@@ -1,0 +1,204 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  
+  <!-- App icon / favicon -->
+  <link rel="icon" href="/images/icon_2_0.png" type="image/png" />
+  <link rel="apple-touch-icon" href="/images/icon_2_0.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_2_0.png" />
+  <meta name="apple-mobile-web-app-title" content="Loan Tracker" />
+  <meta name="application-name" content="Loan Tracker" />
+  
+  <title>Redeem your code · Loan Tracker: You Owe Me</title>
+  <style>
+    body {
+      font-family: -apple-system, system-ui, sans-serif;
+      margin: 24px;
+      line-height: 1.4;
+      color: #111;
+    }
+    .box { max-width: 560px; margin: 0 auto; }
+
+    /* Title row with icon */
+    .titleRow {
+      display: flex;
+      align-items: baseline; /* keeps icon aligned with title text baseline */
+      gap: 10px;
+      margin-bottom: 6px;
+    }
+    .appIcon {
+      width: 28px;          /* tune if you want slightly bigger/smaller */
+      height: 28px;
+      border-radius: 6px;   /* nice iOS-ish rounding */
+      flex: 0 0 auto;
+      transform: translateY(2px); /* tiny tweak so it visually sits with baseline */
+    }
+
+    h1 { margin: 0; }
+    .subtitle { color: #444; margin-bottom: 20px; }
+
+    .step {
+      margin-top: 18px;
+      padding: 14px 16px;
+      border-radius: 12px;
+      border: 1px solid #e5e5e5;
+      background: #fafafa;
+    }
+
+    .step b {
+      display: block;
+      margin-bottom: 6px;
+    }
+
+    .row {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-top: 10px;
+    }
+
+    a.btn, button {
+      padding: 12px 16px;
+      border-radius: 10px;
+      font-weight: 700;
+      border: none;
+      cursor: pointer;
+      text-decoration: none;
+      text-align: center;
+    }
+
+    .primary {
+      background: #111;
+      color: #fff;
+    }
+
+    .secondary {
+      background: #eee;
+      color: #111;
+    }
+
+    .code {
+      font-size: 20px;
+      font-weight: 700;
+      padding: 12px 14px;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      background: #fff;
+      word-break: break-all;
+      margin-top: 6px;
+    }
+
+    .hint {
+      margin-top: 8px;
+      color: #444;
+    }
+
+    .small {
+      margin-top: 14px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+  <div class="box">
+
+    <div class="titleRow">
+      <img class="appIcon" src="/images/icon_2_0.png" alt="App icon" />
+      <h1>Loan Tracker: You Owe Me</h1>
+    </div>
+
+    <div class="subtitle">
+      Track personal debts, shared expenses, and repayments — without awkwardness.
+    </div>
+
+    <!-- STEP 1 -->
+    <div class="step">
+      <b>Step 1 — Install the app</b>
+      <div class="hint">
+          This code unlocks bonus features inside the app once redeemed.
+      </div>
+      <div class="row">
+          <a class="btn primary"
+             href="https://apps.apple.com/app/id1147058670"
+             target="_blank" rel="noopener">
+            Install from App Store
+          </a>
+      </div>
+      <div class="hint">
+        Once you install the app, please return here and continue with Step 2 below.
+      </div>
+    </div>
+
+    <!-- STEP 2 -->
+    <div class="step">
+      <b>Step 2 — Open the app & redeem</b>
+      <div class="hint">
+        After installing, tap the button below.
+        If the app is installed, it will open and prefill your code automatically.
+      </div>
+      <div class="row">
+          <a id="openBtn" class="btn secondary" href="youoweme://redeem">
+          Open the app & redeem
+        </a>
+      </div>
+    </div>
+
+    <!-- STEP 3 -->
+    <div class="step">
+      <b>Optional — Redeem manually</b>
+      <div class="hint">
+        If opening the app didn’t show the Redeem screen:
+      </div>
+
+      <div class="code" id="code">—</div>
+
+      <div class="row">
+        <button id="copyBtn" class="secondary">Copy code</button>
+      </div>
+
+      <div class="small">
+        Open the app → Settings → Redeem code → paste the code above.
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const params = new URLSearchParams(window.location.search);
+    const code = (params.get("code") || "").trim();
+
+    const codeEl = document.getElementById("code");
+    const copyBtn = document.getElementById("copyBtn");
+    const openBtn = document.getElementById("openBtn");
+
+    codeEl.textContent = code || "No code found in this link";
+
+    // Disable Step 2 + Copy if there is no code
+    if (!code) {
+      openBtn.textContent = "Open the app & redeem (missing code)";
+      openBtn.style.opacity = "0.5";
+      openBtn.style.pointerEvents = "none";
+      openBtn.style.cursor = "default";
+
+      copyBtn.disabled = true;
+      copyBtn.style.opacity = "0.5";
+      copyBtn.style.cursor = "default";
+    } else {
+      // ✅ IMPORTANT: make Step 2 a *custom scheme* link (works from this same page)
+      openBtn.href = "youoweme://redeem?code=" + encodeURIComponent(code);
+
+      copyBtn.addEventListener("click", async () => {
+        try {
+          await navigator.clipboard.writeText(code);
+          copyBtn.textContent = "Copied!";
+          setTimeout(() => (copyBtn.textContent = "Copy code"), 1200);
+        } catch {
+          alert("Please copy manually: " + code);
+        }
+      });
+    }
+  </script>
+</body>
+</html>

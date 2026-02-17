@@ -1,0 +1,714 @@
+<!DOCTYPE HTML>
+<html>
+  <head>
+      <title>Loan Tracker: You Owe Me — Money Conversations & Interest Rate</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+
+    <!-- App icon / favicon -->
+    <link rel="icon" href="favicon.ico" sizes="any">
+    <link rel="icon" type="image/png" sizes="32x32" href="./images/icon_2_0.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="./images/icon_2_0.png">
+    <link rel="apple-touch-icon" sizes="180x180" href="./images/icon_2_0.png">
+
+    <meta name="apple-mobile-web-app-title" content="Loan Tracker">
+    <meta name="application-name" content="Loan Tracker">
+
+    <!-- Canonical -->
+    <link rel="canonical" href="https://midoris.github.io/you-owe-me-site/" />
+
+    <!-- SEO description (AI-readable) -->
+    <meta name="description" content="YouOweMe is a loan tracker, IOU and debt app for friends, couples, families, roommates and small businesses. Track shared expenses, split bills, generate ready-to-send Money Conversations (follow-up, ask for loan, repayment update), create professional PDF statements, set reminders, and track interest." />
+    <meta name="article:author" content="Ievgenii Iablonskyi" />
+
+    <!-- Open Graph -->
+    <meta property="og:title" content="Loan Tracker: You Owe Me — Money Conversations & Interest Rate" />
+    <meta property="og:description" content="Track loans, IOUs and shared expenses. Split bills, generate ready-to-send Money Conversations (follow-up, ask for loan, repayment update), create professional PDF statements, set reminders, and track interest." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://midoris.github.io/you-owe-me-site/" />
+    <meta property="og:image" content="https://midoris.github.io/you-owe-me-site/images/you_owe_me_2025.png" />
+
+    <!-- Theme CSS (go up one level) -->
+    <link rel="stylesheet" href="./assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
+
+    <!-- Landing page styles (extracted from inline CSS) -->
+    <link rel="stylesheet" href="./styles/landing.css" />
+
+    <!-- Schema.org (SoftwareApplication) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "Loan Tracker: You Owe Me",
+      "alternateName": "YouOweMe",
+      "applicationCategory": "FinanceApplication",
+      "operatingSystem": "iOS",
+      "url": "https://midoris.github.io/you-owe-me-site/",
+      "downloadUrl": "https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en",
+      "description": "Loan tracker, IOU and debt app for friends, couples, families, roommates and small businesses. Track shared expenses, split bills, generate Money Conversations (follow-up, ask for loan, repayment update), and create professional PDF statements, with reminders, recurring entries, and interest tracking."
+    }
+    </script>
+
+    <!-- Schema.org (FAQPage) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "What is YouOweMe?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "YouOweMe is a loan tracker and IOU app that helps you track debts, shared expenses, and repayments — so you always know who owes whom and how much."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Is it good for tracking money between friends or roommates?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. It’s designed for shared expenses, splitting bills, and keeping a clear running balance between people."
+          }
+        },
+        {
+          "@type": "Question",
+            "name": "Can it help me ask someone to pay me back politely?",
+            "acceptedAnswer": {
+              "@type": "Answer",
+            "text": "Yes. Money Conversations can generate a follow-up message with a clear balance breakdown in a tone that fits your relationship."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can it help me ask for a loan clearly and respectfully?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can generate an Ask for Loan message from your real context, choose a tone, and send a clear request without awkward wording."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Does it support recurring bills?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. Use recurring entries and reminders for rent, subscriptions, utilities, and repeating payments."
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "Can I generate professional PDF statements?",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "Yes. You can generate clean, shareable PDF statements from your records, with an option to add your own logo or image."
+          }
+        }
+      ]
+    }
+    </script>
+
+  </head>
+
+  <body class="is-preload">
+    <div id="wrapper" class="fade-in">
+
+      <!-- Header intentionally hidden via CSS above -->
+      <header id="header">
+        <a href="https://midoris.github.io/" class="logo">Portfolio</a>
+      </header>
+
+      <!-- Nav -->
+      <nav id="nav">
+        <ul class="links">
+          <li class="active"><a href="#">YouOweMe</a></li>
+          <li><a href="./blog/">Blog</a></li>
+        </ul>
+      </nav>
+
+      <!-- Main -->
+      <div id="main">
+
+        <article class="post featured">
+
+          <!-- HERO -->
+          <div class="lt-hero">
+            <div>
+              <header class="major" style="margin-bottom: 0.75rem;">
+                <h1 style="margin-bottom: 0.35rem;">Loan Tracker: You Owe Me</h1>
+                <p style="margin: 0;"><strong>IOUs &amp; Money Messages</strong></p>
+              </header>
+
+              <p style="margin-top: 0;">
+                Stop losing money over forgotten <strong>loans</strong> — and stop stressing about what to say when money is involved.
+              </p>
+
+              <p>
+                <strong>YouOweMe</strong> is built for real life: ongoing balances, partial repayments, shared expenses, and the awkward conversations that come with them.
+                Track who owes whom, keep everything clear, and use Money Conversations to generate ready-to-send texts for real situations: follow-up, ask for loan, and repayment update — in a tone that fits your relationship.
+                When you need something formal, generate professional PDF statements from your records.
+              </p>
+
+              <div class="lt-ctaRow">
+                <a href="https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en" class="lt-appStoreBtn" aria-label="Download on the App Store">
+                  <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" />
+                </a>
+              </div>
+
+              <div class="lt-note">
+                Works offline • No mandatory sign-up • Face ID / Touch ID lock
+              </div>
+            </div>
+
+            <div class="lt-card">
+                <a href="https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en" class="image main lt-heroShot" style="margin: 0;">
+                <img src="./images/Start_screen_ready.png" alt="Loan Tracker: You Owe Me — iOS app screenshot" />
+              </a>
+            </div>
+          </div>
+          
+          <!-- WHY THIS APP EXISTS (Medium) -->
+          <div class="lt-card" style="margin-top: 1.75rem;">
+            <h2 style="margin-top: 0; margin-bottom: 0.5rem;">Why this app exists</h2>
+            <p style="margin: 0; opacity: 0.92;">
+              Money between people rarely stays “one loan, one repayment.” I wrote a short explanation of why it gets awkward — and what actually helps.
+            </p>
+            <p style="margin: 0.65rem 0 0;">
+              <a href="https://medium.com/@eugen_yablonski/why-asking-friends-to-pay-you-back-feels-awkward-and-why-simple-loans-dont-stay-simple-e5b20b30ea39"
+                 target="_blank" rel="noopener">
+                 Read: why simple loans don’t stay simple →
+              </a>
+            </p>
+          </div>
+
+          <!-- REVIEWS -->
+          <div class="lt-reviews" aria-label="What people are saying">
+            <div class="lt-reviewsHeader">
+              <h2>What people are saying</h2>
+              <div class="lt-reviewsHint">Scroll →</div>
+            </div>
+
+            <div class="lt-reviewRail">
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">This app is a lifesaver! I finally have an easy way to track money I’ve loaned or am owed. Setup is quick, the design is clean, and reminders keep me on top of everything without stress. No more awkward ‘you still owe me’ talks—just open the app and it’s all there. Simple, reliable, incredibly useful. Highly recommend!</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">This is my go-to app for a year now for daily financial logs. It has been much easier and more convenient than anything I used before. The UI is simple and clean despite all the features. I paid once and keep getting new improvements. Most importantly, the developer provides real support and responds to suggestions and questions.</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">No app is flawless, but there really is not anything better out there. The developer listens to feedback and fixes issues fast. This is not an abandoned project. You won’t find anything better than this.</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">Superb app. I purchased the Unlimited Entries and Members subscription, and it has everything a lender needs to keep clear records. Great interface and accessibility. Looking forward to new features!</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">I usually judge apps by ratings and review counts, so I didn’t expect much—but I was wrong. From the first use, the layout stood out and performance was smooth. I reported a small bug through support; the developer replied quickly and fixed it in the next update. With its thoughtful design and responsive support, I confidently recommend this app to anyone tracking money they owe or are owed.</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">I’ve used this app for a long time. It’s the only app where the developer truly listens and responds. The interface is very easy to use, transactions are fast, and it supports many currencies, reminders, and recurring entries. It has all the features I need.</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">There are a number of apps like this, but this one is the best so far. The simplest interface with solid functionality. I use it daily—everything in one clean screen.</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">One of the best apps to track your money—whether you’re lending or running a business. Simple, user-friendly, and it gets the job done.</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">Very good app 🙂 Nice design, easy to use, and straightforward. I can set a date and change it later for any loan. Everything else can be edited too. Very flexible.</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">I can keep track of everything—including money I take from savings that I plan to pay back. You can add a note to every transaction, and the developer added my currency in about three days after I asked! There are other apps, but this one is the most convenient and fairly priced.</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">This app is super innovative and makes it easy to keep track of the money people owe you. Highly recommended!</p>
+              </div>
+
+              <div class="lt-card lt-reviewCard">
+                <div class="lt-stars" aria-label="5 out of 5 stars">
+                  <span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span><span class="lt-star">★</span>
+                </div>
+                <p class="lt-reviewText">I’ve tried several apps, but this one is the best!</p>
+              </div>
+
+            </div>
+          </div>
+          
+          <!-- FEATURE RAIL -->
+          <div class="lt-featureRailWrap" aria-label="Top features">
+            <div class="lt-reviewsHeader">
+              <h2>What you get</h2>
+              <div class="lt-reviewsHint">Scroll →</div>
+            </div>
+
+            <div class="lt-featureRail">
+
+              <div class="lt-featureCard">
+                <div class="lt-featureIcon"><span class="icon solid fa-comments"></span></div>
+                <p class="lt-featureTitle">Money Conversations</p>
+              </div>
+
+              <div class="lt-featureCard">
+                <div class="lt-featureIcon"><span class="icon solid fa-file-pdf"></span></div>
+                <p class="lt-featureTitle">PDF Statements</p>
+              </div>
+
+              <div class="lt-featureCard">
+                <div class="lt-featureIcon"><span class="icon solid fa-percent"></span></div>
+                <p class="lt-featureTitle">Interest Tracking</p>
+              </div>
+
+              <div class="lt-featureCard">
+                <div class="lt-featureIcon"><span class="icon solid fa-microphone"></span></div>
+                <p class="lt-featureTitle">Voice to Entry</p>
+              </div>
+
+              <div class="lt-featureCard">
+                <div class="lt-featureIcon"><span class="icon solid fa-user-friends"></span></div>
+                <p class="lt-featureTitle">Split Expenses</p>
+              </div>
+
+              <div class="lt-featureCard">
+                <div class="lt-featureIcon"><span class="icon solid fa-bell"></span></div>
+                <p class="lt-featureTitle">Payment reminders</p>
+              </div>
+
+              <div class="lt-featureCard">
+                <div class="lt-featureIcon"><span class="icon solid fa-sync-alt"></span></div>
+                <p class="lt-featureTitle">Recurring Entries</p>
+              </div>
+
+              <div class="lt-featureCard">
+                <div class="lt-featureIcon"><span class="icon solid fa-file-download"></span></div>
+                <p class="lt-featureTitle">CSV export</p>
+              </div>
+
+              <div class="lt-featureCard">
+                <div class="lt-featureIcon"><span class="icon solid fa-lock"></span></div>
+                <p class="lt-featureTitle">Face ID lock</p>
+              </div>
+
+            </div>
+          </div>
+
+          <!-- QUICK FEATURE GRID -->
+          <div id="features" class="lt-featureGrid">
+            <div class="lt-card">
+                <h3>Money Conversations</h3>
+                <p>Generate ready-to-send follow-up, ask for loan, and repayment update messages with a clear breakdown and natural tone.</p>
+            </div>
+            <div class="lt-card">
+              <h3>Professional Statements &amp; PDFs</h3>
+              <p>Generate clean PDF statements from real records, with optional logo/image branding for a more polished look.</p>
+            </div>
+            <div class="lt-card">
+              <h3>Reminders &amp; Recurring</h3>
+              <p>Never miss repayments. Perfect for rent, subscriptions, utilities, and repeating payments.</p>
+            </div>
+          </div>
+
+          <hr />
+
+          <!-- SCREENSHOT SECTIONS -->
+          <div class="lt-section">
+            <div class="lt-snap">
+              <div>
+                <div class="lt-kicker">Core</div>
+                <h2 style="margin-top: 0;">Know who owes whom — instantly</h2>
+                <p>
+                  A clean main screen that shows your total balance and each person’s running balance.
+                  It’s designed for ongoing real-world situations, not “one loan opened / one loan closed.”
+                </p>
+                <ul>
+                  <li>Running balance per person</li>
+                  <li>Clear timeline of repayments</li>
+                  <li>Fast search and quick entry</li>
+                </ul>
+              </div>
+              <div class="lt-imgWrap">
+                <img src="./images/main.png" alt="Main screen — Track who owes you" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lt-section">
+            <div class="lt-snap reverse">
+              <div>
+                <div class="lt-kicker">Conversations</div>
+                <h2 style="margin-top: 0;">Money Conversations that make hard messages easier</h2>
+                <p>
+                  The hardest part about money is often not the math - it is the message.
+                  Money Conversations gives you three ready-to-send message types based on real balances and history:
+                  Follow-Up, Ask for Loan, and Repayment Update.
+                </p>
+                <p class="lt-note" style="margin-top: 0.5rem;">
+                        Choose a tone (friendly, polite, or firm), adjust details if needed, and keep full control.
+                </p>
+
+                <ul>
+                  <li>Follow-Up when someone owes you and you want to check in</li>
+                  <li>Ask for Loan when you need to borrow money clearly and respectfully</li>
+                  <li>Repayment Update when you owe someone and want to share your plan</li>
+                  <li>Clear amount + context, so there is no confusion</li>
+                  <li>Optional secure summary link (no app install needed)</li>
+                </ul>
+              </div>
+              <div class="lt-imgWrap">
+                  <img src="./images/money_messages.png" alt="Money Conversations - follow-up, ask for loan, and repayment update" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lt-section">
+            <div class="lt-snap">
+              <div>
+                <div class="lt-kicker">Ask for Loan</div>
+                <h2 style="margin-top: 0;">Ask for a loan clearly and respectfully</h2>
+                <p>
+                  When you need to borrow money, the wording matters.
+                  YouOweMe helps you generate an Ask for Loan message that is direct, respectful, and based on your real context.
+                </p>
+                <ul>
+                  <li>Built for real people, not generic templates</li>
+                  <li>Choose a tone that fits your relationship</li>
+                  <li>Clear request without emotional pressure</li>
+                </ul>
+              </div>
+              <div class="lt-imgWrap">
+                <img src="./images/ask_for_loan.png" alt="Ask for Loan message generation" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lt-section">
+            <div class="lt-snap reverse">
+              <div>
+                <div class="lt-kicker">Voice</div>
+                <h2 style="margin-top: 0;">Add entries by speaking naturally</h2>
+                <p>
+                  Say something like: “I lent Alex 30 euros for groceries yesterday.”
+                  The app turns it into a structured entry with the right person, amount, category, and date.
+                </p>
+                <ul>
+                  <li>Fast capture when you’re on the go</li>
+                  <li>Reduces friction for daily use</li>
+                  <li>Designed for real-world wording</li>
+                </ul>
+              </div>
+              <div class="lt-imgWrap">
+                <img src="./images/voice.png" alt="Voice to entry — add loans without typing" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lt-section">
+            <div class="lt-snap">
+              <div>
+                <div class="lt-kicker">Reminders</div>
+                <h2 style="margin-top: 0;">Never miss repayments</h2>
+                <p>
+                  Set reminders for money you need to collect or repay. Great for one-time IOUs, due dates, and recurring payments.
+                </p>
+                <ul>
+                  <li>Upcoming, overdue, completed views</li>
+                  <li>Works well for recurring bills</li>
+                  <li>Designed to reduce “I forgot” situations</li>
+                </ul>
+              </div>
+              <div class="lt-imgWrap">
+                <img src="./images/reminders.png" alt="Payment reminders — never miss payments" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lt-section">
+            <div class="lt-snap reverse">
+              <div>
+                <div class="lt-kicker">Splits</div>
+                <h2 style="margin-top: 0;">Split bills fairly (equal or custom)</h2>
+                <p>
+                  Split shared expenses in one tap — equal or custom — and keep balances accurate for groups, roommates, trips, or couples.
+                </p>
+                <ul>
+                  <li>Equal and custom splits</li>
+                  <li>Designed for group scenarios</li>
+                  <li>Balances stay consistent automatically</li>
+                </ul>
+              </div>
+              <div class="lt-imgWrap">
+                <img src="./images/split.png" alt="Split bills fairly" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lt-section">
+            <div class="lt-snap">
+              <div>
+                <div class="lt-kicker">Statements</div>
+                <h2 style="margin-top: 0;">Professional Statements &amp; PDFs for formal situations</h2>
+                <p>
+                  For cases where you need something more formal, YouOweMe generates clean, shareable PDF statements from your real records.
+                  You can also add your own logo or image for a more polished presentation.
+                </p>
+                <ul>
+                  <li>Great for small businesses, freelancers, and client payments</li>
+                  <li>Clear repayment summaries for long-term or interest-based balances</li>
+                  <li>Easy to share and clearly formatted to reduce misunderstandings</li>
+                </ul>
+              </div>
+              <div class="lt-imgWrap">
+                <img src="./images/pdf_generation.png" alt="Professional PDF statements and summaries" />
+              </div>
+            </div>
+          </div>
+
+          <div class="lt-section">
+            <div class="lt-snap reverse">
+              <div>
+                <div class="lt-kicker">Interest</div>
+                <h2 style="margin-top: 0;">Track interest for long-term or larger amounts</h2>
+                <p>
+                  Add an interest rate (daily / monthly / yearly), set a start date, and see accrued interest so far.
+                  Useful for long-running balances and larger amounts where interest matters.
+                </p>
+                <ul>
+                  <li>Daily / monthly / yearly</li>
+                  <li>Custom start date</li>
+                  <li>Clear accrued interest summary</li>
+                </ul>
+              </div>
+              <div class="lt-imgWrap">
+                <img src="./images/interest.png" alt="Interest tracking" />
+              </div>
+            </div>
+          </div>
+
+          <hr />
+
+          <!-- KEEP YOUR ORIGINAL SECTIONS (improved intro text only) -->
+          <h2>If you’re looking for…</h2>
+          <ul>
+            <li>An app to track money friends owe you</li>
+            <li>An IOU tracker for shared expenses and split bills</li>
+            <li>A debt tracker to borrow, lend, repay, and pay back clearly</li>
+            <li>A simple tool for small business payments</li>
+            <li>A clean alternative to spreadsheets for balances and reminders</li>
+          </ul>
+
+          <hr />
+
+          <h2>Common use cases</h2>
+
+          <h3>Friends &amp; roommates</h3>
+          <ul>
+            <li>Split bills and shared expenses (equal or custom)</li>
+            <li>Keep a clear running balance so nobody forgets</li>
+            <li>Send polite reminders when it’s time to pay back</li>
+          </ul>
+
+          <h3>Couples &amp; families</h3>
+          <ul>
+            <li>Track shared spending and repayments over time</li>
+            <li>Stay transparent with clean summaries</li>
+            <li>Use reminders and recurring entries for regular payments</li>
+          </ul>
+
+          <h3>Small business / clients</h3>
+          <ul>
+            <li>Track simple client payments and repayments (without spreadsheets)</li>
+            <li>Use Interest Rate tracking for long-term or larger amounts</li>
+            <li>Use Money Conversations for follow-ups, loan requests, and repayment updates</li>
+            <li>Share professional PDF statements for clear communication</li>
+          </ul>
+
+          <hr />
+
+          <h2>Key features</h2>
+
+          <h3>Money Conversations (Follow-Up + Ask for Loan + Repayment Update)</h3>
+          <p>
+            Select a person and a tone, and YouOweMe generates a ready-to-send message for the situation you actually have:
+            a follow-up when someone owes you, an ask for loan request when you need to borrow, or a repayment update when you owe someone.
+            Each message includes a clear breakdown and can include a secure summary link — the other person can view it
+            <strong>without installing the app</strong>.
+          </p>
+
+          <h3>Professional Statements &amp; PDFs</h3>
+          <p>
+            Generate clean, professional PDF statements from your records when you need a more formal summary.
+            Add your own logo or image, share statements easily, and keep everyone aligned with clear data.
+          </p>
+
+          <h3>Voice-to-Entry (Add loans without typing)</h3>
+          <p>
+            Just speak naturally: “I lent Alex 30 euros for groceries yesterday.”
+            YouOweMe automatically creates the correct entry with names, amounts, categories, and dates.
+          </p>
+
+          <h3>Smart Payment Reminders</h3>
+          <p>
+            Set reminders for payments you need to collect or repay. Great for one-time IOUs, payback dates, and recurring bills.
+          </p>
+
+          <h2>Built for real-life money tracking</h2>
+          <ul>
+            <li>Automatic running balance that always shows who owes whom</li>
+            <li>Split expenses in one tap (equal or custom)</li>
+            <li>Track borrow and lend history with a clear timeline</li>
+            <li>Instant sharing of clean summaries for transparency</li>
+            <li>Recurring entries for rent, subscriptions, utilities, or repeating payments</li>
+            <li>Interest rate tracking for long-term or large amounts</li>
+            <li>Professional PDF statements for formal sharing</li>
+            <li>Sync across devices + multiple cloud profiles under one login</li>
+            <li>Face ID / Touch ID lock for privacy</li>
+            <li>Works offline</li>
+            <li>No mandatory sign-up to get started</li>
+          </ul>
+
+          <ul class="actions special">
+            <li>
+              <a href="https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en" class="lt-appStoreBtn" aria-label="Download on the App Store">
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" />
+              </a>
+            </li>
+          </ul>
+
+          <hr />
+
+          <h2>FAQ</h2>
+
+          <h3>What is YouOweMe?</h3>
+          <p>
+            YouOweMe is a loan tracker and IOU app that helps you track debts, shared expenses, and repayments —
+            so you always know who owes whom and how much.
+          </p>
+
+          <h3>Is it good for tracking money between friends or roommates?</h3>
+          <p>
+            Yes. It’s designed for shared expenses, splitting bills, and keeping a clear running balance between people.
+          </p>
+
+          <h3>Can it help me ask someone to pay me back politely?</h3>
+          <p>
+          Yes. Money Conversations generates a ready-to-send follow-up with a clear breakdown of what’s owed — in a tone that fits your relationship.
+          </p>
+
+          <h3>Can it help me ask for a loan clearly and respectfully?</h3>
+          <p>
+            Yes. You can generate an Ask for Loan message from your real context, choose a tone, and send a clear request without awkward wording.
+          </p>
+          
+          <h3>Can it confirm a repayment or partial payment?</h3>
+          <p>
+            Yes. Use Money Conversations to send a repayment update with a clear breakdown of what changed, so there is no confusion.
+          </p>
+
+          <h3>Does it support recurring bills?</h3>
+          <p>
+            Yes. Use recurring entries and reminders for rent, subscriptions, utilities, and repeating payments.
+          </p>
+
+          <h3>Can I generate professional PDF statements?</h3>
+          <p>
+            Yes. You can generate clean, shareable PDF statements from your records, with an option to add your own logo or image.
+          </p>
+
+          <hr />
+
+          <h2>Support</h2>
+          <p>
+            Support email:
+            <a href="mailto:eugen_yablonski@yahoo.com">eugen_yablonski@yahoo.com</a>
+          </p>
+          <p>
+            Privacy Policy:
+            <a href="https://docs.google.com/document/d/e/2PACX-1vT4eaJ9w54hqRGNHqwwEa7h6ASKQeHdfBZS-MpoblxHKtUioTNaetS-gSffs-zkrsfdSPNXzBYF0suS/pub" target="_blank" rel="noopener">
+              View Privacy Policy
+            </a>
+          </p>
+          <p>
+            Official LinkedIn page:
+            <a href="https://www.linkedin.com/company/111266291/" target="_blank" rel="noopener">
+              YouOweMe on LinkedIn
+            </a>
+          </p>
+          <p>
+            Blog &amp; guides:
+            <a href="./blog/">
+              Read money conversation guides
+            </a>
+          </p>
+
+          <!-- Mobile sticky CTA -->
+          <div class="lt-stickyCTA">
+            <a href="https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en" class="lt-appStoreBtn" aria-label="Download on the App Store">
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" />
+            </a>
+          </div>
+
+        </article>
+      </div>
+
+      <div id="copyright">
+        <ul>
+          <li>&copy; 2026 Ievgenii Iablonskyi</li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- Scripts (go up one level) -->
+    <script src="./scripts/reviews.js"></script>
+    <script src="./assets/js/jquery.min.js"></script>
+    <script src="./assets/js/jquery.scrollex.min.js"></script>
+    <script src="./assets/js/jquery.scrolly.min.js"></script>
+    <script src="./assets/js/browser.min.js"></script>
+    <script src="./assets/js/breakpoints.min.js"></script>
+    <script src="./assets/js/util.js"></script>
+    <script src="./assets/js/main.js"></script>
+  </body>
+</html>

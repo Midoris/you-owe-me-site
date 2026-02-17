@@ -1,0 +1,823 @@
+        /* Feature rail (like reviews) */
+        .lt-featureRailWrap {
+          margin-top: 1.5rem;
+        }
+
+        .lt-featureRail {
+          display: flex;
+          gap: 1rem;
+          overflow-x: auto;
+          padding: 0.25rem 0.75rem 0.75rem;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+          align-items: stretch;
+        }
+
+        .lt-featureRail::-webkit-scrollbar { height: 10px; }
+        .lt-featureRail::-webkit-scrollbar-thumb {
+          background: rgba(255,255,255,0.15);
+          border-radius: 999px;
+        }
+        .lt-featureRail::-webkit-scrollbar-track {
+          background: rgba(255,255,255,0.05);
+          border-radius: 999px;
+        }
+
+        
+
+        /* Feature cards: make them feel like the review cards (but greener/neutral) */
+        .lt-featureCard {
+          flex: 0 0 auto;
+          width: 260px;
+          height: 120px;                 /* consistent “card” feel */
+          scroll-snap-align: start;
+          border-radius: 14px;
+
+          display: grid;
+          grid-template-columns: 44px 1fr;
+          gap: 0.85rem;
+          align-items: center;
+
+          border: 1px solid rgba(255,255,255,0.14);
+          background:
+          radial-gradient(900px 260px at 12% 0%, rgba(175,230,126,0.12), rgba(0,0,0,0) 55%),
+            radial-gradient(700px 280px at 95% 25%, rgba(255,255,255,0.06), rgba(0,0,0,0) 60%),
+            rgba(255,255,255,0.035);
+          box-shadow:
+            0 10px 28px rgba(0,0,0,0.22),
+            0 1px 0 rgba(255,255,255,0.06) inset;
+
+          padding: 1.0rem 1.0rem;
+          position: relative;
+          overflow: hidden;
+        }
+
+        /* Optional subtle “spark” like reviews, but not quotes */
+        .lt-featureCard::before {
+          content: "";
+          position: absolute;
+          inset: -1px;
+          background:
+          radial-gradient(500px 180px at 15% 20%, rgba(175,230,126,0.14), rgba(0,0,0,0) 55%);
+          opacity: 0.55;
+          pointer-events: none;
+        }
+
+        @media (max-width: 736px) {
+          .lt-featureCard {
+              width: 74vw;   /* was 86vw, 80 */
+            height: 128px;
+          }
+        }
+
+        .lt-featureIcon {
+          width: 44px;
+          height: 44px;
+          border-radius: 14px;
+          border: 1px solid rgba(255,255,255,0.14);
+          background:
+          radial-gradient(220px 120px at 30% 20%, rgba(175,230,126,0.20), rgba(0,0,0,0) 60%),
+            rgba(0,0,0,0.12);
+          display: grid;
+          place-items: center;
+          font-size: 1.05rem;
+          opacity: 0.98;
+          box-shadow: 0 8px 18px rgba(0,0,0,0.18);
+          position: relative;
+          z-index: 1; /* sit above ::before */
+        }
+
+        .lt-featureTitle {
+          margin: 0;
+          font-size: 1.02rem;
+          line-height: 1.25;
+          opacity: 0.94;
+          position: relative;
+          z-index: 1; /* sit above ::before */
+        }
+
+        /* Nice hover, desktop only-ish */
+        @media (hover: hover) {
+          .lt-featureCard:hover {
+            transform: translateY(-2px);
+            box-shadow:
+              0 14px 34px rgba(0,0,0,0.26),
+              0 1px 0 rgba(255,255,255,0.07) inset;
+          }
+        }
+
+        
+
+        
+        
+      #header { display: none !important; }
+
+      :root {
+        /* wider landing-page container */
+        --lt-max: 1280px;
+      }
+
+      /* Make the main content area feel like a landing page */
+      #main { padding-top: 0; }
+
+      /* Override HTML5UP's default fixed widths */
+      #main > * {
+        width: 100% !important;
+        max-width: none !important;
+      }
+
+      article.post.featured {
+        width: min(var(--lt-max), calc(100% - 4rem));
+        margin: 0 auto;
+      }
+      @media (max-width: 736px) {
+        article.post.featured {
+          width: calc(100% - 2rem);
+        }
+      }
+
+      /* Hero */
+      /* Hero screenshot: match rounded corners of other screenshots */
+      .lt-heroShot {
+        display: block;
+        border-radius: 16px;
+        overflow: hidden; /* important: rounds the image even if it scales */
+      }
+      .lt-heroShot img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+        
+      .lt-hero {
+        display: grid;
+        grid-template-columns: 1.05fr 0.95fr;
+        gap: 2rem;
+        align-items: center;
+        margin-top: 1.5rem;
+      }
+      @media (max-width: 980px) {
+        .lt-hero { grid-template-columns: 1fr; }
+      }
+
+      .lt-badges {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 0.75rem 0 1.25rem;
+      }
+      .lt-badge {
+        font-size: 0.85rem;
+        padding: 0.4rem 0.7rem;
+        border-radius: 999px;
+        border: 1px solid rgba(255,255,255,0.15);
+        background: rgba(255,255,255,0.05);
+      }
+
+      .lt-ctaRow {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+        margin-top: 1.25rem;
+      }
+
+      .lt-appStoreBtn {
+        display: inline-block;
+        width: min(250px, 100%);
+        line-height: 0;
+        border-radius: 13px;
+        overflow: hidden;
+        box-shadow: 0 10px 22px rgba(15, 23, 42, 0.2);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .lt-appStoreBtn img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .lt-appStoreBtn:hover {
+        transform: translateY(-1px) scale(1.01);
+        box-shadow: 0 14px 28px rgba(15, 23, 42, 0.24);
+      }
+
+      .lt-appStoreBtn:active {
+        transform: translateY(0);
+      }
+
+      .lt-appStoreBtn:focus-visible {
+        outline: 3px solid rgba(59, 130, 246, 0.38);
+        outline-offset: 3px;
+      }
+
+      .lt-note {
+        font-size: 0.95rem;
+        opacity: 0.85;
+        margin-top: 0.75rem;
+      }
+
+      /* Card blocks */
+      .lt-card {
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(255,255,255,0.04);
+        border-radius: 14px;
+        padding: 1.1rem 1.1rem;
+      }
+
+      .lt-featureGrid {
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+        margin-top: 1.25rem;
+      }
+      @media (max-width: 980px) {
+        .lt-featureGrid { grid-template-columns: 1fr; }
+      }
+      .lt-featureGrid h3 { margin: 0 0 0.35rem 0; }
+      .lt-featureGrid p { margin: 0; opacity: 0.9; }
+
+      /* Reviews (horizontal scroll) */
+      .lt-reviews {
+        margin-top: 1.5rem;
+      }
+
+      .lt-reviewsHeader {
+        display: flex;
+        align-items: baseline;
+        justify-content: space-between;
+        gap: 1rem;
+        margin-bottom: 0.75rem;
+      }
+
+      .lt-reviewsHeader h2 {
+        margin: 0;
+      }
+
+      .lt-reviewsHint {
+        font-size: 0.95rem;
+        opacity: 0.75;
+        white-space: nowrap;
+      }
+
+      .lt-reviewRail {
+        display: flex;
+        gap: 1rem;
+        overflow-x: auto;
+        padding: 0.25rem 0.75rem 0.75rem;
+        scroll-snap-type: x mandatory;
+        -webkit-overflow-scrolling: touch;
+        align-items: stretch; /* make cards same height */
+      }
+
+      .lt-reviewRail::-webkit-scrollbar { height: 10px; }
+      .lt-reviewRail::-webkit-scrollbar-thumb {
+        background: rgba(255,255,255,0.15);
+        border-radius: 999px;
+      }
+      .lt-reviewRail::-webkit-scrollbar-track {
+        background: rgba(255,255,255,0.05);
+        border-radius: 999px;
+      }
+
+      /* ✅ Reviews: nicer background + same height + variable width */
+      .lt-reviewCard {
+        flex: 0 0 auto;                 /* variable width */
+        width: 340px;       /* starting width (JS will grow if needed) */
+        max-width: 920px;   /* upper bound so it doesn't get crazy-wide */
+        height: 340px;                  /* same height */
+        scroll-snap-align: start;
+        border-radius: 14px;
+
+        display: flex;
+        flex-direction: column;
+        position: relative;
+
+        border: 1px solid rgba(255,255,255,0.14);
+        background:
+          radial-gradient(1200px 400px at 10% 0%, rgba(245,200,75,0.10), rgba(0,0,0,0) 55%),
+          radial-gradient(900px 420px at 95% 20%, rgba(255,255,255,0.06), rgba(0,0,0,0) 60%),
+          rgba(255,255,255,0.035);
+        box-shadow:
+          0 10px 30px rgba(0,0,0,0.22),
+          0 1px 0 rgba(255,255,255,0.06) inset;
+      }
+
+      @media (max-width: 736px) {
+        .lt-reviewCard {
+            width: 74vw;   /* was 86vw, 78 */
+          height: 360px;
+        }
+      }
+
+      .lt-reviewCard::before {
+        content: "“";
+        position: absolute;
+        top: 0.55rem;
+        right: 1.0rem;
+        font-size: 3.1rem;
+        line-height: 1;
+        opacity: 0.12;
+        pointer-events: none;
+      }
+
+      .lt-stars {
+        display: inline-flex;
+        gap: 0.15rem;
+        margin-bottom: 0.6rem;
+        font-size: 1.05rem;
+        line-height: 1;
+        flex: 0 0 auto;
+      }
+
+      .lt-star {
+        color: #f5c84b; /* gold */
+        text-shadow: 0 1px 10px rgba(245,200,75,0.15);
+      }
+
+        .lt-reviewText {
+          margin: 0;
+          opacity: 0.92;
+          flex: 1 1 auto;
+          overflow: hidden;
+
+          /* ✅ fix ugly stretched spaces */
+          text-align: left;
+          text-align-last: left;
+          text-justify: auto;
+          word-spacing: normal;
+
+          /* clamp so all cards stay same height */
+          display: -webkit-box;
+          -webkit-box-orient: vertical;
+          -webkit-line-clamp: 12;
+        }
+
+      /* Screenshot sections */
+      .lt-section {
+        margin: 2.5rem 0;
+      }
+      .lt-snap {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+        align-items: center;
+      }
+      .lt-snap.reverse { direction: rtl; }
+      .lt-snap.reverse > * { direction: ltr; }
+      @media (max-width: 980px) {
+        .lt-snap { grid-template-columns: 1fr; }
+        .lt-snap.reverse { direction: ltr; }
+      }
+      .lt-imgWrap {
+        border-radius: 16px;
+        overflow: hidden;
+        border: 1px solid rgba(255,255,255,0.12);
+        background: rgba(0,0,0,0.12);
+      }
+      .lt-imgWrap img {
+        width: 100%;
+        height: auto;
+        display: block;
+      }
+      .lt-kicker {
+        font-size: 0.9rem;
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
+        opacity: 0.7;
+        margin-bottom: 0.35rem;
+      }
+
+      /* Sticky mini-CTA on mobile */
+      .lt-stickyCTA {
+        display: none;
+        position: sticky;
+        bottom: 0;
+        z-index: 50;
+        margin: 1.25rem -2rem -2rem;
+        padding: 0.9rem 1.25rem;
+        background: rgba(10,10,10,0.88);
+        border-top: 1px solid rgba(255,255,255,0.12);
+        backdrop-filter: blur(10px);
+      }
+      .lt-stickyCTA a.button { width: 100%; }
+      .lt-stickyCTA .lt-appStoreBtn {
+        display: block;
+        width: min(250px, 100%);
+        margin: 0 auto;
+      }
+      @media (max-width: 736px) {
+        .lt-stickyCTA { display: block; }
+      }
+
+      /* Make HR a bit cleaner */
+      hr { opacity: 0.35; }
+      
+      
+      /* ---------------------------
+         Mobile polish (easy wins)
+      --------------------------- */
+        
+        @media (max-width: 736px) {
+          .lt-reviewRail,
+          .lt-featureRail {
+            padding-left: 0.75rem;
+            padding-right: 0.75rem;
+            scroll-padding-left: 0.75rem;
+            scroll-padding-right: 0.75rem;
+
+            -webkit-mask-image: linear-gradient(
+              to right,
+              transparent 0,
+              #000 24px,
+              #000 calc(100% - 54px),
+              transparent 100%
+            );
+            mask-image: linear-gradient(
+              to right,
+              transparent 0,
+              #000 24px,
+              #000 calc(100% - 54px),
+              transparent 100%
+            );
+          }
+        }
+        
+      @media (max-width: 736px) {
+
+        /* Slightly tighter page padding (article width already becomes 100%-2rem) */
+        article.post.featured { padding-left: 0; padding-right: 0; }
+
+        /* Hero: reduce vertical “air” */
+        .lt-hero { gap: 1.25rem; margin-top: 1rem; }
+
+        /* Make CTAs finger-friendly: full width stack */
+        .lt-ctaRow {
+          flex-direction: column;
+          align-items: stretch;
+          gap: 0.6rem;
+        }
+        .lt-ctaRow .button {
+          width: 100%;
+          text-align: center;
+          padding: 0.9rem 1rem; /* slightly taller tap target */
+        }
+
+        .lt-appStoreBtn {
+          width: min(225px, 100%);
+        }
+
+        /* Badges: smaller + tighter */
+        .lt-badges { gap: 0.45rem; margin: 0.6rem 0 1rem; }
+        .lt-badge { font-size: 0.8rem; padding: 0.35rem 0.6rem; }
+
+        /* Cards: a bit less padding on small screens */
+        .lt-card { padding: 0.95rem; }
+
+        /* Feature grid: keep spacing nice */
+        .lt-featureGrid { gap: 0.85rem; }
+
+        /* Reviews rail: nicer edge-to-edge feel */
+        .lt-reviewRail {
+          padding: 0.25rem 0.75rem 0.75rem;
+          scroll-padding-left: 0.75rem;
+          scroll-padding-right: 0.75rem;
+        }
+
+        /* Optional: hide the “Scroll →” hint on mobile (it competes for space) */
+        .lt-reviewsHint { display: none; }
+
+        /* Text blocks: slightly tighter for mobile readability */
+        p { line-height: 1.55; }
+      }
+
+      /* Extra small phones */
+      @media (max-width: 420px) {
+        h1 { font-size: 1.85rem; }
+        .lt-note { font-size: 0.9rem; }
+      }
+
+      /* ----------------------------------------
+         Layout polish overrides (landing page)
+         Goals:
+         1) remove framed/template side bars
+         2) add breathing room and clearer rhythm
+         3) keep current branding and behavior
+      ---------------------------------------- */
+      :root {
+        --lt-max: 1340px;
+        --lt-canvas: #f4f6f8;
+        --lt-surface: rgba(255, 255, 255, 0.78);
+        --lt-border-soft: rgba(15, 23, 42, 0.1);
+        --lt-shadow-soft: 0 12px 36px rgba(15, 23, 42, 0.07);
+        --lt-shadow-media: 0 20px 42px rgba(15, 23, 42, 0.12);
+        --lt-gutter: clamp(1rem, 3.5vw, 3.25rem);
+        --lt-content-pad: clamp(0.55rem, 1.25vw, 1.35rem);
+      }
+
+      body {
+        background-color: var(--lt-canvas);
+      }
+
+      #wrapper {
+        overflow: visible;
+      }
+
+      #wrapper > .bg {
+        display: none !important;
+      }
+
+      #wrapper.fade-in:before {
+        background: var(--lt-canvas);
+      }
+
+      #nav,
+      #main,
+      #footer,
+      #copyright {
+        width: 100% !important;
+        max-width: none !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+      }
+
+      #nav {
+        margin-top: 0 !important;
+        padding-left: var(--lt-gutter);
+        padding-right: var(--lt-gutter);
+        background: rgba(30, 37, 45, 0.88);
+        backdrop-filter: blur(10px);
+      }
+
+      #main {
+        background:
+          linear-gradient(180deg, #fbfdff 0%, #f8fafc 58%, var(--lt-canvas) 100%);
+        padding-top: clamp(0.8rem, 2vw, 1.8rem);
+        padding-left: var(--lt-gutter);
+        padding-right: var(--lt-gutter);
+        box-sizing: border-box;
+      }
+
+      #main > * {
+        padding: 0 !important;
+        border-top: 0 !important;
+      }
+
+      article.post.featured {
+        width: min(var(--lt-max), 100%);
+        box-sizing: border-box;
+        margin: 0 auto;
+        padding: clamp(2rem, 5vw, 4.8rem) 0 clamp(3rem, 8vw, 6.2rem);
+        text-align: left !important;
+        font-size: clamp(0.78rem, 0.74rem + 0.24vw, 0.86rem);
+      }
+
+      article.post.featured > * {
+        padding-left: var(--lt-content-pad);
+        padding-right: var(--lt-content-pad);
+        box-sizing: border-box;
+      }
+
+      article.post.featured h1 {
+        font-size: clamp(2.15em, 5.1vw, 3.35em) !important;
+        line-height: 1.06;
+        letter-spacing: 0.015em;
+        margin-bottom: 0.42em !important;
+      }
+
+      article.post.featured h2 {
+        font-size: clamp(1.48em, 2.05vw, 1.92em);
+        line-height: 1.2;
+        letter-spacing: 0.03em;
+        margin-bottom: 0.85rem;
+      }
+
+      article.post.featured h3 {
+        font-size: clamp(1.16em, 1.3vw, 1.34em);
+        line-height: 1.28;
+      }
+
+      article.post.featured p:not(.lt-reviewText) {
+        max-width: 68ch;
+        line-height: 1.72;
+      }
+
+      article.post.featured ul:not(.actions):not(.icons):not(.links) {
+        max-width: 68ch;
+      }
+
+      article.post.featured li {
+        margin-bottom: 0.32rem;
+      }
+
+      .lt-kicker {
+        font-size: 0.82em;
+      }
+
+      .lt-featureTitle {
+        font-size: 0.98em;
+      }
+
+      .lt-reviewCard {
+        font-size: 0.95em;
+      }
+
+      .lt-hero {
+        gap: clamp(2rem, 4.5vw, 4rem);
+        margin-top: clamp(1.4rem, 3vw, 2.7rem);
+        grid-template-columns: minmax(0, 1.3fr) minmax(260px, 0.7fr);
+      }
+
+      .lt-hero > div:first-child {
+        max-width: 68ch;
+        padding-left: clamp(0.15rem, 0.6vw, 0.55rem);
+        padding-right: clamp(0.15rem, 0.6vw, 0.55rem);
+      }
+
+      .lt-hero .lt-card {
+        max-width: 430px;
+        width: 100%;
+        margin-left: auto;
+      }
+
+      .lt-ctaRow {
+        margin-top: 1.45rem;
+        gap: 0.85rem;
+      }
+
+      .lt-note {
+        margin-top: 0.95rem;
+      }
+
+      .lt-card {
+        border: 1px solid var(--lt-border-soft);
+        background: var(--lt-surface);
+        box-shadow: var(--lt-shadow-soft);
+        padding: clamp(1.15rem, 2vw, 1.6rem);
+      }
+
+      .lt-reviews {
+        margin-top: clamp(2.2rem, 5vw, 4.3rem);
+      }
+
+      .lt-featureRailWrap {
+        margin-top: clamp(2rem, 4vw, 3.4rem);
+      }
+
+      .lt-featureGrid {
+        gap: clamp(1rem, 2vw, 1.5rem);
+        margin-top: clamp(1.35rem, 2.2vw, 2rem);
+      }
+
+      .lt-reviewsHeader {
+        margin-bottom: 1rem;
+      }
+
+      .lt-reviewRail,
+      .lt-featureRail {
+        gap: 1.1rem;
+        padding: 0.35rem 1rem 1rem;
+        scroll-padding-left: 1rem;
+        scroll-padding-right: 1rem;
+      }
+
+      .lt-reviewCard {
+        border-color: var(--lt-border-soft);
+        box-shadow:
+          0 12px 34px rgba(15, 23, 42, 0.1),
+          0 1px 0 rgba(255, 255, 255, 0.5) inset;
+      }
+
+      .lt-featureCard {
+        border-color: var(--lt-border-soft);
+      }
+
+      .lt-section {
+        margin: clamp(3rem, 7vw, 6rem) 0;
+      }
+
+      .lt-snap {
+        gap: clamp(2rem, 4.2vw, 4rem);
+        align-items: start;
+        grid-template-columns: minmax(0, 1.28fr) minmax(250px, 0.72fr);
+      }
+
+      .lt-snap > div:first-child {
+        max-width: 68ch;
+        padding-left: clamp(0.15rem, 0.6vw, 0.55rem);
+        padding-right: clamp(0.15rem, 0.6vw, 0.55rem);
+      }
+
+      .lt-snap.reverse > div:first-child {
+        margin-left: auto;
+      }
+
+      .lt-imgWrap {
+        border-color: var(--lt-border-soft);
+        background: #f8fafc;
+        box-shadow: var(--lt-shadow-media);
+        max-width: 430px;
+        width: 100%;
+        margin-left: auto;
+        margin-right: auto;
+      }
+
+      .lt-kicker {
+        letter-spacing: 0.12em;
+        margin-bottom: 0.55rem;
+      }
+
+      hr {
+        margin: clamp(2.5rem, 6vw, 5rem) 0 !important;
+        opacity: 0.18;
+      }
+
+      #copyright {
+        margin: 0 !important;
+        padding: 2.25rem var(--lt-gutter) 3rem;
+        color: rgba(33, 41, 49, 0.56);
+      }
+
+      #copyright ul li {
+        border-left-color: rgba(33, 41, 49, 0.2);
+      }
+
+      @media (max-width: 980px) {
+        .lt-hero,
+        .lt-snap {
+          grid-template-columns: 1fr;
+        }
+
+        .lt-hero > div:first-child,
+        .lt-snap > div:first-child {
+          max-width: none;
+        }
+
+        .lt-hero .lt-card,
+        .lt-imgWrap {
+          max-width: min(560px, 100%);
+        }
+      }
+
+      @media (max-width: 736px) {
+        article.post.featured {
+          width: 100%;
+          padding: 1.4rem 0 3.4rem;
+          font-size: 0.77rem;
+        }
+
+        article.post.featured > * {
+          padding-left: 0.55rem;
+          padding-right: 0.55rem;
+        }
+
+        article.post.featured h1 {
+          font-size: clamp(1.8em, 9vw, 2.35em) !important;
+          line-height: 1.08;
+        }
+
+        article.post.featured h2 {
+          font-size: 1.35em;
+          line-height: 1.25;
+        }
+
+        article.post.featured h3 {
+          font-size: 1.12em;
+          line-height: 1.3;
+        }
+
+        .lt-hero {
+          gap: 1.5rem;
+          margin-top: 0.9rem;
+        }
+
+        .lt-section {
+          margin: 2.8rem 0;
+        }
+
+        .lt-hero .lt-card,
+        .lt-imgWrap {
+          max-width: 100%;
+        }
+
+        .lt-card {
+          padding: 1rem;
+          box-shadow: 0 8px 24px rgba(15, 23, 42, 0.08);
+        }
+
+        .lt-reviewRail,
+        .lt-featureRail {
+          padding: 0.3rem 0.72rem 0.9rem;
+          scroll-padding-left: 0.72rem;
+          scroll-padding-right: 0.72rem;
+        }
+
+        hr {
+          margin: 2.2rem 0 !important;
+        }
+
+        #copyright {
+          padding: 1.75rem 1rem 2.5rem;
+        }
+      }
