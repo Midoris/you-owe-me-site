@@ -140,6 +140,37 @@
         max-width: 72ch;
       }
 
+      .lt-cta {
+        margin-top: 2.1rem;
+        padding: 1.05rem 1.15rem;
+        border-radius: 14px;
+        border: 1px solid rgba(15, 23, 42, 0.1);
+        background: rgba(255, 255, 255, 0.8);
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.07);
+        max-width: 72ch;
+      }
+
+      .lt-appStoreBtn {
+        display: inline-block;
+        width: min(250px, 100%);
+        line-height: 0;
+        border-radius: 13px;
+        overflow: hidden;
+        box-shadow: 0 10px 22px rgba(15, 23, 42, 0.2);
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .lt-appStoreBtn img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
+      .lt-appStoreBtn:hover {
+        transform: translateY(-1px) scale(1.01);
+        box-shadow: 0 14px 28px rgba(15, 23, 42, 0.24);
+      }
+
       .lt-actions {
         margin-top: 2rem;
       }
@@ -458,6 +489,13 @@
           <p>Clarity is respectful.</p>
           <p>When calm money conversations become normal, relationships stay lighter.</p>
           <p>And simple loans stay simple.</p>
+          <p>Available on the App Store.</p>
+
+          <div class="lt-cta">
+            <a href="https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en" class="lt-appStoreBtn" aria-label="Download on the App Store">
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" />
+            </a>
+          </div>
 
           <hr />
 
