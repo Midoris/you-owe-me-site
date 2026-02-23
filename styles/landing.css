@@ -255,6 +255,18 @@
         margin: 0;
       }
 
+      .lt-reviewsTitle {
+        line-height: 1.12;
+      }
+
+      .lt-reviewsTitleSub {
+        display: block;
+        margin-top: 0.16rem;
+        font-size: 0.62em;
+        font-weight: 600;
+        opacity: 0.78;
+      }
+
       .lt-reviewsHint {
         font-size: 0.95rem;
         opacity: 0.75;
@@ -286,7 +298,7 @@
         flex: 0 0 auto;                 /* variable width */
         width: 340px;       /* starting width (JS will grow if needed) */
         max-width: 920px;   /* upper bound so it doesn't get crazy-wide */
-        height: 340px;                  /* same height */
+        height: 428px;                  /* same height */
         scroll-snap-align: start;
         border-radius: 14px;
 
@@ -351,7 +363,7 @@
           /* clamp so all cards stay same height */
           display: -webkit-box;
           -webkit-box-orient: vertical;
-          -webkit-line-clamp: 12;
+          -webkit-line-clamp: 16;
         }
 
       /* Screenshot sections */
