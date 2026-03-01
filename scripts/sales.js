@@ -3,6 +3,8 @@
 
   const ENABLE_DEBUG_SALE = false;
   const REFRESH_INTERVAL_MS = 60000;
+  const SALE_CHANGED_EVENT = "youoweme:sale-changed";
+  let currentActiveSale = null;
 
   /**
    * Placeholder parity hook for iOS DiscountCooldown.isActive().
@@ -232,11 +234,44 @@
     });
   }
 
+  function emitSaleState(sale) {
+    currentActiveSale = sale
+      ? {
+          startDate: new Date(sale.startDate.getTime()),
+          endDate: new Date(sale.endDate.getTime()),
+          saleName: sale.saleName,
+          id: sale.id,
+        }
+      : null;
+
+    window.YouOweMeSaleState = window.YouOweMeSaleState || {};
+    window.YouOweMeSaleState.getActiveSale = function () {
+      if (!currentActiveSale) return null;
+      return {
+        startDate: new Date(currentActiveSale.startDate.getTime()),
+        endDate: new Date(currentActiveSale.endDate.getTime()),
+        saleName: currentActiveSale.saleName,
+        id: currentActiveSale.id,
+      };
+    };
+
+    try {
+      window.dispatchEvent(
+        new CustomEvent(SALE_CHANGED_EVENT, {
+          detail: { sale: window.YouOweMeSaleState.getActiveSale() },
+        })
+      );
+    } catch (error) {
+      // Ignore event dispatch failures in legacy browsers.
+    }
+  }
+
   function initSaleBadges() {
     const now = new Date();
     const sales = buildSales(now);
     const activeSale = getActiveSale(sales, now);
     applySaleBadge(activeSale);
+    emitSaleState(activeSale);
   }
 
   if (document.readyState === "loading") {

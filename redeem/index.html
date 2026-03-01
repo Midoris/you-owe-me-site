@@ -123,6 +123,7 @@
       <div class="row">
           <a class="btn primary"
              href="https://apps.apple.com/app/id1147058670"
+             data-track-location="redeem_step_install"
              target="_blank" rel="noopener">
             Install from App Store
           </a>
@@ -165,6 +166,8 @@
     </div>
   </div>
 
+  <script src="/scripts/sales.js"></script>
+  <script src="/scripts/analytics.js"></script>
   <script>
     const params = new URLSearchParams(window.location.search);
     const code = (params.get("code") || "").trim();
