@@ -438,48 +438,10 @@
         margin-bottom: 0.35rem;
       }
 
-      /* Sticky mini-CTA on mobile */
-      .lt-stickyCTA {
-        display: none;
-        position: sticky;
-        bottom: 0;
-        z-index: 50;
-        margin: 1.25rem -2rem -2rem;
-        padding: 0.9rem 1.25rem;
-        background: rgba(10,10,10,0.88);
-        border-top: 1px solid rgba(255,255,255,0.12);
-        backdrop-filter: blur(10px);
-      }
-      .lt-stickyCTA a.button { width: 100%; }
-      .lt-stickyCTA .lt-appStoreBtn {
-        display: block;
-        width: min(250px, 100%);
-        margin: 0 auto;
-      }
-
-      .lt-salePill--sticky {
-        display: table;
-        margin: 0 auto 0.52rem;
-        border-color: rgba(175, 230, 126, 0.5);
-        background:
-          linear-gradient(180deg, rgba(175, 230, 126, 0.24), rgba(175, 230, 126, 0.08)),
-          rgba(255, 255, 255, 0.08);
-        color: #f8fafc;
-        box-shadow: 0 8px 20px rgba(0, 0, 0, 0.26);
-      }
-
-      .lt-salePill--sticky::before {
-        background: rgb(175, 230, 126);
-        box-shadow: 0 0 0 4px rgba(175, 230, 126, 0.2);
-      }
-
       @media (max-width: 736px) {
         .lt-ctaRow .lt-salePill {
           align-self: center;
         }
-      }
-      @media (max-width: 736px) {
-        .lt-stickyCTA { display: block; }
       }
 
       /* Make HR a bit cleaner */

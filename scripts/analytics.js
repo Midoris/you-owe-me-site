@@ -103,7 +103,6 @@
 
   function getCtaLocation(link) {
     if (link.dataset.trackLocation) return link.dataset.trackLocation;
-    if (link.closest(".lt-stickyCTA")) return "sticky_cta";
     if (link.closest(".lt-hero")) return "hero_cta";
     if (link.closest(".lt-cta")) return "article_cta";
     if (link.closest("#nav")) return "nav";
