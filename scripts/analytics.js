@@ -1,243 +1,250 @@
-(function () {
-  "use strict";
+import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
+import {
+  getAnalytics,
+  isSupported,
+  logEvent,
+  setDefaultEventParameters,
+  setUserProperties,
+} from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
 
-  const GA_MEASUREMENT_ID = "G-TJDLPVM702";
-  const APP_STORE_HOST_MATCH = "apps.apple.com";
-  const APP_STORE_ID_MATCH = "id1147058670";
-  const SALE_CHANGED_EVENT = "youoweme:sale-changed";
-  const saleBadgeEventsSent = new Set();
+const FIREBASE_CONFIG = {
+  apiKey: "AIzaSyD0sFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",
+  authDomain: "you-owe-me-app.firebaseapp.com",
+  databaseURL: "https://you-owe-me-app.firebaseio.com",
+  projectId: "you-owe-me-app",
+  storageBucket: "you-owe-me-app.firebasestorage.app",
+  messagingSenderId: "1056899447246",
+  appId: "1:1056899447246:web:9880554b4d5bf68003539f",
+  measurementId: "G-TJDLPVM702",
+};
 
-  function initGoogleAnalytics() {
-    if (!GA_MEASUREMENT_ID) return false;
+const APP_STORE_HOST_MATCH = "apps.apple.com";
+const APP_STORE_ID_MATCH = "id1147058670";
+const SALE_CHANGED_EVENT = "youoweme:sale-changed";
+const app = initializeApp(FIREBASE_CONFIG);
+const analyticsPromise = initAnalytics();
+const saleBadgeEventsSent = new Set();
 
-    window.dataLayer = window.dataLayer || [];
-    if (typeof window.gtag !== "function") {
-      window.gtag = function gtag() {
-        window.dataLayer.push(arguments);
-      };
-    }
+let activeSale = null;
 
-    if (!document.querySelector("script[data-youoweme-ga='1']")) {
-      const gaScript = document.createElement("script");
-      gaScript.async = true;
-      gaScript.src = "https://www.googletagmanager.com/gtag/js?id=" + encodeURIComponent(GA_MEASUREMENT_ID);
-      gaScript.setAttribute("data-youoweme-ga", "1");
-      document.head.appendChild(gaScript);
-    }
+async function initAnalytics() {
+  try {
+    const supported = await isSupported();
+    if (!supported) return null;
 
-    if (!window.__youowemeGaConfigured) {
-      window.gtag("js", new Date());
-      window.gtag("config", GA_MEASUREMENT_ID, { send_page_view: true });
-      window.__youowemeGaConfigured = true;
-    }
+    const analytics = getAnalytics(app);
 
-    return true;
+    setDefaultEventParameters({
+      site_platform: "web",
+      experience_surface: "marketing_site",
+      page_type: getPageType(),
+    });
+
+    setUserProperties(analytics, {
+      site_platform: "web",
+      experience_surface: "marketing_site",
+    });
+
+    return analytics;
+  } catch (error) {
+    return null;
   }
+}
 
-  function getPageType() {
-    const path = window.location.pathname;
-    if (path === "/" || path === "/index.html") return "landing";
-    if (path === "/blog/" || path === "/blog/index.html") return "blog_index";
-    if (path.indexOf("/blog/") === 0) return "blog_article";
-    if (path.indexOf("/redeem/") === 0) return "redeem";
-    return "other";
-  }
+function getPageType() {
+  const path = window.location.pathname;
+  if (path === "/" || path === "/index.html") return "landing";
+  if (path === "/blog/" || path === "/blog/index.html") return "blog_index";
+  if (path.indexOf("/blog/") === 0) return "blog_article";
+  if (path.indexOf("/redeem/") === 0) return "redeem";
+  return "other";
+}
 
-  function sanitizeText(value, maxLength) {
-    return String(value || "")
-      .trim()
-      .slice(0, maxLength);
-  }
+function sanitizeText(value, maxLength) {
+  return String(value || "")
+    .trim()
+    .slice(0, maxLength);
+}
 
-  function normalizeSale(sale) {
-    if (!sale) return null;
-    return {
-      id: sanitizeText(sale.id, 64),
-      saleName: sanitizeText(sale.saleName, 80),
-    };
-  }
+function normalizeSale(sale) {
+  if (!sale) return null;
+  return {
+    id: sanitizeText(sale.id, 64),
+    saleName: sanitizeText(sale.saleName, 80),
+  };
+}
 
-  function getActiveSale() {
-    try {
-      if (window.YouOweMeSaleState && typeof window.YouOweMeSaleState.getActiveSale === "function") {
-        return normalizeSale(window.YouOweMeSaleState.getActiveSale());
-      }
-    } catch (error) {
-      return null;
+function getActiveSale() {
+  try {
+    if (window.YouOweMeSaleState && typeof window.YouOweMeSaleState.getActiveSale === "function") {
+      return normalizeSale(window.YouOweMeSaleState.getActiveSale());
     }
+  } catch (error) {
     return null;
   }
 
-  let activeSale = null;
+  return null;
+}
 
-  function getSaleParams() {
-    if (!activeSale) {
-      return {
-        sale_active: 0,
-        sale_name: "none",
-        sale_id: "none",
-      };
-    }
-
+function getSaleParams() {
+  if (!activeSale) {
     return {
-      sale_active: 1,
-      sale_name: activeSale.saleName || "unknown",
-      sale_id: activeSale.id || "unknown",
+      sale_active: 0,
+      sale_name: "none",
+      sale_id: "none",
     };
   }
 
-  function trackEvent(eventName, params) {
-    if (typeof window.gtag !== "function") return;
-    window.gtag(
-      "event",
-      eventName,
-      Object.assign(
-        {
-          page_type: getPageType(),
-          page_path: window.location.pathname,
-        },
-        params || {}
-      )
-    );
+  return {
+    sale_active: 1,
+    sale_name: activeSale.saleName || "unknown",
+    sale_id: activeSale.id || "unknown",
+  };
+}
+
+async function trackEvent(eventName, params) {
+  const analytics = await analyticsPromise;
+  if (!analytics) return;
+
+  logEvent(analytics, eventName, Object.assign(
+    {
+      page_type: getPageType(),
+      page_path: window.location.pathname,
+      site_platform: "web",
+      experience_surface: "marketing_site",
+    },
+    params || {}
+  ));
+}
+
+function getCtaLocation(link) {
+  if (link.dataset.trackLocation) return link.dataset.trackLocation;
+  if (link.closest(".lt-hero")) return "hero_cta";
+  if (link.closest(".lt-cta")) return "article_cta";
+  if (link.closest("#nav")) return "nav";
+  if (link.closest("#main")) return "main";
+  return "unknown";
+}
+
+function shouldInterceptNavigation(event, link) {
+  if (event.defaultPrevented) return false;
+  if (event.button && event.button !== 0) return false;
+  if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return false;
+  if (link.target && link.target.toLowerCase() === "_blank") return false;
+  return true;
+}
+
+function trackAppStoreClick(link, event) {
+  const eventPayload = Object.assign({}, getSaleParams(), {
+    cta_location: getCtaLocation(link),
+    link_url: link.href,
+    link_text: sanitizeText(link.getAttribute("aria-label") || link.textContent, 120),
+  });
+
+  if (!shouldInterceptNavigation(event, link)) {
+    void trackEvent("app_store_click", eventPayload);
+    return;
   }
 
-  function getCtaLocation(link) {
-    if (link.dataset.trackLocation) return link.dataset.trackLocation;
-    if (link.closest(".lt-hero")) return "hero_cta";
-    if (link.closest(".lt-cta")) return "article_cta";
-    if (link.closest("#nav")) return "nav";
-    if (link.closest("#main")) return "main";
-    return "unknown";
-  }
+  event.preventDefault();
 
-  function shouldInterceptNavigation(event, link) {
-    if (event.defaultPrevented) return false;
-    if (event.button && event.button !== 0) return false;
-    if (event.metaKey || event.ctrlKey || event.shiftKey || event.altKey) return false;
-    if (link.target && link.target.toLowerCase() === "_blank") return false;
-    return true;
-  }
+  let navigated = false;
+  const navigate = function () {
+    if (navigated) return;
+    navigated = true;
+    window.location.assign(link.href);
+  };
 
-  function trackAppStoreClick(link, event) {
-    const eventPayload = Object.assign({}, getSaleParams(), {
-      cta_location: getCtaLocation(link),
-      link_url: link.href,
-      link_text: sanitizeText(link.getAttribute("aria-label") || link.textContent, 120),
+  void trackEvent("app_store_click", eventPayload);
+  window.setTimeout(navigate, 200);
+}
+
+function bindAppStoreClicks() {
+  const links = document.querySelectorAll("a[href*='apps.apple.com/app']");
+
+  links.forEach(function (link) {
+    if (link.dataset.analyticsBound === "1") return;
+    if (link.href.indexOf(APP_STORE_HOST_MATCH) === -1) return;
+    if (link.href.indexOf(APP_STORE_ID_MATCH) === -1) return;
+
+    link.dataset.analyticsBound = "1";
+    link.addEventListener("click", function (event) {
+      trackAppStoreClick(link, event);
     });
+  });
+}
 
-    if (!shouldInterceptNavigation(event, link)) {
-      trackEvent("app_store_click", eventPayload);
-      return;
+function trackBlogArticleOpen() {
+  if (getPageType() !== "blog_article") return;
+  if (window.__youowemeBlogArticleOpenTracked) return;
+
+  window.__youowemeBlogArticleOpenTracked = true;
+
+  const pagePath = window.location.pathname;
+  const slug = sanitizeText(pagePath.replace(/^\/blog\//, "").replace(/\/$/, ""), 120) || "unknown";
+  const heading = document.querySelector("h1");
+
+  void trackEvent("blog_article_open", Object.assign({}, getSaleParams(), {
+    article_slug: slug,
+    article_title: sanitizeText(heading ? heading.textContent : "unknown", 160),
+  }));
+}
+
+function bindMediumClicks() {
+  const links = document.querySelectorAll("a[href*='medium.com']");
+
+  links.forEach(function (link) {
+    if (link.dataset.mediumAnalyticsBound === "1") return;
+
+    link.dataset.mediumAnalyticsBound = "1";
+    link.addEventListener("click", function () {
+      void trackEvent("medium_article_click", Object.assign({}, getSaleParams(), {
+        cta_location: getCtaLocation(link),
+        link_url: link.href,
+        link_text: sanitizeText(link.textContent, 120),
+      }));
+    });
+  });
+}
+
+function trackSaleBadgeVisible() {
+  if (!activeSale) return;
+
+  const visibleBadges = Array.prototype.filter.call(
+    document.querySelectorAll(".lt-salePill"),
+    function (badge) {
+      return !badge.hidden;
     }
+  );
 
-    event.preventDefault();
-    let navigated = false;
-    const navigate = function () {
-      if (navigated) return;
-      navigated = true;
-      window.location.assign(link.href);
-    };
+  if (!visibleBadges.length) return;
 
-    trackEvent(
-      "app_store_click",
-      Object.assign({}, eventPayload, {
-        event_callback: navigate,
-      })
-    );
+  const pageKey = window.location.pathname + "|" + (activeSale.id || "unknown");
+  if (saleBadgeEventsSent.has(pageKey)) return;
 
-    window.setTimeout(navigate, 450);
-  }
+  saleBadgeEventsSent.add(pageKey);
 
-  function bindAppStoreClicks() {
-    const links = document.querySelectorAll("a[href*='apps.apple.com/app']");
-    links.forEach(function (link) {
-      if (link.dataset.analyticsBound === "1") return;
-      if (link.href.indexOf(APP_STORE_HOST_MATCH) === -1) return;
-      if (link.href.indexOf(APP_STORE_ID_MATCH) === -1) return;
-      link.dataset.analyticsBound = "1";
-      link.addEventListener("click", function (event) {
-        trackAppStoreClick(link, event);
-      });
-    });
-  }
+  void trackEvent("sale_badge_visible", Object.assign({}, getSaleParams(), {
+    badge_count: visibleBadges.length,
+  }));
+}
 
-  function trackBlogArticleOpen() {
-    if (getPageType() !== "blog_article") return;
-    if (window.__youowemeBlogArticleOpenTracked) return;
-    window.__youowemeBlogArticleOpenTracked = true;
+function onSaleChanged(event) {
+  activeSale = normalizeSale(event && event.detail ? event.detail.sale : null);
+  trackSaleBadgeVisible();
+}
 
-    const pagePath = window.location.pathname;
-    const slug = sanitizeText(pagePath.replace(/^\/blog\//, "").replace(/\/$/, ""), 120) || "unknown";
-    const heading = document.querySelector("h1");
+function initEventTracking() {
+  activeSale = getActiveSale();
+  bindAppStoreClicks();
+  bindMediumClicks();
+  trackBlogArticleOpen();
+  trackSaleBadgeVisible();
+  window.addEventListener(SALE_CHANGED_EVENT, onSaleChanged);
+}
 
-    trackEvent(
-      "blog_article_open",
-      Object.assign({}, getSaleParams(), {
-        article_slug: slug,
-        article_title: sanitizeText(heading ? heading.textContent : "unknown", 160),
-      })
-    );
-  }
-
-  function bindMediumClicks() {
-    const links = document.querySelectorAll("a[href*='medium.com']");
-    links.forEach(function (link) {
-      if (link.dataset.mediumAnalyticsBound === "1") return;
-      link.dataset.mediumAnalyticsBound = "1";
-      link.addEventListener("click", function () {
-        trackEvent(
-          "medium_article_click",
-          Object.assign({}, getSaleParams(), {
-            cta_location: getCtaLocation(link),
-            link_url: link.href,
-            link_text: sanitizeText(link.textContent, 120),
-          })
-        );
-      });
-    });
-  }
-
-  function trackSaleBadgeVisible() {
-    if (!activeSale) return;
-    const visibleBadges = Array.prototype.filter.call(
-      document.querySelectorAll(".lt-salePill"),
-      function (badge) {
-        return !badge.hidden;
-      }
-    );
-    if (!visibleBadges.length) return;
-
-    const pageKey = window.location.pathname + "|" + (activeSale.id || "unknown");
-    if (saleBadgeEventsSent.has(pageKey)) return;
-    saleBadgeEventsSent.add(pageKey);
-
-    trackEvent(
-      "sale_badge_visible",
-      Object.assign({}, getSaleParams(), {
-        badge_count: visibleBadges.length,
-      })
-    );
-  }
-
-  function onSaleChanged(event) {
-    activeSale = normalizeSale(event && event.detail ? event.detail.sale : null);
-    trackSaleBadgeVisible();
-  }
-
-  function initEventTracking() {
-    activeSale = getActiveSale();
-    bindAppStoreClicks();
-    bindMediumClicks();
-    trackBlogArticleOpen();
-    trackSaleBadgeVisible();
-    window.addEventListener(SALE_CHANGED_EVENT, onSaleChanged);
-  }
-
-  if (!initGoogleAnalytics()) return;
-
-  if (document.readyState === "loading") {
-    document.addEventListener("DOMContentLoaded", initEventTracking);
-  } else {
-    initEventTracking();
-  }
-})();
+if (document.readyState === "loading") {
+  document.addEventListener("DOMContentLoaded", initEventTracking, { once: true });
+} else {
+  initEventTracking();
+}
