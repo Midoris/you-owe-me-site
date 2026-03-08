@@ -1,0 +1,15 @@
+{
+  "applinks": {
+    "apps": [],
+    "details": [
+      {
+        "appID": "3YKZSY3MBA.com.midori.s.You-owe-me",
+        "paths": [
+          "/redeem",
+          "/redeem/",
+          "/redeem/*"
+        ]
+      }
+    ]
+  }
+}
