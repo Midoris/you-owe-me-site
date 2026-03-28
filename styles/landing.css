@@ -115,6 +115,9 @@
       :root {
         /* wider landing-page container */
         --lt-max: 1280px;
+        --lt-accent: #afe67e;
+        --lt-accent-rgb: 175, 230, 126;
+        --lt-ink: #1e252d;
       }
 
       /* Make the main content area feel like a landing page */
@@ -130,6 +133,26 @@
         width: min(var(--lt-max), calc(100% - 4rem));
         margin: 0 auto;
       }
+
+      #navPanelToggle {
+        background: rgba(var(--lt-accent-rgb), 0.94);
+        border-radius: 999px;
+        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+        color: var(--lt-ink) !important;
+      }
+
+      #navPanelToggle:hover,
+      #navPanelToggle.alt,
+      #navPanelToggle.alt:hover {
+        background: var(--lt-accent);
+        color: var(--lt-ink) !important;
+      }
+
+      #navPanelToggle:focus-visible {
+        outline: 3px solid rgba(var(--lt-accent-rgb), 0.4);
+        outline-offset: 3px;
+      }
+
       @media (max-width: 736px) {
         article.post.featured {
           width: calc(100% - 2rem);
