@@ -40,17 +40,14 @@
   }
 
   function revealEmail() {
-    const email = decodeEmail();
-
-    emailValue.textContent = email;
+    decodeEmail();
     emailValue.hidden = false;
     actions.hidden = false;
     openLink.hidden = false;
-    openLink.href = "mailto:" + email;
     revealButton.disabled = true;
-    revealButton.textContent = "Email revealed";
+    revealButton.textContent = "Email unlocked";
     revealButton.setAttribute("aria-expanded", "true");
-    setStatus("You can now copy the address or open it in your mail app.");
+    setStatus("You can now copy the email or open your mail app without showing the address on the page.");
     dispatchAnalyticsEvent("youoweme:support-email-revealed");
   }
 
@@ -67,6 +64,12 @@
     }
   }
 
+  function openMailApp() {
+    const email = decodeEmail();
+    window.location.href = "mailto:" + email;
+  }
+
   revealButton.addEventListener("click", revealEmail);
   copyButton.addEventListener("click", copyEmail);
+  openLink.addEventListener("click", openMailApp);
 })();
