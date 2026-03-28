@@ -5,11 +5,8 @@
   if (!root) return;
 
   const revealButton = root.querySelector("[data-support-email-reveal]");
-  const emailValue = root.querySelector("[data-support-email-value]");
   const actions = root.querySelector("[data-support-email-actions]");
   const copyButton = root.querySelector("[data-support-email-copy]");
-  const openLink = root.querySelector("[data-support-email-open]");
-  const status = root.querySelector("[data-support-email-status]");
 
   const XOR_KEY = 37;
   const ENCODED_EMAIL = [
@@ -19,6 +16,7 @@
   ];
 
   let revealedEmail = null;
+  let copyResetTimer = null;
 
   function dispatchAnalyticsEvent(name) {
     window.dispatchEvent(new CustomEvent(name));
@@ -34,20 +32,16 @@
     return revealedEmail;
   }
 
-  function setStatus(message) {
-    if (!status) return;
-    status.textContent = message || "";
+  function setCopyButtonLabel(label) {
+    if (!copyButton) return;
+    copyButton.textContent = label;
   }
 
   function revealEmail() {
     decodeEmail();
-    emailValue.hidden = false;
     actions.hidden = false;
-    openLink.hidden = false;
-    revealButton.disabled = true;
-    revealButton.textContent = "Email unlocked";
-    revealButton.setAttribute("aria-expanded", "true");
-    setStatus("You can now copy the email or open your mail app without showing the address on the page.");
+    revealButton.hidden = true;
+    copyButton.focus();
     dispatchAnalyticsEvent("youoweme:support-email-revealed");
   }
 
@@ -56,20 +50,17 @@
 
     try {
       await navigator.clipboard.writeText(email);
-      setStatus("Support email copied.");
+      window.clearTimeout(copyResetTimer);
+      setCopyButtonLabel("Copied");
+      copyResetTimer = window.setTimeout(function () {
+        setCopyButtonLabel("Copy email");
+      }, 1600);
       dispatchAnalyticsEvent("youoweme:support-email-copied");
     } catch (error) {
       window.prompt("Copy support email:", email);
-      setStatus("Support email ready to copy.");
     }
-  }
-
-  function openMailApp() {
-    const email = decodeEmail();
-    window.location.href = "mailto:" + email;
   }
 
   revealButton.addEventListener("click", revealEmail);
   copyButton.addEventListener("click", copyEmail);
-  openLink.addEventListener("click", openMailApp);
 })();
