@@ -255,6 +255,59 @@
         margin-top: 0.75rem;
       }
 
+      .lt-supportEmail {
+        max-width: 46rem;
+        margin: -0.2rem 0 1rem;
+      }
+
+      .lt-supportEmailControls,
+      .lt-supportEmailActions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.75rem;
+        align-items: center;
+      }
+
+      .lt-supportEmailActions {
+        margin-top: 0.75rem;
+      }
+
+      .lt-supportEmailValue {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.9rem;
+        padding: 0.65rem 0.9rem;
+        border-radius: 12px;
+        border: 1px solid rgba(15, 23, 42, 0.14);
+        background: rgba(15, 23, 42, 0.04);
+        color: #1f2937;
+        font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        font-size: 0.95rem;
+        line-height: 1.3;
+        word-break: break-all;
+      }
+
+      .lt-supportEmailValue[hidden] {
+        display: none !important;
+      }
+
+      .lt-supportEmailNote,
+      .lt-supportEmailStatus {
+        max-width: 52ch;
+        margin: 0.6rem 0 0;
+        font-size: 0.92rem;
+        line-height: 1.5;
+      }
+
+      .lt-supportEmailNote {
+        opacity: 0.75;
+      }
+
+      .lt-supportEmailStatus {
+        min-height: 1.45rem;
+        color: rgba(33, 41, 49, 0.82);
+      }
+
       /* Card blocks */
       .lt-card {
         border: 1px solid rgba(255,255,255,0.12);
@@ -499,6 +552,24 @@
 
         .lt-appStoreBtn {
           width: min(225px, 100%);
+        }
+
+        .lt-supportEmailControls,
+        .lt-supportEmailActions {
+          flex-direction: column;
+          align-items: stretch;
+        }
+
+        .lt-supportEmailControls .button,
+        .lt-supportEmailActions .button,
+        .lt-supportEmailActions a.button {
+          width: 100%;
+          text-align: center;
+        }
+
+        .lt-supportEmailValue {
+          width: 100%;
+          justify-content: center;
         }
 
         /* Badges: smaller + tighter */

@@ -712,8 +712,28 @@
           <h2>Support</h2>
           <p>
             Support email:
-            <a href="mailto:eugen_yablonski@yahoo.com">eugen_yablonski@yahoo.com</a>
           </p>
+          <div class="lt-supportEmail" data-support-email>
+            <div class="lt-supportEmailControls">
+              <button type="button" class="button primary" data-support-email-reveal>
+                Reveal support email
+              </button>
+              <span class="lt-supportEmailValue" data-support-email-value hidden aria-live="polite"></span>
+            </div>
+            <div class="lt-supportEmailActions" data-support-email-actions hidden>
+              <button type="button" class="button small" data-support-email-copy>
+                Copy email
+              </button>
+              <a href="/" class="button small" data-support-email-open hidden>
+                Open mail app
+              </a>
+            </div>
+            <p class="lt-supportEmailNote">Hidden to reduce spam from automated scraping.</p>
+            <p class="lt-supportEmailStatus" data-support-email-status aria-live="polite"></p>
+            <noscript>
+              <p class="lt-supportEmailStatus">Please use LinkedIn above for support if JavaScript is disabled.</p>
+            </noscript>
+          </div>
           <p>
             Privacy Policy:
             <a href="https://docs.google.com/document/d/e/2PACX-1vT4eaJ9w54hqRGNHqwwEa7h6ASKQeHdfBZS-MpoblxHKtUioTNaetS-gSffs-zkrsfdSPNXzBYF0suS/pub" target="_blank" rel="noopener">
@@ -747,6 +767,7 @@
 
     <!-- Scripts (go up one level) -->
     <script src="./scripts/sales.js"></script>
+    <script src="./scripts/support-email.js"></script>
     <script type="module" src="./scripts/analytics.js"></script>
     <script src="./scripts/reviews.js"></script>
     <script src="./assets/js/jquery.min.js"></script>
