@@ -106,6 +106,17 @@ body.blog-article-page article.post.featured .lt-pattern {
   margin-right: auto;
 }
 
+body.blog-article-page article.post.featured > h2,
+body.blog-article-page article.post.featured > h3 {
+  width: min(100%, var(--blog-article-measure)) !important;
+  max-width: var(--blog-article-measure) !important;
+  box-sizing: border-box;
+  margin-left: auto !important;
+  margin-right: auto !important;
+  padding-left: 0 !important;
+  padding-right: 0 !important;
+}
+
 body.blog-page article.post.featured h2 {
   margin: 2.4rem auto 0.9rem;
   font-size: clamp(1.35rem, 1.15rem + 1vw, 1.9rem);
