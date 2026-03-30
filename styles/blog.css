@@ -2,6 +2,14 @@ body.blog-page {
   background: #f4f6f8;
 }
 
+body.blog-article-page {
+  --blog-article-measure: 46rem;
+}
+
+body.blog-index-page {
+  --blog-index-max: 1040px;
+}
+
 body.blog-page #header {
   display: none !important;
 }
@@ -80,15 +88,31 @@ body.blog-page article.post.featured h1 {
   margin: 0;
 }
 
+body.blog-article-page article.post.featured > header.major,
+body.blog-article-page article.post.featured > header.major > p,
+body.blog-article-page article.post.featured h2,
+body.blog-article-page article.post.featured h3,
+body.blog-article-page article.post.featured p,
+body.blog-article-page article.post.featured ul,
+body.blog-article-page article.post.featured ol,
+body.blog-article-page article.post.featured hr,
+body.blog-article-page article.post.featured .lt-cta,
+body.blog-article-page article.post.featured .lt-actions,
+body.blog-article-page article.post.featured .lt-lead,
+body.blog-article-page article.post.featured .lt-pattern {
+  width: min(100%, var(--blog-article-measure));
+  max-width: var(--blog-article-measure);
+  margin-left: auto;
+  margin-right: auto;
+}
+
 body.blog-page article.post.featured h2 {
-  max-width: 74ch;
   margin: 2.4rem auto 0.9rem;
   font-size: clamp(1.35rem, 1.15rem + 1vw, 1.9rem);
   line-height: 1.24;
 }
 
 body.blog-page article.post.featured h3 {
-  max-width: 74ch;
   margin: 1.5rem auto 0.55rem;
   font-size: clamp(1.08rem, 0.98rem + 0.45vw, 1.28rem);
   line-height: 1.34;
@@ -102,7 +126,6 @@ body.blog-page article.post.featured .lt-cta,
 body.blog-page article.post.featured .lt-actions,
 body.blog-page article.post.featured .lt-lead,
 body.blog-page article.post.featured .lt-pattern {
-  max-width: 74ch;
   margin-left: auto;
   margin-right: auto;
 }
@@ -139,23 +162,6 @@ body.blog-page #copyright ul li {
   border-left-color: rgba(33, 41, 49, 0.2);
 }
 
-body.blog-article-page article.post.featured > header.major {
-  max-width: 72ch;
-}
-
-body.blog-article-page article.post.featured h2,
-body.blog-article-page article.post.featured h3,
-body.blog-article-page article.post.featured p,
-body.blog-article-page article.post.featured ul,
-body.blog-article-page article.post.featured ol,
-body.blog-article-page article.post.featured hr,
-body.blog-article-page article.post.featured .lt-cta,
-body.blog-article-page article.post.featured .lt-actions,
-body.blog-article-page article.post.featured .lt-lead,
-body.blog-article-page article.post.featured .lt-pattern {
-  max-width: 72ch;
-}
-
 body.blog-index-page article.post.featured > header.major {
   max-width: 46rem;
   text-align: center !important;
@@ -176,7 +182,7 @@ body.blog-index-page .lt-lead {
 }
 
 body.blog-index-page .lt-blogGrid {
-  max-width: 1040px;
+  max-width: var(--blog-index-max);
   grid-template-columns: repeat(auto-fit, minmax(280px, 320px));
   justify-content: center;
   gap: 1.1rem;
@@ -229,6 +235,10 @@ body.blog-index-page .lt-blogCard p {
   body.blog-page article.post.featured {
     width: calc(100% - 0.6rem);
     padding: 1.4rem 0.2rem 2.8rem;
+  }
+
+  body.blog-article-page {
+    --blog-article-measure: 100%;
   }
 
   body.blog-page article.post.featured > header.major {
