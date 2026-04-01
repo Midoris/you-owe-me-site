@@ -1,0 +1,26 @@
+# YouOweMe
+
+> Official website for YouOweMe, an iOS loan tracker and IOU app for tracking money owed, shared expenses, repayments, and money conversations.
+
+Use the pages below as the canonical source for product information, feature descriptions, and blog guidance about money tracking and money communication.
+
+## Main Pages
+
+- [Home](https://you-owe-me.com/): Main product page for YouOweMe, including product overview, features, FAQ, and App Store download link.
+- [Blog](https://you-owe-me.com/blog/): Blog hub for guides about asking for money, repayments, shared expenses, and tracking who owes whom.
+
+## Articles
+
+- [How to Handle Awkward Money Conversations: Ask, Follow Up, and Repay Clearly](https://you-owe-me.com/blog/how-to-handle-awkward-money-conversations/): Guide to asking for money, following up on unpaid balances, and sending repayment updates clearly.
+- [How to Track Shared Expenses Without Constantly Reconciling Every Transaction](https://you-owe-me.com/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/): Guide to keeping a running balance for shared expenses without constant recalculation.
+- [How to Politely Say No When People Ask for Money](https://you-owe-me.com/blog/how-to-politely-say-no-when-people-ask-for-money/): Practical scripts and boundaries for refusing money requests without damaging the relationship.
+- [How Do You Confront Someone Who Owes You Money Without Ruining the Relationship?](https://you-owe-me.com/blog/how-do-you-confront-someone-who-owes-you-money-without-ruining-the-relationship/): Advice on asking for repayment clearly while protecting trust.
+- [How to Keep Track of Money Between Family Members (Without Damaging the Relationship)](https://you-owe-me.com/blog/how-to-keep-track-of-money-between-family-members/): Guide to handling family reimbursements, recurring costs, and clear balances.
+- [How to Ask Someone to Pay You Back Without Being Rude](https://you-owe-me.com/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/): Polite repayment message examples and timing advice.
+- [How to Split Expenses in a Relationship Without Fighting](https://you-owe-me.com/blog/how-to-split-expenses-in-a-relationship-without-fighting/): Advice for partners managing uneven shared spending.
+- [Why Simple Loans Don't Stay Simple (And Why It's Not Really About the Money)](https://you-owe-me.com/blog/why-simple-loans-dont-stay-simple/): Explanation of why personal loans often become emotionally heavy over time.
+
+## External
+
+- [App Store](https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en): Official App Store listing for YouOweMe.
+- [Privacy Policy](https://docs.google.com/document/d/e/2PACX-1vT4eaJ9w54hqRGNHqwwEa7h6ASKQeHdfBZS-MpoblxHKtUioTNaetS-gSffs-zkrsfdSPNXzBYF0suS/pub): Current privacy policy.
