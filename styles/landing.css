@@ -134,25 +134,6 @@
         margin: 0 auto;
       }
 
-      #navPanelToggle {
-        background: rgba(var(--lt-accent-rgb), 0.94);
-        border-radius: 999px;
-        box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
-        color: var(--lt-ink) !important;
-      }
-
-      #navPanelToggle:hover,
-      #navPanelToggle.alt,
-      #navPanelToggle.alt:hover {
-        background: var(--lt-accent);
-        color: var(--lt-ink) !important;
-      }
-
-      #navPanelToggle:focus-visible {
-        outline: 3px solid rgba(var(--lt-accent-rgb), 0.4);
-        outline-offset: 3px;
-      }
-
       @media (max-width: 736px) {
         article.post.featured {
           width: calc(100% - 2rem);
