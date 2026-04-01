@@ -152,23 +152,28 @@
 
       .lt-heroHeader {
         width: 100%;
-        max-width: 54rem;
+        max-width: none;
       }
 
       .lt-heroHeader .major {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
         margin-left: auto;
         margin-right: auto;
         text-align: center;
       }
 
       .lt-heroHeader .major p {
-        max-width: none;
-        width: 100%;
+        width: auto;
+        margin-left: auto !important;
+        margin-right: auto !important;
+        text-align: center !important;
       }
 
       .lt-heroVisual {
         width: 100%;
-        padding: clamp(0.2rem, 0.8vw, 0.45rem) 0 clamp(1rem, 2.8vw, 2rem);
+        padding: clamp(0.2rem, 0.8vw, 0.45rem) 0 clamp(2rem, 5vw, 3.8rem);
       }
 
       .lt-heroGallery {
@@ -209,6 +214,22 @@
         outline-offset: 4px;
       }
 
+      @media (min-width: 737px) {
+        .lt-heroGallery {
+          gap: clamp(1.05rem, 2.6vw, 2rem);
+          max-width: 62rem;
+        }
+
+        .lt-heroShot {
+          flex: 0 1 clamp(9.2rem, 18.8vw, 14.8rem);
+          max-width: 14.8rem;
+          border-radius: 26px;
+          box-shadow:
+            0 22px 40px rgba(15, 23, 42, 0.13),
+            0 1px 0 rgba(255, 255, 255, 0.76) inset;
+        }
+      }
+
       @media (hover: hover) {
         .lt-heroShot:hover {
           transform: translateY(-2px);
@@ -219,12 +240,16 @@
       }
 
       .lt-heroBody {
+        align-self: stretch;
         width: 100%;
-        max-width: 76rem;
+        max-width: none;
         text-align: left;
       }
 
-      .lt-heroBody p {
+      .lt-heroBody p,
+      .lt-heroBody p:not(.lt-reviewText) {
+        display: block;
+        width: 100%;
         margin-left: 0;
         margin-right: 0;
         max-width: none;
@@ -321,6 +346,11 @@
         outline-offset: 3px;
       }
 
+      body.site-nav-page a:hover {
+        color: #8fc95c !important;
+        border-bottom-color: rgba(143, 201, 92, 0.38) !important;
+      }
+
       .lt-note {
         font-size: 0.95rem;
         opacity: 0.85;
@@ -398,20 +428,33 @@
       }
 
       .lt-reviewsTitle {
+        color: rgba(30, 37, 45, 0.68);
         font-weight: 400;
-        line-height: 1.12;
+        line-height: 1.08;
       }
 
       .lt-reviewsTitleEmphasis {
-        font-weight: 650;
+        color: var(--lt-ink);
+        font-weight: 700;
+        white-space: nowrap;
+        display: inline-block;
+        line-height: 1;
+        padding: 0.16em 0.3em 0.18em;
+        border-radius: 999px;
+        background: linear-gradient(180deg, rgba(214, 242, 184, 0.96), rgba(197, 234, 160, 0.92));
+        box-shadow:
+          inset 0 0 0 1px rgba(143, 201, 92, 0.35),
+          0 1px 0 rgba(255, 255, 255, 0.65);
+        vertical-align: baseline;
       }
 
       .lt-reviewsTitleSub {
         display: block;
-        margin-top: 0.16rem;
+        margin-top: 0.22rem;
         font-size: 0.62em;
         font-weight: 400;
-        opacity: 0.78;
+        letter-spacing: 0.004em;
+        color: rgba(30, 37, 45, 0.58);
       }
 
       .lt-reviewsHint {
@@ -542,8 +585,8 @@
       }
       .lt-kicker {
         font-size: 0.9rem;
-        letter-spacing: 0.08em;
-        text-transform: uppercase;
+        letter-spacing: 0.02em;
+        text-transform: none;
         opacity: 0.7;
         margin-bottom: 0.35rem;
       }
@@ -738,25 +781,77 @@
       article.post.featured h1 {
         font-size: clamp(2.15em, 5.1vw, 3.35em) !important;
         line-height: 1.06;
-        letter-spacing: 0.015em;
+        letter-spacing: 0.01em;
         margin-bottom: 0.42em !important;
+      }
+
+      article.post.featured h1,
+      article.post.featured h2,
+      article.post.featured h3,
+      article.post.featured h4,
+      article.post.featured h5,
+      article.post.featured h6 {
+        text-transform: none !important;
+      }
+
+      .lt-heroHeader h1 {
+        text-transform: none !important;
+        letter-spacing: 0.01em !important;
+        font-weight: 700;
       }
 
       article.post.featured h2 {
         font-size: clamp(1.48em, 2.05vw, 1.92em);
         line-height: 1.2;
-        letter-spacing: 0.03em;
+        letter-spacing: 0.012em;
         margin-bottom: 0.85rem;
       }
 
       article.post.featured h3 {
         font-size: clamp(1.16em, 1.3vw, 1.34em);
         line-height: 1.28;
+        letter-spacing: 0.008em;
       }
 
       article.post.featured p:not(.lt-reviewText) {
         max-width: 68ch;
         line-height: 1.72;
+      }
+
+      @media (min-width: 737px) {
+        article.post.featured .lt-heroBody {
+          align-self: stretch;
+          width: 100%;
+          max-width: none;
+        }
+
+        article.post.featured .lt-heroBody p:not(.lt-reviewText),
+        article.post.featured .lt-heroBody .lt-ctaRow,
+        article.post.featured .lt-heroBody .lt-note {
+          display: block;
+          width: 100%;
+          max-width: none;
+        }
+      }
+
+      @media (min-width: 981px) {
+        body.site-nav-page #main {
+          background:
+            linear-gradient(
+              180deg,
+              #ffffff 0rem,
+              #ffffff 18rem,
+              #fbfdff 30rem,
+              #f8fafc 62%,
+              var(--lt-canvas) 100%
+            ) !important;
+          padding-top: 0 !important;
+        }
+
+        body.site-nav-page article.post.featured {
+          margin: 0 auto;
+          padding-top: 0 !important;
+        }
       }
 
       article.post.featured ul:not(.actions):not(.icons):not(.links) {
@@ -782,6 +877,13 @@
       .lt-hero {
         gap: clamp(1.1rem, 2.5vw, 1.9rem);
         margin-top: clamp(1.3rem, 3vw, 2.7rem);
+      }
+
+      @media (min-width: 981px) {
+        .lt-hero {
+          margin-top: 0;
+          padding-top: 3rem;
+        }
       }
 
       .lt-heroHeader,
@@ -875,7 +977,7 @@
       }
 
       .lt-kicker {
-        letter-spacing: 0.12em;
+        letter-spacing: 0.02em;
         margin-bottom: 0.55rem;
       }
 
@@ -948,7 +1050,7 @@
 
         .lt-heroVisual {
           padding-top: 0;
-          padding-bottom: 1rem;
+          padding-bottom: 1.8rem;
         }
 
         .lt-heroGallery {
@@ -965,7 +1067,8 @@
             0 1px 0 rgba(255, 255, 255, 0.72) inset;
         }
 
-        .lt-heroBody p {
+        .lt-heroBody p,
+        .lt-heroBody p:not(.lt-reviewText) {
           font-size: 1.02rem;
           line-height: 1.75;
         }

@@ -9,6 +9,79 @@ body.site-nav-page #navPanelToggle:focus-visible {
   outline-offset: 3px;
 }
 
+@media screen and (min-width: 981px) {
+  body.site-nav-page #nav {
+    height: auto !important;
+    min-height: 1.55rem;
+    line-height: normal !important;
+    margin-top: 0 !important;
+    padding: 0 clamp(0.45rem, 1.05vw, 0.8rem) !important;
+    background: #ffffff !important;
+    color: var(--site-menu-ink) !important;
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    border-bottom: 0;
+    box-shadow: none;
+  }
+
+  body.site-nav-page #nav a {
+    color: var(--site-menu-ink) !important;
+    border-bottom: 0;
+  }
+
+  body.site-nav-page #nav a:hover {
+    color: var(--site-menu-ink) !important;
+    border-bottom: 0;
+  }
+
+  body.site-nav-page #nav ul.links {
+    flex-grow: 0;
+    flex-shrink: 0;
+    align-items: center;
+    gap: 0.12rem;
+    min-height: 1.55rem;
+    margin: 0;
+    font-weight: 600;
+    font-size: 0.78rem;
+    letter-spacing: 0.01em;
+    text-transform: none;
+  }
+
+  body.site-nav-page #nav ul.links li {
+    display: flex;
+    align-items: center;
+    border-radius: 999px;
+    overflow: hidden;
+  }
+
+  body.site-nav-page #nav ul.links li a {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 1.55rem;
+    padding: 0.12rem 0.72rem;
+    font-size: 0.54rem;
+    line-height: 1;
+  }
+
+  body.site-nav-page #nav ul.links li a:hover {
+    background: rgba(var(--site-menu-accent-rgb), 0.22);
+  }
+
+  body.site-nav-page #nav ul.links li.active {
+    background: rgba(15, 23, 42, 0.07);
+  }
+
+  body.site-nav-page #nav ul.links li.active a {
+    color: var(--site-menu-ink) !important;
+  }
+
+  body.site-nav-page #nav ul.links li.active a:hover {
+    color: var(--site-menu-ink) !important;
+    background: rgba(var(--site-menu-accent-rgb), 0.28);
+  }
+}
+
 @media screen and (max-width: 980px) {
   body.site-nav-page #navPanelToggle {
     display: inline-flex !important;
