@@ -141,16 +141,96 @@
       }
 
       /* Hero */
-      /* Hero screenshot: match rounded corners of other screenshots */
+      .lt-heroVisual {
+        width: 100%;
+      }
+
+      .lt-heroGalleryShell {
+        position: relative;
+        padding: clamp(0.75rem, 1.6vw, 1.2rem);
+        border-radius: 30px;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background:
+          radial-gradient(130% 120% at 15% 8%, rgba(175, 230, 126, 0.18), rgba(255, 255, 255, 0) 45%),
+          radial-gradient(120% 120% at 100% 100%, rgba(59, 130, 246, 0.08), rgba(255, 255, 255, 0) 38%),
+          linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(244, 247, 250, 0.96));
+        box-shadow:
+          0 26px 54px rgba(15, 23, 42, 0.12),
+          inset 0 1px 0 rgba(255, 255, 255, 0.85);
+        overflow: hidden;
+      }
+
+      .lt-heroGalleryShell::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background: linear-gradient(180deg, rgba(255, 255, 255, 0.32), rgba(255, 255, 255, 0));
+        pointer-events: none;
+      }
+
+      .lt-heroGallery {
+        position: relative;
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        gap: clamp(0.4rem, 0.95vw, 0.75rem);
+        align-items: end;
+      }
+
       .lt-heroShot {
         display: block;
-        border-radius: 16px;
-        overflow: hidden; /* important: rounds the image even if it scales */
+        border-radius: 22px;
+        overflow: hidden;
+        border-bottom: 0;
+        border: 1px solid rgba(15, 23, 42, 0.09);
+        background: #f8fafc;
+        box-shadow:
+          0 18px 34px rgba(15, 23, 42, 0.15),
+          0 1px 0 rgba(255, 255, 255, 0.72) inset;
+        transition: transform 0.22s ease, box-shadow 0.22s ease;
+        line-height: 0;
       }
+
       .lt-heroShot img {
         display: block;
         width: 100%;
         height: auto;
+      }
+
+      .lt-heroShot:focus-visible {
+        outline: 3px solid rgba(59, 130, 246, 0.3);
+        outline-offset: 4px;
+      }
+
+      .lt-heroShot--main {
+        transform: translateY(0.9rem);
+      }
+
+      .lt-heroShot--proactive {
+        transform: translateY(0) scale(1.015);
+      }
+
+      .lt-heroShot--messages {
+        transform: translateY(1.1rem);
+      }
+
+      @media (hover: hover) {
+        .lt-heroShot:hover {
+          box-shadow:
+            0 22px 40px rgba(15, 23, 42, 0.18),
+            0 1px 0 rgba(255, 255, 255, 0.76) inset;
+        }
+
+        .lt-heroShot--main:hover {
+          transform: translateY(0.55rem);
+        }
+
+        .lt-heroShot--proactive:hover {
+          transform: translateY(-0.2rem) scale(1.02);
+        }
+
+        .lt-heroShot--messages:hover {
+          transform: translateY(0.75rem);
+        }
       }
         
       .lt-hero {
@@ -330,14 +410,19 @@
       }
 
       .lt-reviewsTitle {
+        font-weight: 400;
         line-height: 1.12;
+      }
+
+      .lt-reviewsTitleEmphasis {
+        font-weight: 650;
       }
 
       .lt-reviewsTitleSub {
         display: block;
         margin-top: 0.16rem;
         font-size: 0.62em;
-        font-weight: 600;
+        font-weight: 400;
         opacity: 0.78;
       }
 
@@ -718,8 +803,8 @@
         padding-right: clamp(0.15rem, 0.6vw, 0.55rem);
       }
 
-      .lt-hero .lt-card {
-        max-width: 430px;
+      .lt-heroVisual {
+        max-width: 540px;
         width: 100%;
         margin-left: auto;
       }
@@ -837,9 +922,18 @@
           max-width: none;
         }
 
-        .lt-hero .lt-card,
+        .lt-heroVisual,
         .lt-imgWrap {
-          max-width: min(560px, 100%);
+          max-width: min(720px, 100%);
+        }
+
+        .lt-heroVisual {
+          order: -1;
+          margin: 0 auto 0.75rem;
+        }
+
+        .lt-heroGalleryShell {
+          padding: 0.75rem;
         }
       }
 
@@ -879,9 +973,38 @@
           margin: 2.8rem 0;
         }
 
-        .lt-hero .lt-card,
+        .lt-heroVisual,
         .lt-imgWrap {
           max-width: 100%;
+        }
+
+        .lt-heroVisual {
+          margin-bottom: 0.35rem;
+        }
+
+        .lt-heroGalleryShell {
+          padding: 0.42rem;
+          border-radius: 22px;
+        }
+
+        .lt-heroGallery {
+          gap: 0.32rem;
+        }
+
+        .lt-heroShot {
+          border-radius: 16px;
+        }
+
+        .lt-heroShot--main {
+          transform: translateY(0.45rem);
+        }
+
+        .lt-heroShot--proactive {
+          transform: translateY(0) scale(1.01);
+        }
+
+        .lt-heroShot--messages {
+          transform: translateY(0.55rem);
         }
 
         .lt-card {
