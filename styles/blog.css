@@ -92,6 +92,7 @@ body.blog-article-page article.post.featured > header.major,
 body.blog-article-page article.post.featured > header.major > p,
 body.blog-article-page article.post.featured h2,
 body.blog-article-page article.post.featured h3,
+body.blog-article-page article.post.featured .lt-articleImage,
 body.blog-article-page article.post.featured p,
 body.blog-article-page article.post.featured ul,
 body.blog-article-page article.post.featured ol,
@@ -132,6 +133,7 @@ body.blog-page article.post.featured h3 {
 body.blog-page article.post.featured p,
 body.blog-page article.post.featured ul,
 body.blog-page article.post.featured ol,
+body.blog-page article.post.featured .lt-articleImage,
 body.blog-page article.post.featured hr,
 body.blog-page article.post.featured .lt-cta,
 body.blog-page article.post.featured .lt-actions,
@@ -156,6 +158,24 @@ body.blog-page article.post.featured ol {
 
 body.blog-page article.post.featured li {
   margin: 0.3rem 0;
+}
+
+body.blog-article-page article.post.featured .lt-articleImage {
+  width: min(100%, 34rem);
+  max-width: 34rem;
+  margin-top: 1.7rem;
+  margin-bottom: 1.7rem;
+  line-height: 0;
+}
+
+body.blog-article-page article.post.featured .lt-articleImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 18px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
+  background: #ffffff;
 }
 
 body.blog-page article.post.featured hr {
@@ -250,6 +270,13 @@ body.blog-index-page .lt-blogCard p {
 
   body.blog-article-page {
     --blog-article-measure: 100%;
+  }
+
+  body.blog-article-page article.post.featured .lt-articleImage {
+    width: 100%;
+    max-width: 100%;
+    margin-top: 1.35rem;
+    margin-bottom: 1.35rem;
   }
 
   body.blog-page article.post.featured > header.major {
