@@ -66,6 +66,11 @@ body.blog-page article.post.featured > header.major {
   text-align: left !important;
 }
 
+body.blog-article-page article.post.featured > header.major,
+body.blog-article-page article.post.featured > header.major h1 {
+  text-align: center !important;
+}
+
 body.blog-page article.post.featured > header.major > p {
   text-align: left !important;
   max-width: none;
