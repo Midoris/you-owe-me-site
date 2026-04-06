@@ -1142,7 +1142,7 @@
           --lt-hero-top-space: clamp(1.45rem, 2.75vh, 2.35rem);
           --lt-hero-visual-top: clamp(0.3rem, 0.8vh, 0.65rem);
           --lt-hero-visual-bottom: clamp(1.35rem, 4.75vh, 2.6rem);
-          --lt-hero-gallery-gap: clamp(1rem, 1.9vh, 1.45rem);
+          --lt-hero-gallery-gap: clamp(2rem, 3.8vh, 2.9rem);
           --lt-hero-shot-height: clamp(24rem, 58vh, 38rem);
           gap: var(--lt-hero-stack-gap);
           padding-top: var(--lt-hero-top-space);
@@ -1156,7 +1156,7 @@
             --lt-hero-top-space: clamp(1.45rem, 2.75dvh, 2.35rem);
             --lt-hero-visual-top: clamp(0.3rem, 0.8dvh, 0.65rem);
             --lt-hero-visual-bottom: clamp(1.35rem, 4.75dvh, 2.6rem);
-            --lt-hero-gallery-gap: clamp(1rem, 1.9dvh, 1.45rem);
+            --lt-hero-gallery-gap: clamp(2rem, 3.8dvh, 2.9rem);
             --lt-hero-shot-height: clamp(24rem, 58dvh, 38rem);
           }
         }
@@ -1182,6 +1182,10 @@
 
         .lt-heroGallery {
           gap: var(--lt-hero-gallery-gap);
+        }
+
+        .lt-heroBody {
+          margin-top: calc(var(--lt-hero-stack-gap) + var(--lt-hero-visual-bottom));
         }
 
         .lt-heroShot {
