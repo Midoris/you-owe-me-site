@@ -180,7 +180,7 @@
         display: flex;
         justify-content: center;
         align-items: flex-start;
-        gap: clamp(0.55rem, 1.45vw, 1.1rem);
+        gap: clamp(0.61rem, 1.6vw, 1.21rem);
         width: 100%;
         max-width: 54rem;
         margin: 0 auto;
@@ -188,8 +188,8 @@
 
       .lt-heroShot {
         display: block;
-        flex: 0 1 clamp(7.1rem, 14.8vw, 11.5rem);
-        max-width: 11.5rem;
+        flex: 0 1 clamp(8.52rem, 17.76vw, 13.8rem);
+        max-width: 13.8rem;
         width: 100%;
         border-radius: 24px;
         overflow: hidden;
@@ -216,13 +216,13 @@
 
       @media (min-width: 737px) {
         .lt-heroGallery {
-          gap: clamp(1.05rem, 2.6vw, 2rem);
+          gap: clamp(1.16rem, 2.86vw, 2.2rem);
           max-width: 62rem;
         }
 
         .lt-heroShot {
-          flex: 0 1 clamp(9.2rem, 18.8vw, 14.8rem);
-          max-width: 14.8rem;
+          flex: 0 1 clamp(11.04rem, 22.56vw, 17.76rem);
+          max-width: 17.76rem;
           border-radius: 26px;
           box-shadow:
             0 22px 40px rgba(15, 23, 42, 0.13),
@@ -433,7 +433,7 @@
         align-items: start;
         column-gap: clamp(2rem, 4.5vw, 4.5rem);
         row-gap: 1.35rem;
-        margin: clamp(1.25rem, 3vw, 1.9rem) 0 clamp(2.6rem, 5vw, 3.7rem);
+        margin: 0 0 clamp(3.2rem, 5.8vw, 4.3rem);
       }
 
       .lt-reviewVideoCopy {
@@ -922,7 +922,7 @@
         .lt-reviewVideoModule {
           grid-template-columns: 1fr;
           gap: 1.65rem;
-          margin-bottom: 2.1rem;
+          margin-bottom: 2.7rem;
         }
 
         .lt-reviewVideoCopy {
@@ -1167,7 +1167,7 @@
       }
 
       .lt-reviews {
-        margin-top: clamp(2.2rem, 5vw, 4.3rem);
+        margin-top: clamp(2.8rem, 5.8vw, 4.9rem);
       }
 
       .lt-featureRailWrap {
@@ -1353,7 +1353,7 @@
         }
 
         .lt-reviewVideoModule {
-          margin: 1.2rem 0 2rem;
+          margin: 0 0 2.6rem;
         }
 
         .lt-reviewVideoEyebrow {
