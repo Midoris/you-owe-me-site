@@ -1220,6 +1220,25 @@
         text-align: left;
       }
 
+      article.post.featured .lt-heroBody .lt-ctaRow.lt-heroCtaStack {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        gap: 0.6rem;
+        width: 100%;
+        max-width: none;
+      }
+
+      article.post.featured .lt-heroBody .lt-ctaRow.lt-heroCtaStack .lt-appStoreBtn,
+      article.post.featured .lt-heroBody .lt-ctaRow.lt-heroCtaStack .lt-salePill {
+        align-self: center;
+      }
+
+      article.post.featured .lt-heroBody .lt-note {
+        text-align: center;
+      }
+
       .lt-card {
         border: 1px solid var(--lt-border-soft);
         background: var(--lt-surface);
