@@ -1138,12 +1138,12 @@
       @media (min-width: 981px) {
         .lt-hero {
           margin-top: 0;
-          --lt-hero-stack-gap: clamp(0.9rem, 1.75vh, 1.35rem);
+          --lt-hero-stack-gap: clamp(0.9rem, 1.65vh, 1.25rem);
           --lt-hero-top-space: clamp(1.45rem, 2.75vh, 2.35rem);
           --lt-hero-visual-top: clamp(0.3rem, 0.8vh, 0.65rem);
-          --lt-hero-visual-bottom: clamp(1rem, 4vh, 2.15rem);
+          --lt-hero-visual-bottom: clamp(1.35rem, 4.75vh, 2.6rem);
           --lt-hero-gallery-gap: clamp(1rem, 1.9vh, 1.45rem);
-          --lt-hero-shot-height: clamp(31rem, 67vh, 39rem);
+          --lt-hero-shot-height: clamp(24rem, 58vh, 38rem);
           gap: var(--lt-hero-stack-gap);
           padding-top: var(--lt-hero-top-space);
         }
@@ -1152,12 +1152,12 @@
       @supports (height: 1dvh) {
         @media (min-width: 981px) {
           .lt-hero {
-            --lt-hero-stack-gap: clamp(0.9rem, 1.75dvh, 1.35rem);
+            --lt-hero-stack-gap: clamp(0.9rem, 1.65dvh, 1.25rem);
             --lt-hero-top-space: clamp(1.45rem, 2.75dvh, 2.35rem);
             --lt-hero-visual-top: clamp(0.3rem, 0.8dvh, 0.65rem);
-            --lt-hero-visual-bottom: clamp(1rem, 4dvh, 2.15rem);
+            --lt-hero-visual-bottom: clamp(1.35rem, 4.75dvh, 2.6rem);
             --lt-hero-gallery-gap: clamp(1rem, 1.9dvh, 1.45rem);
-            --lt-hero-shot-height: clamp(31rem, 67dvh, 39rem);
+            --lt-hero-shot-height: clamp(24rem, 58dvh, 38rem);
           }
         }
       }
