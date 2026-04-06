@@ -115,6 +115,19 @@
     }
     </script>
 
+    <!-- Schema.org (VideoObject) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "VideoObject",
+      "name": "See why You Owe Me works in real life",
+      "description": "See how the app handles follow-ups, repayments, and shared expenses.",
+      "thumbnailUrl": "https://i.ytimg.com/vi/vJlj6Duc2eI/hqdefault.jpg",
+      "embedUrl": "https://www.youtube-nocookie.com/embed/vJlj6Duc2eI?rel=0&playsinline=1",
+      "contentUrl": "https://www.youtube.com/shorts/vJlj6Duc2eI"
+    }
+    </script>
+
   </head>
 
   <body class="is-preload site-nav-page">
@@ -190,6 +203,51 @@
           
           <!-- REVIEWS -->
           <div class="lt-reviews" aria-label="What people are saying">
+            <section class="lt-reviewVideoModule" aria-labelledby="lt-review-video-title">
+              <div class="lt-reviewVideoCopy">
+                <p class="lt-reviewVideoEyebrow">Why it works</p>
+                <h3 id="lt-review-video-title" class="lt-reviewVideoTitle">See why You Owe Me works in real life</h3>
+                <p class="lt-reviewVideoBody">
+                  Money between people gets awkward quickly. This short shows how You Owe Me helps keep balances clear, follow-ups polite, and shared expenses from turning into tension.
+                </p>
+                <ul class="lt-reviewVideoList">
+                  <li>Track who owes whom clearly</li>
+                  <li>Handle follow-ups without awkward wording</li>
+                  <li>Keep shared money organized in one place</li>
+                </ul>
+                <p class="lt-reviewVideoSupport">For friends, couples, families, roommates, and client payments.</p>
+              </div>
+
+              <div class="lt-reviewVideoMedia">
+                <div class="lt-videoDevice" data-video-shell>
+                  <div class="lt-videoViewport">
+                    <a
+                      class="lt-videoPoster"
+                      href="https://www.youtube.com/shorts/vJlj6Duc2eI"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      data-youtube-embed="https://www.youtube-nocookie.com/embed/vJlj6Duc2eI?rel=0&playsinline=1"
+                      data-video-title="Short video showing how You Owe Me works in real life"
+                      aria-describedby="lt-review-video-caption"
+                      aria-label="Play short video showing how You Owe Me works in real life"
+                    >
+                      <picture>
+                        <source srcset="https://i.ytimg.com/vi_webp/vJlj6Duc2eI/maxresdefault.webp" type="image/webp" />
+                        <img src="https://i.ytimg.com/vi/vJlj6Duc2eI/hqdefault.jpg" alt="Preview image for a short video showing how You Owe Me works in real life" loading="lazy" />
+                      </picture>
+                      <span class="lt-videoPosterOverlay" aria-hidden="true">
+                        <span class="lt-videoPlayButton"></span>
+                        <span class="lt-videoPosterLabel">Play short</span>
+                      </span>
+                    </a>
+                  </div>
+                </div>
+                <p id="lt-review-video-caption" class="lt-reviewVideoCaption">
+                  See how the app handles follow-ups, repayments, and shared expenses.
+                </p>
+              </div>
+            </section>
+
             <div class="lt-reviewsHeader">
               <h2 class="lt-reviewsTitle">
                 <span>Helping people track loans <span class="lt-reviewsTitleEmphasis">since 2016</span>.</span>
@@ -786,6 +844,7 @@
     <!-- Scripts (go up one level) -->
     <script src="./scripts/sales.js"></script>
     <script src="./scripts/support-email.js"></script>
+    <script src="./scripts/video-embed.js"></script>
     <script type="module" src="./scripts/analytics.js"></script>
     <script src="./scripts/reviews.js"></script>
     <script src="./assets/js/jquery.min.js"></script>
