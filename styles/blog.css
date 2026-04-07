@@ -173,6 +173,10 @@ body.blog-article-page article.post.featured .lt-articleImage {
   line-height: 0;
 }
 
+body.blog-article-page article.post.featured .lt-articleImage picture {
+  display: block;
+}
+
 body.blog-article-page article.post.featured .lt-articleImage img {
   display: block;
   width: 100%;

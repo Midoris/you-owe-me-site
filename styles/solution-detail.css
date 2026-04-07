@@ -95,6 +95,11 @@ body.solution-detail-page .lt-sectionClose {
   margin: 0;
 }
 
+body.solution-detail-page article.post.featured p,
+body.solution-detail-page article.post.featured li {
+  text-align: left;
+}
+
 body.solution-detail-page .lt-cardGrid,
 body.solution-detail-page .lt-stepGrid,
 body.solution-detail-page .lt-compareGrid,
