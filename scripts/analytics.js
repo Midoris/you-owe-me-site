@@ -56,9 +56,11 @@ async function initAnalytics() {
 function getPageType() {
   const path = window.location.pathname;
   if (path === "/" || path === "/index.html") return "landing";
+  if (path === "/solutions/" || path === "/solutions/index.html") return "solutions_index";
+  if (path.startsWith("/solutions/")) return "solution_page";
   if (path === "/blog/" || path === "/blog/index.html") return "blog_index";
-  if (path.indexOf("/blog/") === 0) return "blog_article";
-  if (path.indexOf("/redeem/") === 0) return "redeem";
+  if (path.startsWith("/blog/")) return "blog_article";
+  if (path.startsWith("/redeem/")) return "redeem";
   return "other";
 }
 
