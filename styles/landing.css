@@ -813,6 +813,9 @@
         border: 1px solid rgba(255,255,255,0.12);
         background: rgba(0,0,0,0.12);
       }
+      .lt-imgWrap picture {
+        display: block;
+      }
       .lt-imgWrap img {
         width: 100%;
         height: auto;
