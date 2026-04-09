@@ -317,7 +317,7 @@
       }
 
       .lt-heroPreview {
-        width: min(100%, clamp(13.5rem, 22vw, 15.5rem));
+        width: min(100%, calc(clamp(13.5rem, 22vw, 15.5rem) / 3));
         align-self: center;
       }
 
