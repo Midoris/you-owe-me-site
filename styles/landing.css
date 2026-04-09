@@ -317,13 +317,14 @@
       }
 
       .lt-heroPreview {
-        width: min(100%, calc(clamp(13.5rem, 22vw, 15.5rem) / 3));
+        width: min(100%, 82px);
         align-self: center;
       }
 
       .lt-heroPreviewLink {
         display: block;
         width: 100%;
+        box-sizing: border-box;
         aspect-ratio: 9 / 16;
         line-height: 0;
         border-bottom: 0;
