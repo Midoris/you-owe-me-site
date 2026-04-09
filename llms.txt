@@ -10,6 +10,8 @@ Use the pages below as the canonical source for product information, feature des
 - [Solutions](https://you-owe-me.com/solutions/): Use-case hub for shared expenses, money owed, couples, family reimbursements, roommates, and repayment follow-ups.
 - [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/): Product page for tracking shared expenses, split bills, recurring costs, and running balances across friends, couples, roommates, and families.
 - [Blog](https://you-owe-me.com/blog/): Blog hub for guides about asking for money, repayments, shared expenses, and tracking who owes whom.
+- [Privacy Policy](https://you-owe-me.com/privacy-policy/): Current privacy policy for the YouOweMe app and website.
+- [Privacy Choices](https://you-owe-me.com/privacy-choices/): Manage website analytics preferences and privacy requests.
 
 ## Articles
 
@@ -25,4 +27,3 @@ Use the pages below as the canonical source for product information, feature des
 ## External
 
 - [App Store](https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en): Official App Store listing for YouOweMe.
-- [Privacy Policy](https://docs.google.com/document/d/e/2PACX-1vT4eaJ9w54hqRGNHqwwEa7h6ASKQeHdfBZS-MpoblxHKtUioTNaetS-gSffs-zkrsfdSPNXzBYF0suS/pub): Current privacy policy.
