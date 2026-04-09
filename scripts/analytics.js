@@ -57,7 +57,6 @@ function getPageType() {
   const path = window.location.pathname;
   if (path === "/" || path === "/index.html") return "landing";
   if (path === "/privacy-policy/" || path === "/privacy-policy/index.html") return "privacy_policy";
-  if (path === "/privacy-choices/" || path === "/privacy-choices/index.html") return "privacy_choices";
   if (path === "/solutions/" || path === "/solutions/index.html") return "solutions_index";
   if (path.startsWith("/solutions/")) return "solution_page";
   if (path === "/blog/" || path === "/blog/index.html") return "blog_index";
