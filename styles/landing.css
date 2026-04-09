@@ -316,6 +316,55 @@
         align-self: flex-start;
       }
 
+      .lt-heroPreview {
+        width: min(100%, clamp(13.5rem, 22vw, 15.5rem));
+        align-self: center;
+      }
+
+      .lt-heroPreviewLink {
+        display: block;
+        width: 100%;
+        aspect-ratio: 9 / 16;
+        line-height: 0;
+        border-bottom: 0;
+        border-radius: 28px;
+        overflow: hidden;
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        background:
+          radial-gradient(140% 120% at 50% 0%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 44%),
+          #0f172a;
+        box-shadow:
+          0 24px 48px rgba(15, 23, 42, 0.18),
+          0 1px 0 rgba(255, 255, 255, 0.7) inset;
+        transition: transform 0.2s ease, box-shadow 0.2s ease;
+      }
+
+      .lt-heroPreviewVideo {
+        display: block;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        background: #0f172a;
+      }
+
+      @media (hover: hover) {
+        .lt-heroPreviewLink:hover {
+          transform: translateY(-2px);
+          box-shadow:
+            0 28px 56px rgba(15, 23, 42, 0.22),
+            0 1px 0 rgba(255, 255, 255, 0.72) inset;
+        }
+      }
+
+      .lt-heroPreviewLink:active {
+        transform: translateY(0);
+      }
+
+      .lt-heroPreviewLink:focus-visible {
+        outline: 3px solid rgba(59, 130, 246, 0.38);
+        outline-offset: 4px;
+      }
+
       .lt-appStoreBtn {
         display: inline-block;
         width: min(250px, 100%);
