@@ -4,6 +4,9 @@
       return;
     }
 
+    video.setAttribute("muted", "");
+    video.setAttribute("playsinline", "");
+    video.setAttribute("webkit-playsinline", "");
     video.muted = true;
     video.defaultMuted = true;
     video.autoplay = true;
@@ -25,8 +28,12 @@
 
       video.dataset.heroPreviewBound = "1";
 
+      video.load();
       tryPlay(video);
       video.addEventListener("loadedmetadata", function () {
+        tryPlay(video);
+      });
+      video.addEventListener("loadeddata", function () {
         tryPlay(video);
       });
       video.addEventListener("canplay", function () {
@@ -52,5 +59,6 @@
   }
 
   window.addEventListener("load", resumeVisibleVideos);
+  window.addEventListener("pageshow", resumeVisibleVideos);
   document.addEventListener("visibilitychange", resumeVisibleVideos);
 })();
