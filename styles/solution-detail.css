@@ -35,7 +35,7 @@ body.solution-detail-page .lt-detailHero {
 
 body.solution-detail-page .lt-detailHeroGrid {
   display: grid;
-  grid-template-columns: minmax(0, 1.2fr) minmax(180px, 240px);
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 23.5rem);
   gap: clamp(1.4rem, 3vw, 2.6rem);
   align-items: center;
 }
@@ -52,7 +52,7 @@ body.solution-detail-page .lt-detailHero .major {
 body.solution-detail-page .lt-detailHeroVisual {
   margin: 0;
   justify-self: end;
-  width: min(100%, 15rem);
+  width: min(100%, 23.5rem);
   line-height: 0;
 }
 
