@@ -9,6 +9,7 @@ Use the pages below as the canonical source for product information, feature des
 - [Home](https://you-owe-me.com/): Main product page for YouOweMe, including product overview, features, FAQ, and App Store download link.
 - [Solutions](https://you-owe-me.com/solutions/): Use-case hub for shared expenses, money owed, couples, family reimbursements, roommates, and repayment follow-ups.
 - [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/): Product page for tracking shared expenses, split bills, recurring costs, and running balances across friends, couples, roommates, and families.
+- [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/): Product page for tracking personal IOUs, money owed, partial repayments, reminders, and follow-up messages.
 - [Blog](https://you-owe-me.com/blog/): Blog hub for guides about asking for money, repayments, shared expenses, and tracking who owes whom.
 - [Privacy Policy](https://you-owe-me.com/privacy-policy/): Current privacy policy for the YouOweMe iOS app.
 
