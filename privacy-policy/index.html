@@ -89,7 +89,7 @@
                 <li>You can use the app without creating a YouOweMe account.</li>
                 <li>The app stores data locally on your device and may also sync Core Data through Apple iCloud/CloudKit when available for your Apple account and device settings.</li>
                 <li>If you sign in with Apple to use Cloud Accounts, selected profile and ledger data is stored in Firebase services.</li>
-                <li>If you create statement links or live links, those pages are public to anyone with the link until they expire or are removed.</li>
+                <li>If you create snapshot statement links or live links, those pages are public to anyone with the link. Snapshot statement links are temporary and are set to expire after 3 days. Live links may update when related borrower data changes and remain available until they expire, are stopped, are removed, or the related Cloud Account data is deleted.</li>
                 <li>If you use AI features such as voice-to-entry parsing, follow-up generation, repayment update generation, or ask-for-loan generation, the text and related context needed for that feature are sent to Firebase Cloud Functions and then to OpenAI.</li>
                 <li>The app uses crash reporting. Firebase Analytics code is present, but Analytics collection is disabled in the bundled configuration for the app version this policy is intended to cover.</li>
                 <li>We do not sell your personal information.</li>
@@ -129,8 +129,14 @@
             <h3>Exports, PDFs, statement links, and live links</h3>
             <p>
               If you create exports, PDFs, statement links, or live links, the information included in those outputs is processed to
-              create them. Text, CSV, and PDF exports are created locally on the device. Statement links and live links are public
-              link-based pages.
+              create them. Text, CSV, and PDF exports are created locally on the device. Snapshot statement links and live links are
+              public link-based pages.
+            </p>
+            <p>
+              Snapshot statement links are temporary, are not updated after creation, and are set to expire after 3 days. After expiry,
+              the public page is intended to become unavailable, although backend cleanup or physical deletion timing may vary. Live
+              links may update when the related borrower data changes and remain available until they expire, are stopped, are removed,
+              or the related Cloud Account data is deleted.
             </p>
 
             <h3>AI feature requests</h3>
@@ -199,8 +205,10 @@
             <p>
               Local app data remains on the device, and iCloud/CloudKit-synced data may remain in the user’s Apple account, until
               deleted by the user or removed through device or account settings. Firebase cloud-account data may remain until deleted
-              from Firebase systems. Public share pages are intended to expire, but backend cleanup timing may vary. Crash and
-              diagnostic data are retained under provider settings. Support emails are retained in the support mailbox until deleted.
+              from Firebase systems. Temporary snapshot statement links are set to expire after 3 days, and live links may remain
+              available until they expire, are stopped, are removed, or the related Cloud Account data is deleted. Backend cleanup or
+              physical deletion timing may vary. Crash and diagnostic data are retained under provider settings. Support emails are
+              retained in the support mailbox until deleted.
             </p>
           </section>
 
@@ -217,7 +225,8 @@
             <h2>Deletion, consent withdrawal, and privacy requests</h2>
             <ul class="lt-legalList">
               <li>You can delete local records in the app and remove the app to delete on-device storage.</li>
-              <li>If you use Cloud Accounts, use the in-app account deletion controls where available in your app version for the fastest result.</li>
+              <li>If you use Cloud Accounts, use the in-app account deletion controls where available in your app version for the fastest result. Deleting a Cloud Account removes Cloud Account data controlled by the app, including account-owned live links.</li>
+              <li>Temporary snapshot statement links created before deletion may remain available until their 3-day expiry because they are public snapshot pages and are not updated after creation.</li>
               <li>For cloud-account or support-data deletion requests, email <a href="mailto:eugen_yablonski@yahoo.com">eugen_yablonski@yahoo.com</a> with enough information to identify the relevant account, communication, or shared output.</li>
               <li>If you use iCloud/CloudKit, you may also need to manage synced data through your Apple account or device settings.</li>
             </ul>
