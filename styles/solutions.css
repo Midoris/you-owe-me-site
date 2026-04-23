@@ -137,6 +137,18 @@ body.solutions-page a {
   margin: 1.15rem 0 0;
 }
 
+.lt-pageMeta {
+  margin: 0.7rem 0 0;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(24, 33, 43, 0.68);
+}
+
+.lt-pageMeta time {
+  font-weight: 600;
+  color: rgba(24, 33, 43, 0.86);
+}
+
 .lt-solutionsHero .lt-heroSupport {
   max-width: 62ch;
   margin: 1rem 0 0;

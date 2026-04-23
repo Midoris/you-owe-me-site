@@ -156,6 +156,39 @@ body.blog-page article.post.featured li {
   text-align: left;
 }
 
+body.blog-article-page article.post.featured .lt-meta {
+  margin-top: 0.15rem;
+  margin-bottom: 1.2rem;
+  font-size: 0.95rem;
+  line-height: 1.65;
+  color: rgba(33, 41, 49, 0.68);
+}
+
+body.blog-article-page article.post.featured .lt-meta span {
+  display: block;
+}
+
+body.blog-article-page article.post.featured .lt-meta time {
+  font-weight: 600;
+  color: rgba(33, 41, 49, 0.86);
+}
+
+body.blog-index-page .lt-cardMeta {
+  margin: 0.7rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: rgba(33, 41, 49, 0.72);
+}
+
+body.blog-index-page .lt-cardMeta span {
+  display: block;
+}
+
+body.blog-index-page .lt-cardMeta time {
+  font-weight: 600;
+  color: rgba(33, 41, 49, 0.88);
+}
+
 body.blog-page article.post.featured ul,
 body.blog-page article.post.featured ol {
   padding-left: 1.35rem;
