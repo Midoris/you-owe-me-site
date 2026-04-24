@@ -49,6 +49,19 @@ body.solution-detail-page .lt-detailHero .major {
   text-align: left !important;
 }
 
+body.solution-detail-page .lt-pageMeta {
+  margin: 2rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: rgba(24, 33, 43, 0.62);
+  font-weight: 400;
+}
+
+body.solution-detail-page .lt-pageMeta time {
+  font-weight: inherit;
+  color: inherit;
+}
+
 body.solution-detail-page .lt-detailHeroVisual {
   margin: 0;
   justify-self: end;

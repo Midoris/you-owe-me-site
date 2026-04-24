@@ -138,15 +138,16 @@ body.solutions-page a {
 }
 
 .lt-pageMeta {
-  margin: 0.7rem 0 0;
-  font-size: 0.95rem;
-  line-height: 1.65;
-  color: rgba(24, 33, 43, 0.68);
+  margin: 2rem 0 0;
+  font-size: 0.84rem;
+  line-height: 1.55;
+  color: rgba(24, 33, 43, 0.62);
+  font-weight: 400;
 }
 
 .lt-pageMeta time {
-  font-weight: 600;
-  color: rgba(24, 33, 43, 0.86);
+  font-weight: inherit;
+  color: inherit;
 }
 
 .lt-solutionsHero .lt-heroSupport {
