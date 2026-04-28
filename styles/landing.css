@@ -440,6 +440,22 @@
         cursor: default;
       }
 
+      #footer .lt-footerSocialLink {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.45rem;
+      }
+
+      #footer .lt-footerSocialIcon {
+        display: inline-block;
+        width: 17px;
+        height: 17px;
+        flex: 0 0 17px;
+        object-fit: contain;
+        vertical-align: middle;
+        filter: saturate(0.88) brightness(0.96) contrast(0.96);
+      }
+
       /* Card blocks */
       .lt-card {
         border: 1px solid rgba(255,255,255,0.12);
