@@ -1,0 +1,486 @@
+body.calculator-page article.post.featured {
+  max-width: none;
+}
+
+.calculator-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.42fr);
+}
+
+.calculator-hero-visual {
+  position: relative;
+  min-height: 15rem;
+}
+
+.calculator-hero-visual span {
+  position: absolute;
+  display: block;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+.calculator-hero-visual span:nth-child(1) {
+  top: 1rem;
+  right: 0.5rem;
+  width: 76%;
+  height: 4.5rem;
+}
+
+.calculator-hero-visual span:nth-child(2) {
+  top: 5rem;
+  left: 0.3rem;
+  width: 72%;
+  height: 4.5rem;
+  background: rgba(175, 230, 126, 0.18);
+}
+
+.calculator-hero-visual span:nth-child(3) {
+  bottom: 1.1rem;
+  right: 0;
+  width: 82%;
+  height: 4.5rem;
+}
+
+.privacy-note {
+  max-width: 58ch;
+  margin: 1rem 0 0;
+  color: rgba(24, 33, 43, 0.66);
+  font-size: 0.94rem !important;
+  line-height: 1.55 !important;
+}
+
+.split-calculator {
+  scroll-margin-top: 1rem;
+}
+
+.calculator-card {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.09);
+  padding: clamp(1.1rem, 2.5vw, 1.8rem);
+}
+
+.calculator-card-header {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(9rem, 12rem);
+  gap: 1.2rem;
+  align-items: start;
+}
+
+.calculator-card-header p {
+  max-width: 70ch;
+  margin: 0;
+}
+
+.calculator-card-header h2 {
+  margin-bottom: 0.6rem !important;
+}
+
+.currency-control label,
+.field label,
+.included-people legend,
+.split-type-label {
+  display: block;
+  margin: 0 0 0.32rem;
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.82rem;
+  font-weight: 700;
+  line-height: 1.35;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.calculator-input,
+.calculator-select {
+  width: 100%;
+  height: 2.8rem;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  border-radius: 12px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #18212b !important;
+  font-size: 1rem;
+  line-height: 1.2;
+  box-shadow: none !important;
+}
+
+.calculator-input {
+  padding: 0 0.85rem !important;
+}
+
+.calculator-select {
+  padding: 0 2rem 0 0.85rem;
+}
+
+.calculator-input:focus,
+.calculator-select:focus,
+.checkbox-pill input:focus-visible + span,
+.small-action:focus-visible,
+.secondary-action:focus-visible,
+.remove-action:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.28) !important;
+  outline-offset: 2px;
+}
+
+.calculator-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.3rem;
+}
+
+.calculator-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.44fr);
+  gap: 1.25rem;
+  align-items: start;
+  margin-top: 1.25rem;
+}
+
+.calculator-editor {
+  display: grid;
+  gap: 1rem;
+}
+
+.calculator-panel,
+.results-panel {
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 20px;
+  background: rgba(248, 250, 252, 0.82);
+  padding: 1rem;
+}
+
+.results-panel {
+  position: sticky;
+  top: 1rem;
+}
+
+.panel-heading,
+.results-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-bottom: 0.85rem;
+}
+
+.panel-heading h3,
+.results-heading h3 {
+  margin: 0 !important;
+}
+
+.small-action,
+.secondary-action,
+.remove-action {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  background: rgba(255, 255, 255, 0.88);
+  color: #18212b;
+  font-size: 0.86rem;
+  font-weight: 700;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.small-action,
+.secondary-action {
+  padding: 0.56rem 0.82rem;
+}
+
+.remove-action {
+  width: 2.35rem;
+  padding: 0;
+}
+
+.small-action:hover,
+.secondary-action:hover,
+.remove-action:hover {
+  background: rgba(175, 230, 126, 0.2);
+}
+
+.people-list,
+.expenses-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.person-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.65rem;
+  align-items: end;
+}
+
+.expense-card {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+  padding: 1rem;
+}
+
+.expense-card-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-bottom: 0.9rem;
+}
+
+.expense-card-title {
+  margin: 0 !important;
+  font-size: 1rem !important;
+}
+
+.expense-fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(8rem, 0.65fr) minmax(10rem, 0.75fr);
+  gap: 0.85rem;
+}
+
+.included-people {
+  margin: 0.95rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.checkbox-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.checkbox-pill {
+  display: inline-flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+.checkbox-pill input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.checkbox-pill span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.2rem;
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(15, 23, 42, 0.11);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.88rem;
+  font-weight: 650;
+  line-height: 1.2;
+}
+
+.checkbox-pill input:checked + span {
+  border-color: rgba(107, 161, 69, 0.28);
+  background: rgba(175, 230, 126, 0.25);
+  color: #18212b;
+}
+
+.split-type {
+  margin-top: 0.85rem;
+}
+
+.split-type-value {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.1rem;
+  padding: 0.42rem 0.68rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.05);
+  color: rgba(24, 33, 43, 0.76);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.validation-message,
+.expense-validation {
+  min-height: 1.2rem;
+  color: #725c16;
+  font-size: 0.88rem !important;
+  line-height: 1.45 !important;
+}
+
+.validation-message {
+  margin: -0.25rem 0 0.65rem;
+}
+
+.expense-validation {
+  margin: 0.7rem 0 0;
+}
+
+.result-block {
+  padding: 0.9rem 0;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.result-block:first-of-type {
+  border-top: 0;
+  padding-top: 0;
+}
+
+.result-block h4 {
+  margin: 0 0 0.5rem;
+  color: #18212b;
+  font-size: 0.94rem;
+  line-height: 1.2;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+.result-list,
+.settlement-list {
+  display: grid;
+  gap: 0.4rem;
+}
+
+.result-item,
+.settlement-item {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 0.95rem;
+  line-height: 1.45;
+}
+
+.settlement-item {
+  justify-content: flex-start;
+  padding: 0.55rem 0.65rem;
+  border-radius: 12px;
+  background: rgba(175, 230, 126, 0.16);
+}
+
+.empty-result {
+  color: rgba(24, 33, 43, 0.66);
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.copy-row {
+  display: flex;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.copy-status {
+  min-width: 4rem;
+  color: #355428;
+  font-size: 0.88rem;
+  font-weight: 700;
+}
+
+.calculator-note {
+  margin-top: 0;
+}
+
+.compact-panel {
+  box-shadow: none;
+}
+
+.compact-panel p {
+  margin: 0 0 0.8rem;
+}
+
+.content-section ol {
+  margin: 0 0 1rem;
+  padding-left: 1.25rem;
+}
+
+.faq-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.faq-list details {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  padding: 1rem 1.1rem;
+}
+
+.faq-list summary {
+  color: #18212b;
+  font-weight: 750;
+  cursor: pointer;
+}
+
+.faq-list p {
+  margin: 0.75rem 0 0;
+}
+
+@media (max-width: 980px) {
+  .calculator-hero,
+  .calculator-card-header,
+  .calculator-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .calculator-hero-visual {
+    display: none;
+  }
+
+  .results-panel {
+    position: static;
+  }
+}
+
+@media (max-width: 736px) {
+  .calculator-card {
+    padding: 1rem;
+  }
+
+  .calculator-actions,
+  .panel-heading,
+  .results-heading,
+  .copy-row {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .panel-heading,
+  .results-heading {
+    gap: 0.65rem;
+  }
+
+  .small-action,
+  .secondary-action,
+  .copy-row .small-action,
+  .currency-control {
+    width: 100%;
+  }
+
+  .expense-fields,
+  .person-row {
+    grid-template-columns: 1fr;
+  }
+
+  .remove-action {
+    width: 100%;
+  }
+
+  .result-item {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+
+  .checkbox-pill,
+  .checkbox-pill span {
+    width: 100%;
+  }
+}

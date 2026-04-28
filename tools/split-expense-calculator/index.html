@@ -1,0 +1,483 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Split Expense Calculator | See Who Owes Whom</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-itunes-app" content="app-id=1147058670" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" href="../../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/icon_2_0.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/icon_2_0.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/icon_2_0.png" />
+
+    <link rel="canonical" href="https://you-owe-me.com/tools/split-expense-calculator/" />
+    <meta
+      name="description"
+      content="Use this free split expense calculator to divide shared bills, add who paid, choose who was included, and see who owes whom. Helpful for trips, dinners, groceries, rent, roommates, couples, and shared costs."
+    />
+    <meta property="og:title" content="Split Expense Calculator | See Who Owes Whom" />
+    <meta
+      property="og:description"
+      content="Divide shared bills, add who paid, choose who was included, and see who owes whom."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://you-owe-me.com/tools/split-expense-calculator/" />
+    <meta property="og:image" content="https://you-owe-me.com/images/icon_2_0.png" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Split Expense Calculator | See Who Owes Whom" />
+    <meta
+      name="twitter:description"
+      content="Divide shared bills, add who paid, choose who was included, and see who owes whom."
+    />
+    <meta name="twitter:image" content="https://you-owe-me.com/images/icon_2_0.png" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "Split Expense Calculator",
+          "description": "A free split expense calculator for shared bills, selective expense splits, IOUs, and simple settlement instructions showing who owes whom.",
+          "url": "https://you-owe-me.com/tools/split-expense-calculator/",
+          "dateModified": "2026-04-28",
+          "isPartOf": {
+            "@type": "CollectionPage",
+            "name": "Money Tools and Templates",
+            "url": "https://you-owe-me.com/tools/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "You Owe Me"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://you-owe-me.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tools",
+              "item": "https://you-owe-me.com/tools/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Split Expense Calculator",
+              "item": "https://you-owe-me.com/tools/split-expense-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a split expense calculator?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A split expense calculator divides shared costs between people and shows who owes whom after accounting for who paid and who was included in each expense."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use this for more than one expense?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Add each expense separately, choose who paid, and select the people who should share that cost. The calculator combines everything into one settlement result."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use this for roommates?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. It works for rent, utilities, groceries, household items, and other shared roommate costs. For recurring bills or long-term household balances, an app like You Owe Me is easier than recalculating every month."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use this for couples?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Couples can use it for groceries, rent, travel, subscriptions, and everyday shared spending. It is useful when one person paid upfront and both people want a clear result."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if one person should not be included in an expense?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Only select the people who should share that specific expense. For example, if three people are on a trip but only two shared a taxi, include only those two people for that taxi expense."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What is the difference between this calculator and You Owe Me?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "The calculator is for quick one-time splits. You Owe Me is for ongoing balances, repayment history, reminders, recurring expenses, follow-up messages, and situations where money between people continues over time."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does the calculator save my data?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. The calculator runs in your browser and is designed for quick calculations. The values you enter are not sent anywhere or saved to an account."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../../styles/site-nav.css" />
+    <link rel="stylesheet" href="../../styles/tools.css" />
+    <link rel="stylesheet" href="../../styles/split-expense-calculator.css" />
+  </head>
+
+  <body class="is-preload tools-page calculator-page site-nav-page">
+    <div id="wrapper" class="fade-in">
+      <header id="header">
+        <a href="../../index.html" class="logo">You Owe Me</a>
+      </header>
+
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="../../">You Owe Me</a></li>
+          <li><a href="../../solutions/">Solutions</a></li>
+          <li class="active"><a href="../">Tools</a></li>
+          <li><a href="../../blog/">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div id="main">
+        <article class="post featured">
+          <nav class="lt-breadcrumb" aria-label="Breadcrumb">
+            <a href="../../">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="../">Tools</a>
+            <span aria-hidden="true">/</span>
+            <span>Split Expense Calculator</span>
+          </nav>
+
+          <section class="lt-toolsHero calculator-hero">
+            <div class="lt-toolsHeroCopy">
+              <p class="lt-eyebrow">Free tool</p>
+              <header class="major">
+                <h1>Split Expense Calculator</h1>
+              </header>
+              <p class="lt-heroBody">
+                Use this split expense calculator to divide shared bills, add who paid, choose who was included, and see who owes whom.
+              </p>
+              <p class="lt-heroSupport">
+                It works for dinners, groceries, rent, trips, roommate bills, couple expenses, household purchases, and other one-time shared costs.
+              </p>
+              <p class="privacy-note">This calculator runs in your browser. The values you enter are not sent anywhere.</p>
+              <div class="lt-ctaRow">
+                <a href="#calculator" class="lt-primaryCta">Start calculating</a>
+                <a href="/tools/" class="lt-textCta">Back to all tools</a>
+              </div>
+            </div>
+            <div class="calculator-hero-visual" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection split-calculator" id="calculator" aria-labelledby="calculator-title">
+            <div class="calculator-card">
+              <div class="calculator-card-header">
+                <div>
+                  <h2 id="calculator-title">Calculate who owes whom</h2>
+                  <p>Add people, enter expenses, choose who paid, and select who should share each expense. The calculator will combine everything into a simple settlement.</p>
+                </div>
+                <div class="currency-control">
+                  <label for="currency-symbol">Currency symbol</label>
+                  <input id="currency-symbol" class="calculator-input" type="text" inputmode="text" maxlength="6" value="$" autocomplete="off" />
+                </div>
+              </div>
+
+              <div class="calculator-actions">
+                <button type="button" class="secondary-action" data-action="use-example">Use example</button>
+                <button type="button" class="secondary-action" data-action="clear-all">Clear all</button>
+              </div>
+
+              <div class="calculator-grid">
+                <div class="calculator-editor">
+                  <section class="calculator-panel" aria-labelledby="people-title">
+                    <div class="panel-heading">
+                      <h3 id="people-title">People</h3>
+                      <button type="button" class="small-action" data-action="add-person">+ Add person</button>
+                    </div>
+                    <div class="validation-message" id="people-message" aria-live="polite"></div>
+                    <div class="people-list" data-people-list></div>
+                  </section>
+
+                  <section class="calculator-panel" aria-labelledby="expenses-title">
+                    <div class="panel-heading">
+                      <h3 id="expenses-title">Expenses</h3>
+                      <button type="button" class="small-action" data-action="add-expense">+ Add another expense</button>
+                    </div>
+                    <div class="expenses-list" data-expenses-list></div>
+                  </section>
+
+                  <p class="privacy-note calculator-note">This calculator runs in your browser. The values you enter are not sent anywhere.</p>
+                </div>
+
+                <aside class="results-panel" aria-labelledby="results-title">
+                  <div class="results-heading">
+                    <h3 id="results-title">Results</h3>
+                    <div class="copy-row">
+                      <button type="button" class="small-action" data-action="copy-summary">Copy summary</button>
+                      <span class="copy-status" aria-live="polite" data-copy-status></span>
+                    </div>
+                  </div>
+
+                  <section class="result-block">
+                    <h4>Summary</h4>
+                    <div class="result-list" data-summary></div>
+                  </section>
+
+                  <section class="result-block">
+                    <h4>Total paid</h4>
+                    <div class="result-list" data-paid></div>
+                  </section>
+
+                  <section class="result-block">
+                    <h4>Fair share</h4>
+                    <div class="result-list" data-share></div>
+                  </section>
+
+                  <section class="result-block">
+                    <h4>Net balance</h4>
+                    <div class="result-list" data-net></div>
+                  </section>
+
+                  <section class="result-block settlement-block">
+                    <h4>Who owes whom</h4>
+                    <div class="settlement-list" data-settlement></div>
+                  </section>
+                </aside>
+              </div>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection content-section">
+            <h2>What this split expense calculator does</h2>
+            <p>
+              This calculator helps you divide one or more shared expenses between people and see the simplest way to settle up. Add who paid, who should be included in each expense, and the calculator will show each person’s fair share and who owes whom.
+            </p>
+            <div class="lt-valuePanel compact-panel">
+              <p>Use it for:</p>
+              <ul class="lt-valueList">
+                <li>dinners and drinks</li>
+                <li>groceries</li>
+                <li>rent and utilities</li>
+                <li>trips</li>
+                <li>household purchases</li>
+                <li>couple expenses</li>
+                <li>roommate bills</li>
+                <li>family reimbursements</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection content-section">
+            <h2>How to split expenses</h2>
+            <ol>
+              <li>Add everyone involved.</li>
+              <li>Add each expense amount.</li>
+              <li>Choose who paid for each expense.</li>
+              <li>Select who should share each expense.</li>
+              <li>Check the settlement to see who owes whom.</li>
+            </ol>
+            <p>
+              For simple situations, this may be enough. For ongoing shared costs, it is usually easier to keep a running balance instead of recalculating from scratch every time.
+            </p>
+          </section>
+
+          <section class="lt-toolsSection content-section">
+            <h2>Example: splitting groceries, dinner, and a taxi</h2>
+            <p>Alex, Mia, and Sam are sharing some costs.</p>
+            <ul>
+              <li>Alex paid $90 for groceries, split between all three.</li>
+              <li>Mia paid $60 for dinner, split between all three.</li>
+              <li>Sam paid $30 for a taxi, split only between Alex and Sam.</li>
+            </ul>
+            <p>
+              The calculator adds what each person paid, calculates each person’s fair share for the expenses they were included in, and then simplifies the result into the smallest practical set of repayments. In this example, Sam owes Alex $25 and Sam owes Mia $10.
+            </p>
+          </section>
+
+          <section class="lt-toolsSection content-section">
+            <h2>Equal splits and selective splits</h2>
+            <p>
+              An equal split works when everyone included in an expense should pay the same share. A selective split is useful when only some people were part of a specific cost.
+            </p>
+            <p>
+              If three roommates share groceries, include all three people. If only two people shared a taxi, include only those two people for that taxi expense.
+            </p>
+            <p>
+              This calculator currently uses equal splitting for each selected expense. For custom percentages, uneven rent arrangements, partial repayments, recurring expenses, and long-term balances, You Owe Me can help you keep the ongoing record manually and clearly.
+            </p>
+          </section>
+
+          <section class="lt-toolsSection">
+            <div class="lt-bridgePanel">
+              <h2>When a calculator is not enough</h2>
+              <p>
+                A calculator is useful when you need to settle one situation. But real shared money often keeps changing. Someone pays for groceries, someone else covers rent, a partial repayment happens later, and another recurring cost appears next month.
+              </p>
+              <p>That is when a running balance is easier than a one-time calculation.</p>
+              <p>
+                You Owe Me is built for ongoing money between people. Instead of only calculating one split, it helps you keep a clear history of expenses, repayments, reminders, and follow-up messages.
+              </p>
+              <div class="lt-valuePanel compact-panel">
+                <p>With You Owe Me, you can:</p>
+                <ul class="lt-valueList">
+                  <li>track shared expenses over time</li>
+                  <li>see who owes whom at any moment</li>
+                  <li>record partial repayments</li>
+                  <li>add recurring expenses</li>
+                  <li>send clearer repayment updates</li>
+                  <li>share a statement when someone needs context</li>
+                </ul>
+              </div>
+              <div class="lt-ctaRow">
+                <a
+                  href="https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en"
+                  class="lt-appStoreBtn"
+                  aria-label="Download on the App Store"
+                  data-track-location="split_calculator_bridge_cta"
+                >
+                  <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" />
+                </a>
+              </div>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection">
+            <h2>Related guides and tools</h2>
+            <div class="lt-relatedGrid">
+              <article class="lt-toolCard">
+                <h3>Tools</h3>
+                <p>Browse free tools and templates for shared expenses, repayment reminders, and money between people.</p>
+                <a href="/tools/" class="lt-cardCta">Back to tools</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>Shared Expense Tracker</h3>
+                <p>Track shared costs, repayments, and running balances without recalculating everything from scratch.</p>
+                <a href="/solutions/shared-expense-tracker/" class="lt-cardCta">Open shared expense solution</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>App to Track Money Owed</h3>
+                <p>Keep a clear record of what people owe, what you owe, and what has already been repaid.</p>
+                <a href="/solutions/app-to-track-money-owed/" class="lt-cardCta">Open money-owed solution</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>Expense Tracker for Couples</h3>
+                <p>Handle groceries, rent, trips, subscriptions, and everyday shared spending with less tension.</p>
+                <a href="/solutions/expense-tracker-for-couples/" class="lt-cardCta">Open couples solution</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>How to Track Shared Expenses</h3>
+                <p>A practical guide to shared expenses when you do not want to reconcile every transaction from scratch.</p>
+                <a href="/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/" class="lt-cardCta">Read the guide</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>How to Split Expenses in a Relationship</h3>
+                <p>A calmer way for couples to talk about shared spending, uneven payments, and recurring costs.</p>
+                <a href="/blog/how-to-split-expenses-in-a-relationship-without-fighting/" class="lt-cardCta">Read the guide</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection faq-section">
+            <h2>Split expense calculator FAQ</h2>
+            <div class="faq-list">
+              <details>
+                <summary>What is a split expense calculator?</summary>
+                <p>A split expense calculator divides shared costs between people and shows who owes whom after accounting for who paid and who was included in each expense.</p>
+              </details>
+              <details>
+                <summary>Can I use this for more than one expense?</summary>
+                <p>Yes. Add each expense separately, choose who paid, and select the people who should share that cost. The calculator combines everything into one settlement result.</p>
+              </details>
+              <details>
+                <summary>Can I use this for roommates?</summary>
+                <p>Yes. It works for rent, utilities, groceries, household items, and other shared roommate costs. For recurring bills or long-term household balances, an app like You Owe Me is easier than recalculating every month.</p>
+              </details>
+              <details>
+                <summary>Can I use this for couples?</summary>
+                <p>Yes. Couples can use it for groceries, rent, travel, subscriptions, and everyday shared spending. It is useful when one person paid upfront and both people want a clear result.</p>
+              </details>
+              <details>
+                <summary>What if one person should not be included in an expense?</summary>
+                <p>Only select the people who should share that specific expense. For example, if three people are on a trip but only two shared a taxi, include only those two people for that taxi expense.</p>
+              </details>
+              <details>
+                <summary>What is the difference between this calculator and You Owe Me?</summary>
+                <p>The calculator is for quick one-time splits. You Owe Me is for ongoing balances, repayment history, reminders, recurring expenses, follow-up messages, and situations where money between people continues over time.</p>
+              </details>
+              <details>
+                <summary>Does the calculator save my data?</summary>
+                <p>No. The calculator runs in your browser and is designed for quick calculations. The values you enter are not sent anywhere or saved to an account.</p>
+              </details>
+            </div>
+          </section>
+
+          <section class="lt-finalCta">
+            <h2>Need to track shared money over time?</h2>
+            <p>
+              Use the calculator for quick splits. Use You Owe Me when you need a lasting record of shared expenses, repayments, reminders, and money conversations.
+            </p>
+            <div class="lt-ctaRow">
+              <a
+                href="https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en"
+                class="lt-appStoreBtn"
+                aria-label="Download on the App Store"
+                data-track-location="split_calculator_final_primary_cta"
+              >
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" />
+              </a>
+              <a href="/solutions/shared-expense-tracker/" class="lt-textCta" data-track-location="split_calculator_final_secondary_cta">Explore shared expense tracking</a>
+            </div>
+          </section>
+
+          <p class="lt-pageMeta">Updated <time datetime="2026-04-28">April 28, 2026</time></p>
+        </article>
+      </div>
+
+      <div id="copyright">
+        <ul>
+          <li>&copy; 2026 Ievgenii Iablonskyi</li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="../../scripts/sales.js"></script>
+    <script src="../../scripts/split-expense-calculator.js"></script>
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
