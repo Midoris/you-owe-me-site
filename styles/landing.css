@@ -209,6 +209,10 @@
         height: auto;
       }
 
+      .lt-heroShot picture {
+        display: block;
+      }
+
       .lt-heroShot:focus-visible {
         outline: 3px solid rgba(59, 130, 246, 0.3);
         outline-offset: 4px;
