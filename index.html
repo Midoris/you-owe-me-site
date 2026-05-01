@@ -39,7 +39,7 @@
     <noscript><link rel="stylesheet" href="./assets/css/noscript.css" /></noscript>
 
     <!-- Landing page styles (extracted from inline CSS) -->
-    <link rel="stylesheet" href="./styles/landing.css?v=footer-social-icons-2" />
+    <link rel="stylesheet" href="./styles/landing.css?v=support-form-1" />
     <link rel="stylesheet" href="./styles/site-nav.css" />
 
     <!-- Schema.org (SoftwareApplication) -->
@@ -904,20 +904,40 @@
 
           <h2>Support</h2>
           <p>
-            Support email:
+            Send a support message:
           </p>
-          <div class="lt-supportEmail" data-support-email>
-            <div class="lt-supportEmailControls">
-              <button type="button" class="button primary" data-support-email-reveal>
-                Unlock support email
-              </button>
-            </div>
-            <div class="lt-supportEmailActions" data-support-email-actions hidden>
-              <button type="button" class="button small" data-support-email-copy>
-                Copy email
-              </button>
-            </div>
-            <p class="lt-supportEmailNote">Hidden to reduce spam from automated scraping.</p>
+          <div class="lt-supportEmail" data-support-form-root>
+            <form class="lt-supportForm" data-support-form>
+              <div class="fields">
+                <div class="field half">
+                  <label for="support-name">Name</label>
+                  <input id="support-name" name="name" type="text" autocomplete="name" maxlength="80" />
+                </div>
+                <div class="field half">
+                  <label for="support-email">Your email</label>
+                  <input id="support-email" name="email" type="email" autocomplete="email" maxlength="254" required />
+                </div>
+                <div class="field">
+                  <label for="support-subject">Subject</label>
+                  <input id="support-subject" name="subject" type="text" maxlength="120" />
+                </div>
+                <div class="field">
+                  <label for="support-message">Message</label>
+                  <textarea id="support-message" name="message" rows="5" maxlength="2000" required></textarea>
+                </div>
+                <div class="field lt-supportTrap" aria-hidden="true">
+                  <label for="support-company">Company</label>
+                  <input id="support-company" name="company" type="text" tabindex="-1" autocomplete="off" />
+                </div>
+              </div>
+              <input type="hidden" name="startedAt" data-support-started-at />
+              <div class="lt-supportEmailControls">
+                <button type="submit" class="button primary" data-support-submit>
+                  Send message
+                </button>
+              </div>
+              <p class="lt-supportEmailNote" data-support-status role="status" aria-live="polite"></p>
+            </form>
             <noscript>
               <p class="lt-supportEmailNote">Please use LinkedIn above for support if JavaScript is disabled.</p>
             </noscript>

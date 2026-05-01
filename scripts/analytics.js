@@ -21,8 +21,8 @@ const FIREBASE_CONFIG = {
 const APP_STORE_HOST_MATCH = "apps.apple.com";
 const APP_STORE_ID_MATCH = "id1147058670";
 const SALE_CHANGED_EVENT = "youoweme:sale-changed";
-const SUPPORT_EMAIL_REVEALED_EVENT = "youoweme:support-email-revealed";
-const SUPPORT_EMAIL_COPIED_EVENT = "youoweme:support-email-copied";
+const SUPPORT_FORM_SENT_EVENT = "youoweme:support-form-sent";
+const SUPPORT_FORM_ERROR_EVENT = "youoweme:support-form-error";
 const app = initializeApp(FIREBASE_CONFIG);
 const analyticsPromise = initAnalytics();
 const saleBadgeEventsSent = new Set();
@@ -239,12 +239,12 @@ function onSaleChanged(event) {
   trackSaleBadgeVisible();
 }
 
-function onSupportEmailRevealed() {
-  void trackEvent("support_email_revealed");
+function onSupportFormSent() {
+  void trackEvent("support_form_sent");
 }
 
-function onSupportEmailCopied() {
-  void trackEvent("support_email_copied");
+function onSupportFormError() {
+  void trackEvent("support_form_error");
 }
 
 function initEventTracking() {
@@ -254,8 +254,8 @@ function initEventTracking() {
   trackBlogArticleOpen();
   trackSaleBadgeVisible();
   window.addEventListener(SALE_CHANGED_EVENT, onSaleChanged);
-  window.addEventListener(SUPPORT_EMAIL_REVEALED_EVENT, onSupportEmailRevealed);
-  window.addEventListener(SUPPORT_EMAIL_COPIED_EVENT, onSupportEmailCopied);
+  window.addEventListener(SUPPORT_FORM_SENT_EVENT, onSupportFormSent);
+  window.addEventListener(SUPPORT_FORM_ERROR_EVENT, onSupportFormError);
 }
 
 if (document.readyState === "loading") {

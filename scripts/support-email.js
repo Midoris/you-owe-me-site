@@ -1,66 +1,93 @@
 (function () {
   "use strict";
 
-  const root = document.querySelector("[data-support-email]");
+  const ENDPOINT_URL = "https://us-central1-you-owe-me-app.cloudfunctions.net/sendWebsiteSupportMessage";
+  const FORM_SENT_EVENT = "youoweme:support-form-sent";
+  const FORM_ERROR_EVENT = "youoweme:support-form-error";
+
+  const root = document.querySelector("[data-support-form-root]");
   if (!root) return;
 
-  const revealButton = root.querySelector("[data-support-email-reveal]");
-  const actions = root.querySelector("[data-support-email-actions]");
-  const copyButton = root.querySelector("[data-support-email-copy]");
+  const form = root.querySelector("[data-support-form]");
+  const submitButton = root.querySelector("[data-support-submit]");
+  const status = root.querySelector("[data-support-status]");
+  const startedAt = root.querySelector("[data-support-started-at]");
 
-  const XOR_KEY = 37;
-  const ENCODED_EMAIL = [
-    64, 80, 66, 64, 75, 122, 92, 68, 71, 73,
-    74, 75, 86, 78, 76, 101, 92, 68, 77, 74,
-    74, 11, 70, 74, 72,
-  ];
+  if (!form || !submitButton || !status || !startedAt) return;
 
-  let revealedEmail = null;
-  let copyResetTimer = null;
+  startedAt.value = String(Date.now());
 
   function dispatchAnalyticsEvent(name) {
     window.dispatchEvent(new CustomEvent(name));
   }
 
-  function decodeEmail() {
-    if (revealedEmail) return revealedEmail;
-
-    revealedEmail = ENCODED_EMAIL.map(function (value) {
-      return String.fromCharCode(value ^ XOR_KEY);
-    }).join("");
-
-    return revealedEmail;
+  function setStatus(message, state) {
+    status.textContent = message;
+    status.dataset.state = state || "";
   }
 
-  function setCopyButtonLabel(label) {
-    if (!copyButton) return;
-    copyButton.textContent = label;
+  function setSubmitting(isSubmitting) {
+    submitButton.disabled = isSubmitting;
+    submitButton.textContent = isSubmitting ? "Sending" : "Send message";
   }
 
-  function revealEmail() {
-    decodeEmail();
-    actions.hidden = false;
-    revealButton.hidden = true;
-    copyButton.focus();
-    dispatchAnalyticsEvent("youoweme:support-email-revealed");
+  function getPayload() {
+    const data = new FormData(form);
+
+    return {
+      name: String(data.get("name") || ""),
+      email: String(data.get("email") || ""),
+      subject: String(data.get("subject") || ""),
+      message: String(data.get("message") || ""),
+      company: String(data.get("company") || ""),
+      startedAt: Number(data.get("startedAt") || 0),
+      page: window.location.href,
+    };
   }
 
-  async function copyEmail() {
-    const email = decodeEmail();
+  async function sendSupportMessage(event) {
+    event.preventDefault();
+
+    if (!form.reportValidity()) return;
+
+    setSubmitting(true);
+    setStatus("", "");
 
     try {
-      await navigator.clipboard.writeText(email);
-      window.clearTimeout(copyResetTimer);
-      setCopyButtonLabel("Copied");
-      copyResetTimer = window.setTimeout(function () {
-        setCopyButtonLabel("Copy email");
-      }, 1600);
-      dispatchAnalyticsEvent("youoweme:support-email-copied");
+      const response = await fetch(ENDPOINT_URL, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(getPayload()),
+      });
+
+      if (!response.ok) {
+        let errorMessage = "Message could not be sent. Please try again later.";
+
+        try {
+          const body = await response.json();
+          if (body && typeof body.error === "string") {
+            errorMessage = body.error;
+          }
+        } catch (error) {
+          // Keep the generic message when the server does not return JSON.
+        }
+
+        throw new Error(errorMessage);
+      }
+
+      form.reset();
+      startedAt.value = String(Date.now());
+      setStatus("Message sent. Thank you.", "success");
+      dispatchAnalyticsEvent(FORM_SENT_EVENT);
     } catch (error) {
-      window.prompt("Copy support email:", email);
+      setStatus(error && error.message ? error.message : "Message could not be sent. Please try again later.", "error");
+      dispatchAnalyticsEvent(FORM_ERROR_EVENT);
+    } finally {
+      setSubmitting(false);
     }
   }
 
-  revealButton.addEventListener("click", revealEmail);
-  copyButton.addEventListener("click", copyEmail);
+  form.addEventListener("submit", sendSupportMessage);
 })();

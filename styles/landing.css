@@ -416,6 +416,10 @@
         margin: -0.2rem 0 1rem;
       }
 
+      .lt-supportForm {
+        margin: 0 0 1.2rem;
+      }
+
       .lt-supportEmailControls,
       .lt-supportEmailActions {
         display: flex;
@@ -437,6 +441,26 @@
 
       .lt-supportEmailNote {
         opacity: 0.75;
+      }
+
+      .lt-supportEmailNote[data-state="success"] {
+        opacity: 1;
+        color: #4b7f28;
+        font-weight: 600;
+      }
+
+      .lt-supportEmailNote[data-state="error"] {
+        opacity: 1;
+        color: #9d2f2f;
+        font-weight: 600;
+      }
+
+      .lt-supportTrap {
+        position: absolute;
+        left: -10000px;
+        width: 1px;
+        height: 1px;
+        overflow: hidden;
       }
 
       .lt-supportEmail .button[disabled] {
