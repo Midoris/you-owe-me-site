@@ -119,12 +119,14 @@ body.site-nav-page #navPanelToggle:focus-visible {
 @media screen and (max-width: 736px) {
   body.site-nav-page #navPanelToggle {
     gap: 0.35rem;
+    top: calc(env(safe-area-inset-top, 0px) + 0.55rem);
+    right: 0.62rem;
     min-height: 2.2rem;
     padding: 0.5rem 0.82rem;
     font-size: 0.68rem;
   }
 
   body.site-nav-page article.post.featured {
-    padding-top: 4.35rem !important;
+    padding-top: 5.15rem !important;
   }
 }

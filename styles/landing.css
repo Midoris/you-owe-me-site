@@ -1511,3 +1511,251 @@
           padding: 1.75rem 1rem 2.5rem;
         }
       }
+
+      /* ----------------------------------------
+         Conversion polish
+      ---------------------------------------- */
+
+      article.post.featured p:not(.lt-reviewText) {
+        text-align: left;
+        text-align-last: left;
+        text-justify: auto;
+        word-spacing: normal;
+      }
+
+      .lt-heroLead {
+        color: rgba(30, 37, 45, 0.9);
+        font-weight: 450;
+      }
+
+      .lt-heroProofList {
+        list-style: none;
+        margin: 1rem 0 0;
+        padding: 0;
+        display: grid;
+        gap: 0.68rem;
+        max-width: 68ch;
+      }
+
+      .lt-heroProofList li {
+        display: grid;
+        grid-template-columns: auto minmax(0, 1fr);
+        gap: 0.66rem;
+        align-items: start;
+        margin: 0;
+        color: rgba(30, 37, 45, 0.88);
+        line-height: 1.45;
+      }
+
+      .lt-heroProofList li::before {
+        content: "";
+        width: 0.5rem;
+        height: 0.5rem;
+        margin-top: 0.47rem;
+        border-radius: 50%;
+        background: linear-gradient(180deg, rgba(175, 230, 126, 0.95), rgba(126, 191, 78, 0.88));
+        box-shadow: 0 0 0 4px rgba(175, 230, 126, 0.2);
+      }
+
+      .lt-heroProofLine {
+        margin: 1rem 0 0;
+        color: rgba(30, 37, 45, 0.62);
+        font-size: 0.96rem;
+        line-height: 1.5;
+      }
+
+      .lt-heroTrust {
+        color: rgba(30, 37, 45, 0.68);
+      }
+
+      .lt-heroBody > .lt-heroPreview {
+        margin: 1.5rem auto 0;
+      }
+
+      @media (max-width: 736px) {
+        article.post.featured {
+          padding-top: 4.9rem;
+        }
+
+        article.post.featured > * {
+          padding-left: 0;
+          padding-right: 0;
+        }
+
+        .lt-hero {
+          gap: 1.05rem;
+          margin-top: 0;
+        }
+
+        .lt-heroHeader {
+          order: 1;
+          padding-left: 1.2rem;
+          padding-right: 1.2rem;
+        }
+
+        .lt-heroBody {
+          order: 2;
+          padding-left: 1.25rem;
+          padding-right: 1.25rem;
+        }
+
+        .lt-heroVisual {
+          order: 3;
+          width: 100vw;
+          margin-left: calc(50% - 50vw);
+          padding: 0.65rem 0 0.35rem;
+          overflow: hidden;
+        }
+
+        .lt-heroHeader .major {
+          margin-bottom: 0.2rem !important;
+        }
+
+        article.post.featured h1,
+        .lt-heroHeader .major h1 {
+          max-width: 12.5ch;
+          margin-left: auto;
+          margin-right: auto;
+          font-size: clamp(1.75rem, 8.2vw, 2.05rem) !important;
+          line-height: 1.05;
+          text-align: center;
+        }
+
+        .lt-heroHeader .major p {
+          font-size: 0.98rem;
+          line-height: 1.25;
+        }
+
+        .lt-heroLead,
+        .lt-heroBody p.lt-heroLead,
+        .lt-heroBody p.lt-heroLead:not(.lt-reviewText) {
+          margin-top: 0;
+          font-size: 1.08rem;
+          line-height: 1.48;
+          text-align: center;
+          text-align-last: center;
+        }
+
+        .lt-heroProofList {
+          margin-top: 0.95rem;
+          gap: 0.58rem;
+          font-size: 0.94rem;
+        }
+
+        .lt-heroProofLine,
+        .lt-heroBody p.lt-heroProofLine:not(.lt-reviewText) {
+          margin-top: 0.9rem;
+          font-size: 0.9rem;
+          line-height: 1.45;
+          text-align: center;
+          text-align-last: center;
+        }
+
+        .lt-heroCtaStack,
+        article.post.featured .lt-heroBody .lt-ctaRow.lt-heroCtaStack {
+          margin-top: 1rem;
+          gap: 0.45rem;
+        }
+
+        .lt-appStoreBtn {
+          width: min(225px, 82vw);
+          align-self: center;
+        }
+
+        .lt-heroTrust,
+        .lt-heroBody .lt-note.lt-heroTrust {
+          max-width: 19rem;
+          margin: 0.78rem auto 0;
+          font-size: 0.9rem;
+          line-height: 1.45;
+          text-align: center;
+        }
+
+        .lt-heroDetails,
+        .lt-heroBrowse {
+          display: none !important;
+        }
+
+        .lt-heroGallery {
+          justify-content: flex-start;
+          gap: 0.78rem;
+          max-width: none;
+          overflow-x: auto;
+          padding: 0.3rem 1.25rem 1rem;
+          scroll-padding-left: 1.25rem;
+          scroll-snap-type: x mandatory;
+          -webkit-overflow-scrolling: touch;
+        }
+
+        .lt-heroGallery::-webkit-scrollbar {
+          display: none;
+        }
+
+        .lt-heroShot {
+          flex: 0 0 min(47vw, 11.6rem);
+          height: min(102vw, 25.2rem);
+          border-radius: 19px;
+          scroll-snap-align: start;
+          box-shadow:
+            0 14px 28px rgba(15, 23, 42, 0.12),
+            0 1px 0 rgba(255, 255, 255, 0.76) inset;
+        }
+
+        .lt-heroShot img {
+          height: 100%;
+          object-fit: cover;
+          object-position: top center;
+        }
+
+        .lt-heroBody > .lt-heroPreview {
+          display: none;
+        }
+
+        .lt-heroPreviewLink {
+          border-radius: 24px;
+          box-shadow:
+            0 18px 36px rgba(15, 23, 42, 0.16),
+            0 1px 0 rgba(255, 255, 255, 0.68) inset;
+        }
+
+        .lt-reviews {
+          margin-top: 2.1rem;
+        }
+
+        .lt-reviewVideoModule {
+          gap: 1.25rem;
+          margin-bottom: 2rem;
+        }
+
+        .lt-reviewVideoBody {
+          line-height: 1.58;
+        }
+
+        .lt-reviewVideoSupport {
+          margin-top: 0.9rem;
+          font-size: 0.94rem;
+          line-height: 1.45;
+        }
+
+        .lt-reviewVideoMedia {
+          width: min(100%, 18.4rem);
+        }
+
+        .lt-reviewsHeader {
+          gap: 0.4rem;
+          margin-bottom: 0.7rem;
+        }
+
+        .lt-reviewsTitle {
+          line-height: 1.16;
+        }
+
+        .lt-reviewCard {
+          width: 82vw;
+          height: 342px;
+        }
+
+        .lt-section {
+          margin: 2.35rem 0;
+        }
+      }
