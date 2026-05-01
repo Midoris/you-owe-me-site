@@ -61,6 +61,7 @@ function getPageType() {
   if (path.startsWith("/solutions/")) return "solution_page";
   if (path === "/blog/" || path === "/blog/index.html") return "blog_index";
   if (path.startsWith("/blog/")) return "blog_article";
+  if (path === "/contact/" || path === "/contact/index.html") return "contact";
   if (path.startsWith("/redeem/")) return "redeem";
   return "other";
 }

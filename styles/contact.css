@@ -1,0 +1,50 @@
+body.contact-page article.post.featured {
+  width: min(900px, calc(100% - 2rem));
+}
+
+.lt-contactSection {
+  margin-top: clamp(2.2rem, 4vw, 3.4rem);
+}
+
+.lt-contactForm {
+  margin: 0;
+}
+
+.lt-contactActions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.lt-contactStatus {
+  max-width: 56ch;
+  margin: 0.85rem 0 0;
+  color: rgba(33, 41, 49, 0.78);
+  font-size: 0.96rem;
+  font-weight: 600;
+  line-height: 1.55;
+}
+
+.lt-contactStatus[data-state="success"] {
+  color: #4b7f28;
+}
+
+.lt-contactStatus[data-state="error"] {
+  color: #9d2f2f;
+}
+
+.lt-supportTrap {
+  position: absolute;
+  left: -10000px;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+}
+
+@media screen and (max-width: 736px) {
+  .lt-contactActions .button {
+    width: 100%;
+    text-align: center;
+  }
+}
