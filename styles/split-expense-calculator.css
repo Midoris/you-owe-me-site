@@ -517,3 +517,88 @@ body.calculator-page article.post.featured {
     width: 100%;
   }
 }
+
+/* ----------------------------------------
+   Calculator mobile usability polish
+---------------------------------------- */
+
+@media (max-width: 736px) {
+  .calculator-card {
+    padding: 1rem;
+    border-radius: 20px;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+  }
+
+  .calculator-card-header {
+    gap: 1rem;
+  }
+
+  .calculator-card-header p,
+  .content-section p,
+  .faq-list p,
+  .compact-panel p {
+    font-size: 1.02rem;
+    line-height: 1.58;
+  }
+
+  .privacy-note {
+    font-size: 0.96rem !important;
+    line-height: 1.5 !important;
+  }
+
+  .calculator-panel,
+  .results-panel,
+  .expense-card,
+  .faq-list details {
+    border-radius: 18px;
+  }
+
+  .calculator-panel,
+  .results-panel,
+  .expense-card {
+    padding: 0.95rem;
+  }
+
+  .currency-control label,
+  .field label,
+  .included-people legend,
+  .split-type-label {
+    font-size: 0.9rem;
+    line-height: 1.35;
+  }
+
+  .calculator-input,
+  .calculator-select {
+    height: 3rem;
+    font-size: 1.02rem;
+  }
+
+  .small-action,
+  .secondary-action,
+  .remove-action {
+    min-height: 2.8rem;
+    font-size: 0.95rem;
+  }
+
+  .checkbox-pill span {
+    min-height: 2.65rem;
+    font-size: 0.96rem;
+  }
+
+  .result-block h4 {
+    font-size: 1rem;
+  }
+
+  .result-item,
+  .settlement-item,
+  .empty-result {
+    font-size: 0.98rem;
+    line-height: 1.5;
+  }
+
+  .example-table th,
+  .example-table td {
+    padding: 0.72rem;
+    font-size: 0.96rem;
+  }
+}

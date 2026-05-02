@@ -586,3 +586,133 @@ body.tools-page #copyright ul li {
     padding: 1.6rem 1rem 2.2rem;
   }
 }
+
+/* ----------------------------------------
+   Tools mobile premium polish
+---------------------------------------- */
+
+@media (min-width: 737px) and (max-width: 980px) {
+  body.tools-page article.post.featured {
+    font-size: 0.94rem;
+  }
+
+  .lt-toolsHero {
+    border-radius: 22px;
+  }
+
+  .lt-featuredTool,
+  .lt-toolCard,
+  .lt-bridgePanel,
+  .lt-finalCta {
+    border-radius: 18px;
+  }
+}
+
+@media (max-width: 736px) {
+  body.tools-page #main {
+    padding: 0.72rem 0.62rem 0;
+  }
+
+  body.tools-page article.post.featured {
+    width: 100%;
+    padding: 1.05rem 0 2.8rem;
+  }
+
+  .lt-breadcrumb {
+    margin-bottom: 0.95rem;
+    font-size: 0.9rem;
+    line-height: 1.4;
+  }
+
+  body.tools-page article.post.featured h1 {
+    font-size: clamp(1.82rem, 8.2vw, 2.22rem);
+    line-height: 1.06;
+    overflow-wrap: break-word;
+  }
+
+  body.tools-page article.post.featured h2 {
+    font-size: 1.48rem;
+    line-height: 1.18;
+  }
+
+  body.tools-page article.post.featured h3 {
+    font-size: 1.16rem;
+    line-height: 1.24;
+  }
+
+  body.tools-page article.post.featured p,
+  body.tools-page article.post.featured li {
+    font-size: 1.02rem;
+    line-height: 1.6;
+  }
+
+  .lt-toolsHero {
+    padding: 1.15rem;
+    border-radius: 20px;
+    box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+  }
+
+  .lt-eyebrow,
+  .lt-sectionEyebrow {
+    margin-bottom: 0.7rem;
+    font-size: 0.84rem;
+    line-height: 1.3;
+    letter-spacing: 0.06em;
+  }
+
+  .lt-toolsHero .lt-heroBody {
+    margin-top: 0.9rem;
+  }
+
+  .lt-toolsHero .lt-heroSupport,
+  .lt-bestFit,
+  .lt-pageMeta {
+    font-size: 0.96rem;
+    line-height: 1.5;
+  }
+
+  .lt-ctaRow {
+    gap: 0.65rem;
+    margin-top: 1.15rem;
+  }
+
+  .lt-appStoreBtn {
+    width: min(225px, 100%);
+    align-self: flex-start;
+  }
+
+  .lt-primaryCta,
+  .lt-textCta,
+  .lt-cardCta {
+    width: 100%;
+    min-height: 2.95rem;
+    padding: 0.78rem 0.95rem;
+    font-size: 0.98rem;
+  }
+
+  .lt-toolsSection {
+    margin-top: 2rem;
+  }
+
+  .lt-featuredTool,
+  .lt-toolCard,
+  .lt-bridgePanel,
+  .lt-finalCta,
+  .lt-valuePanel {
+    padding: 1rem;
+    border-radius: 18px;
+    box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+  }
+
+  .lt-plannedGrid,
+  .lt-relatedGrid,
+  .lt-bridgeGrid {
+    gap: 0.9rem;
+    margin-top: 1.1rem;
+  }
+
+  .lt-statusChip {
+    font-size: 0.86rem;
+    line-height: 1.25;
+  }
+}

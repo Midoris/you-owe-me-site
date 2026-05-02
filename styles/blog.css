@@ -342,3 +342,178 @@ body.blog-index-page .lt-blogCard p {
     padding: 1.6rem 1rem 2.2rem;
   }
 }
+
+/* ----------------------------------------
+   Blog mobile conversion polish
+---------------------------------------- */
+
+body.blog-page .lt-appStoreBtn {
+  display: inline-block;
+  width: min(250px, 100%);
+  line-height: 0;
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.blog-page .lt-appStoreBtn img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.blog-page .lt-blogIntroCta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: center;
+  gap: clamp(1rem, 2.5vw, 1.8rem);
+  max-width: var(--blog-index-max);
+  margin: 1.55rem auto 0;
+  padding: clamp(1.15rem, 2.6vw, 1.7rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.22), transparent 36%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(242, 247, 252, 0.94));
+  box-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+}
+
+body.blog-page .lt-blogIntroCta h2 {
+  margin: 0.25rem 0 0.55rem !important;
+  font-size: clamp(1.22rem, 1rem + 0.9vw, 1.7rem) !important;
+  line-height: 1.16 !important;
+}
+
+body.blog-page .lt-blogIntroCta p {
+  margin: 0;
+  max-width: 52ch;
+}
+
+body.blog-page .lt-blogIntroEyebrow {
+  color: #355428 !important;
+  font-size: 0.78rem !important;
+  font-weight: 800;
+  letter-spacing: 0.07em;
+  line-height: 1.3 !important;
+  text-transform: uppercase;
+}
+
+body.blog-page .lt-cta {
+  border-radius: 18px !important;
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.2), transparent 38%),
+    rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08) !important;
+}
+
+@media (min-width: 737px) and (max-width: 980px) {
+  body.blog-page article.post.featured {
+    font-size: 0.94rem;
+  }
+
+  body.blog-page article.post.featured > header.major {
+    padding-right: 4.45rem;
+    box-sizing: border-box;
+  }
+
+  body.blog-page #main > .post header.major > h1,
+  body.blog-page article.post.featured h1 {
+    max-width: 12.5ch;
+  }
+
+  body.blog-page .lt-blogIntroCta {
+    grid-template-columns: 1fr;
+    justify-items: start;
+  }
+}
+
+@media (max-width: 736px) {
+  body.blog-page #main {
+    padding: 0.72rem 0.62rem 0;
+  }
+
+  body.blog-page article.post.featured {
+    width: 100%;
+    padding: 1.05rem 0 2.8rem;
+  }
+
+  body.blog-page article.post.featured > header.major {
+    margin-bottom: 1.05rem !important;
+    padding-right: 4.45rem;
+    box-sizing: border-box;
+  }
+
+  body.blog-page #main > .post header.major > h1,
+  body.blog-page article.post.featured h1 {
+    max-width: 12.5ch;
+    font-size: clamp(1.72rem, 8vw, 2.18rem);
+    line-height: 1.07;
+  }
+
+  body.blog-page article.post.featured h2 {
+    margin-top: 1.85rem;
+    font-size: 1.42rem;
+    line-height: 1.22;
+  }
+
+  body.blog-page article.post.featured h3 {
+    font-size: 1.13rem;
+    line-height: 1.28;
+  }
+
+  body.blog-page article.post.featured p,
+  body.blog-page article.post.featured li {
+    font-size: 1.02rem;
+    line-height: 1.62;
+  }
+
+  body.blog-index-page article.post.featured > header.major,
+  body.blog-index-page article.post.featured > header.major > p,
+  body.blog-index-page .lt-lead {
+    text-align: left !important;
+  }
+
+  body.blog-page .lt-blogIntroCta {
+    grid-template-columns: 1fr;
+    justify-items: start;
+    margin-top: 1.25rem;
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  body.blog-page .lt-blogIntroCta h2 {
+    font-size: 1.26rem !important;
+  }
+
+  body.blog-page .lt-blogIntroCta .lt-appStoreBtn,
+  body.blog-page .lt-cta .lt-appStoreBtn {
+    width: min(225px, 100%);
+  }
+
+  body.blog-index-page .lt-blogGrid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    margin-top: 1.1rem;
+  }
+
+  body.blog-index-page .lt-blogCard {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  body.blog-index-page .lt-blogCard h3 {
+    font-size: 1.14rem;
+    line-height: 1.25;
+  }
+
+  body.blog-index-page .lt-cardMeta,
+  body.blog-article-page article.post.featured .lt-pageMeta {
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  body.blog-article-page article.post.featured .lt-cta {
+    padding: 1rem;
+  }
+}
