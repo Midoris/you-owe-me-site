@@ -321,8 +321,13 @@
       }
 
       .lt-heroPreview {
-        width: min(100%, clamp(13.5rem, 22vw, 15.5rem));
+        width: min(100%, clamp(12.75rem, 18vw, 14.75rem));
+        margin: clamp(1.15rem, 2.2vw, 1.55rem) auto 0.85rem;
         align-self: center;
+      }
+
+      .lt-heroPreview + .lt-heroCtaStack {
+        margin-top: 0.85rem;
       }
 
       .lt-heroPreviewLink {
@@ -338,7 +343,8 @@
           radial-gradient(140% 120% at 50% 0%, rgba(255, 255, 255, 0.18), rgba(255, 255, 255, 0) 44%),
           #0f172a;
         box-shadow:
-          0 24px 48px rgba(15, 23, 42, 0.18),
+          0 26px 52px rgba(15, 23, 42, 0.2),
+          0 10px 28px rgba(174, 229, 123, 0.14),
           0 1px 0 rgba(255, 255, 255, 0.7) inset;
         transition: transform 0.2s ease, box-shadow 0.2s ease;
       }
@@ -356,7 +362,8 @@
         .lt-heroPreviewLink:hover {
           transform: translateY(-2px);
           box-shadow:
-            0 28px 56px rgba(15, 23, 42, 0.22),
+            0 30px 60px rgba(15, 23, 42, 0.23),
+            0 12px 32px rgba(174, 229, 123, 0.18),
             0 1px 0 rgba(255, 255, 255, 0.72) inset;
         }
       }
