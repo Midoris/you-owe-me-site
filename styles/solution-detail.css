@@ -154,19 +154,19 @@ body.solution-detail-page .lt-faqGrid {
 }
 
 body.solution-detail-page .lt-cardGrid--audience {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 body.solution-detail-page .lt-cardGrid--problems {
-  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 body.solution-detail-page .lt-cardGrid--proof {
-  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 body.solution-detail-page .lt-stepGrid {
-  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 body.solution-detail-page .lt-compareGrid {
@@ -174,7 +174,7 @@ body.solution-detail-page .lt-compareGrid {
 }
 
 body.solution-detail-page .lt-relatedGrid {
-  grid-template-columns: repeat(auto-fit, minmax(245px, 1fr));
+  grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
 body.solution-detail-page .lt-faqGrid {
@@ -596,6 +596,220 @@ body.family-reimbursement-page .family-faq-item p {
   color: rgba(24, 33, 43, 0.74);
 }
 
+body.solution-detail-page .solution-hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+body.solution-detail-page .solution-highlight-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  min-width: 0;
+  padding: 0.42rem 0.64rem;
+  border-radius: 999px;
+  background: rgba(248, 250, 246, 0.94);
+  color: rgba(24, 33, 43, 0.86);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.05);
+}
+
+body.solution-detail-page .solution-highlight-chip::before,
+body.solution-detail-page .solution-category-card li::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.36);
+  color: #274218;
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.solution-detail-page .solution-workflow-grid,
+body.solution-detail-page .solution-category-grid,
+body.solution-detail-page .solution-step-strip {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.6rem;
+}
+
+body.solution-detail-page .solution-workflow-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.solution-detail-page .solution-workflow-card,
+body.solution-detail-page .solution-category-card,
+body.solution-detail-page .solution-faq-item {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.solution-detail-page .solution-workflow-card {
+  position: relative;
+  min-height: 0;
+  padding: 1.4rem 1.35rem 1.28rem 4rem;
+}
+
+body.solution-detail-page .solution-workflow-card h3,
+body.solution-detail-page .solution-category-card h3 {
+  margin-top: 0;
+}
+
+body.solution-detail-page .solution-workflow-card p {
+  max-width: 72ch;
+  margin: 0;
+}
+
+body.solution-detail-page .solution-category-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.solution-detail-page .solution-category-card {
+  padding: 1.35rem;
+}
+
+body.solution-detail-page .solution-category-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.solution-detail-page .solution-category-card li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  margin: 0;
+  padding: 0.42rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.16);
+  color: rgba(24, 33, 43, 0.8);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+body.solution-detail-page .solution-category-card li::before {
+  width: 1.1rem;
+  height: 1.1rem;
+  background: rgba(255, 255, 255, 0.74);
+  color: #355428;
+  font-size: 0.68rem;
+}
+
+body.solution-detail-page .solution-step-strip {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.solution-detail-page .solution-step-item {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.75rem;
+  border-radius: 16px;
+  background: rgba(248, 250, 246, 0.88);
+}
+
+body.solution-detail-page .solution-step-item span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.3);
+  color: #274218;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+body.solution-detail-page .solution-step-item p {
+  margin: 0;
+  color: rgba(24, 33, 43, 0.82);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+body.solution-detail-page .solution-faq-accordion {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 980px;
+  margin: 1.6rem auto 0;
+}
+
+body.solution-detail-page .solution-faq-item {
+  overflow: hidden;
+}
+
+body.solution-detail-page .solution-faq-item summary {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  padding: 1.1rem 3.15rem 1.1rem 1.35rem;
+  color: rgba(24, 33, 43, 0.92);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+body.solution-detail-page .solution-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+body.solution-detail-page .solution-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.25);
+  color: #274218;
+  font-weight: 900;
+  transform: translateY(-50%);
+}
+
+body.solution-detail-page .solution-faq-item[open] summary::after {
+  content: "-";
+}
+
+body.solution-detail-page .solution-faq-item p {
+  max-width: 76ch;
+  margin: 0;
+  padding: 0 1.35rem 1.2rem;
+  color: rgba(24, 33, 43, 0.74);
+}
+
 @media (max-width: 980px) {
   body.solution-detail-page article.post.featured {
     width: calc(100% - 1.5rem);
@@ -622,6 +836,16 @@ body.family-reimbursement-page .family-faq-item p {
 
   body.solution-detail-page .lt-detailSection {
     margin-top: 2.7rem;
+  }
+
+  body.solution-detail-page .lt-cardGrid--audience,
+  body.solution-detail-page .lt-cardGrid--problems,
+  body.solution-detail-page .lt-cardGrid--proof,
+  body.solution-detail-page .lt-stepGrid,
+  body.solution-detail-page .lt-relatedGrid,
+  body.solution-detail-page .solution-workflow-grid,
+  body.solution-detail-page .solution-step-strip {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   body.family-reimbursement-page .lt-cardGrid--audience,
@@ -702,6 +926,17 @@ body.family-reimbursement-page .family-faq-item p {
 
   body.solution-detail-page .lt-detailSection {
     margin-top: 2.35rem;
+  }
+
+  body.solution-detail-page .lt-cardGrid--audience,
+  body.solution-detail-page .lt-cardGrid--problems,
+  body.solution-detail-page .lt-cardGrid--proof,
+  body.solution-detail-page .lt-stepGrid,
+  body.solution-detail-page .lt-relatedGrid,
+  body.solution-detail-page .solution-workflow-grid,
+  body.solution-detail-page .solution-category-grid,
+  body.solution-detail-page .solution-step-strip {
+    grid-template-columns: 1fr;
   }
 
   body.family-reimbursement-page .lt-cardGrid--audience,
@@ -850,6 +1085,47 @@ body.family-reimbursement-page .family-faq-item p {
 
   body.solution-detail-page .lt-detailVisual img {
     border-radius: 18px;
+  }
+
+  body.solution-detail-page .solution-hero-highlights {
+    gap: 0.55rem;
+    padding: 0.8rem;
+    border-radius: 18px;
+  }
+
+  body.solution-detail-page .solution-highlight-chip {
+    width: 100%;
+    padding: 0.5rem 0.62rem;
+  }
+
+  body.solution-detail-page .solution-workflow-card {
+    padding: 3.15rem 1rem 1rem;
+    border-radius: 18px;
+  }
+
+  body.solution-detail-page .solution-category-card,
+  body.solution-detail-page .solution-step-strip,
+  body.solution-detail-page .solution-faq-item {
+    border-radius: 18px;
+  }
+
+  body.solution-detail-page .solution-category-card,
+  body.solution-detail-page .solution-step-strip {
+    padding: 1rem;
+  }
+
+  body.solution-detail-page .solution-step-item p,
+  body.solution-detail-page .solution-category-card li {
+    font-size: 0.96rem;
+    line-height: 1.45;
+  }
+
+  body.solution-detail-page .solution-faq-item summary {
+    padding: 1rem 3rem 1rem 1rem;
+  }
+
+  body.solution-detail-page .solution-faq-item p {
+    padding: 0 1rem 1rem;
   }
 
   body.family-reimbursement-page .family-hero-highlights {
