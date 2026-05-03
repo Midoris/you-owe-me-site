@@ -69,6 +69,10 @@ body.solution-detail-page .lt-detailHeroVisual {
   line-height: 0;
 }
 
+body.solution-detail-page .lt-detailHeroVisual--wide {
+  width: min(100%, 31rem);
+}
+
 body.solution-detail-page .lt-detailHeroVisual picture,
 body.solution-detail-page .lt-detailVisual picture {
   display: block;
@@ -101,6 +105,19 @@ body.solution-detail-page .lt-detailHero .lt-trustNote {
   margin-top: 1.2rem;
   color: rgba(24, 33, 43, 0.68);
   font-size: 0.94rem;
+}
+
+body.solution-detail-page .lt-heroList {
+  margin-top: 1.25rem;
+}
+
+body.solution-detail-page .lt-definitionBlock {
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.18), rgba(255, 255, 255, 0.96));
+}
+
+body.solution-detail-page .lt-definitionBlock h2 {
+  margin-top: 0;
 }
 
 body.solution-detail-page .lt-detailSection {
@@ -304,6 +321,10 @@ body.solution-detail-page .lt-textCta--subtle:hover {
     margin-top: 0.4rem;
   }
 
+  body.solution-detail-page .lt-detailHeroVisual--wide {
+    width: 100%;
+  }
+
   body.solution-detail-page .lt-detailVisual,
   body.solution-detail-page .lt-detailVisual--compare {
     width: 100%;
@@ -414,6 +435,10 @@ body.solution-detail-page .lt-textCta--subtle:hover {
 
   body.solution-detail-page .lt-detailHeroVisual {
     width: min(100%, 12rem);
+  }
+
+  body.solution-detail-page .lt-detailHeroVisual--wide {
+    width: 100%;
   }
 
   body.solution-detail-page .lt-detailHero .lt-trustNote,
