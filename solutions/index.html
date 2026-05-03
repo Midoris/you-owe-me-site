@@ -57,7 +57,7 @@
     <link rel="stylesheet" href="../assets/css/main.css" />
     <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="../styles/site-nav.css" />
-    <link rel="stylesheet" href="../styles/solutions.css" />
+    <link rel="stylesheet" href="../styles/solutions.css?v=hub-layout-1" />
   </head>
 
   <body class="is-preload solutions-page solutions-index-page site-nav-page">
@@ -88,6 +88,13 @@
             <p class="lt-heroSupport">
               Built for real-life balances between friends, partners, family members, roommates, and everyday shared spending.
             </p>
+            <div class="solutions-hub-hero-highlights" aria-label="Solution categories">
+              <span class="solutions-hub-highlight">Shared expenses</span>
+              <span class="solutions-hub-highlight">Money owed</span>
+              <span class="solutions-hub-highlight">Couples</span>
+              <span class="solutions-hub-highlight">Family reimbursements</span>
+              <span class="solutions-hub-highlight">Tools and calculators</span>
+            </div>
             <div class="lt-ctaRow">
               <a
                 href="https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en"
@@ -102,80 +109,171 @@
           </section>
 
           <section class="lt-solutionsSection">
-            <h2>Browse by situation</h2>
+            <h2>Primary solution pages</h2>
             <p>
-              Start with the use case that feels closest to your real life. Some situations already have dedicated solution pages. Others still point to the best current guide on the site.
+              Start with the commercial solution closest to your situation. Each page explains the use case, the tracking pattern, and how YouOweMe keeps the balance clear.
             </p>
 
-            <div class="lt-solutionsGrid">
-              <article class="lt-solutionCard">
-                <h3>Shared expenses</h3>
-                <p>For people who split costs over time and want a clear running balance instead of constant recalculation.</p>
-                <p class="lt-bestFit">Best for: friends, everyday shared spending, trips, and mixed recurring costs.</p>
+            <div class="solutions-hub-grid solutions-hub-grid--primary">
+              <article class="solutions-hub-card solutions-hub-card--primary">
+                <h3>Shared Expense Tracker</h3>
+                <p>For ongoing shared costs, repeated expenses, repayments, and one clear running balance.</p>
+                <div class="solutions-hub-chips" aria-label="Best for shared expenses">
+                  <span>Friends</span>
+                  <span>Trips</span>
+                  <span>Households</span>
+                  <span>Recurring costs</span>
+                </div>
                 <span class="lt-statusChip">Solution page available now</span>
                 <a href="/solutions/shared-expense-tracker/" class="lt-cardCta">Open shared expense solution</a>
-                <p class="lt-cardSupport"><a href="/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/">Need the deeper guide instead? Read the full shared-expenses article.</a></p>
+                <p class="lt-cardSupport"><a href="/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/">Need the deeper guide instead? Read the shared expense guide.</a></p>
               </article>
 
-              <article class="lt-solutionCard">
-                <h3>Money owed and repayments</h3>
-                <p>For people dealing with balances, follow-ups, repayment updates, and the awkwardness that comes with asking clearly.</p>
-                <p class="lt-bestFit">Best for: personal IOUs, overdue repayments, partial repayments, and follow-up messages.</p>
+              <article class="solutions-hub-card solutions-hub-card--primary">
+                <h3>App to Track Money Owed</h3>
+                <p>For balances, follow-ups, repayment updates, partial repayments, and money that needs a clear record.</p>
+                <div class="solutions-hub-chips" aria-label="Best for money owed">
+                  <span>IOUs</span>
+                  <span>Overdue balances</span>
+                  <span>Partial repayments</span>
+                  <span>Follow-ups</span>
+                </div>
                 <span class="lt-statusChip">Solution page available now</span>
                 <a href="/solutions/app-to-track-money-owed/" class="lt-cardCta">Open money-owed solution</a>
                 <p class="lt-cardSupport"><a href="/blog/how-to-handle-awkward-money-conversations/">Need the communication guide instead? Read the money conversation guide.</a></p>
               </article>
 
-              <article class="lt-solutionCard">
-                <h3>Couples</h3>
-                <p>For partners trying to keep shared spending clear without turning money into tension or repeated small arguments.</p>
-                <p class="lt-bestFit">Best for: groceries, rent, travel, uneven day-to-day purchases, and recurring shared costs.</p>
+              <article class="solutions-hub-card solutions-hub-card--primary">
+                <h3>Expense Tracker for Couples</h3>
+                <p>For partners who share everyday spending and want balances to stay clear without making money feel heavy.</p>
+                <div class="solutions-hub-chips" aria-label="Best for couples">
+                  <span>Partners</span>
+                  <span>Groceries</span>
+                  <span>Rent and bills</span>
+                  <span>Travel</span>
+                </div>
                 <span class="lt-statusChip">Solution page available now</span>
                 <a href="/solutions/expense-tracker-for-couples/" class="lt-cardCta">Open couples solution</a>
                 <p class="lt-cardSupport"><a href="/blog/how-to-split-expenses-in-a-relationship-without-fighting/">Need the deeper guide instead? Read the relationship article.</a></p>
               </article>
 
-              <article class="lt-solutionCard">
-                <h3>Family reimbursements</h3>
-                <p>For families managing purchases, recurring charges, caregiving-related spending, and repayments that need calm structure.</p>
-                <p class="lt-bestFit">Best for: parents, adult children, shared bills, and money tracked on someone else’s behalf.</p>
+              <article class="solutions-hub-card solutions-hub-card--primary">
+                <h3>Family Reimbursement Tracker</h3>
+                <p>Track parent-related bills, purchases made for relatives, recurring family charges, sibling reimbursements, and partial repayments.</p>
+                <div class="solutions-hub-chips" aria-label="Best for family reimbursements">
+                  <span>Parents</span>
+                  <span>Adult children</span>
+                  <span>Siblings</span>
+                  <span>Recurring bills</span>
+                </div>
                 <span class="lt-statusChip">Solution page available now</span>
                 <a href="/solutions/family-reimbursement-tracker/" class="lt-cardCta">Open family reimbursement solution</a>
-                <p class="lt-cardSupport"><a href="/blog/how-to-keep-track-of-money-between-family-members/">Need the deeper guide instead? Read the family money guide.</a></p>
-              </article>
-
-              <article class="lt-solutionCard">
-                <h3>Roommates</h3>
-                <p>For shared rent, utilities, groceries, and household costs that need a simple system without constant settling up.</p>
-                <p class="lt-bestFit">Best for: rent, utility bills, household purchases, and recurring shared expenses.</p>
-                <span class="lt-statusChip">Best current starting point</span>
-                <a href="/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/" class="lt-cardCta">Use the shared-expenses guide</a>
+                <p class="lt-cardSupport"><a href="/blog/how-to-keep-track-of-money-between-family-members/">Read the family money guide.</a></p>
               </article>
             </div>
           </section>
 
           <section class="lt-solutionsSection">
-            <h2>Start from the situation you are in</h2>
-            <p>If you already know the kind of money situation you are dealing with, this section helps you begin in a more direct way than a general feature page.</p>
-            <p>Some situations already have dedicated solution pages. Others still point to the strongest current guide, so you can start with something useful right away and move to the product when it fits.</p>
+            <h2>Which solution should you start with?</h2>
+            <div class="solutions-decision-map">
+              <div class="solutions-decision-row solutions-decision-row--head">
+                <div>If your situation is...</div>
+                <div>Start with...</div>
+              </div>
+              <div class="solutions-decision-row">
+                <div><span>If your situation is</span>You mainly split repeated costs with friends, roommates, or a group.</div>
+                <div><span>Start with</span><a href="/solutions/shared-expense-tracker/">Shared Expense Tracker</a></div>
+              </div>
+              <div class="solutions-decision-row">
+                <div><span>If your situation is</span>You share rent, utilities, groceries, or household costs with roommates.</div>
+                <div><span>Start with</span><a href="/solutions/shared-expense-tracker/">Shared Expense Tracker</a></div>
+              </div>
+              <div class="solutions-decision-row">
+                <div><span>If your situation is</span>Someone owes you, you owe someone, or the balance needs follow-up.</div>
+                <div><span>Start with</span><a href="/solutions/app-to-track-money-owed/">App to Track Money Owed</a></div>
+              </div>
+              <div class="solutions-decision-row">
+                <div><span>If your situation is</span>You and your partner share everyday spending.</div>
+                <div><span>Start with</span><a href="/solutions/expense-tracker-for-couples/">Expense Tracker for Couples</a></div>
+              </div>
+              <div class="solutions-decision-row">
+                <div><span>If your situation is</span>You pay for parents, siblings, or family members and reconcile later.</div>
+                <div><span>Start with</span><a href="/solutions/family-reimbursement-tracker/">Family Reimbursement Tracker</a></div>
+              </div>
+              <div class="solutions-decision-row">
+                <div><span>If your situation is</span>You only need a quick one-time split.</div>
+                <div><span>Start with</span><a href="/tools/split-expense-calculator/">Split Expense Calculator</a></div>
+              </div>
+            </div>
           </section>
 
           <section class="lt-solutionsSection">
-            <div class="lt-valuePanel">
-              <h2>Need a quick calculation or template?</h2>
-              <p>Use the Tools section for practical one-time tasks like splitting a bill, figuring out who owes whom, or organizing shared money before it becomes confusing.</p>
-              <div class="lt-ctaRow">
-                <a href="/tools/" class="lt-cardCta">Explore tools</a>
-                <a href="/tools/split-expense-calculator/" class="lt-cardCta">Use the Split Expense Calculator</a>
-              </div>
+            <h2>Browse solutions by situation</h2>
+            <p>Use these grouped paths when you know the situation, but not the exact page name yet.</p>
+            <div class="solutions-hub-grid solutions-hub-grid--situations">
+              <article class="solutions-hub-card">
+                <h3>Everyday shared money</h3>
+                <ul class="solutions-hub-list">
+                  <li>Shared expenses</li>
+                  <li>Group trips</li>
+                  <li>Meals and groceries</li>
+                  <li>Recurring costs</li>
+                </ul>
+                <a href="/solutions/shared-expense-tracker/" class="lt-cardCta">Open shared expense tracker</a>
+              </article>
+
+              <article class="solutions-hub-card">
+                <h3>Roommates and household costs</h3>
+                <ul class="solutions-hub-list">
+                  <li>Rent and utilities</li>
+                  <li>Groceries</li>
+                  <li>Household supplies</li>
+                  <li>Recurring shared expenses</li>
+                </ul>
+                <span class="lt-statusChip">Shared-expense starting point</span>
+                <a href="/solutions/shared-expense-tracker/" class="lt-cardCta">Use shared expense tracker</a>
+              </article>
+
+              <article class="solutions-hub-card">
+                <h3>Money owed and follow-ups</h3>
+                <ul class="solutions-hub-list">
+                  <li>IOUs</li>
+                  <li>Partial repayments</li>
+                  <li>Overdue balances</li>
+                  <li>Awkward follow-ups</li>
+                </ul>
+                <a href="/solutions/app-to-track-money-owed/" class="lt-cardCta">Open money-owed tracker</a>
+              </article>
+
+              <article class="solutions-hub-card">
+                <h3>Couples and households</h3>
+                <ul class="solutions-hub-list">
+                  <li>Partner spending</li>
+                  <li>Subscriptions</li>
+                  <li>Rent and utilities</li>
+                  <li>Balance clarity</li>
+                </ul>
+                <a href="/solutions/expense-tracker-for-couples/" class="lt-cardCta">Open couples tracker</a>
+              </article>
+
+              <article class="solutions-hub-card">
+                <h3>Family reimbursements</h3>
+                <ul class="solutions-hub-list">
+                  <li>Parent-related bills</li>
+                  <li>Sibling reimbursements</li>
+                  <li>Recurring family charges</li>
+                  <li>Purchases made for relatives</li>
+                </ul>
+                <a href="/solutions/family-reimbursement-tracker/" class="lt-cardCta">Open family reimbursement tracker</a>
+              </article>
             </div>
           </section>
 
           <section class="lt-solutionsSection">
             <h2>What YouOweMe helps with across every scenario</h2>
             <p>No matter which situation you start from, the core goal is the same: keep money clear before it turns into confusion, silence, or friction.</p>
-            <div class="lt-valuePanel">
-              <ul class="lt-valueList">
+            <div class="solutions-hub-card solutions-hub-card--wide">
+              <ul class="solutions-hub-list solutions-hub-list--columns">
                 <li>Clear running balances that show who owes whom</li>
                 <li>Shared expense tracking without constant reconciliation</li>
                 <li>Reminders and recurring entries for ongoing costs</li>
@@ -187,50 +285,45 @@
           </section>
 
           <section class="lt-solutionsSection">
-            <h2>Start with the strongest current guides</h2>
-            <p>If you are still figuring out which situation fits best, these are the best places to begin.</p>
+            <h2>Helpful guides and tools</h2>
+            <p>These resources support the main solution pages. Use them for quick calculations, timing, wording, and deeper frameworks.</p>
 
-            <div class="lt-guideGrid">
-              <article class="lt-guideCard">
+            <div class="solutions-resource-grid">
+              <article class="solutions-resource-card">
+                <h3><a href="/tools/split-expense-calculator/">Split Expense Calculator</a></h3>
+                <p>For quick one-time splits before you need a running balance.</p>
+              </article>
+
+              <article class="solutions-resource-card">
+                <h3><a href="/blog/how-to-keep-track-of-money-between-family-members/">Family Money Guide</a></h3>
+                <p>A deeper framework for keeping family money clear without damaging the relationship.</p>
+              </article>
+
+              <article class="solutions-resource-card">
                 <h3><a href="/blog/when-to-ask-for-money-back-or-send-a-repayment-update/">When to Ask for Money Back or Send a Repayment Update</a></h3>
-                <p>Guide: When to Ask for Money Back or Send a Repayment Update</p>
+                <p>For timing follow-ups and repayment updates without making money feel heavier.</p>
               </article>
 
-              <article class="lt-guideCard">
-                <h3><a href="/blog/how-to-handle-awkward-money-conversations/">How to Handle Awkward Money Conversations</a></h3>
-                <p>A practical starting point for follow-ups, repayment updates, loan requests, and the part most people avoid: what to say.</p>
-              </article>
-
-              <article class="lt-guideCard">
+              <article class="solutions-resource-card">
                 <h3><a href="/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/">How to Ask Someone to Pay You Back Without Being Rude</a></h3>
-                <p>Useful when the balance is clear but the message still feels hard to send.</p>
+                <p>Useful when the balance is clear but the wording still feels hard to send.</p>
               </article>
 
-              <article class="lt-guideCard">
-                <h3><a href="/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/">How to Track Shared Expenses Without Constantly Reconciling Every Transaction</a></h3>
-                <p>The best starting point for people tired of re-counting every shared purchase and trying to remember who paid what.</p>
+              <article class="solutions-resource-card">
+                <h3><a href="/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/">Shared Expense Guide</a></h3>
+                <p>For people tired of re-counting every shared purchase and trying to remember who paid what.</p>
               </article>
 
-              <article class="lt-guideCard">
-                <h3><a href="/blog/how-to-split-expenses-in-a-relationship-without-fighting/">How to Split Expenses in a Relationship Without Fighting</a></h3>
-                <p>For couples who want a calmer system for shared spending that protects closeness instead of creating friction.</p>
-              </article>
-
-              <article class="lt-guideCard">
-                <h3><a href="/solutions/family-reimbursement-tracker/">Family Reimbursement Tracker</a></h3>
-                <p>The commercial destination for tracking bills, purchases, recurring charges, partial repayments, and balances between family members.</p>
-              </article>
-
-              <article class="lt-guideCard">
-                <h3><a href="/blog/how-to-keep-track-of-money-between-family-members/">How to Keep Track of Money Between Family Members</a></h3>
-                <p>For families handling reimbursements, shared charges, caregiving costs, and recurring money between relatives.</p>
+              <article class="solutions-resource-card">
+                <h3><a href="/tools/">Tools Hub</a></h3>
+                <p>For practical calculators and one-time money tasks before a situation becomes ongoing.</p>
               </article>
             </div>
           </section>
 
           <section class="lt-finalCta">
-            <h2>Start with clarity, then build the right system</h2>
-            <p>If you already know this is your kind of problem, download YouOweMe and start keeping balances clear. If you are still working through the situation, start with the guide that fits your life best and come back when you are ready.</p>
+            <h2>Not sure where to start?</h2>
+            <p>Start with the situation closest to yours. YouOweMe keeps balances, repayments, reminders, recurring entries, and money conversations clear as the relationship changes.</p>
             <div class="lt-ctaRow">
               <a
                 href="https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en"
@@ -240,9 +333,8 @@
               >
                 <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download on the App Store" />
               </a>
-              <a href="/blog/" class="lt-textCta" data-track-location="solutions_final_secondary_cta">Read the blog</a>
+              <a href="/tools/split-expense-calculator/" class="lt-textCta" data-track-location="solutions_final_secondary_cta">Try the split expense calculator</a>
             </div>
-            <p class="lt-helperNote">More dedicated solution pages are coming next.</p>
           </section>
           <p class="lt-pageMeta">Updated <time datetime="2026-04-23">April 23, 2026</time></p>
         </article>
