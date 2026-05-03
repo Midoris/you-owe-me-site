@@ -306,6 +306,296 @@ body.solution-detail-page .lt-textCta--subtle:hover {
   box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
 }
 
+body.family-reimbursement-page .lt-cardGrid--audience,
+body.family-reimbursement-page .lt-cardGrid--problems,
+body.family-reimbursement-page .lt-cardGrid--proof,
+body.family-reimbursement-page .lt-relatedGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.family-reimbursement-page .lt-detailSection > p {
+  max-width: 76ch;
+}
+
+body.family-reimbursement-page #main > .post .lt-detailHero header.major > h1 {
+  font-size: clamp(3rem, 5.6vw, 4rem);
+  line-height: 1.08;
+}
+
+body.family-reimbursement-page .family-hero-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+  backdrop-filter: blur(14px);
+}
+
+body.family-reimbursement-page .family-hero-highlight {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.48rem;
+  min-width: 0;
+  padding: 0.42rem 0.64rem;
+  border-radius: 999px;
+  background: rgba(248, 250, 246, 0.94);
+  color: rgba(24, 33, 43, 0.86);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.3;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.05);
+}
+
+body.family-reimbursement-page .family-check {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  flex: 0 0 auto;
+  width: 1.35rem;
+  height: 1.35rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.36);
+  color: #274218;
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.family-reimbursement-page .family-workflow-grid,
+body.family-reimbursement-page .family-tracking-grid,
+body.family-reimbursement-page .family-reconciliation-steps {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.6rem;
+}
+
+body.family-reimbursement-page .family-workflow-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.family-reimbursement-page .family-workflow-card,
+body.family-reimbursement-page .family-tracking-card,
+body.family-reimbursement-page .family-feature-map,
+body.family-reimbursement-page .family-faq-item {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.family-reimbursement-page .family-workflow-card {
+  position: relative;
+  min-height: 0;
+  padding: 1.4rem 1.35rem 1.28rem 4rem;
+  border-radius: 20px;
+}
+
+body.family-reimbursement-page .family-workflow-card--wide {
+  grid-column: span 3;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.18), rgba(255, 255, 255, 0.94));
+}
+
+body.family-reimbursement-page .family-workflow-card h3,
+body.family-reimbursement-page .family-tracking-card h3 {
+  margin-top: 0;
+}
+
+body.family-reimbursement-page .family-workflow-card p,
+body.family-reimbursement-page .family-tracking-card p {
+  margin: 0;
+}
+
+body.family-reimbursement-page .family-workflow-card p {
+  max-width: 72ch;
+}
+
+body.family-reimbursement-page .family-tracking-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.family-reimbursement-page .family-tracking-card {
+  padding: 1.35rem;
+  border-radius: 20px;
+}
+
+body.family-reimbursement-page .family-tracking-card ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.family-reimbursement-page .family-tracking-card li {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.42rem;
+  margin: 0;
+  padding: 0.42rem 0.62rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.16);
+  color: rgba(24, 33, 43, 0.8);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+body.family-reimbursement-page .family-tracking-card li::before {
+  content: "✓";
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  color: #355428;
+  font-size: 0.68rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.family-reimbursement-page .family-reconciliation-steps {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.family-reimbursement-page .family-reconciliation-step {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 0.55rem;
+  align-items: center;
+  min-width: 0;
+  padding: 0.75rem;
+  border-radius: 16px;
+  background: rgba(248, 250, 246, 0.88);
+}
+
+body.family-reimbursement-page .family-reconciliation-step span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.3);
+  color: #274218;
+  font-size: 0.82rem;
+  font-weight: 900;
+}
+
+body.family-reimbursement-page .family-reconciliation-step p {
+  margin: 0;
+  color: rgba(24, 33, 43, 0.82);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.35;
+}
+
+body.family-reimbursement-page .family-feature-map {
+  max-width: 960px;
+  margin: 1.6rem auto 0;
+  overflow: hidden;
+  border-radius: 24px;
+}
+
+body.family-reimbursement-page .family-feature-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 1.5rem;
+  align-items: center;
+  padding: 1rem 1.35rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+}
+
+body.family-reimbursement-page .family-feature-row:last-child {
+  border-bottom: 0;
+}
+
+body.family-reimbursement-page .family-feature-row--head {
+  background: rgba(175, 230, 126, 0.14);
+  color: rgba(24, 33, 43, 0.68);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.family-reimbursement-page .family-feature-row:not(.family-feature-row--head) div:first-child {
+  color: rgba(24, 33, 43, 0.72);
+}
+
+body.family-reimbursement-page .family-feature-row:not(.family-feature-row--head) div:last-child {
+  color: #274218;
+  font-weight: 800;
+}
+
+body.family-reimbursement-page .family-feature-row span {
+  display: none;
+}
+
+body.family-reimbursement-page .family-faq-accordion {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 980px;
+  margin: 1.6rem auto 0;
+}
+
+body.family-reimbursement-page .family-faq-item {
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+body.family-reimbursement-page .family-faq-item summary {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  padding: 1.1rem 3.15rem 1.1rem 1.35rem;
+  color: rgba(24, 33, 43, 0.92);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+body.family-reimbursement-page .family-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+body.family-reimbursement-page .family-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.25);
+  color: #274218;
+  font-weight: 900;
+  transform: translateY(-50%);
+}
+
+body.family-reimbursement-page .family-faq-item[open] summary::after {
+  content: "-";
+}
+
+body.family-reimbursement-page .family-faq-item p {
+  max-width: 76ch;
+  margin: 0;
+  padding: 0 1.35rem 1.2rem;
+  color: rgba(24, 33, 43, 0.74);
+}
+
 @media (max-width: 980px) {
   body.solution-detail-page article.post.featured {
     width: calc(100% - 1.5rem);
@@ -333,9 +623,52 @@ body.solution-detail-page .lt-textCta--subtle:hover {
   body.solution-detail-page .lt-detailSection {
     margin-top: 2.7rem;
   }
+
+  body.family-reimbursement-page .lt-cardGrid--audience,
+  body.family-reimbursement-page .lt-cardGrid--problems,
+  body.family-reimbursement-page .lt-cardGrid--proof,
+  body.family-reimbursement-page .lt-relatedGrid,
+  body.family-reimbursement-page .family-workflow-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.family-reimbursement-page .family-workflow-card--wide {
+    grid-column: span 2;
+  }
+
+  body.family-reimbursement-page .family-reconciliation-steps {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.family-reimbursement-page #main > .post .lt-detailHero header.major > h1 {
+    font-size: clamp(2.2rem, 6.8vw, 3rem);
+  }
 }
 
 @media (max-width: 736px) {
+  body.family-reimbursement-page #main > .post.featured {
+    padding: 0.75rem 0.6rem 2rem;
+  }
+
+  body.family-reimbursement-page #main > .post .lt-detailHero header.major > h1 {
+    font-size: clamp(1.72rem, 7.2vw, 2.05rem);
+    line-height: 1.1;
+  }
+
+  body.family-reimbursement-page .lt-detailHero,
+  body.family-reimbursement-page .lt-detailHeroContent,
+  body.family-reimbursement-page .lt-detailSection {
+    max-width: 100%;
+  }
+
+  body.family-reimbursement-page .lt-detailHero p,
+  body.family-reimbursement-page .lt-detailSection p,
+  body.family-reimbursement-page .family-workflow-card p,
+  body.family-reimbursement-page .family-faq-item p {
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
   body.solution-detail-page article.post.featured {
     width: calc(100% - 0.6rem);
   }
@@ -369,6 +702,40 @@ body.solution-detail-page .lt-textCta--subtle:hover {
 
   body.solution-detail-page .lt-detailSection {
     margin-top: 2.35rem;
+  }
+
+  body.family-reimbursement-page .lt-cardGrid--audience,
+  body.family-reimbursement-page .lt-cardGrid--problems,
+  body.family-reimbursement-page .lt-cardGrid--proof,
+  body.family-reimbursement-page .lt-relatedGrid,
+  body.family-reimbursement-page .family-workflow-grid,
+  body.family-reimbursement-page .family-tracking-grid,
+  body.family-reimbursement-page .family-reconciliation-steps {
+    grid-template-columns: 1fr;
+  }
+
+  body.family-reimbursement-page .family-workflow-card--wide {
+    grid-column: span 1;
+  }
+
+  body.family-reimbursement-page .family-feature-row {
+    grid-template-columns: 1fr;
+    gap: 0.5rem;
+    padding: 1rem;
+  }
+
+  body.family-reimbursement-page .family-feature-row--head {
+    display: none;
+  }
+
+  body.family-reimbursement-page .family-feature-row span {
+    display: block;
+    margin-bottom: 0.2rem;
+    color: rgba(24, 33, 43, 0.52);
+    font-size: 0.72rem;
+    font-weight: 800;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
   }
 }
 
@@ -483,5 +850,47 @@ body.solution-detail-page .lt-textCta--subtle:hover {
 
   body.solution-detail-page .lt-detailVisual img {
     border-radius: 18px;
+  }
+
+  body.family-reimbursement-page .family-hero-highlights {
+    gap: 0.55rem;
+    padding: 0.8rem;
+    border-radius: 18px;
+  }
+
+  body.family-reimbursement-page .family-hero-highlight {
+    width: 100%;
+    padding: 0.5rem 0.62rem;
+  }
+
+  body.family-reimbursement-page .family-workflow-card {
+    padding: 3.15rem 1rem 1rem;
+    border-radius: 18px;
+  }
+
+  body.family-reimbursement-page .family-tracking-card,
+  body.family-reimbursement-page .family-reconciliation-steps,
+  body.family-reimbursement-page .family-feature-map,
+  body.family-reimbursement-page .family-faq-item {
+    border-radius: 18px;
+  }
+
+  body.family-reimbursement-page .family-tracking-card,
+  body.family-reimbursement-page .family-reconciliation-steps {
+    padding: 1rem;
+  }
+
+  body.family-reimbursement-page .family-reconciliation-step p,
+  body.family-reimbursement-page .family-tracking-card li {
+    font-size: 0.96rem;
+    line-height: 1.45;
+  }
+
+  body.family-reimbursement-page .family-faq-item summary {
+    padding: 1rem 3rem 1rem 1rem;
+  }
+
+  body.family-reimbursement-page .family-faq-item p {
+    padding: 0 1rem 1rem;
   }
 }
