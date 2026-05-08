@@ -624,6 +624,17 @@ body.solution-detail-page .solution-highlight-chip {
   box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.05);
 }
 
+body.roommate-expense-page .solution-highlight-chip {
+  display: inline-grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  flex: 1 1 15rem;
+  min-width: 0;
+  max-width: 100%;
+  overflow-wrap: anywhere;
+  white-space: normal;
+}
+
 body.solution-detail-page .solution-highlight-chip::before,
 body.solution-detail-page .solution-category-card li::before {
   content: "✓";
