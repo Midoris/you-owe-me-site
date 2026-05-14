@@ -406,6 +406,10 @@ body.tools-page a {
   background: rgba(255, 255, 255, 0.72);
 }
 
+.lt-toolCard--planned .lt-statusChip {
+  order: -1;
+}
+
 .lt-statusChip {
   display: inline-flex;
   align-items: center;

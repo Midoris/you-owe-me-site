@@ -24,14 +24,21 @@ const SALE_CHANGED_EVENT = "youoweme:sale-changed";
 const SUPPORT_FORM_SENT_EVENT = "youoweme:support-form-sent";
 const SUPPORT_FORM_ERROR_EVENT = "youoweme:support-form-error";
 const TOOL_TEMPLATE_COPY_EVENT = "youoweme:tool-template-copy";
-const app = initializeApp(FIREBASE_CONFIG);
+const app = shouldInitializeFirebase() ? initializeApp(FIREBASE_CONFIG) : null;
 const analyticsPromise = initAnalytics();
 const saleBadgeEventsSent = new Set();
 
 let activeSale = null;
 
+function shouldInitializeFirebase() {
+  const hostname = window.location.hostname;
+  return hostname !== "localhost" && hostname !== "127.0.0.1" && hostname !== "::1";
+}
+
 async function initAnalytics() {
   try {
+    if (!app) return null;
+
     const supported = await isSupported();
     if (!supported) return null;
 
