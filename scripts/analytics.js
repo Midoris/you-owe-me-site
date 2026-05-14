@@ -23,6 +23,7 @@ const APP_STORE_ID_MATCH = "id1147058670";
 const SALE_CHANGED_EVENT = "youoweme:sale-changed";
 const SUPPORT_FORM_SENT_EVENT = "youoweme:support-form-sent";
 const SUPPORT_FORM_ERROR_EVENT = "youoweme:support-form-error";
+const TOOL_TEMPLATE_COPY_EVENT = "youoweme:tool-template-copy";
 const app = initializeApp(FIREBASE_CONFIG);
 const analyticsPromise = initAnalytics();
 const saleBadgeEventsSent = new Set();
@@ -59,6 +60,8 @@ function getPageType() {
   if (path === "/privacy-policy/" || path === "/privacy-policy/index.html") return "privacy_policy";
   if (path === "/solutions/" || path === "/solutions/index.html") return "solutions_index";
   if (path.startsWith("/solutions/")) return "solution_page";
+  if (path === "/tools/" || path === "/tools/index.html") return "tools_index";
+  if (path.startsWith("/tools/")) return "tool_page";
   if (path === "/blog/" || path === "/blog/index.html") return "blog_index";
   if (path.startsWith("/blog/")) return "blog_article";
   if (path === "/contact/" || path === "/contact/index.html") return "contact";
@@ -248,6 +251,17 @@ function onSupportFormError() {
   void trackEvent("support_form_error");
 }
 
+function onToolTemplateCopy(event) {
+  const detail = event && event.detail ? event.detail : {};
+
+  void trackEvent("tool_template_copy", Object.assign({}, getSaleParams(), {
+    page: sanitizeText(detail.page, 80),
+    template_id: sanitizeText(detail.template_id, 120),
+    tone: sanitizeText(detail.tone, 80),
+    category: sanitizeText(detail.category, 80),
+  }));
+}
+
 function initEventTracking() {
   activeSale = getActiveSale();
   bindAppStoreClicks();
@@ -257,6 +271,7 @@ function initEventTracking() {
   window.addEventListener(SALE_CHANGED_EVENT, onSaleChanged);
   window.addEventListener(SUPPORT_FORM_SENT_EVENT, onSupportFormSent);
   window.addEventListener(SUPPORT_FORM_ERROR_EVENT, onSupportFormError);
+  window.addEventListener(TOOL_TEMPLATE_COPY_EVENT, onToolTemplateCopy);
 }
 
 if (document.readyState === "loading") {

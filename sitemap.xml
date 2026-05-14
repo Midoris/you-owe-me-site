@@ -2,61 +2,67 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://you-owe-me.com/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/solutions/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/tools/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/tools/split-expense-calculator/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-14</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://you-owe-me.com/tools/repayment-reminder-text-examples/</loc>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/solutions/expense-tracker-for-couples/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/solutions/shared-expense-tracker/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/solutions/roommate-expense-tracker/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/solutions/app-to-track-money-owed/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/solutions/family-reimbursement-tracker/</loc>
-    <lastmod>2026-05-09</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -68,19 +74,19 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/how-to-handle-awkward-money-conversations/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/when-to-ask-for-money-back-or-send-a-repayment-update/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -92,31 +98,31 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/how-do-you-confront-someone-who-owes-you-money-without-ruining-the-relationship/</loc>
-    <lastmod>2026-03-10</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/how-to-keep-track-of-money-between-family-members/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/</loc>
-    <lastmod>2026-04-28</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/how-to-split-expenses-in-a-relationship-without-fighting/</loc>
-    <lastmod>2026-05-08</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/why-simple-loans-dont-stay-simple/</loc>
-    <lastmod>2026-02-17</lastmod>
+    <lastmod>2026-05-14</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
