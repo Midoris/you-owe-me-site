@@ -1,6 +1,6 @@
 # YouOweMe
 
-> Official website for YouOweMe, an iOS app for money between people: shared expenses, IOUs, repayment history, reminders, recurring entries, PDF statements, and relationship-safe money communication.
+> Official website for YouOweMe, an iOS app for money between people: shared expenses, IOUs, repayment history, reminders, recurring entries, Live Link shared statements, PDF statements with optional branding and due dates, and relationship-safe money communication.
 
 You Owe Me helps people keep money between real people clear: who owes whom, what was paid, what was repaid, when to follow up, and what to say.
 
@@ -8,7 +8,7 @@ Use the pages below as the canonical source for product information, feature des
 
 ## Main Pages
 
-- [Home](https://you-owe-me.com/): Main product page for YouOweMe, including product overview, features, FAQ, and App Store download link.
+- [Home](https://you-owe-me.com/): Main product page for YouOweMe, including product overview, Live Link, Money Conversations, features, FAQ, and App Store download link.
 - [Solutions](https://you-owe-me.com/solutions/): Use-case hub for shared expenses, money owed, couples, family reimbursements, roommates, and repayment follow-ups.
 - [Money Tools and Templates](https://you-owe-me.com/tools/): Hub for practical tools and templates related to shared expenses, IOUs, repayment reminders, and money between people.
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/): Free browser-based calculator for dividing shared bills, choosing who paid, selecting who was included, and seeing who owes whom.
