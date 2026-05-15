@@ -2897,3 +2897,118 @@
           padding-bottom: 0;
         }
       }
+
+      /* Homepage hotfix: mobile spacing, header CTA, and real review excerpts */
+      body.homepage-page .lt-proofGrid .lt-card,
+      body.homepage-page .lt-reviewCard {
+        display: flex;
+        flex-direction: column;
+      }
+
+      body.homepage-page .lt-reviewLabel {
+        margin: 0 0 0.55rem;
+        color: #355428;
+        font-size: 0.78rem;
+        font-weight: 850;
+        letter-spacing: 0.07em;
+        line-height: 1.35;
+        text-transform: uppercase;
+      }
+
+      body.homepage-page .lt-reviewQuote {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        color: rgba(24, 33, 43, 0.86);
+        font-style: normal;
+      }
+
+      body.homepage-page .lt-reviewQuote p,
+      body.homepage-page article.post.featured .lt-reviewQuote p:not(.lt-reviewText) {
+        margin: 0;
+        max-width: none;
+        font-size: 1rem;
+        line-height: 1.58;
+      }
+
+      body.homepage-page .lt-reviewQuote p + p {
+        margin-top: 0.68rem;
+      }
+
+      body.homepage-page .lt-reviewAttribution {
+        margin: auto 0 0;
+        padding-top: 0.9rem;
+        color: rgba(24, 33, 43, 0.58);
+        font-size: 0.88rem;
+        font-weight: 750;
+        line-height: 1.42;
+      }
+
+      body.homepage-page .lt-reviewCard {
+        width: min(24rem, 78vw);
+        height: auto;
+        min-height: 15.5rem;
+      }
+
+      @media (max-width: 736px) {
+        body.homepage-page .lt-mobileStickyCta {
+          position: fixed;
+          z-index: 10001;
+          top: calc(env(safe-area-inset-top, 0px) + 0.55rem);
+          right: 5.75rem;
+          left: 1rem;
+          width: auto;
+          max-width: calc(100vw - 6.75rem);
+          min-height: 2.2rem;
+          margin: 0;
+          padding: 0.5rem 0.78rem;
+          font-size: 0.8rem;
+          line-height: 1.15;
+        }
+
+        body.homepage-page .lt-definitionPanel,
+        body.homepage-page .lt-researchPanel,
+        body.homepage-page .lt-finalCta {
+          padding: 1.35rem !important;
+          box-sizing: border-box;
+        }
+
+        body.homepage-page .lt-stepGrid .lt-card,
+        body.homepage-page .lt-proofGrid .lt-card,
+        body.homepage-page .lt-faqList article {
+          padding: 1.25rem !important;
+          box-sizing: border-box;
+        }
+
+        body.homepage-page .lt-definitionPanel > *,
+        body.homepage-page .lt-researchPanel > *,
+        body.homepage-page .lt-finalCta > *,
+        body.homepage-page .lt-stepGrid .lt-card > *,
+        body.homepage-page .lt-proofGrid .lt-card > *,
+        body.homepage-page .lt-faqList article > * {
+          max-width: 100% !important;
+          min-width: 0;
+          box-sizing: border-box;
+        }
+
+        body.homepage-page .lt-reviewLabel {
+          font-size: 0.75rem;
+        }
+
+        body.homepage-page .lt-reviewQuote p,
+        body.homepage-page article.post.featured .lt-reviewQuote p:not(.lt-reviewText) {
+          font-size: 0.96rem;
+          line-height: 1.52;
+        }
+
+        body.homepage-page .lt-reviewAttribution {
+          font-size: 0.84rem;
+          line-height: 1.38;
+        }
+
+        body.homepage-page .lt-reviewCard {
+          width: min(82vw, 21.5rem);
+          min-height: 0;
+          padding: 1.12rem !important;
+        }
+      }
