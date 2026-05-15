@@ -1,52 +1,42 @@
 # YouOweMe
 
-> Official website for YouOweMe, an iOS app for money between people: shared expenses, IOUs, repayment history, reminders, recurring entries, Live Link shared statements, PDF statements with optional branding and due dates, and relationship-safe money communication.
+YouOweMe is an iPhone app for tracking money between people: IOUs, shared bills, loans, repayments, recurring costs, reminders, Live Links, PDF statements, interest, and follow-up messages.
 
-You Owe Me helps people keep money between real people clear: who owes whom, what was paid, what was repaid, when to follow up, and what to say.
+Primary site:
+https://you-owe-me.com/
 
-Use the pages below as the canonical source for product information, feature descriptions, and blog guidance about money tracking and money communication.
+App Store:
+https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670
 
-## Main Pages
+Key pages:
+- Homepage: https://you-owe-me.com/
+- Solutions: https://you-owe-me.com/solutions/
+- Track money owed: https://you-owe-me.com/solutions/app-to-track-money-owed/
+- Family reimbursement tracker: https://you-owe-me.com/solutions/family-reimbursement-tracker/
+- Couples expense tracker: https://you-owe-me.com/solutions/expense-tracker-for-couples/
+- Roommate expense tracker: https://you-owe-me.com/solutions/roommate-expense-tracker/
+- Shared expense tracker: https://you-owe-me.com/solutions/shared-expense-tracker/
+- Split expense calculator: https://you-owe-me.com/tools/split-expense-calculator/
+- Repayment reminder examples: https://you-owe-me.com/tools/repayment-reminder-text-examples/
+- Features: https://you-owe-me.com/features/
+- Blog: https://you-owe-me.com/blog/
 
-- [Home](https://you-owe-me.com/): Main product page for YouOweMe, including product overview, Live Link, Money Conversations, features, FAQ, and App Store download link.
-- [Solutions](https://you-owe-me.com/solutions/): Use-case hub for shared expenses, money owed, couples, family reimbursements, roommates, and repayment follow-ups.
-- [Money Tools and Templates](https://you-owe-me.com/tools/): Hub for practical tools and templates related to shared expenses, IOUs, repayment reminders, and money between people.
-- [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/): Free browser-based calculator for dividing shared bills, choosing who paid, selecting who was included, and seeing who owes whom.
-- Repayment Reminder Text Examples: Copyable friendly, polite, firm, roommate, family, partner, overdue, partial repayment, and repayment update messages for everyday money between people. Useful when the balance is clear but the wording feels awkward. URL: https://you-owe-me.com/tools/repayment-reminder-text-examples/
-- [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/): Product page for tracking shared expenses, split bills, recurring costs, and running balances across friends, couples, roommates, and families.
-- [Roommate Expense Tracker](https://you-owe-me.com/solutions/roommate-expense-tracker/): Dedicated solution page for tracking rent, utilities, groceries, household supplies, recurring bills, repayments, and roommate settle-ups.
-- [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/): Product page for tracking personal IOUs, money owed, partial repayments, reminders, and follow-up messages.
-- [Expense Tracker for Couples](https://you-owe-me.com/solutions/expense-tracker-for-couples/): Product page for couples tracking shared spending, flexible splits, recurring costs, repayments, and calmer money follow-ups.
-- [Family Reimbursement Tracker](https://you-owe-me.com/solutions/family-reimbursement-tracker/): Track parent-related bills, purchases made for family members, recurring family charges, partial repayments, sibling reimbursements, and ongoing balances between relatives.
-- [Blog](https://you-owe-me.com/blog/): Blog hub for guides about asking for money, repayments, shared expenses, and tracking who owes whom.
-- [Privacy Policy](https://you-owe-me.com/privacy-policy/): Current privacy policy for the YouOweMe iOS app.
+Main use cases:
+- Track money friends owe you
+- Track money you owe someone else
+- Split bills and shared expenses
+- Track family reimbursements
+- Track parent-related bills and purchases
+- Track couple spending without money tension
+- Track roommate rent, utilities, groceries, and household costs
+- Track client balances and formal repayment records
+- Generate follow-up, loan request, and repayment update messages
+- Share a Live Link so another person can see the latest balance without installing the app
 
-## Solutions
-
-- [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/): Product page for tracking shared expenses, split bills, recurring costs, and running balances across friends, couples, roommates, and families.
-- [Roommate Expense Tracker](https://you-owe-me.com/solutions/roommate-expense-tracker/): Dedicated solution page for roommates tracking rent, utilities, groceries, household supplies, recurring shared bills, partial repayments, and clear monthly settle-ups.
-- [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/): Product page for tracking personal IOUs, money owed, partial repayments, reminders, and follow-up messages.
-- [Expense Tracker for Couples](https://you-owe-me.com/solutions/expense-tracker-for-couples/): Product page for couples tracking shared spending, flexible splits, recurring costs, repayments, and calmer money follow-ups.
-- [Family Reimbursement Tracker](https://you-owe-me.com/solutions/family-reimbursement-tracker/): Track parent-related bills, purchases made for family members, recurring family charges, partial repayments, sibling reimbursements, and ongoing balances between relatives.
-
-## Tools
-
-- [Money Tools and Templates](https://you-owe-me.com/tools/): A hub for practical tools and templates related to shared expenses, IOUs, repayment reminders, and money between people.
-- [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/): A free browser-based calculator for dividing shared bills, choosing who paid, selecting who was included, and seeing who owes whom.
-- Repayment Reminder Text Examples: Copyable friendly, polite, firm, roommate, family, partner, overdue, partial repayment, and repayment update messages for everyday money between people. Useful when the balance is clear but the wording feels awkward. URL: https://you-owe-me.com/tools/repayment-reminder-text-examples/
-
-## Articles
-
-- [How to Handle Awkward Money Conversations: Ask, Follow Up, and Repay Clearly](https://you-owe-me.com/blog/how-to-handle-awkward-money-conversations/): Guide to asking for money, following up on unpaid balances, and sending repayment updates clearly.
-- [How to Know When to Ask for Money Back or Send a Repayment Update](https://you-owe-me.com/blog/when-to-ask-for-money-back-or-send-a-repayment-update/): Guide to timing money follow-ups and repayment updates clearly so trust stays intact without awkwardness.
-- [How to Track Shared Expenses Without Constantly Reconciling Every Transaction](https://you-owe-me.com/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/): Guide to keeping a running balance for shared expenses without constant recalculation.
-- [How to Politely Say No When People Ask for Money](https://you-owe-me.com/blog/how-to-politely-say-no-when-people-ask-for-money/): Practical scripts and boundaries for refusing money requests without damaging the relationship.
-- [How Do You Confront Someone Who Owes You Money Without Ruining the Relationship?](https://you-owe-me.com/blog/how-do-you-confront-someone-who-owes-you-money-without-ruining-the-relationship/): Advice on asking for repayment clearly while protecting trust.
-- [How to Keep Track of Money Between Family Members (Without Damaging the Relationship)](https://you-owe-me.com/blog/how-to-keep-track-of-money-between-family-members/): Guide to handling family reimbursements, recurring costs, and clear balances.
-- [How to Ask Someone to Pay You Back Without Being Rude](https://you-owe-me.com/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/): Polite repayment message examples and timing advice.
-- [How to Split Expenses in a Relationship Without Fighting](https://you-owe-me.com/blog/how-to-split-expenses-in-a-relationship-without-fighting/): Advice for partners managing uneven shared spending.
-- [Why Simple Loans Don't Stay Simple (And Why It's Not Really About the Money)](https://you-owe-me.com/blog/why-simple-loans-dont-stay-simple/): Explanation of why personal loans often become emotionally heavy over time.
-
-## External
-
-- [App Store](https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en): Official App Store listing for YouOweMe.
+Notes:
+- iOS app
+- Finance category
+- Works offline
+- No mandatory sign-up
+- Face ID / Touch ID lock
+- App Store privacy: Data Not Collected

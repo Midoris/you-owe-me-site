@@ -1,0 +1,290 @@
+body.features-page .lt-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem;
+  align-items: center;
+  margin: 0 0 1.2rem;
+  color: rgba(24, 33, 43, 0.58);
+  font-size: 0.92rem;
+  line-height: 1.35;
+}
+
+body.features-page .lt-breadcrumb a {
+  color: rgba(24, 33, 43, 0.72);
+  border-bottom: 0;
+}
+
+body.features-page .features-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.34fr);
+  align-items: center;
+  gap: clamp(1.25rem, 3vw, 2.4rem);
+}
+
+body.features-page .features-hero-shot {
+  display: block;
+  justify-self: end;
+  width: min(100%, 13.2rem);
+  border-radius: 24px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #f8fafc;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.13);
+  line-height: 0;
+}
+
+body.features-page .features-hero-shot img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.features-page .features-section > p {
+  max-width: 72ch;
+  margin-bottom: 1.35rem;
+}
+
+body.features-page .features-tour-section {
+  margin-top: 3rem;
+}
+
+body.features-page .features-tour-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.35rem;
+}
+
+body.features-page .features-tour-card {
+  min-width: 0;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+body.features-page .features-tour-card picture {
+  display: block;
+  width: min(100%, 9.25rem);
+  margin: 0 auto 0.85rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  overflow: hidden;
+  background: #f8fafc;
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.1);
+  line-height: 0;
+}
+
+body.features-page .features-tour-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.features-page .features-tour-card h3 {
+  margin: 0 0 0.45rem;
+  font-size: clamp(1.02rem, 0.96rem + 0.22vw, 1.16rem);
+}
+
+body.features-page .features-tour-card p {
+  margin: 0;
+  color: rgba(24, 33, 43, 0.72);
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+body.features-page .features-grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: 1rem;
+  margin-top: 1.35rem;
+}
+
+body.features-page .features-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(9rem, 0.28fr);
+  align-items: center;
+  gap: clamp(1rem, 2.4vw, 1.8rem);
+  min-width: 0;
+  padding: clamp(1rem, 2vw, 1.45rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.features-page .features-card--text {
+  display: block;
+}
+
+body.features-page .features-card h3 {
+  margin: 0 0 0.65rem;
+}
+
+body.features-page .features-card h4 {
+  margin: 1rem 0 0.45rem;
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.84rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+body.features-page .features-card p {
+  margin: 0;
+}
+
+body.features-page .features-card p + p {
+  margin-top: 0.78rem;
+}
+
+body.features-page .features-card ul {
+  margin-top: 0.35rem;
+}
+
+body.features-page .features-card picture {
+  display: block;
+  justify-self: end;
+  width: min(100%, 11rem);
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: #f8fafc;
+  box-shadow: 0 15px 34px rgba(15, 23, 42, 0.12);
+  line-height: 0;
+}
+
+body.features-page .features-card img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.features-page .features-card .lt-cardCta {
+  margin-top: 1rem;
+}
+
+body.features-page .lt-finalCta {
+  margin-top: 3.1rem;
+}
+
+@media (min-width: 981px) {
+  body.features-page .features-grid {
+    gap: 1.15rem;
+  }
+
+  body.features-page .features-card p,
+  body.features-page .features-card li {
+    font-size: 1.03rem;
+    line-height: 1.62;
+  }
+}
+
+@media (max-width: 980px) {
+  body.features-page .features-hero {
+    grid-template-columns: 1fr;
+  }
+
+  body.features-page .features-tour-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.features-page .features-hero-shot {
+    justify-self: start;
+    width: min(46vw, 12rem);
+  }
+
+  body.features-page .features-card {
+    grid-template-columns: 1fr;
+  }
+
+  body.features-page .features-card picture {
+    justify-self: start;
+    width: min(48vw, 11rem);
+  }
+}
+
+@media (max-width: 736px) {
+  body.features-page {
+    overflow-x: hidden;
+  }
+
+  body.features-page #main {
+    width: 100vw !important;
+    max-width: 100vw !important;
+    padding-left: 0.62rem !important;
+    padding-right: 0.62rem !important;
+    overflow-x: hidden;
+  }
+
+  body.features-page article.post.featured {
+    width: calc(100vw - 1.24rem) !important;
+    max-width: calc(100vw - 1.24rem) !important;
+    overflow: hidden;
+    overflow-wrap: break-word;
+  }
+
+  body.features-page article.post.featured > *,
+  body.features-page .lt-solutionsHero,
+  body.features-page .lt-solutionsSection,
+  body.features-page .lt-finalCta,
+  body.features-page .features-tour-grid,
+  body.features-page .features-tour-card,
+  body.features-page .features-grid,
+  body.features-page .features-card {
+    width: 100%;
+    max-width: 100%;
+    min-width: 0;
+    box-sizing: border-box;
+  }
+
+  body.features-page h1,
+  body.features-page h2,
+  body.features-page h3,
+  body.features-page h4,
+  body.features-page p,
+  body.features-page li,
+  body.features-page a {
+    overflow-wrap: break-word;
+  }
+
+  body.features-page .lt-breadcrumb {
+    margin-bottom: 0.9rem;
+    font-size: 0.88rem;
+  }
+
+  body.features-page .features-hero-shot,
+  body.features-page .features-card picture {
+    width: min(52vw, 10.5rem);
+    border-radius: 16px;
+  }
+
+  body.features-page .features-tour-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.features-page .features-tour-card {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  body.features-page .features-tour-card picture {
+    width: min(52vw, 10.5rem);
+  }
+
+  body.features-page .features-card {
+    padding: 1rem;
+    border-radius: 18px;
+    gap: 0.95rem;
+  }
+
+  body.features-page .features-card h4 {
+    margin-top: 0.85rem;
+  }
+
+  body.features-page .features-card .lt-cardCta {
+    width: 100%;
+  }
+}

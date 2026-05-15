@@ -67,6 +67,7 @@ function getPageType() {
   if (path === "/privacy-policy/" || path === "/privacy-policy/index.html") return "privacy_policy";
   if (path === "/solutions/" || path === "/solutions/index.html") return "solutions_index";
   if (path.startsWith("/solutions/")) return "solution_page";
+  if (path === "/features/" || path === "/features/index.html") return "features";
   if (path === "/tools/" || path === "/tools/index.html") return "tools_index";
   if (path.startsWith("/tools/")) return "tool_page";
   if (path === "/blog/" || path === "/blog/index.html") return "blog_index";
@@ -134,6 +135,7 @@ async function trackEvent(eventName, params) {
 }
 
 function getCtaLocation(link) {
+  if (link.dataset.ctaLocation) return link.dataset.ctaLocation;
   if (link.dataset.trackLocation) return link.dataset.trackLocation;
   if (link.closest(".lt-hero")) return "hero_cta";
   if (link.closest(".lt-cta")) return "article_cta";
