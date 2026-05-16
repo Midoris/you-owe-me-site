@@ -24,6 +24,18 @@ const SALE_CHANGED_EVENT = "youoweme:sale-changed";
 const SUPPORT_FORM_SENT_EVENT = "youoweme:support-form-sent";
 const SUPPORT_FORM_ERROR_EVENT = "youoweme:support-form-error";
 const TOOL_TEMPLATE_COPY_EVENT = "youoweme:tool-template-copy";
+const PAYBACK_GENERATOR_EVENT = "youoweme:payback-generator-event";
+const PAYBACK_GENERATOR_EVENTS = new Set([
+  "payback_generator_generate",
+  "payback_generator_copy_short",
+  "payback_generator_copy_clear",
+  "payback_generator_copy_context",
+  "payback_generator_clear",
+  "payback_generator_use_example",
+  "payback_generator_app_store_click",
+  "payback_generator_examples_click",
+  "payback_generator_solution_click",
+]);
 const app = shouldInitializeFirebase() ? initializeApp(FIREBASE_CONFIG) : null;
 const analyticsPromise = initAnalytics();
 const saleBadgeEventsSent = new Set();
@@ -178,7 +190,7 @@ function trackAppStoreClick(link, event) {
 }
 
 function bindAppStoreClicks() {
-  const links = document.querySelectorAll("a[href*='apps.apple.com/app']");
+  const links = document.querySelectorAll("a[href*='apps.apple.com']");
 
   links.forEach(function (link) {
     if (link.dataset.analyticsBound === "1") return;
@@ -271,6 +283,21 @@ function onToolTemplateCopy(event) {
   }));
 }
 
+function onPaybackGeneratorEvent(event) {
+  const detail = event && event.detail ? event.detail : {};
+  const eventName = sanitizeText(detail.eventName, 80);
+
+  if (!PAYBACK_GENERATOR_EVENTS.has(eventName)) return;
+
+  void trackEvent(eventName, Object.assign({}, getSaleParams(), {
+    relationship: sanitizeText(detail.relationship, 80),
+    situation: sanitizeText(detail.situation, 120),
+    tone: sanitizeText(detail.tone, 80),
+    message_length: sanitizeText(detail.message_length, 80),
+    include_statement_line: detail.include_statement_line ? 1 : 0,
+  }));
+}
+
 function initEventTracking() {
   activeSale = getActiveSale();
   bindAppStoreClicks();
@@ -281,6 +308,7 @@ function initEventTracking() {
   window.addEventListener(SUPPORT_FORM_SENT_EVENT, onSupportFormSent);
   window.addEventListener(SUPPORT_FORM_ERROR_EVENT, onSupportFormError);
   window.addEventListener(TOOL_TEMPLATE_COPY_EVENT, onToolTemplateCopy);
+  window.addEventListener(PAYBACK_GENERATOR_EVENT, onPaybackGeneratorEvent);
 }
 
 if (document.readyState === "loading") {

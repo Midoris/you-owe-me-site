@@ -2,19 +2,19 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>https://you-owe-me.com/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/solutions/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -26,7 +26,7 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/tools/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -38,7 +38,13 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/tools/repayment-reminder-text-examples/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
+    <loc>https://you-owe-me.com/tools/polite-payback-reminder-generator/</loc>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
@@ -62,7 +68,7 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/solutions/app-to-track-money-owed/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -80,13 +86,13 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/how-to-handle-awkward-money-conversations/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/when-to-ask-for-money-back-or-send-a-repayment-update/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -116,7 +122,7 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/</loc>
-    <lastmod>2026-05-14</lastmod>
+    <lastmod>2026-05-16</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>

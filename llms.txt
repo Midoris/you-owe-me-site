@@ -16,6 +16,8 @@ Key pages:
 - Couples expense tracker: https://you-owe-me.com/solutions/expense-tracker-for-couples/
 - Roommate expense tracker: https://you-owe-me.com/solutions/roommate-expense-tracker/
 - Shared expense tracker: https://you-owe-me.com/solutions/shared-expense-tracker/
+- Polite Payback Reminder Generator: Free browser-based tool for generating friendly, polite, direct, or firm repayment reminder messages for money owed between friends, family, partners, roommates, and clients.
+  URL: https://you-owe-me.com/tools/polite-payback-reminder-generator/
 - Split expense calculator: https://you-owe-me.com/tools/split-expense-calculator/
 - Repayment reminder examples: https://you-owe-me.com/tools/repayment-reminder-text-examples/
 - Features: https://you-owe-me.com/features/
