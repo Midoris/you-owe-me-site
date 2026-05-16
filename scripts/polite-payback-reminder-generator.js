@@ -35,6 +35,30 @@
     context: "payback_generator_copy_context",
   };
 
+  var resultMeta = {
+    short: {
+      badge: "Short version",
+      title: "Good for text messages",
+      note: "Use when the relationship is comfortable and you only need a quick nudge.",
+      copyLabel: "Copy short message",
+      copyAria: "Copy short reminder message",
+    },
+    clear: {
+      badge: "Clear version",
+      title: "Good default message",
+      note: "Use when you want the amount, context, and next step to be obvious.",
+      copyLabel: "Copy clear message",
+      copyAria: "Copy clear reminder message",
+    },
+    context: {
+      badge: "More context version",
+      title: "Good when it has dragged on",
+      note: "Use when the situation needs explanation, sensitivity, or a clearer record.",
+      copyLabel: "Copy context message",
+      copyAria: "Copy context reminder message",
+    },
+  };
+
   var els = {};
   var timingHardTouched = false;
   var lastMessages = {};
@@ -88,7 +112,8 @@
       relationship: values.relationship,
       situation: values.situation,
       tone: values.tone,
-      message_length: values.messageLength,
+      preferred_version: values.messageLength,
+      include_timing_hard_line: values.timingHard,
       include_statement_line: values.statementLine,
     };
   }
@@ -395,21 +420,63 @@
     return "clear";
   }
 
+  function createResultCard(resultKey, message, isRecommended) {
+    var meta = resultMeta[resultKey];
+    var card = document.createElement("article");
+    var badge = document.createElement("span");
+    var title = document.createElement("h3");
+    var messageNode = document.createElement("p");
+    var note = document.createElement("p");
+    var button = document.createElement("button");
+
+    card.className = "payback-result-card";
+    card.dataset.resultCard = resultKey;
+    if (isRecommended) card.classList.add("is-recommended");
+
+    badge.className = "payback-result-badge";
+    badge.textContent = meta.badge;
+    card.appendChild(badge);
+
+    if (isRecommended) {
+      var recommendation = document.createElement("span");
+      recommendation.className = "payback-recommended-badge";
+      recommendation.textContent = "Recommended for your selection";
+      card.appendChild(recommendation);
+    }
+
+    title.textContent = meta.title;
+    card.appendChild(title);
+
+    messageNode.className = "payback-result-message";
+    messageNode.textContent = message;
+    card.appendChild(messageNode);
+
+    note.className = "payback-result-note";
+    note.textContent = meta.note;
+    card.appendChild(note);
+
+    button.type = "button";
+    button.className = "payback-copy-button";
+    button.dataset.copyResult = resultKey;
+    button.setAttribute("aria-label", meta.copyAria);
+    button.textContent = meta.copyLabel;
+    card.appendChild(button);
+
+    return card;
+  }
+
   function renderMessages(messages, values) {
     var key = recommendedKey(values.messageLength);
     lastMessages = messages;
 
-    els.messageShort.textContent = messages.short;
-    els.messageClear.textContent = messages.clear;
-    els.messageContext.textContent = messages.context;
-
-    Object.keys(els.resultCards).forEach(function (resultKey) {
-      els.resultCards[resultKey].classList.toggle("is-recommended", resultKey === key);
+    els.resultGrid.textContent = "";
+    ["short", "clear", "context"].forEach(function (resultKey) {
+      els.resultGrid.appendChild(createResultCard(resultKey, messages[resultKey], resultKey === key));
     });
 
     if (els.recommendation) {
       var label = key === "short" ? "Short version" : key === "context" ? "More context version" : "Clear version";
-      els.recommendation.textContent = label + " is highlighted from your message length choice. You can copy any version.";
+      els.recommendation.textContent = label + " is recommended from your preferred version choice. You can copy any version.";
     }
 
     if (els.resultsSection.hidden) {
@@ -510,6 +577,7 @@
     applyTimingDefault();
 
     lastMessages = {};
+    els.resultGrid.textContent = "";
     els.resultsSection.hidden = true;
     if (els.copyStatus) els.copyStatus.textContent = "";
     track("payback_generator_clear", values);
@@ -547,16 +615,9 @@
     els.timingHard = byId("payback-timing-hard");
     els.statementLine = byId("payback-statement");
     els.resultsSection = byId("payback-results");
-    els.messageShort = document.querySelector("[data-message-short]");
-    els.messageClear = document.querySelector("[data-message-clear]");
-    els.messageContext = document.querySelector("[data-message-context]");
+    els.resultGrid = document.querySelector("[data-result-grid]");
     els.copyStatus = document.querySelector("[data-copy-status]");
     els.recommendation = document.querySelector("[data-recommendation]");
-    els.resultCards = {
-      short: document.querySelector("[data-result-card='short']"),
-      clear: document.querySelector("[data-result-card='clear']"),
-      context: document.querySelector("[data-result-card='context']"),
-    };
   }
 
   function bindEvents() {
@@ -570,10 +631,9 @@
       select.addEventListener("change", applyTimingDefault);
     });
 
-    document.querySelectorAll("[data-copy-result]").forEach(function (button) {
-      button.addEventListener("click", function () {
-        handleCopy(button);
-      });
+    els.resultGrid.addEventListener("click", function (event) {
+      var button = event.target.closest("[data-copy-result]");
+      if (button) handleCopy(button);
     });
 
     document.querySelectorAll("[data-action]").forEach(function (button) {

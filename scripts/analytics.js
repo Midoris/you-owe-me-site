@@ -293,7 +293,8 @@ function onPaybackGeneratorEvent(event) {
     relationship: sanitizeText(detail.relationship, 80),
     situation: sanitizeText(detail.situation, 120),
     tone: sanitizeText(detail.tone, 80),
-    message_length: sanitizeText(detail.message_length, 80),
+    preferred_version: sanitizeText(detail.preferred_version, 80),
+    include_timing_hard_line: detail.include_timing_hard_line ? 1 : 0,
     include_statement_line: detail.include_statement_line ? 1 : 0,
   }));
 }
