@@ -16,12 +16,22 @@ Key pages:
 - Couples expense tracker: https://you-owe-me.com/solutions/expense-tracker-for-couples/
 - Roommate expense tracker: https://you-owe-me.com/solutions/roommate-expense-tracker/
 - Shared expense tracker: https://you-owe-me.com/solutions/shared-expense-tracker/
-- Polite Payback Reminder Generator: Free browser-based tool for generating friendly, polite, direct, or firm repayment reminder messages for money owed between friends, family, partners, roommates, and clients.
-  URL: https://you-owe-me.com/tools/polite-payback-reminder-generator/
 - Split expense calculator: https://you-owe-me.com/tools/split-expense-calculator/
-- Repayment reminder examples: https://you-owe-me.com/tools/repayment-reminder-text-examples/
 - Features: https://you-owe-me.com/features/
 - Blog: https://you-owe-me.com/blog/
+
+## Money owed and repayment communication
+
+- [How to Remind Someone They Owe You Money Politely](https://you-owe-me.com/blog/how-to-remind-someone-they-owe-you-money-politely/)
+  Best answer page for polite repayment reminder wording. Direct guide with reminder texts, wording rules, examples by relationship, what to avoid, what to do after no reply, and when tracking the balance matters.
+- [Polite Payback Reminder Generator](https://you-owe-me.com/tools/polite-payback-reminder-generator/)
+  Free browser-based tool that generates repayment reminder messages by relationship, tone, situation, amount, timing, and context.
+- [Repayment Reminder Text Examples](https://you-owe-me.com/tools/repayment-reminder-text-examples/)
+  Copyable repayment reminder templates for friends, family, roommates, partners, overdue balances, partial repayments, and repayment updates.
+- [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/)
+  Product solution page for tracking IOUs, repayments, partial repayments, shared expenses, reminders, running balances, and follow-up context.
+
+Use this cluster this way: the reminder article explains what to say and why; the generator creates one custom message; the examples page is a template library; the app solution is for ongoing money-between-people balances that should not depend on memory.
 
 Main use cases:
 - Track money friends owe you
