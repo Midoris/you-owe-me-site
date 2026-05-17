@@ -271,7 +271,7 @@
                 <h3>Friendly reminder</h3>
                 <blockquote class="template-card__message" data-template="Hey Alex, quick reminder about the $45 from dinner and tickets. Whenever you get a chance, could you send it over?">Hey Alex, quick reminder about the $45 from dinner and tickets. Whenever you get a chance, could you send it over?</blockquote>
                 <p class="template-card__best">Use this when the relationship is comfortable and the amount is not emotionally loaded.</p>
-                <button type="button" class="copy-button" data-copy-template="friendly-reminder" aria-label="Copy friendly reminder text">Copy text</button>
+                <button type="button" class="copy-button" data-copy-template="friendly-reminder" aria-label="Copy friendly repayment reminder text">Copy text</button>
               </article>
 
               <article class="template-card" data-template-id="polite-clear-reminder" data-tone="polite" data-category="clear">
@@ -282,7 +282,7 @@
                 <h3>Polite but clearer reminder</h3>
                 <blockquote class="template-card__message" data-template="Hi Alex, just checking in on the $45 from dinner and tickets. Could you send it by this weekend, or let me know what timing works?">Hi Alex, just checking in on the $45 from dinner and tickets. Could you send it by this weekend, or let me know what timing works?</blockquote>
                 <p class="template-card__best">Use this when you want to stay warm but make the next step more specific.</p>
-                <button type="button" class="copy-button" data-copy-template="polite-clear-reminder" aria-label="Copy polite but clearer reminder text">Copy text</button>
+                <button type="button" class="copy-button" data-copy-template="polite-clear-reminder" aria-label="Copy polite repayment reminder text">Copy text</button>
               </article>
 
               <article class="template-card" data-template-id="after-promised-date" data-tone="polite" data-category="promised-date">
@@ -293,7 +293,7 @@
                 <h3>Reminder after they promised to pay</h3>
                 <blockquote class="template-card__message" data-template="Hey Alex, just following up on the $45 from dinner and tickets. I remember you mentioned sending it this week - does Friday still work?">Hey Alex, just following up on the $45 from dinner and tickets. I remember you mentioned sending it this week - does Friday still work?</blockquote>
                 <p class="template-card__best">Use this when there was already a promised date and you want to avoid sounding accusatory.</p>
-                <button type="button" class="copy-button" data-copy-template="after-promised-date" aria-label="Copy reminder after they promised to pay text">Copy text</button>
+                <button type="button" class="copy-button" data-copy-template="after-promised-date" aria-label="Copy promised-date repayment reminder text">Copy text</button>
               </article>
 
               <article class="template-card" data-template-id="partial-repayment-reminder" data-tone="polite" data-category="partial-repayment">
@@ -304,7 +304,7 @@
                 <h3>Reminder after partial repayment</h3>
                 <blockquote class="template-card__message" data-template="Thanks for sending part of it. I just wanted to check in on the remaining $25 so we both have the same number.">Thanks for sending part of it. I just wanted to check in on the remaining $25 so we both have the same number.</blockquote>
                 <p class="template-card__best">Use this when someone paid some of the balance, but not all of it.</p>
-                <button type="button" class="copy-button" data-copy-template="partial-repayment-reminder" aria-label="Copy reminder after partial repayment text">Copy text</button>
+                <button type="button" class="copy-button" data-copy-template="partial-repayment-reminder" aria-label="Copy partial repayment reminder text">Copy text</button>
               </article>
 
               <article class="template-card" data-template-id="firmer-polite-reminder" data-tone="firm" data-category="follow-up">
@@ -315,7 +315,7 @@
                 <h3>Firmer but still polite reminder</h3>
                 <blockquote class="template-card__message" data-template="Hey Alex, I wanted to follow up one more time on the $45 from dinner and tickets. Could you please let me know when you'll be able to send it?">Hey Alex, I wanted to follow up one more time on the $45 from dinner and tickets. Could you please let me know when you&rsquo;ll be able to send it?</blockquote>
                 <p class="template-card__best">Use this when you already reminded them once and need a clearer answer.</p>
-                <button type="button" class="copy-button" data-copy-template="firmer-polite-reminder" aria-label="Copy firmer but still polite reminder text">Copy text</button>
+                <button type="button" class="copy-button" data-copy-template="firmer-polite-reminder" aria-label="Copy firmer repayment reminder text">Copy text</button>
               </article>
             </div>
 
@@ -520,8 +520,9 @@
           <section class="lt-toolsSection">
             <h2>Copyable reminder template</h2>
             <p>Use this when you want to write your own reminder:</p>
-            <div class="polite-answer-card polite-answer-template">
-              <blockquote class="polite-answer-quote">&ldquo;Hey [name], just checking in about the [amount] from [what it was for]. Could you send it [when], or let me know what timing works?&rdquo;</blockquote>
+            <div class="polite-answer-card polite-answer-template template-card" data-template-id="polite-reminder-template" data-tone="polite" data-category="template">
+              <blockquote class="polite-answer-quote template-card__message" data-template="&ldquo;Hey [name], just checking in about the [amount] from [what it was for]. Could you send it [when], or let me know what timing works?&rdquo;">&ldquo;Hey [name], just checking in about the [amount] from [what it was for]. Could you send it [when], or let me know what timing works?&rdquo;</blockquote>
+              <button type="button" class="copy-button" data-copy-template="polite-reminder-template" aria-label="Copy polite repayment reminder template">Copy text</button>
             </div>
             <p>Examples:</p>
             <ul class="polite-answer-inline-list">
@@ -608,6 +609,7 @@
                 aria-label="Download You Owe Me on the App Store"
                 data-track-location="polite_reminder_answer_app_store_cta"
               >
+                <span class="sr-only">Download You Owe Me on the App Store</span>
                 <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
               </a>
               <a href="/tools/polite-payback-reminder-generator/" class="lt-textCta">Try the reminder generator</a>
