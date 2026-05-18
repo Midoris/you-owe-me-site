@@ -20,6 +20,10 @@ Key pages:
 - Features: https://you-owe-me.com/features/
 - Blog: https://you-owe-me.com/blog/
 
+## Tools and templates
+
+- [Family Reimbursement Tracker Template](https://you-owe-me.com/tools/family-reimbursement-tracker-template/): Free Excel, CSV, and printable PDF template for tracking money paid for parents, siblings, relatives, recurring family bills, subscriptions, purchases, partial repayments, and remaining balances.
+
 ## Money owed and repayment communication
 
 - [How to Remind Someone They Owe You Money Politely](https://you-owe-me.com/blog/how-to-remind-someone-they-owe-you-money-politely/)
