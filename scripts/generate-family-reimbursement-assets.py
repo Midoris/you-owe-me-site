@@ -9,7 +9,7 @@ from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
 from openpyxl.workbook.defined_name import DefinedName
 from reportlab.lib import colors
-from reportlab.lib.enums import TA_LEFT
+from reportlab.lib.enums import TA_CENTER, TA_LEFT
 from reportlab.lib.pagesizes import landscape, letter
 from reportlab.lib.styles import ParagraphStyle, getSampleStyleSheet
 from reportlab.lib.units import inch
@@ -431,6 +431,7 @@ def build_pdf():
     subtitle = ParagraphStyle("Subtitle", parent=styles["BodyText"], fontName="Helvetica", fontSize=12.5, leading=17, textColor=colors.HexColor("#344054"))
     body = ParagraphStyle("Body", parent=styles["BodyText"], fontName="Helvetica", fontSize=10.5, leading=15, textColor=colors.HexColor("#344054"))
     small = ParagraphStyle("Small", parent=styles["BodyText"], fontName="Helvetica", fontSize=9, leading=12.5, textColor=colors.HexColor("#5F6D7A"))
+    table_header = ParagraphStyle("TableHeader", parent=styles["BodyText"], fontName="Helvetica-Bold", fontSize=7.8, leading=9.1, alignment=TA_CENTER, textColor=colors.HexColor("#18212B"))
 
     elements = []
     elements.append(paragraph("Family Reimbursement Tracker", title))
@@ -518,15 +519,27 @@ def build_pdf():
     elements.append(log_meta)
     elements.append(Spacer(1, 0.1 * inch))
 
-    headers = ["Date", "Family member", "What it was for", "Expense", "Repaid", "Remaining balance", "Notes"]
+    headers = [
+        paragraph("Date", table_header),
+        paragraph("Family member", table_header),
+        paragraph("What it was for", table_header),
+        paragraph("Expense", table_header),
+        paragraph("Repaid", table_header),
+        paragraph("Remaining<br/>balance", table_header),
+        paragraph("Notes", table_header),
+    ]
     blank_rows = [["", "", "", "", "", "", ""] for _ in range(15)]
-    log_table = Table([headers] + blank_rows, colWidths=[0.82 * inch, 1.22 * inch, 2.55 * inch, 0.85 * inch, 0.85 * inch, 1.15 * inch, 2.0 * inch], repeatRows=1)
+    log_table = Table(
+        [headers] + blank_rows,
+        colWidths=[0.78 * inch, 1.15 * inch, 2.35 * inch, 0.78 * inch, 0.78 * inch, 1.45 * inch, 2.05 * inch],
+        repeatRows=1,
+    )
     log_table.setStyle(TableStyle([
         ("BACKGROUND", (0, 0), (-1, 0), colors.HexColor("#AFE67E")),
         ("TEXTCOLOR", (0, 0), (-1, 0), colors.HexColor("#18212B")),
         ("FONTNAME", (0, 0), (-1, 0), "Helvetica-Bold"),
         ("FONTNAME", (0, 1), (-1, -1), "Helvetica"),
-        ("FONTSIZE", (0, 0), (-1, -1), 8.7),
+        ("FONTSIZE", (0, 0), (-1, -1), 8.4),
         ("VALIGN", (0, 0), (-1, -1), "TOP"),
         ("GRID", (0, 0), (-1, -1), 0.35, colors.HexColor("#C8D2DC")),
         ("ROWBACKGROUNDS", (0, 1), (-1, -1), [colors.white, colors.HexColor("#FBFCFE")]),

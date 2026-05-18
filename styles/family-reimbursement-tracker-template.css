@@ -203,8 +203,16 @@ body.family-template-page .lt-toolsHero .lt-heroSupport {
   margin-top: auto;
 }
 
+.family-file-meta {
+  margin-top: -0.42rem !important;
+  color: rgba(24, 33, 43, 0.58) !important;
+  font-size: 0.84rem !important;
+  line-height: 1.35 !important;
+}
+
 .family-table-scroll {
   margin-top: 1.35rem;
+  padding: 0.35rem;
   overflow-x: auto;
   border: 1px solid rgba(15, 23, 42, 0.09);
   border-radius: 20px;
@@ -434,18 +442,45 @@ body.family-template-page .lt-toolsHero .lt-heroSupport {
     margin-right: auto;
   }
 
+  body.family-template-page .lt-toolsHero,
+  body.family-template-page .lt-toolsSection,
+  body.family-template-page .lt-finalCta,
+  body.family-template-page .lt-bridgePanel,
+  body.family-template-page .family-download-card,
+  body.family-template-page .family-use-card,
+  body.family-template-page .family-column-grid article,
+  body.family-template-page .family-compare-card,
+  body.family-template-page .family-review-checklist {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.family-template-page .lt-toolsHeroCopy,
+  body.family-template-page .family-review-copy,
+  body.family-template-page .family-download-card > *,
+  body.family-template-page .family-use-card > *,
+  body.family-template-page .family-column-grid article > *,
+  body.family-template-page .family-compare-card > * {
+    min-width: 0;
+    max-width: 100%;
+  }
+
   body.family-template-page #main article.post.featured header.major > h1 {
     font-size: 2.05rem;
     overflow-wrap: anywhere;
   }
 
+  body.family-template-page article.post.featured h1,
   body.family-template-page article.post.featured h2,
+  body.family-template-page article.post.featured h3,
   body.family-template-page article.post.featured p,
   body.family-template-page article.post.featured li,
+  body.family-template-page article.post.featured a,
   .family-download-card,
   .family-use-card,
   .family-column-grid article {
     overflow-wrap: anywhere;
+    word-break: normal;
   }
 
   body.family-template-page .lt-toolsSection > .lt-sectionEyebrow,
@@ -495,6 +530,7 @@ body.family-template-page .lt-toolsHero .lt-heroSupport {
   }
 
   .family-table-scroll {
+    padding: 0.3rem;
     border-radius: 16px;
   }
 
