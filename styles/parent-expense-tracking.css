@@ -1,0 +1,699 @@
+body.parent-expense-page {
+  --parent-green: #afe67e;
+  --parent-green-strong: #355428;
+  --parent-yellow: #e4e4b8;
+  --parent-ink: #18212b;
+  --parent-muted: rgba(24, 33, 43, 0.72);
+  --parent-border: rgba(15, 23, 42, 0.08);
+  --parent-shadow: 0 16px 38px rgba(15, 23, 42, 0.08);
+  overflow-x: hidden;
+}
+
+body.parent-expense-page article.post.featured {
+  width: min(1180px, calc(100% - 2rem));
+}
+
+body.parent-expense-page *,
+body.parent-expense-page *::before,
+body.parent-expense-page *::after {
+  box-sizing: border-box;
+}
+
+body.parent-expense-page .lt-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.42rem;
+  width: min(100%, 68rem);
+  margin: 0 auto 1.4rem;
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+body.parent-expense-page .lt-breadcrumb a {
+  color: var(--parent-green-strong);
+  font-weight: 700;
+}
+
+body.parent-expense-page .lt-breadcrumb [aria-current="page"] {
+  color: rgba(24, 33, 43, 0.78);
+  font-weight: 700;
+}
+
+body.parent-expense-page .parent-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 0.82fr);
+  gap: clamp(1.2rem, 3vw, 2.2rem);
+  align-items: center;
+  width: min(100%, 68rem);
+  margin: 0 auto 3rem;
+  padding: clamp(1.25rem, 3vw, 2.3rem);
+  border: 1px solid var(--parent-border);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 10% 12%, rgba(175, 230, 126, 0.28), transparent 32%),
+    radial-gradient(circle at 88% 8%, rgba(228, 228, 184, 0.36), transparent 30%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(244, 248, 241, 0.92));
+  box-shadow: var(--parent-shadow);
+}
+
+body.parent-expense-page .parent-hero-copy,
+body.parent-expense-page .parent-hero-media,
+body.parent-expense-page .parent-hero-media img {
+  min-width: 0;
+  max-width: 100%;
+}
+
+body.parent-expense-page .parent-eyebrow,
+body.parent-expense-page .parent-section-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: auto !important;
+  margin: 0 0 0.8rem !important;
+  padding: 0.26rem 0.72rem;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.18);
+  color: var(--parent-green-strong) !important;
+  font-size: 0.78rem !important;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.35 !important;
+  text-transform: uppercase;
+}
+
+body.parent-expense-page .parent-hero h1 {
+  max-width: 14ch !important;
+  margin: 0 0 1rem !important;
+  color: var(--parent-ink);
+  font-size: clamp(2.35rem, 5vw, 4.15rem) !important;
+  line-height: 1.04 !important;
+  letter-spacing: -0.025em !important;
+  text-align: left !important;
+}
+
+body.parent-expense-page .parent-answer,
+body.parent-expense-page .parent-support {
+  width: auto !important;
+  max-width: 62ch !important;
+  margin: 0 !important;
+  color: rgba(24, 33, 43, 0.86) !important;
+  font-size: clamp(1.02rem, 0.98rem + 0.2vw, 1.15rem) !important;
+  line-height: 1.68 !important;
+}
+
+body.parent-expense-page .parent-support {
+  margin-top: 0.85rem !important;
+  color: var(--parent-muted) !important;
+}
+
+body.parent-expense-page .parent-cta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  margin-top: 1.35rem;
+}
+
+body.parent-expense-page .parent-primary-cta,
+body.parent-expense-page .parent-secondary-cta,
+body.parent-expense-page .parent-card-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.9rem;
+  padding: 0.78rem 1.05rem;
+  border: 0;
+  border-radius: 999px;
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.25;
+  text-align: center;
+  text-decoration: none;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+body.parent-expense-page .parent-primary-cta {
+  background: var(--parent-ink);
+  color: #ffffff !important;
+  box-shadow: 0 14px 26px rgba(15, 23, 42, 0.18);
+}
+
+body.parent-expense-page .parent-secondary-cta,
+body.parent-expense-page .parent-card-cta {
+  background: rgba(255, 255, 255, 0.92);
+  color: var(--parent-ink) !important;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.1);
+}
+
+body.parent-expense-page .parent-primary-cta:hover,
+body.parent-expense-page .parent-secondary-cta:hover,
+body.parent-expense-page .parent-card-cta:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.12);
+}
+
+body.parent-expense-page .parent-hero-media,
+body.parent-expense-page .parent-article-figure {
+  margin: 0;
+  line-height: 0;
+}
+
+body.parent-expense-page .parent-hero-media img,
+body.parent-expense-page .parent-article-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--parent-border);
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+}
+
+body.parent-expense-page .parent-section,
+body.parent-expense-page .parent-wide-section {
+  margin: 3rem auto 0;
+}
+
+body.parent-expense-page .parent-section {
+  width: min(100%, 48rem);
+}
+
+body.parent-expense-page .parent-wide-section {
+  width: min(100%, 68rem);
+}
+
+body.parent-expense-page .parent-section h2,
+body.parent-expense-page .parent-wide-section h2 {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 0 0.85rem !important;
+  font-size: clamp(1.45rem, 1.18rem + 1vw, 2rem) !important;
+  line-height: 1.2 !important;
+  text-align: left !important;
+}
+
+body.parent-expense-page .parent-section h3,
+body.parent-expense-page .parent-wide-section h3 {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 0 0.48rem !important;
+  font-size: 1.08rem !important;
+  line-height: 1.32 !important;
+  text-align: left !important;
+}
+
+body.parent-expense-page .parent-section p,
+body.parent-expense-page .parent-wide-section p,
+body.parent-expense-page .parent-section ul,
+body.parent-expense-page .parent-wide-section ul,
+body.parent-expense-page .parent-section ol,
+body.parent-expense-page .parent-wide-section ol {
+  width: auto !important;
+  max-width: none !important;
+}
+
+body.parent-expense-page .parent-section p,
+body.parent-expense-page .parent-wide-section p {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.parent-expense-page .parent-card-grid,
+body.parent-expense-page .parent-workflow-grid,
+body.parent-expense-page .parent-related-grid,
+body.parent-expense-page .parent-check-grid,
+body.parent-expense-page .parent-comparison-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.15rem;
+}
+
+body.parent-expense-page .parent-card-grid,
+body.parent-expense-page .parent-related-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.parent-expense-page .parent-workflow-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.parent-expense-page .parent-check-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body.parent-expense-page .parent-comparison-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.parent-expense-page .parent-card,
+body.parent-expense-page .parent-formula,
+body.parent-expense-page .parent-highlight,
+body.parent-expense-page .parent-workflow-card,
+body.parent-expense-page .parent-message-card,
+body.parent-expense-page .parent-related-card,
+body.parent-expense-page .parent-check-item,
+body.parent-expense-page .parent-comparison-card,
+body.parent-expense-page .parent-cta-panel,
+body.parent-expense-page .parent-faq details {
+  border: 1px solid var(--parent-border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+}
+
+body.parent-expense-page .parent-card,
+body.parent-expense-page .parent-highlight,
+body.parent-expense-page .parent-workflow-card,
+body.parent-expense-page .parent-message-card,
+body.parent-expense-page .parent-related-card,
+body.parent-expense-page .parent-check-item,
+body.parent-expense-page .parent-comparison-card,
+body.parent-expense-page .parent-cta-panel {
+  padding: 1.15rem;
+}
+
+body.parent-expense-page .parent-card p,
+body.parent-expense-page .parent-highlight p,
+body.parent-expense-page .parent-workflow-card p,
+body.parent-expense-page .parent-message-card p,
+body.parent-expense-page .parent-related-card p,
+body.parent-expense-page .parent-check-item p,
+body.parent-expense-page .parent-comparison-card p,
+body.parent-expense-page .parent-cta-panel p {
+  margin: 0 !important;
+  font-size: 0.98rem !important;
+  line-height: 1.6 !important;
+}
+
+body.parent-expense-page .parent-card ul,
+body.parent-expense-page .parent-comparison-card ul,
+body.parent-expense-page .parent-highlight ul {
+  margin: 0.75rem 0 0 !important;
+  padding-left: 1.1rem !important;
+}
+
+body.parent-expense-page .parent-formula {
+  display: grid;
+  gap: 0.5rem;
+  margin-top: 1.1rem;
+  padding: 1.15rem;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.96) 54%, rgba(228, 228, 184, 0.28));
+}
+
+body.parent-expense-page .parent-formula-row,
+body.parent-expense-page .parent-mini-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  align-items: baseline;
+  min-width: 0;
+  padding: 0.58rem 0.72rem;
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.74);
+  color: var(--parent-ink);
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+body.parent-expense-page .parent-formula-row strong,
+body.parent-expense-page .parent-mini-row strong {
+  color: var(--parent-green-strong);
+  white-space: nowrap;
+}
+
+body.parent-expense-page .parent-fields {
+  columns: 2;
+  column-gap: 2rem;
+  margin-top: 1rem !important;
+}
+
+body.parent-expense-page .parent-fields li {
+  break-inside: avoid;
+}
+
+body.parent-expense-page .parent-highlight {
+  margin-top: 1.25rem;
+  background:
+    radial-gradient(circle at top left, rgba(228, 228, 184, 0.4), transparent 34%),
+    rgba(255, 255, 255, 0.94);
+}
+
+body.parent-expense-page .parent-highlight h3 {
+  color: var(--parent-green-strong);
+}
+
+body.parent-expense-page .parent-workflow-card {
+  position: relative;
+  padding-left: 4rem;
+}
+
+body.parent-expense-page .parent-step-number {
+  position: absolute;
+  top: 1.05rem;
+  left: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.32);
+  color: var(--parent-green-strong);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+body.parent-expense-page .parent-table-scroll {
+  margin-top: 1.2rem;
+  padding: 0.35rem;
+  overflow-x: auto;
+  border: 1px solid var(--parent-border);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+  -webkit-overflow-scrolling: touch;
+}
+
+body.parent-expense-page .parent-table-scroll:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.28);
+  outline-offset: 3px;
+}
+
+body.parent-expense-page .parent-example-table {
+  width: 100%;
+  min-width: 980px;
+  margin: 0 !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--parent-ink);
+}
+
+body.parent-expense-page .parent-example-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+body.parent-expense-page .parent-example-table th,
+body.parent-expense-page .parent-example-table td {
+  padding: 0.82rem 0.74rem;
+  border-right: 1px solid rgba(15, 23, 42, 0.07);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  color: rgba(24, 33, 43, 0.88);
+  font-size: 0.9rem;
+  line-height: 1.34;
+  text-align: left;
+  vertical-align: top;
+}
+
+body.parent-expense-page .parent-example-table th {
+  background: var(--parent-green);
+  color: var(--parent-ink);
+  font-weight: 900;
+}
+
+body.parent-expense-page .parent-example-table tbody tr:nth-child(even) td {
+  background: rgba(248, 250, 252, 0.84);
+}
+
+body.parent-expense-page .parent-example-table td:nth-child(7) {
+  color: var(--parent-green-strong);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+body.parent-expense-page .parent-article-figure {
+  width: min(100%, 46rem);
+  margin: 1.4rem auto 0;
+}
+
+body.parent-expense-page .parent-mini-example {
+  width: min(100%, 28rem);
+  margin-top: 1rem;
+}
+
+body.parent-expense-page .parent-message-list {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.1rem;
+}
+
+body.parent-expense-page .parent-message-card p {
+  color: rgba(24, 33, 43, 0.84) !important;
+}
+
+body.parent-expense-page .parent-message-label {
+  display: block;
+  margin-bottom: 0.45rem;
+  color: var(--parent-green-strong);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+body.parent-expense-page .parent-comparison-card--highlight,
+body.parent-expense-page .parent-cta-panel {
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.28), transparent 38%),
+    rgba(255, 255, 255, 0.96);
+}
+
+body.parent-expense-page .parent-cta-panel {
+  margin-top: 1.5rem;
+  padding: clamp(1.25rem, 3vw, 2rem);
+}
+
+body.parent-expense-page .parent-related-card {
+  display: flex;
+  flex-direction: column;
+  min-height: 100%;
+  gap: 0.75rem;
+}
+
+body.parent-expense-page .parent-related-card .parent-card-cta {
+  align-self: flex-start;
+  margin-top: auto;
+}
+
+body.parent-expense-page .parent-comparison-card .parent-card-cta {
+  margin-top: 0.95rem;
+}
+
+body.parent-expense-page .parent-faq {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.15rem;
+}
+
+body.parent-expense-page .parent-faq details {
+  overflow: hidden;
+}
+
+body.parent-expense-page .parent-faq summary {
+  position: relative;
+  padding: 1rem 3rem 1rem 1.15rem;
+  color: var(--parent-ink);
+  cursor: pointer;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+body.parent-expense-page .parent-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+body.parent-expense-page .parent-faq summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.25);
+  color: var(--parent-green-strong);
+  transform: translateY(-50%);
+}
+
+body.parent-expense-page .parent-faq details[open] summary::after {
+  content: "-";
+}
+
+body.parent-expense-page .parent-faq details p {
+  margin: 0 !important;
+  padding: 0 1.15rem 1.1rem;
+  color: var(--parent-muted) !important;
+}
+
+body.parent-expense-page .parent-final-cta {
+  width: min(100%, 68rem);
+  margin: 3rem auto 0;
+  padding: clamp(1.35rem, 3.2vw, 2.2rem);
+  border: 1px solid var(--parent-border);
+  border-radius: 24px;
+  background:
+    radial-gradient(circle at 12% 16%, rgba(175, 230, 126, 0.26), transparent 34%),
+    radial-gradient(circle at 92% 18%, rgba(228, 228, 184, 0.4), transparent 30%),
+    rgba(255, 255, 255, 0.95);
+  box-shadow: var(--parent-shadow);
+}
+
+body.parent-expense-page .parent-final-cta h2 {
+  width: auto !important;
+  max-width: 18ch !important;
+  margin: 0 0 0.75rem !important;
+  font-size: clamp(1.55rem, 1.25rem + 1.2vw, 2.2rem) !important;
+  line-height: 1.14 !important;
+  text-align: left !important;
+}
+
+body.parent-expense-page .parent-final-cta p {
+  width: auto !important;
+  max-width: 66ch !important;
+  margin: 0 !important;
+}
+
+body.parent-expense-page .parent-final-cta p + p {
+  margin-top: 0.8rem !important;
+}
+
+body.parent-expense-page .parent-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  width: min(100%, 48rem);
+  margin: 1.8rem auto 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+body.parent-expense-page .parent-footer-links li {
+  margin: 0 !important;
+}
+
+@media (max-width: 1040px) {
+  body.parent-expense-page .parent-card-grid,
+  body.parent-expense-page .parent-related-grid,
+  body.parent-expense-page .parent-check-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 860px) {
+  body.parent-expense-page .parent-hero,
+  body.parent-expense-page .parent-workflow-grid,
+  body.parent-expense-page .parent-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.parent-expense-page .parent-hero h1 {
+    max-width: none !important;
+  }
+}
+
+@media (max-width: 736px) {
+  html {
+    min-width: 0 !important;
+  }
+
+  body.parent-expense-page {
+    min-width: 0 !important;
+  }
+
+  body.parent-expense-page #main {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.parent-expense-page article.post.featured {
+    width: calc(100vw - 1.6rem) !important;
+    max-width: calc(100vw - 1.6rem) !important;
+  }
+
+  body.parent-expense-page .lt-breadcrumb,
+  body.parent-expense-page .parent-section,
+  body.parent-expense-page .parent-wide-section,
+  body.parent-expense-page .parent-final-cta,
+  body.parent-expense-page .parent-footer-links {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.parent-expense-page .parent-hero {
+    width: 100%;
+    margin-bottom: 2.35rem;
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  body.parent-expense-page .parent-hero h1 {
+    max-width: none !important;
+    font-size: clamp(2rem, 10vw, 2.65rem) !important;
+  }
+
+  body.parent-expense-page .parent-cta-row,
+  body.parent-expense-page .parent-primary-cta,
+  body.parent-expense-page .parent-secondary-cta {
+    width: 100%;
+  }
+
+  body.parent-expense-page .parent-card-grid,
+  body.parent-expense-page .parent-related-grid,
+  body.parent-expense-page .parent-check-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.parent-expense-page .parent-fields {
+    columns: 1;
+  }
+
+  body.parent-expense-page .parent-card,
+  body.parent-expense-page .parent-highlight,
+  body.parent-expense-page .parent-workflow-card,
+  body.parent-expense-page .parent-message-card,
+  body.parent-expense-page .parent-related-card,
+  body.parent-expense-page .parent-check-item,
+  body.parent-expense-page .parent-comparison-card,
+  body.parent-expense-page .parent-cta-panel,
+  body.parent-expense-page .parent-final-cta,
+  body.parent-expense-page .parent-faq details {
+    border-radius: 18px;
+  }
+
+  body.parent-expense-page .parent-workflow-card {
+    padding: 3.75rem 1rem 1.05rem;
+  }
+
+  body.parent-expense-page .parent-step-number {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  body.parent-expense-page .parent-table-scroll {
+    border-radius: 16px;
+  }
+
+  body.parent-expense-page .parent-example-table th,
+  body.parent-expense-page .parent-example-table td {
+    padding: 0.7rem 0.65rem;
+    font-size: 0.84rem;
+  }
+
+  body.parent-expense-page .parent-hero-media img,
+  body.parent-expense-page .parent-article-figure img {
+    border-radius: 18px;
+  }
+
+  body.parent-expense-page .parent-final-cta h2 {
+    max-width: none !important;
+  }
+}

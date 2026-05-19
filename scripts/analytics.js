@@ -237,6 +237,25 @@ function bindMediumClicks() {
   });
 }
 
+function bindTrackedLinkClicks() {
+  const links = document.querySelectorAll("a[data-track-event]");
+
+  links.forEach(function (link) {
+    if (link.dataset.linkAnalyticsBound === "1") return;
+
+    link.dataset.linkAnalyticsBound = "1";
+    link.addEventListener("click", function () {
+      const eventName = sanitizeText(link.dataset.trackEvent, 80) || "site_link_click";
+
+      void trackEvent(eventName, Object.assign({}, getSaleParams(), {
+        cta_location: getCtaLocation(link),
+        link_url: link.href,
+        link_text: sanitizeText(link.getAttribute("aria-label") || link.textContent, 120),
+      }));
+    });
+  });
+}
+
 function trackSaleBadgeVisible() {
   if (!activeSale) return;
 
@@ -303,6 +322,7 @@ function initEventTracking() {
   activeSale = getActiveSale();
   bindAppStoreClicks();
   bindMediumClicks();
+  bindTrackedLinkClicks();
   trackBlogArticleOpen();
   trackSaleBadgeVisible();
   window.addEventListener(SALE_CHANGED_EVENT, onSaleChanged);
