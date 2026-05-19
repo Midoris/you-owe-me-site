@@ -3152,7 +3152,7 @@
         body.homepage-page .lt-ctaRow {
           flex-direction: row;
           align-items: center;
-          justify-content: flex-start;
+          justify-content: center;
           gap: 0.7rem;
           margin-top: 0.88rem;
         }
@@ -3160,7 +3160,7 @@
         body.homepage-page .lt-heroCtas .lt-appStoreBtn,
         body.homepage-page .lt-appStoreBtn {
           width: min(205px, 62vw);
-          align-self: flex-start;
+          align-self: center;
         }
 
         body.homepage-page .lt-heroCtas .lt-textCta {
