@@ -96,19 +96,8 @@ body.site-nav-page #navPanelToggle:focus-visible {
 
 @media screen and (max-width: 980px) {
   body.site-nav-page #wrapper::after {
-    content: "";
-    position: fixed;
-    z-index: 10000;
-    top: 0;
-    left: 0;
-    right: 0;
-    height: calc(env(safe-area-inset-top, 0px) + 4rem);
-    background: rgba(251, 253, 255, 0.985);
-    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
-    box-shadow: 0 10px 30px rgba(15, 23, 42, 0.08);
-    -webkit-backdrop-filter: blur(14px);
-    backdrop-filter: blur(14px);
-    pointer-events: none;
+    content: none;
+    display: none;
   }
 
   body.site-nav-page #navPanelToggle {
@@ -120,9 +109,12 @@ body.site-nav-page #navPanelToggle:focus-visible {
     right: 0.75rem;
     min-height: 2.35rem;
     padding: 0.55rem 0.92rem;
+    border: 1px solid rgba(118, 177, 75, 0.18);
     border-radius: 999px;
     background: rgba(var(--site-menu-accent-rgb), 0.94);
     box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
+    -webkit-backdrop-filter: blur(12px);
+    backdrop-filter: blur(12px);
     color: var(--site-menu-ink) !important;
     font-size: 0.72rem;
     line-height: 1;
@@ -137,6 +129,7 @@ body.site-nav-page #navPanelToggle:focus-visible {
   body.site-nav-page #navPanelToggle.alt,
   body.site-nav-page #navPanelToggle.alt:hover {
     background: rgba(var(--site-menu-accent-rgb), 0.94);
+    border-color: rgba(118, 177, 75, 0.18);
     color: var(--site-menu-ink) !important;
   }
 
@@ -155,7 +148,8 @@ body.site-nav-page #navPanelToggle:focus-visible {
 
 @media screen and (max-width: 736px) {
   body.site-nav-page #wrapper::after {
-    height: calc(env(safe-area-inset-top, 0px) + 3.72rem);
+    content: none;
+    display: none;
   }
 
   body.site-nav-page #navPanelToggle {
