@@ -21,15 +21,20 @@ body.partial-repayment-page article.post.featured h3 {
 body.partial-repayment-page .lt-toolsSection p,
 body.partial-repayment-page .lt-toolsSection ul,
 body.partial-repayment-page .lt-toolsSection ol,
+body.partial-repayment-page .lt-toolsHero p,
 body.partial-repayment-page .lt-finalCta p,
 body.partial-repayment-page .template-card p,
 body.partial-repayment-page .template-card blockquote,
+body.partial-repayment-page .polite-answer-card p,
+body.partial-repayment-page .polite-answer-card blockquote,
+body.partial-repayment-page .polite-answer-card ul,
 body.partial-repayment-page .lt-toolCard p,
 body.partial-repayment-page .faq-section p {
   width: auto;
   max-width: none;
   margin-left: 0;
   margin-right: 0;
+  overflow-wrap: break-word;
 }
 
 body.partial-repayment-page .lt-toolsSection > p {
@@ -187,6 +192,13 @@ body.partial-repayment-page .lt-toolsSection > p {
   line-height: 1.55 !important;
 }
 
+.partial-scope-note {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.66);
+}
+
 .partial-helper-form {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
@@ -339,6 +351,7 @@ body.partial-repayment-page .lt-toolsSection > p {
 
 .partial-allocation-grid {
   grid-template-columns: repeat(4, minmax(0, 1fr));
+  margin-left: 0;
 }
 
 .partial-allocation-grid > div {
@@ -348,7 +361,7 @@ body.partial-repayment-page .lt-toolsSection > p {
   background: rgba(255, 255, 255, 0.76);
 }
 
-.partial-allocation-grid span {
+.partial-allocation-grid dt {
   display: block;
   color: rgba(24, 33, 43, 0.62);
   font-size: 0.8rem;
@@ -358,9 +371,10 @@ body.partial-repayment-page .lt-toolsSection > p {
   letter-spacing: 0.06em;
 }
 
-.partial-allocation-grid strong {
+.partial-allocation-grid dd {
   display: block;
   margin-top: 0.28rem;
+  margin-left: 0;
   color: #18212b;
   font-size: 1.45rem;
   line-height: 1.1;
