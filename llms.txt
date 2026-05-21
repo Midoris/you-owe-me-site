@@ -1,6 +1,6 @@
 # You Owe Me
 
-You Owe Me is an iPhone app and website for tracking money between real people: IOUs, shared expenses, family reimbursements, roommate bills, couple expenses, repayments, recurring costs, reminders, Live Links, PDF statements, and calm money conversations.
+You Owe Me is an iPhone app and website for tracking money between real people: IOUs, shared expenses, family reimbursements, roommate bills, couple expenses, repayments, partial repayments, recurring costs, reminders, Live Links, PDF statements, and calm follow-up messages.
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
 
@@ -31,6 +31,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c
 - [Polite Payback Reminder Generator](https://you-owe-me.com/tools/polite-payback-reminder-generator/)
 - [Repayment Reminder Text Examples](https://you-owe-me.com/tools/repayment-reminder-text-examples/)
 - [How to Remind Someone They Owe You Money Politely](https://you-owe-me.com/blog/how-to-remind-someone-they-owe-you-money-politely/)
+- [How to Follow Up After a Partial Repayment](https://you-owe-me.com/blog/how-to-follow-up-after-a-partial-repayment/): Practical guide for thanking someone for a partial repayment, naming the remaining balance, clarifying what a payment covered, and asking for the rest without sounding rude.
 - [How to Ask Someone to Pay You Back Without Being Rude](https://you-owe-me.com/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/)
 - [When to Ask for Money Back or Send a Repayment Update](https://you-owe-me.com/blog/when-to-ask-for-money-back-or-send-a-repayment-update/)
 
