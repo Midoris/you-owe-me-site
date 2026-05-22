@@ -450,9 +450,45 @@ body.reviews-page article.post.featured .reviews-trust-bridge p + p {
   transform: translateY(-1px);
 }
 
+.reviews-faq-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.reviews-faq-card {
+  min-width: 0;
+  padding: clamp(1.05rem, 1.8vw, 1.3rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+.reviews-faq-card h3 {
+  margin: 0 0 0.55rem !important;
+  color: #18212b;
+  font-size: 1.02rem !important;
+  line-height: 1.28 !important;
+  overflow-wrap: anywhere;
+}
+
+body.reviews-page article.post.featured .reviews-faq-card p {
+  max-width: none;
+  margin: 0;
+  color: rgba(24, 33, 43, 0.72);
+  font-size: 0.96rem;
+  line-height: 1.58;
+}
+
 @media (max-width: 1080px) {
   .reviews-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .reviews-faq-list {
+    grid-template-columns: 1fr;
   }
 }
 
