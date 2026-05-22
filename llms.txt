@@ -14,6 +14,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c
 
 - [Home](https://you-owe-me.com/)
 - [Features](https://you-owe-me.com/features/)
+- [Reviews](https://you-owe-me.com/reviews/): Selected App Store reviews for You Owe Me, including 4.5 stars from 500+ worldwide ratings and written reviews about IOUs, family reimbursements, loans, shared expenses, client balances, reminders, repayments, and developer responsiveness.
 - [Tools](https://you-owe-me.com/tools/)
 - [Blog](https://you-owe-me.com/blog/)
 - [Solutions](https://you-owe-me.com/solutions/)

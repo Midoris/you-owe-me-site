@@ -2950,6 +2950,29 @@
         min-height: 15.5rem;
       }
 
+      body.homepage-page .lt-reviewMoreLink {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        min-height: 2.1rem;
+        padding: 0.48rem 0.8rem;
+        border: 1px solid rgba(107, 161, 69, 0.2);
+        border-radius: 999px;
+        background: rgba(175, 230, 126, 0.18);
+        color: #18212b;
+        font-size: 0.84rem;
+        font-weight: 800;
+        letter-spacing: 0;
+        line-height: 1.2;
+        text-decoration: none;
+        white-space: nowrap;
+      }
+
+      body.homepage-page .lt-reviewMoreLink:hover {
+        background: rgba(175, 230, 126, 0.28);
+        color: #18212b !important;
+      }
+
       @media (max-width: 736px) {
         body.homepage-page .lt-mobileStickyCta {
           position: fixed;
@@ -3004,6 +3027,11 @@
         body.homepage-page .lt-reviewAttribution {
           font-size: 0.84rem;
           line-height: 1.38;
+        }
+
+        body.homepage-page .lt-reviewMoreLink {
+          width: fit-content;
+          font-size: 0.78rem;
         }
 
         body.homepage-page .lt-reviewCard {
