@@ -642,6 +642,13 @@
     }, 2800);
   }
 
+  function scrollCalculatorIntoView() {
+    const calculator = document.querySelector("#calculator");
+    if (!calculator) return;
+    const reducedMotion = window.matchMedia && window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    calculator.scrollIntoView({ behavior: reducedMotion ? "auto" : "smooth", block: "start" });
+  }
+
   function handleSetupInput(event) {
     const target = event.target;
     if (target === els.currency) state.currency = sanitizeCurrency(target.value);
@@ -694,6 +701,7 @@
       if (!button) return;
       const action = button.getAttribute("data-action");
       const row = button.closest("[data-transaction-id]");
+      const shouldScrollToCalculator = button.hasAttribute("data-scroll-to-calculator");
 
       if (action === "add-shared") addTransaction("shared");
       if (action === "add-repayment") addTransaction("repayment");
@@ -704,6 +712,7 @@
       if (action === "load-couple") loadScenario("couple");
       if (action === "load-roommate") loadScenario("roommate");
       if (action === "copy-summary") copySummary();
+      if (shouldScrollToCalculator) scrollCalculatorIntoView();
     });
   }
 

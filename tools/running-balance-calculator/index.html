@@ -226,15 +226,21 @@
           <section class="lt-toolsSection rb-calculator" id="calculator" aria-labelledby="calculator-title">
             <div class="rb-calculatorShell">
               <div class="rb-calculatorHeader">
-                <div>
+                <div class="rb-calculatorIntro">
                   <p class="lt-sectionEyebrow">Browser calculator</p>
                   <h2 id="calculator-title">Current balance between two people</h2>
                   <p>This calculator runs in your browser. The values you enter are not sent anywhere or saved to an account.</p>
                 </div>
+                <aside class="rb-exampleResultCard" aria-labelledby="example-result-title">
+                  <p class="rb-exampleLabel">Example result</p>
+                  <h3 id="example-result-title">Alex owes you $8.00</h3>
+                  <p>You paid $42 for groceries. Alex paid $18 for Uber. You paid $12 for a subscription. Alex sent back $10.</p>
+                  <button type="button" class="rb-secondaryButton" data-action="load-example" aria-label="Load the example result into the calculator">Load this example</button>
+                </aside>
                 <div class="rb-actionCluster" aria-label="Example scenarios">
-                  <button type="button" class="rb-secondaryButton" data-action="load-example">Load example</button>
-                  <button type="button" class="rb-secondaryButton" data-action="load-couple">Couple example</button>
-                  <button type="button" class="rb-secondaryButton" data-action="load-roommate">Roommate example</button>
+                  <button type="button" class="rb-secondaryButton" data-action="load-example" aria-label="Load groceries, Uber, subscription, and repayment example">Load example</button>
+                  <button type="button" class="rb-secondaryButton" data-action="load-couple" aria-label="Load couple running balance example">Couple example</button>
+                  <button type="button" class="rb-secondaryButton" data-action="load-roommate" aria-label="Load roommate running balance example">Roommate example</button>
                   <button type="button" class="rb-secondaryButton" data-action="clear-all">Clear all</button>
                 </div>
               </div>
@@ -261,6 +267,7 @@
 
                 <fieldset class="rb-startingBalance">
                   <legend>Optional starting balance</legend>
+                  <p class="rb-fieldHint rb-startingHelp">Use a starting balance if one person already owed money before the rows you are about to enter. For example, if Alex already owed you $25 before this week, start from that amount and then add new expenses or repayments.</p>
                   <label class="rb-radioCard">
                     <input type="radio" name="rb-starting-direction" value="none" checked />
                     <span data-starting-label="none">No starting balance</span>
@@ -292,6 +299,26 @@
                     <button type="button" class="rb-smallButton" data-action="add-shared">Add shared expense</button>
                     <button type="button" class="rb-smallButton" data-action="add-repayment">Add repayment</button>
                     <button type="button" class="rb-smallButton" data-action="add-direct">Add direct expense</button>
+                  </div>
+                </div>
+                <div class="rb-typeGuide" aria-labelledby="row-type-guide-title">
+                  <div class="rb-typeGuideIntro">
+                    <h4 id="row-type-guide-title">Choose the row type</h4>
+                    <p>Use shared expense when both people should cover part of the cost. Use repayment when someone sends money back. Use direct expense when one person paid something entirely for the other person.</p>
+                  </div>
+                  <div class="rb-typeGuideGrid">
+                    <article>
+                      <h5>Shared expense</h5>
+                      <p>One person paid, but both people should share the cost. Example: groceries, dinner, taxi, subscription.</p>
+                    </article>
+                    <article>
+                      <h5>Repayment</h5>
+                      <p>Someone sent money back. This reduces the current balance and can even flip the balance if they overpay.</p>
+                    </article>
+                    <article>
+                      <h5>Direct expense</h5>
+                      <p>One person paid entirely for the other person. Example: you bought something only for Alex, or Alex paid a bill only for you.</p>
+                    </article>
                   </div>
                 </div>
                 <div class="rb-transactionList" data-transaction-list></div>
@@ -326,13 +353,27 @@
               </section>
 
               <section class="rb-panel rb-copyPanel" aria-labelledby="copy-title">
-                <div>
-                  <h3 id="copy-title">5. Copy summary</h3>
-                  <p>Copy a clear message-ready summary of the current balance and the rows behind it.</p>
+                <div class="rb-copyHeader">
+                  <div>
+                    <h3 id="copy-title">5. Copy summary</h3>
+                    <p>Copy a clear message-ready summary of the current balance and the rows behind it.</p>
+                  </div>
+                  <div class="rb-copyActions">
+                    <button type="button" class="rb-primaryButton" data-action="copy-summary">Copy summary</button>
+                    <span class="rb-copyStatus" aria-live="polite" data-copy-status></span>
+                  </div>
                 </div>
-                <div class="rb-copyActions">
-                  <button type="button" class="rb-primaryButton" data-action="copy-summary">Copy summary</button>
-                  <span class="rb-copyStatus" aria-live="polite" data-copy-status></span>
+                <div class="rb-copyExample" aria-label="Example copied summary">
+                  <h4>What the copied summary can look like</h4>
+                  <p>Current balance: Alex owes you $8.00.</p>
+                  <p>Based on:</p>
+                  <ul>
+                    <li>You paid $42.00 for groceries. Alex's share was $21.00.</li>
+                    <li>Alex paid $18.00 for Uber. Your share was $9.00.</li>
+                    <li>You paid $12.00 for a subscription. Alex's share was $6.00.</li>
+                    <li>Alex repaid $10.00.</li>
+                  </ul>
+                  <p>Remaining balance: Alex owes you $8.00.</p>
                 </div>
               </section>
             </div>
@@ -345,6 +386,23 @@
             </p>
             <p>
               It is useful when the situation is not just one bill. For example, one person pays for groceries, the other pays for a ride, a subscription renews, and then someone sends back only part of the money.
+            </p>
+          </section>
+
+          <section class="lt-toolsSection rb-contentSection">
+            <h2>What you can include</h2>
+            <p>The calculator is built for short real-life histories, not just one bill.</p>
+            <ul class="lt-valueList">
+              <li>shared expenses split equally</li>
+              <li>custom shares when the cost is not 50/50</li>
+              <li>repayments and partial repayments</li>
+              <li>direct expenses paid entirely for the other person</li>
+              <li>an optional starting balance</li>
+              <li>overpayments that flip the balance direction</li>
+              <li>a timeline showing the balance after each row</li>
+            </ul>
+            <p>
+              Use custom shares when the expense is not split 50/50. For example, if one person should cover 70% and the other 30%, the balance updates only by the other person's share.
             </p>
           </section>
 
@@ -415,6 +473,10 @@
                 </tbody>
               </table>
             </div>
+            <div class="rb-exampleCta">
+              <p>Want to try this exact situation? Load the example in the calculator above.</p>
+              <button type="button" class="rb-secondaryButton" data-action="load-example" data-scroll-to-calculator aria-label="Load groceries, Uber, subscription, and repayment example and return to the calculator">Load example</button>
+            </div>
           </section>
 
           <section class="lt-toolsSection rb-contentSection">
@@ -462,8 +524,9 @@
             <div class="lt-bridgePanel">
               <h2>Need to keep this balance clear over time?</h2>
               <p>
-                Use the calculator for a quick check. Use You Owe Me when expenses, repayments, reminders, and money conversations keep happening with the same person.
+                Use this calculator when you need a quick answer. Use You Owe Me when the same balance keeps changing, repayments happen later, or you need a clear history you can share without rebuilding everything from memory.
               </p>
+              <p class="rb-trustLine">Built for the same real-life problem You Owe Me solves in the app: expenses, repayments, reminders, and one clear balance between people.</p>
               <div class="lt-ctaRow">
                 <a
                   href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=7f9074ac-4090-4e07-aebe-c5722e76eedc"
