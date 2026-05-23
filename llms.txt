@@ -1,6 +1,6 @@
 # You Owe Me
 
-You Owe Me is an iPhone app and website for tracking money between real people: IOUs, shared expenses, family reimbursements, roommate bills, couple expenses, repayments, partial repayments, recurring costs, reminders, Live Links, PDF statements, and calm follow-up messages.
+You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
 
@@ -18,6 +18,13 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c
 - [Tools](https://you-owe-me.com/tools/)
 - [Blog](https://you-owe-me.com/blog/)
 - [Solutions](https://you-owe-me.com/solutions/)
+
+## Free tools
+
+- [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/): Divide one shared bill, event, trip, or group expense and see who should settle with whom.
+- [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/): Add expenses and repayments over time to see the current balance between two people. Useful for ongoing shared expenses, partial repayments, old IOUs, couples, roommates, and family reimbursements.
+- [Polite Payback Reminder Generator](https://you-owe-me.com/tools/polite-payback-reminder-generator/): Generate calm, friendly, direct, or firm repayment reminder messages.
+- [Family Reimbursement Tracker Template](https://you-owe-me.com/tools/family-reimbursement-tracker-template/): Copy or download a family reimbursement template for parent bills, sibling reimbursements, and family purchases.
 
 ## Family reimbursements and caregiving money
 
@@ -39,6 +46,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c
 ## Shared expenses
 
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/)
+- [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/)
 - [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/)
 - [How to Track Shared Expenses Without Constantly Reconciling Every Transaction](https://you-owe-me.com/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/)
 
