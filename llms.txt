@@ -1,6 +1,6 @@
 # You Owe Me
 
-You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
+You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, Loan Records, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
 
@@ -36,6 +36,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c
 ## Money owed and repayment communication
 
 - [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/)
+- Loan Records: separate records for specific loans or repayment plans that keep their own remaining balance while still counting toward the full person balance.
 - [Polite Payback Reminder Generator](https://you-owe-me.com/tools/polite-payback-reminder-generator/)
 - [Repayment Reminder Text Examples](https://you-owe-me.com/tools/repayment-reminder-text-examples/)
 - [How to Remind Someone They Owe You Money Politely](https://you-owe-me.com/blog/how-to-remind-someone-they-owe-you-money-politely/)

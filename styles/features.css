@@ -166,6 +166,13 @@ body.features-page .features-card .lt-cardCta {
   margin-top: 1rem;
 }
 
+body.features-page .features-included-list {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.4rem 1.25rem;
+  margin-bottom: 0;
+}
+
 body.features-page .lt-finalCta {
   margin-top: 3.1rem;
 }
@@ -188,6 +195,10 @@ body.features-page .lt-finalCta {
   }
 
   body.features-page .features-tour-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.features-page .features-included-list {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -262,6 +273,10 @@ body.features-page .lt-finalCta {
   }
 
   body.features-page .features-tour-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.features-page .features-included-list {
     grid-template-columns: 1fr;
   }
 
