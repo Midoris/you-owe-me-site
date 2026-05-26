@@ -1,0 +1,642 @@
+body.running-balance-answer-page {
+  --rb-answer-ink: #18212b;
+  --rb-answer-muted: rgba(24, 33, 43, 0.72);
+  --rb-answer-line: rgba(15, 23, 42, 0.08);
+  --rb-answer-green: #afe67e;
+  --rb-answer-blue: #dfeaf4;
+  --rb-answer-sun: #e9e6bc;
+}
+
+body.running-balance-answer-page article.post.featured {
+  max-width: none;
+}
+
+body.running-balance-answer-page #wrapper,
+body.running-balance-answer-page #main {
+  overflow-x: hidden;
+}
+
+body.running-balance-answer-page a {
+  border-bottom: 0;
+}
+
+body.running-balance-answer-page .lt-breadcrumb {
+  flex-wrap: wrap;
+}
+
+body.running-balance-answer-page .lt-breadcrumb span {
+  min-width: 0;
+  overflow-wrap: break-word;
+}
+
+body.running-balance-answer-page .rb-answer-hero,
+body.running-balance-answer-page .rb-answer-card,
+body.running-balance-answer-page .rb-answer-section,
+body.running-balance-answer-page .rb-answer-product,
+body.running-balance-answer-page .rb-answer-finalCta {
+  box-sizing: border-box;
+  width: min(100%, 58rem);
+}
+
+body.running-balance-answer-page .rb-answer-product,
+body.running-balance-answer-page .rb-answer-finalCta {
+  width: min(100%, 64rem);
+}
+
+body.running-balance-answer-page .rb-answer-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.42fr);
+  align-items: stretch;
+}
+
+body.running-balance-answer-page .rb-answer-hero .lt-toolsHeroCopy {
+  min-width: 0;
+}
+
+body.running-balance-answer-page .rb-answer-hero h1 {
+  max-width: 16ch;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+body.running-balance-answer-page .rb-answer-hero .major,
+body.running-balance-answer-page .rb-answer-hero .lt-heroBody,
+body.running-balance-answer-page .rb-answer-hero .lt-heroSupport,
+body.running-balance-answer-page .rb-answer-hero .lt-eyebrow {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.running-balance-answer-page .rb-answer-hero .lt-heroBody,
+body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
+  width: auto !important;
+}
+
+.rb-answer-chipRow {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1.15rem 0 0;
+}
+
+.rb-answer-chipRow span,
+.rb-productGrid span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2rem;
+  border: 1px solid var(--rb-answer-line);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.74);
+  color: rgba(24, 33, 43, 0.74);
+  font-size: 0.82rem;
+  font-weight: 750;
+  line-height: 1.2;
+  padding: 0.42rem 0.68rem;
+}
+
+.rb-answer-heroVisual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: 0;
+  min-height: 0;
+}
+
+.rb-answer-heroVisual img,
+.rb-answer-inlineImage img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 22px 54px rgba(15, 23, 42, 0.1);
+}
+
+.rb-answer-heroVisual img {
+  max-width: 34rem;
+}
+
+.rb-answer-inlineImage {
+  box-sizing: border-box;
+  width: 100%;
+  margin: 1.35rem 0 0;
+}
+}
+
+.rb-answer-section,
+.rb-answer-card,
+.rb-answer-product,
+.rb-answer-finalCta {
+  max-width: 58rem;
+}
+
+.rb-answer-section h2,
+.rb-answer-card h2,
+.rb-answer-product h2,
+.rb-answer-finalCta h2 {
+  margin-bottom: 0.75rem !important;
+}
+
+.rb-answer-section > p,
+.rb-answer-card > p,
+.rb-answer-product p,
+.rb-answer-finalCta p {
+  max-width: 72ch;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.rb-answer-section > p + p,
+.rb-answer-card > p + p,
+.rb-answer-product p + p {
+  margin-top: 0.9rem;
+}
+
+.rb-answer-section > h2,
+.rb-answer-card > h2,
+.rb-answer-product h2,
+.rb-answer-finalCta h2,
+.rb-answer-section > .lt-sectionEyebrow,
+.rb-answer-card > .lt-sectionEyebrow,
+.rb-answer-product .lt-sectionEyebrow {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.rb-answer-card {
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.24), rgba(223, 234, 244, 0.22)),
+    rgba(255, 255, 255, 0.94);
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  padding: clamp(1.25rem, 3vw, 1.9rem);
+}
+
+.rb-answer-card--short h2 {
+  margin-top: 0 !important;
+}
+
+.rb-answer-miniExample {
+  margin-top: 1.1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.7);
+  padding: 1rem;
+}
+
+.rb-answer-miniExample p {
+  margin: 0;
+  max-width: none;
+}
+
+.rb-tableWrap {
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 100%;
+  margin: 1.25rem 0 1rem;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border: 1px solid var(--rb-answer-line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+}
+
+.rb-answer-table {
+  width: 100%;
+  min-width: 730px;
+  border-collapse: collapse;
+  margin: 0 !important;
+  color: rgba(33, 41, 49, 0.9);
+}
+
+.rb-answer-table th,
+.rb-answer-table td {
+  border: 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  padding: 0.95rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rb-answer-table thead th {
+  background:
+    linear-gradient(135deg, rgba(223, 234, 244, 0.52), rgba(255, 255, 255, 0.94));
+  color: rgba(24, 33, 43, 0.66);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.02em;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.rb-answer-table tbody th {
+  width: 18%;
+  color: var(--rb-answer-ink);
+  font-size: 0.96rem;
+  font-weight: 780;
+  line-height: 1.35;
+}
+
+.rb-answer-table td {
+  font-size: 0.96rem;
+  line-height: 1.5;
+}
+
+.rb-answer-table tr:last-child th,
+.rb-answer-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.rb-answer-contrast,
+.rb-mentalModel,
+.rb-comparisonCard,
+.rb-messageCard,
+.rb-definitionCard,
+.rb-situationCard {
+  border: 1px solid var(--rb-answer-line);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+}
+
+.rb-answer-contrast {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1.15rem;
+  padding: 1rem;
+}
+
+.rb-answer-contrast p {
+  margin: 0;
+  max-width: none;
+}
+
+.rb-mentalModel {
+  display: grid;
+  grid-template-columns: minmax(12rem, 0.36fr) minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-top: 1.2rem;
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+.rb-mentalModelStart {
+  display: grid;
+  gap: 0.4rem;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.24), rgba(233, 230, 188, 0.24)),
+    rgba(255, 255, 255, 0.82);
+  padding: 1rem;
+}
+
+.rb-mentalModelStart span {
+  color: rgba(24, 33, 43, 0.64);
+  font-size: 0.8rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.rb-mentalModelStart strong {
+  color: var(--rb-answer-ink);
+  font-size: clamp(1.35rem, 2.2vw, 1.8rem);
+  line-height: 1.1;
+}
+
+.rb-mentalModel ul {
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.rb-definitionGrid,
+.rb-situationGrid,
+.rb-twoColumn,
+.rb-messageGrid,
+.rb-productGrid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+.rb-definitionGrid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.rb-definitionCard,
+.rb-situationCard,
+.rb-comparisonCard,
+.rb-messageCard {
+  padding: 1.15rem;
+}
+
+.rb-definitionCard h3,
+.rb-situationCard h3,
+.rb-comparisonCard h3,
+.rb-messageCard h3 {
+  margin: 0 0 0.55rem !important;
+}
+
+.rb-definitionCard p,
+.rb-situationCard p,
+.rb-messageCard p {
+  margin: 0;
+  max-width: none;
+}
+
+.rb-situationGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rb-situationCard--wide {
+  grid-column: span 2;
+  background:
+    linear-gradient(135deg, rgba(223, 234, 244, 0.46), rgba(255, 255, 255, 0.92));
+}
+
+.rb-twoColumn {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rb-comparisonCard ul {
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.rb-comparisonCard--product {
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.2), rgba(255, 255, 255, 0.94));
+}
+
+.rb-workflowList {
+  display: grid;
+  gap: 0.8rem;
+  max-width: 76ch !important;
+  margin: 1rem 0 0 !important;
+  padding-left: 0 !important;
+  list-style: none;
+  counter-reset: rb-workflow;
+}
+
+.rb-workflowList li {
+  position: relative;
+  display: grid;
+  gap: 0.28rem;
+  border: 1px solid var(--rb-answer-line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  padding: 1rem 1rem 1rem 3.4rem;
+  counter-increment: rb-workflow;
+}
+
+.rb-workflowList li::before {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.65rem;
+  height: 1.65rem;
+  border-radius: 50%;
+  background: var(--rb-answer-green);
+  color: var(--rb-answer-ink);
+  content: counter(rb-workflow);
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.rb-workflowList strong,
+.rb-workflowList span {
+  display: block;
+}
+
+.rb-workflowList strong {
+  color: var(--rb-answer-ink);
+}
+
+.rb-workflowList span {
+  color: var(--rb-answer-muted);
+}
+
+.rb-messageGrid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rb-messageCard span {
+  display: inline-flex;
+  margin-bottom: 0.65rem;
+  color: #355428;
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.rb-answer-product {
+  max-width: 64rem;
+}
+
+.rb-productGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1.1rem 0;
+}
+
+.rb-answer-product .lt-bridgePanel {
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.24), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(223, 234, 244, 0.44));
+}
+
+.rb-answer-keyTakeaway {
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.24), rgba(233, 230, 188, 0.22)),
+    rgba(255, 255, 255, 0.94);
+}
+
+.faq-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.faq-list details {
+  border: 1px solid var(--rb-answer-line);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.06);
+  padding: 1rem 1.1rem;
+}
+
+.faq-list summary {
+  cursor: pointer;
+  color: var(--rb-answer-ink);
+  font-weight: 780;
+  line-height: 1.35;
+}
+
+.faq-list summary:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.28);
+  outline-offset: 4px;
+  border-radius: 8px;
+}
+
+.faq-list p {
+  margin: 0.75rem 0 0 !important;
+  max-width: 72ch !important;
+}
+
+.rb-answer-finalCta {
+  max-width: 64rem;
+}
+
+.rb-answer-finalCta .lt-ctaRow {
+  align-items: center;
+}
+
+@media (max-width: 980px) {
+  body.running-balance-answer-page .rb-answer-hero {
+    grid-template-columns: 1fr;
+  }
+
+  body.running-balance-answer-page .rb-answer-hero h1 {
+    max-width: 22ch;
+  }
+
+  body.blog-page.running-balance-answer-page #main > .post header.major > h1,
+  body.blog-page.running-balance-answer-page article.post.featured h1 {
+    max-width: 22ch;
+  }
+
+  .rb-answer-heroVisual {
+    display: none;
+  }
+
+  .rb-situationGrid,
+  .rb-messageGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rb-situationCard--wide {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 736px) {
+  body.running-balance-answer-page #main {
+    box-sizing: border-box;
+    padding-left: 0.55rem;
+    padding-right: 0.55rem;
+  }
+
+  body.running-balance-answer-page article.post.featured {
+    box-sizing: border-box;
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  body.running-balance-answer-page .rb-answer-hero,
+  body.running-balance-answer-page .rb-answer-card,
+  body.running-balance-answer-page .rb-answer-section,
+  body.running-balance-answer-page .rb-answer-product,
+  body.running-balance-answer-page .rb-answer-finalCta {
+    width: 100% !important;
+    max-width: 100% !important;
+    min-width: 0;
+  }
+
+  body.running-balance-answer-page .lt-toolsHeroCopy,
+  body.running-balance-answer-page .rb-answer-hero .major,
+  body.running-balance-answer-page .rb-answer-hero .lt-heroBody,
+  body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
+    max-width: 100%;
+    min-width: 0;
+  }
+
+  body.blog-page.running-balance-answer-page article.post.featured > header.major {
+    padding-right: 0;
+  }
+
+  body.blog-page.running-balance-answer-page #main > .post header.major > h1,
+  body.blog-page.running-balance-answer-page article.post.featured h1 {
+    max-width: none;
+    font-size: clamp(1.82rem, 7.4vw, 2.35rem);
+    overflow-wrap: break-word;
+    text-wrap: normal;
+  }
+
+  body.running-balance-answer-page .rb-answer-hero {
+    padding: 1.25rem 1rem;
+  }
+
+  .rb-answer-heroVisual {
+    display: none;
+  }
+
+  .rb-answer-chipRow span,
+  .rb-productGrid span {
+    min-height: 1.85rem;
+    font-size: 0.78rem;
+  }
+
+  .rb-answer-card,
+  .rb-definitionCard,
+  .rb-situationCard,
+  .rb-comparisonCard,
+  .rb-messageCard,
+  .rb-answer-contrast,
+  .rb-mentalModel,
+  .faq-list details {
+    border-radius: 16px;
+  }
+
+  .rb-answer-card {
+    padding: 1rem;
+  }
+
+  .rb-tableWrap {
+    border-radius: 16px;
+  }
+
+  .rb-answer-table {
+    min-width: 680px;
+  }
+
+  .rb-answer-table th,
+  .rb-answer-table td {
+    padding: 0.78rem;
+    font-size: 0.9rem;
+  }
+
+  .rb-mentalModel,
+  .rb-twoColumn,
+  .rb-messageGrid,
+  .rb-situationGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .rb-situationCard--wide {
+    grid-column: auto;
+  }
+
+  .rb-workflowList li {
+    padding: 0.95rem 0.95rem 0.95rem 3.1rem;
+  }
+
+  .rb-answer-product .lt-bridgePanel,
+  .rb-answer-finalCta {
+    padding-left: 1rem;
+    padding-right: 1rem;
+  }
+
+  .rb-answer-finalCta .lt-primaryCta,
+  .rb-answer-finalCta .lt-appStoreBtn {
+    width: 100%;
+  }
+}

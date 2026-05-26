@@ -4,6 +4,9 @@ You Owe Me is an iPhone app for tracking money between real people. It helps wit
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
 
+Core concept:
+A running balance between two people is one current total that updates after each expense, repayment, partial repayment, or adjustment. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
+
 App Store:
 https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670
 
@@ -46,6 +49,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c
 
 ## Shared expenses
 
+- [What Is a Running Balance Between Two People?](https://you-owe-me.com/blog/what-is-a-running-balance-between-two-people/): Plain-English explanation of how one current balance updates after expenses, repayments, partial repayments, shared costs, starting balances, adjustments, and overpayments between two people.
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/)
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/)
 - [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/)
