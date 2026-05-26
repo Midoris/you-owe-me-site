@@ -121,7 +121,6 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
   width: 100%;
   margin: 1.35rem 0 0;
 }
-}
 
 .rb-answer-section,
 .rb-answer-card,
@@ -190,6 +189,25 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
   max-width: none;
 }
 
+.rb-answer-callout {
+  border: 1px solid rgba(53, 84, 40, 0.14);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(233, 230, 188, 0.22), rgba(255, 255, 255, 0.94)),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.06);
+  padding: clamp(1.05rem, 2.5vw, 1.35rem);
+}
+
+.rb-answer-callout h2 {
+  margin-top: 0 !important;
+  font-size: clamp(1.12rem, 0.98rem + 0.55vw, 1.35rem) !important;
+}
+
+.rb-answer-callout p {
+  margin-bottom: 0;
+}
+
 .rb-tableWrap {
   box-sizing: border-box;
   width: 100%;
@@ -209,6 +227,17 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
   border-collapse: collapse;
   margin: 0 !important;
   color: rgba(33, 41, 49, 0.9);
+}
+
+.rb-answer-table caption {
+  caption-side: top;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: rgba(24, 33, 43, 0.72);
+  font-size: 0.92rem;
+  font-weight: 700;
+  line-height: 1.45;
+  text-align: left;
 }
 
 .rb-answer-table th,
@@ -251,10 +280,12 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
 
 .rb-answer-contrast,
 .rb-mentalModel,
+.rb-directionCard,
 .rb-comparisonCard,
 .rb-messageCard,
 .rb-definitionCard,
-.rb-situationCard {
+.rb-situationCard,
+.rb-relatedCard {
   border: 1px solid var(--rb-answer-line);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.9);
@@ -312,11 +343,46 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
   max-width: none !important;
 }
 
+.rb-directionCard {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  padding: clamp(1rem, 2.5vw, 1.25rem);
+  background:
+    linear-gradient(135deg, rgba(223, 234, 244, 0.38), rgba(255, 255, 255, 0.94));
+}
+
+.rb-directionCard h3 {
+  margin: 0 !important;
+}
+
+.rb-directionCard p,
+.rb-directionCard ul {
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.rb-simpleFormula {
+  display: block;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 42rem;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.22);
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.92rem !important;
+  font-weight: 760;
+  line-height: 1.35 !important;
+  padding: 0.45rem 0.72rem;
+}
+
 .rb-definitionGrid,
 .rb-situationGrid,
 .rb-twoColumn,
 .rb-messageGrid,
-.rb-productGrid {
+.rb-productGrid,
+.rb-relatedGrid {
   display: grid;
   gap: 1rem;
   margin-top: 1.2rem;
@@ -329,20 +395,23 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
 .rb-definitionCard,
 .rb-situationCard,
 .rb-comparisonCard,
-.rb-messageCard {
+.rb-messageCard,
+.rb-relatedCard {
   padding: 1.15rem;
 }
 
 .rb-definitionCard h3,
 .rb-situationCard h3,
 .rb-comparisonCard h3,
-.rb-messageCard h3 {
+.rb-messageCard h3,
+.rb-relatedCard h3 {
   margin: 0 0 0.55rem !important;
 }
 
 .rb-definitionCard p,
 .rb-situationCard p,
-.rb-messageCard p {
+.rb-messageCard p,
+.rb-relatedCard p {
   margin: 0;
   max-width: none;
 }
@@ -355,6 +424,29 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
   grid-column: span 2;
   background:
     linear-gradient(135deg, rgba(223, 234, 244, 0.46), rgba(255, 255, 255, 0.92));
+}
+
+.rb-situationExample {
+  margin-top: 0.8rem !important;
+  color: rgba(24, 33, 43, 0.72);
+  font-size: 0.94rem !important;
+  line-height: 1.55 !important;
+}
+
+.rb-relatedGrid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rb-relatedCard {
+  display: grid;
+  align-content: start;
+  gap: 0.75rem;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.rb-relatedCard .lt-cardCta {
+  align-self: end;
+  margin-top: 0.1rem;
 }
 
 .rb-twoColumn {
@@ -519,7 +611,8 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
   }
 
   .rb-situationGrid,
-  .rb-messageGrid {
+  .rb-messageGrid,
+  .rb-relatedGrid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -586,10 +679,13 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
   }
 
   .rb-answer-card,
+  .rb-answer-callout,
   .rb-definitionCard,
   .rb-situationCard,
   .rb-comparisonCard,
   .rb-messageCard,
+  .rb-directionCard,
+  .rb-relatedCard,
   .rb-answer-contrast,
   .rb-mentalModel,
   .faq-list details {
@@ -617,7 +713,8 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
   .rb-mentalModel,
   .rb-twoColumn,
   .rb-messageGrid,
-  .rb-situationGrid {
+  .rb-situationGrid,
+  .rb-relatedGrid {
     grid-template-columns: 1fr;
   }
 
