@@ -111,6 +111,22 @@
             },
             {
               "@type": "Question",
+              "name": "Can this calculator handle uneven rent or different room sizes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Add rent as a bill, choose the roommates included, and use custom shares if one person should pay more because of room size, a private bathroom, a couple sharing a room, or another household agreement."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use this for a move-out settle-up?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Add the final shared bills, choose who was included in each cost, add repayments already made, and include any previous balance. The result can help estimate the remaining amount before someone moves out."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "How do I include money someone already paid back?",
               "acceptedAnswer": {
                 "@type": "Answer",
@@ -451,6 +467,10 @@
                 <p>Carry over an amount from last month when everyone did not fully settle up.</p>
               </article>
               <article class="roommate-info-card">
+                <h3>Uneven shares and partial participation</h3>
+                <p>Not every roommate bill has to include everyone equally. Use included roommates when only some people shared a cost, and use custom shares when rent, rooms, or household agreements are not equal.</p>
+              </article>
+              <article class="roommate-info-card">
                 <h3>Move-out settle-ups</h3>
                 <p>Use the calculator to estimate a final household balance when someone is moving out.</p>
               </article>
@@ -485,6 +505,35 @@
                 <p>For one month, a calculator may be enough. For ongoing household costs, a running balance is usually easier. If the idea is new, read <a href="/blog/what-is-a-running-balance-between-two-people/">what a running balance means</a> before deciding whether to settle once or track the balance over time.</p>
               </li>
             </ol>
+          </section>
+
+          <section class="lt-toolsSection roommate-fit-section" aria-labelledby="fit-title">
+            <div class="roommate-section-heading">
+              <p class="lt-sectionEyebrow">Best fit</p>
+              <h2 id="fit-title">Best for one monthly household settle-up</h2>
+              <p>Use this when you need a clear answer for a specific month, move-out estimate, or short household period.</p>
+            </div>
+            <div class="roommate-comparison-grid">
+              <div class="roommate-compare-card">
+                <h3>Best for:</h3>
+                <ul>
+                  <li>rent, utilities, groceries, supplies, and repayments in one month</li>
+                  <li>one roommate paid upfront and others need to settle</li>
+                  <li>a previous balance needs to be counted</li>
+                  <li>someone is moving out and needs a final estimate</li>
+                </ul>
+              </div>
+              <div class="roommate-compare-card">
+                <h3>Not for:</h3>
+                <ul>
+                  <li>legal disputes</li>
+                  <li>automatic payment collection</li>
+                  <li>long-term record keeping across many months</li>
+                  <li>replacing a clear household agreement</li>
+                </ul>
+              </div>
+            </div>
+            <p class="roommate-small-copy">For long-term roommate tracking, use the <a href="/solutions/roommate-expense-tracker/">Roommate Expense Tracker</a> in You Owe Me.</p>
           </section>
 
           <section class="lt-toolsSection roommate-comparison-section" aria-labelledby="comparison-title">
@@ -586,6 +635,7 @@
               <p class="lt-sectionEyebrow">Privacy and limitations</p>
               <h2 id="limitations-title">Privacy and limitations</h2>
               <p>This calculator is designed for simple roommate bill splitting and monthly settle-ups. It runs in your browser and does not need an account.</p>
+              <p>For household agreements, deposits, legal disputes, or formal rental issues, use this only as a practical calculation aid and keep your own records.</p>
             </div>
             <div class="roommate-limitations-card">
               <ul>
@@ -646,6 +696,14 @@
                 <p>Yes. Not every bill needs to include every roommate. For example, all roommates may split rent and internet, but only two roommates may split groceries or a subscription.</p>
               </details>
               <details>
+                <summary>Can this calculator handle uneven rent or different room sizes?</summary>
+                <p>Yes. Add rent as a bill, choose the roommates included, and use custom shares if one person should pay more because of room size, a private bathroom, a couple sharing a room, or another household agreement.</p>
+              </details>
+              <details>
+                <summary>Can I use this for a move-out settle-up?</summary>
+                <p>Yes. Add the final shared bills, choose who was included in each cost, add repayments already made, and include any previous balance. The result can help estimate the remaining amount before someone moves out.</p>
+              </details>
+              <details>
                 <summary>How do I include money someone already paid back?</summary>
                 <p>Add it as a repayment. A repayment from Alex to Maya reduces what Alex still owes and reduces what Maya should still receive.</p>
               </details>
@@ -678,6 +736,15 @@
                 class="lt-primaryCta"
                 data-track-location="roommate_calculator_bottom_primary_cta"
               >Track roommate expenses with You Owe Me</a>
+              <a
+                href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12"
+                class="lt-appStoreBtn"
+                aria-label="Download You Owe Me on the App Store"
+                data-track-location="roommate_calculator_bottom_app_store_cta"
+              >
+                <span class="sr-only">Download You Owe Me on the App Store</span>
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+              </a>
               <a href="#calculator" class="lt-textCta">Calculate another month</a>
             </div>
           </section>
