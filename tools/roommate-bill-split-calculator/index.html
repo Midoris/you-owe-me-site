@@ -1,0 +1,712 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Roommate Bill Split Calculator | Split Rent, Utilities &amp; Shared Bills</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-itunes-app" content="app-id=1147058670" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" href="../../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/shared/brand/icon_2_0.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/shared/brand/icon_2_0.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/shared/brand/icon_2_0.png" />
+
+    <link rel="canonical" href="https://you-owe-me.com/tools/roommate-bill-split-calculator/" />
+    <meta
+      name="description"
+      content="Split rent, utilities, groceries, subscriptions, and household costs with roommates. Add repayments and see who owes whom this month."
+    />
+    <meta property="og:title" content="Roommate Bill Split Calculator" />
+    <meta
+      property="og:description"
+      content="A free calculator for roommate bills, monthly settle-ups, repayments, and shared household costs."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://you-owe-me.com/tools/roommate-bill-split-calculator/" />
+    <meta property="og:image" content="https://you-owe-me.com/images/tools/roommate-bill-split-calculator/roommate-bill-split-calculator-hero.webp" />
+    <meta property="og:image:alt" content="Illustration of shared roommate bills, household expense cards, and a clear balance summary on a calm apartment table." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Roommate Bill Split Calculator" />
+    <meta
+      name="twitter:description"
+      content="A free calculator for roommate bills, monthly settle-ups, repayments, and shared household costs."
+    />
+    <meta name="twitter:image" content="https://you-owe-me.com/images/tools/roommate-bill-split-calculator/roommate-bill-split-calculator-hero.webp" />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "Roommate Bill Split Calculator",
+          "description": "A free roommate bill split calculator for rent, utilities, groceries, subscriptions, household supplies, repayments, previous balances, monthly settle-ups, and move-out balances.",
+          "url": "https://you-owe-me.com/tools/roommate-bill-split-calculator/",
+          "dateModified": "2026-05-27",
+          "isPartOf": {
+            "@type": "CollectionPage",
+            "name": "Money Tools and Templates",
+            "url": "https://you-owe-me.com/tools/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "You Owe Me"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Roommate Bill Split Calculator",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Any",
+          "url": "https://you-owe-me.com/tools/roommate-bill-split-calculator/",
+          "description": "A browser-based calculator that helps roommates split household bills, add repayments, include previous balances, and see who owes whom.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://you-owe-me.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tools",
+              "item": "https://you-owe-me.com/tools/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Roommate Bill Split Calculator",
+              "item": "https://you-owe-me.com/tools/roommate-bill-split-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "How do you split bills with roommates?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "List the shared bills, record who paid each one, decide which roommates were included, subtract each person's fair share, and then settle the remaining balance. A good calculator should also count repayments that already happened."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I split only some bills between some roommates?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Not every bill needs to include every roommate. For example, all roommates may split rent and internet, but only two roommates may split groceries or a subscription."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I include money someone already paid back?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Add it as a repayment. A repayment from Alex to Maya reduces what Alex still owes and reduces what Maya should still receive."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if a balance carries over from last month?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Add it as a previous balance. For example, if Alex still owed Maya $40 from last month, add Alex as the person who owed, Maya as the person who was owed, and $40 as the amount."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this better than a spreadsheet?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A spreadsheet can work for simple roommate bills, but it becomes harder when expenses, repayments, recurring costs, and previous balances keep changing. A running balance app is better when the situation repeats."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can this calculator handle rent, utilities, and groceries together?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Add each bill as a separate expense, choose who paid, choose which roommates were included, and the calculator will combine everything into one settle-up result."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What should I send my roommate after calculating the bills?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Send a short, specific message that includes what was counted and the remaining balance. For example: \"I added rent, utilities, and groceries for this month. After the repayment already made, you owe $42.50.\""
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../../styles/site-nav.css" />
+    <link rel="stylesheet" href="../../styles/tools.css" />
+    <link rel="stylesheet" href="../../styles/roommate-bill-split-calculator.css" />
+  </head>
+
+  <body class="is-preload tools-page roommate-bill-page site-nav-page">
+    <div id="wrapper" class="fade-in">
+      <header id="header">
+        <a href="../../index.html" class="logo">You Owe Me</a>
+      </header>
+
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="/">You Owe Me</a></li>
+          <li><a href="/solutions/">Solutions</a></li>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li class="active"><a href="/tools/">Tools</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div id="main">
+        <article class="post featured">
+          <nav class="lt-breadcrumb" aria-label="Breadcrumb">
+            <a href="../../">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="../">Tools</a>
+            <span aria-hidden="true">/</span>
+            <span>Roommate Bill Split Calculator</span>
+          </nav>
+
+          <section class="lt-toolsHero roommate-hero">
+            <div class="lt-toolsHeroCopy">
+              <p class="lt-eyebrow">Free roommate tool</p>
+              <header class="major">
+                <h1>Roommate Bill Split Calculator</h1>
+              </header>
+              <p class="lt-heroBody">Split rent, utilities, groceries, and shared household costs &mdash; then see who owes whom this month.</p>
+              <p class="lt-heroSupport">Add the bills one roommate paid, choose who was included, include repayments or a previous balance, and get a clear monthly settle-up summary.</p>
+              <p class="roommate-search-summary">
+                The Roommate Bill Split Calculator helps you add shared household expenses, choose who paid, choose which roommates were included, add repayments or previous balances, and calculate who owes whom after everything is counted.
+              </p>
+              <div class="roommate-chip-row" aria-label="Calculator highlights">
+                <span>Rent, utilities, groceries</span>
+                <span>Partial repayments</span>
+                <span>Previous balances</span>
+                <span>Monthly settle-ups</span>
+              </div>
+              <div class="lt-ctaRow">
+                <a href="#calculator" class="lt-primaryCta">Start calculating</a>
+                <a href="#example" class="lt-textCta">View example</a>
+              </div>
+            </div>
+            <figure class="roommate-hero-visual">
+              <img
+                src="/images/tools/roommate-bill-split-calculator/roommate-bill-split-calculator-hero.webp"
+                alt="Illustration of shared roommate bills, household expense cards, and a clear balance summary on a calm apartment table."
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                width="1586"
+                height="992"
+              />
+            </figure>
+          </section>
+
+          <section class="lt-toolsSection roommate-calculator-section" id="calculator" aria-labelledby="calculator-title">
+            <div class="roommate-calculator">
+              <div class="roommate-calculator-header">
+                <div>
+                  <p class="lt-sectionEyebrow">Browser calculator</p>
+                  <h2 id="calculator-title">Calculate roommate bills</h2>
+                  <p>Add roommates, shared expenses, repayments, and any previous balance. The calculator will show each person&apos;s fair share and the simplest way to settle up.</p>
+                  <p class="roommate-privacy-note">This calculator runs in your browser. No account needed.</p>
+                </div>
+                <div class="roommate-toolbar" aria-label="Calculator controls">
+                  <div class="roommate-field roommate-currency-field">
+                    <label for="roommate-currency">Currency</label>
+                    <select id="roommate-currency" class="roommate-select">
+                      <option value="$">$</option>
+                      <option value="€">&euro;</option>
+                      <option value="£">&pound;</option>
+                      <option value="A$">A$</option>
+                      <option value="C$">C$</option>
+                      <option value="₹">&#8377;</option>
+                      <option value="IDR">IDR</option>
+                      <option value="custom">Custom</option>
+                    </select>
+                    <input id="roommate-currency-custom" class="roommate-input" type="text" maxlength="8" placeholder="Symbol" autocomplete="off" hidden />
+                  </div>
+                  <div class="roommate-toolbar-actions">
+                    <button type="button" class="roommate-secondary-button" data-action="load-example">Reset example</button>
+                    <button type="button" class="roommate-secondary-button" data-action="start-blank">Start blank</button>
+                  </div>
+                </div>
+              </div>
+
+              <div class="roommate-calculator-grid">
+                <div class="roommate-editor">
+                  <section class="roommate-step-card" aria-labelledby="roommates-title">
+                    <div class="roommate-step-header">
+                      <div>
+                        <p class="roommate-step-kicker">Step 1</p>
+                        <h3 id="roommates-title">Roommates</h3>
+                        <p>Add the people who share the household costs. You can use first names or nicknames.</p>
+                      </div>
+                      <button type="button" class="roommate-small-button" data-action="add-roommate">Add roommate</button>
+                    </div>
+                    <p id="roommate-message" class="roommate-validation" aria-live="polite"></p>
+                    <div class="roommate-list" data-roommate-list></div>
+                  </section>
+
+                  <section class="roommate-step-card" aria-labelledby="expenses-title">
+                    <div class="roommate-step-header">
+                      <div>
+                        <p class="roommate-step-kicker">Step 2</p>
+                        <h3 id="expenses-title">Shared bills</h3>
+                        <p>Use this for rent, utilities, groceries, subscriptions, or any household cost one roommate paid for.</p>
+                      </div>
+                      <button type="button" class="roommate-small-button" data-action="add-expense">Add bill</button>
+                    </div>
+                    <div class="roommate-entry-list" data-expense-list></div>
+                  </section>
+
+                  <section class="roommate-step-card" aria-labelledby="adjustments-title">
+                    <div class="roommate-step-header">
+                      <div>
+                        <p class="roommate-step-kicker">Step 3</p>
+                        <h3 id="adjustments-title">Repayments or previous balance</h3>
+                        <p>Add money that already changed hands, or carry over a balance from last month if everyone did not settle fully.</p>
+                      </div>
+                    </div>
+                    <div class="roommate-adjustment-grid">
+                      <div class="roommate-adjustment-panel">
+                        <div class="roommate-mini-header">
+                          <div>
+                            <h4>Repayments already made</h4>
+                            <p>Add money that already changed hands, such as "Alex already sent Maya $200."</p>
+                          </div>
+                          <button type="button" class="roommate-small-button" data-action="add-repayment">Add repayment</button>
+                        </div>
+                        <div class="roommate-entry-list" data-repayment-list></div>
+                      </div>
+                      <div class="roommate-adjustment-panel">
+                        <div class="roommate-mini-header">
+                          <div>
+                            <h4>Previous balance</h4>
+                            <p>Add a balance carried over from last month if everyone did not settle fully.</p>
+                          </div>
+                          <button type="button" class="roommate-small-button" data-action="add-previous-balance">Add balance</button>
+                        </div>
+                        <div class="roommate-entry-list" data-previous-balance-list></div>
+                      </div>
+                    </div>
+                  </section>
+                </div>
+
+                <aside class="roommate-results-panel" aria-labelledby="results-title">
+                  <div class="roommate-results-header">
+                    <p class="roommate-step-kicker">Step 4</p>
+                    <h3 id="results-title">Result</h3>
+                  </div>
+
+                  <section class="roommate-result-block roommate-result-block--primary" aria-labelledby="settlement-title">
+                    <h4 id="settlement-title">Who owes whom</h4>
+                    <div class="roommate-settlement-list" data-settlement-list aria-live="polite"></div>
+                  </section>
+
+                  <section class="roommate-result-block" aria-labelledby="balance-summary-title">
+                    <h4 id="balance-summary-title">Roommate balance summary</h4>
+                    <div class="roommate-balance-grid" data-balance-summary></div>
+                  </section>
+
+                  <section class="roommate-result-block" aria-labelledby="monthly-summary-title">
+                    <h4 id="monthly-summary-title">Monthly bill summary</h4>
+                    <div class="roommate-result-list" data-monthly-summary></div>
+                  </section>
+
+                  <section class="roommate-result-block roommate-message-result" aria-labelledby="copy-message-title">
+                    <div class="roommate-message-toolbar">
+                      <h4 id="copy-message-title">Copy a roommate settle-up message</h4>
+                      <div class="roommate-field roommate-tone-field">
+                        <label for="roommate-message-tone">Tone</label>
+                        <select id="roommate-message-tone" class="roommate-select">
+                          <option value="friendly">Friendly</option>
+                          <option value="direct">Direct</option>
+                          <option value="short">Very short</option>
+                        </select>
+                      </div>
+                    </div>
+                    <p class="roommate-generated-message" data-generated-message></p>
+                    <div class="roommate-copy-row">
+                      <button type="button" class="roommate-small-button" data-action="copy-generated-message" aria-label="Copy generated roommate settle-up message">Copy message</button>
+                      <span class="roommate-copy-status" data-generated-copy-status aria-live="polite"></span>
+                    </div>
+                  </section>
+                </aside>
+              </div>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection roommate-example-section" id="example" aria-labelledby="example-title">
+            <div class="roommate-section-heading">
+              <p class="lt-sectionEyebrow">Worked example</p>
+              <h2 id="example-title">Example: three roommates, one monthly settle-up</h2>
+              <p>Maya paid rent and cleaning supplies. Alex paid for internet. Sam paid for groceries. Alex also sent Maya a partial repayment before the final settle-up.</p>
+            </div>
+            <div class="roommate-example-grid">
+              <div class="roommate-table-wrap">
+                <table class="roommate-example-table">
+                  <thead>
+                    <tr>
+                      <th scope="col">Expense</th>
+                      <th scope="col">Paid by</th>
+                      <th scope="col">Amount</th>
+                      <th scope="col">Split between</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Rent</td>
+                      <td>Maya</td>
+                      <td>$1,800</td>
+                      <td>Alex, Maya, Sam</td>
+                    </tr>
+                    <tr>
+                      <td>Internet</td>
+                      <td>Alex</td>
+                      <td>$60</td>
+                      <td>Alex, Maya, Sam</td>
+                    </tr>
+                    <tr>
+                      <td>Groceries</td>
+                      <td>Sam</td>
+                      <td>$120</td>
+                      <td>Alex, Maya, Sam</td>
+                    </tr>
+                    <tr>
+                      <td>Cleaning supplies</td>
+                      <td>Maya</td>
+                      <td>$30</td>
+                      <td>Alex, Maya, Sam</td>
+                    </tr>
+                    <tr>
+                      <td>Repayment</td>
+                      <td>Alex &rarr; Maya</td>
+                      <td>$200</td>
+                      <td>Already paid</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <div class="roommate-example-result-card">
+                <h3>Final result</h3>
+                <p>Total shared bills: <strong>$2,010</strong></p>
+                <p>Each roommate&apos;s equal share: <strong>$670</strong></p>
+                <p>After Alex&apos;s $200 repayment, the final settle-up is:</p>
+                <ul>
+                  <li>Alex owes Maya $410</li>
+                  <li>Sam owes Maya $550</li>
+                </ul>
+              </div>
+            </div>
+            <p class="roommate-example-note">The calculator does this automatically: it adds what each roommate paid, subtracts their fair share, counts repayments, and simplifies the final "who owes whom" result.</p>
+          </section>
+
+          <section class="lt-toolsSection" aria-labelledby="handles-title">
+            <div class="roommate-section-heading">
+              <p class="lt-sectionEyebrow">Household costs</p>
+              <h2 id="handles-title">What this calculator handles</h2>
+            </div>
+            <div class="roommate-card-grid">
+              <article class="roommate-info-card">
+                <h3>Rent and utilities</h3>
+                <p>Split rent, electricity, water, internet, and other monthly household bills.</p>
+              </article>
+              <article class="roommate-info-card">
+                <h3>Groceries and supplies</h3>
+                <p>Add shared groceries, cleaning supplies, repairs, and household purchases.</p>
+              </article>
+              <article class="roommate-info-card">
+                <h3>Different people paying</h3>
+                <p>Track bills even when one roommate pays rent, another pays internet, and another buys groceries.</p>
+              </article>
+              <article class="roommate-info-card">
+                <h3>Partial repayments</h3>
+                <p>Include money someone already sent so the final balance does not double-count it.</p>
+              </article>
+              <article class="roommate-info-card">
+                <h3>Previous balances</h3>
+                <p>Carry over an amount from last month when everyone did not fully settle up.</p>
+              </article>
+              <article class="roommate-info-card">
+                <h3>Move-out settle-ups</h3>
+                <p>Use the calculator to estimate a final household balance when someone is moving out.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection roommate-fair-section" aria-labelledby="fair-title">
+            <div class="roommate-section-heading">
+              <p class="lt-sectionEyebrow">Fair splitting</p>
+              <h2 id="fair-title">How to split roommate bills fairly</h2>
+              <p>The fairest system is usually simple: agree what counts as a shared household cost, record who paid, decide who was included, and settle the remaining balance from the same record. The hard part is not the math - it is remembering every bill, repayment, and exception later.</p>
+            </div>
+            <ol class="roommate-step-list">
+              <li>
+                <h3>List the people sharing the bills</h3>
+                <p>Include only the roommates who should be part of the calculation.</p>
+              </li>
+              <li>
+                <h3>Add each bill once</h3>
+                <p>Record the amount, who paid, and who should be included.</p>
+              </li>
+              <li>
+                <h3>Count repayments</h3>
+                <p>If someone already sent money, add it before calculating the final settle-up.</p>
+              </li>
+              <li>
+                <h3>Check the final balance</h3>
+                <p>The result should show who needs to pay whom, not just the total expenses.</p>
+              </li>
+              <li>
+                <h3>Keep a record</h3>
+                <p>For one month, a calculator may be enough. For ongoing household costs, a running balance is usually easier. If the idea is new, read <a href="/blog/what-is-a-running-balance-between-two-people/">what a running balance means</a> before deciding whether to settle once or track the balance over time.</p>
+              </li>
+            </ol>
+          </section>
+
+          <section class="lt-toolsSection roommate-comparison-section" aria-labelledby="comparison-title">
+            <div class="roommate-comparison-layout">
+              <div>
+                <p class="lt-sectionEyebrow">Calculator vs running balance</p>
+                <h2 id="comparison-title">When this calculator is enough - and when a running balance helps</h2>
+                <p>Use the calculator for a quick answer. Use the <a href="/solutions/roommate-expense-tracker/">Roommate Expense Tracker</a> when roommate costs become an ongoing balance. Only splitting one bill, like one dinner or one grocery run? Use the <a href="/tools/split-expense-calculator/">Split Expense Calculator</a> instead. If this is a two-person balance that changes over time, the <a href="/tools/running-balance-calculator/">Running Balance Calculator</a> may be a better fit.</p>
+                <div class="roommate-comparison-grid">
+                  <div class="roommate-compare-card">
+                    <h3>A calculator is enough when:</h3>
+                    <ul>
+                      <li>you only need one monthly settle-up</li>
+                      <li>everyone pays quickly</li>
+                      <li>there are only a few bills</li>
+                      <li>you do not need a long-term history</li>
+                      <li>the same situation will not repeat often</li>
+                    </ul>
+                  </div>
+                  <div class="roommate-compare-card roommate-compare-card--accent">
+                    <h3>You Owe Me helps when:</h3>
+                    <ul>
+                      <li>bills keep changing every month</li>
+                      <li>roommates make partial repayments</li>
+                      <li>one person often pays first</li>
+                      <li>old balances carry over</li>
+                      <li>you need reminders or follow-up messages</li>
+                      <li>you want a clear history instead of rebuilding everything from chats</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="lt-ctaRow">
+                  <a
+                    href="/solutions/roommate-expense-tracker/"
+                    class="lt-primaryCta"
+                    data-track-location="roommate_calculator_comparison_cta"
+                  >Track roommate expenses over time</a>
+                </div>
+                <p class="roommate-small-copy">Keep rent, utilities, groceries, repayments, and old balances in one clear record.</p>
+              </div>
+              <figure class="roommate-summary-visual">
+                <img
+                  src="/images/tools/roommate-bill-split-calculator/roommate-bill-split-calculator-summary.webp"
+                  alt="Illustration of a roommate monthly bill summary with shared expense cards and simplified balance cards."
+                  loading="lazy"
+                  decoding="async"
+                  width="1448"
+                  height="1086"
+                />
+              </figure>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection roommate-message-section" aria-labelledby="messages-title">
+            <div class="roommate-section-heading">
+              <p class="lt-sectionEyebrow">Message examples</p>
+              <h2 id="messages-title">Copyable roommate bill messages</h2>
+              <p>After you calculate the balance, the hardest part can be sending the message. Keep it factual, specific, and calm.</p>
+            </div>
+            <div class="roommate-message-grid">
+              <article class="roommate-message-card">
+                <h3>Friendly monthly settle-up</h3>
+                <p data-message-text>Hey everyone - I added the shared bills for this month. After rent, utilities, groceries, and the repayments already made, Alex owes Maya $410 and Sam owes Maya $550. Just keeping the household costs clear.</p>
+                <div class="roommate-copy-row">
+                  <button type="button" class="roommate-small-button" data-action="copy-static-message">Copy message</button>
+                  <span class="roommate-copy-status" data-static-copy-status aria-live="polite"></span>
+                </div>
+              </article>
+              <article class="roommate-message-card">
+                <h3>Very short</h3>
+                <p data-message-text>Monthly bills are calculated. Alex owes Maya $410, and Sam owes Maya $550.</p>
+                <div class="roommate-copy-row">
+                  <button type="button" class="roommate-small-button" data-action="copy-static-message">Copy message</button>
+                  <span class="roommate-copy-status" data-static-copy-status aria-live="polite"></span>
+                </div>
+              </article>
+              <article class="roommate-message-card">
+                <h3>Partial repayment included</h3>
+                <p data-message-text>I included the $200 Alex already sent, so the remaining balance is updated. After everything is counted, Alex owes Maya $410 and Sam owes Maya $550.</p>
+                <div class="roommate-copy-row">
+                  <button type="button" class="roommate-small-button" data-action="copy-static-message">Copy message</button>
+                  <span class="roommate-copy-status" data-static-copy-status aria-live="polite"></span>
+                </div>
+              </article>
+              <article class="roommate-message-card">
+                <h3>Move-out settle-up</h3>
+                <p data-message-text>I added the final shared bills and the payments already made. This should be the remaining roommate balance before move-out: Alex owes Maya $410 and Sam owes Maya $550.</p>
+                <div class="roommate-copy-row">
+                  <button type="button" class="roommate-small-button" data-action="copy-static-message">Copy message</button>
+                  <span class="roommate-copy-status" data-static-copy-status aria-live="polite"></span>
+                </div>
+              </article>
+            </div>
+            <p class="roommate-small-copy">If the amount is clear but the wording still feels awkward, use the <a href="/tools/polite-payback-reminder-generator/">Polite Payback Reminder Generator</a> to write a roommate-safe message, or browse <a href="/tools/repayment-reminder-text-examples/">Repayment Reminder Text Examples</a> for roommate, partial repayment, and monthly settle-up wording.</p>
+          </section>
+
+          <section class="lt-toolsSection roommate-limitations-section" aria-labelledby="limitations-title">
+            <div class="roommate-section-heading">
+              <p class="lt-sectionEyebrow">Privacy and limitations</p>
+              <h2 id="limitations-title">Privacy and limitations</h2>
+              <p>This calculator is designed for simple roommate bill splitting and monthly settle-ups. It runs in your browser and does not need an account.</p>
+            </div>
+            <div class="roommate-limitations-card">
+              <ul>
+                <li>It does not send payment requests.</li>
+                <li>It does not move money.</li>
+                <li>It does not replace legal, tax, or accounting advice.</li>
+                <li>It works best when everyone agrees which bills are shared.</li>
+                <li>For ongoing roommate balances, use the <a href="/solutions/roommate-expense-tracker/">Roommate Expense Tracker</a> instead of rebuilding the calculation every month.</li>
+              </ul>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection" aria-labelledby="related-resources-title">
+            <div class="roommate-section-heading">
+              <p class="lt-sectionEyebrow">Related resources</p>
+              <h2 id="related-resources-title">Related tools and guides</h2>
+              <p>Choose the next step based on whether you need one quick calculation, broader shared-cost tracking, or a calmer message.</p>
+            </div>
+            <div class="lt-relatedGrid">
+              <article class="lt-toolCard">
+                <h3>Roommate Expense Tracker</h3>
+                <p>Use the calculator for one monthly settle-up. Use the Roommate Expense Tracker when rent, utilities, groceries, repayments, and old balances keep changing.</p>
+                <a href="/solutions/roommate-expense-tracker/" class="lt-cardCta">Track roommate expenses over time</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>Shared Expense Tracker</h3>
+                <p>For broader shared costs between friends, trips, households, and repeated expenses, see the Shared Expense Tracker.</p>
+                <a href="/solutions/shared-expense-tracker/" class="lt-cardCta">Open shared expense tracker</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>Split Expense Calculator</h3>
+                <p>Only splitting one bill, like one dinner, one grocery run, or one simple purchase? Use the Split Expense Calculator instead.</p>
+                <a href="/tools/split-expense-calculator/" class="lt-cardCta">Split one bill</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>Running Balance Calculator</h3>
+                <p>If this is a two-person balance that changes over time, calculate the running balance from expenses and repayments.</p>
+                <a href="/tools/running-balance-calculator/" class="lt-cardCta">Calculate a running balance</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>Repayment wording</h3>
+                <p>Once the roommate amount is clear, use a message generator or ready-made examples to keep the follow-up calm and specific.</p>
+                <a href="/tools/polite-payback-reminder-generator/" class="lt-cardCta">Generate a payback reminder</a>
+                <a href="/tools/repayment-reminder-text-examples/" class="lt-cardCta">Browse reminder examples</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection faq-section roommate-faq-section" aria-labelledby="faq-title">
+            <h2 id="faq-title">Roommate bill split calculator FAQ</h2>
+            <div class="faq-list">
+              <details>
+                <summary>How do you split bills with roommates?</summary>
+                <p>List the shared bills, record who paid each one, decide which roommates were included, subtract each person&apos;s fair share, and then settle the remaining balance. A good calculator should also count repayments that already happened.</p>
+              </details>
+              <details>
+                <summary>Can I split only some bills between some roommates?</summary>
+                <p>Yes. Not every bill needs to include every roommate. For example, all roommates may split rent and internet, but only two roommates may split groceries or a subscription.</p>
+              </details>
+              <details>
+                <summary>How do I include money someone already paid back?</summary>
+                <p>Add it as a repayment. A repayment from Alex to Maya reduces what Alex still owes and reduces what Maya should still receive.</p>
+              </details>
+              <details>
+                <summary>What if a balance carries over from last month?</summary>
+                <p>Add it as a previous balance. For example, if Alex still owed Maya $40 from last month, add Alex as the person who owed, Maya as the person who was owed, and $40 as the amount.</p>
+              </details>
+              <details>
+                <summary>Is this better than a spreadsheet?</summary>
+                <p>A spreadsheet can work for simple roommate bills, but it becomes harder when expenses, repayments, recurring costs, and previous balances keep changing. A running balance app is better when the situation repeats.</p>
+              </details>
+              <details>
+                <summary>Can this calculator handle rent, utilities, and groceries together?</summary>
+                <p>Yes. Add each bill as a separate expense, choose who paid, choose which roommates were included, and the calculator will combine everything into one settle-up result.</p>
+              </details>
+              <details>
+                <summary>What should I send my roommate after calculating the bills?</summary>
+                <p>Send a short, specific message that includes what was counted and the remaining balance. For example: "I added rent, utilities, and groceries for this month. After the repayment already made, you owe $42.50."</p>
+              </details>
+            </div>
+          </section>
+
+          <section class="lt-finalCta roommate-bottom-cta">
+            <h2>Roommate bills keep changing?</h2>
+            <p>A calculator is useful for one settle-up. You Owe Me is built for the ongoing version: rent, utilities, groceries, repayments, reminders, and old balances between real people.</p>
+            <p>Keep one clear balance with each roommate instead of rebuilding the month from memory.</p>
+            <div class="lt-ctaRow">
+              <a
+                href="/solutions/roommate-expense-tracker/"
+                class="lt-primaryCta"
+                data-track-location="roommate_calculator_bottom_primary_cta"
+              >Track roommate expenses with You Owe Me</a>
+              <a href="#calculator" class="lt-textCta">Calculate another month</a>
+            </div>
+          </section>
+
+          <p class="lt-pageMeta">Updated <time datetime="2026-05-27">May 27, 2026</time></p>
+        </article>
+      </div>
+
+      <div id="copyright">
+        <ul>
+          <li>&copy; 2026 Ievgenii Iablonskyi</li>
+          <li><a href="/solutions/">Solutions</a></li>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="../../scripts/sales.js"></script>
+    <script src="../../scripts/roommate-bill-split-calculator.js"></script>
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
