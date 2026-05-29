@@ -54,6 +54,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 ## Shared expenses
 
 - [What Is a Running Balance Between Two People?](https://you-owe-me.com/blog/what-is-a-running-balance-between-two-people/): Plain-English explanation of how one current balance updates after expenses, repayments, partial repayments, shared costs, starting balances, adjustments, overpayments, and balance flips between two people.
+- [How to Track Money Between Roommates](https://you-owe-me.com/blog/how-to-track-money-between-roommates/): Practical guide for keeping roommate rent, utilities, groceries, household supplies, repayments, previous balances, and monthly settle-ups clear without rebuilding bills from memory.
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/)
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/)
 - [Roommate Bill Split Calculator](https://you-owe-me.com/tools/roommate-bill-split-calculator/): For one monthly roommate settle-up across rent, utilities, groceries, household supplies, repayments, and previous balances.
