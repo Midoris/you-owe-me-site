@@ -364,6 +364,10 @@ body.roommate-tracking-page .rm-section .lt-bridgePanel > p + p {
   min-width: 900px;
 }
 
+.rm-table--ongoing {
+  min-width: 820px;
+}
+
 .rm-table caption {
   caption-side: top;
   padding: 0.95rem 1rem;
@@ -614,6 +618,10 @@ body.roommate-tracking-page .lt-pageMeta {
 
   .rm-table--template {
     min-width: 860px;
+  }
+
+  .rm-table--ongoing {
+    min-width: 780px;
   }
 
   .rm-table th,

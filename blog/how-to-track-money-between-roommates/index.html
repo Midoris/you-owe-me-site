@@ -482,6 +482,52 @@
             </figure>
           </section>
 
+          <section class="lt-toolsSection rm-section rm-example-section" aria-labelledby="carry-forward-title">
+            <h2 id="carry-forward-title">Example: when the balance carries into next month</h2>
+            <p>Some roommate balances do not end cleanly at the end of the month. If someone only pays part of what they owe, the remaining amount should carry forward instead of disappearing into a new calculation.</p>
+            <div class="rm-table-wrap" role="region" aria-label="Ongoing roommate balance example table" tabindex="0">
+              <table class="rm-table rm-table--ongoing">
+                <caption>Ongoing roommate balance example</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">Date</th>
+                    <th scope="col">What happened</th>
+                    <th scope="col">Balance effect</th>
+                    <th scope="col">Current balance</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>May 31</td>
+                    <th scope="row">Alex still owed Maya from last month</th>
+                    <td>Starting balance +$40</td>
+                    <td>Alex owes Maya $40</td>
+                  </tr>
+                  <tr>
+                    <td>June 5</td>
+                    <th scope="row">Maya paid $90 for electricity, split three ways</th>
+                    <td>Alex&rsquo;s share +$30</td>
+                    <td>Alex owes Maya $70</td>
+                  </tr>
+                  <tr>
+                    <td>June 12</td>
+                    <th scope="row">Alex paid Maya back part of the balance</th>
+                    <td>Repayment -$25</td>
+                    <td>Alex owes Maya $45</td>
+                  </tr>
+                  <tr>
+                    <td>June 18</td>
+                    <th scope="row">Alex paid $60 for internet, split three ways</th>
+                    <td>Maya&rsquo;s share -$20</td>
+                    <td>Alex owes Maya $25</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>This is where an ongoing record is different from a one-month split. The question is no longer only &ldquo;how should we divide this bill?&rdquo; The question becomes &ldquo;after last month, this month&rsquo;s bills, and the repayments already made, what is still open?&rdquo;</p>
+            <p class="rm-note">Use the calculator for one monthly settle-up. Use a running balance when old balances, new bills, and repayments keep interacting.</p>
+          </section>
+
           <section class="lt-toolsSection rm-section" aria-labelledby="situations-title">
             <h2 id="situations-title">Common roommate money situations and how to handle them</h2>
             <div class="rm-card-grid rm-card-grid--three">
@@ -567,6 +613,7 @@
             <p>If you are starting manually, use this structure for each shared cost.</p>
             <div class="rm-table-wrap" role="region" aria-label="Roommate expense tracking template table" tabindex="0">
               <table class="rm-table rm-table--template">
+                <caption>Roommate expense tracking template</caption>
                 <thead>
                   <tr>
                     <th scope="col">Date</th>
@@ -701,6 +748,11 @@
                 <h3>Running Balance Calculator</h3>
                 <p>Add expenses and repayments over time to see the current balance between two people.</p>
                 <a href="/tools/running-balance-calculator/" class="lt-cardCta">Try the calculator</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>Split Expense Calculator</h3>
+                <p>Use this when you only need to divide one simple bill, purchase, dinner, or grocery run.</p>
+                <a href="/tools/split-expense-calculator/" class="lt-cardCta">Split one bill</a>
               </article>
               <article class="lt-toolCard">
                 <h3>Repayment Reminder Text Examples</h3>
