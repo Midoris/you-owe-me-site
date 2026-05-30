@@ -54,14 +54,6 @@ body.roommate-splitting-guide-page .rms-hero .lt-heroBody {
   font-weight: 700;
 }
 
-.rms-cta-note {
-  margin-top: 0.65rem !important;
-  max-width: 38rem !important;
-  color: rgba(24, 33, 43, 0.62) !important;
-  font-size: 0.92rem !important;
-  line-height: 1.45 !important;
-}
-
 body.roommate-splitting-guide-page .rms-hero-visual {
   justify-self: end;
 }

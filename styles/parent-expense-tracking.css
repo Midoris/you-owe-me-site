@@ -125,6 +125,23 @@ body.parent-expense-page .parent-cta-row {
   margin-top: 1.35rem;
 }
 
+body.parent-expense-page .parent-app-store-cta {
+  display: grid;
+  gap: 0.55rem;
+  max-width: 28rem;
+}
+
+body.parent-expense-page .parent-app-store-cta p {
+  margin: 0 !important;
+  color: rgba(24, 33, 43, 0.72) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.45 !important;
+}
+
+body.parent-expense-page .parent-app-store-cta p:first-child {
+  color: var(--parent-ink) !important;
+}
+
 body.parent-expense-page .parent-primary-cta,
 body.parent-expense-page .parent-secondary-cta,
 body.parent-expense-page .parent-card-cta {
@@ -712,6 +729,11 @@ body.parent-expense-page .parent-footer-links li {
   body.parent-expense-page .parent-primary-cta,
   body.parent-expense-page .parent-secondary-cta {
     width: 100%;
+  }
+
+  body.parent-expense-page .parent-app-store-cta {
+    width: 100%;
+    max-width: 100%;
   }
 
   body.parent-expense-page .parent-card-grid,
