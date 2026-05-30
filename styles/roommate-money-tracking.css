@@ -35,10 +35,26 @@ body.roommate-tracking-page .lt-breadcrumb span {
   overflow-wrap: break-word;
 }
 
+body.roommate-tracking-page .lt-breadcrumb,
+body.roommate-tracking-page .rm-hero,
+body.roommate-tracking-page .rm-section,
+body.roommate-tracking-page .rm-cta-block {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 body.roommate-tracking-page .rm-hero,
 body.roommate-tracking-page .rm-section,
 body.roommate-tracking-page .rm-cta-block {
   box-sizing: border-box;
+}
+
+body.roommate-tracking-page .rm-hero {
+  width: 100%;
+}
+
+body.roommate-tracking-page .rm-section,
+body.roommate-tracking-page .rm-cta-block {
   width: min(100%, 68rem);
 }
 
