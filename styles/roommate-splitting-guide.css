@@ -7,8 +7,34 @@ body.roommate-splitting-guide-page {
   --rms-warm: #f3eedf;
 }
 
+body.roommate-splitting-guide-page article.post.featured {
+  max-width: none;
+}
+
+body.roommate-splitting-guide-page .lt-breadcrumb,
+body.roommate-splitting-guide-page .rms-hero,
+body.roommate-splitting-guide-page .rm-section,
+body.roommate-splitting-guide-page .rm-cta-block {
+  margin-left: 0;
+  margin-right: 0;
+}
+
 body.roommate-splitting-guide-page .rms-hero {
-  grid-template-columns: minmax(0, 0.98fr) minmax(21rem, 0.62fr);
+  width: 100%;
+}
+
+body.roommate-splitting-guide-page .rm-section {
+  width: min(100%, 68rem);
+}
+
+body.roommate-splitting-guide-page .rms-direct-answer,
+body.roommate-splitting-guide-page .rm-product-section,
+body.roommate-splitting-guide-page .rm-cta-block {
+  width: min(100%, 64rem);
+}
+
+body.roommate-splitting-guide-page .rms-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.58fr);
 }
 
 body.roommate-splitting-guide-page .rms-hero > *,
@@ -20,12 +46,20 @@ body.roommate-splitting-guide-page .rms-hero-visual {
 
 body.blog-page.roommate-splitting-guide-page #main > .post header.major > h1,
 body.blog-page.roommate-splitting-guide-page article.post.featured h1 {
-  max-width: 22ch;
-  font-size: clamp(2.05rem, 3.45vw, 3.28rem);
+  max-width: 28ch;
+  font-size: clamp(2.05rem, 3.2vw, 3.28rem);
+}
+
+body.roommate-splitting-guide-page .rms-hero .lt-heroBody {
+  font-weight: 700;
+}
+
+body.roommate-splitting-guide-page .rms-hero-visual {
+  justify-self: end;
 }
 
 body.roommate-splitting-guide-page .rms-hero-visual img {
-  max-width: 38rem;
+  max-width: 34rem;
 }
 
 body.roommate-splitting-guide-page .rms-direct-answer > p {
