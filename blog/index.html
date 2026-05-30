@@ -216,6 +216,24 @@
         margin-top: 1.35rem;
       }
 
+      .lt-blogGroup {
+        grid-column: 1 / -1;
+        margin-top: 0.35rem;
+      }
+
+      .lt-blogGroup h2 {
+        margin: 0 0 0.85rem;
+        color: #18212b;
+        font-size: 1.15rem;
+        line-height: 1.2;
+      }
+
+      .lt-blogGroupGrid {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
+      }
+
       .lt-blogCard {
         border: 1px solid rgba(15, 23, 42, 0.1);
         border-radius: 14px;
@@ -294,6 +312,10 @@
         }
 
         .lt-blogGrid {
+          grid-template-columns: 1fr;
+        }
+
+        .lt-blogGroupGrid {
           grid-template-columns: 1fr;
         }
 
@@ -405,25 +427,28 @@
               <p>A plain-English guide to how one current balance updates after expenses, repayments, partial payments, and shared costs over time.</p>
             </article>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-split-rent-utilities-and-groceries-with-roommates/">
-                  How to Split Rent, Utilities, and Groceries With Roommates
-                </a>
-              </h3>
-              <p>Decide what should be split equally, what needs custom shares, how to handle groceries, utilities, repayments, and move-out settle-ups before calculating who owes whom.</p>
-              <span class="lt-chip">Roommates</span>
-            </article>
+            <section class="lt-blogGroup" aria-labelledby="roommate-guides-title">
+              <h2 id="roommate-guides-title">Roommates</h2>
+              <div class="lt-blogGroupGrid">
+                <article class="lt-blogCard">
+                  <h3>
+                    <a href="./how-to-split-rent-utilities-and-groceries-with-roommates/">
+                      How to Split Rent, Utilities, and Groceries With Roommates
+                    </a>
+                  </h3>
+                  <p>Decide what should be split equally, what needs custom shares, how to handle groceries, utilities, repayments, and move-out settle-ups before calculating who owes whom.</p>
+                </article>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-track-money-between-roommates/">
-                  How to Track Money Between Roommates
-                </a>
-              </h3>
-              <p>A practical system for shared rent, utilities, groceries, repayments, previous balances, and monthly settle-ups.</p>
-              <span class="lt-chip">Roommates</span>
-            </article>
+                <article class="lt-blogCard">
+                  <h3>
+                    <a href="./how-to-track-money-between-roommates/">
+                      How to Track Money Between Roommates
+                    </a>
+                  </h3>
+                  <p>A practical system for shared rent, utilities, groceries, repayments, previous balances, and monthly settle-ups.</p>
+                </article>
+              </div>
+            </section>
 
             <article class="lt-blogCard">
               <h3>
