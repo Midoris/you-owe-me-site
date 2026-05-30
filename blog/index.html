@@ -16,19 +16,19 @@
     <meta name="robots" content="index, follow" />
     <meta
       name="description"
-      content="Money conversation guides and practical tips on IOUs, repayment reminders, asking for a loan respectfully, and tracking balances clearly with YouOweMe."
+      content="Practical guides for money between people: repayment reminders, running balances, shared expenses, roommate bills, family reimbursements, and relationship-safe money conversations."
     />
     <meta property="og:title" content="YouOweMe Blog & Guides" />
     <meta
       property="og:description"
-      content="Money conversation guides: repayment reminders, asking for a loan respectfully, and practical IOU tracking tips."
+      content="Practical guides for money between people: repayment reminders, running balances, shared expenses, roommate bills, family reimbursements, and relationship-safe money conversations."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://you-owe-me.com/blog/" />
     <meta property="og:image" content="https://you-owe-me.com/images/shared/brand/icon_2_0.png" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="YouOweMe Blog & Guides" />
-    <meta name="twitter:description" content="Money conversation guides: repayment reminders, asking for a loan respectfully, and practical IOU tracking tips." />
+    <meta name="twitter:description" content="Practical guides for money between people: repayment reminders, running balances, shared expenses, roommate bills, family reimbursements, and relationship-safe money conversations." />
     <meta name="twitter:image" content="https://you-owe-me.com/images/shared/brand/icon_2_0.png" />
 
     <script type="application/ld+json">
@@ -39,7 +39,7 @@
           "@type": "Blog",
           "name": "YouOweMe Blog & Guides",
           "url": "https://you-owe-me.com/blog/",
-          "description": "Money conversation guides and practical tips on IOUs, repayment reminders, shared expenses, and keeping balances clear.",
+          "description": "Practical guides for money between people: repayment reminders, running balances, shared expenses, roommate bills, family reimbursements, and relationship-safe money conversations.",
           "publisher": {
             "@type": "Organization",
             "name": "YouOweMe"
@@ -209,37 +209,67 @@
         line-height: 1.72;
       }
 
-      .lt-blogGrid {
+      .lt-blogHubSections {
+        display: grid;
+        gap: clamp(1.35rem, 3vw, 2.15rem);
+        margin-top: clamp(1.65rem, 3vw, 2.35rem);
+      }
+
+      .lt-blogSection {
+        padding-top: clamp(1.1rem, 2.5vw, 1.65rem);
+        border-top: 1px solid rgba(15, 23, 42, 0.08);
+      }
+
+      .lt-blogSection:first-child {
+        padding-top: 0;
+        border-top: 0;
+      }
+
+      .lt-blogSection h2 {
+        margin: 0 0 0.35rem;
+        color: #18212b;
+        font-size: clamp(1.28rem, 1.1rem + 0.85vw, 1.8rem);
+        line-height: 1.16;
+      }
+
+      .lt-blogSectionIntro {
+        max-width: 66ch;
+        margin: 0;
+        color: rgba(24, 33, 43, 0.72);
+        line-height: 1.62;
+      }
+
+      .lt-blogSectionGrid {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
         gap: 1rem;
-        margin-top: 1.35rem;
-      }
-
-      .lt-blogGroup {
-        grid-column: 1 / -1;
-        margin-top: 0.35rem;
-      }
-
-      .lt-blogGroup h2 {
-        margin: 0 0 0.85rem;
-        color: #18212b;
-        font-size: 1.15rem;
-        line-height: 1.2;
-      }
-
-      .lt-blogGroupGrid {
-        display: grid;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 1rem;
+        margin-top: 1rem;
       }
 
       .lt-blogCard {
+        display: flex;
+        flex-direction: column;
         border: 1px solid rgba(15, 23, 42, 0.1);
         border-radius: 14px;
         background: rgba(255, 255, 255, 0.8);
         box-shadow: 0 10px 28px rgba(15, 23, 42, 0.08);
         padding: 1rem 1rem 0.9rem;
+      }
+
+      .lt-blogCard--featured {
+        background:
+          linear-gradient(135deg, rgba(175, 230, 126, 0.16), rgba(255, 255, 255, 0.92)),
+          rgba(255, 255, 255, 0.86);
+      }
+
+      .lt-blogCard .lt-cardLabel {
+        margin: 0 0 0.58rem;
+        color: #355428;
+        font-size: 0.78rem;
+        font-weight: 800;
+        letter-spacing: 0.07em;
+        line-height: 1.2;
+        text-transform: uppercase;
       }
 
       .lt-blogCard h3 {
@@ -259,6 +289,15 @@
         margin: 0;
         opacity: 0.93;
         line-height: 1.62;
+      }
+
+      .lt-blogCard h3 + p {
+        flex: 1 1 auto;
+      }
+
+      body.blog-index-page .lt-blogIntroCta .lt-appStoreBtn {
+        width: 250px;
+        max-width: 100%;
       }
 
       .lt-chip {
@@ -297,7 +336,7 @@
       }
 
       @media (max-width: 980px) {
-        .lt-blogGrid {
+        .lt-blogSectionGrid {
           grid-template-columns: repeat(2, minmax(0, 1fr));
         }
       }
@@ -311,11 +350,7 @@
           padding: 1.3rem 0.2rem 2.7rem;
         }
 
-        .lt-blogGrid {
-          grid-template-columns: 1fr;
-        }
-
-        .lt-blogGroupGrid {
+        .lt-blogSectionGrid {
           grid-template-columns: 1fr;
         }
 
@@ -354,14 +389,10 @@
           </header>
 
           <p class="lt-lead">
-            This page is the content hub for guides that help people handle awkward money situations:
-            asking for repayments, requesting a loan respectfully, splitting shared expenses, and keeping balances clear.
+            Practical guides for money between people: asking for repayment, splitting shared costs, tracking family reimbursements, handling roommate bills, keeping running balances clear, and knowing what to say next.
           </p>
           <p class="lt-pattern">
-            Prefer to start from your situation instead of a question? Visit the <a href="../solutions/">Solutions section</a> for shared expenses, money owed, couples, family reimbursements, <a href="/solutions/roommate-expense-tracker/">roommate expenses</a>, and more.
-          </p>
-          <p class="lt-pattern">
-            Need a quick calculator, message tool, or tracker template instead? Visit the <a href="../tools/">Tools section</a> for free tools like the <a href="../tools/split-expense-calculator/">Split Expense Calculator</a>, <a href="/tools/running-balance-calculator/">Running Balance Calculator</a>, <a href="/tools/roommate-bill-split-calculator/">Roommate Bill Split Calculator</a>, <a href="/tools/polite-payback-reminder-generator/">Polite Payback Reminder Generator</a>, <a href="/tools/repayment-reminder-text-examples/">Repayment Reminder Text Examples</a>, and <a href="/tools/family-reimbursement-tracker-template/">Family Reimbursement Tracker Template</a>.
+            Start with the situation closest to yours, then use the related tools or app pages when the balance keeps changing.
           </p>
 
           <section class="lt-blogIntroCta" aria-label="Download You Owe Me">
@@ -377,151 +408,160 @@
               data-track-location="blog_index_intro_cta"
             >
               <span class="sr-only">Download You Owe Me on the App Store</span>
-                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" />
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
             </a>
           </section>
 
-          <div class="lt-blogGrid">
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-remind-someone-they-owe-you-money-politely/">
-                  How to Remind Someone They Owe You Money Politely
-                </a>
-              </h3>
-              <p>A direct, practical guide with polite reminder texts, wording examples, what to avoid, and when to use a clearer tracking system.</p>
-            </article>
+          <div class="lt-blogHubSections">
+            <section class="lt-blogSection" aria-labelledby="start-here-title">
+              <h2 id="start-here-title">Start here</h2>
+              <p class="lt-blogSectionIntro">Four useful entry points for the most common money-between-people situations.</p>
+              <div class="lt-blogSectionGrid">
+                <article class="lt-blogCard lt-blogCard--featured">
+                  <p class="lt-cardLabel">Money owed</p>
+                  <h3><a href="./how-to-remind-someone-they-owe-you-money-politely/">How to Remind Someone They Owe You Money Politely</a></h3>
+                  <p>Use polite reminder texts, a simple wording formula, examples, and FAQs when the balance is clear but the message feels awkward.</p>
+                </article>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-follow-up-after-a-partial-repayment/">
-                  How to Follow Up After a Partial Repayment
-                </a>
-              </h3>
-              <p>Learn how to thank them for what they already sent, name the remaining balance, and ask for the rest without sounding rude or ungrateful.</p>
-            </article>
+                <article class="lt-blogCard lt-blogCard--featured">
+                  <p class="lt-cardLabel">Running balance</p>
+                  <h3><a href="./what-is-a-running-balance-between-two-people/">What Is a Running Balance Between Two People?</a></h3>
+                  <p>Understand how one current balance updates after expenses, repayments, partial payments, and shared costs over time.</p>
+                </article>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./when-to-ask-for-money-back-or-send-a-repayment-update/">
-                  How to Know When to Ask for Money Back or Send a Repayment Update
-                </a>
-              </h3>
-              <p>Timing matters as much as wording when money gets awkward. Learn when to follow up, when to send an update, and how clarity protects trust.</p>
-            </article>
+                <article class="lt-blogCard lt-blogCard--featured">
+                  <p class="lt-cardLabel">Roommates</p>
+                  <h3><a href="./how-to-split-rent-utilities-and-groceries-with-roommates/">How to Split Rent, Utilities, and Groceries With Roommates</a></h3>
+                  <p>Decide what should be split equally, what needs custom shares, and how to handle groceries, utilities, repayments, and move-out settle-ups.</p>
+                </article>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-handle-awkward-money-conversations/">
-                  How to Handle Awkward Money Conversations: Ask, Follow Up, and Repay Clearly
-                </a>
-              </h3>
-              <p>A calmer, practical guide to asking for money, following up on unpaid balances, and sending repayment updates without making things worse.</p>
-            </article>
+                <article class="lt-blogCard lt-blogCard--featured">
+                  <p class="lt-cardLabel">Family reimbursements</p>
+                  <h3><a href="./how-to-track-money-you-pay-for-elderly-parents/">How to Track Money You Pay for Elderly Parents</a></h3>
+                  <p>Track parent bills, groceries, subscriptions, pharmacy purchases, repayments, sibling shares, and remaining balances clearly.</p>
+                </article>
+              </div>
+            </section>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./what-is-a-running-balance-between-two-people/">
-                  What Is a Running Balance Between Two People?
-                </a>
-              </h3>
-              <p>A plain-English guide to how one current balance updates after expenses, repayments, partial payments, and shared costs over time.</p>
-            </article>
-
-            <section class="lt-blogGroup" aria-labelledby="roommate-guides-title">
-              <h2 id="roommate-guides-title">Roommates</h2>
-              <div class="lt-blogGroupGrid">
+            <section class="lt-blogSection" aria-labelledby="repayment-guides-title">
+              <h2 id="repayment-guides-title">Money owed and repayment messages</h2>
+              <div class="lt-blogSectionGrid">
                 <article class="lt-blogCard">
-                  <h3>
-                    <a href="./how-to-split-rent-utilities-and-groceries-with-roommates/">
-                      How to Split Rent, Utilities, and Groceries With Roommates
-                    </a>
-                  </h3>
-                  <p>Decide what should be split equally, what needs custom shares, how to handle groceries, utilities, repayments, and move-out settle-ups before calculating who owes whom.</p>
+                  <p class="lt-cardLabel">Money owed</p>
+                  <h3><a href="./how-to-remind-someone-they-owe-you-money-politely/">How to Remind Someone They Owe You Money Politely</a></h3>
+                  <p>A direct, practical guide with polite reminder texts, wording examples, what to avoid, and when to use a clearer tracking system.</p>
                 </article>
 
                 <article class="lt-blogCard">
-                  <h3>
-                    <a href="./how-to-track-money-between-roommates/">
-                      How to Track Money Between Roommates
-                    </a>
-                  </h3>
+                  <p class="lt-cardLabel">Partial repayment</p>
+                  <h3><a href="./how-to-follow-up-after-a-partial-repayment/">How to Follow Up After a Partial Repayment</a></h3>
+                  <p>Thank them for what they already sent, name the remaining balance, and ask about the rest without sounding rude or ungrateful.</p>
+                </article>
+
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Timing</p>
+                  <h3><a href="./when-to-ask-for-money-back-or-send-a-repayment-update/">How to Know When to Ask for Money Back or Send a Repayment Update</a></h3>
+                  <p>Learn when to follow up, when to send an update, and how timing protects trust before silence becomes awkward.</p>
+                </article>
+
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Payback scripts</p>
+                  <h3><a href="./how-to-ask-someone-to-pay-you-back-without-being-rude/">How to Ask Someone to Pay You Back Without Being Rude</a></h3>
+                  <p>Polite scripts, timing advice, and practical examples for asking for repayment while protecting the relationship.</p>
+                </article>
+
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Overdue money</p>
+                  <h3><a href="./how-do-you-confront-someone-who-owes-you-money-without-ruining-the-relationship/">How Do You Confront Someone Who Owes You Money Without Ruining the Relationship?</a></h3>
+                  <p>A calmer, clearer way to ask for repayment when the balance is overdue, ignored, or emotionally heavier than a simple reminder.</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="lt-blogSection" aria-labelledby="running-balance-guides-title">
+              <h2 id="running-balance-guides-title">Running balances and shared expenses</h2>
+              <div class="lt-blogSectionGrid">
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Running balance</p>
+                  <h3><a href="./what-is-a-running-balance-between-two-people/">What Is a Running Balance Between Two People?</a></h3>
+                  <p>A plain-English guide to how one current balance updates after expenses, repayments, partial payments, and shared costs over time.</p>
+                </article>
+
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Shared expenses</p>
+                  <h3><a href="./how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/">How to Track Shared Expenses Without Constantly Reconciling Every Transaction</a></h3>
+                  <p>Learn how to keep a running balance for shared expenses, reduce friction, and stay clear without constant reconciliation.</p>
+                </article>
+              </div>
+            </section>
+
+            <section class="lt-blogSection" aria-labelledby="roommate-guides-title">
+              <h2 id="roommate-guides-title">Roommates and household bills</h2>
+              <div class="lt-blogSectionGrid">
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Roommate rules</p>
+                  <h3><a href="./how-to-split-rent-utilities-and-groceries-with-roommates/">How to Split Rent, Utilities, and Groceries With Roommates</a></h3>
+                  <p>Decide what should be split equally, what needs custom shares, and how to handle groceries, utilities, repayments, and move-out settle-ups before calculating who owes whom.</p>
+                </article>
+
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Roommate tracking</p>
+                  <h3><a href="./how-to-track-money-between-roommates/">How to Track Money Between Roommates</a></h3>
                   <p>A practical system for shared rent, utilities, groceries, repayments, previous balances, and monthly settle-ups.</p>
                 </article>
               </div>
             </section>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/">
-                  How to Track Shared Expenses Without Constantly Reconciling Every Transaction
-                </a>
-              </h3>
-              <p>Learn how to keep a running balance for shared expenses, reduce friction, and stay clear without constant reconciliation.</p>
-            </article>
+            <section class="lt-blogSection" aria-labelledby="family-guides-title">
+              <h2 id="family-guides-title">Family reimbursements and parent expenses</h2>
+              <div class="lt-blogSectionGrid">
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Parent expenses</p>
+                  <h3><a href="./how-to-track-money-you-pay-for-elderly-parents/">How to Track Money You Pay for Elderly Parents</a></h3>
+                  <p>A practical workflow for tracking parent bills, subscriptions, pharmacy purchases, groceries, sibling reimbursements, and remaining balances.</p>
+                </article>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-politely-say-no-when-people-ask-for-money/">
-                  How to Politely Say No When People Ask for Money
-                </a>
-              </h3>
-              <p>Clear scripts, practical boundaries, and a calmer way to refuse money requests without damaging the relationship.</p>
-            </article>
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Family money</p>
+                  <h3><a href="./how-to-keep-track-of-money-between-family-members/">How to Keep Track of Money Between Family Members</a></h3>
+                  <p>A practical framework for family expenses, reimbursements, recurring bills, and clear records without emotional friction.</p>
+                </article>
+              </div>
+            </section>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-do-you-confront-someone-who-owes-you-money-without-ruining-the-relationship/">
-                  How Do You Confront Someone Who Owes You Money Without Ruining the Relationship?
-                </a>
-              </h3>
-              <p>A calmer, clearer way to ask for repayment without damaging trust or turning the situation into a fight.</p>
-            </article>
+            <section class="lt-blogSection" aria-labelledby="couples-guides-title">
+              <h2 id="couples-guides-title">Couples and relationship spending</h2>
+              <div class="lt-blogSectionGrid">
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Couples</p>
+                  <h3><a href="./how-to-split-expenses-in-a-relationship-without-fighting/">How to Split Expenses in a Relationship Without Fighting</a></h3>
+                  <p>Practical strategies, communication tips, and systems that protect closeness while keeping shared spending clear.</p>
+                </article>
+              </div>
+            </section>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-keep-track-of-money-between-family-members/">
-                  How to Keep Track of Money Between Family Members (Without Damaging the Relationship)
-                </a>
-              </h3>
-              <p>A practical framework for tracking shared family expenses, reimbursements, and recurring bills without emotional friction. For the product page, start with the <a href="/solutions/family-reimbursement-tracker/">family reimbursement tracker</a>.</p>
-            </article>
+            <section class="lt-blogSection" aria-labelledby="boundaries-guides-title">
+              <h2 id="boundaries-guides-title">Boundaries and awkward money conversations</h2>
+              <div class="lt-blogSectionGrid">
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Boundaries</p>
+                  <h3><a href="./how-to-politely-say-no-when-people-ask-for-money/">How to Politely Say No When People Ask for Money</a></h3>
+                  <p>Clear scripts, practical boundaries, and a calmer way to refuse money requests without damaging the relationship.</p>
+                </article>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="/blog/how-to-track-money-you-pay-for-elderly-parents/">
-                  How to Track Money You Pay for Elderly Parents
-                </a>
-              </h3>
-              <p>A practical workflow for tracking parent bills, subscriptions, pharmacy purchases, groceries, sibling reimbursements, and remaining balances.</p>
-            </article>
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Money conversations</p>
+                  <h3><a href="./how-to-handle-awkward-money-conversations/">How to Handle Awkward Money Conversations: Ask, Follow Up, and Repay Clearly</a></h3>
+                  <p>A broader guide to asking, following up, and sending repayment updates without making money conversations heavier.</p>
+                </article>
 
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./why-simple-loans-dont-stay-simple/">
-                  Why Simple Loans Don't Stay Simple (And Why It's Not Really About the Money)
-                </a>
-              </h3>
-              <p>Why small loans between friends turn emotionally heavy, and how clarity and communication prevent tension.</p>
-            </article>
-
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-ask-someone-to-pay-you-back-without-being-rude/">
-                  How to Ask Someone to Pay You Back Without Being Rude
-                </a>
-              </h3>
-              <p>Polite scripts, timing advice, and practical examples to protect relationships while asking for repayment.</p>
-            </article>
-
-            <article class="lt-blogCard">
-              <h3>
-                <a href="./how-to-split-expenses-in-a-relationship-without-fighting/">
-                  How to Split Expenses in a Relationship Without Fighting
-                </a>
-              </h3>
-              <p>Practical strategies, communication tips, and systems that protect closeness while keeping money clear.</p>
-            </article>
-
+                <article class="lt-blogCard">
+                  <p class="lt-cardLabel">Friend loans</p>
+                  <h3><a href="./why-simple-loans-dont-stay-simple/">Why Simple Loans Don&rsquo;t Stay Simple</a></h3>
+                  <p>Why small loans between friends turn emotionally heavy, and how clarity and communication prevent resentment.</p>
+                </article>
+              </div>
+            </section>
           </div>
 
           <hr />
