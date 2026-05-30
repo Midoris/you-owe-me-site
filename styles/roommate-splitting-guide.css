@@ -1,0 +1,350 @@
+body.roommate-splitting-guide-page {
+  --rms-ink: #18212b;
+  --rms-muted: rgba(24, 33, 43, 0.72);
+  --rms-line: rgba(15, 23, 42, 0.08);
+  --rms-green: #afe67e;
+  --rms-blue: #dfeaf4;
+  --rms-warm: #f3eedf;
+}
+
+body.roommate-splitting-guide-page .rms-hero {
+  grid-template-columns: minmax(0, 0.98fr) minmax(21rem, 0.62fr);
+}
+
+body.roommate-splitting-guide-page .rms-hero > *,
+body.roommate-splitting-guide-page .rms-hero .lt-toolsHeroCopy,
+body.roommate-splitting-guide-page .rms-hero-visual {
+  min-width: 0;
+  max-width: 100%;
+}
+
+body.blog-page.roommate-splitting-guide-page #main > .post header.major > h1,
+body.blog-page.roommate-splitting-guide-page article.post.featured h1 {
+  max-width: 22ch;
+  font-size: clamp(2.05rem, 3.45vw, 3.28rem);
+}
+
+body.roommate-splitting-guide-page .rms-hero-visual img {
+  max-width: 38rem;
+}
+
+body.roommate-splitting-guide-page .rms-direct-answer > p {
+  max-width: 74ch !important;
+}
+
+.rms-simple-card {
+  margin-top: 1.2rem;
+}
+
+.rms-simple-card h3 {
+  margin-top: 0 !important;
+}
+
+.rms-limitation-note {
+  margin-top: 0.95rem !important;
+  color: rgba(24, 33, 43, 0.62) !important;
+  font-size: 0.96rem !important;
+}
+
+.rms-rule-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.rms-example-section {
+  position: relative;
+}
+
+.rms-table-wrap {
+  margin-top: 1.2rem;
+}
+
+.rms-rules-table {
+  min-width: 780px;
+}
+
+.rms-ledger-table {
+  min-width: 920px;
+}
+
+.rms-small-table-wrap {
+  width: min(100%, 34rem);
+}
+
+.rms-small-table {
+  min-width: 420px;
+}
+
+.rms-small-table tbody tr:last-child th,
+.rms-small-table tbody tr:last-child td {
+  color: var(--rms-ink);
+  font-weight: 850;
+}
+
+.rms-compact-card-grid .rm-card {
+  padding: 1rem;
+}
+
+.rms-compact-card-grid .rm-card h3 {
+  font-size: 1.02rem !important;
+}
+
+.rms-compare-grid {
+  margin-top: 1.1rem;
+}
+
+.rms-mini-example {
+  margin-top: 1.1rem;
+}
+
+.rms-two-column-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.15rem 0;
+}
+
+.rms-two-column-list .rm-check-list,
+.rms-wide-check-list {
+  grid-template-columns: 1fr;
+}
+
+.rms-muted-check-list li::before {
+  background: var(--rms-blue);
+}
+
+.rms-formula-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+  margin: 1.15rem 0;
+  padding: 1rem;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.96));
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+}
+
+.rms-formula-card span,
+.rms-formula-card strong {
+  color: var(--rms-ink);
+  font-size: clamp(0.98rem, 0.94rem + 0.18vw, 1.08rem);
+  line-height: 1.35;
+}
+
+.rms-formula-card strong {
+  font-weight: 850;
+}
+
+.rms-ledger-results {
+  display: grid;
+  grid-template-columns: minmax(0, 1.18fr) minmax(18rem, 0.82fr);
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.rms-ledger-results .rm-card ul {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+}
+
+.rms-ledger-results .lt-cardCta {
+  margin-top: 1rem;
+}
+
+.rms-copy-panel {
+  margin-top: 1.2rem;
+  border: 1px solid var(--rms-line);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 250, 252, 0.94));
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+  overflow: hidden;
+}
+
+.rms-copy-header {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.8rem;
+  padding: 1rem 1rem 0;
+}
+
+.rms-copy-header h3 {
+  margin: 0 !important;
+}
+
+.rms-template-text {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 !important;
+  padding: 1rem;
+  overflow-x: auto;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  color: rgba(24, 33, 43, 0.86);
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: 0.93rem;
+  line-height: 1.65;
+  text-align: left;
+  white-space: pre-wrap;
+}
+
+.rms-copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.35rem;
+  width: fit-content;
+  border: 1px solid rgba(107, 161, 69, 0.22);
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.24);
+  color: var(--rms-ink);
+  cursor: pointer;
+  font-size: 0.86rem;
+  font-weight: 760;
+  letter-spacing: 0;
+  line-height: 1.2;
+  padding: 0.58rem 0.92rem;
+  text-transform: none;
+  transition: background 160ms ease, border-color 160ms ease, transform 160ms ease;
+}
+
+.rms-copy-button:hover {
+  background: rgba(175, 230, 126, 0.34);
+  border-color: rgba(107, 161, 69, 0.34);
+  transform: translateY(-1px);
+}
+
+.rms-copy-button:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.28);
+  outline-offset: 3px;
+}
+
+.rms-copy-status {
+  min-height: 1.35rem;
+  margin: 0 !important;
+  padding: 0 1rem 1rem;
+  color: rgba(24, 33, 43, 0.62) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.35 !important;
+}
+
+.rms-copy-status:empty {
+  min-height: 0;
+  padding-bottom: 0;
+}
+
+.rms-section-cta {
+  margin-top: 1.2rem;
+}
+
+.rms-wide-check-list {
+  width: min(100%, 52rem) !important;
+  max-width: 52rem !important;
+  margin: 1rem 0 0 !important;
+}
+
+.rms-message-grid .rm-message-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.rms-message-grid .rms-copy-button {
+  margin-top: 1rem;
+}
+
+.rms-final-cta {
+  margin-top: 2.5rem;
+}
+
+body.roommate-splitting-guide-page .lt-pageMeta {
+  width: min(100%, 60rem);
+  max-width: 60rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (max-width: 1100px) {
+  .rms-rule-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rms-ledger-results {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  body.roommate-splitting-guide-page .rms-hero {
+    grid-template-columns: 1fr;
+  }
+
+  body.blog-page.roommate-splitting-guide-page #main > .post header.major > h1,
+  body.blog-page.roommate-splitting-guide-page article.post.featured h1 {
+    max-width: 24ch;
+  }
+}
+
+@media (max-width: 736px) {
+  body.blog-page.roommate-splitting-guide-page #main > .post header.major > h1,
+  body.blog-page.roommate-splitting-guide-page article.post.featured h1 {
+    max-width: none;
+  }
+
+  .rms-rule-grid,
+  .rms-two-column-list {
+    grid-template-columns: 1fr;
+  }
+
+  body.roommate-splitting-guide-page .rms-hero,
+  body.roommate-splitting-guide-page .rms-hero .lt-toolsHeroCopy,
+  body.roommate-splitting-guide-page .rms-hero .lt-heroBody,
+  body.roommate-splitting-guide-page .rms-hero .lt-heroSupport,
+  body.roommate-splitting-guide-page .rms-hero-visual,
+  body.roommate-splitting-guide-page .rms-hero-visual img {
+    width: 100% !important;
+    max-width: 100% !important;
+  }
+
+  .rms-rules-table {
+    min-width: 720px;
+  }
+
+  .rms-ledger-table {
+    min-width: 860px;
+  }
+
+  .rms-small-table {
+    min-width: 360px;
+  }
+
+  .rms-formula-card {
+    align-items: flex-start;
+    flex-direction: column;
+    border-radius: 16px;
+  }
+
+  .rms-copy-panel {
+    border-radius: 16px;
+  }
+
+  .rms-copy-header {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .rms-copy-button,
+  .rms-section-cta .lt-primaryCta {
+    width: 100%;
+  }
+
+  .rms-template-text {
+    font-size: 0.86rem;
+    line-height: 1.58;
+  }
+}

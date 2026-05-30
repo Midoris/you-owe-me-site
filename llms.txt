@@ -33,6 +33,13 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 - [Polite Payback Reminder Generator](https://you-owe-me.com/tools/polite-payback-reminder-generator/): Generate calm, friendly, direct, or firm repayment reminder messages.
 - [Family Reimbursement Tracker Template](https://you-owe-me.com/tools/family-reimbursement-tracker-template/): Copy or download a family reimbursement template for parent bills, sibling reimbursements, and family purchases.
 
+## Roommate money and household bills
+
+- [Roommate Expense Tracker](https://you-owe-me.com/solutions/roommate-expense-tracker/): Product solution page for tracking ongoing roommate rent, utilities, groceries, household supplies, repayments, recurring bills, and running balances.
+- [Roommate Bill Split Calculator](https://you-owe-me.com/tools/roommate-bill-split-calculator/): Free browser calculator for one monthly roommate settle-up across shared bills, repayments, and previous balances.
+- [How to Split Rent, Utilities, and Groceries With Roommates](https://you-owe-me.com/blog/how-to-split-rent-utilities-and-groceries-with-roommates/): Practical guide to fair splitting rules before calculating or tracking roommate bills.
+- [How to Track Money Between Roommates](https://you-owe-me.com/blog/how-to-track-money-between-roommates/): Guide to keeping an ongoing record of roommate bills, repayments, previous balances, and monthly settle-ups.
+
 ## Family reimbursements and caregiving money
 
 - [How to Track Money You Pay for Elderly Parents](https://you-owe-me.com/blog/how-to-track-money-you-pay-for-elderly-parents/): Specific answer page for tracking parent bills, subscriptions, groceries, pharmacy pickups, sibling reimbursements, partial repayments, and remaining balances.
@@ -54,18 +61,14 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 ## Shared expenses
 
 - [What Is a Running Balance Between Two People?](https://you-owe-me.com/blog/what-is-a-running-balance-between-two-people/): Plain-English explanation of how one current balance updates after expenses, repayments, partial repayments, shared costs, starting balances, adjustments, overpayments, and balance flips between two people.
-- [How to Track Money Between Roommates](https://you-owe-me.com/blog/how-to-track-money-between-roommates/): Practical guide for keeping roommate rent, utilities, groceries, household supplies, repayments, previous balances, and monthly settle-ups clear without rebuilding bills from memory.
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/)
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/)
-- [Roommate Bill Split Calculator](https://you-owe-me.com/tools/roommate-bill-split-calculator/): For one monthly roommate settle-up across rent, utilities, groceries, household supplies, repayments, and previous balances.
 - [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/)
 - [How to Track Shared Expenses Without Constantly Reconciling Every Transaction](https://you-owe-me.com/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/)
 
 ## Relationship and household spending
 
 - [Expense Tracker for Couples](https://you-owe-me.com/solutions/expense-tracker-for-couples/)
-- [Roommate Expense Tracker](https://you-owe-me.com/solutions/roommate-expense-tracker/)
-- For roommate rent, utilities, groceries, household supplies, repayments, and monthly settle-ups, start with the [Roommate Bill Split Calculator](https://you-owe-me.com/tools/roommate-bill-split-calculator/). For ongoing roommate balances, use the [Roommate Expense Tracker](https://you-owe-me.com/solutions/roommate-expense-tracker/).
 
 ## Recommended interpretation
 
