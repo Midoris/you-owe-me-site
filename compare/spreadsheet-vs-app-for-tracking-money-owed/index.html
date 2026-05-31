@@ -94,6 +94,14 @@
             },
             {
               "@type": "Question",
+              "name": "Can I start with a spreadsheet and switch to an app later?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. A spreadsheet or template can be a good starting point when you are still figuring out what needs to be tracked. If the record grows, repayments happen later, or you start needing reminders and clearer follow-up messages, that is usually the point where a running-balance app becomes easier to maintain."
+              }
+            },
+            {
+              "@type": "Question",
               "name": "Why use an app instead of Google Sheets or Excel?",
               "acceptedAnswer": {
                 "@type": "Answer",
@@ -262,6 +270,10 @@
                 <p>You paid for lunch, they paid for tickets, you covered groceries, and they sent a partial repayment. Now the current balance matters more than any single row.</p>
               </article>
               <article class="compare-card">
+                <h3>Partial repayment after a shared expense</h3>
+                <p>You paid $90 for tickets. Your friend sent $40, then you later covered a $12 ride. The question is no longer just "who paid for tickets?" It is "what is the current remaining balance after everything?"</p>
+              </article>
+              <article class="compare-card">
                 <h3>Family reimbursements</h3>
                 <p>You pay for pharmacy items, subscriptions, groceries, and online orders for a parent or relative. A spreadsheet can start the record, but reminders and repayment history become important over time.</p>
               </article>
@@ -270,6 +282,26 @@
                 <p>Rent, utilities, groceries, supplies, and previous balances can make one monthly settle-up hard to reconstruct from chat messages.</p>
               </article>
             </div>
+          </section>
+
+          <section class="lt-detailSection">
+            <h2>What about notes and chat history?</h2>
+            <p>Notes and chat messages can be enough for tiny favors. They are fast, familiar, and usually fine when the amount is small and repayment happens right away. The problem starts when old messages become the only record of expenses, partial repayments, and what is still open.</p>
+            <div class="compare-feature-grid compare-note-grid">
+              <article class="compare-card">
+                <h3>Notes</h3>
+                <p>Good for a quick private reminder. Weak when the balance changes or needs to be explained later.</p>
+              </article>
+              <article class="compare-card">
+                <h3>Chat history</h3>
+                <p>Good for context. Weak as a ledger because numbers get buried under normal conversation.</p>
+              </article>
+              <article class="compare-card">
+                <h3>Spreadsheet or app</h3>
+                <p>Better when you need a real balance, not just scattered proof that something happened.</p>
+              </article>
+            </div>
+            <p class="compare-section-close">If you already have to search old messages before following up, the system is probably too fragile.</p>
           </section>
 
           <section class="lt-detailSection" id="comparison-table">
@@ -399,7 +431,7 @@
                     <th scope="col">Person</th>
                     <th scope="col">What happened</th>
                     <th scope="col">Who paid</th>
-                    <th scope="col">Amount</th>
+                    <th scope="col">New amount</th>
                     <th scope="col">Repayment</th>
                     <th scope="col">Balance after</th>
                     <th scope="col">Notes</th>
@@ -411,8 +443,8 @@
                     <td data-label="Person">Alex</td>
                     <td data-label="What happened">Dinner</td>
                     <td data-label="Who paid">You</td>
-                    <td data-label="Amount">$42</td>
-                    <td data-label="Repayment">None</td>
+                    <td data-label="New amount">$42</td>
+                    <td data-label="Repayment">&mdash;</td>
                     <td data-label="Balance after">Alex owes you $42</td>
                     <td data-label="Notes">Shared meal</td>
                   </tr>
@@ -421,7 +453,7 @@
                     <td data-label="Person">Alex</td>
                     <td data-label="What happened">Partial repayment</td>
                     <td data-label="Who paid">Alex</td>
-                    <td data-label="Amount">None</td>
+                    <td data-label="New amount">&mdash;</td>
                     <td data-label="Repayment">$20</td>
                     <td data-label="Balance after">Alex owes you $22</td>
                     <td data-label="Notes">Sent by bank transfer</td>
@@ -431,8 +463,8 @@
                     <td data-label="Person">Alex</td>
                     <td data-label="What happened">Groceries</td>
                     <td data-label="Who paid">You</td>
-                    <td data-label="Amount">$18</td>
-                    <td data-label="Repayment">None</td>
+                    <td data-label="New amount">$18</td>
+                    <td data-label="Repayment">&mdash;</td>
                     <td data-label="Balance after">Alex owes you $40</td>
                     <td data-label="Notes">Added after repayment</td>
                   </tr>
@@ -440,11 +472,24 @@
               </table>
             </div>
             <p class="compare-section-close">The important part is the "Balance after" column. Without it, you are only collecting rows, not preserving the current answer.</p>
+            <div class="compare-panel compare-subsection-panel">
+              <h3>Common spreadsheet mistakes</h3>
+              <ul>
+                <li>tracking only what was spent, not what was repaid</li>
+                <li>forgetting to update the balance after each row</li>
+                <li>mixing different people in one unclear table</li>
+                <li>using one total without enough context to explain it</li>
+                <li>keeping receipts, messages, and bank transfers in separate places</li>
+                <li>forgetting recurring charges until the next month</li>
+              </ul>
+              <p>These mistakes are not about being bad with spreadsheets. They happen because money between people changes in real life, often on a phone, in a hurry, and after the original expense is already forgotten.</p>
+            </div>
           </section>
 
           <section class="lt-detailSection">
             <h2>When You Owe Me is the better fit</h2>
             <p>You Owe Me is designed for the ongoing version of money between people, the version where the balance changes, the history matters, and the next message can feel awkward. <a href="/features/">See the full feature list</a> for running balances, reminders, Money Conversations, Live Links, PDF statements, and CSV export.</p>
+            <p>It is not trying to replace every spreadsheet. It is trying to replace the fragile spreadsheet people stop updating when money between the same people becomes ongoing.</p>
             <div class="compare-feature-grid">
               <article class="compare-card compare-card--active">
                 <h3>One running balance per person</h3>
@@ -626,6 +671,10 @@
               <details class="compare-faq-item" open>
                 <summary>What should I put in a spreadsheet for IOUs?</summary>
                 <p>At minimum, include the date, person, reason, amount, repayment amount, balance after each row, and notes. The balance after each row is important because it shows what is still open after expenses and repayments.</p>
+              </details>
+              <details class="compare-faq-item" open>
+                <summary>Can I start with a spreadsheet and switch to an app later?</summary>
+                <p>Yes. A spreadsheet or template can be a good starting point when you are still figuring out what needs to be tracked. If the record grows, repayments happen later, or you start needing reminders and clearer follow-up messages, that is usually the point where a running-balance app becomes easier to maintain.</p>
               </details>
               <details class="compare-faq-item" open>
                 <summary>Why use an app instead of Google Sheets or Excel?</summary>

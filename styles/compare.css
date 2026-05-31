@@ -100,6 +100,11 @@ body.compare-page .lt-breadcrumb [aria-current="page"] {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
+.compare-method-grid {
+  grid-template-columns: repeat(auto-fit, minmax(12.25rem, 1fr));
+  gap: 1rem;
+}
+
 .compare-relationship-grid,
 .compare-example-grid,
 .compare-related-grid {
@@ -143,6 +148,15 @@ body.compare-page .lt-breadcrumb [aria-current="page"] {
   margin: 0;
 }
 
+.compare-method-card {
+  gap: 0.75rem;
+  padding: 1.05rem;
+}
+
+.compare-method-card .lt-cardCta {
+  margin-top: auto;
+}
+
 .compare-disabled-cta {
   display: inline-flex;
   align-items: center;
@@ -161,6 +175,15 @@ body.compare-page .lt-breadcrumb [aria-current="page"] {
 
 .compare-panel {
   padding: clamp(1.35rem, 2.5vw, 1.7rem);
+}
+
+.compare-subsection-panel {
+  max-width: 900px;
+  margin-top: 1.35rem;
+}
+
+.compare-subsection-panel p:last-child {
+  margin-bottom: 0;
 }
 
 .compare-two-column {
