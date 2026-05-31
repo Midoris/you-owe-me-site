@@ -1,0 +1,442 @@
+body.compare-page article.post.featured h1,
+body.compare-page article.post.featured h2,
+body.compare-page article.post.featured h3 {
+  letter-spacing: 0 !important;
+}
+
+body.compare-page #nav .links li.active a {
+  background: rgba(255, 255, 255, 0.16);
+}
+
+body.compare-page .lt-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.42rem;
+  margin: 0 0 1.35rem;
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+body.compare-page .lt-breadcrumb a {
+  color: #355428;
+  font-weight: 600;
+}
+
+body.compare-page .lt-breadcrumb [aria-current="page"] {
+  color: rgba(24, 33, 43, 0.78);
+  font-weight: 700;
+}
+
+.compare-hero-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(18rem, 0.98fr);
+  gap: clamp(1.35rem, 3vw, 2.6rem);
+  align-items: center;
+}
+
+.compare-hero-copy {
+  min-width: 0;
+}
+
+.compare-hero-media {
+  margin: 0;
+  line-height: 0;
+}
+
+.compare-hero-media picture {
+  display: block;
+}
+
+.compare-hero-media img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 24px 58px rgba(15, 23, 42, 0.13);
+}
+
+.compare-hero-chips,
+.compare-chip-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.62rem;
+  margin-top: 1.25rem;
+}
+
+.compare-hero-chips span,
+.compare-chip-list span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.1rem;
+  padding: 0.42rem 0.68rem;
+  border: 1px solid rgba(107, 161, 69, 0.16);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: rgba(24, 33, 43, 0.84);
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1.25;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.04);
+}
+
+.compare-card-grid,
+.compare-principle-grid,
+.compare-relationship-grid,
+.compare-example-grid,
+.compare-feature-grid,
+.compare-related-grid {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.6rem;
+}
+
+.compare-card-grid,
+.compare-principle-grid,
+.compare-feature-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.compare-relationship-grid,
+.compare-example-grid,
+.compare-related-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.compare-card,
+.compare-panel,
+.compare-verdict,
+.compare-step-card,
+.compare-table-wrap {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.compare-card,
+.compare-step-card,
+.compare-verdict {
+  display: flex;
+  flex-direction: column;
+  gap: 0.9rem;
+  min-width: 0;
+  padding: 1.35rem;
+}
+
+.compare-card--active,
+.compare-verdict {
+  background:
+    linear-gradient(180deg, rgba(175, 230, 126, 0.16), rgba(255, 255, 255, 0.96));
+}
+
+.compare-card--planned {
+  background: rgba(255, 255, 255, 0.78);
+}
+
+.compare-card p,
+.compare-step-card p,
+.compare-verdict p {
+  margin: 0;
+}
+
+.compare-disabled-cta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: fit-content;
+  min-height: 2.8rem;
+  padding: 0.72rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.05);
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.96rem;
+  font-weight: 700;
+  line-height: 1.2;
+}
+
+.compare-panel {
+  padding: clamp(1.35rem, 2.5vw, 1.7rem);
+}
+
+.compare-two-column {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.45rem;
+}
+
+.compare-two-column .compare-panel {
+  height: 100%;
+}
+
+.compare-section-close {
+  max-width: 74ch;
+  margin-top: 1.35rem;
+}
+
+.compare-table-wrap {
+  margin-top: 1.6rem;
+  overflow: hidden;
+}
+
+.compare-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.compare-table th,
+.compare-table td {
+  padding: 1rem 1.15rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  text-align: left;
+  vertical-align: top;
+}
+
+.compare-table th {
+  background: rgba(175, 230, 126, 0.14);
+  color: rgba(24, 33, 43, 0.72);
+  font-size: 0.78rem;
+  font-weight: 850;
+  letter-spacing: 0.08em;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+.compare-table td {
+  color: rgba(33, 41, 49, 0.88);
+  line-height: 1.6;
+}
+
+.compare-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.compare-table a {
+  color: #355428;
+  font-weight: 800;
+}
+
+.compare-table--decision th:nth-child(1) {
+  width: 29%;
+}
+
+.compare-table--decision th:nth-child(2) {
+  width: 20%;
+}
+
+.compare-table--comparison th:nth-child(1) {
+  width: 22%;
+}
+
+.compare-table--comparison th:nth-child(2),
+.compare-table--comparison th:nth-child(3) {
+  width: 39%;
+}
+
+.compare-table--example th,
+.compare-table--example td {
+  white-space: normal;
+}
+
+.compare-table--example th:nth-child(1) {
+  width: 12%;
+}
+
+.compare-step-path {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.6rem;
+}
+
+.compare-step-card {
+  position: relative;
+  padding-left: 4rem;
+}
+
+.compare-step-number {
+  position: absolute;
+  top: 1.05rem;
+  left: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.3);
+  color: #274218;
+  font-size: 0.92rem;
+  font-weight: 850;
+  line-height: 1;
+}
+
+.compare-faq-list {
+  display: grid;
+  gap: 0.85rem;
+  max-width: 980px;
+  margin: 1.6rem auto 0;
+}
+
+.compare-faq-item {
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+}
+
+.compare-faq-item summary {
+  position: relative;
+  cursor: pointer;
+  list-style: none;
+  padding: 1.1rem 3.15rem 1.1rem 1.35rem;
+  color: rgba(24, 33, 43, 0.92);
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.compare-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+.compare-faq-item summary::after {
+  content: "-";
+  position: absolute;
+  top: 50%;
+  right: 1.25rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.25);
+  color: #274218;
+  font-weight: 900;
+  transform: translateY(-50%);
+}
+
+.compare-faq-item:not([open]) summary::after {
+  content: "+";
+}
+
+.compare-faq-item p {
+  max-width: 76ch;
+  margin: 0;
+  padding: 0 1.35rem 1.2rem;
+  color: rgba(24, 33, 43, 0.74);
+}
+
+@media (max-width: 980px) {
+  .compare-hero-grid,
+  .compare-card-grid,
+  .compare-principle-grid,
+  .compare-feature-grid,
+  .compare-step-path {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .compare-hero-copy {
+    grid-column: 1 / -1;
+  }
+
+  .compare-hero-media {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 736px) {
+  body.compare-page .lt-breadcrumb {
+    margin-bottom: 0.95rem;
+    font-size: 0.9rem;
+  }
+
+  .compare-hero-grid,
+  .compare-card-grid,
+  .compare-principle-grid,
+  .compare-relationship-grid,
+  .compare-example-grid,
+  .compare-feature-grid,
+  .compare-related-grid,
+  .compare-two-column,
+  .compare-step-path {
+    grid-template-columns: 1fr;
+  }
+
+  .compare-hero-media img {
+    border-radius: 18px;
+  }
+
+  .compare-card,
+  .compare-panel,
+  .compare-verdict,
+  .compare-step-card {
+    border-radius: 18px;
+    padding: 1rem;
+  }
+
+  .compare-step-card {
+    padding-top: 3.15rem;
+  }
+
+  .compare-step-number {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  .compare-table thead {
+    display: none;
+  }
+
+  .compare-table,
+  .compare-table tbody,
+  .compare-table tr,
+  .compare-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .compare-table tr {
+    padding: 0.85rem 1rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .compare-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .compare-table td {
+    display: grid;
+    grid-template-columns: minmax(7.5rem, 0.42fr) minmax(0, 1fr);
+    gap: 0.75rem;
+    padding: 0.35rem 0;
+    border-bottom: 0;
+    overflow-wrap: anywhere;
+  }
+
+  .compare-table td::before {
+    content: attr(data-label);
+    color: rgba(24, 33, 43, 0.56);
+    font-size: 0.72rem;
+    font-weight: 850;
+    letter-spacing: 0.08em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .compare-table td:first-child {
+    font-weight: 800;
+  }
+
+  .compare-disabled-cta,
+  .compare-card .lt-cardCta,
+  .compare-related-grid .lt-cardCta {
+    width: 100%;
+  }
+}
