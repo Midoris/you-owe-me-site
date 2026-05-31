@@ -186,6 +186,31 @@ body.compare-page .lt-breadcrumb [aria-current="page"] {
   margin-bottom: 0;
 }
 
+.compare-soft-cta {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1.35rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(107, 161, 69, 0.18);
+  border-radius: 18px;
+  background: rgba(175, 230, 126, 0.11);
+}
+
+.compare-soft-cta h3,
+.compare-soft-cta p {
+  margin: 0;
+}
+
+.compare-soft-cta p {
+  margin-top: 0.45rem;
+}
+
+.compare-soft-cta .lt-ctaRow {
+  margin-top: 0;
+}
+
 .compare-two-column {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
@@ -399,9 +424,14 @@ body.compare-page .lt-breadcrumb [aria-current="page"] {
   .compare-card,
   .compare-panel,
   .compare-verdict,
-  .compare-step-card {
+  .compare-step-card,
+  .compare-soft-cta {
     border-radius: 18px;
     padding: 1rem;
+  }
+
+  .compare-soft-cta {
+    grid-template-columns: 1fr;
   }
 
   .compare-step-card {
