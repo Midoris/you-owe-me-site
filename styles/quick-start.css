@@ -251,6 +251,10 @@ body.quick-start-page .qs-feature-card-wide {
   grid-template-columns: minmax(0, 1fr) minmax(9rem, 0.22fr);
 }
 
+body.quick-start-page .qs-feature-card--text {
+  display: block;
+}
+
 body.quick-start-page .qs-feature-card picture {
   display: block;
   justify-self: end;
@@ -298,7 +302,7 @@ body.quick-start-page .qs-mode-note {
 }
 
 body.quick-start-page .qs-link-grid {
-  grid-template-columns: repeat(4, minmax(0, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(13.5rem, 1fr));
 }
 
 body.quick-start-page .qs-link-card {
