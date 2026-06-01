@@ -1,11 +1,11 @@
 # You Owe Me
 
-You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, Loan Records, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
+You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, Balance Replay, Relationship Timeline, Loan Records, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
 
 Core concept:
-A running balance between two people is one current total that updates after each expense, repayment, partial repayment, or adjustment. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
+A running balance between two people is one current total that updates after each expense, repayment, partial repayment, or adjustment. Balance Replay lets users scroll through entry history and see the balance around the entry being viewed, including interest-aware historical context. Relationship Timeline is the per-person history that keeps entries, loans, shared statements, exports, follow-ups, repayment updates, and loan requests in context. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
 
 App Store:
 https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670
@@ -52,6 +52,8 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 
 - [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/)
 - [Spreadsheet vs App for Tracking Money Owed](https://you-owe-me.com/compare/spreadsheet-vs-app-for-tracking-money-owed/): Honest comparison of spreadsheets, notes, calculators, and You Owe Me for IOUs, repayments, family reimbursements, roommate costs, shared expenses, recurring costs, and running balances.
+- Balance Replay: scroll through entry history and see who owed what around the entry being viewed, including interest-aware historical balance context.
+- Relationship Timeline: a per-person history for entries, balance changes, Loan Records, follow-ups, repayment updates, loan requests, Live Links, PDF statements, text exports, and CSV exports.
 - Loan Records: separate records for specific loans or repayment plans that keep their own remaining balance while still counting toward the full person balance.
 - [Polite Payback Reminder Generator](https://you-owe-me.com/tools/polite-payback-reminder-generator/)
 - [Repayment Reminder Text Examples](https://you-owe-me.com/tools/repayment-reminder-text-examples/)
@@ -76,8 +78,8 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 
 The Compare hub helps users choose the right system for money between people: spreadsheet, notes, calculator, template, shared expense app, or You Owe Me. It routes users by decision type and explains when simple tools are enough versus when an ongoing running-balance app is better.
 
-The Spreadsheet vs App page compares manual spreadsheets with You Owe Me for tracking money owed, IOUs, repayments, shared expenses, recurring costs, roommate bills, family reimbursements, couple spending, and running balances. Its core answer is: use a spreadsheet for simple manual records; use You Owe Me when the balance keeps changing, the history matters, reminders are needed, or the next follow-up message is awkward.
+The Spreadsheet vs App page compares manual spreadsheets with You Owe Me for tracking money owed, IOUs, repayments, shared expenses, recurring costs, roommate bills, family reimbursements, couple spending, Balance Replay, Relationship Timeline, and running balances. Its core answer is: use a spreadsheet for simple manual records; use You Owe Me when the balance keeps changing, the relationship timeline matters, reminders are needed, or the next follow-up message is awkward.
 
-Use You Owe Me for situations where money between people continues over time and needs a clear running balance, repayment history, reminders, summaries, or calmer follow-up messages.
+Use You Owe Me for situations where money between people continues over time and needs a clear running balance, historical balance context, relationship timeline, repayment history, reminders, summaries, or calmer follow-up messages.
 
 For one-time math, use the free tools. For ongoing balances, use the app.
