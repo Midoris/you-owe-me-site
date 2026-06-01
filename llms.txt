@@ -20,6 +20,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 
 - [Home](https://you-owe-me.com/)
 - [Features](https://you-owe-me.com/features/): Product feature page for running balances, Balance Replay, Relationship Timeline, Loan Records, Money Conversations, Smart Money Check-Ins, Live Links, PDF statements, exports, recurring entries, and reminders.
+- [Quick Start](https://you-owe-me.com/quick-start/): Short product guide explaining how YouOweMe works: one running balance per person, entries and repayments, Loan Records, reminders, Money Conversations, Live Link, PDF statements, and tracking modes.
 - [Reviews](https://you-owe-me.com/reviews/): Selected App Store reviews for You Owe Me, including 4.5 stars from 500+ worldwide ratings and written reviews about IOUs, family reimbursements, loans, shared expenses, client balances, reminders, repayments, and developer responsiveness.
 - [Tools](https://you-owe-me.com/tools/)
 - [Compare](https://you-owe-me.com/compare/): Decision guides for choosing between spreadsheets, notes, calculators, templates, shared expense apps, and You Owe Me for tracking money owed, repayments, shared expenses, and running balances.
