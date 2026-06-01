@@ -449,6 +449,14 @@ body.splitwise-alternative-page .splitwise-difference-arrow {
   line-height: 1;
 }
 
+body.splitwise-alternative-page .splitwise-split-entry-cards {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body.splitwise-alternative-page .splitwise-split-entry-cards .compare-card {
+  gap: 0.72rem;
+}
+
 body.splitwise-alternative-page .splitwise-feature-media-grid {
   display: grid;
   grid-template-columns: minmax(0, 0.95fr) minmax(18rem, 1.05fr);
@@ -534,7 +542,7 @@ body.splitwise-alternative-page .splitwise-note {
 }
 
 body.splitwise-alternative-page .splitwise-scenario-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(2, minmax(0, 1fr));
 }
 
 body.splitwise-alternative-page .splitwise-final-cta {
@@ -570,6 +578,7 @@ body.splitwise-alternative-page .splitwise-final-note {
 
   body.splitwise-alternative-page .splitwise-feature-media-grid,
   body.splitwise-alternative-page .splitwise-feature-media-grid--reverse,
+  body.splitwise-alternative-page .splitwise-split-entry-cards,
   body.splitwise-alternative-page .splitwise-scenario-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -684,6 +693,7 @@ body.splitwise-alternative-page .splitwise-final-note {
   body.splitwise-alternative-page .splitwise-difference-panel,
   body.splitwise-alternative-page .splitwise-feature-media-grid,
   body.splitwise-alternative-page .splitwise-feature-media-grid--reverse,
+  body.splitwise-alternative-page .splitwise-split-entry-cards,
   body.splitwise-alternative-page .splitwise-scenario-grid {
     grid-template-columns: 1fr;
   }

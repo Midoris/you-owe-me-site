@@ -28,7 +28,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 
 ## Comparison guides
 
-- [Splitwise Alternative](https://you-owe-me.com/compare/splitwise-alternative/): Comparison of Splitwise-style group expense splitting with YouOweMe's private running balances, Live Links, repayment history, Relationship Timeline, Money Conversations, and calmer follow-up messages.
+- [Splitwise Alternative](https://you-owe-me.com/compare/splitwise-alternative/): Comparison of Splitwise-style collaborative group ledgers with You Owe Me's Split Entry, private running balances, Live Links, repayment history, Relationship Timeline, Money Conversations, and calmer follow-up messages.
 - [Spreadsheet vs App for Tracking Money Owed](https://you-owe-me.com/compare/spreadsheet-vs-app-for-tracking-money-owed/): Honest comparison of spreadsheets, notes, calculators, and You Owe Me for IOUs, repayments, family reimbursements, roommate costs, shared expenses, recurring costs, and running balances.
 
 ## Free tools
