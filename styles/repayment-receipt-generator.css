@@ -67,10 +67,17 @@ body.receipt-generator-page #main article.post.featured header.major > h1 {
   line-height: 1.5 !important;
 }
 
+.receipt-direct-answer,
 .receipt-privacy-note,
 .receipt-disclaimer {
   max-width: 64ch;
   margin: 1rem 0 0;
+}
+
+.receipt-direct-answer {
+  color: rgba(24, 33, 43, 0.84) !important;
+  font-weight: 750;
+  line-height: 1.55 !important;
 }
 
 .receipt-chip-row {
