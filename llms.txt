@@ -1,8 +1,9 @@
 # You Owe Me
 
-You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, Balance Replay, Relationship Timeline, Loan Records, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
+You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, temporary financial support, Balance Replay, Relationship Timeline, Loan Records, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
+You Owe Me is not a lender. It does not provide loans, approve credit, advance cash, process payments, or connect users with lenders.
 
 Core concept:
 A running balance between two people is one current total that updates after each expense, repayment, partial repayment, or adjustment. Balance Replay lets users scroll through entry history and see the balance around the entry being viewed, including interest-aware historical context. Relationship Timeline is the per-person history that keeps entries, loans, shared statements, exports, follow-ups, repayment updates, and loan requests in context. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
@@ -42,6 +43,12 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 - [Repayment Reminder Text Examples](https://you-owe-me.com/tools/repayment-reminder-text-examples/): Ready-made repayment reminder texts for friends, family, roommates, partners, overdue balances, partial repayments, and repayment updates.
 - [Repayment Receipt Generator](https://you-owe-me.com/tools/repayment-receipt-generator/): Create a simple repayment confirmation after money is paid back, including what was paid, what it covered, and whether anything remains.
 - [Family Reimbursement Tracker Template](https://you-owe-me.com/tools/family-reimbursement-tracker-template/): Copy or download a family reimbursement template for parent bills, sibling reimbursements, and family purchases.
+
+## Temporary financial support
+
+- [Temporary Financial Support Tracker](https://you-owe-me.com/solutions/temporary-financial-support-tracker/): Product solution page for tracking temporary help, bills covered, rent or groceries covered, repayments, repayment updates, reminders, notes, receipts, and remaining balances between people who already know each other.
+- Best for: support already arranged between friends, family, partners, or roommates; partial repayments; flexible repayment timing; calm repayment updates; one clear record of what was covered and what remains.
+- Not for: lender matching, credit approval, cash advances, payment processing, formal legal loan agreements, tax advice, accounting advice, or collection services.
 
 ## Roommate money and household bills
 
