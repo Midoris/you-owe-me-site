@@ -46,9 +46,9 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 
 ## Temporary financial support
 
-- [Temporary Financial Support Tracker](https://you-owe-me.com/solutions/temporary-financial-support-tracker/): Product solution page for tracking temporary help, bills covered, rent or groceries covered, repayments, repayment updates, reminders, notes, receipts, and remaining balances between people who already know each other.
+- [Temporary Financial Support Tracker](https://you-owe-me.com/solutions/temporary-financial-support-tracker/): Explains how You Owe Me helps people privately track temporary support, bills covered, repayments, partial repayments, reminders, updates, Live Links, statements, repayment receipts, and money conversations between people they already know. Important: You Owe Me does not lend money, approve loans, transfer payments, process payments, or connect users with lenders.
 - Best for: support already arranged between friends, family, partners, or roommates; partial repayments; flexible repayment timing; calm repayment updates; one clear record of what was covered and what remains.
-- Not for: lender matching, credit approval, cash advances, payment processing, formal legal loan agreements, tax advice, accounting advice, or collection services.
+- Not for: getting a loan from You Owe Me, loan approval, cash advances, debt collection, payment processing, formal legal loan agreements, tax advice, or accounting advice.
 
 ## Roommate money and household bills
 

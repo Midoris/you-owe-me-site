@@ -1105,6 +1105,47 @@ body.temporary-support-page .temporary-message-card::before {
   background: rgba(175, 230, 126, 0.52);
 }
 
+body.temporary-support-page .temporary-feature-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.6rem;
+}
+
+body.temporary-support-page .temporary-feature-card {
+  padding: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 246, 0.92));
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.temporary-support-page .temporary-feature-card h3 {
+  margin: 0 0 0.55rem;
+}
+
+body.temporary-support-page .temporary-feature-card p {
+  margin: 0;
+  color: rgba(24, 33, 43, 0.72);
+  line-height: 1.58;
+}
+
+body.temporary-support-page .temporary-feature-card .temporary-feature-label {
+  display: inline-flex;
+  align-items: center;
+  margin-bottom: 0.75rem;
+  padding: 0.32rem 0.58rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.18);
+  color: #355428;
+  font-size: 0.76rem;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
 body.temporary-support-page .temporary-feature-map {
   max-width: 1040px;
   margin: 1.6rem auto 0;
@@ -1220,6 +1261,10 @@ body.temporary-support-page .temporary-feature-row span {
 
   body.temporary-support-page .temporary-chip-grid,
   body.temporary-support-page .temporary-ledger-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.temporary-support-page .temporary-feature-grid {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
@@ -1348,6 +1393,7 @@ body.temporary-support-page .temporary-feature-row span {
   body.temporary-support-page .temporary-compare-grid,
   body.temporary-support-page .temporary-ledger-grid,
   body.temporary-support-page .temporary-message-grid,
+  body.temporary-support-page .temporary-feature-grid,
   body.temporary-support-page .temporary-checklist {
     grid-template-columns: 1fr;
   }
@@ -1361,7 +1407,8 @@ body.temporary-support-page .temporary-feature-row span {
 
   body.temporary-support-page .temporary-compare-card,
   body.temporary-support-page .temporary-ledger-card,
-  body.temporary-support-page .temporary-message-card {
+  body.temporary-support-page .temporary-message-card,
+  body.temporary-support-page .temporary-feature-card {
     padding: 1rem;
     border-radius: 18px;
   }
