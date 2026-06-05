@@ -27,6 +27,35 @@ body.temporary-help-answer-page article.post.featured h1 {
   font-weight: 700;
 }
 
+.temporary-help-note,
+.temporary-help-boundary-note {
+  border: 1px solid rgba(42, 115, 94, 0.18);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(240, 253, 244, 0.76));
+  padding: 1rem 1.05rem;
+}
+
+.temporary-help-note {
+  margin: 1rem 0 0;
+}
+
+.temporary-help-note h2,
+.temporary-help-boundary-note h2 {
+  margin: 0 0 0.45rem !important;
+  color: #18212b;
+  font-size: 1rem;
+  letter-spacing: 0;
+}
+
+.temporary-help-note p,
+.temporary-help-boundary-note p {
+  margin: 0 !important;
+  color: rgba(24, 33, 43, 0.78) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.6 !important;
+}
+
 .temporary-help-hero-visual {
   margin: 0;
   justify-self: end;
@@ -334,6 +363,73 @@ body.blog-page.temporary-help-answer-page article.post.featured .lt-toolsSection
 
   .temporary-help-hero-visual {
     width: 100%;
+  }
+
+  .temporary-help-table-wrap {
+    overflow-x: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .temporary-help-table {
+    min-width: 0;
+  }
+
+  .temporary-help-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .temporary-help-table,
+  .temporary-help-table tbody,
+  .temporary-help-table tr,
+  .temporary-help-table th,
+  .temporary-help-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .temporary-help-table tbody {
+    display: grid;
+    gap: 0.9rem;
+  }
+
+  .temporary-help-table tr {
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 18px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+    overflow: hidden;
+  }
+
+  .temporary-help-table th,
+  .temporary-help-table td {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+    padding: 0.85rem 0.95rem;
+  }
+
+  .temporary-help-table tbody tr:last-child th,
+  .temporary-help-table tbody tr:last-child td {
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .temporary-help-table tr td:last-child {
+    border-bottom: 0;
+  }
+
+  .temporary-help-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.25rem;
+    color: rgba(24, 33, 43, 0.58);
+    font-size: 0.78rem;
+    font-weight: 900;
+    text-transform: uppercase;
   }
 
   .temporary-help-avoid-grid,
