@@ -25,6 +25,7 @@ const SUPPORT_FORM_SENT_EVENT = "youoweme:support-form-sent";
 const SUPPORT_FORM_ERROR_EVENT = "youoweme:support-form-error";
 const TOOL_TEMPLATE_COPY_EVENT = "youoweme:tool-template-copy";
 const PAYBACK_GENERATOR_EVENT = "youoweme:payback-generator-event";
+const TEMPORARY_HELP_COPY_EVENT = "youoweme:temporary-financial-help-copy";
 const PAYBACK_GENERATOR_EVENTS = new Set([
   "payback_generator_generate",
   "payback_generator_copy_short",
@@ -318,6 +319,19 @@ function onPaybackGeneratorEvent(event) {
   }));
 }
 
+function onTemporaryHelpCopy(event) {
+  const detail = event && event.detail ? event.detail : {};
+  const copyType = sanitizeText(detail.copy_type, 40);
+  const eventName = copyType === "record"
+    ? "temporary_help_support_record_copy"
+    : "temporary_help_template_copy";
+
+  void trackEvent(eventName, Object.assign({}, getSaleParams(), {
+    copy_type: copyType || "template",
+    template_id: sanitizeText(detail.id, 120),
+  }));
+}
+
 function initEventTracking() {
   activeSale = getActiveSale();
   bindAppStoreClicks();
@@ -330,6 +344,7 @@ function initEventTracking() {
   window.addEventListener(SUPPORT_FORM_ERROR_EVENT, onSupportFormError);
   window.addEventListener(TOOL_TEMPLATE_COPY_EVENT, onToolTemplateCopy);
   window.addEventListener(PAYBACK_GENERATOR_EVENT, onPaybackGeneratorEvent);
+  window.addEventListener(TEMPORARY_HELP_COPY_EVENT, onTemporaryHelpCopy);
 }
 
 if (document.readyState === "loading") {

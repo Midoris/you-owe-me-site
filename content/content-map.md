@@ -1,6 +1,6 @@
 # YouOweMe Content Map
 
-Updated: 2026-05-16
+Updated: 2026-06-05
 
 This is the working map for planning YouOweMe content across Shorts, TikTok, Instagram Reels, Instagram carousels, and 1-2 minute YouTube landscape videos.
 
@@ -9,6 +9,27 @@ The core category is:
 **Real-life money between people.**
 
 The content should not feel like "finance app content." It should feel like specific human situations people recognize immediately, with practical help before the product appears.
+
+## Website Temporary Support Cluster
+
+Parent:
+
+- `/solutions/temporary-financial-support-tracker/`
+
+Current answer page:
+
+- `/blog/how-to-ask-family-for-temporary-financial-help/`
+
+Related support:
+
+- `/tools/repayment-reminder-text-examples/`
+- `/tools/polite-payback-reminder-generator/`
+- `/tools/repayment-receipt-generator/`
+- `/blog/how-to-follow-up-after-a-partial-repayment/`
+- `/solutions/family-reimbursement-tracker/`
+- `/solutions/app-to-track-money-owed/`
+
+Cluster boundary: temporary support content should stay calm, dignified, and non-shaming. You Owe Me does not lend money, approve loans, process payments, provide legal/tax/accounting/financial advice, or act as a collection service. The product helps people track and communicate about support already arranged between people who know each other.
 
 ## Current Strategy Shift
 

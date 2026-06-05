@@ -46,7 +46,10 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 
 ## Temporary financial support
 
+The temporary financial support cluster helps people handle informal support between people they know, such as family help with rent, groceries, bills, uneven income, partial repayments, repayment updates, and flexible check-ins. The tone is calm, dignified, and non-shaming. You Owe Me does not lend money or process payments; it helps people track and communicate about support already arranged between them.
+
 - [Temporary Financial Support Tracker](https://you-owe-me.com/solutions/temporary-financial-support-tracker/): Explains how You Owe Me helps people privately track temporary support, bills covered, repayments, partial repayments, reminders, updates, Live Links, statements, repayment receipts, and money conversations between people they already know. Important: You Owe Me does not lend money, approve loans, transfer payments, process payments, or connect users with lenders.
+- [How to Ask Family for Temporary Financial Help](https://you-owe-me.com/blog/how-to-ask-family-for-temporary-financial-help/): Borrower-side answer page with copyable message templates for asking family for help, guidance on gift vs loan vs flexible support, common wording mistakes, a simple support record, and a bridge to tracking the agreement in You Owe Me.
 - Best for: support already arranged between friends, family, partners, or roommates; partial repayments; flexible repayment timing; calm repayment updates; one clear record of what was covered and what remains.
 - Not for: getting a loan from You Owe Me, loan approval, cash advances, debt collection, payment processing, formal legal loan agreements, tax advice, or accounting advice.
 
