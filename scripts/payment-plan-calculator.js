@@ -140,6 +140,12 @@
     return frequencyLabels[frequency] || "monthly";
   }
 
+  function frequencyUnitLabel(frequency) {
+    if (frequency === "weekly") return "week";
+    if (frequency === "biweekly") return "2 weeks";
+    return "month";
+  }
+
   function dispatchToolEvent(eventName, values, extra) {
     if (!eventName || typeof window.CustomEvent !== "function") return;
 
@@ -237,6 +243,10 @@
     if (values.extraRaw !== "" && (!Number.isFinite(values.extra) || values.extra < 0)) {
       setError("extra", "Extra payment now cannot be negative.");
       isValid = false;
+    }
+
+    if (isValid && buildBaseAmounts(values).remainingAfterExtraCents <= 0) {
+      return true;
     }
 
     if (values.mode === "amount") {
@@ -368,7 +378,7 @@
     }
 
     var numberOfPayments = dates.length;
-    var requiredCents = Math.max(1, Math.round(amounts.remainingAfterExtraCents / numberOfPayments));
+    var requiredCents = Math.max(1, Math.ceil(amounts.remainingAfterExtraCents / numberOfPayments));
     var balance = amounts.remainingAfterExtraCents;
     var schedule = [];
     var rowsToRender = Math.min(numberOfPayments, maxRenderedRows);
@@ -394,7 +404,7 @@
       paymentCents: requiredCents,
       regularCents: requiredCents,
       finalPaymentCents: schedule.length ? schedule[schedule.length - 1].paymentCents : requiredCents,
-      finalSmallCents: schedule.length && schedule[schedule.length - 1].paymentCents !== requiredCents
+      finalSmallCents: schedule.length && schedule[schedule.length - 1].paymentCents < requiredCents
         ? schedule[schedule.length - 1].paymentCents
         : null,
       numberOfPayments: numberOfPayments,
@@ -572,7 +582,7 @@
     }
 
     details.push(formatMoneyFromCents(result.amounts.remainingAfterExtraCents, values.currency) + " remains.");
-    details.push("Planned repayment: " + formatMoneyFromCents(plan.paymentCents, values.currency) + "/" + frequencyLabel(plan.frequency) + " starting " + formatDate(plan.firstDate) + ".");
+    details.push("Planned repayment: " + formatMoneyFromCents(plan.paymentCents, values.currency) + "/" + frequencyUnitLabel(plan.frequency) + " starting " + formatDate(plan.firstDate) + ".");
 
     if (plan.finalSmallCents) {
       details.push("Final smaller payment of " + formatMoneyFromCents(plan.finalSmallCents, values.currency) + ".");
@@ -593,6 +603,7 @@
       setText("count", "0");
       setText("finalDate", "Fully repaid");
       if (els.finalSmallCard) els.finalSmallCard.hidden = true;
+      setText("finalSmall", "");
       return;
     }
 
@@ -603,6 +614,7 @@
       setText("count", "0");
       setText("finalDate", "Overpaid");
       if (els.finalSmallCard) els.finalSmallCard.hidden = true;
+      setText("finalSmall", "");
       return;
     }
 
@@ -619,6 +631,8 @@
 
     if (plan.finalSmallCents) {
       setText("finalSmall", formatMoneyFromCents(plan.finalSmallCents, values.currency));
+    } else {
+      setText("finalSmall", "");
     }
   }
 
@@ -662,7 +676,7 @@
     var note = "";
 
     if (result.state === "settled") {
-      note = "This looks fully repaid. You may not need a payment plan.";
+      note = "This looks fully repaid. You may not need a payment plan. A repayment receipt can help if you want a clear confirmation.";
     } else if (result.state === "overpaid") {
       note = "This looks overpaid by " + formatMoneyFromCents(Math.abs(result.amounts.remainingAfterExtraCents), values.currency) + ". Check the numbers before creating a plan.";
     } else if (result.plan.numberOfPayments === 1) {
@@ -686,6 +700,7 @@
     if (els.outputs.message) els.outputs.message.textContent = lastOutput.message;
     if (els.outputs.summary) els.outputs.summary.textContent = lastOutput.summary;
     if (els.outputs.record) els.outputs.record.textContent = lastOutput.record;
+    setCopyButtonsDisabled(false);
   }
 
   function render(values, result) {
@@ -702,9 +717,47 @@
   }
 
   function renderInvalid(message) {
-    if (els.formStatus) els.formStatus.textContent = message || "Check the highlighted fields.";
+    var safeMessage = message || "Check the highlighted fields.";
+
+    if (els.formStatus) els.formStatus.textContent = safeMessage;
     if (els.resultStatus) els.resultStatus.textContent = "Check fields";
     if (els.resultNote) els.resultNote.textContent = message || "Check the fields above before using the plan.";
+    if (els.planLabel) els.planLabel.textContent = "Payment plan";
+
+    setText("remaining", "Check fields");
+    setText("plan", "Needs valid input");
+    setText("count", "-");
+    setText("finalDate", "-");
+
+    if (els.finalSmallCard) els.finalSmallCard.hidden = true;
+    setText("finalSmall", "");
+    if (els.scheduleBody) {
+      els.scheduleBody.textContent = "";
+      var tr = document.createElement("tr");
+      var td = document.createElement("td");
+      td.colSpan = 4;
+      td.setAttribute("data-label", "Schedule");
+      td.textContent = safeMessage;
+      tr.appendChild(td);
+      els.scheduleBody.appendChild(tr);
+    }
+
+    lastOutput.message = "";
+    lastOutput.summary = "";
+    lastOutput.record = "";
+    if (els.outputs.message) els.outputs.message.textContent = "Enter valid amounts to generate a repayment message.";
+    if (els.outputs.summary) els.outputs.summary.textContent = "Enter valid amounts to generate a plan summary.";
+    if (els.outputs.record) els.outputs.record.textContent = "Enter valid amounts to generate a record note.";
+    setCopyButtonsDisabled(true);
+  }
+
+  function setCopyButtonsDisabled(isDisabled) {
+    if (!els.outputButtons) return;
+
+    els.outputButtons.forEach(function (button) {
+      button.disabled = Boolean(isDisabled);
+      button.setAttribute("aria-disabled", isDisabled ? "true" : "false");
+    });
   }
 
   function generate(options) {
@@ -744,8 +797,15 @@
   }
 
   function syncModePanels(mode) {
-    if (els.amountPanel) els.amountPanel.hidden = mode !== "amount";
-    if (els.datePanel) els.datePanel.hidden = mode !== "date";
+    if (els.amountPanel) {
+      els.amountPanel.hidden = mode !== "amount";
+      els.amountPanel.setAttribute("aria-hidden", mode !== "amount" ? "true" : "false");
+    }
+
+    if (els.datePanel) {
+      els.datePanel.hidden = mode !== "date";
+      els.datePanel.setAttribute("aria-hidden", mode !== "date" ? "true" : "false");
+    }
   }
 
   function setDefaultDates() {
@@ -965,6 +1025,7 @@
         summary: document.querySelector("[data-output='summary']"),
         record: document.querySelector("[data-output='record']"),
       },
+      outputButtons: Array.prototype.slice.call(document.querySelectorAll("[data-copy-output]")),
     };
 
     setDefaultDates();

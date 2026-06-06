@@ -362,7 +362,7 @@
                     </div>
                     <div class="pp-field">
                       <label for="pp-first-payment-amount">First payment date</label>
-                      <input id="pp-first-payment-amount" name="firstPaymentAmount" type="date" required aria-describedby="pp-first-amount-error" />
+                      <input id="pp-first-payment-amount" name="firstPaymentAmount" type="date" value="2026-07-01" required aria-describedby="pp-first-amount-error" />
                       <p id="pp-first-amount-error" class="pp-validation" aria-live="polite"></p>
                     </div>
                   </div>
@@ -373,7 +373,7 @@
                   <div class="pp-field-grid pp-field-grid--three">
                     <div class="pp-field">
                       <label for="pp-target-date">Target payoff date</label>
-                      <input id="pp-target-date" name="targetDate" type="date" aria-describedby="pp-target-error" />
+                      <input id="pp-target-date" name="targetDate" type="date" value="2026-09-01" aria-describedby="pp-target-error" />
                       <p id="pp-target-error" class="pp-validation" aria-live="polite"></p>
                     </div>
                     <div class="pp-field">
@@ -386,7 +386,7 @@
                     </div>
                     <div class="pp-field">
                       <label for="pp-first-payment-date">First payment date</label>
-                      <input id="pp-first-payment-date" name="firstPaymentDate" type="date" aria-describedby="pp-first-date-error" />
+                      <input id="pp-first-payment-date" name="firstPaymentDate" type="date" value="2026-07-01" aria-describedby="pp-first-date-error" />
                       <p id="pp-first-date-error" class="pp-validation" aria-live="polite"></p>
                     </div>
                   </div>
@@ -433,7 +433,7 @@
                   </article>
                   <article class="pp-summary-card">
                     <p>Estimated final payment</p>
-                    <strong data-summary="finalDate">-</strong>
+                    <strong data-summary="finalDate">September 1, 2026</strong>
                   </article>
                   <article class="pp-summary-card" data-final-small-card>
                     <p>Final smaller payment</p>
@@ -451,9 +451,30 @@
                         <th scope="col">Balance after</th>
                       </tr>
                     </thead>
-                    <tbody data-schedule-body></tbody>
+                    <tbody data-schedule-body>
+                      <tr>
+                        <td data-label="Payment">Payment 1</td>
+                        <td data-label="Date">July 1, 2026</td>
+                        <td data-label="Planned payment">$200.00</td>
+                        <td data-label="Balance after">$320.00</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Payment">Payment 2</td>
+                        <td data-label="Date">August 1, 2026</td>
+                        <td data-label="Planned payment">$200.00</td>
+                        <td data-label="Balance after">$120.00</td>
+                      </tr>
+                      <tr>
+                        <td data-label="Payment">Payment 3</td>
+                        <td data-label="Date">September 1, 2026</td>
+                        <td data-label="Planned payment">$120.00</td>
+                        <td data-label="Balance after">$0.00</td>
+                      </tr>
+                    </tbody>
                   </table>
                 </div>
+
+                <p class="pp-soft-note pp-result-fineprint">This is a simple no-interest schedule. It does not include interest, fees, penalties, or payment processing.</p>
 
                 <section class="pp-copy-panel" aria-labelledby="pp-copy-title">
                   <div class="pp-copy-heading">
@@ -466,17 +487,24 @@
                   <div class="pp-output-grid">
                     <article class="pp-output-card">
                       <h4>Short repayment message</h4>
-                      <p class="pp-output-text" data-output="message"></p>
+                      <p class="pp-output-text" data-output="message">I can repay $200.00 monthly starting July 1, 2026 for rent and groceries. Based on the current remaining balance of $520.00, that would settle it around September 1, 2026. I&rsquo;ll keep the repayments written down so the balance stays clear.</p>
                       <button type="button" class="pp-copy-button" data-copy-output="message">Copy message</button>
                     </article>
                     <article class="pp-output-card">
                       <h4>Plan summary</h4>
-                      <pre class="pp-output-pre" data-output="summary"></pre>
+                      <pre class="pp-output-pre" data-output="summary">Repayment plan:
+Original amount: $720.00
+Already repaid: $200.00
+Remaining balance: $520.00
+Payment amount: $200.00 monthly
+First payment: July 1, 2026
+Estimated final payment: September 1, 2026
+Final smaller payment: $120.00</pre>
                       <button type="button" class="pp-copy-button" data-copy-output="summary">Copy summary</button>
                     </article>
                     <article class="pp-output-card">
                       <h4>You Owe Me record note</h4>
-                      <p class="pp-output-text" data-output="record"></p>
+                      <p class="pp-output-text" data-output="record">Temporary support repayment plan: $720.00 for rent and groceries. $200.00 already repaid. $520.00 remains. Planned repayment: $200.00/month starting July 1, 2026. Final smaller payment of $120.00.</p>
                       <button type="button" class="pp-copy-button" data-copy-output="record">Copy record note</button>
                     </article>
                   </div>
@@ -485,8 +513,8 @@
                 <section class="pp-result-cta" aria-labelledby="pp-result-cta-title">
                   <div>
                     <h3 id="pp-result-cta-title">Need to track the real repayments?</h3>
-                    <p>This calculator gives you the plan. You Owe Me helps when the plan becomes real: repayments happen, timing changes, another amount is added, or someone needs a clear update.</p>
-                  <p class="pp-muted">Use the app to save the balance, record each repayment, add notes, set reminders, and keep the history clear.</p>
+                    <p>This calculator gives you the plan. You Owe Me helps when the plan becomes real: repayments happen, timing changes, another amount is added, or someone needs a clear update. Save the plan once, then record each repayment as it happens.</p>
+                  <p class="pp-muted">Use the app to save the balance, add notes, set reminders, and keep the history clear.</p>
                 </div>
                   <!-- TODO: Replace with the Temporary Financial Support Custom Product Page URL when available. -->
                   <a
