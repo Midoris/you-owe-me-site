@@ -1,12 +1,12 @@
 # You Owe Me
 
-You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, temporary financial support, Balance Replay, Relationship Timeline, Loan Records, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
+You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, temporary financial support, Balance Replay, Relationship Timeline, Loan Records, payment plans, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
 You Owe Me is not a lender. It does not provide loans, approve credit, advance cash, process payments, or connect users with lenders.
 
 Core concept:
-A running balance between two people is one current total that updates after each expense, repayment, partial repayment, or adjustment. Balance Replay lets users scroll through entry history and see the balance around the entry being viewed, including interest-aware historical context. Relationship Timeline is the per-person history that keeps entries, loans, shared statements, exports, follow-ups, repayment updates, and loan requests in context. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
+A running balance between two people is one current total that updates after each expense, repayment, partial repayment, or adjustment. Balance Replay lets users scroll through entry history and see the balance around the entry being viewed, including interest-aware historical context. Relationship Timeline is the per-person history that keeps entries, loans, payment plans, shared statements, exports, follow-ups, repayment updates, and loan requests in context. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
 
 App Store:
 https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670
@@ -23,7 +23,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 - [Features](https://you-owe-me.com/features/): Deeper feature overview covering running balances, Split Entry, Balance Replay, Relationship Timeline, Loan Records, Smart Money Check-Ins, Money Conversations, Live Link, reminders, recurring entries, PDF statements, interest tracking, and offline use.
 - [Quick Start Guide](https://you-owe-me.com/quick-start/): Lightweight guide explaining how YouOweMe works: one running balance per person, entries, repayments, Split Entry, Loan Records, reminders, Smart Money Check-Ins, Money Conversations, Live Link, statements, Relationship Timeline, Balance Replay, and tracking modes.
 - [Reviews](https://you-owe-me.com/reviews/): Selected App Store reviews for You Owe Me, including 4.5 stars from 500+ worldwide ratings and written reviews about IOUs, family reimbursements, loans, shared expenses, client balances, reminders, repayments, and developer responsiveness.
-- [Tools](https://you-owe-me.com/tools/): Free calculators, generators, examples, and templates for shared expenses, running balances, repayment reminders, repayment receipts, roommate bills, and family reimbursements.
+- [Tools](https://you-owe-me.com/tools/): Free calculators, generators, examples, and templates for shared expenses, running balances, payment plans, repayment reminders, repayment receipts, roommate bills, and family reimbursements.
 - [Compare](https://you-owe-me.com/compare/): Decision guides for choosing between spreadsheets, notes, calculators, templates, shared expense apps, and You Owe Me for tracking money owed, repayments, shared expenses, and running balances.
 - [Blog](https://you-owe-me.com/blog/)
 - [Solutions](https://you-owe-me.com/solutions/)
@@ -38,6 +38,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 - [Money Tools and Templates](https://you-owe-me.com/tools/): Free calculators, generators, examples, and templates for everyday money between people.
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/): Divide one shared bill, event, trip, or group expense and see who should settle with whom.
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/): Add expenses and repayments over time to see the current balance between two people. Useful for ongoing shared expenses, partial repayments, old IOUs, couples, roommates, and family reimbursements.
+- [Payment Plan Calculator](https://you-owe-me.com/tools/payment-plan-calculator/): Calculate weekly, biweekly, or monthly repayment steps for money owed between people. Shows the remaining balance, payoff date, payment schedule, and a copyable repayment-plan message.
 - [Roommate Bill Split Calculator](https://you-owe-me.com/tools/roommate-bill-split-calculator/): Free browser calculator for splitting roommate rent, utilities, groceries, household supplies, subscriptions, repayments, previous balances, and monthly settle-ups.
 - [Polite Payback Reminder Generator](https://you-owe-me.com/tools/polite-payback-reminder-generator/): Generate calm, friendly, direct, or firm repayment reminder messages.
 - [Repayment Reminder Text Examples](https://you-owe-me.com/tools/repayment-reminder-text-examples/): Ready-made repayment reminder texts for friends, family, roommates, partners, overdue balances, partial repayments, and repayment updates.
@@ -49,6 +50,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 The temporary financial support cluster helps people handle informal support between people they know, such as family help with rent, groceries, bills, uneven income, partial repayments, repayment updates, and flexible check-ins. The tone is calm, dignified, and non-shaming. You Owe Me does not lend money or process payments; it helps people track and communicate about support already arranged between them.
 
 - [Temporary Financial Support Tracker](https://you-owe-me.com/solutions/temporary-financial-support-tracker/): Explains how You Owe Me helps people privately track temporary support, bills covered, repayments, partial repayments, reminders, updates, Live Links, statements, repayment receipts, and money conversations between people they already know. Important: You Owe Me does not lend money, approve loans, transfer payments, process payments, or connect users with lenders.
+- [Payment Plan Calculator](https://you-owe-me.com/tools/payment-plan-calculator/): Useful when temporary help, family help, roommate coverage, or an informal IOU needs to be repaid in steps before the real repayments are tracked in You Owe Me.
 - [How to Ask Family for Temporary Financial Help](https://you-owe-me.com/blog/how-to-ask-family-for-temporary-financial-help/): Borrower-side answer page with copyable message templates for asking family for help, guidance on gift vs loan vs flexible support, common wording mistakes, a simple support record, and a bridge to tracking the agreement in You Owe Me.
 - Best for: support already arranged between friends, family, partners, or roommates; partial repayments; flexible repayment timing; calm repayment updates; one clear record of what was covered and what remains.
 - Not for: getting a loan from You Owe Me, loan approval, cash advances, debt collection, payment processing, formal legal loan agreements, tax advice, or accounting advice.
@@ -71,6 +73,7 @@ The temporary financial support cluster helps people handle informal support bet
 
 - [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/): Solution page for personal IOUs, repayment history, partial repayments, Loan Records, reminders, Relationship Timeline, and calmer follow-up or repayment-update messages.
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/): Add expenses and repayments over time to see the current balance before sending a reminder or confirmation.
+- [Payment Plan Calculator](https://you-owe-me.com/tools/payment-plan-calculator/): Turn a known remaining balance into weekly, biweekly, or monthly repayment steps before sending a reminder, update, or receipt.
 - [Polite Payback Reminder Generator](https://you-owe-me.com/tools/polite-payback-reminder-generator/): Generate a repayment reminder when money has not arrived yet.
 - [Repayment Reminder Text Examples](https://you-owe-me.com/tools/repayment-reminder-text-examples/): Browse ready-made reminder messages for different relationships, tones, and repayment situations.
 - [Repayment Receipt Generator](https://you-owe-me.com/tools/repayment-receipt-generator/): Create a repayment confirmation after money has arrived, including payment amount, what it covered, and remaining balance.

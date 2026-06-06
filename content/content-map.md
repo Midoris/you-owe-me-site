@@ -834,6 +834,22 @@ Use for:
 - family reimbursements
 - partial repayments
 
+### Payment Plan Calculator
+
+Best line:
+
+```text
+A payment plan turns a remaining balance into clear repayment steps.
+```
+
+Use for:
+
+- temporary support
+- family help
+- roommate coverage
+- larger informal IOUs
+- partial repayments that need a next schedule
+
 ### Money Conversations
 
 Best line:

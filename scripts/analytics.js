@@ -26,6 +26,7 @@ const SUPPORT_FORM_ERROR_EVENT = "youoweme:support-form-error";
 const TOOL_TEMPLATE_COPY_EVENT = "youoweme:tool-template-copy";
 const PAYBACK_GENERATOR_EVENT = "youoweme:payback-generator-event";
 const TEMPORARY_HELP_COPY_EVENT = "youoweme:temporary-financial-help-copy";
+const PAYMENT_PLAN_TOOL_EVENT = "youoweme:payment-plan-tool-event";
 const PAYBACK_GENERATOR_EVENTS = new Set([
   "payback_generator_generate",
   "payback_generator_copy_short",
@@ -36,6 +37,13 @@ const PAYBACK_GENERATOR_EVENTS = new Set([
   "payback_generator_app_store_click",
   "payback_generator_examples_click",
   "payback_generator_solution_click",
+]);
+const PAYMENT_PLAN_EVENTS = new Set([
+  "payment_plan_tool_start",
+  "payment_plan_calculate",
+  "payment_plan_copy_message",
+  "payment_plan_copy_summary",
+  "payment_plan_copy_record_note",
 ]);
 const app = shouldInitializeFirebase() ? initializeApp(FIREBASE_CONFIG) : null;
 const analyticsPromise = initAnalytics();
@@ -332,6 +340,22 @@ function onTemporaryHelpCopy(event) {
   }));
 }
 
+function onPaymentPlanToolEvent(event) {
+  const detail = event && event.detail ? event.detail : {};
+  const eventName = sanitizeText(detail.eventName, 80);
+
+  if (!PAYMENT_PLAN_EVENTS.has(eventName)) return;
+
+  void trackEvent(eventName, Object.assign({}, getSaleParams(), {
+    mode: sanitizeText(detail.mode, 40),
+    frequency: sanitizeText(detail.frequency, 40),
+    perspective: sanitizeText(detail.perspective, 40),
+    result_state: sanitizeText(detail.result_state, 40),
+    payment_count: Number.isFinite(Number(detail.payment_count)) ? Number(detail.payment_count) : 0,
+    copy_target: sanitizeText(detail.copy_target, 40),
+  }));
+}
+
 function initEventTracking() {
   activeSale = getActiveSale();
   bindAppStoreClicks();
@@ -345,6 +369,7 @@ function initEventTracking() {
   window.addEventListener(TOOL_TEMPLATE_COPY_EVENT, onToolTemplateCopy);
   window.addEventListener(PAYBACK_GENERATOR_EVENT, onPaybackGeneratorEvent);
   window.addEventListener(TEMPORARY_HELP_COPY_EVENT, onTemporaryHelpCopy);
+  window.addEventListener(PAYMENT_PLAN_TOOL_EVENT, onPaymentPlanToolEvent);
 }
 
 if (document.readyState === "loading") {
