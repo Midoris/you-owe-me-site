@@ -328,7 +328,7 @@
                     </div>
                     <div class="pp-field">
                       <label for="pp-repaying-person">Person repaying</label>
-                      <input id="pp-repaying-person" name="repayingPerson" type="text" maxlength="60" placeholder="Maya" autocomplete="off" />
+                      <input id="pp-repaying-person" name="repayingPerson" type="text" maxlength="60" value="Maya" placeholder="Maya" autocomplete="off" />
                     </div>
                     <div class="pp-field">
                       <label for="pp-receiving-person">Person receiving</label>
@@ -403,7 +403,76 @@
               <noscript>
                 <div class="pp-noscript">
                   <h3>Example no-interest plan</h3>
-                  <p>If $520 remains and $200 can be repaid monthly starting July 1, 2026, the plan needs three payments and settles on September 1, 2026. The complete example schedule and copyable text are visible below.</p>
+                  <p>If $520 remains and $200 can be repaid monthly starting July 1, 2026, the plan needs three payments and settles on September 1, 2026.</p>
+                  <dl class="pp-noscript-summary">
+                    <div>
+                      <dt>Remaining balance</dt>
+                      <dd>$520.00</dd>
+                    </div>
+                    <div>
+                      <dt>Payment plan</dt>
+                      <dd>$200.00 monthly</dd>
+                    </div>
+                    <div>
+                      <dt>Number of payments</dt>
+                      <dd>3</dd>
+                    </div>
+                    <div>
+                      <dt>Estimated final payment</dt>
+                      <dd>September 1, 2026</dd>
+                    </div>
+                    <div>
+                      <dt>Final smaller payment</dt>
+                      <dd>$120.00</dd>
+                    </div>
+                  </dl>
+                  <div class="pp-static-table-wrap">
+                    <table class="pp-static-table">
+                      <thead>
+                        <tr>
+                          <th scope="col">Payment</th>
+                          <th scope="col">Date</th>
+                          <th scope="col">Planned payment</th>
+                          <th scope="col">Balance after</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        <tr>
+                          <td>1</td>
+                          <td>July 1, 2026</td>
+                          <td>$200.00</td>
+                          <td>$320.00</td>
+                        </tr>
+                        <tr>
+                          <td>2</td>
+                          <td>August 1, 2026</td>
+                          <td>$200.00</td>
+                          <td>$120.00</td>
+                        </tr>
+                        <tr>
+                          <td>3</td>
+                          <td>September 1, 2026</td>
+                          <td>$120.00</td>
+                          <td>$0.00</td>
+                        </tr>
+                      </tbody>
+                    </table>
+                  </div>
+                  <div class="pp-noscript-copy">
+                    <h4>Short repayment message</h4>
+                    <p>I can repay $200.00 monthly starting July 1, 2026 for rent and groceries. Based on the current remaining balance of $520.00, that would settle it around September 1, 2026. I&rsquo;ll keep the repayments written down so the balance stays clear.</p>
+                    <h4>Plan summary</h4>
+                    <pre>Repayment plan:
+Original amount: $720.00
+Already repaid: $200.00
+Remaining balance: $520.00
+Payment amount: $200.00 monthly
+First payment: July 1, 2026
+Estimated final payment: September 1, 2026
+Final smaller payment: $120.00</pre>
+                    <h4>You Owe Me record note</h4>
+                    <p>Temporary support repayment plan: $720.00 for rent and groceries. $200.00 already repaid. $520.00 remains. Planned repayment: $200.00/month starting July 1, 2026, with a final smaller payment of $120.00.</p>
+                  </div>
                 </div>
               </noscript>
 
@@ -413,7 +482,7 @@
                     <h2 id="payment-plan-results-title">Your repayment plan</h2>
                     <p data-result-intro>Adjust the fields above to update the schedule and copyable messages.</p>
                   </div>
-                  <span class="pp-status-pill" data-result-status aria-live="polite">Ready</span>
+                  <span class="pp-status-pill" data-result-status aria-live="polite">Payment-amount plan</span>
                 </div>
 
                 <div class="pp-result-note" data-result-note aria-live="polite"></div>
