@@ -703,17 +703,13 @@ body.payment-plan-page #main article.post.featured header.major > h1 {
 
 .pp-app-actions {
   display: grid;
-  gap: 0.65rem;
   justify-items: start;
-}
-
-.pp-download-note {
-  max-width: 28ch;
 }
 
 .pp-result-cta .lt-appStoreBtn,
 .pp-app-bridge-cta .lt-appStoreBtn {
-  width: min(180px, 100%);
+  width: 180px;
+  max-width: 100%;
 }
 
 .pp-result-cta .lt-appStoreBtn:focus-visible,
@@ -822,7 +818,7 @@ body.payment-plan-page #main article.post.featured header.major > h1 {
 }
 
 .pp-app-bridge-cta {
-  grid-template-columns: auto minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) auto;
   align-items: center;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 18px;
@@ -830,7 +826,12 @@ body.payment-plan-page #main article.post.featured header.major > h1 {
   padding: 1rem;
 }
 
+.pp-app-bridge-cta h3 {
+  margin: 0 0 0.45rem !important;
+}
+
 .pp-app-bridge-cta p {
+  margin: 0 !important;
   color: rgba(24, 33, 43, 0.72) !important;
   font-size: 0.98rem !important;
   line-height: 1.55 !important;
@@ -981,7 +982,8 @@ body.payment-plan-page #main article.post.featured header.major > h1 {
 
   .pp-result-cta .lt-appStoreBtn,
   .pp-app-bridge-cta .lt-appStoreBtn {
-    width: min(180px, 100%);
+    width: 180px;
+    max-width: 100%;
   }
 
   .pp-summary-grid,
