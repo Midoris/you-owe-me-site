@@ -3,6 +3,7 @@
 
   var centsPerUnit = 100;
   var maxRenderedRows = 480;
+  var maxPlanPayments = 5000;
   var frequencyLabels = {
     weekly: "weekly",
     biweekly: "every 2 weeks",
@@ -109,6 +110,17 @@
     if (frequency === "weekly") return addDays(date, 7);
     if (frequency === "biweekly") return addDays(date, 14);
     return addMonthsClamped(date, 1);
+  }
+
+  function advanceByFrequency(firstDate, frequency, steps) {
+    var current = new Date(firstDate.getTime());
+    var i;
+
+    for (i = 0; i < steps; i += 1) {
+      current = addFrequency(current, frequency);
+    }
+
+    return current;
   }
 
   function defaultFirstPaymentDate() {
@@ -305,15 +317,24 @@
   function buildDatesThroughTarget(firstDate, targetDate, frequency) {
     var dates = [];
     var current = new Date(firstDate.getTime());
-    var guard = 0;
+    var finalDate = null;
+    var numberOfPayments = 0;
 
-    while (current <= targetDate && guard < 600) {
-      dates.push(new Date(current.getTime()));
+    while (current <= targetDate && numberOfPayments < maxPlanPayments) {
+      finalDate = new Date(current.getTime());
+      if (dates.length < maxRenderedRows) {
+        dates.push(new Date(current.getTime()));
+      }
       current = addFrequency(current, frequency);
-      guard += 1;
+      numberOfPayments += 1;
     }
 
-    return dates;
+    return {
+      dates: dates,
+      finalDate: finalDate,
+      numberOfPayments: numberOfPayments,
+      beyondLimit: current <= targetDate,
+    };
   }
 
   function calculateAmountMode(values, amounts) {
@@ -325,6 +346,12 @@
     var rowsToRender = Math.min(numberOfPayments, maxRenderedRows);
     var i;
 
+    if (numberOfPayments > maxPlanPayments) {
+      return {
+        error: "This plan would require more than " + maxPlanPayments.toLocaleString("en-US") + " payments. Increase the payment amount or use a shorter plan.",
+      };
+    }
+
     for (i = 0; i < rowsToRender; i += 1) {
       var paymentCents = i === numberOfPayments - 1
         ? balance
@@ -333,7 +360,7 @@
       balance -= paymentCents;
 
       schedule.push({
-        label: "Payment " + (i + 1),
+        label: String(i + 1),
         date: new Date(currentDate.getTime()),
         paymentCents: paymentCents,
         balanceCents: Math.max(0, balance),
@@ -346,10 +373,7 @@
     var finalDate = schedule.length ? schedule[schedule.length - 1].date : activeFirstDate(values);
 
     if (numberOfPayments > maxRenderedRows) {
-      finalDate = activeFirstDate(values);
-      for (i = 1; i < numberOfPayments; i += 1) {
-        finalDate = addFrequency(finalDate, values.frequencyAmount);
-      }
+      finalDate = advanceByFrequency(activeFirstDate(values), values.frequencyAmount, numberOfPayments - 1);
     }
 
     return {
@@ -369,20 +393,32 @@
 
   function calculateDateMode(values, amounts) {
     var frequency = values.frequencyDate;
-    var dates = buildDatesThroughTarget(values.firstPaymentDate, values.targetDate, frequency);
+    var planDates = buildDatesThroughTarget(values.firstPaymentDate, values.targetDate, frequency);
+    var dates = planDates.dates;
 
-    if (!dates.length) {
+    if (!planDates.numberOfPayments) {
       return {
         error: "Choose a payoff date after the first payment date.",
       };
     }
 
-    var numberOfPayments = dates.length;
-    var requiredCents = Math.max(1, Math.ceil(amounts.remainingAfterExtraCents / numberOfPayments));
+    if (planDates.beyondLimit) {
+      return {
+        error: "Choose a closer payoff date. This calculator supports up to " + maxPlanPayments.toLocaleString("en-US") + " payments at a time.",
+      };
+    }
+
+    var availablePayments = planDates.numberOfPayments;
+    var requiredCents = Math.max(1, Math.ceil(amounts.remainingAfterExtraCents / availablePayments));
+    var numberOfPayments = Math.ceil(amounts.remainingAfterExtraCents / requiredCents);
+    var finalPaymentCents = amounts.remainingAfterExtraCents - requiredCents * (numberOfPayments - 1);
     var balance = amounts.remainingAfterExtraCents;
     var schedule = [];
     var rowsToRender = Math.min(numberOfPayments, maxRenderedRows);
     var i;
+    var finalDate = numberOfPayments <= dates.length
+      ? dates[numberOfPayments - 1]
+      : advanceByFrequency(values.firstPaymentDate, frequency, numberOfPayments - 1);
 
     for (i = 0; i < rowsToRender; i += 1) {
       var paymentCents = i === numberOfPayments - 1
@@ -392,7 +428,7 @@
       balance -= paymentCents;
 
       schedule.push({
-        label: "Payment " + (i + 1),
+        label: String(i + 1),
         date: dates[i],
         paymentCents: paymentCents,
         balanceCents: Math.max(0, balance),
@@ -403,12 +439,12 @@
       mode: "date",
       paymentCents: requiredCents,
       regularCents: requiredCents,
-      finalPaymentCents: schedule.length ? schedule[schedule.length - 1].paymentCents : requiredCents,
-      finalSmallCents: schedule.length && schedule[schedule.length - 1].paymentCents < requiredCents
-        ? schedule[schedule.length - 1].paymentCents
+      finalPaymentCents: finalPaymentCents,
+      finalSmallCents: finalPaymentCents < requiredCents
+        ? finalPaymentCents
         : null,
       numberOfPayments: numberOfPayments,
-      finalDate: dates[dates.length - 1],
+      finalDate: finalDate,
       frequency: frequency,
       firstDate: values.firstPaymentDate,
       schedule: schedule,
@@ -582,10 +618,10 @@
     }
 
     details.push(formatMoneyFromCents(result.amounts.remainingAfterExtraCents, values.currency) + " remains.");
-    details.push("Planned repayment: " + formatMoneyFromCents(plan.paymentCents, values.currency) + "/" + frequencyUnitLabel(plan.frequency) + " starting " + formatDate(plan.firstDate) + ".");
-
     if (plan.finalSmallCents) {
-      details.push("Final smaller payment of " + formatMoneyFromCents(plan.finalSmallCents, values.currency) + ".");
+      details.push("Planned repayment: " + formatMoneyFromCents(plan.paymentCents, values.currency) + "/" + frequencyUnitLabel(plan.frequency) + " starting " + formatDate(plan.firstDate) + ", with a final smaller payment of " + formatMoneyFromCents(plan.finalSmallCents, values.currency) + ".");
+    } else {
+      details.push("Planned repayment: " + formatMoneyFromCents(plan.paymentCents, values.currency) + "/" + frequencyUnitLabel(plan.frequency) + " starting " + formatDate(plan.firstDate) + ".");
     }
 
     return opener + details.join(" ");
