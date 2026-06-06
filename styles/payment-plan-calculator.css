@@ -701,6 +701,27 @@ body.payment-plan-page #main article.post.featured header.major > h1 {
   margin-top: 0.6rem !important;
 }
 
+.pp-app-actions {
+  display: grid;
+  gap: 0.65rem;
+  justify-items: start;
+}
+
+.pp-download-note {
+  max-width: 28ch;
+}
+
+.pp-result-cta .lt-appStoreBtn,
+.pp-app-bridge-cta .lt-appStoreBtn {
+  width: min(180px, 100%);
+}
+
+.pp-result-cta .lt-appStoreBtn:focus-visible,
+.pp-app-bridge-cta .lt-appStoreBtn:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.28) !important;
+  outline-offset: 3px;
+}
+
 .pp-content-section > p,
 .pp-content-section > ul,
 .pp-app-intro-copy > p {
@@ -942,7 +963,8 @@ body.payment-plan-page #main article.post.featured header.major > h1 {
   }
 
   .pp-actions,
-  .pp-copy-heading {
+  .pp-copy-heading,
+  .pp-app-actions {
     align-items: stretch;
     grid-template-columns: 1fr;
   }
@@ -955,6 +977,11 @@ body.payment-plan-page #main article.post.featured header.major > h1 {
   .pp-app-bridge-cta .lt-primaryCta,
   .pp-app-intro-section .lt-primaryCta {
     width: 100%;
+  }
+
+  .pp-result-cta .lt-appStoreBtn,
+  .pp-app-bridge-cta .lt-appStoreBtn {
+    width: min(180px, 100%);
   }
 
   .pp-summary-grid,
