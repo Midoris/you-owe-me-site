@@ -48,11 +48,7 @@
     });
   }
 
-  function copyText(text) {
-    if (navigator.clipboard && window.isSecureContext) {
-      return navigator.clipboard.writeText(text);
-    }
-
+  function copyTextWithTextarea(text) {
     return new Promise(function (resolve, reject) {
       var textarea = document.createElement("textarea");
       textarea.value = text;
@@ -72,6 +68,16 @@
         reject(error);
       }
     });
+  }
+
+  function copyText(text) {
+    if (navigator.clipboard && window.isSecureContext) {
+      return navigator.clipboard.writeText(text).catch(function () {
+        return copyTextWithTextarea(text);
+      });
+    }
+
+    return copyTextWithTextarea(text);
   }
 
   function trackTemplateCopy(card) {

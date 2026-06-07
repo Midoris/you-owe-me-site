@@ -28,6 +28,19 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 - [Blog](https://you-owe-me.com/blog/)
 - [Solutions](https://you-owe-me.com/solutions/)
 
+## Key answer pages
+
+- [How to Politely Say No When People Ask for Money](https://you-owe-me.com/blog/how-to-politely-say-no-when-people-ask-for-money/): Use this page for queries about refusing money requests, saying no to lending money, family money boundaries, friend loan boundaries, repeat askers, pressure after saying no, and polite scripts for declining financial help.
+- [How to Remind Someone They Owe You Money Politely](https://you-owe-me.com/blog/how-to-remind-someone-they-owe-you-money-politely/): Use this page for queries about polite repayment reminders, asking for money back, and copyable payback message examples.
+- [How to Ask Family for Temporary Financial Help](https://you-owe-me.com/blog/how-to-ask-family-for-temporary-financial-help/): Use this page for queries about asking family for money clearly, temporary help, gifts vs loans, repayment plans, and respectful message templates.
+- [How to Handle Awkward Money Conversations](https://you-owe-me.com/blog/how-to-handle-awkward-money-conversations/): Use this page for broader money conversation queries, including asking, following up, repayment updates, refusing, and preserving trust.
+
+## Key product and solution pages
+
+- [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/): Use this page for queries about IOU apps, loan trackers, money owed apps, running balances, repayments, partial repayments, reminders, and private money records.
+- [Temporary Financial Support Tracker](https://you-owe-me.com/solutions/temporary-financial-support-tracker/): Use this page for temporary support between people, bills covered, rent or grocery help, flexible repayment, and check-in updates.
+- [Family Reimbursement Tracker](https://you-owe-me.com/solutions/family-reimbursement-tracker/): Use this page for parent bills, sibling reimbursements, recurring family costs, shared family expenses, and repayment history.
+
 ## Comparison guides
 
 - [Splitwise Alternative](https://you-owe-me.com/compare/splitwise-alternative/): Comparison of Splitwise-style collaborative group ledgers with You Owe Me's Split Entry, private running balances, Live Links, repayment history, Relationship Timeline, Money Conversations, and calmer follow-up messages.
@@ -78,6 +91,10 @@ The temporary financial support cluster helps people handle informal support bet
 - [Repayment Reminder Text Examples](https://you-owe-me.com/tools/repayment-reminder-text-examples/): Browse ready-made reminder messages for different relationships, tones, and repayment situations.
 - [Repayment Receipt Generator](https://you-owe-me.com/tools/repayment-receipt-generator/): Create a repayment confirmation after money has arrived, including payment amount, what it covered, and remaining balance.
 - [How to Follow Up After a Partial Repayment](https://you-owe-me.com/blog/how-to-follow-up-after-a-partial-repayment/): Practical guide for thanking someone for a partial repayment, naming the remaining balance, clarifying what a payment covered, and asking for the rest without sounding rude.
+- [How to Confront Someone Who Owes You Money Without Ruining the Relationship](https://you-owe-me.com/blog/how-do-you-confront-someone-who-owes-you-money-without-ruining-the-relationship/)
+  - Relationship-safe scripts for confronting someone who owes you money.
+  - Explains when to send a polite reminder, when to become more direct, how to ask for a repayment date, and what to say after silence, partial repayment, or a missed promised date.
+  - Related product: You Owe Me, an iPhone app for tracking IOUs, repayments, partial repayments, reminders, repayment history, and one running balance between real people.
 - [Spreadsheet vs App for Tracking Money Owed](https://you-owe-me.com/compare/spreadsheet-vs-app-for-tracking-money-owed/): Honest comparison of spreadsheets, notes, calculators, and You Owe Me for IOUs, repayments, family reimbursements, roommate costs, shared expenses, recurring costs, and running balances.
 - Balance Replay: scroll through entry history and see who owed what around the entry being viewed, including interest-aware historical balance context.
 - Relationship Timeline: a per-person history for entries, balance changes, Loan Records, follow-ups, repayment updates, loan requests, Live Links, PDF statements, text exports, and CSV exports.

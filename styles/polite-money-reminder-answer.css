@@ -282,6 +282,101 @@ body.polite-reminder-answer-page .lt-appStoreBtn img {
   max-width: 100%;
 }
 
+body.confront-answer-page .confront-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+body.confront-answer-page .confront-avoid-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+body.confront-answer-page .confront-avoid-table th,
+body.confront-answer-page .confront-avoid-table td {
+  min-width: 16rem;
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  text-align: left;
+  vertical-align: top;
+}
+
+body.confront-answer-page .confront-avoid-table th {
+  color: #18212b;
+  font-weight: 900;
+}
+
+body.confront-answer-page .confront-avoid-table tr:last-child td {
+  border-bottom: 0;
+}
+
+body.confront-answer-page .polite-answer-bridge .polite-answer-image--wide {
+  justify-self: center;
+  width: min(100%, 24rem);
+}
+
+body.polite-no-answer-page .polite-answer-hero-visual {
+  width: min(100%, 29rem);
+}
+
+body.polite-no-answer-page .polite-no-avoid-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+body.polite-no-answer-page .polite-no-avoid-row {
+  display: grid;
+  gap: 0.72rem;
+}
+
+body.polite-no-answer-page .polite-no-avoid-row blockquote {
+  margin: 0;
+  padding: 0.82rem 0.92rem;
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.88);
+  color: #18212b;
+  font-size: 0.96rem;
+  font-style: normal;
+  line-height: 1.5;
+}
+
+body.polite-no-answer-page .polite-no-label {
+  width: fit-content !important;
+  margin: 0 !important;
+  padding: 0.18rem 0.58rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.2);
+  color: #355428 !important;
+  font-size: 0.76rem !important;
+  font-weight: 800;
+  line-height: 1.25 !important;
+  text-transform: uppercase;
+}
+
+body.polite-no-answer-page .polite-no-pushback-grid .polite-answer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+body.polite-no-answer-page .polite-no-pushback-grid .polite-answer-card h3 {
+  margin: 0 !important;
+}
+
+body.polite-no-answer-page .polite-no-pushback-grid .polite-answer-card p {
+  margin: 0;
+}
+
+body.polite-no-answer-page .template-card h3 {
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left;
+}
+
 @media (max-width: 980px) {
   .polite-answer-hero,
   .polite-answer-summary,
@@ -313,6 +408,74 @@ body.polite-reminder-answer-page .lt-appStoreBtn img {
     max-width: calc(100vw - 1.24rem);
     margin-left: 0;
     margin-right: 0;
+  }
+
+  body.confront-answer-page .lt-breadcrumb,
+  body.confront-answer-page .lt-toolsHero,
+  body.confront-answer-page .lt-toolsSection,
+  body.confront-answer-page .lt-finalCta {
+    width: 100%;
+    max-width: 100%;
+  }
+
+  body.confront-answer-page .lt-breadcrumb {
+    flex-wrap: wrap;
+    padding-right: 4.8rem;
+  }
+
+  body.confront-answer-page .lt-breadcrumb span:nth-last-child(2),
+  body.confront-answer-page .lt-breadcrumb [aria-current="page"] {
+    display: none;
+  }
+
+  body.confront-answer-page .confront-avoid-table,
+  body.confront-answer-page .confront-avoid-table thead,
+  body.confront-answer-page .confront-avoid-table tbody,
+  body.confront-answer-page .confront-avoid-table tr,
+  body.confront-answer-page .confront-avoid-table td {
+    display: block;
+    width: 100%;
+  }
+
+  body.confront-answer-page .confront-avoid-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  body.confront-answer-page .confront-avoid-table tr {
+    padding: 0.85rem 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  body.confront-answer-page .confront-avoid-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  body.confront-answer-page .confront-avoid-table td {
+    min-width: 0;
+    padding: 0.45rem 0;
+    border-bottom: 0;
+  }
+
+  body.confront-answer-page .confront-avoid-table td::before {
+    display: block;
+    margin-bottom: 0.25rem;
+    color: rgba(24, 33, 43, 0.58);
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+  }
+
+  body.confront-answer-page .confront-avoid-table td:first-child::before {
+    content: "Avoid";
+  }
+
+  body.confront-answer-page .confront-avoid-table td:nth-child(2)::before {
+    content: "Say instead";
   }
 
   body.polite-reminder-answer-page #main article.post.featured header.major > h1,
@@ -347,5 +510,22 @@ body.polite-reminder-answer-page .lt-appStoreBtn img {
 
   .copy-button {
     width: 100%;
+  }
+
+  body.polite-no-answer-page .polite-answer-hero-visual {
+    display: block;
+    width: 100%;
+  }
+
+  body.polite-no-answer-page .polite-no-avoid-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.polite-no-answer-page .lt-breadcrumb {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.32rem;
+    padding-right: 4.8rem;
+    font-size: 0.82rem;
   }
 }

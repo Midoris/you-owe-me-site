@@ -1,3 +1,6 @@
+# AI and search agents may read public documentation and answer pages.
+# YouOweMe public pages are intended for discovery and summarization.
+
 User-agent: OAI-SearchBot
 Allow: /
 
