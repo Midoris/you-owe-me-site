@@ -27,6 +27,7 @@ const TOOL_TEMPLATE_COPY_EVENT = "youoweme:tool-template-copy";
 const PAYBACK_GENERATOR_EVENT = "youoweme:payback-generator-event";
 const TEMPORARY_HELP_COPY_EVENT = "youoweme:temporary-financial-help-copy";
 const PAYMENT_PLAN_TOOL_EVENT = "youoweme:payment-plan-tool-event";
+const TEMPORARY_SUPPORT_RECORD_TOOL_EVENT = "youoweme:temporary-support-record-tool-event";
 const PAYBACK_GENERATOR_EVENTS = new Set([
   "payback_generator_generate",
   "payback_generator_copy_short",
@@ -44,6 +45,13 @@ const PAYMENT_PLAN_EVENTS = new Set([
   "payment_plan_copy_message",
   "payment_plan_copy_summary",
   "payment_plan_copy_record_note",
+]);
+const TEMPORARY_SUPPORT_RECORD_EVENTS = new Set([
+  "temporary_support_record_tool_start",
+  "temporary_support_record_complete",
+  "temporary_support_record_copy_record",
+  "temporary_support_record_copy_message",
+  "temporary_support_record_copy_app_note",
 ]);
 const app = shouldInitializeFirebase() ? initializeApp(FIREBASE_CONFIG) : null;
 const analyticsPromise = initAnalytics();
@@ -356,6 +364,27 @@ function onPaymentPlanToolEvent(event) {
   }));
 }
 
+function onTemporarySupportRecordToolEvent(event) {
+  const detail = event && event.detail ? event.detail : {};
+  const eventName = sanitizeText(detail.eventName, 80);
+
+  if (!TEMPORARY_SUPPORT_RECORD_EVENTS.has(eventName)) return;
+
+  void trackEvent(eventName, Object.assign({}, getSaleParams(), {
+    support_type: sanitizeText(detail.support_type, 40),
+    perspective: sanitizeText(detail.perspective, 40),
+    has_helper: detail.has_helper ? 1 : 0,
+    has_receiver: detail.has_receiver ? 1 : 0,
+    has_amount: detail.has_amount ? 1 : 0,
+    has_purpose: detail.has_purpose ? 1 : 0,
+    has_date: detail.has_date ? 1 : 0,
+    has_check_in: detail.has_check_in ? 1 : 0,
+    clarify_count: Number.isFinite(Number(detail.clarify_count)) ? Number(detail.clarify_count) : 0,
+    copy_target: sanitizeText(detail.copy_target, 40),
+    result_state: sanitizeText(detail.result_state, 40),
+  }));
+}
+
 function initEventTracking() {
   activeSale = getActiveSale();
   bindAppStoreClicks();
@@ -370,6 +399,7 @@ function initEventTracking() {
   window.addEventListener(PAYBACK_GENERATOR_EVENT, onPaybackGeneratorEvent);
   window.addEventListener(TEMPORARY_HELP_COPY_EVENT, onTemporaryHelpCopy);
   window.addEventListener(PAYMENT_PLAN_TOOL_EVENT, onPaymentPlanToolEvent);
+  window.addEventListener(TEMPORARY_SUPPORT_RECORD_TOOL_EVENT, onTemporarySupportRecordToolEvent);
 }
 
 if (document.readyState === "loading") {
