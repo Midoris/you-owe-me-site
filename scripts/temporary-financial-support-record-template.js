@@ -863,6 +863,7 @@
       var copyButton = event.target.closest("[data-copy-target]");
 
       if (scenarioButton) {
+        event.preventDefault();
         applyScenario(scenarioButton.getAttribute("data-scenario"));
         return;
       }
@@ -881,6 +882,15 @@
       if (copyButton) {
         copyOutput(copyButton.getAttribute("data-copy-target"));
       }
+    });
+
+    document.addEventListener("keydown", function (event) {
+      var scenarioButton = event.target.closest("[data-scenario][role='button']");
+
+      if (!scenarioButton || (event.key !== "Enter" && event.key !== " ")) return;
+
+      event.preventDefault();
+      applyScenario(scenarioButton.getAttribute("data-scenario"));
     });
   }
 
