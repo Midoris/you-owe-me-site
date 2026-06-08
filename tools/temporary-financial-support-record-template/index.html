@@ -42,7 +42,7 @@
         {
           "@type": "WebPage",
           "name": "Temporary Financial Support Record Template",
-          "description": "Create a simple written record for temporary help between people, including what was covered, whether it is a gift, support to repay, part gift / part to repay, or flexible support, repayment timing, check-in date, and next step.",
+          "description": "Create a simple written record for temporary help between people, including what was covered, whether it is a gift, support to repay, part gift / part to repay, or something flexible, repayment timing, check-in date, and next step.",
           "url": "https://you-owe-me.com/tools/temporary-financial-support-record-template/",
           "dateModified": "2026-06-08",
           "isPartOf": {
@@ -129,7 +129,7 @@
               "name": "What if we have not decided whether it is a gift or support to repay?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Use the not clear yet option and confirm the missing details before relying on memory. It is also okay if the answer is mixed: for example, one part is a gift and one part should be repaid. The important thing is that both people understand the same record."
+                "text": "Use the \"not clear yet\" option and confirm the missing details before relying on memory. It is also okay if the answer is mixed: for example, one part is a gift and one part should be repaid. The important thing is that both people understand the same record."
               }
             },
             {
@@ -248,8 +248,8 @@
               <div class="tsr-tool-heading">
                 <div>
                   <p class="lt-sectionEyebrow">Record builder</p>
-                  <h2 id="support-record-tool-title">Create a simple support record</h2>
-                  <p>Start with the details you know. You can leave anything undecided and the template will create a draft message instead of pretending the agreement is final.</p>
+                  <h2 id="support-record-tool-title">Start with what you know</h2>
+                  <p>You can leave anything undecided. If the agreement is not clear yet, the template will create a draft message instead of pretending the record is final.</p>
                 </div>
                 <div class="tsr-example-loader" aria-label="Load an example">
                   <p>Load example</p>
@@ -345,7 +345,7 @@
 
                   <section class="tsr-helper-panel" aria-labelledby="common-support-situations-title">
                     <h3 id="common-support-situations-title">Common situations this record can handle</h3>
-                    <p>Choose the closest match. The record can still be edited before you copy it.</p>
+                    <p>Choose the closest match, then edit the record before you copy it.</p>
                     <div class="tsr-helper-grid">
                       <button type="button" class="tsr-helper-card" data-scenario="covered-bill">
                         <strong>Someone covered a bill for now</strong>
@@ -402,7 +402,7 @@
                         <input type="radio" name="supportType" value="undecided" />
                         <span>
                           <strong>Not clear yet</strong>
-                          <small>Use this when you still need to confirm whether it is a gift, support to repay, part gift / part to repay, or flexible support.</small>
+                          <small>Use this when you still need to confirm whether it is a gift, support to repay, part gift / part to repay, or something flexible.</small>
                         </span>
                       </label>
                     </div>
@@ -510,11 +510,11 @@
                   </fieldset>
 
                   <fieldset class="tsr-fieldset tsr-conditional" data-conditional="flexible" hidden>
-                    <legend>Flexible support details</legend>
+                    <legend>Repay when possible details</legend>
                     <div class="tsr-field-grid tsr-field-grid--two">
                       <div class="tsr-field">
                         <label for="support-flex-amount">Expected repayment amount, if known</label>
-                        <input id="support-flex-amount" name="flexAmount" type="text" maxlength="80" placeholder="$720 or not decided" autocomplete="off" />
+                        <input id="support-flex-amount" name="flexAmount" type="text" maxlength="80" placeholder="$720 or still flexible" autocomplete="off" />
                       </div>
                       <div class="tsr-field">
                         <label for="support-flex-date">Check-in date</label>
@@ -628,7 +628,7 @@
                 </thead>
                 <tbody>
                   <tr>
-                    <td data-label="Situation">The other person said, "Don't pay me back."</td>
+                    <td data-label="Situation">The other person said, “Don’t pay me back.”</td>
                     <td data-label="Choose">No repayment — it was a gift</td>
                     <td data-label="Why">The record should not show an amount owed.</td>
                   </tr>
@@ -860,7 +860,7 @@
                 <p>Only if both people want a simple record. If no repayment is expected and the support will not continue, a thank-you message may be enough.</p>
               </details>
               <details>
-                <summary>What if we have not decided whether it is a gift or repayable support?</summary>
+                <summary>What if we have not decided whether it is a gift or support to repay?</summary>
                 <p>Use the "not clear yet" option and confirm the missing details before relying on memory. It is also okay if the answer is mixed: for example, one part is a gift and one part should be repaid. The important thing is that both people understand the same record.</p>
               </details>
               <details>

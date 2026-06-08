@@ -522,14 +522,14 @@
       record: recordLines.join(" "),
       message: messageLines.join(" "),
       note: noteParts.join(" "),
-      next: "Flexible support is where records help most. Set a check-in date, send updates before the other person has to ask, and use You Owe Me if the balance or timing keeps changing.",
+      next: "Repay-when-possible situations are where records help most. Set a check-in date, send updates before the other person has to ask, and use You Owe Me if the balance or timing keeps changing.",
       context: "Repay-when-possible record generated.",
     };
   }
 
   function buildUndecided(values) {
     var clarify = values.clarify.length ? values.clarify : [
-      "whether this is a gift, support to repay, part gift / part to repay, or flexible support",
+      "whether this is a gift, support to repay, part gift / part to repay, or something flexible",
       "how much should be repaid",
       "when to check in again",
     ];
@@ -543,7 +543,7 @@
       record: "Draft support record: " + supportSentence(values, false) + " What should happen next has not been confirmed yet. Before relying on this record, clarify " + naturalList(clarify) + ".",
       message: messageStart + " For the support with " + conversationSubject(values) + " on " + values.dateShort + ", should we treat it as a gift, " + repayPhrase + ", part gift / part to repay, or support to repay when possible? Also, should we set a check-in date so neither of us has to rely on memory later?",
       note: "Draft temporary support record: " + supportSentenceWithoutPeriod(values, false) + ". What should happen next is not confirmed. Clarify " + naturalList(clarify) + " before tracking as final.",
-      next: "Do not treat this as a final record yet. First confirm whether this is a gift, support to repay, part gift / part to repay, or flexible support. The best record is the one both people understand the same way.",
+      next: "Do not treat this as a final record yet. First confirm whether this is a gift, support to repay, part gift / part to repay, or something flexible. The best record is the one both people understand the same way.",
       context: "Draft record generated because the next step is not clear yet.",
     };
   }
