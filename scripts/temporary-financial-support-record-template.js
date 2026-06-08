@@ -104,7 +104,7 @@
 
   function setCheckboxDefaults() {
     document.querySelectorAll("input[name='clarify']").forEach(function (input) {
-      input.checked = input.value === "whether this is a gift or repayable support" ||
+      input.checked = input.value === "whether this is a gift, support to repay, or mixed" ||
         input.value === "how much should be repaid" ||
         input.value === "when to check in again";
     });
@@ -315,9 +315,9 @@
 
   function buildDefaultOutput() {
     return {
-      record: "Example: Anna helped Maya with $720 for rent and groceries on July 1. They agreed this is repayable temporary support, with monthly repayment and a check-in date.",
+      record: "Example: Anna helped Maya with $720 for rent and groceries on July 1. They agreed the full amount should be repaid, with monthly repayment and a check-in date.",
       message: "Thanks again for helping with rent and groceries. I saved the support as $720 from July 1, with monthly repayment planned and a check-in on July 15. I just want us both to have the same understanding so it stays clear.",
-      note: "Temporary support: Anna helped Maya with $720 for rent and groceries on July 1. Repayable support. Planned repayment: monthly. Next check-in: July 15.",
+      note: "Temporary support: Anna helped Maya with $720 for rent and groceries on July 1. Support to repay. Planned repayment: monthly. Next check-in: July 15.",
       next: "Add your own details to create a private record, a message to send, and a compact note for You Owe Me.",
       context: "Example preview shown until you add your own details.",
     };
@@ -356,14 +356,14 @@
     var timing = timingLabel(values.repayTiming);
     var recordLines = [
       supportSentence(values, false),
-      "They agreed this is repayable temporary support.",
+      "They agreed the full amount should be repaid.",
       "The expected repayment amount is " + expected + ".",
       "The plan is to repay " + timing + ".",
     ];
     var messageLines;
     var noteParts = [
       "Temporary support: " + supportSentenceWithoutPeriod(values, false) + ".",
-      "Repayable support.",
+      "Support to repay.",
       "Planned repayment: " + timing + ".",
     ];
     var repaidLine = remainingSentence(values, expected, values.alreadyRepaid);
@@ -392,13 +392,13 @@
     } else if (values.perspective === "helping") {
       messageLines = [
         "I wrote this down so neither of us has to rely on memory later: I helped with " + supportSubject(values) + " on " + values.dateShort + ".",
-        "We have it as repayable temporary support, with " + timing + " repayment planned" + (values.repayDateRaw ? " and a check-in on " + values.repayDateShort : "") + ".",
+        "We have it as support to repay, with " + timing + " repayment planned" + (values.repayDateRaw ? " and a check-in on " + values.repayDateShort : "") + ".",
         "We can adjust if timing changes.",
       ];
     } else {
       messageLines = [
         "For clarity, we recorded that " + supportSentenceWithoutPeriod(values, false) + ".",
-        "This is repayable temporary support. The expected repayment amount is " + expected + ", with repayment " + timing + (values.repayDateRaw ? " and the next check-in on " + values.repayDateShort : "") + ".",
+        "This is support to repay. The expected repayment amount is " + expected + ", with repayment " + timing + (values.repayDateRaw ? " and the next check-in on " + values.repayDateShort : "") + ".",
       ];
       if (repaidLine) messageLines.push(repaidLine);
     }
@@ -407,8 +407,8 @@
       record: recordLines.join(" "),
       message: messageLines.join(" "),
       note: noteParts.join(" "),
-      next: "This is a good fit for You Owe Me if repayments will happen in steps, timing may change, or both people need a clear history. If you need to calculate weekly or monthly repayment amounts first, use the Payment Plan Calculator.",
-      context: "Repayable support record generated.",
+      next: "If repayment will happen all at once, this record may be enough until payment is made. If repayment will happen in steps, use the Payment Plan Calculator. If repayments, notes, or timing changes continue, track it in You Owe Me.",
+      context: "Support-to-repay record generated.",
     };
   }
 
@@ -418,12 +418,12 @@
     var timing = timingLabel(values.partialTiming);
     var recordLines = [
       supportSentence(values, false),
-      "They agreed that " + gift + " is a gift and " + repay + " should be repaid.",
+      "They agreed that " + gift + " is a gift and " + repay + " is the amount to repay.",
       "The repayment plan is " + timing + ".",
     ];
     var noteParts = [
       "Temporary support: " + supportSentenceWithoutPeriod(values, false) + ".",
-      "Partial gift: " + gift + ".",
+      "Part gift: " + gift + ".",
       "Amount to repay: " + repay + ".",
       "Repayment timing: " + timing + ".",
     ];
@@ -466,21 +466,21 @@
       record: recordLines.join(" "),
       message: messageLines.filter(Boolean).join(" "),
       note: noteParts.join(" "),
-      next: "Only track the repayable part in You Owe Me. Keep the gift part in the note so the full story is clear later.",
-      context: "Partial gift record generated.",
+      next: "Only the repayable part needs to become the balance. Keep the gift part in the note so nobody has to reconstruct the full story later.",
+      context: "Part gift / part to repay record generated.",
     };
   }
 
   function buildFlexible(values) {
     var recordLines = [
       supportSentence(values, false),
-      "They agreed this is flexible temporary support.",
+      "They agreed to repay when possible and check in later.",
       "Repayment is expected when possible.",
     ];
     var noteParts = [
       "Temporary support: " + supportSentenceWithoutPeriod(values, false) + ".",
-      "Flexible support.",
-      "Repayment timing not fixed yet.",
+      "Repay when possible.",
+      "Repayment timing not fixed yet; use a check-in date.",
     ];
     var messageLines;
 
@@ -501,19 +501,19 @@
     if (values.perspective === "receiving") {
       messageLines = [
         "Thanks again for helping with " + conversationSubject(values) + ".",
-        "I wrote this down as flexible support from " + values.dateShort + ".",
+        "I wrote this down as support to repay when possible from " + values.dateShort + ".",
         values.flexDateRaw ? "I have our next check-in as " + values.flexDateShort + "," : "I will keep you updated,",
         "and I will send an update before then if anything changes.",
       ];
     } else if (values.perspective === "helping") {
       messageLines = [
         "I wrote this down so it stays clear without pressure: I helped with " + supportSubject(values) + " on " + values.dateShort + ".",
-        "We are treating it as flexible support" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + " and updates if timing changes.",
+        "We are treating it as support to repay when possible" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + " and updates if timing changes.",
       ];
     } else {
       messageLines = [
         "For clarity, we recorded that " + supportSentenceWithoutPeriod(values, false) + ".",
-        "We are treating it as flexible temporary support" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + ".",
+        "We are treating it as support to repay when possible" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + ".",
         updateSentence(values),
       ];
     }
@@ -522,29 +522,29 @@
       record: recordLines.join(" "),
       message: messageLines.join(" "),
       note: noteParts.join(" "),
-      next: "Flexible support is exactly where records help. Use You Owe Me if the timing may change, repayments may happen in parts, or you want calm check-ins instead of reconstructing details from memory.",
-      context: "Flexible support record generated.",
+      next: "Flexible support is where records help most. Set a check-in date, send updates before the other person has to ask, and use You Owe Me if the balance or timing keeps changing.",
+      context: "Repay-when-possible record generated.",
     };
   }
 
   function buildUndecided(values) {
     var clarify = values.clarify.length ? values.clarify : [
-      "whether this is a gift, repayable support, partial gift, or flexible support",
+      "whether this is a gift, support to repay, part gift / part to repay, or flexible support",
       "how much should be repaid",
       "when to check in again",
     ];
     var messageStart = values.clarifyMessage || "I want to make sure I understand this correctly before I write it down.";
-    var repayPhrase = "repayable support";
+    var repayPhrase = "support to repay";
 
     if (values.perspective === "receiving") repayPhrase = "something I should repay";
     if (values.perspective === "helping") repayPhrase = "something you plan to repay";
 
     return {
-      record: "Draft support record: " + supportSentence(values, false) + " The support type has not been confirmed yet. Before relying on this record, clarify " + naturalList(clarify) + ".",
-      message: messageStart + " For the support with " + conversationSubject(values) + " on " + values.dateShort + ", should we treat it as a gift, " + repayPhrase + ", a partial gift, or flexible support? Also, should we set a check-in date so neither of us has to rely on memory later?",
-      note: "Draft temporary support record: " + supportSentenceWithoutPeriod(values, false) + ". Support type not confirmed. Clarify " + naturalList(clarify) + " before tracking as final.",
-      next: "Do not turn this into a final record yet. First confirm the missing details in writing. The most helpful record is the one both people understand the same way.",
-      context: "Draft record generated because the support type is not decided yet.",
+      record: "Draft support record: " + supportSentence(values, false) + " What should happen next has not been confirmed yet. Before relying on this record, clarify " + naturalList(clarify) + ".",
+      message: messageStart + " For the support with " + conversationSubject(values) + " on " + values.dateShort + ", should we treat it as a gift, " + repayPhrase + ", part gift / part to repay, or support to repay when possible? Also, should we set a check-in date so neither of us has to rely on memory later?",
+      note: "Draft temporary support record: " + supportSentenceWithoutPeriod(values, false) + ". What should happen next is not confirmed. Clarify " + naturalList(clarify) + " before tracking as final.",
+      next: "Do not treat this as a final record yet. First confirm whether this is a gift, support to repay, part gift / part to repay, or flexible support. The best record is the one both people understand the same way.",
+      context: "Draft record generated because the next step is not clear yet.",
     };
   }
 
@@ -591,16 +591,16 @@
   function guidanceMessages(values) {
     var messages = [];
     if (isBlankStart(values)) return messages;
-    if (!values.amountRaw && !values.purposeRaw) messages.push("Add the amount, item, or purpose so the record is easier to understand later.");
-    if (!values.supportType) messages.push("Choose the support type so the template does not assume the arrangement is clear.");
+    if (!values.amountRaw && !values.purposeRaw) messages.push("Add the amount or item covered if you want the record to be easier to understand later.");
+    if (!values.supportType) messages.push("Choose what should happen next so the template does not assume this is a loan or a gift.");
     if (values.supportType === "repayable" && values.repayTiming === "unsure" && !values.repayDateRaw) {
-      messages.push("Add a check-in date if repayment timing is not fully decided yet.");
+      messages.push("Add a check-in date if repayment timing is still flexible.");
     }
     if (values.supportType === "flexible" && !values.flexDateRaw) {
-      messages.push("Add a check-in date if flexible repayment needs a calm next step.");
+      messages.push("Add a check-in date if repayment timing is still flexible.");
     }
     if (values.supportType === "partial" && !values.giftAmount && !values.partialRepayAmount) {
-      messages.push("Add the gift part or repayable part if you know it.");
+      messages.push("Add the gift part or the part to repay if you know it.");
     }
     if (values.supportType === "undecided" && values.clarify.length === 0) {
       messages.push("Choose what still needs to be clarified.");
@@ -816,6 +816,19 @@
     }
   }
 
+  function applyScenario(name) {
+    if (name === "covered-bill") {
+      setRadio("supportType", "flexible");
+    } else if (name === "sent-money" || name === "paid-share") {
+      setRadio("supportType", "repayable");
+    } else if (name === "not-sure") {
+      setRadio("supportType", "undecided");
+    }
+
+    trackToolStart(getValues());
+    render();
+  }
+
   function bindEvents() {
     if (!els.form) return;
 
@@ -844,9 +857,15 @@
     });
 
     document.addEventListener("click", function (event) {
+      var scenarioButton = event.target.closest("[data-scenario]");
       var exampleButton = event.target.closest("[data-example]");
       var actionButton = event.target.closest("[data-action]");
       var copyButton = event.target.closest("[data-copy-target]");
+
+      if (scenarioButton) {
+        applyScenario(scenarioButton.getAttribute("data-scenario"));
+        return;
+      }
 
       if (exampleButton) {
         loadExample(exampleButton.getAttribute("data-example"));

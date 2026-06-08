@@ -15,12 +15,12 @@
     <link rel="canonical" href="https://you-owe-me.com/tools/temporary-financial-support-record-template/" />
     <meta
       name="description"
-      content="Create a simple record for temporary financial help between people. Write down the amount, purpose, gift or repayment expectation, check-in date, and next step."
+      content="Create a simple record for temporary financial help between people. Write down what was covered, whether it is a gift or support to repay, the check-in date, and the next step."
     />
     <meta property="og:title" content="Temporary Financial Support Record Template | You Owe Me" />
     <meta
       property="og:description"
-      content="Create a simple record for temporary financial help between people. Write down the amount, purpose, gift or repayment expectation, check-in date, and next step."
+      content="Create a simple record for temporary financial help between people. Write down what was covered, whether it is a gift or support to repay, the check-in date, and the next step."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://you-owe-me.com/tools/temporary-financial-support-record-template/" />
@@ -30,7 +30,7 @@
     <meta name="twitter:title" content="Temporary Financial Support Record Template | You Owe Me" />
     <meta
       name="twitter:description"
-      content="Create a simple record for temporary financial help between people. Write down the amount, purpose, gift or repayment expectation, check-in date, and next step."
+      content="Create a simple record for temporary financial help between people. Write down what was covered, whether it is a gift or support to repay, the check-in date, and the next step."
     />
     <meta name="twitter:image" content="https://you-owe-me.com/images/tools/temporary-financial-support-record-template/temporary-support-record-hero.webp" />
     <meta name="twitter:image:alt" content="A calm temporary support record shown on a phone beside a notebook and receipt." />
@@ -42,7 +42,7 @@
         {
           "@type": "WebPage",
           "name": "Temporary Financial Support Record Template",
-          "description": "Create a simple written record for temporary help between people, including amount, purpose, support type, repayment expectation, check-in date, and next step.",
+          "description": "Create a simple written record for temporary help between people, including what was covered, whether it is a gift, support to repay, part gift / part to repay, or flexible support, repayment timing, check-in date, and next step.",
           "url": "https://you-owe-me.com/tools/temporary-financial-support-record-template/",
           "dateModified": "2026-06-08",
           "isPartOf": {
@@ -102,10 +102,10 @@
           "mainEntity": [
             {
               "@type": "Question",
-              "name": "Is this a legal loan agreement?",
+              "name": "Is this a formal loan document?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No. This is a simple record template for private money arrangements between people. It is not legal advice, tax advice, a formal loan agreement, debt collection, or repayment enforcement."
+                "text": "No. This is a simple record template for private support between people. It is not legal advice, tax advice, a formal loan document, collection, or repayment enforcement."
               }
             },
             {
@@ -126,10 +126,10 @@
             },
             {
               "@type": "Question",
-              "name": "What if we have not decided whether it is a gift or repayable support?",
+              "name": "What if we have not decided whether it is a gift or support to repay?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Use the not decided yet option and confirm the missing details before relying on memory. The most important thing is not to pretend the arrangement is clear when it is not."
+                "text": "Use the not clear yet option and confirm the missing details before relying on memory. It is also okay if the answer is mixed: for example, one part is a gift and one part should be repaid. The important thing is that both people understand the same record."
               }
             },
             {
@@ -216,7 +216,7 @@
               <div class="tsr-chip-row" aria-label="Tool highlights">
                 <span>No sign-up needed</span>
                 <span>Copyable summary</span>
-                <span>Gift, repayable, partial gift, or flexible support</span>
+                <span>Gift, support to repay, or check-in later</span>
                 <span>Not legal advice</span>
                 <span>No payment processing</span>
               </div>
@@ -237,8 +237,8 @@
           <section class="tsr-boundary-note" aria-labelledby="support-boundary-title">
             <div class="tsr-info-mark" aria-hidden="true">i</div>
             <div>
-              <h2 id="support-boundary-title">A simple record, not a legal agreement</h2>
-              <p>This template is not legal advice, tax advice, a formal loan agreement, payment processing, lending, or debt collection. It is a simple conversation and record template for private support between people who already know each other.</p>
+              <h2 id="support-boundary-title">A simple record, not a formal contract</h2>
+              <p>This template is not legal advice, tax advice, a formal loan document, payment processing, lending, or collection. It is a simple conversation and record template for private support between people who already know each other.</p>
               <p>If you have not asked yet, start with the guide on <a href="/blog/how-to-ask-family-for-temporary-financial-help/">how to ask family for temporary financial help</a> without making it awkward. If the help has already been agreed and you only need to write it down, use this record builder.</p>
             </div>
           </section>
@@ -249,7 +249,7 @@
                 <div>
                   <p class="lt-sectionEyebrow">Record builder</p>
                   <h2 id="support-record-tool-title">Create a simple support record</h2>
-                  <p>Fill in only what you know. If something is not decided yet, the template will help you create a confirmation message instead of pretending the arrangement is clear.</p>
+                  <p>Start with the details you know. You can leave anything undecided and the template will create a draft message instead of pretending the agreement is final.</p>
                 </div>
                 <div class="tsr-example-loader" aria-label="Load an example">
                   <p>Load example</p>
@@ -265,7 +265,7 @@
               <div class="tsr-tool-grid">
                 <form class="tsr-form" id="support-record-form" novalidate>
                   <div class="tsr-guidance" data-guidance-region aria-live="polite" hidden>
-                    <h3>This will make the record clearer</h3>
+                    <h3>A few details would make this clearer</h3>
                     <ul data-guidance-list></ul>
                   </div>
 
@@ -343,42 +343,66 @@
                     </div>
                   </fieldset>
 
+                  <section class="tsr-helper-panel" aria-labelledby="common-support-situations-title">
+                    <h3 id="common-support-situations-title">Common situations this record can handle</h3>
+                    <p>Choose the closest match. The record can still be edited before you copy it.</p>
+                    <div class="tsr-helper-grid">
+                      <button type="button" class="tsr-helper-card" data-scenario="covered-bill">
+                        <strong>Someone covered a bill for now</strong>
+                        <span>Rent, utilities, groceries, travel, or another cost that may be repaid later.</span>
+                      </button>
+                      <button type="button" class="tsr-helper-card" data-scenario="sent-money">
+                        <strong>Someone sent money directly</strong>
+                        <span>Family help, friend support, partner support, or a temporary transfer.</span>
+                      </button>
+                      <button type="button" class="tsr-helper-card" data-scenario="paid-share">
+                        <strong>Someone paid my share</strong>
+                        <span>A roommate, partner, sibling, or friend covered your part temporarily.</span>
+                      </button>
+                      <button type="button" class="tsr-helper-card" data-scenario="not-sure">
+                        <strong>We are not sure yet</strong>
+                        <span>The amount happened, but gift vs repayment and timing still need to be clarified.</span>
+                      </button>
+                    </div>
+                  </section>
+
                   <fieldset class="tsr-fieldset">
-                    <legend>What kind of support is this?</legend>
-                    <div class="tsr-radio-card-grid" role="radiogroup" aria-label="What kind of support is this?">
+                    <legend>What did you agree should happen next?</legend>
+                    <p class="tsr-fieldset-intro">This is not a legal category. It only helps the template use the right wording so the record does not assume everything is a loan or everything is a gift.</p>
+                    <div class="tsr-radio-card-grid" role="radiogroup" aria-label="What did you agree should happen next?">
                       <label class="tsr-radio-card">
                         <input type="radio" name="supportType" value="gift" />
                         <span>
-                          <strong>Gift - no repayment expected</strong>
+                          <strong>No repayment — it was a gift</strong>
                           <small>Use this when the help does not need to be repaid, but you still want a simple note or thank-you record.</small>
                         </span>
                       </label>
                       <label class="tsr-radio-card">
                         <input type="radio" name="supportType" value="repayable" />
                         <span>
-                          <strong>Repayable support - repayment is expected</strong>
-                          <small>Use this when both people understand that the support should be paid back.</small>
+                          <strong>Repay the full amount</strong>
+                          <small>Use this when both people understand that the full amount should be paid back.</small>
                         </span>
                       </label>
                       <label class="tsr-radio-card">
                         <input type="radio" name="supportType" value="partial" />
                         <span>
-                          <strong>Partial gift - only part should be repaid</strong>
-                          <small>Use this when part of the help is a gift and part should be paid back.</small>
+                          <strong>Repay part of it</strong>
+                          <small>Use this when one part is a gift and only the remaining part should be paid back.</small>
                         </span>
                       </label>
                       <label class="tsr-radio-card">
                         <input type="radio" name="supportType" value="flexible" />
                         <span>
-                          <strong>Flexible support - repay when possible</strong>
-                          <small>Use this when repayment is expected, but the exact timing may depend on what happens next.</small>
+                          <strong>Repay when possible / check in later</strong>
+                          <small>Use this when repayment is expected, but the exact timing is flexible or depends on what happens next.</small>
                         </span>
                       </label>
                       <label class="tsr-radio-card">
                         <input type="radio" name="supportType" value="undecided" />
                         <span>
-                          <strong>Not decided yet</strong>
-                          <small>Use this when the most important details still need to be confirmed.</small>
+                          <strong>Not clear yet</strong>
+                          <small>Use this when you still need to confirm whether it is a gift, support to repay, part gift / part to repay, or flexible support.</small>
                         </span>
                       </label>
                     </div>
@@ -449,7 +473,7 @@
                   </fieldset>
 
                   <fieldset class="tsr-fieldset tsr-conditional" data-conditional="partial" hidden>
-                    <legend>Partial gift details</legend>
+                    <legend>Part gift / part to repay details</legend>
                     <div class="tsr-field-grid tsr-field-grid--two">
                       <div class="tsr-field">
                         <label for="support-gift-amount">Gift amount</label>
@@ -515,7 +539,7 @@
                   <fieldset class="tsr-fieldset tsr-conditional" data-conditional="undecided" hidden>
                     <legend>What still needs to be clarified?</legend>
                     <div class="tsr-checkbox-grid">
-                      <label><input type="checkbox" name="clarify" value="whether this is a gift or repayable support" checked /> <span>Whether this is a gift or repayable support</span></label>
+                      <label><input type="checkbox" name="clarify" value="whether this is a gift, support to repay, or mixed" checked /> <span>Whether this is a gift, support to repay, or mixed</span></label>
                       <label><input type="checkbox" name="clarify" value="how much should be repaid" checked /> <span>How much should be repaid</span></label>
                       <label><input type="checkbox" name="clarify" value="when repayment should start" /> <span>When repayment should start</span></label>
                       <label><input type="checkbox" name="clarify" value="whether partial repayments are okay" /> <span>Whether partial repayments are okay</span></label>
@@ -548,7 +572,7 @@
                     <article class="tsr-output-card">
                       <div>
                         <h3>Simple record</h3>
-                        <p>Save this for yourself, paste it into notes, or use it as the starting record in You Owe Me.</p>
+                        <p>Best for saving privately or pasting into notes.</p>
                       </div>
                       <pre data-output-record></pre>
                       <button type="button" class="tsr-copy-button" data-copy-target="record" aria-label="Copy support record">Copy record</button>
@@ -556,7 +580,7 @@
                     <article class="tsr-output-card">
                       <div>
                         <h3>Message to send</h3>
-                        <p>Use this if you want the other person to confirm the same understanding.</p>
+                        <p>Best for confirming the same understanding with the other person.</p>
                       </div>
                       <pre data-output-message></pre>
                       <button type="button" class="tsr-copy-button" data-copy-target="message" aria-label="Copy message to send">Copy message</button>
@@ -564,7 +588,7 @@
                     <article class="tsr-output-card">
                       <div>
                         <h3>You Owe Me note</h3>
-                        <p>A compact version you can save with the entry or Loan Record in You Owe Me.</p>
+                        <p>Best for saving with an entry or Loan Record if the situation continues.</p>
                       </div>
                       <pre data-output-note></pre>
                       <button type="button" class="tsr-copy-button" data-copy-target="note" aria-label="Copy You Owe Me note">Copy app note</button>
@@ -572,7 +596,7 @@
                     <article class="tsr-output-card tsr-output-card--next">
                       <div>
                         <h3>Suggested next step</h3>
-                        <p>What to do after creating the record.</p>
+                        <p>Best for deciding whether to use a message, calculator, receipt, or the app.</p>
                       </div>
                       <pre data-output-next></pre>
                     </article>
@@ -583,9 +607,53 @@
               <noscript>
                 <div class="tsr-noscript">
                   <h3>Example support record</h3>
-                  <p>Anna helped Maya with $720 for rent and groceries on July 1. They agreed this is repayable temporary support, with monthly repayment and a check-in date.</p>
+                  <p>Anna helped Maya with $720 for rent and groceries on July 1. They agreed the full amount should be repaid, with monthly repayment and a check-in date.</p>
                 </div>
               </noscript>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection tsr-content-section tsr-decision-section" aria-labelledby="support-decision-title">
+            <p class="lt-sectionEyebrow">Quick choice guide</p>
+            <h2 id="support-decision-title">Which option should I choose?</h2>
+            <p>If the support type feels unclear, use this quick guide before generating the record.</p>
+            <div class="tsr-decision-table-wrap">
+              <table class="tsr-decision-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Situation</th>
+                    <th scope="col">Choose</th>
+                    <th scope="col">Why</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td data-label="Situation">The other person said, "Don't pay me back."</td>
+                    <td data-label="Choose">No repayment — it was a gift</td>
+                    <td data-label="Why">The record should not show an amount owed.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Situation">Both people agree the full amount should be repaid.</td>
+                    <td data-label="Choose">Repay the full amount</td>
+                    <td data-label="Why">The record can show the support amount, repayment timing, and any amount already repaid.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Situation">One part is a gift and only the rest should be repaid.</td>
+                    <td data-label="Choose">Repay part of it</td>
+                    <td data-label="Why">The gift part stays in the note, and only the repayable part becomes the balance.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Situation">Repayment is expected, but timing is not exact.</td>
+                    <td data-label="Choose">Repay when possible / check in later</td>
+                    <td data-label="Why">A check-in date and update expectation matter more than a fixed due date.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Situation">You are not sure what the other person expects.</td>
+                    <td data-label="Choose">Not clear yet</td>
+                    <td data-label="Why">The tool should create a clarification message instead of a final record.</td>
+                  </tr>
+                </tbody>
+              </table>
             </div>
           </section>
 
@@ -593,7 +661,7 @@
             <p class="lt-sectionEyebrow">Related next steps</p>
             <h2 id="related-next-steps-title">Choose the next step after the record</h2>
             <p>Use the support record as the calm starting point. Then choose the next tool based on what actually happens next.</p>
-            <div class="lt-relatedGrid">
+            <div class="lt-relatedGrid tsr-priority-related">
               <article class="lt-toolCard">
                 <h3>Need to plan repayment steps?</h3>
                 <p>Use the Payment Plan Calculator when the repayable amount is clear but the timing needs to be broken into weekly, biweekly, or monthly steps.</p>
@@ -614,26 +682,13 @@
                 <p>Create a simple receipt-style confirmation for a full or partial repayment.</p>
                 <a href="/tools/repayment-receipt-generator/" class="lt-cardCta" data-track-event="temporary_support_record_related_click_receipt">Create a repayment receipt</a>
               </article>
-              <article class="lt-toolCard">
-                <h3>Need a calmer follow-up?</h3>
-                <p>If the support record is clear but you do not know what to say next, use the Polite Payback Reminder Generator.</p>
-                <a href="/tools/polite-payback-reminder-generator/" class="lt-cardCta" data-track-event="temporary_support_record_related_click_reminder">Generate a calm repayment reminder</a>
-              </article>
-              <article class="lt-toolCard">
-                <h3>Did this become family reimbursement?</h3>
-                <p>If parent bills, sibling reimbursements, or recurring family costs continue, the Family Reimbursement Tracker is a better next step than a one-time template.</p>
-                <a href="/solutions/family-reimbursement-tracker/" class="lt-cardCta" data-track-event="temporary_support_record_related_click_family">Track family reimbursements over time</a>
-              </article>
-              <article class="lt-toolCard">
-                <h3>Is this mainly an open balance?</h3>
-                <p>If the situation is mainly one clear balance, partial repayments, or follow-up timing, see the app to track money owed between people.</p>
-                <a href="/solutions/app-to-track-money-owed/" class="lt-cardCta" data-track-event="temporary_support_record_related_click_money_owed">Track money owed between people</a>
-              </article>
-              <article class="lt-toolCard">
-                <h3>Need a different calculator?</h3>
-                <p>Browse all You Owe Me tools for calculators, templates, repayment receipts, and message generators.</p>
-                <a href="/tools/" class="lt-cardCta" data-track-event="temporary_support_record_related_click_tools_hub">Browse all money tools</a>
-              </article>
+            </div>
+            <div class="tsr-more-related" aria-label="More related resources">
+              <span>More related resources:</span>
+              <a href="/tools/polite-payback-reminder-generator/" data-track-event="temporary_support_record_related_click_reminder">Polite Payback Reminder Generator</a>
+              <a href="/solutions/family-reimbursement-tracker/" data-track-event="temporary_support_record_related_click_family">Family Reimbursement Tracker</a>
+              <a href="/solutions/app-to-track-money-owed/" data-track-event="temporary_support_record_related_click_money_owed">App to Track Money Owed</a>
+              <a href="/tools/" data-track-event="temporary_support_record_related_click_tools_hub">Tools hub</a>
             </div>
           </section>
 
@@ -659,7 +714,7 @@
                 <p>A parent covers $600 of rent and $120 of groceries while Maya's income is uneven. Maya has already repaid $200. A clear record shows what was covered, what has been repaid, what remains open, and when they will check in again.</p>
                 <div class="tsr-sample-record">
                   <h4>Sample record</h4>
-                  <p>Parent helped Maya with $720 for rent and groceries on July 1. This is repayable temporary support. Maya has repaid $200. The remaining amount to track is $520. Next check-in: July 15.</p>
+                  <p>Parent helped Maya with $720 for rent and groceries on July 1. They agreed the full amount should be repaid. Maya has repaid $200. The remaining amount to track is $520. Next check-in: July 15.</p>
                 </div>
               </article>
               <article class="tsr-static-card">
@@ -672,7 +727,7 @@
               </article>
               <article class="tsr-static-card">
                 <h3>Partner covers shared costs during a job transition</h3>
-                <p>One partner covers groceries and household items for a few weeks. They do not want to turn the relationship into a spreadsheet, so they only record the parts both people agree should be repaid.</p>
+                <p>One partner covers groceries and household items for a few weeks. They do not want to turn the relationship into a spreadsheet, so they only record the part they both agree should be repaid.</p>
                 <div class="tsr-sample-record">
                   <h4>Sample record</h4>
                   <p>Jordan covered $310 of shared groceries and household items during a temporary income gap. They agreed that $150 should be repaid and the rest is shared support. Next check-in: September 1.</p>
@@ -683,7 +738,7 @@
                 <p>A sibling covers groceries and a pharmacy run. Part of it is a gift, and part should be repaid later. A simple record prevents both people from remembering it differently.</p>
                 <div class="tsr-sample-record">
                   <h4>Sample record</h4>
-                  <p>Nina helped Leo with $180 for groceries and pharmacy items. They agreed $80 is a gift and $100 should be repaid when possible. Next check-in: October 10.</p>
+                  <p>Nina helped Leo with $180 for groceries and pharmacy items. They agreed $80 is a gift and $100 is the amount to repay when possible. Next check-in: October 10.</p>
                 </div>
               </article>
             </div>
@@ -697,7 +752,7 @@
               <p>Money between people becomes difficult when memory replaces records. Clear records reduce misunderstandings. Clear communication reduces friction. The goal is clarity, not confrontation.</p>
             </div>
             <ul class="tsr-checklist">
-              <li>Was this a gift, repayable support, partial gift, or flexible support?</li>
+              <li>Was this a gift, support to repay, part gift / part to repay, or something flexible?</li>
               <li>What amount or bill was covered?</li>
               <li>Is repayment expected?</li>
               <li>Is partial repayment okay?</li>
@@ -793,8 +848,8 @@
             <h2 id="support-faq-title">Temporary support record questions</h2>
             <div class="faq-list">
               <details>
-                <summary>Is this a legal loan agreement?</summary>
-                <p>No. This is a simple record template for private money arrangements between people. It is not legal advice, tax advice, a formal loan agreement, debt collection, or repayment enforcement.</p>
+                <summary>Is this a formal loan document?</summary>
+                <p>No. This is a simple record template for private support between people. It is not legal advice, tax advice, a formal loan document, collection, or repayment enforcement.</p>
               </details>
               <details>
                 <summary>Does You Owe Me provide temporary financial support?</summary>
@@ -806,7 +861,7 @@
               </details>
               <details>
                 <summary>What if we have not decided whether it is a gift or repayable support?</summary>
-                <p>Use the "not decided yet" option and confirm the missing details before relying on memory. The most important thing is not to pretend the arrangement is clear when it is not.</p>
+                <p>Use the "not clear yet" option and confirm the missing details before relying on memory. It is also okay if the answer is mixed: for example, one part is a gift and one part should be repaid. The important thing is that both people understand the same record.</p>
               </details>
               <details>
                 <summary>What if repayment will happen in steps?</summary>
