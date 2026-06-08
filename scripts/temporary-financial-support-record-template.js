@@ -104,7 +104,7 @@
 
   function setCheckboxDefaults() {
     document.querySelectorAll("input[name='clarify']").forEach(function (input) {
-      input.checked = input.value === "whether this is a gift, support to repay, or mixed" ||
+      input.checked = input.value === "whether this is a gift, something to repay, or mixed" ||
         input.value === "how much should be repaid" ||
         input.value === "when to check in again";
     });
@@ -392,13 +392,13 @@
     } else if (values.perspective === "helping") {
       messageLines = [
         "I wrote this down so neither of us has to rely on memory later: I helped with " + supportSubject(values) + " on " + values.dateShort + ".",
-        "We have it as support to repay, with " + timing + " repayment planned" + (values.repayDateRaw ? " and a check-in on " + values.repayDateShort : "") + ".",
+        "We have it as support with repayment expected, with " + timing + " repayment planned" + (values.repayDateRaw ? " and a check-in on " + values.repayDateShort : "") + ".",
         "We can adjust if timing changes.",
       ];
     } else {
       messageLines = [
         "For clarity, we recorded that " + supportSentenceWithoutPeriod(values, false) + ".",
-        "This is support to repay. The expected repayment amount is " + expected + ", with repayment " + timing + (values.repayDateRaw ? " and the next check-in on " + values.repayDateShort : "") + ".",
+        "This is support with repayment expected. The expected repayment amount is " + expected + ", with repayment " + timing + (values.repayDateRaw ? " and the next check-in on " + values.repayDateShort : "") + ".",
       ];
       if (repaidLine) messageLines.push(repaidLine);
     }
@@ -501,19 +501,19 @@
     if (values.perspective === "receiving") {
       messageLines = [
         "Thanks again for helping with " + conversationSubject(values) + ".",
-        "I wrote this down as support to repay when possible from " + values.dateShort + ".",
+        "I wrote this down as support with repayment expected when possible from " + values.dateShort + ".",
         values.flexDateRaw ? "I have our next check-in as " + values.flexDateShort + "," : "I will keep you updated,",
         "and I will send an update before then if anything changes.",
       ];
     } else if (values.perspective === "helping") {
       messageLines = [
         "I wrote this down so it stays clear without pressure: I helped with " + supportSubject(values) + " on " + values.dateShort + ".",
-        "We are treating it as support to repay when possible" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + " and updates if timing changes.",
+        "We are treating it as support with repayment expected when possible" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + " and updates if timing changes.",
       ];
     } else {
       messageLines = [
         "For clarity, we recorded that " + supportSentenceWithoutPeriod(values, false) + ".",
-        "We are treating it as support to repay when possible" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + ".",
+        "We are treating it as support with repayment expected when possible" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + ".",
         updateSentence(values),
       ];
     }
@@ -529,21 +529,21 @@
 
   function buildUndecided(values) {
     var clarify = values.clarify.length ? values.clarify : [
-      "whether this is a gift, support to repay, part gift / part to repay, or something flexible",
+      "whether this is a gift, something to repay, part gift / part to repay, or a flexible check-in situation",
       "how much should be repaid",
       "when to check in again",
     ];
     var messageStart = values.clarifyMessage || "I want to make sure I understand this correctly before I write it down.";
-    var repayPhrase = "support to repay";
+    var repayPhrase = "something to repay";
 
     if (values.perspective === "receiving") repayPhrase = "something I should repay";
     if (values.perspective === "helping") repayPhrase = "something you plan to repay";
 
     return {
       record: "Draft support record: " + supportSentence(values, false) + " What should happen next has not been confirmed yet. Before relying on this record, clarify " + naturalList(clarify) + ".",
-      message: messageStart + " For the support with " + conversationSubject(values) + " on " + values.dateShort + ", should we treat it as a gift, " + repayPhrase + ", part gift / part to repay, or support to repay when possible? Also, should we set a check-in date so neither of us has to rely on memory later?",
+      message: messageStart + " For the support with " + conversationSubject(values) + " on " + values.dateShort + ", should we treat it as a gift, " + repayPhrase + ", part gift / part to repay, or a flexible check-in situation? Also, should we set a check-in date so neither of us has to rely on memory later?",
       note: "Draft temporary support record: " + supportSentenceWithoutPeriod(values, false) + ". What should happen next is not confirmed. Clarify " + naturalList(clarify) + " before tracking as final.",
-      next: "Do not treat this as a final record yet. First confirm whether this is a gift, support to repay, part gift / part to repay, or something flexible. The best record is the one both people understand the same way.",
+      next: "Do not treat this as a final record yet. First confirm whether this is a gift, something to repay, part gift / part to repay, or a flexible check-in situation. The best record is the one both people understand the same way.",
       context: "Draft record generated because the next step is not clear yet.",
     };
   }
