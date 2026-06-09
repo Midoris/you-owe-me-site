@@ -66,6 +66,46 @@
     };
   }
 
+  function selectTextInTextarea(text) {
+    if (!text) return false;
+
+    var textarea = document.createElement("textarea");
+    textarea.value = text;
+    textarea.setAttribute("readonly", "");
+    textarea.style.position = "fixed";
+    textarea.style.top = "0";
+    textarea.style.left = "0";
+    textarea.style.width = "1px";
+    textarea.style.height = "1px";
+    textarea.style.opacity = "0";
+    textarea.style.zIndex = "-1";
+    document.body.appendChild(textarea);
+    textarea.focus();
+    textarea.select();
+    textarea.setSelectionRange(0, textarea.value.length);
+
+    window.setTimeout(function () {
+      if (textarea.parentNode) textarea.parentNode.removeChild(textarea);
+    }, 6000);
+
+    return true;
+  }
+
+  function selectTemplateText(button, text) {
+    var templateId = button.getAttribute("data-copy-template");
+    var card = document.querySelector('[data-template-id="' + templateId + '"]');
+    var message = card ? card.querySelector(".template-card__message") : null;
+    var selection = window.getSelection && window.getSelection();
+
+    if (!message || !selection || !document.createRange) return selectTextInTextarea(text);
+
+    var range = document.createRange();
+    range.selectNodeContents(message);
+    selection.removeAllRanges();
+    selection.addRange(range);
+    return true;
+  }
+
   function trackCopy(type, id) {
     window.dispatchEvent(new CustomEvent("youoweme:repayment-update-copy", {
       detail: {
@@ -90,7 +130,8 @@
         button.textContent = originalText;
       }, 1800);
     }).catch(function () {
-      announce(button, "Copy did not work. Select the text and copy it manually.");
+      var selected = selectTemplateText(button, text);
+      announce(button, selected ? "Text selected. Use your keyboard to copy it." : "Copy did not work. Select the text and copy it manually.");
     });
   }
 

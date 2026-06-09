@@ -57,6 +57,16 @@ body.repayment-update-page .lt-toolsSection > p {
   line-height: 1.55 !important;
 }
 
+.repayment-overlap-note {
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 16px;
+  background: rgba(175, 230, 126, 0.12);
+  color: rgba(24, 33, 43, 0.78) !important;
+  font-size: 0.96rem !important;
+  line-height: 1.58 !important;
+}
+
 .repayment-update-hero-visual {
   width: min(100%, 34rem);
   margin: 0;
@@ -350,7 +360,7 @@ body.repayment-update-page .lt-toolsSection > p {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
-  gap: 0.75rem;
+  gap: 0.55rem;
   width: fit-content;
   max-width: 100%;
   margin: 1rem 0;
@@ -365,8 +375,22 @@ body.repayment-update-page .lt-toolsSection > p {
   color: #274218;
 }
 
+.repayment-formula-equals {
+  color: #274218 !important;
+  font-weight: 900;
+}
+
 .repayment-formula-strip span {
   color: rgba(24, 33, 43, 0.72);
+}
+
+body.repayment-update-page .faq-section summary h3 {
+  display: inline;
+  margin: 0 !important;
+  color: #18212b;
+  font-size: 1rem !important;
+  font-weight: 800;
+  line-height: 1.35 !important;
 }
 
 .repayment-trust-grid {
