@@ -2340,6 +2340,40 @@
         color: var(--lt-muted);
       }
 
+      body.homepage-page .lt-findNudge {
+        display: inline-flex;
+        flex-wrap: wrap;
+        align-items: center;
+        gap: 0.35rem 0.55rem;
+        margin: 0 0 1.2rem;
+        padding: 0.72rem 0.9rem;
+        border: 1px solid rgba(107, 161, 69, 0.2);
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.92);
+        box-shadow: 0 10px 22px rgba(15, 23, 42, 0.06);
+        color: var(--lt-deep);
+        font-size: 0.96rem;
+        line-height: 1.25;
+        text-decoration: none;
+        transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+      }
+
+      body.homepage-page .lt-findNudge strong {
+        color: var(--lt-deep);
+        font-weight: 800;
+      }
+
+      body.homepage-page .lt-findNudge span {
+        color: rgba(24, 33, 43, 0.68);
+        font-weight: 700;
+      }
+
+      body.homepage-page .lt-findNudge:hover {
+        transform: translateY(-1px);
+        background: #ffffff;
+        box-shadow: 0 14px 28px rgba(15, 23, 42, 0.09);
+      }
+
       body.homepage-page .lt-situationGrid,
       body.homepage-page .lt-stepGrid,
       body.homepage-page .lt-proofGrid {
@@ -2403,6 +2437,7 @@
       }
 
       body.homepage-page .lt-situationCard:focus-visible,
+      body.homepage-page .lt-findNudge:focus-visible,
       body.homepage-page .lt-textCta:focus-visible,
       body.homepage-page .lt-cardCta:focus-visible,
       body.homepage-page .lt-mobileStickyCta:focus-visible {
