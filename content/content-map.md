@@ -1,6 +1,6 @@
 # YouOweMe Content Map
 
-Updated: 2026-06-05
+Updated: 2026-06-09
 
 This is the working map for planning YouOweMe content across Shorts, TikTok, Instagram Reels, Instagram carousels, and 1-2 minute YouTube landscape videos.
 
@@ -19,6 +19,7 @@ Parent:
 Current answer page:
 
 - `/blog/how-to-ask-family-for-temporary-financial-help/`
+- `/blog/how-to-send-a-repayment-update-when-you-need-more-time/`
 
 Related support:
 
@@ -26,6 +27,7 @@ Related support:
 - `/tools/polite-payback-reminder-generator/`
 - `/tools/repayment-receipt-generator/`
 - `/blog/how-to-follow-up-after-a-partial-repayment/`
+- `/blog/how-to-send-a-repayment-update-when-you-need-more-time/`
 - `/solutions/family-reimbursement-tracker/`
 - `/solutions/app-to-track-money-owed/`
 

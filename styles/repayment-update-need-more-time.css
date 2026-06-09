@@ -1,0 +1,563 @@
+body.repayment-update-page {
+  overflow-x: hidden;
+}
+
+body.repayment-update-page *,
+body.repayment-update-page *::before,
+body.repayment-update-page *::after {
+  box-sizing: border-box;
+}
+
+body.repayment-update-page article.post.featured {
+  max-width: none;
+}
+
+body.repayment-update-page article.post.featured h1,
+body.repayment-update-page article.post.featured h2,
+body.repayment-update-page article.post.featured h3 {
+  letter-spacing: 0;
+}
+
+body.repayment-update-page .lt-toolsSection p,
+body.repayment-update-page .lt-toolsSection ul,
+body.repayment-update-page .lt-toolsSection ol,
+body.repayment-update-page .lt-toolsHero p,
+body.repayment-update-page .lt-finalCta p,
+body.repayment-update-page .template-card p,
+body.repayment-update-page .template-card blockquote,
+body.repayment-update-page .faq-section p,
+body.repayment-update-page .lt-toolCard p {
+  width: auto;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  overflow-wrap: break-word;
+}
+
+body.repayment-update-page .lt-toolsSection > p {
+  max-width: 74ch;
+}
+
+.repayment-update-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.62fr);
+}
+
+.repayment-update-hero .lt-heroBody {
+  font-weight: 700;
+}
+
+.repayment-update-note {
+  max-width: 74ch;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.68);
+  color: rgba(24, 33, 43, 0.68) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.55 !important;
+}
+
+.repayment-update-hero-visual {
+  width: min(100%, 34rem);
+  margin: 0;
+  line-height: 0;
+}
+
+.repayment-update-hero-visual img,
+.repayment-article-image img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: #ffffff;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.12);
+}
+
+.repayment-answer-card,
+.repayment-mini-card,
+.repayment-step-card,
+.repayment-comparison-card,
+.repayment-product-bridge {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+.repayment-direct-answer .repayment-answer-card {
+  max-width: 60rem;
+  padding: clamp(1.1rem, 2.6vw, 1.75rem);
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.22), transparent 42%),
+    rgba(255, 255, 255, 0.94);
+}
+
+.repayment-answer-card > * + * {
+  margin-top: 1rem;
+}
+
+.repayment-copy-status {
+  min-height: 1.2em;
+  color: #355428 !important;
+  font-size: 0.92rem !important;
+  font-weight: 800;
+}
+
+.repayment-copy-panel {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: end;
+  margin-top: 1rem;
+}
+
+.repayment-copy-panel.template-card {
+  padding: clamp(1rem, 2.2vw, 1.25rem);
+  border-color: rgba(74, 114, 56, 0.16);
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.98), rgba(248, 252, 245, 0.94));
+}
+
+.repayment-copy-panel h3 {
+  margin: 0 0 0.65rem !important;
+}
+
+.repayment-copy-panel .template-card__message,
+.repayment-number-card .template-card__message {
+  margin: 0;
+  padding: 1rem 1rem 1rem 1.1rem;
+  border-left: 4px solid #afe67e;
+  border-radius: 16px;
+  background: rgba(175, 230, 126, 0.11);
+  color: #18212b !important;
+  font-size: 1rem !important;
+  line-height: 1.62 !important;
+}
+
+.repayment-jump-grid,
+.repayment-step-grid,
+.repayment-template-grid,
+.repayment-number-grid,
+.repayment-trust-grid,
+.repayment-comparison-grid,
+.repayment-related-grid {
+  display: grid;
+  gap: 1rem;
+}
+
+.repayment-jump-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.repayment-jump-subtitle {
+  margin: 1.5rem 0 0 !important;
+  font-size: 1.02rem !important;
+}
+
+.repayment-jump-grid a {
+  display: flex;
+  align-items: center;
+  min-height: 4.2rem;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #18212b;
+  font-weight: 800;
+  line-height: 1.3;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+.repayment-jump-grid a:hover {
+  color: #355428 !important;
+  border-color: rgba(74, 114, 56, 0.28);
+}
+
+.repayment-step-grid {
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.repayment-step-card {
+  padding: 1.15rem;
+}
+
+.repayment-step-card span {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.85rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.32);
+  color: #274218;
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+.repayment-step-card h3,
+.repayment-mini-card h3,
+.repayment-comparison-card h3,
+.repayment-number-card h3,
+.repayment-product-bridge h3 {
+  margin: 0 0 0.7rem !important;
+}
+
+.repayment-step-card p,
+.repayment-mini-card p,
+.repayment-comparison-card li,
+.repayment-number-card p,
+.repayment-product-bridge p {
+  color: rgba(24, 33, 43, 0.74) !important;
+  font-size: 0.98rem !important;
+  line-height: 1.58 !important;
+}
+
+.repayment-step-card blockquote {
+  margin: 0.8rem 0 0;
+  padding: 0.85rem 0.9rem;
+  border-left: 3px solid rgba(53, 84, 40, 0.28);
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.92);
+  color: #18212b !important;
+  font-size: 0.94rem !important;
+  line-height: 1.5 !important;
+}
+
+.repayment-article-image {
+  width: min(100%, 56rem);
+  margin-top: 1.35rem;
+}
+
+.repayment-anatomy-image {
+  width: min(100%, 50rem);
+}
+
+.repayment-template-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  margin-top: 1.25rem;
+}
+
+.repayment-template-grid .template-card,
+.repayment-number-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.85rem;
+}
+
+.repayment-template-grid .template-card__message {
+  flex: 1 1 auto;
+}
+
+.repayment-table-wrap {
+  width: 100%;
+  margin-top: 1.15rem;
+  overflow-x: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.08);
+}
+
+.repayment-comparison-table {
+  width: 100%;
+  min-width: 760px;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+.repayment-comparison-table th,
+.repayment-comparison-table td {
+  padding: 0.95rem 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  color: rgba(24, 33, 43, 0.82);
+  font-size: 0.95rem;
+  line-height: 1.45;
+  text-align: left;
+  vertical-align: top;
+}
+
+.repayment-comparison-table th {
+  background: rgba(175, 230, 126, 0.17);
+  color: #24371b;
+  font-weight: 900;
+}
+
+.repayment-comparison-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.repayment-number-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.repayment-number-card {
+  padding: clamp(1rem, 2.2vw, 1.25rem);
+}
+
+.repayment-mini-ledger {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.repayment-mini-ledger div {
+  padding: 0.75rem 0.8rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.88);
+}
+
+.repayment-mini-ledger dt {
+  color: rgba(24, 33, 43, 0.58);
+  font-size: 0.74rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.repayment-mini-ledger dd {
+  margin: 0.25rem 0 0;
+  color: #18212b;
+  font-size: 1.18rem;
+  font-weight: 900;
+  line-height: 1.1;
+}
+
+.repayment-list-card {
+  padding: clamp(1rem, 2.2vw, 1.35rem);
+}
+
+.repayment-list-card h3 {
+  margin: 0 0 0.8rem !important;
+}
+
+.repayment-list-card ul,
+.repayment-comparison-card ul {
+  display: grid;
+  gap: 0.55rem;
+  margin: 0;
+  padding-left: 1.15rem !important;
+}
+
+.repayment-formula-strip {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 1rem 0;
+  padding: 0.85rem 1rem;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 16px;
+  background: rgba(175, 230, 126, 0.16);
+  color: #18212b;
+}
+
+.repayment-formula-strip strong {
+  color: #274218;
+}
+
+.repayment-formula-strip span {
+  color: rgba(24, 33, 43, 0.72);
+}
+
+.repayment-trust-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.repayment-mini-card {
+  padding: 1.15rem;
+}
+
+.repayment-comparison-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  margin-top: 1.25rem;
+}
+
+.repayment-comparison-card {
+  padding: 1.25rem;
+}
+
+.repayment-comparison-card--product {
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.28), transparent 44%),
+    rgba(255, 255, 255, 0.94);
+}
+
+.repayment-product-bridge {
+  margin-top: 1rem;
+  padding: clamp(1.1rem, 2.6vw, 1.6rem);
+  background:
+    radial-gradient(circle at top left, rgba(228, 228, 184, 0.34), transparent 34%),
+    rgba(255, 255, 255, 0.92);
+}
+
+.repayment-related-grid {
+  grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
+}
+
+.repayment-final-cta {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.repayment-final-cta h2 {
+  margin-bottom: 0 !important;
+}
+
+body.repayment-update-page .copy-button:disabled {
+  opacity: 0.55;
+  cursor: not-allowed;
+}
+
+@media (max-width: 1180px) {
+  .repayment-step-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 980px) {
+  .repayment-update-hero,
+  .repayment-number-grid,
+  .repayment-comparison-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .repayment-update-hero-visual {
+    justify-self: start;
+    width: min(100%, 36rem);
+  }
+
+  .repayment-jump-grid,
+  .repayment-trust-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 736px) {
+  body.repayment-update-page article.post.featured {
+    width: 100%;
+    padding-top: 1.05rem;
+  }
+
+  body.repayment-update-page .lt-breadcrumb,
+  body.repayment-update-page .lt-toolsHero,
+  body.repayment-update-page .lt-toolsSection,
+  body.repayment-update-page .lt-finalCta {
+    width: 100%;
+    max-width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body.repayment-update-page #main article.post.featured header.major > h1,
+  body.repayment-update-page article.post.featured h1 {
+    font-size: clamp(1.72rem, 7.3vw, 2.12rem);
+    line-height: 1.08;
+  }
+
+  body.repayment-update-page .lt-breadcrumb span[aria-current="page"],
+  body.repayment-update-page .lt-breadcrumb a[href="../"] + span {
+    display: none;
+  }
+
+  .repayment-update-hero {
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  .repayment-update-hero-visual,
+  .repayment-article-image {
+    display: block;
+    width: 100%;
+  }
+
+  .repayment-update-hero-visual img,
+  .repayment-article-image img {
+    border-radius: 18px;
+  }
+
+  .repayment-jump-grid,
+  .repayment-step-grid,
+  .repayment-template-grid,
+  .repayment-trust-grid,
+  .repayment-copy-panel,
+  .repayment-mini-ledger {
+    grid-template-columns: 1fr;
+  }
+
+  .repayment-answer-card,
+  .repayment-mini-card,
+  .repayment-step-card,
+  .repayment-comparison-card,
+  .repayment-product-bridge,
+  .repayment-table-wrap,
+  .repayment-number-card,
+  .repayment-copy-panel.template-card {
+    border-radius: 18px;
+  }
+
+  .repayment-table-wrap {
+    overflow-x: visible;
+    border: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .repayment-comparison-table {
+    display: block;
+    min-width: 0;
+  }
+
+  .repayment-comparison-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .repayment-comparison-table tbody {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .repayment-comparison-table tr {
+    display: grid;
+    gap: 0.65rem;
+    padding: 0.95rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.94);
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+  }
+
+  .repayment-comparison-table td {
+    display: grid;
+    grid-template-columns: minmax(6.5rem, 0.34fr) minmax(0, 1fr);
+    gap: 0.6rem;
+    padding: 0 !important;
+    border-bottom: 0;
+    font-size: 0.92rem;
+  }
+
+  .repayment-comparison-table td::before {
+    content: attr(data-label);
+    color: rgba(24, 33, 43, 0.62);
+    font-size: 0.78rem;
+    font-weight: 900;
+    line-height: 1.35;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+}
