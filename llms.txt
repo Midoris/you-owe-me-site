@@ -21,6 +21,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 ## Core pages
 
 - [Home](https://you-owe-me.com/)
+- [Find your money situation](https://you-owe-me.com/find/): A situation router that helps visitors choose the right You Owe Me guide, tool, solution, or tracker for money owed, repayments, family reimbursements, roommate costs, temporary support, running balances, and shared expenses.
 - [Features](https://you-owe-me.com/features/): Deeper feature overview covering running balances, Split Entry, Balance Replay, Relationship Timeline, Loan Records, Smart Money Check-Ins, Money Conversations, Live Link, reminders, recurring entries, PDF statements, interest tracking, and offline use.
 - [Quick Start Guide](https://you-owe-me.com/quick-start/): Lightweight guide explaining how YouOweMe works: one running balance per person, entries, repayments, Split Entry, Loan Records, reminders, Smart Money Check-Ins, Money Conversations, Live Link, statements, Relationship Timeline, Balance Replay, and tracking modes.
 - [Reviews](https://you-owe-me.com/reviews/): Selected App Store reviews for You Owe Me, including 4.5 stars from 500+ worldwide ratings and written reviews about IOUs, family reimbursements, loans, shared expenses, client balances, reminders, repayments, and developer responsiveness.
