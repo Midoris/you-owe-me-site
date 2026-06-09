@@ -373,15 +373,8 @@ body.repayment-update-page .lt-toolsSection > p {
 
 .repayment-formula-strip strong {
   color: #274218;
-}
-
-.repayment-formula-equals {
-  color: #274218 !important;
   font-weight: 900;
-}
-
-.repayment-formula-strip span {
-  color: rgba(24, 33, 43, 0.72);
+  line-height: 1.35;
 }
 
 body.repayment-update-page .faq-section summary h3 {
