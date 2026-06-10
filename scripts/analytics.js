@@ -263,8 +263,23 @@ function bindTrackedLinkClicks() {
     link.dataset.linkAnalyticsBound = "1";
     link.addEventListener("click", function () {
       const eventName = sanitizeText(link.dataset.trackEvent, 80) || "site_link_click";
+      const bestNextStepModule = link.closest('[data-module="best-next-step"]');
+      const bestNextStepPayload = bestNextStepModule
+        ? {
+            source_page: sanitizeText(link.dataset.sourcePage || bestNextStepModule.dataset.sourcePage, 120),
+            source_cluster: sanitizeText(link.dataset.sourceCluster || bestNextStepModule.dataset.sourceCluster, 80),
+            destination_url: sanitizeText(link.href, 240),
+            destination_cluster: sanitizeText(link.dataset.destinationCluster, 80),
+            step_type: sanitizeText(link.dataset.stepType, 40),
+            step_intent: sanitizeText(link.dataset.stepIntent, 80),
+            step_destination: sanitizeText(link.dataset.stepDestination, 160),
+            step_position: sanitizeText(link.dataset.stepPosition, 10),
+            module_variant: sanitizeText(link.dataset.moduleVariant || bestNextStepModule.dataset.moduleVariant, 40),
+            module_template: sanitizeText(link.dataset.moduleTemplate || bestNextStepModule.dataset.moduleTemplate, 80),
+          }
+        : {};
 
-      void trackEvent(eventName, Object.assign({}, getSaleParams(), {
+      void trackEvent(eventName, Object.assign({}, getSaleParams(), bestNextStepPayload, {
         cta_location: getCtaLocation(link),
         link_url: link.href,
         link_text: sanitizeText(link.getAttribute("aria-label") || link.textContent, 120),

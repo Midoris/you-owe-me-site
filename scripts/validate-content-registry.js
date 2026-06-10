@@ -6,6 +6,7 @@ const { pathToFileURL } = require("url");
 
 const rootDir = path.resolve(__dirname, "..");
 const registryPath = path.join(rootDir, "content", "content-registry.mjs");
+const bestNextStepComponentPath = path.join(rootDir, "scripts", "best-next-step-component.mjs");
 
 const requiredFields = [
   "url",
@@ -63,6 +64,27 @@ const clusters = new Set([
 
 const statuses = new Set(["live", "planned", "draft"]);
 const priorities = new Set(["core", "high", "medium", "low"]);
+const bestNextStepTypes = new Set(["tool", "guide", "solution", "feature", "app", "compare", "template", "anchor", "hub"]);
+const bestNextStepIntents = new Set([
+  "clarify_amount",
+  "calculate_split",
+  "calculate_running_balance",
+  "plan_repayment",
+  "write_message",
+  "browse_examples",
+  "confirm_payment",
+  "create_record",
+  "track_ongoing_balance",
+  "set_boundary",
+  "compare_methods",
+  "download_app",
+  "choose_starting_point",
+  "handle_partial_repayment",
+  "send_update",
+  "family_record",
+  "roommate_settle_up",
+]);
+const vagueLinkText = new Set(["read more", "learn more", "click here", "download now"]);
 
 function routeFilePath(url) {
   if (url === "/") return path.join(rootDir, "index.html");
@@ -71,6 +93,204 @@ function routeFilePath(url) {
 
 function isMissing(value) {
   return value === undefined || value === null || (typeof value === "string" && value.trim() === "");
+}
+
+function routeFromIndexPath(filePath) {
+  const relative = path.relative(rootDir, filePath).split(path.sep).join("/");
+  if (relative === "index.html") return "/";
+  return `/${path.dirname(relative)}/`;
+}
+
+function collectIndexRoutes(dir, routes) {
+  for (const name of fs.readdirSync(dir)) {
+    if (name === ".git" || name === "assets" || name === "images" || name === "downloads") continue;
+
+    const filePath = path.join(dir, name);
+    const stat = fs.statSync(filePath);
+    if (stat.isDirectory()) {
+      collectIndexRoutes(filePath, routes);
+      continue;
+    }
+
+    if (name === "index.html") {
+      routes.set(routeFromIndexPath(filePath), filePath);
+    }
+  }
+}
+
+function getHtml(filePath, htmlCache) {
+  if (!htmlCache.has(filePath)) {
+    htmlCache.set(filePath, fs.readFileSync(filePath, "utf8"));
+  }
+
+  return htmlCache.get(filePath);
+}
+
+function splitHref(href) {
+  const hashIndex = href.indexOf("#");
+  if (hashIndex === -1) {
+    return { pathname: href, hash: "" };
+  }
+
+  return {
+    pathname: href.slice(0, hashIndex) || "",
+    hash: href.slice(hashIndex),
+  };
+}
+
+function hasAnchor(filePath, hash, htmlCache) {
+  if (!hash) return true;
+
+  const id = hash.slice(1);
+  if (!id) return false;
+
+  const html = getHtml(filePath, htmlCache);
+  const escapedId = id.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
+  return new RegExp(`\\sid=(["'])${escapedId}\\1`).test(html);
+}
+
+function isAppStoreUrl(url) {
+  return /^https:\/\/apps\.apple\.com\/.+id1147058670/.test(url);
+}
+
+function validateBestNextStepHref(entry, step, errors, warnings, byUrl, htmlCache) {
+  const href = step.resolved.href;
+
+  if (!href) {
+    errors.push(`${entry.url}: Best Next Step "${step.title}" has an empty href`);
+    return;
+  }
+
+  if (href.startsWith("#")) {
+    if (!hasAnchor(routeFilePath(entry.url), href, htmlCache)) {
+      errors.push(`${entry.url}: Best Next Step anchor ${href} does not exist on the source page`);
+    }
+    return;
+  }
+
+  if (/^https?:\/\//.test(href)) {
+    if (!isAppStoreUrl(href)) {
+      errors.push(`${entry.url}: Best Next Step external href must be an approved App Store URL: ${href}`);
+    }
+
+    if (step.type !== "app") {
+      errors.push(`${entry.url}: Best Next Step external App Store href must use type "app"`);
+    }
+
+    if (step.resolved.appStoreFallback) {
+      warnings.push(`${entry.url}: App Store step "${step.title}" falls back to the general App Store URL because the CPP mapping is missing`);
+    }
+
+    return;
+  }
+
+  if (!href.startsWith("/")) {
+    errors.push(`${entry.url}: Best Next Step href must be internal, same-page anchor, or App Store URL: ${href}`);
+    return;
+  }
+
+  const { pathname, hash } = splitHref(href);
+  const normalizedPath = pathname === "/" ? "/" : pathname.endsWith("/") ? pathname : `${pathname}/`;
+
+  if (normalizedPath === entry.url && !hash) {
+    errors.push(`${entry.url}: Best Next Step must not link to itself unless it is a same-page anchor`);
+  }
+
+  const destination = byUrl.get(normalizedPath);
+  if (!destination) {
+    errors.push(`${entry.url}: Best Next Step references unknown internal URL ${normalizedPath}`);
+    return;
+  }
+
+  const destinationFile = routeFilePath(normalizedPath);
+  if (!fs.existsSync(destinationFile)) {
+    errors.push(`${entry.url}: Best Next Step destination file does not exist for ${normalizedPath}`);
+    return;
+  }
+
+  if (hash && !hasAnchor(destinationFile, hash, htmlCache)) {
+    errors.push(`${entry.url}: Best Next Step destination anchor ${href} does not exist`);
+  }
+}
+
+function validateBestNextSteps(entry, errors, warnings, byUrl, htmlCache, resolveBestNextSteps, cardTextSignatures, isStrategic) {
+  const explicit = entry.bestNextSteps;
+
+  if (explicit && explicit.enabled === false) {
+    if (isMissing(explicit.skipReason)) {
+      errors.push(`${entry.url}: disabled Best Next Step modules must include skipReason`);
+    }
+    return;
+  }
+
+  if (!explicit && !isStrategic) {
+    warnings.push(`${entry.url}: no Best Next Step config yet; review before the page is considered complete`);
+    return;
+  }
+
+  if (isStrategic && explicit && explicit.enabled === false) {
+    errors.push(`${entry.url}: strategic pages must not disable Best Next Step`);
+    return;
+  }
+
+  const resolved = resolveBestNextSteps(entry, byUrl);
+  if (!resolved || !resolved.enabled) {
+    errors.push(`${entry.url}: enabled Best Next Step did not resolve to a module`);
+    return;
+  }
+
+  if (!resolved.heading || !resolved.intro) {
+    errors.push(`${entry.url}: Best Next Step must include heading and intro`);
+  }
+
+  if (!Array.isArray(resolved.steps) || resolved.steps.length < 2 || resolved.steps.length > 4) {
+    errors.push(`${entry.url}: Best Next Step must resolve to 2-4 cards`);
+    return;
+  }
+
+  if (resolved.steps.length === 2) {
+    warnings.push(`${entry.url}: Best Next Step has only 2 cards; confirm that is intentional`);
+  }
+
+  if (resolved.source !== "page") {
+    warnings.push(`${entry.url}: Best Next Step uses ${resolved.source} fallback text; consider page-specific copy`);
+  }
+
+  for (const step of resolved.steps) {
+    for (const field of ["label", "title", "description", "href", "type", "intent", "priority"]) {
+      if (isMissing(step[field])) {
+        errors.push(`${entry.url}: Best Next Step card is missing ${field}`);
+      }
+    }
+
+    if (!bestNextStepTypes.has(step.type)) {
+      errors.push(`${entry.url}: unsupported Best Next Step card type ${step.type}`);
+    }
+
+    if (!bestNextStepIntents.has(step.intent)) {
+      errors.push(`${entry.url}: unsupported Best Next Step card intent ${step.intent}`);
+    }
+
+    const titleText = String(step.title || "").trim().toLowerCase();
+    const labelText = String(step.label || "").trim().toLowerCase();
+    if (vagueLinkText.has(titleText) || vagueLinkText.has(labelText)) {
+      errors.push(`${entry.url}: Best Next Step card uses vague link text "${step.title || step.label}"`);
+    }
+
+    validateBestNextStepHref(entry, step, errors, warnings, byUrl, htmlCache);
+
+    const signature = [
+      String(step.label || "").trim().toLowerCase(),
+      String(step.title || "").trim().toLowerCase(),
+      String(step.description || "").trim().toLowerCase(),
+      String(step.resolved.href || "").trim().toLowerCase(),
+    ].join("|");
+
+    if (!cardTextSignatures.has(signature)) {
+      cardTextSignatures.set(signature, []);
+    }
+    cardTextSignatures.get(signature).push({ url: entry.url, cluster: entry.cluster });
+  }
 }
 
 function validateArrayLinks(entry, field, errors, byUrl, expectedType) {
@@ -109,7 +329,13 @@ function validateArrayLinks(entry, field, errors, byUrl, expectedType) {
 
 async function main() {
   const errors = [];
-  const { contentRegistry, appStoreCppUrls } = await import(pathToFileURL(registryPath).href);
+  const warnings = [];
+  const htmlCache = new Map();
+  const cardTextSignatures = new Map();
+  const routeFiles = new Map();
+  const { contentRegistry, appStoreCppUrls, bestNextStepStrategicUrls } = await import(pathToFileURL(registryPath).href);
+  const { resolveBestNextSteps } = await import(pathToFileURL(bestNextStepComponentPath).href);
+  const strategicUrls = new Set(bestNextStepStrategicUrls || []);
 
   if (!Array.isArray(contentRegistry)) {
     throw new Error("contentRegistry must be an exported array");
@@ -126,6 +352,13 @@ async function main() {
       errors.push(`Duplicate URL: ${entry.url}`);
     }
     byUrl.set(entry.url, entry);
+  }
+
+  collectIndexRoutes(rootDir, routeFiles);
+  for (const [route] of routeFiles) {
+    if (!byUrl.has(route)) {
+      errors.push(`${route}: live route file does not have a registry entry`);
+    }
   }
 
   for (const entry of contentRegistry) {
@@ -196,12 +429,67 @@ async function main() {
     if (entry.pageType === "guide" && (entry.relatedPages.length === 0 || entry.relatedTools.length === 0 || entry.relatedSolutions.length === 0)) {
       errors.push(`${entry.url}: guides must not be isolated`);
     }
+
+    if (entry.status === "live") {
+      validateBestNextSteps(
+        entry,
+        errors,
+        warnings,
+        byUrl,
+        htmlCache,
+        resolveBestNextSteps,
+        cardTextSignatures,
+        strategicUrls.has(entry.url)
+      );
+    }
+  }
+
+  for (const url of strategicUrls) {
+    const entry = byUrl.get(url);
+    if (!entry) {
+      errors.push(`${url}: strategic Best Next Step URL is missing from registry`);
+      continue;
+    }
+
+    if (entry.status !== "live") {
+      errors.push(`${url}: strategic Best Next Step URL must be live`);
+    }
+
+    if (entry.bestNextSteps && entry.bestNextSteps.enabled === false) {
+      errors.push(`${url}: strategic Best Next Step URL must not disable the module`);
+    }
+
+    const filePath = routeFilePath(url);
+    if (fs.existsSync(filePath)) {
+      const html = getHtml(filePath, htmlCache);
+      if (!html.includes("<!-- best-next-step:start -->") || !html.includes("<!-- best-next-step:end -->")) {
+        errors.push(`${url}: strategic page is missing Best Next Step marker comments`);
+      }
+    }
+  }
+
+  for (const [signature, usages] of cardTextSignatures) {
+    if (!signature.trim()) continue;
+
+    const clustersUsed = new Set(usages.map((usage) => usage.cluster));
+    if (usages.length >= 3 && clustersUsed.size > 1) {
+      errors.push(`Best Next Step card text is repeated across unrelated clusters: ${usages.map((usage) => usage.url).join(", ")}`);
+    }
   }
 
   if (errors.length > 0) {
     console.error(`Content registry validation failed with ${errors.length} issue(s):`);
     for (const error of errors) console.error(`- ${error}`);
+    if (warnings.length > 0) {
+      console.error(`Warnings (${warnings.length}):`);
+      for (const warning of warnings) console.error(`- ${warning}`);
+    }
     process.exit(1);
+  }
+
+  if (warnings.length > 0) {
+    console.warn(`Content registry validation passed with ${warnings.length} warning(s):`);
+    for (const warning of warnings) console.warn(`- ${warning}`);
   }
 
   console.log(`Content registry validation passed for ${contentRegistry.length} page(s).`);
