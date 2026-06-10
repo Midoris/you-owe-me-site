@@ -338,8 +338,8 @@ body.blog-page.temporary-help-answer-page article.post.featured .lt-toolsSection
   body.temporary-help-answer-page .lt-toolsHero,
   body.temporary-help-answer-page .lt-toolsSection,
   body.temporary-help-answer-page .lt-finalCta {
-    width: calc(100vw - 1.24rem);
-    max-width: calc(100vw - 1.24rem);
+    width: 100%;
+    max-width: 100%;
     margin-left: 0;
     margin-right: 0;
   }
