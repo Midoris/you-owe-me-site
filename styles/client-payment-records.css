@@ -174,42 +174,31 @@ body.client-payment-records-page .client-message-card {
 }
 
 body.client-payment-records-page .client-mini-ledger {
-  width: 100%;
-  border-collapse: separate;
-  border-spacing: 0 0.55rem;
+  display: grid;
+  gap: 0.55rem;
   padding: 0.75rem;
   border-radius: 16px;
   background: rgba(248, 250, 246, 0.9);
+  list-style: none;
 }
 
-body.client-payment-records-page .client-mini-ledger th {
-  padding: 0 0.55rem 0.1rem;
-  color: rgba(24, 33, 43, 0.58);
-  font-size: 0.72rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-align: left;
-  text-transform: uppercase;
-}
-
-body.client-payment-records-page .client-mini-ledger th:last-child {
-  text-align: right;
-}
-
-body.client-payment-records-page .client-mini-ledger td {
+body.client-payment-records-page .client-mini-ledger li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.8rem;
+  align-items: center;
   padding: 0.45rem 0.55rem;
+  border-radius: 12px;
   background: rgba(255, 255, 255, 0.78);
 }
 
-body.client-payment-records-page .client-mini-ledger td:first-child {
-  border-radius: 12px 0 0 12px;
+body.client-payment-records-page .client-mini-ledger span {
   color: rgba(24, 33, 43, 0.76);
   font-size: 0.92rem;
   line-height: 1.35;
 }
 
-body.client-payment-records-page .client-mini-ledger td:last-child {
-  border-radius: 0 12px 12px 0;
+body.client-payment-records-page .client-mini-ledger strong {
   color: rgba(24, 33, 43, 0.92);
   font-size: 0.96rem;
   font-weight: 800;
@@ -217,7 +206,7 @@ body.client-payment-records-page .client-mini-ledger td:last-child {
   white-space: nowrap;
 }
 
-body.client-payment-records-page .client-mini-ledger .client-mini-ledger-total td {
+body.client-payment-records-page .client-mini-ledger .client-mini-ledger-total {
   background: rgba(175, 230, 126, 0.2);
 }
 
@@ -245,45 +234,40 @@ body.client-payment-records-page .client-message-copy {
 }
 
 body.client-payment-records-page .client-feature-map {
-  width: 100%;
   max-width: 1040px;
   margin: 1.6rem auto 0;
   overflow: hidden;
-  border-collapse: separate;
-  border-spacing: 0;
   border-radius: 24px;
+  list-style: none;
 }
 
-body.client-payment-records-page .client-feature-map th,
-body.client-payment-records-page .client-feature-map td {
+body.client-payment-records-page .client-feature-map li {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.2fr);
+  gap: 1.35rem;
+  align-items: center;
   padding: 1rem 1.25rem;
   border-bottom: 1px solid rgba(15, 23, 42, 0.07);
-  text-align: left;
-  vertical-align: middle;
 }
 
-body.client-payment-records-page .client-feature-map tr:last-child td {
+body.client-payment-records-page .client-feature-map li:last-child {
   border-bottom: 0;
 }
 
-body.client-payment-records-page .client-feature-map th {
-  background: rgba(175, 230, 126, 0.14);
-  color: rgba(24, 33, 43, 0.62);
-  font-size: 0.78rem;
-  font-weight: 800;
-  letter-spacing: 0.08em;
-  text-transform: uppercase;
-}
-
-body.client-payment-records-page .client-feature-map td:first-child {
-  width: 44%;
+body.client-payment-records-page .client-feature-map span:first-child {
   color: rgba(24, 33, 43, 0.74);
   font-weight: 700;
 }
 
-body.client-payment-records-page .client-feature-map td:last-child {
+body.client-payment-records-page .client-feature-map span:last-child {
   color: #274218;
   font-weight: 800;
+}
+
+body.client-payment-records-page .client-feature-map strong {
+  color: rgba(24, 33, 43, 0.55);
+  font-size: 0.74rem;
+  letter-spacing: 0.06em;
 }
 
 body.client-payment-records-page .client-app-cta {
@@ -366,27 +350,18 @@ body.client-payment-records-page .client-microcopy {
     gap: 0.35rem;
   }
 
-  body.client-payment-records-page .client-feature-map {
-    font-size: 0.9rem;
-    table-layout: fixed;
-  }
-
-  body.client-payment-records-page .client-feature-map th,
-  body.client-payment-records-page .client-feature-map td {
+  body.client-payment-records-page .client-feature-map li {
+    grid-template-columns: 1fr;
+    gap: 0.45rem;
     padding: 0.82rem 0.78rem;
     overflow-wrap: anywhere;
-  }
-
-  body.client-payment-records-page .client-feature-map th {
-    font-size: 0.68rem;
   }
 
   body.client-payment-records-page .client-mini-ledger {
     padding: 0.65rem;
   }
 
-  body.client-payment-records-page .client-mini-ledger th,
-  body.client-payment-records-page .client-mini-ledger td {
+  body.client-payment-records-page .client-mini-ledger li {
     padding-left: 0.48rem;
     padding-right: 0.48rem;
   }
