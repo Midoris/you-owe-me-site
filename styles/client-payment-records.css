@@ -30,6 +30,7 @@ body.client-payment-records-page .client-checklist,
 body.client-payment-records-page .client-decision-grid,
 body.client-payment-records-page .client-record-panel,
 body.client-payment-records-page .client-ledger-grid,
+body.client-payment-records-page .client-pdf-grid,
 body.client-payment-records-page .client-message-grid {
   display: grid;
   gap: 1.25rem;
@@ -101,6 +102,28 @@ body.client-payment-records-page .client-decision-card ul {
 
 body.client-payment-records-page .client-workflow-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.client-payment-records-page .client-pdf-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.client-payment-records-page .client-pdf-grid .lt-detailCard {
+  padding: 1.35rem;
+}
+
+body.client-payment-records-page .client-pdf-grid .lt-detailCard h3 {
+  margin-top: 0;
+}
+
+body.client-payment-records-page .client-pdf-disclaimer {
+  max-width: 78ch;
+  margin: 1.4rem 0 0;
+  padding: 0.95rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(248, 250, 246, 0.92);
+  color: rgba(24, 33, 43, 0.74);
 }
 
 body.client-payment-records-page .client-decision-grid {
@@ -309,6 +332,10 @@ body.client-payment-records-page .client-microcopy {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
+  body.client-payment-records-page .client-pdf-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
   body.client-payment-records-page .client-record-panel {
     grid-template-columns: 1fr;
   }
@@ -335,6 +362,7 @@ body.client-payment-records-page .client-microcopy {
   body.client-payment-records-page .client-two-column,
   body.client-payment-records-page .client-workflow-grid,
   body.client-payment-records-page .client-decision-grid,
+  body.client-payment-records-page .client-pdf-grid,
   body.client-payment-records-page .client-ledger-grid,
   body.client-payment-records-page .client-message-grid {
     grid-template-columns: 1fr;
