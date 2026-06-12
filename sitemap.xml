@@ -145,6 +145,12 @@
     <priority>0.85</priority>
   </url>
   <url>
+    <loc>https://you-owe-me.com/solutions/client-payment-records/</loc>
+    <lastmod>2026-06-12</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.85</priority>
+  </url>
+  <url>
     <loc>https://you-owe-me.com/solutions/family-reimbursement-tracker/</loc>
     <lastmod>2026-06-10</lastmod>
     <changefreq>weekly</changefreq>

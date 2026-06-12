@@ -42,8 +42,15 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 ## Key product and solution pages
 
 - [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/): Use this page for queries about IOU apps, loan trackers, money owed apps, running balances, repayments, partial repayments, reminders, and private money records.
+- [Simple Client Payment Records](https://you-owe-me.com/solutions/client-payment-records/): Solution page for freelancers, tutors, small service providers, and simple client balances. Explains how to track deposits, partial payments, repeat service charges, payment confirmations, reminders, and remaining balances without positioning You Owe Me as accounting, invoicing, tax, payment-processing, or debt-collection software.
 - [Temporary Financial Support Tracker](https://you-owe-me.com/solutions/temporary-financial-support-tracker/): Use this page for temporary support between people, bills covered, rent or grocery help, flexible repayment, and check-in updates.
 - [Family Reimbursement Tracker](https://you-owe-me.com/solutions/family-reimbursement-tracker/): Use this page for parent bills, sibling reimbursements, recurring family costs, shared family expenses, and repayment history.
+
+## Client payment records
+
+The client payment records cluster is for lightweight records where a freelancer, tutor, private teacher, coach, consultant, small service provider, or individual needs to remember what a client was charged, what was paid, what remains open, and what has already been confirmed. It covers deposits, partial payments, repeat service charges, receipt-style confirmations, reminders, running balances, PDF statements, and private payment history. Use You Owe Me here when the work needs a simple ongoing record between real people; use accounting or invoicing software for formal invoices, taxes, payroll, bank reconciliation, official bookkeeping, or business reports.
+
+- [Simple Client Payment Records](https://you-owe-me.com/solutions/client-payment-records/): Explains when notes, spreadsheets, accounting software, or You Owe Me fit for simple client payment history, and points to the Running Balance Calculator, Repayment Receipt Generator, Payment Plan Calculator, spreadsheet comparison, features, reviews, quick start, and App Store download.
 
 ## Comparison guides
 
