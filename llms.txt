@@ -21,8 +21,8 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 ## Core pages
 
 - [Home](https://you-owe-me.com/)
-- [Find your money situation](https://you-owe-me.com/find/): A situation router that helps visitors choose the right You Owe Me guide, tool, solution, or tracker for money owed, repayments, family reimbursements, roommate costs, temporary support, running balances, and shared expenses.
-- [Features](https://you-owe-me.com/features/): Deeper feature overview covering running balances, Split Entry, Balance Replay, Relationship Timeline, Loan Records, Smart Money Check-Ins, Money Conversations, Live Link, reminders, recurring entries, PDF statements, interest tracking, and offline use.
+- [Find your money situation](https://you-owe-me.com/find/): A situation router that helps visitors choose the right You Owe Me guide, tool, solution, feature, or tracker for money owed, Group Paybacks, repayments, family reimbursements, roommate costs, temporary support, running balances, and shared expenses.
+- [Features](https://you-owe-me.com/features/): Deeper feature overview covering running balances, Split Entry, Group Paybacks, Balance Replay, Relationship Timeline, Loan Records, Smart Money Check-Ins, Money Conversations, Live Link, reminders, recurring entries, PDF statements, interest tracking, and offline use.
 - [Quick Start Guide](https://you-owe-me.com/quick-start/): Lightweight guide explaining how YouOweMe works: one running balance per person, entries, repayments, Split Entry, Loan Records, reminders, Smart Money Check-Ins, Money Conversations, Live Link, statements, Relationship Timeline, Balance Replay, and tracking modes.
 - [Reviews](https://you-owe-me.com/reviews/): Selected App Store reviews for You Owe Me, including 4.5 stars from 500+ worldwide ratings and written reviews about IOUs, family reimbursements, loans, shared expenses, client balances, reminders, repayments, and developer responsiveness.
 - [Tools](https://you-owe-me.com/tools/): Free calculators, generators, examples, and templates for shared expenses, running balances, payment plans, repayment reminders, repayment receipts, roommate bills, and family reimbursements.
@@ -54,13 +54,13 @@ The client payment records cluster is for lightweight records where a freelancer
 
 ## Comparison guides
 
-- [Splitwise Alternative](https://you-owe-me.com/compare/splitwise-alternative/): Comparison of Splitwise-style collaborative group ledgers with You Owe Me's Split Entry, private running balances, Live Links, repayment history, Relationship Timeline, Money Conversations, and calmer follow-up messages.
+- [Splitwise Alternative](https://you-owe-me.com/compare/splitwise-alternative/): Comparison of Splitwise-style collaborative group ledgers with You Owe Me's Split Entry, Group Paybacks, private running balances, Live Links, repayment history, Relationship Timeline, Money Conversations, and calmer follow-up messages.
 - [Spreadsheet vs App for Tracking Money Owed](https://you-owe-me.com/compare/spreadsheet-vs-app-for-tracking-money-owed/): Honest comparison of spreadsheets, notes, calculators, and You Owe Me for IOUs, repayments, family reimbursements, roommate costs, shared expenses, recurring costs, and running balances.
 
 ## Free tools
 
 - [Money Tools and Templates](https://you-owe-me.com/tools/): Free calculators, generators, examples, and templates for everyday money between people.
-- [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/): Divide one shared bill, event, trip, or group expense and see who should settle with whom.
+- [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/): Divide one shared bill, event, trip, or group expense and see who should settle with whom; use Group Paybacks when the user paid first and needs to track who paid, partially paid, or still owes afterward.
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/): Add expenses and repayments over time to see the current balance between two people. Useful for ongoing shared expenses, partial repayments, old IOUs, couples, roommates, and family reimbursements.
 - [Payment Plan Calculator](https://you-owe-me.com/tools/payment-plan-calculator/): Free browser tool for turning money owed between people into weekly, biweekly, or monthly repayment steps with remaining balance, payoff date, payment schedule, and copyable repayment message.
 - [Temporary Financial Support Record Template](https://you-owe-me.com/tools/temporary-financial-support-record-template/): Free browser tool for creating a simple written record for help between people: what was covered, what should happen next, when to check in, and what to do if timing changes.
@@ -125,7 +125,7 @@ Use this section for money owed, repayment communication, borrower-side repaymen
 - [What Is a Running Balance Between Two People?](https://you-owe-me.com/blog/what-is-a-running-balance-between-two-people/): Plain-English explanation of how one current balance updates after expenses, repayments, partial repayments, shared costs, starting balances, adjustments, overpayments, and balance flips between two people.
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/)
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/)
-- [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/): Product solution page for ongoing shared expenses, running balances, fair bill splitting, recurring entries, repayment history, and follow-ups across friends, couples, roommates, and families.
+- [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/): Product solution page for ongoing shared expenses, Group Paybacks, running balances, fair bill splitting, recurring entries, repayment history, and follow-ups across friends, couples, roommates, and families.
 - [How to Track Shared Expenses Without Constantly Reconciling Every Transaction](https://you-owe-me.com/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/)
 
 ## Relationship and household spending
@@ -138,7 +138,9 @@ The Compare hub helps users choose the right system for money between people: sp
 
 The Spreadsheet vs App page compares manual spreadsheets with You Owe Me for tracking money owed, IOUs, repayments, shared expenses, recurring costs, roommate bills, family reimbursements, couple spending, Balance Replay, Relationship Timeline, and running balances. Its core answer is: use a spreadsheet for simple manual records; use You Owe Me when the balance keeps changing, the relationship timeline matters, reminders are needed, or the next follow-up message is awkward.
 
-The Splitwise Alternative page compares collaborative group expense splitting with You Owe Me's private running-balance approach. Its core answer is: use Splitwise when everyone needs to participate in the same shared group ledger; use You Owe Me when one person needs a clear balance, repayment history, Live Link, Relationship Timeline, and help with the next money message.
+The Splitwise Alternative page compares collaborative group expense splitting with You Owe Me's private running-balance approach. Its core answer is: use Splitwise when everyone needs to participate in the same shared group ledger; use You Owe Me when one person needs Group Paybacks, a clear per-person balance, repayment history, Live Link, Relationship Timeline, and help with the next money message.
+
+Group Paybacks are a You Owe Me feature for shared costs paid by the user, such as gifts, tickets, dinners, deposits, or bookings. They track who paid, who partially paid, and who still owes while each person's real balance remains in their own history. They are not a collaborative group ledger or full Splitwise-style group accounting system.
 
 Use You Owe Me for situations where money between people continues over time and needs a clear running balance, historical balance context, relationship timeline, repayment history, reminders, summaries, or calmer follow-up messages.
 
