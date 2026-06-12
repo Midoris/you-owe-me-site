@@ -458,47 +458,133 @@
               <article class="client-ledger-card">
                 <h3>Tutor with weekly lessons</h3>
                 <p>A tutor teaches four weekly lessons at $40 each. The family pays $80 now and the rest at the end of the month.</p>
-                <div class="client-mini-ledger" aria-label="Tutor lesson ledger">
-                  <div><span>Week 1 lesson</span><strong>+$40</strong></div>
-                  <div><span>Week 2 lesson</span><strong>+$40</strong></div>
-                  <div><span>Payment received</span><strong>-$80</strong></div>
-                  <div><span>Week 3 lesson</span><strong>+$40</strong></div>
-                  <div><span>Week 4 lesson</span><strong>+$40</strong></div>
-                  <div class="client-mini-ledger-total"><span>Remaining balance</span><strong>$80</strong></div>
-                </div>
+                <table class="client-mini-ledger" aria-label="Tutor lesson ledger">
+                  <thead>
+                    <tr>
+                      <th scope="col">Item</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Week 1 lesson</td>
+                      <td>+$40</td>
+                    </tr>
+                    <tr>
+                      <td>Week 2 lesson</td>
+                      <td>+$40</td>
+                    </tr>
+                    <tr>
+                      <td>Payment received</td>
+                      <td>-$80</td>
+                    </tr>
+                    <tr>
+                      <td>Week 3 lesson</td>
+                      <td>+$40</td>
+                    </tr>
+                    <tr>
+                      <td>Week 4 lesson</td>
+                      <td>+$40</td>
+                    </tr>
+                    <tr class="client-mini-ledger-total">
+                      <td>Remaining balance</td>
+                      <td>$80</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <p><strong>Takeaway:</strong> The tutor can see the current balance without checking every message.</p>
               </article>
               <article class="client-ledger-card">
                 <h3>Freelancer with deposit and final payment</h3>
                 <p>A freelancer agrees on a $600 project. The client pays a $200 deposit, then a $250 milestone payment. The final balance is still open.</p>
-                <div class="client-mini-ledger" aria-label="Freelance project ledger">
-                  <div><span>Project total</span><strong>+$600</strong></div>
-                  <div><span>Deposit received</span><strong>-$200</strong></div>
-                  <div><span>Milestone payment</span><strong>-$250</strong></div>
-                  <div class="client-mini-ledger-total"><span>Remaining balance</span><strong>$150</strong></div>
-                </div>
+                <table class="client-mini-ledger" aria-label="Freelance project ledger">
+                  <thead>
+                    <tr>
+                      <th scope="col">Item</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Project total</td>
+                      <td>+$600</td>
+                    </tr>
+                    <tr>
+                      <td>Deposit received</td>
+                      <td>-$200</td>
+                    </tr>
+                    <tr>
+                      <td>Milestone payment</td>
+                      <td>-$250</td>
+                    </tr>
+                    <tr class="client-mini-ledger-total">
+                      <td>Remaining balance</td>
+                      <td>$150</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <p><strong>Takeaway:</strong> The record makes the final payment easy to explain.</p>
               </article>
               <article class="client-ledger-card">
                 <h3>Service provider with parts and labor</h3>
                 <p>A repair worker buys parts first, then adds labor after the job is finished. The client pays part in cash and the rest later.</p>
-                <div class="client-mini-ledger" aria-label="Parts and labor ledger">
-                  <div><span>Parts</span><strong>+$75</strong></div>
-                  <div><span>Labor</span><strong>+$120</strong></div>
-                  <div><span>Cash payment</span><strong>-$100</strong></div>
-                  <div class="client-mini-ledger-total"><span>Remaining balance</span><strong>$95</strong></div>
-                </div>
+                <table class="client-mini-ledger" aria-label="Parts and labor ledger">
+                  <thead>
+                    <tr>
+                      <th scope="col">Item</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Parts</td>
+                      <td>+$75</td>
+                    </tr>
+                    <tr>
+                      <td>Labor</td>
+                      <td>+$120</td>
+                    </tr>
+                    <tr>
+                      <td>Cash payment</td>
+                      <td>-$100</td>
+                    </tr>
+                    <tr class="client-mini-ledger-total">
+                      <td>Remaining balance</td>
+                      <td>$95</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <p><strong>Takeaway:</strong> The record shows what was included, not just what was paid.</p>
               </article>
               <article class="client-ledger-card">
                 <h3>Coach or consultant with a session package</h3>
                 <p>A coach sells a five-session package for $500. The client pays $250 upfront and $250 after the third session.</p>
-                <div class="client-mini-ledger" aria-label="Session package ledger">
-                  <div><span>Package</span><strong>+$500</strong></div>
-                  <div><span>Upfront payment</span><strong>-$250</strong></div>
-                  <div><span>Second payment</span><strong>-$250</strong></div>
-                  <div class="client-mini-ledger-total"><span>Remaining balance</span><strong>$0</strong></div>
-                </div>
+                <table class="client-mini-ledger" aria-label="Session package ledger">
+                  <thead>
+                    <tr>
+                      <th scope="col">Item</th>
+                      <th scope="col">Amount</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>Package</td>
+                      <td>+$500</td>
+                    </tr>
+                    <tr>
+                      <td>Upfront payment</td>
+                      <td>-$250</td>
+                    </tr>
+                    <tr>
+                      <td>Second payment</td>
+                      <td>-$250</td>
+                    </tr>
+                    <tr class="client-mini-ledger-total">
+                      <td>Remaining balance</td>
+                      <td>$0</td>
+                    </tr>
+                  </tbody>
+                </table>
                 <p><strong>Takeaway:</strong> The history still matters after the balance reaches zero because it confirms the package was paid.</p>
               </article>
             </div>
@@ -642,44 +728,48 @@
 
           <section class="lt-detailSection">
             <h2>Features that matter for simple client payment records</h2>
-            <div class="client-feature-map" role="table" aria-label="Features that matter for simple client payment records">
-              <div class="client-feature-row client-feature-row--head" role="row">
-                <div role="columnheader">Client need</div>
-                <div role="columnheader">How You Owe Me helps</div>
-              </div>
-              <div class="client-feature-row" role="row">
-                <div role="cell"><span>Client need</span>&ldquo;I need to know what this client still owes&rdquo;</div>
-                <div role="cell"><span>How You Owe Me helps</span>One running balance per client</div>
-              </div>
-              <div class="client-feature-row" role="row">
-                <div role="cell"><span>Client need</span>&ldquo;They paid a deposit first&rdquo;</div>
-                <div role="cell"><span>How You Owe Me helps</span>Record deposits and remaining balances</div>
-              </div>
-              <div class="client-feature-row" role="row">
-                <div role="cell"><span>Client need</span>&ldquo;They paid part of it&rdquo;</div>
-                <div role="cell"><span>How You Owe Me helps</span>Partial payment history</div>
-              </div>
-              <div class="client-feature-row" role="row">
-                <div role="cell"><span>Client need</span>&ldquo;This client pays every month&rdquo;</div>
-                <div role="cell"><span>How You Owe Me helps</span>Recurring entries and reminders</div>
-              </div>
-              <div class="client-feature-row" role="row">
-                <div role="cell"><span>Client need</span>&ldquo;I need to remember what the payment covered&rdquo;</div>
-                <div role="cell"><span>How You Owe Me helps</span>Notes on each entry</div>
-              </div>
-              <div class="client-feature-row" role="row">
-                <div role="cell"><span>Client need</span>&ldquo;I need to confirm payment clearly&rdquo;</div>
-                <div role="cell"><span>How You Owe Me helps</span>Receipt-style summaries</div>
-              </div>
-              <div class="client-feature-row" role="row">
-                <div role="cell"><span>Client need</span>&ldquo;I need to share the balance&rdquo;</div>
-                <div role="cell"><span>How You Owe Me helps</span>Clean summaries, Live Link, or PDF statements</div>
-              </div>
-              <div class="client-feature-row" role="row">
-                <div role="cell"><span>Client need</span>&ldquo;I want the record private&rdquo;</div>
-                <div role="cell"><span>How You Owe Me helps</span>Offline use and Face ID / Touch ID lock</div>
-              </div>
-            </div>
+            <table class="client-feature-map" aria-label="Features that matter for simple client payment records">
+              <thead>
+                <tr>
+                  <th scope="col">Client need</th>
+                  <th scope="col">How You Owe Me helps</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td>&ldquo;I need to know what this client still owes&rdquo;</td>
+                  <td>One running balance per client</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;They paid a deposit first&rdquo;</td>
+                  <td>Record deposits and remaining balances</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;They paid part of it&rdquo;</td>
+                  <td>Partial payment history</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;This client pays every month&rdquo;</td>
+                  <td>Recurring entries and reminders</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;I need to remember what the payment covered&rdquo;</td>
+                  <td>Notes on each entry</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;I need to confirm payment clearly&rdquo;</td>
+                  <td>Receipt-style summaries</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;I need to share the balance&rdquo;</td>
+                  <td>Clean summaries, Live Link, or PDF statements</td>
+                </tr>
+                <tr>
+                  <td>&ldquo;I want the record private&rdquo;</td>
+                  <td>Offline use and Face ID / Touch ID lock</td>
+                </tr>
+              </tbody>
+            </table>
           </section>
 
           <section class="lt-detailSection">
