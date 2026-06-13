@@ -1197,6 +1197,340 @@ body.temporary-support-page .temporary-feature-row span {
   display: none;
 }
 
+body.elderly-parent-expense-page .lt-detailHeroGrid {
+  grid-template-columns: minmax(0, 1fr) minmax(22rem, 34rem);
+}
+
+body.elderly-parent-expense-page .elderly-hero-visual {
+  width: 100%;
+}
+
+body.elderly-parent-expense-page .elderly-hero-visual img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+body.elderly-parent-expense-page #main > .post .lt-detailHero header.major > h1 {
+  font-size: clamp(3rem, 5.6vw, 4.15rem);
+  line-height: 1.06;
+}
+
+body.elderly-parent-expense-page .elderly-answer-panel {
+  padding: clamp(1.25rem, 2.6vw, 1.85rem);
+}
+
+body.elderly-parent-expense-page .elderly-use-row,
+body.elderly-parent-expense-page .elderly-check-grid,
+body.elderly-parent-expense-page .elderly-principle-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 0.65rem;
+  margin-top: 1.2rem;
+}
+
+body.elderly-parent-expense-page .elderly-use-row span,
+body.elderly-parent-expense-page .elderly-check-grid span,
+body.elderly-parent-expense-page .elderly-principle-grid span {
+  position: relative;
+  min-width: 0;
+  padding: 0.72rem 0.85rem 0.72rem 2.35rem;
+  border-radius: 16px;
+  background: rgba(248, 250, 246, 0.92);
+  color: rgba(24, 33, 43, 0.82);
+  font-size: 0.95rem;
+  font-weight: 700;
+  line-height: 1.42;
+  box-shadow: inset 0 0 0 1px rgba(15, 23, 42, 0.06);
+}
+
+body.elderly-parent-expense-page .elderly-use-row span::before,
+body.elderly-parent-expense-page .elderly-check-grid span::before,
+body.elderly-parent-expense-page .elderly-principle-grid span::before {
+  content: "✓";
+  position: absolute;
+  top: 0.77rem;
+  left: 0.85rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.1rem;
+  height: 1.1rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.3);
+  color: #274218;
+  font-size: 0.68rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.elderly-parent-expense-page .elderly-table-wrap {
+  margin-top: 1.45rem;
+  overflow-x: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.elderly-parent-expense-page .elderly-tracking-table {
+  width: 100%;
+  min-width: 720px;
+  border-collapse: collapse;
+}
+
+body.elderly-parent-expense-page .elderly-tracking-table th,
+body.elderly-parent-expense-page .elderly-tracking-table td {
+  padding: 0.88rem 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  text-align: left;
+  vertical-align: top;
+}
+
+body.elderly-parent-expense-page .elderly-tracking-table th {
+  background: rgba(175, 230, 126, 0.16);
+  color: rgba(24, 33, 43, 0.68);
+  font-size: 0.78rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+body.elderly-parent-expense-page .elderly-tracking-table td {
+  color: rgba(24, 33, 43, 0.74);
+  font-size: 0.98rem;
+  line-height: 1.52;
+}
+
+body.elderly-parent-expense-page .elderly-tracking-table td:first-child {
+  width: 34%;
+  color: rgba(24, 33, 43, 0.92);
+  font-weight: 800;
+}
+
+body.elderly-parent-expense-page .elderly-tracking-table tr:last-child td {
+  border-bottom: 0;
+}
+
+body.elderly-parent-expense-page .elderly-category-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.elderly-parent-expense-page .elderly-callout,
+body.elderly-parent-expense-page .elderly-app-cta-panel {
+  margin-top: 1.4rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(82, 131, 48, 0.18);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.18), rgba(255, 255, 255, 0.94));
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+}
+
+body.elderly-parent-expense-page .elderly-callout {
+  max-width: 74ch;
+  color: rgba(24, 33, 43, 0.76);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+body.elderly-parent-expense-page .elderly-ledger-card {
+  display: grid;
+  gap: 0.62rem;
+  max-width: 980px;
+  margin: 1.55rem 0 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.elderly-parent-expense-page .elderly-ledger-row {
+  display: grid;
+  grid-template-columns: 5.5rem minmax(0, 1fr) 6.2rem minmax(8rem, 0.75fr);
+  gap: 0.8rem;
+  align-items: center;
+  padding: 0.72rem 0.85rem;
+  border-radius: 15px;
+  background: rgba(248, 250, 246, 0.9);
+}
+
+body.elderly-parent-expense-page .elderly-ledger-row span,
+body.elderly-parent-expense-page .elderly-ledger-row strong {
+  min-width: 0;
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.95rem;
+  line-height: 1.35;
+}
+
+body.elderly-parent-expense-page .elderly-ledger-row strong {
+  color: rgba(24, 33, 43, 0.94);
+  font-weight: 800;
+}
+
+body.elderly-parent-expense-page .elderly-ledger-row span:nth-child(3) {
+  color: rgba(24, 33, 43, 0.94);
+  font-weight: 900;
+  text-align: right;
+  white-space: nowrap;
+}
+
+body.elderly-parent-expense-page .elderly-ledger-row--repayment span:nth-child(3) {
+  color: #355428;
+}
+
+body.elderly-parent-expense-page .elderly-open-amount {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.95rem 1rem;
+  border-radius: 16px;
+  background: rgba(175, 230, 126, 0.2);
+  color: rgba(24, 33, 43, 0.86);
+}
+
+body.elderly-parent-expense-page .elderly-open-amount span {
+  font-size: 0.98rem;
+  font-weight: 800;
+}
+
+body.elderly-parent-expense-page .elderly-open-amount strong {
+  color: #274218;
+  font-size: 1.28rem;
+}
+
+body.elderly-parent-expense-page .elderly-workflow-grid .solution-workflow-card {
+  padding-bottom: 1.35rem;
+}
+
+body.elderly-parent-expense-page .elderly-workflow-grid ol {
+  margin: 0.85rem 0 0;
+  padding-left: 1.25rem;
+}
+
+body.elderly-parent-expense-page .elderly-workflow-grid li {
+  margin: 0.28rem 0;
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.98rem;
+  line-height: 1.5;
+}
+
+body.elderly-parent-expense-page .elderly-use-case {
+  margin-top: 1rem !important;
+  color: rgba(24, 33, 43, 0.72);
+  font-size: 0.96rem !important;
+  line-height: 1.55 !important;
+}
+
+body.elderly-parent-expense-page .elderly-feature-grid,
+body.elderly-parent-expense-page .elderly-message-grid,
+body.elderly-parent-expense-page .elderly-mistake-list {
+  display: grid;
+  gap: 1.25rem;
+  margin-top: 1.6rem;
+}
+
+body.elderly-parent-expense-page .elderly-feature-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.elderly-parent-expense-page .elderly-message-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.elderly-parent-expense-page .elderly-mistake-list {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.elderly-parent-expense-page .elderly-feature-card,
+body.elderly-parent-expense-page .elderly-message-card,
+body.elderly-parent-expense-page .elderly-mistake-list article {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.elderly-parent-expense-page .elderly-feature-card,
+body.elderly-parent-expense-page .elderly-message-card,
+body.elderly-parent-expense-page .elderly-mistake-list article {
+  padding: 1.35rem;
+}
+
+body.elderly-parent-expense-page .elderly-feature-card h3,
+body.elderly-parent-expense-page .elderly-message-card h3,
+body.elderly-parent-expense-page .elderly-mistake-list h3 {
+  margin-top: 0;
+}
+
+body.elderly-parent-expense-page .elderly-feature-card p,
+body.elderly-parent-expense-page .elderly-message-card p,
+body.elderly-parent-expense-page .elderly-mistake-list p {
+  margin: 0;
+}
+
+body.elderly-parent-expense-page .elderly-feature-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 246, 0.92));
+}
+
+body.elderly-parent-expense-page .elderly-feature-card::before {
+  content: "";
+  display: block;
+  width: 2.25rem;
+  height: 0.22rem;
+  margin-bottom: 0.95rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.58);
+}
+
+body.elderly-parent-expense-page .elderly-app-cta-panel {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+body.elderly-parent-expense-page .elderly-app-cta-panel p {
+  max-width: 58ch;
+  margin: 0;
+  color: rgba(24, 33, 43, 0.78);
+  font-weight: 700;
+}
+
+body.elderly-parent-expense-page .elderly-message-card {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(228, 238, 248, 0.34));
+}
+
+body.elderly-parent-expense-page .elderly-message-card p {
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+body.elderly-parent-expense-page .elderly-mistake-list article {
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 246, 0.9));
+}
+
+body.elderly-parent-expense-page .elderly-mistake-list h3 {
+  font-size: 1.05rem;
+}
+
+body.elderly-parent-expense-page .elderly-mistake-list p {
+  color: rgba(24, 33, 43, 0.72);
+  line-height: 1.58;
+}
+
+body.elderly-parent-expense-page .elderly-wide-visual img {
+  object-fit: cover;
+}
+
 @media (max-width: 980px) {
   body.solution-detail-page article.post.featured {
     width: calc(100% - 1.5rem);
@@ -1676,5 +2010,173 @@ body.temporary-support-page .temporary-feature-row span {
 
   body.temporary-support-page .solution-highlight-chip {
     white-space: normal;
+  }
+}
+
+@media (max-width: 980px) {
+  body.elderly-parent-expense-page .lt-detailHeroGrid,
+  body.elderly-parent-expense-page .elderly-category-grid,
+  body.elderly-parent-expense-page .elderly-feature-grid,
+  body.elderly-parent-expense-page .elderly-mistake-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.elderly-parent-expense-page .elderly-message-grid {
+    grid-template-columns: 1fr;
+  }
+
+  body.elderly-parent-expense-page .elderly-hero-visual {
+    justify-self: center;
+    max-width: 42rem;
+  }
+}
+
+@media (max-width: 736px) {
+  body.elderly-parent-expense-page #main > .post.featured {
+    max-width: 100%;
+    overflow-x: hidden;
+    padding-left: 0.6rem !important;
+    padding-right: 0.6rem !important;
+  }
+
+  body.elderly-parent-expense-page #main > .post .lt-detailHero header.major > h1 {
+    font-size: clamp(1.82rem, 8.2vw, 2.22rem);
+  }
+
+  body.elderly-parent-expense-page .lt-breadcrumb,
+  body.elderly-parent-expense-page .lt-breadcrumb *,
+  body.elderly-parent-expense-page .lt-detailHero,
+  body.elderly-parent-expense-page .lt-detailHeroGrid,
+  body.elderly-parent-expense-page .lt-detailHeroContent,
+  body.elderly-parent-expense-page .solution-hero-highlights,
+  body.elderly-parent-expense-page .solution-highlight-chip,
+  body.elderly-parent-expense-page .elderly-answer-panel,
+  body.elderly-parent-expense-page .elderly-callout,
+  body.elderly-parent-expense-page .elderly-app-cta-panel,
+  body.elderly-parent-expense-page .elderly-ledger-card {
+    box-sizing: border-box;
+    min-width: 0;
+    max-width: 100%;
+  }
+
+  body.elderly-parent-expense-page .lt-breadcrumb {
+    overflow-wrap: anywhere;
+  }
+
+  body.elderly-parent-expense-page .lt-breadcrumb [aria-current="page"] {
+    flex: 1 1 100%;
+    overflow-wrap: break-word;
+  }
+
+  body.elderly-parent-expense-page .lt-detailHero p,
+  body.elderly-parent-expense-page .lt-detailSection p,
+  body.elderly-parent-expense-page .solution-highlight-chip,
+  body.elderly-parent-expense-page .elderly-use-row span,
+  body.elderly-parent-expense-page .elderly-check-grid span,
+  body.elderly-parent-expense-page .elderly-principle-grid span,
+  body.elderly-parent-expense-page .elderly-message-card p,
+  body.elderly-parent-expense-page .elderly-mistake-list h3 {
+    overflow-wrap: break-word;
+    word-break: normal;
+  }
+
+  body.elderly-parent-expense-page .lt-detailHeroGrid,
+  body.elderly-parent-expense-page .elderly-use-row,
+  body.elderly-parent-expense-page .elderly-check-grid,
+  body.elderly-parent-expense-page .elderly-principle-grid,
+  body.elderly-parent-expense-page .elderly-category-grid,
+  body.elderly-parent-expense-page .elderly-feature-grid,
+  body.elderly-parent-expense-page .elderly-message-grid,
+  body.elderly-parent-expense-page .elderly-mistake-list {
+    grid-template-columns: 1fr;
+  }
+
+  body.elderly-parent-expense-page .elderly-hero-visual {
+    width: 100%;
+  }
+
+  body.elderly-parent-expense-page .elderly-hero-visual img {
+    border-radius: 18px;
+  }
+
+  body.elderly-parent-expense-page .elderly-answer-panel,
+  body.elderly-parent-expense-page .elderly-feature-card,
+  body.elderly-parent-expense-page .elderly-message-card,
+  body.elderly-parent-expense-page .elderly-mistake-list article,
+  body.elderly-parent-expense-page .elderly-callout,
+  body.elderly-parent-expense-page .elderly-app-cta-panel {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  body.elderly-parent-expense-page .elderly-table-wrap {
+    overflow-x: visible;
+    border-radius: 18px;
+  }
+
+  body.elderly-parent-expense-page .elderly-tracking-table {
+    min-width: 0;
+  }
+
+  body.elderly-parent-expense-page .elderly-tracking-table thead {
+    display: none;
+  }
+
+  body.elderly-parent-expense-page .elderly-tracking-table,
+  body.elderly-parent-expense-page .elderly-tracking-table tbody,
+  body.elderly-parent-expense-page .elderly-tracking-table tr,
+  body.elderly-parent-expense-page .elderly-tracking-table td {
+    display: block;
+    width: 100%;
+  }
+
+  body.elderly-parent-expense-page .elderly-tracking-table tr {
+    padding: 0.82rem 0.85rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  }
+
+  body.elderly-parent-expense-page .elderly-tracking-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  body.elderly-parent-expense-page .elderly-tracking-table th,
+  body.elderly-parent-expense-page .elderly-tracking-table td {
+    padding: 0.12rem 0;
+    border-bottom: 0;
+  }
+
+  body.elderly-parent-expense-page .elderly-tracking-table td:first-child {
+    width: 100%;
+    margin-bottom: 0.18rem;
+    font-size: 1rem;
+  }
+
+  body.elderly-parent-expense-page .elderly-ledger-card {
+    padding: 0.8rem;
+    border-radius: 18px;
+  }
+
+  body.elderly-parent-expense-page .elderly-ledger-row {
+    grid-template-columns: 1fr;
+    gap: 0.25rem;
+    padding: 0.85rem;
+  }
+
+  body.elderly-parent-expense-page .elderly-ledger-row span:nth-child(3) {
+    text-align: left;
+  }
+
+  body.elderly-parent-expense-page .elderly-open-amount {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  body.elderly-parent-expense-page .elderly-workflow-grid ol {
+    padding-left: 1.1rem;
+  }
+
+  body.elderly-parent-expense-page .elderly-app-cta-panel {
+    align-items: flex-start;
+    flex-direction: column;
   }
 }

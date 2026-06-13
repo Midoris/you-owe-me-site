@@ -1,6 +1,6 @@
 # YouOweMe Content Map
 
-Updated: 2026-06-10
+Updated: 2026-06-13
 
 This is the working map for planning YouOweMe content across Shorts, TikTok, Instagram Reels, Instagram carousels, and 1-2 minute YouTube landscape videos.
 
@@ -34,6 +34,7 @@ Related support:
 - `/blog/how-to-send-a-repayment-update-when-you-need-more-time/`
 - `/blog/how-to-politely-say-no-when-people-ask-for-money/`
 - `/blog/how-to-handle-awkward-money-conversations/`
+- `/solutions/elderly-parent-expense-tracker/`
 - `/solutions/family-reimbursement-tracker/`
 - `/solutions/app-to-track-money-owed/`
 
@@ -334,6 +335,12 @@ Must become more specific:
 - "Most couples do not fight about the receipt. They fight about the pattern."
 
 ### Parents / Caregiving
+
+Website anchor:
+
+- `/solutions/elderly-parent-expense-tracker/`
+- `/blog/how-to-track-money-you-pay-for-elderly-parents/`
+- `/tools/family-reimbursement-tracker-template/`
 
 Use for:
 

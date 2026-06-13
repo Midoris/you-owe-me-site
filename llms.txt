@@ -18,6 +18,9 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c
 Roommate expenses App Store custom product page:
 https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12
 
+Elderly parent caregiving App Store custom product page:
+https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=794c6086-e032-4408-ab2f-acb4ad23ec98
+
 ## Core pages
 
 - [Home](https://you-owe-me.com/)
@@ -45,6 +48,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b
 - [Simple Client Payment Records](https://you-owe-me.com/solutions/client-payment-records/): Solution page for freelancers, tutors, small service providers, and simple client balances. Explains how to track deposits, partial payments, repeat service charges, payment confirmations, reminders, and remaining balances without positioning You Owe Me as accounting, invoicing, tax, payment-processing, or debt-collection software.
 - [Temporary Financial Support Tracker](https://you-owe-me.com/solutions/temporary-financial-support-tracker/): Use this page for temporary support between people, bills covered, rent or grocery help, flexible repayment, and check-in updates.
 - [Family Reimbursement Tracker](https://you-owe-me.com/solutions/family-reimbursement-tracker/): Use this page for parent bills, sibling reimbursements, recurring family costs, shared family expenses, and repayment history.
+- [Elderly Parent Expense Tracker](https://you-owe-me.com/solutions/elderly-parent-expense-tracker/): Dedicated solution page for adult children, caregivers, and relatives tracking parent bills, subscriptions, groceries, pharmacy purchases, sibling reimbursements, recurring charges, repayments, remaining balances, and monthly family reviews.
 
 ## Client payment records
 
@@ -70,6 +74,7 @@ The client payment records cluster is for lightweight records where a freelancer
 - [Repayment Reminder Text Examples](https://you-owe-me.com/tools/repayment-reminder-text-examples/): Ready-made repayment reminder texts for friends, family, roommates, partners, overdue balances, partial repayments, and repayment updates.
 - [Repayment Receipt Generator](https://you-owe-me.com/tools/repayment-receipt-generator/): Create a simple repayment confirmation after money is paid back, including what was paid, what it covered, and whether anything remains.
 - [Family Reimbursement Tracker Template](https://you-owe-me.com/tools/family-reimbursement-tracker-template/): Copy or download a family reimbursement template for parent bills, sibling reimbursements, and family purchases.
+- [Elderly Parent Expense Tracker](https://you-owe-me.com/solutions/elderly-parent-expense-tracker/): App workflow for parent bills, subscriptions, groceries, pharmacy purchases, sibling reimbursements, recurring charges, repayments, and monthly family review records.
 
 ## Temporary financial support
 
@@ -93,6 +98,7 @@ The temporary financial support cluster helps people handle informal support bet
 ## Family reimbursements and caregiving money
 
 - [How to Track Money You Pay for Elderly Parents](https://you-owe-me.com/blog/how-to-track-money-you-pay-for-elderly-parents/): Specific answer page for tracking parent bills, subscriptions, groceries, pharmacy pickups, sibling reimbursements, partial repayments, and remaining balances.
+- [Elderly Parent Expense Tracker](https://you-owe-me.com/solutions/elderly-parent-expense-tracker/): Product solution page for ongoing parent bills, subscriptions, groceries, pharmacy purchases, sibling reimbursements, recurring charges, repayments, PDF statements, Live Links, and monthly family reviews in You Owe Me.
 - [Family Reimbursement Tracker](https://you-owe-me.com/solutions/family-reimbursement-tracker/): Product solution page for recurring parent bills, family purchases, partial repayments, sibling shares, reminders, summaries, and running balances in You Owe Me.
 - [Family Reimbursement Tracker Template](https://you-owe-me.com/tools/family-reimbursement-tracker-template/): Free Excel, CSV, and printable PDF template for family reimbursements, parent bills, purchases, repayments, and running balances.
 - [How to Keep Track of Money Between Family Members](https://you-owe-me.com/blog/how-to-keep-track-of-money-between-family-members/): Broader educational guide about family money clarity, relationship friction, siblings, relatives, and shared family expenses.
