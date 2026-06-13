@@ -1,0 +1,736 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Partial Repayment Calculator | See What Is Still Owed</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-itunes-app" content="app-id=1147058670" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" href="../../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/shared/brand/icon_2_0.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/shared/brand/icon_2_0.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/shared/brand/icon_2_0.png" />
+
+    <link rel="canonical" href="https://you-owe-me.com/tools/partial-repayment-calculator/" />
+    <meta
+      name="description"
+      content="Calculate what remains after one or more partial repayments. See the remaining balance, repayment history, and a copyable update message for money between people."
+    />
+    <meta property="og:title" content="Partial Repayment Calculator | See What Is Still Owed" />
+    <meta
+      property="og:description"
+      content="Calculate what remains after one or more partial repayments. See the remaining balance, repayment history, and a copyable update message for money between people."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://you-owe-me.com/tools/partial-repayment-calculator/" />
+    <meta property="og:image" content="https://you-owe-me.com/images/tools/partial-repayment-calculator/partial-repayment-calculator-hero.webp" />
+    <meta property="og:image:alt" content="Illustration of two people calmly reviewing partial repayments and a remaining balance." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Partial Repayment Calculator | See What Is Still Owed" />
+    <meta
+      name="twitter:description"
+      content="Calculate what remains after one or more partial repayments. See the remaining balance, repayment history, and a copyable update message for money between people."
+    />
+    <meta name="twitter:image" content="https://you-owe-me.com/images/tools/partial-repayment-calculator/partial-repayment-calculator-hero.webp" />
+    <meta name="twitter:image:alt" content="Illustration of two people calmly reviewing partial repayments and a remaining balance." />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "Partial Repayment Calculator",
+          "description": "A free browser calculator for one known amount being repaid in parts, including remaining balance, repayment history, and copyable update messages.",
+          "url": "https://you-owe-me.com/tools/partial-repayment-calculator/",
+          "dateModified": "2026-06-13",
+          "isPartOf": {
+            "@type": "CollectionPage",
+            "name": "Money Tools and Templates",
+            "url": "https://you-owe-me.com/tools/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "You Owe Me"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Partial Repayment Calculator",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web browser",
+          "url": "https://you-owe-me.com/tools/partial-repayment-calculator/",
+          "description": "A free browser tool for calculating what remains after partial repayments toward one known amount.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://you-owe-me.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tools",
+              "item": "https://you-owe-me.com/tools/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Partial Repayment Calculator",
+              "item": "https://you-owe-me.com/tools/partial-repayment-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "What is a partial repayment?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "A partial repayment is when someone pays back part of the amount they owe, but not all of it. For example, if someone owes $300 and sends $100, the remaining balance is $200."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I calculate what is still owed after a partial payment?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Start with the original amount, subtract each partial repayment, and subtract any amount that was waived or forgiven. The result is the remaining balance. If the repayments are greater than the amount owed, the result is an overpayment."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I add more than one partial repayment?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. This calculator is specifically for several partial repayments against one original amount. Add each payment as its own row so the balance after each repayment stays clear."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if new expenses were added after the original amount?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use the optional adjustment only for a simple correction to the same balance. If new expenses keep happening over time, a running balance is usually a better fit."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this a payment plan calculator?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. This calculator shows what remains after repayments that already happened. A payment plan calculator is for planning future weekly, biweekly, or monthly repayments."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Is this a legal loan calculator?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. This is a simple personal calculation tool for informal money between people. It does not create a legal agreement, charge interest, process payments, collect money, provide tax advice, or provide legal advice."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "When should I use You Owe Me instead of this calculator?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use the calculator for a one-time check. Use You Owe Me when partial repayments, reminders, receipts, or updates will continue and you want the history connected to the same person."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../../styles/site-nav.css" />
+    <link rel="stylesheet" href="../../styles/tools.css" />
+    <link rel="stylesheet" href="../../styles/best-next-step.css" />
+    <link rel="stylesheet" href="../../styles/partial-repayment-calculator.css" />
+  </head>
+
+  <body class="is-preload tools-page partial-repayment-calculator-page site-nav-page">
+    <div id="wrapper" class="fade-in">
+      <header id="header">
+        <a href="../../index.html" class="logo">You Owe Me</a>
+      </header>
+
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="/">You Owe Me</a></li>
+          <li><a href="/solutions/">Solutions</a></li>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li class="active"><a href="/tools/">Tools</a></li>
+          <li><a href="/compare/">Compare</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div id="main">
+        <article class="post featured">
+          <nav class="lt-breadcrumb" aria-label="Breadcrumb">
+            <a href="../../">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="../">Tools</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Partial Repayment Calculator</span>
+          </nav>
+
+          <section class="lt-toolsHero prc-hero">
+            <div class="lt-toolsHeroCopy">
+              <p class="lt-eyebrow">Free browser tool</p>
+              <header class="major">
+                <h1>Partial Repayment Calculator</h1>
+              </header>
+              <p class="lt-heroBody">Calculate what is still owed after one or more partial payments.</p>
+              <p class="lt-heroSupport">
+                Use this when the original amount is already clear and someone has repaid part of it. Add each partial repayment, see the remaining balance, and copy a calm update message so nobody has to rebuild the numbers from memory.
+              </p>
+              <div class="prc-chip-row" aria-label="Tool highlights">
+                <span>Multiple partial payments</span>
+                <span>Remaining balance</span>
+                <span>Copyable update</span>
+                <span>No sign-up needed</span>
+                <span>Runs in your browser</span>
+                <span>No interest or fees</span>
+              </div>
+              <div class="lt-ctaRow">
+                <a href="#partial-repayment-calculator" class="lt-primaryCta">Start calculating</a>
+                <a href="#partial-repayment-example" class="lt-textCta">See example</a>
+              </div>
+              <div class="prc-clarification-box">
+                <strong>This tool is for one known amount being repaid in parts.</strong>
+                <span>If new expenses keep being added, use the <a href="/tools/running-balance-calculator/">Running Balance Calculator</a> instead. If you already know what remains and need future steps, use the <a href="/tools/payment-plan-calculator/">Payment Plan Calculator</a>. If one payment just happened and you only need to confirm it, use the <a href="/tools/repayment-receipt-generator/">Repayment Receipt Generator</a>.</span>
+              </div>
+            </div>
+            <figure class="prc-hero-visual">
+              <img
+                src="/images/tools/partial-repayment-calculator/partial-repayment-calculator-hero.webp"
+                alt="Illustration of two people calmly reviewing partial repayments and a remaining balance."
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                width="1586"
+                height="992"
+              />
+            </figure>
+          </section>
+
+          <!-- best-next-step:start -->
+<!-- Generated by scripts/build-best-next-steps.mjs. Edit content/content-registry.mjs instead. -->
+<section class="best-next-step best-next-step--tool best-next-step--custom" aria-labelledby="best-next-step-tools_partial_repayment_calculator-title" data-module="best-next-step" data-source-page="tools_partial_repayment_calculator" data-source-cluster="repayments" data-module-variant="tool" data-module-template="custom">
+  <p class="best-next-step__eyebrow">Best next step</p>
+  <h2 id="best-next-step-tools_partial_repayment_calculator-title">After you calculate what remains</h2>
+  <p class="best-next-step__intro">Once the remaining balance is clear, choose whether to confirm a payment, plan the rest, track the history, or switch tools if the situation is bigger than one original amount.</p>
+  <div class="best-next-step__grid">
+    <a class="best-next-step__card" href="/tools/repayment-receipt-generator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_partial_repayment_calculator_best_next_step_1" data-source-page="tools_partial_repayment_calculator" data-source-cluster="repayments" data-destination-cluster="repayments" data-step-type="tool" data-step-intent="confirm_payment" data-step-destination="/tools/repayment-receipt-generator/" data-step-position="1" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="partial_repayment_calculator_receipt">
+      <span class="best-next-step__label">Confirm</span>
+      <strong>Confirm a payment that already happened</strong>
+      <span>Use this after someone sends a partial or final repayment and you want a short confirmation of what was received and what remains.</span>
+    </a>
+    <a class="best-next-step__card" href="/tools/payment-plan-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_partial_repayment_calculator_best_next_step_2" data-source-page="tools_partial_repayment_calculator" data-source-cluster="repayments" data-destination-cluster="repayments" data-step-type="tool" data-step-intent="plan_repayment" data-step-destination="/tools/payment-plan-calculator/" data-step-position="2" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="partial_repayment_calculator_plan">
+      <span class="best-next-step__label">Plan</span>
+      <strong>Turn the remaining balance into repayment steps</strong>
+      <span>Use this if the remaining amount cannot be paid all at once and both people need a weekly, biweekly, or monthly plan.</span>
+    </a>
+    <a class="best-next-step__card" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=0ad25f49-9026-4d8b-99ea-9581a98702db" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_partial_repayment_calculator_best_next_step_3" data-source-page="tools_partial_repayment_calculator" data-source-cluster="repayments" data-destination-cluster="app-store" data-step-type="app" data-step-intent="download_app" data-step-destination="app-store:money-owed-followups" data-step-position="3" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="partial_repayment_calculator_app">
+      <span class="best-next-step__label">Track</span>
+      <strong>Track future repayments in You Owe Me</strong>
+      <span>Use this when partial repayments, reminders, receipts, or updates will continue and you want the history connected to the same person.</span>
+    </a>
+    <a class="best-next-step__card" href="/tools/running-balance-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_partial_repayment_calculator_best_next_step_4" data-source-page="tools_partial_repayment_calculator" data-source-cluster="repayments" data-destination-cluster="running-balance" data-step-type="tool" data-step-intent="calculate_running_balance" data-step-destination="/tools/running-balance-calculator/" data-step-position="4" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="partial_repayment_calculator_running_balance">
+      <span class="best-next-step__label">Bigger balance</span>
+      <strong>Use a running balance when new expenses keep being added</strong>
+      <span>Use this if the original amount is no longer the only thing involved because new expenses, repayments, or shared costs keep happening.</span>
+    </a>
+  </div>
+</section>
+<!-- best-next-step:end -->
+
+          <section class="lt-toolsSection prc-tool-section" id="partial-repayment-calculator" aria-labelledby="partial-repayment-calculator-title">
+            <div class="prc-tool-shell">
+              <div class="prc-tool-heading">
+                <div>
+                  <p class="lt-sectionEyebrow">Browser calculator</p>
+                  <h2 id="partial-repayment-calculator-title">Calculate the remaining balance</h2>
+                  <p>Enter the original amount and each partial repayment that has already happened. The calculator will show the total repaid, what remains, the balance after each payment, and a message you can copy.</p>
+                  <p class="prc-privacy-note">Your calculation stays in your browser. Nothing you enter is sent to an account or saved by this page.</p>
+                </div>
+                <aside class="prc-example-card" aria-labelledby="prc-featured-example-title">
+                  <p class="prc-example-label">Example preset</p>
+                  <h3 id="prc-featured-example-title">$720 repaid in three parts</h3>
+                  <p>Alex repaid $200, $150, and $100 toward rent and groceries. The remaining balance is $270.</p>
+                  <button type="button" class="prc-secondary-button" data-example="temporary-support">Load example</button>
+                </aside>
+              </div>
+
+              <form class="prc-form" id="partial-repayment-form" novalidate>
+                <fieldset class="prc-fieldset">
+                  <legend>Amount setup</legend>
+                  <div class="prc-field-grid prc-field-grid--amounts">
+                    <div class="prc-field prc-field--compact">
+                      <label for="prc-currency">Currency symbol</label>
+                      <input id="prc-currency" name="currency" type="text" inputmode="text" maxlength="8" value="$" list="prc-currency-options" autocomplete="off" aria-describedby="prc-currency-help" />
+                      <datalist id="prc-currency-options">
+                        <option value="$"></option>
+                        <option value="&euro;"></option>
+                        <option value="&pound;"></option>
+                        <option value="&#3647;"></option>
+                        <option value="Rp"></option>
+                        <option value="&#8377;"></option>
+                        <option value="&#8372;"></option>
+                        <option value="A$"></option>
+                        <option value="C$"></option>
+                      </datalist>
+                      <p id="prc-currency-help" class="prc-field-hint">Examples: $, &euro;, &pound;, &#3647;, Rp, &#8377;, &#8372;, A$, C$</p>
+                    </div>
+                    <div class="prc-field">
+                      <label for="prc-original">Original amount owed</label>
+                      <input id="prc-original" name="original" type="text" inputmode="decimal" placeholder="720" required aria-describedby="prc-original-help prc-original-error" />
+                      <p id="prc-original-help" class="prc-field-hint">Use the amount before the partial repayments you want to calculate.</p>
+                      <p id="prc-original-error" class="prc-validation" aria-live="polite"></p>
+                    </div>
+                    <div class="prc-field prc-field--wide">
+                      <label for="prc-purpose">What was this for?</label>
+                      <input id="prc-purpose" name="purpose" type="text" maxlength="120" value="rent and groceries" placeholder="rent and groceries" autocomplete="off" aria-describedby="prc-purpose-help" />
+                      <p id="prc-purpose-help" class="prc-field-hint">Examples: rent, groceries, concert tickets, family support, client work, utility bill.</p>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="prc-fieldset">
+                  <legend>People and message perspective</legend>
+                  <div class="prc-field-grid">
+                    <div class="prc-field">
+                      <label for="prc-repaying-person">Person repaying</label>
+                      <input id="prc-repaying-person" name="repayingPerson" type="text" maxlength="60" value="Alex" placeholder="Alex" autocomplete="off" />
+                    </div>
+                    <div class="prc-field">
+                      <label for="prc-receiving-person">Person receiving repayment</label>
+                      <input id="prc-receiving-person" name="receivingPerson" type="text" maxlength="60" value="Maya" placeholder="Maya" autocomplete="off" />
+                    </div>
+                    <div class="prc-field prc-field--wide">
+                      <span class="prc-field-label" id="prc-perspective-label">Message perspective</span>
+                      <div class="prc-mode-grid" role="radiogroup" aria-labelledby="prc-perspective-label">
+                        <label class="prc-mode-card">
+                          <input type="radio" name="perspective" value="received" checked />
+                          <span>I received partial repayments</span>
+                        </label>
+                        <label class="prc-mode-card">
+                          <input type="radio" name="perspective" value="made" />
+                          <span>I made partial repayments</span>
+                        </label>
+                      </div>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="prc-fieldset">
+                  <legend>Optional starting repayment</legend>
+                  <div class="prc-field-grid prc-field-grid--single">
+                    <div class="prc-field">
+                      <label for="prc-starting-repaid">Already repaid before the rows below</label>
+                      <input id="prc-starting-repaid" name="startingAlreadyRepaid" type="text" inputmode="decimal" value="0" placeholder="0" aria-describedby="prc-starting-repaid-help prc-starting-repaid-error" />
+                      <p id="prc-starting-repaid-help" class="prc-field-hint">Use this only if some money was already repaid before the payments you want to list one by one.</p>
+                      <p id="prc-starting-repaid-error" class="prc-validation" aria-live="polite"></p>
+                    </div>
+                  </div>
+                </fieldset>
+
+                <fieldset class="prc-fieldset">
+                  <legend>Partial repayment rows</legend>
+                  <div class="prc-repayment-rows" data-repayment-rows>
+                    <div class="prc-repayment-row" data-repayment-row>
+                      <div class="prc-field">
+                        <label for="prc-row-1-date">Date</label>
+                        <input id="prc-row-1-date" name="repaymentDate" type="date" aria-describedby="prc-row-1-date-help" />
+                        <p id="prc-row-1-date-help" class="prc-field-hint">Optional.</p>
+                      </div>
+                      <div class="prc-field">
+                        <label for="prc-row-1-amount">Amount repaid</label>
+                        <input id="prc-row-1-amount" name="repaymentAmount" type="text" inputmode="decimal" placeholder="200" aria-describedby="prc-row-1-amount-error" />
+                        <p id="prc-row-1-amount-error" class="prc-validation" data-row-error aria-live="polite"></p>
+                      </div>
+                      <div class="prc-field">
+                        <label for="prc-row-1-note">Note</label>
+                        <input id="prc-row-1-note" name="repaymentNote" type="text" maxlength="120" placeholder="bank transfer" autocomplete="off" />
+                      </div>
+                      <button type="button" class="prc-icon-button" data-remove-row aria-label="Remove partial repayment row" disabled>Remove</button>
+                    </div>
+                  </div>
+
+                  <div class="prc-actions prc-actions--compact">
+                    <button type="button" class="prc-secondary-button" data-action="add-row">Add partial repayment</button>
+                  </div>
+                </fieldset>
+
+                <details class="prc-adjustment">
+                  <summary>Optional adjustment</summary>
+                  <div class="prc-adjustment-body">
+                    <div class="prc-field-grid">
+                      <div class="prc-field">
+                        <label for="prc-adjustment-added">Amount added to this same original balance</label>
+                        <input id="prc-adjustment-added" name="adjustmentAdded" type="text" inputmode="decimal" value="0" placeholder="0" aria-describedby="prc-adjustment-added-help prc-adjustment-added-error" />
+                        <p id="prc-adjustment-added-help" class="prc-field-hint">Use only for a correction to this same amount, not for ongoing new expenses.</p>
+                        <p id="prc-adjustment-added-error" class="prc-validation" aria-live="polite"></p>
+                      </div>
+                      <div class="prc-field">
+                        <label for="prc-adjustment-waived">Amount waived or forgiven</label>
+                        <input id="prc-adjustment-waived" name="adjustmentWaived" type="text" inputmode="decimal" value="0" placeholder="0" aria-describedby="prc-adjustment-waived-help prc-adjustment-waived-error" />
+                        <p id="prc-adjustment-waived-help" class="prc-field-hint">Use this if part of the amount no longer needs to be repaid.</p>
+                        <p id="prc-adjustment-waived-error" class="prc-validation" aria-live="polite"></p>
+                      </div>
+                    </div>
+                    <p class="prc-soft-note">If new expenses keep being added over time, this tool is no longer the best fit. Use a running balance instead.</p>
+                  </div>
+                </details>
+
+                <div class="prc-actions">
+                  <button type="submit" class="prc-primary-button">Update result</button>
+                  <button type="button" class="prc-secondary-button" data-example="temporary-support">Load example</button>
+                  <button type="button" class="prc-secondary-button" data-action="clear-fields">Clear fields</button>
+                </div>
+                <p class="prc-form-status" data-form-status aria-live="polite"></p>
+              </form>
+
+              <section class="prc-presets" aria-labelledby="prc-presets-title">
+                <p class="prc-example-label">Example presets</p>
+                <h3 id="prc-presets-title">Try a known partial repayment scenario</h3>
+                <div class="prc-preset-grid">
+                  <article class="prc-preset-card">
+                    <h4>Temporary support</h4>
+                    <p>$720 for rent and groceries, with $200, $150, and $100 repaid. Expected remaining: $270.</p>
+                    <button type="button" class="prc-copy-button" data-example="temporary-support">Load temporary support</button>
+                  </article>
+                  <article class="prc-preset-card">
+                    <h4>Friend repayment</h4>
+                    <p>$200 for concert tickets, with one $120 partial repayment. Expected remaining: $80.</p>
+                    <button type="button" class="prc-copy-button" data-example="friend-repayment">Load friend repayment</button>
+                  </article>
+                  <article class="prc-preset-card">
+                    <h4>Client partial payment</h4>
+                    <p>$600 for design work, $150 already repaid, then a $300 second payment. Expected remaining: $150.</p>
+                    <button type="button" class="prc-copy-button" data-example="client-payment">Load client payment</button>
+                  </article>
+                </div>
+              </section>
+
+              <noscript>
+                <div class="prc-noscript">
+                  <h3>Example partial repayment calculation</h3>
+                  <p>With JavaScript off, use this visible example: $720 original amount minus $200, $150, and $100 in partial repayments leaves $270 still open.</p>
+                </div>
+              </noscript>
+
+              <section class="prc-results" id="partial-repayment-results" aria-labelledby="partial-repayment-results-title">
+                <div class="prc-results-heading">
+                  <div>
+                    <h2 id="partial-repayment-results-title">Your partial repayment result</h2>
+                    <p data-result-summary aria-live="polite">Enter an original amount and at least one repayment, or load an example, to see the remaining balance.</p>
+                  </div>
+                  <span class="prc-status-pill" data-result-status aria-live="polite">Ready</span>
+                </div>
+
+                <div class="prc-result-note" data-result-note aria-live="polite"></div>
+
+                <div class="prc-summary-grid">
+                  <article class="prc-summary-card">
+                    <p>Remaining balance</p>
+                    <strong data-summary="remaining">$0.00</strong>
+                  </article>
+                  <article class="prc-summary-card">
+                    <p>Total repaid</p>
+                    <strong data-summary="totalRepaid">$0.00</strong>
+                  </article>
+                  <article class="prc-summary-card">
+                    <p>Original amount</p>
+                    <strong data-summary="original">$0.00</strong>
+                  </article>
+                  <article class="prc-summary-card">
+                    <p>Status</p>
+                    <strong data-summary="status">Ready</strong>
+                  </article>
+                  <article class="prc-summary-card" data-overpayment-card hidden>
+                    <p>Overpayment</p>
+                    <strong data-summary="overpayment">$0.00</strong>
+                  </article>
+                </div>
+
+                <div class="prc-progress-wrap">
+                  <div class="prc-progress-label" data-progress-label>0% repaid</div>
+                  <div class="prc-progress" role="progressbar" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="Repayment progress" data-progress-bar>
+                    <span data-progress-fill></span>
+                  </div>
+                </div>
+
+                <div class="prc-table-wrap">
+                  <table class="prc-history-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Date</th>
+                        <th scope="col">Repayment</th>
+                        <th scope="col">Note</th>
+                        <th scope="col">Balance after</th>
+                      </tr>
+                    </thead>
+                    <tbody data-history-body>
+                      <tr>
+                        <td colspan="4">Add a partial repayment above to see the balance after each payment.</td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+
+                <section class="prc-copy-panel" aria-labelledby="prc-copy-title">
+                  <div class="prc-copy-heading">
+                    <div>
+                      <h3 id="prc-copy-title">Copy your update</h3>
+                      <p>Copy a short message, a repayment history summary, or a note for your You Owe Me record.</p>
+                    </div>
+                    <span class="prc-copy-status" aria-live="polite" data-copy-status></span>
+                  </div>
+                  <div class="prc-output-grid">
+                    <article class="prc-output-card">
+                      <h4>Short update message</h4>
+                      <p class="prc-output-text" data-output="message">Add a valid calculation to create a copyable update message.</p>
+                      <button type="button" class="prc-copy-button" data-copy-output="message" aria-label="Copy short update message" disabled>Copy message</button>
+                    </article>
+                    <article class="prc-output-card">
+                      <h4>Repayment history summary</h4>
+                      <pre class="prc-output-pre" data-output="summary">Add repayments to create a summary.</pre>
+                      <button type="button" class="prc-copy-button" data-copy-output="summary" aria-label="Copy repayment history summary" disabled>Copy summary</button>
+                    </article>
+                    <article class="prc-output-card">
+                      <h4>You Owe Me record note</h4>
+                      <p class="prc-output-text" data-output="record">Add a valid calculation to create a record note.</p>
+                      <button type="button" class="prc-copy-button" data-copy-output="record" aria-label="Copy You Owe Me record note" disabled>Copy record note</button>
+                    </article>
+                  </div>
+                </section>
+              </section>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection prc-content-section" id="partial-repayment-example">
+            <h2>Example: partial repayments toward one amount</h2>
+            <p>Maya covered $720 for rent and groceries. Alex repaid $200 first, then $150, then $100. The total repaid is $450, so $270 is still open.</p>
+            <div class="prc-static-table-wrap">
+              <table class="prc-static-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Step</th>
+                    <th scope="col">What happened</th>
+                    <th scope="col">Balance after</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>Original amount</td>
+                    <td>Maya covered rent and groceries: $720</td>
+                    <td>Alex owes $720</td>
+                  </tr>
+                  <tr>
+                    <td>Partial repayment 1</td>
+                    <td>Alex repaid $200</td>
+                    <td>$520 still open</td>
+                  </tr>
+                  <tr>
+                    <td>Partial repayment 2</td>
+                    <td>Alex repaid $150</td>
+                    <td>$370 still open</td>
+                  </tr>
+                  <tr>
+                    <td>Partial repayment 3</td>
+                    <td>Alex repaid $100</td>
+                    <td>$270 still open</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="prc-soft-note">The point is not to make the conversation formal. The point is to make the next message clear: "Thanks - I have $450 repaid so far, which leaves $270 still open."</p>
+          </section>
+
+          <section class="lt-toolsSection prc-content-section">
+            <h2>When to use a partial repayment calculator</h2>
+            <p>Use this calculator when the amount started as one clear balance and repayment is happening in steps.</p>
+            <ul class="lt-valueList">
+              <li>Someone borrowed one amount and has sent back part of it.</li>
+              <li>A family member helped with rent, groceries, or a bill and repayment is happening gradually.</li>
+              <li>A roommate paid part of what they owed from one known balance.</li>
+              <li>A friend sent a partial repayment and you want to know what remains.</li>
+              <li>A client paid a deposit or partial amount and you want a simple remaining-balance summary.</li>
+              <li>You want to send a clear update without recalculating from memory.</li>
+            </ul>
+          </section>
+
+          <section class="lt-toolsSection prc-content-section">
+            <h2>When another tool is better</h2>
+            <div class="prc-card-grid">
+              <article class="prc-info-card">
+                <h3>Use a running balance when new expenses keep being added</h3>
+                <p>If both people keep paying for different things, or new expenses and repayments continue over time, a running balance is better than reducing one original amount.</p>
+                <a href="/tools/running-balance-calculator/" class="lt-cardCta">Use the Running Balance Calculator</a>
+              </article>
+              <article class="prc-info-card">
+                <h3>Use a repayment receipt when you only need to confirm one payment</h3>
+                <p>If one payment just happened and you only need to confirm what was received, a receipt-style message may be enough.</p>
+                <a href="/tools/repayment-receipt-generator/" class="lt-cardCta">Create a repayment receipt</a>
+              </article>
+              <article class="prc-info-card">
+                <h3>Use a payment plan when you need future repayment steps</h3>
+                <p>If the remaining amount is clear but the person needs to repay weekly, biweekly, or monthly, a payment plan is the better next step.</p>
+                <a href="/tools/payment-plan-calculator/" class="lt-cardCta">Create a payment plan</a>
+              </article>
+              <article class="prc-info-card">
+                <h3>Use You Owe Me when the balance will keep changing</h3>
+                <p>A calculator is useful once. You Owe Me helps when repayments, reminders, updates, and history need to stay connected over time.</p>
+                <a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=0ad25f49-9026-4d8b-99ea-9581a98702db" class="lt-cardCta">Download You Owe Me to track partial repayments</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection prc-app-cta" aria-labelledby="prc-app-cta-title">
+            <div>
+              <p class="lt-sectionEyebrow">Clear record</p>
+              <h2 id="prc-app-cta-title">Keep partial repayments clear in You Owe Me</h2>
+              <p>A calculator helps once. You Owe Me helps when repayments, reminders, receipts, and updates need to stay connected to the same person.</p>
+              <ul class="lt-valueList">
+                <li>Track one clear balance with someone you know.</li>
+                <li>Add partial repayments as they happen.</li>
+                <li>Keep the history instead of searching old messages.</li>
+                <li>Send calmer repayment updates from a clear record.</li>
+                <li>Use reminders and receipts when repayment continues.</li>
+              </ul>
+              <p class="prc-muted">Download You Owe Me to track partial repayments and remaining balances.</p>
+            </div>
+            <div class="prc-app-actions">
+              <a
+                href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=0ad25f49-9026-4d8b-99ea-9581a98702db"
+                class="lt-appStoreBtn"
+                aria-label="Download You Owe Me on the App Store"
+              >
+                <span class="sr-only">Download You Owe Me on the App Store</span>
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+              </a>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection prc-content-section">
+            <h2>Why partial repayments get confusing</h2>
+            <p>Partial repayments are easy to misremember because both people may remember a different part of the story. One person remembers the original amount. The other remembers what they already sent. After two or three payments, the remaining balance can become unclear unless the record is written down.</p>
+            <p>The goal is not pressure. The goal is clarity. A clear remaining balance makes it easier to say what happened, what was repaid, and what is still open without turning the conversation into an argument.</p>
+          </section>
+
+          <section class="lt-toolsSection prc-content-section" aria-labelledby="partial-repayment-related-title">
+            <p class="lt-sectionEyebrow">Related resources</p>
+            <h2 id="partial-repayment-related-title">Related tools and guides</h2>
+            <div class="prc-card-grid">
+              <article class="prc-info-card">
+                <h3>Repayment Receipt Generator</h3>
+                <p>Create a short confirmation after someone sends a partial or final repayment.</p>
+                <a href="/tools/repayment-receipt-generator/" class="lt-cardCta">Create a receipt</a>
+              </article>
+              <article class="prc-info-card">
+                <h3>Payment Plan Calculator</h3>
+                <p>Turn the remaining balance into weekly, biweekly, or monthly repayment steps.</p>
+                <a href="/tools/payment-plan-calculator/" class="lt-cardCta">Plan the remaining balance</a>
+              </article>
+              <article class="prc-info-card">
+                <h3>Running Balance Calculator</h3>
+                <p>Use this when the situation includes more than one original amount, new expenses, or money moving both ways.</p>
+                <a href="/tools/running-balance-calculator/" class="lt-cardCta">Calculate a running balance</a>
+              </article>
+              <article class="prc-info-card">
+                <h3>How to Follow Up After a Partial Repayment</h3>
+                <p>Use calm wording when someone paid part of what they owe and you need to ask about the rest.</p>
+                <a href="/blog/how-to-follow-up-after-a-partial-repayment/" class="lt-cardCta">Read the partial repayment guide</a>
+              </article>
+              <article class="prc-info-card">
+                <h3>Temporary Financial Support Tracker</h3>
+                <p>Use this when partial repayments are part of rent, bills, groceries, or help between people you trust.</p>
+                <a href="/solutions/temporary-financial-support-tracker/" class="lt-cardCta">Track temporary support</a>
+              </article>
+              <article class="prc-info-card">
+                <h3>Simple Client Payment Records</h3>
+                <p>Use this when deposits, partial payments, and remaining balances continue with a client or small service record.</p>
+                <a href="/solutions/client-payment-records/" class="lt-cardCta">Open client payment records</a>
+              </article>
+              <article class="prc-info-card">
+                <h3>App to Track Money Owed</h3>
+                <p>Use this when the remaining balance, reminders, receipts, and updates should stay connected to the same person.</p>
+                <a href="/solutions/app-to-track-money-owed/" class="lt-cardCta">Open money-owed workflow</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection prc-faq-section" aria-labelledby="partial-repayment-faq-title">
+            <h2 id="partial-repayment-faq-title">Partial repayment calculator FAQ</h2>
+            <div class="prc-faq-list">
+              <details>
+                <summary>What is a partial repayment?</summary>
+                <p>A partial repayment is when someone pays back part of the amount they owe, but not all of it. For example, if someone owes $300 and sends $100, the remaining balance is $200.</p>
+              </details>
+              <details>
+                <summary>How do I calculate what is still owed after a partial payment?</summary>
+                <p>Start with the original amount, subtract each partial repayment, and subtract any amount that was waived or forgiven. The result is the remaining balance. If the repayments are greater than the amount owed, the result is an overpayment.</p>
+              </details>
+              <details>
+                <summary>Can I add more than one partial repayment?</summary>
+                <p>Yes. This calculator is specifically for several partial repayments against one original amount. Add each payment as its own row so the balance after each repayment stays clear.</p>
+              </details>
+              <details>
+                <summary>What if new expenses were added after the original amount?</summary>
+                <p>Use the optional adjustment only for a simple correction to the same balance. If new expenses keep happening over time, a running balance is usually a better fit.</p>
+              </details>
+              <details>
+                <summary>Is this a payment plan calculator?</summary>
+                <p>No. This calculator shows what remains after repayments that already happened. A payment plan calculator is for planning future weekly, biweekly, or monthly repayments.</p>
+              </details>
+              <details>
+                <summary>Is this a legal loan calculator?</summary>
+                <p>No. This is a simple personal calculation tool for informal money between people. It does not create a legal agreement, charge interest, process payments, collect money, provide tax advice, or provide legal advice.</p>
+              </details>
+              <details>
+                <summary>When should I use You Owe Me instead of this calculator?</summary>
+                <p>Use the calculator for a one-time check. Use You Owe Me when partial repayments, reminders, receipts, or updates will continue and you want the history connected to the same person.</p>
+              </details>
+            </div>
+          </section>
+
+          <p class="lt-pageMeta">Updated June 13, 2026</p>
+        </article>
+      </div>
+
+      <div id="copyright">
+        <ul>
+          <li>&copy; You Owe Me</li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+    <script src="../../scripts/partial-repayment-calculator.js"></script>
+  </body>
+</html>

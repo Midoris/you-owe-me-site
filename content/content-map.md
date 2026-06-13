@@ -26,6 +26,7 @@ Related support:
 
 - `/tools/temporary-financial-support-record-template/`
 - `/tools/payment-plan-calculator/`
+- `/tools/partial-repayment-calculator/`
 - `/tools/repayment-reminder-text-examples/`
 - `/tools/polite-payback-reminder-generator/`
 - `/tools/repayment-receipt-generator/`
@@ -856,6 +857,23 @@ Use for:
 - roommate coverage
 - larger informal IOUs
 - partial repayments that need a next schedule
+
+### Partial Repayment Calculator
+
+Best line:
+
+```text
+A partial repayment calculator shows what remains after one known amount is repaid in parts.
+```
+
+Use for:
+
+- one original amount
+- partial repayments already made
+- remaining balance before a follow-up
+- repayment receipt prep
+- repayment update prep
+- payment plan prep
 
 ### Money Conversations
 
