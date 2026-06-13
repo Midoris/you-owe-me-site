@@ -489,11 +489,11 @@
 
     setText("[data-result-summary]", "Enter an original amount and at least one repayment, or load an example, to see the remaining balance.");
     setText("[data-result-status]", "Ready");
-    setText("[data-summary='remaining']", "$0.00");
-    setText("[data-summary='totalRepaid']", "$0.00");
-    setText("[data-summary='original']", "$0.00");
+    setText("[data-summary='remaining']", "\u2014");
+    setText("[data-summary='totalRepaid']", "\u2014");
+    setText("[data-summary='original']", "\u2014");
     setText("[data-summary='status']", "Ready");
-    setText("[data-summary='overpayment']", "$0.00");
+    setText("[data-summary='overpayment']", "\u2014");
     setText("[data-output='message']", "Add a valid calculation to create a copyable update message.");
     setText("[data-output='summary']", "Add repayments to create a summary.");
     setText("[data-output='record']", "Add a valid calculation to create a record note.");
