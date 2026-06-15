@@ -937,7 +937,7 @@ export const contentRegistry = [
   },
   {
     url: "/solutions/app-to-track-money-owed/",
-    title: "App to track money owed",
+    title: "App to Track Money Owed Between Friends and Family",
     pageType: "solution",
     cluster: "money-owed",
     primaryAudience: "People tracking personal balances, IOUs, repayments, and partial repayments.",
@@ -949,7 +949,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/temporary-financial-support-tracker/", "/solutions/shared-expense-tracker/", "/solutions/family-reimbursement-tracker/"],
     appStoreCpp: "money-owed-followups",
     tags: ["money-owed", "iou", "repayments", "running-balance"],
-    updated: "2026-06-13",
+    updated: "2026-06-15",
     status: "live",
     priority: "core",
     primaryCta: "Download You Owe Me",
