@@ -1,0 +1,4 @@
+# Private local GSC / Search Console analysis artifacts
+/data/gsc/
+/docs/gsc-ctr-*.md
+/scripts/analyze_gsc_exports.py
