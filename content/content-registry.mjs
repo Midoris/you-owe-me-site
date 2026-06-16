@@ -1992,7 +1992,7 @@ export const contentRegistry = [
       placement: "after-direct-answer",
       template: "custom",
       heading: "Best next step for a running balance",
-      intro: "Start with the practical next action: calculate the balance, split one expense, compare tracking methods, or keep a record when the balance continues.",
+      intro: "Start with the practical next action: calculate the balance, split one expense, track shared expenses over time, or keep a saved record when the balance continues.",
       steps: [
         {
           label: "Calculate",
