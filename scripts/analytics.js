@@ -8,7 +8,7 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
 
 const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyD0sFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",
+  apiKey: "AIzaSyDOsFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",
   authDomain: "you-owe-me-app.firebaseapp.com",
   databaseURL: "https://you-owe-me-app.firebaseio.com",
   projectId: "you-owe-me-app",
@@ -20,6 +20,9 @@ const FIREBASE_CONFIG = {
 
 const APP_STORE_HOST_MATCH = "apps.apple.com";
 const APP_STORE_ID_MATCH = "id1147058670";
+const WEB_EVENT_PREFIX = "uomi_web_";
+const PAGE_VISITED_EVENT = "uomi_web_page_visited";
+const APP_STORE_OPENED_EVENT = "uomi_web_app_store_opened";
 const SALE_CHANGED_EVENT = "youoweme:sale-changed";
 const SUPPORT_FORM_SENT_EVENT = "youoweme:support-form-sent";
 const SUPPORT_FORM_ERROR_EVENT = "youoweme:support-form-error";
@@ -53,9 +56,76 @@ const TEMPORARY_SUPPORT_RECORD_EVENTS = new Set([
   "temporary_support_record_copy_message",
   "temporary_support_record_copy_app_note",
 ]);
+
+const APP_STORE_CPP_BY_PPID = {
+  "0ad25f49-9026-4d8b-99ea-9581a98702db": "money_owed_followups",
+  "7f9074ac-4090-4e07-aebe-c5722e76eedc": "shared_expenses",
+  "8e720a01-7489-4044-9f6a-0080793442a0": "couples_relationship_spending",
+  "bc366b6c-90ff-4cde-9ae7-d420c6512e7a": "family_reimbursements",
+  "18039f2b-da9e-4d5f-9ba1-b60f117ecf12": "roommates_household_costs",
+  "794c6086-e032-4408-ab2f-acb4ad23ec98": "elderly_parent_caregiving",
+  "15af0298-82ca-4a0e-8230-d12774916992": "client_payment_records",
+  "07350272-1b8a-4f9f-a267-dc72c33b4404": "long_term_interest_balances",
+};
+
+const PAGE_METADATA = {
+  "/": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/index.html": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/find/": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/quick-start/": { page_type: "feature", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/features/": { page_type: "feature", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/reviews/": { page_type: "review", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/solutions/": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/tools/": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/compare/": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/blog/": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/privacy-policy/": { page_type: "legal", cluster: "legal_support", app_store_cpp: "none" },
+  "/contact/": { page_type: "legal", cluster: "legal_support", app_store_cpp: "none" },
+  "/redeem/": { page_type: "feature", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/solutions/app-to-track-money-owed/": { page_type: "solution", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/solutions/shared-expense-tracker/": { page_type: "solution", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
+  "/solutions/roommate-expense-tracker/": { page_type: "solution", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
+  "/solutions/expense-tracker-for-couples/": { page_type: "solution", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
+  "/solutions/family-reimbursement-tracker/": { page_type: "solution", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
+  "/solutions/elderly-parent-expense-tracker/": { page_type: "solution", cluster: "elderly_parent_caregiving", app_store_cpp: "elderly_parent_caregiving" },
+  "/solutions/temporary-financial-support-tracker/": { page_type: "solution", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/solutions/client-payment-records/": { page_type: "solution", cluster: "client_payment_records", app_store_cpp: "client_payment_records" },
+  "/tools/split-expense-calculator/": { page_type: "tool", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
+  "/tools/running-balance-calculator/": { page_type: "tool", cluster: "running_balance", app_store_cpp: "shared_expenses" },
+  "/tools/roommate-bill-split-calculator/": { page_type: "tool", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
+  "/tools/partial-repayment-calculator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/tools/payment-plan-calculator/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/tools/polite-payback-reminder-generator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/tools/repayment-reminder-text-examples/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/tools/repayment-receipt-generator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/tools/temporary-financial-support-record-template/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/tools/family-reimbursement-tracker-template/": { page_type: "tool", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
+  "/compare/splitwise-alternative/": { page_type: "comparison", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
+  "/compare/spreadsheet-vs-app-for-tracking-money-owed/": { page_type: "comparison", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/how-to-remind-someone-they-owe-you-money-politely/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/how-do-you-confront-someone-who-owes-you-money-without-ruining-the-relationship/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/how-to-follow-up-after-a-partial-repayment/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/when-to-ask-for-money-back-or-send-a-repayment-update/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/how-to-handle-awkward-money-conversations/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/how-to-politely-say-no-when-people-ask-for-money/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/why-simple-loans-dont-stay-simple/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/how-to-send-a-repayment-update-when-you-need-more-time/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/blog/how-to-ask-family-for-temporary-financial-help/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/blog/how-to-support-someone-financially-without-confusion/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/blog/what-is-a-running-balance-between-two-people/": { page_type: "blog", cluster: "running_balance", app_store_cpp: "shared_expenses" },
+  "/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
+  "/blog/how-to-track-money-between-roommates/": { page_type: "blog", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
+  "/blog/how-to-split-rent-utilities-and-groceries-with-roommates/": { page_type: "blog", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
+  "/blog/how-to-split-expenses-in-a-relationship-without-fighting/": { page_type: "blog", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
+  "/blog/how-to-keep-track-of-money-between-family-members/": { page_type: "blog", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
+  "/blog/how-to-track-money-you-pay-for-elderly-parents/": { page_type: "blog", cluster: "elderly_parent_caregiving", app_store_cpp: "elderly_parent_caregiving" },
+};
+
 const app = shouldInitializeFirebase() ? initializeApp(FIREBASE_CONFIG) : null;
 const analyticsPromise = initAnalytics();
 const saleBadgeEventsSent = new Set();
+let pageVisitTracked = false;
 
 let activeSale = null;
 
@@ -76,7 +146,9 @@ async function initAnalytics() {
     setDefaultEventParameters({
       site_platform: "web",
       experience_surface: "marketing_site",
-      page_type: getPageType(),
+      page_type: getPageMetadata().page_type,
+      cluster: getPageMetadata().cluster,
+      app_store_cpp: getPageMetadata().app_store_cpp,
     });
 
     setUserProperties(analytics, {
@@ -90,26 +162,41 @@ async function initAnalytics() {
   }
 }
 
-function getPageType() {
-  const path = window.location.pathname;
-  if (path === "/" || path === "/index.html") return "landing";
-  if (path === "/privacy-policy/" || path === "/privacy-policy/index.html") return "privacy_policy";
-  if (path === "/solutions/" || path === "/solutions/index.html") return "solutions_index";
-  if (path.startsWith("/solutions/")) return "solution_page";
-  if (path === "/features/" || path === "/features/index.html") return "features";
-  if (path === "/tools/" || path === "/tools/index.html") return "tools_index";
-  if (path.startsWith("/tools/")) return "tool_page";
-  if (path === "/blog/" || path === "/blog/index.html") return "blog_index";
-  if (path.startsWith("/blog/")) return "blog_article";
-  if (path === "/contact/" || path === "/contact/index.html") return "contact";
-  if (path.startsWith("/redeem/")) return "redeem";
-  return "other";
+function normalizePath(path) {
+  if (!path || path === "/index.html") return "/";
+  if (path.endsWith("/index.html")) return path.slice(0, -"index.html".length);
+  return path.endsWith("/") ? path : path + "/";
+}
+
+function getPageMetadata() {
+  const normalizedPath = normalizePath(window.location.pathname);
+  return PAGE_METADATA[normalizedPath] || {
+    page_type: "hub",
+    cluster: "multi_cluster",
+    app_store_cpp: "default",
+  };
 }
 
 function sanitizeText(value, maxLength) {
   return String(value || "")
     .trim()
     .slice(0, maxLength);
+}
+
+function sanitizeEventName(eventName) {
+  return String(eventName || "")
+    .trim()
+    .toLowerCase()
+    .replace(/[^a-z0-9_]/g, "_")
+    .replace(/_+/g, "_")
+    .replace(/^_+|_+$/g, "");
+}
+
+function normalizeEventName(eventName) {
+  const sanitizedName = sanitizeEventName(eventName);
+  if (!sanitizedName) return WEB_EVENT_PREFIX + "event";
+  if (sanitizedName.indexOf(WEB_EVENT_PREFIX) === 0) return sanitizedName.slice(0, 40);
+  return (WEB_EVENT_PREFIX + sanitizedName).slice(0, 40);
 }
 
 function normalizeSale(sale) {
@@ -151,16 +238,71 @@ function getSaleParams() {
 async function trackEvent(eventName, params) {
   const analytics = await analyticsPromise;
   if (!analytics) return;
+  const pageMetadata = getPageMetadata();
 
-  logEvent(analytics, eventName, Object.assign(
+  logEvent(analytics, normalizeEventName(eventName), Object.assign(
     {
-      page_type: getPageType(),
+      page_type: pageMetadata.page_type,
+      cluster: pageMetadata.cluster,
+      app_store_cpp: pageMetadata.app_store_cpp,
       page_path: window.location.pathname,
       site_platform: "web",
       experience_surface: "marketing_site",
     },
     params || {}
   ));
+}
+
+function getReferrerContext() {
+  const currentOrigin = window.location.origin;
+  let referrerUrl = null;
+
+  try {
+    referrerUrl = document.referrer ? new URL(document.referrer) : null;
+  } catch (error) {
+    referrerUrl = null;
+  }
+
+  if (referrerUrl && referrerUrl.origin === currentOrigin) {
+    return {
+      entry_type: "internal_navigation",
+      is_initial_entry: 0,
+      referrer_type: "same_site",
+      previous_page_path: normalizePath(referrerUrl.pathname),
+      referrer_domain: referrerUrl.hostname,
+    };
+  }
+
+  return {
+    entry_type: "initial_entry",
+    is_initial_entry: 1,
+    referrer_type: referrerUrl ? "external" : "none",
+    previous_page_path: "none",
+    referrer_domain: referrerUrl ? referrerUrl.hostname : "none",
+  };
+}
+
+function hasSmartAppBanner() {
+  return document.querySelector('meta[name="apple-itunes-app"]') ? 1 : 0;
+}
+
+function isIosMobile() {
+  const ua = window.navigator.userAgent || "";
+  return /iPad|iPhone|iPod/.test(ua) || (
+    window.navigator.platform === "MacIntel" && window.navigator.maxTouchPoints > 1
+  );
+}
+
+function trackPageVisited() {
+  if (pageVisitTracked) return;
+  pageVisitTracked = true;
+
+  void trackEvent(PAGE_VISITED_EVENT, Object.assign({}, getReferrerContext(), {
+    page_title: sanitizeText(document.title, 160),
+    page_url: sanitizeText(window.location.href, 240),
+    smart_app_banner_available: hasSmartAppBanner(),
+    smart_app_banner_ios_mobile: hasSmartAppBanner() && isIosMobile() ? 1 : 0,
+  }));
 }
 
 function getCtaLocation(link) {
@@ -173,6 +315,49 @@ function getCtaLocation(link) {
   return "unknown";
 }
 
+function normalizeClusterValue(value) {
+  const key = sanitizeText(value, 80).replace(/-/g, "_");
+  const aliases = {
+    app_store: "app_store",
+    caregiving: "elderly_parent_caregiving",
+    client_records: "client_payment_records",
+    compare: "multi_cluster",
+    couples: "couples_relationship_spending",
+    family: "family_reimbursements",
+    features: "multi_cluster",
+    homepage: "multi_cluster",
+    money_owed: "money_owed_followups",
+    repayments: "money_owed_followups",
+    reviews: "multi_cluster",
+    roommates: "roommates_household_costs",
+    shared_expenses: "shared_expenses",
+    temporary_support: "temporary_financial_support",
+    tools: "multi_cluster",
+  };
+
+  return aliases[key] || key || "unknown";
+}
+
+function getAppStoreCppFromLink(link) {
+  try {
+    const url = new URL(link.href);
+    const ppid = url.searchParams.get("ppid");
+    if (ppid && APP_STORE_CPP_BY_PPID[ppid]) return APP_STORE_CPP_BY_PPID[ppid];
+  } catch (error) {
+    return "default";
+  }
+
+  return "default";
+}
+
+function getAppStoreButtonVariant(link) {
+  if (link.closest('[data-module="best-next-step"]')) return "best_next_step";
+  if (link.dataset.trackEvent) return "custom_tracked_link";
+  if (link.querySelector("img")) return "app_store_badge";
+  if (link.target && link.target.toLowerCase() === "_blank") return "external_link";
+  return "custom_link";
+}
+
 function shouldInterceptNavigation(event, link) {
   if (event.defaultPrevented) return false;
   if (event.button && event.button !== 0) return false;
@@ -182,14 +367,22 @@ function shouldInterceptNavigation(event, link) {
 }
 
 function trackAppStoreClick(link, event) {
+  const pageMetadata = getPageMetadata();
+  const sourceCluster = link.dataset.sourceCluster
+    ? normalizeClusterValue(link.dataset.sourceCluster)
+    : pageMetadata.cluster;
+  const appStoreCpp = getAppStoreCppFromLink(link);
   const eventPayload = Object.assign({}, getSaleParams(), {
     cta_location: getCtaLocation(link),
+    cta_cluster: sourceCluster,
+    app_store_cpp: appStoreCpp,
+    app_store_button_variant: getAppStoreButtonVariant(link),
     link_url: link.href,
     link_text: sanitizeText(link.getAttribute("aria-label") || link.textContent, 120),
   });
 
   if (!shouldInterceptNavigation(event, link)) {
-    void trackEvent("app_store_click", eventPayload);
+    void trackEvent(APP_STORE_OPENED_EVENT, eventPayload);
     return;
   }
 
@@ -202,7 +395,7 @@ function trackAppStoreClick(link, event) {
     window.location.assign(link.href);
   };
 
-  void trackEvent("app_store_click", eventPayload);
+  void trackEvent(APP_STORE_OPENED_EVENT, eventPayload);
   window.setTimeout(navigate, 200);
 }
 
@@ -222,7 +415,7 @@ function bindAppStoreClicks() {
 }
 
 function trackBlogArticleOpen() {
-  if (getPageType() !== "blog_article") return;
+  if (getPageMetadata().page_type !== "blog") return;
   if (window.__youowemeBlogArticleOpenTracked) return;
 
   window.__youowemeBlogArticleOpenTracked = true;
@@ -402,6 +595,7 @@ function onTemporarySupportRecordToolEvent(event) {
 
 function initEventTracking() {
   activeSale = getActiveSale();
+  trackPageVisited();
   bindAppStoreClicks();
   bindMediumClicks();
   bindTrackedLinkClicks();
