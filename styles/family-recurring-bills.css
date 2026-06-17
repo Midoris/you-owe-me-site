@@ -1,0 +1,701 @@
+body.family-bills-page {
+  --family-ink: #18212b;
+  --family-muted: rgba(24, 33, 43, 0.72);
+  --family-soft: #f6f8f5;
+  --family-panel: #ffffff;
+  --family-green: #8fcf8e;
+  --family-green-dark: #2f6248;
+  --family-blue: #8ab6d6;
+  --family-yellow: #f0d98a;
+  --family-border: rgba(15, 23, 42, 0.1);
+  --family-shadow: 0 14px 32px rgba(15, 23, 42, 0.08);
+  --family-measure: 74ch;
+  overflow-x: hidden;
+}
+
+body.family-bills-page *,
+body.family-bills-page *::before,
+body.family-bills-page *::after {
+  box-sizing: border-box;
+}
+
+body.family-bills-page article.post.featured {
+  width: min(1180px, calc(100% - 2rem));
+  max-width: none;
+}
+
+body.family-bills-page #main > .post header.major,
+body.family-bills-page #main > .post header.major h1,
+body.family-bills-page article.post.featured h1,
+body.family-bills-page article.post.featured h2,
+body.family-bills-page article.post.featured h3 {
+  letter-spacing: 0 !important;
+  text-align: left !important;
+}
+
+body.family-bills-page .family-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.42rem;
+  margin: 0 0 1.35rem;
+  color: rgba(24, 33, 43, 0.6);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+body.family-bills-page .family-breadcrumb a {
+  color: var(--family-green-dark);
+  font-weight: 800;
+}
+
+body.family-bills-page .family-breadcrumb [aria-current="page"] {
+  color: rgba(24, 33, 43, 0.78);
+  font-weight: 800;
+}
+
+body.family-bills-page .family-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.02fr) minmax(18rem, 0.78fr);
+  gap: clamp(1.5rem, 4vw, 3rem);
+  align-items: center;
+  margin: 0 0 clamp(2.4rem, 5vw, 4rem);
+}
+
+body.family-bills-page .family-hero-copy,
+body.family-bills-page .family-hero-media,
+body.family-bills-page .family-hero-media img {
+  min-width: 0;
+  max-width: 100%;
+}
+
+body.family-bills-page .family-hero .major {
+  margin: 0 !important;
+}
+
+body.family-bills-page .family-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  width: auto !important;
+  margin: 0 0 0.8rem !important;
+  padding: 0.28rem 0.72rem;
+  border: 1px solid rgba(47, 98, 72, 0.18);
+  border-radius: 999px;
+  background: rgba(143, 207, 142, 0.18);
+  color: var(--family-green-dark) !important;
+  font-size: 0.76rem !important;
+  font-weight: 900;
+  letter-spacing: 0 !important;
+  line-height: 1.35 !important;
+  text-transform: uppercase;
+}
+
+body.family-bills-page .family-hero h1 {
+  width: auto !important;
+  max-width: 13ch !important;
+  margin: 0 0 1rem !important;
+  color: var(--family-ink);
+  font-size: clamp(2.05rem, 4.8vw, 4rem) !important;
+  line-height: 1.02 !important;
+}
+
+body.family-bills-page .family-hero-answer,
+body.family-bills-page .family-hero-support {
+  width: auto !important;
+  max-width: 64ch !important;
+  margin: 0 !important;
+  color: rgba(24, 33, 43, 0.86) !important;
+  font-size: clamp(1.02rem, 0.98rem + 0.16vw, 1.13rem) !important;
+  line-height: 1.72 !important;
+}
+
+body.family-bills-page .family-hero-answer {
+  font-weight: 750;
+}
+
+body.family-bills-page .family-hero-support {
+  margin-top: 0.85rem !important;
+  color: var(--family-muted) !important;
+}
+
+body.family-bills-page .family-hero-media {
+  margin: 0;
+  line-height: 0;
+}
+
+body.family-bills-page .family-hero-media img,
+body.family-bills-page .family-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--family-border);
+  border-radius: 8px;
+  background: #ffffff;
+  box-shadow: var(--family-shadow);
+}
+
+body.family-bills-page .family-hero-media img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+  object-position: center;
+}
+
+body.family-bills-page .family-chip-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1.15rem;
+}
+
+body.family-bills-page .family-chip-row span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.1rem;
+  padding: 0.44rem 0.72rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.92);
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.88rem;
+  font-weight: 800;
+  line-height: 1.25;
+  box-shadow: 0 8px 18px rgba(15, 23, 42, 0.05);
+}
+
+body.family-bills-page .family-chip-row--wide {
+  max-width: 58rem;
+}
+
+body.family-bills-page .family-section,
+body.family-bills-page .family-wide-section {
+  width: 100%;
+  margin: clamp(2.4rem, 5vw, 4rem) auto 0;
+}
+
+body.family-bills-page .family-section {
+  max-width: var(--family-measure);
+}
+
+body.family-bills-page .family-section h2,
+body.family-bills-page .family-wide-section h2 {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 0 0.75rem !important;
+  color: var(--family-ink);
+  font-size: clamp(1.45rem, 1.18rem + 1vw, 2rem) !important;
+  line-height: 1.2 !important;
+}
+
+body.family-bills-page .family-section h3,
+body.family-bills-page .family-wide-section h3 {
+  width: auto !important;
+  max-width: none !important;
+  margin: 0 0 0.45rem !important;
+  color: var(--family-ink);
+  font-size: 1.04rem !important;
+  line-height: 1.32 !important;
+}
+
+body.family-bills-page .family-section p,
+body.family-bills-page .family-wide-section p,
+body.family-bills-page .family-section ul,
+body.family-bills-page .family-wide-section ul,
+body.family-bills-page .family-section ol,
+body.family-bills-page .family-wide-section ol {
+  width: auto !important;
+  max-width: var(--family-measure) !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.family-bills-page .family-section p,
+body.family-bills-page .family-wide-section p,
+body.family-bills-page .family-section li,
+body.family-bills-page .family-wide-section li {
+  color: rgba(33, 41, 49, 0.86);
+}
+
+body.family-bills-page .family-note {
+  width: min(100%, var(--family-measure));
+  margin: 1.15rem 0;
+  padding: 1rem 1.1rem;
+  border-left: 4px solid var(--family-green);
+  border-radius: 8px;
+  background: linear-gradient(135deg, rgba(143, 207, 142, 0.16), rgba(255, 255, 255, 0.94));
+}
+
+body.family-bills-page .family-note p {
+  margin: 0 !important;
+}
+
+body.family-bills-page .family-group-grid,
+body.family-bills-page .family-workflow-grid,
+body.family-bills-page .family-comparison-grid,
+body.family-bills-page .family-feature-grid,
+body.family-bills-page .family-review-grid,
+body.family-bills-page .family-mistake-list,
+body.family-bills-page .family-message-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.15rem;
+}
+
+body.family-bills-page .family-group-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body.family-bills-page .family-workflow-grid,
+body.family-bills-page .family-comparison-grid,
+body.family-bills-page .family-review-grid,
+body.family-bills-page .family-mistake-list,
+body.family-bills-page .family-message-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.family-bills-page .family-feature-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+body.family-bills-page .family-card,
+body.family-bills-page .family-step-card,
+body.family-bills-page .family-message-card,
+body.family-bills-page .family-review-card,
+body.family-bills-page .family-checklist-block,
+body.family-bills-page .family-faq details,
+body.family-bills-page .family-final-cta {
+  border: 1px solid var(--family-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+}
+
+body.family-bills-page .family-card,
+body.family-bills-page .family-step-card,
+body.family-bills-page .family-message-card,
+body.family-bills-page .family-review-card,
+body.family-bills-page .family-checklist-block {
+  padding: 1.05rem;
+}
+
+body.family-bills-page .family-card--accent {
+  background: linear-gradient(135deg, rgba(143, 207, 142, 0.2), rgba(255, 255, 255, 0.96) 54%, rgba(138, 182, 214, 0.15));
+}
+
+body.family-bills-page .family-card p,
+body.family-bills-page .family-step-card p,
+body.family-bills-page .family-message-card p,
+body.family-bills-page .family-review-card p,
+body.family-bills-page .family-checklist-block p {
+  margin: 0 !important;
+  color: var(--family-muted) !important;
+  font-size: 0.96rem !important;
+  line-height: 1.6 !important;
+}
+
+body.family-bills-page .family-card ul {
+  margin: 0.7rem 0 0 !important;
+  padding-left: 1.1rem !important;
+}
+
+body.family-bills-page .family-card li {
+  margin: 0.22rem 0 !important;
+  font-size: 0.94rem !important;
+  line-height: 1.52 !important;
+}
+
+body.family-bills-page .family-split {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.68fr);
+  gap: clamp(1rem, 3vw, 2rem);
+  align-items: center;
+}
+
+body.family-bills-page .family-split--reverse {
+  grid-template-columns: minmax(18rem, 0.68fr) minmax(0, 1fr);
+}
+
+body.family-bills-page .family-split--reverse > div {
+  order: 2;
+}
+
+body.family-bills-page .family-figure {
+  margin: 0;
+  line-height: 0;
+}
+
+body.family-bills-page .family-figure--small {
+  justify-self: end;
+  width: min(100%, 30rem);
+}
+
+body.family-bills-page .family-table-scroll {
+  width: 100%;
+  margin-top: 1.15rem;
+  padding: 0.35rem;
+  overflow-x: auto;
+  border: 1px solid var(--family-border);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  -webkit-overflow-scrolling: touch;
+}
+
+body.family-bills-page .family-table-scroll:focus-visible {
+  outline: 3px solid rgba(47, 98, 72, 0.25);
+  outline-offset: 3px;
+}
+
+body.family-bills-page .family-table {
+  width: 100%;
+  min-width: 840px;
+  margin: 0 !important;
+  border-collapse: separate;
+  border-spacing: 0;
+  color: var(--family-ink);
+}
+
+body.family-bills-page .family-table--example {
+  min-width: 980px;
+}
+
+body.family-bills-page .family-table caption {
+  padding: 0.75rem 0.8rem;
+  color: var(--family-ink);
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.35;
+  text-align: left;
+}
+
+body.family-bills-page .family-table th,
+body.family-bills-page .family-table td {
+  padding: 0.78rem 0.74rem;
+  border-right: 1px solid rgba(15, 23, 42, 0.07);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  color: rgba(24, 33, 43, 0.88);
+  font-size: 0.88rem;
+  line-height: 1.38;
+  text-align: left;
+  vertical-align: top;
+}
+
+body.family-bills-page .family-table th {
+  background: linear-gradient(135deg, rgba(143, 207, 142, 0.55), rgba(138, 182, 214, 0.25));
+  color: var(--family-ink);
+  font-weight: 900;
+}
+
+body.family-bills-page .family-table tbody tr:nth-child(even) td {
+  background: rgba(248, 250, 252, 0.86);
+}
+
+body.family-bills-page .family-table--example td:nth-child(7) {
+  color: var(--family-green-dark);
+  font-weight: 900;
+  white-space: nowrap;
+}
+
+body.family-bills-page .family-step-card {
+  position: relative;
+  padding-left: 3.9rem;
+}
+
+body.family-bills-page .family-step-number {
+  position: absolute;
+  top: 1rem;
+  left: 1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 999px;
+  background: rgba(143, 207, 142, 0.28);
+  color: var(--family-green-dark);
+  font-size: 0.9rem;
+  font-weight: 900;
+}
+
+body.family-bills-page .family-checklist-block {
+  max-width: 58rem;
+  background: linear-gradient(135deg, rgba(143, 207, 142, 0.16), rgba(255, 255, 255, 0.96) 58%, rgba(240, 217, 138, 0.18));
+}
+
+body.family-bills-page .family-checklist-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.42fr);
+  gap: clamp(1rem, 3vw, 1.8rem);
+  align-items: center;
+  margin-top: 1.15rem;
+}
+
+body.family-bills-page .family-figure--checklist {
+  width: min(100%, 22rem);
+  justify-self: end;
+}
+
+body.family-bills-page .family-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1rem;
+  margin: 0.9rem 0 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+body.family-bills-page .family-checklist li {
+  position: relative;
+  min-width: 0;
+  margin: 0 !important;
+  padding: 0.68rem 0.72rem 0.68rem 2.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 8px;
+  background: rgba(255, 255, 255, 0.76);
+  color: rgba(24, 33, 43, 0.84);
+  font-size: 0.94rem !important;
+  line-height: 1.38 !important;
+}
+
+body.family-bills-page .family-checklist li::before {
+  content: "";
+  position: absolute;
+  top: 0.78rem;
+  left: 0.8rem;
+  width: 0.82rem;
+  height: 0.82rem;
+  border: 2px solid var(--family-green-dark);
+  border-radius: 3px;
+  background: rgba(143, 207, 142, 0.18);
+}
+
+body.family-bills-page .family-message-card span,
+body.family-bills-page .family-review-card span {
+  display: block;
+  margin-bottom: 0.5rem;
+  color: var(--family-green-dark);
+  font-size: 0.78rem;
+  font-weight: 900;
+  line-height: 1.35;
+  text-transform: uppercase;
+}
+
+body.family-bills-page .family-message-card p {
+  color: rgba(24, 33, 43, 0.84) !important;
+}
+
+body.family-bills-page .family-review-card blockquote {
+  margin: 0;
+  padding: 0;
+  border-left: 0;
+}
+
+body.family-bills-page .family-review-card blockquote p + p {
+  margin-top: 0.65rem !important;
+}
+
+body.family-bills-page .family-faq {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+body.family-bills-page .family-faq details {
+  overflow: hidden;
+}
+
+body.family-bills-page .family-faq summary {
+  position: relative;
+  padding: 1rem 3rem 1rem 1.1rem;
+  color: var(--family-ink);
+  cursor: pointer;
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+body.family-bills-page .family-faq summary::-webkit-details-marker {
+  display: none;
+}
+
+body.family-bills-page .family-faq summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1.1rem;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.45rem;
+  height: 1.45rem;
+  border-radius: 999px;
+  background: rgba(143, 207, 142, 0.24);
+  color: var(--family-green-dark);
+  transform: translateY(-50%);
+}
+
+body.family-bills-page .family-faq details[open] summary::after {
+  content: "-";
+}
+
+body.family-bills-page .family-faq details p {
+  margin: 0 !important;
+  padding: 0 1.1rem 1.05rem;
+  color: var(--family-muted) !important;
+}
+
+body.family-bills-page .family-final-cta {
+  width: 100%;
+  margin: clamp(2.4rem, 5vw, 4rem) auto 0;
+  padding: clamp(1.25rem, 3vw, 2rem);
+  background: linear-gradient(135deg, rgba(143, 207, 142, 0.2), rgba(255, 255, 255, 0.96) 52%, rgba(138, 182, 214, 0.18));
+}
+
+body.family-bills-page .family-final-cta h2 {
+  width: auto !important;
+  max-width: 18ch !important;
+  margin: 0 0 0.75rem !important;
+  color: var(--family-ink);
+  font-size: clamp(1.55rem, 1.25rem + 1.2vw, 2.2rem) !important;
+  line-height: 1.14 !important;
+}
+
+body.family-bills-page .family-final-cta p {
+  width: auto !important;
+  max-width: 70ch !important;
+  margin: 0 !important;
+}
+
+body.family-bills-page .family-final-cta p + p {
+  margin-top: 0.8rem !important;
+}
+
+body.family-bills-page .lt-appStoreBtn {
+  display: inline-block;
+  width: min(250px, 100%);
+  margin-top: 1rem;
+  line-height: 0;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.18);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.family-bills-page .lt-appStoreBtn img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.family-bills-page .lt-appStoreBtn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.2);
+}
+
+body.family-bills-page .family-footer-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  width: 100%;
+  margin: 1.8rem auto 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+body.family-bills-page .family-footer-links li {
+  margin: 0 !important;
+}
+
+@media (max-width: 1120px) {
+  body.family-bills-page .family-group-grid,
+  body.family-bills-page .family-feature-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  body.family-bills-page .family-hero,
+  body.family-bills-page .family-split,
+  body.family-bills-page .family-split--reverse,
+  body.family-bills-page .family-comparison-grid,
+  body.family-bills-page .family-review-grid,
+  body.family-bills-page .family-mistake-list,
+  body.family-bills-page .family-message-grid,
+  body.family-bills-page .family-checklist-layout {
+    grid-template-columns: 1fr;
+  }
+
+  body.family-bills-page .family-split--reverse > div {
+    order: 0;
+  }
+
+  body.family-bills-page .family-hero h1 {
+    max-width: none !important;
+  }
+
+  body.family-bills-page .family-figure--small {
+    justify-self: start;
+    width: min(100%, 36rem);
+  }
+
+  body.family-bills-page .family-figure--checklist {
+    justify-self: start;
+  }
+}
+
+@media (max-width: 736px) {
+  html {
+    min-width: 0 !important;
+  }
+
+  body.family-bills-page {
+    min-width: 0 !important;
+  }
+
+  body.family-bills-page #main {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.family-bills-page article.post.featured {
+    width: calc(100vw - 1.6rem) !important;
+    max-width: calc(100vw - 1.6rem) !important;
+    padding-top: 1.25rem;
+  }
+
+  body.family-bills-page .family-hero {
+    gap: 1.1rem;
+  }
+
+  body.family-bills-page .family-hero h1 {
+    font-size: clamp(2rem, 11vw, 2.7rem) !important;
+  }
+
+  body.family-bills-page .family-hero-media img {
+    aspect-ratio: 4 / 3;
+  }
+
+  body.family-bills-page .family-group-grid,
+  body.family-bills-page .family-workflow-grid,
+  body.family-bills-page .family-feature-grid,
+  body.family-bills-page .family-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  body.family-bills-page .family-step-card {
+    padding: 3.65rem 1rem 1rem;
+  }
+
+  body.family-bills-page .family-step-number {
+    top: 1rem;
+    left: 1rem;
+  }
+
+  body.family-bills-page .family-table th,
+  body.family-bills-page .family-table td {
+    padding: 0.68rem 0.62rem;
+    font-size: 0.84rem;
+  }
+
+  body.family-bills-page .family-final-cta h2 {
+    max-width: none !important;
+  }
+}

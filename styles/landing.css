@@ -2429,6 +2429,27 @@
         line-height: 1.2;
       }
 
+      body.homepage-page .lt-situationLinks {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.55rem;
+        margin-top: 1rem;
+      }
+
+      body.homepage-page .lt-situationLinks a {
+        display: inline-flex;
+        align-items: center;
+        min-height: 2.45rem;
+        padding: 0.62rem 0.82rem;
+        border-radius: 999px;
+        background: rgba(175, 230, 126, 0.22);
+        color: #24351e;
+        font-size: 0.9rem;
+        font-weight: 800;
+        line-height: 1.2;
+        text-decoration: none;
+      }
+
       body.homepage-page .lt-situationCard:hover,
       body.homepage-page .lt-situationCard:focus-visible {
         transform: translateY(-2px);
@@ -2440,6 +2461,7 @@
       body.homepage-page .lt-findNudge:focus-visible,
       body.homepage-page .lt-textCta:focus-visible,
       body.homepage-page .lt-cardCta:focus-visible,
+      body.homepage-page .lt-situationLinks a:focus-visible,
       body.homepage-page .lt-mobileStickyCta:focus-visible {
         outline: 3px solid rgba(59, 130, 246, 0.36);
         outline-offset: 4px;
