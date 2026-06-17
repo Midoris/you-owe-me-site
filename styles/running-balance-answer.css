@@ -8,7 +8,10 @@ body.running-balance-answer-page {
 }
 
 body.running-balance-answer-page article.post.featured {
-  max-width: none;
+  width: min(1840px, calc(100% - clamp(1.5rem, 5vw, 7rem))) !important;
+  max-width: none !important;
+  margin-left: auto !important;
+  margin-right: auto !important;
 }
 
 body.running-balance-answer-page #wrapper,
@@ -36,8 +39,8 @@ body.running-balance-answer-page .rb-answer-callout,
 body.running-balance-answer-page .rb-answer-section,
 body.running-balance-answer-page .rb-answer-product,
 body.running-balance-answer-page .rb-answer-finalCta {
-  margin-left: 0;
-  margin-right: 0;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 body.running-balance-answer-page .rb-answer-hero,
@@ -56,12 +59,12 @@ body.running-balance-answer-page .rb-answer-hero {
 body.running-balance-answer-page .rb-answer-card,
 body.running-balance-answer-page .rb-answer-callout,
 body.running-balance-answer-page .rb-answer-section {
-  width: min(100%, 58rem);
+  width: 100%;
 }
 
 body.running-balance-answer-page .rb-answer-product,
 body.running-balance-answer-page .rb-answer-finalCta {
-  width: min(100%, 64rem);
+  width: 100%;
 }
 
 body.running-balance-answer-page .rb-answer-hero {
@@ -148,7 +151,7 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
 .rb-answer-callout,
 .rb-answer-product,
 .rb-answer-finalCta {
-  max-width: 58rem;
+  max-width: none;
 }
 
 .rb-answer-section h2,
@@ -552,7 +555,7 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
 }
 
 .rb-answer-product {
-  max-width: 64rem;
+  max-width: none;
 }
 
 .rb-productGrid {
@@ -607,7 +610,7 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
 }
 
 .rb-answer-finalCta {
-  max-width: 64rem;
+  max-width: none;
 }
 
 .rb-answer-finalCta .lt-ctaRow {
