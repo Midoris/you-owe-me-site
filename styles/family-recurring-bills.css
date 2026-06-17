@@ -20,8 +20,8 @@ body.family-bills-page *::after {
 }
 
 body.family-bills-page article.post.featured {
-  width: min(1180px, calc(100% - 2rem));
-  max-width: none;
+  width: min(1920px, calc(100% - clamp(1.5rem, 6vw, 8rem))) !important;
+  max-width: none !important;
 }
 
 body.family-bills-page #main > .post header.major,
@@ -192,13 +192,18 @@ body.family-bills-page .family-section {
 }
 
 body.family-bills-page .family-direct-answer {
-  width: 100%;
-  max-width: none;
-  margin: 0;
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 body.family-bills-page .family-answer-card,
 body.family-bills-page .family-why-section {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 20px;
   background: rgba(255, 255, 255, 0.94);
@@ -232,9 +237,6 @@ body.family-bills-page .family-answer-card p:not(.family-eyebrow) {
 }
 
 body.family-bills-page .family-why-section {
-  max-width: none;
-  margin-left: 0;
-  margin-right: 0;
   padding: clamp(1.15rem, 2.8vw, 1.85rem);
 }
 
@@ -605,6 +607,10 @@ body.family-bills-page .family-faq details p {
 }
 
 body.family-bills-page .best-next-step {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
   text-align: left !important;
 }
 
@@ -620,6 +626,11 @@ body.family-bills-page .best-next-step__intro {
 
 body.family-bills-page .best-next-step h2 {
   margin-top: 0 !important;
+}
+
+body.family-bills-page .best-next-step__grid {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
 }
 
 body.family-bills-page .family-final-cta {
