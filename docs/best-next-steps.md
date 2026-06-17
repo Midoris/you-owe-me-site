@@ -19,9 +19,12 @@ The Best Next Step module is a registry-powered routing component for helping re
 ```sh
 node scripts/build-best-next-steps.mjs
 node scripts/validate-content-registry.js
+node scripts/audit-content-routing.mjs
 ```
 
 The build script writes crawlable static HTML between the markers. Edit the registry, not the generated HTML.
+
+`audit-content-routing.mjs` compares live route files, registry entries, hub links, rendered Best Next Step output, sitemap URLs, and App Store CPP routing metadata. It fails only on hard routing problems such as broken internal links, missing strategic BNS output, missing registry coverage, and invalid App Store URLs; strategic gaps such as planned CPPs or optional BNS opportunities stay as warnings.
 
 ## When Defaults Are Enough
 
