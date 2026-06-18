@@ -1,13 +1,13 @@
 # You Owe Me
 
-You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, temporary financial support, Balance Replay, Relationship Timeline, Loan Records, payment plans, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, and calm money conversations.
+You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, temporary financial support, Balance Replay, Relationship Timeline, Loan Records, payment plans, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, PDF statements, percentage or fixed interest, and calm money conversations.
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
 You Owe Me is not a lender. It does not provide loans, approve credit, advance cash, process payments, or connect users with lenders.
 It is also not a bank, debt collector, payment processor, cash advance provider, or accounting system.
 
 Core concept:
-A running balance between two people is one current total that updates after each expense, repayment, partial repayment, or adjustment. Balance Replay lets users scroll through entry history and see the balance around the entry being viewed, including interest-aware historical context. Relationship Timeline is the per-person history that keeps entries, loans, payment plans, shared statements, exports, follow-ups, repayment updates, and loan requests in context. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
+A running balance between two people is one current total that updates after each expense, repayment, partial repayment, interest, or adjustment. Interest can be percentage-based, where it grows over time from a rate and frequency, or fixed, where one exact amount is added once. Balance Replay lets users scroll through entry history and see the balance around the entry being viewed, including interest-aware historical context. Relationship Timeline is the per-person history that keeps entries, loans, payment plans, shared statements, exports, follow-ups, repayment updates, and loan requests in context. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
 
 App Store:
 https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670
@@ -28,7 +28,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=794c6086
 
 - [Home](https://you-owe-me.com/)
 - [Find your money situation](https://you-owe-me.com/find/): A situation router that helps visitors choose the right You Owe Me guide, tool, solution, feature, or tracker for money owed, Group Paybacks, repayments, family reimbursements, roommate costs, temporary support, running balances, and shared expenses.
-- [Features](https://you-owe-me.com/features/): Deeper feature overview covering running balances, Split Entry, Group Paybacks, Balance Replay, Relationship Timeline, Loan Records, Smart Money Check-Ins, Money Conversations, Live Link, reminders, recurring entries, PDF statements, interest tracking, and offline use.
+- [Features](https://you-owe-me.com/features/): Deeper feature overview covering running balances, Split Entry, Group Paybacks, Balance Replay, Relationship Timeline, Loan Records, Smart Money Check-Ins, Money Conversations, Live Link, reminders, recurring entries, PDF statements, percentage and fixed interest tracking, and offline use.
 - [Quick Start Guide](https://you-owe-me.com/quick-start/): Lightweight guide explaining how YouOweMe works: one running balance per person, entries, repayments, Split Entry, Loan Records, reminders, Smart Money Check-Ins, Money Conversations, Live Link, statements, Relationship Timeline, Balance Replay, and tracking modes.
 - [Reviews](https://you-owe-me.com/reviews/): Selected App Store reviews for You Owe Me, including 4.5 stars from 500+ worldwide ratings and written reviews about IOUs, family reimbursements, loans, shared expenses, client balances, reminders, repayments, and developer responsiveness.
 - [Tools](https://you-owe-me.com/tools/): Free calculators, generators, examples, and templates for shared expenses, running balances, payment plans, repayment reminders, repayment receipts, roommate bills, and family reimbursements.
@@ -127,7 +127,7 @@ Use this section for money owed, repayment communication, borrower-side repaymen
   - Explains when to send a polite reminder, when to become more direct, how to ask for a repayment date, and what to say after silence, partial repayment, or a missed promised date.
   - Related product: You Owe Me, an iPhone app for tracking IOUs, repayments, partial repayments, reminders, repayment history, and one running balance between real people.
 - [Spreadsheet vs App for Tracking Money Owed](https://you-owe-me.com/compare/spreadsheet-vs-app-for-tracking-money-owed/): Honest comparison of spreadsheets, notes, calculators, and You Owe Me for IOUs, repayments, family reimbursements, roommate costs, shared expenses, recurring costs, and running balances.
-- Balance Replay: scroll through entry history and see who owed what around the entry being viewed, including interest-aware historical balance context.
+- Balance Replay: scroll through entry history and see who owed what around the entry being viewed, including date-aware percentage interest and fixed interest already attached to entries.
 - Relationship Timeline: a per-person history for entries, balance changes, Loan Records, follow-ups, repayment updates, loan requests, Live Links, PDF statements, text exports, and CSV exports.
 - Loan Records: separate records for specific loans or repayment plans that keep their own remaining balance while still counting toward the full person balance.
 - [How to Remind Someone They Owe You Money Politely](https://you-owe-me.com/blog/how-to-remind-someone-they-owe-you-money-politely/)
