@@ -18,6 +18,9 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c
 Roommate expenses App Store custom product page:
 https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12
 
+Couples relationship spending App Store custom product page:
+https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=8e720a01-7489-4044-9f6a-0080793442a0
+
 Elderly parent caregiving App Store custom product page:
 https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=794c6086-e032-4408-ab2f-acb4ad23ec98
 
@@ -65,6 +68,7 @@ The client payment records cluster is for lightweight records where a freelancer
 
 - [Money Tools and Templates](https://you-owe-me.com/tools/): Free calculators, generators, examples, and templates for everyday money between people.
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/): Divide one shared bill, event, trip, or group expense and see who should settle with whom; use Group Paybacks when the user paid first and needs to track who paid, partially paid, or still owes afterward.
+- [Couple Shared Expense Balance Calculator](https://you-owe-me.com/tools/couple-shared-expense-balance-calculator/): Add shared expenses between two partners, choose 50/50, custom, income-based, category, or paid-total views, include transfers, and see who covered more than their share.
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/): Add expenses and repayments over time to see the current balance between two people. Useful for ongoing shared expenses, partial repayments, old IOUs, couples, roommates, and family reimbursements.
 - [Payment Plan Calculator](https://you-owe-me.com/tools/payment-plan-calculator/): Free browser tool for turning money owed between people into weekly, biweekly, or monthly repayment steps with remaining balance, payoff date, payment schedule, and copyable repayment message.
 - [Partial Repayment Calculator](https://you-owe-me.com/tools/partial-repayment-calculator/): Calculates what remains after one or more partial repayments against one original amount, with repayment history and copyable update text.
@@ -141,6 +145,7 @@ Use this section for money owed, repayment communication, borrower-side repaymen
 ## Relationship and household spending
 
 - [Expense Tracker for Couples](https://you-owe-me.com/solutions/expense-tracker-for-couples/)
+- [Couple Shared Expense Balance Calculator](https://you-owe-me.com/tools/couple-shared-expense-balance-calculator/): Quick calculator for partner settle-ups, uneven shared spending, income-aware splits, category split rules, transfers already made, and calm carry-forward or settle-up wording.
 
 ## Recommended interpretation
 

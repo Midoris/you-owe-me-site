@@ -1,0 +1,943 @@
+body.couple-balance-page article.post.featured {
+  max-width: none;
+}
+
+.cb-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.56fr);
+}
+
+.cb-heroVisual {
+  margin: 0;
+}
+
+.cb-heroVisual img {
+  display: block;
+  width: min(100%, 32rem);
+  height: auto;
+  margin: 0 auto;
+  border-radius: 28px;
+  box-shadow: 0 24px 58px rgba(15, 23, 42, 0.12);
+}
+
+.cb-privacyNote {
+  max-width: 62ch;
+  margin: 1rem 0 0;
+  color: rgba(24, 33, 43, 0.66);
+  font-size: 0.94rem !important;
+  line-height: 1.55 !important;
+}
+
+.cb-linkButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  border: 0;
+  border-radius: 999px;
+  background: transparent;
+  color: #355428;
+  font-size: 0.9rem;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: none;
+  cursor: pointer;
+  padding: 0.72rem 0.2rem;
+}
+
+.cb-linkButton:hover {
+  color: #18212b;
+}
+
+.cb-calculator {
+  scroll-margin-top: 1rem;
+}
+
+.cb-shell {
+  display: grid;
+  gap: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 28px;
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.2), transparent 31rem),
+    radial-gradient(circle at bottom right, rgba(228, 228, 184, 0.22), transparent 28rem),
+    rgba(255, 255, 255, 0.94);
+  box-shadow: 0 22px 56px rgba(15, 23, 42, 0.1);
+  padding: clamp(1rem, 2.5vw, 1.8rem);
+}
+
+.cb-calculatorHeader {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(15rem, 0.5fr) minmax(12rem, 0.34fr);
+  align-items: start;
+  gap: 1rem;
+}
+
+.cb-calculatorHeader h2,
+.cb-panelHeader h3,
+.cb-copyHeader h3 {
+  margin-bottom: 0.45rem !important;
+}
+
+.cb-calculatorHeader p,
+.cb-panelHeader p,
+.cb-copyHeader p {
+  margin: 0;
+  max-width: 72ch;
+}
+
+.cb-exampleCard {
+  display: grid;
+  gap: 0.55rem;
+  border: 1px solid rgba(175, 230, 126, 0.34);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.2), rgba(228, 228, 184, 0.18)),
+    rgba(255, 255, 255, 0.88);
+  box-shadow: 0 14px 32px rgba(15, 23, 42, 0.07);
+  padding: 0.95rem;
+}
+
+.cb-exampleCard h3 {
+  margin: 0 !important;
+  color: #18212b;
+  font-size: 1.24rem;
+  line-height: 1.16;
+}
+
+.cb-exampleCard p {
+  color: rgba(24, 33, 43, 0.72);
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+}
+
+.cb-cardLabel {
+  margin: 0 0 0.35rem;
+  color: rgba(24, 33, 43, 0.6) !important;
+  font-size: 0.76rem !important;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2 !important;
+  text-transform: uppercase;
+}
+
+.cb-workspace {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.44fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.cb-editor {
+  display: grid;
+  gap: 1rem;
+}
+
+.cb-results {
+  display: grid;
+  gap: 1rem;
+}
+
+.cb-panel,
+.cb-results > section {
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 22px;
+  background: rgba(248, 250, 252, 0.82);
+  padding: clamp(1rem, 2vw, 1.25rem);
+}
+
+.cb-panelHeader,
+.cb-panelHeader--split,
+.cb-copyHeader {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.cb-setupGrid,
+.cb-threeColumn {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.35fr) repeat(2, minmax(10rem, 1fr));
+  gap: 0.9rem;
+}
+
+.cb-twoColumn {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(10rem, 1fr));
+  gap: 0.9rem;
+}
+
+.cb-field label,
+.cb-rowField label,
+.cb-radioGroup legend,
+.cb-toneSelector legend {
+  display: block;
+  margin: 0 0 0.34rem;
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.84rem;
+  font-weight: 750;
+  line-height: 1.35;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.cb-input,
+.cb-select {
+  width: 100%;
+  height: 2.85rem;
+  border: 1px solid rgba(15, 23, 42, 0.12) !important;
+  border-radius: 13px !important;
+  background: rgba(255, 255, 255, 0.95) !important;
+  color: #18212b !important;
+  font-size: 1rem;
+  line-height: 1.2;
+  box-shadow: none !important;
+}
+
+.cb-input {
+  padding: 0 0.85rem !important;
+}
+
+.cb-select {
+  padding: 0 2rem 0 0.85rem;
+}
+
+.cb-input:focus,
+.cb-select:focus,
+.cb-radioCard input:focus-visible + span,
+.cb-methodCard input:focus-visible + span,
+.cb-secondaryButton:focus-visible,
+.cb-smallButton:focus-visible,
+.cb-primaryButton:focus-visible,
+.cb-removeButton:focus-visible,
+.cb-linkButton:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.28) !important;
+  outline-offset: 2px;
+}
+
+.cb-fieldHint,
+.cb-validation,
+.cb-rowValidation,
+.cb-incomeSuggestion {
+  margin: 0.45rem 0 0;
+  color: rgba(24, 33, 43, 0.64);
+  font-size: 0.86rem !important;
+  line-height: 1.45 !important;
+}
+
+.cb-validation,
+.cb-rowValidation {
+  color: #725c16;
+}
+
+.cb-details {
+  margin-top: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.66);
+  padding: 0.9rem;
+}
+
+.cb-details summary {
+  color: #18212b;
+  font-size: 0.96rem;
+  font-weight: 780;
+  cursor: pointer;
+}
+
+.cb-radioGroup,
+.cb-toneSelector {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.65rem;
+  margin: 0.8rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.cb-radioCard,
+.cb-methodCard {
+  display: inline-flex;
+  align-items: stretch;
+  cursor: pointer;
+}
+
+.cb-radioCard input,
+.cb-methodCard input {
+  position: absolute;
+  opacity: 0;
+  pointer-events: none;
+}
+
+.cb-radioCard span {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.2;
+  padding: 0.52rem 0.78rem;
+}
+
+.cb-radioCard input:checked + span,
+.cb-methodCard input:checked + span {
+  border-color: rgba(107, 161, 69, 0.3);
+  background: rgba(175, 230, 126, 0.26);
+  color: #18212b;
+}
+
+.cb-startingAmount {
+  max-width: 18rem;
+  margin-top: 0.85rem;
+}
+
+.cb-methodGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin: 0.95rem 0 0;
+  padding: 0;
+  border: 0;
+}
+
+.cb-methodCard span {
+  display: grid;
+  gap: 0.38rem;
+  align-content: start;
+  min-height: 8.2rem;
+  width: 100%;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.76);
+  letter-spacing: 0;
+  text-transform: none;
+  padding: 0.9rem;
+}
+
+.cb-methodCard strong {
+  color: #18212b;
+  font-size: 0.98rem;
+  line-height: 1.22;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.cb-methodCard small {
+  color: rgba(24, 33, 43, 0.68);
+  font-size: 0.84rem;
+  line-height: 1.4;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+.cb-methodOptions {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 0.9rem;
+}
+
+.cb-optionPanel {
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.68);
+  padding: 0.95rem;
+}
+
+.cb-categoryRules {
+  display: grid;
+  gap: 0.75rem;
+}
+
+.cb-categoryRule {
+  display: grid;
+  grid-template-columns: minmax(9rem, 1fr) minmax(9rem, 0.72fr) repeat(2, minmax(6rem, 0.42fr));
+  gap: 0.75rem;
+  align-items: start;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.76);
+  padding: 0.8rem;
+}
+
+.cb-categoryName {
+  color: #18212b;
+  font-size: 0.94rem;
+  font-weight: 780;
+  line-height: 1.3;
+  padding-top: 0.76rem;
+}
+
+.cb-expenseList,
+.cb-transferList {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 0.95rem;
+}
+
+.cb-emptyState {
+  margin: 0;
+  border: 1px dashed rgba(15, 23, 42, 0.16);
+  border-radius: 16px;
+  color: rgba(24, 33, 43, 0.64);
+  padding: 1rem;
+}
+
+.cb-rowCard {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.06);
+  padding: 1rem;
+}
+
+.cb-rowTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.85rem;
+  margin-bottom: 0.9rem;
+}
+
+.cb-rowTitle {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.55rem;
+}
+
+.cb-rowTitle h4 {
+  margin: 0 !important;
+  color: #18212b;
+  font-size: 1rem;
+  line-height: 1.2;
+}
+
+.cb-typePill {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.75rem;
+  border-radius: 999px;
+  background: rgba(15, 23, 42, 0.055);
+  color: rgba(24, 33, 43, 0.66);
+  font-size: 0.78rem;
+  font-weight: 750;
+  line-height: 1.2;
+  padding: 0.34rem 0.58rem;
+}
+
+.cb-expenseFields {
+  display: grid;
+  grid-template-columns: minmax(8rem, 0.62fr) minmax(12rem, 1fr) minmax(8rem, 0.6fr) minmax(10rem, 0.74fr) minmax(9rem, 0.68fr);
+  gap: 0.8rem;
+  align-items: start;
+}
+
+.cb-expenseMetaFields,
+.cb-transferFields,
+.cb-overrideFields {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.8rem;
+  align-items: start;
+  margin-top: 0.85rem;
+}
+
+.cb-transferFields {
+  grid-template-columns: minmax(8rem, 0.72fr) minmax(8rem, 0.62fr) minmax(9rem, 0.72fr) minmax(9rem, 0.72fr) minmax(12rem, 1fr);
+  margin-top: 0;
+}
+
+.cb-overrideFields {
+  grid-template-columns: minmax(10rem, 0.8fr) repeat(2, minmax(7rem, 0.42fr));
+}
+
+.cb-rowDetails {
+  margin-top: 0.85rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  padding-top: 0.85rem;
+}
+
+.cb-rowDetails summary {
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.9rem;
+  font-weight: 760;
+  cursor: pointer;
+}
+
+.cb-secondaryButton,
+.cb-smallButton,
+.cb-primaryButton,
+.cb-removeButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.45rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  color: #18212b;
+  font-size: 0.88rem;
+  font-weight: 750;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+  box-shadow: none;
+  cursor: pointer;
+}
+
+.cb-secondaryButton,
+.cb-smallButton {
+  background: rgba(255, 255, 255, 0.88);
+  padding: 0.55rem 0.82rem;
+}
+
+.cb-primaryButton {
+  border-color: rgba(53, 84, 40, 0.18);
+  background: #afe67e;
+  padding: 0.62rem 1rem;
+}
+
+.cb-removeButton {
+  background: rgba(255, 255, 255, 0.78);
+  padding: 0.52rem 0.78rem;
+}
+
+.cb-secondaryButton:hover,
+.cb-smallButton:hover,
+.cb-removeButton:hover {
+  background: rgba(175, 230, 126, 0.2);
+}
+
+.cb-primaryButton:hover {
+  background: #9bdc68;
+}
+
+.cb-actionCluster {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.6rem;
+}
+
+.cb-resultCard {
+  border-color: rgba(53, 84, 40, 0.16) !important;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.28), rgba(228, 228, 184, 0.2)),
+    rgba(255, 255, 255, 0.92) !important;
+  box-shadow: 0 18px 40px rgba(15, 23, 42, 0.08);
+}
+
+.cb-resultCard h3 {
+  margin: 0 !important;
+  color: #18212b;
+  font-size: clamp(1.5rem, 2.6vw, 2.35rem) !important;
+  line-height: 1.08 !important;
+  letter-spacing: 0;
+}
+
+.cb-resultCard p:last-child {
+  max-width: 58ch;
+  margin: 0.75rem 0 0;
+  color: rgba(24, 33, 43, 0.72);
+  font-size: 0.98rem !important;
+  line-height: 1.5 !important;
+}
+
+.cb-summaryGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cb-summaryCard {
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.82);
+  padding: 0.9rem;
+}
+
+.cb-summaryCard span {
+  display: block;
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.8rem;
+  font-weight: 750;
+  line-height: 1.25;
+}
+
+.cb-summaryCard strong {
+  display: block;
+  margin-top: 0.3rem;
+  color: #18212b;
+  font-size: 1.04rem;
+  line-height: 1.22;
+}
+
+.cb-summaryCard small {
+  display: block;
+  margin-top: 0.28rem;
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.cb-summaryCard--wide {
+  grid-column: 1 / -1;
+}
+
+.cb-categorySummaryTable {
+  display: grid;
+  gap: 0.45rem;
+  margin-top: 0.75rem;
+}
+
+.cb-categorySummaryHeader,
+.cb-categorySummaryRow {
+  display: grid;
+  grid-template-columns: minmax(7rem, 1fr) minmax(5rem, 0.62fr) minmax(8rem, 1fr) repeat(2, minmax(5rem, 0.62fr));
+  gap: 0.55rem;
+  align-items: start;
+}
+
+.cb-categorySummaryHeader span {
+  color: rgba(24, 33, 43, 0.58);
+  font-size: 0.72rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.cb-categorySummaryRow {
+  border-top: 1px solid rgba(15, 23, 42, 0.07);
+  color: rgba(33, 41, 49, 0.86);
+  font-size: 0.82rem;
+  line-height: 1.4;
+  padding-top: 0.45rem;
+}
+
+.cb-explanationBox {
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.12), rgba(228, 228, 184, 0.12)),
+    rgba(255, 255, 255, 0.74) !important;
+}
+
+.cb-explanationBox h4,
+.cb-copyPreview h4 {
+  margin: 0 0 0.45rem !important;
+  color: #18212b;
+  font-size: 1rem;
+  line-height: 1.25;
+}
+
+.cb-explanationBox p,
+.cb-copyPreview p {
+  margin: 0;
+  color: rgba(24, 33, 43, 0.74);
+  font-size: 0.93rem !important;
+  line-height: 1.5 !important;
+  white-space: pre-line;
+}
+
+.cb-copyPanel {
+  display: grid;
+  gap: 0.95rem;
+}
+
+.cb-copyStatus {
+  min-width: 8rem;
+  color: #355428;
+  font-size: 0.9rem;
+  font-weight: 750;
+}
+
+.cb-copyPreview {
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.74);
+  padding: 0.95rem;
+}
+
+.cb-calculatorNote {
+  margin-top: 0;
+}
+
+.cb-contentSection p {
+  max-width: 76ch;
+}
+
+.cb-cardGrid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.cb-cardGrid article {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+  padding: 1rem;
+}
+
+.cb-cardGrid h3 {
+  margin: 0.3rem 0 0.55rem !important;
+}
+
+.cb-cardGrid p:last-child {
+  margin-bottom: 0;
+  font-size: 0.95rem !important;
+  line-height: 1.5 !important;
+}
+
+.cb-softCta {
+  margin-top: 1rem;
+  color: #355428 !important;
+  font-weight: 760;
+}
+
+.cb-doDontTable {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.cb-doDontHeader,
+.cb-doDontRow {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.cb-doDontHeader span {
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.78rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.cb-doDontRow span {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.86);
+  color: rgba(33, 41, 49, 0.9);
+  font-size: 0.96rem;
+  line-height: 1.5;
+  padding: 0.85rem;
+}
+
+.cb-exampleTableWrap {
+  margin: 1rem 0;
+  overflow-x: auto;
+}
+
+.cb-exampleTable {
+  width: 100%;
+  border-collapse: collapse;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.cb-exampleTable th,
+.cb-exampleTable td {
+  padding: 0.82rem 0.9rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 0.96rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.cb-exampleTable th {
+  color: #18212b;
+  font-weight: 780;
+}
+
+.cb-exampleTable tr:last-child td {
+  border-bottom: 0;
+}
+
+.cb-exampleCta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+  margin-top: 1rem;
+  border: 1px solid rgba(175, 230, 126, 0.28);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+  padding: 0.85rem 0.95rem;
+}
+
+.cb-exampleCta p {
+  flex: 1 1 18rem;
+  margin: 0;
+  color: rgba(24, 33, 43, 0.74);
+  font-size: 0.96rem !important;
+  line-height: 1.45 !important;
+}
+
+.faq-list {
+  display: grid;
+  gap: 0.85rem;
+}
+
+.faq-list details {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.06);
+  padding: 1rem 1.1rem;
+}
+
+.faq-list summary {
+  color: #18212b;
+  font-weight: 760;
+  cursor: pointer;
+}
+
+.faq-list p {
+  margin: 0.75rem 0 0;
+}
+
+@media (max-width: 1180px) {
+  .cb-methodGrid,
+  .cb-cardGrid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+
+  .cb-expenseFields,
+  .cb-transferFields,
+  .cb-categoryRule {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (min-width: 981px) and (min-height: 860px) {
+  .cb-results {
+    position: sticky;
+    top: 1rem;
+  }
+}
+
+@media (max-width: 980px) {
+  .cb-hero,
+  .cb-calculatorHeader,
+  .cb-workspace,
+  .cb-setupGrid {
+    grid-template-columns: 1fr;
+  }
+
+  .cb-heroVisual img {
+    width: min(100%, 34rem);
+  }
+
+  .cb-panelHeader--split,
+  .cb-copyHeader {
+    flex-direction: column;
+  }
+
+  .cb-actionCluster {
+    justify-content: flex-start;
+  }
+
+  .cb-summaryGrid {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+
+  .cb-cardGrid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 736px) {
+  .cb-heroVisual {
+    display: none;
+  }
+
+  .cb-shell,
+  .cb-panel,
+  .cb-results > section,
+  .cb-rowCard,
+  .cb-cardGrid article,
+  .faq-list details {
+    border-radius: 18px;
+  }
+
+  .cb-actionCluster,
+  .cb-radioGroup,
+  .cb-toneSelector {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cb-secondaryButton,
+  .cb-smallButton,
+  .cb-primaryButton,
+  .cb-removeButton,
+  .cb-linkButton,
+  .cb-radioCard,
+  .cb-radioCard span,
+  .cb-methodCard,
+  .cb-methodCard span {
+    width: 100%;
+  }
+
+  .cb-methodGrid,
+  .cb-twoColumn,
+  .cb-threeColumn,
+  .cb-expenseFields,
+  .cb-expenseMetaFields,
+  .cb-transferFields,
+  .cb-overrideFields,
+  .cb-summaryGrid,
+  .cb-cardGrid,
+  .cb-categoryRule,
+  .cb-categorySummaryHeader,
+  .cb-categorySummaryRow,
+  .cb-doDontHeader,
+  .cb-doDontRow {
+    grid-template-columns: 1fr;
+  }
+
+  .cb-rowTop {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  .cb-input,
+  .cb-select {
+    height: 3rem;
+    font-size: 1.02rem;
+  }
+
+  .cb-secondaryButton,
+  .cb-smallButton,
+  .cb-primaryButton,
+  .cb-removeButton {
+    min-height: 2.85rem;
+    font-size: 0.96rem;
+  }
+
+  .cb-methodCard span {
+    min-height: auto;
+  }
+
+  .cb-resultCard h3 {
+    font-size: clamp(1.45rem, 8vw, 2.05rem) !important;
+  }
+
+  .cb-exampleTable th,
+  .cb-exampleTable td {
+    padding: 0.72rem;
+    font-size: 0.95rem;
+  }
+}

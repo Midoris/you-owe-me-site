@@ -91,6 +91,7 @@ const PAGE_METADATA = {
   "/solutions/temporary-financial-support-tracker/": { page_type: "solution", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
   "/solutions/client-payment-records/": { page_type: "solution", cluster: "client_payment_records", app_store_cpp: "client_payment_records" },
   "/tools/split-expense-calculator/": { page_type: "tool", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
+  "/tools/couple-shared-expense-balance-calculator/": { page_type: "tool", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
   "/tools/running-balance-calculator/": { page_type: "tool", cluster: "running_balance", app_store_cpp: "shared_expenses" },
   "/tools/roommate-bill-split-calculator/": { page_type: "tool", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/tools/partial-repayment-calculator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
