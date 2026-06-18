@@ -155,9 +155,10 @@ export function renderBestNextStep(entry, byUrl = new Map()) {
     const destination = step.resolved.destinationKey;
     const destinationCluster = step.resolved.destinationCluster;
     const trackLocation = `${sourcePage}_best_next_step_${step.position}`;
+    const trackEventAttr = destinationCluster === "app-store" ? "" : " data-track-event=\"best_next_step_click\"";
 
     return [
-      `    <a class="best-next-step__card" href="${escapeAttr(step.resolved.href)}" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="${escapeAttr(trackLocation)}" data-source-page="${escapeAttr(sourcePage)}" data-source-cluster="${escapeAttr(entry.cluster)}" data-destination-cluster="${escapeAttr(destinationCluster)}" data-step-type="${escapeAttr(step.type)}" data-step-intent="${escapeAttr(step.intent)}" data-step-destination="${escapeAttr(destination)}" data-step-position="${escapeAttr(step.position)}" data-module-variant="${escapeAttr(resolved.variant)}" data-module-template="${escapeAttr(resolved.template)}"${step.analyticsId ? ` data-step-analytics-id="${escapeAttr(step.analyticsId)}"` : ""}>`,
+      `    <a class="best-next-step__card" href="${escapeAttr(step.resolved.href)}" data-module="best-next-step"${trackEventAttr} data-track-location="${escapeAttr(trackLocation)}" data-source-page="${escapeAttr(sourcePage)}" data-source-cluster="${escapeAttr(entry.cluster)}" data-destination-cluster="${escapeAttr(destinationCluster)}" data-step-type="${escapeAttr(step.type)}" data-step-intent="${escapeAttr(step.intent)}" data-step-destination="${escapeAttr(destination)}" data-step-position="${escapeAttr(step.position)}" data-module-variant="${escapeAttr(resolved.variant)}" data-module-template="${escapeAttr(resolved.template)}"${step.analyticsId ? ` data-step-analytics-id="${escapeAttr(step.analyticsId)}"` : ""}>`,
       `      <span class="best-next-step__label">${escapeHtml(step.label)}</span>`,
       `      <strong>${escapeHtml(step.title)}</strong>`,
       `      <span>${escapeHtml(step.description)}</span>`,

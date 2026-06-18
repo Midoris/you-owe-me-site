@@ -88,17 +88,17 @@ const PAGE_METADATA = {
   "/solutions/expense-tracker-for-couples/": { page_type: "solution", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
   "/solutions/family-reimbursement-tracker/": { page_type: "solution", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
   "/solutions/elderly-parent-expense-tracker/": { page_type: "solution", cluster: "elderly_parent_caregiving", app_store_cpp: "elderly_parent_caregiving" },
-  "/solutions/temporary-financial-support-tracker/": { page_type: "solution", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/solutions/temporary-financial-support-tracker/": { page_type: "solution", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
   "/solutions/client-payment-records/": { page_type: "solution", cluster: "client_payment_records", app_store_cpp: "client_payment_records" },
   "/tools/split-expense-calculator/": { page_type: "tool", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/tools/running-balance-calculator/": { page_type: "tool", cluster: "running_balance", app_store_cpp: "shared_expenses" },
   "/tools/roommate-bill-split-calculator/": { page_type: "tool", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/tools/partial-repayment-calculator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
-  "/tools/payment-plan-calculator/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/tools/payment-plan-calculator/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
   "/tools/polite-payback-reminder-generator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/repayment-reminder-text-examples/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/repayment-receipt-generator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
-  "/tools/temporary-financial-support-record-template/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/tools/temporary-financial-support-record-template/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
   "/tools/family-reimbursement-tracker-template/": { page_type: "tool", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
   "/compare/splitwise-alternative/": { page_type: "comparison", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/compare/spreadsheet-vs-app-for-tracking-money-owed/": { page_type: "comparison", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
@@ -110,9 +110,9 @@ const PAGE_METADATA = {
   "/blog/how-to-handle-awkward-money-conversations/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-politely-say-no-when-people-ask-for-money/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/why-simple-loans-dont-stay-simple/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
-  "/blog/how-to-send-a-repayment-update-when-you-need-more-time/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "none" },
-  "/blog/how-to-ask-family-for-temporary-financial-help/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "none" },
-  "/blog/how-to-support-someone-financially-without-confusion/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "none" },
+  "/blog/how-to-send-a-repayment-update-when-you-need-more-time/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
+  "/blog/how-to-ask-family-for-temporary-financial-help/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
+  "/blog/how-to-support-someone-financially-without-confusion/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
   "/blog/what-is-a-running-balance-between-two-people/": { page_type: "blog", cluster: "running_balance", app_store_cpp: "shared_expenses" },
   "/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/blog/how-to-track-money-between-roommates/": { page_type: "blog", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
@@ -351,12 +351,33 @@ function getAppStoreCppFromLink(link) {
   return "default";
 }
 
+function getAppStoreIntendedCpp(link, pageMetadata, appStoreCpp) {
+  const stepDestination = sanitizeText(link.dataset.stepDestination, 160);
+  const stepMatch = stepDestination.match(/^app-store:(.+)$/);
+  if (stepMatch && stepMatch[1]) {
+    return normalizeClusterValue(stepMatch[1]);
+  }
+
+  if (appStoreCpp && appStoreCpp !== "default") return appStoreCpp;
+  if (pageMetadata.app_store_cpp && pageMetadata.app_store_cpp !== "none") return pageMetadata.app_store_cpp;
+  return appStoreCpp || "default";
+}
+
 function getAppStoreButtonVariant(link) {
   if (link.closest('[data-module="best-next-step"]')) return "best_next_step";
-  if (link.dataset.trackEvent) return "custom_tracked_link";
   if (link.querySelector("img")) return "app_store_badge";
   if (link.target && link.target.toLowerCase() === "_blank") return "external_link";
   return "custom_link";
+}
+
+function getAppStoreCtaSurface(link) {
+  if (link.closest('[data-module="best-next-step"]')) return "best_next_step";
+  if (link.closest(".lt-toolsHero") || link.closest(".lt-detailHero") || link.closest(".lt-hero")) return "hero";
+  if (link.closest("footer") || link.closest("#footer")) return "footer";
+  if (link.closest(".lt-finalCta") || link.closest(".lt-bottomCta")) return "final_cta";
+  if (link.closest("#main")) return "inline";
+  if (link.closest("#nav")) return "nav";
+  return "other";
 }
 
 function shouldInterceptNavigation(event, link) {
@@ -373,12 +394,18 @@ function trackAppStoreClick(link, event) {
     ? normalizeClusterValue(link.dataset.sourceCluster)
     : pageMetadata.cluster;
   const appStoreCpp = getAppStoreCppFromLink(link);
+  const intendedCpp = getAppStoreIntendedCpp(link, pageMetadata, appStoreCpp);
   const eventPayload = Object.assign({}, getSaleParams(), {
+    source_page_path: window.location.pathname,
+    page_title: sanitizeText(document.title, 160),
     cta_location: getCtaLocation(link),
+    cta_surface: getAppStoreCtaSurface(link),
     cta_cluster: sourceCluster,
     app_store_cpp: appStoreCpp,
+    app_store_intended_cpp: intendedCpp,
     app_store_button_variant: getAppStoreButtonVariant(link),
     link_url: link.href,
+    app_store_destination_url: link.href,
     link_text: sanitizeText(link.getAttribute("aria-label") || link.textContent, 120),
   });
 
@@ -453,6 +480,7 @@ function bindTrackedLinkClicks() {
 
   links.forEach(function (link) {
     if (link.dataset.linkAnalyticsBound === "1") return;
+    if (link.href && link.href.indexOf(APP_STORE_HOST_MATCH) !== -1 && link.href.indexOf(APP_STORE_ID_MATCH) !== -1) return;
 
     link.dataset.linkAnalyticsBound = "1";
     link.addEventListener("click", function () {
