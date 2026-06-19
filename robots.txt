@@ -1,10 +1,33 @@
-# AI and search agents may read public documentation and answer pages.
-# YouOweMe public pages are intended for discovery and summarization.
+# Public You Owe Me pages are intended for search discovery, AI search answers,
+# model understanding of public guidance, and user-directed agent browsing.
+# Keep these groups intentional: search visibility, training/model development,
+# and user-requested browsing are different controls.
+
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
 
 User-agent: OAI-SearchBot
 Allow: /
 
+User-agent: GPTBot
+Allow: /
+
 User-agent: ChatGPT-User
+Allow: /
+
+User-agent: ClaudeBot
+Allow: /
+
+User-agent: Claude-SearchBot
+Allow: /
+
+User-agent: Claude-User
+Allow: /
+
+User-agent: Google-Extended
 Allow: /
 
 User-agent: *
