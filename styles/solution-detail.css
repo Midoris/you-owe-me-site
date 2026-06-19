@@ -821,6 +821,167 @@ body.solution-detail-page .solution-faq-item p {
   color: rgba(24, 33, 43, 0.74);
 }
 
+body.group-payback-page .group-payback-callout,
+body.group-payback-page .group-payback-tablePanel,
+body.group-payback-page .group-message-card {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.group-payback-page .group-payback-callout {
+  max-width: 76ch;
+  margin-top: 1.25rem;
+  padding: 1.1rem 1.2rem;
+  border-color: rgba(82, 131, 48, 0.18);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.18), rgba(255, 255, 255, 0.94));
+}
+
+body.group-payback-page .group-payback-callout p {
+  margin: 0;
+  color: rgba(24, 33, 43, 0.78);
+  font-weight: 700;
+}
+
+body.group-payback-page .group-payback-tablePanel {
+  margin-top: 1.55rem;
+  padding: 0.75rem;
+  overflow-x: auto;
+  border-radius: 22px;
+  -webkit-overflow-scrolling: touch;
+}
+
+body.group-payback-page .group-payback-tablePanel--record {
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.15), rgba(255, 255, 255, 0.96) 48%, rgba(228, 238, 248, 0.52));
+}
+
+body.group-payback-page .group-payback-table {
+  width: 100%;
+  min-width: 620px;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+  overflow: hidden;
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+body.group-payback-page .group-decision-table {
+  min-width: 720px;
+}
+
+body.group-payback-page .group-payback-table th,
+body.group-payback-page .group-payback-table td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  color: rgba(24, 33, 43, 0.84);
+  font-size: 0.98rem;
+  line-height: 1.45;
+  text-align: left;
+  vertical-align: top;
+  text-transform: none;
+  letter-spacing: 0;
+}
+
+body.group-payback-page .group-payback-table thead th {
+  background: rgba(175, 230, 126, 0.18);
+  color: rgba(24, 33, 43, 0.72);
+  font-size: 0.82rem;
+  font-weight: 900;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+body.group-payback-page .group-payback-table tbody th {
+  color: rgba(24, 33, 43, 0.92);
+  font-weight: 800;
+}
+
+body.group-payback-page .group-payback-table tbody tr:last-child th,
+body.group-payback-page .group-payback-table tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+body.group-payback-page .group-payback-ledger td:nth-child(2),
+body.group-payback-page .group-payback-ledger td:nth-child(3),
+body.group-payback-page .group-payback-ledger td:nth-child(5) {
+  text-align: right;
+  white-space: nowrap;
+}
+
+body.group-payback-page .group-status {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-width: 5.9rem;
+  padding: 0.28rem 0.68rem;
+  border-radius: 999px;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  font-size: 0.86rem;
+  font-weight: 800;
+  line-height: 1.25;
+  white-space: nowrap;
+}
+
+body.group-payback-page .group-status--paid {
+  background: rgba(175, 230, 126, 0.26);
+  color: #274218;
+}
+
+body.group-payback-page .group-status--partial {
+  background: rgba(228, 238, 248, 0.86);
+  color: #215982;
+}
+
+body.group-payback-page .group-status--open {
+  background: rgba(244, 126, 94, 0.13);
+  color: #8a3b2d;
+}
+
+body.group-payback-page .group-ledger-total {
+  margin: 0.85rem 0 0;
+  padding: 0.85rem 1rem;
+  border-radius: 14px;
+  background: rgba(175, 230, 126, 0.18);
+  color: rgba(24, 33, 43, 0.82);
+}
+
+body.group-payback-page .group-message-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.25rem;
+  margin-top: 1.6rem;
+}
+
+body.group-payback-page .group-message-card {
+  padding: 1.35rem;
+  border-radius: 20px;
+  background:
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(248, 250, 246, 0.9));
+}
+
+body.group-payback-page .group-message-card h3 {
+  margin-top: 0;
+}
+
+body.group-payback-page .group-message-card p {
+  margin: 0;
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 1rem;
+  line-height: 1.65;
+}
+
+body.group-payback-page .group-payback-mid-visual {
+  width: min(100%, 52rem);
+}
+
+body.group-payback-page .solution-step-item {
+  align-items: start;
+}
+
 body.temporary-support-page .temporary-hero-note,
 body.temporary-support-page .temporary-clarification,
 body.temporary-support-page .temporary-record-panel,
@@ -1606,6 +1767,14 @@ body.elderly-parent-expense-page .elderly-wide-visual img {
   body.temporary-support-page .temporary-record-layout {
     grid-template-columns: 1fr;
   }
+
+  body.group-payback-page .lt-detailHeroVisual {
+    width: min(100%, 18rem);
+  }
+
+  body.group-payback-page .group-message-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
 }
 
 @media (max-width: 736px) {
@@ -1766,6 +1935,43 @@ body.elderly-parent-expense-page .elderly-wide-visual img {
     letter-spacing: 0.08em;
     text-transform: uppercase;
   }
+
+  body.group-payback-page .group-payback-callout,
+  body.group-payback-page .group-message-card {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  body.group-payback-page .group-payback-tablePanel {
+    padding: 0.55rem;
+    border-radius: 18px;
+  }
+
+  body.group-payback-page .group-payback-table {
+    min-width: 590px;
+  }
+
+  body.group-payback-page .group-decision-table {
+    min-width: 680px;
+  }
+
+  body.group-payback-page .group-payback-table th,
+  body.group-payback-page .group-payback-table td {
+    padding: 0.72rem 0.78rem;
+    font-size: 0.94rem;
+    line-height: 1.38;
+  }
+
+  body.group-payback-page .group-message-grid {
+    grid-template-columns: 1fr;
+    gap: 0.9rem;
+    margin-top: 1.1rem;
+  }
+
+  body.group-payback-page .group-message-card p {
+    font-size: 0.98rem;
+    line-height: 1.55;
+  }
 }
 
 /* ----------------------------------------
@@ -1831,6 +2037,10 @@ body.elderly-parent-expense-page .elderly-wide-visual img {
 
   body.solution-detail-page .lt-detailHeroVisual {
     width: min(100%, 12rem);
+  }
+
+  body.group-payback-page .lt-detailHeroVisual {
+    width: min(100%, 15.5rem);
   }
 
   body.solution-detail-page .lt-detailHeroVisual--wide {

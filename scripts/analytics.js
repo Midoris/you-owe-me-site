@@ -84,6 +84,7 @@ const PAGE_METADATA = {
   "/redeem/": { page_type: "feature", cluster: "multi_cluster", app_store_cpp: "default" },
   "/solutions/app-to-track-money-owed/": { page_type: "solution", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/solutions/shared-expense-tracker/": { page_type: "solution", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
+  "/solutions/group-payback-tracker/": { page_type: "solution", cluster: "shared_expenses", app_store_cpp: "group_paybacks" },
   "/solutions/roommate-expense-tracker/": { page_type: "solution", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/solutions/expense-tracker-for-couples/": { page_type: "solution", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
   "/solutions/family-reimbursement-tracker/": { page_type: "solution", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
