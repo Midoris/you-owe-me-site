@@ -1,0 +1,312 @@
+body.group-payback-answer-page {
+  --gpa-ink: #18212b;
+  --gpa-muted: rgba(24, 33, 43, 0.72);
+  --gpa-line: rgba(15, 23, 42, 0.08);
+  --gpa-green: #afe67e;
+  --gpa-amber: #f4d89a;
+  --gpa-coral: #f4b49d;
+  --gpa-blue: #dfeaf4;
+}
+
+body.group-payback-answer-page #main {
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.15), transparent 28%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f6f8 72%);
+}
+
+body.group-payback-answer-page a {
+  border-bottom: 0;
+}
+
+body.group-payback-answer-page .gpa-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.48fr);
+  align-items: center;
+}
+
+body.group-payback-answer-page .gpa-hero h1 {
+  max-width: 18ch;
+}
+
+body.group-payback-answer-page .gpa-hero .lt-heroBody {
+  font-weight: 700;
+}
+
+.gpa-hero-link {
+  margin: 0.85rem 0 0 !important;
+  color: var(--gpa-muted) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.45 !important;
+}
+
+.gpa-hero-visual img {
+  max-width: 38rem;
+}
+
+.gpa-formula-card,
+.gpa-summary-card,
+.gpa-download-card {
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.2), rgba(223, 234, 244, 0.24)),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 34px rgba(15, 23, 42, 0.07);
+}
+
+.gpa-formula-card {
+  display: grid;
+  gap: 0.7rem;
+  margin: 1.1rem 0;
+  padding: 1rem;
+}
+
+.gpa-formula-card p {
+  margin: 0;
+  max-width: none;
+}
+
+.gpa-table {
+  min-width: 760px;
+}
+
+.gpa-ledger-table {
+  min-width: 850px;
+}
+
+.gpa-decision-table {
+  min-width: 820px;
+}
+
+.gpa-status {
+  display: inline-flex;
+  align-items: center;
+  width: fit-content;
+  min-height: 1.85rem;
+  border-radius: 999px;
+  font-size: 0.8rem;
+  font-weight: 850;
+  line-height: 1.15;
+  padding: 0.34rem 0.68rem;
+  white-space: nowrap;
+}
+
+.gpa-status--paid {
+  background: rgba(175, 230, 126, 0.38);
+  color: #355428;
+}
+
+.gpa-status--partial {
+  background: rgba(244, 216, 154, 0.45);
+  color: #8a5b05;
+}
+
+.gpa-status--open {
+  background: rgba(244, 180, 157, 0.36);
+  color: #9c3d23;
+}
+
+.gpa-summary-card {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+  margin: 1rem 0 1.1rem;
+  padding: 1rem;
+}
+
+.gpa-summary-card p {
+  display: grid;
+  gap: 0.28rem;
+  margin: 0 !important;
+  max-width: none !important;
+}
+
+.gpa-summary-card span {
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.78rem;
+  font-weight: 850;
+  line-height: 1.2;
+  text-transform: uppercase;
+}
+
+.gpa-summary-card strong {
+  color: var(--gpa-ink);
+  font-size: clamp(1.45rem, 2.4vw, 2rem);
+  line-height: 1;
+}
+
+.gpa-inline-cta {
+  margin-top: 1rem;
+}
+
+.gpa-wide-image {
+  margin-bottom: 1.2rem;
+}
+
+.gpa-card-grid {
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+}
+
+.gpa-message-grid {
+  margin: 1rem 0 1.2rem;
+}
+
+.gpa-copy-status {
+  min-height: 1.4rem;
+}
+
+.gpa-copy-status:empty {
+  min-height: 0;
+}
+
+body.group-payback-answer-page .template-card__message {
+  overflow-wrap: anywhere;
+}
+
+body.group-payback-answer-page .template-card p,
+body.group-payback-answer-page .template-card blockquote {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.gpa-best-next-step {
+  width: 100%;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.gpa-two-column .rb-comparisonCard {
+  padding: 1.15rem;
+}
+
+.gpa-two-column ul {
+  margin: 0 !important;
+}
+
+.gpa-situation-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gpa-product-section .lt-bridgePanel {
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.22), transparent 34%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(223, 234, 244, 0.44));
+}
+
+.gpa-product-grid {
+  margin: 1.2rem 0;
+}
+
+.gpa-product-wide {
+  grid-column: span 2;
+}
+
+.gpa-download-card {
+  margin-top: 1.2rem;
+  padding: clamp(1rem, 2.5vw, 1.35rem);
+}
+
+.gpa-download-card h3 {
+  margin: 0 0 0.6rem !important;
+}
+
+.gpa-download-card p {
+  margin: 0 !important;
+  max-width: 66ch !important;
+}
+
+.gpa-download-card .lt-ctaRow {
+  margin-top: 1rem;
+}
+
+.gpa-related-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.gpa-final-cta {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(175, 230, 126, 0.18) 100%);
+}
+
+body.group-payback-answer-page .lt-pageMeta,
+body.group-payback-answer-page .lt-actions {
+  width: 100%;
+  max-width: 72rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.group-payback-answer-page .lt-appStoreBtn img {
+  width: 250px;
+  max-width: 100%;
+}
+
+@media (max-width: 1100px) {
+  .gpa-situation-grid,
+  .gpa-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .gpa-product-wide {
+    grid-column: auto;
+  }
+}
+
+@media (max-width: 980px) {
+  body.group-payback-answer-page .gpa-hero {
+    grid-template-columns: 1fr;
+  }
+
+  body.group-payback-answer-page .gpa-hero h1 {
+    max-width: 22ch;
+  }
+
+  body.group-payback-answer-page .gpa-hero-visual {
+    display: flex;
+    justify-content: flex-start;
+  }
+
+  body.group-payback-answer-page .gpa-hero-visual img {
+    max-width: 100%;
+  }
+}
+
+@media (max-width: 736px) {
+  body.group-payback-answer-page .gpa-hero {
+    padding: 1.25rem 1rem;
+  }
+
+  body.group-payback-answer-page .gpa-hero-visual {
+    display: block;
+  }
+
+  body.group-payback-answer-page .gpa-hero h1 {
+    max-width: none;
+  }
+
+  .gpa-formula-card,
+  .gpa-summary-card,
+  .gpa-download-card {
+    border-radius: 16px;
+  }
+
+  .gpa-summary-card,
+  .gpa-situation-grid,
+  .gpa-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .gpa-table {
+    min-width: 680px;
+  }
+
+  .gpa-ledger-table,
+  .gpa-decision-table {
+    min-width: 760px;
+  }
+
+  .copy-button {
+    width: 100%;
+  }
+}

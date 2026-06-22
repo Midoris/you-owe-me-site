@@ -59,6 +59,7 @@ const clusters = new Set([
   "reviews",
   "caregiving",
   "client-records",
+  "group-paybacks",
   "long-term-balances",
 ]);
 

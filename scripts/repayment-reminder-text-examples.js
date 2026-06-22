@@ -80,10 +80,15 @@
     return copyTextWithTextarea(text);
   }
 
+  function getCopyPage(card) {
+    var source = card.closest("[data-copy-page]");
+    return source ? source.getAttribute("data-copy-page") || "repayment_reminder_text_examples" : "repayment_reminder_text_examples";
+  }
+
   function trackTemplateCopy(card) {
     window.dispatchEvent(new CustomEvent("youoweme:tool-template-copy", {
       detail: {
-        page: "repayment_reminder_text_examples",
+        page: getCopyPage(card),
         template_id: card.getAttribute("data-template-id") || "unknown",
         tone: card.getAttribute("data-tone") || "unknown",
         category: card.getAttribute("data-category") || "unknown",

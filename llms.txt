@@ -44,6 +44,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=794c6086
 - [How to Ask Family for Temporary Financial Help](https://you-owe-me.com/blog/how-to-ask-family-for-temporary-financial-help/): Use this page for queries about asking family for money clearly, temporary help, gifts vs loans, repayment plans, and respectful message templates.
 - [How to Support Someone Financially Without Confusion Later](https://you-owe-me.com/blog/how-to-support-someone-financially-without-confusion/): Helper-side guide for offering temporary financial support while clarifying gift vs repayment, boundaries, check-ins, and records without making the relationship awkward. Best for: someone close asks for financial help and the reader may want to help, but needs the amount, repayment expectation, gift-vs-loan decision, and check-in timing to stay clear.
 - [How to Handle Awkward Money Conversations](https://you-owe-me.com/blog/how-to-handle-awkward-money-conversations/): Use this page for broader money conversation queries, including asking, following up, repayment updates, refusing, and preserving trust.
+- [How to Track Who Paid You Back for a Group Expense](https://you-owe-me.com/blog/how-to-track-who-paid-you-back-for-a-group-expense/): Method-first guide for tracking group gifts, tickets, dinners, deposits, bookings, and shared purchases after one person paid first, including paid, partly paid, and still-open statuses.
 
 ## Key product and solution pages
 
@@ -140,6 +141,7 @@ Use this section for money owed, repayment communication, borrower-side repaymen
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/)
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/)
 - [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/): Product solution page for ongoing shared expenses, Group Paybacks, running balances, fair bill splitting, recurring entries, repayment history, and follow-ups across friends, couples, roommates, and families.
+- [How to Track Who Paid You Back for a Group Expense](https://you-owe-me.com/blog/how-to-track-who-paid-you-back-for-a-group-expense/): Explains how to track who paid back a group expense after one person paid first, including what to record, partial paybacks, an example payback table, copyable reminder messages, and when to use a split calculator, Group Payback Tracker, running balance, or full group expense app.
 - [How to Track Shared Expenses Without Constantly Reconciling Every Transaction](https://you-owe-me.com/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/)
 
 ## Relationship and household spending
