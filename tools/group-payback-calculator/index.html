@@ -1,0 +1,940 @@
+<!DOCTYPE HTML>
+<html lang="en">
+  <head>
+    <title>Group Payback Calculator | Track Who Paid You Back</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-itunes-app" content="app-id=1147058670" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" href="../../favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/shared/brand/icon_2_0.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/shared/brand/icon_2_0.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/shared/brand/icon_2_0.png" />
+
+    <link rel="canonical" href="https://you-owe-me.com/tools/group-payback-calculator/" />
+    <meta
+      name="description"
+      content="Calculate each person&rsquo;s share, track who paid you back, who partly paid, and who still owes after you paid first for a group gift, dinner, tickets, booking, deposit, or shared purchase."
+    />
+    <meta property="og:title" content="Group Payback Calculator" />
+    <meta
+      property="og:description"
+      content="See who paid, who partly paid, and who still owes after you paid first for a group cost."
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://you-owe-me.com/tools/group-payback-calculator/" />
+    <meta property="og:image" content="https://you-owe-me.com/images/tools/group-payback-calculator/group-payback-calculator-hero.webp" />
+    <meta property="og:image:alt" content="Group payback status list showing paid, partly paid, and still open shares for one shared cost." />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Group Payback Calculator" />
+    <meta
+      name="twitter:description"
+      content="See who paid, who partly paid, and who still owes after you paid first for a group cost."
+    />
+    <meta name="twitter:image" content="https://you-owe-me.com/images/tools/group-payback-calculator/group-payback-calculator-hero.webp" />
+    <meta name="twitter:image:alt" content="Group payback status list showing paid, partly paid, and still open shares for one shared cost." />
+
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@graph": [
+        {
+          "@type": "WebPage",
+          "name": "Group Payback Calculator",
+          "description": "A free browser calculator for one group cost that one person paid first, showing each person's share, amount paid back, status, still-open amount, and copyable payback updates.",
+          "url": "https://you-owe-me.com/tools/group-payback-calculator/",
+          "dateModified": "2026-06-23",
+          "isPartOf": {
+            "@type": "CollectionPage",
+            "name": "Money Tools and Templates",
+            "url": "https://you-owe-me.com/tools/"
+          },
+          "publisher": {
+            "@type": "Organization",
+            "name": "You Owe Me"
+          }
+        },
+        {
+          "@type": "WebApplication",
+          "name": "Group Payback Calculator",
+          "applicationCategory": "FinanceApplication",
+          "operatingSystem": "Web browser",
+          "url": "https://you-owe-me.com/tools/group-payback-calculator/",
+          "description": "A free browser tool that calculates each person's share for one shared cost and tracks who paid back, partly paid, or still has an open share.",
+          "offers": {
+            "@type": "Offer",
+            "price": "0",
+            "priceCurrency": "USD"
+          }
+        },
+        {
+          "@type": "BreadcrumbList",
+          "itemListElement": [
+            {
+              "@type": "ListItem",
+              "position": 1,
+              "name": "Home",
+              "item": "https://you-owe-me.com/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 2,
+              "name": "Tools",
+              "item": "https://you-owe-me.com/tools/"
+            },
+            {
+              "@type": "ListItem",
+              "position": 3,
+              "name": "Group Payback Calculator",
+              "item": "https://you-owe-me.com/tools/group-payback-calculator/"
+            }
+          ]
+        },
+        {
+          "@type": "FAQPage",
+          "mainEntity": [
+            {
+              "@type": "Question",
+              "name": "Is this the same as a split expense calculator?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. A split expense calculator tells you what each person should pay. This calculator helps after you paid first, when you need to track who paid back, who partly paid, and who still owes."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Should I include myself if I paid first?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes, if you were part of the group cost. Your own share is covered because you paid first. If you only paid on behalf of others and were not part of the split, turn off the payer-included option."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How do I track a partial payback?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Enter the person's full agreed share, then enter how much they already paid back. The calculator keeps the remaining amount visible instead of marking the person as fully paid."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use custom shares instead of equal shares?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Use custom shares when people agreed to different amounts. The page warns you if the custom shares do not add up to the original total."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does this calculator save my group payback?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. It runs in your browser for a quick calculation. Use You Owe Me if you want to keep the payback list updated later."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Do other people need to install You Owe Me?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. One person can keep the record and share a clear message, summary, or update when needed."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "What if several people paid for different expenses?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Use the Split Expense Calculator or a running balance tool if there are multiple expenses from different payers. This page is best for one group cost that one person paid first."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Can I use this for group gifts, tickets, dinners, deposits, and bookings?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. Those are the clearest use cases: one person pays first, then others repay their shares over time."
+              }
+            }
+          ]
+        }
+      ]
+    }
+    </script>
+
+    <link rel="stylesheet" href="../../assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="../../styles/site-nav.css" />
+    <link rel="stylesheet" href="../../styles/tools.css" />
+    <link rel="stylesheet" href="../../styles/group-payback-calculator.css" />
+    <link rel="stylesheet" href="../../styles/best-next-step.css" />
+  </head>
+
+  <body class="is-preload tools-page group-payback-calculator-page site-nav-page">
+    <div id="wrapper" class="fade-in">
+      <header id="header">
+        <a href="../../index.html" class="logo">You Owe Me</a>
+      </header>
+
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="/">You Owe Me</a></li>
+          <li><a href="/solutions/">Solutions</a></li>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li class="active"><a href="/tools/">Tools</a></li>
+          <li><a href="/compare/">Compare</a></li>
+          <li><a href="/blog/">Blog</a></li>
+        </ul>
+      </nav>
+
+      <div id="main">
+        <article class="post featured">
+          <nav class="lt-breadcrumb" aria-label="Breadcrumb">
+            <a href="../../">Home</a>
+            <span aria-hidden="true">/</span>
+            <a href="/tools/">Tools</a>
+            <span aria-hidden="true">/</span>
+            <span aria-current="page">Group Payback Calculator</span>
+          </nav>
+
+          <section class="lt-toolsHero gpc-hero">
+            <div class="lt-toolsHeroCopy">
+              <p class="lt-eyebrow">Free browser tool</p>
+              <header class="major">
+                <h1>Group Payback Calculator</h1>
+              </header>
+              <p class="lt-heroBody">
+                Calculate each person&rsquo;s share, subtract what they already paid back, and see who is paid, partly paid, or still open.
+              </p>
+              <p class="lt-heroSupport">
+                Use this when you paid first for a group gift, dinner, tickets, booking, deposit, or shared purchase and people are paying you back later. Enter the total, who was included, and what each person already paid back. The calculator will show who is paid, who partly paid, and who still owes.
+              </p>
+              <p class="gpc-difference-note">
+                A split calculator tells you each person&rsquo;s share. A group payback calculator helps after that, when you paid first and need to track who paid you back, who partly paid, and who still owes.
+              </p>
+              <p class="gpc-difference-note">
+                If everyone is paying immediately and you only need each person&rsquo;s share, use the <a href="/tools/split-expense-calculator/">Split Expense Calculator</a>. If paybacks stay open, this tool helps you track the status.
+              </p>
+              <div class="gpc-chip-row" aria-label="Group payback calculator highlights">
+                <span>Paid first</span>
+                <span>Group gifts</span>
+                <span>Tickets</span>
+                <span>Bookings</span>
+                <span>Partial paybacks</span>
+                <span>Still open</span>
+              </div>
+              <div class="lt-ctaRow">
+                <a href="#group-payback-calculator" class="lt-primaryCta">Start calculating</a>
+                <button type="button" class="gpc-link-button" data-action="load-example" data-scroll-to-calculator>Load example</button>
+                <a
+                  href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670"
+                  class="lt-textCta"
+                  data-track-location="group_payback_calculator_hero_tertiary_app_cta"
+                  data-source-cluster="group-paybacks"
+                  data-step-destination="app-store:group-paybacks"
+                >Need to keep this updated later? Track group paybacks in You Owe Me</a>
+              </div>
+              <p class="gpc-privacy-note">This calculator runs in your browser. The values you enter are not sent anywhere or saved to an account.</p>
+            </div>
+            <figure class="gpc-hero-visual">
+              <img
+                src="/images/tools/group-payback-calculator/group-payback-calculator-hero.webp"
+                alt="Group payback status list showing paid, partly paid, and still open shares for one shared cost."
+                loading="eager"
+                fetchpriority="high"
+                decoding="async"
+                width="1693"
+                height="929"
+              />
+            </figure>
+          </section>
+
+          <section class="lt-toolsSection gpc-tool-section" id="group-payback-calculator" aria-labelledby="group-payback-calculator-title">
+            <div class="gpc-tool-shell">
+              <div class="gpc-tool-heading">
+                <div>
+                  <p class="lt-sectionEyebrow">Browser calculator</p>
+                  <h2 id="group-payback-calculator-title">Calculate your group payback status</h2>
+                  <p>Start with the original group cost. Then add each person&rsquo;s share and what they have already paid back. Keep the original share visible so a partial payment does not get mistaken for being settled.</p>
+                  <p class="gpc-privacy-note">Your calculation stays in this browser. Use You Owe Me if you want a lasting record you can update later.</p>
+                </div>
+                <aside class="gpc-example-card" aria-labelledby="gpc-example-card-title">
+                  <p class="gpc-example-label">Example loaded</p>
+                  <h3 id="gpc-example-card-title">$150.00 still open</h3>
+                  <p>Cabin booking deposit for six people. Alex and Maya paid, Leo partly paid, and Sam and Nina are still open.</p>
+                  <button type="button" class="gpc-secondary-button" data-action="load-example">Use example</button>
+                </aside>
+              </div>
+
+              <form class="gpc-form" id="gpc-form" novalidate>
+                <section class="gpc-step-card" aria-labelledby="gpc-cost-title">
+                  <div class="gpc-step-header">
+                    <div>
+                      <p class="gpc-step-kicker">Step 1</p>
+                      <h3 id="gpc-cost-title">Cost</h3>
+                      <p>Describe the shared cost and the person who paid first.</p>
+                    </div>
+                    <div class="gpc-action-row gpc-action-row--compact">
+                      <button type="button" class="gpc-secondary-button" data-action="load-example">Use example</button>
+                      <button type="button" class="gpc-secondary-button" data-action="start-blank">Start blank</button>
+                    </div>
+                  </div>
+                  <div class="gpc-field-grid gpc-field-grid--cost">
+                    <div class="gpc-field gpc-field--currency">
+                      <label for="gpc-currency">Currency symbol</label>
+                      <input id="gpc-currency" name="currency" type="text" inputmode="text" maxlength="8" value="$" autocomplete="off" aria-describedby="gpc-currency-help" />
+                      <p id="gpc-currency-help" class="gpc-field-hint">Examples: $, A$, IDR, Rp, &#3647;</p>
+                    </div>
+                    <div class="gpc-field gpc-field--wide">
+                      <label for="gpc-reason">What was this for?</label>
+                      <input id="gpc-reason" name="reason" type="text" maxlength="90" value="Cabin booking deposit" autocomplete="off" />
+                    </div>
+                    <div class="gpc-field">
+                      <label for="gpc-total">Total amount</label>
+                      <input id="gpc-total" name="total" type="number" min="0" step="0.01" inputmode="decimal" value="360" autocomplete="off" aria-describedby="gpc-total-error" />
+                      <p id="gpc-total-error" class="gpc-validation" aria-live="polite"></p>
+                    </div>
+                    <div class="gpc-field">
+                      <label for="gpc-payer-name">Who paid first?</label>
+                      <input id="gpc-payer-name" name="payerName" type="text" maxlength="50" value="You" autocomplete="off" />
+                    </div>
+                    <div class="gpc-field">
+                      <label for="gpc-check-in-date">Optional check-in / reminder date</label>
+                      <input id="gpc-check-in-date" name="checkInDate" type="date" />
+                    </div>
+                  </div>
+                </section>
+
+                <section class="gpc-step-card" aria-labelledby="gpc-split-title">
+                  <div class="gpc-step-header">
+                    <div>
+                      <p class="gpc-step-kicker">Step 2</p>
+                      <h3 id="gpc-split-title">Split setup</h3>
+                      <p>Choose whether the person who paid first was part of the split and whether shares are equal or custom.</p>
+                    </div>
+                  </div>
+                  <div class="gpc-option-grid">
+                    <fieldset class="gpc-radio-panel">
+                      <legend>Was the person who paid first included in the split?</legend>
+                      <label class="gpc-radio-card">
+                        <input type="radio" name="payerIncluded" value="yes" checked />
+                        <span>
+                          <strong>Yes, they were part of the group</strong>
+                          <small>Their own share is covered because they paid first.</small>
+                        </span>
+                      </label>
+                      <label class="gpc-radio-card">
+                        <input type="radio" name="payerIncluded" value="no" />
+                        <span>
+                          <strong>No, they paid on behalf of others only</strong>
+                          <small>The full cost is expected back from the people included.</small>
+                        </span>
+                      </label>
+                    </fieldset>
+
+                    <fieldset class="gpc-radio-panel">
+                      <legend>Split mode</legend>
+                      <label class="gpc-radio-card">
+                        <input type="radio" name="splitMode" value="equal" checked />
+                        <span>
+                          <strong>Equal shares</strong>
+                          <small>The calculator divides the total across included people.</small>
+                        </span>
+                      </label>
+                      <label class="gpc-radio-card">
+                        <input type="radio" name="splitMode" value="custom" />
+                        <span>
+                          <strong>Custom shares</strong>
+                          <small>Use this when people agreed to different amounts.</small>
+                        </span>
+                      </label>
+                    </fieldset>
+                  </div>
+                </section>
+
+                <section class="gpc-step-card" aria-labelledby="gpc-people-title">
+                  <div class="gpc-step-header">
+                    <div>
+                      <p class="gpc-step-kicker">Step 3</p>
+                      <h3 id="gpc-people-title">People and paybacks</h3>
+                      <p>Add each person, keep their original share visible, and enter what they already paid back.</p>
+                    </div>
+                    <button type="button" class="gpc-secondary-button" data-action="add-person">Add person</button>
+                  </div>
+                  <p id="gpc-people-error" class="gpc-validation gpc-validation--block" aria-live="polite"></p>
+                  <div class="gpc-people-list" data-people-list></div>
+                  <p class="gpc-privacy-note gpc-tool-note">Your calculation stays in this browser. Use You Owe Me if you want a lasting record you can update later.</p>
+                </section>
+              </form>
+
+              <section class="gpc-results" id="gpc-results" aria-labelledby="gpc-results-title" aria-live="polite">
+                <div class="gpc-results-heading">
+                  <div>
+                    <p class="lt-sectionEyebrow">Result</p>
+                    <h2 id="gpc-results-title">Your group payback status</h2>
+                    <p data-result-headline>$150.00 still open from 3 people.</p>
+                    <p class="gpc-result-support" data-result-support>Leo partly paid. Sam and Nina still have open shares.</p>
+                  </div>
+                  <span class="gpc-status-pill" data-result-status>Open paybacks</span>
+                </div>
+
+                <p class="gpc-warning" data-warning aria-live="polite"></p>
+
+                <div class="gpc-summary-grid" aria-label="Group payback summary">
+                  <article class="gpc-summary-card">
+                    <p>Total cost</p>
+                    <strong data-summary-total>$360.00</strong>
+                  </article>
+                  <article class="gpc-summary-card">
+                    <p>Payer&rsquo;s own share</p>
+                    <strong data-summary-payer-share>$60.00</strong>
+                  </article>
+                  <article class="gpc-summary-card">
+                    <p>Expected back from others</p>
+                    <strong data-summary-expected>$300.00</strong>
+                  </article>
+                  <article class="gpc-summary-card">
+                    <p>Paid back so far</p>
+                    <strong data-summary-paid-back>$150.00</strong>
+                  </article>
+                  <article class="gpc-summary-card">
+                    <p>Still open</p>
+                    <strong data-summary-open>$150.00</strong>
+                  </article>
+                  <article class="gpc-summary-card">
+                    <p>Paid</p>
+                    <strong data-summary-paid-count>2 people</strong>
+                  </article>
+                  <article class="gpc-summary-card">
+                    <p>Partly paid</p>
+                    <strong data-summary-partial-count>1 person</strong>
+                  </article>
+                  <article class="gpc-summary-card">
+                    <p>Still open</p>
+                    <strong data-summary-open-count>2 people</strong>
+                  </article>
+                </div>
+
+                <div class="gpc-table-wrap">
+                  <table class="gpc-status-table">
+                    <thead>
+                      <tr>
+                        <th scope="col">Person</th>
+                        <th scope="col">Share</th>
+                        <th scope="col">Paid back</th>
+                        <th scope="col">Still open</th>
+                        <th scope="col">Status</th>
+                        <th scope="col">Next action</th>
+                      </tr>
+                    </thead>
+                    <tbody data-status-table></tbody>
+                  </table>
+                </div>
+
+                <section class="gpc-app-cta" aria-labelledby="gpc-app-cta-title">
+                  <div>
+                    <p class="lt-sectionEyebrow">Best next step</p>
+                    <h2 id="gpc-app-cta-title">Need this list to stay updated?</h2>
+                    <p>This calculator gives you the status now. You Owe Me helps when people pay later, partly pay, need reminders, or when the group payback should stay connected to each person&rsquo;s balance.</p>
+                    <ul class="lt-valueList">
+                      <li>Mark people as paid, partly paid, or still open</li>
+                      <li>Keep the original cost and each repayment in one place</li>
+                      <li>Send calmer reminders with the real amount</li>
+                      <li>Connect group paybacks to each person&rsquo;s running balance</li>
+                      <li>One person can keep the record - others do not need to install the app</li>
+                    </ul>
+                  </div>
+                  <div class="gpc-app-actions">
+                    <a
+                      href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670"
+                      class="lt-appStoreBtn"
+                      aria-label="Track group paybacks in You Owe Me on the App Store"
+                      data-track-location="group_payback_calculator_result_app_cta"
+                      data-source-cluster="group-paybacks"
+                      data-step-destination="app-store:group-paybacks"
+                    >
+                      <span class="sr-only">Track this in You Owe Me</span>
+                      <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+                    </a>
+                    <a href="/solutions/group-payback-tracker/" class="lt-textCta">See the Group Payback Tracker</a>
+                  </div>
+                </section>
+
+                <section class="gpc-copy-panel" id="copy-group-payback-update" aria-labelledby="gpc-copy-title">
+                  <div class="gpc-copy-heading">
+                    <div>
+                      <p class="lt-sectionEyebrow">Copyable updates</p>
+                      <h2 id="gpc-copy-title">Copy a clear group payback update</h2>
+                      <p>Once the numbers are clear, the message can stay simple. Use the version that matches what is happening now. If you want more wording options, try the <a href="/tools/polite-payback-reminder-generator/">Polite Payback Reminder Generator</a>.</p>
+                    </div>
+                    <p class="gpc-copy-status" data-copy-status aria-live="polite"></p>
+                  </div>
+                  <div class="gpc-output-grid">
+                    <article class="gpc-output-card">
+                      <h3>Group update</h3>
+                      <p class="gpc-output-text" data-output="groupUpdate"></p>
+                      <button type="button" class="gpc-copy-button" data-copy-output="groupUpdate">Copy group update</button>
+                    </article>
+                    <article class="gpc-output-card">
+                      <div class="gpc-output-card-heading">
+                        <h3>Individual reminder</h3>
+                        <label for="gpc-reminder-person">Person</label>
+                        <select id="gpc-reminder-person" data-reminder-select></select>
+                      </div>
+                      <p class="gpc-output-text" data-output="individualReminder"></p>
+                      <button type="button" class="gpc-copy-button" data-copy-output="individualReminder">Copy individual reminder</button>
+                    </article>
+                    <article class="gpc-output-card">
+                      <h3>Partial payment acknowledgment</h3>
+                      <p class="gpc-output-text" data-output="partialAcknowledgment"></p>
+                      <button type="button" class="gpc-copy-button" data-copy-output="partialAcknowledgment">Copy partial update</button>
+                    </article>
+                    <article class="gpc-output-card">
+                      <h3>Closing message <span data-closing-label>for later</span></h3>
+                      <p class="gpc-output-text" data-output="closingMessage"></p>
+                      <button type="button" class="gpc-copy-button" data-copy-output="closingMessage">Copy closing message</button>
+                    </article>
+                    <article class="gpc-output-card gpc-output-card--wide">
+                      <h3>Record note</h3>
+                      <pre class="gpc-output-pre" data-output="recordNote"></pre>
+                      <button type="button" class="gpc-copy-button" data-copy-output="recordNote">Copy record note</button>
+                    </article>
+                  </div>
+                </section>
+              </section>
+            </div>
+          </section>
+
+          <!-- best-next-step:start -->
+<!-- Generated by scripts/build-best-next-steps.mjs. Edit content/content-registry.mjs instead. -->
+<section class="best-next-step best-next-step--tool best-next-step--custom" aria-labelledby="best-next-step-tools_group_payback_calculator-title" data-module="best-next-step" data-source-page="tools_group_payback_calculator" data-source-cluster="group-paybacks" data-module-variant="tool" data-module-template="custom">
+  <p class="best-next-step__eyebrow">Best next step</p>
+  <h2 id="best-next-step-tools_group_payback_calculator-title">After you calculate, choose what happens next</h2>
+  <p class="best-next-step__intro">Once the paid, partly paid, and still-open amounts are clear, the next step is usually a message, an updated record, the original split, or a running balance.</p>
+  <div class="best-next-step__grid">
+    <a class="best-next-step__card" href="#copy-group-payback-update" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_group_payback_calculator_best_next_step_1" data-source-page="tools_group_payback_calculator" data-source-cluster="group-paybacks" data-destination-cluster="group-paybacks" data-step-type="anchor" data-step-intent="write_message" data-step-destination="/tools/group-payback-calculator/#copy-group-payback-update" data-step-position="1" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="group_payback_calculator_copy_update">
+      <span class="best-next-step__label">Message</span>
+      <strong>Copy a calm payback update</strong>
+      <span>Use this if the status is clear and you want wording you can send now.</span>
+    </a>
+    <a class="best-next-step__card" href="/solutions/group-payback-tracker/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_group_payback_calculator_best_next_step_2" data-source-page="tools_group_payback_calculator" data-source-cluster="group-paybacks" data-destination-cluster="shared-expenses" data-step-type="solution" data-step-intent="track_ongoing_balance" data-step-destination="/solutions/group-payback-tracker/" data-step-position="2" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="group_payback_calculator_tracker">
+      <span class="best-next-step__label">Track</span>
+      <strong>Keep the payback list updated</strong>
+      <span>Use this if people will keep paying later or partial paybacks need history.</span>
+    </a>
+    <a class="best-next-step__card" href="/tools/split-expense-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_group_payback_calculator_best_next_step_3" data-source-page="tools_group_payback_calculator" data-source-cluster="group-paybacks" data-destination-cluster="shared-expenses" data-step-type="tool" data-step-intent="calculate_split" data-step-destination="/tools/split-expense-calculator/" data-step-position="3" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="group_payback_calculator_split">
+      <span class="best-next-step__label">Split</span>
+      <strong>Calculate the original split</strong>
+      <span>Use this if you still need to divide the first shared cost before tracking paybacks.</span>
+    </a>
+    <a class="best-next-step__card" href="/tools/running-balance-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_group_payback_calculator_best_next_step_4" data-source-page="tools_group_payback_calculator" data-source-cluster="group-paybacks" data-destination-cluster="running-balance" data-step-type="tool" data-step-intent="calculate_running_balance" data-step-destination="/tools/running-balance-calculator/" data-step-position="4" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="group_payback_calculator_running_balance">
+      <span class="best-next-step__label">Balance</span>
+      <strong>Use a running balance instead</strong>
+      <span>Use this if the same people have several expenses and repayments over time.</span>
+    </a>
+  </div>
+</section>
+<!-- best-next-step:end -->
+
+          <section class="lt-toolsSection gpc-content-section" id="gpc-static-example" aria-labelledby="gpc-static-example-title">
+            <p class="lt-sectionEyebrow">Static example</p>
+            <h2 id="gpc-static-example-title">Example: tracking a cabin deposit</h2>
+            <p>You paid $360 for a cabin booking deposit for six people, including you. The equal share is $60 each. Your own share is covered because you paid first. Alex and Maya paid in full, Leo sent $30, and Sam and Nina have not paid yet.</p>
+            <div class="gpc-static-table-wrap">
+              <table class="gpc-static-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Person</th>
+                    <th scope="col">Share</th>
+                    <th scope="col">Paid back</th>
+                    <th scope="col">Status</th>
+                    <th scope="col">Open</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>You</td>
+                    <td>$60</td>
+                    <td>Paid first</td>
+                    <td>Own share covered</td>
+                    <td>$0 open</td>
+                  </tr>
+                  <tr>
+                    <td>Alex</td>
+                    <td>$60</td>
+                    <td>$60</td>
+                    <td>Paid</td>
+                    <td>$0 open</td>
+                  </tr>
+                  <tr>
+                    <td>Maya</td>
+                    <td>$60</td>
+                    <td>$60</td>
+                    <td>Paid</td>
+                    <td>$0 open</td>
+                  </tr>
+                  <tr>
+                    <td>Leo</td>
+                    <td>$60</td>
+                    <td>$30</td>
+                    <td>Partly paid</td>
+                    <td>$30 open</td>
+                  </tr>
+                  <tr>
+                    <td>Sam</td>
+                    <td>$60</td>
+                    <td>$0</td>
+                    <td>Still open</td>
+                    <td>$60 open</td>
+                  </tr>
+                  <tr>
+                    <td>Nina</td>
+                    <td>$60</td>
+                    <td>$0</td>
+                    <td>Still open</td>
+                    <td>$60 open</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p class="gpc-soft-note">Total paid back: $150. Total still open: $150.</p>
+            <p class="gpc-soft-note">The important part is that Leo is not marked as paid just because money came in. The original share stays visible, the partial payment is recorded, and the remaining amount is clear.</p>
+          </section>
+
+          <section class="lt-toolsSection gpc-content-section" aria-labelledby="gpc-does-title">
+            <h2 id="gpc-does-title">What this group payback calculator does</h2>
+            <p>This tool starts with one shared cost that one person paid first. It calculates each person&rsquo;s share, subtracts what each person already paid back, and turns the result into a clear paid / partly paid / still open list.</p>
+            <p>Need the manual workflow before using the calculator? Read <a href="/blog/how-to-track-who-paid-you-back-for-a-group-expense/">how to track who paid you back for a group expense</a>.</p>
+            <ul class="lt-valueList">
+              <li>calculate equal or custom shares</li>
+              <li>track full and partial paybacks</li>
+              <li>show the amount still open for each person</li>
+              <li>create a group update</li>
+              <li>create individual reminders</li>
+              <li>create a record note you can save in You Owe Me</li>
+            </ul>
+            <p class="gpc-formula">Still open = agreed share - amount paid back</p>
+            <p>Keep the original share and the repayment separate. Do not erase the original share when someone pays part of it.</p>
+          </section>
+
+          <section class="lt-toolsSection gpc-content-section" aria-labelledby="gpc-useful-title">
+            <h2 id="gpc-useful-title">Use this when you paid first and people repay later</h2>
+            <div class="gpc-card-grid">
+              <article class="gpc-info-card">
+                <h3>Group gift</h3>
+                <p>One person buys the gift and others send their share afterward.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Tickets</h3>
+                <p>You bought seats together and people pay you back later.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Dinner where one person paid</h3>
+                <p>One card covered the table and the paybacks happen after the meal.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Vacation deposit</h3>
+                <p>A booking deposit needs a clear list of who has sent their part.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Shared booking</h3>
+                <p>Rooms, reservations, cabins, or rentals can stay open while people repay.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Office or team gift</h3>
+                <p>One person can keep the contribution list without making it awkward.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>One shared purchase</h3>
+                <p>Use it for one clear cost, not a full multi-expense group ledger.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection gpc-content-section" aria-labelledby="gpc-other-tool-title">
+            <h2 id="gpc-other-tool-title">When another tool is better</h2>
+            <div class="gpc-decision-table-wrap">
+              <table class="gpc-decision-table">
+                <thead>
+                  <tr>
+                    <th scope="col">Situation</th>
+                    <th scope="col">Best next step</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>You only need to divide one bill and everyone will pay right away</td>
+                    <td><a href="/tools/split-expense-calculator/">Split Expense Calculator</a></td>
+                  </tr>
+                  <tr>
+                    <td>One person already paid part of one known amount</td>
+                    <td><a href="/tools/partial-repayment-calculator/">Partial Repayment Calculator</a></td>
+                  </tr>
+                  <tr>
+                    <td>You paid first and people will pay you back later</td>
+                    <td>Group Payback Calculator</td>
+                  </tr>
+                  <tr>
+                    <td>Some people paid, some partly paid, and some still owe</td>
+                    <td><a href="#group-payback-calculator">Group Payback Calculator</a> or <a href="/solutions/group-payback-tracker/">You Owe Me Group Paybacks</a></td>
+                  </tr>
+                  <tr>
+                    <td>The same two people keep exchanging money over time</td>
+                    <td><a href="/tools/running-balance-calculator/">Running Balance Calculator</a></td>
+                  </tr>
+                  <tr>
+                    <td>Several roommate bills need one monthly settle-up</td>
+                    <td><a href="/tools/roommate-bill-split-calculator/">Roommate Bill Split Calculator</a></td>
+                  </tr>
+                  <tr>
+                    <td>Partner spending needs a fair split rule</td>
+                    <td><a href="/tools/couple-shared-expense-balance-calculator/">Couple Shared Expense Balance Calculator</a></td>
+                  </tr>
+                  <tr>
+                    <td>Someone already paid and you need to confirm it</td>
+                    <td><a href="/tools/repayment-receipt-generator/">Repayment Receipt Generator</a></td>
+                  </tr>
+                  <tr>
+                    <td>Everyone wants to join the same shared group ledger and add expenses themselves</td>
+                    <td><a href="/compare/splitwise-alternative/">Compare You Owe Me with Splitwise-style group ledgers</a></td>
+                  </tr>
+                  <tr>
+                    <td>The payback list will keep changing and you want history, reminders, and running balances</td>
+                    <td><a href="/solutions/group-payback-tracker/">Group Payback Tracker</a> or <a href="/solutions/shared-expense-tracker/">Shared Expense Tracker</a></td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection gpc-app-explainer" aria-labelledby="gpc-app-explainer-title">
+            <div class="gpc-app-explainer-copy">
+              <p class="lt-sectionEyebrow">Calculator vs app</p>
+              <h2 id="gpc-app-explainer-title">When the calculator is enough - and when You Owe Me helps</h2>
+              <div class="gpc-two-column">
+                <article class="gpc-info-card">
+                  <h3>A calculator is enough when...</h3>
+                  <ul class="lt-valueList">
+                    <li>you only need one quick status check</li>
+                    <li>everyone will pay soon</li>
+                    <li>there are no more partial payments expected</li>
+                    <li>you do not need a lasting history</li>
+                    <li>you only need to copy one message</li>
+                  </ul>
+                </article>
+                <article class="gpc-info-card">
+                  <h3>You Owe Me helps when...</h3>
+                  <ul class="lt-valueList">
+                    <li>people pay on different days</li>
+                    <li>someone pays only part of their share</li>
+                    <li>you need to remind specific people</li>
+                    <li>the group payback should stay connected to each person&rsquo;s balance</li>
+                    <li>you do not want to rebuild the situation from chat messages</li>
+                    <li>you want a clear record even if nobody else installs the app</li>
+                  </ul>
+                </article>
+              </div>
+              <div class="lt-ctaRow">
+                <a
+                  href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670"
+                  class="lt-primaryCta"
+                  data-track-location="group_payback_calculator_app_explainer_cta"
+                  data-source-cluster="group-paybacks"
+                  data-step-destination="app-store:group-paybacks"
+                >Track group paybacks in You Owe Me</a>
+              </div>
+              <p class="gpc-soft-note">You Owe Me does not process payments, lend money, or collect money for you. It helps you keep the record, history, reminders, and communication clear.</p>
+            </div>
+            <figure class="gpc-support-visual">
+              <img
+                src="/images/tools/group-payback-calculator/group-payback-calculator-messages-to-list.webp"
+                alt="Scattered group payment messages turning into one clear group payback status list."
+                loading="lazy"
+                decoding="async"
+                width="1693"
+                height="929"
+              />
+            </figure>
+          </section>
+
+          <section class="lt-toolsSection gpc-content-section" aria-labelledby="gpc-mistakes-title">
+            <h2 id="gpc-mistakes-title">Common group payback mistakes</h2>
+            <div class="gpc-card-grid">
+              <article class="gpc-info-card">
+                <h3>Only saving the final amount</h3>
+                <p>Keep the original total, each share, and repayments separate. Otherwise a partial payment can make the record confusing later.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Marking someone as paid after a partial payment</h3>
+                <p>If someone sent half, mark the payment and keep the remaining amount visible.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Relying only on chat messages</h3>
+                <p>Chats are useful for context, but the latest status can get buried.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Forgetting your own share</h3>
+                <p>If you were part of the split, your own share is covered by paying first. Do not ask others to repay your share.</p>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Using a full group app for a simple one-person payback list</h3>
+                <p>If everyone wants a shared ledger, a collaborative expense app can be better. If you mainly need to track who paid you back, a lightweight record is enough.</p>
+              </article>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection gpc-faq-section" aria-labelledby="gpc-faq-title">
+            <h2 id="gpc-faq-title">Group payback calculator FAQ</h2>
+            <div class="gpc-faq-list">
+              <details>
+                <summary>Is this the same as a split expense calculator?</summary>
+                <p>No. A split expense calculator tells you what each person should pay. This calculator helps after you paid first, when you need to track who paid back, who partly paid, and who still owes.</p>
+              </details>
+              <details>
+                <summary>Should I include myself if I paid first?</summary>
+                <p>Yes, if you were part of the group cost. Your own share is covered because you paid first. If you only paid on behalf of others and were not part of the split, turn off the payer-included option.</p>
+              </details>
+              <details>
+                <summary>How do I track a partial payback?</summary>
+                <p>Enter the person&rsquo;s full agreed share, then enter how much they already paid back. The calculator keeps the remaining amount visible instead of marking the person as fully paid.</p>
+              </details>
+              <details>
+                <summary>Can I use custom shares instead of equal shares?</summary>
+                <p>Yes. Use custom shares when people agreed to different amounts. The page warns you if the custom shares do not add up to the original total.</p>
+              </details>
+              <details>
+                <summary>Does this calculator save my group payback?</summary>
+                <p>No. It runs in your browser for a quick calculation. Use You Owe Me if you want to keep the payback list updated later.</p>
+              </details>
+              <details>
+                <summary>Do other people need to install You Owe Me?</summary>
+                <p>No. One person can keep the record and share a clear message, summary, or update when needed.</p>
+              </details>
+              <details>
+                <summary>What if several people paid for different expenses?</summary>
+                <p>Use the <a href="/tools/split-expense-calculator/">Split Expense Calculator</a> or a running balance tool if there are multiple expenses from different payers. This page is best for one group cost that one person paid first.</p>
+              </details>
+              <details>
+                <summary>Can I use this for group gifts, tickets, dinners, deposits, and bookings?</summary>
+                <p>Yes. Those are the clearest use cases: one person pays first, then others repay their shares over time.</p>
+              </details>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection gpc-content-section" aria-labelledby="gpc-related-title">
+            <p class="lt-sectionEyebrow">Related resources</p>
+            <h2 id="gpc-related-title">Related tools and guides</h2>
+            <div class="gpc-card-grid">
+              <article class="gpc-info-card">
+                <h3>Money Tools and Templates</h3>
+                <p>Browse the full hub for calculators, generators, examples, and templates for everyday money between people.</p>
+                <a href="/tools/" class="lt-cardCta">Back to tools</a>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Split Expense Calculator</h3>
+                <p>Use this first if you only need to divide the cost and find each person&rsquo;s share.</p>
+                <a href="/tools/split-expense-calculator/" class="lt-cardCta">Calculate a split</a>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Group Payback Tracker</h3>
+                <p>Use You Owe Me when the payback list needs to stay updated as people pay later.</p>
+                <a href="/solutions/group-payback-tracker/" class="lt-cardCta">See the tracker</a>
+              </article>
+              <article class="gpc-info-card">
+                <h3>How to Track Who Paid You Back for a Group Expense</h3>
+                <p>Read the manual method and examples before choosing a tool.</p>
+                <a href="/blog/how-to-track-who-paid-you-back-for-a-group-expense/" class="lt-cardCta">Read the guide</a>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Running Balance Calculator</h3>
+                <p>Use this when the same two people keep exchanging money over time.</p>
+                <a href="/tools/running-balance-calculator/" class="lt-cardCta">Calculate a balance</a>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Partial Repayment Calculator</h3>
+                <p>Use this when one known amount has already been partly repaid and you need the remaining balance.</p>
+                <a href="/tools/partial-repayment-calculator/" class="lt-cardCta">Calculate what remains</a>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Polite Payback Reminder Generator</h3>
+                <p>Use this when the amount is clear but the wording feels awkward.</p>
+                <a href="/tools/polite-payback-reminder-generator/" class="lt-cardCta">Write a reminder</a>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Repayment Receipt Generator</h3>
+                <p>Use this after someone pays and you want to confirm what changed.</p>
+                <a href="/tools/repayment-receipt-generator/" class="lt-cardCta">Create a receipt</a>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Shared Expense Tracker</h3>
+                <p>Use this when shared costs keep happening over time and a one-time group payback is only part of the story.</p>
+                <a href="/solutions/shared-expense-tracker/" class="lt-cardCta">Open shared expense tracker</a>
+              </article>
+              <article class="gpc-info-card">
+                <h3>Splitwise Alternative</h3>
+                <p>Compare collaborative group ledgers with You Owe Me&rsquo;s one-person payback and running-balance workflow.</p>
+                <a href="/compare/splitwise-alternative/" class="lt-cardCta">Compare options</a>
+              </article>
+            </div>
+          </section>
+
+          <section class="lt-finalCta">
+            <h2>Track group paybacks without losing the thread</h2>
+            <p>A calculator can show the status once. You Owe Me helps when the status keeps changing - people pay later, partial paybacks happen, reminders are needed, and each person&rsquo;s balance should stay clear.</p>
+            <ul class="lt-valueList">
+              <li>Track paid, partly paid, and still open</li>
+              <li>Keep the original group cost and repayments together</li>
+              <li>Send clearer reminders</li>
+              <li>Keep each person&rsquo;s running balance accurate</li>
+              <li>One person can manage the record</li>
+            </ul>
+            <div class="lt-ctaRow">
+              <a
+                href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670"
+                class="lt-appStoreBtn"
+                aria-label="Download You Owe Me on the App Store for tracking group paybacks"
+                data-track-location="group_payback_calculator_final_primary_cta"
+                data-source-cluster="group-paybacks"
+                data-step-destination="app-store:group-paybacks"
+              >
+                <span class="sr-only">Download You Owe Me</span>
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+              </a>
+              <a href="#group-payback-calculator" class="lt-textCta">Try another calculation</a>
+            </div>
+          </section>
+
+          <p class="lt-pageMeta">Updated <time datetime="2026-06-23">June 23, 2026</time></p>
+        </article>
+      </div>
+
+      <div id="copyright">
+        <ul>
+          <li>&copy; 2026 Ievgenii Iablonskyi</li>
+          <li><a href="/solutions/">Solutions</a></li>
+          <li><a href="/features/">Features</a></li>
+          <li><a href="/reviews/">Reviews</a></li>
+          <li><a href="/tools/">Tools</a></li>
+          <li><a href="/compare/">Compare</a></li>
+          <li><a href="/blog/">Blog</a></li>
+          <li><a href="/contact/">Contact</a></li>
+          <li>Design: <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="../../scripts/sales.js"></script>
+    <script src="../../scripts/group-payback-calculator.js"></script>
+    <script type="module" src="../../scripts/analytics.js"></script>
+    <script src="../../assets/js/jquery.min.js"></script>
+    <script src="../../assets/js/jquery.scrollex.min.js"></script>
+    <script src="../../assets/js/jquery.scrolly.min.js"></script>
+    <script src="../../assets/js/browser.min.js"></script>
+    <script src="../../assets/js/breakpoints.min.js"></script>
+    <script src="../../assets/js/util.js"></script>
+    <script src="../../assets/js/main.js"></script>
+  </body>
+</html>
