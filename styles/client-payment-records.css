@@ -116,6 +116,10 @@ body.client-payment-records-page .client-pdf-grid .lt-detailCard h3 {
   margin-top: 0;
 }
 
+body.client-payment-records-page .client-pdf-screenshot {
+  width: min(100%, 23.5rem);
+}
+
 body.client-payment-records-page .client-pdf-disclaimer {
   max-width: 78ch;
   margin: 1.4rem 0 0;
