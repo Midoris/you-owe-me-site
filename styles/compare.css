@@ -718,6 +718,113 @@ body.best-way-ious-page .best-way-ious-final-cta {
     linear-gradient(135deg, rgba(175, 230, 126, 0.18), rgba(255, 255, 255, 0.98) 52%, rgba(232, 241, 251, 0.92));
 }
 
+body.best-way-ious-page .best-way-ious-review-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  align-items: stretch;
+}
+
+body.best-way-ious-page .best-way-ious-review-card {
+  position: relative;
+  overflow: hidden;
+  background:
+    radial-gradient(24rem 14rem at 0% 0%, rgba(175, 230, 126, 0.14), transparent 58%),
+    linear-gradient(180deg, rgba(255, 255, 255, 0.96), rgba(255, 255, 255, 0.86));
+}
+
+body.best-way-ious-page .best-way-ious-review-card::before {
+  content: "\201C";
+  position: absolute;
+  top: 0.5rem;
+  right: 0.9rem;
+  color: rgba(53, 84, 40, 0.08);
+  font-size: 4rem;
+  font-weight: 900;
+  line-height: 1;
+  pointer-events: none;
+}
+
+body.best-way-ious-page .best-way-ious-review-top {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 0.75rem;
+  align-items: center;
+  justify-content: space-between;
+  position: relative;
+  z-index: 1;
+}
+
+body.best-way-ious-page .best-way-ious-review-stars {
+  display: inline-flex;
+  margin: 0;
+  color: #f5c84b;
+  font-size: 1rem;
+  line-height: 1;
+}
+
+body.best-way-ious-page .best-way-ious-review-top span,
+body.best-way-ious-page .best-way-ious-review-theme {
+  display: inline-flex;
+  align-items: center;
+  min-height: 1.7rem;
+  padding: 0.28rem 0.58rem;
+  border-radius: 999px;
+  color: rgba(24, 33, 43, 0.68);
+  font-size: 0.78rem;
+  font-weight: 780;
+  line-height: 1.2;
+}
+
+body.best-way-ious-page .best-way-ious-review-top span {
+  background: rgba(15, 23, 42, 0.045);
+}
+
+body.best-way-ious-page .best-way-ious-review-theme {
+  align-self: flex-start;
+  margin: 0.7rem 0 0;
+  border: 1px solid rgba(107, 161, 69, 0.16);
+  background: rgba(175, 230, 126, 0.16);
+  color: rgba(24, 33, 43, 0.78);
+}
+
+body.best-way-ious-page .best-way-ious-review-card blockquote {
+  margin: 0;
+  padding: 0;
+  border: 0;
+  color: rgba(24, 33, 43, 0.82);
+  font-style: normal;
+  position: relative;
+  z-index: 1;
+}
+
+body.best-way-ious-page article.post.featured .best-way-ious-review-card blockquote p {
+  max-width: none;
+  margin: 0;
+  font-size: 0.98rem;
+  line-height: 1.58;
+}
+
+body.best-way-ious-page article.post.featured .best-way-ious-review-card blockquote p + p {
+  margin-top: 0.65rem;
+}
+
+body.best-way-ious-page .best-way-ious-review-author {
+  margin: auto 0 0;
+  padding-top: 0.95rem;
+  color: rgba(24, 33, 43, 0.64);
+  font-size: 0.92rem;
+  font-weight: 780;
+}
+
+body.best-way-ious-page .best-way-ious-review-author::before {
+  content: "App Store reviewer \00B7 ";
+  color: rgba(24, 33, 43, 0.46);
+}
+
+body.best-way-ious-page .best-way-ious-review-cta {
+  justify-content: center;
+  margin-top: 1.2rem;
+}
+
 body.best-way-ious-page .best-way-ious-link-list {
   display: flex;
   flex-wrap: wrap;
@@ -789,6 +896,7 @@ body.best-way-ious-page .compare-related-grid .compare-card p {
 
   body.best-way-ious-page .best-way-ious-choice-grid,
   body.best-way-ious-page .best-way-ious-checklist-grid,
+  body.best-way-ious-page .best-way-ious-review-grid,
   body.best-way-ious-page .compare-three-column {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
@@ -804,6 +912,26 @@ body.best-way-ious-page .compare-related-grid .compare-card p {
 }
 
 @media (max-width: 736px) {
+  body.best-way-ious-page,
+  body.best-way-ious-page #wrapper,
+  body.best-way-ious-page #main {
+    max-width: 100vw;
+    overflow-x: clip;
+  }
+
+  body.best-way-ious-page #main {
+    box-sizing: border-box;
+    padding-left: 0.62rem;
+    padding-right: 0.62rem;
+  }
+
+  body.best-way-ious-page #main > .post.featured {
+    box-sizing: border-box;
+    width: 100%;
+    max-width: 100%;
+    overflow-wrap: anywhere;
+  }
+
   body.compare-page .lt-breadcrumb {
     margin-bottom: 0.95rem;
     font-size: 0.9rem;
@@ -822,6 +950,7 @@ body.best-way-ious-page .compare-related-grid .compare-card p {
   }
 
   .compare-hero-media img {
+    max-width: 100%;
     border-radius: 18px;
   }
 
@@ -928,8 +1057,20 @@ body.best-way-ious-page .compare-related-grid .compare-card p {
 
   body.best-way-ious-page .best-way-ious-choice-grid,
   body.best-way-ious-page .best-way-ious-checklist-grid,
+  body.best-way-ious-page .best-way-ious-review-grid,
   body.best-way-ious-page .compare-three-column {
     grid-template-columns: 1fr;
+  }
+
+  body.best-way-ious-page .lt-detailHero,
+  body.best-way-ious-page .compare-hero-grid,
+  body.best-way-ious-page .compare-hero-copy,
+  body.best-way-ious-page .compare-hero-media,
+  body.best-way-ious-page .compare-hero-media img,
+  body.best-way-ious-page .compare-hero-chips,
+  body.best-way-ious-page .lt-ctaRow {
+    min-width: 0;
+    max-width: 100%;
   }
 
   body.best-way-ious-page .best-way-ious-wide-card {
