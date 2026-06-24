@@ -62,6 +62,7 @@ The client payment records cluster is for lightweight records where a freelancer
 
 ## Comparison guides
 
+- [Best Way to Track IOUs Between People](https://you-owe-me.com/compare/best-way-to-track-ious-between-people/): Compares notes, chat history, spreadsheets, payment history, calculators, split apps, and You Owe Me for tracking who owes whom, partial repayments, reminders, and running balances.
 - [Splitwise Alternative](https://you-owe-me.com/compare/splitwise-alternative/): Comparison of Splitwise-style collaborative group ledgers with You Owe Me's Split Entry, Group Paybacks, private running balances, Live Links, repayment history, Relationship Timeline, Money Conversations, and calmer follow-up messages.
 - [Spreadsheet vs App for Tracking Money Owed](https://you-owe-me.com/compare/spreadsheet-vs-app-for-tracking-money-owed/): Honest comparison of spreadsheets, notes, calculators, and You Owe Me for IOUs, repayments, family reimbursements, roommate costs, shared expenses, recurring costs, and running balances.
 

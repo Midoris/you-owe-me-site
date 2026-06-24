@@ -105,6 +105,7 @@ const PAGE_METADATA = {
   "/tools/repayment-receipt-generator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/temporary-financial-support-record-template/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/tools/family-reimbursement-tracker-template/": { page_type: "tool", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
+  "/compare/best-way-to-track-ious-between-people/": { page_type: "comparison", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/compare/splitwise-alternative/": { page_type: "comparison", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/compare/spreadsheet-vs-app-for-tracking-money-owed/": { page_type: "comparison", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-remind-someone-they-owe-you-money-politely/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
