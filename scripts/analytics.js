@@ -66,6 +66,8 @@ const APP_STORE_CPP_BY_PPID = {
   "794c6086-e032-4408-ab2f-acb4ad23ec98": "elderly_parent_caregiving",
   "15af0298-82ca-4a0e-8230-d12774916992": "client_payment_records",
   "07350272-1b8a-4f9f-a267-dc72c33b4404": "long_term_interest_balances",
+  "d333ba53-318b-44d7-ad07-f29841091043": "group_paybacks",
+  "d845bed2-b88d-47a2-854a-9aa0c35eb049": "temporary_support",
 };
 
 const PAGE_METADATA = {
@@ -84,26 +86,26 @@ const PAGE_METADATA = {
   "/redeem/": { page_type: "feature", cluster: "multi_cluster", app_store_cpp: "default" },
   "/solutions/app-to-track-money-owed/": { page_type: "solution", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/solutions/shared-expense-tracker/": { page_type: "solution", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
-  "/solutions/group-payback-tracker/": { page_type: "solution", cluster: "shared_expenses", app_store_cpp: "group_paybacks" },
+  "/solutions/group-payback-tracker/": { page_type: "solution", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/solutions/roommate-expense-tracker/": { page_type: "solution", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/solutions/expense-tracker-for-couples/": { page_type: "solution", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
   "/solutions/family-reimbursement-tracker/": { page_type: "solution", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
   "/solutions/elderly-parent-expense-tracker/": { page_type: "solution", cluster: "elderly_parent_caregiving", app_store_cpp: "elderly_parent_caregiving" },
-  "/solutions/temporary-financial-support-tracker/": { page_type: "solution", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
+  "/solutions/temporary-financial-support-tracker/": { page_type: "solution", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/solutions/client-payment-records/": { page_type: "solution", cluster: "client_payment_records", app_store_cpp: "client_payment_records" },
   "/tools/split-expense-calculator/": { page_type: "tool", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/tools/couple-shared-expense-balance-calculator/": { page_type: "tool", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
-  "/tools/running-balance-calculator/": { page_type: "tool", cluster: "running_balance", app_store_cpp: "shared_expenses" },
+  "/tools/running-balance-calculator/": { page_type: "tool", cluster: "running_balance", app_store_cpp: "default" },
   "/tools/roommate-bill-split-calculator/": { page_type: "tool", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/tools/partial-repayment-calculator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/group-payback-calculator/": { page_type: "tool", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
-  "/tools/payment-plan-calculator/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
+  "/tools/payment-plan-calculator/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/tools/polite-payback-reminder-generator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/repayment-reminder-text-examples/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/repayment-receipt-generator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
-  "/tools/temporary-financial-support-record-template/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
+  "/tools/temporary-financial-support-record-template/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/tools/family-reimbursement-tracker-template/": { page_type: "tool", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
-  "/compare/splitwise-alternative/": { page_type: "comparison", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
+  "/compare/splitwise-alternative/": { page_type: "comparison", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/compare/spreadsheet-vs-app-for-tracking-money-owed/": { page_type: "comparison", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-remind-someone-they-owe-you-money-politely/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
@@ -111,12 +113,12 @@ const PAGE_METADATA = {
   "/blog/how-to-follow-up-after-a-partial-repayment/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/when-to-ask-for-money-back-or-send-a-repayment-update/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-handle-awkward-money-conversations/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
-  "/blog/how-to-politely-say-no-when-people-ask-for-money/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/how-to-politely-say-no-when-people-ask-for-money/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/blog/why-simple-loans-dont-stay-simple/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
-  "/blog/how-to-send-a-repayment-update-when-you-need-more-time/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
-  "/blog/how-to-ask-family-for-temporary-financial-help/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
-  "/blog/how-to-support-someone-financially-without-confusion/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_financial_support" },
-  "/blog/what-is-a-running-balance-between-two-people/": { page_type: "blog", cluster: "running_balance", app_store_cpp: "shared_expenses" },
+  "/blog/how-to-send-a-repayment-update-when-you-need-more-time/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
+  "/blog/how-to-ask-family-for-temporary-financial-help/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
+  "/blog/how-to-support-someone-financially-without-confusion/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
+  "/blog/what-is-a-running-balance-between-two-people/": { page_type: "blog", cluster: "running_balance", app_store_cpp: "default" },
   "/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/blog/how-to-track-who-paid-you-back-for-a-group-expense/": { page_type: "blog", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/blog/how-to-track-money-between-roommates/": { page_type: "blog", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
@@ -344,6 +346,12 @@ function normalizeClusterValue(value) {
   return aliases[key] || key || "unknown";
 }
 
+function normalizeAppStoreCppValue(value) {
+  const normalizedValue = normalizeClusterValue(value);
+  if (normalizedValue === "temporary_financial_support") return "temporary_support";
+  return normalizedValue;
+}
+
 function getAppStoreCppFromLink(link) {
   try {
     const url = new URL(link.href);
@@ -360,7 +368,7 @@ function getAppStoreIntendedCpp(link, pageMetadata, appStoreCpp) {
   const stepDestination = sanitizeText(link.dataset.stepDestination, 160);
   const stepMatch = stepDestination.match(/^app-store:(.+)$/);
   if (stepMatch && stepMatch[1]) {
-    return normalizeClusterValue(stepMatch[1]);
+    return normalizeAppStoreCppValue(stepMatch[1]);
   }
 
   if (appStoreCpp && appStoreCpp !== "default") return appStoreCpp;
