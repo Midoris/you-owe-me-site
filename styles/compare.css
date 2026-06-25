@@ -903,6 +903,23 @@ body.shared-expense-vs-running-balance-page .shared-vs-balance-final-cta {
     linear-gradient(135deg, rgba(175, 230, 126, 0.18), rgba(255, 255, 255, 0.98) 52%, rgba(232, 241, 251, 0.92));
 }
 
+body.shared-expense-vs-running-balance-page .shared-vs-balance-proof-module {
+  margin-top: 1.35rem;
+}
+
+body.shared-expense-vs-running-balance-page .shared-vs-balance-proof-module h2 {
+  max-width: 760px;
+  font-size: clamp(1.45rem, 2.2vw, 2rem);
+}
+
+body.shared-expense-vs-running-balance-page .shared-vs-balance-proof-module > p {
+  max-width: 78ch;
+}
+
+body.shared-expense-vs-running-balance-page .shared-vs-balance-proof-module .lt-ctaRow {
+  margin-top: 1.15rem;
+}
+
 body.shared-expense-vs-running-balance-page .shared-vs-balance-model-grid ul,
 body.shared-expense-vs-running-balance-page .shared-vs-balance-not-fit ul {
   margin-top: 0.35rem;
