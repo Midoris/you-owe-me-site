@@ -118,6 +118,7 @@ The temporary financial support cluster helps people handle informal support bet
 Use this section for money owed, repayment communication, borrower-side repayment updates, reminder-side follow-ups, partial repayments, and deciding what to say next.
 
 - [App to Track Money Owed](https://you-owe-me.com/solutions/app-to-track-money-owed/): Solution page for personal IOUs, repayment history, partial repayments, Loan Records, reminders, Relationship Timeline, and calmer follow-up or repayment-update messages.
+- [How to Keep Track of Who Owes You Money](https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/): Answer guide for the minimum money-owed record: person, direction, original amount, reason, date, repayments, remaining balance, status, and next step before choosing a note, spreadsheet, calculator, reminder, or app.
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/): Add expenses and repayments over time to see the current balance before sending a reminder or confirmation.
 - [Payment Plan Calculator](https://you-owe-me.com/tools/payment-plan-calculator/): Turn a known remaining balance into weekly, biweekly, or monthly repayment steps before sending a reminder, update, or receipt.
 - [Partial Repayment Calculator](https://you-owe-me.com/tools/partial-repayment-calculator/): Calculate the remaining balance after one known amount has been repaid in parts before sending a follow-up, receipt, repayment update, or payment plan.
