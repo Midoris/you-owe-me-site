@@ -35,6 +35,14 @@
   line-height: 1.65;
 }
 
+.best-next-step .best-next-step__intro {
+  /* Keep the module intro aligned inside article layouts that center ordinary paragraphs. */
+  width: auto !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
 .best-next-step__grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
