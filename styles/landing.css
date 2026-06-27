@@ -2450,6 +2450,117 @@
         text-decoration: none;
       }
 
+      body.homepage-page .lt-specificStarts {
+        margin-top: clamp(1.15rem, 2.4vw, 1.8rem);
+        padding: clamp(1.1rem, 2.3vw, 1.55rem);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 22px;
+        background:
+          linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 246, 0.92) 58%, rgba(228, 238, 248, 0.54));
+        box-shadow: 0 12px 34px rgba(15, 23, 42, 0.07);
+      }
+
+      body.homepage-page .lt-specificStartsHeader {
+        display: grid;
+        grid-template-columns: minmax(12rem, 0.38fr) minmax(0, 1fr);
+        gap: clamp(1rem, 2.4vw, 1.8rem);
+        align-items: end;
+        padding-bottom: 1rem;
+        border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+      }
+
+      body.homepage-page .lt-specificStartsEyebrow {
+        margin: 0 0 0.48rem;
+        color: #315a7a;
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.08em;
+        line-height: 1.25;
+        text-transform: uppercase;
+      }
+
+      body.homepage-page .lt-specificStarts h3 {
+        margin: 0;
+        max-width: 16ch;
+        color: var(--lt-deep);
+        font-size: clamp(1.22rem, 1rem + 0.7vw, 1.56rem);
+        line-height: 1.12;
+      }
+
+      body.homepage-page .lt-specificStartsHeader p:last-child {
+        margin: 0;
+        max-width: 46rem;
+        color: rgba(24, 33, 43, 0.68);
+        font-size: clamp(0.98rem, 0.94rem + 0.12vw, 1.06rem);
+        line-height: 1.55;
+      }
+
+      body.homepage-page .lt-specificStartsGrid {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(0, 1fr));
+        margin-top: 1rem;
+        border: 1px solid rgba(15, 23, 42, 0.07);
+        border-radius: 16px;
+        background: rgba(255, 255, 255, 0.56);
+        overflow: hidden;
+      }
+
+      body.homepage-page .lt-specificStartsGroup {
+        min-width: 0;
+        padding: clamp(0.95rem, 1.5vw, 1.15rem);
+      }
+
+      body.homepage-page .lt-specificStartsGroup + .lt-specificStartsGroup {
+        border-left: 1px solid rgba(15, 23, 42, 0.07);
+      }
+
+      body.homepage-page .lt-specificStartsGroup h4 {
+        margin: 0 0 0.68rem;
+        color: rgba(24, 33, 43, 0.62);
+        font-size: 0.76rem;
+        font-weight: 800;
+        letter-spacing: 0.06em;
+        line-height: 1.25;
+        text-transform: uppercase;
+      }
+
+      body.homepage-page .lt-specificStartLink {
+        display: grid;
+        gap: 0.22rem;
+        padding: 0.72rem 0;
+        color: var(--lt-deep);
+        text-decoration: none;
+        transition: background-color 0.18s ease, color 0.18s ease;
+      }
+
+      body.homepage-page .lt-specificStartLink + .lt-specificStartLink {
+        border-top: 1px solid rgba(15, 23, 42, 0.07);
+      }
+
+      body.homepage-page .lt-specificStartLink strong {
+        width: fit-content;
+        max-width: 100%;
+        color: #1f3e37;
+        font-size: 0.98rem;
+        font-weight: 800;
+        line-height: 1.28;
+        text-decoration: underline;
+        text-decoration-color: rgba(143, 201, 92, 0.62);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.18em;
+      }
+
+      body.homepage-page .lt-specificStartLink span {
+        color: rgba(24, 33, 43, 0.68);
+        font-size: 0.9rem;
+        line-height: 1.42;
+      }
+
+      body.homepage-page .lt-specificStartLink:hover strong {
+        color: #355428;
+        text-decoration-color: rgba(143, 201, 92, 0.9);
+      }
+
       body.homepage-page .lt-situationCard:hover,
       body.homepage-page .lt-situationCard:focus-visible {
         transform: translateY(-2px);
@@ -2462,6 +2573,7 @@
       body.homepage-page .lt-textCta:focus-visible,
       body.homepage-page .lt-cardCta:focus-visible,
       body.homepage-page .lt-situationLinks a:focus-visible,
+      body.homepage-page .lt-specificStartLink:focus-visible,
       body.homepage-page .lt-mobileStickyCta:focus-visible {
         outline: 3px solid rgba(59, 130, 246, 0.36);
         outline-offset: 4px;
@@ -2877,6 +2989,51 @@
         body.homepage-page .lt-proofGrid,
         body.homepage-page .lt-checkGrid {
           grid-template-columns: 1fr;
+        }
+
+        body.homepage-page .lt-specificStarts {
+          margin-top: 1rem;
+          padding: 0.95rem;
+          border-radius: 18px;
+        }
+
+        body.homepage-page .lt-specificStartsHeader,
+        body.homepage-page .lt-specificStartsGrid {
+          grid-template-columns: 1fr;
+        }
+
+        body.homepage-page .lt-specificStartsHeader {
+          gap: 0.55rem;
+          align-items: start;
+          padding-bottom: 0.85rem;
+        }
+
+        body.homepage-page .lt-specificStarts h3,
+        body.homepage-page .lt-specificStartsHeader p:last-child {
+          max-width: none;
+        }
+
+        body.homepage-page .lt-specificStartsGrid {
+          margin-top: 0.85rem;
+          border-radius: 14px;
+        }
+
+        body.homepage-page .lt-specificStartsGroup + .lt-specificStartsGroup {
+          border-top: 1px solid rgba(15, 23, 42, 0.07);
+          border-left: 0;
+        }
+
+        body.homepage-page .lt-specificStartsGroup {
+          padding: 0.9rem;
+        }
+
+        body.homepage-page .lt-specificStartLink strong {
+          font-size: 0.96rem;
+        }
+
+        body.homepage-page .lt-specificStartLink span {
+          font-size: 0.88rem;
+          line-height: 1.38;
         }
 
         body.homepage-page .lt-situationCard,
