@@ -50,16 +50,16 @@
         {
           "@type": "WebSite",
           "@id": "https://you-owe-me.com/#website",
-          "name": "YouOweMe",
-          "alternateName": "You Owe Me",
+          "name": "You Owe Me",
+          "alternateName": "YouOweMe",
           "url": "https://you-owe-me.com/"
         },
         {
           "@type": "SoftwareApplication",
           "@id": "https://you-owe-me.com/#software-application",
-          "name": "YouOweMe",
+          "name": "You Owe Me",
           "alternateName": [
-            "You Owe Me",
+            "YouOweMe",
             "Loan Tracker: You Owe Me"
           ],
           "operatingSystem": "iOS",
@@ -67,7 +67,7 @@
           "url": "https://you-owe-me.com/",
           "downloadUrl": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670",
           "image": "https://you-owe-me.com/images/shared/app-screenshots/6.8.5_money_between_people.webp",
-          "description": "YouOweMe is an iPhone app for tracking money between people, including IOUs, shared bills, temporary support, loans, Relationship Timeline, Loan Records, repayments, recurring costs, reminders, Live Links, PDF statements, percentage or fixed interest, and follow-up messages.",
+          "description": "You Owe Me is an iPhone app for tracking money between people. It helps with IOUs, shared bills, temporary support, informal loans, repayments, recurring costs, reminders, Live Links, PDF statements, and follow-up messages, so you can see who owes whom, what changed, and what to say next.",
           "offers": {
             "@type": "Offer",
             "price": "0",
@@ -200,9 +200,10 @@
 
           <section id="situations" class="lt-pageSection lt-situationsSection" aria-labelledby="situations-title">
             <div class="lt-sectionHeader">
-              <h2 id="situations-title">Start with the money situation you are in</h2>
+              <p class="lt-eyebrow">Start with your situation</p>
+              <h2 id="situations-title">What kind of money are you trying to keep clear?</h2>
               <p>
-                Most money problems between people are not just about math. They are about remembering the real balance, knowing when to follow up, and keeping the conversation calm.
+                Choose the closest match. You do not need the perfect category &mdash; You Owe Me is built around the balance, history, repayments, and next step between people.
               </p>
             </div>
 
@@ -212,152 +213,117 @@
             </a>
 
             <div class="lt-situationGrid">
-              <a href="./solutions/app-to-track-money-owed/" class="lt-situationCard" data-cta-location="situation-card">
+              <article class="lt-situationCard lt-situationCard--withMicro">
                 <h3>Someone owes me money</h3>
-                <p>Track IOUs, partial repayments, due dates, and calmer follow-ups when a friend, family member, or client still owes you.</p>
-                <span>Track money owed</span>
-              </a>
-
-              <a href="./solutions/temporary-financial-support-tracker/" class="lt-situationCard" data-cta-location="situation-card">
-                <h3>Temporary support</h3>
-                <p>Someone covered rent, bills, groceries, or other help temporarily? Keep the support, repayments, updates, and remaining balance clear without making it feel formal.</p>
-                <span>Track temporary support</span>
-              </a>
-
-              <article class="lt-situationCard lt-situationCard--withLinks">
-                <h3>I pay for a parent or family member</h3>
-                <p>Track parent bills, subscriptions, groceries, pharmacy purchases, online orders, sibling reimbursements, and remaining balances.</p>
-                <div class="lt-situationLinks">
-                  <a href="./solutions/elderly-parent-expense-tracker/">Track parent expenses</a>
-                  <a href="./blog/how-to-track-subscriptions-and-bills-you-pay-for-family/">Track subscriptions and bills you pay for family</a>
+                <p>Track IOUs, partial repayments, due dates, reminders, and calmer follow-ups when a friend, family member, client, or roommate still owes you.</p>
+                <div class="lt-situationCardActions">
+                  <a href="./solutions/app-to-track-money-owed/" class="lt-situationPrimaryCta" data-cta-location="situation-card">Track money owed</a>
+                  <a href="/blog/how-to-keep-track-of-who-owes-you-money/" class="lt-situationMicroLink">Need the simple record first? Set up a money-owed record.</a>
                 </div>
               </article>
 
-              <a href="./solutions/expense-tracker-for-couples/" class="lt-situationCard" data-cta-location="situation-card">
+              <article class="lt-situationCard lt-situationCard--withMicro">
+                <h3>Temporary support</h3>
+                <p>Keep covered rent, bills, groceries, repayment steps, timing changes, and check-ins clear without making the situation feel heavier than it needs to.</p>
+                <div class="lt-situationCardActions">
+                  <a href="./solutions/temporary-financial-support-tracker/" class="lt-situationPrimaryCta" data-cta-location="situation-card">Track temporary support</a>
+                  <a href="/tools/temporary-financial-support-record-template/" class="lt-situationMicroLink">Need to write it down first? Create a support record.</a>
+                </div>
+              </article>
+
+              <article class="lt-situationCard lt-situationCard--withMicro">
+                <h3>I pay for a parent or family member</h3>
+                <p>Track parent bills, subscriptions, groceries, pharmacy purchases, online orders, sibling reimbursements, recurring charges, and repayments.</p>
+                <div class="lt-situationCardActions">
+                  <a href="./solutions/elderly-parent-expense-tracker/" class="lt-situationPrimaryCta" data-cta-location="situation-card">Track parent expenses</a>
+                  <a href="./blog/how-to-track-subscriptions-and-bills-you-pay-for-family/" class="lt-situationMicroLink">Tracking recurring charges? See family subscriptions and bills.</a>
+                </div>
+              </article>
+
+              <article class="lt-situationCard lt-situationCard--withMicro">
                 <h3>We split costs as a couple</h3>
-                <p>Keep groceries, travel, rent, subscriptions, and uneven day-to-day spending clear without turning money into tension.</p>
-                <span>Track couple expenses</span>
-              </a>
+                <p>Keep groceries, travel, rent, subscriptions, uneven spending, and repayments clear without turning every purchase into a tense conversation.</p>
+                <div class="lt-situationCardActions">
+                  <a href="./solutions/expense-tracker-for-couples/" class="lt-situationPrimaryCta" data-cta-location="situation-card">Track couple expenses</a>
+                  <a href="/tools/couple-shared-expense-balance-calculator/" class="lt-situationMicroLink">Need one quick partner balance? Calculate a couple balance.</a>
+                </div>
+              </article>
 
-              <a href="./solutions/roommate-expense-tracker/" class="lt-situationCard" data-cta-location="situation-card">
+              <article class="lt-situationCard lt-situationCard--withMicro">
                 <h3>Roommates and household bills</h3>
-                <p>Track rent, utilities, groceries, household supplies, recurring charges, and roommate settle-ups in one running balance.</p>
-                <span>Track roommate expenses</span>
-              </a>
+                <p>Track rent, utilities, groceries, household supplies, recurring charges, repayments, and roommate settle-ups in one running balance.</p>
+                <div class="lt-situationCardActions">
+                  <a href="./solutions/roommate-expense-tracker/" class="lt-situationPrimaryCta" data-cta-location="situation-card">Track roommate expenses</a>
+                  <a href="/tools/roommate-bill-split-calculator/" class="lt-situationMicroLink">Need one monthly settle-up? Use the roommate bill calculator.</a>
+                </div>
+              </article>
 
-              <a href="./solutions/shared-expense-tracker/" class="lt-situationCard" data-cta-location="situation-card">
+              <article class="lt-situationCard lt-situationCard--withMicro">
                 <h3>Shared expenses over time</h3>
                 <p>For friends, trips, groups, and repeated shared spending where one quick split is not enough.</p>
-                <span>Track shared expenses</span>
-              </a>
+                <div class="lt-situationCardActions">
+                  <a href="./solutions/shared-expense-tracker/" class="lt-situationPrimaryCta" data-cta-location="situation-card">Track shared expenses</a>
+                  <a href="/tools/group-payback-calculator/" class="lt-situationMicroLink">Paid first for a group cost? Check group payback status.</a>
+                </div>
+              </article>
 
-              <a href="./tools/running-balance-calculator/" class="lt-situationCard" data-cta-location="situation-card">
+              <article class="lt-situationCard">
                 <h3>Running balance calculator</h3>
-                <p>Try a quick example of expenses and repayments over time.</p>
-                <span>Open calculator</span>
-              </a>
+                <p>Add expenses and repayments over time to see the current balance between two people.</p>
+                <div class="lt-situationCardActions">
+                  <a href="./tools/running-balance-calculator/" class="lt-situationPrimaryCta" data-cta-location="situation-card">Calculate a running balance</a>
+                </div>
+              </article>
 
-              <a href="./tools/split-expense-calculator/" class="lt-situationCard" data-cta-location="situation-card">
+              <article class="lt-situationCard">
                 <h3>One quick split</h3>
-                <p>Only need to divide one bill? Use the free split expense calculator first.</p>
-                <span>Open split calculator</span>
-              </a>
+                <p>Only need to divide one bill, meal, purchase, trip cost, or household expense?</p>
+                <div class="lt-situationCardActions">
+                  <a href="./tools/split-expense-calculator/" class="lt-situationPrimaryCta" data-cta-location="situation-card">Split one bill</a>
+                </div>
+              </article>
             </div>
-
-            <aside class="lt-specificStarts" aria-labelledby="specific-starts-title">
-              <div class="lt-specificStartsHeader">
-                <div>
-                  <p class="lt-specificStartsEyebrow">More specific paths</p>
-                  <h3 id="specific-starts-title">Need a more specific path?</h3>
-                </div>
-                <p>
-                  Use these focused shortcuts when the main cards are close, but not exact.
-                </p>
-              </div>
-
-              <div class="lt-specificStartsGrid">
-                <div class="lt-specificStartsGroup">
-                  <h4>Use a quick tool</h4>
-                  <a href="./tools/roommate-bill-split-calculator/" class="lt-specificStartLink">
-                    <strong>Roommate monthly settle-up</strong>
-                    <span>Split rent, utilities, groceries, repayments, and previous balances.</span>
-                  </a>
-                  <a href="/tools/group-payback-calculator/" class="lt-specificStartLink">
-                    <strong>Group payback status</strong>
-                    <span>See who is paid, partly paid, or still open after one person paid first.</span>
-                  </a>
-                </div>
-
-                <div class="lt-specificStartsGroup">
-                  <h4>Set up the record first</h4>
-                  <a href="./solutions/client-payment-records/" class="lt-specificStartLink">
-                    <strong>Client balances</strong>
-                    <span>Use a simple record for deposits, repeat charges, partial payments, and open balances.</span>
-                  </a>
-                  <a href="/blog/how-to-keep-track-of-who-owes-you-money/" class="lt-specificStartLink">
-                    <strong>Money-owed record</strong>
-                    <span>Clarify the person, reason, repayments, and remaining balance before choosing a tool.</span>
-                  </a>
-                  <a href="/blog/how-to-track-who-paid-you-back-for-a-group-expense/" class="lt-specificStartLink">
-                    <strong>Group payback guide</strong>
-                    <span>Follow the step-by-step path when a shared cost has several payback statuses.</span>
-                  </a>
-                </div>
-
-                <div class="lt-specificStartsGroup">
-                  <h4>Compare before choosing</h4>
-                  <a href="/compare/best-way-to-track-ious-between-people/" class="lt-specificStartLink">
-                    <strong>Compare tracking methods</strong>
-                    <span>Choose between a note, calculator, spreadsheet, split app, or IOU tracker.</span>
-                  </a>
-                  <a href="/compare/shared-expense-app-vs-running-balance-app/" class="lt-specificStartLink">
-                    <strong>Shared expense app or running balance</strong>
-                    <span>Decide whether you need collaboration or one ongoing balance.</span>
-                  </a>
-                  <a href="/compare/splitwise-alternative/" class="lt-specificStartLink">
-                    <strong>Splitwise alternative</strong>
-                    <span>See where You Owe Me fits better for IOUs, repayments, Live Links, and follow-ups.</span>
-                  </a>
-                </div>
-              </div>
-            </aside>
           </section>
 
           <!-- best-next-step:start -->
 <!-- Generated by scripts/build-best-next-steps.mjs. Edit content/content-registry.mjs instead. -->
 <section class="best-next-step best-next-step--hub best-next-step--custom" aria-labelledby="best-next-step-home-title" data-module="best-next-step" data-source-page="home" data-source-cluster="homepage" data-module-variant="hub" data-module-template="custom">
-  <p class="best-next-step__eyebrow">Choose your starting point</p>
-  <h2 id="best-next-step-home-title">Choose the clearest starting point</h2>
-  <p class="best-next-step__intro">Start with the job in front of you: identify the situation, calculate the balance, choose a solution, or read trust proof before installing.</p>
+  <p class="best-next-step__eyebrow">Next step</p>
+  <h2 id="best-next-step-home-title">Choose what you need now</h2>
+  <p class="best-next-step__intro">If this will keep happening, start in the app. If you only need a number, a comparison, or more confidence first, use the lighter path.</p>
   <div class="best-next-step__grid">
-    <a class="best-next-step__card" href="/find/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="home_best_next_step_1" data-source-page="home" data-source-cluster="homepage" data-destination-cluster="homepage" data-step-type="hub" data-step-intent="choose_starting_point" data-step-destination="/find/" data-step-position="1" data-module-variant="hub" data-module-template="custom" data-step-analytics-id="home_find_situation">
-      <span class="best-next-step__label">Find</span>
-      <strong>Find your money situation</strong>
-      <span>Use this if the words are fuzzy but you know what happened between people.</span>
+    <a class="best-next-step__card" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670" data-module="best-next-step" data-track-location="home_best_next_step_1" data-source-page="home" data-source-cluster="homepage" data-destination-cluster="app-store" data-step-type="app" data-step-intent="download_app" data-step-destination="app-store:general" data-step-position="1" data-module-variant="hub" data-module-template="custom">
+      <span class="best-next-step__label">Download on the App Store</span>
+      <strong>Start in You Owe Me</strong>
+      <span>Best when the balance may change again, repayments may happen in parts, reminders matter, or you need a shareable record.</span>
     </a>
-    <a class="best-next-step__card" href="/tools/running-balance-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="home_best_next_step_2" data-source-page="home" data-source-cluster="homepage" data-destination-cluster="running-balance" data-step-type="tool" data-step-intent="calculate_running_balance" data-step-destination="/tools/running-balance-calculator/" data-step-position="2" data-module-variant="hub" data-module-template="custom" data-step-analytics-id="home_running_balance">
-      <span class="best-next-step__label">Calculate</span>
-      <strong>Calculate who owes whom now</strong>
-      <span>Use this if expenses, repayments, or partial repayments already happened.</span>
+    <a class="best-next-step__card" href="/find/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="home_best_next_step_2" data-source-page="home" data-source-cluster="homepage" data-destination-cluster="homepage" data-step-type="hub" data-step-intent="choose_starting_point" data-step-destination="/find/" data-step-position="2" data-module-variant="hub" data-module-template="custom" data-step-analytics-id="home_find_situation">
+      <span class="best-next-step__label">Find my situation</span>
+      <strong>Find the closest situation</strong>
+      <span>Use this when your situation overlaps family, roommates, shared expenses, temporary support, or repayments.</span>
     </a>
-    <a class="best-next-step__card" href="/solutions/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="home_best_next_step_3" data-source-page="home" data-source-cluster="homepage" data-destination-cluster="money-owed" data-step-type="hub" data-step-intent="track_ongoing_balance" data-step-destination="/solutions/" data-step-position="3" data-module-variant="hub" data-module-template="custom" data-step-analytics-id="home_solutions">
-      <span class="best-next-step__label">Solutions</span>
-      <strong>Choose a tracking setup</strong>
-      <span>Use this if the situation is ongoing and needs a clearer record than memory.</span>
+    <a class="best-next-step__card" href="/tools/running-balance-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="home_best_next_step_3" data-source-page="home" data-source-cluster="homepage" data-destination-cluster="running-balance" data-step-type="tool" data-step-intent="calculate_running_balance" data-step-destination="/tools/running-balance-calculator/" data-step-position="3" data-module-variant="hub" data-module-template="custom" data-step-analytics-id="home_running_balance">
+      <span class="best-next-step__label">Open running balance calculator</span>
+      <strong>Calculate the current balance</strong>
+      <span>Use this when expenses or repayments already happened and you need to know who owes whom now.</span>
     </a>
-    <a class="best-next-step__card" href="/reviews/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="home_best_next_step_4" data-source-page="home" data-source-cluster="homepage" data-destination-cluster="reviews" data-step-type="feature" data-step-intent="choose_starting_point" data-step-destination="/reviews/" data-step-position="4" data-module-variant="hub" data-module-template="custom" data-step-analytics-id="home_reviews">
-      <span class="best-next-step__label">Proof</span>
-      <strong>Read real App Store reviews</strong>
-      <span>Use this if you want to see how people use You Owe Me for family, repayments, roommates, clients, and shared costs.</span>
+    <a class="best-next-step__card" href="/compare/best-way-to-track-ious-between-people/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="home_best_next_step_4" data-source-page="home" data-source-cluster="homepage" data-destination-cluster="compare" data-step-type="hub" data-step-intent="choose_starting_point" data-step-destination="/compare/best-way-to-track-ious-between-people/" data-step-position="4" data-module-variant="hub" data-module-template="custom">
+      <span class="best-next-step__label">Compare tracking methods</span>
+      <strong>Compare methods before choosing</strong>
+      <span>Use this when you are deciding between notes, spreadsheets, payment history, calculators, split apps, and an IOU tracker.</span>
     </a>
   </div>
 </section>
 <!-- best-next-step:end -->
+          <p class="lt-bnsProof">Want proof first? <a href="/reviews/">Read real App Store reviews</a>.</p>
 
           <section class="lt-pageSection lt-definitionPanel" aria-labelledby="what-is-youoweme">
-            <h2 id="what-is-youoweme">What is YouOweMe?</h2>
+            <h2 id="what-is-youoweme">What is You Owe Me?</h2>
             <p>
-              YouOweMe is an iPhone app for tracking money between people. It helps you record IOUs, shared bills, temporary support, loans, repayments, recurring costs, reminders, Live Links, PDF statements, and follow-up messages - with a Relationship Timeline for each person, so you can see who owes whom, what happened, and what to say next.
+              You Owe Me is an iPhone app for tracking money between people. It helps with IOUs, shared bills, temporary support, informal loans, repayments, recurring costs, reminders, Live Links, PDF statements, and follow-up messages &mdash; so you can see who owes whom, what changed, and what to say next.
+            </p>
+            <p>
+              Use it when the amount does not stay simple: someone repays part, another cost is added, a due date changes, a recurring bill renews, or you need to share the balance without forcing the other person into the app.
             </p>
           </section>
 
@@ -735,13 +701,55 @@
             </div>
           </section>
 
+          <section class="lt-pageSection lt-resourceShelf" aria-labelledby="resource-shelf-title">
+            <div class="lt-sectionHeader">
+              <p class="lt-eyebrow">Helpful specific paths</p>
+              <h2 id="resource-shelf-title">Specific tools, records, and comparisons</h2>
+              <p>Use these when you need a narrower shortcut than the main situations above.</p>
+            </div>
+
+            <div class="lt-resourceShelfGrid">
+              <div class="lt-resourceShelfGroup">
+                <h3>Set up the record</h3>
+                <a href="/solutions/client-payment-records/" class="lt-resourceShelfLink">
+                  <strong>Simple client payment records</strong>
+                  <span>For deposits, repeat charges, partial payments, and open client balances.</span>
+                </a>
+                <a href="/blog/how-to-keep-track-of-who-owes-you-money/" class="lt-resourceShelfLink">
+                  <strong>Money-owed record</strong>
+                  <span>Clarify the person, reason, repayments, and remaining balance before choosing a tool.</span>
+                </a>
+                <a href="/blog/how-to-track-who-paid-you-back-for-a-group-expense/" class="lt-resourceShelfLink">
+                  <strong>Group payback guide</strong>
+                  <span>Use a step-by-step method when one shared cost has paid, partly paid, and unpaid statuses.</span>
+                </a>
+              </div>
+
+              <div class="lt-resourceShelfGroup">
+                <h3>Compare before choosing</h3>
+                <a href="/compare/best-way-to-track-ious-between-people/" class="lt-resourceShelfLink">
+                  <strong>Best way to track IOUs between people</strong>
+                  <span>Compare notes, chat history, payment apps, spreadsheets, calculators, split apps, and You Owe Me.</span>
+                </a>
+                <a href="/compare/shared-expense-app-vs-running-balance-app/" class="lt-resourceShelfLink">
+                  <strong>Shared expense app vs running balance app</strong>
+                  <span>Choose collaboration when everyone adds expenses; choose a running balance when the amount keeps changing.</span>
+                </a>
+                <a href="/compare/splitwise-alternative/" class="lt-resourceShelfLink">
+                  <strong>Splitwise alternative for IOUs and running balances</strong>
+                  <span>Compare Splitwise-style group splitting with running balances, repayments, Live Links, and follow-ups.</span>
+                </a>
+              </div>
+            </div>
+          </section>
+
           <section class="lt-pageSection lt-faqSection" aria-labelledby="faq-title">
             <h2 id="faq-title">FAQ</h2>
 
             <div class="lt-faqList">
               <article>
-                <h3>What is YouOweMe?</h3>
-                <p>YouOweMe is an iPhone app for tracking money between people. It helps with IOUs, shared bills, temporary support, loans, repayments, recurring costs, reminders, a Relationship Timeline, Live Links, PDF statements, and follow-up messages.</p>
+                <h3>What is You Owe Me?</h3>
+                <p>You Owe Me is an iPhone app for tracking money between people. It helps with IOUs, shared bills, temporary support, informal loans, repayments, recurring costs, reminders, Live Links, PDF statements, and follow-up messages.</p>
               </article>
               <article>
                 <h3>Is YouOweMe only for loans?</h3>

@@ -2414,31 +2414,19 @@
         line-height: 1.58;
       }
 
-      body.homepage-page .lt-situationCard span {
+      body.homepage-page .lt-situationCardActions {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0.72rem;
+        margin-top: auto;
+        padding-top: 1rem;
+      }
+
+      body.homepage-page .lt-situationPrimaryCta {
         display: inline-flex;
         align-items: center;
         width: fit-content;
-        min-height: 2.45rem;
-        margin-top: 1rem;
-        padding: 0.62rem 0.82rem;
-        border-radius: 999px;
-        background: rgba(175, 230, 126, 0.22);
-        color: #24351e;
-        font-size: 0.9rem;
-        font-weight: 800;
-        line-height: 1.2;
-      }
-
-      body.homepage-page .lt-situationLinks {
-        display: flex;
-        flex-wrap: wrap;
-        gap: 0.55rem;
-        margin-top: 1rem;
-      }
-
-      body.homepage-page .lt-situationLinks a {
-        display: inline-flex;
-        align-items: center;
         min-height: 2.45rem;
         padding: 0.62rem 0.82rem;
         border-radius: 999px;
@@ -2450,44 +2438,70 @@
         text-decoration: none;
       }
 
-      body.homepage-page .lt-specificStarts {
-        margin-top: clamp(1.15rem, 2.4vw, 1.8rem);
-        padding: clamp(1.1rem, 2.3vw, 1.55rem);
-        border: 1px solid rgba(15, 23, 42, 0.08);
-        border-radius: 22px;
-        background:
-          linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(248, 251, 246, 0.92) 58%, rgba(228, 238, 248, 0.54));
-        box-shadow: 0 12px 34px rgba(15, 23, 42, 0.07);
+      body.homepage-page .lt-situationPrimaryCta:hover {
+        background: rgba(175, 230, 126, 0.34);
+        color: #1f302b;
       }
 
-      body.homepage-page .lt-specificStartsHeader {
+      body.homepage-page .lt-situationMicroLink {
+        display: inline;
+        max-width: 100%;
+        color: rgba(31, 62, 55, 0.78);
+        font-size: 0.88rem;
+        font-weight: 700;
+        line-height: 1.38;
+        text-decoration: underline;
+        text-decoration-color: rgba(143, 201, 92, 0.58);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.18em;
+      }
+
+      body.homepage-page .lt-situationMicroLink:hover {
+        color: #355428;
+        text-decoration-color: rgba(143, 201, 92, 0.92);
+      }
+
+      body.homepage-page .lt-bnsProof {
+        max-width: 58rem;
+        margin: -2rem 0 0;
+        color: rgba(24, 33, 43, 0.68);
+        font-size: 0.98rem;
+        line-height: 1.55;
+      }
+
+      body.homepage-page .lt-bnsProof a {
+        color: #1f3e37;
+        font-weight: 800;
+        text-decoration: underline;
+        text-decoration-color: rgba(143, 201, 92, 0.62);
+        text-decoration-thickness: 0.08em;
+        text-underline-offset: 0.18em;
+      }
+
+      body.homepage-page .lt-resourceShelf {
+        padding: 0;
+      }
+
+      body.homepage-page .lt-resourceShelf .lt-sectionHeader {
         display: grid;
-        grid-template-columns: minmax(12rem, 0.38fr) minmax(0, 1fr);
+        grid-template-columns: minmax(14rem, 0.42fr) minmax(0, 1fr);
         gap: clamp(1rem, 2.4vw, 1.8rem);
         align-items: end;
+        max-width: none;
+        margin-bottom: 1rem;
         padding-bottom: 1rem;
         border-bottom: 1px solid rgba(15, 23, 42, 0.08);
       }
 
-      body.homepage-page .lt-specificStartsEyebrow {
-        margin: 0 0 0.48rem;
-        color: #315a7a;
-        font-size: 0.76rem;
-        font-weight: 800;
-        letter-spacing: 0.08em;
-        line-height: 1.25;
-        text-transform: uppercase;
-      }
-
-      body.homepage-page .lt-specificStarts h3 {
+      body.homepage-page .lt-resourceShelf .lt-sectionHeader h2 {
         margin: 0;
-        max-width: 16ch;
+        max-width: 17ch;
         color: var(--lt-deep);
         font-size: clamp(1.22rem, 1rem + 0.7vw, 1.56rem);
         line-height: 1.12;
       }
 
-      body.homepage-page .lt-specificStartsHeader p:last-child {
+      body.homepage-page .lt-resourceShelf .lt-sectionHeader p:last-child {
         margin: 0;
         max-width: 46rem;
         color: rgba(24, 33, 43, 0.68);
@@ -2495,26 +2509,22 @@
         line-height: 1.55;
       }
 
-      body.homepage-page .lt-specificStartsGrid {
+      body.homepage-page .lt-resourceShelfGrid {
         display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: 1rem;
         margin-top: 1rem;
+      }
+
+      body.homepage-page .lt-resourceShelfGroup {
+        min-width: 0;
+        padding: clamp(0.95rem, 1.5vw, 1.2rem);
         border: 1px solid rgba(15, 23, 42, 0.07);
         border-radius: 16px;
-        background: rgba(255, 255, 255, 0.56);
-        overflow: hidden;
+        background: rgba(255, 255, 255, 0.64);
       }
 
-      body.homepage-page .lt-specificStartsGroup {
-        min-width: 0;
-        padding: clamp(0.95rem, 1.5vw, 1.15rem);
-      }
-
-      body.homepage-page .lt-specificStartsGroup + .lt-specificStartsGroup {
-        border-left: 1px solid rgba(15, 23, 42, 0.07);
-      }
-
-      body.homepage-page .lt-specificStartsGroup h4 {
+      body.homepage-page .lt-resourceShelfGroup h3 {
         margin: 0 0 0.68rem;
         color: rgba(24, 33, 43, 0.62);
         font-size: 0.76rem;
@@ -2524,7 +2534,7 @@
         text-transform: uppercase;
       }
 
-      body.homepage-page .lt-specificStartLink {
+      body.homepage-page .lt-resourceShelfLink {
         display: grid;
         gap: 0.22rem;
         padding: 0.72rem 0;
@@ -2533,11 +2543,11 @@
         transition: background-color 0.18s ease, color 0.18s ease;
       }
 
-      body.homepage-page .lt-specificStartLink + .lt-specificStartLink {
+      body.homepage-page .lt-resourceShelfLink + .lt-resourceShelfLink {
         border-top: 1px solid rgba(15, 23, 42, 0.07);
       }
 
-      body.homepage-page .lt-specificStartLink strong {
+      body.homepage-page .lt-resourceShelfLink strong {
         width: fit-content;
         max-width: 100%;
         color: #1f3e37;
@@ -2550,13 +2560,13 @@
         text-underline-offset: 0.18em;
       }
 
-      body.homepage-page .lt-specificStartLink span {
+      body.homepage-page .lt-resourceShelfLink span {
         color: rgba(24, 33, 43, 0.68);
         font-size: 0.9rem;
         line-height: 1.42;
       }
 
-      body.homepage-page .lt-specificStartLink:hover strong {
+      body.homepage-page .lt-resourceShelfLink:hover strong {
         color: #355428;
         text-decoration-color: rgba(143, 201, 92, 0.9);
       }
@@ -2572,8 +2582,10 @@
       body.homepage-page .lt-findNudge:focus-visible,
       body.homepage-page .lt-textCta:focus-visible,
       body.homepage-page .lt-cardCta:focus-visible,
-      body.homepage-page .lt-situationLinks a:focus-visible,
-      body.homepage-page .lt-specificStartLink:focus-visible,
+      body.homepage-page .lt-situationPrimaryCta:focus-visible,
+      body.homepage-page .lt-situationMicroLink:focus-visible,
+      body.homepage-page .lt-resourceShelfLink:focus-visible,
+      body.homepage-page .lt-bnsProof a:focus-visible,
       body.homepage-page .lt-mobileStickyCta:focus-visible {
         outline: 3px solid rgba(59, 130, 246, 0.36);
         outline-offset: 4px;
@@ -2845,7 +2857,10 @@
         body.homepage-page .lt-proofGrid,
         body.homepage-page .lt-coreFeatureGrid,
         body.homepage-page .lt-coreFeatureCard,
-        body.homepage-page .lt-checkGrid {
+        body.homepage-page .lt-checkGrid,
+        body.homepage-page .lt-resourceShelf,
+        body.homepage-page .lt-resourceShelfGrid,
+        body.homepage-page .lt-resourceShelfGroup {
           width: 100%;
           max-width: 100%;
           min-width: 0;
@@ -2991,47 +3006,40 @@
           grid-template-columns: 1fr;
         }
 
-        body.homepage-page .lt-specificStarts {
+        body.homepage-page .lt-resourceShelf {
           margin-top: 1rem;
-          padding: 0.95rem;
-          border-radius: 18px;
         }
 
-        body.homepage-page .lt-specificStartsHeader,
-        body.homepage-page .lt-specificStartsGrid {
+        body.homepage-page .lt-resourceShelf .lt-sectionHeader,
+        body.homepage-page .lt-resourceShelfGrid {
           grid-template-columns: 1fr;
         }
 
-        body.homepage-page .lt-specificStartsHeader {
+        body.homepage-page .lt-resourceShelf .lt-sectionHeader {
           gap: 0.55rem;
           align-items: start;
           padding-bottom: 0.85rem;
         }
 
-        body.homepage-page .lt-specificStarts h3,
-        body.homepage-page .lt-specificStartsHeader p:last-child {
+        body.homepage-page .lt-resourceShelf .lt-sectionHeader h2,
+        body.homepage-page .lt-resourceShelf .lt-sectionHeader p:last-child {
           max-width: none;
         }
 
-        body.homepage-page .lt-specificStartsGrid {
+        body.homepage-page .lt-resourceShelfGrid {
           margin-top: 0.85rem;
-          border-radius: 14px;
+          gap: 0.85rem;
         }
 
-        body.homepage-page .lt-specificStartsGroup + .lt-specificStartsGroup {
-          border-top: 1px solid rgba(15, 23, 42, 0.07);
-          border-left: 0;
-        }
-
-        body.homepage-page .lt-specificStartsGroup {
+        body.homepage-page .lt-resourceShelfGroup {
           padding: 0.9rem;
         }
 
-        body.homepage-page .lt-specificStartLink strong {
+        body.homepage-page .lt-resourceShelfLink strong {
           font-size: 0.96rem;
         }
 
-        body.homepage-page .lt-specificStartLink span {
+        body.homepage-page .lt-resourceShelfLink span {
           font-size: 0.88rem;
           line-height: 1.38;
         }
@@ -3049,9 +3057,20 @@
           padding: 1rem;
         }
 
+        body.homepage-page .lt-situationCardActions {
+          gap: 0.65rem;
+          padding-top: 0.9rem;
+        }
+
         body.homepage-page .lt-situationCard p {
           font-size: 0.98rem;
           line-height: 1.48;
+        }
+
+        body.homepage-page .lt-bnsProof {
+          width: calc(100vw - 2.1rem) !important;
+          max-width: calc(100vw - 2.1rem) !important;
+          margin: -1.35rem auto 0;
         }
 
         body.homepage-page .lt-coreFeatureCard {
@@ -3366,7 +3385,7 @@
           overflow: hidden;
         }
 
-        body.homepage-page .lt-eyebrow {
+        body.homepage-page .lt-hero .lt-eyebrow {
           display: none;
         }
 
