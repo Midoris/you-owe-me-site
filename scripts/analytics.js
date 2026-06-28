@@ -122,6 +122,7 @@ const PAGE_METADATA = {
   "/blog/how-to-ask-family-for-temporary-financial-help/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/blog/how-to-support-someone-financially-without-confusion/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/blog/what-is-a-running-balance-between-two-people/": { page_type: "blog", cluster: "running_balance", app_store_cpp: "default" },
+  "/blog/can-one-person-track-shared-money-without-everyone-installing-an-app/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/blog/how-to-track-who-paid-you-back-for-a-group-expense/": { page_type: "blog", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/blog/how-to-split-costs-when-people-pay-at-different-times/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
