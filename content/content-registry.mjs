@@ -3679,7 +3679,7 @@ export const contentRegistry = [
           analyticsId: "one_person_tracking_repayment_receipt",
         },
         {
-          label: "App",
+          label: "Open on the App Store",
           title: "Keep the record updated",
           description: "Use You Owe Me when the balance may change again, repayments happen later, or you want to share clarity without forcing setup.",
           href: "app-store:self",

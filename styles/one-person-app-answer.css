@@ -14,22 +14,44 @@ body.one-person-app-answer-page #main {
     linear-gradient(180deg, #fbfdff 0%, #f4f6f8 72%);
 }
 
+body.one-person-app-answer-page article.post.featured {
+  width: min(1480px, calc(100% - clamp(1.5rem, 5vw, 7rem))) !important;
+}
+
 body.one-person-app-answer-page .opa-hero {
-  grid-template-columns: minmax(0, 1fr) minmax(19rem, 0.5fr);
+  grid-template-columns: minmax(0, 0.98fr) minmax(24rem, 0.82fr);
+  gap: clamp(2rem, 4vw, 4.75rem);
   align-items: center;
 }
 
 body.one-person-app-answer-page .opa-hero h1 {
-  max-width: 19ch;
+  max-width: 24ch;
+}
+
+body.one-person-app-answer-page .opa-hero .lt-toolsHeroCopy {
+  max-width: 64rem;
 }
 
 body.one-person-app-answer-page .opa-hero .lt-heroBody {
   font-weight: 720;
 }
 
+body.one-person-app-answer-page .rb-answer-section > h2,
+body.one-person-app-answer-page .rb-answer-product h2,
+body.one-person-app-answer-page .rb-answer-finalCta h2 {
+  max-width: min(100%, 76rem);
+}
+
+body.one-person-app-answer-page .rb-answer-section > p:not(.lt-sectionEyebrow),
+body.one-person-app-answer-page .rb-answer-product p,
+body.one-person-app-answer-page .rb-answer-finalCta p {
+  max-width: min(100%, 66rem) !important;
+  width: min(100%, 66rem);
+}
+
 .opa-heroBridge,
 .opa-use-note {
-  max-width: 72ch;
+  max-width: min(100%, 66rem) !important;
   margin: 0.9rem 0 0 !important;
   color: var(--opa-muted) !important;
   font-size: 0.96rem !important;
@@ -43,8 +65,34 @@ body.one-person-app-answer-page .opa-hero .lt-heroBody {
   padding: 0.85rem 0.95rem;
 }
 
+.opa-cta-support {
+  max-width: min(100%, 48rem) !important;
+  margin: 1.2rem 0 -0.25rem !important;
+  color: var(--opa-ink) !important;
+  font-size: 0.98rem !important;
+  font-weight: 760;
+  line-height: 1.45 !important;
+}
+
+body.one-person-app-answer-page .opa-hero .lt-appStoreBtn,
+body.one-person-app-answer-page .opa-download-card .lt-appStoreBtn,
+body.one-person-app-answer-page .rb-answer-finalCta .lt-appStoreBtn {
+  flex: 0 0 auto;
+  width: min(250px, 100%) !important;
+}
+
+body.one-person-app-answer-page .opa-hero .lt-textCta,
+body.one-person-app-answer-page .opa-download-card .lt-textCta,
+body.one-person-app-answer-page .rb-answer-finalCta .lt-textCta {
+  min-height: 3rem;
+}
+
 .opa-hero-visual img {
   max-width: 38rem;
+}
+
+.opa-hero-visual {
+  justify-content: flex-end;
 }
 
 .opa-image-text {
@@ -69,7 +117,7 @@ body.one-person-app-answer-page .opa-hero .lt-heroBody {
 }
 
 .opa-wide-image {
-  max-width: 58rem;
+  max-width: min(100%, 72rem);
   margin-bottom: 1.2rem;
 }
 
@@ -164,6 +212,12 @@ body.one-person-app-answer-page .best-next-step .best-next-step__card {
   min-height: 13.5rem;
 }
 
+body.one-person-app-answer-page .best-next-step__card[data-step-type="app"] .best-next-step__label {
+  background: #f1f7ff;
+  border-color: rgba(49, 90, 122, 0.18);
+  color: #315a7a;
+}
+
 .opa-final-cta {
   background:
     linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(175, 230, 126, 0.18) 100%);
@@ -220,6 +274,10 @@ body.one-person-app-answer-page .lt-actions {
 }
 
 @media (max-width: 736px) {
+  body.one-person-app-answer-page article.post.featured {
+    width: 100% !important;
+  }
+
   body.one-person-app-answer-page .opa-hero {
     padding: 1.25rem 1rem;
   }
