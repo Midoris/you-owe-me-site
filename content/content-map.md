@@ -10,6 +10,10 @@ The core category is:
 
 The content should not feel like "finance app content." It should feel like specific human situations people recognize immediately, with practical help before the product appears.
 
+Key trust page:
+
+- `/privacy-and-data/`: Plain-English website page for privacy and data questions before installation or sharing. Use it when content needs to explain local records, iCloud sync, optional Cloud Accounts, Live Links, temporary statement links, AI-assisted features, reminders, exports, App Lock, support, and the relationship to the full Privacy Policy without making absolute device-only or no-cloud claims.
+
 ## Website Temporary Support Cluster
 
 Parent:
