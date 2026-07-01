@@ -51,6 +51,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=794c6086
 - [How to Track Who Paid You Back for a Group Expense](https://you-owe-me.com/blog/how-to-track-who-paid-you-back-for-a-group-expense/): Method-first guide for tracking group gifts, tickets, dinners, deposits, bookings, and shared purchases after one person paid first, including paid, partly paid, and still-open statuses.
 - [How to Split Costs When People Pay at Different Times](https://you-owe-me.com/blog/how-to-split-costs-when-people-pay-at-different-times/): Use this page when a shared cost is not only one split, because different people paid first, paid later, repaid partly, or added more expenses before the old balance was settled.
 - [Can One Person Track Shared Money Without Everyone Installing an App?](https://you-owe-me.com/blog/can-one-person-track-shared-money-without-everyone-installing-an-app/): Explains one-person shared-money tracking, private record/shared visibility, Live Link, repayment receipts, PDF statements, group paybacks, and when a collaborative shared expense app is better.
+- [I Pay More Than My Partner for Shared Expenses](https://you-owe-me.com/blog/i-pay-more-than-my-partner/): Decision guide for people who pay more than their partner for shared expenses. Explains whether uneven spending should be ignored, split, reimbursed, carried forward into a running balance, or treated as temporary support. Routes users to the Couple Shared Expense Balance Calculator, Expense Tracker for Couples, Temporary Financial Support Tracker, and Couples App Store page.
 
 ## Key product and solution pages
 
@@ -160,6 +161,7 @@ Use this section for money owed, repayment communication, borrower-side repaymen
 ## Relationship and household spending
 
 - [Expense Tracker for Couples](https://you-owe-me.com/solutions/expense-tracker-for-couples/)
+- [I Pay More Than My Partner for Shared Expenses](https://you-owe-me.com/blog/i-pay-more-than-my-partner/): Answers the search intent “I pay more than my partner for shared expenses.” Teaches that uneven spending is not automatically money owed; it becomes something to track only when both partners expect it to be balanced later. Includes a decision framework, example monthly balance, partner-safe wording, calculator-vs-app guidance, temporary support distinction, and routes users to the couple calculator, couples solution, and You Owe Me couples App Store CPP.
 - [Couple Shared Expense Balance Calculator](https://you-owe-me.com/tools/couple-shared-expense-balance-calculator/): Quick calculator for partner settle-ups, uneven shared spending, income-aware splits, category split rules, transfers already made, and calm carry-forward or settle-up wording.
 
 ## Recommended interpretation

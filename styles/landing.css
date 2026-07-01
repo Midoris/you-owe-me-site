@@ -2456,6 +2456,13 @@
         text-underline-offset: 0.18em;
       }
 
+      body.homepage-page .lt-situationMicroCopy {
+        color: rgba(31, 62, 55, 0.72);
+        font-size: 0.88rem;
+        font-weight: 700;
+        line-height: 1.38;
+      }
+
       body.homepage-page .lt-situationMicroLink:hover {
         color: #355428;
         text-decoration-color: rgba(143, 201, 92, 0.92);

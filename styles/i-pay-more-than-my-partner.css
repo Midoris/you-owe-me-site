@@ -1,0 +1,830 @@
+body.i-pay-more-than-my-partner-page {
+  --ipmp-page-max: 1220px;
+  --ipmp-copy-measure: 72ch;
+  background: #f4f6f8;
+  overflow-x: hidden;
+}
+
+body.i-pay-more-than-my-partner-page *,
+body.i-pay-more-than-my-partner-page *::before,
+body.i-pay-more-than-my-partner-page *::after {
+  box-sizing: border-box;
+}
+
+body.i-pay-more-than-my-partner-page #header {
+  display: none !important;
+}
+
+body.i-pay-more-than-my-partner-page #wrapper {
+  overflow: visible;
+}
+
+body.i-pay-more-than-my-partner-page #wrapper > .bg {
+  display: none !important;
+}
+
+body.i-pay-more-than-my-partner-page #wrapper.fade-in:before {
+  background: #f4f6f8;
+}
+
+body.i-pay-more-than-my-partner-page #nav,
+body.i-pay-more-than-my-partner-page #main,
+body.i-pay-more-than-my-partner-page #copyright {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.i-pay-more-than-my-partner-page #nav {
+  margin-top: 0 !important;
+  padding: 0 clamp(1rem, 3.5vw, 3rem);
+  background: rgba(30, 37, 45, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+body.i-pay-more-than-my-partner-page #main {
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.16), transparent 30%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f6f8 76%);
+  padding: clamp(1rem, 2.25vw, 1.85rem) clamp(1rem, 3.5vw, 3rem) 0;
+}
+
+body.i-pay-more-than-my-partner-page #main > * {
+  border-top: 0 !important;
+  padding: 0 !important;
+  width: 100% !important;
+  max-width: none !important;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured {
+  width: min(var(--ipmp-page-max), calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(1.85rem, 4vw, 3.75rem) clamp(0.65rem, 1.2vw, 1.25rem) 4rem;
+  text-align: left !important;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured h1,
+body.i-pay-more-than-my-partner-page article.post.featured h2,
+body.i-pay-more-than-my-partner-page article.post.featured h3 {
+  color: #18212b;
+  text-transform: none;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured h1 {
+  margin: 0;
+  max-width: 16.5ch;
+  font-size: clamp(2.1rem, 3.35vw, 3.15rem);
+  line-height: 1.06;
+  font-weight: 900;
+}
+
+body.i-pay-more-than-my-partner-page #main article.post.featured header.major > h1 {
+  max-width: 16.5ch !important;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured h2 {
+  margin: 0 0 0.85rem;
+  font-size: clamp(1.42rem, 1.12rem + 1vw, 1.95rem);
+  line-height: 1.2;
+  font-weight: 900;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured h3 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.08rem, 0.98rem + 0.45vw, 1.28rem);
+  line-height: 1.32;
+  font-weight: 900;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured p,
+body.i-pay-more-than-my-partner-page article.post.featured li,
+body.i-pay-more-than-my-partner-page article.post.featured td,
+body.i-pay-more-than-my-partner-page article.post.featured th {
+  color: rgba(33, 41, 49, 0.88);
+  font-size: clamp(1rem, 0.97rem + 0.14vw, 1.08rem);
+  line-height: 1.7;
+  text-align: left;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured p {
+  margin: 0;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured p + p {
+  margin-top: 0.9rem;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured ul,
+body.i-pay-more-than-my-partner-page article.post.featured ol {
+  margin: 0;
+  padding-left: 1.25rem;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured li {
+  margin: 0.32rem 0;
+}
+
+body.i-pay-more-than-my-partner-page article.post.featured a {
+  border-bottom: 0;
+}
+
+body.i-pay-more-than-my-partner-page .lt-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem;
+  margin: 0 0 1.1rem;
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+body.i-pay-more-than-my-partner-page .lt-breadcrumb a {
+  color: rgba(24, 33, 43, 0.72);
+  font-weight: 700;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero,
+body.i-pay-more-than-my-partner-page .ipmp-section,
+body.i-pay-more-than-my-partner-page .lt-finalCta,
+body.i-pay-more-than-my-partner-page .best-next-step {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(22rem, 0.86fr);
+  gap: clamp(1.5rem, 4vw, 3.6rem);
+  align-items: center;
+  padding: clamp(1.35rem, 3vw, 2.55rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero .major {
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+body.i-pay-more-than-my-partner-page .lt-eyebrow,
+body.i-pay-more-than-my-partner-page .lt-sectionEyebrow {
+  margin: 0 0 0.85rem;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 0.82rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero-copy {
+  min-width: 0;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero-copy > p {
+  max-width: 62ch;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero-lead {
+  margin-top: 1.15rem !important;
+  font-weight: 700;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero-subcopy {
+  color: rgba(24, 33, 43, 0.74) !important;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero-visual {
+  margin: 0;
+  justify-self: stretch;
+  line-height: 0;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero-visual img,
+body.i-pay-more-than-my-partner-page .ipmp-product-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-hero-visual img {
+  aspect-ratio: 3 / 2;
+  object-fit: cover;
+}
+
+body.i-pay-more-than-my-partner-page .lt-ctaRow {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.9rem;
+  margin-top: 1.45rem;
+}
+
+body.i-pay-more-than-my-partner-page .lt-primaryCta,
+body.i-pay-more-than-my-partner-page .lt-textCta,
+body.i-pay-more-than-my-partner-page .lt-cardCta {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  padding: 0.72rem 1rem;
+  border-radius: 999px;
+  font-size: 0.96rem;
+  font-weight: 800;
+  line-height: 1.2;
+  text-decoration: none;
+  text-transform: none;
+  letter-spacing: 0;
+  transition: transform 0.2s ease, box-shadow 0.2s ease, background-color 0.2s ease;
+}
+
+body.i-pay-more-than-my-partner-page .lt-primaryCta {
+  color: #18212b;
+  background: #afe67e;
+  border: 1px solid rgba(107, 161, 69, 0.24);
+  box-shadow: 0 12px 26px rgba(85, 125, 55, 0.16);
+}
+
+body.i-pay-more-than-my-partner-page .lt-primaryCta:hover {
+  background: #bcf18c;
+  box-shadow: 0 16px 30px rgba(85, 125, 55, 0.2);
+  transform: translateY(-1px);
+}
+
+body.i-pay-more-than-my-partner-page .lt-textCta,
+body.i-pay-more-than-my-partner-page .lt-cardCta {
+  color: #18212b;
+  background: rgba(255, 255, 255, 0.9);
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.08);
+}
+
+body.i-pay-more-than-my-partner-page .lt-textCta:hover,
+body.i-pay-more-than-my-partner-page .lt-cardCta:hover {
+  background: #ffffff;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.1);
+  transform: translateY(-1px);
+}
+
+body.i-pay-more-than-my-partner-page .lt-primaryCta:focus-visible,
+body.i-pay-more-than-my-partner-page .lt-textCta:focus-visible,
+body.i-pay-more-than-my-partner-page .lt-cardCta:focus-visible,
+body.i-pay-more-than-my-partner-page .lt-appStoreBtn:focus-visible,
+body.i-pay-more-than-my-partner-page .lt-breadcrumb a:focus-visible,
+body.i-pay-more-than-my-partner-page .best-next-step__card:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+body.i-pay-more-than-my-partner-page .lt-appStoreBtn {
+  display: inline-block;
+  width: min(250px, 100%);
+  line-height: 0;
+  border-radius: 13px;
+  overflow: hidden;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+body.i-pay-more-than-my-partner-page .lt-appStoreBtn:hover {
+  transform: translateY(-1px) scale(1.01);
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.24);
+}
+
+body.i-pay-more-than-my-partner-page .lt-appStoreBtn img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-cta-note {
+  margin-top: 0.85rem !important;
+  color: rgba(24, 33, 43, 0.68) !important;
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-trust-strip {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 1rem;
+  padding: 0;
+  list-style: none;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-trust-strip li {
+  margin: 0;
+  padding: 0.38rem 0.68rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.72);
+  color: rgba(24, 33, 43, 0.74);
+  font-size: 0.84rem;
+  font-weight: 700;
+  line-height: 1.3;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-section {
+  margin-top: 3rem;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-section > p {
+  max-width: var(--ipmp-copy-measure);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-card,
+body.i-pay-more-than-my-partner-page .ipmp-callout,
+body.i-pay-more-than-my-partner-page .ipmp-cta-card,
+body.i-pay-more-than-my-partner-page .ipmp-related-card,
+body.i-pay-more-than-my-partner-page .ipmp-script-card,
+body.i-pay-more-than-my-partner-page .ipmp-faq details,
+body.i-pay-more-than-my-partner-page .lt-finalCta {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-card,
+body.i-pay-more-than-my-partner-page .ipmp-callout,
+body.i-pay-more-than-my-partner-page .ipmp-cta-card,
+body.i-pay-more-than-my-partner-page .ipmp-related-card,
+body.i-pay-more-than-my-partner-page .ipmp-script-card,
+body.i-pay-more-than-my-partner-page .ipmp-faq details {
+  padding: clamp(1.1rem, 2.3vw, 1.55rem);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-answer-card {
+  margin-top: 1.35rem;
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.24), transparent 36%),
+    rgba(255, 255, 255, 0.94);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-answer-card ol {
+  display: grid;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-stress-list,
+body.i-pay-more-than-my-partner-page .ipmp-check-list,
+body.i-pay-more-than-my-partner-page .ipmp-feature-list {
+  display: grid;
+  gap: 0.65rem;
+  max-width: var(--ipmp-copy-measure);
+  margin: 1.1rem 0 0 !important;
+  padding-left: 0 !important;
+  list-style: none;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-stress-list li,
+body.i-pay-more-than-my-partner-page .ipmp-check-list li,
+body.i-pay-more-than-my-partner-page .ipmp-feature-list li {
+  margin: 0 !important;
+  padding: 0.78rem 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.9);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-callout {
+  max-width: var(--ipmp-copy-measure);
+  margin-top: 1.15rem;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.16), rgba(255, 255, 255, 0.96));
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-table-wrap {
+  width: 100%;
+  margin-top: 1.35rem;
+  overflow-x: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-table {
+  width: 100%;
+  min-width: 760px;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-table th,
+body.i-pay-more-than-my-partner-page .ipmp-table td {
+  padding: 0.92rem 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  vertical-align: top;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-table th {
+  color: #18212b;
+  font-weight: 900;
+  background: rgba(228, 238, 248, 0.34);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-table tr:last-child td {
+  border-bottom: 0;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-table td strong {
+  color: #18212b;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-cta-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1.1rem;
+  align-items: center;
+  margin-top: 1.35rem;
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.22), transparent 38%),
+    rgba(255, 255, 255, 0.94);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-cta-card p {
+  max-width: 62ch;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-example-outcomes {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.85rem;
+  margin-top: 1.1rem;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-example-outcomes article {
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-example-outcomes p {
+  font-weight: 800;
+  line-height: 1.45;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-script-table td:first-child {
+  color: rgba(24, 33, 43, 0.66);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-script-grid,
+body.i-pay-more-than-my-partner-page .ipmp-related-grid,
+body.i-pay-more-than-my-partner-page .ipmp-feature-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-script-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-related-grid {
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-feature-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-script-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-script-card blockquote {
+  margin: 0;
+  padding: 1rem 1.05rem 1rem 1.15rem;
+  border-left: 4px solid #afe67e;
+  border-radius: 16px;
+  background: rgba(175, 230, 126, 0.12);
+  color: #18212b;
+  font-size: clamp(1rem, 0.97rem + 0.16vw, 1.08rem);
+  font-style: normal;
+  line-height: 1.58;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-product-bridge {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 0.38fr);
+  gap: clamp(1.2rem, 3vw, 2.4rem);
+  align-items: center;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-product-visual {
+  margin: 0;
+  justify-self: center;
+  width: min(100%, 18rem);
+  line-height: 0;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-product-visual img {
+  border-radius: 28px;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-feature-list {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: none;
+}
+
+body.i-pay-more-than-my-partner-page .best-next-step {
+  padding: clamp(1.2rem, 2.6vw, 1.65rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.18), transparent 36%),
+    rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.i-pay-more-than-my-partner-page .best-next-step__eyebrow,
+body.i-pay-more-than-my-partner-page .best-next-step__label {
+  color: rgba(33, 41, 49, 0.88);
+}
+
+body.i-pay-more-than-my-partner-page .best-next-step h2 {
+  color: #18212b;
+}
+
+body.i-pay-more-than-my-partner-page .best-next-step__grid {
+  grid-template-columns: repeat(auto-fit, minmax(190px, 1fr));
+}
+
+body.i-pay-more-than-my-partner-page .best-next-step__card {
+  min-height: 0;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.i-pay-more-than-my-partner-page .best-next-step__label {
+  border-color: rgba(15, 23, 42, 0.08);
+  background: rgba(175, 230, 126, 0.2);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-split-methods {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 0.9rem;
+  margin-top: 1.25rem;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-split-methods article {
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.9);
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-faq {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 1.25rem;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-faq summary {
+  cursor: pointer;
+  color: #18212b;
+  font-size: clamp(1.02rem, 0.98rem + 0.16vw, 1.1rem);
+  font-weight: 900;
+  line-height: 1.35;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-faq p {
+  margin-top: 0.75rem;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-related-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+body.i-pay-more-than-my-partner-page .ipmp-related-card p {
+  flex: 1 1 auto;
+}
+
+body.i-pay-more-than-my-partner-page .lt-cardCta {
+  width: fit-content;
+  margin-top: auto;
+}
+
+body.i-pay-more-than-my-partner-page .lt-finalCta {
+  display: grid;
+  gap: 1rem;
+  margin-top: 3.1rem;
+  padding: clamp(1.4rem, 3vw, 2.25rem);
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(175, 230, 126, 0.16) 100%);
+}
+
+body.i-pay-more-than-my-partner-page .lt-finalCta h2 {
+  margin-bottom: 0;
+}
+
+body.i-pay-more-than-my-partner-page .lt-pageMeta {
+  margin: 2rem 0 0;
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.84rem;
+  line-height: 1.55;
+  font-weight: 400;
+}
+
+body.i-pay-more-than-my-partner-page #copyright {
+  margin: 0 !important;
+  padding: 2rem clamp(1rem, 3.5vw, 3rem) 2.8rem;
+  color: rgba(33, 41, 49, 0.56);
+}
+
+body.i-pay-more-than-my-partner-page #copyright ul li {
+  border-left-color: rgba(33, 41, 49, 0.2);
+}
+
+@media (max-width: 1080px) {
+  body.i-pay-more-than-my-partner-page .ipmp-hero,
+  body.i-pay-more-than-my-partner-page .ipmp-product-bridge,
+  body.i-pay-more-than-my-partner-page .ipmp-cta-card {
+    grid-template-columns: 1fr;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-hero-visual,
+  body.i-pay-more-than-my-partner-page .ipmp-product-visual {
+    justify-self: start;
+    max-width: 38rem;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-script-grid,
+  body.i-pay-more-than-my-partner-page .ipmp-example-outcomes,
+  body.i-pay-more-than-my-partner-page .ipmp-split-methods,
+  body.i-pay-more-than-my-partner-page .ipmp-feature-list {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 736px) {
+  body.i-pay-more-than-my-partner-page #main {
+    padding: 0.72rem 0.62rem 0;
+  }
+
+  body.i-pay-more-than-my-partner-page article.post.featured {
+    width: 100%;
+    padding: 1.05rem 0 2.8rem;
+  }
+
+  body.i-pay-more-than-my-partner-page .lt-breadcrumb,
+  body.i-pay-more-than-my-partner-page .ipmp-hero,
+  body.i-pay-more-than-my-partner-page .ipmp-section,
+  body.i-pay-more-than-my-partner-page .best-next-step,
+  body.i-pay-more-than-my-partner-page .lt-finalCta {
+    width: calc(100vw - 1.24rem);
+    max-width: calc(100vw - 1.24rem);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body.i-pay-more-than-my-partner-page .lt-breadcrumb {
+    gap: 0.32rem;
+    padding-right: 4.8rem;
+    font-size: 0.82rem;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-hero {
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  body.i-pay-more-than-my-partner-page article.post.featured h1 {
+    max-width: none !important;
+    font-size: clamp(1.72rem, 6.9vw, 2.05rem);
+    line-height: 1.08;
+  }
+
+  body.i-pay-more-than-my-partner-page #main article.post.featured header.major > h1 {
+    max-width: none !important;
+  }
+
+  body.i-pay-more-than-my-partner-page .lt-ctaRow {
+    align-items: stretch;
+  }
+
+  body.i-pay-more-than-my-partner-page .lt-primaryCta,
+  body.i-pay-more-than-my-partner-page .lt-textCta {
+    width: 100%;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-script-grid,
+  body.i-pay-more-than-my-partner-page .ipmp-example-outcomes,
+  body.i-pay-more-than-my-partner-page .ipmp-split-methods,
+  body.i-pay-more-than-my-partner-page .ipmp-feature-list {
+    grid-template-columns: 1fr;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-table-wrap {
+    border-radius: 18px;
+    overflow-x: visible;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-table,
+  body.i-pay-more-than-my-partner-page .ipmp-table thead,
+  body.i-pay-more-than-my-partner-page .ipmp-table tbody,
+  body.i-pay-more-than-my-partner-page .ipmp-table tr,
+  body.i-pay-more-than-my-partner-page .ipmp-table td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-table tr {
+    padding: 0.9rem 1rem;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-table td {
+    padding: 0.42rem 0;
+    border-bottom: 0;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-table td::before {
+    display: block;
+    margin-bottom: 0.18rem;
+    color: rgba(33, 41, 49, 0.88);
+    font-size: 0.72rem;
+    font-weight: 900;
+    letter-spacing: 0.08em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-decision-table td:first-child::before {
+    content: "Situation";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-decision-table td:nth-child(2)::before {
+    content: "What it probably means";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-decision-table td:nth-child(3)::before {
+    content: "What to track";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-decision-table td:nth-child(4)::before {
+    content: "Best next step";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-example-table td:first-child::before {
+    content: "Item";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-example-table td:nth-child(2)::before {
+    content: "Paid by";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-example-table td:nth-child(3)::before {
+    content: "Amount";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-example-table td:nth-child(4)::before {
+    content: "Include?";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-example-table td:nth-child(5)::before {
+    content: "Why";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-script-table td:first-child::before {
+    content: "Do not say";
+  }
+
+  body.i-pay-more-than-my-partner-page .ipmp-script-table td:nth-child(2)::before {
+    content: "Try instead";
+  }
+}

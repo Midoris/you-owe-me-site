@@ -130,6 +130,7 @@ const PAGE_METADATA = {
   "/blog/how-to-track-money-between-roommates/": { page_type: "blog", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/blog/how-to-split-rent-utilities-and-groceries-with-roommates/": { page_type: "blog", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/blog/how-to-split-expenses-in-a-relationship-without-fighting/": { page_type: "blog", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
+  "/blog/i-pay-more-than-my-partner/": { page_type: "blog", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
   "/blog/how-to-keep-track-of-money-between-family-members/": { page_type: "blog", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
   "/blog/how-to-track-money-you-pay-for-elderly-parents/": { page_type: "blog", cluster: "elderly_parent_caregiving", app_store_cpp: "elderly_parent_caregiving" },
   "/blog/how-to-track-subscriptions-and-bills-you-pay-for-family/": { page_type: "blog", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
