@@ -145,7 +145,7 @@ let activeSale = null;
 
 function shouldInitializeFirebase() {
   const hostname = window.location.hostname;
-  return hostname !== "localhost" && hostname !== "127.0.0.1" && hostname !== "::1";
+  return hostname === "you-owe-me.com" || hostname === "www.you-owe-me.com";
 }
 
 async function initAnalytics() {
