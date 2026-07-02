@@ -1,5 +1,8 @@
 body.solutions-page {
   background: #f4f6f8;
+  --yom-primary-cta-hover: #bcf18c;
+  --yom-visual-card-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+  --yom-focus-outline: rgba(53, 84, 40, 0.32);
 }
 
 body.solutions-page #header {
@@ -115,6 +118,12 @@ body.solutions-page article.post.featured li {
 
 body.solutions-page a {
   border-bottom: 0;
+}
+
+body.solutions-page a:focus-visible,
+body.solutions-page button:focus-visible {
+  outline: 3px solid var(--yom-focus-outline);
+  outline-offset: 3px;
 }
 
 .lt-solutionsHero,

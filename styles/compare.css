@@ -651,8 +651,8 @@ body.best-way-ious-page .best-way-ious-copy-button {
   padding: 0.72rem 1rem;
   border: 0;
   border-radius: 999px;
-  background: #355428;
-  color: #ffffff;
+  background: #afe67e;
+  color: #18212b;
   font-size: 0.92rem;
   font-weight: 800;
   line-height: 1.2;
@@ -662,7 +662,7 @@ body.best-way-ious-page .best-way-ious-copy-button {
 
 body.best-way-ious-page .best-way-ious-copy-button:hover,
 body.best-way-ious-page .best-way-ious-copy-button:focus-visible {
-  background: #263f1c;
+  background: #bcf18c;
 }
 
 body.best-way-ious-page .best-way-ious-copy-status {
