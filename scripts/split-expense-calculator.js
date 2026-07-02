@@ -218,7 +218,7 @@
       const included = document.createElement("fieldset");
       included.className = "included-people";
       const legend = document.createElement("legend");
-      legend.textContent = "Split between";
+      legend.textContent = "Split between / included people";
       included.appendChild(legend);
 
       const checkboxGrid = document.createElement("div");
