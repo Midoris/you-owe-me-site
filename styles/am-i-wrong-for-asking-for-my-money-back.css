@@ -1,0 +1,471 @@
+body.blog-page {
+  background: #f4f6f8;
+  --amw-page-text: rgba(33, 41, 49, 0.88);
+  --amw-heading: #18212b;
+  --amw-primary-cta: #afe67e;
+  --amw-primary-cta-hover: #bcf18c;
+  --amw-border: rgba(15, 23, 42, 0.08);
+  --amw-card-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  --amw-hero-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  --amw-visual-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+  --amw-focus-outline: rgba(53, 84, 40, 0.32);
+}
+
+body.blog-page #header {
+  display: none !important;
+}
+
+body.blog-page #wrapper > .bg {
+  display: none !important;
+}
+
+body.blog-page #wrapper.fade-in:before {
+  background: #f4f6f8;
+}
+
+body.blog-page #nav,
+body.blog-page #main,
+body.blog-page #copyright {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.blog-page #main {
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.16), transparent 30%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f6f8 76%);
+}
+
+body.am-i-wrong-money-back-page {
+  overflow-x: hidden;
+}
+
+body.am-i-wrong-money-back-page *,
+body.am-i-wrong-money-back-page *::before,
+body.am-i-wrong-money-back-page *::after {
+  box-sizing: border-box;
+}
+
+body.am-i-wrong-money-back-page article.post.featured {
+  max-width: none;
+}
+
+body.am-i-wrong-money-back-page #main article.post.featured header.major > h1,
+body.am-i-wrong-money-back-page article.post.featured h1 {
+  max-width: none;
+  color: #18212b;
+  font-weight: 900;
+  overflow-wrap: anywhere;
+  text-wrap: balance;
+}
+
+body.am-i-wrong-money-back-page .lt-eyebrow,
+body.am-i-wrong-money-back-page .lt-sectionEyebrow {
+  color: rgba(33, 41, 49, 0.88);
+  letter-spacing: 0.08em;
+}
+
+body.am-i-wrong-money-back-page .lt-toolsHero,
+body.am-i-wrong-money-back-page .polite-answer-card,
+body.am-i-wrong-money-back-page .template-card,
+body.am-i-wrong-money-back-page .lt-finalCta,
+body.am-i-wrong-money-back-page .lt-toolCard {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+body.am-i-wrong-money-back-page .amw-hero {
+  grid-template-columns: minmax(0, 1fr) minmax(17rem, 0.48fr);
+  gap: 2rem;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  border-radius: 24px;
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+body.am-i-wrong-money-back-page .amw-hero-visual {
+  width: min(100%, 31rem);
+}
+
+body.am-i-wrong-money-back-page .amw-hero-visual img,
+body.am-i-wrong-money-back-page .amw-section-image img,
+body.am-i-wrong-money-back-page .amw-balance-bridge img {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+body.am-i-wrong-money-back-page .amw-direct-answer {
+  margin-top: 1.2rem;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.am-i-wrong-money-back-page .amw-direct-answer .lt-sectionEyebrow {
+  margin-bottom: 0.5rem;
+}
+
+body.am-i-wrong-money-back-page .amw-direct-answer h2 {
+  margin-top: 0 !important;
+}
+
+body.am-i-wrong-money-back-page .lt-primaryCta {
+  background: #afe67e;
+  color: #18212b !important;
+}
+
+body.am-i-wrong-money-back-page .lt-primaryCta:hover {
+  background: #bcf18c;
+}
+
+body.am-i-wrong-money-back-page a:focus-visible,
+body.am-i-wrong-money-back-page button:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+body.am-i-wrong-money-back-page .amw-quick-actions {
+  gap: 0.7rem;
+}
+
+body.am-i-wrong-money-back-page .amw-quick-actions .lt-textCta {
+  min-height: 2.65rem;
+}
+
+body.am-i-wrong-money-back-page .amw-quote-pair,
+body.am-i-wrong-money-back-page .amw-check-section {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+body.am-i-wrong-money-back-page .amw-quote-pair {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.am-i-wrong-money-back-page .amw-check-section {
+  grid-template-columns: minmax(0, 0.95fr) minmax(16rem, 0.58fr);
+  align-items: center;
+}
+
+body.am-i-wrong-money-back-page .amw-check-card {
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.18), transparent 36%),
+    rgba(255, 255, 255, 0.94);
+}
+
+body.am-i-wrong-money-back-page .amw-checklist {
+  display: grid;
+  gap: 0.7rem;
+  padding-left: 0 !important;
+  list-style: none;
+  counter-reset: fairness;
+}
+
+body.am-i-wrong-money-back-page .amw-checklist li {
+  position: relative;
+  margin: 0 !important;
+  padding: 0.78rem 0.95rem 0.78rem 3rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(248, 250, 252, 0.9);
+  color: #18212b;
+  font-weight: 800;
+}
+
+body.am-i-wrong-money-back-page .amw-checklist li::before {
+  counter-increment: fairness;
+  content: counter(fairness);
+  position: absolute;
+  left: 0.82rem;
+  top: 50%;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 1.55rem;
+  height: 1.55rem;
+  border-radius: 999px;
+  background: #afe67e;
+  color: #18212b;
+  font-size: 0.82rem;
+  font-weight: 900;
+  transform: translateY(-50%);
+}
+
+body.am-i-wrong-money-back-page .amw-section-image {
+  width: min(100%, 31rem);
+  margin: 0;
+}
+
+body.am-i-wrong-money-back-page .amw-table-card {
+  padding: 0;
+  overflow: hidden;
+}
+
+body.am-i-wrong-money-back-page .amw-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+body.am-i-wrong-money-back-page .amw-decision-table {
+  width: 100%;
+  min-width: 62rem;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+body.am-i-wrong-money-back-page .amw-decision-table th,
+body.am-i-wrong-money-back-page .amw-decision-table td {
+  padding: 0.9rem 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: rgba(33, 41, 49, 0.88);
+  text-align: left;
+  vertical-align: top;
+}
+
+body.am-i-wrong-money-back-page .amw-decision-table th {
+  color: #18212b;
+  font-weight: 900;
+  background: rgba(248, 250, 252, 0.92);
+}
+
+body.am-i-wrong-money-back-page .amw-decision-table tr:last-child td {
+  border-bottom: 0;
+}
+
+body.am-i-wrong-money-back-page .amw-script-grid {
+  margin-top: 0.9rem;
+}
+
+body.am-i-wrong-money-back-page .amw-tool-cta {
+  margin-top: 1.2rem;
+}
+
+body.am-i-wrong-money-back-page .amw-balance-bridge {
+  border-radius: 20px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.am-i-wrong-money-back-page .amw-balance-bridge .polite-answer-image--wide {
+  justify-self: center;
+  width: min(100%, 32rem);
+}
+
+body.am-i-wrong-money-back-page .amw-avoid-card {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(228, 238, 248, 0.62));
+}
+
+body.am-i-wrong-money-back-page .amw-final-cta {
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.16), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.78));
+  border-radius: 20px;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.am-i-wrong-money-back-page .amw-final-cta .lt-appStoreBtn img {
+  width: 250px;
+  max-width: 100%;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-toolsHero p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-toolsSection p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-toolsSection ul,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-toolsSection ol,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-finalCta p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .template-card p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .template-card blockquote,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-toolCard p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .faq-section p {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-toolsSection > p {
+  max-width: 74ch;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured .polite-answer-card p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .polite-answer-card ul,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .polite-answer-card ol,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .polite-answer-card blockquote,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .template-card p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .template-card blockquote,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-toolCard p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .faq-section p {
+  max-width: none;
+}
+
+body.am-i-wrong-money-back-page .template-card__message {
+  overflow-wrap: anywhere;
+}
+
+@media (max-width: 980px) {
+  body.am-i-wrong-money-back-page .amw-hero,
+  body.am-i-wrong-money-back-page .amw-check-section,
+  body.am-i-wrong-money-back-page .amw-balance-bridge {
+    grid-template-columns: 1fr;
+  }
+
+  body.am-i-wrong-money-back-page .amw-hero-visual,
+  body.am-i-wrong-money-back-page .amw-section-image {
+    justify-self: start;
+    width: min(100%, 29rem);
+  }
+
+  body.am-i-wrong-money-back-page .amw-quote-pair {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 736px) {
+  body.am-i-wrong-money-back-page article.post.featured {
+    width: 100%;
+    padding-top: 1.05rem;
+  }
+
+  body.am-i-wrong-money-back-page .lt-breadcrumb,
+  body.am-i-wrong-money-back-page .lt-toolsHero,
+  body.am-i-wrong-money-back-page .lt-toolsSection,
+  body.am-i-wrong-money-back-page .lt-finalCta {
+    width: calc(100vw - 1.24rem);
+    max-width: calc(100vw - 1.24rem);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body.am-i-wrong-money-back-page .lt-breadcrumb {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.32rem;
+    padding-right: 4.8rem;
+    font-size: 0.82rem;
+  }
+
+  body.am-i-wrong-money-back-page .lt-breadcrumb span:nth-last-child(2),
+  body.am-i-wrong-money-back-page .lt-breadcrumb [aria-current="page"] {
+    display: none;
+  }
+
+  body.am-i-wrong-money-back-page .amw-hero {
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  body.am-i-wrong-money-back-page .amw-hero .lt-toolsHeroCopy {
+    display: flex;
+    flex-direction: column;
+  }
+
+  body.am-i-wrong-money-back-page .amw-hero .lt-eyebrow {
+    order: 1;
+    margin-bottom: 0.4rem;
+  }
+
+  body.am-i-wrong-money-back-page .amw-hero header.major {
+    order: 2;
+    margin-bottom: 0.55rem !important;
+  }
+
+  body.am-i-wrong-money-back-page .amw-hero .lt-heroBody {
+    order: 3;
+    margin-bottom: 0.65rem;
+  }
+
+  body.am-i-wrong-money-back-page .amw-direct-answer {
+    order: 4;
+    margin-top: 0;
+    margin-bottom: 0.8rem;
+    padding: 0.9rem;
+  }
+
+  body.am-i-wrong-money-back-page .amw-direct-answer .lt-sectionEyebrow,
+  body.am-i-wrong-money-back-page .amw-direct-answer h2 {
+    display: none;
+  }
+
+  body.am-i-wrong-money-back-page .amw-direct-answer p {
+    margin-bottom: 0.55rem;
+  }
+
+  body.am-i-wrong-money-back-page .amw-direct-answer p:first-of-type {
+    color: #18212b;
+    font-weight: 900;
+  }
+
+  body.am-i-wrong-money-back-page .amw-direct-answer p:nth-of-type(2) {
+    font-size: 0.95rem;
+    line-height: 1.45;
+  }
+
+  body.am-i-wrong-money-back-page .amw-direct-answer p:last-child {
+    margin-bottom: 0;
+  }
+
+  body.am-i-wrong-money-back-page .amw-hero .lt-heroSupport {
+    order: 5;
+    margin-top: 0;
+  }
+
+  body.am-i-wrong-money-back-page .amw-quick-actions {
+    order: 6;
+    margin-top: 0.75rem;
+  }
+
+  body.am-i-wrong-money-back-page .amw-hero-visual {
+    display: none;
+  }
+
+  body.am-i-wrong-money-back-page .amw-decision-table,
+  body.am-i-wrong-money-back-page .amw-decision-table thead,
+  body.am-i-wrong-money-back-page .amw-decision-table tbody,
+  body.am-i-wrong-money-back-page .amw-decision-table tr,
+  body.am-i-wrong-money-back-page .amw-decision-table td {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  body.am-i-wrong-money-back-page .amw-decision-table {
+    min-width: 0;
+  }
+
+  body.am-i-wrong-money-back-page .amw-decision-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  body.am-i-wrong-money-back-page .amw-decision-table tr {
+    padding: 0.95rem 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  body.am-i-wrong-money-back-page .amw-decision-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  body.am-i-wrong-money-back-page .amw-decision-table td {
+    padding: 0.45rem 1rem;
+    border-bottom: 0;
+  }
+
+  body.am-i-wrong-money-back-page .amw-decision-table td::before {
+    display: block;
+    margin-bottom: 0.18rem;
+    color: rgba(24, 33, 43, 0.58);
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    line-height: 1.2;
+    text-transform: uppercase;
+    content: attr(data-label);
+  }
+
+  body.am-i-wrong-money-back-page .amw-checklist li {
+    padding-left: 2.75rem;
+  }
+}
