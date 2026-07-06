@@ -301,6 +301,69 @@ body.am-i-wrong-money-back-page .template-card__message {
   overflow-wrap: anywhere;
 }
 
+body.blog-page.am-i-wrong-money-back-page article.post.featured #what-to-say-title,
+body.blog-page.am-i-wrong-money-back-page article.post.featured #be-more-careful {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: center !important;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured #unclear-balance,
+body.blog-page.am-i-wrong-money-back-page article.post.featured #final-cta-title,
+body.blog-page.am-i-wrong-money-back-page article.post.featured #money-back-faq,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .best-next-step h2 {
+  width: auto !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured .best-next-step,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .best-next-step__eyebrow,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .best-next-step__intro,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .amw-balance-bridge,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .amw-final-cta,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .faq-section {
+  text-align: left !important;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured .best-next-step__eyebrow {
+  width: auto;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured .amw-balance-bridge p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .amw-balance-bridge ul,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .amw-final-cta p,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .faq-section p {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-pageMeta,
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-actions {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-actions {
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-actions li:first-child {
+  padding-left: 0;
+}
+
 @media (max-width: 980px) {
   body.am-i-wrong-money-back-page .amw-hero,
   body.am-i-wrong-money-back-page .amw-check-section,
