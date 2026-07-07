@@ -108,6 +108,35 @@ body.friend-borrowing-page .friend-record-bridge .polite-answer-image {
   width: min(100%, 26rem);
 }
 
+body.friend-borrowing-page .friend-record-bridge .lt-ctaRow {
+  align-items: center;
+}
+
+body.friend-borrowing-page .friend-record-bridge .lt-ctaRow > a {
+  margin-top: 0 !important;
+  min-height: 3.25rem;
+  white-space: nowrap;
+}
+
+body.blog-page.friend-borrowing-page article.post.featured .lt-pageMeta,
+body.blog-page.friend-borrowing-page article.post.featured .lt-actions {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
+}
+
+body.blog-page.friend-borrowing-page article.post.featured .lt-actions {
+  justify-content: flex-start;
+  gap: 1rem;
+  padding-left: 0;
+}
+
+body.blog-page.friend-borrowing-page article.post.featured .lt-actions li {
+  padding-left: 0;
+}
+
 body.blog-page.friend-borrowing-page article.post.featured .lt-toolsHero p,
 body.blog-page.friend-borrowing-page article.post.featured .lt-toolsSection p,
 body.blog-page.friend-borrowing-page article.post.featured .lt-toolsSection ul,
