@@ -1,0 +1,236 @@
+body.friend-borrowing-page {
+  overflow-x: hidden;
+}
+
+body.friend-borrowing-page *,
+body.friend-borrowing-page *::before,
+body.friend-borrowing-page *::after {
+  box-sizing: border-box;
+}
+
+body.friend-borrowing-page .friend-borrowing-hero .lt-heroBody {
+  font-weight: 800;
+}
+
+body.friend-borrowing-page .friend-borrowing-hero-visual {
+  width: min(100%, 29rem);
+}
+
+body.friend-borrowing-page .friend-table-panel {
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 2vw, 1.35rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.friend-borrowing-page .friend-table-panel h3 {
+  margin-top: 0 !important;
+}
+
+body.friend-borrowing-page .friend-table-wrap {
+  width: 100%;
+  overflow-x: auto;
+}
+
+body.friend-borrowing-page .friend-decision-table,
+body.friend-borrowing-page .friend-ledger-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+body.friend-borrowing-page .friend-decision-table th,
+body.friend-borrowing-page .friend-decision-table td,
+body.friend-borrowing-page .friend-ledger-table th,
+body.friend-borrowing-page .friend-ledger-table td {
+  padding: 0.85rem 0.9rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 0.95rem;
+  line-height: 1.52;
+  text-align: left;
+  vertical-align: top;
+}
+
+body.friend-borrowing-page .friend-decision-table th,
+body.friend-borrowing-page .friend-ledger-table th {
+  color: #18212b;
+  font-weight: 900;
+}
+
+body.friend-borrowing-page .friend-decision-table tr:last-child td,
+body.friend-borrowing-page .friend-ledger-table tr:last-child td {
+  border-bottom: 0;
+}
+
+body.friend-borrowing-page .friend-ledger-panel {
+  margin-bottom: 1.25rem;
+}
+
+body.friend-borrowing-page .friend-checklist-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  max-width: 76rem;
+}
+
+body.friend-borrowing-page .friend-checklist-grid--wide {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.friend-borrowing-page .friend-boundary-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.2rem;
+}
+
+body.friend-borrowing-page .friend-boundary-grid .relationship-card blockquote {
+  flex: 0 1 auto;
+}
+
+body.friend-borrowing-page .friend-wide-image {
+  width: min(100%, 58rem);
+}
+
+body.friend-borrowing-page .friend-pushback-grid .polite-answer-card {
+  display: flex;
+  flex-direction: column;
+  gap: 0.8rem;
+}
+
+body.friend-borrowing-page .friend-pushback-grid .polite-answer-card h3,
+body.friend-borrowing-page .friend-pushback-grid .polite-answer-card blockquote {
+  margin: 0 !important;
+}
+
+body.friend-borrowing-page .friend-record-bridge .polite-answer-image {
+  width: min(100%, 26rem);
+}
+
+body.blog-page.friend-borrowing-page article.post.featured .lt-toolsHero p,
+body.blog-page.friend-borrowing-page article.post.featured .lt-toolsSection p,
+body.blog-page.friend-borrowing-page article.post.featured .lt-toolsSection ul,
+body.blog-page.friend-borrowing-page article.post.featured .lt-toolsSection ol,
+body.blog-page.friend-borrowing-page article.post.featured .lt-finalCta p,
+body.blog-page.friend-borrowing-page article.post.featured .template-card p,
+body.blog-page.friend-borrowing-page article.post.featured .template-card blockquote,
+body.blog-page.friend-borrowing-page article.post.featured .lt-toolCard p,
+body.blog-page.friend-borrowing-page article.post.featured .faq-section p,
+body.blog-page.friend-borrowing-page article.post.featured .relationship-card blockquote {
+  width: auto;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+body.blog-page.friend-borrowing-page article.post.featured .lt-toolsSection > p {
+  max-width: 74ch;
+}
+
+body.blog-page.friend-borrowing-page article.post.featured .template-card h3 {
+  width: 100%;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left;
+}
+
+@media (max-width: 980px) {
+  body.friend-borrowing-page .friend-checklist-grid,
+  body.friend-borrowing-page .friend-checklist-grid--wide,
+  body.friend-borrowing-page .friend-boundary-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 736px) {
+  body.friend-borrowing-page .lt-breadcrumb,
+  body.friend-borrowing-page .lt-toolsHero,
+  body.friend-borrowing-page .lt-toolsSection,
+  body.friend-borrowing-page .lt-finalCta {
+    width: calc(100vw - 1.24rem);
+    max-width: calc(100vw - 1.24rem);
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  body.friend-borrowing-page .lt-breadcrumb {
+    align-items: flex-start;
+    flex-wrap: wrap;
+    gap: 0.32rem;
+    padding-right: 4.8rem;
+    font-size: 0.82rem;
+  }
+
+  body.friend-borrowing-page .lt-breadcrumb span:nth-last-child(2),
+  body.friend-borrowing-page .lt-breadcrumb [aria-current="page"] {
+    display: none;
+  }
+
+  body.friend-borrowing-page .friend-decision-table,
+  body.friend-borrowing-page .friend-decision-table thead,
+  body.friend-borrowing-page .friend-decision-table tbody,
+  body.friend-borrowing-page .friend-decision-table tr,
+  body.friend-borrowing-page .friend-decision-table td,
+  body.friend-borrowing-page .friend-ledger-table,
+  body.friend-borrowing-page .friend-ledger-table thead,
+  body.friend-borrowing-page .friend-ledger-table tbody,
+  body.friend-borrowing-page .friend-ledger-table tr,
+  body.friend-borrowing-page .friend-ledger-table td {
+    display: block;
+    width: 100%;
+  }
+
+  body.friend-borrowing-page .friend-decision-table thead,
+  body.friend-borrowing-page .friend-ledger-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+  }
+
+  body.friend-borrowing-page .friend-decision-table tr,
+  body.friend-borrowing-page .friend-ledger-table tr {
+    padding: 0.9rem 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  body.friend-borrowing-page .friend-decision-table tr:last-child,
+  body.friend-borrowing-page .friend-ledger-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  body.friend-borrowing-page .friend-decision-table td,
+  body.friend-borrowing-page .friend-ledger-table td {
+    min-width: 0;
+    padding: 0.42rem 0;
+    border-bottom: 0;
+  }
+
+  body.friend-borrowing-page .friend-decision-table td::before,
+  body.friend-borrowing-page .friend-ledger-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.2rem;
+    color: rgba(24, 33, 43, 0.58);
+    font-size: 0.74rem;
+    font-weight: 900;
+    letter-spacing: 0.04em;
+    line-height: 1.25;
+    text-transform: uppercase;
+  }
+
+  body.friend-borrowing-page .friend-table-panel {
+    padding: 0.95rem;
+    border-radius: 18px;
+  }
+
+  body.friend-borrowing-page .friend-borrowing-hero-visual {
+    display: block;
+    width: 100%;
+  }
+
+  body.friend-borrowing-page .friend-record-bridge .polite-answer-image {
+    width: 100%;
+  }
+}
