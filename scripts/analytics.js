@@ -119,6 +119,7 @@ const PAGE_METADATA = {
   "/blog/how-to-handle-awkward-money-conversations/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-handle-a-friend-who-keeps-borrowing-money/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-politely-say-no-when-people-ask-for-money/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
+  "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/blog/why-simple-loans-dont-stay-simple/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-send-a-repayment-update-when-you-need-more-time/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/blog/how-to-ask-family-for-temporary-financial-help/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
