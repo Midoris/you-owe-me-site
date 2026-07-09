@@ -1,6 +1,6 @@
 # YouOweMe Content Map
 
-Updated: 2026-07-08
+Updated: 2026-07-09
 
 This is the working map for planning YouOweMe content across Shorts, TikTok, Instagram Reels, Instagram carousels, and 1-2 minute YouTube landscape videos.
 
@@ -45,6 +45,27 @@ Related support:
 - `/solutions/app-to-track-money-owed/`
 
 Cluster boundary: temporary support content should stay calm, dignified, and non-shaming. You Owe Me does not lend money, approve loans, process payments, provide legal/tax/accounting/financial advice, or act as a collection service. The product helps people track and communicate about support already arranged between people who know each other.
+
+## Website Group Paybacks Cluster
+
+Parent:
+
+- `/solutions/group-payback-tracker/`
+
+Current answer pages:
+
+- `/blog/how-to-track-who-paid-you-back-for-a-group-expense/`
+- `/blog/how-to-remind-a-group-to-pay-you-back-without-spamming-everyone/`
+- `/blog/how-to-split-costs-when-people-pay-at-different-times/`
+
+Related tools:
+
+- `/tools/group-payback-calculator/`
+- `/tools/split-expense-calculator/`
+- `/tools/polite-payback-reminder-generator/`
+- `/tools/repayment-reminder-text-examples/`
+
+Cluster boundary: the group payback reminder workflow is for one group cost after one person paid first. Use the calculator when the paid / partly paid / still-open status is unclear, use the tracker when the payback record stays open, and use the reminder guide when the communication order is the problem: one neutral group update, then private follow-ups.
 
 ## Current Strategy Shift
 
