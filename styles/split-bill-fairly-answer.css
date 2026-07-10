@@ -104,7 +104,11 @@ body.split-bill-fairly-page article.post.featured th {
 }
 
 body.split-bill-fairly-page article.post.featured p {
-  max-width: 72ch;
+  width: 100%;
+  max-width: none;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
 }
 
 body.split-bill-fairly-page a {
@@ -135,6 +139,13 @@ body.split-bill-fairly-page .lt-sectionEyebrow {
   font-weight: 700;
   letter-spacing: 0.08em;
   text-transform: uppercase;
+}
+
+body.split-bill-fairly-page .sbf-hero .lt-eyebrow {
+  width: auto;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+  text-align: left !important;
 }
 
 body.split-bill-fairly-page .lt-primaryCta {
@@ -196,8 +207,8 @@ body.split-bill-fairly-page .sbf-hero .lt-heroBody {
 .sbf-quick-answer {
   position: relative;
   z-index: 1;
-  width: calc(100% - 4rem);
-  margin: -1.3rem auto 0;
+  width: 100%;
+  margin: 1.5rem 0 0;
   padding: 1.2rem;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 20px;
@@ -251,7 +262,7 @@ body.split-bill-fairly-page .sbf-quick-grid p {
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 0.72rem;
-  max-width: 70rem;
+  max-width: none;
   margin: 1.1rem 0 1.2rem !important;
   padding: 0 !important;
   list-style: none;
@@ -517,7 +528,7 @@ body.split-bill-fairly-page .sbf-comparison-card .sbf-formula {
 
 body.split-bill-fairly-page .sbf-result-callout p,
 body.split-bill-fairly-page .sbf-limitation p {
-  max-width: 70ch;
+  max-width: none;
   margin: 0;
 }
 
@@ -575,7 +586,7 @@ body.split-bill-fairly-page .template-card__message {
 .sbf-step-list {
   display: grid;
   gap: 0.75rem;
-  max-width: 72rem;
+  max-width: none;
   margin: 1.2rem 0 !important;
   padding: 0 !important;
   list-style: none;
@@ -649,8 +660,14 @@ body.split-bill-fairly-page .template-card__message {
 }
 
 body.split-bill-fairly-page .sbf-product-transition p {
-  max-width: 72ch;
+  max-width: none;
   margin: 0;
+}
+
+body.split-bill-fairly-page .sbf-product-transition .lt-appStoreBtn,
+body.split-bill-fairly-page .sbf-final-cta .lt-appStoreBtn {
+  flex: 0 0 auto;
+  align-self: center;
 }
 
 body.split-bill-fairly-page .best-next-step {
@@ -689,7 +706,7 @@ body.split-bill-fairly-page .faq-list summary {
 }
 
 body.split-bill-fairly-page .faq-list details p {
-  max-width: 76ch !important;
+  max-width: none !important;
   margin: 0 !important;
   padding: 0 1rem 1rem;
 }
@@ -709,12 +726,20 @@ body.split-bill-fairly-page .sbf-final-cta p {
 }
 
 body.split-bill-fairly-page .sbf-final-cta p {
-  max-width: 54rem !important;
+  max-width: none !important;
 }
 
-body.split-bill-fairly-page .lt-pageMeta,
+body.split-bill-fairly-page .lt-pageMeta {
+  max-width: none;
+  margin: 2rem 0 0.25rem !important;
+  text-align: left !important;
+}
+
 body.split-bill-fairly-page .lt-actions {
-  max-width: 72rem;
+  max-width: none;
+  margin: 1rem 0 0 -1rem !important;
+  justify-content: flex-start;
+  text-align: left !important;
 }
 
 body.split-bill-fairly-page #copyright {
@@ -822,8 +847,8 @@ body.split-bill-fairly-page #copyright ul li {
   }
 
   .sbf-quick-answer {
-    width: calc(100% - 1rem);
-    margin-top: -0.65rem;
+    width: 100%;
+    margin-top: 1rem;
     padding: 0.9rem;
   }
 
@@ -851,6 +876,12 @@ body.split-bill-fairly-page #copyright ul li {
   body.split-bill-fairly-page .lt-textCta {
     width: 100%;
     min-height: 3rem;
+  }
+
+  body.split-bill-fairly-page .sbf-product-transition .lt-appStoreBtn,
+  body.split-bill-fairly-page .sbf-final-cta .lt-appStoreBtn {
+    align-self: flex-start;
+    width: min(250px, 100%);
   }
 
   .sbf-fact-grid {
