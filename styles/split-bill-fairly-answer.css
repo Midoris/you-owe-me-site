@@ -664,6 +664,10 @@ body.split-bill-fairly-page .sbf-product-transition p {
   margin: 0;
 }
 
+body.split-bill-fairly-page .sbf-product-transition .lt-textCta {
+  margin-top: 0;
+}
+
 body.split-bill-fairly-page .sbf-product-transition .lt-appStoreBtn,
 body.split-bill-fairly-page .sbf-final-cta .lt-appStoreBtn {
   flex: 0 0 auto;
