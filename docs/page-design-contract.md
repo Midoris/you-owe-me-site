@@ -66,6 +66,18 @@ Do not use these legacy/off-system treatments on new modern pages:
 - Card radii of `8px` for major hero/content cards.
 - A centered page sheet when the page should be full-width.
 
+## Content Alignment
+
+Modern full-width content pages should use a left-aligned reading flow by
+default. Do not apply broad `margin-left: auto` and `margin-right: auto` rules
+to every paragraph, list, CTA row, or card inside a blog article: those rules
+can make otherwise full-width sections look narrow and visually centered.
+
+Use a narrower measure only for a deliberate, self-contained reading module.
+When a page uses a wide hero, its primary sections, cards, tables, metadata,
+and closing actions should share that same content row unless the module has a
+documented reason to be narrower.
+
 ## Check
 
 After styling a modern page, run:

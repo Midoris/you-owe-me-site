@@ -206,8 +206,41 @@ body.gift-or-loan-clarification-page #copyright {
 .gift-or-loan-clarification-page .lt-toolsSection,
 .gift-or-loan-clarification-page .lt-finalCta,
 .gift-or-loan-clarification-page .best-next-step {
-  width: min(100%, 74rem);
-  margin: 2.25rem auto 0;
+  width: 100%;
+  max-width: none;
+  margin: 2.25rem 0 0;
+}
+
+/*
+ * This guide intentionally uses the same wide content row as its hero. The
+ * shared blog stylesheet provides sensible defaults, but page prose must not
+ * inherit a centered, narrow measure from generic article rules.
+ */
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-toolsHero .lt-heroBody,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-toolsHero .lt-heroSupport,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-toolsSection > p,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-toolsSection > ul,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-toolsSection > ol,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-finalCta p,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .template-card p,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .template-card blockquote,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .gift-loan-card p,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .gift-loan-outcome-card p,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .gift-loan-example p,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .gift-loan-record-row p,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .gift-loan-tool-choice p,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .gift-loan-tool-choice ul {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-sectionEyebrow {
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
 }
 
 .gift-loan-direct-answer {
@@ -222,7 +255,7 @@ body.gift-or-loan-clarification-page #copyright {
 
 .gift-loan-direct-answer > p,
 .gift-or-loan-clarification-page .lt-toolsSection > p {
-  max-width: 74ch;
+  max-width: none;
   margin: 0;
 }
 
@@ -400,7 +433,8 @@ body.gift-or-loan-clarification-page #copyright {
 
 .gift-loan-routing-callout,
 .gift-loan-caution {
-  max-width: 74ch;
+  width: 100%;
+  max-width: none;
   margin-top: 1.15rem;
   padding: 1rem 1.1rem;
   color: #18212b;
@@ -710,6 +744,24 @@ body.gift-or-loan-clarification-page #copyright {
 .gift-or-loan-clarification-page .lt-primaryCta:hover,
 .gift-or-loan-clarification-page .lt-primaryCta:focus-visible {
   background: #bcf18c;
+}
+
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-pageMeta,
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-actions {
+  width: 100%;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  text-align: left;
+}
+
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-actions {
+  justify-content: flex-start;
+  padding-left: 0;
+}
+
+body.blog-page.gift-or-loan-clarification-page article.post.featured .lt-actions li {
+  padding-left: 0;
 }
 
 @media (max-width: 1120px) {

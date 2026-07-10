@@ -154,8 +154,13 @@ body.blog-page article.post.featured .lt-actions,
 body.blog-page article.post.featured .lt-lead,
 body.blog-page article.post.featured .lt-pattern,
 body.blog-page article.post.featured .lt-callout {
-  margin-left: auto;
-  margin-right: auto;
+  /*
+   * Keep the default modern blog flow left-aligned. Page-specific modules can
+   * opt into a narrower measure, but broad auto margins otherwise make prose
+   * appear centered inside a full-width article shell.
+   */
+  margin-left: 0;
+  margin-right: 0;
 }
 
 body.blog-page article.post.featured p,
