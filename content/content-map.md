@@ -1,6 +1,6 @@
 # YouOweMe Content Map
 
-Updated: 2026-07-09
+Updated: 2026-07-10
 
 This is the working map for planning YouOweMe content across Shorts, TikTok, Instagram Reels, Instagram carousels, and 1-2 minute YouTube landscape videos.
 
@@ -327,6 +327,8 @@ Product bridge:
 These still matter, but the new content series above should control how they are told.
 
 ### Friends / Loans / Shared Costs
+
+- Unequal restaurant bills: decide whether equal, itemized, hybrid, or separate-check splitting is fair before calculating or tracking paybacks.
 
 Use for:
 

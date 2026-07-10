@@ -157,6 +157,7 @@ Use this section for money owed, repayment communication, borrower-side repaymen
 
 ## Shared expenses
 
+- [How to Split a Bill Fairly When One Person Ordered Less](https://you-owe-me.com/blog/how-to-split-a-bill-fairly-when-one-person-ordered-less/): Guide to choosing between equal, itemized, hybrid, and separate-check splits when personal orders differ.
 - [What Is a Running Balance Between Two People?](https://you-owe-me.com/blog/what-is-a-running-balance-between-two-people/): Plain-English explanation of how one current balance updates after expenses, repayments, partial repayments, shared costs, starting balances, adjustments, overpayments, and balance flips between two people.
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/)
 - [Group Payback Calculator](https://you-owe-me.com/tools/group-payback-calculator/): Free browser tool for group gifts, tickets, dinners, deposits, bookings, and shared purchases where one person paid first and needs paid, partly paid, and still-open status.

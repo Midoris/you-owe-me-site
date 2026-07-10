@@ -130,6 +130,7 @@ const PAGE_METADATA = {
   "/blog/how-to-track-who-paid-you-back-for-a-group-expense/": { page_type: "blog", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/blog/how-to-remind-a-group-to-pay-you-back-without-spamming-everyone/": { page_type: "blog", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/blog/how-to-split-costs-when-people-pay-at-different-times/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
+  "/blog/how-to-split-a-bill-fairly-when-one-person-ordered-less/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "group_paybacks" },
   "/blog/how-to-track-money-between-roommates/": { page_type: "blog", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/blog/how-to-split-rent-utilities-and-groceries-with-roommates/": { page_type: "blog", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/blog/how-to-split-expenses-in-a-relationship-without-fighting/": { page_type: "blog", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
