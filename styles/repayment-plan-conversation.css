@@ -1,0 +1,989 @@
+body.repayment-plan-conversation-page {
+  overflow-x: hidden;
+  background: #f4f6f8;
+}
+
+body.repayment-plan-conversation-page *,
+body.repayment-plan-conversation-page *::before,
+body.repayment-plan-conversation-page *::after {
+  box-sizing: border-box;
+}
+
+body.repayment-plan-conversation-page #header {
+  display: none !important;
+}
+
+body.repayment-plan-conversation-page #wrapper {
+  overflow: visible;
+}
+
+body.repayment-plan-conversation-page #wrapper > .bg {
+  display: none !important;
+}
+
+body.repayment-plan-conversation-page #wrapper.fade-in:before {
+  background: #f4f6f8;
+}
+
+body.repayment-plan-conversation-page #nav,
+body.repayment-plan-conversation-page #main,
+body.repayment-plan-conversation-page #copyright {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.repayment-plan-conversation-page #nav {
+  margin-top: 0 !important;
+  padding: 0 clamp(1rem, 3.5vw, 3rem);
+  background: rgba(30, 37, 45, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+body.repayment-plan-conversation-page #main {
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.16), transparent 30%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f6f8 76%);
+  padding: clamp(1rem, 2.25vw, 1.85rem) clamp(1rem, 3.5vw, 3rem) 0;
+}
+
+body.repayment-plan-conversation-page #main > * {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 !important;
+  border-top: 0 !important;
+}
+
+body.repayment-plan-conversation-page article.post.featured {
+  width: min(1220px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(1.85rem, 4vw, 3.75rem) clamp(0.65rem, 1.2vw, 1.25rem) 4rem;
+  text-align: left !important;
+}
+
+body.repayment-plan-conversation-page article.post.featured h1,
+body.repayment-plan-conversation-page article.post.featured h2,
+body.repayment-plan-conversation-page article.post.featured h3,
+body.repayment-plan-conversation-page article.post.featured h4 {
+  color: #18212b;
+  letter-spacing: -0.02em;
+}
+
+body.repayment-plan-conversation-page article.post.featured h1 {
+  font-weight: 900;
+}
+
+body.repayment-plan-conversation-page article.post.featured p,
+body.repayment-plan-conversation-page article.post.featured li,
+body.repayment-plan-conversation-page article.post.featured blockquote,
+body.repayment-plan-conversation-page article.post.featured dd {
+  width: auto;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  color: rgba(33, 41, 49, 0.88);
+  overflow-wrap: break-word;
+}
+
+body.repayment-plan-conversation-page article.post.featured .lt-toolsSection > p {
+  max-width: 74ch;
+}
+
+body.repayment-plan-conversation-page #copyright {
+  margin: 0 !important;
+  padding: 2rem clamp(1rem, 3.5vw, 3rem) 2.8rem;
+  color: rgba(33, 41, 49, 0.56);
+}
+
+.rp-eyebrow {
+  color: rgba(33, 41, 49, 0.88) !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+}
+
+.rp-hero {
+  grid-template-columns: minmax(0, 1.04fr) minmax(20rem, 0.78fr);
+  align-items: center;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+.rp-hero .lt-heroBody {
+  font-weight: 700;
+}
+
+.rp-hero-visual {
+  width: min(100%, 34rem);
+  margin: 0;
+}
+
+.rp-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+.rp-copy-card,
+.rp-checklist-card,
+.rp-approach-card,
+.rp-step-grid article,
+.rp-state-workflow,
+.rp-state-panel,
+.rp-formula-card,
+.rp-why-grid,
+.rp-script-card,
+.rp-scenario-grid article,
+.rp-product-module,
+.rp-callout {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.rp-hero-message {
+  margin-top: 1.25rem;
+  padding: 1rem;
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.2), transparent 45%),
+    rgba(255, 255, 255, 0.88);
+}
+
+.rp-card-label,
+.rp-use-label {
+  margin: 0 0 0.55rem !important;
+  color: rgba(33, 41, 49, 0.88) !important;
+  font-size: 0.76rem !important;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  line-height: 1.3 !important;
+  text-transform: uppercase;
+}
+
+.rp-copy-card blockquote,
+.rp-approach-card blockquote,
+.rp-script-card blockquote,
+.rp-state-panel blockquote,
+.rp-step-grid blockquote,
+.rp-scenario-grid blockquote {
+  margin: 0;
+  padding: 0.9rem 1rem 0.9rem 1.1rem;
+  border-left: 4px solid #afe67e;
+  border-radius: 14px;
+  background: rgba(175, 230, 126, 0.11);
+  color: #18212b !important;
+  font-size: 1rem !important;
+  font-style: normal;
+  line-height: 1.62 !important;
+}
+
+.rp-copy-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+}
+
+.rp-copy-status {
+  min-height: 1.4em;
+  color: rgba(33, 41, 49, 0.76);
+  font-size: 0.9rem;
+  font-weight: 700;
+  line-height: 1.4;
+}
+
+.rp-scope-line,
+.rp-trust-line {
+  max-width: 74ch;
+  margin: 1rem 0 0 !important;
+  color: rgba(33, 41, 49, 0.72) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.55 !important;
+}
+
+.rp-on-page-nav {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  margin-top: 1.35rem;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 10px 28px rgba(15, 23, 42, 0.06);
+}
+
+.rp-on-page-nav > p {
+  margin: 0 !important;
+  color: #18212b !important;
+  font-weight: 900;
+}
+
+.rp-on-page-nav > div {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
+.rp-on-page-nav a {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.4rem;
+  padding: 0.5rem 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.9);
+  color: #18212b;
+  font-size: 0.91rem;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.rp-table-wrap {
+  width: 100%;
+  margin-top: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.rp-decision-table,
+.rp-comparison-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+.rp-decision-table th,
+.rp-decision-table td,
+.rp-comparison-table th,
+.rp-comparison-table td {
+  padding: 1rem;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.07);
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 0.96rem;
+  line-height: 1.52;
+  text-align: left;
+  vertical-align: top;
+}
+
+.rp-decision-table th,
+.rp-comparison-table th {
+  width: 50%;
+  background: rgba(175, 230, 126, 0.17);
+  color: #18212b;
+  font-weight: 900;
+}
+
+.rp-decision-table tr:last-child td,
+.rp-comparison-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.rp-callout {
+  max-width: 74ch;
+  margin-top: 1.25rem;
+  padding: 1rem 1.1rem;
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.2), transparent 48%),
+    rgba(255, 255, 255, 0.92);
+  color: #18212b;
+  font-weight: 800;
+  line-height: 1.55;
+}
+
+.rp-callout h3 {
+  margin: 0 0 0.6rem !important;
+}
+
+.rp-callout p {
+  margin: 0 !important;
+  font-weight: 400;
+}
+
+.rp-checklist-card {
+  max-width: 76rem;
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 2.4vw, 1.5rem);
+}
+
+.rp-checklist-card h3 {
+  margin: 0 0 1rem !important;
+}
+
+.rp-numbered-checklist {
+  display: grid;
+  gap: 0.8rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: balance-check;
+}
+
+.rp-numbered-checklist li {
+  position: relative;
+  min-height: 3rem;
+  padding-left: 3rem;
+  counter-increment: balance-check;
+}
+
+.rp-numbered-checklist li::before {
+  content: counter(balance-check);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+  display: grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  border-radius: 50%;
+  background: rgba(175, 230, 126, 0.3);
+  color: #18212b;
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.rp-numbered-checklist strong,
+.rp-numbered-checklist span {
+  display: block;
+}
+
+.rp-numbered-checklist strong {
+  color: #18212b;
+  font-size: 1rem;
+}
+
+.rp-numbered-checklist span {
+  margin-top: 0.18rem;
+  color: rgba(33, 41, 49, 0.76);
+  font-size: 0.96rem;
+  line-height: 1.52;
+}
+
+.rp-checklist-card + .rp-copy-card {
+  max-width: 60rem;
+  margin-top: 1.25rem;
+  padding: 1rem;
+}
+
+.rp-contextual-cta {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.rp-contextual-cta p {
+  max-width: 58ch;
+  margin: 0 !important;
+  color: rgba(33, 41, 49, 0.72) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.5 !important;
+}
+
+.rp-approach-grid,
+.rp-script-grid,
+.rp-scenario-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.rp-approach-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.rp-approach-card,
+.rp-script-card,
+.rp-scenario-grid article {
+  display: flex;
+  flex-direction: column;
+  padding: 1.15rem;
+}
+
+.rp-approach-card h3,
+.rp-script-card h3,
+.rp-scenario-grid h3 {
+  margin: 0 0 0.7rem !important;
+}
+
+.rp-approach-card > p:not(.rp-card-label):not(.rp-use-label),
+.rp-script-card > p:not(.rp-use-label),
+.rp-scenario-grid article > p {
+  margin: 0 0 0.75rem !important;
+  color: rgba(33, 41, 49, 0.76) !important;
+  font-size: 0.96rem !important;
+  line-height: 1.55 !important;
+}
+
+.rp-approach-card blockquote,
+.rp-script-card blockquote {
+  margin-top: auto;
+}
+
+.rp-step-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+  margin: 1.25rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+.rp-step-grid article {
+  height: 100%;
+  padding: 1.1rem;
+}
+
+.rp-step-number {
+  display: inline-grid;
+  place-items: center;
+  width: 2rem;
+  height: 2rem;
+  margin-bottom: 0.75rem;
+  border-radius: 50%;
+  background: rgba(175, 230, 126, 0.3);
+  color: #18212b;
+  font-size: 0.88rem;
+  font-weight: 900;
+}
+
+.rp-step-grid h3 {
+  margin: 0 0 0.7rem !important;
+  font-size: 1.04rem !important;
+}
+
+.rp-step-grid p,
+.rp-step-grid li {
+  color: rgba(33, 41, 49, 0.76) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.52 !important;
+}
+
+.rp-step-grid ul {
+  margin: 0.8rem 0 0;
+  padding-left: 1rem;
+}
+
+.rp-step-grid blockquote {
+  margin-top: 0.85rem;
+  font-size: 0.9rem !important;
+}
+
+.rp-avoid {
+  margin: 0.85rem 0 0 !important;
+  padding: 0.7rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.92);
+}
+
+.rp-avoid strong {
+  display: block;
+  margin-bottom: 0.25rem;
+  color: #18212b;
+  font-size: 0.76rem;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+.rp-formula-card {
+  max-width: 72rem;
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 2.4vw, 1.5rem);
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.2), rgba(255, 255, 255, 0.96) 60%);
+}
+
+.rp-formula-card h3 {
+  margin: 0 0 0.65rem !important;
+}
+
+.rp-formula-card p:last-child {
+  margin: 0 !important;
+}
+
+.rp-state-workflow {
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 2.5vw, 1.45rem);
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.22), transparent 42%),
+    rgba(255, 255, 255, 0.94);
+}
+
+.rp-state-workflow__header h3 {
+  margin: 0 0 0.45rem !important;
+}
+
+.rp-state-workflow__header p {
+  margin: 0 !important;
+  color: rgba(33, 41, 49, 0.72) !important;
+}
+
+.rp-state-tabs {
+  display: flex;
+  gap: 0.65rem;
+  margin-top: 1rem;
+  padding-bottom: 0.1rem;
+}
+
+.rp-state-tabs button {
+  min-height: 2.7rem;
+  padding: 0.6rem 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.86);
+  color: #18212b;
+  cursor: pointer;
+  font-family: inherit;
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.2;
+}
+
+.rp-state-tabs button[aria-selected="true"] {
+  border-color: rgba(107, 161, 69, 0.32);
+  background: #afe67e;
+}
+
+.rp-state-panels {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.rp-state-panel {
+  padding: 1rem;
+}
+
+.rp-state-panel h4 {
+  margin: 0 0 0.6rem !important;
+  font-size: 1.13rem;
+}
+
+.rp-state-panel > p:not(.rp-card-label) {
+  margin: 0 0 0.85rem !important;
+  color: rgba(33, 41, 49, 0.76) !important;
+  font-size: 0.96rem !important;
+  line-height: 1.55 !important;
+}
+
+.rp-state-panel dl {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.65rem;
+  margin: 1rem 0 0;
+}
+
+.rp-state-panel dl div {
+  padding: 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.84);
+}
+
+.rp-state-panel dt {
+  color: rgba(33, 41, 49, 0.62);
+  font-size: 0.72rem;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.3;
+  text-transform: uppercase;
+}
+
+.rp-state-panel dd {
+  margin: 0.25rem 0 0 !important;
+  color: #18212b !important;
+  font-size: 0.96rem !important;
+  font-weight: 800;
+  line-height: 1.35 !important;
+}
+
+.rp-plan-summary {
+  max-width: 64rem;
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 2.4vw, 1.35rem);
+}
+
+.rp-plan-summary h3 {
+  margin: 0 0 0.55rem !important;
+}
+
+.rp-plan-summary > p:not(.rp-card-label) {
+  margin: 0 0 0.9rem !important;
+}
+
+.rp-plan-summary pre {
+  margin: 0;
+  padding: 1rem;
+  border-left: 4px solid #afe67e;
+  border-radius: 14px;
+  background: rgba(175, 230, 126, 0.11);
+  color: #18212b;
+  font-family: inherit;
+  font-size: 0.96rem;
+  line-height: 1.62;
+  white-space: pre-wrap;
+}
+
+.rp-why-grid {
+  margin-top: 1.25rem;
+  padding: clamp(1rem, 2.4vw, 1.4rem);
+}
+
+.rp-why-grid > h3 {
+  margin: 0 0 0.9rem !important;
+}
+
+.rp-why-grid > div {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem;
+}
+
+.rp-why-grid article {
+  padding: 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.84);
+}
+
+.rp-why-grid h4 {
+  margin: 0 0 0.4rem !important;
+  font-size: 1rem;
+}
+
+.rp-why-grid p {
+  margin: 0 !important;
+  color: rgba(33, 41, 49, 0.76) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.5 !important;
+}
+
+.rp-script-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rp-script-card {
+  min-height: 0;
+}
+
+.rp-agreement-checklist {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem 1.25rem;
+  margin: 1.25rem 0 0;
+  padding: clamp(1rem, 2.4vw, 1.35rem) clamp(1rem, 2.4vw, 1.5rem) clamp(1rem, 2.4vw, 1.35rem) 2.6rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.rp-agreement-checklist li::marker {
+  color: #355428;
+}
+
+.rp-soft-bridge {
+  max-width: 74ch;
+  margin: 1.25rem 0 0 !important;
+}
+
+.rp-scenario-grid {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.rp-scenario-grid article {
+  min-height: 0;
+}
+
+.rp-scenario-grid blockquote {
+  margin-top: auto;
+}
+
+.rp-product-module {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(12rem, 0.34fr);
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: center;
+  margin-top: 1.25rem;
+  padding: clamp(1.05rem, 2.7vw, 1.7rem);
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.26), transparent 40%),
+    rgba(255, 255, 255, 0.94);
+}
+
+.rp-product-module h3 {
+  margin: 0 0 0.7rem !important;
+}
+
+.rp-product-module__copy > p:not(.rp-card-label) {
+  max-width: 70ch;
+  margin: 0 0 0.85rem !important;
+}
+
+.rp-feature-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 1rem 0 !important;
+  padding: 0 !important;
+  list-style: none;
+}
+
+.rp-feature-chips li {
+  padding: 0.42rem 0.65rem;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.18);
+  color: #18212b !important;
+  font-size: 0.85rem !important;
+  font-weight: 800;
+  line-height: 1.3 !important;
+}
+
+.rp-product-module figure {
+  width: min(100%, 17rem);
+  margin: 0 auto;
+}
+
+.rp-product-module img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+.repayment-plan-conversation-page .best-next-step {
+  margin: 3rem 0 0;
+}
+
+.rp-final-cta {
+  background:
+    linear-gradient(135deg, rgba(255, 255, 255, 0.96), rgba(175, 230, 126, 0.16) 100%);
+}
+
+.rp-final-cta h2 {
+  margin-top: 0 !important;
+}
+
+.rp-final-cta > p:not(.lt-sectionEyebrow):not(.rp-trust-line) {
+  margin: 0.85rem 0 0 !important;
+}
+
+.rp-final-cta .rp-trust-line {
+  margin-top: 1.15rem !important;
+}
+
+.repayment-plan-conversation-page a:focus-visible,
+.repayment-plan-conversation-page button:focus-visible,
+.repayment-plan-conversation-page summary:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+.repayment-plan-conversation-page .copy-button {
+  min-height: 2.7rem;
+  margin-top: 0;
+  color: #18212b;
+}
+
+.repayment-plan-conversation-page .lt-primaryCta:hover {
+  background: #bcf18c;
+}
+
+@media (max-width: 1080px) {
+  .rp-approach-grid,
+  .rp-step-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .rp-step-grid > li:last-child {
+    grid-column: span 2;
+  }
+}
+
+@media (max-width: 980px) {
+  .rp-hero,
+  .rp-product-module {
+    grid-template-columns: 1fr;
+  }
+
+  .rp-hero-visual {
+    width: min(100%, 38rem);
+  }
+
+  .rp-product-module figure {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 736px) {
+  body.repayment-plan-conversation-page #main {
+    padding: 0.72rem 0.62rem 0;
+  }
+
+  body.repayment-plan-conversation-page article.post.featured {
+    width: 100%;
+    padding: 1.05rem 0 2.8rem;
+  }
+
+  body.repayment-plan-conversation-page article.post.featured h1 {
+    font-size: clamp(1.82rem, 8.2vw, 2.22rem);
+    line-height: 1.06;
+  }
+
+  body.repayment-plan-conversation-page article.post.featured h2 {
+    font-size: 1.48rem;
+    line-height: 1.18;
+  }
+
+  .rp-hero {
+    padding: 1.15rem;
+    border-radius: 20px;
+  }
+
+  .rp-hero-visual {
+    display: block;
+    width: 100%;
+  }
+
+  .rp-on-page-nav {
+    grid-template-columns: 1fr;
+    gap: 0.65rem;
+    margin-top: 1rem;
+    padding: 0.9rem;
+    border-radius: 18px;
+  }
+
+  .rp-on-page-nav > div {
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding-bottom: 0.25rem;
+    scrollbar-width: thin;
+  }
+
+  .rp-on-page-nav a {
+    flex: 0 0 auto;
+  }
+
+  .rp-approach-grid,
+  .rp-step-grid,
+  .rp-script-grid,
+  .rp-scenario-grid,
+  .rp-why-grid > div,
+  .rp-agreement-checklist {
+    grid-template-columns: 1fr;
+  }
+
+  .rp-step-grid > li:last-child {
+    grid-column: auto;
+  }
+
+  .rp-agreement-checklist {
+    padding-left: 2.3rem;
+  }
+
+  .rp-table-wrap {
+    overflow: visible;
+  }
+
+  .rp-decision-table,
+  .rp-decision-table tbody,
+  .rp-decision-table tr,
+  .rp-decision-table td,
+  .rp-comparison-table,
+  .rp-comparison-table tbody,
+  .rp-comparison-table tr,
+  .rp-comparison-table td {
+    display: block;
+    width: 100%;
+  }
+
+  .rp-decision-table thead,
+  .rp-comparison-table thead {
+    display: none;
+  }
+
+  .rp-decision-table tr,
+  .rp-comparison-table tr {
+    padding: 0.15rem 0;
+    border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  .rp-decision-table tr:last-child,
+  .rp-comparison-table tr:last-child {
+    border-bottom: 0;
+  }
+
+  .rp-decision-table td,
+  .rp-comparison-table td {
+    border-bottom: 0;
+  }
+
+  .rp-decision-table td::before,
+  .rp-comparison-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 0.3rem;
+    color: #18212b;
+    font-size: 0.76rem;
+    font-weight: 900;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+  }
+
+  .rp-copy-actions,
+  .rp-contextual-cta {
+    align-items: stretch;
+  }
+
+  .repayment-plan-conversation-page .copy-button,
+  .rp-contextual-cta .lt-primaryCta,
+  .rp-contextual-cta .lt-textCta {
+    width: 100%;
+  }
+
+  .rp-state-tabs {
+    overflow-x: auto;
+    padding-bottom: 0.35rem;
+  }
+
+  .rp-state-tabs button {
+    flex: 0 0 auto;
+  }
+
+  .rp-state-panel dl {
+    grid-template-columns: 1fr;
+  }
+
+  .rp-product-module figure {
+    width: min(100%, 15rem);
+    margin: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .repayment-plan-conversation-page *,
+  .repayment-plan-conversation-page *::before,
+  .repayment-plan-conversation-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
