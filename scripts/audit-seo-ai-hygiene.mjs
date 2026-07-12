@@ -10,6 +10,7 @@ const rootDir = path.resolve(__dirname, "..");
 const siteOrigin = "https://you-owe-me.com";
 const excludedRouteDirs = new Set([".git", ".agents", ".codex", "assets", "downloads", "images", "styles", "scripts"]);
 const oldAppStoreSlug = "https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en";
+const registryOptionalNoindexRoutes = new Set(["/connect/"]);
 
 const requiredRobotPolicies = [
   "Googlebot",
@@ -336,8 +337,13 @@ function main() {
     add(errors, "robots.txt: missing sitemap declaration");
   }
 
-  for (const [route] of routeFiles) {
-    if (!byUrl.has(route)) add(errors, `${route}: route file is missing from content registry`);
+  for (const [route, filePath] of routeFiles) {
+    const html = fs.readFileSync(filePath, "utf8");
+    const isAllowedRegistryOmission = registryOptionalNoindexRoutes.has(route)
+      && isNoindex(html);
+    if (!byUrl.has(route) && !isAllowedRegistryOmission) {
+      add(errors, `${route}: route file is missing from content registry`);
+    }
   }
 
   for (const entry of contentRegistry) {

@@ -7,6 +7,7 @@ const { pathToFileURL } = require("url");
 const rootDir = path.resolve(__dirname, "..");
 const registryPath = path.join(rootDir, "content", "content-registry.mjs");
 const bestNextStepComponentPath = path.join(rootDir, "scripts", "best-next-step-component.mjs");
+const registryOptionalNoindexRoutes = new Set(["/connect/"]);
 
 const requiredFields = [
   "url",
@@ -125,6 +126,13 @@ function getHtml(filePath, htmlCache) {
   }
 
   return htmlCache.get(filePath);
+}
+
+function isNoindex(html) {
+  const namedFirst = html.match(/<meta\b[^>]*\bname=(["'])robots\1[^>]*\bcontent=(["'])(.*?)\2/i);
+  const contentFirst = html.match(/<meta\b[^>]*\bcontent=(["'])(.*?)\1[^>]*\bname=(["'])robots\3/i);
+  const content = namedFirst?.[3] || contentFirst?.[2] || "";
+  return content.toLowerCase().split(",").map((item) => item.trim()).includes("noindex");
 }
 
 function splitHref(href) {
@@ -356,8 +364,11 @@ async function main() {
   }
 
   collectIndexRoutes(rootDir, routeFiles);
-  for (const [route] of routeFiles) {
-    if (!byUrl.has(route)) {
+  for (const [route, filePath] of routeFiles) {
+    const html = getHtml(filePath, htmlCache);
+    const isAllowedRegistryOmission = registryOptionalNoindexRoutes.has(route)
+      && isNoindex(html);
+    if (!byUrl.has(route) && !isAllowedRegistryOmission) {
       errors.push(`${route}: live route file does not have a registry entry`);
     }
   }

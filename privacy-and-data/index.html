@@ -15,12 +15,12 @@
     <link rel="canonical" href="https://you-owe-me.com/privacy-and-data/" />
     <meta
       name="description"
-      content="Understand how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Live Links, statement links, AI features, reminders, exports, App Lock, and sensitive money records."
+      content="Understand how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Balance Sync, sharing links, AI features, reminders, exports, App Lock, and sensitive money records."
     />
     <meta property="og:title" content="Privacy and Data | You Owe Me" />
     <meta
       property="og:description"
-      content="Understand how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Live Links, statement links, AI features, reminders, exports, App Lock, and sensitive money records."
+      content="Understand how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Balance Sync, sharing links, AI features, reminders, exports, App Lock, and sensitive money records."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://you-owe-me.com/privacy-and-data/" />
@@ -30,7 +30,7 @@
     <meta name="twitter:title" content="Privacy and Data | You Owe Me" />
     <meta
       name="twitter:description"
-      content="Understand how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Live Links, statement links, AI features, reminders, exports, App Lock, and sensitive money records."
+      content="Understand how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Balance Sync, sharing links, AI features, reminders, exports, App Lock, and sensitive money records."
     />
     <meta name="twitter:image" content="https://you-owe-me.com/images/privacy-data-hero.webp" />
 
@@ -42,9 +42,9 @@
           "@type": "WebPage",
           "@id": "https://you-owe-me.com/privacy-and-data/#webpage",
           "name": "Privacy and Data in You Owe Me",
-          "description": "A plain-English guide to how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Live Links, statement links, AI features, reminders, exports, App Lock, and sensitive money records.",
+          "description": "A plain-English guide to how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Balance Sync, sharing links, AI features, reminders, exports, App Lock, and sensitive money records.",
           "url": "https://you-owe-me.com/privacy-and-data/",
-          "dateModified": "2026-06-30",
+          "dateModified": "2026-07-11",
           "image": "https://you-owe-me.com/images/privacy-data-hero.webp",
           "publisher": {
             "@type": "Organization",
@@ -106,6 +106,14 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "A Live Link creates a read-only web statement at an unlisted link. The other person does not need the app, but anyone with the link can view the active statement. A Live Link may show selected balance history, totals, dates, amounts, currencies, notes/reasons, and interest details where relevant."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "How does Balance Sync handle shared records?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Balance Sync is optional and private to two authenticated participants. Firebase Cloud Firestore and Cloud Functions process and store canonical copies of supported shared entry fields so both people can edit or delete them. Images and recurrence rules stay local. Disconnecting stops future sync and schedules canonical data for deletion, but it does not remotely erase records already downloaded to the other participant's device."
               }
             },
             {
@@ -214,11 +222,12 @@
                 A plain-English guide to what stays in the app, what can sync, what happens when you share a link, and how optional AI features work.
               </p>
               <p>
-                Money records are sensitive. You Owe Me is designed to help you keep a clear record of balances, repayments, shared expenses, reminders, notes, statements, and money conversations between real people. The core tracking experience can work without a mandatory You Owe Me account, and your working ledger is stored in the app's local database. Some features, such as iCloud sync, Cloud Accounts, Live Links, temporary statement links, AI drafting, support, diagnostics, and exchange-rate lookup, use network services when you choose or enable them.
+                Money records are sensitive. You Owe Me is designed to help you keep a clear record of balances, repayments, shared expenses, reminders, notes, statements, and money conversations between real people. The core tracking experience can work without a mandatory You Owe Me account, and your working ledger is stored in the app's local database. Some features, such as iCloud sync, Cloud Accounts, Balance Sync, Live Links, temporary statement links, AI drafting, support, diagnostics, and exchange-rate lookup, use network services when you choose or enable them.
               </p>
               <div class="pd-trust-strip" aria-label="Privacy and data trust points">
                 <span>Local ledger</span>
                 <span>Optional cloud features</span>
+                <span>Private two-person sync</span>
                 <span>User-chosen sharing</span>
                 <span>Not a payment app</span>
               </div>
@@ -272,7 +281,7 @@
               </article>
               <article class="pd-card">
                 <h3>Sharing is a choice</h3>
-                <p>PDFs, CSVs, text summaries, statement links, and Live Links are created when you choose to share or export something.</p>
+                <p>PDFs, CSVs, text summaries, statement links, Live Links, and private two-person Balance Sync connections are created only when you choose to share or connect.</p>
               </article>
               <article class="pd-card">
                 <h3>AI drafts, you decide</h3>
@@ -347,6 +356,11 @@
                     <td data-label="What to know">If you use Cloud Accounts, selected account/profile and ledger data needed for that feature may be stored in Firebase services.</td>
                   </tr>
                   <tr>
+                    <th scope="row" data-label="Place">Balance Sync / Firebase</th>
+                    <td data-label="Used for">A private canonical ledger for two authenticated participants</td>
+                    <td data-label="What to know">Cloud Firestore and Cloud Functions process and store canonical copies of supported shared entries so changes can be projected into both participants' app records.</td>
+                  </tr>
+                  <tr>
                     <th scope="row" data-label="Place">Public web links</th>
                     <td data-label="Used for">Temporary statement links and Live Links</td>
                     <td data-label="What to know">These are public link-based pages. Anyone with the link can view the shared statement while it is active.</td>
@@ -379,7 +393,7 @@
               <p class="pd-eyebrow">Setup</p>
               <h2 id="no-account-title">No mandatory You Owe Me account for core tracking</h2>
               <p>You can use the core tracking experience without creating a You Owe Me cloud account. That keeps setup simple: choose the person, add what happened, and let the app keep the balance and history clear.</p>
-              <p>Some features need account or cloud support. For example, Cloud Accounts and Live Link management may require Sign in with Apple so the app can manage the shared records and keep them available across reinstall or device changes.</p>
+              <p>Some features need account or cloud support. For example, Cloud Accounts and Live Link management may require Sign in with Apple. Balance Sync requires both participants to use full Apple-linked Firebase accounts so the app can authorize the private connection.</p>
             </div>
             <aside class="pd-inline-cta">
               <p class="pd-eyebrow">New to the app?</p>
@@ -430,6 +444,11 @@
                     <td data-label="Best when">The balance may change and the other person needs the latest view.</td>
                     <td data-label="Privacy note">Public to anyone with the link while active. It may update when related entries change.</td>
                   </tr>
+                  <tr>
+                    <th scope="row" data-label="Share option">Balance Sync</th>
+                    <td data-label="Best when">Both people use the app and want one supported balance to update in both records.</td>
+                    <td data-label="Privacy note">Private to two authenticated participants after acceptance. Before acceptance, anyone with the complete invitation link may be able to claim it.</td>
+                  </tr>
                 </tbody>
               </table>
             </div>
@@ -446,10 +465,24 @@
               </ul>
             </div>
 
+            <div class="pd-info-card">
+              <h3>Balance Sync is private, two-way sharing for two people.</h3>
+              <p>Balance Sync is optional. When two authenticated participants connect one balance, Firebase Cloud Firestore and Cloud Functions process and store a private canonical copy of supported shared entries. Shared fields can include amounts, currencies, dates, reasons or notes, interest settings, archive state, and supported loan relationships.</p>
+              <ul>
+                <li>Both participants can create, edit, archive, or delete connected entries. Those changes are projected into each person's local app record when the app synchronizes.</li>
+                <li>Keep the invitation private: anyone with the complete link may be able to claim it before it expires or is revoked. The website does not display the inviter, amounts, notes, or other entry details.</li>
+                <li>Images and recurrence rules are not transferred. A concrete entry generated by a local recurrence rule may sync as an ordinary entry, but the rule itself stays local.</li>
+                <li>Disconnecting stops future sync. Both people keep their local borrower and entries, while the disconnected canonical ledger becomes inaccessible and is scheduled for deletion after a 30-day safety window.</li>
+                <li>Deleting an account closes its Balance Sync connections and schedules controlled canonical data for deletion. It cannot remotely erase a copy that the other participant already downloaded into their own local app storage.</li>
+                <li>To keep a deleted account or Cloud Account scope closed to stale devices, Firebase may retain an opaque deletion fence. It contains no ledger entries, amounts, notes, invitation tokens, raw user ID, or raw profile ID.</li>
+              </ul>
+              <p>Balance Sync uses encrypted transport and Firebase platform storage protections. It is not end-to-end encrypted.</p>
+            </div>
+
             <div class="pd-soft-cta">
               <div>
                 <h3>Ready to keep a clearer record?</h3>
-                <p>Start in the app, then share summaries, PDFs, statement links, or Live Links only when they help.</p>
+                <p>Start in the app, then share summaries, PDFs, statement links, Live Links, or a private Balance Sync connection only when they help.</p>
               </div>
               <div class="pd-cta-row">
                 <a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670" class="pd-primary-cta" data-track-location="privacy_data_sharing_section_app_store">Download You Owe Me</a>
@@ -664,6 +697,10 @@
                 <p>A Live Link creates a read-only web statement at an unlisted link. The other person does not need the app, but anyone with the link can view the active statement. A Live Link may show selected balance history, totals, dates, amounts, currencies, notes/reasons, and interest details where relevant.</p>
               </details>
               <details>
+                <summary>How does Balance Sync handle shared records?</summary>
+                <p>Balance Sync is optional and private to two authenticated participants. Firebase Cloud Firestore and Cloud Functions process and store canonical copies of supported shared entry fields so both people can edit or delete them. Images and recurrence rules stay local. Disconnecting stops future sync and schedules canonical data for deletion, but it does not remotely erase records already downloaded to the other participant's device.</p>
+              </details>
+              <details>
                 <summary>Are temporary statement links private?</summary>
                 <p>They are public to anyone with the link while available. They are intended for short-term sharing and are set to expire after 3 days. Do not treat them like signed-in account pages.</p>
               </details>
@@ -697,13 +734,13 @@
           <section class="pd-final-cta" aria-labelledby="final-cta-title">
             <p class="pd-eyebrow">Start clearly</p>
             <h2 id="final-cta-title">Keep the record clear, then share only what you choose</h2>
-            <p>You Owe Me gives you one place to record what happened, what changed, what remains open, and what you may want to say next. Start with your own record. Add sync, sharing, statements, reminders, Live Links, or AI drafting only when they help your situation.</p>
+            <p>You Owe Me gives you one place to record what happened, what changed, what remains open, and what you may want to say next. Start with your own record. Add iCloud sync, Balance Sync, sharing, statements, reminders, Live Links, or AI drafting only when they help your situation.</p>
             <div class="pd-cta-row">
               <a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670" class="pd-primary-cta" data-track-location="privacy_data_final_cta_app_store">Download You Owe Me on the App Store</a>
               <a href="/privacy-policy/" class="lt-textCta" data-track-location="privacy_data_final_policy">Read the full Privacy Policy</a>
             </div>
             <p class="pd-cta-note">Free download. Core tracking works without a mandatory You Owe Me cloud account.</p>
-            <p class="pd-updated">Updated June 30, 2026</p>
+            <p class="pd-updated">Updated July 11, 2026</p>
           </section>
         </article>
       </div>

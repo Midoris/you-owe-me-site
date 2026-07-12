@@ -9,7 +9,10 @@
           "/redeem/",
           "/redeem/*",
           "/events/live-link",
-          "/events/timeline"
+          "/events/timeline",
+          "/connect",
+          "/connect/",
+          "/connect/*"
         ]
       }
     ]

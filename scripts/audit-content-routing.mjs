@@ -21,6 +21,7 @@ const startMarker = "<!-- best-next-step:start -->";
 const endMarker = "<!-- best-next-step:end -->";
 const excludedRouteDirs = new Set([".git", ".agents", ".codex", "assets", "downloads", "images", "styles", "scripts"]);
 const hubUrls = ["/find/", "/solutions/", "/tools/"];
+const registryOptionalNoindexRoutes = new Set(["/connect/"]);
 
 const priorityAuditTiers = {
   tier1: [
@@ -102,6 +103,13 @@ function collectIndexRoutes(dir, routes) {
 function readHtml(filePath, cache) {
   if (!cache.has(filePath)) cache.set(filePath, fs.readFileSync(filePath, "utf8"));
   return cache.get(filePath);
+}
+
+function isNoindex(html) {
+  const namedFirst = html.match(/<meta\b[^>]*\bname=(["'])robots\1[^>]*\bcontent=(["'])(.*?)\2/i);
+  const contentFirst = html.match(/<meta\b[^>]*\bcontent=(["'])(.*?)\1[^>]*\bname=(["'])robots\3/i);
+  const content = namedFirst?.[3] || contentFirst?.[2] || "";
+  return content.toLowerCase().split(",").map((item) => item.trim()).includes("noindex");
 }
 
 function hasAnchor(filePath, hash, htmlCache) {
@@ -224,11 +232,13 @@ function main() {
   collectIndexRoutes(rootDir, routeFiles);
 
   for (const [route, filePath] of routeFiles) {
-    if (!byUrl.has(route)) {
+    const html = readHtml(filePath, htmlCache);
+    const isAllowedRegistryOmission = registryOptionalNoindexRoutes.has(route)
+      && isNoindex(html);
+    if (!byUrl.has(route) && !isAllowedRegistryOmission) {
       addIssue(errors, "hard", `${route}: live route file does not have a registry entry`);
     }
 
-    const html = readHtml(filePath, htmlCache);
     for (const href of extractHrefs(html)) {
       const normalized = normalizeInternalHref(href, route);
       if (!normalized || normalized.type === "external" || normalized.type === "asset") continue;

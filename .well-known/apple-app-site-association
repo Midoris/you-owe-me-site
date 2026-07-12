@@ -8,7 +8,11 @@
           "/redeem",
           "/redeem/",
           "/redeem/*",
-          "/events/live-link"
+          "/events/live-link",
+          "/events/timeline",
+          "/connect",
+          "/connect/",
+          "/connect/*"
         ]
       }
     ]
