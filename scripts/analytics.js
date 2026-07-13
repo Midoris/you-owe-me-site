@@ -111,6 +111,7 @@ const PAGE_METADATA = {
   "/compare/spreadsheet-vs-app-for-tracking-money-owed/": { page_type: "comparison", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/compare/shared-expense-app-vs-running-balance-app/": { page_type: "compare", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/blog/how-to-keep-track-of-who-owes-you-money/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/what-to-do-when-you-disagree-about-how-much-money-is-still-owed/": { page_type: "guide", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-suggest-a-repayment-plan-to-someone-who-owes-you-money/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-remind-someone-they-owe-you-money-politely/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
