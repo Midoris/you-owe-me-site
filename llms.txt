@@ -160,6 +160,7 @@ Use this section for money owed, repayment communication, borrower-side repaymen
 
 ## Shared expenses
 
+- [How to Recalculate Shared Costs When Someone Cancels or Drops Out](https://you-owe-me.com/blog/how-to-split-shared-costs-when-someone-cancels/): Rebuild an agreed group cost after a cancellation, refund, replacement, added charge, or money already paid.
 - [How to Split a Bill Fairly When One Person Ordered Less](https://you-owe-me.com/blog/how-to-split-a-bill-fairly-when-one-person-ordered-less/): Guide to choosing between equal, itemized, hybrid, and separate-check splits when personal orders differ.
 - [What Is a Running Balance Between Two People?](https://you-owe-me.com/blog/what-is-a-running-balance-between-two-people/): Plain-English explanation of how one current balance updates after expenses, repayments, partial repayments, shared costs, starting balances, adjustments, overpayments, and balance flips between two people.
 - [Split Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/)
