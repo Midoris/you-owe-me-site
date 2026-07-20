@@ -126,6 +126,7 @@ const PAGE_METADATA = {
   "/blog/how-to-send-a-repayment-update-when-you-need-more-time/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/blog/how-to-ask-family-for-temporary-financial-help/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/blog/how-to-support-someone-financially-without-confusion/": { page_type: "blog", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
+  "/blog/how-to-stop-giving-someone-money/": { page_type: "guide", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
   "/blog/how-to-clarify-if-money-was-a-gift-or-a-loan/": { page_type: "guide", cluster: "temporary_support", app_store_cpp: "temporary_support" },
   "/blog/what-is-a-running-balance-between-two-people/": { page_type: "blog", cluster: "running_balance", app_store_cpp: "shared_expenses" },
   "/blog/can-one-person-track-shared-money-without-everyone-installing-an-app/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
