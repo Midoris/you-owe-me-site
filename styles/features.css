@@ -195,6 +195,27 @@ body.features-page .features-card ul {
   margin-top: 0.35rem;
 }
 
+body.features-page .features-language-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0.35rem 0 0;
+  padding-left: 0;
+  list-style: none;
+  text-align: left;
+}
+
+body.features-page .features-card .features-language-list li {
+  padding: 0.45rem 0.7rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.94);
+  color: #212931;
+  font-size: 0.94rem;
+  font-weight: 700;
+  line-height: 1.2 !important;
+}
+
 body.features-page .features-card picture {
   display: block;
   justify-self: end;

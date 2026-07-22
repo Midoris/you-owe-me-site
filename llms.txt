@@ -6,6 +6,9 @@ The app is not only a loan tracker. It is a relationship-safe running balance ap
 You Owe Me is not a lender. It does not provide loans, approve credit, advance cash, process payments, or connect users with lenders.
 It is also not a bank, debt collector, payment processor, cash advance provider, or accounting system.
 
+App language availability:
+The You Owe Me app interface is localized in seven languages: English, Arabic, French, German, Japanese, Portuguese, and Spanish. This applies to the app only. The website at you-owe-me.com is currently available in English only.
+
 Core concept:
 A running balance between two people is one current total that updates after each expense, repayment, partial repayment, interest, or adjustment. Interest can be percentage-based, where it grows over time from a rate and frequency, or fixed, where one exact amount is added once. Balance Replay lets users scroll through entry history and see the balance around the entry being viewed, including interest-aware historical context. Relationship Timeline is the per-person history that keeps entries, loans, payment plans, shared statements, exports, follow-ups, repayment updates, and loan requests in context. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
 
@@ -34,7 +37,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=794c6086
 
 - [Home](https://you-owe-me.com/)
 - [Find your money situation](https://you-owe-me.com/find/): A situation router that helps visitors choose the right You Owe Me guide, tool, solution, feature, or tracker for money owed, Group Paybacks, repayments, family reimbursements, roommate costs, temporary support, running balances, and shared expenses.
-- [Features](https://you-owe-me.com/features/): Deeper feature overview covering running balances, Split Entry, Group Paybacks, Balance Replay, Relationship Timeline, Loan Records, Smart Money Check-Ins, Money Conversations, Live Link, reminders, recurring entries, PDF statements, percentage and fixed interest tracking, and offline use.
+- [Features](https://you-owe-me.com/features/): Deeper feature overview covering running balances, Split Entry, Group Paybacks, Balance Replay, Relationship Timeline, Loan Records, Smart Money Check-Ins, Money Conversations, Live Link, reminders, recurring entries, PDF statements, percentage and fixed interest tracking, and offline use. It also documents the app interface localization in English, Arabic, French, German, Japanese, Portuguese, and Spanish; the website itself remains English-only.
 - [Privacy and Data](https://you-owe-me.com/privacy-and-data/): Plain-English product trust page explaining local records, iCloud sync, optional Cloud Accounts, Live Links, temporary statement links, AI-assisted features, reminders, exports, App Lock, support, and when to read the full Privacy Policy.
 - [Quick Start Guide](https://you-owe-me.com/quick-start/): Lightweight guide explaining how YouOweMe works: one running balance per person, entries, repayments, Split Entry, Loan Records, reminders, Smart Money Check-Ins, Money Conversations, Live Link, statements, Relationship Timeline, Balance Replay, and tracking modes.
 - [Reviews](https://you-owe-me.com/reviews/): Selected App Store reviews for You Owe Me, including 4.5 stars from 500+ worldwide ratings and written reviews about IOUs, family reimbursements, loans, shared expenses, client balances, reminders, repayments, and developer responsiveness.
