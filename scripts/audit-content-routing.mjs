@@ -68,7 +68,7 @@ const priorityAuditTiers = {
   ],
 };
 
-const conversionRoles = new Set(["router", "entry", "utility", "explanation", "solution", "trust", "conversion", "support", "answer-entry-to-group-paybacks-solution-and-app-store", "method_choice_to_money_owed_cpp", "answer_search_entry_to_money_owed_cpp"]);
+const conversionRoles = new Set(["router", "entry", "utility", "explanation", "solution", "trust", "conversion", "support", "answer-entry-to-group-paybacks-solution-and-app-store", "answer-entry-to-shared-expense-solution-and-app-store", "method_choice_to_money_owed_cpp", "answer_search_entry_to_money_owed_cpp"]);
 const destinationStates = new Set(["defaultAppStore", "plannedCpp", "activeCpp"]);
 const genericCtaText = new Set(["download now", "get started", "learn more", "read more", "click here"]);
 
