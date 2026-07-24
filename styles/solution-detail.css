@@ -286,6 +286,81 @@ body.solution-detail-page .lt-relatedCard {
   gap: 0.95rem;
 }
 
+body.solution-detail-page .lt-routeSection {
+  margin-top: -0.75rem;
+  padding: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+body.solution-detail-page .lt-routeSection > h3,
+body.solution-detail-page .lt-routeSection > p {
+  margin: 0;
+}
+
+body.solution-detail-page .lt-routeSection > p {
+  max-width: 72ch;
+  margin-top: 0.55rem;
+  color: rgba(24, 33, 43, 0.72);
+}
+
+body.solution-detail-page .lt-routeGrid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+body.solution-detail-page .lt-routeCard {
+  display: grid;
+  gap: 0.35rem;
+  min-width: 0;
+  min-height: 6.5rem;
+  padding: 0.95rem 1rem;
+  color: #212931;
+  text-decoration: none;
+  transition:
+    border-color 160ms ease,
+    transform 160ms ease;
+}
+
+body.solution-detail-page .lt-routeCard:hover,
+body.solution-detail-page .lt-routeCard:focus-visible {
+  border-color: rgba(53, 84, 40, 0.24);
+  color: #18212b;
+  transform: translateY(-1px);
+}
+
+body.solution-detail-page .lt-routeCard:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+body.solution-detail-page .lt-routeCard strong {
+  color: #18212b;
+  font-size: 0.98rem;
+  line-height: 1.35;
+}
+
+body.solution-detail-page .lt-routeCard span {
+  color: rgba(33, 41, 49, 0.72);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.solution-detail-page .lt-routeCard {
+    transition: none;
+  }
+
+  body.solution-detail-page .lt-routeCard:hover,
+  body.solution-detail-page .lt-routeCard:focus-visible {
+    transform: none;
+  }
+}
+
 body.solution-detail-page .lt-proofNote {
   margin-top: 1.25rem;
   color: rgba(24, 33, 43, 0.68);
@@ -1832,6 +1907,19 @@ body.elderly-parent-expense-page .elderly-wide-visual img {
     grid-template-columns: 1fr;
   }
 
+  body.solution-detail-page .lt-routeSection {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  body.solution-detail-page .lt-routeGrid {
+    grid-template-columns: 1fr;
+  }
+
+  body.solution-detail-page .lt-routeCard {
+    min-height: 0;
+  }
+
   body.solution-detail-page .lt-detailSection {
     margin-top: 2.35rem;
   }
@@ -2081,6 +2169,11 @@ body.elderly-parent-expense-page .elderly-wide-visual img {
   body.solution-detail-page .lt-faqItem,
   body.solution-detail-page .lt-listPanel {
     padding: 1rem;
+  }
+
+  body.solution-detail-page .lt-relatedCard.lt-routeCard {
+    border-radius: 20px;
+    box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
   }
 
   body.solution-detail-page .lt-stepCard {
