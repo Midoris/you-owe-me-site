@@ -46,7 +46,7 @@
           "description": "Compare shared ledger apps, shared expense apps, and running balance apps for household expenses, repayments, partial payments, recurring costs, and who owes whom.",
           "url": "https://you-owe-me.com/compare/shared-expense-app-vs-running-balance-app/",
           "inLanguage": "en",
-          "dateModified": "2026-07-05",
+          "dateModified": "2026-07-24",
           "publisher": {
             "@type": "Organization",
             "name": "You Owe Me"
@@ -107,7 +107,7 @@
               "name": "Do both people need to use the same app?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Not always. With You Owe Me, one person can keep the record and share clarity when needed through a message, statement, receipt, or Live Link. This is useful when asking everyone to install another app would create friction."
+                "text": "Not always. One person can maintain the record and share a message, statement, receipt, or always-current Live Link. If exactly two people both want to add or update supported connected entries, they can use Balance Sync, which requires both participants to use You Owe Me and Sign in with Apple."
               }
             },
             {
@@ -131,7 +131,7 @@
               "name": "Is You Owe Me a replacement for Splitwise?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Not for every situation. Use a full collaborative group expense app when everyone needs to join one shared ledger and add expenses themselves. Use You Owe Me when one person wants a clearer record, per-person running balances, repayment history, reminders, and shareable context without forcing everyone into the app."
+                "text": "Not for every situation. Use a full collaborative shared expense app when several people need to join one group ledger and add expenses themselves. Use You Owe Me when the main job is an ongoing per-person balance, repayment history, reminders, communication, one-person browser sharing through Live Link, or private two-person participation through Balance Sync."
               }
             },
             {
@@ -140,6 +140,22 @@
               "acceptedAnswer": {
                 "@type": "Answer",
                 "text": "Yes, if you want manual control and will keep it updated. A spreadsheet can work for simple records. A running balance app becomes easier when repayments, partial repayments, recurring entries, reminders, and communication need to stay connected."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Balance Sync turn a running balance into a group ledger?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "No. Balance Sync connects exactly two people and one supported balance. It does not support several participants, Group Paybacks, or group settlement across multiple payers."
+              }
+            },
+            {
+              "@type": "Question",
+              "name": "Does Live Link update when the balance changes?",
+              "acceptedAnswer": {
+                "@type": "Answer",
+                "text": "Yes. One person maintains the record in You Owe Me, and the same browser link shows the latest balance and history as that record changes. The viewer has read-only access and does not need the app or an account."
               }
             }
           ]
@@ -192,9 +208,9 @@
                 <header class="major">
                   <h1>Shared Expense App vs Running Balance App</h1>
                 </header>
-                <p>Use a shared ledger app or shared expense app when several people need to add expenses to the same shared ledger. Use a running balance app when the real problem is what remains open after expenses, repayments, partial repayments, recurring costs, and follow-ups change over time.</p>
-                <p>The difference is what happens after the split. If one bill settles immediately, a calculator may be enough. If the answer keeps changing, you need a record that keeps the current balance, history, and next message together.</p>
-                <p>You Owe Me is built for that second case: one clear running balance, repayment history, and shareable context without making everyone join the same shared ledger. It can work as a ledger app for tracking shared household expenses when the important question is what is still owed now.</p>
+                <p>Use a shared ledger app when several people need to add expenses to the same group record. Use a running-balance app when the real problem is what remains open after expenses, repayments, partial repayments, recurring costs, and follow-ups change over time.</p>
+                <p>A running balance can start with one person. That person can share an always-current Live Link when the other person only needs visibility. With Balance Sync, exactly two You Owe Me users can instead privately connect the balance so supported changes made on either phone stay aligned.</p>
+                <p>You Owe Me is built for that relationship-centered case: one current balance, repayment history, and flexible participation without requiring a full group workspace.</p>
                 <div class="compare-hero-chips" aria-label="Topics covered">
                   <span>Shared expense apps</span>
                   <span>Running balances</span>
@@ -202,6 +218,8 @@
                   <span>Recurring costs</span>
                   <span>Group paybacks</span>
                   <span>No forced app install</span>
+                  <span>Always-current Live Link</span>
+                  <span>Optional two-person sync</span>
                 </div>
                 <div class="lt-ctaRow">
                   <a
@@ -263,6 +281,21 @@
                   <a href="#product-fit" data-track-location="compare_shared_expense_vs_running_balance_quick_product_fit">See how You Owe Me fits</a>
                 </div>
               </article>
+              <article class="compare-card">
+                <h3>Use one-person tracking when</h3>
+                <p>One person can maintain the record and share details only when needed.</p>
+              </article>
+              <article class="compare-card">
+                <h3>Use Live Link when</h3>
+                <p>One person maintains the record while the other person needs an always-current, read-only browser view without installing the app.</p>
+              </article>
+              <article class="compare-card">
+                <h3>Use Balance Sync when</h3>
+                <p>Exactly two people both use You Owe Me and want supported entries for one ongoing balance to stay updated across their phones.</p>
+                <div class="compare-link-list">
+                  <a href="/features/#balance-sync" data-track-location="compare_shared_expense_vs_running_balance_quick_balance_sync">See Balance Sync</a>
+                </div>
+              </article>
             </div>
           </section>
 
@@ -285,8 +318,9 @@
                 <p class="lt-eyebrow">Running balance app</p>
                 <h3>Best for an ongoing current balance</h3>
                 <ul>
-                  <li>One person can keep the record.</li>
-                  <li>The other person does not need to install the app.</li>
+                  <li>One person can keep the record privately.</li>
+                  <li>Use Live Link when the other person only needs an always-current browser view without the app.</li>
+                  <li>Use Balance Sync when exactly two people both want to add or update supported connected entries.</li>
                   <li>Expenses, repayments, partial repayments, and recurring costs update one current balance.</li>
                   <li>The main question is: who owes whom now, and what should happen next?</li>
                 </ul>
@@ -330,13 +364,13 @@
                   <tr>
                     <td data-label="Situation">Roommate bills</td>
                     <td data-label="Shared expense app fits when">Everyone in the household wants to add expenses to one shared house ledger.</td>
-                    <td data-label="Running balance app fits when">One person usually pays utilities, supplies, or rent extras and the balance carries forward month to month.</td>
+                    <td data-label="Running balance app fits when">One roommate often keeps the record and shares a Live Link, or exactly two roommates use Balance Sync to update one supported balance from either phone.</td>
                     <td data-label="Best next step">Use the <a href="/tools/roommate-bill-split-calculator/">Roommate Bill Split Calculator</a> for one month; use a running balance when history continues.</td>
                   </tr>
                   <tr>
                     <td data-label="Situation">Couple shared spending</td>
                     <td data-label="Shared expense app fits when">Both partners want a shared expense ledger and frequent settle-ups.</td>
-                    <td data-label="Running balance app fits when">You want clarity without turning every purchase into scorekeeping or constant micro-settling.</td>
+                    <td data-label="Running balance app fits when">The couple wants one relationship-centered balance, with either one-person Live Link visibility or two-way Balance Sync participation.</td>
                     <td data-label="Best next step">Use the <a href="/tools/couple-shared-expense-balance-calculator/">Couple Shared Expense Balance Calculator</a> for one month, read <a href="/blog/i-pay-more-than-my-partner/">what to do when you pay more than your partner</a> if the expectation is unclear, or use an <a href="/tools/running-balance-calculator/">ongoing running balance</a> when shared spending keeps changing.</td>
                   </tr>
                   <tr>
@@ -354,7 +388,7 @@
                   <tr>
                     <td data-label="Situation">Repeated friend IOUs</td>
                     <td data-label="Shared expense app fits when">Useful only if the friends want a shared group ledger.</td>
-                    <td data-label="Running balance app fits when">Better when small costs, repayments, and follow-ups keep happening with the same person.</td>
+                    <td data-label="Running balance app fits when">Better when small costs, repayments, and follow-ups keep happening with the same person. Use Live Link for visibility or Balance Sync when both people want to maintain the supported balance.</td>
                     <td data-label="Best next step">Use the <a href="/tools/running-balance-calculator/">Running Balance Calculator</a>, then save the record in You Owe Me if it continues.</td>
                   </tr>
                   <tr>
@@ -362,6 +396,18 @@
                     <td data-label="Shared expense app fits when">Usually not the right model.</td>
                     <td data-label="Running balance app fits when">Useful for lightweight personal records, deposits, partial payments, or payment confirmation.</td>
                     <td data-label="Best next step">Use a proper accounting system for formal business accounting; use You Owe Me only for simple private records.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Situation">Exactly two people both want editing access</td>
+                    <td data-label="Shared expense app fits when">They want that activity inside a broader group-expense workspace.</td>
+                    <td data-label="Running balance app fits when">They want one private relationship balance with supported entries synchronized across both apps.</td>
+                    <td data-label="Best next step"><a href="/features/#balance-sync">Review Balance Sync</a>, then choose the model that matches the wider workflow.</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Situation">Only one person wants the app</td>
+                    <td data-label="Shared expense app fits when">Usually less suitable when joining the group is required.</td>
+                    <td data-label="Running balance app fits when">One person keeps the record and shares an always-current Live Link without requiring the other person to install the app.</td>
+                    <td data-label="Best next step"><a href="/blog/can-one-person-track-shared-money-without-everyone-installing-an-app/">Review the one-person sharing workflow.</a></td>
                   </tr>
                 </tbody>
               </table>
@@ -446,7 +492,7 @@
             <p>A running balance app fits when the original split is not enough because the relationship keeps generating money history.</p>
             <div class="compare-feature-grid shared-vs-balance-running-grid">
               <article class="compare-card"><h3>Repeated shared money</h3><p>The same people keep paying for things over time.</p></article>
-              <article class="compare-card"><h3>No forced setup</h3><p>One person wants to keep the record without forcing setup on everyone else.</p></article>
+              <article class="compare-card"><h3>Flexible participation</h3><p>Keep the record private when that is enough. Share a Live Link if the other person needs an always-current browser view without the app. Use Balance Sync if exactly two people both want to add or update supported connected entries from their own phones.</p></article>
               <article class="compare-card"><h3>Repayments happen later</h3><p>The record needs to track repayments after the first shared expense.</p></article>
               <article class="compare-card"><h3>Partial repayments happen</h3><p>Someone pays part of the amount, and the remaining balance still matters.</p></article>
               <article class="compare-card"><h3>Recurring costs repeat</h3><p>Subscriptions, utilities, rent extras, or family costs can renew before the old amount is settled.</p></article>
@@ -608,8 +654,15 @@
                 <p>Use the actual balance and history to draft calmer follow-ups or repayment updates that you can review before sending.</p>
               </article>
               <article class="compare-card">
-                <h3>Live Link without forced app install</h3>
-                <p>One person can keep the record, and the other person can see the current balance in the browser when it is useful to share without everyone installing the app.</p>
+                <h3>Live Link when only one person needs the app</h3>
+                <p>One person maintains the balance in You Owe Me. The other person opens one always-current, read-only browser link to see the latest balance and history without installing the app or creating an account.</p>
+              </article>
+              <article class="compare-card">
+                <h3>Balance Sync for exactly two people</h3>
+                <p>Privately connect one supported balance across two You Owe Me accounts. Changes made from either phone synchronize when the app can connect, while each person keeps a separate record and sees the balance from their own perspective.</p>
+                <div class="compare-link-list">
+                  <a href="/features/#balance-sync" data-track-location="compare_shared_expense_vs_running_balance_product_balance_sync">Explore Balance Sync</a>
+                </div>
               </article>
               <article class="compare-card compare-card--active shared-vs-balance-product-wide">
                 <h3>Statements and receipts</h3>
@@ -739,7 +792,7 @@
               </details>
               <details class="compare-faq-item" open>
                 <summary>Do both people need to use the same app?</summary>
-                <p>Not always. With You Owe Me, one person can keep the record and share clarity when needed through a message, statement, receipt, or Live Link. This is useful when asking everyone to install another app would create friction.</p>
+                <p>Not always. One person can maintain the record and share a message, statement, receipt, or always-current Live Link. If exactly two people both want to add or update supported connected entries, they can use Balance Sync, which requires both participants to use You Owe Me and Sign in with Apple.</p>
               </details>
               <details class="compare-faq-item" open>
                 <summary>Is a split calculator enough?</summary>
@@ -751,11 +804,19 @@
               </details>
               <details class="compare-faq-item" open>
                 <summary>Is You Owe Me a replacement for Splitwise?</summary>
-                <p>Not for every situation. Use a full collaborative group expense app when everyone needs to join one shared ledger and add expenses themselves. Use You Owe Me when one person wants a clearer record, per-person running balances, repayment history, reminders, and shareable context without forcing everyone into the app.</p>
+                <p>Not for every situation. Use a full collaborative shared expense app when several people need to join one group ledger and add expenses themselves. Use You Owe Me when the main job is an ongoing per-person balance, repayment history, reminders, communication, one-person browser sharing through Live Link, or private two-person participation through Balance Sync.</p>
               </details>
               <details class="compare-faq-item" open>
                 <summary>Can I use a spreadsheet instead?</summary>
                 <p>Yes, if you want manual control and will keep it updated. A spreadsheet can work for simple records. A running balance app becomes easier when repayments, partial repayments, recurring entries, reminders, and communication need to stay connected.</p>
+              </details>
+              <details class="compare-faq-item" open>
+                <summary>Does Balance Sync turn a running balance into a group ledger?</summary>
+                <p>No. Balance Sync connects exactly two people and one supported balance. It does not support several participants, Group Paybacks, or group settlement across multiple payers.</p>
+              </details>
+              <details class="compare-faq-item" open>
+                <summary>Does Live Link update when the balance changes?</summary>
+                <p>Yes. One person maintains the record in You Owe Me, and the same browser link shows the latest balance and history as that record changes. The viewer has read-only access and does not need the app or an account.</p>
               </details>
             </div>
           </section>
@@ -779,7 +840,7 @@
             </div>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-07-05">July 5, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-07-24">July 24, 2026</time></p>
         </article>
       </div>
 

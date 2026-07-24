@@ -511,6 +511,15 @@ body.splitwise-alternative-page .splitwise-section-media img {
   box-shadow: 0 20px 48px rgba(15, 23, 42, 0.11);
 }
 
+body.splitwise-alternative-page .splitwise-balance-sync-media {
+  justify-self: center;
+  width: min(100%, 22rem);
+}
+
+body.splitwise-alternative-page .splitwise-balance-sync-media img {
+  object-fit: contain;
+}
+
 body.splitwise-alternative-page .splitwise-example-panel {
   margin-top: 1.25rem;
 }

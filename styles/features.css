@@ -234,6 +234,14 @@ body.features-page .features-card img {
   height: auto;
 }
 
+body.features-page .features-balance-sync-media {
+  width: min(100%, 15rem);
+}
+
+body.features-page .features-balance-sync-media img {
+  object-fit: contain;
+}
+
 body.features-page .features-card .lt-cardCta {
   margin-top: 1rem;
 }

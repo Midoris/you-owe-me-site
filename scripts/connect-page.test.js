@@ -270,8 +270,8 @@ test("both privacy pages disclose the same Balance Sync lifecycle and data bound
     assert.match(policy, pattern, `privacy policy missing ${pattern}`);
   }
 
-  assert.match(overview, /Updated July 11, 2026/);
+  assert.match(overview, /Updated July 24, 2026/);
   assert.match(policy, /Last updated: July 12, 2026/);
-  assert.match(overview, /"dateModified": "2026-07-11"/);
+  assert.match(overview, /"dateModified": "2026-07-24"/);
   assert.match(policy, /"dateModified": "2026-07-12"/);
 });
