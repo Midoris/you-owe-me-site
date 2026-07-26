@@ -1,0 +1,1057 @@
+body.couple-expense-split-method-calculator-page {
+  background: #f4f6f8;
+}
+
+body.couple-expense-split-method-calculator-page #header {
+  display: none !important;
+}
+
+body.couple-expense-split-method-calculator-page #wrapper > .bg {
+  display: none !important;
+}
+
+body.couple-expense-split-method-calculator-page #wrapper.fade-in:before {
+  background: #f4f6f8;
+}
+
+body.couple-expense-split-method-calculator-page #nav,
+body.couple-expense-split-method-calculator-page #main,
+body.couple-expense-split-method-calculator-page #copyright {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.couple-expense-split-method-calculator-page #main {
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.16), transparent 30%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f6f8 76%);
+}
+
+body.couple-expense-split-method-calculator-page article.post.featured {
+  max-width: none;
+}
+
+.ces-hero {
+  display: block;
+  padding: clamp(1.6rem, 3.5vw, 3rem);
+}
+
+.ces-hero .lt-toolsHeroCopy {
+  max-width: 74rem;
+}
+
+.ces-hero .lt-eyebrow,
+.ces-stage-callout .lt-sectionEyebrow,
+.ces-calculator-shell .lt-sectionEyebrow,
+.ces-results-section .lt-sectionEyebrow,
+.ces-framework .lt-sectionEyebrow,
+.ces-decision .lt-sectionEyebrow,
+.ces-agreement .lt-sectionEyebrow,
+.ces-examples .lt-sectionEyebrow,
+.ces-product .lt-sectionEyebrow,
+.ces-faq .lt-sectionEyebrow,
+.ces-app-card .lt-sectionEyebrow {
+  color: rgba(33, 41, 49, 0.88);
+}
+
+.ces-direct-answer,
+.ces-clarifier {
+  max-width: 75ch;
+  margin: 1rem 0 0;
+}
+
+.ces-direct-answer {
+  color: #212931 !important;
+  font-weight: 650;
+}
+
+.ces-clarifier {
+  color: rgba(33, 41, 49, 0.78) !important;
+}
+
+.ces-primary-button,
+.ces-secondary-button,
+.ces-text-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 2.8rem;
+  border: 1px solid transparent;
+  border-radius: 999px;
+  cursor: pointer;
+  font: inherit;
+  font-size: 0.94rem;
+  font-weight: 750;
+  letter-spacing: 0;
+  line-height: 1.2;
+  padding: 0.68rem 1rem;
+  text-align: center;
+  text-transform: none;
+  transition: background-color 0.2s ease, box-shadow 0.2s ease, transform 0.2s ease;
+}
+
+.ces-primary-button {
+  background: #afe67e;
+  border-color: rgba(107, 161, 69, 0.24);
+  color: #18212b;
+  box-shadow: 0 12px 26px rgba(85, 125, 55, 0.16);
+}
+
+.ces-primary-button:hover:not(:disabled),
+.ces-primary-button:focus-visible:not(:disabled) {
+  background: #bcf18c;
+  transform: translateY(-1px);
+}
+
+.ces-secondary-button {
+  background: rgba(255, 255, 255, 0.86);
+  border-color: rgba(15, 23, 42, 0.12);
+  color: #18212b;
+}
+
+.ces-secondary-button:hover,
+.ces-secondary-button:focus-visible {
+  background: rgba(228, 238, 248, 0.92);
+}
+
+.ces-text-button {
+  background: transparent;
+  color: #18212b;
+}
+
+.ces-text-button:hover,
+.ces-text-button:focus-visible {
+  text-decoration: underline;
+}
+
+.ces-primary-button:disabled {
+  cursor: not-allowed;
+  opacity: 0.55;
+}
+
+.ces-primary-button:focus-visible,
+.ces-secondary-button:focus-visible,
+.ces-text-button:focus-visible,
+.ces-calculator-shell input:focus-visible,
+.ces-calculator-shell select:focus-visible,
+.ces-calculator-shell textarea:focus-visible,
+.ces-calculator-shell summary:focus-visible,
+.ces-method-card button:focus-visible,
+.ces-mode-control input:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+.ces-trust {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.45rem 1.1rem;
+  margin: 1.2rem 0 0 !important;
+  padding: 0 !important;
+}
+
+.ces-trust li {
+  display: flex;
+  align-items: center;
+  color: rgba(33, 41, 49, 0.74) !important;
+  font-size: 0.86rem !important;
+  font-weight: 700;
+  list-style: none;
+  margin: 0 !important;
+}
+
+.ces-trust li::before {
+  content: "";
+  width: 0.42rem;
+  height: 0.42rem;
+  margin-right: 0.42rem;
+  border-radius: 50%;
+  background: #afe67e;
+  box-shadow: 0 0 0 0.22rem rgba(175, 230, 126, 0.23);
+}
+
+.ces-stage-callout {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.25rem;
+  margin: 1rem 0 0;
+  padding: clamp(1.1rem, 2.1vw, 1.5rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.ces-stage-callout h2,
+.ces-stage-callout p {
+  margin: 0;
+}
+
+.ces-stage-callout p:not(.lt-sectionEyebrow) {
+  max-width: 78ch;
+  margin-top: 0.45rem;
+}
+
+.ces-calculator {
+  margin-top: clamp(1.35rem, 3vw, 2.6rem);
+  scroll-margin-top: 1rem;
+}
+
+.ces-calculator-shell {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+  padding: clamp(1rem, 2.7vw, 2rem);
+}
+
+.ces-section-heading {
+  max-width: 83rem;
+}
+
+.ces-section-heading > p {
+  margin: 0.45rem 0 0;
+}
+
+.ces-privacy-note,
+.ces-helper,
+.ces-validation,
+.ces-form-status,
+.ces-copy-status,
+.ces-result-summary {
+  font-size: 0.88rem !important;
+  line-height: 1.5 !important;
+}
+
+.ces-privacy-note,
+.ces-helper {
+  color: rgba(33, 41, 49, 0.68) !important;
+}
+
+.ces-form-status {
+  min-height: 1.35rem;
+  margin: 0.85rem 0 0;
+  color: #18212b !important;
+  font-weight: 700;
+}
+
+.ces-calculator-shell form {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 1rem;
+}
+
+.ces-form-card,
+.ces-advanced {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  padding: clamp(1rem, 2vw, 1.4rem);
+}
+
+.ces-form-card > p,
+.ces-advanced-inner > p {
+  margin: 0.25rem 0 0;
+}
+
+.ces-step-heading {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.ces-step-heading p {
+  margin: 0;
+  color: #18212b !important;
+  font-size: 1.03rem !important;
+  font-weight: 850;
+  line-height: 1.25 !important;
+}
+
+.ces-step-heading span {
+  border-radius: 999px;
+  background: rgba(228, 238, 248, 0.92);
+  color: rgba(33, 41, 49, 0.7);
+  font-size: 0.76rem;
+  font-weight: 750;
+  padding: 0.26rem 0.55rem;
+}
+
+.ces-two-column,
+.ces-income-grid,
+.ces-agreement-grid {
+  display: grid;
+  gap: 0.85rem;
+  margin-top: 0.9rem;
+}
+
+.ces-two-column {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+.ces-income-grid {
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr) minmax(9rem, 0.34fr);
+}
+
+.ces-agreement-grid {
+  grid-template-columns: minmax(0, 1.4fr) minmax(10rem, 0.6fr) minmax(0, 1fr);
+}
+
+.ces-field {
+  min-width: 0;
+}
+
+.ces-field label,
+.ces-mode-control legend,
+.ces-copy-fallback label {
+  display: block;
+  margin: 0 0 0.35rem;
+  color: rgba(33, 41, 49, 0.9);
+  font-size: 0.88rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.ces-calculator-shell input,
+.ces-calculator-shell select,
+.ces-calculator-shell textarea {
+  width: 100%;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: none;
+  color: #18212b;
+  font: inherit;
+  line-height: 1.25;
+}
+
+.ces-calculator-shell input,
+.ces-calculator-shell select {
+  min-height: 2.85rem;
+  padding: 0.65rem 0.78rem;
+}
+
+.ces-calculator-shell input[aria-invalid="true"] {
+  border-color: #a65b38;
+}
+
+.ces-validation {
+  min-height: 1.2rem;
+  margin: 0.35rem 0 0;
+  color: #8a4b2b !important;
+  font-weight: 650;
+}
+
+.ces-field > .ces-helper {
+  margin: 0.35rem 0 0;
+}
+
+.ces-income-grid + .ces-helper {
+  margin: 0.45rem 0 0;
+}
+
+.ces-currency-field {
+  align-self: start;
+}
+
+.ces-currency-field input[hidden] {
+  display: none;
+}
+
+.ces-currency-field input:not([hidden]) {
+  margin-top: 0.5rem;
+}
+
+.ces-mode-control {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin: 1rem 0;
+  padding: 0;
+  border: 0;
+}
+
+.ces-mode-control legend {
+  width: 100%;
+}
+
+.ces-mode-control label {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  min-height: 2.55rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 999px;
+  background: rgba(255, 255, 255, 0.82);
+  color: #18212b;
+  cursor: pointer;
+  font-size: 0.92rem;
+  font-weight: 700;
+  padding: 0.45rem 0.75rem;
+}
+
+.ces-mode-control label:has(input:checked) {
+  border-color: rgba(107, 161, 69, 0.38);
+  background: rgba(175, 230, 126, 0.3);
+}
+
+.ces-total-field {
+  max-width: 26rem;
+}
+
+.ces-cost-rows {
+  display: grid;
+  gap: 0.65rem;
+  margin: 0.85rem 0;
+}
+
+.ces-cost-row {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(8rem, 0.45fr) auto;
+  gap: 0.65rem;
+  align-items: end;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.84);
+  padding: 0.75rem;
+}
+
+.ces-cost-row .ces-field label {
+  font-size: 0.8rem;
+}
+
+.ces-row-default-label {
+  margin: 0 0 0.35rem !important;
+  color: rgba(33, 41, 49, 0.9) !important;
+  font-size: 0.8rem !important;
+  font-weight: 750;
+  line-height: 1.35 !important;
+}
+
+.ces-remove-button {
+  min-width: 2.8rem;
+  min-height: 2.8rem;
+  border: 1px solid rgba(15, 23, 42, 0.12);
+  border-radius: 13px;
+  background: rgba(255, 255, 255, 0.8);
+  color: #18212b;
+  cursor: pointer;
+  font-size: 1.1rem;
+}
+
+.ces-dynamic-total {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 0.25rem 1rem;
+  align-items: center;
+  margin-top: 0.9rem;
+  border-radius: 16px;
+  background: rgba(228, 238, 248, 0.62);
+  padding: 0.85rem;
+}
+
+.ces-dynamic-total strong,
+.ces-dynamic-total output {
+  color: #18212b;
+}
+
+.ces-dynamic-total output {
+  font-size: 1.15rem;
+  font-weight: 850;
+}
+
+.ces-dynamic-total p {
+  grid-column: 1 / -1;
+  margin: 0;
+  color: rgba(33, 41, 49, 0.7) !important;
+  font-size: 0.82rem !important;
+}
+
+.ces-advanced {
+  padding: 0;
+}
+
+.ces-advanced summary {
+  color: #18212b;
+  cursor: pointer;
+  font-size: 0.98rem;
+  font-weight: 800;
+  padding: 1rem 1.2rem;
+}
+
+.ces-advanced-inner {
+  padding: 0 1.2rem 1.2rem;
+}
+
+.ces-advanced h3 {
+  margin: 1rem 0 0.35rem !important;
+}
+
+.ces-percent-field > span {
+  position: relative;
+  display: block;
+}
+
+.ces-percent-field input {
+  padding-right: 2.4rem !important;
+}
+
+.ces-percent-field b {
+  position: absolute;
+  top: 50%;
+  right: 0.85rem;
+  color: rgba(33, 41, 49, 0.7);
+  font-size: 0.94rem;
+  transform: translateY(-50%);
+}
+
+.ces-form-actions,
+.ces-copy-actions,
+.ces-final-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.ces-form-actions {
+  margin-top: 0.15rem;
+}
+
+.ces-results-section,
+.ces-framework,
+.ces-decision,
+.ces-agreement,
+.ces-examples,
+.ces-product,
+.ces-faq {
+  margin-top: clamp(2.2rem, 5vw, 4.2rem);
+}
+
+.ces-results-section[hidden] {
+  display: none;
+}
+
+.ces-result-summary {
+  color: rgba(33, 41, 49, 0.76) !important;
+  font-weight: 650;
+}
+
+.ces-warnings {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.ces-warning {
+  border: 1px solid rgba(155, 111, 37, 0.28);
+  border-radius: 16px;
+  background: rgba(255, 250, 232, 0.86);
+  color: #513b19;
+  padding: 0.9rem 1rem;
+}
+
+.ces-warning strong,
+.ces-warning p {
+  display: block;
+  margin: 0;
+}
+
+.ces-warning p {
+  margin-top: 0.35rem;
+  color: #513b19 !important;
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+}
+
+.ces-method-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ces-method-card {
+  display: grid;
+  align-content: start;
+  gap: 0.9rem;
+  min-width: 0;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.88);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  padding: clamp(1rem, 2vw, 1.3rem);
+}
+
+.ces-method-card[data-working="true"] {
+  border-color: rgba(53, 84, 40, 0.4);
+  background: rgba(245, 251, 240, 0.94);
+}
+
+.ces-method-header {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+}
+
+.ces-method-header h3,
+.ces-method-card p {
+  margin: 0 !important;
+}
+
+.ces-principle,
+.ces-status-label,
+.ces-working-label {
+  display: inline-block;
+  border-radius: 999px;
+  background: rgba(228, 238, 248, 0.88);
+  color: rgba(33, 41, 49, 0.8);
+  font-size: 0.76rem;
+  font-weight: 800;
+  line-height: 1.25;
+  padding: 0.32rem 0.55rem;
+}
+
+.ces-status-label {
+  background: rgba(255, 240, 230, 0.9);
+  color: #7d432c;
+}
+
+.ces-working-label {
+  background: rgba(175, 230, 126, 0.34);
+  color: #18212b;
+}
+
+.ces-method-body {
+  color: rgba(33, 41, 49, 0.79) !important;
+  font-size: 0.93rem !important;
+  line-height: 1.57 !important;
+}
+
+.ces-metric-list {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.55rem;
+  margin: 0;
+}
+
+.ces-metric-list > div {
+  min-width: 0;
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.92);
+  padding: 0.65rem;
+}
+
+.ces-metric-list dt {
+  color: rgba(33, 41, 49, 0.66);
+  font-size: 0.72rem;
+  font-weight: 750;
+  line-height: 1.35;
+}
+
+.ces-metric-list dd {
+  margin: 0.25rem 0 0;
+  color: #18212b;
+  font-size: 0.94rem;
+  font-weight: 800;
+  line-height: 1.35;
+}
+
+.ces-metric-list small {
+  display: block;
+  margin-top: 0.2rem;
+  color: rgba(33, 41, 49, 0.67);
+  font-size: 0.74rem;
+  font-weight: 500;
+  line-height: 1.35;
+}
+
+.ces-visual {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+  margin: 0;
+}
+
+.ces-visual figcaption {
+  grid-column: 1 / -1;
+  color: rgba(33, 41, 49, 0.7);
+  font-size: 0.78rem;
+  line-height: 1.35;
+}
+
+.ces-person-bar {
+  display: grid;
+  gap: 0.35rem;
+}
+
+.ces-person-bar > span:first-child {
+  color: #18212b;
+  font-size: 0.8rem;
+  font-weight: 750;
+}
+
+.ces-bar-track {
+  display: grid;
+  min-height: 1.5rem;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.09);
+  border-radius: 999px;
+  background: rgba(228, 238, 248, 0.55);
+}
+
+.ces-bar-contribution,
+.ces-bar-left,
+.ces-bar-negative {
+  min-width: 0.3rem;
+}
+
+.ces-bar-contribution { background: #afe67e; }
+.ces-bar-left { background: #202a36; }
+.ces-bar-negative { background: #cda07d; }
+
+.ces-bar-key {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 0.6rem;
+  color: rgba(33, 41, 49, 0.72);
+  font-size: 0.72rem;
+  line-height: 1.3;
+}
+
+.ces-bar-key span::before {
+  content: "";
+  display: inline-block;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin-right: 0.25rem;
+  border-radius: 2px;
+  vertical-align: -0.03rem;
+}
+.ces-bar-key span:nth-child(1)::before { background: #afe67e; }
+.ces-bar-key span:nth-child(2)::before { background: #202a36; }
+.ces-bar-key span:nth-child(3)::before { background: #cda07d; }
+
+.ces-comparison-note {
+  border-left: 3px solid rgba(175, 230, 126, 0.78);
+  color: rgba(33, 41, 49, 0.75) !important;
+  font-size: 0.86rem !important;
+  line-height: 1.5 !important;
+  padding-left: 0.7rem;
+}
+
+.ces-method-card .ces-primary-button,
+.ces-method-card .ces-secondary-button {
+  justify-self: start;
+}
+
+.ces-infeasible-boundary {
+  border-radius: 14px;
+  background: rgba(248, 250, 252, 0.92);
+  color: rgba(33, 41, 49, 0.78) !important;
+  font-size: 0.88rem !important;
+  line-height: 1.5 !important;
+  padding: 0.75rem;
+}
+
+.ces-responsive-table {
+  margin-top: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.84);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  overflow: hidden;
+}
+
+.ces-responsive-table table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+}
+
+.ces-responsive-table th,
+.ces-responsive-table td {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  color: rgba(33, 41, 49, 0.84);
+  font-size: 0.9rem;
+  line-height: 1.5;
+  padding: 0.95rem;
+  text-align: left;
+  vertical-align: top;
+}
+
+.ces-responsive-table thead th {
+  color: #18212b;
+  font-size: 0.82rem;
+  font-weight: 850;
+}
+
+.ces-responsive-table tbody th {
+  color: #18212b;
+  font-weight: 850;
+}
+
+.ces-responsive-table tr:last-child th,
+.ces-responsive-table tr:last-child td {
+  border-bottom: 0;
+}
+
+.ces-checklist,
+.ces-callout-grid > aside,
+.ces-app-card,
+.ces-product-grid > div,
+.ces-example {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.ces-checklist {
+  margin-top: 1rem;
+  padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.ces-checklist h3,
+.ces-callout-grid h3,
+.ces-product-grid h3,
+.ces-app-card h3,
+.ces-example h3 {
+  margin: 0 0 0.5rem !important;
+}
+
+.ces-checklist ol {
+  margin: 0.7rem 0 0;
+  padding-left: 1.35rem;
+}
+
+.ces-checklist li {
+  margin: 0.5rem 0 !important;
+}
+
+.ces-callout-grid,
+.ces-product-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.ces-callout-grid > aside,
+.ces-product-grid > div {
+  padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.ces-callout-grid p,
+.ces-product-grid p,
+.ces-app-card p {
+  margin: 0;
+}
+
+.ces-agreement {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: rgba(255, 255, 255, 0.72);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+  padding: clamp(1rem, 2.7vw, 2rem);
+}
+
+.ces-copy-actions {
+  margin-top: 1rem;
+}
+
+.ces-copy-actions .ces-helper,
+.ces-copy-actions .ces-copy-status {
+  width: 100%;
+  margin: 0;
+}
+
+.ces-copy-status {
+  color: #18212b !important;
+  font-weight: 750;
+}
+
+.ces-copy-fallback {
+  margin-top: 1rem;
+}
+
+.ces-copy-fallback textarea {
+  min-height: 14rem;
+  resize: vertical;
+  white-space: pre-wrap;
+}
+
+.ces-next-steps {
+  margin-top: clamp(2.2rem, 5vw, 4.2rem);
+}
+
+.ces-next-steps .best-next-step__card em {
+  display: block;
+  margin-top: 0.75rem;
+  color: #18212b;
+  font-size: 0.86rem;
+  font-style: normal;
+  font-weight: 800;
+}
+
+.ces-examples {
+  display: grid;
+  gap: 1rem;
+}
+
+.ces-examples > .lt-sectionEyebrow,
+.ces-examples > h2,
+.ces-examples > p {
+  margin-bottom: 0;
+}
+
+.ces-example {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  align-items: start;
+  gap: 1rem;
+  padding: clamp(1rem, 2vw, 1.35rem);
+}
+
+.ces-example .ces-responsive-table,
+.ces-example > p {
+  grid-column: 1 / -1;
+  margin-bottom: 0;
+}
+
+.ces-product-grid {
+  margin-top: 1rem;
+}
+
+.ces-product-grid .lt-textCta {
+  margin-top: 1rem;
+}
+
+.ces-app-card {
+  margin-top: 1rem;
+  padding: clamp(1rem, 2.7vw, 1.75rem);
+}
+
+.ces-app-card .lt-sectionEyebrow {
+  margin-bottom: 0.75rem;
+}
+
+.ces-app-card h3 {
+  font-size: clamp(1.25rem, 1rem + 0.7vw, 1.65rem) !important;
+}
+
+.ces-app-card p + p {
+  margin-top: 0.65rem;
+}
+
+.ces-faq-list {
+  display: grid;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+.ces-faq-list details {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.8);
+  padding: 0.2rem 1rem;
+}
+
+.ces-faq-list summary {
+  color: #18212b;
+  cursor: pointer;
+  font-weight: 800;
+  line-height: 1.45;
+  padding: 0.7rem 0;
+}
+
+.ces-faq-list p {
+  margin: 0 0 0.9rem;
+}
+
+.ces-boundary {
+  margin: 1rem 0;
+  border-left: 3px solid rgba(15, 23, 42, 0.24);
+  color: rgba(33, 41, 49, 0.76) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.55 !important;
+  padding-left: 0.8rem;
+}
+
+.ces-final-actions {
+  justify-content: flex-start;
+  margin: clamp(2rem, 5vw, 4rem) 0 0;
+  padding-top: 1.5rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+@media (max-width: 900px) {
+  .ces-income-grid,
+  .ces-agreement-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .ces-currency-field { grid-column: 1 / -1; max-width: 14rem; }
+  .ces-agreement-grid .ces-field:first-child { grid-column: 1 / -1; }
+}
+
+@media (max-width: 736px) {
+  .ces-hero { border-radius: 20px; padding: 1.35rem; }
+  .ces-stage-callout,
+  .ces-example { grid-template-columns: 1fr; }
+  .ces-stage-callout .lt-textCta,
+  .ces-example .ces-secondary-button { justify-self: start; }
+  .ces-two-column,
+  .ces-income-grid,
+  .ces-agreement-grid,
+  .ces-method-grid,
+  .ces-callout-grid,
+  .ces-product-grid { grid-template-columns: 1fr; }
+  .ces-currency-field,
+  .ces-agreement-grid .ces-field:first-child { grid-column: auto; max-width: none; }
+  .ces-cost-row { grid-template-columns: 1fr auto; }
+  .ces-cost-row .ces-field:first-child { grid-column: 1 / -1; }
+  .ces-metric-list { grid-template-columns: 1fr; }
+  .ces-responsive-table { border: 0; background: transparent; box-shadow: none; }
+  .ces-responsive-table table,
+  .ces-responsive-table thead,
+  .ces-responsive-table tbody,
+  .ces-responsive-table tr,
+  .ces-responsive-table th,
+  .ces-responsive-table td { display: block; width: 100%; }
+  .ces-responsive-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+  .ces-responsive-table tr { margin-bottom: 0.65rem; border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 16px; background: rgba(255, 255, 255, 0.84); box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08); padding: 0.8rem; }
+  .ces-responsive-table th,
+  .ces-responsive-table td { border: 0; padding: 0.35rem 0; }
+  .ces-responsive-table tbody th { font-size: 1rem; }
+  .ces-responsive-table td::before { content: attr(data-label); display: block; color: rgba(33, 41, 49, 0.63); font-size: 0.75rem; font-weight: 800; text-transform: uppercase; letter-spacing: 0.05em; }
+  .ces-example > .ces-secondary-button { grid-row: 2; }
+  .ces-example .ces-responsive-table { grid-row: 3; }
+}
+
+@media (max-width: 420px) {
+  .ces-calculator-shell,
+  .ces-agreement { border-radius: 20px; padding: 1rem; }
+  .ces-mode-control { display: grid; }
+  .ces-mode-control label { width: 100%; }
+  .ces-form-actions,
+  .ces-copy-actions,
+  .ces-final-actions { align-items: stretch; }
+  .ces-form-actions > *,
+  .ces-copy-actions > button,
+  .ces-final-actions > * { width: 100%; }
+  .ces-primary-button,
+  .ces-secondary-button,
+  .ces-text-button { min-height: 3rem; }
+  .ces-visual { grid-template-columns: 1fr; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .ces-primary-button,
+  .ces-secondary-button,
+  .ces-text-button { transition: none; }
+}
