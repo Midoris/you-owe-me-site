@@ -853,7 +853,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/expense-tracker-for-couples/", "/solutions/group-payback-tracker/", "/solutions/family-reimbursement-tracker/", "/solutions/roommate-expense-tracker/"],
     appStoreCpp: "general",
     tags: ["find", "situation-router", "money-between-people", "money-owed", "repayment", "live-links", "balance-sync", "group-paybacks", "family", "caregiving", "elderly-parents", "roommates", "temporary-support", "client-records", "tools"],
-    updated: "2026-07-24",
+    updated: "2026-07-26",
     status: "live",
     priority: "core",
     primaryCta: "Find the right place to start",
