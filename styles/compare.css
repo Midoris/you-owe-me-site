@@ -501,6 +501,10 @@ body.splitwise-alternative-page .splitwise-section-media {
   line-height: 0;
 }
 
+body.splitwise-alternative-page .splitwise-section-media picture {
+  display: block;
+}
+
 body.splitwise-alternative-page .splitwise-section-media img {
   display: block;
   width: 100%;
