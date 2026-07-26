@@ -1,10 +1,10 @@
 (function () {
   "use strict";
 
-  const EPSILON = 0.005;
   const MAX_ROOMMATES = 8;
   const MAX_EXPENSES = 40;
   const MAX_ADJUSTMENTS = 24;
+  const MODEL = window.RoommateBillSplitModel;
 
   const CATEGORIES = [
     "Rent",
@@ -23,13 +23,15 @@
     currency: "$",
     currencyMode: "$",
     customCurrency: "",
+    billingPeriod: "",
     roommates: [],
     expenses: [],
     repayments: [],
     previousBalances: [],
     nextRoommateNumber: 1,
     messageTone: "friendly",
-    roommateMessage: ""
+    roommateMessage: "",
+    detailedSummary: ""
   };
 
   const els = {};
@@ -50,6 +52,12 @@
       ? options.includedIds.slice()
       : state.roommates.map((roommate) => roommate.id);
 
+    const billingDays = String((options && options.billingDays) || "30");
+    const usageDetails = Object.assign({}, (options && options.usageDetails) || {});
+    includedIds.forEach((id) => {
+      if (!usageDetails[id]) usageDetails[id] = { daysPresent: billingDays, weight: "1" };
+    });
+
     return {
       id: makeId("expense"),
       description: (options && options.description) || "",
@@ -57,8 +65,25 @@
       amount: (options && options.amount) || "",
       paidBy: (options && options.paidBy) || (state.roommates[0] ? state.roommates[0].id : ""),
       includedIds,
+      mode: (options && options.mode) || ((options && options.splitType) === "custom" ? "custom" : "simple"),
+      advancedOpen: Boolean(options && options.advancedOpen),
       splitType: (options && options.splitType) || "equal",
       customShares: Object.assign({}, (options && options.customShares) || {}),
+      fixedInputType: (options && options.fixedInputType) || "amount",
+      fixedAmount: (options && options.fixedAmount) || "",
+      fixedPercent: (options && options.fixedPercent) || "",
+      fixedSplitType: (options && options.fixedSplitType) || "equal",
+      fixedCustomShares: Object.assign({}, (options && options.fixedCustomShares) || {}),
+      billingDays,
+      usageDetails,
+      guest: Object.assign({
+        enabled: false,
+        name: "Guest",
+        daysPresent: billingDays,
+        weight: "1",
+        responsibility: "direct",
+        hostId: includedIds[0] || ""
+      }, (options && options.guest) || {}),
       note: (options && options.note) || ""
     };
   }
@@ -89,31 +114,18 @@
     };
   }
 
-  function parseAmount(value) {
-    if (typeof value === "number") return Number.isFinite(value) ? value : 0;
-    const normalized = String(value || "").trim().replace(/,/g, "");
-    const amount = Number(normalized);
-    return Number.isFinite(amount) ? amount : 0;
-  }
-
-  function roundMoney(value) {
-    if (Math.abs(value) < EPSILON) return 0;
-    return Math.round((value + Number.EPSILON) * 100) / 100;
-  }
-
   function sanitizeCurrency(value) {
     const trimmed = String(value || "").trim().slice(0, 8);
     return trimmed || "$";
   }
 
-  function formatMoney(value, compact) {
-    const symbol = sanitizeCurrency(state.currency);
-    const number = roundMoney(value).toLocaleString("en-US", {
-      minimumFractionDigits: compact && Number.isInteger(roundMoney(value)) ? 0 : 2,
-      maximumFractionDigits: 2
-    });
-    const space = symbol.length > 1 ? " " : "";
-    return `${symbol}${space}${number}`;
+  function formatMoney(cents, compact) {
+    return MODEL.formatMoney(cents, sanitizeCurrency(state.currency), compact);
+  }
+
+  function centsToInputValue(cents) {
+    const value = BigInt(cents);
+    return `${value / 100n}.${String(value % 100n).padStart(2, "0")}`;
   }
 
   function getRoommateName(roommate, index) {
@@ -178,6 +190,14 @@
   }
 
   function populateRoommateSelect(select, selectedId) {
+    if (!state.roommates.some((roommate) => roommate.id === selectedId)) {
+      const placeholder = document.createElement("option");
+      placeholder.value = "";
+      placeholder.textContent = "Choose a roommate";
+      placeholder.selected = true;
+      placeholder.disabled = true;
+      select.appendChild(placeholder);
+    }
     state.roommates.forEach((roommate, index) => {
       const option = document.createElement("option");
       option.value = roommate.id;
@@ -200,27 +220,35 @@
   function normalizeState() {
     const validIds = new Set(state.roommates.map((roommate) => roommate.id));
     const first = state.roommates[0] ? state.roommates[0].id : "";
-    const second = state.roommates[1] ? state.roommates[1].id : first;
 
     state.expenses.forEach((expense) => {
-      if (!validIds.has(expense.paidBy)) expense.paidBy = first;
+      if (!expense.mode) expense.mode = expense.splitType === "custom" ? "custom" : "simple";
+      if (!expense.usageDetails) expense.usageDetails = {};
+      if (!expense.fixedCustomShares) expense.fixedCustomShares = {};
+      if (!expense.guest) expense.guest = { enabled: false };
+      if (!validIds.has(expense.paidBy)) expense.paidBy = "";
       expense.includedIds = expense.includedIds.filter((id) => validIds.has(id));
       Object.keys(expense.customShares).forEach((id) => {
         if (!validIds.has(id)) delete expense.customShares[id];
       });
+      Object.keys(expense.fixedCustomShares).forEach((id) => {
+        if (!validIds.has(id)) delete expense.fixedCustomShares[id];
+      });
+      Object.keys(expense.usageDetails).forEach((id) => {
+        if (!validIds.has(id)) delete expense.usageDetails[id];
+      });
+      expense.includedIds.forEach((id) => {
+        if (!expense.usageDetails[id]) {
+          expense.usageDetails[id] = { daysPresent: expense.billingDays || "30", weight: "1" };
+        }
+      });
+      if (!validIds.has(expense.guest.hostId) || !expense.includedIds.includes(expense.guest.hostId)) {
+        expense.guest.hostId = expense.includedIds[0] || first;
+      }
     });
 
-    state.repayments.forEach((repayment) => {
-      if (!validIds.has(repayment.fromId)) repayment.fromId = first;
-      if (!validIds.has(repayment.toId)) repayment.toId = second;
-      if (repayment.fromId === repayment.toId && state.roommates.length > 1) repayment.toId = second;
-    });
-
-    state.previousBalances.forEach((balance) => {
-      if (!validIds.has(balance.debtorId)) balance.debtorId = first;
-      if (!validIds.has(balance.creditorId)) balance.creditorId = second;
-      if (balance.debtorId === balance.creditorId && state.roommates.length > 1) balance.creditorId = second;
-    });
+    state.repayments = state.repayments.filter((repayment) => validIds.has(repayment.fromId) && validIds.has(repayment.toId));
+    state.previousBalances = state.previousBalances.filter((balance) => validIds.has(balance.debtorId) && validIds.has(balance.creditorId));
   }
 
   function render() {
@@ -313,6 +341,7 @@
       amount.setAttribute("aria-describedby", `expense-validation-${expense.id}`);
       amount.addEventListener("input", () => {
         expense.amount = amount.value;
+        syncExpenseDependentConstraints(expense, card);
         renderExpenseValidation(expense, card);
         updateResults();
       });
@@ -321,6 +350,7 @@
       populateRoommateSelect(paidBy, expense.paidBy);
       paidBy.addEventListener("change", () => {
         expense.paidBy = paidBy.value;
+        renderExpenseValidation(expense, card);
         updateResults();
       });
 
@@ -334,6 +364,7 @@
       const included = renderIncludedRoommates(expense, card);
       const splitType = renderSplitType(expense);
       const customShares = renderCustomShares(expense, card);
+      const fixedUsage = renderFixedUsage(expense, card);
 
       const note = makeInput(`expense-note-${expense.id}`, expense.note, "text");
       note.placeholder = "Optional note";
@@ -347,7 +378,7 @@
       validation.id = `expense-validation-${expense.id}`;
       validation.setAttribute("aria-live", "polite");
 
-      card.append(header, fields, included, splitType, customShares, makeField("Note", note), validation);
+      card.append(header, fields, included, splitType, customShares, fixedUsage, makeField("Note", note), validation);
       els.expenseList.appendChild(card);
       renderExpenseValidation(expense, card);
     });
@@ -375,9 +406,17 @@
       checkbox.addEventListener("change", () => {
         if (checkbox.checked) {
           if (!expense.includedIds.includes(roommate.id)) expense.includedIds.push(roommate.id);
+          if (!expense.usageDetails[roommate.id]) {
+            expense.usageDetails[roommate.id] = { daysPresent: expense.billingDays || "30", weight: "1" };
+          }
         } else {
           expense.includedIds = expense.includedIds.filter((id) => id !== roommate.id);
           delete expense.customShares[roommate.id];
+          delete expense.fixedCustomShares[roommate.id];
+          delete expense.usageDetails[roommate.id];
+          if (expense.guest.responsibility === "host" && expense.guest.hostId === roommate.id) {
+            expense.guest.hostId = expense.includedIds[0] || "";
+          }
         }
         renderExpenses();
         updateResults();
@@ -395,59 +434,114 @@
   }
 
   function renderSplitType(expense) {
+    const wrap = document.createElement("div");
+    wrap.className = "roommate-advanced-split";
+
+    const toggle = document.createElement("button");
+    toggle.type = "button";
+    toggle.className = "roommate-advanced-toggle";
+    toggle.textContent = "Advanced split options";
+    toggle.setAttribute("aria-expanded", String(Boolean(expense.advancedOpen)));
+    toggle.setAttribute("aria-controls", `advanced-split-${expense.id}`);
+    toggle.addEventListener("click", () => {
+      expense.advancedOpen = !expense.advancedOpen;
+      renderExpenses();
+      const nextToggle = document.querySelector(`[aria-controls="advanced-split-${expense.id}"]`);
+      if (nextToggle) nextToggle.focus();
+    });
+    wrap.appendChild(toggle);
+
+    const panel = document.createElement("div");
+    panel.id = `advanced-split-${expense.id}`;
+    panel.className = "roommate-advanced-panel";
+    panel.hidden = !expense.advancedOpen;
+
+    const intro = document.createElement("p");
+    intro.className = "roommate-field-hint";
+    intro.textContent = "Keep Simple split for an ordinary equal bill. Use the other methods only when the household has agreed on different assumptions.";
+    panel.appendChild(intro);
+
     const fieldset = document.createElement("fieldset");
     fieldset.className = "roommate-fieldset roommate-split-fieldset";
     const legend = document.createElement("legend");
-    legend.textContent = "Split type";
+    legend.textContent = "Calculation method";
     fieldset.appendChild(legend);
 
     const grid = document.createElement("div");
     grid.className = "roommate-segmented";
 
-    ["equal", "custom"].forEach((splitType) => {
+    [
+      ["simple", "Simple split"],
+      ["fixedUsage", "Fixed + usage"],
+      ["custom", "Custom allocation"]
+    ].forEach(([mode, labelText]) => {
       const label = document.createElement("label");
       const input = document.createElement("input");
       input.type = "radio";
-      input.name = `split-type-${expense.id}`;
-      input.value = splitType;
-      input.checked = expense.splitType === splitType;
+      input.name = `split-mode-${expense.id}`;
+      input.value = mode;
+      input.checked = expense.mode === mode;
       input.addEventListener("change", () => {
-        expense.splitType = splitType;
-        if (splitType === "custom") seedCustomShares(expense);
+        expense.mode = mode;
+        expense.splitType = mode === "custom" ? "custom" : "equal";
+        if (mode === "custom") seedCustomShares(expense);
+        if (mode === "fixedUsage") seedUsageDetails(expense);
         renderExpenses();
         updateResults();
+        const nextInput = document.querySelector(`input[name="split-mode-${expense.id}"][value="${mode}"]`);
+        if (nextInput) nextInput.focus();
       });
 
       const text = document.createElement("span");
-      text.textContent = splitType === "equal" ? "Equal" : "Custom amounts";
+      text.textContent = labelText;
       label.append(input, text);
       grid.appendChild(label);
     });
 
     fieldset.appendChild(grid);
-    return fieldset;
+    panel.appendChild(fieldset);
+    wrap.appendChild(panel);
+    return wrap;
+  }
+
+  function seedUsageDetails(expense) {
+    const days = String(expense.billingDays || "30");
+    expense.includedIds.forEach((id) => {
+      if (!expense.usageDetails[id]) expense.usageDetails[id] = { daysPresent: days, weight: "1" };
+    });
+    if (!expense.guest.daysPresent) expense.guest.daysPresent = days;
+    if (!expense.guest.weight) expense.guest.weight = "1";
   }
 
   function seedCustomShares(expense) {
-    const amount = parseAmount(expense.amount);
+    const amountCents = MODEL.parseMoney(expense.amount);
     const included = expense.includedIds.slice();
-    if (amount <= 0 || included.length === 0) return;
+    if (!Number.isFinite(amountCents) || amountCents <= 0 || included.length === 0) return;
 
     const hasAnyShare = included.some((id) => String(expense.customShares[id] || "").trim());
     if (hasAnyShare) return;
 
-    let remaining = roundMoney(amount);
-    included.forEach((id, index) => {
-      const share = index === included.length - 1 ? remaining : roundMoney(amount / included.length);
-      expense.customShares[id] = share.toFixed(2);
-      remaining = roundMoney(remaining - share);
+    MODEL.allocateEqual(amountCents, included).forEach((row) => {
+      expense.customShares[row.id] = centsToInputValue(row.cents);
+    });
+  }
+
+  function syncExpenseDependentConstraints(expense, card) {
+    if (!card) return;
+    const fixedValue = card.querySelector(`#fixed-value-${expense.id}`);
+    if (fixedValue && expense.fixedInputType !== "percent") {
+      fixedValue.max = String(expense.amount || "");
+    }
+    const daysMax = String(expense.billingDays || "");
+    card.querySelectorAll(`input[id^="usage-days-${expense.id}-"], #guest-days-${expense.id}`).forEach((input) => {
+      input.max = daysMax;
     });
   }
 
   function renderCustomShares(expense, card) {
     const wrap = document.createElement("div");
     wrap.className = "roommate-custom-shares";
-    if (expense.splitType !== "custom") return wrap;
+    if (expense.mode !== "custom") return wrap;
 
     const heading = document.createElement("p");
     heading.className = "roommate-mini-heading";
@@ -473,6 +567,298 @@
     });
 
     wrap.appendChild(grid);
+    return wrap;
+  }
+
+  function renderFixedUsage(expense, card) {
+    const wrap = document.createElement("div");
+    wrap.className = "roommate-fixed-usage";
+    if (expense.mode !== "fixedUsage") return wrap;
+
+    const explanation = document.createElement("p");
+    explanation.className = "roommate-advanced-explanation";
+    explanation.textContent = "Separate the unavoidable fixed part from the usage-based part. The usage portion is allocated using days present × agreed usage weight.";
+    wrap.appendChild(explanation);
+
+    const fixedGrid = document.createElement("div");
+    fixedGrid.className = "roommate-advanced-grid";
+
+    const fixedType = makeSelect(`fixed-input-type-${expense.id}`);
+    [
+      ["amount", "Fixed amount"],
+      ["percent", "Fixed percentage"]
+    ].forEach(([value, label]) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = label;
+      option.selected = expense.fixedInputType === value;
+      fixedType.appendChild(option);
+    });
+    fixedType.addEventListener("change", () => {
+      expense.fixedInputType = fixedType.value;
+      renderExpenses();
+      updateResults();
+      const nextSelect = document.querySelector(`#fixed-input-type-${expense.id}`);
+      if (nextSelect) nextSelect.focus();
+    });
+
+    const fixedValue = makeInput(
+      `fixed-value-${expense.id}`,
+      expense.fixedInputType === "percent" ? expense.fixedPercent : expense.fixedAmount,
+      "number"
+    );
+    fixedValue.min = "0";
+    fixedValue.max = expense.fixedInputType === "percent" ? "100" : String(expense.amount || "");
+    fixedValue.step = expense.fixedInputType === "percent" ? "0.0001" : "0.01";
+    fixedValue.inputMode = "decimal";
+    fixedValue.placeholder = expense.fixedInputType === "percent" ? "0–100" : "0.00";
+    fixedValue.setAttribute("aria-describedby", `expense-validation-${expense.id}`);
+    fixedValue.addEventListener("input", () => {
+      if (expense.fixedInputType === "percent") expense.fixedPercent = fixedValue.value;
+      else expense.fixedAmount = fixedValue.value;
+      renderExpenseValidation(expense, card);
+      updateResults();
+    });
+
+    const billingDays = makeInput(`billing-days-${expense.id}`, expense.billingDays, "number");
+    billingDays.min = "1";
+    billingDays.step = "1";
+    billingDays.inputMode = "numeric";
+    billingDays.setAttribute("aria-describedby", `expense-validation-${expense.id}`);
+    billingDays.addEventListener("input", () => {
+      expense.billingDays = billingDays.value;
+      syncExpenseDependentConstraints(expense, card);
+      renderExpenseValidation(expense, card);
+      updateResults();
+    });
+
+    fixedGrid.append(
+      makeField("Fixed input", fixedType),
+      makeField(expense.fixedInputType === "percent" ? "Fixed percentage" : "Fixed amount", fixedValue, "Zero and the full bill are both valid."),
+      makeField("Days in billing period", billingDays)
+    );
+    wrap.appendChild(fixedGrid);
+
+    const fixedRule = document.createElement("fieldset");
+    fixedRule.className = "roommate-fieldset";
+    const fixedLegend = document.createElement("legend");
+    fixedLegend.textContent = "Fixed portion allocation";
+    const fixedRuleGrid = document.createElement("div");
+    fixedRuleGrid.className = "roommate-segmented";
+    [["equal", "Equal"], ["custom", "Custom amounts"]].forEach(([value, textValue]) => {
+      const label = document.createElement("label");
+      const input = document.createElement("input");
+      input.type = "radio";
+      input.name = `fixed-rule-${expense.id}`;
+      input.value = value;
+      input.checked = expense.fixedSplitType === value;
+      input.addEventListener("change", () => {
+        expense.fixedSplitType = value;
+        if (value === "custom") seedFixedCustomShares(expense);
+        renderExpenses();
+        updateResults();
+        const nextInput = document.querySelector(`input[name="fixed-rule-${expense.id}"][value="${value}"]`);
+        if (nextInput) nextInput.focus();
+      });
+      const text = document.createElement("span");
+      text.textContent = textValue;
+      label.append(input, text);
+      fixedRuleGrid.appendChild(label);
+    });
+    fixedRule.append(fixedLegend, fixedRuleGrid);
+    wrap.appendChild(fixedRule);
+
+    if (expense.fixedSplitType === "custom") {
+      const customGrid = document.createElement("div");
+      customGrid.className = "roommate-custom-grid roommate-fixed-custom-grid";
+      expense.includedIds.forEach((id) => {
+        const input = makeInput(`fixed-custom-${expense.id}-${id}`, expense.fixedCustomShares[id] || "", "number");
+        input.min = "0";
+        input.step = "0.01";
+        input.inputMode = "decimal";
+        input.setAttribute("aria-describedby", `expense-validation-${expense.id}`);
+        input.addEventListener("input", () => {
+          expense.fixedCustomShares[id] = input.value;
+          renderExpenseValidation(expense, card);
+          updateResults();
+        });
+        customGrid.appendChild(makeField(`${getRoommateNameById(id)} fixed share`, input));
+      });
+      wrap.appendChild(customGrid);
+    }
+
+    const usageHeading = document.createElement("p");
+    usageHeading.className = "roommate-mini-heading roommate-usage-heading";
+    usageHeading.textContent = "Usage assumptions";
+    wrap.appendChild(usageHeading);
+
+    const usageGrid = document.createElement("div");
+    usageGrid.className = "roommate-usage-grid";
+    expense.includedIds.forEach((id) => {
+      const detail = expense.usageDetails[id] || { daysPresent: expense.billingDays || "30", weight: "1" };
+      expense.usageDetails[id] = detail;
+      usageGrid.appendChild(renderUsagePerson(expense, id, getRoommateNameById(id), detail, card));
+    });
+    wrap.appendChild(usageGrid);
+
+    const guestToggle = document.createElement("label");
+    guestToggle.className = "roommate-check-row";
+    const guestCheckbox = document.createElement("input");
+    guestCheckbox.type = "checkbox";
+    guestCheckbox.checked = Boolean(expense.guest.enabled);
+    guestCheckbox.addEventListener("change", () => {
+      expense.guest.enabled = guestCheckbox.checked;
+      seedUsageDetails(expense);
+      renderExpenses();
+      updateResults();
+      if (expense.guest.enabled) {
+        const guestName = document.querySelector(`#guest-name-${expense.id}`);
+        if (guestName) guestName.focus();
+      }
+    });
+    const guestText = document.createElement("span");
+    guestText.textContent = "Include a temporary occupant or long-staying guest for this bill";
+    guestToggle.append(guestCheckbox, guestText);
+    wrap.appendChild(guestToggle);
+
+    if (expense.guest.enabled) wrap.appendChild(renderGuestFields(expense, card));
+
+    const boundary = document.createElement("p");
+    boundary.className = "roommate-field-hint roommate-assumption-note";
+    boundary.textContent = "Days present and usage weights are agreed proxies, not meter readings. Fixed household costs may still apply during an absence.";
+    wrap.appendChild(boundary);
+    return wrap;
+  }
+
+  function deriveFixedCentsForUi(expense) {
+    const total = MODEL.parseMoney(expense.amount);
+    if (!Number.isFinite(total)) return NaN;
+    return MODEL.deriveFixedCents(expense, total);
+  }
+
+  function seedFixedCustomShares(expense) {
+    const fixedCents = deriveFixedCentsForUi(expense);
+    if (!Number.isFinite(fixedCents) || !expense.includedIds.length) return;
+    const hasValues = expense.includedIds.some((id) => String(expense.fixedCustomShares[id] || "").trim());
+    if (hasValues) return;
+    const rows = MODEL.allocateEqual(fixedCents, expense.includedIds);
+    rows.forEach((row) => {
+      expense.fixedCustomShares[row.id] = centsToInputValue(row.cents);
+    });
+  }
+
+  function renderUsagePerson(expense, id, name, detail, card) {
+    const group = document.createElement("fieldset");
+    group.className = "roommate-usage-person";
+    const legend = document.createElement("legend");
+    legend.textContent = name;
+
+    const days = makeInput(`usage-days-${expense.id}-${id}`, detail.daysPresent, "number");
+    days.min = "0";
+    days.max = expense.billingDays || "";
+    days.step = "1";
+    days.inputMode = "numeric";
+    days.setAttribute("aria-describedby", `expense-validation-${expense.id}`);
+    days.addEventListener("input", () => {
+      detail.daysPresent = days.value;
+      renderExpenseValidation(expense, card);
+      updateResults();
+    });
+
+    const weight = makeInput(`usage-weight-${expense.id}-${id}`, detail.weight, "number");
+    weight.min = "0";
+    weight.step = "0.0001";
+    weight.inputMode = "decimal";
+    weight.setAttribute("aria-describedby", `expense-validation-${expense.id}`);
+    weight.addEventListener("input", () => {
+      detail.weight = weight.value;
+      renderExpenseValidation(expense, card);
+      updateResults();
+    });
+
+    const fields = document.createElement("div");
+    fields.className = "roommate-usage-fields";
+    fields.append(makeField("Days present", days), makeField("Usage weight", weight, "Default 1"));
+    group.append(legend, fields);
+    return group;
+  }
+
+  function renderGuestFields(expense, card) {
+    const guest = expense.guest;
+    const wrap = document.createElement("div");
+    wrap.className = "roommate-guest-panel";
+    const heading = document.createElement("p");
+    heading.className = "roommate-mini-heading";
+    heading.textContent = "Temporary occupant";
+
+    const name = makeInput(`guest-name-${expense.id}`, guest.name, "text");
+    name.maxLength = 40;
+    name.addEventListener("input", () => {
+      guest.name = name.value;
+      renderExpenseValidation(expense, card);
+      updateResults();
+    });
+    const days = makeInput(`guest-days-${expense.id}`, guest.daysPresent, "number");
+    days.min = "0";
+    days.max = expense.billingDays || "";
+    days.step = "1";
+    days.addEventListener("input", () => {
+      guest.daysPresent = days.value;
+      renderExpenseValidation(expense, card);
+      updateResults();
+    });
+    const weight = makeInput(`guest-weight-${expense.id}`, guest.weight, "number");
+    weight.min = "0";
+    weight.step = "0.0001";
+    weight.addEventListener("input", () => {
+      guest.weight = weight.value;
+      renderExpenseValidation(expense, card);
+      updateResults();
+    });
+    [name, days, weight].forEach((input) => input.setAttribute("aria-describedby", `expense-validation-${expense.id}`));
+
+    const responsibility = makeSelect(`guest-responsibility-${expense.id}`);
+    [["direct", "Occupant pays directly"], ["host", "A host is responsible"]].forEach(([value, textValue]) => {
+      const option = document.createElement("option");
+      option.value = value;
+      option.textContent = textValue;
+      option.selected = guest.responsibility === value;
+      responsibility.appendChild(option);
+    });
+    responsibility.addEventListener("change", () => {
+      guest.responsibility = responsibility.value;
+      renderExpenses();
+      updateResults();
+      const nextSelect = document.querySelector(`#guest-responsibility-${expense.id}`);
+      if (nextSelect) nextSelect.focus();
+    });
+
+    const grid = document.createElement("div");
+    grid.className = "roommate-advanced-grid";
+    grid.append(
+      makeField("Name or label", name),
+      makeField("Days present", days),
+      makeField("Usage weight", weight),
+      makeField("Who is responsible", responsibility)
+    );
+
+    if (guest.responsibility === "host") {
+      const host = makeSelect(`guest-host-${expense.id}`);
+      expense.includedIds.forEach((id) => {
+        const option = document.createElement("option");
+        option.value = id;
+        option.textContent = getRoommateNameById(id);
+        option.selected = guest.hostId === id;
+        host.appendChild(option);
+      });
+      host.addEventListener("change", () => {
+        guest.hostId = host.value;
+        renderExpenseValidation(expense, card);
+        updateResults();
+      });
+      grid.appendChild(makeField("Assigned host", host, "The guest share stays visible and is added to this roommate once."));
+    }
+    wrap.append(heading, grid);
     return wrap;
   }
 
@@ -625,224 +1011,179 @@
   }
 
   function validateExpense(expense) {
-    const amountText = String(expense.amount || "").trim();
-    const amount = parseAmount(expense.amount);
-    const included = expense.includedIds.filter((id) => getRoommateIndex(id) !== -1);
+    return getExpenseErrors(expense)
+      .map((error) => error.message.replace(/\$/g, sanitizeCurrency(state.currency)))
+      .join(" ");
+  }
 
-    if (amountText && amount <= 0) return "Enter an amount greater than zero.";
-    if (amount <= 0) return "";
-    if (getRoommateIndex(expense.paidBy) === -1) return "Choose who paid for this bill.";
-    if (included.length === 0) return "Select at least one roommate included in this bill.";
-
-    if (expense.splitType === "custom") {
-      const shares = included.map((id) => parseAmount(expense.customShares[id]));
-      if (shares.some((share) => share < 0)) return "Custom shares cannot be negative.";
-      const sum = shares.reduce((total, share) => total + share, 0);
-      if (Math.abs(roundMoney(sum - amount)) > 0.01) {
-        return `Custom shares currently add up to ${formatMoney(sum)}. They need to add up to ${formatMoney(amount)}.`;
-      }
-    }
-
-    return "";
+  function getExpenseErrors(expense) {
+    return MODEL.validateExpense(expense, state.roommates);
   }
 
   function renderExpenseValidation(expense, card) {
     const validation = card && card.querySelector(`#expense-validation-${expense.id}`);
     if (!validation) return;
-    const message = validateExpense(expense);
+    const errors = getExpenseErrors(expense);
+    const message = errors.map((error) => error.message.replace(/\$/g, sanitizeCurrency(state.currency))).join(" ");
     validation.textContent = message;
+    const controls = card.querySelectorAll("input, select");
+    controls.forEach((control) => control.setAttribute("aria-invalid", "false"));
+    errors.forEach((error) => {
+      let selectors = [];
+      if (error.field === "amount") selectors = [`#expense-amount-${expense.id}`];
+      if (error.field === "paidBy") selectors = [`#expense-paid-by-${expense.id}`];
+      if (error.field === "included") selectors = [`input[id^="expense-included-${expense.id}-"]`];
+      if (error.field === "customShares") selectors = [`input[id^="custom-share-${expense.id}-"]`];
+      if (error.field === "fixedAmount" || error.field === "fixedPercent") selectors = [`#fixed-value-${expense.id}`];
+      if (error.field === "billingDays") selectors = [`#billing-days-${expense.id}`];
+      if (error.field === "fixedCustomShares") selectors = [`input[id^="fixed-custom-${expense.id}-"]`];
+      if (error.field === "usage") selectors = [`input[id^="usage-days-${expense.id}-"]`, `input[id^="usage-weight-${expense.id}-"]`];
+      if (error.field.startsWith("days-")) selectors = [`#usage-days-${expense.id}-${error.field.slice(5)}`];
+      if (error.field.startsWith("weight-")) selectors = [`#usage-weight-${expense.id}-${error.field.slice(7)}`];
+      if (error.field === "guestName") selectors = [`#guest-name-${expense.id}`];
+      if (error.field === "guestDays") selectors = [`#guest-days-${expense.id}`];
+      if (error.field === "guestWeight") selectors = [`#guest-weight-${expense.id}`];
+      if (error.field === "guestHost") selectors = [`#guest-host-${expense.id}`];
+      selectors.forEach((selector) => {
+        card.querySelectorAll(selector).forEach((control) => {
+          control.setAttribute("aria-invalid", "true");
+          control.setAttribute("aria-describedby", `expense-validation-${expense.id}`);
+        });
+      });
+    });
   }
 
   function validateAdjustment(row, type) {
-    const amountText = String(row.amount || "").trim();
-    const amount = parseAmount(row.amount);
-    if (amountText && amount <= 0) return "Enter an amount greater than zero.";
-    if (amount <= 0) return "";
-
-    if (type === "repayment") {
-      if (row.fromId === row.toId) return "Choose two different roommates for a repayment.";
-      if (getRoommateIndex(row.fromId) === -1 || getRoommateIndex(row.toId) === -1) return "Choose valid roommates.";
-    } else {
-      if (row.debtorId === row.creditorId) return "Choose two different roommates for a previous balance.";
-      if (getRoommateIndex(row.debtorId) === -1 || getRoommateIndex(row.creditorId) === -1) return "Choose valid roommates.";
-    }
-
-    return "";
+    return MODEL.validateAdjustment(row, type, state.roommates);
   }
 
   function renderAdjustmentValidation(row, card, type) {
     const prefix = type === "repayment" ? "repayment" : "previous";
     const validation = card && card.querySelector(`#${prefix}-validation-${row.id}`);
     if (!validation) return;
-    validation.textContent = validateAdjustment(row, type);
-  }
-
-  function calculateExpenseShares(expense) {
-    const amount = parseAmount(expense.amount);
-    const included = expense.includedIds.filter((id) => getRoommateIndex(id) !== -1);
-    if (amount <= 0 || getRoommateIndex(expense.paidBy) === -1 || included.length === 0) return null;
-    if (validateExpense(expense)) return null;
-
-    if (expense.splitType === "custom") {
-      return included.map((id) => ({
-        id,
-        amount: parseAmount(expense.customShares[id])
-      }));
-    }
-
-    return included.map((id) => ({
-      id,
-      amount: amount / included.length
-    }));
+    const errors = validateAdjustment(row, type);
+    validation.textContent = errors.map((error) => error.message).join(" ");
+    const amount = card.querySelector(`#${prefix}-amount-${row.id}`);
+    const from = card.querySelector(type === "repayment" ? `#repayment-from-${row.id}` : `#previous-debtor-${row.id}`);
+    const to = card.querySelector(type === "repayment" ? `#repayment-to-${row.id}` : `#previous-creditor-${row.id}`);
+    [amount, from, to].forEach((control) => {
+      if (control) control.setAttribute("aria-invalid", "false");
+    });
+    errors.forEach((error) => {
+      const controls = error.field === "amount" ? [amount] : [from, to];
+      controls.forEach((control) => {
+        if (!control) return;
+        control.setAttribute("aria-invalid", "true");
+        control.setAttribute("aria-describedby", `${prefix}-validation-${row.id}`);
+      });
+    });
   }
 
   function calculate() {
-    const balances = new Map();
-    const paid = new Map();
-    const fairShare = new Map();
-    const repaymentSent = new Map();
-    const repaymentReceived = new Map();
-    const previousOwed = new Map();
-    const previousOwedTo = new Map();
-
-    state.roommates.forEach((roommate) => {
-      balances.set(roommate.id, 0);
-      paid.set(roommate.id, 0);
-      fairShare.set(roommate.id, 0);
-      repaymentSent.set(roommate.id, 0);
-      repaymentReceived.set(roommate.id, 0);
-      previousOwed.set(roommate.id, 0);
-      previousOwedTo.set(roommate.id, 0);
-    });
-
-    let totalBills = 0;
-    let expenseCount = 0;
-    let repaymentCount = 0;
-    let repaymentTotal = 0;
-    let previousBalanceCount = 0;
-    let previousBalanceTotal = 0;
-    const categories = new Set();
-
-    state.expenses.forEach((expense) => {
-      const shares = calculateExpenseShares(expense);
-      if (!shares) return;
-
-      const amount = parseAmount(expense.amount);
-      totalBills += amount;
-      expenseCount += 1;
-      categories.add(expense.category || "Other");
-
-      paid.set(expense.paidBy, paid.get(expense.paidBy) + amount);
-      balances.set(expense.paidBy, balances.get(expense.paidBy) + amount);
-
-      shares.forEach((share) => {
-        fairShare.set(share.id, fairShare.get(share.id) + share.amount);
-        balances.set(share.id, balances.get(share.id) - share.amount);
-      });
-    });
-
-    applyRepayments(balances, repaymentSent, repaymentReceived, (countedAmount) => {
-      repaymentCount += 1;
-      repaymentTotal += countedAmount;
-    });
-
-    applyPreviousBalances(balances, previousOwed, previousOwedTo, (countedAmount) => {
-      previousBalanceCount += 1;
-      previousBalanceTotal += countedAmount;
-    });
-
-    const net = state.roommates.map((roommate, index) => ({
-      id: roommate.id,
-      name: getRoommateName(roommate, index),
-      paid: roundMoney(paid.get(roommate.id) || 0),
-      fairShare: roundMoney(fairShare.get(roommate.id) || 0),
-      repaymentSent: roundMoney(repaymentSent.get(roommate.id) || 0),
-      repaymentReceived: roundMoney(repaymentReceived.get(roommate.id) || 0),
-      previousOwed: roundMoney(previousOwed.get(roommate.id) || 0),
-      previousOwedTo: roundMoney(previousOwedTo.get(roommate.id) || 0),
-      net: roundMoney(balances.get(roommate.id) || 0)
-    }));
-
+    const raw = MODEL.calculate(state);
     const result = {
-      totalBills: roundMoney(totalBills),
-      expenseCount,
-      roommateCount: state.roommates.length,
-      repaymentCount,
-      repaymentTotal: roundMoney(repaymentTotal),
-      previousBalanceCount,
-      previousBalanceTotal: roundMoney(previousBalanceTotal),
-      categories: Array.from(categories),
-      net
+      raw,
+      totalBills: raw.totalBillsCents,
+      expenseCount: raw.expenseCount,
+      roommateCount: raw.roommateCount,
+      repaymentCount: raw.repaymentCount,
+      repaymentTotal: raw.repaymentTotalCents,
+      previousBalanceCount: raw.previousBalanceCount,
+      previousBalanceTotal: raw.previousBalanceTotalCents,
+      categories: raw.categories,
+      bills: raw.bills,
+      errors: raw.errors,
+      adjustmentErrors: raw.adjustmentErrors,
+      net: raw.participants.map((row) => ({
+        id: row.id,
+        name: row.name,
+        kind: row.kind,
+        paid: row.paidCents,
+        fairShare: row.responsibilityCents,
+        repaymentSent: row.repaymentSentCents,
+        repaymentReceived: row.repaymentReceivedCents,
+        previousOwed: row.previousOwedCents,
+        previousOwedTo: row.previousOwedToCents,
+        net: row.netCents
+      })),
+      settlements: raw.settlements.map((settlement) => ({
+        from: settlement.from,
+        to: settlement.to,
+        amount: settlement.cents
+      }))
     };
-    result.settlements = simplifySettlements(net);
     return result;
-  }
-
-  function applyRepayments(balances, repaymentSent, repaymentReceived, onCounted) {
-    state.repayments.forEach((repayment) => {
-      const amount = parseAmount(repayment.amount);
-      if (amount <= 0 || validateAdjustment(repayment, "repayment")) return;
-      balances.set(repayment.fromId, balances.get(repayment.fromId) + amount);
-      balances.set(repayment.toId, balances.get(repayment.toId) - amount);
-      repaymentSent.set(repayment.fromId, repaymentSent.get(repayment.fromId) + amount);
-      repaymentReceived.set(repayment.toId, repaymentReceived.get(repayment.toId) + amount);
-      onCounted(amount);
-    });
-  }
-
-  function applyPreviousBalances(balances, previousOwed, previousOwedTo, onCounted) {
-    state.previousBalances.forEach((balance) => {
-      const amount = parseAmount(balance.amount);
-      if (amount <= 0 || validateAdjustment(balance, "previous")) return;
-      balances.set(balance.debtorId, balances.get(balance.debtorId) - amount);
-      balances.set(balance.creditorId, balances.get(balance.creditorId) + amount);
-      previousOwed.set(balance.debtorId, previousOwed.get(balance.debtorId) + amount);
-      previousOwedTo.set(balance.creditorId, previousOwedTo.get(balance.creditorId) + amount);
-      onCounted(amount);
-    });
-  }
-
-  function simplifySettlements(netRows) {
-    const creditors = netRows
-      .filter((row) => row.net > EPSILON)
-      .map((row) => ({ name: row.name, amount: row.net }))
-      .sort((a, b) => b.amount - a.amount);
-
-    const debtors = netRows
-      .filter((row) => row.net < -EPSILON)
-      .map((row) => ({ name: row.name, amount: Math.abs(row.net) }))
-      .sort((a, b) => a.amount - b.amount);
-
-    const settlements = [];
-    let creditorIndex = 0;
-
-    debtors.forEach((debtor) => {
-      while (debtor.amount > EPSILON && creditorIndex < creditors.length) {
-        const creditor = creditors[creditorIndex];
-        const amount = roundMoney(Math.min(debtor.amount, creditor.amount));
-        if (amount < 0.01) break;
-
-        settlements.push({
-          from: debtor.name,
-          to: creditor.name,
-          amount
-        });
-
-        debtor.amount = roundMoney(debtor.amount - amount);
-        creditor.amount = roundMoney(creditor.amount - amount);
-        if (creditor.amount <= EPSILON) creditorIndex += 1;
-      }
-    });
-
-    return settlements.filter((settlement) => settlement.amount >= 0.01);
   }
 
   function updateResults() {
     const result = calculate();
     renderSettlements(result);
+    renderBillBreakdown(result);
     renderBalanceSummary(result);
     renderMonthlySummary(result);
+    renderAssumptions(result);
     renderGeneratedMessage(result);
+    renderDetailedSummary(result);
+  }
+
+  function renderBillBreakdown(result) {
+    if (!els.billBreakdown) return;
+    clearNode(els.billBreakdown);
+    if (!result.bills.length) {
+      appendEmpty(els.billBreakdown, "Add a valid bill to review its method and responsibility breakdown.");
+      return;
+    }
+
+    result.bills.forEach((bill) => {
+      const card = document.createElement("article");
+      card.className = "roommate-bill-result-card";
+      const heading = document.createElement("div");
+      heading.className = "roommate-bill-result-header";
+      const title = document.createElement("h5");
+      title.textContent = bill.name;
+      const total = document.createElement("strong");
+      total.textContent = formatMoney(bill.amountCents);
+      heading.append(title, total);
+
+      const method = document.createElement("p");
+      method.className = "roommate-bill-method";
+      method.textContent = bill.methodLabel;
+      card.append(heading, method);
+
+      if (bill.mode === "fixedUsage") {
+        const details = document.createElement("dl");
+        details.className = "roommate-balance-details roommate-method-details";
+        appendDefinition(details, "Fixed portion", `${formatMoney(bill.fixedCents)} (${bill.fixedRule.toLowerCase()})`);
+        appendDefinition(details, "Usage portion", formatMoney(bill.usageCents));
+        if (bill.billingDays != null) appendDefinition(details, "Billing period", `${bill.billingDays} days`);
+        bill.participants.forEach((participant) => {
+          const participantName = participant.kind === "guest"
+            ? bill.guest.name
+            : getRoommateNameById(participant.id);
+          appendDefinition(
+            details,
+            `${participantName} usage`,
+            `${participant.days} days × ${participant.weightScaled / MODEL.WEIGHT_SCALE} = ${participant.units / MODEL.WEIGHT_SCALE} units`
+          );
+        });
+        if (bill.guest) {
+          const assigned = bill.guest.responsibility === "host"
+            ? `assigned to ${getRoommateNameById(bill.guest.hostId)}`
+            : "pays directly";
+          appendDefinition(details, `${bill.guest.name} usage share`, `${formatMoney(bill.guest.cents)}; ${assigned}`);
+        }
+        card.appendChild(details);
+      }
+
+      const shares = document.createElement("dl");
+      shares.className = "roommate-balance-details roommate-responsibility-details";
+      bill.responsibilityRows.forEach((share) => {
+        const participant = result.raw.participants.find((row) => row.id === share.id);
+        appendDefinition(shares, `${participant ? participant.name : "Someone"} responsibility`, formatMoney(share.cents));
+      });
+      card.appendChild(shares);
+      els.billBreakdown.appendChild(card);
+    });
   }
 
   function renderSettlements(result) {
@@ -878,10 +1219,10 @@
       const status = document.createElement("span");
       status.className = "roommate-status-chip";
 
-      if (row.net > EPSILON) {
+      if (row.net > 0) {
         status.textContent = `Gets back ${formatMoney(row.net)}`;
         status.classList.add("is-positive");
-      } else if (row.net < -EPSILON) {
+      } else if (row.net < 0) {
         status.textContent = `Owes ${formatMoney(Math.abs(row.net))}`;
         status.classList.add("is-negative");
       } else {
@@ -893,7 +1234,7 @@
       const list = document.createElement("dl");
       list.className = "roommate-balance-details";
       appendDefinition(list, "Total paid", formatMoney(row.paid));
-      appendDefinition(list, "Fair share", formatMoney(row.fairShare));
+      appendDefinition(list, "Total responsibility", formatMoney(row.fairShare));
       appendDefinition(list, "Repayments sent", formatMoney(row.repaymentSent));
       appendDefinition(list, "Repayments received", formatMoney(row.repaymentReceived));
       appendDefinition(list, "Previous balance", describePreviousBalance(row));
@@ -906,8 +1247,8 @@
 
   function describePreviousBalance(row) {
     const parts = [];
-    if (row.previousOwed > EPSILON) parts.push(`owed ${formatMoney(row.previousOwed)}`);
-    if (row.previousOwedTo > EPSILON) parts.push(`was owed ${formatMoney(row.previousOwedTo)}`);
+    if (row.previousOwed > 0) parts.push(`owed ${formatMoney(row.previousOwed)}`);
+    if (row.previousOwedTo > 0) parts.push(`was owed ${formatMoney(row.previousOwedTo)}`);
     return parts.length ? parts.join(", ") : formatMoney(0);
   }
 
@@ -930,9 +1271,39 @@
     appendResultItem(els.monthlySummary, "Previous balances counted", `${result.previousBalanceCount} (${formatMoney(result.previousBalanceTotal)})`);
   }
 
+  function renderAssumptions(result) {
+    if (!els.assumptions) return;
+    clearNode(els.assumptions);
+    const paragraphs = [];
+    const hasSimple = result.bills.some((bill) => bill.mode === "simple");
+    const hasCustom = result.bills.some((bill) => bill.mode === "custom");
+    const hasFixed = result.bills.some((bill) => bill.mode === "fixedUsage");
+    const hasUsage = result.bills.some((bill) => bill.mode === "fixedUsage" && bill.usageCents > 0);
+    if (hasSimple) paragraphs.push("Simple split divides each valid bill equally among the roommates included in that bill.");
+    if (hasCustom) paragraphs.push("Custom allocation uses the exact amounts the household entered.");
+    if (hasFixed && !hasUsage) paragraphs.push("The selected fixed portion uses the household’s agreed fixed-allocation rule; inactive usage inputs do not affect the result.");
+    if (hasUsage) {
+      paragraphs.push("To handle an absence transparently, separate the unavoidable fixed part from the usage-based part. Apply the household’s agreed rule to the fixed portion, then allocate only the usage portion using days present and any agreed usage weights.");
+      paragraphs.push("Days present and usage weights are agreed estimates. They do not prove exact consumption or determine legal responsibility for a bill.");
+    }
+    paragraphs.push(hasFixed
+      ? "No method is universally fair. Fixed costs may remain payable during an absence, and formal lease, deposit, or rental disputes need an appropriate external source."
+      : "This is an agreed household estimate. It does not determine lease, contract, deposit, or legal responsibility.");
+    paragraphs.forEach((text) => {
+      const paragraph = document.createElement("p");
+      paragraph.textContent = text;
+      els.assumptions.appendChild(paragraph);
+    });
+  }
+
   function renderGeneratedMessage(result) {
     state.roommateMessage = buildRoommateMessage(result, state.messageTone);
     els.generatedMessage.textContent = state.roommateMessage;
+  }
+
+  function renderDetailedSummary(result) {
+    state.detailedSummary = MODEL.buildCopySummary(result.raw);
+    if (els.detailedSummary) els.detailedSummary.textContent = state.detailedSummary;
   }
 
   function buildRoommateMessage(result, tone) {
@@ -1020,8 +1391,14 @@
     state.roommates.push(roommate);
     state.expenses.forEach((expense) => {
       if (!expense.includedIds.includes(roommate.id)) expense.includedIds.push(roommate.id);
+      expense.usageDetails[roommate.id] = {
+        daysPresent: expense.billingDays || "30",
+        weight: "1"
+      };
     });
     render();
+    const input = document.querySelector(`#roommate-name-${roommate.id}`);
+    if (input) input.focus();
   }
 
   function removeRoommate(id) {
@@ -1030,52 +1407,82 @@
       return;
     }
     state.roommates = state.roommates.filter((roommate) => roommate.id !== id);
+    state.expenses.forEach((expense) => {
+      if (expense.paidBy === id) expense.paidBy = "";
+    });
+    state.repayments = state.repayments.filter((repayment) => repayment.fromId !== id && repayment.toId !== id);
+    state.previousBalances = state.previousBalances.filter((balance) => balance.debtorId !== id && balance.creditorId !== id);
     render();
+    const addButton = document.querySelector('[data-action="add-roommate"]');
+    if (addButton) addButton.focus();
   }
 
   function addExpense() {
     if (state.expenses.length >= MAX_EXPENSES) return;
-    state.expenses.push(createExpense({
+    const expense = createExpense({
       description: "",
       category: "Other",
       amount: "",
       paidBy: state.roommates[0] ? state.roommates[0].id : ""
-    }));
+    });
+    state.expenses.push(expense);
     render();
+    const input = document.querySelector(`#expense-description-${expense.id}`);
+    if (input) input.focus();
   }
 
   function removeExpense(id) {
     state.expenses = state.expenses.filter((expense) => expense.id !== id);
-    if (state.expenses.length === 0) addExpense();
+    if (state.expenses.length === 0) {
+      state.expenses.push(createExpense({
+        description: "",
+        category: "Other",
+        amount: "",
+        paidBy: state.roommates[0] ? state.roommates[0].id : ""
+      }));
+    }
     render();
+    const addButton = document.querySelector('[data-action="add-expense"]');
+    if (addButton) addButton.focus();
   }
 
   function addRepayment() {
     if (state.repayments.length >= MAX_ADJUSTMENTS) return;
-    state.repayments.push(createRepayment());
+    const repayment = createRepayment();
+    state.repayments.push(repayment);
     render();
+    const input = document.querySelector(`#repayment-amount-${repayment.id}`);
+    if (input) input.focus();
   }
 
   function removeRepayment(id) {
     state.repayments = state.repayments.filter((repayment) => repayment.id !== id);
     render();
+    const addButton = document.querySelector('[data-action="add-repayment"]');
+    if (addButton) addButton.focus();
   }
 
   function addPreviousBalance() {
     if (state.previousBalances.length >= MAX_ADJUSTMENTS) return;
-    state.previousBalances.push(createPreviousBalance());
+    const balance = createPreviousBalance();
+    state.previousBalances.push(balance);
     render();
+    const input = document.querySelector(`#previous-amount-${balance.id}`);
+    if (input) input.focus();
   }
 
   function removePreviousBalance(id) {
     state.previousBalances = state.previousBalances.filter((balance) => balance.id !== id);
     render();
+    const addButton = document.querySelector('[data-action="add-previous-balance"]');
+    if (addButton) addButton.focus();
   }
 
   function loadExample() {
     state.currency = "$";
     state.currencyMode = "$";
     state.customCurrency = "";
+    state.billingPeriod = "Example month";
     state.nextRoommateNumber = 1;
     state.roommates = [createRoommate("Alex"), createRoommate("Maya"), createRoommate("Sam")];
     state.nextRoommateNumber = 4;
@@ -1096,6 +1503,7 @@
     ];
     state.previousBalances = [];
     syncCurrencyControls();
+    syncBillingPeriod();
     render();
   }
 
@@ -1103,6 +1511,7 @@
     state.currency = "$";
     state.currencyMode = "$";
     state.customCurrency = "";
+    state.billingPeriod = "";
     state.nextRoommateNumber = 1;
     state.roommates = [createRoommate("Roommate 1"), createRoommate("Roommate 2")];
     state.nextRoommateNumber = 3;
@@ -1118,7 +1527,112 @@
     state.repayments = [];
     state.previousBalances = [];
     syncCurrencyControls();
+    syncBillingPeriod();
     render();
+  }
+
+  function loadPreset(name) {
+    state.currency = "$";
+    state.currencyMode = "$";
+    state.customCurrency = "";
+    state.billingPeriod = "Example month";
+    state.nextRoommateNumber = 1;
+    state.roommates = [createRoommate("Alex"), createRoommate("Maya"), createRoommate("Sam")];
+    state.nextRoommateNumber = 4;
+    const alex = state.roommates[0].id;
+    const maya = state.roommates[1].id;
+    const sam = state.roommates[2].id;
+    const all = [alex, maya, sam];
+    const fullUsage = {
+      [alex]: { daysPresent: "30", weight: "1" },
+      [maya]: { daysPresent: "30", weight: "1" },
+      [sam]: { daysPresent: "30", weight: "1" }
+    };
+
+    if (name === "away") {
+      state.expenses = [createExpense({
+        description: "Electricity",
+        category: "Electricity",
+        amount: "120",
+        paidBy: alex,
+        includedIds: all,
+        mode: "fixedUsage",
+        advancedOpen: true,
+        fixedAmount: "30",
+        billingDays: "30",
+        usageDetails: Object.assign({}, fullUsage, {
+          [sam]: { daysPresent: "10", weight: "1" }
+        })
+      })];
+    } else if (name === "fixed-usage") {
+      state.expenses = [
+        createExpense({ description: "Broadband", category: "Internet", amount: "60", paidBy: maya, includedIds: all }),
+        createExpense({
+          description: "Electricity",
+          category: "Electricity",
+          amount: "150",
+          paidBy: alex,
+          includedIds: all,
+          mode: "fixedUsage",
+          advancedOpen: true,
+          fixedInputType: "percent",
+          fixedPercent: "20",
+          billingDays: "30",
+          usageDetails: fullUsage
+        })
+      ];
+    } else if (name === "guest") {
+      state.expenses = [createExpense({
+        description: "Water and electricity",
+        category: "Electricity",
+        amount: "160",
+        paidBy: alex,
+        includedIds: all,
+        mode: "fixedUsage",
+        advancedOpen: true,
+        fixedAmount: "40",
+        billingDays: "30",
+        usageDetails: fullUsage,
+        guest: {
+          enabled: true,
+          name: "Lee",
+          daysPresent: "20",
+          weight: "1",
+          responsibility: "host",
+          hostId: maya
+        }
+      })];
+    } else if (name === "weighted") {
+      state.expenses = [createExpense({
+        description: "Electricity",
+        category: "Electricity",
+        amount: "150",
+        paidBy: maya,
+        includedIds: all,
+        mode: "fixedUsage",
+        advancedOpen: true,
+        fixedAmount: "30",
+        billingDays: "30",
+        usageDetails: Object.assign({}, fullUsage, {
+          [alex]: { daysPresent: "30", weight: "1.5" }
+        })
+      })];
+    } else {
+      state.expenses = [createExpense({
+        description: "Internet",
+        category: "Internet",
+        amount: "60",
+        paidBy: alex,
+        includedIds: all
+      })];
+    }
+    state.repayments = [];
+    state.previousBalances = [];
+    syncCurrencyControls();
+    syncBillingPeriod();
+    render();
+    const calculator = document.querySelector("#calculator");
+    if (calculator) calculator.scrollIntoView({ behavior: "smooth", block: "start" });
   }
 
   async function copyText(text, statusElement) {
@@ -1156,6 +1670,10 @@
     els.currencyCustom.hidden = state.currencyMode !== "custom";
   }
 
+  function syncBillingPeriod() {
+    if (els.billingPeriod) els.billingPeriod.value = state.billingPeriod;
+  }
+
   function handleCurrencyChange() {
     const mode = els.currencyPreset.value;
     state.currencyMode = mode;
@@ -1182,6 +1700,8 @@
       if (action === "load-example") loadExample();
       if (action === "start-blank") startBlank();
       if (action === "copy-generated-message") copyText(state.roommateMessage, els.generatedCopyStatus);
+      if (action === "copy-detailed-summary") copyText(state.detailedSummary, els.detailedCopyStatus);
+      if (action === "load-preset") loadPreset(target.getAttribute("data-preset") || "ordinary");
       if (action === "copy-static-message") {
         const card = target.closest(".roommate-message-card");
         const message = card && card.querySelector("[data-message-text]");
@@ -1199,6 +1719,10 @@
       state.messageTone = els.messageTone.value;
       updateResults();
     });
+    els.billingPeriod.addEventListener("input", () => {
+      state.billingPeriod = els.billingPeriod.value;
+      updateResults();
+    });
   }
 
   function init() {
@@ -1213,10 +1737,15 @@
     els.settlementList = document.querySelector("[data-settlement-list]");
     els.balanceSummary = document.querySelector("[data-balance-summary]");
     els.monthlySummary = document.querySelector("[data-monthly-summary]");
+    els.billBreakdown = document.querySelector("[data-bill-breakdown]");
+    els.assumptions = document.querySelector("[data-assumptions]");
     els.generatedMessage = document.querySelector("[data-generated-message]");
     els.generatedCopyStatus = document.querySelector("[data-generated-copy-status]");
+    els.detailedSummary = document.querySelector("[data-detailed-summary]");
+    els.detailedCopyStatus = document.querySelector("[data-detailed-copy-status]");
     els.currencyPreset = document.querySelector("#roommate-currency");
     els.currencyCustom = document.querySelector("#roommate-currency-custom");
+    els.billingPeriod = document.querySelector("#roommate-billing-period");
     els.messageTone = document.querySelector("#roommate-message-tone");
 
     bindEvents();

@@ -43,7 +43,7 @@
           "name": "Roommate Bill Split Calculator",
           "description": "Split rent, utilities, groceries, subscriptions, and household costs with roommates. Add repayments and see who owes whom this month.",
           "url": "https://you-owe-me.com/tools/roommate-bill-split-calculator/",
-          "dateModified": "2026-07-05",
+          "dateModified": "2026-07-26",
           "isPartOf": {
             "@type": "CollectionPage",
             "name": "Money Tools and Templates",
@@ -256,7 +256,7 @@
                 <div>
                   <p class="lt-sectionEyebrow">Browser calculator</p>
                   <h2 id="calculator-title">Calculate roommate bills</h2>
-                  <p>Add roommates, shared expenses, repayments, and any previous balance. The calculator will show each person&apos;s fair share and the simplest way to settle up.</p>
+                  <p>Add roommates, shared expenses, repayments, and any previous balance. The calculator will show each person&apos;s responsibility and the simplest way to settle up.</p>
                   <p class="roommate-privacy-note">This calculator runs in your browser. No account needed.</p>
                 </div>
                 <div class="roommate-toolbar" aria-label="Calculator controls">
@@ -273,6 +273,10 @@
                       <option value="custom">Custom</option>
                     </select>
                     <input id="roommate-currency-custom" class="roommate-input" type="text" maxlength="8" placeholder="Symbol" autocomplete="off" hidden />
+                  </div>
+                  <div class="roommate-field">
+                    <label for="roommate-billing-period">Billing period</label>
+                    <input id="roommate-billing-period" class="roommate-input" type="text" maxlength="60" placeholder="Example: July 2026" autocomplete="off" />
                   </div>
                   <div class="roommate-toolbar-actions">
                     <button type="button" class="roommate-secondary-button" data-action="load-example">Reset example</button>
@@ -306,6 +310,17 @@
                       <button type="button" class="roommate-small-button" data-action="add-expense">Add bill</button>
                     </div>
                     <div class="roommate-entry-list" data-expense-list></div>
+                    <details class="roommate-presets">
+                      <summary>Try an example split</summary>
+                      <p>Examples replace the calculator inputs. The ordinary equal month remains the default experience.</p>
+                      <div class="roommate-preset-grid">
+                        <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="ordinary">Ordinary equal month</button>
+                        <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="away">Roommate away</button>
+                        <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="fixed-usage">Broadband + electricity</button>
+                        <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="guest">Long-staying guest</button>
+                        <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="weighted">Heavier usage weight</button>
+                      </div>
+                    </details>
                   </section>
 
                   <section class="roommate-step-card" aria-labelledby="adjustments-title">
@@ -352,6 +367,11 @@
                     <div class="roommate-settlement-list" data-settlement-list aria-live="polite"></div>
                   </section>
 
+                  <section class="roommate-result-block" aria-labelledby="bill-breakdown-title">
+                    <h4 id="bill-breakdown-title">Bill responsibility details</h4>
+                    <div class="roommate-bill-breakdown" data-bill-breakdown></div>
+                  </section>
+
                   <section class="roommate-result-block" aria-labelledby="balance-summary-title">
                     <h4 id="balance-summary-title">Roommate balance summary</h4>
                     <div class="roommate-balance-grid" data-balance-summary></div>
@@ -360,6 +380,20 @@
                   <section class="roommate-result-block" aria-labelledby="monthly-summary-title">
                     <h4 id="monthly-summary-title">Monthly bill summary</h4>
                     <div class="roommate-result-list" data-monthly-summary></div>
+                  </section>
+
+                  <section class="roommate-result-block roommate-assumptions-result" aria-labelledby="assumptions-title">
+                    <h4 id="assumptions-title">Formula and assumptions</h4>
+                    <div data-assumptions></div>
+                  </section>
+
+                  <section class="roommate-result-block roommate-detailed-summary-result" aria-labelledby="detailed-summary-title">
+                    <h4 id="detailed-summary-title">Copyable detailed settle-up summary</h4>
+                    <pre class="roommate-detailed-summary" data-detailed-summary></pre>
+                    <div class="roommate-copy-row">
+                      <button type="button" class="roommate-small-button" data-action="copy-detailed-summary" aria-label="Copy detailed roommate settle-up summary">Copy detailed summary</button>
+                      <span class="roommate-copy-status" data-detailed-copy-status aria-live="polite"></span>
+                    </div>
                   </section>
 
                   <section class="roommate-result-block roommate-message-result" aria-labelledby="copy-message-title">
@@ -390,27 +424,27 @@
 <section class="best-next-step best-next-step--tool best-next-step--custom" aria-labelledby="best-next-step-tools_roommate_bill_split_calculator-title" data-module="best-next-step" data-source-page="tools_roommate_bill_split_calculator" data-source-cluster="roommates" data-module-variant="tool" data-module-template="custom">
   <p class="best-next-step__eyebrow">Best next step</p>
   <h2 id="best-next-step-tools_roommate_bill_split_calculator-title">After the roommate balance is calculated</h2>
-  <p class="best-next-step__intro">Once the monthly settle-up is clear, choose whether to send the message, confirm repayment, or move to an ongoing roommate record.</p>
+  <p class="best-next-step__intro">Once the monthly settle-up is clear, review the rule, share the result, confirm any payment, or move to an ongoing record only if the household balance continues.</p>
   <div class="best-next-step__grid">
-    <a class="best-next-step__card" href="/tools/polite-payback-reminder-generator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_roommate_bill_split_calculator_best_next_step_1" data-source-page="tools_roommate_bill_split_calculator" data-source-cluster="roommates" data-destination-cluster="repayments" data-step-type="tool" data-step-intent="write_message" data-step-destination="/tools/polite-payback-reminder-generator/" data-step-position="1" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="roommate_calculator_send">
+    <a class="best-next-step__card" href="/blog/how-to-split-rent-utilities-and-groceries-with-roommates/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_roommate_bill_split_calculator_best_next_step_1" data-source-page="tools_roommate_bill_split_calculator" data-source-cluster="roommates" data-destination-cluster="roommates" data-step-type="guide" data-step-intent="choose_starting_point" data-step-destination="/blog/how-to-split-rent-utilities-and-groceries-with-roommates/" data-step-position="1" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="roommate_calculator_guide">
+      <span class="best-next-step__label">Check the rule</span>
+      <strong>Read how to split rent, utilities, and groceries</strong>
+      <span>Use this to review fixed charges, usage assumptions, custom shares, and the household rule behind the estimate.</span>
+    </a>
+    <a class="best-next-step__card" href="/tools/polite-payback-reminder-generator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_roommate_bill_split_calculator_best_next_step_2" data-source-page="tools_roommate_bill_split_calculator" data-source-cluster="roommates" data-destination-cluster="repayments" data-step-type="tool" data-step-intent="write_message" data-step-destination="/tools/polite-payback-reminder-generator/" data-step-position="2" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="roommate_calculator_send">
       <span class="best-next-step__label">Send</span>
       <strong>Write a roommate-safe settle-up message</strong>
       <span>Use this if the amount is clear but you want the wording to stay calm and specific.</span>
     </a>
-    <a class="best-next-step__card" href="/tools/repayment-receipt-generator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_roommate_bill_split_calculator_best_next_step_2" data-source-page="tools_roommate_bill_split_calculator" data-source-cluster="roommates" data-destination-cluster="repayments" data-step-type="tool" data-step-intent="confirm_payment" data-step-destination="/tools/repayment-receipt-generator/" data-step-position="2" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="roommate_calculator_confirm">
+    <a class="best-next-step__card" href="/tools/repayment-receipt-generator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_roommate_bill_split_calculator_best_next_step_3" data-source-page="tools_roommate_bill_split_calculator" data-source-cluster="roommates" data-destination-cluster="repayments" data-step-type="tool" data-step-intent="confirm_payment" data-step-destination="/tools/repayment-receipt-generator/" data-step-position="3" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="roommate_calculator_confirm">
       <span class="best-next-step__label">Confirm</span>
       <strong>Create a repayment receipt</strong>
       <span>Use this after a roommate pays and you want to confirm what changed.</span>
     </a>
-    <a class="best-next-step__card" href="/solutions/roommate-expense-tracker/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_roommate_bill_split_calculator_best_next_step_3" data-source-page="tools_roommate_bill_split_calculator" data-source-cluster="roommates" data-destination-cluster="roommates" data-step-type="solution" data-step-intent="track_ongoing_balance" data-step-destination="/solutions/roommate-expense-tracker/" data-step-position="3" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="roommate_calculator_track">
+    <a class="best-next-step__card" href="/solutions/roommate-expense-tracker/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_roommate_bill_split_calculator_best_next_step_4" data-source-page="tools_roommate_bill_split_calculator" data-source-cluster="roommates" data-destination-cluster="roommates" data-step-type="solution" data-step-intent="track_ongoing_balance" data-step-destination="/solutions/roommate-expense-tracker/" data-step-position="4" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="roommate_calculator_track">
       <span class="best-next-step__label">Track</span>
       <strong>Track roommate expenses over time</strong>
       <span>Use this if rent, utilities, groceries, repayments, or old balances keep changing.</span>
-    </a>
-    <a class="best-next-step__card" href="/tools/split-expense-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_roommate_bill_split_calculator_best_next_step_4" data-source-page="tools_roommate_bill_split_calculator" data-source-cluster="roommates" data-destination-cluster="shared-expenses" data-step-type="tool" data-step-intent="calculate_split" data-step-destination="/tools/split-expense-calculator/" data-step-position="4" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="roommate_calculator_simple_split">
-      <span class="best-next-step__label">Simpler split</span>
-      <strong>Split one simple bill instead</strong>
-      <span>Use this if you only need one dinner, grocery run, or simple shared purchase.</span>
     </a>
   </div>
 </section>
@@ -678,13 +712,15 @@
             <div class="roommate-section-heading">
               <p class="lt-sectionEyebrow">Privacy and limitations</p>
               <h2 id="limitations-title">Privacy and limitations</h2>
-              <p>This calculator is designed for simple roommate bill splitting and monthly settle-ups. It runs in your browser and does not need an account.</p>
-              <p>For household agreements, deposits, legal disputes, or formal rental issues, use this only as a practical calculation aid and keep your own records.</p>
+              <p>This calculator provides an agreed estimate for roommate bill splitting and monthly settle-ups. It runs in your browser and does not need an account.</p>
+              <p>No calculation method is universally fair. Days present are not proof of exact utility consumption, usage weights are household assumptions, and fixed costs may remain payable during an absence.</p>
+              <p>It does not determine lease or contract responsibility or resolve deposit and rental disputes. For a formal or legal dispute, use an appropriate external source and keep your own records.</p>
             </div>
             <div class="roommate-limitations-card">
               <ul>
                 <li>It does not send payment requests.</li>
                 <li>It does not move money.</li>
+                <li>You Owe Me records agreed amounts and history but does not enforce payment.</li>
                 <li>It does not replace legal, tax, or accounting advice.</li>
                 <li>It works best when everyone agrees which bills are shared.</li>
                 <li>For ongoing roommate balances, use the <a href="/solutions/roommate-expense-tracker/">Roommate Expense Tracker</a> instead of rebuilding the calculation every month.</li>
@@ -812,7 +848,7 @@
             </div>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-07-05">July 5, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-07-26">July 26, 2026</time></p>
         </article>
       </div>
 
@@ -834,6 +870,7 @@
     </div>
 
     <script src="../../scripts/sales.js"></script>
+    <script src="../../scripts/roommate-bill-split-model.js"></script>
     <script src="../../scripts/roommate-bill-split-calculator.js"></script>
     <script type="module" src="../../scripts/analytics.js"></script>
     <script src="../../assets/js/jquery.min.js"></script>

@@ -207,6 +207,7 @@ body.roommate-bill-page article.post.featured {
 .roommate-entry-list,
 .roommate-list,
 .roommate-balance-grid,
+.roommate-bill-breakdown,
 .roommate-result-list,
 .roommate-settlement-list {
   display: grid;
@@ -379,6 +380,168 @@ body.roommate-bill-page article.post.featured {
   margin-top: 0.9rem;
 }
 
+.roommate-advanced-split {
+  margin-top: 0.95rem;
+}
+
+.roommate-advanced-toggle {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.6rem;
+  padding: 0.58rem 0.84rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 999px;
+  background: rgba(248, 250, 252, 0.9);
+  color: #18212b;
+  font-size: 0.88rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-transform: none;
+  cursor: pointer;
+  box-shadow: none;
+}
+
+.roommate-advanced-toggle::after {
+  content: "+";
+  margin-left: 0.45rem;
+  font-size: 1rem;
+}
+
+.roommate-advanced-toggle[aria-expanded="true"]::after {
+  content: "−";
+}
+
+.roommate-advanced-toggle:focus-visible,
+.roommate-check-row input:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32) !important;
+  outline-offset: 2px;
+}
+
+.roommate-advanced-panel {
+  margin-top: 0.8rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.78);
+}
+
+.roommate-advanced-panel[hidden] {
+  display: none;
+}
+
+.roommate-fixed-usage {
+  display: grid;
+  gap: 0.9rem;
+  margin-top: 0.85rem;
+  padding: 0.95rem;
+  border: 1px solid rgba(107, 161, 69, 0.18);
+  border-radius: 16px;
+  background: rgba(175, 230, 126, 0.08);
+}
+
+.roommate-advanced-explanation,
+.roommate-assumption-note {
+  margin: 0 !important;
+}
+
+.roommate-advanced-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(10rem, 1fr));
+  gap: 0.75rem;
+}
+
+.roommate-usage-heading {
+  margin-top: 0.15rem !important;
+}
+
+.roommate-usage-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(13rem, 1fr));
+  gap: 0.75rem;
+}
+
+.roommate-usage-person {
+  min-width: 0;
+  margin: 0;
+  padding: 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.82);
+}
+
+.roommate-usage-person legend {
+  padding: 0 0.25rem;
+  color: #18212b;
+  font-size: 0.88rem;
+  font-weight: 800;
+}
+
+.roommate-usage-fields {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.65rem;
+}
+
+.roommate-check-row {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  margin: 0;
+  color: #18212b;
+  font-size: 0.92rem;
+  font-weight: 750;
+  line-height: 1.45;
+  cursor: pointer;
+}
+
+.roommate-check-row input {
+  width: 1.15rem;
+  height: 1.15rem;
+  flex: 0 0 1.15rem;
+  margin-top: 0.12rem;
+  position: static !important;
+  opacity: 1 !important;
+  pointer-events: auto !important;
+  appearance: auto !important;
+  accent-color: #6ba145;
+}
+
+.roommate-guest-panel {
+  padding: 0.85rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.86);
+}
+
+.roommate-presets {
+  margin-top: 0.9rem;
+  padding: 0.85rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.62);
+}
+
+.roommate-presets summary {
+  color: #18212b;
+  font-size: 0.92rem;
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.roommate-presets p {
+  margin: 0.65rem 0 !important;
+  color: rgba(24, 33, 43, 0.68) !important;
+  font-size: 0.9rem !important;
+  line-height: 1.5 !important;
+}
+
+.roommate-preset-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+}
+
 .roommate-custom-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(9rem, 1fr));
@@ -486,6 +649,75 @@ body.roommate-bill-page article.post.featured {
   border-radius: 16px;
   background: rgba(248, 250, 252, 0.74);
   padding: 0.9rem;
+}
+
+.roommate-bill-result-card {
+  padding: 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 16px;
+  background: rgba(248, 250, 252, 0.74);
+}
+
+.roommate-bill-result-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  gap: 0.8rem;
+}
+
+.roommate-bill-result-header h5 {
+  margin: 0 !important;
+  color: #18212b;
+  font-size: 1rem;
+  letter-spacing: 0;
+  line-height: 1.3;
+  text-transform: none;
+}
+
+.roommate-bill-method {
+  width: fit-content;
+  margin: 0.45rem 0 0 !important;
+  padding: 0.25rem 0.55rem;
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.2);
+  color: #18212b !important;
+  font-size: 0.78rem !important;
+  font-weight: 800;
+  line-height: 1.3 !important;
+}
+
+.roommate-method-details,
+.roommate-responsibility-details {
+  padding-top: 0.7rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.07);
+}
+
+.roommate-assumptions-result p {
+  margin: 0.55rem 0 0 !important;
+  color: rgba(24, 33, 43, 0.76) !important;
+  font-size: 0.92rem !important;
+  line-height: 1.55 !important;
+}
+
+.roommate-detailed-summary {
+  max-height: 19rem;
+  margin: 0.75rem 0 0;
+  padding: 0.85rem;
+  overflow: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  background: rgba(255, 255, 255, 0.88);
+  color: rgba(24, 33, 43, 0.84);
+  font-family: inherit;
+  font-size: 0.82rem;
+  line-height: 1.55;
+  text-align: left;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}
+
+.roommate-detailed-summary-result .roommate-copy-row {
+  margin-top: 0.7rem;
 }
 
 .roommate-balance-card-header {
@@ -885,6 +1117,7 @@ body.roommate-bill-page article.post.featured {
   .roommate-small-button,
   .roommate-secondary-button,
   .roommate-remove-button,
+  .roommate-advanced-toggle,
   .roommate-toolbar-actions,
   .roommate-tone-field,
   .roommate-currency-field {
@@ -894,10 +1127,18 @@ body.roommate-bill-page article.post.featured {
   .roommate-person-row,
   .roommate-expense-fields,
   .roommate-adjustment-fields,
+  .roommate-advanced-grid,
+  .roommate-usage-grid,
+  .roommate-usage-fields,
   .roommate-card-grid,
   .roommate-message-grid,
   .roommate-comparison-grid,
   .roommate-step-list {
+    grid-template-columns: 1fr;
+  }
+
+  .roommate-preset-grid {
+    display: grid;
     grid-template-columns: 1fr;
   }
 
