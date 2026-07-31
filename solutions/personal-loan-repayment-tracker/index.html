@@ -114,13 +114,16 @@
               <p class="plrt-hero__answer">Create a named loan, choose a realistic way to repay it, and record what actually happens. You Owe Me keeps the remaining balance, next payment, reminder, and projected payoff current after partial, extra, early, or late payments—whether you lent the money or borrowed it.</p>
               <p class="plrt-qualifier">For personal loans between friends, family members, partners, or roommates—not bank loans or automatic payment collection.</p>
               <div class="plrt-actions">
-                <a class="plrt-button plrt-button--primary" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670" aria-label="Track a personal loan in You Owe Me on the App Store">Track a personal loan in You Owe Me</a>
+                <a class="lt-appStoreBtn" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670" aria-label="Download You Owe Me on the App Store">
+                  <span class="sr-only">Download You Owe Me on the App Store</span>
+                  <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+                </a>
                 <a class="plrt-button plrt-button--secondary" href="#loan-example">See how the plan stays current</a>
               </div>
               <p class="plrt-support-line">One active repayment plan is available free. iPhone app.</p>
             </div>
             <figure class="plrt-hero__visual">
-              <img src="../../images/shared/app-screenshots/EN_AppStore_Separate_Loan_Records.webp" alt="You Owe Me loan list showing a Laptop purchase loan with its remaining balance, active plan, and next payment." width="1290" height="2796" fetchpriority="high" />
+              <img src="../../images/shared/app-screenshots/EN_AppStore_Separate_Loan_Records.webp" alt="You Owe Me Loans screen showing a laptop loan with its remaining balance, active repayment plan, and next payment." width="1290" height="2796" fetchpriority="high" />
             </figure>
           </section>
 
@@ -246,7 +249,7 @@
                 <p>You Owe Me connects the repayment plan to the loan you are actually tracking. Future payments, corrections, reminders, and plan changes can stay connected to the same record.</p>
               </div>
               <div class="plrt-compact-bridge__actions">
-                <a class="plrt-button plrt-button--primary" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670" aria-label="Keep this loan current in You Owe Me on the App Store">Keep this loan current in You Owe Me</a>
+                <a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670" aria-label="Keep this loan current in You Owe Me on the App Store">Keep this loan current in You Owe Me <span aria-hidden="true">→</span></a>
                 <span>Only need the initial schedule? <a href="/tools/payment-plan-calculator/">Use the Payment Plan Calculator</a>.</span>
               </div>
             </aside>
@@ -268,9 +271,28 @@
               <p>Each loan can keep its own currency, start date, note, visual identity, updates, interest context, and settled state. Every loan update still contributes to the person’s overall balance, so the detail stays precise without hiding the full picture.</p>
               <p class="plrt-support-copy">Need one balance for mixed IOUs, shared costs, and repayments instead? See how You Owe Me <a href="/solutions/app-to-track-money-owed/">tracks money owed between two people</a>.</p>
             </div>
-            <figure class="plrt-product-visual">
-              <img src="../../images/shared/app-screenshots/loan-records.webp" alt="Two separate loans with the same person in You Owe Me, each with its own remaining balance." width="1290" height="2796" loading="lazy" decoding="async" />
-            </figure>
+            <div class="plrt-relationship-map" role="group" aria-label="Two separate loans with Jordan contributing to one overall relationship balance.">
+              <div class="plrt-relationship-map__person">
+                <span class="plrt-relationship-map__person-mark" aria-hidden="true"></span>
+                <p>Jordan</p>
+              </div>
+              <span class="plrt-relationship-map__connector plrt-relationship-map__connector--person" aria-hidden="true"></span>
+              <div class="plrt-relationship-map__loans">
+                <article class="plrt-relationship-map__loan">
+                  <p class="plrt-relationship-map__loan-name">Laptop purchase</p>
+                  <p class="plrt-relationship-map__amount">750 remaining</p>
+                </article>
+                <article class="plrt-relationship-map__loan">
+                  <p class="plrt-relationship-map__loan-name">Moving deposit</p>
+                  <p class="plrt-relationship-map__amount">400 remaining</p>
+                </article>
+              </div>
+              <span class="plrt-relationship-map__connector plrt-relationship-map__connector--summary" aria-hidden="true"></span>
+              <div class="plrt-relationship-map__summary">
+                <p class="plrt-relationship-map__summary-label">Overall balance with Jordan</p>
+                <p class="plrt-relationship-map__summary-amount">1,150</p>
+              </div>
+            </div>
           </section>
 
           <section class="plrt-section plrt-plan-section" aria-labelledby="realistic-plan-heading">
@@ -455,7 +477,10 @@
             <h2 id="final-heading">Keep the loan clear from the next real payment onward</h2>
             <p>Use You Owe Me when the record needs to continue: every payment should update the balance, the next reminder should stay relevant, and the full history should remain understandable without rebuilding the plan by hand.</p>
             <div class="plrt-actions">
-              <a class="plrt-button plrt-button--primary" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670" aria-label="Track a personal loan in You Owe Me on the App Store">Track a personal loan in You Owe Me</a>
+              <a class="lt-appStoreBtn" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670" aria-label="Download You Owe Me on the App Store">
+                <span class="sr-only">Download You Owe Me on the App Store</span>
+                <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" loading="lazy" width="250" height="83" />
+              </a>
               <a class="plrt-button plrt-button--secondary" href="/tools/payment-plan-calculator/">Create a one-time repayment plan instead</a>
             </div>
             <p class="plrt-support-line">One active repayment plan is available free. iPhone app. The app records and plans; it does not move money.</p>
