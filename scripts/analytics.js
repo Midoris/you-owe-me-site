@@ -86,6 +86,7 @@ const PAGE_METADATA = {
   "/contact/": { page_type: "legal", cluster: "legal_support", app_store_cpp: "none" },
   "/redeem/": { page_type: "feature", cluster: "multi_cluster", app_store_cpp: "default" },
   "/solutions/app-to-track-money-owed/": { page_type: "solution", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/solutions/personal-loan-repayment-tracker/": { page_type: "solution", cluster: "money_owed_followups", app_store_cpp: "default" },
   "/solutions/shared-expense-tracker/": { page_type: "solution", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/solutions/group-payback-tracker/": { page_type: "solution", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/solutions/roommate-expense-tracker/": { page_type: "solution", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
