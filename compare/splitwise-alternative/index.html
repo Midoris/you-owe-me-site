@@ -45,7 +45,7 @@
           "url": "https://you-owe-me.com/compare/splitwise-alternative/",
           "isPartOf": "https://you-owe-me.com/compare/",
           "inLanguage": "en",
-          "dateModified": "2026-07-24",
+          "dateModified": "2026-07-31",
           "publisher": {
             "@type": "Organization",
             "name": "You Owe Me"
@@ -218,7 +218,7 @@
               "name": "Can You Owe Me track a separate loan inside a person's balance?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "Yes. A Loan Record can keep one specific loan or repayment plan in its own focused view, while linked entries still update the full running balance with that person. This is useful when one larger loan needs its own history but you still want the overall relationship balance to stay accurate."
+                "text": "Yes. A Loan Record keeps one named loan and its real remaining balance separate while linked entries still update the full balance with that person. You can add a repayment plan that recalculates the remaining schedule, projected payoff, and next reminder after partial or larger payments."
               }
             }
           ]
@@ -623,12 +623,15 @@
 
           <section class="lt-detailSection">
             <h2>Separate Loan Records for larger or longer-running balances</h2>
-            <p>Some balances deserve their own focused record. In You Owe Me, a specific loan, rent deposit, car repair, client project, or repayment plan can live inside a separate Loan Record while still staying connected to the person&rsquo;s full balance history.</p>
-            <p>When interest is part of the agreement, each entry can use percentage interest that grows over time or fixed interest that adds one exact amount once.</p>
-            <p>That means linked repayments and updates count in the normal balance with that person, but the Loan Record also shows its own remaining amount and history. It is useful when one relationship has more than one money story happening at the same time.</p>
+            <p>Some balances deserve their own focused record. In You Owe Me, a personal loan, rent deposit, repair, or larger purchase can live inside a separate Loan Record while still staying connected to the person&rsquo;s full balance history.</p>
+            <p>When the loan needs a schedule, add a repayment plan. Compare lower-payment, balanced, and faster-payoff options, or build around a payment amount, target payoff date, or number of payments.</p>
+            <p>The plan uses the same balance and payment history as the loan. A smaller payment leaves the rest of the installment visible. A larger payment can move the plan ahead. Additional borrowing or corrections update the remaining schedule, projected payoff, and next reminder.</p>
+            <p>Interest can be left out, added as one agreed fixed amount, or calculated annually on the declining unpaid balance.</p>
             <ul>
-              <li>Keep one loan or repayment plan separate from everyday IOUs.</li>
+              <li>Keep each named loan separate from everyday IOUs and other loans.</li>
               <li>Link repayments and updates to the right record.</li>
+              <li>Choose a realistic schedule and see what is due next.</li>
+              <li>Let real payments update plan progress and the projected payoff.</li>
               <li>Keep the person&rsquo;s full balance accurate at the same time.</li>
             </ul>
           </section>
@@ -706,6 +709,11 @@
                     <td data-label="You Owe Me">Strong fit: Timeline, Balance Replay, statements, recurring entries</td>
                   </tr>
                   <tr>
+                    <td data-label="Situation">Personal loan with a repayment schedule</td>
+                    <td data-label="Splitwise">Not the main focus</td>
+                    <td data-label="You Owe Me">A named loan plus an optional plan that updates after partial, extra, or changed payments</td>
+                  </tr>
+                  <tr>
                     <td data-label="Situation">Two people both want to update one ongoing balance</td>
                     <td data-label="Splitwise">Strong when the balance belongs inside a broader collaborative expense ledger.</td>
                     <td data-label="You Owe Me">Strong fit with Balance Sync: exactly two users can privately keep supported entries aligned across both apps.</td>
@@ -761,6 +769,11 @@
                     <td data-label="Feature">Separate records for specific loans or repayment plans</td>
                     <td data-label="Splitwise">Not the main focus</td>
                     <td data-label="You Owe Me">Loan Records keep a specific balance in its own view while linked entries still update the full person balance</td>
+                  </tr>
+                  <tr>
+                    <td data-label="Feature">Loan-linked repayment plans that adapt to actual payments</td>
+                    <td data-label="Splitwise">Not the main focus</td>
+                    <td data-label="You Owe Me">Compare payoff options, follow installment progress, and update the schedule, payoff, and next reminder after partial or larger payments</td>
                   </tr>
                   <tr>
                     <td data-label="Feature">Interest on money owed</td>
@@ -1045,7 +1058,7 @@
               </details>
               <details class="compare-faq-item" open>
                 <summary>Can You Owe Me track a separate loan inside a person&rsquo;s balance?</summary>
-                <p>Yes. A Loan Record can keep one specific loan or repayment plan in its own focused view, while linked entries still update the full running balance with that person. This is useful when one larger loan needs its own history but you still want the overall relationship balance to stay accurate.</p>
+                <p>Yes. A Loan Record keeps one named loan and its real remaining balance separate while linked entries still update the full balance with that person. You can add a repayment plan that recalculates the remaining schedule, projected payoff, and next reminder after partial or larger payments.</p>
               </details>
             </div>
           </section>
@@ -1082,8 +1095,8 @@
 <!-- best-next-step:end -->
 
           <section class="lt-finalCta lt-finalCta--detail splitwise-final-cta">
-            <h2>Choose the app built for the whole money story</h2>
-            <p>If your main problem is a collaborative group ledger where everyone adds expenses, Splitwise may still be the right tool. If your problem is splitting shared costs into per-person balances, tracking a Group Payback until everyone pays, handling partial repayments, sending awkward follow-ups, managing family reimbursements, or keeping the full history clear, You Owe Me is built for that.</p>
+            <h2>Choose the tool that matches the record you need</h2>
+            <p>If everyone needs to add group expenses to one shared ledger, Splitwise may be the better fit. If one person needs to keep IOUs, named loans, partial repayments, or a repayment plan tied to the changing balance, You Owe Me is designed for that kind of record.</p>
             <div class="lt-ctaRow">
               <a
                 href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d333ba53-318b-44d7-ad07-f29841091043"
@@ -1094,11 +1107,11 @@
                 <span class="sr-only">Download You Owe Me on the App Store</span>
                 <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
               </a>
-              <span class="splitwise-final-note">Track the balance. Keep the history. Send the next message with context.</span>
+              <span class="splitwise-final-note">Keep the loan, plan, payments, reminders, and wider history connected.</span>
             </div>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-07-24">July 24, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-07-31">July 31, 2026</time></p>
         </article>
       </div>
 
