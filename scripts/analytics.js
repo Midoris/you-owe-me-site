@@ -103,6 +103,7 @@ const PAGE_METADATA = {
   "/tools/partial-repayment-calculator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/group-payback-calculator/": { page_type: "tool", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/tools/payment-plan-calculator/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },
+  "/tools/personal-loan-payment-tracker/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "default" },
   "/tools/polite-payback-reminder-generator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/repayment-reminder-text-examples/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/repayment-receipt-generator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
