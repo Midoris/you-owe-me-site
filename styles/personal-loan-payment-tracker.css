@@ -540,7 +540,7 @@ body.personal-loan-payment-tracker-page article.post.featured h4 {
   .plpt-dialog div { align-items: stretch; flex-direction: column; }
   .plpt-form-actions button,
   .plpt-output-actions button,
-  .plpt-product-actions a,
+  .plpt-product-actions a:not(.lt-appStoreBtn),
   .plpt-dialog button,
   .plpt-hero .lt-primaryCta,
   .plpt-hero .plpt-text-button { width: 100%; }
