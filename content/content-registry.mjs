@@ -1084,7 +1084,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/elderly-parent-expense-tracker/", "/solutions/family-reimbursement-tracker/"],
     appStoreCpp: "general",
     tags: ["reviews", "trust", "app-store", "social-proof"],
-    updated: "2026-07-05",
+    updated: "2026-08-05",
     status: "live",
     priority: "core",
     primaryCta: "Download You Owe Me",
