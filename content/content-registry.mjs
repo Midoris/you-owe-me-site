@@ -5580,7 +5580,7 @@ export const contentRegistry = [
     appStoreCpp: "general",
     conversionRole: "explanation",
     tags: ["personal-loan", "friends-and-family", "loan-payment-history", "payment-history", "remaining-balance", "repayment-plan", "partial-payment", "loan-already-in-progress"],
-    updated: "2026-08-04",
+    updated: "2026-08-09",
     status: "live",
     priority: "high",
     primaryCta: "Track actual payments in the browser",
