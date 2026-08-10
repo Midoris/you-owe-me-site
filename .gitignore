@@ -2,3 +2,6 @@
 /data/gsc/
 /docs/gsc-ctr-*.md
 /scripts/analyze_gsc_exports.py
+
+# Local dependency links used while producing research artifacts
+**/_artifact_work/node_modules/
