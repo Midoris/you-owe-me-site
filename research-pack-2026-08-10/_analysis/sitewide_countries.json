@@ -1,0 +1,1528 @@
+[
+  {
+    "Country": "United States",
+    "Clicks": 445,
+    "Impressions": 50436,
+    "CTR": 0.0088,
+    "Position": 8.33
+  },
+  {
+    "Country": "United Kingdom",
+    "Clicks": 115,
+    "Impressions": 8411,
+    "CTR": 0.0137,
+    "Position": 7.0
+  },
+  {
+    "Country": "Nigeria",
+    "Clicks": 92,
+    "Impressions": 6518,
+    "CTR": 0.0141,
+    "Position": 5.23
+  },
+  {
+    "Country": "Canada",
+    "Clicks": 52,
+    "Impressions": 4783,
+    "CTR": 0.0109,
+    "Position": 7.06
+  },
+  {
+    "Country": "South Africa",
+    "Clicks": 47,
+    "Impressions": 3952,
+    "CTR": 0.0119,
+    "Position": 5.81
+  },
+  {
+    "Country": "Australia",
+    "Clicks": 46,
+    "Impressions": 3393,
+    "CTR": 0.0136,
+    "Position": 6.46
+  },
+  {
+    "Country": "Kenya",
+    "Clicks": 44,
+    "Impressions": 3316,
+    "CTR": 0.0133,
+    "Position": 5.25
+  },
+  {
+    "Country": "India",
+    "Clicks": 31,
+    "Impressions": 4882,
+    "CTR": 0.0063,
+    "Position": 6.9
+  },
+  {
+    "Country": "Ghana",
+    "Clicks": 24,
+    "Impressions": 1389,
+    "CTR": 0.0173,
+    "Position": 5.17
+  },
+  {
+    "Country": "Philippines",
+    "Clicks": 22,
+    "Impressions": 3229,
+    "CTR": 0.0068,
+    "Position": 6.08
+  },
+  {
+    "Country": "Zambia",
+    "Clicks": 15,
+    "Impressions": 946,
+    "CTR": 0.0159,
+    "Position": 5.37
+  },
+  {
+    "Country": "Germany",
+    "Clicks": 15,
+    "Impressions": 795,
+    "CTR": 0.0189,
+    "Position": 6.04
+  },
+  {
+    "Country": "United Arab Emirates",
+    "Clicks": 14,
+    "Impressions": 789,
+    "CTR": 0.0177,
+    "Position": 5.57
+  },
+  {
+    "Country": "Uganda",
+    "Clicks": 13,
+    "Impressions": 1554,
+    "CTR": 0.0084,
+    "Position": 5.12
+  },
+  {
+    "Country": "Ireland",
+    "Clicks": 10,
+    "Impressions": 640,
+    "CTR": 0.0156,
+    "Position": 5.78
+  },
+  {
+    "Country": "Singapore",
+    "Clicks": 9,
+    "Impressions": 717,
+    "CTR": 0.0126,
+    "Position": 6.15
+  },
+  {
+    "Country": "Spain",
+    "Clicks": 9,
+    "Impressions": 481,
+    "CTR": 0.0187,
+    "Position": 8.06
+  },
+  {
+    "Country": "Malaysia",
+    "Clicks": 8,
+    "Impressions": 597,
+    "CTR": 0.0134,
+    "Position": 6.75
+  },
+  {
+    "Country": "France",
+    "Clicks": 8,
+    "Impressions": 368,
+    "CTR": 0.0217,
+    "Position": 7.0
+  },
+  {
+    "Country": "Poland",
+    "Clicks": 7,
+    "Impressions": 311,
+    "CTR": 0.0225,
+    "Position": 6.43
+  },
+  {
+    "Country": "New Zealand",
+    "Clicks": 6,
+    "Impressions": 579,
+    "CTR": 0.0104,
+    "Position": 6.35
+  },
+  {
+    "Country": "Bangladesh",
+    "Clicks": 6,
+    "Impressions": 207,
+    "CTR": 0.029,
+    "Position": 11.26
+  },
+  {
+    "Country": "Denmark",
+    "Clicks": 6,
+    "Impressions": 137,
+    "CTR": 0.0438,
+    "Position": 6.15
+  },
+  {
+    "Country": "Pakistan",
+    "Clicks": 4,
+    "Impressions": 585,
+    "CTR": 0.0068,
+    "Position": 7.56
+  },
+  {
+    "Country": "Jamaica",
+    "Clicks": 4,
+    "Impressions": 384,
+    "CTR": 0.0104,
+    "Position": 5.78
+  },
+  {
+    "Country": "Mexico",
+    "Clicks": 4,
+    "Impressions": 341,
+    "CTR": 0.0117,
+    "Position": 8.41
+  },
+  {
+    "Country": "Belgium",
+    "Clicks": 4,
+    "Impressions": 204,
+    "CTR": 0.0196,
+    "Position": 6.63
+  },
+  {
+    "Country": "Portugal",
+    "Clicks": 4,
+    "Impressions": 159,
+    "CTR": 0.0252,
+    "Position": 6.89
+  },
+  {
+    "Country": "Switzerland",
+    "Clicks": 4,
+    "Impressions": 127,
+    "CTR": 0.0315,
+    "Position": 6.46
+  },
+  {
+    "Country": "Thailand",
+    "Clicks": 3,
+    "Impressions": 1099,
+    "CTR": 0.0027,
+    "Position": 4.0
+  },
+  {
+    "Country": "Italy",
+    "Clicks": 3,
+    "Impressions": 476,
+    "CTR": 0.0063,
+    "Position": 6.67
+  },
+  {
+    "Country": "Indonesia",
+    "Clicks": 3,
+    "Impressions": 411,
+    "CTR": 0.0073,
+    "Position": 10.2
+  },
+  {
+    "Country": "Namibia",
+    "Clicks": 3,
+    "Impressions": 404,
+    "CTR": 0.0074,
+    "Position": 5.87
+  },
+  {
+    "Country": "Hong Kong",
+    "Clicks": 3,
+    "Impressions": 361,
+    "CTR": 0.0083,
+    "Position": 5.87
+  },
+  {
+    "Country": "Egypt",
+    "Clicks": 3,
+    "Impressions": 202,
+    "CTR": 0.0149,
+    "Position": 7.35
+  },
+  {
+    "Country": "Guernsey",
+    "Clicks": 3,
+    "Impressions": 41,
+    "CTR": 0.0732,
+    "Position": 5.32
+  },
+  {
+    "Country": "Netherlands",
+    "Clicks": 2,
+    "Impressions": 609,
+    "CTR": 0.0033,
+    "Position": 6.43
+  },
+  {
+    "Country": "Greece",
+    "Clicks": 2,
+    "Impressions": 206,
+    "CTR": 0.0097,
+    "Position": 5.28
+  },
+  {
+    "Country": "Israel",
+    "Clicks": 2,
+    "Impressions": 179,
+    "CTR": 0.0112,
+    "Position": 6.59
+  },
+  {
+    "Country": "Tanzania",
+    "Clicks": 2,
+    "Impressions": 177,
+    "CTR": 0.0113,
+    "Position": 6.24
+  },
+  {
+    "Country": "Nepal",
+    "Clicks": 2,
+    "Impressions": 149,
+    "CTR": 0.0134,
+    "Position": 5.54
+  },
+  {
+    "Country": "Finland",
+    "Clicks": 2,
+    "Impressions": 118,
+    "CTR": 0.0169,
+    "Position": 6.01
+  },
+  {
+    "Country": "Rwanda",
+    "Clicks": 2,
+    "Impressions": 105,
+    "CTR": 0.019,
+    "Position": 5.58
+  },
+  {
+    "Country": "Bahrain",
+    "Clicks": 2,
+    "Impressions": 65,
+    "CTR": 0.0308,
+    "Position": 5.46
+  },
+  {
+    "Country": "Congo - Kinshasa",
+    "Clicks": 2,
+    "Impressions": 34,
+    "CTR": 0.0588,
+    "Position": 4.26
+  },
+  {
+    "Country": "Antigua & Barbuda",
+    "Clicks": 2,
+    "Impressions": 23,
+    "CTR": 0.087,
+    "Position": 4.3
+  },
+  {
+    "Country": "Moldova",
+    "Clicks": 2,
+    "Impressions": 18,
+    "CTR": 0.1111,
+    "Position": 8.17
+  },
+  {
+    "Country": "Saudi Arabia",
+    "Clicks": 1,
+    "Impressions": 431,
+    "CTR": 0.0023,
+    "Position": 8.12
+  },
+  {
+    "Country": "Japan",
+    "Clicks": 1,
+    "Impressions": 343,
+    "CTR": 0.0029,
+    "Position": 6.98
+  },
+  {
+    "Country": "Brazil",
+    "Clicks": 1,
+    "Impressions": 298,
+    "CTR": 0.0034,
+    "Position": 8.48
+  },
+  {
+    "Country": "Zimbabwe",
+    "Clicks": 1,
+    "Impressions": 267,
+    "CTR": 0.0037,
+    "Position": 5.65
+  },
+  {
+    "Country": "Russia",
+    "Clicks": 1,
+    "Impressions": 228,
+    "CTR": 0.0044,
+    "Position": 9.52
+  },
+  {
+    "Country": "Sweden",
+    "Clicks": 1,
+    "Impressions": 212,
+    "CTR": 0.0047,
+    "Position": 6.49
+  },
+  {
+    "Country": "Malawi",
+    "Clicks": 1,
+    "Impressions": 208,
+    "CTR": 0.0048,
+    "Position": 5.62
+  },
+  {
+    "Country": "Cameroon",
+    "Clicks": 1,
+    "Impressions": 200,
+    "CTR": 0.005,
+    "Position": 6.14
+  },
+  {
+    "Country": "Botswana",
+    "Clicks": 1,
+    "Impressions": 194,
+    "CTR": 0.0052,
+    "Position": 5.53
+  },
+  {
+    "Country": "Turkey",
+    "Clicks": 1,
+    "Impressions": 182,
+    "CTR": 0.0055,
+    "Position": 9.21
+  },
+  {
+    "Country": "Sri Lanka",
+    "Clicks": 1,
+    "Impressions": 165,
+    "CTR": 0.0061,
+    "Position": 5.41
+  },
+  {
+    "Country": "Norway",
+    "Clicks": 1,
+    "Impressions": 163,
+    "CTR": 0.0061,
+    "Position": 5.93
+  },
+  {
+    "Country": "South Korea",
+    "Clicks": 1,
+    "Impressions": 163,
+    "CTR": 0.0061,
+    "Position": 6.13
+  },
+  {
+    "Country": "Trinidad & Tobago",
+    "Clicks": 1,
+    "Impressions": 143,
+    "CTR": 0.007,
+    "Position": 5.51
+  },
+  {
+    "Country": "Qatar",
+    "Clicks": 1,
+    "Impressions": 141,
+    "CTR": 0.0071,
+    "Position": 5.93
+  },
+  {
+    "Country": "Bahamas",
+    "Clicks": 1,
+    "Impressions": 123,
+    "CTR": 0.0081,
+    "Position": 5.28
+  },
+  {
+    "Country": "Sierra Leone",
+    "Clicks": 1,
+    "Impressions": 108,
+    "CTR": 0.0093,
+    "Position": 5.64
+  },
+  {
+    "Country": "Czechia",
+    "Clicks": 1,
+    "Impressions": 100,
+    "CTR": 0.01,
+    "Position": 5.82
+  },
+  {
+    "Country": "Austria",
+    "Clicks": 1,
+    "Impressions": 93,
+    "CTR": 0.0108,
+    "Position": 6.16
+  },
+  {
+    "Country": "Papua New Guinea",
+    "Clicks": 1,
+    "Impressions": 91,
+    "CTR": 0.011,
+    "Position": 5.9
+  },
+  {
+    "Country": "Jordan",
+    "Clicks": 1,
+    "Impressions": 87,
+    "CTR": 0.0115,
+    "Position": 13.94
+  },
+  {
+    "Country": "Lesotho",
+    "Clicks": 1,
+    "Impressions": 81,
+    "CTR": 0.0123,
+    "Position": 7.16
+  },
+  {
+    "Country": "Malta",
+    "Clicks": 1,
+    "Impressions": 75,
+    "CTR": 0.0133,
+    "Position": 5.89
+  },
+  {
+    "Country": "Cyprus",
+    "Clicks": 1,
+    "Impressions": 58,
+    "CTR": 0.0172,
+    "Position": 5.14
+  },
+  {
+    "Country": "Chile",
+    "Clicks": 1,
+    "Impressions": 53,
+    "CTR": 0.0189,
+    "Position": 7.32
+  },
+  {
+    "Country": "Dominican Republic",
+    "Clicks": 1,
+    "Impressions": 52,
+    "CTR": 0.0192,
+    "Position": 5.85
+  },
+  {
+    "Country": "Puerto Rico",
+    "Clicks": 1,
+    "Impressions": 52,
+    "CTR": 0.0192,
+    "Position": 6.4
+  },
+  {
+    "Country": "Costa Rica",
+    "Clicks": 1,
+    "Impressions": 33,
+    "CTR": 0.0303,
+    "Position": 6.7
+  },
+  {
+    "Country": "Slovenia",
+    "Clicks": 1,
+    "Impressions": 27,
+    "CTR": 0.037,
+    "Position": 6.7
+  },
+  {
+    "Country": "Yemen",
+    "Clicks": 1,
+    "Impressions": 26,
+    "CTR": 0.0385,
+    "Position": 5.31
+  },
+  {
+    "Country": "Benin",
+    "Clicks": 1,
+    "Impressions": 25,
+    "CTR": 0.04,
+    "Position": 5.8
+  },
+  {
+    "Country": "Palestine",
+    "Clicks": 1,
+    "Impressions": 20,
+    "CTR": 0.05,
+    "Position": 4.55
+  },
+  {
+    "Country": "Panama",
+    "Clicks": 1,
+    "Impressions": 20,
+    "CTR": 0.05,
+    "Position": 6.35
+  },
+  {
+    "Country": "Azerbaijan",
+    "Clicks": 1,
+    "Impressions": 18,
+    "CTR": 0.0556,
+    "Position": 12.11
+  },
+  {
+    "Country": "Jersey",
+    "Clicks": 1,
+    "Impressions": 17,
+    "CTR": 0.0588,
+    "Position": 5.53
+  },
+  {
+    "Country": "Luxembourg",
+    "Clicks": 1,
+    "Impressions": 15,
+    "CTR": 0.0667,
+    "Position": 7.07
+  },
+  {
+    "Country": "Congo - Brazzaville",
+    "Clicks": 1,
+    "Impressions": 6,
+    "CTR": 0.1667,
+    "Position": 2.5
+  },
+  {
+    "Country": "Vietnam",
+    "Clicks": 0,
+    "Impressions": 658,
+    "CTR": 0.0,
+    "Position": 13.04
+  },
+  {
+    "Country": "Taiwan",
+    "Clicks": 0,
+    "Impressions": 166,
+    "CTR": 0.0,
+    "Position": 6.57
+  },
+  {
+    "Country": "Liberia",
+    "Clicks": 0,
+    "Impressions": 164,
+    "CTR": 0.0,
+    "Position": 5.51
+  },
+  {
+    "Country": "Argentina",
+    "Clicks": 0,
+    "Impressions": 156,
+    "CTR": 0.0,
+    "Position": 8.94
+  },
+  {
+    "Country": "Ukraine",
+    "Clicks": 0,
+    "Impressions": 156,
+    "CTR": 0.0,
+    "Position": 10.03
+  },
+  {
+    "Country": "Morocco",
+    "Clicks": 0,
+    "Impressions": 146,
+    "CTR": 0.0,
+    "Position": 14.81
+  },
+  {
+    "Country": "Ethiopia",
+    "Clicks": 0,
+    "Impressions": 135,
+    "CTR": 0.0,
+    "Position": 5.59
+  },
+  {
+    "Country": "Oman",
+    "Clicks": 0,
+    "Impressions": 110,
+    "CTR": 0.0,
+    "Position": 5.57
+  },
+  {
+    "Country": "Romania",
+    "Clicks": 0,
+    "Impressions": 110,
+    "CTR": 0.0,
+    "Position": 5.81
+  },
+  {
+    "Country": "Colombia",
+    "Clicks": 0,
+    "Impressions": 98,
+    "CTR": 0.0,
+    "Position": 9.96
+  },
+  {
+    "Country": "China",
+    "Clicks": 0,
+    "Impressions": 91,
+    "CTR": 0.0,
+    "Position": 6.79
+  },
+  {
+    "Country": "Lebanon",
+    "Clicks": 0,
+    "Impressions": 88,
+    "CTR": 0.0,
+    "Position": 5.94
+  },
+  {
+    "Country": "Iraq",
+    "Clicks": 0,
+    "Impressions": 86,
+    "CTR": 0.0,
+    "Position": 10.76
+  },
+  {
+    "Country": "South Sudan",
+    "Clicks": 0,
+    "Impressions": 84,
+    "CTR": 0.0,
+    "Position": 6.01
+  },
+  {
+    "Country": "Algeria",
+    "Clicks": 0,
+    "Impressions": 79,
+    "CTR": 0.0,
+    "Position": 9.43
+  },
+  {
+    "Country": "Barbados",
+    "Clicks": 0,
+    "Impressions": 76,
+    "CTR": 0.0,
+    "Position": 5.87
+  },
+  {
+    "Country": "Gambia",
+    "Clicks": 0,
+    "Impressions": 75,
+    "CTR": 0.0,
+    "Position": 5.48
+  },
+  {
+    "Country": "Croatia",
+    "Clicks": 0,
+    "Impressions": 75,
+    "CTR": 0.0,
+    "Position": 5.6
+  },
+  {
+    "Country": "Swaziland",
+    "Clicks": 0,
+    "Impressions": 73,
+    "CTR": 0.0,
+    "Position": 5.9
+  },
+  {
+    "Country": "Kuwait",
+    "Clicks": 0,
+    "Impressions": 72,
+    "CTR": 0.0,
+    "Position": 6.08
+  },
+  {
+    "Country": "Hungary",
+    "Clicks": 0,
+    "Impressions": 67,
+    "CTR": 0.0,
+    "Position": 5.88
+  },
+  {
+    "Country": "Iran",
+    "Clicks": 0,
+    "Impressions": 65,
+    "CTR": 0.0,
+    "Position": 6.6
+  },
+  {
+    "Country": "Slovakia",
+    "Clicks": 0,
+    "Impressions": 64,
+    "CTR": 0.0,
+    "Position": 6.27
+  },
+  {
+    "Country": "Cambodia",
+    "Clicks": 0,
+    "Impressions": 63,
+    "CTR": 0.0,
+    "Position": 6.25
+  },
+  {
+    "Country": "Fiji",
+    "Clicks": 0,
+    "Impressions": 57,
+    "CTR": 0.0,
+    "Position": 5.49
+  },
+  {
+    "Country": "Peru",
+    "Clicks": 0,
+    "Impressions": 55,
+    "CTR": 0.0,
+    "Position": 4.69
+  },
+  {
+    "Country": "Serbia",
+    "Clicks": 0,
+    "Impressions": 55,
+    "CTR": 0.0,
+    "Position": 5.84
+  },
+  {
+    "Country": "Guyana",
+    "Clicks": 0,
+    "Impressions": 55,
+    "CTR": 0.0,
+    "Position": 6.36
+  },
+  {
+    "Country": "Mauritius",
+    "Clicks": 0,
+    "Impressions": 50,
+    "CTR": 0.0,
+    "Position": 5.88
+  },
+  {
+    "Country": "Ecuador",
+    "Clicks": 0,
+    "Impressions": 49,
+    "CTR": 0.0,
+    "Position": 7.16
+  },
+  {
+    "Country": "Bulgaria",
+    "Clicks": 0,
+    "Impressions": 48,
+    "CTR": 0.0,
+    "Position": 5.31
+  },
+  {
+    "Country": "Syria",
+    "Clicks": 0,
+    "Impressions": 47,
+    "CTR": 0.0,
+    "Position": 5.15
+  },
+  {
+    "Country": "Laos",
+    "Clicks": 0,
+    "Impressions": 45,
+    "CTR": 0.0,
+    "Position": 2.4
+  },
+  {
+    "Country": "Venezuela",
+    "Clicks": 0,
+    "Impressions": 45,
+    "CTR": 0.0,
+    "Position": 6.87
+  },
+  {
+    "Country": "Belize",
+    "Clicks": 0,
+    "Impressions": 41,
+    "CTR": 0.0,
+    "Position": 5.22
+  },
+  {
+    "Country": "Lithuania",
+    "Clicks": 0,
+    "Impressions": 40,
+    "CTR": 0.0,
+    "Position": 6.67
+  },
+  {
+    "Country": "Estonia",
+    "Clicks": 0,
+    "Impressions": 38,
+    "CTR": 0.0,
+    "Position": 6.5
+  },
+  {
+    "Country": "Senegal",
+    "Clicks": 0,
+    "Impressions": 38,
+    "CTR": 0.0,
+    "Position": 9.08
+  },
+  {
+    "Country": "Albania",
+    "Clicks": 0,
+    "Impressions": 37,
+    "CTR": 0.0,
+    "Position": 5.41
+  },
+  {
+    "Country": "Georgia",
+    "Clicks": 0,
+    "Impressions": 36,
+    "CTR": 0.0,
+    "Position": 5.94
+  },
+  {
+    "Country": "Maldives",
+    "Clicks": 0,
+    "Impressions": 36,
+    "CTR": 0.0,
+    "Position": 6.94
+  },
+  {
+    "Country": "Tunisia",
+    "Clicks": 0,
+    "Impressions": 35,
+    "CTR": 0.0,
+    "Position": 7.97
+  },
+  {
+    "Country": "Latvia",
+    "Clicks": 0,
+    "Impressions": 34,
+    "CTR": 0.0,
+    "Position": 6.15
+  },
+  {
+    "Country": "Côte d’Ivoire",
+    "Clicks": 0,
+    "Impressions": 32,
+    "CTR": 0.0,
+    "Position": 6.94
+  },
+  {
+    "Country": "Brunei",
+    "Clicks": 0,
+    "Impressions": 30,
+    "CTR": 0.0,
+    "Position": 5.3
+  },
+  {
+    "Country": "Guam",
+    "Clicks": 0,
+    "Impressions": 30,
+    "CTR": 0.0,
+    "Position": 6.97
+  },
+  {
+    "Country": "Mozambique",
+    "Clicks": 0,
+    "Impressions": 29,
+    "CTR": 0.0,
+    "Position": 5.55
+  },
+  {
+    "Country": "Bhutan",
+    "Clicks": 0,
+    "Impressions": 29,
+    "CTR": 0.0,
+    "Position": 5.79
+  },
+  {
+    "Country": "Uzbekistan",
+    "Clicks": 0,
+    "Impressions": 28,
+    "CTR": 0.0,
+    "Position": 6.25
+  },
+  {
+    "Country": "Iceland",
+    "Clicks": 0,
+    "Impressions": 24,
+    "CTR": 0.0,
+    "Position": 5.83
+  },
+  {
+    "Country": "Kazakhstan",
+    "Clicks": 0,
+    "Impressions": 24,
+    "CTR": 0.0,
+    "Position": 6.79
+  },
+  {
+    "Country": "Bosnia & Herzegovina",
+    "Clicks": 0,
+    "Impressions": 23,
+    "CTR": 0.0,
+    "Position": 5.61
+  },
+  {
+    "Country": "Samoa",
+    "Clicks": 0,
+    "Impressions": 23,
+    "CTR": 0.0,
+    "Position": 5.87
+  },
+  {
+    "Country": "Guatemala",
+    "Clicks": 0,
+    "Impressions": 23,
+    "CTR": 0.0,
+    "Position": 6.22
+  },
+  {
+    "Country": "Grenada",
+    "Clicks": 0,
+    "Impressions": 23,
+    "CTR": 0.0,
+    "Position": 7.09
+  },
+  {
+    "Country": "Somalia",
+    "Clicks": 0,
+    "Impressions": 22,
+    "CTR": 0.0,
+    "Position": 7.86
+  },
+  {
+    "Country": "Suriname",
+    "Clicks": 0,
+    "Impressions": 21,
+    "CTR": 0.0,
+    "Position": 4.67
+  },
+  {
+    "Country": "El Salvador",
+    "Clicks": 0,
+    "Impressions": 21,
+    "CTR": 0.0,
+    "Position": 4.81
+  },
+  {
+    "Country": "Belarus",
+    "Clicks": 0,
+    "Impressions": 21,
+    "CTR": 0.0,
+    "Position": 6.95
+  },
+  {
+    "Country": "Libya",
+    "Clicks": 0,
+    "Impressions": 18,
+    "CTR": 0.0,
+    "Position": 5.72
+  },
+  {
+    "Country": "Macau",
+    "Clicks": 0,
+    "Impressions": 18,
+    "CTR": 0.0,
+    "Position": 5.89
+  },
+  {
+    "Country": "Angola",
+    "Clicks": 0,
+    "Impressions": 18,
+    "CTR": 0.0,
+    "Position": 6.28
+  },
+  {
+    "Country": "Macedonia",
+    "Clicks": 0,
+    "Impressions": 17,
+    "CTR": 0.0,
+    "Position": 6.18
+  },
+  {
+    "Country": "St. Vincent & Grenadines",
+    "Clicks": 0,
+    "Impressions": 17,
+    "CTR": 0.0,
+    "Position": 6.24
+  },
+  {
+    "Country": "U.S. Virgin Islands",
+    "Clicks": 0,
+    "Impressions": 17,
+    "CTR": 0.0,
+    "Position": 6.24
+  },
+  {
+    "Country": "Bolivia",
+    "Clicks": 0,
+    "Impressions": 17,
+    "CTR": 0.0,
+    "Position": 10.29
+  },
+  {
+    "Country": "Togo",
+    "Clicks": 0,
+    "Impressions": 16,
+    "CTR": 0.0,
+    "Position": 5.5
+  },
+  {
+    "Country": "Aruba",
+    "Clicks": 0,
+    "Impressions": 15,
+    "CTR": 0.0,
+    "Position": 5.33
+  },
+  {
+    "Country": "Seychelles",
+    "Clicks": 0,
+    "Impressions": 15,
+    "CTR": 0.0,
+    "Position": 6.0
+  },
+  {
+    "Country": "Myanmar (Burma)",
+    "Clicks": 0,
+    "Impressions": 15,
+    "CTR": 0.0,
+    "Position": 6.33
+  },
+  {
+    "Country": "Cayman Islands",
+    "Clicks": 0,
+    "Impressions": 15,
+    "CTR": 0.0,
+    "Position": 6.6
+  },
+  {
+    "Country": "Nicaragua",
+    "Clicks": 0,
+    "Impressions": 15,
+    "CTR": 0.0,
+    "Position": 9.8
+  },
+  {
+    "Country": "Isle of Man",
+    "Clicks": 0,
+    "Impressions": 14,
+    "CTR": 0.0,
+    "Position": 8.07
+  },
+  {
+    "Country": "St. Lucia",
+    "Clicks": 0,
+    "Impressions": 13,
+    "CTR": 0.0,
+    "Position": 5.54
+  },
+  {
+    "Country": "Bermuda",
+    "Clicks": 0,
+    "Impressions": 12,
+    "CTR": 0.0,
+    "Position": 6.5
+  },
+  {
+    "Country": "Honduras",
+    "Clicks": 0,
+    "Impressions": 12,
+    "CTR": 0.0,
+    "Position": 6.67
+  },
+  {
+    "Country": "Armenia",
+    "Clicks": 0,
+    "Impressions": 12,
+    "CTR": 0.0,
+    "Position": 14.92
+  },
+  {
+    "Country": "Afghanistan",
+    "Clicks": 0,
+    "Impressions": 11,
+    "CTR": 0.0,
+    "Position": 5.55
+  },
+  {
+    "Country": "Dominica",
+    "Clicks": 0,
+    "Impressions": 10,
+    "CTR": 0.0,
+    "Position": 4.3
+  },
+  {
+    "Country": "Montenegro",
+    "Clicks": 0,
+    "Impressions": 10,
+    "CTR": 0.0,
+    "Position": 5.8
+  },
+  {
+    "Country": "Uruguay",
+    "Clicks": 0,
+    "Impressions": 9,
+    "CTR": 0.0,
+    "Position": 4.67
+  },
+  {
+    "Country": "Madagascar",
+    "Clicks": 0,
+    "Impressions": 9,
+    "CTR": 0.0,
+    "Position": 5.44
+  },
+  {
+    "Country": "Guinea",
+    "Clicks": 0,
+    "Impressions": 9,
+    "CTR": 0.0,
+    "Position": 5.56
+  },
+  {
+    "Country": "Kyrgyzstan",
+    "Clicks": 0,
+    "Impressions": 9,
+    "CTR": 0.0,
+    "Position": 6.78
+  },
+  {
+    "Country": "Curaçao",
+    "Clicks": 0,
+    "Impressions": 9,
+    "CTR": 0.0,
+    "Position": 7.0
+  },
+  {
+    "Country": "Gibraltar",
+    "Clicks": 0,
+    "Impressions": 8,
+    "CTR": 0.0,
+    "Position": 6.5
+  },
+  {
+    "Country": "Mongolia",
+    "Clicks": 0,
+    "Impressions": 8,
+    "CTR": 0.0,
+    "Position": 10.5
+  },
+  {
+    "Country": "Marshall Islands",
+    "Clicks": 0,
+    "Impressions": 7,
+    "CTR": 0.0,
+    "Position": 4.29
+  },
+  {
+    "Country": "Sudan",
+    "Clicks": 0,
+    "Impressions": 7,
+    "CTR": 0.0,
+    "Position": 5.14
+  },
+  {
+    "Country": "St. Kitts & Nevis",
+    "Clicks": 0,
+    "Impressions": 7,
+    "CTR": 0.0,
+    "Position": 5.29
+  },
+  {
+    "Country": "Northern Mariana Islands",
+    "Clicks": 0,
+    "Impressions": 7,
+    "CTR": 0.0,
+    "Position": 5.43
+  },
+  {
+    "Country": "Haiti",
+    "Clicks": 0,
+    "Impressions": 7,
+    "CTR": 0.0,
+    "Position": 6.43
+  },
+  {
+    "Country": "Turks & Caicos Islands",
+    "Clicks": 0,
+    "Impressions": 7,
+    "CTR": 0.0,
+    "Position": 7.43
+  },
+  {
+    "Country": "Paraguay",
+    "Clicks": 0,
+    "Impressions": 7,
+    "CTR": 0.0,
+    "Position": 7.71
+  },
+  {
+    "Country": "Unknown Region",
+    "Clicks": 0,
+    "Impressions": 6,
+    "CTR": 0.0,
+    "Position": 4.0
+  },
+  {
+    "Country": "Micronesia",
+    "Clicks": 0,
+    "Impressions": 5,
+    "CTR": 0.0,
+    "Position": 3.4
+  },
+  {
+    "Country": "Burundi",
+    "Clicks": 0,
+    "Impressions": 5,
+    "CTR": 0.0,
+    "Position": 3.6
+  },
+  {
+    "Country": "American Samoa",
+    "Clicks": 0,
+    "Impressions": 5,
+    "CTR": 0.0,
+    "Position": 4.2
+  },
+  {
+    "Country": "Solomon Islands",
+    "Clicks": 0,
+    "Impressions": 5,
+    "CTR": 0.0,
+    "Position": 4.8
+  },
+  {
+    "Country": "Equatorial Guinea",
+    "Clicks": 0,
+    "Impressions": 5,
+    "CTR": 0.0,
+    "Position": 8.8
+  },
+  {
+    "Country": "Sint Maarten",
+    "Clicks": 0,
+    "Impressions": 5,
+    "CTR": 0.0,
+    "Position": 9.0
+  },
+  {
+    "Country": "Burkina Faso",
+    "Clicks": 0,
+    "Impressions": 5,
+    "CTR": 0.0,
+    "Position": 10.0
+  },
+  {
+    "Country": "St. Martin",
+    "Clicks": 0,
+    "Impressions": 4,
+    "CTR": 0.0,
+    "Position": 4.25
+  },
+  {
+    "Country": "Turkmenistan",
+    "Clicks": 0,
+    "Impressions": 4,
+    "CTR": 0.0,
+    "Position": 5.5
+  },
+  {
+    "Country": "Cuba",
+    "Clicks": 0,
+    "Impressions": 4,
+    "CTR": 0.0,
+    "Position": 7.0
+  },
+  {
+    "Country": "Mauritania",
+    "Clicks": 0,
+    "Impressions": 4,
+    "CTR": 0.0,
+    "Position": 7.25
+  },
+  {
+    "Country": "British Virgin Islands",
+    "Clicks": 0,
+    "Impressions": 4,
+    "CTR": 0.0,
+    "Position": 8.25
+  },
+  {
+    "Country": "St. Helena",
+    "Clicks": 0,
+    "Impressions": 3,
+    "CTR": 0.0,
+    "Position": 3.0
+  },
+  {
+    "Country": "Kiribati",
+    "Clicks": 0,
+    "Impressions": 3,
+    "CTR": 0.0,
+    "Position": 5.67
+  },
+  {
+    "Country": "Andorra",
+    "Clicks": 0,
+    "Impressions": 3,
+    "CTR": 0.0,
+    "Position": 6.0
+  },
+  {
+    "Country": "Cape Verde",
+    "Clicks": 0,
+    "Impressions": 3,
+    "CTR": 0.0,
+    "Position": 7.0
+  },
+  {
+    "Country": "Mali",
+    "Clicks": 0,
+    "Impressions": 3,
+    "CTR": 0.0,
+    "Position": 7.0
+  },
+  {
+    "Country": "Gabon",
+    "Clicks": 0,
+    "Impressions": 3,
+    "CTR": 0.0,
+    "Position": 8.0
+  },
+  {
+    "Country": "Greenland",
+    "Clicks": 0,
+    "Impressions": 3,
+    "CTR": 0.0,
+    "Position": 9.33
+  },
+  {
+    "Country": "Faroe Islands",
+    "Clicks": 0,
+    "Impressions": 2,
+    "CTR": 0.0,
+    "Position": 3.5
+  },
+  {
+    "Country": "Tajikistan",
+    "Clicks": 0,
+    "Impressions": 2,
+    "CTR": 0.0,
+    "Position": 3.5
+  },
+  {
+    "Country": "Chad",
+    "Clicks": 0,
+    "Impressions": 2,
+    "CTR": 0.0,
+    "Position": 5.5
+  },
+  {
+    "Country": "Timor-Leste",
+    "Clicks": 0,
+    "Impressions": 2,
+    "CTR": 0.0,
+    "Position": 5.5
+  },
+  {
+    "Country": "Djibouti",
+    "Clicks": 0,
+    "Impressions": 2,
+    "CTR": 0.0,
+    "Position": 6.0
+  },
+  {
+    "Country": "Niger",
+    "Clicks": 0,
+    "Impressions": 2,
+    "CTR": 0.0,
+    "Position": 6.0
+  },
+  {
+    "Country": "Palau",
+    "Clicks": 0,
+    "Impressions": 2,
+    "CTR": 0.0,
+    "Position": 6.0
+  },
+  {
+    "Country": "Vanuatu",
+    "Clicks": 0,
+    "Impressions": 2,
+    "CTR": 0.0,
+    "Position": 8.0
+  },
+  {
+    "Country": "Nauru",
+    "Clicks": 0,
+    "Impressions": 2,
+    "CTR": 0.0,
+    "Position": 8.5
+  },
+  {
+    "Country": "Central African Republic",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 2.0
+  },
+  {
+    "Country": "Kosovo",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 4.0
+  },
+  {
+    "Country": "Martinique",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 5.0
+  },
+  {
+    "Country": "Åland Islands",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 6.0
+  },
+  {
+    "Country": "Montserrat",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 6.0
+  },
+  {
+    "Country": "British Indian Ocean Territory",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 7.0
+  },
+  {
+    "Country": "Western Sahara",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 8.0
+  },
+  {
+    "Country": "Guinea-Bissau",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 9.0
+  },
+  {
+    "Country": "North Korea",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 11.0
+  },
+  {
+    "Country": "Réunion",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 11.0
+  },
+  {
+    "Country": "Anguilla",
+    "Clicks": 0,
+    "Impressions": 1,
+    "CTR": 0.0,
+    "Position": 12.0
+  }
+]

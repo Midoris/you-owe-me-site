@@ -135,6 +135,7 @@ const PAGE_METADATA = {
   "/blog/what-is-a-running-balance-between-two-people/": { page_type: "blog", cluster: "running_balance", app_store_cpp: "shared_expenses" },
   "/blog/can-one-person-track-shared-money-without-everyone-installing-an-app/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/": { page_type: "blog", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
+  "/blog/how-to-track-shared-expenses-without-a-joint-account/": { page_type: "guide", cluster: "shared_expenses", app_store_cpp: "couples_relationship_spending" },
   "/blog/how-to-track-who-paid-you-back-for-a-group-expense/": { page_type: "blog", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/blog/how-to-split-shared-costs-when-someone-cancels/": { page_type: "guide", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/blog/how-to-remind-a-group-to-pay-you-back-without-spamming-everyone/": { page_type: "blog", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
