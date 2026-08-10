@@ -129,7 +129,10 @@ body.shared-expense-setup-guide-page .lt-primaryCta:hover {
 }
 
 .ses-hero {
-  display: block !important;
+  display: grid !important;
+  grid-template-columns: minmax(0, 1.15fr) minmax(20rem, 0.85fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 24px;
   background:
@@ -138,7 +141,29 @@ body.shared-expense-setup-guide-page .lt-primaryCta:hover {
 }
 
 body.shared-expense-setup-guide-page .ses-hero .lt-toolsHeroCopy {
-  max-width: 72rem;
+  max-width: 44rem;
+}
+
+.ses-heroVisual,
+.ses-autopayVisual {
+  min-width: 0;
+  margin: 0;
+}
+
+.ses-heroVisual {
+  justify-self: end;
+  width: min(100%, 34rem);
+}
+
+.ses-heroVisual img,
+.ses-autopayVisual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
 }
 
 body.shared-expense-setup-guide-page .ses-hero h1 {
@@ -814,6 +839,25 @@ body.shared-expense-setup-guide-page .ses-result[hidden] {
     linear-gradient(135deg, rgba(228, 238, 248, 0.58), rgba(255, 255, 255, 0.94));
 }
 
+.ses-autopayIntro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.72fr);
+  gap: clamp(1.2rem, 3vw, 2.5rem);
+  align-items: center;
+  margin-top: 0.7rem;
+}
+
+.ses-autopayIntro > div {
+  min-width: 0;
+}
+
+.ses-autopayIntro p {
+  width: min(100%, 72ch) !important;
+  max-width: 72ch !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
 .ses-autopayExample p {
   margin: 0 !important;
   border: 1px solid rgba(15, 23, 42, 0.08);
@@ -844,6 +888,7 @@ body.shared-expense-setup-guide-page .best-next-step__card {
 }
 
 .ses-productSection {
+  padding: clamp(1.65rem, 3vw, 2.35rem);
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 24px;
   background:
@@ -946,6 +991,18 @@ body.shared-expense-setup-guide-page .lt-actions {
   }
 }
 
+@media (max-width: 980px) {
+  .ses-hero,
+  .ses-autopayIntro {
+    grid-template-columns: 1fr;
+  }
+
+  .ses-heroVisual {
+    justify-self: start;
+    width: min(100%, 34rem);
+  }
+}
+
 @media (max-width: 760px) {
   body.shared-expense-setup-guide-page article.post.featured {
     width: 100% !important;
@@ -956,6 +1013,11 @@ body.shared-expense-setup-guide-page .lt-actions {
   .ses-hero {
     border-radius: 20px;
     padding: 1.25rem 1rem;
+  }
+
+  .ses-heroVisual,
+  .ses-autopayVisual {
+    width: 100%;
   }
 
   body.shared-expense-setup-guide-page .ses-hero h1,
