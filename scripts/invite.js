@@ -8,17 +8,19 @@
 
   if (!invitationPanel || !missingPanel || !copyButton || !copyStatus) return;
 
-  const isCanonicalInvitation =
-    /^https:\/\/you-owe-me\.com\/invite\/?#t=[A-Za-z0-9_-]{42}[AQgw]$/.test(
+  const hasCanonicalInvitation = function () {
+    return /^https:\/\/you-owe-me\.com\/invite\/?#t=[A-Za-z0-9_-]{42}[AQgw]$/.test(
       window.location.href
     );
+  };
+  let copyListenerInstalled = false;
 
-  invitationPanel.hidden = !isCanonicalInvitation;
-  missingPanel.hidden = isCanonicalInvitation;
+  const copyInvitation = async function () {
+    if (!hasCanonicalInvitation()) {
+      renderInvitationState();
+      return;
+    }
 
-  if (!isCanonicalInvitation) return;
-
-  copyButton.addEventListener("click", async function () {
     copyButton.disabled = true;
     copyButton.textContent = "Copying…";
     let invitationURL = window.location.href;
@@ -36,5 +38,20 @@
       copyButton.textContent = "Copy Invitation Link";
       copyButton.disabled = false;
     }
-  });
+  };
+
+  function renderInvitationState() {
+    const isCanonicalInvitation = hasCanonicalInvitation();
+    invitationPanel.hidden = !isCanonicalInvitation;
+    missingPanel.hidden = isCanonicalInvitation;
+
+    if (isCanonicalInvitation && !copyListenerInstalled) {
+      copyButton.addEventListener("click", copyInvitation);
+      copyListenerInstalled = true;
+    }
+  }
+
+  renderInvitationState();
+  window.addEventListener("hashchange", renderInvitationState);
+  window.addEventListener("pageshow", renderInvitationState);
 })();

@@ -52,6 +52,13 @@ function runInvitePage(rawURL, options) {
   const clipboardWrites = [];
   const networkCalls = [];
   const logCalls = [];
+  const windowListeners = new Map();
+  const fakeWindow = {
+    location: browserLocation(rawURL),
+    addEventListener(type, listener) {
+      windowListeners.set(type, listener);
+    },
+  };
   const navigator = {
     sendBeacon() {
       networkCalls.push(["sendBeacon"].concat(Array.from(arguments)));
@@ -66,7 +73,7 @@ function runInvitePage(rawURL, options) {
     };
   }
   const context = {
-    window: {location: browserLocation(rawURL)},
+    window: fakeWindow,
     document: {
       getElementById(id) {
         return elements[id] || null;
@@ -95,7 +102,16 @@ function runInvitePage(rawURL, options) {
   };
 
   vm.runInNewContext(inviteJS, context, {filename: "scripts/invite.js"});
-  return {elements, clipboardWrites, networkCalls, logCalls};
+  return {
+    elements,
+    clipboardWrites,
+    networkCalls,
+    logCalls,
+    window: fakeWindow,
+    windowListener(type) {
+      return windowListeners.get(type);
+    },
+  };
 }
 
 test("invite page has local-only privacy, CSP, accessibility, and restrained Boost Pack copy", () => {
@@ -204,6 +220,36 @@ test("missing, query, ambiguous, unsafe, and noncanonical invitations show only 
     assert.deepEqual(page.networkCalls, [], rawURL);
     assert.deepEqual(page.logCalls, [], rawURL);
   }
+});
+
+test("same-document fragment changes cannot leave a stale invitation state", async () => {
+  const token = "A".repeat(43);
+  const validURL = "https://you-owe-me.com/invite/#t=" + token;
+  const invalidURL = "https://you-owe-me.com/invite/#t=invalid";
+  const page = runInvitePage(validURL);
+  const hashChange = page.windowListener("hashchange");
+
+  assert.equal(typeof hashChange, "function");
+  assert.equal(typeof page.windowListener("pageshow"), "function");
+  page.window.location = browserLocation(invalidURL);
+  hashChange();
+  assert.equal(page.elements["invitation-ready"].hidden, true);
+  assert.equal(page.elements["invitation-missing"].hidden, false);
+
+  const click = page.elements["copy-invitation"].listener("click");
+  await click();
+  assert.deepEqual(page.clipboardWrites, []);
+
+  const initiallyMissing = runInvitePage(invalidURL);
+  assert.equal(initiallyMissing.elements["copy-invitation"].listener("click"), undefined);
+  initiallyMissing.window.location = browserLocation(validURL);
+  initiallyMissing.windowListener("hashchange")();
+  assert.equal(initiallyMissing.elements["invitation-ready"].hidden, false);
+  assert.equal(initiallyMissing.elements["invitation-missing"].hidden, true);
+  await initiallyMissing.elements["copy-invitation"].listener("click")();
+  assert.deepEqual(initiallyMissing.clipboardWrites, [validURL]);
+  assert.deepEqual(initiallyMissing.networkCalls, []);
+  assert.deepEqual(initiallyMissing.logCalls, []);
 });
 
 test("clipboard denial or absence gives recovery guidance without exposing the token", async () => {
