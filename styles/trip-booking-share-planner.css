@@ -137,6 +137,95 @@ body.trip-booking-plan-page .tbp-hero .lt-heroBody { width: min(100%, 66rem) !im
 .tbp-policyChoices input { flex: 0 0 auto; margin-top: .2rem; }
 .tbp-policyChoices { display: grid; gap: .65rem; }
 .tbp-policyChoices small { display: block; margin-top: .25rem; color: var(--tbp-muted); font-size: .88rem; line-height: 1.55; }
+.tbp-choiceGrid label,
+.tbp-policyChoices label,
+.tbp-checkbox label {
+  position: relative;
+  transition: border-color .16s ease, background-color .16s ease, box-shadow .16s ease, transform .16s ease;
+}
+.tbp-choiceGrid label:hover,
+.tbp-policyChoices label:hover,
+.tbp-checkbox label:hover {
+  border-color: rgba(53,84,40,.32);
+  background: #fff;
+  box-shadow: 0 7px 16px rgba(15,23,42,.06);
+}
+.tbp-choiceGrid label:has(input:checked),
+.tbp-policyChoices label:has(input:checked),
+.tbp-checkbox label:has(input:checked) {
+  border-color: rgba(53,84,40,.68);
+  background: rgba(175,230,126,.22);
+  box-shadow: inset 0 0 0 1px rgba(53,84,40,.18), 0 9px 22px rgba(53,84,40,.1);
+}
+.tbp-choiceGrid label:focus-within,
+.tbp-policyChoices label:focus-within,
+.tbp-checkbox label:focus-within,
+.tbp-choiceGrid label:has(input:focus-visible),
+.tbp-policyChoices label:has(input:focus-visible),
+.tbp-checkbox label:has(input:focus-visible) {
+  outline: 3px solid rgba(53,84,40,.52);
+  outline-offset: 3px;
+  border-color: rgba(53,84,40,.58);
+  box-shadow: 0 0 0 5px rgba(175,230,126,.18), 0 9px 22px rgba(15,23,42,.1);
+}
+.tbp-choiceGrid input[type="radio"],
+.tbp-policyChoices input[type="radio"],
+.tbp-checkbox input[type="checkbox"] {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip-path: inset(50%);
+  white-space: nowrap;
+  border: 0;
+  opacity: 0;
+  z-index: auto;
+}
+.tbp-choiceGrid label::before,
+.tbp-policyChoices label::before,
+.tbp-checkbox label::before {
+  content: "";
+  box-sizing: border-box;
+  display: inline-grid;
+  width: 1.3rem;
+  height: 1.3rem;
+  flex: 0 0 1.3rem;
+  place-items: center;
+  margin-top: .08rem;
+  border: 2px solid rgba(24,33,43,.34);
+  background: #fff;
+  color: #fff;
+}
+.tbp-choiceGrid label::before,
+.tbp-policyChoices label::before { border-radius: 50%; }
+.tbp-checkbox label::before { border-radius: 6px; }
+.tbp-choiceGrid label:has(input[type="radio"]:checked)::before,
+.tbp-policyChoices label:has(input[type="radio"]:checked)::before {
+  border: 4px solid #fff;
+  background: var(--tbp-ink);
+  box-shadow: 0 0 0 2px #52713e;
+}
+.tbp-checkbox label:has(input[type="checkbox"]:checked)::before {
+  content: "✓";
+  border-color: var(--tbp-ink);
+  background: var(--tbp-ink);
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: .92rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.tbp-checkbox label {
+  width: 100%;
+  min-height: 4.6rem;
+  padding: .8rem;
+  border: 1px solid var(--tbp-line);
+  border-radius: 14px;
+  background: #f8fafb;
+  cursor: pointer;
+}
 .tbp-participants { display: grid; gap: .75rem; margin-top: .55rem; }
 .tbp-participant { display: grid; grid-template-columns: minmax(0, 1fr) minmax(0, 1fr); gap: .85rem; padding: .85rem; border-radius: 16px; background: #f4f6f8; }
 .tbp-liveShare { margin: .9rem 0 .2rem !important; color: var(--tbp-ink) !important; font-weight: 900; }
@@ -168,7 +257,51 @@ body.trip-booking-plan-page .tbp-hero .lt-heroBody { width: min(100%, 66rem) !im
 .tbp-resetButton { margin-top: 1rem; border: 1px solid rgba(15,23,42,.16); background: #fff; color: #18212b; }
 .tbp-copyStatus { min-height: 1.3rem; color: #355428 !important; font-size: .86rem; font-weight: 700; }
 .tbp-messageGrid { display: grid; grid-template-columns: repeat(2, minmax(0,1fr)); gap: 1rem; margin: 1.2rem 0; }
-.tbp-messageGrid .tbp-copyPanel { margin: 0; }
+.tbp-messageGrid .tbp-copyPanel { display: flex; flex-direction: column; align-items: flex-start; margin: 0; }
+.tbp-messageGrid .tbp-copyButton {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: .55rem;
+  min-width: 8.4rem;
+  min-height: 3rem;
+  margin-top: auto;
+  padding: .55rem 1rem .55rem .65rem;
+  border: 1px solid rgba(24,33,43,.14);
+  border-radius: 999px;
+  background: linear-gradient(180deg, #fff 0%, #f7faf5 100%);
+  box-shadow: 0 8px 18px rgba(15,23,42,.08), inset 0 1px 0 rgba(255,255,255,.92);
+  color: var(--tbp-ink);
+  font-size: .88rem;
+  font-weight: 900;
+  letter-spacing: .01em;
+  line-height: 1;
+  text-transform: none;
+  transition: transform .18s ease, border-color .18s ease, background .18s ease, box-shadow .18s ease;
+}
+.tbp-messageGrid .tbp-copyButton::before {
+  content: "\f0c5";
+  display: inline-grid;
+  width: 1.8rem;
+  height: 1.8rem;
+  flex: 0 0 1.8rem;
+  place-items: center;
+  border-radius: 50%;
+  background: rgba(175,230,126,.54);
+  color: #29451f;
+  font-family: "Font Awesome 5 Free";
+  font-size: .78rem;
+  font-weight: 900;
+}
+.tbp-messageGrid .tbp-copyButton:hover {
+  transform: translateY(-1px);
+  border-color: rgba(53,84,40,.3);
+  background: linear-gradient(180deg, #fff 0%, #f0f8e9 100%);
+  box-shadow: 0 11px 24px rgba(15,23,42,.11), inset 0 1px 0 rgba(255,255,255,.95);
+}
+.tbp-messageGrid .tbp-copyButton:active { transform: translateY(0); box-shadow: 0 5px 12px rgba(15,23,42,.09); }
+.tbp-messageGrid .tbp-copyButton:focus-visible { outline: 3px solid rgba(175,230,126,.72); outline-offset: 3px; }
+.tbp-messageGrid .tbp-copyStatus { margin: .45rem 0 0 !important; }
 .tbp-tableWrap { max-width: 100%; margin: 1.2rem 0; overflow-x: auto; border: 1px solid var(--tbp-line); border-radius: 20px; box-shadow: var(--tbp-shadow); }
 .tbp-table { min-width: 820px; margin: 0; }
 .tbp-table th { background: #eef3f6; color: var(--tbp-ink); }

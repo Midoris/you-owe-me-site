@@ -37,7 +37,11 @@ assert.strictEqual(planner.calculate(base({ refundability: "Nonrefundable", comf
 assert.strictEqual(planner.calculate(base({ priorDelays: "Yes" })).result.label, "Collect before booking", "case B: prior delay history");
 assert.strictEqual(planner.calculate(base()).result.label, "Book first, then collect before departure", "case C: flexible refundable booking");
 assert.strictEqual(planner.calculate(base({ bookingStatus: "already-booked" })).result.label, "Set a fixed pay-before-departure date", "case D: already booked");
-assert.strictEqual(planner.calculate(base({ participants: [{ name: "Maya", received: 280 }, { name: "Leo", received: 280 }, { name: "Sam", received: 280 }] })).result.label, "Fixed shares are covered", "case E: all covered");
+const covered = planner.calculate(base({ participants: [{ name: "Maya", received: 280 }, { name: "Leo", received: 280 }, { name: "Sam", received: 280 }] }));
+assert.strictEqual(covered.result.label, "Fixed shares are covered", "case E: all covered");
+assert(covered.artifacts.policy.includes("Everyone else’s fixed share is covered."), "case E: covered policy confirms payment state");
+assert(covered.artifacts.message.includes("everyone else’s fixed share for Lisbon hotel is covered."), "case E: covered message confirms payment state");
+assert(!covered.artifacts.message.includes("Please send"), "case E: covered message does not request payment again");
 
 const partial = planner.calculate(base());
 assert.strictEqual(partial.share, 280, "equal share uses organizer inclusion");

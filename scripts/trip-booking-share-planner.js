@@ -51,7 +51,10 @@
     const policySentence = cancellationSentence(state.cancellationRule, state.customRule);
     let policy;
     let message;
-    if (state.bookingStatus === "already-booked") {
+    if (result.key === "covered") {
+      policy = `${base} Everyone else’s fixed share is covered. ${policySentence} Variable trip costs such as meals and taxis will be handled separately after they happen.`;
+      message = `Thanks — everyone else’s fixed share for ${label} is covered. ${policySentence}`;
+    } else if (state.bookingStatus === "already-booked") {
       policy = `${label} is booked at ${state.currency} ${money(state.total)} total for ${state.shareCount} people (${state.currency} ${money(state.share)} each). The remaining fixed shares are due by ${state.deadlineDisplay} before travel. ${policySentence} Variable trip costs such as meals and taxis will be handled separately after they happen.`;
       message = `${label} is booked. Your fixed share is ${state.currency} ${money(state.share)}, due by ${state.deadlineDisplay} before we travel. ${policySentence}`;
     } else if (result.key === "collect") {
@@ -255,6 +258,7 @@
     }
 
     function renderResult(plan) {
+      clearCopyFeedback(resultRegion);
       emptyState.hidden = true;
       resultRegion.hidden = false;
       $("recommendation-label").textContent = plan.result.label;
@@ -299,6 +303,13 @@
       resultTitle.focus();
     }
 
+    function clearCopyFeedback(scope) {
+      scope.querySelectorAll(".tbp-copyStatus").forEach((node) => { node.textContent = ""; });
+      scope.querySelectorAll(".tbp-copyButton").forEach((button) => {
+        if (button.dataset.copyLabel) button.textContent = button.dataset.copyLabel;
+      });
+    }
+
     function resetPlanner() {
       form.reset();
       otherPeopleInput.value = "3";
@@ -309,14 +320,15 @@
       clearErrors();
       resultRegion.hidden = true;
       emptyState.hidden = false;
-      form.querySelectorAll(".tbp-copyStatus").forEach((node) => { node.textContent = ""; });
+      clearCopyFeedback(resultRegion);
       $("booking-status").focus();
     }
 
     function copyText(button) {
       const target = $(button.dataset.copyTarget);
       const status = button.parentElement.querySelector(".tbp-copyStatus");
-      const original = button.textContent;
+      const original = button.dataset.copyLabel || button.textContent;
+      button.dataset.copyLabel = original;
       if (!target || !navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
         status.textContent = "Couldn’t copy automatically. Select the text and copy it manually.";
         return;
