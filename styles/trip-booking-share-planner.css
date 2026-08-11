@@ -31,6 +31,8 @@ body.trip-booking-plan-page article.post.featured {
   padding-bottom: clamp(3rem, 6vw, 5.5rem);
 }
 body.trip-booking-plan-page a { border-bottom: 0; color: #243f30; text-decoration: underline; text-decoration-thickness: .08em; text-underline-offset: .15em; }
+body.trip-booking-plan-page .best-next-step__card,
+body.trip-booking-plan-page .best-next-step__card * { text-decoration: none; }
 body.trip-booking-plan-page .lt-breadcrumb { width: 100%; max-width: none; margin-bottom: 1.2rem; }
 body.trip-booking-plan-page .tbp-section { box-sizing: border-box; width: 100%; max-width: none; }
 body.trip-booking-plan-page .tbp-section > h2,
@@ -70,9 +72,34 @@ body.trip-booking-plan-page .tbp-hero .lt-heroBody { width: min(100%, 66rem) !im
 .tbp-answer p { margin: 0 !important; max-width: 70ch !important; }
 .tbp-workflow { margin: 0; padding: clamp(1rem, 2.5vw, 1.5rem); border: 1px solid var(--tbp-line); border-radius: 22px; background: rgba(255,255,255,.74); box-shadow: 0 18px 38px rgba(15,23,42,.1); }
 .tbp-workflow ol { display: grid; gap: .55rem; margin: 0; padding: 0; list-style: none; }
-.tbp-workflow li { position: relative; display: grid; grid-template-columns: 2.25rem 1fr; gap: .75rem; align-items: center; min-height: 3.2rem; padding: .55rem .75rem; border: 1px solid var(--tbp-line); border-radius: 16px; background: rgba(255,255,255,.9); text-align: left; }
-.tbp-workflow li:not(:last-child):after { content: "↓"; position: absolute; left: 1.2rem; bottom: -.88rem; z-index: 2; color: #52713e; font-weight: 900; }
-.tbp-workflow li span { display: grid; place-items: center; width: 2.15rem; height: 2.15rem; border-radius: 50%; background: rgba(175,230,126,.42); color: #18212b; font-weight: 900; }
+.tbp-workflow li {
+  --tbp-workflow-pad-x: .75rem;
+  --tbp-workflow-marker-center: 1.075rem;
+  position: relative;
+  display: grid;
+  grid-template-columns: 2.25rem 1fr;
+  gap: .75rem;
+  align-items: center;
+  min-height: 3.2rem;
+  padding: .55rem var(--tbp-workflow-pad-x);
+  border: 1px solid var(--tbp-line);
+  border-radius: 16px;
+  background: rgba(255,255,255,.9);
+  text-align: left;
+}
+.tbp-workflow li:not(:last-child):after {
+  content: "";
+  position: absolute;
+  left: calc(var(--tbp-workflow-pad-x) + var(--tbp-workflow-marker-center));
+  bottom: -.65rem;
+  z-index: 2;
+  width: .7rem;
+  height: .72rem;
+  background: #52713e;
+  clip-path: polygon(42% 0, 58% 0, 58% 52%, 100% 52%, 50% 100%, 0 52%, 42% 52%);
+  transform: translateX(-50%);
+}
+.tbp-workflow li span { display: grid; place-items: center; width: 2.15rem; height: 2.15rem; border-radius: 50%; background: rgba(175,230,126,.42); color: #18212b; font-weight: 900; line-height: 1; }
 .tbp-workflow figcaption,
 .tbp-cancelFlow figcaption { margin-top: .9rem; color: var(--tbp-muted); font-size: .9rem; line-height: 1.5; text-align: left; }
 
@@ -92,9 +119,43 @@ body.trip-booking-plan-page .tbp-hero .lt-heroBody { width: min(100%, 66rem) !im
 .tbp-legalNote { max-width: 84rem; margin: 1.2rem 0; padding: 1rem 1.15rem; text-align: left; }
 .tbp-note { background: linear-gradient(135deg, rgba(175,230,126,.18), rgba(255,255,255,.95)); }
 .tbp-legalNote { background: rgba(228,238,248,.65); }
-.tbp-checklist { grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); counter-reset: checklist; }
-.tbp-checklist article { position: relative; padding-left: 3.4rem; counter-increment: checklist; }
-.tbp-checklist article:before { content: counter(checklist); position: absolute; top: 1.1rem; left: 1rem; display: grid; place-items: center; width: 1.8rem; height: 1.8rem; border-radius: 50%; background: #afe67e; color: #18212b; font-weight: 900; }
+.tbp-checklist { grid-template-columns: repeat(12, minmax(0, 1fr)); gap: 1.1rem; counter-reset: checklist; }
+.tbp-checklist article {
+  position: relative;
+  display: grid;
+  grid-column: span 3;
+  grid-template-columns: 2.35rem minmax(0, 1fr);
+  grid-template-rows: auto 1fr;
+  column-gap: .85rem;
+  align-content: start;
+  min-height: 13rem;
+  padding: 1.2rem;
+  counter-increment: checklist;
+  background: linear-gradient(145deg, rgba(255,255,255,.98), rgba(246,250,243,.9));
+}
+.tbp-checklist article:nth-child(n+5) { grid-column: span 4; min-height: 12rem; }
+.tbp-checklist article:before {
+  content: counter(checklist);
+  position: static;
+  display: grid;
+  grid-column: 1;
+  grid-row: 1 / span 2;
+  place-items: center;
+  align-self: start;
+  width: 2.35rem;
+  height: 2.35rem;
+  border: 1px solid rgba(53,84,40,.14);
+  border-radius: 50%;
+  background: rgba(175,230,126,.72);
+  box-shadow: 0 7px 16px rgba(53,84,40,.12), inset 0 1px 0 rgba(255,255,255,.65);
+  color: #18212b;
+  font-family: "Source Sans Pro", Helvetica, sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1;
+}
+.tbp-checklist article h3 { grid-column: 2; grid-row: 1; align-self: center; margin: .12rem 0 .75rem !important; line-height: 1.25; }
+.tbp-checklist article p { grid-column: 2; grid-row: 2; margin: 0 !important; color: var(--tbp-muted) !important; line-height: 1.62; }
 .tbp-exampleCallout { display: inline-block; margin: 1rem 0; padding: .9rem 1.1rem; background: rgba(175,230,126,.22); color: var(--tbp-ink); font-weight: 900; }
 .tbp-comparison { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1rem; margin: 1.2rem 0; }
 .tbp-comparison > div { padding: 1.15rem; border: 1px solid var(--tbp-line); border-radius: 20px; background: rgba(255,255,255,.9); box-shadow: var(--tbp-shadow); text-align: left; }
@@ -324,6 +385,10 @@ body.trip-booking-plan-page .lt-actions { width: 100%; max-width: none; margin-l
   .tbp-hero { grid-template-columns: 1fr; }
   .tbp-workflow { width: 100%; }
   .tbp-cardGrid--three { grid-template-columns: 1fr; }
+  .tbp-checklist { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .tbp-checklist article,
+  .tbp-checklist article:nth-child(n+5) { grid-column: auto; min-height: 0; }
+  .tbp-checklist article:last-child { grid-column: 1 / -1; }
   .tbp-cancelFlow ol { grid-template-columns: 1fr 1fr; }
   .tbp-cancelFlow li:nth-child(2):after { content: "↓"; right: .5rem; bottom: -1.3rem; top: auto; }
   .tbp-summary { grid-template-columns: repeat(2, minmax(0,1fr)); }
@@ -336,6 +401,10 @@ body.trip-booking-plan-page .lt-actions { width: 100%; max-width: none; margin-l
   body.trip-booking-plan-page .tbp-hero .lt-ctaRow { display: grid; justify-items: stretch; }
   body.trip-booking-plan-page .tbp-hero .lt-primaryCta { width: 100%; text-align: center; }
   .tbp-workflow { margin-top: .3rem; }
+  .tbp-checklist { grid-template-columns: 1fr; gap: .8rem; }
+  .tbp-checklist article,
+  .tbp-checklist article:nth-child(n+5),
+  .tbp-checklist article:last-child { grid-column: auto; min-height: 0; padding: 1rem; }
   .tbp-formGrid,
   .tbp-choiceGrid,
   .tbp-choiceGrid--two,
@@ -357,6 +426,6 @@ body.trip-booking-plan-page .lt-actions { width: 100%; max-width: none; margin-l
   .tbp-fieldset,
   .tbp-card,
   .tbp-copyPanel { padding: .85rem; }
-  .tbp-workflow li { grid-template-columns: 2rem 1fr; padding: .45rem .55rem; }
+  .tbp-workflow li { --tbp-workflow-pad-x: .55rem; --tbp-workflow-marker-center: .95rem; grid-template-columns: 2rem 1fr; padding: .45rem var(--tbp-workflow-pad-x); }
   .tbp-workflow li span { width: 1.9rem; height: 1.9rem; }
 }
