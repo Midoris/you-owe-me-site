@@ -21,7 +21,7 @@ const startMarker = "<!-- best-next-step:start -->";
 const endMarker = "<!-- best-next-step:end -->";
 const excludedRouteDirs = new Set([".git", ".agents", ".codex", "assets", "downloads", "images", "styles", "scripts"]);
 const hubUrls = ["/find/", "/solutions/", "/tools/"];
-const registryOptionalNoindexRoutes = new Set(["/connect/"]);
+const registryOptionalNoindexRoutes = new Set(["/connect/", "/invite/"]);
 
 const priorityAuditTiers = {
   tier1: [

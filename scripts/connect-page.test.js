@@ -136,7 +136,7 @@ test("connect page has static privacy, security, and accessibility protections",
   assert.doesNotMatch(sitemap, /you-owe-me\.com\/connect\/?/i);
 });
 
-test("only the connect utility route may omit content-registry metadata", () => {
+test("only the private connect and invite utility routes may omit content-registry metadata", () => {
   const auditPaths = [
     "scripts/audit-content-routing.mjs",
     "scripts/audit-seo-ai-hygiene.mjs",
@@ -145,7 +145,7 @@ test("only the connect utility route may omit content-registry metadata", () => 
 
   for (const relativePath of auditPaths) {
     const source = fs.readFileSync(path.join(root, relativePath), "utf8");
-    assert.match(source, /registryOptionalNoindexRoutes\s*=\s*new Set\(\["\/connect\/"\]\)/);
+    assert.match(source, /registryOptionalNoindexRoutes\s*=\s*new Set\(\["\/connect\/", "\/invite\/"\]\)/);
     assert.match(source, /registryOptionalNoindexRoutes\.has\(route\)/);
     assert.doesNotMatch(source, /!byUrl\.has\(route\)\s*&&\s*!isNoindex\(html\)/);
   }
@@ -167,6 +167,8 @@ test("AASA copies are byte-identical, valid, and preserve every prior route", ()
     "/connect",
     "/connect/",
     "/connect/*",
+    "/invite",
+    "/invite/",
   ]);
 });
 
@@ -270,8 +272,8 @@ test("both privacy pages disclose the same Balance Sync lifecycle and data bound
     assert.match(policy, pattern, `privacy policy missing ${pattern}`);
   }
 
-  assert.match(overview, /Updated July 24, 2026/);
-  assert.match(policy, /Last updated: July 12, 2026/);
-  assert.match(overview, /"dateModified": "2026-07-24"/);
-  assert.match(policy, /"dateModified": "2026-07-12"/);
+  assert.match(overview, /Updated August 11, 2026/);
+  assert.match(policy, /Last updated: August 11, 2026/);
+  assert.match(overview, /"dateModified": "2026-08-11"/);
+  assert.match(policy, /"dateModified": "2026-08-11"/);
 });

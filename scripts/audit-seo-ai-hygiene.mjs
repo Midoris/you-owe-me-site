@@ -10,7 +10,7 @@ const rootDir = path.resolve(__dirname, "..");
 const siteOrigin = "https://you-owe-me.com";
 const excludedRouteDirs = new Set([".git", ".agents", ".codex", "assets", "downloads", "images", "styles", "scripts"]);
 const oldAppStoreSlug = "https://apps.apple.com/app/you-owe-me-short-term-loans/id1147058670?l=en";
-const registryOptionalNoindexRoutes = new Set(["/connect/"]);
+const registryOptionalNoindexRoutes = new Set(["/connect/", "/invite/"]);
 
 const requiredRobotPolicies = [
   "Googlebot",

@@ -12,7 +12,9 @@
           "/events/timeline",
           "/connect",
           "/connect/",
-          "/connect/*"
+          "/connect/*",
+          "/invite",
+          "/invite/"
         ]
       }
     ]

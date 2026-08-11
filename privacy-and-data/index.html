@@ -44,7 +44,7 @@
           "name": "Privacy and Data in You Owe Me",
           "description": "A plain-English guide to how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Balance Sync, sharing links, AI features, reminders, exports, App Lock, and sensitive money records.",
           "url": "https://you-owe-me.com/privacy-and-data/",
-          "dateModified": "2026-07-24",
+          "dateModified": "2026-08-11",
           "image": "https://you-owe-me.com/images/privacy-data-hero.webp",
           "publisher": {
             "@type": "Organization",
@@ -490,6 +490,17 @@
               <p>For the product overview, participation choices, and feature limitations, <a href="/features/#balance-sync">see Balance Sync on the Features page</a>.</p>
             </div>
 
+            <div class="pd-info-card">
+              <h3 id="referral-boost-packs">Referral Boost Packs use private, single-use invitations.</h3>
+              <p>When an Apple-linked account creates or claims a referral, Firebase Authentication, App Check, Cloud Functions, and Cloud Firestore process the minimum metadata needed to validate the invitation and apply the existing <code>boost_pack_v1</code> entitlement.</p>
+              <ul>
+                <li>The random invitation token stays in the app&rsquo;s Keychain and the shared link fragment. Firebase stores only its SHA-256 hash; the website does not send the fragment in network or analytics requests.</li>
+                <li>Referral records may contain participant Firebase user IDs, invitation state and timestamps, eligibility and grant booleans, successful-referral counts, bounded anti-abuse attempt state, and an account-deletion fence. Names, email addresses, contacts, balances, and ledger entries are not part of referral records.</li>
+                <li>The other participant&rsquo;s identity is not shown. A recipient can receive the Boost Pack at most once, and an inviter&rsquo;s own Boost Pack does not stack.</li>
+                <li>Invitations are single-use, expire after seven days, and terminal records are normally scheduled for cleanup after an additional 30-day safety period. A minimal deletion fence remains through Firebase Authentication deletion and is then scheduled for cleanup after the 30-day safety period.</li>
+              </ul>
+            </div>
+
             <div class="pd-soft-cta">
               <div>
                 <h3>Ready to keep a clearer record?</h3>
@@ -751,7 +762,7 @@
               <a href="/privacy-policy/" class="lt-textCta" data-track-location="privacy_data_final_policy">Read the full Privacy Policy</a>
             </div>
             <p class="pd-cta-note">Free download. Core tracking works without a mandatory You Owe Me cloud account.</p>
-            <p class="pd-updated">Updated July 24, 2026</p>
+            <p class="pd-updated">Updated August 11, 2026</p>
           </section>
         </article>
       </div>

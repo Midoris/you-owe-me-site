@@ -40,7 +40,7 @@
       "name": "Privacy Policy for the YouOweMe iOS App",
       "description": "Privacy Policy for the YouOweMe iOS app.",
       "url": "https://you-owe-me.com/privacy-policy/",
-      "dateModified": "2026-07-12",
+      "dateModified": "2026-08-11",
       "publisher": {
         "@type": "Organization",
         "name": "YouOweMe"
@@ -83,7 +83,7 @@
             <header class="major">
               <h1>Privacy Policy</h1>
             </header>
-            <p class="lt-legalMeta">Last updated: July 12, 2026</p>
+            <p class="lt-legalMeta">Last updated: August 11, 2026</p>
             <p class="lt-heroBody">
               This Privacy Policy explains how information may be handled in the YouOweMe iOS app. It is written to give users and
               App Store reviewers a clear, practical summary of what information may be processed, why it may be processed, and what
@@ -153,6 +153,21 @@
               A Balance Sync invitation expires and may be revoked or replaced, but anyone with the complete invitation link may be able
               to claim it before then. Keep invitation links private. The website handoff page does not display the inviter's identity,
               amounts, notes, or other shared entry details.
+            </p>
+
+            <h3>Referral Boost Packs</h3>
+            <p>
+              Referral Boost Packs use Apple-linked Firebase Authentication, App Check, Cloud Functions, and Cloud Firestore. The app
+              generates a random single-use invitation token and keeps it in Keychain and the shared URL fragment. Firebase stores only
+              the token's SHA-256 hash. The private invitation page does not send the fragment to analytics, advertising, or another
+              service.
+            </p>
+            <p>
+              Referral records may include participant Firebase user IDs, invitation state and timestamps, eligibility and reward-grant
+              booleans, successful-referral counts, bounded anti-abuse attempt state, and an account-deletion fence. They do not include
+              participant names, email addresses, contacts, balances, or ledger entries, and one participant's identity is not disclosed
+              to the other. A successful claim adds the existing <code>boost_pack_v1</code> value to the eligible account's entitlement
+              record.
             </p>
 
             <h3>Exports, PDFs, statement links, and live links</h3>
@@ -245,6 +260,12 @@
               records as ordinary local data. The disconnected canonical ledger becomes inaccessible for mutation, is retained for a
               30-day recovery and debugging safety window, and is then scheduled for deletion. Expired, revoked, or consumed invitation
               records may also be retained temporarily for safe status handling before scheduled cleanup.
+            </p>
+            <p>
+              Referral invitations expire after seven days. Claimed, expired, or superseded referral invitation records are normally
+              scheduled for cleanup after an additional 30-day safety period. A minimal referral deletion fence is not made purgeable
+              until Firebase Authentication deletion succeeds; after that, it is normally scheduled for cleanup after a 30-day safety
+              period.
             </p>
             <p>
               To prevent stale authenticated devices from recreating a deleted account or Cloud Account scope, Firebase may retain an
