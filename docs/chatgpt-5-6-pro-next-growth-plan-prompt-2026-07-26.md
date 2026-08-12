@@ -202,7 +202,7 @@ The site currently explains and connects users to features including:
 - sync/cloud profiles;
 - biometric privacy;
 - offline use and no mandatory sign-up;
-- seven app languages: English, Arabic, French, German, Japanese, Portuguese, and Spanish.
+- 10 app languages: English, Arabic, French, German, Italian, Japanese, Korean, Polish, Portuguese, and Spanish.
 
 Do not recommend pages based on a feature the app does not support. Verify product claims before using them.
 
