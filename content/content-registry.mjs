@@ -6229,7 +6229,7 @@ export const contentRegistry = [
   },
   {
     url: "/blog/how-to-politely-say-no-when-people-ask-for-money/",
-    title: "How to Say No When Someone Asks for Money: 8 Scripts",
+    title: "How to Say No When Someone Asks for Money — Examples for Friends & Family",
     pageType: "guide",
     cluster: "temporary-support",
     primaryAudience: "People who need to decline a money request while keeping the relationship respectful.",
@@ -6241,7 +6241,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/temporary-financial-support-tracker/", "/solutions/app-to-track-money-owed/"],
     appStoreCpp: "temporary-financial-support",
     tags: ["guide", "boundaries", "family-help", "messages", "scripts", "lending-money", "family-boundaries", "friends"],
-    updated: "2026-07-23",
+    updated: "2026-08-12",
     status: "live",
     priority: "medium",
     primaryCta: "Read money conversation guidance",
