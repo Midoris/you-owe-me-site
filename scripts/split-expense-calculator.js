@@ -15,6 +15,7 @@
   };
 
   const els = {};
+  let hasExplicitInteraction = false;
 
   function makeId(prefix) {
     const random = Math.random().toString(36).slice(2, 8);
@@ -368,6 +369,12 @@
     renderMoneyRows(els.share, result.net.map((row) => [`${row.name}'s share`, row.share]));
     renderNetRows(result);
     renderSettlement(result);
+    renderAppContinuation(result);
+  }
+
+  function renderAppContinuation(result) {
+    if (!els.appContinuation) return;
+    els.appContinuation.hidden = !(hasExplicitInteraction && result.validCount > 0);
   }
 
   function renderSummary(result) {
@@ -497,6 +504,7 @@
   }
 
   function useExample() {
+    hasExplicitInteraction = true;
     state.currency = "$";
     state.nextPersonNumber = 1;
     state.people = [createPerson("Alex"), createPerson("Mia"), createPerson("Sam")];
@@ -514,6 +522,7 @@
   }
 
   function clearAll() {
+    hasExplicitInteraction = false;
     setInitialState();
     state.expenses[0].description = "";
     state.expenses[0].amount = "";
@@ -591,6 +600,19 @@
     });
   }
 
+  function bindExplicitInteractionGate(root) {
+    const markInteraction = function () {
+      hasExplicitInteraction = true;
+    };
+
+    root.addEventListener("input", markInteraction, true);
+    root.addEventListener("change", markInteraction, true);
+    root.addEventListener("click", function (event) {
+      const control = event.target && event.target.closest("button, input, select, textarea");
+      if (control && root.contains(control)) markInteraction();
+    }, true);
+  }
+
   function init() {
     const root = document.querySelector(".split-calculator");
     if (!root) return;
@@ -604,9 +626,11 @@
     els.net = document.querySelector("[data-net]");
     els.settlement = document.querySelector("[data-settlement]");
     els.copyStatus = document.querySelector("[data-copy-status]");
+    els.appContinuation = document.querySelector("[data-app-continuation]");
 
     setInitialState();
     els.currency.value = state.currency;
+    bindExplicitInteractionGate(root);
     bindEvents();
     render();
   }

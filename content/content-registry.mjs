@@ -2333,16 +2333,6 @@ export const contentRegistry = [
           priority: 3,
           analyticsId: "split_calculator_running_balance",
         },
-        {
-          label: "Use app",
-          title: "Track shared expenses in You Owe Me",
-          description: "Use this if the split is part of a longer shared-expense history.",
-          href: "app-store:self",
-          type: "app",
-          intent: "download_app",
-          priority: 4,
-          analyticsId: "split_calculator_app",
-        },
       ],
       skipReason: null,
     },
@@ -3284,16 +3274,6 @@ export const contentRegistry = [
       heading: "After you see the running balance",
       intro: "A running balance is useful because the next message should be based on the current amount, not memory.",
       steps: [
-        {
-          label: "Track",
-          title: "Keep the running balance in You Owe Me",
-          description: "Use this if expenses, repayments, and partial payments will continue.",
-          href: "/solutions/app-to-track-money-owed/",
-          type: "solution",
-          intent: "track_ongoing_balance",
-          priority: 1,
-          analyticsId: "running_balance_calculator_track",
-        },
         {
           label: "Message",
           title: "Send a repayment update or reminder",

@@ -13,6 +13,7 @@
   };
 
   const els = {};
+  let hasExplicitInteraction = false;
 
   function makeId() {
     return `rb-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
@@ -438,6 +439,12 @@
 
     renderSummaryCards(result);
     renderTimeline(result);
+    renderAppContinuation(result);
+  }
+
+  function renderAppContinuation(result) {
+    if (!els.appContinuation) return;
+    els.appContinuation.hidden = !(hasExplicitInteraction && result.rows.length > 0);
   }
 
   function renderSummaryCards(result) {
@@ -531,6 +538,7 @@
   }
 
   function clearAll() {
+    hasExplicitInteraction = false;
     state.currency = "$";
     state.person1 = "You";
     state.person2 = "Alex";
@@ -543,6 +551,7 @@
   }
 
   function loadScenario(scenario) {
+    hasExplicitInteraction = true;
     state.currency = "$";
     state.startingDirection = "none";
     state.startingAmount = "";
@@ -716,6 +725,19 @@
     });
   }
 
+  function bindExplicitInteractionGate(root) {
+    const markInteraction = function () {
+      hasExplicitInteraction = true;
+    };
+
+    root.addEventListener("input", markInteraction, true);
+    root.addEventListener("change", markInteraction, true);
+    root.addEventListener("click", function (event) {
+      const control = event.target && event.target.closest("button, input, select, textarea");
+      if (control && root.contains(control)) markInteraction();
+    }, true);
+  }
+
   function init() {
     const root = document.querySelector(".rb-calculator");
     if (!root) return;
@@ -732,10 +754,12 @@
     els.summaryCards = document.querySelector("[data-summary-cards]");
     els.timelineRows = document.querySelector("[data-timeline-rows]");
     els.copyStatus = document.querySelector("[data-copy-status]");
+    els.appContinuation = document.querySelector("[data-app-continuation]");
 
     setStarterRows();
     syncSetupInputs();
     renderTransactions();
+    bindExplicitInteractionGate(root);
     bindEvents();
     renderAll();
 

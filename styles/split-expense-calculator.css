@@ -156,6 +156,10 @@ body.calculator-page article.post.featured {
   top: 1rem;
 }
 
+.results-panel .lt-appContinuation {
+  grid-template-columns: 1fr;
+}
+
 .panel-heading,
 .results-heading {
   display: flex;
@@ -469,6 +473,12 @@ body.calculator-page article.post.featured {
 
   .results-panel {
     position: static;
+  }
+}
+
+@media (min-width: 1281px) {
+  .best-next-step[data-source-page="tools_split_expense_calculator"] .best-next-step__grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
   }
 }
 

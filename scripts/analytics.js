@@ -6,6 +6,7 @@ import {
   setDefaultEventParameters,
   setUserProperties,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
+import { createAppStoreCtaViewTracker } from "./app-store-cta-view-tracker.mjs";
 
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyDOsFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",
@@ -23,6 +24,7 @@ const APP_STORE_ID_MATCH = "id1147058670";
 const WEB_EVENT_PREFIX = "uomi_web_";
 const PAGE_VISITED_EVENT = "uomi_web_page_visited";
 const APP_STORE_OPENED_EVENT = "uomi_web_app_store_opened";
+const APP_STORE_CTA_VIEWED_EVENT = "uomi_web_app_store_cta_viewed";
 const SALE_CHANGED_EVENT = "youoweme:sale-changed";
 const SUPPORT_FORM_SENT_EVENT = "youoweme:support-form-sent";
 const SUPPORT_FORM_ERROR_EVENT = "youoweme:support-form-error";
@@ -159,6 +161,11 @@ const saleBadgeEventsSent = new Set();
 let pageVisitTracked = false;
 
 let activeSale = null;
+const appStoreCtaViewTracker = createAppStoreCtaViewTracker({
+  onView: function (link) {
+    void trackEvent(APP_STORE_CTA_VIEWED_EVENT, getAppStoreEventPayload(link));
+  },
+});
 
 function shouldInitializeFirebase() {
   const hostname = window.location.hostname;
@@ -425,14 +432,14 @@ function shouldInterceptNavigation(event, link) {
   return true;
 }
 
-function trackAppStoreClick(link, event) {
+function getAppStoreEventPayload(link) {
   const pageMetadata = getPageMetadata();
   const sourceCluster = link.dataset.sourceCluster
     ? normalizeClusterValue(link.dataset.sourceCluster)
     : pageMetadata.cluster;
   const appStoreCpp = getAppStoreCppFromLink(link);
   const intendedCpp = getAppStoreIntendedCpp(link, pageMetadata, appStoreCpp);
-  const eventPayload = Object.assign({}, getSaleParams(), {
+  return Object.assign({}, getSaleParams(), {
     source_page_path: window.location.pathname,
     page_title: sanitizeText(document.title, 160),
     cta_location: getCtaLocation(link),
@@ -445,6 +452,10 @@ function trackAppStoreClick(link, event) {
     app_store_destination_url: link.href,
     link_text: sanitizeText(link.getAttribute("aria-label") || link.textContent, 120),
   });
+}
+
+function trackAppStoreClick(link, event) {
+  const eventPayload = getAppStoreEventPayload(link);
 
   if (!shouldInterceptNavigation(event, link)) {
     void trackEvent(APP_STORE_OPENED_EVENT, eventPayload);
@@ -462,6 +473,15 @@ function trackAppStoreClick(link, event) {
 
   void trackEvent(APP_STORE_OPENED_EVENT, eventPayload);
   window.setTimeout(navigate, 200);
+}
+
+function bindAppStoreCtaViews() {
+  const links = document.querySelectorAll("a[href*='apps.apple.com']");
+
+  links.forEach(function (link) {
+    if (link.href.indexOf(APP_STORE_HOST_MATCH) === -1) return;
+    appStoreCtaViewTracker.register(link);
+  });
 }
 
 function bindAppStoreClicks() {
@@ -663,6 +683,7 @@ function initEventTracking() {
   activeSale = getActiveSale();
   trackPageVisited();
   bindAppStoreClicks();
+  bindAppStoreCtaViews();
   bindMediumClicks();
   bindTrackedLinkClicks();
   trackBlogArticleOpen();

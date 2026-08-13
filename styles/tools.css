@@ -536,6 +536,69 @@ body.tools-page a {
   padding: clamp(1.45rem, 3vw, 2rem);
 }
 
+.lt-appContinuation {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 1rem;
+  align-items: center;
+  margin-top: 1rem;
+  padding: 1rem 1.1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.16), rgba(255, 255, 255, 0.96) 55%, rgba(228, 238, 248, 0.7));
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.07);
+  color: #212931;
+  text-align: left;
+}
+
+.lt-appContinuation[hidden] {
+  display: none;
+}
+
+.lt-appContinuation__copy {
+  min-width: 0;
+}
+
+.lt-appContinuation__eyebrow {
+  margin: 0 0 0.35rem !important;
+  color: rgba(33, 41, 49, 0.7);
+  font-size: 0.74rem !important;
+  font-weight: 800;
+  letter-spacing: 0.06em;
+  line-height: 1.25 !important;
+  text-transform: uppercase;
+}
+
+.lt-appContinuation h2,
+.lt-appContinuation h3,
+.lt-appContinuation h4 {
+  margin: 0 !important;
+  color: #18212b;
+  font-size: clamp(1.12rem, 1.05rem + 0.3vw, 1.35rem) !important;
+  font-weight: 900;
+  letter-spacing: -0.01em;
+  line-height: 1.25;
+  text-transform: none;
+}
+
+.lt-appContinuation__copy > p:last-child {
+  max-width: 66ch;
+  margin: 0.45rem 0 0 !important;
+  color: rgba(33, 41, 49, 0.78);
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
+}
+
+.lt-appContinuation .lt-ctaRow {
+  margin-top: 0;
+}
+
+.lt-appContinuation .lt-appStoreBtn {
+  width: 225px;
+  max-width: 100%;
+}
+
 .lt-bridgeGrid {
   grid-template-columns: repeat(2, minmax(0, 1fr));
   margin: 1.25rem 0 1.2rem;
@@ -675,6 +738,11 @@ body.tools-page #copyright ul li {
   .lt-featuredTool,
   .lt-bridgeGrid {
     grid-template-columns: 1fr;
+  }
+
+  .lt-appContinuation {
+    grid-template-columns: 1fr;
+    padding: 1rem;
   }
 
   .lt-toolGlyph {
