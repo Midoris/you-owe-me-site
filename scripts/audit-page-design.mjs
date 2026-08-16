@@ -3,16 +3,19 @@
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
+import { auditRoute as auditLanguageSupportRoute } from "./audit-app-language-support.mjs";
 
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const rootDir = path.resolve(__dirname, "..");
 
 const ignoredBodyClasses = new Set(["is-preload", "site-nav-page"]);
 const commonStylesheets = new Set([
+  "assets/css/fontawesome-all.min.css",
   "assets/css/main.css",
   "assets/css/noscript.css",
   "styles/site-nav.css",
   "styles/best-next-step.css",
+  "styles/app-language-support.css",
 ]);
 
 const requiredTokens = [
@@ -49,8 +52,9 @@ function compact(text) {
 }
 
 function cssPathFromHref(href, htmlPath) {
-  if (!href.endsWith(".css") || /^(https?:)?\/\//.test(href)) return null;
+  if (/^(https?:)?\/\//.test(href)) return null;
   const cleanHref = href.split("#")[0].split("?")[0];
+  if (!cleanHref.endsWith(".css")) return null;
   if (cleanHref.startsWith("/")) return path.join(rootDir, cleanHref);
   return path.resolve(path.dirname(htmlPath), cleanHref);
 }
@@ -195,6 +199,9 @@ function main() {
   for (const input of inputs) {
     const target = readTarget(input);
     const { errors, warnings } = auditTarget(target);
+    if (!input.endsWith(".css")) {
+      errors.push(...auditLanguageSupportRoute(input).map((error) => `Language support: ${error}`));
+    }
     hasErrors ||= errors.length > 0;
 
     console.log(`Page design audit: ${target.label}`);

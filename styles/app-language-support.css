@@ -1,0 +1,64 @@
+[data-app-language-support-anchor][hidden] {
+  display: none !important;
+}
+
+.app-language-support {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 0 0.75rem;
+  padding: 0.48rem 0.72rem;
+  border: 1px solid rgba(53, 84, 40, 0.18);
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.18);
+  color: #18212b;
+  font-family: inherit;
+  font-size: 0.9rem;
+  font-weight: 700;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-align: left;
+  text-transform: none;
+  box-shadow: none;
+}
+
+.app-language-support[dir="rtl"] {
+  text-align: right;
+}
+
+.app-language-support__icon {
+  display: inline-grid;
+  flex: 0 0 1.25rem;
+  width: 1.25rem;
+  height: 1.25rem;
+  place-items: center;
+  border-radius: 50%;
+  background: #afe67e;
+  color: #18212b;
+  font-size: 0.78rem;
+  line-height: 1;
+}
+
+.app-language-support__text,
+.app-language-support__text bdi {
+  color: inherit;
+  font: inherit;
+  letter-spacing: inherit;
+  text-transform: inherit;
+}
+
+.app-language-support__text {
+  min-width: 0;
+  overflow-wrap: anywhere;
+}
+
+@media screen and (max-width: 480px) {
+  .app-language-support {
+    width: 100%;
+    border-radius: 14px;
+    font-size: 0.86rem;
+  }
+}
