@@ -77,6 +77,7 @@ const bestNextStepIntents = new Set([
   "confirm_payment",
   "create_record",
   "track_ongoing_balance",
+  "organize_records",
   "set_boundary",
   "compare_methods",
   "download_app",

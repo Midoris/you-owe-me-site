@@ -145,6 +145,20 @@ body.features-page .features-tour-card p {
   line-height: 1.5;
 }
 
+body.features-page .features-tour-card--landscape {
+  grid-column: span 2;
+}
+
+body.features-page .features-tour-card .features-tour-visual {
+  width: 100%;
+  max-width: none;
+  border-radius: 16px;
+}
+
+body.features-page #spaces {
+  scroll-margin-top: 5.5rem;
+}
+
 body.features-page .features-grid {
   display: grid;
   grid-template-columns: 1fr;
@@ -234,6 +248,46 @@ body.features-page .features-card img {
   height: auto;
 }
 
+body.features-page .features-spaces-media-card {
+  grid-template-columns: minmax(0, 1fr) minmax(18rem, 0.72fr);
+  align-items: start;
+}
+
+body.features-page .features-card .features-spaces-media {
+  width: 100%;
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+body.features-page .features-space-support-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1rem;
+}
+
+body.features-page .features-boundary-line {
+  margin-top: 1rem;
+  padding: 0.8rem 0.9rem;
+  border-left: 4px solid #afe67e;
+  background: rgba(175, 230, 126, 0.12);
+  color: rgba(33, 41, 49, 0.88);
+}
+
+body.features-page .features-boundary-note {
+  max-width: none;
+  margin-top: 1rem;
+  padding: 0.9rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.features-page .features-spaces-faq {
+  margin-top: 1.6rem;
+}
+
 body.features-page .features-balance-sync-media {
   width: min(100%, 15rem);
 }
@@ -288,6 +342,10 @@ body.features-page .lt-finalCta {
   }
 
   body.features-page .features-card {
+    grid-template-columns: 1fr;
+  }
+
+  body.features-page .features-space-support-grid {
     grid-template-columns: 1fr;
   }
 
@@ -356,6 +414,10 @@ body.features-page .lt-finalCta {
     grid-template-columns: 1fr;
   }
 
+  body.features-page .features-tour-card--landscape {
+    grid-column: span 1;
+  }
+
   body.features-page .features-included-list {
     grid-template-columns: 1fr;
   }
@@ -373,6 +435,13 @@ body.features-page .lt-finalCta {
     padding: 1rem;
     border-radius: 18px;
     gap: 0.95rem;
+  }
+
+  body.features-page .features-card .features-spaces-media,
+  body.features-page .features-tour-card .features-tour-visual {
+    width: 100%;
+    max-width: 100%;
+    border-radius: 16px;
   }
 
   body.features-page .features-card h4 {
