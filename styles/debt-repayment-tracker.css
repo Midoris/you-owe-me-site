@@ -1,0 +1,977 @@
+body.debt-repayment-tracker-page {
+  overflow-x: clip;
+  background: #f4f6f8;
+  --drt-text: #212931;
+  --drt-heading: #18212b;
+  --drt-border: rgba(15, 23, 42, 0.08);
+  --drt-focus: rgba(53, 84, 40, 0.32);
+}
+
+body.debt-repayment-tracker-page #header {
+  display: none !important;
+}
+
+body.debt-repayment-tracker-page #wrapper {
+  overflow: visible;
+}
+
+body.debt-repayment-tracker-page #wrapper > .bg {
+  display: none !important;
+}
+
+body.debt-repayment-tracker-page #wrapper.fade-in:before {
+  background: #f4f6f8;
+}
+
+body.debt-repayment-tracker-page #nav,
+body.debt-repayment-tracker-page #main,
+body.debt-repayment-tracker-page #copyright {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+body.debt-repayment-tracker-page #nav {
+  margin-top: 0 !important;
+  padding: 0 clamp(1rem, 3.5vw, 3rem);
+  background: rgba(30, 37, 45, 0.9);
+  backdrop-filter: blur(10px);
+}
+
+body.debt-repayment-tracker-page #main {
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.16), transparent 30%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f6f8 76%);
+  padding: clamp(1rem, 2.25vw, 1.85rem) clamp(1rem, 3.5vw, 3rem) 0;
+}
+
+body.debt-repayment-tracker-page #main > * {
+  width: 100% !important;
+  max-width: none !important;
+  padding: 0 !important;
+  border-top: 0 !important;
+}
+
+body.debt-repayment-tracker-page article.post.featured {
+  width: min(1240px, calc(100% - 2rem));
+  margin: 0 auto;
+  padding: clamp(1.85rem, 4vw, 3.75rem) clamp(0.65rem, 1.2vw, 1.25rem) 4rem;
+  color: var(--drt-text);
+  text-align: left !important;
+}
+
+body.debt-repayment-tracker-page article.post.featured h1,
+body.debt-repayment-tracker-page article.post.featured h2,
+body.debt-repayment-tracker-page article.post.featured h3 {
+  color: var(--drt-heading);
+  letter-spacing: -0.02em;
+  text-transform: none;
+  text-wrap: balance;
+}
+
+body.debt-repayment-tracker-page article.post.featured h1 {
+  margin: 0;
+  font-size: clamp(2.25rem, 4vw, 4rem);
+  font-weight: 900;
+  line-height: 1.04;
+}
+
+body.debt-repayment-tracker-page article.post.featured h2 {
+  margin: 0 0 0.95rem;
+  font-size: clamp(1.65rem, 1.28rem + 1.15vw, 2.35rem);
+  font-weight: 900;
+  line-height: 1.15;
+}
+
+body.debt-repayment-tracker-page article.post.featured h3 {
+  margin: 0 0 0.6rem;
+  font-size: clamp(1.08rem, 0.98rem + 0.45vw, 1.3rem);
+  font-weight: 900;
+  line-height: 1.3;
+}
+
+body.debt-repayment-tracker-page article.post.featured p,
+body.debt-repayment-tracker-page article.post.featured li,
+body.debt-repayment-tracker-page article.post.featured td,
+body.debt-repayment-tracker-page article.post.featured th,
+body.debt-repayment-tracker-page article.post.featured dt,
+body.debt-repayment-tracker-page article.post.featured dd {
+  color: rgba(33, 41, 49, 0.88);
+  font-size: clamp(0.98rem, 0.95rem + 0.16vw, 1.08rem);
+  line-height: 1.7;
+  text-align: left;
+}
+
+body.debt-repayment-tracker-page article.post.featured a {
+  border-bottom: 0;
+}
+
+body.debt-repayment-tracker-page a:focus-visible,
+body.debt-repayment-tracker-page button:focus-visible,
+body.debt-repayment-tracker-page summary:focus-visible,
+body.debt-repayment-tracker-page pre:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+body.debt-repayment-tracker-page .lt-breadcrumb {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.42rem;
+  margin: 0 0 1.65rem;
+  color: rgba(24, 33, 43, 0.62);
+  font-size: 0.92rem;
+  line-height: 1.5;
+}
+
+body.debt-repayment-tracker-page .lt-breadcrumb a {
+  color: #355428;
+  font-weight: 700;
+}
+
+body.debt-repayment-tracker-page .lt-breadcrumb [aria-current="page"] {
+  color: rgba(24, 33, 43, 0.78);
+  font-weight: 700;
+}
+
+body.debt-repayment-tracker-page .drt-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.07fr) minmax(22rem, 0.93fr);
+  gap: clamp(1.5rem, 4vw, 4rem);
+  align-items: center;
+  overflow: hidden;
+  padding: clamp(1.75rem, 3.8vw, 3rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-hero__content {
+  min-width: 0;
+}
+
+body.debt-repayment-tracker-page .drt-eyebrow,
+body.debt-repayment-tracker-page .drt-card__eyebrow {
+  margin: 0 0 0.85rem;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 0.76rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.25;
+  text-transform: uppercase;
+}
+
+body.debt-repayment-tracker-page .drt-hero .major {
+  margin: 0 !important;
+  text-align: left !important;
+}
+
+body.debt-repayment-tracker-page .drt-hero__answer {
+  max-width: 67ch;
+  margin: 1.15rem 0 0;
+  color: rgba(33, 41, 49, 0.9);
+  font-size: clamp(1.07rem, 1rem + 0.3vw, 1.2rem) !important;
+  line-height: 1.72 !important;
+}
+
+body.debt-repayment-tracker-page .drt-authority {
+  max-width: 67ch;
+  margin: 1rem 0 0;
+  padding: 0.85rem 1rem;
+  border-left: 4px solid #afe67e;
+  border-radius: 0 14px 14px 0;
+  background: rgba(255, 255, 255, 0.7);
+  color: rgba(33, 41, 49, 0.82);
+  font-size: 0.96rem !important;
+  font-weight: 700;
+  line-height: 1.55 !important;
+}
+
+body.debt-repayment-tracker-page .drt-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 1.45rem;
+}
+
+body.debt-repayment-tracker-page .drt-actions .lt-appStoreBtn,
+body.debt-repayment-tracker-page .drt-product-bridge__actions .lt-appStoreBtn {
+  flex: 0 0 auto;
+  width: min(250px, 100%);
+}
+
+body.debt-repayment-tracker-page .lt-appStoreBtn img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.debt-repayment-tracker-page .drt-button,
+body.debt-repayment-tracker-page .drt-copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 3rem;
+  padding: 0.72rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 999px;
+  color: #18212b;
+  font-family: inherit;
+  font-size: 0.95rem;
+  font-weight: 800;
+  line-height: 1.3;
+  text-align: center;
+  text-decoration: none;
+  transition: background 160ms ease, box-shadow 160ms ease, transform 160ms ease;
+}
+
+body.debt-repayment-tracker-page .drt-button--secondary {
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 8px 20px rgba(15, 23, 42, 0.05);
+}
+
+body.debt-repayment-tracker-page .drt-button--secondary:hover {
+  background: #ffffff;
+  color: #18212b;
+  box-shadow: 0 14px 28px rgba(15, 23, 42, 0.08);
+  transform: translateY(-1px);
+}
+
+body.debt-repayment-tracker-page .drt-copy-button {
+  width: auto;
+  margin-top: 1rem;
+  background: #afe67e;
+  box-shadow: 0 10px 22px rgba(53, 84, 40, 0.15);
+  cursor: pointer;
+}
+
+body.debt-repayment-tracker-page .drt-copy-button:hover {
+  background: #bcf18c;
+  color: #18212b;
+  transform: translateY(-1px);
+}
+
+body.debt-repayment-tracker-page .drt-support-line {
+  margin: 0.9rem 0 0;
+  color: rgba(33, 41, 49, 0.7);
+  font-size: 0.9rem !important;
+  line-height: 1.45 !important;
+}
+
+body.debt-repayment-tracker-page .drt-hero__visual,
+body.debt-repayment-tracker-page .drt-editorial-visual,
+body.debt-repayment-tracker-page .drt-product-visual {
+  margin: 0;
+  line-height: 0;
+}
+
+body.debt-repayment-tracker-page .drt-hero__visual,
+body.debt-repayment-tracker-page .drt-editorial-visual {
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+body.debt-repayment-tracker-page .drt-hero__visual img,
+body.debt-repayment-tracker-page .drt-editorial-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+body.debt-repayment-tracker-page .drt-answer-strip {
+  margin-top: clamp(1.3rem, 3vw, 2rem);
+  padding: clamp(1.2rem, 2.4vw, 1.75rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-answer-strip > div {
+  max-width: 92ch;
+}
+
+body.debt-repayment-tracker-page .drt-answer-strip h2 {
+  font-size: clamp(1.4rem, 1.2rem + 0.65vw, 1.9rem) !important;
+}
+
+body.debt-repayment-tracker-page .drt-answer-strip p,
+body.debt-repayment-tracker-page .drt-section-heading p,
+body.debt-repayment-tracker-page .drt-section > p,
+body.debt-repayment-tracker-page .drt-media-section__copy > p {
+  max-width: 76ch;
+  margin: 0;
+}
+
+body.debt-repayment-tracker-page .drt-answer-strip p + p,
+body.debt-repayment-tracker-page .drt-section-heading p + p,
+body.debt-repayment-tracker-page .drt-section > p + p,
+body.debt-repayment-tracker-page .drt-media-section__copy > p + p {
+  margin-top: 0.85rem;
+}
+
+body.debt-repayment-tracker-page .drt-contents {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.45rem 0.9rem;
+  margin-top: 1.25rem;
+  padding: 0.75rem 0;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.1);
+  color: rgba(33, 41, 49, 0.7);
+  font-size: 0.88rem;
+  line-height: 1.4;
+}
+
+body.debt-repayment-tracker-page .drt-contents > span {
+  color: #18212b;
+  font-weight: 900;
+}
+
+body.debt-repayment-tracker-page .drt-contents a {
+  color: #355428;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+body.debt-repayment-tracker-page .drt-emphasis {
+  margin-top: 1.05rem !important;
+  color: #18212b !important;
+  font-weight: 900;
+}
+
+body.debt-repayment-tracker-page .drt-section {
+  margin-top: clamp(2.7rem, 6vw, 5rem);
+  scroll-margin-top: 1rem;
+}
+
+body.debt-repayment-tracker-page #example-heading,
+body.debt-repayment-tracker-page #projection-heading,
+body.debt-repayment-tracker-page #faq-heading {
+  scroll-margin-top: 1rem;
+}
+
+body.debt-repayment-tracker-page .drt-section--artifact {
+  padding: clamp(1.4rem, 3.5vw, 2.45rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: rgba(236, 244, 249, 0.76);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+
+body.debt-repayment-tracker-page .drt-grid--three {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+body.debt-repayment-tracker-page .drt-grid--two {
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+}
+
+body.debt-repayment-tracker-page .drt-card {
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-card--muted {
+  background: rgba(241, 244, 247, 0.92);
+}
+
+body.debt-repayment-tracker-page .drt-card p,
+body.debt-repayment-tracker-page .drt-card ul {
+  margin: 0;
+}
+
+body.debt-repayment-tracker-page .drt-card ul {
+  padding-left: 1.2rem;
+}
+
+body.debt-repayment-tracker-page .drt-card li + li {
+  margin-top: 0.45rem;
+}
+
+body.debt-repayment-tracker-page .drt-card__eyebrow {
+  font-size: 0.68rem !important;
+}
+
+body.debt-repayment-tracker-page .drt-routing {
+  margin-top: 1.3rem;
+  padding: clamp(1.15rem, 2.2vw, 1.55rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+}
+
+body.debt-repayment-tracker-page .drt-routing ul {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.8rem 1.5rem;
+  margin: 0;
+  padding-left: 1.2rem;
+}
+
+body.debt-repayment-tracker-page .drt-routing a,
+body.debt-repayment-tracker-page .drt-section a,
+body.debt-repayment-tracker-page .drt-final a:not(.lt-appStoreBtn):not(.drt-button) {
+  color: #355428;
+  font-weight: 700;
+  text-decoration: underline;
+  text-decoration-thickness: 0.08em;
+  text-underline-offset: 0.16em;
+}
+
+body.debt-repayment-tracker-page .drt-template-card {
+  margin-top: 1.35rem;
+  padding: clamp(1.1rem, 2.5vw, 1.65rem);
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 20px;
+  background: #18212b;
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+body.debt-repayment-tracker-page .drt-template-card pre {
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: visible;
+  border: 0;
+  background: transparent;
+  color: #ffffff;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+  font-size: clamp(0.8rem, 0.74rem + 0.22vw, 0.94rem);
+  line-height: 1.75;
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+  user-select: text;
+}
+
+body.debt-repayment-tracker-page .drt-template-card code {
+  color: inherit;
+}
+
+body.debt-repayment-tracker-page .drt-template-note {
+  max-width: 84ch;
+  margin: 0.9rem 0 0;
+  color: rgba(33, 41, 49, 0.74) !important;
+  font-size: 0.92rem !important;
+  font-weight: 700;
+}
+
+body.debt-repayment-tracker-page .drt-steps {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.35rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.debt-repayment-tracker-page .drt-step {
+  display: grid;
+  grid-template-columns: 2.7rem minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+  padding: 1.15rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.86);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-step__number {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 2.7rem;
+  height: 2.7rem;
+  border-radius: 50%;
+  background: #afe67e;
+  color: #18212b;
+  font-weight: 900;
+}
+
+body.debt-repayment-tracker-page .drt-step p {
+  max-width: 88ch;
+  margin: 0;
+}
+
+body.debt-repayment-tracker-page .drt-rule-callout,
+body.debt-repayment-tracker-page .drt-boundary-note {
+  margin-top: 1.15rem;
+  padding: 1rem 1.15rem;
+  border-left: 4px solid #afe67e;
+  border-radius: 0 16px 16px 0;
+  background: rgba(255, 255, 255, 0.88);
+}
+
+body.debt-repayment-tracker-page .drt-rule-callout p {
+  margin: 0;
+}
+
+body.debt-repayment-tracker-page .drt-boundary-note {
+  max-width: 96ch;
+  color: #18212b;
+  font-weight: 700;
+}
+
+body.debt-repayment-tracker-page .drt-product-bridge {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(14rem, 19rem);
+  gap: 1.5rem;
+  align-items: center;
+  margin-top: 1.3rem;
+  padding: clamp(1.2rem, 2.6vw, 1.75rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-product-bridge p {
+  margin: 0;
+}
+
+body.debt-repayment-tracker-page .drt-product-bridge__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.65rem;
+}
+
+body.debt-repayment-tracker-page .drt-product-bridge__actions span {
+  color: rgba(33, 41, 49, 0.7);
+  font-size: 0.86rem;
+  line-height: 1.5;
+}
+
+body.debt-repayment-tracker-page .drt-media-section {
+  display: grid;
+  grid-template-columns: minmax(0, 1.2fr) minmax(15rem, 0.42fr);
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+  align-items: center;
+}
+
+body.debt-repayment-tracker-page .drt-media-section--wide-visual {
+  grid-template-columns: minmax(0, 0.98fr) minmax(25rem, 1.02fr);
+}
+
+body.debt-repayment-tracker-page .drt-scenario-grid {
+  margin-top: 1.25rem;
+}
+
+body.debt-repayment-tracker-page .drt-product-visual {
+  width: min(100%, 18rem);
+  justify-self: end;
+  padding: 0.75rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+body.debt-repayment-tracker-page .drt-product-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: 14px;
+}
+
+body.debt-repayment-tracker-page .drt-product-visual figcaption {
+  margin-top: 0.75rem;
+  color: rgba(33, 41, 49, 0.68);
+  font-size: 0.78rem;
+  line-height: 1.55;
+  text-align: left;
+}
+
+body.debt-repayment-tracker-page .drt-table-wrap {
+  margin-top: 1.25rem;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-table {
+  width: 100%;
+  margin: 0;
+  border-collapse: collapse;
+  table-layout: fixed;
+}
+
+body.debt-repayment-tracker-page .drt-table caption {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border: 0;
+}
+
+body.debt-repayment-tracker-page .drt-table th,
+body.debt-repayment-tracker-page .drt-table td {
+  padding: 1rem;
+  border-color: rgba(15, 23, 42, 0.08);
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+body.debt-repayment-tracker-page .drt-table thead th {
+  background: #18212b;
+  color: #ffffff !important;
+  font-weight: 800;
+}
+
+body.debt-repayment-tracker-page .drt-table tbody th {
+  color: #18212b;
+  font-weight: 800;
+}
+
+body.debt-repayment-tracker-page .drt-table-note {
+  max-width: 96ch !important;
+  margin: 0.95rem 0 0 !important;
+  color: rgba(33, 41, 49, 0.74) !important;
+  font-weight: 700;
+}
+
+body.debt-repayment-tracker-page .drt-space-record {
+  margin: 1.25rem 0 0;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-space-record > div {
+  display: grid;
+  grid-template-columns: minmax(7rem, 0.34fr) minmax(0, 1fr);
+  gap: 1rem;
+  padding: 0.85rem 1rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-space-record > div:first-child {
+  border-top: 0;
+}
+
+body.debt-repayment-tracker-page .drt-space-record dt,
+body.debt-repayment-tracker-page .drt-space-record dd {
+  margin: 0;
+}
+
+body.debt-repayment-tracker-page .drt-space-record dt {
+  color: rgba(33, 41, 49, 0.62);
+  font-size: 0.82rem !important;
+  font-weight: 800;
+  letter-spacing: 0.04em;
+  text-transform: uppercase;
+}
+
+body.debt-repayment-tracker-page .drt-space-record dd {
+  color: #18212b;
+  font-weight: 800;
+}
+
+body.debt-repayment-tracker-page .drt-space-record__heading,
+body.debt-repayment-tracker-page .drt-space-record__footer {
+  background: rgba(175, 230, 126, 0.16);
+}
+
+body.debt-repayment-tracker-page .drt-space-record__footer {
+  grid-template-columns: 1fr !important;
+}
+
+body.debt-repayment-tracker-page .drt-editorial-visual {
+  width: 100%;
+  justify-self: end;
+}
+
+body.debt-repayment-tracker-page .drt-faq-list {
+  display: grid;
+  gap: 0.8rem;
+  margin-top: 1.25rem;
+}
+
+body.debt-repayment-tracker-page .drt-faq-item {
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-faq-item summary {
+  position: relative;
+  min-height: 3.25rem;
+  padding: 1rem 3.25rem 1rem 1.15rem;
+  color: #18212b;
+  font-size: clamp(1rem, 0.96rem + 0.25vw, 1.16rem);
+  font-weight: 900;
+  line-height: 1.45;
+  cursor: pointer;
+  list-style: none;
+}
+
+body.debt-repayment-tracker-page .drt-faq-item summary::-webkit-details-marker {
+  display: none;
+}
+
+body.debt-repayment-tracker-page .drt-faq-item summary::after {
+  content: "+";
+  position: absolute;
+  top: 50%;
+  right: 1.1rem;
+  transform: translateY(-50%);
+  color: #355428;
+  font-size: 1.5rem;
+  line-height: 1;
+}
+
+body.debt-repayment-tracker-page .drt-faq-item[open] summary::after {
+  content: "−";
+}
+
+body.debt-repayment-tracker-page .drt-faq-item p {
+  max-width: 90ch;
+  margin: 0;
+  padding: 0 1.15rem 1.15rem;
+}
+
+body.debt-repayment-tracker-page .drt-final {
+  margin-top: clamp(2.7rem, 6vw, 5rem);
+  padding: clamp(1.4rem, 3.5vw, 2.45rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+body.debt-repayment-tracker-page .drt-final > p {
+  max-width: 76ch;
+  margin: 0;
+}
+
+body.debt-repayment-tracker-page .drt-final .drt-support-line,
+body.debt-repayment-tracker-page .drt-final .drt-trust-link {
+  margin-top: 0.95rem;
+}
+
+body.debt-repayment-tracker-page .lt-pageMeta {
+  margin: 1.4rem 0 0;
+  color: rgba(33, 41, 49, 0.62);
+  font-size: 0.86rem;
+  text-align: left;
+}
+
+body.debt-repayment-tracker-page #copyright {
+  background: #f4f6f8;
+}
+
+@media (max-width: 1100px) {
+  body.debt-repayment-tracker-page .drt-hero,
+  body.debt-repayment-tracker-page .drt-media-section,
+  body.debt-repayment-tracker-page .drt-media-section--wide-visual {
+    grid-template-columns: 1fr;
+  }
+
+  body.debt-repayment-tracker-page .drt-hero__visual,
+  body.debt-repayment-tracker-page .drt-editorial-visual {
+    width: min(100%, 48rem);
+    justify-self: center;
+  }
+
+  body.debt-repayment-tracker-page .drt-product-visual {
+    width: min(100%, 17rem);
+    justify-self: center;
+  }
+}
+
+@media (max-width: 900px) {
+  body.debt-repayment-tracker-page .drt-grid--three {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  body.debt-repayment-tracker-page .drt-grid--three > :last-child:nth-child(odd) {
+    grid-column: 1 / -1;
+  }
+
+  body.debt-repayment-tracker-page .drt-product-bridge {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 736px) {
+  body.debt-repayment-tracker-page .lt-breadcrumb {
+    padding-right: 4.75rem;
+  }
+
+  body.debt-repayment-tracker-page article.post.featured {
+    width: calc(100% - 0.6rem);
+    padding: 1.1rem 0.1rem 2.5rem;
+  }
+
+  body.debt-repayment-tracker-page #main {
+    padding-left: 0.6rem;
+    padding-right: 0.6rem;
+  }
+
+  body.debt-repayment-tracker-page .drt-hero,
+  body.debt-repayment-tracker-page .drt-section--artifact,
+  body.debt-repayment-tracker-page .drt-final {
+    padding: 1.2rem;
+    border-radius: 20px;
+  }
+
+  body.debt-repayment-tracker-page .drt-actions,
+  body.debt-repayment-tracker-page .drt-actions .drt-button {
+    width: 100%;
+  }
+
+  body.debt-repayment-tracker-page .drt-actions .lt-appStoreBtn,
+  body.debt-repayment-tracker-page .drt-product-bridge__actions .lt-appStoreBtn {
+    width: min(225px, 100%);
+  }
+
+  body.debt-repayment-tracker-page .drt-grid--three,
+  body.debt-repayment-tracker-page .drt-grid--two,
+  body.debt-repayment-tracker-page .drt-routing ul {
+    grid-template-columns: 1fr;
+  }
+
+  body.debt-repayment-tracker-page .drt-grid--three > :last-child:nth-child(odd) {
+    grid-column: auto;
+  }
+
+  body.debt-repayment-tracker-page .drt-copy-button {
+    width: 100%;
+  }
+
+  body.debt-repayment-tracker-page .drt-step {
+    grid-template-columns: 2.4rem minmax(0, 1fr);
+    gap: 0.8rem;
+    padding: 1rem;
+  }
+
+  body.debt-repayment-tracker-page .drt-step__number {
+    width: 2.4rem;
+    height: 2.4rem;
+  }
+
+  body.debt-repayment-tracker-page .drt-table-wrap {
+    overflow: visible;
+    border-radius: 18px;
+  }
+
+  body.debt-repayment-tracker-page .drt-table,
+  body.debt-repayment-tracker-page .drt-table tbody,
+  body.debt-repayment-tracker-page .drt-table tr,
+  body.debt-repayment-tracker-page .drt-table th,
+  body.debt-repayment-tracker-page .drt-table td {
+    display: block;
+    width: 100%;
+  }
+
+  body.debt-repayment-tracker-page .drt-table thead {
+    display: none;
+  }
+
+  body.debt-repayment-tracker-page .drt-table tr {
+    padding: 0.95rem 1rem;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  body.debt-repayment-tracker-page .drt-table tbody tr:first-child {
+    border-top: 0;
+  }
+
+  body.debt-repayment-tracker-page .drt-table th,
+  body.debt-repayment-tracker-page .drt-table td {
+    padding: 0.18rem 0;
+    border: 0;
+  }
+
+  body.debt-repayment-tracker-page .drt-table th::before,
+  body.debt-repayment-tracker-page .drt-table td::before {
+    content: attr(data-label);
+    display: block;
+    margin-top: 0.55rem;
+    color: rgba(33, 41, 49, 0.58);
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    line-height: 1.4;
+    text-transform: uppercase;
+  }
+
+  body.debt-repayment-tracker-page .drt-table th::before {
+    margin-top: 0;
+  }
+
+  body.debt-repayment-tracker-page .drt-space-record > div {
+    grid-template-columns: 1fr;
+    gap: 0.15rem;
+  }
+}
+
+@media (max-width: 430px) {
+  body.debt-repayment-tracker-page article.post.featured h1 {
+    font-size: clamp(2rem, 10.2vw, 2.55rem);
+  }
+
+  body.debt-repayment-tracker-page .drt-hero,
+  body.debt-repayment-tracker-page .drt-section--artifact,
+  body.debt-repayment-tracker-page .drt-final {
+    padding: 1rem;
+  }
+
+  body.debt-repayment-tracker-page .drt-answer-strip,
+  body.debt-repayment-tracker-page .drt-card,
+  body.debt-repayment-tracker-page .drt-product-bridge {
+    padding: 1rem;
+  }
+
+  body.debt-repayment-tracker-page .drt-template-card {
+    padding: 0.9rem;
+  }
+
+  body.debt-repayment-tracker-page .drt-template-card pre {
+    font-size: 0.76rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.debt-repayment-tracker-page .drt-button,
+  body.debt-repayment-tracker-page .drt-copy-button {
+    transition: none;
+  }
+
+  body.debt-repayment-tracker-page .drt-button:hover,
+  body.debt-repayment-tracker-page .drt-copy-button:hover {
+    transform: none;
+  }
+}
