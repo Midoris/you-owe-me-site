@@ -160,6 +160,33 @@ body.calculator-page article.post.featured {
   grid-template-columns: 1fr;
 }
 
+.split-expense-continuation__actions {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.split-expense-continuation .lt-appContinuation__copy > p:not(.lt-appContinuation__eyebrow) {
+  max-width: 66ch;
+  margin: 0.45rem 0 0 !important;
+  color: var(--text-muted);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+.split-expense-continuation__actions .lt-primaryCta {
+  width: 100%;
+  padding-right: 0.85rem;
+  padding-left: 0.85rem;
+  text-align: center;
+}
+
+.split-expense-continuation__actions .lt-appStoreBtn {
+  width: min(190px, 100%);
+  margin-top: 0;
+  border-radius: 11px;
+}
+
 .panel-heading,
 .results-heading {
   display: flex;
