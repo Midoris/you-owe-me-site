@@ -102,6 +102,7 @@ const PAGE_METADATA = {
   "/tools/couple-shared-expense-balance-calculator/": { page_type: "tool", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
   "/tools/running-balance-calculator/": { page_type: "tool", cluster: "running_balance", app_store_cpp: "shared_expenses" },
   "/tools/roommate-bill-split-calculator/": { page_type: "tool", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
+  "/tools/roommate-expense-tracker-template/": { page_type: "tool", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/tools/partial-repayment-calculator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/group-payback-calculator/": { page_type: "tool", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },
   "/tools/payment-plan-calculator/": { page_type: "tool", cluster: "temporary_financial_support", app_store_cpp: "temporary_support" },

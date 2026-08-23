@@ -1,0 +1,4 @@
+Date,Entry type,Expense or repayment,Category,Amount,Paid by or From,To,Split method,Included roommates,Agreed shares,Notes
+2026-05-01,Expense,Rent,Rent,1800.00,Maya,,Equal among included roommates,"Maya, Alex, Sam",Maya 600.00; Alex 600.00; Sam 600.00,Example row—replace with your own entry. This CSV does not calculate balances.
+2026-05-05,Expense,Internet,Internet,60.00,Alex,,Equal among included roommates,"Maya, Alex, Sam",Maya 20.00; Alex 20.00; Sam 20.00,Example expense; replace or remove.
+2026-05-20,Repayment,Repayment to Maya,,200.00,Alex,Maya,,,,Example repayment recorded separately; replace or remove.

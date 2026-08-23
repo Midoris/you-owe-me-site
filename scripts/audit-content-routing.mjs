@@ -58,6 +58,7 @@ const priorityAuditTiers = {
     "/tools/family-reimbursement-tracker-template/",
     "/solutions/roommate-expense-tracker/",
     "/tools/roommate-bill-split-calculator/",
+    "/tools/roommate-expense-tracker-template/",
     "/blog/how-to-track-money-between-roommates/",
     "/blog/how-to-split-rent-utilities-and-groceries-with-roommates/",
     "/solutions/expense-tracker-for-couples/",

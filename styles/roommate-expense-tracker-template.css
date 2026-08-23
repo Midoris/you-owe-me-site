@@ -1,0 +1,849 @@
+body.roommate-template-page {
+  --roommate-ink: #18212b;
+  --roommate-body: rgba(33, 41, 49, 0.88);
+  --roommate-muted: rgba(33, 41, 49, 0.68);
+  --roommate-line: rgba(15, 23, 42, 0.08);
+  --roommate-green: #afe67e;
+  --roommate-blue: rgba(228, 238, 248, 0.92);
+  --roommate-surface: rgba(255, 255, 255, 0.92);
+  background: #f4f6f8;
+  color: #212931;
+}
+
+body.roommate-template-page #header,
+body.roommate-template-page #wrapper > .bg {
+  display: none !important;
+}
+
+body.roommate-template-page #wrapper.fade-in:before {
+  background: #f4f6f8;
+}
+
+body.roommate-template-page #nav,
+body.roommate-template-page #main,
+body.roommate-template-page #copyright {
+  width: 100%;
+  max-width: none;
+}
+
+body.roommate-template-page #main {
+  overflow: hidden;
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.16), transparent 30%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f6f8 76%);
+}
+
+body.roommate-template-page #main > .post {
+  width: min(100%, 82rem);
+  max-width: none;
+  margin: 0;
+  padding: clamp(1rem, 3vw, 2.5rem);
+}
+
+body.roommate-template-page article.post.featured,
+body.roommate-template-page article.post.featured header.major,
+body.roommate-template-page article.post.featured header.major h1,
+body.roommate-template-page article.post.featured h2,
+body.roommate-template-page article.post.featured h3,
+body.roommate-template-page article.post.featured p,
+body.roommate-template-page article.post.featured ul,
+body.roommate-template-page article.post.featured ol {
+  text-align: left;
+}
+
+body.roommate-template-page article.post.featured header.major,
+body.roommate-template-page article.post.featured header.major h1,
+body.roommate-template-page article.post.featured h2,
+body.roommate-template-page article.post.featured h3 {
+  width: auto;
+  max-width: none;
+  margin-left: 0;
+  margin-right: 0;
+  color: #18212b;
+  text-transform: none;
+}
+
+body.roommate-template-page article.post.featured header.major {
+  margin: 0;
+}
+
+body.roommate-template-page article.post.featured header.major h1 {
+  max-width: 16ch;
+  margin: 0 0 1rem;
+  font-size: clamp(2.45rem, 5vw, 4.6rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 0.98;
+}
+
+body.roommate-template-page article.post.featured h2 {
+  margin: 0 0 0.8rem;
+  font-size: clamp(1.75rem, 3.4vw, 2.65rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+body.roommate-template-page article.post.featured h3 {
+  margin: 0 0 0.55rem;
+  font-size: 1.12rem;
+  font-weight: 800;
+  line-height: 1.3;
+}
+
+body.roommate-template-page article.post.featured p,
+body.roommate-template-page article.post.featured li,
+body.roommate-template-page article.post.featured td,
+body.roommate-template-page article.post.featured th {
+  color: var(--roommate-body);
+}
+
+body.roommate-template-page article.post.featured a {
+  border-bottom: 0;
+}
+
+body.roommate-template-page .lt-breadcrumb {
+  width: min(100%, 76rem);
+  margin: 0 0 1.25rem;
+  flex-wrap: wrap;
+}
+
+body.roommate-template-page .lt-eyebrow,
+body.roommate-template-page .lt-sectionEyebrow,
+body.roommate-template-page .roommate-template-kicker {
+  margin: 0 0 0.65rem;
+  color: rgba(33, 41, 49, 0.88) !important;
+  font-size: 0.8rem !important;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.25 !important;
+  text-transform: uppercase;
+}
+
+.roommate-template-hero,
+.roommate-template-section,
+.roommate-template-final {
+  box-sizing: border-box;
+  width: min(100%, 76rem);
+  margin: 0 0 1.35rem;
+}
+
+.roommate-template-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.08fr) minmax(21rem, 0.92fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: center;
+  padding: clamp(1.25rem, 4vw, 3.25rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+.roommate-template-hero .lt-heroBody,
+.roommate-template-hero .lt-heroSupport {
+  width: auto;
+  max-width: 68ch;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+.roommate-template-hero .lt-heroBody {
+  font-size: clamp(1.06rem, 1.7vw, 1.25rem);
+  line-height: 1.62;
+}
+
+.roommate-template-hero .lt-heroSupport {
+  color: var(--roommate-muted) !important;
+  font-size: 1rem;
+  line-height: 1.62;
+}
+
+.roommate-template-hero-visual {
+  min-width: 0;
+  margin: 0;
+}
+
+.roommate-template-hero-visual img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+
+.roommate-template-hero-actions,
+.roommate-template-product-actions,
+.roommate-template-copy-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.75rem;
+  align-items: center;
+}
+
+.roommate-template-hero-actions {
+  margin-top: 1.25rem;
+}
+
+body.roommate-template-page .lt-primaryCta,
+body.roommate-template-page .roommate-template-secondaryCta,
+body.roommate-template-page .roommate-template-copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 44px;
+  padding: 0.78rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 14px;
+  box-shadow: none;
+  font-family: inherit;
+  font-size: 0.92rem;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.2;
+  text-align: center;
+  text-transform: none;
+  cursor: pointer;
+}
+
+body.roommate-template-page .lt-primaryCta,
+body.roommate-template-page .roommate-template-copy-button {
+  background: #afe67e;
+  color: #18212b !important;
+}
+
+body.roommate-template-page .lt-primaryCta:hover,
+body.roommate-template-page .roommate-template-copy-button:hover {
+  background: #bcf18c;
+}
+
+body.roommate-template-page .roommate-template-secondaryCta {
+  background: rgba(255, 255, 255, 0.9);
+  color: #18212b !important;
+}
+
+body.roommate-template-page .roommate-template-secondaryCta:hover {
+  background: #ffffff;
+}
+
+body.roommate-template-page a:focus-visible,
+body.roommate-template-page button:focus-visible,
+body.roommate-template-page summary:focus-visible,
+body.roommate-template-page [tabindex="0"]:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+.roommate-template-tertiary {
+  display: inline-flex;
+  min-height: 44px;
+  align-items: center;
+  margin-top: 0.55rem;
+}
+
+.roommate-template-trust,
+.roommate-template-privacy,
+.roommate-template-boundary,
+.roommate-template-tip,
+.roommate-template-verdict {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.72);
+  color: var(--roommate-muted) !important;
+  font-size: 0.94rem !important;
+  line-height: 1.55 !important;
+  padding: 0.85rem 1rem;
+}
+
+.roommate-template-trust {
+  margin-top: 0.8rem;
+}
+
+.roommate-template-section {
+  padding: clamp(1.25rem, 3.5vw, 2.5rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: var(--roommate-surface);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.roommate-template-section > p:not(.lt-sectionEyebrow),
+.roommate-template-final > p {
+  max-width: 72ch;
+}
+
+.roommate-template-choice-grid,
+.roommate-template-callout-grid,
+.roommate-template-related-grid {
+  display: grid;
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.roommate-template-choice-grid {
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+}
+
+.roommate-template-choice-grid article,
+.roommate-template-callout-grid article,
+.roommate-template-related-grid article,
+.roommate-template-download-card,
+.roommate-template-review-card,
+.roommate-template-message-card,
+.roommate-template-boundaries {
+  min-width: 0;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.94);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  padding: 1.2rem;
+}
+
+.roommate-template-choice-grid article,
+.roommate-template-related-grid article,
+.roommate-template-download-card {
+  display: flex;
+  flex-direction: column;
+}
+
+.roommate-template-choice-grid article p,
+.roommate-template-related-grid article p {
+  flex: 1 1 auto;
+}
+
+.roommate-template-choice-current,
+.roommate-template-download-card--primary {
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.25), transparent 42%),
+    rgba(255, 255, 255, 0.96) !important;
+}
+
+.roommate-template-current-label,
+.roommate-template-trust-chips span {
+  display: inline-flex;
+  width: fit-content;
+  min-height: 32px;
+  align-items: center;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.22);
+  color: #18212b;
+  font-size: 0.84rem;
+  font-weight: 800;
+  line-height: 1.2;
+  padding: 0.42rem 0.72rem;
+}
+
+.roommate-template-download-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+  margin-top: 1.3rem;
+}
+
+.roommate-template-download-card h3 {
+  font-size: 1.45rem !important;
+}
+
+.roommate-template-download-card .lt-primaryCta,
+.roommate-template-download-card .roommate-template-secondaryCta {
+  width: fit-content;
+  margin-top: auto;
+}
+
+.roommate-template-check-list {
+  display: grid;
+  gap: 0.55rem;
+  margin: 1rem 0 1.1rem !important;
+  padding-left: 1.25rem !important;
+}
+
+.roommate-template-file-meta {
+  color: var(--roommate-muted) !important;
+  font-size: 0.82rem !important;
+  font-weight: 700;
+}
+
+.roommate-template-privacy {
+  margin-top: 1rem;
+  background: rgba(228, 238, 248, 0.46);
+}
+
+.roommate-template-table-scroll {
+  width: 100%;
+  margin: 1.25rem 0;
+  overflow-x: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: #ffffff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  -webkit-overflow-scrolling: touch;
+}
+
+.roommate-template-mobile-swipe {
+  display: none;
+}
+
+.roommate-template-table-scroll table {
+  width: 100%;
+  min-width: 46rem;
+  margin: 0;
+  border-collapse: separate;
+  border-spacing: 0;
+}
+
+.roommate-template-table-scroll caption {
+  padding: 0.85rem 1rem;
+  background: rgba(228, 238, 248, 0.58);
+  color: #18212b;
+  font-weight: 800;
+  text-align: left;
+}
+
+.roommate-template-table-scroll th,
+.roommate-template-table-scroll td {
+  padding: 0.82rem;
+  border-right: 1px solid rgba(15, 23, 42, 0.08);
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  font-size: 0.9rem;
+  line-height: 1.45;
+  text-align: left;
+  vertical-align: top;
+}
+
+.roommate-template-table-scroll thead th {
+  background: #afe67e;
+  color: #18212b !important;
+  font-weight: 800;
+}
+
+.roommate-template-table-scroll tbody th {
+  color: #18212b !important;
+  font-weight: 800;
+}
+
+.roommate-template-table-scroll tbody tr:nth-child(even) th,
+.roommate-template-table-scroll tbody tr:nth-child(even) td {
+  background: rgba(248, 250, 252, 0.78);
+}
+
+.roommate-template-callout-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roommate-template-step-list {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.25rem 0 !important;
+  padding: 0 !important;
+  list-style: none;
+  counter-reset: roommate-step;
+}
+
+.roommate-template-step-list li {
+  display: grid;
+  grid-template-columns: 2.4rem minmax(0, 1fr);
+  gap: 0.85rem;
+  align-items: start;
+  counter-increment: roommate-step;
+}
+
+.roommate-template-step-list li::before {
+  display: inline-flex;
+  width: 2.4rem;
+  height: 2.4rem;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background: #afe67e;
+  color: #18212b;
+  content: counter(roommate-step);
+  font-weight: 900;
+}
+
+.roommate-template-step-list li > div {
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  padding-bottom: 0.9rem;
+}
+
+.roommate-template-step-list p {
+  margin: 0;
+}
+
+.roommate-template-tip {
+  background: rgba(255, 244, 194, 0.5);
+}
+
+.roommate-template-result {
+  max-width: 50rem;
+  margin: 1.25rem 0;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 20px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.25), rgba(228, 238, 248, 0.42)),
+    #ffffff;
+  padding: 1.25rem;
+}
+
+.roommate-template-result p {
+  margin-bottom: 0.45rem;
+}
+
+.roommate-template-result-main {
+  color: #18212b !important;
+  font-size: clamp(1.25rem, 3vw, 1.8rem) !important;
+  font-weight: 900;
+  line-height: 1.25 !important;
+}
+
+.roommate-template-review-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(20rem, 0.9fr);
+  gap: 1rem;
+  margin-top: 1.25rem;
+}
+
+.roommate-template-message-card blockquote {
+  margin: 0 0 1rem;
+  border-left: 4px solid #afe67e;
+  background: rgba(248, 250, 252, 0.9);
+  color: #18212b;
+  font-size: 1rem;
+  line-height: 1.65;
+  padding: 1rem;
+  user-select: text;
+}
+
+.roommate-template-copy-status {
+  color: var(--roommate-muted);
+  font-size: 0.88rem;
+}
+
+.roommate-template-product {
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.24), transparent 34%),
+    rgba(255, 255, 255, 0.94);
+}
+
+.roommate-template-product-actions {
+  margin-top: 1.2rem;
+}
+
+.roommate-template-trust-chips {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.roommate-template-faq-list {
+  display: grid;
+  gap: 0.75rem;
+  margin-top: 1.2rem;
+}
+
+.roommate-template-faq-list details {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: #ffffff;
+  box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+}
+
+.roommate-template-faq-list summary {
+  min-height: 44px;
+  padding: 1rem 1.1rem;
+  color: #18212b;
+  font-weight: 800;
+  line-height: 1.4;
+  cursor: pointer;
+}
+
+.roommate-template-faq-list details p {
+  margin: 0;
+  padding: 0 1.1rem 1.1rem;
+}
+
+.roommate-template-boundaries {
+  margin-top: 1rem;
+  background: rgba(228, 238, 248, 0.48);
+}
+
+.roommate-template-related-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
+.roommate-template-final {
+  padding: clamp(1.5rem, 4vw, 3rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background:
+    linear-gradient(135deg, rgba(175, 230, 126, 0.28), rgba(255, 255, 255, 0.98) 55%, rgba(228, 238, 248, 0.75));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+body.roommate-template-page .lt-pageMeta {
+  width: min(100%, 76rem);
+  margin: 0;
+  text-align: left;
+}
+
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  white-space: nowrap;
+}
+
+@media (max-width: 1080px) {
+  .roommate-template-choice-grid,
+  .roommate-template-related-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 900px) {
+  .roommate-template-hero,
+  .roommate-template-review-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .roommate-template-hero-visual {
+    width: min(100%, 42rem);
+  }
+
+  .roommate-template-callout-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 980px) {
+  body.roommate-template-page.site-nav-page #main > article.post.featured {
+    padding-top: 4rem !important;
+  }
+
+  body.roommate-template-page .lt-breadcrumb {
+    width: calc(100% - 6rem);
+  }
+}
+
+@media (max-width: 736px) {
+  body.roommate-template-page #main {
+    padding-left: 0 !important;
+    padding-right: 0 !important;
+  }
+
+  body.roommate-template-page #main > .post {
+    width: calc(100vw - 1rem);
+    max-width: calc(100vw - 1rem);
+    margin: 0 auto;
+    padding: 0.75rem 0 1.5rem;
+    padding-top: 5.15rem !important;
+  }
+
+  body.roommate-template-page article.post.featured header.major h1 {
+    max-width: none;
+    margin-bottom: 0.75rem;
+    font-size: clamp(2rem, 10vw, 2.55rem);
+    line-height: 1.02;
+    overflow-wrap: anywhere;
+  }
+
+  .roommate-template-hero,
+  .roommate-template-section,
+  .roommate-template-final {
+    width: 100%;
+    border-radius: 20px;
+  }
+
+  .roommate-template-hero,
+  .roommate-template-section {
+    padding: 1rem;
+  }
+
+  .roommate-template-hero {
+    gap: 1rem;
+  }
+
+  .roommate-template-hero .lt-heroBody {
+    margin-bottom: 0.7rem;
+    font-size: 1rem;
+    line-height: 1.5;
+  }
+
+  .roommate-template-hero .lt-heroSupport {
+    margin-bottom: 0.7rem;
+    font-size: 0.92rem;
+    line-height: 1.5;
+  }
+
+  .roommate-template-hero-actions {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin-top: 0.8rem;
+  }
+
+  .roommate-template-hero-actions > *,
+  .roommate-template-download-card .lt-primaryCta,
+  .roommate-template-download-card .roommate-template-secondaryCta {
+    width: 100%;
+  }
+
+  .roommate-template-trust {
+    margin-bottom: 0;
+  }
+
+  .roommate-template-hero-visual img {
+    border-radius: 18px;
+  }
+
+  .roommate-template-choice-grid,
+  .roommate-template-download-grid,
+  .roommate-template-related-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .roommate-template-choice-grid article,
+  .roommate-template-callout-grid article,
+  .roommate-template-related-grid article,
+  .roommate-template-download-card,
+  .roommate-template-review-card,
+  .roommate-template-message-card,
+  .roommate-template-boundaries {
+    padding: 1rem;
+    border-radius: 18px;
+  }
+
+  .roommate-template-table-scroll {
+    border-radius: 16px;
+  }
+
+  body.roommate-template-page article.post.featured .roommate-template-mobile-swipe {
+    display: block;
+    margin: 0.85rem 0 0.4rem;
+    color: var(--roommate-muted);
+    font-size: 0.82rem;
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
+  .roommate-template-method-comparison {
+    overflow: visible;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  .roommate-template-method-comparison .roommate-template-method-table {
+    display: block;
+    min-width: 0;
+    background: transparent;
+  }
+
+  .roommate-template-method-table caption {
+    display: block;
+    margin-bottom: 0.75rem;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 14px;
+  }
+
+  .roommate-template-method-table thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    margin: -1px;
+    overflow: hidden;
+    clip: rect(0 0 0 0);
+    white-space: nowrap;
+  }
+
+  .roommate-template-method-table tbody {
+    display: grid;
+    gap: 0.85rem;
+  }
+
+  .roommate-template-method-table tbody tr {
+    display: grid;
+    overflow: hidden;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    background: #ffffff;
+    box-shadow: 0 10px 26px rgba(15, 23, 42, 0.06);
+  }
+
+  .roommate-template-method-table tbody th,
+  .roommate-template-method-table tbody td {
+    display: grid;
+    grid-template-columns: minmax(5.8rem, 7.2rem) minmax(0, 1fr);
+    gap: 0.75rem;
+    align-items: start;
+    width: 100%;
+    border-right: 0;
+    background: transparent !important;
+  }
+
+  .roommate-template-method-table tbody tr > :last-child {
+    border-bottom: 0;
+  }
+
+  .roommate-template-method-table [data-label]::before {
+    color: rgba(33, 41, 49, 0.68);
+    content: attr(data-label);
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.04em;
+    line-height: 1.35;
+    text-transform: uppercase;
+  }
+
+  .roommate-template-product-actions {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .roommate-template-product-actions .lt-primaryCta {
+    width: 100%;
+  }
+
+  .roommate-template-final {
+    padding: 1.25rem;
+  }
+}
+
+@media (max-width: 390px) {
+  body.roommate-template-page #main > .post {
+    width: calc(100vw - 0.75rem);
+    max-width: calc(100vw - 0.75rem);
+  }
+
+  .roommate-template-hero,
+  .roommate-template-section,
+  .roommate-template-final {
+    padding: 0.9rem;
+  }
+
+  .roommate-template-trust,
+  .roommate-template-privacy,
+  .roommate-template-boundary,
+  .roommate-template-tip,
+  .roommate-template-verdict {
+    padding: 0.75rem;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  body.roommate-template-page *,
+  body.roommate-template-page *::before,
+  body.roommate-template-page *::after {
+    scroll-behavior: auto !important;
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+  }
+}
