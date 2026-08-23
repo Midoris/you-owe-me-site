@@ -341,93 +341,58 @@
           </section>
 
           <section class="lt-toolsSection" id="example-log" aria-labelledby="example-title">
-            <p class="lt-sectionEyebrow">Example</p>
-            <h2 id="example-title">Example family reimbursement log</h2>
-            <p>Here is what a family reimbursement log can look like when someone pays several costs and receives a partial repayment later.</p>
-            <p>The key is to record repayments as their own rows. That way the remaining balance stays clear even when someone sends only part of what they owe.</p>
+            <p class="lt-sectionEyebrow">Static example</p>
+            <h2 id="example-title">Example family reimbursement record</h2>
+            <p>This normal HTML example stays readable without JavaScript. Jordan paid two everyday costs for their mother, then recorded one partial reimbursement.</p>
+            <p>The key is to record reimbursements as their own rows. That way the remaining amount stays clear even when a relative sends only part of what was paid.</p>
 
-            <div class="family-table-scroll" tabindex="0" aria-label="Example family reimbursement log table">
+            <div class="family-table-scroll" tabindex="0" aria-label="Example family reimbursement record table">
               <table class="family-example-table">
-                <caption>Example family reimbursement log with expenses, repayments, balance changes, and running balances.</caption>
+                <caption>Example family reimbursement record with two expenses, one partial reimbursement, and the remaining amount.</caption>
                 <thead>
                   <tr>
                     <th scope="col">Date</th>
-                    <th scope="col">Family member</th>
-                    <th scope="col">Entry type</th>
-                    <th scope="col">Category</th>
-                    <th scope="col">What it was for</th>
+                    <th scope="col">Person supported</th>
+                    <th scope="col">Payer or sender</th>
+                    <th scope="col">Entry</th>
                     <th scope="col">Expense amount</th>
-                    <th scope="col">Repayment amount</th>
-                    <th scope="col">Balance change</th>
-                    <th scope="col">Running balance</th>
-                    <th scope="col">Notes</th>
+                    <th scope="col">Reimbursed</th>
+                    <th scope="col">Remaining</th>
                   </tr>
                 </thead>
                 <tbody>
                   <tr>
-                    <td>May 1, 2026</td>
+                    <td>August 2, 2026</td>
                     <td>Mom</td>
-                    <td>Expense paid for family</td>
-                    <td>Utilities</td>
-                    <td>Monthly internet bill</td>
-                    <td>$48</td>
+                    <td>Jordan</td>
+                    <td>Pharmacy</td>
+                    <td>$42.50</td>
                     <td>&mdash;</td>
-                    <td>+$48</td>
-                    <td>$48</td>
-                    <td>Recurs monthly</td>
+                    <td>$42.50</td>
                   </tr>
                   <tr>
-                    <td>May 3, 2026</td>
-                    <td>Dad</td>
-                    <td>Expense paid for family</td>
-                    <td>Pharmacy / care purchase</td>
-                    <td>Pharmacy pickup</td>
-                    <td>$23</td>
-                    <td>&mdash;</td>
-                    <td>+$23</td>
-                    <td>$23</td>
-                    <td>Add receipt reference</td>
-                  </tr>
-                  <tr>
-                    <td>May 5, 2026</td>
+                    <td>August 5, 2026</td>
                     <td>Mom</td>
-                    <td>Expense paid for family</td>
-                    <td>Online order</td>
-                    <td>Household supplies</td>
-                    <td>$37</td>
+                    <td>Jordan</td>
+                    <td>Groceries</td>
+                    <td>$63.20</td>
                     <td>&mdash;</td>
-                    <td>+$37</td>
-                    <td>$85</td>
-                    <td>Ordered online</td>
+                    <td>$105.70</td>
                   </tr>
                   <tr>
-                    <td>May 8, 2026</td>
+                    <td>August 12, 2026</td>
                     <td>Mom</td>
-                    <td>Repayment received</td>
-                    <td>Repayment</td>
-                    <td>Partial repayment</td>
+                    <td>Mom</td>
+                    <td>Partial reimbursement to Jordan</td>
                     <td>&mdash;</td>
-                    <td>$40</td>
-                    <td>-$40</td>
-                    <td>$45</td>
-                    <td>Partial repayment</td>
-                  </tr>
-                  <tr>
-                    <td>May 10, 2026</td>
-                    <td>Family shared</td>
-                    <td>Expense paid for family</td>
-                    <td>Subscription</td>
-                    <td>Shared cloud storage</td>
-                    <td>$12</td>
-                    <td>&mdash;</td>
-                    <td>+$12</td>
-                    <td>$12</td>
-                    <td>Monthly subscription</td>
+                    <td>$40.00</td>
+                    <td>$65.70</td>
                   </tr>
                 </tbody>
               </table>
             </div>
-            <p class="family-table-note">The important part is not only the original expense. It is also what was repaid, what is still open, and which family member the balance belongs to.</p>
+            <p class="family-table-note"><strong>Remaining: $65.70.</strong> Copyable family update: &ldquo;Jordan paid $105.70 for Mom&rsquo;s pharmacy and groceries. Mom reimbursed $40.00, so $65.70 remains.&rdquo;</p>
+            <p class="family-template-note">This is a plain family record, not a legal contract, tax record, or accounting document.</p>
           </section>
 
           <section class="lt-toolsSection" aria-labelledby="how-to-title">

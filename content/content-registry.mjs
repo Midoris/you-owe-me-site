@@ -3613,7 +3613,7 @@ export const contentRegistry = [
   },
   {
     url: "/blog/how-to-remind-someone-they-owe-you-money-politely/",
-    title: "How to remind someone they owe you money politely",
+    title: "How to Remind Someone Who Owes You Money: Polite Texts",
     pageType: "guide",
     cluster: "money-owed",
     primaryAudience: "People who need to follow up without making the relationship feel tense.",
@@ -3625,7 +3625,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/temporary-financial-support-tracker/"],
     appStoreCpp: "money-owed-followups",
     tags: ["guide", "reminders", "messages", "repayments", "promised money", "text messages", "whatsapp", "friend reminders", "partner reminders"],
-    updated: "2026-08-20",
+    updated: "2026-08-23",
     status: "live",
     priority: "core",
     primaryCta: "Use reminder examples",
