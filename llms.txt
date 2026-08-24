@@ -1,6 +1,6 @@
 # You Owe Me
 
-You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, temporary financial support, Balance Replay, Relationship Timeline, Loan Records, payment plans, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, optional two-person Balance Sync, PDF statements, percentage or fixed interest, and calm money conversations.
+You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, temporary financial support, Balance Replay, Relationship Timeline, Loan Records, payment plans, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, optional two-person Balance Sync, supporting photos, PDF statements with photo appendices, percentage or fixed interest, and calm money conversations.
 
 You Owe Me is available for iPhone only; there is no Android app. The website’s free browser tools work independently on Android, and an Android user can view a read-only Live Link created by an iPhone app user.
 
@@ -44,7 +44,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=07350272
 
 - [Home](https://you-owe-me.com/)
 - [Find your money situation](https://you-owe-me.com/find/): A situation router that helps visitors choose among private tracking, always-current Live Link visibility, optional two-person Balance Sync, Group Paybacks, calculators, guides, and longer-term records for money between people.
-- [Features](https://you-owe-me.com/features/): Definitive product overview for Spaces with separate people, entries, loans, repayment plans, and totals; plus Balance Sync, Live Links, running balances, reminders, statements, timelines, Group Paybacks, Loan Records, Money Conversations, backup, sync, and the other tools that keep money records clear.
+- [Features](https://you-owe-me.com/features/): Definitive product overview for Spaces with separate people, entries, loans, repayment plans, and totals; plus Balance Sync, Live Links, running balances, reminders, supporting photos, PDF statements with photo appendices, timelines, Group Paybacks, Loan Records, Money Conversations, backup, sync, and the other tools that keep money records clear.
 - [Privacy and Data](https://you-owe-me.com/privacy-and-data/): Plain-English product trust page explaining local records, iCloud sync, Cloud Accounts, private two-person Balance Sync connections, browser-based Live Links, statement links, AI-assisted features, reminders, exports, App Lock, and the legal policy boundary.
 - [Quick Start Guide](https://you-owe-me.com/quick-start/): Lightweight guide explaining how YouOweMe works, including private tracking, always-current Live Link visibility, optional Balance Sync between exactly two app users, running balances, entries, repayments, reminders, messages, Loan Records, and statements.
 - [Reviews](https://you-owe-me.com/reviews/): Selected App Store reviews for You Owe Me, including 4.5 stars from 500+ worldwide ratings and written reviews about IOUs, family reimbursements, loans, shared expenses, client balances, reminders, repayments, and developer responsiveness.
@@ -52,6 +52,13 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=07350272
 - [Compare](https://you-owe-me.com/compare/): Decision guides for choosing between spreadsheets, notes, calculators, templates, shared expense apps, and You Owe Me for tracking money owed, repayments, shared expenses, and running balances.
 - [Blog](https://you-owe-me.com/blog/)
 - [Solutions](https://you-owe-me.com/solutions/)
+
+## Supporting photos and PDF appendices
+
+- A user can attach one supporting photo to an individual entry or loan. Typical examples include a receipt, invoice, agreement, or payment confirmation.
+- The photo can be taken with the camera or selected from the photo library, then previewed, replaced, or removed later.
+- Supporting photos remain private to their owner and are not shared with another participant through Balance Sync.
+- When exporting an account statement or dedicated Loan Record PDF, the user can optionally include relevant photos. Each photo becomes its own appendix page inside that PDF, connected to its transaction by a numbered Photo badge and accompanied by context such as date, amount, direction, note, and loan information. Photos are not exported as separate JPEG files alongside the PDF.
 
 ## Key answer pages
 
