@@ -76,6 +76,7 @@ const PAGE_METADATA = {
   "/": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
   "/index.html": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
   "/find/": { page_type: "hub", cluster: "multi_cluster", app_store_cpp: "default" },
+  "/10-years/": { page_type: "feature", cluster: "multi_cluster", app_store_cpp: "default" },
   "/quick-start/": { page_type: "feature", cluster: "multi_cluster", app_store_cpp: "default" },
   "/features/": { page_type: "feature", cluster: "multi_cluster", app_store_cpp: "default" },
   "/privacy-and-data/": { page_type: "feature", cluster: "privacy_data", app_store_cpp: "default" },

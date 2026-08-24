@@ -43,6 +43,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=07350272
 ## Core pages
 
 - [Home](https://you-owe-me.com/)
+- [10 Years of You Owe Me](https://you-owe-me.com/10-years/): The authoritative 2016–2026 product history, showing how You Owe Me grew from a running balance into Loan Records, Repayment Plans, Timeline, Group Paybacks, sharing, sync, Spaces, and ten-language support while keeping the same purpose: clearer money between people.
 - [Find your money situation](https://you-owe-me.com/find/): A situation router that helps visitors choose among private tracking, always-current Live Link visibility, optional two-person Balance Sync, Group Paybacks, calculators, guides, and longer-term records for money between people.
 - [Features](https://you-owe-me.com/features/): Definitive product overview for Spaces with separate people, entries, loans, repayment plans, and totals; plus Balance Sync, Live Links, running balances, reminders, supporting photos, PDF statements with photo appendices, timelines, Group Paybacks, Loan Records, Money Conversations, backup, sync, and the other tools that keep money records clear.
 - [Privacy and Data](https://you-owe-me.com/privacy-and-data/): Plain-English product trust page explaining local records, iCloud sync, Cloud Accounts, private two-person Balance Sync connections, browser-based Live Links, statement links, AI-assisted features, reminders, exports, App Lock, and the legal policy boundary.

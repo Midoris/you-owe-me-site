@@ -2831,6 +2831,59 @@
         display: none;
       }
 
+      body.homepage-page .lt-anniversaryCallout {
+        display: grid;
+        grid-template-columns: minmax(0, 0.92fr) minmax(22rem, 1.08fr);
+        align-items: center;
+        gap: clamp(1.5rem, 4vw, 3.5rem);
+        margin-top: clamp(3rem, 6vw, 5rem);
+        padding: clamp(1.3rem, 3vw, 2.35rem);
+        border: 1px solid rgba(15, 23, 42, 0.08);
+        border-radius: 24px;
+        background:
+          radial-gradient(circle at 12% 12%, rgba(175, 230, 126, 0.2), transparent 36%),
+          linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(228, 238, 248, 0.88));
+        box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+        overflow: hidden;
+      }
+
+      body.homepage-page .lt-anniversaryCallout__copy {
+        min-width: 0;
+      }
+
+      body.homepage-page .lt-anniversaryCallout h2 {
+        margin: 0;
+        color: var(--lt-deep);
+        font-size: clamp(1.85rem, 1.3rem + 1.5vw, 2.8rem);
+        line-height: 1.1;
+        letter-spacing: -0.02em;
+        text-transform: none;
+      }
+
+      body.homepage-page .lt-anniversaryCallout__copy > p:not(.lt-eyebrow) {
+        margin: 1rem 0 0;
+        color: var(--lt-muted);
+        font-size: 1.03rem;
+        line-height: 1.68;
+      }
+
+      body.homepage-page .lt-anniversaryCallout .lt-textCta {
+        min-height: 44px;
+        margin-top: 1.15rem;
+      }
+
+      body.homepage-page .lt-anniversaryCallout__media {
+        min-width: 0;
+        border-radius: 18px;
+        overflow: hidden;
+      }
+
+      body.homepage-page .lt-anniversaryCallout__media img {
+        display: block;
+        width: 100%;
+        height: auto;
+      }
+
       @media (max-width: 1100px) {
         body.homepage-page .lt-coreFeatureGrid {
           grid-template-columns: 1fr;
@@ -2850,6 +2903,10 @@
 
         body.homepage-page .lt-heroMedia {
           width: 100%;
+        }
+
+        body.homepage-page .lt-anniversaryCallout {
+          grid-template-columns: 1fr;
         }
 
         body.homepage-page .lt-situationGrid,
@@ -2880,6 +2937,17 @@
           padding-top: 4.9rem;
           overflow: hidden;
           overflow-wrap: break-word;
+        }
+
+        body.homepage-page .lt-anniversaryCallout {
+          width: calc(100vw - 2.1rem);
+          margin: 2.5rem auto 0;
+          padding: 1rem;
+          border-radius: 20px;
+        }
+
+        body.homepage-page .lt-anniversaryCallout h2 {
+          font-size: 1.75rem;
         }
 
         body.homepage-page article.post.featured > *,

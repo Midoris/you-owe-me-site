@@ -6,6 +6,7 @@ export const INCLUDED_EXACT_ROUTES = new Set([
   "/reviews/",
   "/find/",
   "/quick-start/",
+  "/10-years/",
 ]);
 
 export const INCLUDED_ROUTE_PREFIXES = Object.freeze([

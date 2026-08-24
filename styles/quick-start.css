@@ -100,6 +100,67 @@ body.quick-start-page .qs-trust-strip span {
   white-space: normal;
 }
 
+body.quick-start-page .qs-anniversary {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  align-items: center;
+  gap: 1rem;
+  margin-top: 1.25rem;
+  padding: 1rem;
+  border: 1px solid rgba(53, 84, 40, 0.16);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 12px 26px rgba(15, 23, 42, 0.06);
+}
+
+body.quick-start-page .qs-anniversary__mark {
+  display: grid;
+  place-items: center;
+  width: 4.15rem;
+  height: 4.15rem;
+  border-radius: 16px;
+  background: linear-gradient(145deg, #355428, #6fa94c);
+  color: #ffffff;
+  font-size: 1.75rem;
+  font-weight: 900;
+  line-height: 1;
+}
+
+body.quick-start-page .qs-anniversary__copy {
+  min-width: 0;
+}
+
+body.quick-start-page .qs-anniversary .qs-eyebrow {
+  margin-bottom: 0.2rem;
+  font-size: 0.76rem;
+}
+
+body.quick-start-page .qs-anniversary h2 {
+  margin: 0;
+  color: #18212b;
+  font-size: 1.3rem;
+  line-height: 1.2;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+body.quick-start-page .qs-anniversary__copy > p:not(.qs-eyebrow) {
+  margin: 0.5rem 0 0;
+  color: rgba(24, 33, 43, 0.78);
+  font-size: 0.94rem;
+  line-height: 1.55;
+}
+
+body.quick-start-page .qs-anniversary .lt-textCta {
+  min-height: 44px;
+  margin-top: 0.7rem;
+}
+
+body.quick-start-page .qs-anniversary .lt-textCta:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
 body.quick-start-page .qs-hero-media {
   position: relative;
   display: grid;
@@ -461,6 +522,20 @@ body.quick-start-page .lt-pageMeta {
   body.quick-start-page .qs-breadcrumb {
     margin-bottom: 0.9rem;
     font-size: 0.88rem;
+  }
+
+  body.quick-start-page .qs-anniversary {
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+    padding: 0.9rem;
+    border-radius: 16px;
+  }
+
+  body.quick-start-page .qs-anniversary__mark {
+    width: 3.5rem;
+    height: 3.5rem;
+    border-radius: 14px;
+    font-size: 1.45rem;
   }
 
   body.quick-start-page .qs-hero {
