@@ -234,6 +234,7 @@
     <link rel="stylesheet" href="/styles/running-balance-answer.css" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
+    <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
   </head>
 
   <body class="is-preload blog-page running-balance-answer-page site-nav-page">
@@ -309,6 +310,23 @@
               <p>If you pay $60 for groceries and the other person owes half, the balance becomes $30. If they later pay $20 for a ride you both shared, your half reduces that balance by $10. The running balance is now $20.</p>
             </div>
           </section>
+
+          <aside
+            class="lt-anniversaryNotice"
+            data-anniversary-announcement
+            data-anniversary-variant="standard"
+            hidden
+            aria-hidden="true"
+            aria-labelledby="running-balance-guide-anniversary-notice-title"
+          >
+            <span class="lt-anniversaryNotice__mark" aria-hidden="true">10</span>
+            <div class="lt-anniversaryNotice__copy">
+              <p class="lt-anniversaryNotice__eyebrow" data-anniversary-eyebrow>2016–2026</p>
+              <h2 id="running-balance-guide-anniversary-notice-title" data-anniversary-heading>You Owe Me is 10.</h2>
+              <p data-anniversary-body>Explore a decade of clearer money between people. Eligible free users can also find a limited anniversary upgrade offer in the app through September 4.</p>
+            </div>
+            <a class="lt-anniversaryNotice__link" href="/10-years/" data-anniversary-cta data-track-event="site_link_click" data-track-location="running_balance_answer_anniversary_notice">Explore the ten-year story</a>
+          </aside>
 
           <section class="lt-toolsSection rb-answer-callout" aria-labelledby="running-balance-meaning-title">
             <h2 id="running-balance-meaning-title">In this guide, &ldquo;running balance&rdquo; means money between people</h2>
@@ -708,6 +726,11 @@
                 </a>
                 <a href="/tools/running-balance-calculator/" class="lt-textCta" data-track-location="running_balance_answer_product_calculator">Try the Running Balance Calculator</a>
               </div>
+              <p class="lt-maintenanceProof">
+                <span class="lt-maintenanceProof__since">Since 2016</span>
+                <span class="lt-maintenanceProof__text">Actively maintained and improving.</span>
+                <a class="lt-maintenanceProof__link" href="/10-years/" data-track-event="site_link_click" data-track-location="running_balance_answer_maintenance_proof">Explore the ten-year story</a>
+              </p>
             </div>
           </section>
 
@@ -873,6 +896,7 @@
     </div>
 
     <script src="/scripts/sales.js"></script>
+    <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
     <script type="module" src="/scripts/analytics.js"></script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/jquery.scrollex.min.js"></script>

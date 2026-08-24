@@ -167,6 +167,7 @@
     <link rel="stylesheet" href="../../styles/compare.css" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
+    <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
   </head>
 
   <body class="is-preload solutions-page solution-detail-page compare-page compare-detail-page best-way-ious-page site-nav-page">
@@ -230,6 +231,11 @@
                   <a href="#decision-table" class="lt-cardCta" data-track-location="compare_best_way_ious_hero_secondary_cta">Compare the methods</a>
                   <a href="/tools/running-balance-calculator/" class="lt-textCta" data-track-location="compare_best_way_ious_hero_tertiary_cta">Running Balance Calculator</a>
                 </div>
+                <p class="lt-maintenanceProof">
+                  <span class="lt-maintenanceProof__since">Since 2016</span>
+                  <span class="lt-maintenanceProof__text">Actively maintained and improving.</span>
+                  <a class="lt-maintenanceProof__link" href="/10-years/" data-track-event="site_link_click" data-track-location="compare_best_way_ious_maintenance_proof">Explore the ten-year story</a>
+                </p>
               </div>
               <figure class="compare-hero-media">
                 <img
@@ -293,6 +299,23 @@
             <p class="compare-section-close">The main question is not &ldquo;Which tool has the most features?&rdquo; The better question is: &ldquo;What will become unclear if this IOU does not settle immediately?&rdquo;</p>
             <p class="compare-section-close">If your situation is one named loan rather than general IOUs, use the <a href="/blog/how-to-track-a-personal-loan-between-friends-or-family/">personal-loan tracking guide</a> to set up the opening record, actual payments, and separate repayment plan.</p>
           </section>
+
+          <aside
+            class="lt-anniversaryNotice"
+            data-anniversary-announcement
+            data-anniversary-variant="standard"
+            hidden
+            aria-hidden="true"
+            aria-labelledby="compare-ious-anniversary-notice-title"
+          >
+            <span class="lt-anniversaryNotice__mark" aria-hidden="true">10</span>
+            <div class="lt-anniversaryNotice__copy">
+              <p class="lt-anniversaryNotice__eyebrow" data-anniversary-eyebrow>2016–2026</p>
+              <h2 id="compare-ious-anniversary-notice-title" data-anniversary-heading>You Owe Me is 10.</h2>
+              <p data-anniversary-body>Explore a decade of clearer money between people. Eligible free users can also find a limited anniversary upgrade offer in the app through September 4.</p>
+            </div>
+            <a class="lt-anniversaryNotice__link" href="/10-years/" data-anniversary-cta data-track-event="site_link_click" data-track-location="compare_best_way_ious_anniversary_notice">Explore the ten-year story</a>
+          </aside>
 
           <section class="lt-detailSection">
             <h2>The question that changes everything: what happens next?</h2>
@@ -1154,6 +1177,7 @@
       })();
     </script>
     <script src="../../scripts/sales.js"></script>
+    <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
     <script type="module" src="../../scripts/analytics.js"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>

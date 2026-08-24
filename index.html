@@ -143,6 +143,7 @@
     </script>
     <link rel="stylesheet" href="styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
+    <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
   </head>
 
   <body class="is-preload site-nav-page homepage-page">
@@ -207,6 +208,11 @@
                 <span class="lt-salePill" aria-label="Current app sale" hidden>Sale - Now on Sale</span>
               </div>
 
+              <p class="lt-maintenanceProof">
+                <span class="lt-maintenanceProof__since">Since 2016</span>
+                <span class="lt-maintenanceProof__text">Actively maintained and improving.</span>
+              </p>
+
               <p class="lt-note lt-heroTrust">
                 Clear numbers. Clear words. Less tension. Free download · works offline · no mandatory sign-up · a polished app experience in 10 languages. Read <a href="/privacy-and-data/">Privacy and Data in You Owe Me</a>.
               </p>
@@ -226,6 +232,16 @@
               <p class="lt-eyebrow">2016–2026</p>
               <h2 id="homepage-ten-years-title">The ten-year story of You Owe Me.</h2>
               <p>Launched on August 26, 2016, You Owe Me has grown from a simple running balance to include Loan Records, Repayment Plans, Timeline, Group Paybacks, sharing, sync, Spaces, and more—while the goal stayed the same.</p>
+              <p
+                class="lt-anniversaryInline"
+                data-anniversary-announcement
+                data-anniversary-variant="inline"
+                hidden
+                aria-hidden="true"
+              >
+                <strong data-anniversary-inline-label>Anniversary live</strong>
+                <span data-anniversary-inline-body>You Owe Me is 10. Eligible free users can also find the limited anniversary offer in the app through September 4.</span>
+              </p>
               <a href="/10-years/" class="lt-textCta" data-cta-location="homepage_ten_years">Explore the ten-year story</a>
             </div>
             <div class="lt-anniversaryCallout__media">
@@ -905,6 +921,7 @@
 
     <script src="./scripts/sales.js"></script>
     <script src="./scripts/video-embed.js"></script>
+    <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
     <script type="module" src="./scripts/analytics.js"></script>
     <script src="./scripts/reviews.js"></script>
     <script src="./assets/js/jquery.min.js"></script>

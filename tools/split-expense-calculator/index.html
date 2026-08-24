@@ -211,6 +211,7 @@
     <link rel="stylesheet" href="../../styles/split-expense-calculator.css" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
+    <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
   </head>
 
   <body class="is-preload tools-page calculator-page site-nav-page">
@@ -364,12 +365,34 @@
                           <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
                         </a>
                       </div>
+                      <p class="lt-maintenanceProof">
+                        <span class="lt-maintenanceProof__since">Since 2016</span>
+                        <span class="lt-maintenanceProof__text">Actively maintained and improving.</span>
+                        <a class="lt-maintenanceProof__link" href="/10-years/" data-track-event="site_link_click" data-track-location="split_expense_maintenance_proof">Explore the ten-year story</a>
+                      </p>
                     </div>
                   </section>
                 </aside>
               </div>
             </div>
           </section>
+
+          <aside
+            class="lt-anniversaryNotice"
+            data-anniversary-announcement
+            data-anniversary-variant="standard"
+            hidden
+            aria-hidden="true"
+            aria-labelledby="split-expense-anniversary-notice-title"
+          >
+            <span class="lt-anniversaryNotice__mark" aria-hidden="true">10</span>
+            <div class="lt-anniversaryNotice__copy">
+              <p class="lt-anniversaryNotice__eyebrow" data-anniversary-eyebrow>2016–2026</p>
+              <h2 id="split-expense-anniversary-notice-title" data-anniversary-heading>You Owe Me is 10.</h2>
+              <p data-anniversary-body>Explore a decade of clearer money between people. Eligible free users can also find a limited anniversary upgrade offer in the app through September 4.</p>
+            </div>
+            <a class="lt-anniversaryNotice__link" href="/10-years/" data-anniversary-cta data-track-event="site_link_click" data-track-location="split_expense_anniversary_notice">Explore the ten-year story</a>
+          </aside>
 
           <section class="lt-toolsSection content-section">
             <h2>Use it as a who owes what calculator</h2>
@@ -755,6 +778,7 @@
 
     <script src="../../scripts/sales.js"></script>
     <script src="../../scripts/split-expense-calculator.js"></script>
+    <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
     <script type="module" src="../../scripts/analytics.js"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>
