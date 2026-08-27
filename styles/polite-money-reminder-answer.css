@@ -31,6 +31,27 @@ body.polite-reminder-answer-page article.post.featured h1 {
   color: rgba(24, 33, 43, 0.74);
 }
 
+body.polite-reminder-answer-page .polite-promised-jump {
+  margin: 0.85rem 0 0 !important;
+  font-size: 0.95rem;
+}
+
+body.polite-reminder-answer-page .polite-promised-jump a:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+body.polite-reminder-answer-page #promised-money .template-card h4 {
+  margin: 1.5rem 0 0.45rem;
+  color: #18212b;
+  font-size: clamp(1.08rem, 0.98rem + 0.45vw, 1.28rem);
+  font-weight: 900;
+  line-height: 1.34;
+  letter-spacing: 0;
+  text-transform: none;
+  text-wrap: balance;
+}
+
 .polite-answer-hero-visual {
   margin: 0;
   justify-self: end;
@@ -436,6 +457,11 @@ body.polite-no-answer-page .template-card h3 {
 }
 
 @media (max-width: 736px) {
+  body.polite-reminder-answer-page #promised-money .template-card h4 {
+    font-size: 1.13rem;
+    line-height: 1.28;
+  }
+
   body.polite-reminder-answer-page article.post.featured {
     width: 100%;
     padding-top: 1.05rem;

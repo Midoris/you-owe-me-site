@@ -3692,7 +3692,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/temporary-financial-support-tracker/"],
     appStoreCpp: "money-owed-followups",
     tags: ["guide", "reminders", "messages", "repayments", "promised money", "text messages", "whatsapp", "friend reminders", "partner reminders"],
-    updated: "2026-08-23",
+    updated: "2026-08-27",
     status: "live",
     priority: "core",
     primaryCta: "Use reminder examples",
