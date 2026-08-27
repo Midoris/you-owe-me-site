@@ -4074,7 +4074,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/shared-expense-tracker/", "/solutions/app-to-track-money-owed/"],
     appStoreCpp: "shared-expenses-over-time",
     tags: ["guide", "running-balance", "shared-expenses", "repayments"],
-    updated: "2026-07-24",
+    updated: "2026-08-27",
     status: "live",
     priority: "core",
     primaryCta: "Use the running balance calculator",

@@ -303,6 +303,33 @@ body.running-balance-answer-page .rb-answer-hero .lt-heroSupport {
   border-bottom: 0;
 }
 
+/* This compact ledger fits narrow screens without changing the larger tables. */
+body.running-balance-answer-page .rb-answer-table--simple {
+  min-width: 0;
+  table-layout: fixed;
+}
+
+body.running-balance-answer-page .rb-answer-table--simple th,
+body.running-balance-answer-page .rb-answer-table--simple td {
+  padding: 0.7rem 0.4rem;
+  overflow-wrap: anywhere;
+}
+
+body.running-balance-answer-page .rb-answer-table--simple thead th {
+  font-size: 0.82rem;
+  letter-spacing: 0;
+  line-height: 1.35;
+  text-transform: none;
+}
+
+body.running-balance-answer-page .rb-answer-table--simple tbody th {
+  width: auto;
+}
+
+body.running-balance-answer-page .rb-answer-table--simple th:first-child {
+  width: 34%;
+}
+
 .rb-answer-contrast,
 .rb-mentalModel,
 .rb-directionCard,
