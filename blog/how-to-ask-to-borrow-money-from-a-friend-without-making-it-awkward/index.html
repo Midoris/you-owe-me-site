@@ -170,7 +170,7 @@
     <link rel="stylesheet" href="/styles/site-nav.css" />
     <link rel="stylesheet" href="/styles/tools.css" />
     <link rel="stylesheet" href="/styles/repayment-reminder-text-examples.css" />
-    <link rel="stylesheet" href="/styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css" />
+    <link rel="stylesheet" href="/styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css?v=friend-borrow-post-copy-1" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
   </head>
@@ -364,9 +364,44 @@
                 </div>
                 <h3>Reply after they agree</h3>
                 <blockquote class="template-card__message" data-template="Thank you - I really appreciate it. Just so we&rsquo;re both clear: it&rsquo;s $100, and I&rsquo;m planning to pay you back on Friday. If that changes, I&rsquo;ll let you know before then.">Thank you - I really appreciate it. Just so we&rsquo;re both clear: it&rsquo;s $100, and I&rsquo;m planning to pay you back on Friday. If that changes, I&rsquo;ll let you know before then.</blockquote>
-                <button type="button" class="copy-button" data-copy-template="reply-after-yes" aria-label="Copy reply after they agree">Copy text</button>
+                <button type="button" class="copy-button" data-copy-template="reply-after-yes" data-friend-borrow-post-copy-eligible aria-label="Copy reply after they agree">Copy text</button>
               </article>
             </div>
+            <aside
+              class="friend-borrow-post-copy"
+              aria-labelledby="friend-borrow-post-copy-title"
+              data-friend-borrow-post-copy
+              hidden
+            >
+              <p class="friend-borrow-post-copy__eyebrow">Copied</p>
+              <h3 id="friend-borrow-post-copy-title">Keep the promise clear&mdash;even if timing changes</h3>
+              <p class="friend-borrow-post-copy__message">
+                Create one named loan with the agreed amount and a repayment plan. Partial or extra payments update what remains and what comes next; if timing changes, Money Conversations can help you send a clear Repayment Update before your friend has to ask.
+              </p>
+              <div class="lt-ctaRow friend-borrow-post-copy__actions">
+                <a
+                  href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&amp;pt=117888502&amp;ct=website_cta&amp;mt=8"
+                  class="lt-appStoreBtn"
+                  aria-label="Download You Owe Me on the App Store for keeping a friend loan and repayment updates clear"
+                  data-track-location="friend_borrow_post_copy_app_store_cta"
+                  data-source-cluster="temporary-support"
+                >
+                  <span class="sr-only">Download You Owe Me on the App Store</span>
+                  <img
+                    src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83"
+                    alt="Download You Owe Me on the App Store"
+                    width="250"
+                    height="83"
+                  />
+                </a>
+                <a
+                  href="/solutions/temporary-financial-support-tracker/"
+                  class="friend-borrow-post-copy__solution-link"
+                  data-track-event="site_link_click"
+                  data-track-location="friend_borrow_post_copy_solution_cta"
+                >See how temporary support tracking works</a>
+              </div>
+            </aside>
             <aside class="friend-borrow-callout">
               <p>Do not send a long emotional message if a short clear one will do. Long messages often create more tension, not less.</p>
             </aside>
@@ -427,7 +462,7 @@ Plan: Repay on July 18
 Update rule: Send update by July 18 if timing changes
 Repayments so far: $0
 Remaining balance: $120</pre>
-                <button type="button" class="copy-button" data-copy-text-target="friend-borrow-example-record" aria-label="Copy example borrowed money record">Copy record</button>
+                <button type="button" class="copy-button" data-copy-text-target="friend-borrow-example-record" data-friend-borrow-post-copy-eligible aria-label="Copy example borrowed money record">Copy record</button>
               </article>
             </div>
             <p>If you want a copyable version of this structure, use the <a href="/tools/temporary-financial-support-record-template/">Temporary Financial Support Record Template</a> after your friend agrees.</p>
@@ -470,7 +505,7 @@ Remaining balance: $120</pre>
               </div>
               <h3>Suggested update script</h3>
               <blockquote class="template-card__message" data-template="I wanted to update you before Friday. I&rsquo;m not able to repay the full amount yet. I can pay $40 now and the rest next week, or update you again on Tuesday if needed. I appreciate your patience.">I wanted to update you before Friday. I&rsquo;m not able to repay the full amount yet. I can pay $40 now and the rest next week, or update you again on Tuesday if needed. I appreciate your patience.</blockquote>
-              <button type="button" class="copy-button" data-copy-template="need-more-time-update" aria-label="Copy repayment update when you need more time">Copy text</button>
+              <button type="button" class="copy-button" data-copy-template="need-more-time-update" data-friend-borrow-post-copy-eligible aria-label="Copy repayment update when you need more time">Copy text</button>
             </article>
             <p>If repayment timing changes later, use the <a href="/blog/how-to-send-a-repayment-update-when-you-need-more-time/">repayment update guide</a> for calm wording before your friend has to ask.</p>
             <p>A calm update is much better than disappearing. Clear updates protect the relationship even when the money is still unresolved.</p>
@@ -628,6 +663,7 @@ Remaining balance: $120</pre>
 
     <script src="/scripts/sales.js"></script>
     <script src="/scripts/friend-borrow-money-answer.js?v=friend-borrow-money-1"></script>
+    <script src="/scripts/friend-borrow-post-copy.js?v=friend-borrow-post-copy-1"></script>
     <script type="module" src="/scripts/analytics.js"></script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/jquery.scrollex.min.js"></script>

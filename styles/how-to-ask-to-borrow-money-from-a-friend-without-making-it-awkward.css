@@ -393,3 +393,94 @@ body.blog-page.friend-borrow-money-page article.post.featured .lt-toolsSection >
     width: 100%;
   }
 }
+
+body.friend-borrow-money-page .friend-borrow-post-copy[hidden] {
+  display: none !important;
+}
+
+body.friend-borrow-money-page .friend-borrow-post-copy {
+  width: min(100%, 62ch);
+  margin: 0.9rem auto 0;
+  padding: clamp(1rem, 2.4vw, 1.25rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top right, rgba(175, 230, 126, 0.16), transparent 42%),
+    linear-gradient(135deg, rgba(255, 255, 255, 0.98), rgba(246, 248, 252, 0.94));
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.07);
+}
+
+body.friend-borrow-money-page .friend-borrow-template-grid > .friend-borrow-post-copy {
+  grid-column: 1 / -1;
+  width: 100%;
+}
+
+body.friend-borrow-money-page .friend-borrow-post-copy__eyebrow {
+  margin: 0 0 0.3rem;
+  color: rgba(33, 41, 49, 0.68);
+  font-size: 0.75rem;
+  font-weight: 800;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+body.friend-borrow-money-page .friend-borrow-post-copy h3 {
+  margin: 0;
+  color: #18212b;
+  font-size: clamp(1.15rem, 1.05rem + 0.4vw, 1.35rem);
+  line-height: 1.2;
+}
+
+body.friend-borrow-money-page .friend-borrow-post-copy__message {
+  max-width: 62ch;
+  margin: 0.62rem 0 0;
+  color: rgba(33, 41, 49, 0.84);
+  font-size: 0.94rem;
+  line-height: 1.52;
+}
+
+body.friend-borrow-money-page .friend-borrow-post-copy__actions {
+  align-items: center;
+  gap: 0.8rem;
+  margin-top: 0.85rem;
+}
+
+body.friend-borrow-money-page .friend-borrow-post-copy__actions .lt-appStoreBtn {
+  flex: 0 0 auto;
+}
+
+body.friend-borrow-money-page .friend-borrow-post-copy__solution-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 2.75rem;
+  color: #18212b;
+  font-weight: 800;
+  line-height: 1.35;
+  text-decoration-thickness: 0.12em;
+  text-underline-offset: 0.14em;
+}
+
+body.friend-borrow-money-page .friend-borrow-post-copy__solution-link:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+@media (max-width: 736px) {
+  body.friend-borrow-money-page .friend-borrow-post-copy {
+    width: 100%;
+    padding: 1rem;
+  }
+
+  body.friend-borrow-money-page .friend-borrow-post-copy__actions {
+    align-items: stretch;
+    flex-direction: column;
+  }
+
+  body.friend-borrow-money-page .friend-borrow-post-copy__actions .lt-appStoreBtn {
+    align-self: flex-start;
+  }
+
+  body.friend-borrow-money-page .friend-borrow-post-copy__solution-link {
+    min-height: 44px;
+  }
+}
