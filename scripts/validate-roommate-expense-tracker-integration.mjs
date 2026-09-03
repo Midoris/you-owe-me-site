@@ -15,7 +15,7 @@ const rootDir = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..")
 const route = "/tools/roommate-expense-tracker-template/";
 const productionOrigin = "https://you-owe-me.com";
 const cppKey = "roommates-shared-household-costs";
-const cppUrl = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12";
+const cppUrl = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&pt=117888502&ct=website_cta&mt=8";
 
 function read(relativePath) {
   return fs.readFileSync(path.join(rootDir, relativePath), "utf8");

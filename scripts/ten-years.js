@@ -15,8 +15,8 @@
   "use strict";
 
   const CAMPAIGN_SELECTOR = "[data-ten-years-campaign]";
-  const APP_STORE_URL = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670";
-  const APP_STORE_EVENT_URL = `${APP_STORE_URL}?eventid=6802562970`;
+  const APP_STORE_URL = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&ct=website_cta&mt=8";
+  const APP_STORE_EVENT_URL = `${APP_STORE_URL}&eventid=6802562970`;
   const ANNIVERSARY_DEEP_LINK = "youoweme://events/anniversary";
 
   const STATES = Object.freeze({

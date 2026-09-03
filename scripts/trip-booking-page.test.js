@@ -32,10 +32,10 @@ for (const href of exactRoutes) {
   assert(fs.existsSync(path.join(root, href.slice(1), "index.html")), `destination exists: ${href}`);
 }
 
-const cpp = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d333ba53-318b-44d7-ad07-f29841091043";
+const cpp = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d333ba53-318b-44d7-ad07-f29841091043&amp;pt=117888502&amp;ct=website_cta&amp;mt=8";
 assert(html.includes(`href="${cpp}"`), "verified Group Paybacks CPP used");
 const registry = fs.readFileSync(path.join(root, "content/content-registry.mjs"), "utf8");
-assert(registry.includes(`"group-paybacks": "${cpp}"`), "CPP matches repository registry fact");
+assert(registry.includes(`"group-paybacks": "${cpp.replaceAll("&amp;", "&")}"`), "CPP matches repository registry fact");
 
 const requiredHeadings = [
   "Three ways to handle group trip costs", "Plan the fixed booking before anyone pays",

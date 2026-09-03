@@ -2,17 +2,17 @@
 // Keep this file infrastructure-only; public pages should import it only when needed.
 
 export const appStoreCppUrls = {
-  general: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670",
-  "money-owed-followups": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=0ad25f49-9026-4d8b-99ea-9581a98702db",
-  "temporary-financial-support": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049",
-  "family-reimbursements": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c-90ff-4cde-9ae7-d420c6512e7a",
-  "roommates-shared-household-costs": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12",
-  "couples-relationship-spending": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=8e720a01-7489-4044-9f6a-0080793442a0",
-  "shared-expenses-over-time": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=7f9074ac-4090-4e07-aebe-c5722e76eedc",
-  "group-paybacks": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d333ba53-318b-44d7-ad07-f29841091043",
-  "elderly-parent-caregiving": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=794c6086-e032-4408-ab2f-acb4ad23ec98",
-  "client-payment-records": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=15af0298-82ca-4a0e-8230-d12774916992",
-  "long-term-balances": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=07350272-1b8a-4f9f-a267-dc72c33b4404",
+  general: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&ct=website_cta&mt=8",
+  "money-owed-followups": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=0ad25f49-9026-4d8b-99ea-9581a98702db&pt=117888502&ct=website_cta&mt=8",
+  "temporary-financial-support": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&pt=117888502&ct=website_cta&mt=8",
+  "family-reimbursements": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=bc366b6c-90ff-4cde-9ae7-d420c6512e7a&pt=117888502&ct=website_cta&mt=8",
+  "roommates-shared-household-costs": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&pt=117888502&ct=website_cta&mt=8",
+  "couples-relationship-spending": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=8e720a01-7489-4044-9f6a-0080793442a0&pt=117888502&ct=website_cta&mt=8",
+  "shared-expenses-over-time": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=7f9074ac-4090-4e07-aebe-c5722e76eedc&pt=117888502&ct=website_cta&mt=8",
+  "group-paybacks": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d333ba53-318b-44d7-ad07-f29841091043&pt=117888502&ct=website_cta&mt=8",
+  "elderly-parent-caregiving": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=794c6086-e032-4408-ab2f-acb4ad23ec98&pt=117888502&ct=website_cta&mt=8",
+  "client-payment-records": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=15af0298-82ca-4a0e-8230-d12774916992&pt=117888502&ct=website_cta&mt=8",
+  "long-term-balances": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=07350272-1b8a-4f9f-a267-dc72c33b4404&pt=117888502&ct=website_cta&mt=8",
 };
 
 export const appStoreCppRouting = {
