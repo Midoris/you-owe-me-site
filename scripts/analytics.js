@@ -33,6 +33,7 @@ const PAYBACK_GENERATOR_EVENT = "youoweme:payback-generator-event";
 const TEMPORARY_HELP_COPY_EVENT = "youoweme:temporary-financial-help-copy";
 const PAYMENT_PLAN_TOOL_EVENT = "youoweme:payment-plan-tool-event";
 const TEMPORARY_SUPPORT_RECORD_TOOL_EVENT = "youoweme:temporary-support-record-tool-event";
+const SPLIT_CALCULATOR_EVENT = "youoweme:split-calculator-event";
 const PAYBACK_GENERATOR_EVENTS = new Set([
   "payback_generator_generate",
   "payback_generator_copy_short",
@@ -58,6 +59,12 @@ const TEMPORARY_SUPPORT_RECORD_EVENTS = new Set([
   "temporary_support_record_copy_message",
   "temporary_support_record_copy_app_note",
 ]);
+const SPLIT_CALCULATOR_EVENTS = Object.freeze({
+  split_result_ready: "uomi_web_split_result_ready",
+  split_summary_copied: "uomi_web_split_summary_copied",
+  split_summary_shared: "uomi_web_split_summary_shared",
+  split_share_fallback_copied: "uomi_web_split_share_fallback_copied",
+});
 
 const APP_STORE_CPP_BY_PPID = {
   "0ad25f49-9026-4d8b-99ea-9581a98702db": "money_owed_followups",
@@ -681,6 +688,15 @@ function onTemporarySupportRecordToolEvent(event) {
   }));
 }
 
+function onSplitCalculatorEvent(event) {
+  const detail = event && event.detail ? event.detail : {};
+  const eventName = typeof detail.eventName === "string" ? detail.eventName : "";
+  const firebaseEventName = SPLIT_CALCULATOR_EVENTS[eventName];
+
+  if (!firebaseEventName) return;
+  void trackEvent(firebaseEventName);
+}
+
 function initEventTracking() {
   activeSale = getActiveSale();
   trackPageVisited();
@@ -698,6 +714,7 @@ function initEventTracking() {
   window.addEventListener(TEMPORARY_HELP_COPY_EVENT, onTemporaryHelpCopy);
   window.addEventListener(PAYMENT_PLAN_TOOL_EVENT, onPaymentPlanToolEvent);
   window.addEventListener(TEMPORARY_SUPPORT_RECORD_TOOL_EVENT, onTemporarySupportRecordToolEvent);
+  window.addEventListener(SPLIT_CALCULATOR_EVENT, onSplitCalculatorEvent);
 }
 
 if (document.readyState === "loading") {

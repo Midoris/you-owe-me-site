@@ -4,6 +4,8 @@
   const EPSILON = 0.005;
   const MAX_PEOPLE = 12;
   const MAX_EXPENSES = 30;
+  const CANONICAL_CALCULATOR_URL = "https://you-owe-me.com/tools/split-expense-calculator/";
+  const SPLIT_CALCULATOR_EVENT = "youoweme:split-calculator-event";
 
   const state = {
     currency: "$",
@@ -16,6 +18,7 @@
 
   const els = {};
   let hasExplicitInteraction = false;
+  let resultReadyEmitted = false;
 
   function makeId(prefix) {
     const random = Math.random().toString(36).slice(2, 8);
@@ -369,12 +372,17 @@
     renderMoneyRows(els.share, result.net.map((row) => [`${row.name}'s share`, row.share]));
     renderNetRows(result);
     renderSettlement(result);
-    renderAppContinuation(result);
+    renderResultActions(result);
   }
 
-  function renderAppContinuation(result) {
-    if (!els.appContinuation) return;
-    els.appContinuation.hidden = !(hasExplicitInteraction && result.validCount > 0);
+  function hasValidResult(result) {
+    return result.validCount > 0 && result.peopleCount > 0;
+  }
+
+  function renderResultActions(result) {
+    const shouldShow = hasExplicitInteraction && hasValidResult(result);
+    els.resultActions.hidden = !shouldShow;
+    if (shouldShow) emitResultReadyOnce();
   }
 
   function renderSummary(result) {
@@ -547,38 +555,114 @@
         lines.push(`${transfer.from} owes ${transfer.to} ${formatMoney(transfer.amount)}`);
       });
     }
-    lines.push("", "Generated with You Owe Me Split Expense Calculator.");
+    lines.push("", `Calculate your own split: ${CANONICAL_CALCULATOR_URL}`);
     return lines.join("\n");
   }
 
-  async function copySummary() {
-    const result = calculate();
-    if (result.validCount === 0) {
-      setCopyStatus("Add an expense before copying a summary.");
-      return;
-    }
-    const text = buildSummaryText(result);
+  function dispatchCalculatorEvent(eventName) {
+    window.dispatchEvent(new CustomEvent(SPLIT_CALCULATOR_EVENT, {
+      detail: { eventName }
+    }));
+  }
+
+  function emitResultReadyOnce() {
+    if (resultReadyEmitted) return;
+    resultReadyEmitted = true;
+    dispatchCalculatorEvent("split_result_ready");
+  }
+
+  async function copyTextToClipboard(text) {
     try {
       await navigator.clipboard.writeText(text);
-      setCopyStatus("Copied");
+      return true;
     } catch (error) {
-      const textarea = document.createElement("textarea");
+      return copyTextWithDocumentFallback(text);
+    }
+  }
+
+  function copyTextWithDocumentFallback(text) {
+    let textarea;
+    try {
+      textarea = document.createElement("textarea");
       textarea.value = text;
       textarea.setAttribute("readonly", "");
       textarea.style.position = "fixed";
       textarea.style.left = "-9999px";
       document.body.appendChild(textarea);
       textarea.select();
-      const copied = document.execCommand("copy");
-      document.body.removeChild(textarea);
-      setCopyStatus(copied ? "Copied" : "Copy failed");
+      return document.execCommand("copy");
+    } catch (error) {
+      return false;
+    } finally {
+      if (textarea && textarea.parentNode) textarea.parentNode.removeChild(textarea);
     }
   }
 
-  function setCopyStatus(text) {
+  function getCurrentSummary() {
+    const result = calculate();
+    return hasValidResult(result) ? buildSummaryText(result) : "";
+  }
+
+  async function copySummary() {
+    const text = getCurrentSummary();
+    if (!text) {
+      setActionStatus("Add an expense before copying a summary.");
+      return;
+    }
+
+    els.copySummary.disabled = true;
+    try {
+      const copied = await copyTextToClipboard(text);
+      if (!copied) {
+        setActionStatus("Couldn’t copy the result.");
+        return;
+      }
+      setActionStatus("Copied summary and calculator link.");
+      dispatchCalculatorEvent("split_summary_copied");
+    } finally {
+      els.copySummary.disabled = false;
+    }
+  }
+
+  async function shareSummary() {
+    if (!els.shareSummary || typeof navigator.share !== "function") return;
+
+    const text = getCurrentSummary();
+    if (!text) {
+      setActionStatus("Add an expense before sharing a summary.");
+      return;
+    }
+
+    els.shareSummary.disabled = true;
+    setActionStatus("");
+    try {
+      await navigator.share({
+        title: "Shared expense summary",
+        text,
+        url: CANONICAL_CALCULATOR_URL
+      });
+      setActionStatus("Shared result.");
+      dispatchCalculatorEvent("split_summary_shared");
+    } catch (error) {
+      if (error && error.name === "AbortError") return;
+
+      const copied = await copyTextToClipboard(text);
+      if (copied) {
+        setActionStatus("Sharing wasn’t available, so the result was copied.");
+        dispatchCalculatorEvent("split_share_fallback_copied");
+      } else {
+        setActionStatus("Couldn’t share or copy the result.");
+      }
+    } finally {
+      els.shareSummary.disabled = false;
+    }
+  }
+
+  function setActionStatus(text) {
     els.copyStatus.textContent = text;
-    window.clearTimeout(setCopyStatus.timer);
-    setCopyStatus.timer = window.setTimeout(() => {
+    window.clearTimeout(setActionStatus.timer);
+    if (!text) return;
+    setActionStatus.timer = window.setTimeout(() => {
       if (els.copyStatus.textContent === text) els.copyStatus.textContent = "";
     }, 2600);
   }
@@ -597,7 +681,19 @@
       if (action === "use-example") useExample();
       if (action === "clear-all") clearAll();
       if (action === "copy-summary") copySummary();
+      if (action === "share-summary") shareSummary();
     });
+  }
+
+  function configureShareAction() {
+    if (!els.shareSummary) return;
+    els.shareSummary.hidden = typeof navigator.share !== "function";
+  }
+
+  function getRequiredElement(selector) {
+    const element = document.querySelector(selector);
+    if (!element) throw new Error(`Split expense calculator is missing ${selector}.`);
+    return element;
   }
 
   function bindExplicitInteractionGate(root) {
@@ -616,20 +712,23 @@
   function init() {
     const root = document.querySelector(".split-calculator");
     if (!root) return;
-    els.currency = document.querySelector("#currency-symbol");
-    els.peopleList = document.querySelector("[data-people-list]");
-    els.peopleMessage = document.querySelector("#people-message");
-    els.expensesList = document.querySelector("[data-expenses-list]");
-    els.summary = document.querySelector("[data-summary]");
-    els.paid = document.querySelector("[data-paid]");
-    els.share = document.querySelector("[data-share]");
-    els.net = document.querySelector("[data-net]");
-    els.settlement = document.querySelector("[data-settlement]");
-    els.copyStatus = document.querySelector("[data-copy-status]");
-    els.appContinuation = document.querySelector("[data-app-continuation]");
+    els.currency = getRequiredElement("#currency-symbol");
+    els.peopleList = getRequiredElement("[data-people-list]");
+    els.peopleMessage = getRequiredElement("#people-message");
+    els.expensesList = getRequiredElement("[data-expenses-list]");
+    els.summary = getRequiredElement("[data-summary]");
+    els.paid = getRequiredElement("[data-paid]");
+    els.share = getRequiredElement("[data-share]");
+    els.net = getRequiredElement("[data-net]");
+    els.settlement = getRequiredElement("[data-settlement]");
+    els.copyStatus = getRequiredElement("[data-copy-status]");
+    els.resultActions = getRequiredElement("[data-result-actions]");
+    els.copySummary = getRequiredElement('[data-action="copy-summary"]');
+    els.shareSummary = document.querySelector('[data-action="share-summary"]');
 
     setInitialState();
     els.currency.value = state.currency;
+    configureShareAction();
     bindExplicitInteractionGate(root);
     bindEvents();
     render();
