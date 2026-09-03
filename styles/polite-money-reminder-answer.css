@@ -303,45 +303,62 @@ body.polite-reminder-answer-page .lt-appStoreBtn img {
   max-width: 100%;
 }
 
-.polite-reminder-product-bridge {
-  grid-template-columns: minmax(0, 1fr) minmax(7.75rem, 9.25rem);
-  gap: clamp(1rem, 2.4vw, 1.6rem);
-  padding: clamp(1.15rem, 2.4vw, 1.5rem);
+body.polite-reminder-answer-page .polite-reminder-post-copy {
+  display: block;
+  width: 100%;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.22), transparent 58%),
+    rgba(255, 255, 255, 0.82);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
 }
 
-.polite-reminder-product-bridge .lt-ctaRow {
-  margin-top: 1.1rem;
+body.polite-reminder-answer-page .polite-reminder-post-copy[hidden] {
+  display: none;
 }
 
-.polite-reminder-product-bridge .lt-appContinuation__copy > p:not(.lt-appContinuation__eyebrow) {
+body.polite-reminder-answer-page .polite-reminder-post-copy__message {
   max-width: 66ch;
   margin: 0.45rem 0 0 !important;
-  color: var(--text-muted);
-  font-size: 0.95rem;
-  line-height: 1.55;
+  color: rgba(33, 41, 49, 0.78);
+  font-size: 0.95rem !important;
+  line-height: 1.55 !important;
 }
 
-.polite-reminder-product-bridge .lt-appStoreBtn {
-  width: 190px;
-  margin-top: 0;
+body.polite-reminder-answer-page .polite-reminder-post-copy__actions {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 0.7rem;
+  margin-top: 0.9rem;
+}
+
+body.polite-reminder-answer-page .polite-reminder-post-copy .lt-appStoreBtn {
+  width: min(190px, 100%);
+  min-height: 44px;
+  margin: 0;
   border-radius: 11px;
 }
 
-.polite-reminder-product-bridge__visual {
-  width: 100%;
-  margin: 0;
-  align-self: center;
-  line-height: 0;
+body.polite-reminder-answer-page .polite-reminder-post-copy__solution-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.45rem 0;
+  color: #355428;
+  border-bottom: 1px solid currentColor;
+  font-weight: 800;
+  line-height: 1.3;
+  text-decoration: none;
 }
 
-.polite-reminder-product-bridge__visual img {
-  display: block;
-  width: 100%;
-  height: auto;
-  border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 18px;
-  background: rgba(255, 255, 255, 0.74);
-  box-shadow: 0 14px 30px rgba(15, 23, 42, 0.1);
+body.polite-reminder-answer-page .polite-reminder-post-copy .lt-appStoreBtn:focus-visible,
+body.polite-reminder-answer-page .polite-reminder-post-copy__solution-link:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
 }
 
 body.confront-answer-page .confront-table-wrap {
@@ -558,14 +575,6 @@ body.polite-no-answer-page .template-card h3 {
   }
 
   .polite-answer-hero-visual {
-    display: none;
-  }
-
-  .polite-reminder-product-bridge {
-    grid-template-columns: 1fr;
-  }
-
-  .polite-reminder-product-bridge__visual {
     display: none;
   }
 

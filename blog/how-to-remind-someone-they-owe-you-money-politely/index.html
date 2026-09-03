@@ -204,7 +204,7 @@
     <link rel="stylesheet" href="/styles/site-nav.css" />
     <link rel="stylesheet" href="/styles/tools.css" />
     <link rel="stylesheet" href="/styles/repayment-reminder-text-examples.css" />
-    <link rel="stylesheet" href="/styles/polite-money-reminder-answer.css?v=2026-08-27" />
+    <link rel="stylesheet" href="/styles/polite-money-reminder-answer.css?v=polite-reminder-post-copy-1" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
@@ -229,7 +229,7 @@
       </nav>
 
       <div id="main">
-        <article class="post featured">
+        <article class="post featured" data-copy-page="blog_how_to_remind_someone_they_owe_you_money_politely">
           <nav class="lt-breadcrumb" aria-label="Breadcrumb">
             <a href="../../">Home</a>
             <span aria-hidden="true">/</span>
@@ -304,45 +304,36 @@
             <a class="lt-anniversaryNotice__link" href="/10-years/" data-anniversary-cta data-track-event="site_link_click" data-track-location="polite_reminder_anniversary_notice">Explore the ten-year story</a>
           </aside>
 
-          <aside class="lt-appContinuation polite-reminder-product-bridge" aria-labelledby="polite-reminder-ongoing-title">
+          <aside
+            class="lt-appContinuation polite-reminder-post-copy"
+            aria-labelledby="polite-reminder-post-copy-title"
+            data-post-copy-app-prompt
+            hidden
+          >
             <div class="lt-appContinuation__copy">
-              <p class="lt-appContinuation__eyebrow">When the balance keeps changing</p>
-              <h2 id="polite-reminder-ongoing-title">Keep the amount clear before the next reminder</h2>
-              <p>This guide helps with the next message. You Owe Me keeps the current balance, partial repayments, and reminder history together, so the next follow-up starts with the right amount instead of old chats.</p>
+              <p class="lt-appContinuation__eyebrow">Reminder copied</p>
+              <h3 id="polite-reminder-post-copy-title">Hopefully, one message is enough.</h3>
+              <p class="polite-reminder-post-copy__message">If it isn’t, You Owe Me keeps the remaining balance and repayments clear—so you don’t have to piece it together from old chats before following up again.</p>
               <div data-app-language-support-anchor hidden></div>
-              <div class="lt-ctaRow">
-                <a
-                  href="/solutions/app-to-track-money-owed/"
-                  class="lt-primaryCta"
-                  data-track-location="polite_reminder_ongoing_solution_cta"
-                >See the balance tracker</a>
+              <div class="lt-ctaRow polite-reminder-post-copy__actions">
                 <a
                   href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=0ad25f49-9026-4d8b-99ea-9581a98702db&amp;pt=117888502&amp;ct=website_cta&amp;mt=8"
                   class="lt-appStoreBtn"
                   aria-label="Download You Owe Me on the App Store for ongoing balances and repayment reminders"
-                  data-track-location="polite_reminder_ongoing_app_store_cta"
+                  data-track-location="polite_reminder_post_copy_app_store_cta"
                   data-source-cluster="money-owed"
                 >
                   <span class="sr-only">Download You Owe Me on the App Store</span>
                   <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
                 </a>
+                <a
+                  href="/solutions/app-to-track-money-owed/"
+                  class="polite-reminder-post-copy__solution-link"
+                  data-track-event="site_link_click"
+                  data-track-location="polite_reminder_post_copy_solution_cta"
+                >See how the balance tracker works</a>
               </div>
-              <p class="lt-maintenanceProof">
-                <span class="lt-maintenanceProof__since">Since 2016</span>
-                <span class="lt-maintenanceProof__text">Actively maintained and improving.</span>
-                <a class="lt-maintenanceProof__link" href="/10-years/" data-track-event="site_link_click" data-track-location="polite_reminder_maintenance_proof">Explore the ten-year story</a>
-              </p>
             </div>
-            <figure class="polite-reminder-product-bridge__visual">
-              <img
-                src="/images/solutions/app-to-track-money-owed/app-to-track-money-owed-app-hero.webp"
-                alt="You Owe Me showing one current balance and a clear repayment history."
-                loading="lazy"
-                decoding="async"
-                width="1024"
-                height="1536"
-              />
-            </figure>
           </aside>
 
           <section class="lt-toolsSection" id="promised-money" aria-labelledby="promised-money-title">
@@ -432,7 +423,7 @@
             <h2 id="polite-reminder-examples-title">Short polite reminder texts you can copy</h2>
             <p class="polite-answer-copy-status" aria-live="polite" data-copy-status></p>
             <div class="repayment-template-grid">
-              <article class="template-card" data-template-id="friendly-reminder" data-tone="friendly" data-category="first-reminder">
+              <article class="template-card" data-template-id="friendly-reminder" data-tone="friendly" data-category="first-reminder" data-post-copy-app-eligible>
                 <div class="template-card__meta">
                   <span>Friendly</span>
                   <span>First reminder</span>
@@ -443,7 +434,7 @@
                 <button type="button" class="copy-button" data-copy-template="friendly-reminder" aria-label="Copy friendly repayment reminder text">Copy text</button>
               </article>
 
-              <article class="template-card" data-template-id="polite-clear-reminder" data-tone="polite" data-category="clear">
+              <article class="template-card" data-template-id="polite-clear-reminder" data-tone="polite" data-category="clear" data-post-copy-app-eligible>
                 <div class="template-card__meta">
                   <span>Polite</span>
                   <span>Clear</span>
@@ -454,7 +445,7 @@
                 <button type="button" class="copy-button" data-copy-template="polite-clear-reminder" aria-label="Copy polite repayment reminder text">Copy text</button>
               </article>
 
-              <article class="template-card" data-template-id="after-promised-date" data-tone="polite" data-category="promised-date">
+              <article class="template-card" data-template-id="after-promised-date" data-tone="polite" data-category="promised-date" data-post-copy-app-eligible>
                 <div class="template-card__meta">
                   <span>Polite</span>
                   <span>Promised date</span>
@@ -465,7 +456,7 @@
                 <button type="button" class="copy-button" data-copy-template="after-promised-date" aria-label="Copy promised-date repayment reminder text">Copy text</button>
               </article>
 
-              <article class="template-card" data-template-id="partial-repayment-reminder" data-tone="polite" data-category="partial-repayment">
+              <article class="template-card" data-template-id="partial-repayment-reminder" data-tone="polite" data-category="partial-repayment" data-post-copy-app-eligible>
                 <div class="template-card__meta">
                   <span>Polite</span>
                   <span>Partial repayment</span>
@@ -478,7 +469,7 @@
                 <button type="button" class="copy-button" data-copy-template="partial-repayment-reminder" aria-label="Copy partial repayment reminder text">Copy text</button>
               </article>
 
-              <article class="template-card" data-template-id="firmer-polite-reminder" data-tone="firm" data-category="follow-up">
+              <article class="template-card" data-template-id="firmer-polite-reminder" data-tone="firm" data-category="follow-up" data-post-copy-app-eligible>
                 <div class="template-card__meta">
                   <span>Firmer</span>
                   <span>Follow-up</span>
@@ -727,7 +718,7 @@
           <section class="lt-toolsSection">
             <h2>Copyable reminder template</h2>
             <p>Use this when you want to write your own reminder:</p>
-            <div class="polite-answer-card polite-answer-template template-card" data-template-id="polite-reminder-template" data-tone="polite" data-category="template">
+            <div class="polite-answer-card polite-answer-template template-card" data-template-id="polite-reminder-template" data-tone="polite" data-category="template" data-post-copy-app-eligible>
               <blockquote class="polite-answer-quote template-card__message" data-template="&ldquo;Hey [name], just checking in about the [amount] from [what it was for]. Could you send it [when], or let me know what timing works?&rdquo;">&ldquo;Hey [name], just checking in about the [amount] from [what it was for]. Could you send it [when], or let me know what timing works?&rdquo;</blockquote>
               <button type="button" class="copy-button" data-copy-template="polite-reminder-template" aria-label="Copy polite repayment reminder template">Copy text</button>
             </div>
@@ -940,6 +931,7 @@
 
     <script src="/scripts/sales.js"></script>
     <script src="/scripts/repayment-reminder-text-examples.js"></script>
+    <script src="/scripts/polite-reminder-post-copy.js?v=polite-reminder-post-copy-1"></script>
     <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
     <script type="module" src="/scripts/analytics.js"></script>
     <script src="/assets/js/jquery.min.js"></script>
