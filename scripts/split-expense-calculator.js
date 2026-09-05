@@ -380,6 +380,13 @@
   }
 
   function renderResultActions(result) {
+    if (result.transfers.length > 0) {
+      els.resultAppTitle.textContent = "Keep track until everyone has paid";
+      els.resultAppMessage.textContent = "Record repayments and new shared costs in You Owe Me, so you always know what’s still owed.";
+    } else {
+      els.resultAppTitle.textContent = "Keep future shared costs in one place";
+      els.resultAppMessage.textContent = "Use You Owe Me to record the next shared expense and any repayments, with a clear balance for each person.";
+    }
     const shouldShow = hasExplicitInteraction && hasValidResult(result);
     els.resultActions.hidden = !shouldShow;
     if (shouldShow) emitResultReadyOnce();
@@ -723,6 +730,8 @@
     els.settlement = getRequiredElement("[data-settlement]");
     els.copyStatus = getRequiredElement("[data-copy-status]");
     els.resultActions = getRequiredElement("[data-result-actions]");
+    els.resultAppTitle = getRequiredElement("[data-result-app-title]");
+    els.resultAppMessage = getRequiredElement("[data-result-app-message]");
     els.copySummary = getRequiredElement('[data-action="copy-summary"]');
     els.shareSummary = document.querySelector('[data-action="share-summary"]');
 

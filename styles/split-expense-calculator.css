@@ -389,75 +389,10 @@ body.calculator-page article.post.featured {
   display: none !important;
 }
 
-.split-result-actions__intro {
-  margin-bottom: 0.9rem;
-}
-
-.split-result-actions__eyebrow {
-  margin: 0 0 0.3rem;
-  color: rgba(33, 41, 49, 0.88);
-  font-size: 0.72rem;
-  font-weight: 700;
-  letter-spacing: 0.08em;
-  line-height: 1.3;
-  text-transform: uppercase;
-}
-
-.split-result-actions__intro h4,
-.split-result-path h5 {
-  margin: 0;
-  color: #18212b;
-  letter-spacing: 0;
-  text-transform: none;
-}
-
-.split-result-actions__intro h4 {
-  font-size: 1rem;
-  line-height: 1.35;
-}
-
-.split-result-actions__paths {
-  display: grid;
-  grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.split-result-path {
-  min-width: 0;
-  padding: 0.2rem 1rem 0.2rem 0;
-}
-
-.split-result-path--ongoing {
-  padding: 0.85rem 0.9rem;
-  border-radius: 16px;
-  background: rgba(175, 230, 126, 0.16);
-}
-
-.split-result-path--one-time {
+.split-result-actions__buttons {
   display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin: 0.85rem 1rem 0.85rem 0;
-  padding-top: 0;
-  padding-bottom: 0;
-  border-right: 1px solid rgba(15, 23, 42, 0.08);
-}
-
-.split-result-path h5 {
-  font-size: 0.96rem;
-  line-height: 1.35;
-}
-
-.split-result-path > p:not(.lt-maintenanceProof) {
-  margin: 0.42rem 0 0;
-  color: rgba(33, 41, 49, 0.78);
-  font-size: 0.91rem;
-  line-height: 1.5;
-}
-
-.split-result-path__actions {
-  display: grid;
+  flex-wrap: wrap;
   gap: 0.6rem;
-  margin-top: 0.85rem;
 }
 
 .split-result-action {
@@ -496,27 +431,88 @@ body.calculator-page article.post.featured {
 }
 
 .split-result-action:focus-visible,
-.split-result-path__learn-more:focus-visible,
-.split-result-path .lt-appStoreBtn:focus-visible {
+.split-result-app-card__learn-more:focus-visible,
+.split-result-app-card .lt-appStoreBtn:focus-visible,
+.split-result-breakdown summary:focus-visible {
   outline: 3px solid rgba(53, 84, 40, 0.28);
   outline-offset: 3px;
 }
 
-.split-result-path__app-actions .lt-appStoreBtn {
-  width: min(190px, 100%);
+.split-result-app-card {
+  margin-top: 0.8rem;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.78);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.split-result-app-card h4 {
+  margin: 0;
+  color: #18212b;
+  font-size: 1.16rem;
+  line-height: 1.25;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+.split-result-app-card > p:not(.lt-maintenanceProof) {
+  margin: 0.5rem 0 0;
+  color: rgba(33, 41, 49, 0.78);
+  font-size: 0.95rem;
+  line-height: 1.48;
+}
+
+.split-result-app-card__actions {
+  display: grid;
+  justify-items: start;
+  gap: 0.55rem;
+  margin-top: 0.85rem;
+}
+
+.split-result-app-card .lt-appStoreBtn {
+  width: min(200px, 100%);
   margin: 0;
   border-radius: 11px;
 }
 
-.split-result-path__learn-more {
+.split-result-app-card__price {
+  margin: 0;
+  color: rgba(33, 41, 49, 0.7);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+.split-result-app-card__learn-more {
   color: #355428;
-  font-size: 0.88rem;
+  font-size: 0.9rem;
   font-weight: 700;
   line-height: 1.45;
 }
 
-.split-result-path .lt-maintenanceProof {
-  margin: 0.85rem 0 0;
+.split-result-app-card .lt-maintenanceProof {
+  margin: 0.8rem 0 0;
+  color: rgba(33, 41, 49, 0.62);
+  font-size: 0.82rem;
+  line-height: 1.4;
+}
+
+.split-result-breakdown {
+  margin-top: 1rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.split-result-breakdown summary {
+  display: flex;
+  align-items: center;
+  min-height: 2.75rem;
+  cursor: pointer;
+  color: #18212b;
+  font-weight: 700;
+}
+
+.split-result-breakdown .result-block:first-of-type {
+  margin-top: 0.75rem;
 }
 
 .calculator-note {
@@ -657,30 +653,17 @@ body.calculator-page article.post.featured {
     width: 100%;
   }
 
-  .split-result-actions__paths {
-    grid-template-columns: 1fr;
-    gap: 0.85rem;
-  }
-
-  .split-result-path,
-  .split-result-path--one-time {
-    margin: 0;
-    padding: 0;
-    border: 0;
-  }
-
-  .split-result-path--ongoing {
-    padding: 0.95rem;
-  }
-
   .split-result-action {
     min-height: 2.8rem;
-    width: 100%;
     font-size: 0.95rem;
   }
 
-  .split-result-path__app-actions .lt-appStoreBtn {
-    width: min(190px, 100%);
+  .split-result-app-card {
+    padding: 0.95rem;
+  }
+
+  .split-result-app-card .lt-appStoreBtn {
+    width: min(200px, 100%);
   }
 }
 

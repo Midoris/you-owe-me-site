@@ -3,6 +3,7 @@ import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
 import { fileURLToPath } from "node:url";
+import vm from "node:vm";
 
 const root = new URL("../", import.meta.url);
 const rootPath = fileURLToPath(root);
@@ -44,16 +45,17 @@ test("borrowing guide has one initially hidden post-copy prompt with approved ac
   assert.equal((page.match(/data-friend-borrow-post-copy(?=[\s=>])/g) ?? []).length, 1);
   assert.match(prompt, /\bhidden\b/);
   assert.match(prompt, /aria-labelledby="friend-borrow-post-copy-title"/);
-  assert.match(prompt, />Copied<\/p>/);
-  assert.match(prompt, /Keep the promise clear&mdash;even if timing changes/);
-  assert.match(prompt, /Create one named loan with the agreed amount and a repayment plan\. Partial or extra payments update what remains and what comes next; if timing changes, Money Conversations can help you send a clear Repayment Update before your friend has to ask\./);
+  assert.match(prompt, /data-friend-borrow-post-copy-eyebrow>Reply copied<\/p>/);
+  assert.match(prompt, /Keep the amount and repayment date together/);
+  assert.match(prompt, /Use You Owe Me to record what you borrowed, when you agreed to repay it, and each payment you make\./);
   assert.ok(prompt.includes(APP_STORE_URL));
   assert.match(prompt, /data-source-cluster="temporary-support"/);
   assert.match(prompt, /aria-label="Download You Owe Me on the App Store for keeping a friend loan and repayment updates clear"/);
   assert.match(prompt, /<img[\s\S]*?alt="Download You Owe Me on the App Store"/);
   assert.ok(appStoreIndex >= 0 && appStoreIndex < solutionIndex, "App Store action precedes solution link");
   assert.match(prompt, /href="\/solutions\/temporary-financial-support-tracker\/"/);
-  assert.match(prompt, />See how temporary support tracking works<\/a>/);
+  assert.match(prompt, /Free download &middot; In-app purchases available/);
+  assert.match(prompt, />See how loan tracking works<\/a>/);
 });
 
 test("only the three high-intent copy controls are eligible", () => {
@@ -81,7 +83,11 @@ test("page-only controller consumes successful copy events and moves the existin
   assert.match(controller, /window\.addEventListener\("youoweme:friend-borrow-money-copy", handleSuccessfulCopy\)/);
   assert.match(controller, /detail\.copy_type === "template"[\s\S]*?data-copy-template/);
   assert.match(controller, /detail\.copy_type === "record"[\s\S]*?data-copy-text-target/);
-  assert.match(controller, /if \(!button\) \{[\s\S]*?prompt\.hidden = true;/);
+  assert.match(controller, /var copyVariants = \{/);
+  assert.match(controller, /"template:reply-after-yes"/);
+  assert.match(controller, /"record:friend-borrow-example-record"/);
+  assert.match(controller, /"template:need-more-time-update"/);
+  assert.match(controller, /if \(!button \|\| !variant\) \{[\s\S]*?prompt\.hidden = true;/);
   assert.match(controller, /button\.closest\("\.template-card, \.friend-borrow-card"\)/);
   assert.match(controller, /card\.insertAdjacentElement\("afterend", prompt\)/);
   assert.match(controller, /button\.insertAdjacentElement\("afterend", prompt\)/);
@@ -89,7 +95,7 @@ test("page-only controller consumes successful copy events and moves the existin
   assert.doesNotMatch(controller, /innerHTML|insertAdjacentHTML|cloneNode|navigator\.clipboard|scrollIntoView|CustomEvent|firebase|addEventListener\("click"/i);
 
   const copyScriptIndex = page.indexOf('/scripts/friend-borrow-money-answer.js?v=friend-borrow-money-1');
-  const controllerIndex = page.indexOf('/scripts/friend-borrow-post-copy.js?v=friend-borrow-post-copy-1');
+  const controllerIndex = page.indexOf('/scripts/friend-borrow-post-copy.js?v=conversion-polish-20260905-3');
   assert.ok(copyScriptIndex >= 0 && controllerIndex > copyScriptIndex);
   assert.ok(controllerIndex < page.indexOf('/scripts/analytics.js'));
 
@@ -102,16 +108,106 @@ test("page-only controller consumes successful copy events and moves the existin
   assert.deepEqual(controllerFiles, [routePath]);
 });
 
+test("borrower prompt uses the approved variant only after a matching successful copy", () => {
+  const prompt = { hidden: true };
+  const eyebrow = { textContent: "" };
+  const heading = { textContent: "" };
+  const message = { textContent: "" };
+  const cards = [];
+
+  function button(copyType, id) {
+    const card = {
+      insertions: [],
+      insertAdjacentElement(position, node) {
+        this.insertions.push({ position, node });
+      }
+    };
+    cards.push(card);
+    return {
+      getAttribute(name) {
+        if (name === "data-copy-template" && copyType === "template") return id;
+        if (name === "data-copy-text-target" && copyType === "record") return id;
+        return null;
+      },
+      closest() {
+        return card;
+      },
+      insertAdjacentElement() {
+        throw new Error("card fallback should not be used in this fixture");
+      }
+    };
+  }
+
+  const buttons = [
+    button("template", "reply-after-yes"),
+    button("record", "friend-borrow-example-record"),
+    button("template", "need-more-time-update"),
+  ];
+  let handler;
+  const document = {
+    readyState: "complete",
+    querySelector(selector) {
+      if (selector === "[data-friend-borrow-post-copy]") return prompt;
+      if (selector === "[data-friend-borrow-post-copy-eyebrow]") return eyebrow;
+      if (selector === "#friend-borrow-post-copy-title") return heading;
+      if (selector === ".friend-borrow-post-copy__message") return message;
+      return null;
+    },
+    querySelectorAll(selector) {
+      return selector === "[data-friend-borrow-post-copy-eligible]" ? buttons : [];
+    },
+    addEventListener() {}
+  };
+  const window = {
+    addEventListener(name, listener) {
+      if (name === "youoweme:friend-borrow-money-copy") handler = listener;
+    }
+  };
+  vm.runInNewContext(controller, { document, window });
+  assert.equal(typeof handler, "function");
+
+  function emit(copy_type, id) {
+    handler({ detail: { copy_type, id } });
+  }
+
+  emit("template", "reply-after-yes");
+  assert.equal(eyebrow.textContent, "Reply copied");
+  assert.equal(heading.textContent, "Keep the amount and repayment date together");
+  assert.equal(message.textContent, "Use You Owe Me to record what you borrowed, when you agreed to repay it, and each payment you make.");
+  assert.equal(prompt.hidden, false);
+  assert.equal(cards[0].insertions.length, 1);
+
+  emit("record", "friend-borrow-example-record");
+  assert.equal(eyebrow.textContent, "Record copied");
+  assert.equal(heading.textContent, "Keep this record up to date as you repay");
+  assert.equal(message.textContent, "Record each payment in You Owe Me and see what’s left, without rewriting your notes.");
+  assert.equal(cards[1].insertions[0].node, prompt, "the same prompt moves for each eligible event");
+
+  emit("template", "need-more-time-update");
+  assert.equal(eyebrow.textContent, "Update copied");
+  assert.equal(heading.textContent, "Keep the revised plan clear");
+  assert.equal(message.textContent, "Record what you’ve repaid, what’s left, and the next agreed date in You Owe Me.");
+
+  emit("template", "promised-gift-timing");
+  assert.equal(prompt.hidden, true, "an ineligible successful copy hides stale prompt content");
+  emit("record", "reply-after-yes");
+  assert.equal(prompt.hidden, true, "a wrong event type cannot select a variant");
+  emit("template", "reply-after-yes");
+  assert.equal(prompt.hidden, false);
+  assert.equal(cards.flatMap((card) => card.insertions).filter(({ node }) => node === prompt).length, 4, "one existing prompt is moved without cloning");
+});
+
 test("existing copy, analytics, metadata, and responsive contracts remain intact", () => {
   assert.match(copyScript, /trackCopy\(type, id\);/);
   assert.match(copyScript, /\.catch\(function \(\) \{[\s\S]*?Copy did not work/);
   assert.doesNotMatch(analytics, /friend_borrow_post_copy|friend-borrow-post-copy/);
   assert.match(styles, /body\.friend-borrow-money-page \.friend-borrow-post-copy\[hidden\]\s*\{\s*display:\s*none !important;/);
   assert.match(styles, /body\.friend-borrow-money-page \.friend-borrow-template-grid > \.friend-borrow-post-copy\s*\{[\s\S]*?grid-column:\s*1 \/ -1/);
-  assert.match(styles, /@media \(max-width: 736px\)[\s\S]*?friend-borrow-post-copy__actions[\s\S]*?flex-direction:\s*column/);
+  assert.match(styles, /body\.friend-borrow-money-page \.friend-borrow-post-copy\s*\{[\s\S]*?width:\s*100%[\s\S]*?max-width:\s*100%[\s\S]*?border-radius:\s*20px/);
+  assert.match(styles, /friend-borrow-post-copy__actions\s*\{[\s\S]*?flex-direction:\s*column/);
   assert.match(page, /<link rel="canonical" href="https:\/\/you-owe-me\.com\/blog\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\/" \/>/);
   assert.match(page, /"datePublished": "2026-07-08"/);
-  assert.match(page, /"dateModified": "2026-08-31"/);
-  assert.match(page, /Updated <time datetime="2026-08-31">August 31, 2026<\/time>/);
-  assert.match(page, /href="\/styles\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\.css\?v=friend-borrow-post-copy-1"/);
+  assert.match(page, /"dateModified": "2026-09-05"/);
+  assert.match(page, /Updated <time datetime="2026-09-05">September 5, 2026<\/time>/);
+  assert.match(page, /href="\/styles\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\.css\?v=conversion-polish-20260905-3"/);
 });

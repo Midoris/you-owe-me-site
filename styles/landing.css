@@ -3394,7 +3394,7 @@
       }
 
       body.homepage-page .lt-heroCopy {
-        align-self: center;
+        align-self: start;
       }
 
       body.homepage-page .lt-hero h1 {
@@ -3423,6 +3423,53 @@
 
       body.homepage-page .lt-heroCtas {
         margin-top: 1.15rem;
+      }
+
+      body.homepage-page .homepage-download-reassurance {
+        display: grid;
+        gap: 0.18rem;
+        margin-top: 0.75rem;
+        color: rgba(33, 41, 49, 0.88);
+        font-size: 0.875rem;
+        line-height: 1.4;
+      }
+
+      body.homepage-page .homepage-review-teaser {
+        max-width: 47ch;
+        margin: 1rem 0 0;
+        padding: 0.2rem 0 0.1rem 1rem;
+        border-left: 2px solid rgba(53, 84, 40, 0.32);
+      }
+
+      body.homepage-page .homepage-review-teaser blockquote {
+        margin: 0;
+        padding: 0;
+        border: 0;
+        color: #212931;
+        font-size: 0.96rem;
+        font-style: normal;
+        line-height: 1.46;
+      }
+
+      body.homepage-page .homepage-review-teaser figcaption {
+        margin-top: 0.45rem;
+        color: rgba(33, 41, 49, 0.68);
+        font-size: 0.84rem;
+        line-height: 1.4;
+      }
+
+      body.homepage-page .homepage-review-teaser a {
+        color: #18212b;
+        font-weight: 700;
+        text-decoration: underline;
+        text-decoration-thickness: 0.1em;
+        text-underline-offset: 0.14em;
+      }
+
+      body.homepage-page .homepage-review-teaser a:focus-visible,
+      body.homepage-page .homepage-loan-value__trust a:focus-visible {
+        outline: 3px solid rgba(53, 84, 40, 0.32);
+        outline-offset: 3px;
       }
 
       body.homepage-page .lt-heroTrust,
@@ -3492,7 +3539,7 @@
           max-width: calc(100vw - 2.1rem) !important;
           margin-left: auto;
           margin-right: auto;
-          overflow: hidden;
+          overflow: visible;
         }
 
         body.homepage-page .lt-hero .lt-eyebrow {
@@ -3519,13 +3566,17 @@
           display: none;
         }
 
-        body.homepage-page .lt-heroCtas,
         body.homepage-page .lt-ctaRow {
           flex-direction: row;
           align-items: center;
           justify-content: center;
           gap: 0.7rem;
           margin-top: 0.88rem;
+        }
+
+        body.homepage-page .lt-heroCtas {
+          align-items: center;
+          justify-content: flex-start;
         }
 
         body.homepage-page .lt-heroCtas .lt-appStoreBtn,
@@ -3562,14 +3613,16 @@
       }
 
       body.homepage-page .homepage-loan-value {
-        max-width: 54ch;
-        margin-top: 1rem;
-        padding: 1rem;
+        width: 100%;
+        max-width: none;
+        box-sizing: border-box;
+        margin: clamp(2.25rem, 5vw, 4rem) 0 0;
+        padding: clamp(1.25rem, 2.4vw, 1.75rem);
         border: 1px solid rgba(15, 23, 42, 0.08);
-        border-radius: 18px;
+        border-radius: 20px;
         background:
           linear-gradient(135deg, rgba(255, 255, 255, 0.94), rgba(175, 230, 126, 0.14));
-        box-shadow: 0 10px 28px rgba(15, 23, 42, 0.07);
+        box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
       }
 
       body.homepage-page .homepage-loan-value__eyebrow {
@@ -3582,7 +3635,7 @@
       }
 
       body.homepage-page .homepage-loan-value h2 {
-        max-width: 27ch;
+        max-width: 34ch;
         margin: 0;
         color: #18212b;
         font-size: clamp(1.15rem, 1.03rem + 0.42vw, 1.42rem);
@@ -3593,8 +3646,8 @@
       body.homepage-page .homepage-loan-value__steps {
         display: grid;
         grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 0.58rem;
-        margin: 0.8rem 0 0;
+        gap: 0.9rem;
+        margin: 1rem 0 0;
         padding: 0;
         list-style: none;
       }
@@ -3602,12 +3655,12 @@
       body.homepage-page .homepage-loan-value__steps li {
         display: flex;
         align-items: flex-start;
-        gap: 0.45rem;
+        gap: 0.65rem;
         min-width: 0;
         margin: 0;
-        padding: 0.62rem;
+        padding: 0.9rem;
         border: 1px solid rgba(15, 23, 42, 0.07);
-        border-radius: 13px;
+        border-radius: 16px;
         background: rgba(255, 255, 255, 0.66);
       }
 
@@ -3628,31 +3681,33 @@
 
       body.homepage-page .homepage-loan-value__copy {
         display: grid;
-        gap: 0.2rem;
+        gap: 0.28rem;
         min-width: 0;
         color: rgba(33, 41, 49, 0.8);
-        font-size: 0.79rem;
-        line-height: 1.36;
+        font-size: 0.95rem;
+        line-height: 1.48;
       }
 
       body.homepage-page .homepage-loan-value__copy strong {
         color: #18212b;
-        font-size: 0.82rem;
+        font-size: 1rem;
         line-height: 1.22;
       }
 
-      body.homepage-page .homepage-loan-value__note,
       body.homepage-page .homepage-loan-value__trust {
-        margin: 0.72rem 0 0;
+        margin: 1rem 0 0;
         color: rgba(33, 41, 49, 0.72);
-        font-size: 0.82rem;
-        line-height: 1.42;
+        font-size: 0.95rem;
+        line-height: 1.48;
         text-align: left;
       }
 
-      body.homepage-page .homepage-loan-value__note {
-        color: rgba(24, 33, 43, 0.86);
-        font-weight: 700;
+      body.homepage-page .homepage-loan-value .lt-maintenanceProof {
+        margin: 0.5rem 0 0;
+        color: rgba(33, 41, 49, 0.68);
+        font-size: 0.875rem;
+        line-height: 1.4;
+        text-align: left;
       }
 
       body.homepage-page .homepage-loan-value__trust a {
@@ -3662,23 +3717,13 @@
         text-underline-offset: 0.14em;
       }
 
-      body.homepage-page .homepage-loan-value__trust a:focus-visible {
-        outline: 3px solid rgba(53, 84, 40, 0.32);
-        outline-offset: 3px;
-      }
-
-      @media (max-width: 980px) {
-        body.homepage-page .homepage-loan-value {
-          max-width: 62ch;
-        }
-      }
-
       @media (max-width: 736px) {
         body.homepage-page .homepage-loan-value {
           width: 100%;
           max-width: 100%;
-          margin-top: 0.95rem;
-          padding: 0.9rem;
+          margin-top: 2.25rem;
+          padding: 1rem;
+          border-radius: 20px;
         }
 
         body.homepage-page .homepage-loan-value h2 {
@@ -3696,15 +3741,14 @@
         }
 
         body.homepage-page .homepage-loan-value__copy {
-          font-size: 0.86rem;
+          font-size: 0.95rem;
         }
 
         body.homepage-page .homepage-loan-value__copy strong {
-          font-size: 0.9rem;
+          font-size: 1rem;
         }
 
-        body.homepage-page .homepage-loan-value__note,
         body.homepage-page .homepage-loan-value__trust {
-          font-size: 0.86rem;
+          font-size: 0.95rem;
         }
       }

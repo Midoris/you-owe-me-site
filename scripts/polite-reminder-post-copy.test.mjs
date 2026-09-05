@@ -54,8 +54,8 @@ test("the old bridge is replaced by one initially hidden post-copy prompt with e
   assert.match(prompt, /data-post-copy-app-prompt[\s\S]*\bhidden\b/);
   assert.match(prompt, /aria-labelledby="polite-reminder-post-copy-title"/);
   assert.match(prompt, />Reminder copied</);
-  assert.match(prompt, />Hopefully, one message is enough\.<\/h3>/);
-  assert.match(prompt, /If it isn’t, You Owe Me keeps the remaining balance and repayments clear—so you don’t have to piece it together from old chats before following up again\./);
+  assert.match(prompt, />Keep track until you&rsquo;re paid back<\/h3>/);
+  assert.match(prompt, /Record each repayment in You Owe Me and see what&rsquo;s left\. When you need another reminder, start with the current balance\./);
   assert.match(styles, /polite-reminder-post-copy\[hidden\]\s*\{\s*display:\s*none/);
 });
 
@@ -72,6 +72,7 @@ test("the post-copy prompt retains attributed App Store and secondary solution a
   assert.match(prompt, /href="\/solutions\/app-to-track-money-owed\/"/);
   assert.match(prompt, /data-track-event="site_link_click"/);
   assert.match(prompt, />See how the balance tracker works<\/a>/);
+  assert.match(prompt, /Free download &middot; In-app purchases available/);
   assert.doesNotMatch(prompt, /lt-primaryCta/);
 });
 
@@ -134,7 +135,8 @@ test("existing analytics and copy contracts remain intact", () => {
 test("search-facing article metadata remains stable", () => {
   assert.match(page, /<link rel="canonical" href="https:\/\/you-owe-me\.com\/blog\/how-to-remind-someone-they-owe-you-money-politely\/" \/>/);
   assert.match(page, /name="description"[\s\S]*Copy polite reminder texts for a friend, relative, roommate, or partner who owes you money/);
-  assert.match(page, /"dateModified": "2026-08-27"/);
-  assert.match(page, /article:modified_time" content="2026-08-27T00:00:00\+07:00"/);
-  assert.match(page, /Updated <time datetime="2026-08-27">August 27, 2026<\/time>/);
+  assert.match(page, /"dateModified": "2026-09-05"/);
+  assert.match(page, /article:modified_time" content="2026-09-05T00:00:00\+07:00"/);
+  assert.match(page, /Updated <time datetime="2026-09-05">September 5, 2026<\/time>/);
+  assert.match(page, /href="\/styles\/polite-money-reminder-answer\.css\?v=conversion-polish-20260905-3"/);
 });

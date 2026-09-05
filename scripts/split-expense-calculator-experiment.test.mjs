@@ -24,19 +24,34 @@ test("the initial result actions preserve the attributed App Store CTA", () => {
   assert.match(page, /<img[^>]+alt="Download You Owe Me on the App Store"/);
 });
 
-test("the two result paths and static attribution outside the experiment remain present", () => {
+test("results put settlement first, then actions, then a native breakdown disclosure", () => {
+  const settlementIndex = page.indexOf('class="result-block settlement-block"');
+  const actionsIndex = page.indexOf('data-result-actions hidden');
+  const detailsIndex = page.indexOf('<details class="split-result-breakdown">');
+  assert.ok(settlementIndex >= 0 && settlementIndex < actionsIndex && actionsIndex < detailsIndex);
+
   for (const requiredCopy of [
-    "Choose what happens next",
-    "Next step after this split",
-    "Settling this split now?",
-    "Copy or share the result with everyone involved.",
     "Copy summary",
     "Share result",
-    "Will expenses or repayments continue?",
-    "See how ongoing shared-expense tracking works",
+    "See calculation details",
+    "Free download &middot; In-app purchases available",
+    "See how shared tracking works",
+    "Since 2016",
+    "Actively maintained.",
   ]) {
     assert.ok(page.includes(requiredCopy), `missing required copy: ${requiredCopy}`);
   }
+
+  for (const selector of ["data-summary", "data-paid", "data-share", "data-net", "data-settlement", "data-copy-status", "data-result-actions"]) {
+    assert.equal((page.match(new RegExp(`${selector}(?=\\s|>)`, "g")) ?? []).length, 1, `one ${selector} hook remains`);
+  }
+  assert.equal((page.match(/data-action="copy-summary"/g) ?? []).length, 1);
+  assert.equal((page.match(/data-action="share-summary"/g) ?? []).length, 1);
+  assert.match(page, /<details class="split-result-breakdown">[\s\S]*?<summary>See calculation details<\/summary>[\s\S]*?data-summary[\s\S]*?data-paid[\s\S]*?data-share[\s\S]*?data-net/);
+  assert.doesNotMatch(page, /Choose what happens next|Settling this split now\?|Will expenses or repayments continue\?/);
+  assert.match(calculator, /els\.resultAppTitle = getRequiredElement\("\[data-result-app-title\]"\)/);
+  assert.match(calculator, /els\.resultAppMessage = getRequiredElement\("\[data-result-app-message\]"\)/);
+  assert.match(calculator, /result\.transfers\.length > 0[\s\S]*?Keep track until everyone has paid[\s\S]*?Keep future shared costs in one place/);
 
   assert.match(page, /<meta name="apple-itunes-app" content="app-id=1147058670, affiliate-data=pt=117888502&amp;ct=website_smart_banner"/);
   assert.match(page, /data-track-location="split_calculator_final_primary_cta"/);

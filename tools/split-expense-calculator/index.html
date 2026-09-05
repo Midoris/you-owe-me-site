@@ -53,7 +53,7 @@
             "height": 630,
             "caption": "Split expense calculator showing who paid, fair shares, net balances, and who owes whom."
           },
-          "dateModified": "2026-09-03",
+          "dateModified": "2026-09-05",
           "isPartOf": {
             "@type": "CollectionPage",
             "name": "Money Tools and Templates",
@@ -208,7 +208,7 @@
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="../../styles/site-nav.css" />
     <link rel="stylesheet" href="../../styles/tools.css" />
-    <link rel="stylesheet" href="../../styles/split-expense-calculator.css?v=split-result-actions-1" />
+    <link rel="stylesheet" href="../../styles/split-expense-calculator.css?v=conversion-polish-20260905-3" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
@@ -314,49 +314,21 @@
                     <h3 id="results-title">Results</h3>
                   </div>
 
-                  <section class="result-block">
-                    <h4>Summary</h4>
-                    <div class="result-list" data-summary></div>
-                  </section>
-
-                  <section class="result-block">
-                    <h4>Total paid</h4>
-                    <div class="result-list" data-paid></div>
-                  </section>
-
-                  <section class="result-block">
-                    <h4>Fair share</h4>
-                    <div class="result-list" data-share></div>
-                  </section>
-
-                  <section class="result-block">
-                    <h4>Net balance</h4>
-                    <div class="result-list" data-net></div>
-                  </section>
-
                   <section class="result-block settlement-block">
                     <h4>Who owes whom</h4>
                     <div class="settlement-list" data-settlement></div>
                   </section>
 
                   <section class="split-result-actions" aria-labelledby="split-result-actions-title" data-result-actions hidden>
-                    <div class="split-result-actions__intro">
-                      <p class="split-result-actions__eyebrow">Choose what happens next</p>
-                      <h4 id="split-result-actions-title">Next step after this split</h4>
+                    <div class="split-result-actions__buttons">
+                      <button type="button" class="split-result-action" data-action="copy-summary">Copy summary</button>
+                      <button type="button" class="split-result-action" data-action="share-summary" data-share-summary hidden>Share result</button>
                     </div>
-                    <div class="split-result-actions__paths">
-                      <section class="split-result-path split-result-path--one-time" aria-labelledby="split-result-one-time-title">
-                        <h5 id="split-result-one-time-title">Settling this split now?</h5>
-                        <p>Copy or share the result with everyone involved.</p>
-                        <div class="split-result-path__actions">
-                          <button type="button" class="split-result-action" data-action="copy-summary">Copy summary</button>
-                          <button type="button" class="split-result-action" data-action="share-summary" data-share-summary hidden>Share result</button>
-                        </div>
-                      </section>
-                      <section class="split-result-path split-result-path--ongoing" aria-labelledby="split-result-ongoing-title">
-                        <h5 id="split-result-ongoing-title">Will expenses or repayments continue?</h5>
-                        <p>Keep later expenses, repayments, and the current balance in one history instead of rebuilding who owes what next time.</p>
-                        <div class="split-result-path__actions split-result-path__app-actions">
+                    <p class="copy-status" aria-live="polite" data-copy-status></p>
+                    <section class="split-result-app-card" aria-labelledby="split-result-actions-title">
+                      <h4 id="split-result-actions-title" data-result-app-title>Keep track until everyone has paid</h4>
+                      <p data-result-app-message>Record repayments and new shared costs in You Owe Me, so you always know what&rsquo;s still owed.</p>
+                      <div class="split-result-app-card__actions">
                         <a
                           href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=7f9074ac-4090-4e07-aebe-c5722e76eedc&amp;pt=117888502&amp;ct=website_cta&amp;mt=8"
                           class="lt-appStoreBtn"
@@ -367,17 +339,20 @@
                           <span class="sr-only">Download You Owe Me on the App Store</span>
                           <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
                         </a>
-                          <a href="/solutions/shared-expense-tracker/" class="split-result-path__learn-more" data-track-location="split_expense_result_solution_cta">See how ongoing shared-expense tracking works</a>
-                        </div>
-                        <p class="lt-maintenanceProof">
-                          <span class="lt-maintenanceProof__since">Since 2016</span>
-                          <span class="lt-maintenanceProof__text">Actively maintained and improving.</span>
-                          <a class="lt-maintenanceProof__link" href="/10-years/" data-track-event="site_link_click" data-track-location="split_expense_maintenance_proof">Explore the ten-year story</a>
-                        </p>
-                      </section>
-                    </div>
-                    <p class="copy-status" aria-live="polite" data-copy-status></p>
+                        <p class="split-result-app-card__price">Free download &middot; In-app purchases available</p>
+                        <a href="/solutions/shared-expense-tracker/" class="split-result-app-card__learn-more" data-track-location="split_expense_result_solution_cta">See how shared tracking works</a>
+                      </div>
+                      <p class="lt-maintenanceProof"><span class="lt-maintenanceProof__since">Since 2016</span> &middot; <span class="lt-maintenanceProof__text">Actively maintained.</span></p>
+                    </section>
                   </section>
+
+                  <details class="split-result-breakdown">
+                    <summary>See calculation details</summary>
+                    <section class="result-block"><h4>Summary</h4><div class="result-list" data-summary></div></section>
+                    <section class="result-block"><h4>Total paid</h4><div class="result-list" data-paid></div></section>
+                    <section class="result-block"><h4>Fair share</h4><div class="result-list" data-share></div></section>
+                    <section class="result-block"><h4>Net balance</h4><div class="result-list" data-net></div></section>
+                  </details>
                 </aside>
               </div>
             </div>
@@ -761,7 +736,7 @@
             </div>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-09-03">September 3, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-09-05">September 5, 2026</time></p>
         </article>
       </div>
 
@@ -783,7 +758,7 @@
     </div>
 
     <script src="../../scripts/sales.js"></script>
-    <script src="../../scripts/split-expense-calculator.js?v=split-result-actions-1"></script>
+    <script src="../../scripts/split-expense-calculator.js?v=conversion-polish-20260905-3"></script>
     <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
     <script type="module" src="../../scripts/analytics.js?v=split-result-actions-1"></script>
     <script src="../../assets/js/jquery.min.js"></script>

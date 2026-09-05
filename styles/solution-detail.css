@@ -108,15 +108,34 @@ body.solution-detail-page .lt-detailHero .lt-trustNote {
 }
 
 body.money-owed-solution-page .money-owed-first-minute {
-  margin-top: 1.2rem;
-  padding: 1rem;
+  width: 100%;
+  box-sizing: border-box;
+  margin-top: clamp(2rem, 4vw, 3.5rem);
+  padding: clamp(1.25rem, 2.4vw, 1.75rem);
   border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 18px;
+  border-radius: 20px;
   background: rgba(255, 255, 255, 0.76);
-  box-shadow: inset 0 1px 0 rgba(255, 255, 255, 0.84);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
 }
 
-body.money-owed-solution-page .lt-detailHero .money-owed-first-minute__eyebrow {
+body.money-owed-solution-page .money-owed-download-reassurance {
+  display: grid;
+  gap: 0.18rem;
+  margin-top: 0.75rem;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+body.money-owed-solution-page .lt-detailHero .lt-ctaRow {
+  margin-top: 1.15rem;
+}
+
+body.money-owed-solution-page .lt-detailHeroGrid {
+  align-items: start;
+}
+
+body.money-owed-solution-page .money-owed-first-minute__eyebrow {
   margin: 0;
   color: rgba(33, 41, 49, 0.72);
   font-family: "Source Sans Pro", Helvetica, sans-serif;
@@ -133,13 +152,14 @@ body.money-owed-solution-page #money-owed-first-minute-title {
   font-size: 1.16rem;
   line-height: 1.25;
   letter-spacing: -0.01em;
+  scroll-margin-top: 5rem;
 }
 
 body.money-owed-solution-page .money-owed-first-minute__steps {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 0.65rem;
-  margin: 0.82rem 0 0;
+  gap: 0.9rem;
+  margin: 1rem 0 0;
   padding: 0;
   list-style: none;
 }
@@ -151,8 +171,9 @@ body.money-owed-solution-page .money-owed-first-minute__steps li {
   align-items: start;
   min-width: 0;
   margin: 0;
-  padding: 0.7rem;
-  border-radius: 14px;
+  padding: 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.07);
+  border-radius: 16px;
   background: rgba(248, 250, 246, 0.9);
 }
 
@@ -180,7 +201,7 @@ body.money-owed-solution-page .money-owed-first-minute__copy > span {
 
 body.money-owed-solution-page .money-owed-first-minute__copy strong {
   color: #18212b;
-  font-size: 0.9rem;
+  font-size: 1rem;
   font-weight: 800;
   line-height: 1.28;
 }
@@ -188,26 +209,41 @@ body.money-owed-solution-page .money-owed-first-minute__copy strong {
 body.money-owed-solution-page .money-owed-first-minute__copy > span {
   margin-top: 0.16rem;
   color: rgba(24, 33, 43, 0.72);
-  font-size: 0.84rem;
-  line-height: 1.42;
+  font-size: 0.95rem;
+  line-height: 1.48;
   overflow-wrap: anywhere;
 }
 
-body.money-owed-solution-page .lt-detailHero .money-owed-first-minute__note {
-  margin: 0.75rem 0 0;
-  padding-top: 0.7rem;
+body.money-owed-solution-page .money-owed-first-minute__note {
+  margin: 1rem 0 0;
+  padding-top: 0.85rem;
   border-top: 1px solid rgba(15, 23, 42, 0.07);
   color: rgba(24, 33, 43, 0.76);
-  font-size: 0.84rem;
-  line-height: 1.45;
+  font-size: 0.95rem;
+  line-height: 1.48;
 }
 
-body.money-owed-solution-page .lt-detailHero .money-owed-first-minute__trust {
+body.money-owed-solution-page .money-owed-first-minute__trust {
   margin: 0.42rem 0 0;
   color: rgba(24, 33, 43, 0.62);
-  font-size: 0.8rem;
+  font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.4;
+}
+
+body.money-owed-solution-page article.post.featured > .lt-maintenanceProof {
+  margin: 0.55rem 0 0;
+  color: rgba(33, 41, 49, 0.68);
+  font-size: 0.875rem;
+  line-height: 1.4;
+}
+
+body.money-owed-solution-page article.post.featured > .lt-trustNote {
+  max-width: 74ch;
+  margin: 0.55rem 0 0;
+  color: rgba(24, 33, 43, 0.68);
+  font-size: 0.95rem;
+  line-height: 1.5;
 }
 
 body.solution-detail-page .lt-heroList {
@@ -1958,7 +1994,7 @@ body.elderly-parent-expense-page .elderly-wide-visual img {
 @media (max-width: 736px) {
   body.money-owed-solution-page .money-owed-first-minute {
     padding: 0.85rem;
-    border-radius: 16px;
+    border-radius: 20px;
   }
 
   body.money-owed-solution-page .money-owed-first-minute__steps {

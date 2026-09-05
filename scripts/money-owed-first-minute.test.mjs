@@ -10,6 +10,7 @@ function normalizeText(value) {
   return value
     .replaceAll("&mdash;", "—")
     .replaceAll("&bull;", "•")
+    .replaceAll("&rsquo;", "’")
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
     .trim();
@@ -21,7 +22,7 @@ function firstMinuteSection(html) {
   return match[0];
 }
 
-test("money-owed hero keeps its CTA and adds a static first-minute reassurance block", async () => {
+test("money-owed hero leads to a separate first-balance setup module", async () => {
   const html = await readFile(pagePath, "utf8");
   const section = firstMinuteSection(html);
   const sectionText = normalizeText(section);
@@ -36,22 +37,26 @@ test("money-owed hero keeps its CTA and adds a static first-minute reassurance b
   assert.match(section, /<h2\b[^>]*id=["']money-owed-first-minute-title["'][^>]*>\s*Start with one real balance\s*<\/h2>/i);
 
   const heroCtaIndex = html.indexOf('data-track-location="solution_money_owed_hero_primary_cta"');
+  const heroIndex = html.indexOf('<section class="lt-detailHero">');
+  const heroEndIndex = html.indexOf('</section>', heroIndex);
   const sectionIndex = html.indexOf(section);
   const maintenanceProofIndex = html.indexOf('<p class="lt-maintenanceProof">');
-  assert.ok(heroCtaIndex >= 0 && heroCtaIndex < sectionIndex, "hero CTA should precede the reassurance block");
-  assert.ok(maintenanceProofIndex > sectionIndex, "maintenance proof should follow the reassurance block");
+  const anniversaryIndex = html.indexOf('<aside\n            class="lt-anniversaryNotice"');
+  assert.ok(heroCtaIndex >= 0 && heroCtaIndex < heroEndIndex, "hero CTA should remain in the hero");
+  assert.ok(heroEndIndex < sectionIndex && sectionIndex < anniversaryIndex, "setup follows the complete hero before the anniversary notice");
+  assert.ok(maintenanceProofIndex > sectionIndex && maintenanceProofIndex < anniversaryIndex, "maintenance proof follows setup before the notice");
 
   for (const copy of [
-    "Your first minute",
+    "Get started",
     "Start with one real balance",
-    "Open and begin",
-    "The core tracker works without mandatory sign-up.",
-    "Add one person and amount",
-    "Choose who owes whom and what the balance is for.",
-    "Keep it current",
-    "Record repayments, add another amount, or share a Live Link.",
-    "The other person can open a read-only Live Link in their browser—no app or account needed.",
-    "Works offline • Face ID / Touch ID lock",
+    "Add one person",
+    "Choose whose balance you want to track.",
+    "Record the amount",
+    "Choose who owes whom and add what the money was for.",
+    "Log a repayment",
+    "Record a payment when it happens and see what’s left.",
+    "Share when you’re ready. A read-only Live Link opens in the other person’s browser without an app or account.",
+    "Face ID / Touch ID app lock",
   ]) {
     assert.ok(sectionText.includes(copy), `first-minute block should include: ${copy}`);
   }
@@ -62,16 +67,19 @@ test("money-owed hero keeps its CTA and adds a static first-minute reassurance b
 
   assert.match(html, new RegExp(appStoreUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   assert.match(html, /data-track-location="solution_money_owed_hero_primary_cta"/);
-  assert.doesNotMatch(html, /Works offline\s*(?:&bull;|•)\s*No mandatory sign-up\s*(?:&bull;|•)\s*Face ID \/ Touch ID lock/);
+  assert.match(html, /href="#money-owed-first-minute-title"[\s\S]*?See how it works/);
+  assert.match(html, /class="money-owed-download-reassurance"[\s\S]*?Free download &middot; In-app purchases available[\s\S]*?Core tracking works offline without an account\./);
+  assert.doesNotMatch(html.slice(heroIndex, heroEndIndex), /solution-hero-highlights|(?:class|id)="money-owed-first-minute/);
   assert.match(html, /You Owe Me is a private record and communication tool\. It does not lend money, move money, collect debts, or replace accounting software\./);
   assert.match(html, /<p class="lt-maintenanceProof">/);
-  assert.match(html, /href="\.\.\/\.\.\/styles\/solution-detail\.css\?v=money-owed-first-minute-1"/);
+  assert.match(html, /href="\.\.\/\.\.\/styles\/solution-detail\.css\?v=conversion-polish-20260905-3"/);
 });
 
 test("first-minute reassurance styles remain page-scoped and responsive", async () => {
   const css = await readFile(stylesheetPath, "utf8");
 
-  assert.match(css, /body\.money-owed-solution-page \.money-owed-first-minute\s*\{[\s\S]*?border: 1px solid rgba\(15, 23, 42, 0\.08\)[\s\S]*?border-radius: 18px[\s\S]*?background: rgba\(255, 255, 255, 0\.76\)/);
+  assert.match(css, /body\.money-owed-solution-page \.money-owed-first-minute\s*\{[\s\S]*?border: 1px solid rgba\(15, 23, 42, 0\.08\)[\s\S]*?border-radius: 20px[\s\S]*?background: rgba\(255, 255, 255, 0\.76\)/);
   assert.match(css, /body\.money-owed-solution-page \.money-owed-first-minute__steps\s*\{[\s\S]*?grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
   assert.match(css, /@media \(max-width: 736px\)\s*\{[\s\S]*?body\.money-owed-solution-page \.money-owed-first-minute__steps\s*\{[\s\S]*?grid-template-columns: 1fr/);
+  assert.match(css, /body\.money-owed-solution-page #money-owed-first-minute-title\s*\{[\s\S]*?scroll-margin-top: 5rem/);
 });

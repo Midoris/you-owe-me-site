@@ -309,7 +309,7 @@ body.polite-reminder-answer-page .polite-reminder-post-copy {
   margin: 1rem 0 0;
   padding: 1rem;
   border: 1px solid rgba(15, 23, 42, 0.08);
-  border-radius: 18px;
+  border-radius: 20px;
   background:
     radial-gradient(circle at top left, rgba(175, 230, 126, 0.22), transparent 58%),
     rgba(255, 255, 255, 0.82);
@@ -333,7 +333,7 @@ body.polite-reminder-answer-page .polite-reminder-post-copy__actions {
   flex-direction: column;
   align-items: flex-start;
   gap: 0.7rem;
-  margin-top: 0.9rem;
+  margin-top: 1rem;
 }
 
 body.polite-reminder-answer-page .polite-reminder-post-copy .lt-appStoreBtn {
@@ -341,6 +341,13 @@ body.polite-reminder-answer-page .polite-reminder-post-copy .lt-appStoreBtn {
   min-height: 44px;
   margin: 0;
   border-radius: 11px;
+}
+
+body.polite-reminder-answer-page .polite-reminder-post-copy__price {
+  margin: -0.2rem 0 0;
+  color: rgba(33, 41, 49, 0.68);
+  font-size: 0.875rem;
+  line-height: 1.4;
 }
 
 body.polite-reminder-answer-page .polite-reminder-post-copy__solution-link {
