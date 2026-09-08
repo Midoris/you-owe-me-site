@@ -1,0 +1,16 @@
+/* Deliberate page-design-contract exception: unlisted review utility, not a
+   marketing page. No legacy wrapper, navigation, hero or visual cards exist. */
+:root { color-scheme: light; font-family: system-ui, sans-serif; color: #212931; background: #f4f6f8; }
+body { margin: 0; background: radial-gradient(circle at top left, rgba(175, 230, 126, 0.16), transparent 30%), linear-gradient(180deg, #fbfdff 0%, #f4f6f8 76%); }
+main { max-width: 760px; padding: 40px 24px; margin: auto; line-height: 1.6; }
+h1 { color: #18212b; font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; }
+h2 { font-size: 1.2rem; }
+.eyebrow { color: rgba(33, 41, 49, 0.88); font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; }
+section { padding: 24px; background: white; border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 20px; box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08); }
+button, #open { font: inherit; display: inline-block; color: #18212b; background: #afe67e; padding: 12px 18px; border: 0; border-radius: 12px; font-weight: 700; cursor: pointer; }
+button:hover, #open:hover { background: #bcf18c; }
+button:disabled { opacity: 0.6; cursor: wait; }
+:focus-visible { outline: 3px solid rgba(53, 84, 40, 0.32); outline-offset: 4px; }
+#open[hidden] { display: none; }
+li { margin: 12px 0; }
+a { color: #355428; overflow-wrap: anywhere; }

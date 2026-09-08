@@ -17,6 +17,7 @@ export const INCLUDED_ROUTE_PREFIXES = Object.freeze([
 ]);
 
 export const EXCLUDED_EXACT_ROUTES = new Set([
+  "/app-clip-review/", // Unlisted synthetic App Review utility, not an acquisition page.
   "/connect/",
   "/contact/",
   "/invite/",
