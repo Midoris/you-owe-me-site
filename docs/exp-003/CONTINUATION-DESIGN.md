@@ -1,0 +1,5 @@
+# Dedicated private continuation page
+
+Deliberate page-design-contract exception: this route is hosted as a small separate Firebase Hosting site, not a public content/marketing page. It intentionally has no site navigation, legacy wrapper, cards/visual cards, hero art, language-promotion module, analytics, remote assets or script. The standard background, type color, lime action, and focus tokens are retained. The scoped audit was executed; expected failures are absent public-page shell/body class, hero/card tokens and language support module. Adding those unused elements would not improve this focused private route. Browser QA must check small-screen readability, Back, and zero third-party requests.
+
+`app-clip-header.svg` is an original vector illustration using the existing pale-green/lime visual palette, exported to the matching 1800×1200 PNG for App Store Connect. It contains no user data, app screenshots, copy, badges or third-party assets. The existing parent AppIcon is reused by the Clip target.

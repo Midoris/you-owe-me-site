@@ -1,0 +1,239 @@
+[
+  {
+    "name": "single-payer",
+    "draft": {
+      "version": 1,
+      "source": "split-calculator",
+      "type": "payer-split",
+      "organizerID": "alex",
+      "currencyLabel": "$",
+      "participants": [
+        {
+          "id": "alex",
+          "name": "Alex"
+        },
+        {
+          "id": "mia",
+          "name": "Mia"
+        },
+        {
+          "id": "sam",
+          "name": "Sam"
+        }
+      ],
+      "costs": [
+        {
+          "id": "dinner",
+          "label": "Dinner",
+          "amount": 9000,
+          "payerID": "alex",
+          "participantIDs": [
+            "alex",
+            "mia",
+            "sam"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      {
+        "alex": 3000,
+        "mia": 3000,
+        "sam": 3000
+      }
+    ]
+  },
+  {
+    "name": "selective-costs-duplicate-name-residual",
+    "draft": {
+      "version": 1,
+      "source": "split-calculator",
+      "type": "payer-split",
+      "organizerID": "alex",
+      "currencyLabel": "EUR",
+      "participants": [
+        {
+          "id": "alex",
+          "name": "Alex"
+        },
+        {
+          "id": "mia",
+          "name": "Alex"
+        },
+        {
+          "id": "sam",
+          "name": "Sam"
+        }
+      ],
+      "costs": [
+        {
+          "id": "dinner",
+          "label": "Dinner",
+          "amount": 1000,
+          "payerID": "alex",
+          "participantIDs": [
+            "alex",
+            "mia",
+            "sam"
+          ]
+        },
+        {
+          "id": "taxi",
+          "label": "Taxi",
+          "amount": 600,
+          "payerID": "alex",
+          "participantIDs": [
+            "alex",
+            "mia"
+          ]
+        }
+      ]
+    },
+    "expected": [
+      {
+        "alex": 334,
+        "mia": 333,
+        "sam": 333
+      },
+      {
+        "alex": 300,
+        "mia": 300
+      }
+    ]
+  },
+  {
+    "name": "reject-aggregate-rounding",
+    "draft": {
+      "version": 1,
+      "source": "split-calculator",
+      "type": "payer-split",
+      "organizerID": "alex",
+      "currencyLabel": "$",
+      "participants": [
+        {
+          "id": "alex",
+          "name": "Alex"
+        },
+        {
+          "id": "mia",
+          "name": "Mia"
+        },
+        {
+          "id": "sam",
+          "name": "Sam"
+        }
+      ],
+      "costs": [
+        {
+          "id": "dinner",
+          "label": "Dinner",
+          "amount": 1000,
+          "payerID": "alex",
+          "participantIDs": [
+            "alex",
+            "mia",
+            "sam"
+          ]
+        },
+        {
+          "id": "second",
+          "label": "Dinner",
+          "amount": 1000,
+          "payerID": "alex",
+          "participantIDs": [
+            "alex",
+            "mia",
+            "sam"
+          ]
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "name": "reject-multiple-payers",
+    "draft": {
+      "version": 1,
+      "source": "split-calculator",
+      "type": "payer-split",
+      "organizerID": "alex",
+      "currencyLabel": "$",
+      "participants": [
+        {
+          "id": "alex",
+          "name": "Alex"
+        },
+        {
+          "id": "mia",
+          "name": "Mia"
+        },
+        {
+          "id": "sam",
+          "name": "Sam"
+        }
+      ],
+      "costs": [
+        {
+          "id": "dinner",
+          "label": "Dinner",
+          "amount": 9000,
+          "payerID": "alex",
+          "participantIDs": [
+            "alex",
+            "mia",
+            "sam"
+          ]
+        },
+        {
+          "id": "second",
+          "label": "Dinner",
+          "amount": 9000,
+          "payerID": "mia",
+          "participantIDs": [
+            "alex",
+            "mia",
+            "sam"
+          ]
+        }
+      ]
+    },
+    "expected": null
+  },
+  {
+    "name": "reject-nonpayer-residual",
+    "draft": {
+      "version": 1,
+      "source": "split-calculator",
+      "type": "payer-split",
+      "organizerID": "alex",
+      "currencyLabel": "$",
+      "participants": [
+        {
+          "id": "alex",
+          "name": "Alex"
+        },
+        {
+          "id": "mia",
+          "name": "Mia"
+        },
+        {
+          "id": "sam",
+          "name": "Sam"
+        }
+      ],
+      "costs": [
+        {
+          "id": "dinner",
+          "label": "Dinner",
+          "amount": 999,
+          "payerID": "alex",
+          "participantIDs": [
+            "mia",
+            "sam"
+          ]
+        }
+      ]
+    },
+    "expected": null
+  }
+]

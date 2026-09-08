@@ -61,6 +61,8 @@ const TEMPORARY_SUPPORT_RECORD_EVENTS = new Set([
 ]);
 const SPLIT_CALCULATOR_EVENTS = Object.freeze({
   split_result_ready: "uomi_web_split_result_ready",
+  split_transfer_offer_viewed: "uomi_web_split_transfer_offer_viewed",
+  split_transfer_chosen: "uomi_web_split_transfer_chosen",
   split_summary_copied: "uomi_web_split_summary_copied",
   split_summary_shared: "uomi_web_split_summary_shared",
   split_share_fallback_copied: "uomi_web_split_share_fallback_copied",

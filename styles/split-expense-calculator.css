@@ -751,3 +751,12 @@ body.calculator-page article.post.featured {
     font-size: 0.96rem;
   }
 }
+
+/* EXP-003 replaces the result app card only for an eligible continuation. */
+.split-result-app-card[hidden], [data-tool-transfer][hidden] { display: none !important; }
+[data-tool-transfer] { margin-bottom: 1rem; }
+[data-tool-transfer] p { margin: 0.65rem 0; font-size: 0.95rem; line-height: 1.5; }
+[data-tool-transfer] .privacy-note { font-size: 0.82rem; }
+.split-result-action.tool-transfer-primary { background: #afe67e; color: #18212b !important; box-shadow: none; border-radius: 20px; }
+.split-result-action.tool-transfer-primary:hover:not(:disabled) { background: #bcf18c; }
+.split-result-action.tool-transfer-primary:focus-visible { outline: 3px solid rgba(53, 84, 40, 0.32); outline-offset: 3px; }

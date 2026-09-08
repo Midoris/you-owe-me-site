@@ -19,6 +19,10 @@
   const els = {};
   let hasExplicitInteraction = false;
   let resultReadyEmitted = false;
+  let meaningfulEdit = false;
+  let transferExposureEmitted = false;
+  let transferAttempt = null;
+  let transferBusy = false;
 
   function makeId(prefix) {
     const random = Math.random().toString(36).slice(2, 8);
@@ -390,6 +394,57 @@
     const shouldShow = hasExplicitInteraction && hasValidResult(result);
     els.resultActions.hidden = !shouldShow;
     if (shouldShow) emitResultReadyOnce();
+    renderTransferOffer();
+  }
+
+  function renderTransferOffer() {
+    const area = document.querySelector("[data-tool-transfer]");
+    if (!area) return;
+    const supported = window.UomiToolTransfer && window.UomiToolTransfer.prepare(state);
+    const allowed = window.UomiToolTransfer && window.UomiToolTransfer.config.enabled;
+    const iphone = /iPhone/.test(navigator.userAgent);
+    area.hidden = !(allowed && iphone && meaningfulEdit && supported);
+    const appCard = document.querySelector(".split-result-app-card");
+    if (appCard) appCard.hidden = !area.hidden;
+    if (!area.hidden && !transferExposureEmitted) {
+      transferExposureEmitted = true;
+      dispatchCalculatorEvent("split_transfer_offer_viewed");
+    }
+  }
+
+  async function continueSplit() {
+    if (transferBusy || !meaningfulEdit || !window.UomiToolTransfer.config.enabled) return;
+    const draft = window.UomiToolTransfer.prepare(state);
+    if (!draft) return;
+    const status = document.querySelector("[data-transfer-status]");
+    const button = document.querySelector('[data-action="track-split"]');
+    const fingerprint = JSON.stringify(draft);
+    if (!transferAttempt || transferAttempt.fingerprint !== fingerprint) {
+      const bytes = crypto.getRandomValues(new Uint8Array(26));
+      transferAttempt = {fingerprint, reference: Date.now().toString(16).padStart(12, "0") + Array.from(bytes, b => b.toString(16).padStart(2, "0")).join("")};
+    }
+    transferBusy = true; button.disabled = true; status.textContent = "Preparing your split…";
+    dispatchCalculatorEvent("split_transfer_chosen");
+    try {
+      const controller = new AbortController();
+      const timeout = setTimeout(() => controller.abort(), 15000);
+      let response;
+      try {
+        response = await fetch(window.UomiToolTransfer.config.endpoint, {method: "POST", headers: {"Content-Type": "application/json"}, credentials: "omit", cache: "no-store", referrerPolicy: "no-referrer", signal: controller.signal, body: JSON.stringify({action: "create", reference: transferAttempt.reference, draft})});
+      } finally { clearTimeout(timeout); }
+      if (!response.ok) {
+        if ([400, 410].includes(response.status)) transferAttempt = null;
+        throw new Error("unavailable");
+      }
+      // A response for an earlier edit must not navigate away with a stale split.
+      if (!meaningfulEdit || !transferAttempt || transferAttempt.fingerprint !== fingerprint ||
+          JSON.stringify(window.UomiToolTransfer.prepare(state)) !== fingerprint) throw new Error("changed");
+      // Preserve input only following explicit consent. Cleared when restored on Back.
+      sessionStorage.setItem("uomi-exp003-return", JSON.stringify({state, transferAttempt}));
+      location.assign(window.UomiToolTransfer.config.continuation + "?ref=" + transferAttempt.reference);
+    } catch (_) {
+      status.textContent = "Couldn’t prepare the transfer. Your split is still here. Try again, or copy your result.";
+    } finally { transferBusy = false; button.disabled = false; }
   }
 
   function renderSummary(result) {
@@ -519,6 +574,7 @@
   }
 
   function useExample() {
+    meaningfulEdit = false; transferAttempt = null;
     hasExplicitInteraction = true;
     state.currency = "$";
     state.nextPersonNumber = 1;
@@ -537,6 +593,7 @@
   }
 
   function clearAll() {
+    meaningfulEdit = false; transferAttempt = null;
     hasExplicitInteraction = false;
     setInitialState();
     state.expenses[0].description = "";
@@ -689,6 +746,7 @@
       if (action === "clear-all") clearAll();
       if (action === "copy-summary") copySummary();
       if (action === "share-summary") shareSummary();
+      if (action === "track-split") continueSplit();
     });
   }
 
@@ -708,8 +766,8 @@
       hasExplicitInteraction = true;
     };
 
-    root.addEventListener("input", markInteraction, true);
-    root.addEventListener("change", markInteraction, true);
+    root.addEventListener("input", () => { meaningfulEdit = true; markInteraction(); }, true);
+    root.addEventListener("change", () => { meaningfulEdit = true; markInteraction(); }, true);
     root.addEventListener("click", function (event) {
       const control = event.target && event.target.closest("button, input, select, textarea");
       if (control && root.contains(control)) markInteraction();
@@ -736,6 +794,17 @@
     els.shareSummary = document.querySelector('[data-action="share-summary"]');
 
     setInitialState();
+    try {
+      const saved = sessionStorage.getItem("uomi-exp003-return");
+      sessionStorage.removeItem("uomi-exp003-return");
+      if (saved && saved.length < 16384) {
+        const restored = JSON.parse(saved), previous = restored.state;
+        if (previous && window.UomiToolTransfer.prepare(previous)) {
+          Object.assign(state, previous); meaningfulEdit = true; hasExplicitInteraction = true;
+          if (restored.transferAttempt && /^[a-f0-9]{64}$/.test(restored.transferAttempt.reference)) transferAttempt = restored.transferAttempt;
+        }
+      }
+    } catch (_) { /* Unavailable session storage does not affect local calculation. */ }
     els.currency.value = state.currency;
     configureShareAction();
     bindExplicitInteractionGate(root);

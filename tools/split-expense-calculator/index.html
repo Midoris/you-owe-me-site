@@ -191,7 +191,7 @@
               "name": "Does the calculator save my data?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "No. The calculator runs in your browser and is designed for quick calculations. The values you enter are not sent anywhere or saved to an account."
+                "text": "No. The calculator runs in your browser and is designed for quick calculations. Calculation stays on this device. Choosing Track this split sends your names and amounts securely to You Owe Me for a transfer link that expires after 24 hours. It does not create an account."
               }
             }
           ]
@@ -255,7 +255,7 @@
                 Use it for dinners, trips, groceries, shared purchases, or any one-time split. It supports different payers and lets you leave people out of costs they did not share.
               </p>
               <p class="lt-heroSupport">Not sure whether an even split is fair because someone ordered less? <a href="/blog/how-to-split-a-bill-fairly-when-one-person-ordered-less/">Choose the split method</a> before calculating the shares.</p>
-              <p class="privacy-note">This calculator runs in your browser. The values you enter are not sent anywhere.</p>
+              <p class="privacy-note">This calculator runs in your browser. Calculation stays on this device. Choosing Track this split sends your names and amounts securely to You Owe Me for a transfer link that expires after 24 hours.</p>
               <div class="lt-ctaRow">
                 <a href="#calculator" class="lt-primaryCta">Start calculating</a>
                 <a href="/tools/" class="lt-textCta">Back to all tools</a>
@@ -306,7 +306,7 @@
                     <div class="expenses-list" data-expenses-list></div>
                   </section>
 
-                  <p class="privacy-note calculator-note">This calculator runs in your browser. The values you enter are not sent anywhere.</p>
+                  <p class="privacy-note calculator-note">This calculator runs in your browser. Calculation stays on this device. Choosing Track this split sends your names and amounts securely to You Owe Me for a transfer link that expires after 24 hours.</p>
                 </div>
 
                 <aside class="results-panel" aria-labelledby="results-title">
@@ -319,7 +319,15 @@
                     <div class="settlement-list" data-settlement></div>
                   </section>
 
-                  <section class="split-result-actions" aria-labelledby="split-result-actions-title" data-result-actions hidden>
+                  <section class="split-result-actions" aria-label="Result actions" data-result-actions hidden>
+                  <div data-tool-transfer hidden>
+                    <h3>Keep track of repayments</h3>
+                    <p>Bring this split into You Owe Me and update what's still owed as people pay you back.</p>
+                    <button type="button" class="split-result-action tool-transfer-primary" data-action="track-split">Track this split</button>
+                    <p>Try it on your iPhone with an App Clip. Your names and amounts come with you.</p>
+                    <p class="privacy-note">Continuing sends this split securely to You Owe Me. The transfer link expires after 24 hours.</p>
+                    <p data-transfer-status role="status" aria-live="polite"></p>
+                  </div>
                     <div class="split-result-actions__buttons">
                       <button type="button" class="split-result-action" data-action="copy-summary">Copy summary</button>
                       <button type="button" class="split-result-action" data-action="share-summary" data-share-summary hidden>Share result</button>
@@ -709,7 +717,7 @@
               </details>
               <details>
                 <summary>Does the calculator save my data?</summary>
-                <p>No. The calculator runs in your browser and is designed for quick calculations. The values you enter are not sent anywhere or saved to an account.</p>
+                <p>No. The calculator runs in your browser and is designed for quick calculations. Calculation stays on this device. Choosing Track this split sends your names and amounts securely to You Owe Me for a transfer link that expires after 24 hours. It does not create an account.</p>
               </details>
             </div>
           </section>
@@ -758,6 +766,7 @@
     </div>
 
     <script src="../../scripts/sales.js"></script>
+    <script src="../../scripts/tool-transfer.js"></script>
     <script src="../../scripts/split-expense-calculator.js?v=conversion-polish-20260905-3"></script>
     <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
     <script type="module" src="../../scripts/analytics.js?v=split-result-actions-1"></script>
