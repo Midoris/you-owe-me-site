@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "you-owe-me-app"
+  },
+  "targets": {
+    "you-owe-me-app": {
+      "hosting": {
+        "tool-continuation": [
+          "you-owe-me-tool-continuation"
+        ]
+      }
+    }
+  },
+  "etags": {}
+}
