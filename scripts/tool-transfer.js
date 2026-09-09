@@ -1,7 +1,7 @@
-/* EXP-003: activation is deliberately false until native and hosted experience acceptance. */
+/* EXP-003: public offer activated September 9, 2026 after 7.1.1 release. */
 (function (root) {
   "use strict";
-  const config = Object.freeze({enabled: false, endpoint: "https://us-central1-you-owe-me-app.cloudfunctions.net/toolTransfer", continuation: "https://continue.you-owe-me.com/split/"});
+  const config = Object.freeze({enabled: true, endpoint: "https://us-central1-you-owe-me-app.cloudfunctions.net/toolTransfer", continuation: "https://continue.you-owe-me.com/split/"});
   function prepare(state) {
     if (state.people.length < 2 || state.people.length > 4 || !state.expenses.length || state.expenses.length > 6) return null;
     const organizerID = state.expenses[0].paidBy;

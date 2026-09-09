@@ -3,7 +3,7 @@ const assert = require('node:assert/strict');
 const fs = require('node:fs');
 const {prepare, config} = require('../scripts/tool-transfer.js');
 const fixture = () => ({currency:'$', people:[{id:'alex',name:'Alex'},{id:'mia',name:'Mia'},{id:'sam',name:'Sam'}], expenses:[{id:'dinner',description:'Dinner',amount:'90',paidBy:'alex',includedPeople:['alex','mia','sam']}]});
-test('release offer is disabled', () => assert.equal(config.enabled, false));
+test('released App Clip offer is enabled', () => assert.equal(config.enabled, true));
 test('preserves unambiguous identity, costs and ambiguous dollar label', () => {const d=fixture(); d.people[1].name='Alex'; const p=prepare(d); assert.equal(p.currencyLabel,'$'); assert.equal(p.costs[0].amount,9000); assert.equal(p.participants.length,3);});
 test('multi-payer and incomplete costs retain web result without upload', () => {const d=fixture(); d.expenses.push({...d.expenses[0],id:'taxi',paidBy:'mia'}); assert.equal(prepare(d),null); d.expenses[1].paidBy='alex'; d.expenses[1].amount=''; assert.equal(prepare(d),null);});
 test('precision and capacity limits', () => {for(const amount of ['0','1.001','Infinity','1000000.01']) {const d=fixture(); d.expenses[0].amount=amount; assert.equal(prepare(d),null);} const d=fixture(); d.people.push({id:'four',name:'Four'},{id:'five',name:'Five'}); assert.equal(prepare(d),null);});
