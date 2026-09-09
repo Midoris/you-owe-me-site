@@ -40,14 +40,22 @@
       "name": "You Owe Me App Features",
       "description": "Explore Spaces, running balances, loans, repayment plans, reminders, Balance Sync, supporting photos, and PDF statements with photo appendices.",
       "url": "https://you-owe-me.com/features/",
-      "dateModified": "2026-08-24",
+      "dateModified": "2026-09-09",
       "inLanguage": "en",
-      "hasPart": {
-        "@type": "WebPageElement",
-        "@id": "https://you-owe-me.com/features/#supporting-photos",
-        "name": "Supporting photos and PDF appendices",
-        "description": "Attach one supporting photo to an entry or loan and optionally include it as a dedicated appendix page inside an exported PDF."
-      },
+      "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://you-owe-me.com/features/#supporting-photos",
+          "name": "Supporting photos and PDF appendices",
+          "description": "Attach one supporting photo to an entry or loan and optionally include it as a dedicated appendix page inside an exported PDF."
+        },
+        {
+          "@type": "WebPageElement",
+          "@id": "https://you-owe-me.com/features/#close-as-unpaid",
+          "name": "Close as unpaid",
+          "description": "Write off an eligible individual IOU without recording a payment. Keep the original history and reopen the debt if circumstances change."
+        }
+      ],
       "about": {
         "@type": "SoftwareApplication",
         "@id": "https://you-owe-me.com/#software-application",
@@ -212,7 +220,7 @@
     <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="../styles/site-nav.css" />
     <link rel="stylesheet" href="../styles/solutions.css?v=features-base-1" />
-    <link rel="stylesheet" href="../styles/features.css" />
+    <link rel="stylesheet" href="../styles/features.css?v=close-as-unpaid-20260909" />
     <link rel="stylesheet" href="../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
@@ -360,7 +368,7 @@
                   <img src="../images/shared/app-screenshots/6.8.5_one_running_balance.png" alt="YouOweMe showing one running balance and transaction history for a person" loading="lazy" decoding="async" width="1290" height="2796" />
                 </picture>
                 <h3>One running balance</h3>
-                <p>Keep IOUs, shared bills, repayments, and partial paybacks in one clear history.</p>
+                <p>Keep IOUs, shared bills, repayments, and partial paybacks in one clear history. When you no longer expect an eligible IOU to be repaid, <a href="#close-as-unpaid">close it as unpaid</a> and keep the record.</p>
               </article>
 
               <article class="features-tour-card">
@@ -579,6 +587,24 @@
                   <source srcset="../images/shared/app-screenshots/6.8.5_one_running_balance.webp" type="image/webp" />
                   <img src="../images/shared/app-screenshots/6.8.5_one_running_balance.png" alt="YouOweMe showing one running balance and transaction history for a person" loading="lazy" decoding="async" width="1290" height="2796" />
                 </picture>
+              </article>
+
+              <article class="features-card features-card--media-wide features-writeoff" id="close-as-unpaid">
+                <div>
+                  <p class="lt-eyebrow">Close as unpaid</p>
+                  <h3>Close an unpaid chapter. Keep the record.</h3>
+                  <p>When you decide you no longer expect an IOU to be repaid, your balance should reflect that decision. Close an eligible entry as unpaid to remove the written-off amount from the balance while keeping the original entry in history.</p>
+                  <p>The record clearly says <strong>Closed as unpaid</strong>. No payment is recorded. If circumstances change, choose <strong>Reopen debt</strong> to return the amount to the balance.</p>
+                  <p class="features-writeoff-example"><strong>A simple example:</strong> You recorded a $100 IOU and received $40 back. If that leaves $60 outstanding, closing it as unpaid removes the remaining $60. Your history still shows the original $100, the real $40 repayment and the $60 write-off.</p>
+                  <details class="features-writeoff-scope">
+                    <summary>Which entries can I close as unpaid?</summary>
+                    <p>Close as unpaid is available for eligible individual entries with an outstanding balance in the same direction. It does not currently apply to Loan Records, repayment plans, interest-bearing or recurring entries, Group Paybacks, or entries connected through Balance Sync. Archived and future-dated entries are also excluded. The app shows the amount and resulting balance before you confirm.</p>
+                  </details>
+                </div>
+                <figure class="features-writeoff-art">
+                  <img src="../images/pages/features/close-as-unpaid.webp" alt="An intact paper ledger with a page gently turning and a sage ribbon keeping its place" loading="lazy" decoding="async" width="1200" height="800" />
+                  <figcaption>A closed chapter, with its history kept.</figcaption>
+                </figure>
               </article>
 
               <article class="features-card features-card--text" id="balance-replay">

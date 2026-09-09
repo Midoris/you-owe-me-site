@@ -470,3 +470,14 @@ body.features-page .lt-finalCta {
     width: 100%;
   }
 }
+
+/* Close as unpaid: editorial illustration, deliberately distinct from app screenshots. */
+body.features-page .features-writeoff { scroll-margin-top: 2rem; }
+body.features-page .features-writeoff-art { margin: 0; align-self: start; min-width: 0; }
+body.features-page .features-writeoff-art img { width: 100%; height: auto; aspect-ratio: 3 / 2; border-radius: 20px; border: 1px solid rgba(15, 23, 42, 0.08); }
+body.features-page .features-writeoff-art figcaption { margin-top: 0.75rem; font-size: 0.85rem; line-height: 1.5; color: rgba(33, 41, 49, 0.72); }
+body.features-page .features-writeoff-example { padding: 1rem 1.15rem; border-left: 3px solid #afe67e; background: #f4f6f8; border-radius: 0 12px 12px 0; }
+body.features-page .features-writeoff-scope { margin-top: 1.1rem; }
+body.features-page .features-writeoff-scope summary { cursor: pointer; font-weight: 700; line-height: 1.5; }
+body.features-page .features-writeoff-scope summary:focus-visible { outline: 3px solid rgba(53, 84, 40, 0.32); outline-offset: 4px; }
+body.features-page .features-writeoff-scope p { margin-top: 0.75rem; }

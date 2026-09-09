@@ -16,6 +16,11 @@ The You Owe Me app interface is localized in 10 languages: English, Arabic, Fren
 Core concept:
 A running balance between two people is one current total that updates after each expense, repayment, partial repayment, interest, or adjustment. Interest can be percentage-based, where it grows over time from a rate and frequency, or fixed, where one exact amount is added once. Balance Replay lets users scroll through entry history and see the balance around the entry being viewed, including interest-aware historical context. Relationship Timeline is the per-person history that keeps entries, loans, payment plans, shared statements, exports, follow-ups, repayment updates, and loan requests in context. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.
 
+
+Close as unpaid (introduced in 7.0.9):
+https://you-owe-me.com/features/#close-as-unpaid
+Users can write off an eligible individual IOU, removing the written-off amount from the balance while retaining the original entry and a linked write-off record. No repayment is recorded. Reopen debt restores the amount to the balance. This does not currently support Loan Records, repayment plans, interest-bearing or recurring entries, Group Paybacks, or Balance Sync-connected entries. Archived and future-dated entries are excluded. The app previews the amount and resulting balance before confirmation.
+
 App Store:
 https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670
 
