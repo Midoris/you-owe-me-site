@@ -1,0 +1,166 @@
+.iphone-handoff[hidden] {
+  display: none !important;
+}
+
+.iphone-handoff {
+  max-width: 38rem;
+}
+
+.lt-heroCtas .iphone-handoff {
+  display: contents;
+}
+
+.lt-heroCtas .iphone-handoff__trigger {
+  order: 0;
+}
+
+.lt-heroCtas .iphone-handoff__panel {
+  order: 1;
+  flex-basis: 100%;
+}
+
+.iphone-handoff__trigger,
+.iphone-handoff__close {
+  min-height: 44px;
+  border: 0;
+  border-radius: 10px;
+  background: transparent;
+  color: #18212b;
+  font: inherit;
+  font-weight: 800;
+  letter-spacing: 0;
+  line-height: 1.25;
+  text-align: left;
+  text-transform: none;
+  cursor: pointer;
+}
+
+.iphone-handoff__trigger {
+  padding: 0.55rem 0.7rem;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.iphone-handoff__trigger:hover,
+.iphone-handoff__close:hover {
+  background: rgba(175, 230, 126, 0.26);
+}
+
+.iphone-handoff__panel {
+  box-sizing: border-box;
+  display: grid;
+  justify-items: start;
+  gap: 0.8rem;
+  width: min(100%, 34rem);
+  margin-top: 0.8rem;
+  padding: clamp(1rem, 3vw, 1.35rem);
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.iphone-handoff__panel[hidden] {
+  display: none !important;
+}
+
+.iphone-handoff__panel h2,
+.iphone-handoff__panel p {
+  margin: 0;
+  text-align: left;
+}
+
+.iphone-handoff__panel h2 {
+  color: #18212b;
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.16;
+  text-transform: none;
+}
+
+.iphone-handoff__instruction {
+  color: rgba(33, 41, 49, 0.88);
+  line-height: 1.5;
+}
+
+.iphone-handoff__qr {
+  display: block;
+  box-sizing: border-box;
+  width: clamp(16rem, 34vw, 18rem);
+  max-width: 100%;
+  height: auto;
+  padding: 0.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.1);
+  border-radius: 12px;
+  background: #fff;
+  image-rendering: auto;
+}
+
+.iphone-handoff__reassurance {
+  color: rgba(33, 41, 49, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.iphone-handoff__clarification {
+  color: rgba(33, 41, 49, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.roommate-template-iphone-handoff {
+  box-sizing: border-box;
+  width: min(100%, 76rem);
+  margin-top: 1rem;
+  padding: clamp(1rem, 3vw, 1.35rem);
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.roommate-template-iphone-handoff > h2 {
+  margin: 0;
+  color: #18212b;
+  font-size: clamp(1.25rem, 2.2vw, 1.55rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.16;
+  text-transform: none;
+}
+
+.roommate-template-iphone-handoff > p {
+  max-width: 60ch;
+  margin: 0.6rem 0 0;
+  color: rgba(33, 41, 49, 0.88);
+  text-align: left;
+}
+
+.roommate-template-iphone-handoff > .iphone-handoff__trigger {
+  margin-top: 0.55rem;
+}
+
+.iphone-handoff__fallback {
+  color: #18212b !important;
+  font-weight: 800;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.iphone-handoff__close {
+  padding: 0.5rem 0.65rem;
+}
+
+.iphone-handoff__trigger:focus-visible,
+.iphone-handoff__close:focus-visible,
+.iphone-handoff__fallback:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+@media (max-width: 767px) {
+  .iphone-handoff {
+    display: none !important;
+  }
+}

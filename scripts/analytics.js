@@ -7,6 +7,7 @@ import {
   setUserProperties,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
 import { createAppStoreCtaViewTracker } from "./app-store-cta-view-tracker.mjs";
+import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs";
 
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyDOsFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",
@@ -718,6 +719,8 @@ function initEventTracking() {
   window.addEventListener(TEMPORARY_SUPPORT_RECORD_TOOL_EVENT, onTemporarySupportRecordToolEvent);
   window.addEventListener(SPLIT_CALCULATOR_EVENT, onSplitCalculatorEvent);
 }
+
+bindIphoneHandoffAnalytics({ eventTarget: window, trackEvent });
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initEventTracking, { once: true });

@@ -16,6 +16,7 @@ const route = "/tools/roommate-expense-tracker-template/";
 const productionOrigin = "https://you-owe-me.com";
 const cppKey = "roommates-shared-household-costs";
 const cppUrl = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&pt=117888502&ct=website_cta&mt=8";
+const expectedUpdatedByUrl = new Map([["/find/", "2026-08-24"]]);
 
 function read(relativePath) {
   return fs.readFileSync(path.join(rootDir, relativePath), "utf8");
@@ -23,6 +24,18 @@ function read(relativePath) {
 
 function occurrences(text, value) {
   return text.split(value).length - 1;
+}
+
+function expectedUpdated(url) {
+  return expectedUpdatedByUrl.get(url) || "2026-08-23";
+}
+
+function decodeHtmlAttribute(value) {
+  return value.replaceAll("&amp;", "&");
+}
+
+function anchorsWithHref(text, expectedHref) {
+  return [...text.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>/g)].filter((match) => decodeHtmlAttribute(match[1]) === expectedHref);
 }
 
 const registryByUrl = new Map(contentRegistry.map((entry) => [entry.url, entry]));
@@ -108,7 +121,7 @@ const relationshipUrls = [
 for (const url of relationshipUrls) {
   const relatedEntry = registryByUrl.get(url);
   assert.ok(relatedEntry.relatedTools.includes(route), `${url} is missing the roommate spreadsheet relationship`);
-  assert.equal(relatedEntry.updated, "2026-08-23", `${url} has a stale registry date`);
+  assert.equal(relatedEntry.updated, expectedUpdated(url), `${url} has a stale registry date`);
 }
 
 const page = read("tools/roommate-expense-tracker-template/index.html");
@@ -128,8 +141,18 @@ assert.equal(occurrences(page, smartBanner), 1);
 assert.equal(occurrences(page, "data-app-language-support-anchor hidden"), 1);
 assert.equal(occurrences(page, '<link rel="stylesheet" href="/styles/app-language-support.css" />'), 1);
 assert.equal(occurrences(page, '<script src="/scripts/app-language-support.js"></script>'), 1);
-assert.equal(occurrences(page, `href="${cppUrl}"`), 1);
-assert.match(page, new RegExp(`href="${cppUrl.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}"[\\s\\S]*?class="lt-appStoreBtn"[\\s\\S]*?download-on-the-app-store/black/en-us`));
+const templateCppAnchors = anchorsWithHref(page, cppUrl);
+assert.equal(templateCppAnchors.length, 2, "the original product badge and QR fallback preserve the same CPP");
+const originalProductBadge = templateCppAnchors.find((match) => match[0].includes('class="lt-appStoreBtn"'));
+assert.ok(originalProductBadge);
+assert.ok(page.slice(originalProductBadge.index, originalProductBadge.index + 1_000).includes("download-on-the-app-store/black/en-us"));
+const handoffFallbacks = [...page.matchAll(/<a\b[^>]*class="iphone-handoff__fallback"[^>]*href="([^"]+)"[^>]*>/g)];
+assert.equal(handoffFallbacks.length, 1, "the template has one QR fallback link");
+assert.equal(
+  decodeHtmlAttribute(handoffFallbacks[0][1]),
+  cppUrl,
+  "the QR fallback preserves the template CPP and ordinary website_cta attribution",
+);
 
 const comparisonPosition = page.indexOf("When the spreadsheet is enough—and when it is not");
 const productPosition = page.indexOf("When the spreadsheet becomes hard to maintain");
@@ -138,8 +161,9 @@ const bnsEnd = page.indexOf("<!-- best-next-step:end -->");
 const faqPosition = page.indexOf("Roommate spreadsheet questions");
 assert.ok(comparisonPosition < productPosition && productPosition < bnsStart && bnsStart < bnsEnd && bnsEnd < faqPosition);
 const product = page.slice(productPosition, bnsStart);
-assert.equal(occurrences(product, `href="${cppUrl}"`), 1);
-const badgePosition = product.indexOf(`href="${cppUrl}"`);
+const productCppAnchors = anchorsWithHref(product, cppUrl);
+assert.equal(productCppAnchors.length, 1);
+const badgePosition = productCppAnchors[0].index;
 const solutionPosition = product.indexOf('href="/solutions/roommate-expense-tracker/"');
 const privacyPosition = product.indexOf('href="/privacy-and-data/"');
 assert.ok(badgePosition < solutionPosition && solutionPosition < privacyPosition);
@@ -198,7 +222,7 @@ const sitemapBlock = `<loc>${productionOrigin}${route}</loc>\n    <lastmod>2026-
 assert.equal(occurrences(sitemap, sitemapBlock), 1);
 for (const url of [...relationshipUrls, route]) {
   const block = sitemap.match(new RegExp(`<url>[\\s\\S]*?<loc>${productionOrigin}${url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}</loc>[\\s\\S]*?</url>`))?.[0];
-  assert.ok(block?.includes("<lastmod>2026-08-23</lastmod>"), `${url} has a stale sitemap date`);
+  assert.ok(block?.includes(`<lastmod>${expectedUpdated(url)}</lastmod>`), `${url} has a stale sitemap date`);
 }
 
 const llms = read("llms.txt");

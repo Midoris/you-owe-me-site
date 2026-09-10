@@ -1,0 +1,18 @@
+{
+  "codes" : [
+    {
+      "filename" : "home.png",
+      "sha256" : "0a07d156ea5ab01be9ad8609b10be8c01b66e1ab21593d7b8fe72a97fa36b65a",
+      "url" : "https:\/\/apps.apple.com\/us\/app\/loan-tracker-you-owe-me\/id1147058670?pt=117888502&ct=website_qr_exp006&mt=8"
+    },
+    {
+      "filename" : "roommate.png",
+      "sha256" : "3763cf73275ec07764a18585f7306807f81dba5de6ee3ca069b41e5cbba5d7bb",
+      "url" : "https:\/\/apps.apple.com\/us\/app\/loan-tracker-you-owe-me\/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&pt=117888502&ct=website_qr_exp006&mt=8"
+    }
+  ],
+  "correction_level" : "M",
+  "extra_quiet_zone_modules" : 4,
+  "generator" : "scripts\/generate-iphone-handoff-qr.swift",
+  "pixel_scale" : 8
+}

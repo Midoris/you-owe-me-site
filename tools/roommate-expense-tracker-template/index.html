@@ -142,6 +142,7 @@
     <link rel="stylesheet" href="../../styles/site-nav.css" />
     <link rel="stylesheet" href="../../styles/tools.css" />
     <link rel="stylesheet" href="../../styles/roommate-expense-tracker-template.css" />
+    <link rel="stylesheet" href="../../styles/iphone-handoff.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
   </head>
@@ -263,6 +264,20 @@
               </article>
             </div>
             <p class="roommate-template-privacy">These files download directly from the site. What you enter stays in your copy unless you choose to upload or share it elsewhere.</p>
+            <div class="iphone-handoff roommate-template-iphone-handoff" data-iphone-handoff data-cta-location="roommate_template_iphone_handoff" hidden>
+              <h2>Prefer tracking on your iPhone?</h2>
+              <p>Record shared expenses and repayments, and see what each roommate still owes.</p>
+              <button class="iphone-handoff__trigger" type="button" data-iphone-handoff-trigger aria-expanded="false" aria-controls="roommate-iphone-handoff-panel">Get You Owe Me on my iPhone</button>
+              <p class="iphone-handoff__clarification">Start a new record in the app; your spreadsheet is not imported.</p>
+              <section class="iphone-handoff__panel" id="roommate-iphone-handoff-panel" data-iphone-handoff-panel aria-label="iPhone handoff QR code" hidden>
+                <h2>Open You Owe Me on your iPhone</h2>
+                <p class="iphone-handoff__instruction">Scan with your iPhone camera to open the App Store.</p>
+                <img class="iphone-handoff__qr" src="/images/shared/iphone-handoff/roommate.png" width="280" height="280" alt="QR code to open You Owe Me on the App Store." />
+                <p class="iphone-handoff__reassurance">Free download &middot; In-app purchases available.</p>
+                <a class="iphone-handoff__fallback" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&amp;pt=117888502&amp;ct=website_cta&amp;mt=8">Open App Store on this device</a>
+                <button class="iphone-handoff__close" type="button" data-iphone-handoff-close>Hide QR code</button>
+              </section>
+            </div>
           </section>
 
           <section class="roommate-template-section" aria-labelledby="workbook-title">
@@ -528,7 +543,8 @@
     </div>
 
     <script src="../../scripts/sales.js"></script>
-    <script type="module" src="../../scripts/analytics.js"></script>
+    <script type="module" src="../../scripts/analytics.js?v=iphone-handoff-20260910-1"></script>
+    <script type="module" src="../../scripts/iphone-handoff.mjs"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>
     <script src="../../assets/js/jquery.scrolly.min.js"></script>
