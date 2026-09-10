@@ -16,7 +16,10 @@ const route = "/tools/roommate-expense-tracker-template/";
 const productionOrigin = "https://you-owe-me.com";
 const cppKey = "roommates-shared-household-costs";
 const cppUrl = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&pt=117888502&ct=website_cta&mt=8";
-const expectedUpdatedByUrl = new Map([["/find/", "2026-08-24"]]);
+const expectedUpdatedByUrl = new Map([
+  ["/find/", "2026-08-24"],
+  [route, "2026-09-10"],
+]);
 
 function read(relativePath) {
   return fs.readFileSync(path.join(rootDir, relativePath), "utf8");
@@ -66,7 +69,7 @@ assert.deepEqual(
     appStoreCpp: cppKey,
     appStoreDestinationState: "activeCpp",
     appStoreIntendedCluster: "roommates",
-    updated: "2026-08-23",
+    updated: "2026-09-10",
     status: "live",
     priority: "core",
   },
@@ -86,7 +89,7 @@ assert.deepEqual(entry.relatedSolutions, [
   "/solutions/roommate-expense-tracker/",
   "/solutions/shared-expense-tracker/",
 ]);
-assert.equal(entry.problemSolved, "Gives roommates a reusable Excel workbook for agreed expenses, equal or custom shares, separate repayments, opening balances, and a clear monthly settle-up—without requiring an app.");
+assert.equal(entry.problemSolved, "Gives roommates free Excel and Google Sheets templates for agreed expenses, equal or custom shares, separate repayments, opening balances and a clear settle-up, without requiring an app.");
 assert.equal(entry.useWhen, "Use when roommate costs repeat across months, one person can maintain the file, and a one-month calculator is no longer enough.");
 assert.equal(entry.nextStep, "Use the roommate bill calculator for one month. Keep the spreadsheet for repeated manual tracking, or use the roommate expense tracker when ongoing upkeep becomes the problem.");
 assert.equal(entry.bestNextSteps.steps.length, 4);
@@ -127,7 +130,14 @@ for (const url of relationshipUrls) {
 const page = read("tools/roommate-expense-tracker-template/index.html");
 const pageCss = read("styles/roommate-expense-tracker-template.css");
 assert.ok(!page.includes("youoweme.io"));
-assert.ok(page.includes("<title>Roommate Expense Tracker Spreadsheet | Free Template</title>"));
+assert.ok(page.includes("<title>Roommate Expense Tracker Template | Excel &amp; Google Sheets</title>"));
+const sheetsCopyUrl = "https://docs.google.com/spreadsheets/d/1KZc83lodHIoj59chDqy2cgADRiScW4FrPBRwatUrekQ/copy";
+const sheetsDescription = "Free roommate expense tracker for Excel and Google Sheets. Record shared bills, agreed shares and repayments, then see who owes whom and what remains.";
+assert.ok(page.includes(`<meta name="description" content="${sheetsDescription}" />`));
+assert.ok(page.includes('<meta property="og:title" content="Roommate Expense Tracker for Excel &amp; Google Sheets" />'));
+assert.ok(page.includes(`<meta property="og:description" content="${sheetsDescription}" />`));
+assert.ok(page.includes('<meta name="twitter:title" content="Roommate Expense Tracker for Excel &amp; Google Sheets" />'));
+assert.ok(page.includes(`<meta name="twitter:description" content="${sheetsDescription}" />`));
 assert.ok(page.includes('<meta name="viewport" content="width=device-width, initial-scale=1" />'));
 for (const absoluteUrl of [
   `${productionOrigin}${route}`,
@@ -199,9 +209,25 @@ for (const [location, href] of approvedDownloads) {
   assert.ok(link.includes('data-track-event="site_link_click"'), `${location} has the wrong event`);
   assert.ok(link.includes('download="roommate-expense-tracker-template.'), `${location} is missing the download filename`);
 }
+const sheetsLinks = [...page.matchAll(/<a\b[^>]*href="([^"]+)"[^>]*>(Use in Google Sheets)<\/a>/g)];
+assert.equal(sheetsLinks.length, 3);
+for (const [location] of [
+  ["roommate_expense_spreadsheet_hero_google_sheets"],
+  ["roommate_expense_spreadsheet_download_card_google_sheets"],
+  ["roommate_expense_spreadsheet_final_google_sheets"],
+]) {
+  const link = sheetsLinks.find((match) => match[0].includes(`data-track-location="${location}"`));
+  assert.ok(link, `missing tracked Google Sheets link ${location}`);
+  assert.equal(link[1], sheetsCopyUrl, `${location} has the wrong copy URL`);
+  assert.ok(link[0].includes('target="_blank"'), `${location} must open a new tab`);
+  assert.ok(link[0].includes('rel="noopener noreferrer"'), `${location} must use noopener noreferrer`);
+  assert.ok(!link[0].includes(" download="), `${location} must not be a file download`);
+}
+assert.ok(page.includes("No You Owe Me account needed. Google Sheets requires a Google account to make and save a copy."));
+assert.ok(page.includes("You Owe Me does not receive the expenses you enter. Excel data stays in your file unless you upload or share it. Google Sheets data is stored in your Google account and is accessible to people you choose to share your copy with."));
 
 const inboundChecks = new Map([
-  ["tools/index.html", ["Use a reusable Excel workbook for two to six roommates.", "Open roommate spreadsheet template"]],
+  ["tools/index.html", ["Use a free Excel or Google Sheets template for two to six roommates. Track agreed shares, separate repayments, opening balances and the remaining balance.", "Open roommate spreadsheet template"]],
   ["find/index.html", ["Get a roommate spreadsheet", "Open spreadsheet template", "one person can maintain the file, and a one-month calculator is no longer enough"]],
   ["blog/index.html", ["Free roommate tool", "Roommate Expense Tracker Spreadsheet"]],
   ["solutions/index.html", ["Need a reusable manual record? Get the"]],
@@ -218,7 +244,7 @@ for (const [relativePath, fragments] of inboundChecks) {
 }
 
 const sitemap = read("sitemap.xml");
-const sitemapBlock = `<loc>${productionOrigin}${route}</loc>\n    <lastmod>2026-08-23</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.88</priority>`;
+const sitemapBlock = `<loc>${productionOrigin}${route}</loc>\n    <lastmod>2026-09-10</lastmod>\n    <changefreq>weekly</changefreq>\n    <priority>0.88</priority>`;
 assert.equal(occurrences(sitemap, sitemapBlock), 1);
 for (const url of [...relationshipUrls, route]) {
   const block = sitemap.match(new RegExp(`<url>[\\s\\S]*?<loc>${productionOrigin}${url.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")}</loc>[\\s\\S]*?</url>`))?.[0];

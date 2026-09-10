@@ -367,6 +367,31 @@ body.roommate-template-page [tabindex="0"]:focus-visible {
   font-weight: 700;
 }
 
+.roommate-template-csv {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.8rem 1.25rem;
+  margin-top: 1rem;
+  padding: 1rem 1.2rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 18px;
+  background: rgba(255, 255, 255, 0.72);
+}
+
+.roommate-template-csv h3,
+.roommate-template-csv p {
+  margin: 0 !important;
+}
+
+.roommate-template-csv p {
+  flex: 1 1 28rem;
+}
+
+.roommate-template-csv .roommate-template-secondaryCta {
+  flex: 0 0 auto;
+}
+
 .roommate-template-privacy {
   margin-top: 1rem;
   background: rgba(228, 238, 248, 0.46);
@@ -712,11 +737,16 @@ body.roommate-template-page .lt-pageMeta {
   .roommate-template-callout-grid article,
   .roommate-template-related-grid article,
   .roommate-template-download-card,
+  .roommate-template-csv,
   .roommate-template-review-card,
   .roommate-template-message-card,
   .roommate-template-boundaries {
     padding: 1rem;
     border-radius: 18px;
+  }
+
+  .roommate-template-csv .roommate-template-secondaryCta {
+    width: 100%;
   }
 
   .roommate-template-table-scroll {

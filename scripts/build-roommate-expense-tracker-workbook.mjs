@@ -14,11 +14,20 @@ process.on("unhandledRejection", (error) => {
   process.exit(1);
 });
 
-const outputPath = process.argv[2];
-const previewDir = process.argv[3];
+const cliArguments = process.argv.slice(2);
+const editionArgument = cliArguments.find((argument) => argument.startsWith("--edition="));
+const edition = editionArgument ? editionArgument.slice("--edition=".length) : "excel";
+const positionalArguments = cliArguments.filter((argument) => argument !== editionArgument);
+const outputPath = positionalArguments[0];
+const previewDir = positionalArguments[1];
+const googleSheetsEdition = edition === "google-sheets";
 
 if (!outputPath) {
-  throw new Error("Usage: node build-roommate-expense-tracker-workbook.mjs <output.xlsx> [preview-dir]");
+  throw new Error("Usage: node build-roommate-expense-tracker-workbook.mjs <output.xlsx> [preview-dir] [--edition=google-sheets]");
+}
+
+if (edition !== "excel" && edition !== "google-sheets") {
+  throw new Error(`Unknown workbook edition: ${edition}`);
 }
 
 const COLORS = {
@@ -128,6 +137,20 @@ function quotedSheet(sheetName, address) {
   return `'${sheetName}'!${address}`;
 }
 
+function escapedCriteria(cellReference) {
+  return `SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(${cellReference},"~","~~"),"*","~*"),"?","~?")`;
+}
+
+function setupNameIsExact(cellReference) {
+  return `COUNTIF('Setup'!$B$9:$B$14,${escapedCriteria(cellReference)})=1`;
+}
+
+function notReadyInputRowCount(sheetName, inputColumns, statusColumn) {
+  return inputColumns
+    .map((column) => `COUNTIFS('${sheetName}'!$${column}$5:$${column}$204,"<>",'${sheetName}'!$${statusColumn}$5:$${statusColumn}$204,"<>Ready")`)
+    .join("+");
+}
+
 const workbook = Workbook.create();
 const start = workbook.worksheets.add("Start Here");
 const setup = workbook.worksheets.add("Setup");
@@ -147,18 +170,28 @@ for (const sheet of [start, setup, expenses, repayments, summary, example, setti
 titleBand(
   start,
   "A1:H1",
-  "Roommate Expense Tracker Spreadsheet",
+  googleSheetsEdition ? "Roommate Expense Tracker — Google Sheets" : "Roommate Expense Tracker Spreadsheet",
   "A2:H2",
-  "A reusable manual record for agreed roommate expenses, repayments, opening positions, and monthly settle-ups.",
+  googleSheetsEdition
+    ? "A reusable Google Sheets record for agreed roommate expenses, repayments, opening positions, and current settle-ups."
+    : "A reusable manual record for agreed roommate expenses, repayments, opening positions, and monthly settle-ups.",
 );
 sectionBand(start, "A4:H4", "Set up your copy");
-const startSteps = [
-  "Open Setup and enter two to six unique roommate names, one period, and one currency.",
-  "Enter opening positions only when they come from a previously checked closing summary.",
-  "Add each shared cost once on Expenses. Choose who paid, who was included, and equal or custom shares.",
-  "Add money sent between roommates on Repayments. Do not edit the original expense to show a repayment.",
-  "Open Summary and resolve any checks before using the suggested settle-up.",
-];
+const startSteps = googleSheetsEdition
+  ? [
+      "Make your own copy in Google Drive before entering personal information.",
+      "Add two to six roommate names in Setup, then record each expense and repayment once.",
+      "Check Summary before settling. Positive means receives money; negative means owes money.",
+      "Each copy includes 200 expense rows and 200 repayment rows (rows 5–204). For a new period, make a fresh copy and enter the checked closing positions once as opening positions.",
+      "The period and currency fields are labels. They do not filter entries or convert currencies.",
+    ]
+  : [
+      "Open Setup and enter two to six unique roommate names, one period, and one currency.",
+      "Enter opening positions only when they come from a previously checked closing summary.",
+      "Add each shared cost once on Expenses. Choose who paid, who was included, and equal or custom shares.",
+      "Add money sent between roommates on Repayments. Do not edit the original expense to show a repayment.",
+      "Open Summary and resolve any checks before using the suggested settle-up.",
+    ];
 start.getRange("A5:B9").values = startSteps.map((step, index) => [index + 1, step]);
 start.getRange("A5:A9").format = {
   fill: COLORS.greenSoft,
@@ -174,7 +207,7 @@ start.getRange("B5:H9").format = {
   verticalAlignment: "center",
   borders: { preset: "inside", style: "thin", color: COLORS.line },
 };
-start.getRange("A5:H9").format.rowHeight = 34;
+start.getRange("A5:H9").format.rowHeight = googleSheetsEdition ? 46 : 34;
 sectionBand(start, "A11:H11", "What positive and negative mean");
 mergeWrite(start, "A12:H13", "A positive position means the roommate should receive money. A negative position means the roommate owes money. All positions should add up to zero.", {
   fill: COLORS.surface,
@@ -183,19 +216,40 @@ mergeWrite(start, "A12:H13", "A positive position means the roommate should rece
   verticalAlignment: "center",
 });
 sectionBand(start, "A15:H15", "Privacy");
-mergeWrite(start, "A16:H17", "Information entered in this workbook stays in the file unless you choose to upload or share it elsewhere.", {
+mergeWrite(start, "A16:H17", googleSheetsEdition
+  ? "Your copy is stored in your Google account. Choose who can view or edit it. You Owe Me does not receive the expenses you enter."
+  : "Information entered in this workbook stays in the file unless you choose to upload or share it elsewhere.", {
   fill: COLORS.surface,
   font: { color: COLORS.body },
   wrapText: true,
   verticalAlignment: "center",
 });
+if (googleSheetsEdition) start.getRange("A16:H17").format.rowHeight = 42;
 sectionBand(start, "A19:H19", "Boundary");
-mergeWrite(start, "A20:H22", "This workbook records costs and shares the roommates already understand and accept. It does not decide fair rent, create or prove a legal debt, process payments, collect money, or replace a lease or roommate agreement.", {
+mergeWrite(start, googleSheetsEdition ? "A20:H21" : "A20:H22", googleSheetsEdition
+  ? "This spreadsheet records costs and shares the roommates already understand and accept. It does not decide fair rent, create or prove a legal debt, process payments, collect money, or replace a lease or roommate agreement."
+  : "This workbook records costs and shares the roommates already understand and accept. It does not decide fair rent, create or prove a legal debt, process payments, collect money, or replace a lease or roommate agreement.", {
   fill: COLORS.surface,
   font: { color: COLORS.body },
   wrapText: true,
   verticalAlignment: "center",
 });
+if (googleSheetsEdition) {
+  start.getRange("A20:H21").format.rowHeight = 44;
+  start.getRange("A23:H23").merge();
+  start.getRange("A23").formulas = [[`=HYPERLINK("https://you-owe-me.com/solutions/roommate-expense-tracker/","Track roommate balances on iPhone")`]];
+  start.getRange("A23:H23").format = {
+    fill: COLORS.surface,
+    font: { bold: true, color: "#355428", underline: true },
+    verticalAlignment: "center",
+  };
+  mergeWrite(start, "A24:H24", "Start a separate record in You Owe Me; this spreadsheet is not imported.", {
+    fill: COLORS.surface,
+    font: { color: COLORS.body },
+    wrapText: true,
+    verticalAlignment: "center",
+  });
+}
 setWidths(start, { A: 8, B: 22, C: 14, D: 14, E: 14, F: 14, G: 14, H: 14 });
 start.freezePanes.freezeRows(2);
 console.log("workbook: start sheet ready");
@@ -222,7 +276,15 @@ const settingsRows = Array.from({ length: 11 }, (_, index) => [
 ]);
 settings.getRange("A5:D15").values = settingsRows;
 styleDataArea(settings.getRange("A5:D15"));
-setWidths(settings, { A: 26, B: 34, C: 16, D: 16 });
+if (googleSheetsEdition) {
+  settings.getRange("F4:G4").values = [["Input readiness", "Status"]];
+  styleHeader(settings.getRange("F4:G4"));
+  settings.getRange("F5").values = [["Live setup and row checks"]];
+  settings.getRange("G5").formulas = [[`=IF('Setup'!$A$17<>"Ready: setup inputs are valid.","Fix setup inputs.",IF(${notReadyInputRowCount("Expenses", Array.from({ length: 19 }, (_, index) => col(index + 1)), "Z")}+${notReadyInputRowCount("Repayments", ["A", "B", "C", "D", "E"], "F")}>0,"Fix highlighted inputs before using the summary","Ready"))`]];
+  styleDataArea(settings.getRange("F5:G5"));
+  addStatusFormatting(settings.getRange("G5"));
+}
+setWidths(settings, googleSheetsEdition ? { A: 26, B: 34, C: 16, D: 16, F: 30, G: 42 } : { A: 26, B: 34, C: 16, D: 16 });
 settings.freezePanes.freezeRows(4);
 console.log("workbook: settings sheet ready");
 
@@ -250,8 +312,29 @@ setup.getRange("A16:C16").values = [["Opening position total", null, null]];
 setup.getRange("C16").formulas = [["=SUM(C9:C14)"]];
 setup.getRange("C16").format.numberFormat = amountFormat;
 setup.getRange("A17:F18").merge();
-setup.getRange("A17").formulas = [[
-  '=IF(COUNTIF(B9:B14,"<>")<2,"Add at least two roommate names.",IF(OR(AND(B9<>"",COUNTIF($B$9:$B$14,B9)>1),AND(B10<>"",COUNTIF($B$9:$B$14,B10)>1),AND(B11<>"",COUNTIF($B$9:$B$14,B11)>1),AND(B12<>"",COUNTIF($B$9:$B$14,B12)>1),AND(B13<>"",COUNTIF($B$9:$B$14,B13)>1),AND(B14<>"",COUNTIF($B$9:$B$14,B14)>1)),"Roommate names must be unique.",IF(ABS(C16)>0.01,"Opening positions do not balance. Check that the total is 0.00.","Ready: opening positions balance to 0.00.")))',
+const setupDuplicateTerms = roommateSlots.map((index) => {
+  const row = 9 + index;
+  return `AND(B${row}<>"",COUNTIF($B$9:$B$14,${escapedCriteria(`B${row}`)})>1)`;
+}).join(",");
+const setupWhitespaceTerms = roommateSlots.map((index) => {
+  const row = 9 + index;
+  return `AND(B${row}<>"",OR(B${row}<>TRIM(B${row}),B${row}<>SUBSTITUTE(B${row},"  "," ")))`;
+}).join(",");
+const setupOpeningTypeTerms = roommateSlots.map((index) => {
+  const row = 9 + index;
+  return `NOT(ISNUMBER(C${row}))`;
+}).join(",");
+const setupUnusedOpeningTerms = roommateSlots.map((index) => {
+  const row = 9 + index;
+  return `AND(B${row}="",C${row}<>0)`;
+}).join(",");
+const setupOpeningPrecisionTerms = roommateSlots.map((index) => {
+  const row = 9 + index;
+  return `ROUND(C${row},2)<>C${row}`;
+}).join(",");
+setup.getRange("A17").formulas = [[googleSheetsEdition
+  ? `=IF(COUNTIF(B9:B14,"<>")<2,"Add at least two roommate names.",IF(OR(${setupWhitespaceTerms}),"Remove leading, trailing, or repeated spaces from roommate names.",IF(OR(${setupDuplicateTerms}),"Roommate names must be unique.",IF(OR(${setupOpeningTypeTerms}),"Opening positions must be numbers with no more than two decimal places.",IF(OR(${setupUnusedOpeningTerms}),"Set opening positions for unused roommate slots to 0.00.",IF(OR(${setupOpeningPrecisionTerms}),"Opening positions must be numbers with no more than two decimal places.",IF(ROUND(C16,2)<>0,"Opening positions do not balance. Check that the total is 0.00.","Ready: setup inputs are valid.")))))))`
+  : '=IF(COUNTIF(B9:B14,"<>")<2,"Add at least two roommate names.",IF(OR(AND(B9<>"",COUNTIF($B$9:$B$14,B9)>1),AND(B10<>"",COUNTIF($B$9:$B$14,B10)>1),AND(B11<>"",COUNTIF($B$9:$B$14,B11)>1),AND(B12<>"",COUNTIF($B$9:$B$14,B12)>1),AND(B13<>"",COUNTIF($B$9:$B$14,B13)>1),AND(B14<>"",COUNTIF($B$9:$B$14,B14)>1)),"Roommate names must be unique.",IF(ABS(C16)>0.01,"Opening positions do not balance. Check that the total is 0.00.","Ready: opening positions balance to 0.00.")))',
 ]];
 setup.getRange("A17:F18").format = {
   fill: COLORS.yellowSoft,
@@ -324,18 +407,52 @@ for (let row = 5; row <= 204; row += 1) {
   const calculated = roommateSlots.map((index) => {
     const includedCol = col(7 + index);
     const customCol = col(13 + index);
-    const calcCol = col(20 + index);
     const laterIncludedStart = col(8 + index);
     const laterIncluded = index < 5 ? `COUNTIF($${laterIncludedStart}${row}:$L${row},"Yes")` : "0";
     const previousCalculated = index === 0 ? "0" : `SUM($T${row}:${col(19 + index)}${row})`;
-    return `=IF(COUNTIF($A${row}:$S${row},"<>")=0,"",IF($F${row}="Equal among included roommates",IF(${includedCol}${row}<>"Yes",0,IF(${laterIncluded}=0,$D${row}-${previousCalculated},ROUND($D${row}/COUNTIF($G${row}:$L${row},"Yes"),2))),IF($F${row}="Custom agreed shares",IF(${includedCol}${row}="Yes",${customCol}${row},0),"")))`;
+    const includedCount = `COUNTIF($G${row}:$L${row},"Yes")`;
+    const includedOrdinal = `COUNTIF($G${row}:${includedCol}${row},"Yes")`;
+    const totalCents = `ROUND($D${row}*100,0)`;
+    const equalShare = `(QUOTIENT(${totalCents},${includedCount})+IF(${includedOrdinal}>${includedCount}-MOD(${totalCents},${includedCount}),1,0))/100`;
+    return googleSheetsEdition
+      ? `=IF($Z${row}<>"Ready","",IF(${includedCol}${row}<>"Yes",0,IF($F${row}="Equal among included roommates",${equalShare},${customCol}${row})))`
+      : `=IF(COUNTIF($A${row}:$S${row},"<>")=0,"",IF($F${row}="Equal among included roommates",IF(${includedCol}${row}<>"Yes",0,IF(${laterIncluded}=0,$D${row}-${previousCalculated},ROUND($D${row}/COUNTIF($G${row}:$L${row},"Yes"),2))),IF($F${row}="Custom agreed shares",IF(${includedCol}${row}="Yes",${customCol}${row},0),"")))`;
   });
   const missingCustomTerms = roommateSlots.map((index) => {
     const includedCol = col(7 + index);
     const customCol = col(13 + index);
     return `AND(${includedCol}${row}="Yes",${customCol}${row}="")`;
   }).join(",");
-  const check = `=IF(COUNTIF($A${row}:$S${row},"<>")=0,"",IF(OR($D${row}="",$D${row}<=0),"Enter an amount greater than 0.",IF($E${row}="","Choose who paid.",IF(COUNTIF($G${row}:$L${row},"Yes")=0,"Choose at least one included roommate.",IF($F${row}="Equal among included roommates","Ready",IF($F${row}="Custom agreed shares",IF(OR(${missingCustomTerms}),"Enter custom shares that add up to the expense amount.",IF(ABS(SUM($M${row}:$R${row}))<0.005,"Enter custom shares that add up to the expense amount.",IF(SUM($M${row}:$R${row})<$D${row}-0.005,"Custom shares are short by "&ROUND($D${row}-SUM($M${row}:$R${row}),2)&".",IF(SUM($M${row}:$R${row})>$D${row}+0.005,"Custom shares are over by "&ROUND(SUM($M${row}:$R${row})-$D${row},2)&".","Ready")))),"Enter custom shares that add up to the expense amount."))))))`;
+  const invalidIncludedChoices = `OR(${roommateSlots.map((index) => {
+    const includedCol = col(7 + index);
+    const setupRow = 9 + index;
+    return `AND(OR(${includedCol}${row}="Yes",${includedCol}${row}="No"),AND(${includedCol}${row}="Yes",'Setup'!$B$${setupRow}=""))`;
+  }).join(",")})`;
+  const invalidIncludedValues = `OR(${roommateSlots.map((index) => {
+    const includedCol = col(7 + index);
+    return `AND(${includedCol}${row}<>"",${includedCol}${row}<>"Yes",${includedCol}${row}<>"No")`;
+  }).join(",")})`;
+  const invalidCustomValues = `OR(${roommateSlots.map((index) => {
+    const includedCol = col(7 + index);
+    const customCol = col(13 + index);
+    return `IF(${includedCol}${row}="Yes",IF(${customCol}${row}="",TRUE,IF(NOT(ISNUMBER(${customCol}${row})),TRUE,IF(${customCol}${row}<0,TRUE,ROUND(${customCol}${row},2)<>${customCol}${row}))),IF(${customCol}${row}="",FALSE,IF(NOT(ISNUMBER(${customCol}${row})),TRUE,${customCol}${row}<>0)))`;
+  }).join(",")})`;
+  const googleSheetsCheck = [
+    `=IF(COUNTIF($A${row}:$S${row},"<>")=0,"",`,
+    `IF(OR($D${row}="",NOT(ISNUMBER($D${row}))),"Enter a positive amount with no more than two decimal places.",`,
+    `IF($D${row}<=0,"Enter a positive amount with no more than two decimal places.",`,
+    `IF(ROUND($D${row},2)<>$D${row},"Enter a positive amount with no more than two decimal places.",`,
+    `IF(OR($E${row}="",NOT(${setupNameIsExact(`$E${row}`)})),"Choose a named roommate who paid.",`,
+    `IF(AND($F${row}<>"Equal among included roommates",$F${row}<>"Custom agreed shares"),"Choose a split method.",`,
+    `IF(OR(${invalidIncludedChoices},${invalidIncludedValues}),"Use Yes only for named roommates, or choose No.",`,
+    `IF(COUNTIF($G${row}:$L${row},"Yes")=0,"Choose at least one included roommate.",`,
+    `IF($F${row}="Equal among included roommates","Ready",`,
+    `IF(${invalidCustomValues},"Enter a numeric custom share for every included roommate; excluded roommates may only be blank or zero.",`,
+    `IF(ROUND(SUM($M${row}:$R${row}),2)<>ROUND($D${row},2),"Custom shares must add up to the expense amount.","Ready")`,
+  ].join("") + ")".repeat(10);
+  const check = googleSheetsEdition
+    ? googleSheetsCheck
+    : `=IF(COUNTIF($A${row}:$S${row},"<>")=0,"",IF(OR($D${row}="",$D${row}<=0),"Enter an amount greater than 0.",IF($E${row}="","Choose who paid.",IF(COUNTIF($G${row}:$L${row},"Yes")=0,"Choose at least one included roommate.",IF($F${row}="Equal among included roommates","Ready",IF($F${row}="Custom agreed shares",IF(OR(${missingCustomTerms}),"Enter custom shares that add up to the expense amount.",IF(ABS(SUM($M${row}:$R${row}))<0.005,"Enter custom shares that add up to the expense amount.",IF(SUM($M${row}:$R${row})<$D${row}-0.005,"Custom shares are short by "&ROUND($D${row}-SUM($M${row}:$R${row}),2)&".",IF(SUM($M${row}:$R${row})>$D${row}+0.005,"Custom shares are over by "&ROUND(SUM($M${row}:$R${row})-$D${row},2)&".","Ready")))),"Enter custom shares that add up to the expense amount."))))))`;
   expenseFormulaRows.push([...calculated, check]);
 }
 expenses.getRange("T5:Z204").formulas = expenseFormulaRows;
@@ -372,7 +489,9 @@ repayments.getRange("A5:A204").format.numberFormat = dateFormat;
 repayments.getRange("D5:D204").format.numberFormat = amountFormat;
 const repaymentChecks = [];
 for (let row = 5; row <= 204; row += 1) {
-  repaymentChecks.push([`=IF(COUNTIF($A${row}:$E${row},"<>")=0,"",IF(OR($B${row}="",$C${row}=""),"Choose who sent and who received the repayment.",IF($B${row}=$C${row},"Choose two different roommates.",IF(OR($D${row}="",$D${row}<=0),"Enter an amount greater than 0.","Ready"))))`]);
+  repaymentChecks.push([googleSheetsEdition
+    ? `=IF(COUNTIF($A${row}:$E${row},"<>")=0,"",IF(OR($B${row}="",$C${row}="",NOT(${setupNameIsExact(`$B${row}`)}),NOT(${setupNameIsExact(`$C${row}`)})),"Choose two named roommates for the repayment.",IF($B${row}=$C${row},"Choose two different roommates.",IF(OR($D${row}="",NOT(ISNUMBER($D${row}))),"Enter a positive amount with no more than two decimal places.",IF($D${row}<=0,"Enter a positive amount with no more than two decimal places.",IF(ROUND($D${row},2)<>$D${row},"Enter a positive amount with no more than two decimal places.","Ready"))))))`
+    : `=IF(COUNTIF($A${row}:$E${row},"<>")=0,"",IF(OR($B${row}="",$C${row}=""),"Choose who sent and who received the repayment.",IF($B${row}=$C${row},"Choose two different roommates.",IF(OR($D${row}="",$D${row}<=0),"Enter an amount greater than 0.","Ready"))))`]);
 }
 repayments.getRange("F5:F204").formulas = repaymentChecks;
 repayments.getRange("B5:C204").dataValidation = { rule: { type: "list", formula1: quotedSheet("Setup", "$B$9:$B$14") } };
@@ -380,7 +499,7 @@ repayments.getRange("D5:D204").dataValidation = { rule: { type: "decimal", opera
 addStatusFormatting(repayments.getRange("F5:F204"));
 setWidths(repayments, { A: 14, B: 22, C: 22, D: 16, E: 42, F: 48 });
 repayments.freezePanes.freezeRows(4);
-repayments.tables.add("A4:F204", true, "RoommateRepayments");
+if (!googleSheetsEdition) repayments.tables.add("A4:F204", true, "RoommateRepayments");
 console.log("workbook: repayments sheet ready");
 
 // Summary
@@ -400,17 +519,27 @@ for (let index = 0; index < 6; index += 1) {
   const assignedCol = col(20 + index);
   summary.getRange(`A${row}`).formulas = [[`=IF('Setup'!B${setupRow}="","",'Setup'!B${setupRow})`]];
   summary.getRange(`B${row}`).formulas = [[`=IF(A${row}="","",'Setup'!C${setupRow})`]];
-  summary.getRange(`C${row}`).formulas = [[`=IF(A${row}="","",SUMIFS('Expenses'!$D$5:$D$204,'Expenses'!$E$5:$E$204,A${row},'Expenses'!$Z$5:$Z$204,"Ready"))`]];
+  summary.getRange(`C${row}`).formulas = [[googleSheetsEdition
+    ? `=IF(A${row}="","",SUMIFS('Expenses'!$D$5:$D$204,'Expenses'!$E$5:$E$204,${escapedCriteria(`A${row}`)},'Expenses'!$Z$5:$Z$204,"Ready"))`
+    : `=IF(A${row}="","",SUMIFS('Expenses'!$D$5:$D$204,'Expenses'!$E$5:$E$204,A${row},'Expenses'!$Z$5:$Z$204,"Ready"))`]];
   summary.getRange(`D${row}`).formulas = [[`=IF(A${row}="","",SUM('Expenses'!$${assignedCol}$5:$${assignedCol}$204))`]];
-  summary.getRange(`E${row}`).formulas = [[`=IF(A${row}="","",SUMIFS('Repayments'!$D$5:$D$204,'Repayments'!$B$5:$B$204,A${row},'Repayments'!$F$5:$F$204,"Ready"))`]];
-  summary.getRange(`F${row}`).formulas = [[`=IF(A${row}="","",SUMIFS('Repayments'!$D$5:$D$204,'Repayments'!$C$5:$C$204,A${row},'Repayments'!$F$5:$F$204,"Ready"))`]];
-  summary.getRange(`G${row}`).formulas = [[`=IF(A${row}="","",B${row}+C${row}-D${row}+E${row}-F${row})`]];
-  summary.getRange(`H${row}`).formulas = [[`=IF(A${row}="","",IF(ABS(G${row})<=0.01,"Settled",IF(G${row}>0,"Should receive "&ROUND(G${row},2),"Owes "&ROUND(-G${row},2))))`]];
+  summary.getRange(`E${row}`).formulas = [[googleSheetsEdition
+    ? `=IF(A${row}="","",SUMIFS('Repayments'!$D$5:$D$204,'Repayments'!$B$5:$B$204,${escapedCriteria(`A${row}`)},'Repayments'!$F$5:$F$204,"Ready"))`
+    : `=IF(A${row}="","",SUMIFS('Repayments'!$D$5:$D$204,'Repayments'!$B$5:$B$204,A${row},'Repayments'!$F$5:$F$204,"Ready"))`]];
+  summary.getRange(`F${row}`).formulas = [[googleSheetsEdition
+    ? `=IF(A${row}="","",SUMIFS('Repayments'!$D$5:$D$204,'Repayments'!$C$5:$C$204,${escapedCriteria(`A${row}`)},'Repayments'!$F$5:$F$204,"Ready"))`
+    : `=IF(A${row}="","",SUMIFS('Repayments'!$D$5:$D$204,'Repayments'!$C$5:$C$204,A${row},'Repayments'!$F$5:$F$204,"Ready"))`]];
+  summary.getRange(`G${row}`).formulas = [[googleSheetsEdition
+    ? `=IF(A${row}="","",IF('Settings'!$G$5<>"Ready","",ROUND(B${row}+C${row}-D${row}+E${row}-F${row},2)))`
+    : `=IF(A${row}="","",B${row}+C${row}-D${row}+E${row}-F${row})`]];
+  summary.getRange(`H${row}`).formulas = [[googleSheetsEdition
+    ? `=IF(A${row}="","",IF($B$17<>"Ready: current positions balance to 0.00.","Fix highlighted inputs before using the summary",IF(ROUND(G${row},2)=0,"Settled",IF(G${row}>0,"Should receive "&ROUND(G${row},2),"Owes "&ROUND(-G${row},2)))))`
+    : `=IF(A${row}="","",IF(ABS(G${row})<=0.01,"Settled",IF(G${row}>0,"Should receive "&ROUND(G${row},2),"Owes "&ROUND(-G${row},2))))`]];
 }
 styleDataArea(summary.getRange("A5:H10"));
 summary.getRange("B5:G10").format.numberFormat = amountFormat;
-summary.getRange("G5:G10").conditionalFormats.add("cellIs", { operator: "greaterThan", formula: 0.01, format: { fill: COLORS.greenSoft, font: { bold: true, color: "#355428" } } });
-summary.getRange("G5:G10").conditionalFormats.add("cellIs", { operator: "lessThan", formula: -0.01, format: { fill: COLORS.yellowSoft, font: { bold: true, color: COLORS.ink } } });
+summary.getRange("G5:G10").conditionalFormats.add("cellIs", { operator: "greaterThan", formula: googleSheetsEdition ? 0 : 0.01, format: { fill: COLORS.greenSoft, font: { bold: true, color: "#355428" } } });
+summary.getRange("G5:G10").conditionalFormats.add("cellIs", { operator: "lessThan", formula: googleSheetsEdition ? 0 : -0.01, format: { fill: COLORS.yellowSoft, font: { bold: true, color: COLORS.ink } } });
 
 sectionBand(summary, "A12:H12", "Totals and record check");
 summary.getRange("A13:A17").values = [["Expense total"], ["Assigned-share total"], ["Repayment total"], ["Position total"], ["Record check"]];
@@ -418,7 +547,9 @@ summary.getRange("B13").formulas = [[`=SUMIF('Expenses'!$Z$5:$Z$204,"Ready",'Exp
 summary.getRange("B14").formulas = [["=SUM(D5:D10)"]];
 summary.getRange("B15").formulas = [[`=SUMIF('Repayments'!$F$5:$F$204,"Ready",'Repayments'!$D$5:$D$204)`]];
 summary.getRange("B16").formulas = [["=SUM(G5:G10)"]];
-summary.getRange("B17").formulas = [[`=IF('Setup'!A17<>"Ready: opening positions balance to 0.00.","Resolve the highlighted setup, expense, or repayment checks before settling.",IF(COUNTIFS('Expenses'!$Z$5:$Z$204,"<>",'Expenses'!$Z$5:$Z$204,"<>Ready")+COUNTIFS('Repayments'!$F$5:$F$204,"<>",'Repayments'!$F$5:$F$204,"<>Ready")>0,"Resolve the highlighted setup, expense, or repayment checks before settling.",IF(ABS(B16)>0.01,"Current positions do not balance to 0.00. Check the opening positions and expense shares.","Ready: current positions balance to 0.00.")))`]];
+summary.getRange("B17").formulas = [[googleSheetsEdition
+  ? `=IF('Settings'!$G$5<>"Ready","Fix the highlighted inputs before using the summary",IF(ROUND(B16,2)<>0,"Current positions do not balance to 0.00. Check the opening positions and expense shares.","Ready: current positions balance to 0.00."))`
+  : `=IF('Setup'!A17<>"Ready: opening positions balance to 0.00.","Resolve the highlighted setup, expense, or repayment checks before settling.",IF(COUNTIFS('Expenses'!$Z$5:$Z$204,"<>",'Expenses'!$Z$5:$Z$204,"<>Ready")+COUNTIFS('Repayments'!$F$5:$F$204,"<>",'Repayments'!$F$5:$F$204,"<>Ready")>0,"Resolve the highlighted setup, expense, or repayment checks before settling.",IF(ABS(B16)>0.01,"Current positions do not balance to 0.00. Check the opening positions and expense shares.","Ready: current positions balance to 0.00.")))`]];
 summary.getRange("A13:A17").format = { fill: COLORS.surfaceAlt, font: { bold: true, color: COLORS.ink } };
 summary.getRange("B13:B16").format.numberFormat = amountFormat;
 summary.getRange("B13:B17").format = {
@@ -431,7 +562,9 @@ summary.getRange("B17:H18").format = { fill: COLORS.yellowSoft, font: { bold: tr
 addStatusFormatting(summary.getRange("B17:H18"));
 
 sectionBand(summary, "A20:H20", "Suggested settlement transfers");
-mergeWrite(summary, "A21:H21", "These transfers settle the current positions with the fewest practical payments the workbook can calculate. Review the underlying entries before sending money.", {
+mergeWrite(summary, "A21:H21", googleSheetsEdition
+  ? "Suggested transfers that settle the current balances. Check the entries before sending money."
+  : "These transfers settle the current positions with the fewest practical payments the workbook can calculate. Review the underlying entries before sending money.", {
   fill: COLORS.surfaceAlt,
   font: { color: COLORS.body, italic: true },
   wrapText: true,
@@ -446,7 +579,9 @@ summary.getRange("A23:C27").formulas = Array.from({ length: 5 }, (_, index) => [
 styleDataArea(summary.getRange("A23:C27"));
 summary.getRange("C23:C27").format.numberFormat = amountFormat;
 summary.getRange("A29:H30").merge();
-summary.getRange("A29").formulas = [[`=IF($B$17<>"Ready: current positions balance to 0.00.","Settlement suggestions are unavailable until the current positions balance to 0.00.",IF(COUNTIF($G$5:$G$10,"<-0.01")=0,"No settlement transfer is needed.",""))`]];
+summary.getRange("A29").formulas = [[googleSheetsEdition
+  ? `=IF($B$17<>"Ready: current positions balance to 0.00.","Fix the highlighted inputs before using the summary",IF(COUNTIF($G$5:$G$10,"<0")=0,"No settlement transfer is needed.",""))`
+  : `=IF($B$17<>"Ready: current positions balance to 0.00.","Settlement suggestions are unavailable until the current positions balance to 0.00.",IF(COUNTIF($G$5:$G$10,"<-0.01")=0,"No settlement transfer is needed.",""))`]];
 summary.getRange("A29:H30").format = { fill: COLORS.blueSoft, font: { bold: true, color: COLORS.ink }, wrapText: true, verticalAlignment: "center" };
 
 // Inspectable settlement engine. Each step applies one transfer and carries the six balances forward.
@@ -458,8 +593,8 @@ for (let step = 1; step <= 5; step += 1) {
   const row = 21 + step;
   const previous = row - 1;
   summary.getRange(`J${row}`).values = [[step]];
-  const negativeChoice = roommateSlots.map((index) => `IF(${col(14 + index)}${previous}<-0.01,$A${5 + index},`).join("") + '""' + ")".repeat(6);
-  const positiveChoice = roommateSlots.map((index) => `IF(${col(14 + index)}${previous}>0.01,$A${5 + index},`).join("") + '""' + ")".repeat(6);
+  const negativeChoice = roommateSlots.map((index) => `IF(${col(14 + index)}${previous}<${googleSheetsEdition ? "0" : "-0.01"},$A${5 + index},`).join("") + '""' + ")".repeat(6);
+  const positiveChoice = roommateSlots.map((index) => `IF(${col(14 + index)}${previous}>${googleSheetsEdition ? "0" : "0.01"},$A${5 + index},`).join("") + '""' + ")".repeat(6);
   summary.getRange(`K${row}`).formulas = [[`=IF($B$17<>"Ready: current positions balance to 0.00.","",${negativeChoice})`]];
   summary.getRange(`L${row}`).formulas = [[`=IF($B$17<>"Ready: current positions balance to 0.00.","",${positiveChoice})`]];
   const debtorAmount = roommateSlots.map((index) => `IF($K${row}=$A${5 + index},-${col(14 + index)}${previous},`).join("") + "0" + ")".repeat(6);
@@ -468,7 +603,9 @@ for (let step = 1; step <= 5; step += 1) {
   roommateSlots.forEach((index) => {
     const stateCol = col(14 + index);
     const nameRow = 5 + index;
-    summary.getRange(`${stateCol}${row}`).formulas = [[`=IF(${stateCol}${previous}="","",${stateCol}${previous}+IF($A${nameRow}=$K${row},$M${row},0)-IF($A${nameRow}=$L${row},$M${row},0))`]];
+    summary.getRange(`${stateCol}${row}`).formulas = [[googleSheetsEdition
+      ? `=IF(${stateCol}${previous}="","",ROUND(${stateCol}${previous}+IF($A${nameRow}=$K${row},$M${row},0)-IF($A${nameRow}=$L${row},$M${row},0),2))`
+      : `=IF(${stateCol}${previous}="","",${stateCol}${previous}+IF($A${nameRow}=$K${row},$M${row},0)-IF($A${nameRow}=$L${row},$M${row},0))`]];
   });
 }
 styleDataArea(summary.getRange("J21:S26"));
@@ -544,7 +681,7 @@ example.freezePanes.freezeRows(5);
 console.log("workbook: example sheet ready");
 
 const sheetPreviewRanges = {
-  "Start Here": "A1:H22",
+  "Start Here": googleSheetsEdition ? "A1:H24" : "A1:H22",
   Setup: "A1:F22",
   Expenses: "A1:Z14",
   Repayments: "A1:F16",

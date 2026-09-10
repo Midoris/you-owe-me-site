@@ -264,7 +264,8 @@ def validate_image() -> None:
 def validate_page() -> None:
     html = PAGE_PATH.read_text(encoding="utf-8")
     assert html.count("<h1") == 1
-    assert "Roommate Expense Tracker Spreadsheet | Free Template" in html
+    assert "Roommate Expense Tracker Template | Excel &amp; Google Sheets" in html
+    assert "Free roommate expense tracker for Excel and Google Sheets. Record shared bills, agreed shares and repayments, then see who owes whom and what remains." in html
     assert '<link rel="canonical" href="https://you-owe-me.com/tools/roommate-expense-tracker-template/" />' in html
     assert html.count("<!-- best-next-step:start -->") == 1
     assert html.count("<!-- best-next-step:end -->") == 1
@@ -274,13 +275,18 @@ def validate_page() -> None:
         links = re.findall(rf'<a\b[^>]*href="[^"]*{re.escape(filename)}"[^>]*>', html, re.I | re.S)
         assert links, filename
         assert all("download" in link for link in links), filename
+    sheets_copy_url = "https://docs.google.com/spreadsheets/d/1KZc83lodHIoj59chDqy2cgADRiScW4FrPBRwatUrekQ/copy"
+    sheets_links = re.findall(r'<a\b[^>]*href="([^"]+)"[^>]*>Use in Google Sheets</a>', html, re.I | re.S)
+    assert sheets_links == [sheets_copy_url] * 3
+    assert html.count('target="_blank" rel="noopener noreferrer"') >= 3
+    assert "download=\"roommate-expense-tracker-google-sheets" not in html
     assert "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12" in html
     assert 'data-track-location="roommate_expense_spreadsheet_product_app_store"' in html
     scripts = re.findall(r'<script type="application/ld\+json">\s*(.*?)\s*</script>', html, re.S)
     documents = [json.loads(script) for script in scripts]
     nodes = [node for document in documents for node in document.get("@graph", [document])]
     faq = next(node for node in nodes if node.get("@type") == "FAQPage")
-    assert len(faq["mainEntity"]) == 7
+    assert len(faq["mainEntity"]) == 9
     assert not any(node.get("@type") in {"SoftwareApplication", "WebApplication", "HowTo"} for node in nodes)
 
 

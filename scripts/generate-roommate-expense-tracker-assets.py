@@ -116,7 +116,7 @@ def runtime_paths() -> tuple[Path, Path]:
     return node, node_modules
 
 
-def build_workbook(preview_dir: Path) -> None:
+def build_workbook(output_path: Path, preview_dir: Path, edition: str = "excel") -> None:
     node, node_modules = runtime_paths()
     with tempfile.TemporaryDirectory(prefix="roommate-workbook-builder-") as temp_name:
         temp_dir = Path(temp_name)
@@ -124,7 +124,13 @@ def build_workbook(preview_dir: Path) -> None:
         temp_builder = temp_dir / BUILDER_PATH.name
         shutil.copy2(BUILDER_PATH, temp_builder)
         result = subprocess.run(
-            [str(node), str(temp_builder), str(WORKBOOK_PATH), str(preview_dir)],
+            [
+                str(node),
+                str(temp_builder),
+                str(output_path),
+                str(preview_dir),
+                *( ["--edition=google-sheets"] if edition == "google-sheets" else [] ),
+            ],
             cwd=temp_dir,
             check=False,
             capture_output=True,
@@ -142,7 +148,7 @@ def build_workbook(preview_dir: Path) -> None:
             print(result.stdout.strip())
 
 
-def postprocess_workbook() -> None:
+def postprocess_workbook(workbook_path: Path) -> None:
     """Repair portable Excel features not emitted by the artifact exporter."""
     namespace = "http://schemas.openxmlformats.org/spreadsheetml/2006/main"
     ET.register_namespace("", namespace)
@@ -171,8 +177,8 @@ def postprocess_workbook() -> None:
     ]
 
     with tempfile.TemporaryDirectory(prefix="roommate-xlsx-repair-") as temp_name:
-        temp_path = Path(temp_name) / WORKBOOK_PATH.name
-        with ZipFile(WORKBOOK_PATH, "r") as source, ZipFile(temp_path, "w", ZIP_DEFLATED) as target:
+        temp_path = Path(temp_name) / workbook_path.name
+        with ZipFile(workbook_path, "r") as source, ZipFile(temp_path, "w", ZIP_DEFLATED) as target:
             for member in source.infolist():
                 data = source.read(member.filename)
                 if member.filename == "xl/workbook.xml":
@@ -215,9 +221,9 @@ def postprocess_workbook() -> None:
                         root.insert(list(root).index(sheet_data) + 1, auto_filter)
                     data = ET.tostring(root, encoding="utf-8", xml_declaration=True)
                 target.writestr(member, data)
-        shutil.copy2(temp_path, WORKBOOK_PATH)
+        shutil.copy2(temp_path, workbook_path)
 
-    inspect_sidecar = WORKBOOK_PATH.with_suffix(WORKBOOK_PATH.suffix + ".inspect.ndjson")
+    inspect_sidecar = workbook_path.with_suffix(workbook_path.suffix + ".inspect.ndjson")
     inspect_sidecar.unlink(missing_ok=True)
 
 
@@ -258,19 +264,37 @@ def build_hero(example_preview: Path) -> None:
 
 
 def main() -> None:
+    arguments = sys.argv[1:]
+    if arguments and arguments[0] == "--edition=google-sheets":
+        if len(arguments) != 3:
+            raise SystemExit(
+                "Usage: generate-roommate-expense-tracker-assets.py --edition=google-sheets "
+                "<output.xlsx> <preview-dir>"
+            )
+        output_path = Path(arguments[1]).resolve()
+        preview_dir = Path(arguments[2]).resolve()
+        if output_path == WORKBOOK_PATH.resolve():
+            raise SystemExit("The Google Sheets edition requires a separate output path; the public workbook must not be overwritten.")
+        output_path.parent.mkdir(parents=True, exist_ok=True)
+        preview_dir.mkdir(parents=True, exist_ok=True)
+        build_workbook(output_path, preview_dir, edition="google-sheets")
+        postprocess_workbook(output_path)
+        print(f"generated Google Sheets import workbook {output_path}")
+        return
+
     DOWNLOADS.mkdir(parents=True, exist_ok=True)
     IMAGE_DIR.mkdir(parents=True, exist_ok=True)
-    if len(sys.argv) > 1:
-        preview_dir = Path(sys.argv[1]).resolve()
+    if arguments:
+        preview_dir = Path(arguments[0]).resolve()
         preview_dir.mkdir(parents=True, exist_ok=True)
-        build_workbook(preview_dir)
-        postprocess_workbook()
+        build_workbook(WORKBOOK_PATH, preview_dir)
+        postprocess_workbook(WORKBOOK_PATH)
         build_hero(preview_dir / "example.png")
     else:
         with tempfile.TemporaryDirectory(prefix="roommate-workbook-previews-") as preview_name:
             preview_dir = Path(preview_name)
-            build_workbook(preview_dir)
-            postprocess_workbook()
+            build_workbook(WORKBOOK_PATH, preview_dir)
+            postprocess_workbook(WORKBOOK_PATH)
             build_hero(preview_dir / "example.png")
     build_csv()
     print(f"generated {WORKBOOK_PATH.relative_to(ROOT)}")
