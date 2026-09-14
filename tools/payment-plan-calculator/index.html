@@ -173,6 +173,7 @@
     <link rel="stylesheet" href="../../styles/site-nav.css" />
     <link rel="stylesheet" href="../../styles/tools.css" />
     <link rel="stylesheet" href="../../styles/payment-plan-calculator.css" />
+    <link rel="stylesheet" href="../../styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
@@ -609,13 +610,28 @@ Final smaller payment: $120.00</pre>
                     <a
                       href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&amp;pt=117888502&amp;ct=website_cta&amp;mt=8"
                       class="lt-appStoreBtn"
+                      id="payment-plan-result-primary-download"
                       aria-label="Download You Owe Me on the App Store for tracking repayments and reminders"
                       data-track-location="payment_plan_results_badge"
+                      data-iphone-handoff-replaceable
                     >
                       <span class="sr-only">Download You Owe Me on the App Store</span>
                       <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
                     </a>
                   </div>
+                  <section class="iphone-handoff payment-plan-results-iphone-handoff" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="payment_plan_results_iphone_handoff" data-iphone-handoff-replaces="payment-plan-result-primary-download" aria-labelledby="payment-plan-iphone-handoff-title" hidden>
+                    <div class="iphone-handoff__visible-layout">
+                      <div class="iphone-handoff__visible-copy">
+                        <h4 id="payment-plan-iphone-handoff-title">Keep repayments on track on your iPhone</h4>
+                        <p class="iphone-handoff__benefit">Record actual payments and keep the remaining balance, plan and reminders together.</p>
+                        <p class="iphone-handoff__instruction" data-iphone-handoff-instruction>Scan with your iPhone camera to get You Owe Me.</p>
+                        <p class="iphone-handoff__clarification">Start a new loan record in the app. This website plan is not transferred.</p>
+                        <p class="iphone-handoff__reassurance">Free download &middot; In-app purchases available.</p>
+                        <a class="iphone-handoff__fallback" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&amp;pt=117888502&amp;ct=website_cta&amp;mt=8">View app details on the App Store</a>
+                      </div>
+                      <img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/shared/iphone-handoff/repayment-plan.png" width="472" height="472" alt="QR code to open You Owe Me on the App Store." loading="eager" />
+                    </div>
+                  </section>
                   <p class="lt-maintenanceProof">
                     <span class="lt-maintenanceProof__since">Since 2016</span>
                     <span class="lt-maintenanceProof__text">Actively maintained and improving.</span>
@@ -1105,7 +1121,8 @@ Final smaller payment: $120.00</pre>
     <script src="../../scripts/sales.js"></script>
     <script src="../../scripts/payment-plan-calculator.js"></script>
     <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
-    <script type="module" src="../../scripts/analytics.js"></script>
+    <script type="module" src="../../scripts/analytics.js?v=iphone-handoff-phase-d-20260914-1"></script>
+    <script type="module" src="../../scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>
     <script src="../../assets/js/jquery.scrolly.min.js"></script>

@@ -45,6 +45,7 @@
 }
 
 .iphone-handoff[data-iphone-handoff-mode="visible"] h2,
+.iphone-handoff[data-iphone-handoff-mode="visible"] h4,
 .iphone-handoff[data-iphone-handoff-mode="visible"] h5 {
   color: #18212b;
   font-size: clamp(1.25rem, 2.2vw, 1.4rem);
@@ -260,6 +261,18 @@
 }
 
 #split-result-primary-download[hidden] ~ .split-result-app-card__price {
+  display: none;
+}
+
+.pp-result-cta > .pp-app-actions:has(#payment-plan-result-primary-download[hidden]) {
+  display: none;
+}
+
+.pp-result-cta > .payment-plan-results-iphone-handoff {
+  grid-column: 1 / -1;
+}
+
+#polite-reminder-post-copy-primary-download[hidden] ~ .polite-reminder-post-copy__price {
   display: none;
 }
 

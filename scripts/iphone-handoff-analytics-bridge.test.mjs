@@ -41,6 +41,17 @@ test("maps only approved handoff events and cta_location into the logger", () =>
     cta_location: "split_result_iphone_handoff",
     result: "not forwarded",
   });
+  for (const ctaLocation of [
+    "money_owed_hero_iphone_handoff",
+    "roommate_calculator_iphone_handoff",
+    "payment_plan_results_iphone_handoff",
+    "polite_reminder_post_copy_iphone_handoff",
+  ]) {
+    eventTarget.emit(IPHONE_QR_VIEWED_EVENT, {
+      cta_location: ctaLocation,
+      invented_parameter: "not forwarded",
+    });
+  }
   eventTarget.emit(IPHONE_HANDOFF_OFFER_VIEWED_EVENT, { cta_location: "unapproved" });
   eventTarget.emit("youoweme:iphone-handoff-unknown", { cta_location: "homepage_iphone_handoff" });
 
@@ -56,6 +67,22 @@ test("maps only approved handoff events and cta_location into the logger", () =>
     {
       name: "uomi_web_iphone_qr_viewed",
       params: { cta_location: "split_result_iphone_handoff" },
+    },
+    {
+      name: "uomi_web_iphone_qr_viewed",
+      params: { cta_location: "money_owed_hero_iphone_handoff" },
+    },
+    {
+      name: "uomi_web_iphone_qr_viewed",
+      params: { cta_location: "roommate_calculator_iphone_handoff" },
+    },
+    {
+      name: "uomi_web_iphone_qr_viewed",
+      params: { cta_location: "payment_plan_results_iphone_handoff" },
+    },
+    {
+      name: "uomi_web_iphone_qr_viewed",
+      params: { cta_location: "polite_reminder_post_copy_iphone_handoff" },
     },
   ]);
 });

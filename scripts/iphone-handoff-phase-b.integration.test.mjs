@@ -90,18 +90,17 @@ test("visible cards use the shared desktop-only layout and cache-busted module p
   assert.match(css, /#split-result-primary-download\[hidden\] ~ \.split-result-app-card__price/);
 
   for (const page of [home, roommate, split]) {
-    assert.ok(page.includes("analytics.js?v=iphone-handoff-phase-b-20260914-1"));
-    assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-c-20260914-1"));
-    assert.ok(page.includes("styles/iphone-handoff.css?v=iphone-handoff-phase-c-20260914-1"));
+    assert.ok(page.includes("analytics.js?v=iphone-handoff-phase-d-20260914-1"));
+    assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"));
+    assert.ok(page.includes("styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1"));
   }
   assert.match(split, /split-expense-calculator\.js\?v=iphone-handoff-phase-b-20260914-2/);
 });
 
-test("the QR manifest and reproducible generator retain all three pooled-campaign destinations", () => {
+test("the QR manifest and reproducible generator retain the original pooled-campaign destinations", () => {
   const manifest = JSON.parse(manifestText);
-  assert.equal(manifest.codes.length, 3);
-  assert.deepEqual(manifest.codes.map((code) => code.filename), ["home.png", "roommate.png", "split.png"]);
-  const splitCode = manifest.codes.at(-1);
+  assert.deepEqual(manifest.codes.slice(0, 3).map((code) => code.filename), ["home.png", "roommate.png", "split.png"]);
+  const splitCode = manifest.codes.find((code) => code.filename === "split.png");
   assert.equal(splitCode.sha256, "abeb73e2adf67567fc83c9fc6c08a183b01756f9a57a23ea2312810104abcc95");
   assert.equal(splitCode.url, `${appStoreBase}?ppid=7f9074ac-4090-4e07-aebe-c5722e76eedc&pt=117888502&ct=website_qr_exp006&mt=8`);
   for (const code of manifest.codes) {
