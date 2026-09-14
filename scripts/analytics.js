@@ -32,6 +32,7 @@ const SUPPORT_FORM_ERROR_EVENT = "youoweme:support-form-error";
 const TOOL_TEMPLATE_COPY_EVENT = "youoweme:tool-template-copy";
 const PAYBACK_GENERATOR_EVENT = "youoweme:payback-generator-event";
 const TEMPORARY_HELP_COPY_EVENT = "youoweme:temporary-financial-help-copy";
+const FRIEND_BORROW_MONEY_COPY_EVENT = "youoweme:friend-borrow-money-copy";
 const PAYMENT_PLAN_TOOL_EVENT = "youoweme:payment-plan-tool-event";
 const TEMPORARY_SUPPORT_RECORD_TOOL_EVENT = "youoweme:temporary-support-record-tool-event";
 const SPLIT_CALCULATOR_EVENT = "youoweme:split-calculator-event";
@@ -715,6 +716,7 @@ function initEventTracking() {
   window.addEventListener(TOOL_TEMPLATE_COPY_EVENT, onToolTemplateCopy);
   window.addEventListener(PAYBACK_GENERATOR_EVENT, onPaybackGeneratorEvent);
   window.addEventListener(TEMPORARY_HELP_COPY_EVENT, onTemporaryHelpCopy);
+  window.addEventListener(FRIEND_BORROW_MONEY_COPY_EVENT, onTemporaryHelpCopy);
   window.addEventListener(PAYMENT_PLAN_TOOL_EVENT, onPaymentPlanToolEvent);
   window.addEventListener(TEMPORARY_SUPPORT_RECORD_TOOL_EVENT, onTemporarySupportRecordToolEvent);
   window.addEventListener(SPLIT_CALCULATOR_EVENT, onSplitCalculatorEvent);

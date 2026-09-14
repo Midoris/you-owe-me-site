@@ -207,7 +207,7 @@ test("existing copy, analytics, metadata, and responsive contracts remain intact
   assert.match(styles, /friend-borrow-post-copy__actions\s*\{[\s\S]*?flex-direction:\s*column/);
   assert.match(page, /<link rel="canonical" href="https:\/\/you-owe-me\.com\/blog\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\/" \/>/);
   assert.match(page, /"datePublished": "2026-07-08"/);
-  assert.match(page, /"dateModified": "2026-09-05"/);
-  assert.match(page, /Updated <time datetime="2026-09-05">September 5, 2026<\/time>/);
+  assert.match(page, /"dateModified": "2026-09-14"/);
+  assert.match(page, /Updated <time datetime="2026-09-14">September 14, 2026<\/time>/);
   assert.match(page, /href="\/styles\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\.css\?v=conversion-polish-20260905-3"/);
 });
