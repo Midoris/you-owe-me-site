@@ -38,7 +38,7 @@ test("all Phase-B cards are automatic desktop QR cards with truthful copy and or
     assert.ok(card.includes(benefit));
     assert.ok(card.includes(limitation));
     assert.ok(card.includes("Free download &middot; In-app purchases available."));
-    assert.ok(card.includes("Open App Store on this device"));
+    assert.ok(card.includes("View app details on the App Store"));
     assert.ok(card.includes(`href="${fallback}"`));
     assert.ok(card.includes(`src="${image}" width="${intrinsicSize}" height="${intrinsicSize}"`));
     assert.ok(card.includes('alt="QR code to open You Owe Me on the App Store."'));
@@ -55,6 +55,8 @@ test("Phase-B placement preserves home/template actions and confines split QR to
   assert.ok(homeReassurance < homeCard && homeCard < homeReview);
   assert.ok(!home.slice(home.indexOf('class="lt-heroCtas"'), homeReassurance).includes("data-iphone-handoff"));
   assert.ok(home.includes("Find your situation"));
+  assert.match(home, /id="homepage-primary-download"[\s\S]*?data-cta-location="hero"[\s\S]*?data-iphone-handoff-replaceable/);
+  assert.match(home, /data-cta-location="homepage_iphone_handoff" data-iphone-handoff-replaces="homepage-primary-download"/);
 
   const roommateHero = roommate.indexOf('class="lt-toolsHero roommate-template-hero"');
   const roommateCard = roommate.indexOf('data-cta-location="roommate_template_iphone_handoff"');
@@ -62,6 +64,7 @@ test("Phase-B placement preserves home/template actions and confines split QR to
   assert.ok(roommateHero < roommateCard && roommateCard < roommateFit);
   assert.ok(roommate.includes("Download the Excel template"));
   assert.ok(roommate.includes("Use in Google Sheets"));
+  assert.doesNotMatch(roommate, /data-iphone-handoff-replaces|data-iphone-handoff-replaceable/);
 
   const splitActions = split.indexOf('class="split-result-app-card__actions"');
   const splitCard = split.indexOf('data-cta-location="split_result_iphone_handoff"');
@@ -69,6 +72,8 @@ test("Phase-B placement preserves home/template actions and confines split QR to
   assert.ok(splitActions < splitCard && splitCard < maintenanceProof);
   assert.ok(split.indexOf('data-result-actions hidden') < splitCard, "the QR remains inside the hidden result surface");
   assert.ok(split.includes("Track this split"), "the separate iPhone App Clip flow is retained");
+  assert.match(split, /id="split-result-primary-download"[\s\S]*?data-track-location="split_expense_result_app_store_cta"[\s\S]*?data-iphone-handoff-replaceable/);
+  assert.match(split, /data-cta-location="split_result_iphone_handoff" data-iphone-handoff-replaces="split-result-primary-download"/);
 });
 
 test("visible cards use the shared desktop-only layout and cache-busted module path", () => {
@@ -79,11 +84,15 @@ test("visible cards use the shared desktop-only layout and cache-busted module p
   assert.doesNotMatch(css, /width: 200px;\s*max-width:/);
   assert.match(css, /@container \(min-width: 480px\)[\s\S]*?grid-template-columns: minmax\(0, 1fr\) 200px;/);
   assert.match(css, /@media \(max-width: 767px\)[\s\S]*?\.iphone-handoff\s*\{\s*display: none !important;/);
+  assert.match(css, /\[data-iphone-handoff-replaceable\]\[hidden\]\s*\{\s*display: none !important;/);
+  assert.match(css, /\.iphone-handoff__fallback\s*\{[\s\S]*?display: inline-flex;[\s\S]*?min-height: 44px;/);
+  assert.match(css, /\.lt-heroCtas:has\(#homepage-primary-download\[hidden\]\) \.lt-textCta/);
+  assert.match(css, /#split-result-primary-download\[hidden\] ~ \.split-result-app-card__price/);
 
   for (const page of [home, roommate, split]) {
     assert.ok(page.includes("analytics.js?v=iphone-handoff-phase-b-20260914-1"));
-    assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-b-20260914-1"));
-    assert.ok(page.includes("styles/iphone-handoff.css"));
+    assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-c-20260914-1"));
+    assert.ok(page.includes("styles/iphone-handoff.css?v=iphone-handoff-phase-c-20260914-1"));
   }
   assert.match(split, /split-expense-calculator\.js\?v=iphone-handoff-phase-b-20260914-2/);
 });

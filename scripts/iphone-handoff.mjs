@@ -55,6 +55,12 @@ function imageLoaded(image) {
   return image && image.complete === true && Number(image.naturalWidth) > 0;
 }
 
+function isReplaceableAppStoreAnchor(element) {
+  if (!element || element.hidden === true) return false;
+  if (typeof element.matches === "function") return element.matches("a[data-iphone-handoff-replaceable]");
+  return element.tagName === "A" && element.dataset?.iphoneHandoffReplaceable !== undefined;
+}
+
 export function createIphoneHandoff(options = {}) {
   const windowRef = options.windowRef || globalThis.window;
   const documentRef = options.documentRef || globalThis.document;
@@ -76,6 +82,12 @@ export function createIphoneHandoff(options = {}) {
   if (mode === "legacy" && (!trigger || !panel || !closeButton)) return null;
   if (mode === "visible" && !qr) return null;
 
+  const replacementId = mode === "visible" ? root.dataset.iphoneHandoffReplaces : "";
+  const pairedAnchor = replacementId && typeof documentRef.getElementById === "function"
+    ? documentRef.getElementById(replacementId)
+    : null;
+  const ownsPairedAnchor = isReplaceableAppStoreAnchor(pairedAnchor);
+
   const minimumWidthQuery = windowRef.matchMedia("(min-width: 768px)");
   const finePointerQuery = windowRef.matchMedia("(hover: hover) and (pointer: fine)");
   const lifetimeState = lifetimeStateByRoot.get(root) || {
@@ -88,6 +100,7 @@ export function createIphoneHandoff(options = {}) {
   let eligible = false;
   let qrFailed = false;
   let viewTracker = null;
+  let pairedAnchorHiddenByController = false;
 
   function recordOffer() {
     if (lifetimeState.offerRecorded) return;
@@ -112,6 +125,32 @@ export function createIphoneHandoff(options = {}) {
     viewTracker = null;
   }
 
+  function pairedAnchorHasFocus() {
+    return ownsPairedAnchor && documentRef.activeElement === pairedAnchor;
+  }
+
+  function restorePairedAnchor() {
+    if (!pairedAnchorHiddenByController) return;
+    pairedAnchor.hidden = false;
+    pairedAnchorHiddenByController = false;
+  }
+
+  function updatePairedAnchor({ afterFocusLeaves = false } = {}) {
+    if (!ownsPairedAnchor) return;
+    const shouldHide = !destroyed
+      && eligible
+      && !qrFailed
+      && root.hidden === false
+      && imageLoaded(qr);
+    if (!shouldHide) {
+      restorePairedAnchor();
+      return;
+    }
+    if (pairedAnchorHasFocus() && !afterFocusLeaves) return;
+    pairedAnchor.hidden = true;
+    pairedAnchorHiddenByController = true;
+  }
+
   function closePanel({ returnFocus = false } = {}) {
     if (mode !== "legacy") return;
     setPanelOpen(trigger, panel, false);
@@ -132,6 +171,7 @@ export function createIphoneHandoff(options = {}) {
     qr.hidden = true;
     if (instruction) instruction.hidden = true;
     disconnectViewTracking();
+    updatePairedAnchor();
   }
 
   function registerVisibleQrWhenLoaded() {
@@ -143,12 +183,19 @@ export function createIphoneHandoff(options = {}) {
     qr.hidden = false;
     if (instruction) instruction.hidden = false;
     startViewTracking(qr, recordQrView);
+    updatePairedAnchor();
   }
 
   function updateEligibility() {
     if (destroyed) return;
     eligible = isEligibleForIphoneHandoff(browserIdentity(windowRef, minimumWidthQuery, finePointerQuery));
     if (!eligible) {
+      const focusIsInsideVisiblePanel = mode === "visible"
+        && ownsPairedAnchor
+        && typeof root.contains === "function"
+        && root.contains(documentRef.activeElement);
+      restorePairedAnchor();
+      if (focusIsInsideVisiblePanel && typeof pairedAnchor.focus === "function") pairedAnchor.focus();
       root.hidden = true;
       closePanel();
       disconnectViewTracking();
@@ -189,6 +236,10 @@ export function createIphoneHandoff(options = {}) {
     if (!destroyed) hideBrokenQr();
   };
 
+  const onPairedAnchorFocusOut = function () {
+    updatePairedAnchor({ afterFocusLeaves: true });
+  };
+
   if (mode === "legacy") {
     trigger.addEventListener("click", onTriggerClick);
     closeButton.addEventListener("click", onCloseClick);
@@ -196,6 +247,7 @@ export function createIphoneHandoff(options = {}) {
   } else {
     qr.addEventListener("load", onQrLoad);
     qr.addEventListener("error", onQrError);
+    if (ownsPairedAnchor) pairedAnchor.addEventListener("focusout", onPairedAnchorFocusOut);
   }
 
   const mediaChange = function () {
@@ -220,6 +272,8 @@ export function createIphoneHandoff(options = {}) {
       } else {
         qr.removeEventListener("load", onQrLoad);
         qr.removeEventListener("error", onQrError);
+        if (ownsPairedAnchor) pairedAnchor.removeEventListener("focusout", onPairedAnchorFocusOut);
+        restorePairedAnchor();
       }
       [minimumWidthQuery, finePointerQuery].forEach(function (query) {
         if (typeof query.removeEventListener === "function") query.removeEventListener("change", mediaChange);

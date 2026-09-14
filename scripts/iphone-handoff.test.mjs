@@ -86,6 +86,14 @@ function makeElement() {
   };
 }
 
+function makeReplaceableAnchor() {
+  const anchor = makeElement();
+  anchor.tagName = "A";
+  anchor.dataset = { iphoneHandoffReplaceable: "" };
+  anchor.matches = (selector) => selector === "a[data-iphone-handoff-replaceable]";
+  return anchor;
+}
+
 function makeHarness() {
   FakeIntersectionObserver.instances = [];
   const timers = makeTimers();
@@ -169,20 +177,35 @@ function makeHarness() {
   return { controller, close, documentRef, events, options, panel, queries, root, timers, trigger };
 }
 
-function makeVisibleHarness({ complete = false, naturalWidth = 0 } = {}) {
+function makeVisibleHarness({
+  complete = false,
+  naturalWidth = 0,
+  paired = false,
+  missingPair = false,
+  pairFocusedDuringInit = false,
+  qrAncestorHidden = false,
+} = {}) {
   FakeIntersectionObserver.instances = [];
   const timers = makeTimers();
   const qr = makeElement();
   const instruction = makeElement();
   const root = makeElement();
+  const pairedAnchor = paired ? makeReplaceableAnchor() : null;
+  const qrAncestor = qrAncestorHidden ? makeElement() : null;
+  if (qrAncestor) qrAncestor.hidden = true;
   root.hidden = true;
   qr.complete = complete;
   qr.naturalWidth = naturalWidth;
-  qr.closest = (selector) => selector === "[hidden]" && (root.hidden || qr.hidden) ? root : null;
+  qr.closest = (selector) => {
+    if (selector !== "[hidden]") return null;
+    if (qrAncestor?.hidden) return qrAncestor;
+    return root.hidden || qr.hidden ? root : null;
+  };
   const events = [];
   const documentListeners = new Map();
   const documentRef = {
     visibilityState: "visible",
+    activeElement: pairFocusedDuringInit ? pairedAnchor : null,
     defaultView: {
       CustomEvent: class {
         constructor(type, init) {
@@ -203,15 +226,20 @@ function makeVisibleHarness({ complete = false, naturalWidth = 0 } = {}) {
     dispatchEvent(event) {
       events.push(event);
     },
+    getElementById(id) {
+      return paired && id === "paired-download" ? pairedAnchor : null;
+    },
   };
   root.dataset = {
     ctaLocation: "split_result_iphone_handoff",
     iphoneHandoffMode: "visible",
+    ...(paired || missingPair ? { iphoneHandoffReplaces: "paired-download" } : {}),
   };
   root.querySelector = (selector) => ({
     "[data-iphone-handoff-qr]": qr,
     "[data-iphone-handoff-instruction]": instruction,
   })[selector] || null;
+  root.contains = (element) => element === root || element === qr || element === instruction;
   const queries = new Map();
   function makeQuery(matches) {
     const listeners = new Set();
@@ -252,7 +280,18 @@ function makeVisibleHarness({ complete = false, naturalWidth = 0 } = {}) {
     },
   };
   const controller = createIphoneHandoff(options);
-  return { controller, documentRef, events, instruction, options, qr, queries, root, timers };
+  return {
+    controller,
+    documentRef,
+    events,
+    instruction,
+    options,
+    pairedAnchor,
+    qr,
+    queries,
+    root,
+    timers,
+  };
 }
 
 test("uses the conservative desktop eligibility table", () => {
@@ -379,4 +418,82 @@ test("visible mode hides a broken QR and cancels/deduplicates through breakpoint
   assert.ok(recreated);
   assert.equal(FakeIntersectionObserver.instances.length, 2, "a recorded root is not registered again after recreation");
   assert.equal(harness.timers.count(), 0, "shared lifetime state prevents a second exposure");
+});
+
+test("a loaded eligible visible QR hides only its explicitly paired App Store anchor", () => {
+  const { pairedAnchor, root } = makeVisibleHarness({ complete: true, naturalWidth: 472, paired: true });
+  const unrelatedAnchor = makeReplaceableAnchor();
+
+  assert.equal(root.hidden, false);
+  assert.equal(pairedAnchor.hidden, true);
+  assert.equal(unrelatedAnchor.hidden, false, "the controller does not infer nearby or global pairs");
+});
+
+test("paired anchors stay available for pending or failed QR images and restore on eligibility changes or destroy", () => {
+  const pending = makeVisibleHarness({ paired: true });
+  assert.equal(pending.pairedAnchor.hidden, false, "a pending image leaves the ordinary badge available");
+
+  pending.qr.complete = true;
+  pending.qr.naturalWidth = 472;
+  pending.qr.dispatch("load");
+  assert.equal(pending.pairedAnchor.hidden, true);
+
+  pending.qr.dispatch("error");
+  assert.equal(pending.pairedAnchor.hidden, false, "a failed QR restores the ordinary badge");
+
+  const loaded = makeVisibleHarness({ complete: true, naturalWidth: 472, paired: true });
+  assert.equal(loaded.pairedAnchor.hidden, true);
+  loaded.queries.get("(min-width: 768px)").change(false);
+  assert.equal(loaded.pairedAnchor.hidden, false, "leaving the desktop eligibility gate restores the badge");
+  loaded.queries.get("(min-width: 768px)").change(true);
+  assert.equal(loaded.pairedAnchor.hidden, true);
+  loaded.controller.destroy();
+  assert.equal(loaded.pairedAnchor.hidden, false, "destroy never leaves a paired badge hidden");
+});
+
+test("a paired badge with keyboard focus is hidden only after focus leaves it", () => {
+  const focused = makeVisibleHarness({
+    complete: true,
+    naturalWidth: 472,
+    paired: true,
+    pairFocusedDuringInit: true,
+  });
+  assert.equal(focused.pairedAnchor.hidden, false, "initial focus is never removed by a loaded QR");
+
+  focused.documentRef.activeElement = null;
+  focused.pairedAnchor.dispatch("focusout");
+  assert.equal(focused.pairedAnchor.hidden, true);
+});
+
+test("loss of desktop eligibility returns focus from a visible QR panel to its restored paired badge", () => {
+  const harness = makeVisibleHarness({ complete: true, naturalWidth: 472, paired: true });
+  harness.documentRef.activeElement = harness.qr;
+  harness.queries.get("(min-width: 768px)").change(false);
+
+  assert.equal(harness.pairedAnchor.hidden, false);
+  assert.equal(harness.pairedAnchor.focused, true);
+  assert.equal(harness.root.hidden, true);
+});
+
+test("a missing or initially hidden replacement target is harmless and keeps the visible QR behavior", () => {
+  const missing = makeVisibleHarness({ complete: true, naturalWidth: 472, missingPair: true });
+  assert.equal(missing.root.hidden, false);
+  assert.equal(missing.qr.hidden, false);
+  assert.equal(FakeIntersectionObserver.instances.length, 1);
+
+  const hiddenTarget = makeVisibleHarness({ complete: true, naturalWidth: 472, paired: true });
+  hiddenTarget.controller.destroy();
+  hiddenTarget.pairedAnchor.hidden = true;
+  const recreated = createIphoneHandoff(hiddenTarget.options);
+  assert.ok(recreated);
+  assert.equal(hiddenTarget.pairedAnchor.hidden, true, "an authored hidden target is not claimed or unhidden");
+});
+
+test("a QR inside a hidden ancestor never records an exposure", () => {
+  const hidden = makeVisibleHarness({ complete: true, naturalWidth: 472, qrAncestorHidden: true });
+  const observer = FakeIntersectionObserver.instances.at(-1);
+  observer.trigger(hidden.qr, 1);
+  hidden.timers.runAll();
+
+  assert.equal(hidden.events.length, 0);
 });

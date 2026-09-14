@@ -6,6 +6,10 @@
   display: none !important;
 }
 
+[data-iphone-handoff-replaceable][hidden] {
+  display: none !important;
+}
+
 .iphone-handoff {
   max-width: 38rem;
 }
@@ -229,10 +233,34 @@
 }
 
 .iphone-handoff__fallback {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
   color: #18212b !important;
   font-weight: 800;
   text-decoration: underline;
   text-underline-offset: 0.16em;
+}
+
+.lt-heroCtas:has(#homepage-primary-download[hidden]) .lt-textCta {
+  min-height: 44px;
+  padding: 8px 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  text-decoration: underline;
+  text-underline-offset: 0.16em;
+}
+
+.lt-heroCtas:has(#homepage-primary-download[hidden]) .lt-textCta:hover {
+  transform: none;
+  background: transparent;
+  box-shadow: none;
+}
+
+#split-result-primary-download[hidden] ~ .split-result-app-card__price {
+  display: none;
 }
 
 .iphone-handoff__close {
