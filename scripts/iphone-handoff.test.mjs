@@ -4,6 +4,7 @@ import test from "node:test";
 import {
   IPHONE_HANDOFF_OFFER_VIEWED_EVENT,
   IPHONE_HANDOFF_REQUESTED_EVENT,
+  IPHONE_QR_VIEWED_EVENT,
   createIphoneHandoff,
   isEligibleForIphoneHandoff,
 } from "./iphone-handoff.mjs";
@@ -168,6 +169,92 @@ function makeHarness() {
   return { controller, close, documentRef, events, options, panel, queries, root, timers, trigger };
 }
 
+function makeVisibleHarness({ complete = false, naturalWidth = 0 } = {}) {
+  FakeIntersectionObserver.instances = [];
+  const timers = makeTimers();
+  const qr = makeElement();
+  const instruction = makeElement();
+  const root = makeElement();
+  root.hidden = true;
+  qr.complete = complete;
+  qr.naturalWidth = naturalWidth;
+  qr.closest = (selector) => selector === "[hidden]" && (root.hidden || qr.hidden) ? root : null;
+  const events = [];
+  const documentListeners = new Map();
+  const documentRef = {
+    visibilityState: "visible",
+    defaultView: {
+      CustomEvent: class {
+        constructor(type, init) {
+          this.type = type;
+          this.detail = init.detail;
+        }
+      },
+    },
+    addEventListener(name, callback) {
+      documentListeners.set(name, callback);
+    },
+    removeEventListener(name) {
+      documentListeners.delete(name);
+    },
+    dispatch(name) {
+      documentListeners.get(name)?.();
+    },
+    dispatchEvent(event) {
+      events.push(event);
+    },
+  };
+  root.dataset = {
+    ctaLocation: "split_result_iphone_handoff",
+    iphoneHandoffMode: "visible",
+  };
+  root.querySelector = (selector) => ({
+    "[data-iphone-handoff-qr]": qr,
+    "[data-iphone-handoff-instruction]": instruction,
+  })[selector] || null;
+  const queries = new Map();
+  function makeQuery(matches) {
+    const listeners = new Set();
+    return {
+      matches,
+      addEventListener(name, callback) {
+        if (name === "change") listeners.add(callback);
+      },
+      removeEventListener(name, callback) {
+        if (name === "change") listeners.delete(callback);
+      },
+      change(nextMatches) {
+        this.matches = nextMatches;
+        listeners.forEach((callback) => callback());
+      },
+    };
+  }
+  queries.set("(min-width: 768px)", makeQuery(true));
+  queries.set("(hover: hover) and (pointer: fine)", makeQuery(true));
+  const windowRef = {
+    navigator: {
+      userAgent: "Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7)",
+      platform: "MacIntel",
+      maxTouchPoints: 0,
+    },
+    matchMedia(query) {
+      return queries.get(query);
+    },
+  };
+  const options = {
+    windowRef,
+    documentRef,
+    root,
+    viewTrackerOptions: {
+      IntersectionObserverClass: FakeIntersectionObserver,
+      setTimeoutFn: timers.setTimeoutFn,
+      clearTimeoutFn: timers.clearTimeoutFn,
+    },
+  };
+  const controller = createIphoneHandoff(options);
+  return { controller, documentRef, events, instruction, options, qr, queries, root, timers };
+}
+
 test("uses the conservative desktop eligibility table", () => {
   const desktop = {
     userAgent: "Mozilla/5.0 (X11; Linux x86_64)",
@@ -238,4 +325,58 @@ test("repeated initialization shares one controller and one offer/request sequen
     IPHONE_HANDOFF_OFFER_VIEWED_EVENT,
     IPHONE_HANDOFF_REQUESTED_EVENT,
   ]);
+});
+
+test("visible mode only records a loaded QR after foreground dwell, never a legacy offer or request", () => {
+  const { documentRef, events, qr, root, timers } = makeVisibleHarness();
+  assert.equal(root.hidden, false, "the automatic card is visible only after the desktop gate passes");
+  assert.equal(FakeIntersectionObserver.instances.length, 0, "an unloaded QR is not an exposure target");
+
+  qr.complete = true;
+  qr.naturalWidth = 472;
+  qr.dispatch("load");
+  const observer = FakeIntersectionObserver.instances.at(-1);
+  observer.trigger(qr, 0.5);
+  assert.equal(timers.count(), 1);
+
+  documentRef.visibilityState = "hidden";
+  documentRef.dispatch("visibilitychange");
+  timers.runAll();
+  assert.equal(events.length, 0, "background time is not counted toward QR exposure");
+
+  documentRef.visibilityState = "visible";
+  documentRef.dispatch("visibilitychange");
+  observer.trigger(qr, 0.5);
+  timers.runAll();
+  assert.deepEqual(events.map((event) => event.type), [IPHONE_QR_VIEWED_EVENT]);
+  assert.deepEqual(events[0].detail, { cta_location: "split_result_iphone_handoff" });
+});
+
+test("visible mode hides a broken QR and cancels/deduplicates through breakpoint and lifecycle changes", () => {
+  const broken = makeVisibleHarness({ complete: true, naturalWidth: 0 });
+  assert.equal(broken.root.hidden, false);
+  assert.equal(broken.qr.hidden, true, "a broken image does not leave a browser error icon");
+  assert.equal(broken.instruction.hidden, true, "camera instructions disappear when there is nothing to scan");
+  assert.equal(FakeIntersectionObserver.instances.length, 0, "a broken image cannot create an exposure");
+
+  const harness = makeVisibleHarness({ complete: true, naturalWidth: 472 });
+  const observer = FakeIntersectionObserver.instances.at(-1);
+  observer.trigger(harness.qr, 1);
+  assert.equal(harness.timers.count(), 1);
+  harness.queries.get("(min-width: 768px)").change(false);
+  assert.equal(harness.root.hidden, true);
+  assert.equal(harness.timers.count(), 0, "hiding the result card cancels its pending dwell");
+  harness.timers.runAll();
+  assert.equal(harness.events.length, 0);
+
+  harness.queries.get("(min-width: 768px)").change(true);
+  FakeIntersectionObserver.instances.at(-1).trigger(harness.qr, 1);
+  harness.timers.runAll();
+  assert.deepEqual(harness.events.map((event) => event.type), [IPHONE_QR_VIEWED_EVENT]);
+
+  harness.controller.destroy();
+  const recreated = createIphoneHandoff(harness.options);
+  assert.ok(recreated);
+  assert.equal(FakeIntersectionObserver.instances.length, 2, "a recorded root is not registered again after recreation");
+  assert.equal(harness.timers.count(), 0, "shared lifetime state prevents a second exposure");
 });

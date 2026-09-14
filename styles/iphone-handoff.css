@@ -2,8 +2,95 @@
   display: none !important;
 }
 
+.iphone-handoff [hidden] {
+  display: none !important;
+}
+
 .iphone-handoff {
   max-width: 38rem;
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] {
+  box-sizing: border-box;
+  container-type: inline-size;
+  width: 100%;
+  margin: 1rem 0 0;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.14);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.96);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__visible-layout {
+  display: grid;
+  gap: 1rem;
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__visible-copy {
+  min-width: 0;
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__visible-copy > * {
+  margin: 0;
+  text-align: left;
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__visible-copy > * + * {
+  margin-top: 0.55rem;
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] h2,
+.iphone-handoff[data-iphone-handoff-mode="visible"] h5 {
+  color: #18212b;
+  font-size: clamp(1.25rem, 2.2vw, 1.4rem);
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.18;
+  text-transform: none;
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__benefit,
+.iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__instruction {
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 1rem;
+  line-height: 1.5;
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__clarification {
+  color: rgba(33, 41, 49, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.45;
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__reassurance {
+  color: rgba(33, 41, 49, 0.68);
+  font-size: 0.9rem;
+  line-height: 1.4;
+}
+
+.iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__qr {
+  align-self: center;
+  justify-self: center;
+  width: 200px;
+  height: 200px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: transparent;
+  box-shadow: none;
+  object-fit: contain;
+}
+
+@container (min-width: 480px) {
+  .iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__visible-layout {
+    grid-template-columns: minmax(0, 1fr) 200px;
+    align-items: center;
+  }
+
+  .iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__visible-layout:has(.iphone-handoff__qr[hidden]) {
+    grid-template-columns: minmax(0, 1fr);
+  }
 }
 
 .lt-heroCtas .iphone-handoff {

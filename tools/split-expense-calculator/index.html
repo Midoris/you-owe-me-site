@@ -209,6 +209,7 @@
     <link rel="stylesheet" href="../../styles/site-nav.css" />
     <link rel="stylesheet" href="../../styles/tools.css" />
     <link rel="stylesheet" href="../../styles/split-expense-calculator.css?v=conversion-polish-20260905-3" />
+    <link rel="stylesheet" href="../../styles/iphone-handoff.css?v=iphone-handoff-phase-b-20260914-1" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
@@ -350,6 +351,19 @@
                         <p class="split-result-app-card__price">Free to download</p>
                         <a href="/solutions/shared-expense-tracker/" class="split-result-app-card__learn-more" data-track-location="split_expense_result_solution_cta">See how shared tracking works</a>
                       </div>
+                      <section class="iphone-handoff split-result-iphone-handoff" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="split_result_iphone_handoff" aria-labelledby="split-result-iphone-handoff-title" hidden>
+                        <div class="iphone-handoff__visible-layout">
+                          <div class="iphone-handoff__visible-copy">
+                            <h5 id="split-result-iphone-handoff-title">Track repayments on your iPhone</h5>
+                            <p class="iphone-handoff__benefit">See what is still owed as people pay you back.</p>
+                            <p class="iphone-handoff__instruction" data-iphone-handoff-instruction>Scan with your iPhone camera to get You Owe Me.</p>
+                            <p class="iphone-handoff__clarification">This opens the App Store. Your calculator result is not transferred.</p>
+                            <p class="iphone-handoff__reassurance">Free download &middot; In-app purchases available.</p>
+                            <a class="iphone-handoff__fallback" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=7f9074ac-4090-4e07-aebe-c5722e76eedc&amp;pt=117888502&amp;ct=website_cta&amp;mt=8">Open App Store on this device</a>
+                          </div>
+                          <img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/shared/iphone-handoff/split.png" width="472" height="472" alt="QR code to open You Owe Me on the App Store." />
+                        </div>
+                      </section>
                       <p class="lt-maintenanceProof"><span class="lt-maintenanceProof__since">Since 2016</span> &middot; <span class="lt-maintenanceProof__text">Actively maintained.</span></p>
                     </section>
                   </section>
@@ -767,9 +781,10 @@
 
     <script src="../../scripts/sales.js"></script>
     <script src="../../scripts/tool-transfer.js?v=exp003-live-20260909"></script>
-    <script src="../../scripts/split-expense-calculator.js?v=conversion-polish-20260905-3"></script>
+    <script src="../../scripts/split-expense-calculator.js?v=iphone-handoff-phase-b-20260914-2"></script>
     <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
-    <script type="module" src="../../scripts/analytics.js?v=split-result-actions-1"></script>
+    <script type="module" src="../../scripts/analytics.js?v=iphone-handoff-phase-b-20260914-1"></script>
+    <script type="module" src="../../scripts/iphone-handoff.mjs?v=iphone-handoff-phase-b-20260914-1"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>
     <script src="../../assets/js/jquery.scrolly.min.js"></script>

@@ -93,3 +93,10 @@ test("result-ready remains an explicit, once-per-page-load milestone", () => {
   assert.match(calculator, /resultReadyEmitted = true;\s*dispatchCalculatorEvent\("split_result_ready"\);/);
   assert.match(calculator, /if \(error && error\.name === "AbortError"\) return;/);
 });
+
+test("desktop QR rendering leaves the existing iPhone App Clip condition intact", () => {
+  assert.match(calculator, /function isDesktopIphoneHandoffEligible\(\)[\s\S]*?platform === "MacIntel"[\s\S]*?maxTouchPoints[\s\S]*?\(min-width: 768px\)[\s\S]*?\(hover: hover\) and \(pointer: fine\)/);
+  assert.match(calculator, /area\.hidden = !\(allowed && iphone && meaningfulEdit && supported\);/);
+  assert.match(calculator, /appCard\.hidden = !\(shouldShow && \(isDesktopIphoneHandoffEligible\(\) \|\| !area\.hidden\)\);/);
+  assert.match(calculator, /mediaQuery\.addEventListener\("change", refreshResultContinuationForViewport\)/);
+});

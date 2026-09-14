@@ -394,10 +394,20 @@
     const shouldShow = hasExplicitInteraction && hasValidResult(result);
     els.resultActions.hidden = !shouldShow;
     if (shouldShow) emitResultReadyOnce();
-    renderTransferOffer();
+    renderTransferOffer(shouldShow);
   }
 
-  function renderTransferOffer() {
+  function isDesktopIphoneHandoffEligible() {
+    const userAgent = navigator.userAgent || "";
+    const platform = navigator.platform || "";
+    return !/iPhone|iPad|iPod|Android|Mobile/i.test(userAgent)
+      && !(platform === "MacIntel" && Number(navigator.maxTouchPoints || 0) > 1)
+      && /Windows NT|Macintosh|X11|CrOS|Linux x86_64/i.test(userAgent)
+      && window.matchMedia("(min-width: 768px)").matches
+      && window.matchMedia("(hover: hover) and (pointer: fine)").matches;
+  }
+
+  function renderTransferOffer(shouldShow) {
     const area = document.querySelector("[data-tool-transfer]");
     if (!area) return;
     const supported = window.UomiToolTransfer && window.UomiToolTransfer.prepare(state);
@@ -405,12 +415,25 @@
     const iphone = /iPhone/.test(navigator.userAgent);
     area.hidden = !(allowed && iphone && meaningfulEdit && supported);
     const appCard = document.querySelector(".split-result-app-card");
-    if (appCard) appCard.hidden = !area.hidden;
+    if (appCard) appCard.hidden = !(shouldShow && (isDesktopIphoneHandoffEligible() || !area.hidden));
     if (!area.hidden && !transferExposureEmitted) {
       transferExposureEmitted = true;
       dispatchCalculatorEvent("split_transfer_offer_viewed");
     }
   }
+
+  function refreshResultContinuationForViewport() {
+    renderTransferOffer(!els.resultActions.hidden);
+  }
+
+  ["(min-width: 768px)", "(hover: hover) and (pointer: fine)"].forEach((query) => {
+    const mediaQuery = window.matchMedia(query);
+    if (typeof mediaQuery.addEventListener === "function") {
+      mediaQuery.addEventListener("change", refreshResultContinuationForViewport);
+    } else if (typeof mediaQuery.addListener === "function") {
+      mediaQuery.addListener(refreshResultContinuationForViewport);
+    }
+  });
 
   async function continueSplit() {
     if (transferBusy || !meaningfulEdit || !window.UomiToolTransfer.config.enabled) return;

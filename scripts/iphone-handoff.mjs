@@ -2,6 +2,7 @@ import { createAppStoreCtaViewTracker } from "./app-store-cta-view-tracker.mjs";
 
 export const IPHONE_HANDOFF_OFFER_VIEWED_EVENT = "youoweme:iphone-handoff-offer-viewed";
 export const IPHONE_HANDOFF_REQUESTED_EVENT = "youoweme:iphone-handoff-requested";
+export const IPHONE_QR_VIEWED_EVENT = "youoweme:iphone-qr-viewed";
 
 const MOBILE_USER_AGENT = /iPhone|iPad|iPod|Android|Mobile/i;
 const DESKTOP_USER_AGENT = /Windows NT|Macintosh|X11|CrOS|Linux x86_64/i;
@@ -50,6 +51,10 @@ function setPanelOpen(trigger, panel, open) {
   trigger.setAttribute("aria-expanded", open ? "true" : "false");
 }
 
+function imageLoaded(image) {
+  return image && image.complete === true && Number(image.naturalWidth) > 0;
+}
+
 export function createIphoneHandoff(options = {}) {
   const windowRef = options.windowRef || globalThis.window;
   const documentRef = options.documentRef || globalThis.document;
@@ -59,20 +64,29 @@ export function createIphoneHandoff(options = {}) {
   const existingController = controllersByRoot.get(root);
   if (existingController) return existingController;
 
-  const trigger = root.querySelector("[data-iphone-handoff-trigger]");
-  const panel = root.querySelector("[data-iphone-handoff-panel]");
-  const closeButton = root.querySelector("[data-iphone-handoff-close]");
+  const mode = root.dataset.iphoneHandoffMode === "visible" ? "visible" : "legacy";
   const ctaLocation = root.dataset.ctaLocation;
-  if (!trigger || !panel || !closeButton || !ctaLocation) return null;
+  if (!ctaLocation) return null;
+
+  const trigger = mode === "legacy" ? root.querySelector("[data-iphone-handoff-trigger]") : null;
+  const panel = mode === "legacy" ? root.querySelector("[data-iphone-handoff-panel]") : null;
+  const closeButton = mode === "legacy" ? root.querySelector("[data-iphone-handoff-close]") : null;
+  const qr = mode === "visible" ? root.querySelector("[data-iphone-handoff-qr]") : null;
+  const instruction = mode === "visible" ? root.querySelector("[data-iphone-handoff-instruction]") : null;
+  if (mode === "legacy" && (!trigger || !panel || !closeButton)) return null;
+  if (mode === "visible" && !qr) return null;
 
   const minimumWidthQuery = windowRef.matchMedia("(min-width: 768px)");
   const finePointerQuery = windowRef.matchMedia("(hover: hover) and (pointer: fine)");
   const lifetimeState = lifetimeStateByRoot.get(root) || {
     offerRecorded: false,
     requestRecorded: false,
+    qrRecorded: false,
   };
   lifetimeStateByRoot.set(root, lifetimeState);
   let destroyed = false;
+  let eligible = false;
+  let qrFailed = false;
   let viewTracker = null;
 
   function recordOffer() {
@@ -87,44 +101,74 @@ export function createIphoneHandoff(options = {}) {
     dispatchHandoffEvent(documentRef, IPHONE_HANDOFF_REQUESTED_EVENT, ctaLocation);
   }
 
+  function recordQrView() {
+    if (lifetimeState.qrRecorded) return;
+    lifetimeState.qrRecorded = true;
+    dispatchHandoffEvent(documentRef, IPHONE_QR_VIEWED_EVENT, ctaLocation);
+  }
+
+  function disconnectViewTracking() {
+    if (viewTracker) viewTracker.disconnect();
+    viewTracker = null;
+  }
+
   function closePanel({ returnFocus = false } = {}) {
+    if (mode !== "legacy") return;
     setPanelOpen(trigger, panel, false);
     if (returnFocus && typeof trigger.focus === "function") trigger.focus();
   }
 
-  function startViewTracking() {
-    if (viewTracker) viewTracker.disconnect();
+  function startViewTracking(target, onView) {
+    disconnectViewTracking();
     viewTracker = createAppStoreCtaViewTracker(Object.assign({}, options.viewTrackerOptions || {}, {
       documentRef,
-      onView: recordOffer,
+      onView,
     }));
-    viewTracker.register(trigger);
+    viewTracker.register(target);
+  }
+
+  function hideBrokenQr() {
+    qrFailed = true;
+    qr.hidden = true;
+    if (instruction) instruction.hidden = true;
+    disconnectViewTracking();
+  }
+
+  function registerVisibleQrWhenLoaded() {
+    if (destroyed || !eligible || qrFailed || lifetimeState.qrRecorded) return;
+    if (!imageLoaded(qr)) {
+      if (qr.complete === true) hideBrokenQr();
+      return;
+    }
+    qr.hidden = false;
+    if (instruction) instruction.hidden = false;
+    startViewTracking(qr, recordQrView);
   }
 
   function updateEligibility() {
     if (destroyed) return;
-    const eligible = isEligibleForIphoneHandoff(browserIdentity(windowRef, minimumWidthQuery, finePointerQuery));
+    eligible = isEligibleForIphoneHandoff(browserIdentity(windowRef, minimumWidthQuery, finePointerQuery));
     if (!eligible) {
       root.hidden = true;
       closePanel();
-      if (viewTracker) {
-        viewTracker.disconnect();
-        viewTracker = null;
-      }
+      disconnectViewTracking();
       return;
     }
 
     root.hidden = false;
-    startViewTracking();
+    if (mode === "visible") {
+      registerVisibleQrWhenLoaded();
+      return;
+    }
+    startViewTracking(trigger, recordOffer);
   }
 
   const onTriggerClick = function () {
-    if (panel.hidden) {
-      recordOffer();
-      recordRequest();
-      setPanelOpen(trigger, panel, true);
-      if (typeof trigger.focus === "function") trigger.focus();
-    }
+    if (mode !== "legacy" || !panel.hidden) return;
+    recordOffer();
+    recordRequest();
+    setPanelOpen(trigger, panel, true);
+    if (typeof trigger.focus === "function") trigger.focus();
   };
 
   const onCloseClick = function () {
@@ -132,14 +176,27 @@ export function createIphoneHandoff(options = {}) {
   };
 
   const onPanelKeydown = function (event) {
-    if (event.key !== "Escape" || !panel.contains(documentRef.activeElement)) return;
+    if (mode !== "legacy" || event.key !== "Escape" || !panel.contains(documentRef.activeElement)) return;
     event.preventDefault();
     closePanel({ returnFocus: true });
   };
 
-  trigger.addEventListener("click", onTriggerClick);
-  closeButton.addEventListener("click", onCloseClick);
-  panel.addEventListener("keydown", onPanelKeydown);
+  const onQrLoad = function () {
+    registerVisibleQrWhenLoaded();
+  };
+
+  const onQrError = function () {
+    if (!destroyed) hideBrokenQr();
+  };
+
+  if (mode === "legacy") {
+    trigger.addEventListener("click", onTriggerClick);
+    closeButton.addEventListener("click", onCloseClick);
+    panel.addEventListener("keydown", onPanelKeydown);
+  } else {
+    qr.addEventListener("load", onQrLoad);
+    qr.addEventListener("error", onQrError);
+  }
 
   const mediaChange = function () {
     updateEligibility();
@@ -155,11 +212,15 @@ export function createIphoneHandoff(options = {}) {
     destroy() {
       if (destroyed) return;
       destroyed = true;
-      if (viewTracker) viewTracker.disconnect();
-      viewTracker = null;
-      trigger.removeEventListener("click", onTriggerClick);
-      closeButton.removeEventListener("click", onCloseClick);
-      panel.removeEventListener("keydown", onPanelKeydown);
+      disconnectViewTracking();
+      if (mode === "legacy") {
+        trigger.removeEventListener("click", onTriggerClick);
+        closeButton.removeEventListener("click", onCloseClick);
+        panel.removeEventListener("keydown", onPanelKeydown);
+      } else {
+        qr.removeEventListener("load", onQrLoad);
+        qr.removeEventListener("error", onQrError);
+      }
       [minimumWidthQuery, finePointerQuery].forEach(function (query) {
         if (typeof query.removeEventListener === "function") query.removeEventListener("change", mediaChange);
         else if (typeof query.removeListener === "function") query.removeListener(mediaChange);

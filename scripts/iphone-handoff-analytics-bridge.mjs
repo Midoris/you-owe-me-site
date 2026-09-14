@@ -1,14 +1,17 @@
 export const IPHONE_HANDOFF_OFFER_VIEWED_EVENT = "youoweme:iphone-handoff-offer-viewed";
 export const IPHONE_HANDOFF_REQUESTED_EVENT = "youoweme:iphone-handoff-requested";
+export const IPHONE_QR_VIEWED_EVENT = "youoweme:iphone-qr-viewed";
 
 const LOCATION_VALUES = new Set([
   "homepage_iphone_handoff",
   "roommate_template_iphone_handoff",
+  "split_result_iphone_handoff",
 ]);
 
 const FIREBASE_EVENTS = {
   [IPHONE_HANDOFF_OFFER_VIEWED_EVENT]: "uomi_web_iphone_handoff_offer_viewed",
   [IPHONE_HANDOFF_REQUESTED_EVENT]: "uomi_web_iphone_handoff_requested",
+  [IPHONE_QR_VIEWED_EVENT]: "uomi_web_iphone_qr_viewed",
 };
 
 export function bindIphoneHandoffAnalytics({ eventTarget, trackEvent }) {
@@ -26,5 +29,6 @@ export function bindIphoneHandoffAnalytics({ eventTarget, trackEvent }) {
 
   eventTarget.addEventListener(IPHONE_HANDOFF_OFFER_VIEWED_EVENT, onHandoffEvent);
   eventTarget.addEventListener(IPHONE_HANDOFF_REQUESTED_EVENT, onHandoffEvent);
+  eventTarget.addEventListener(IPHONE_QR_VIEWED_EVENT, onHandoffEvent);
   return true;
 }
