@@ -92,3 +92,8 @@
 @media(max-width:850px){#import-loan-history .loan-import-source-choices{grid-template-columns:1fr}#import-loan-history .loan-import-source-choices button{min-height:88px}}
 
 #import-loan-history .loan-import-source-icon svg {width:24px;height:24px;fill:none;stroke:currentColor;stroke-width:1.5;stroke-linecap:round;stroke-linejoin:round}
+
+/* Brand green is a surface, with dark text for contrast. */
+#import-loan-history .loan-import-source-icon {background:var(--li-accent);color:#18212b}
+#import-loan-history button.lt-primaryCta {min-height:56px;padding:1rem 1.5rem;font-weight:700}
+#import-loan-history input[type=checkbox] {accent-color:#355428}

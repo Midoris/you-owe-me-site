@@ -1,4 +1,4 @@
-import {test} from 'node:test';import assert from 'node:assert/strict';import {balance,validate,reviewDraft,recoveryState,minorUnits,validDate} from './loan-import-model.mjs';
+import {test} from 'node:test';import assert from 'node:assert/strict';import {balance,validate,reviewDraft,recoveryState,minorUnits,validDate,interpretedDraft} from './loan-import-model.mjs';
 const fixture=()=>({version:1,type:'loan-history',person:'Alex Synthetic',title:'Loan',currency:'USD',direction:'lent',openingContext:'full-history',records:[{id:'root',kind:'opening',date:'2026-01-01',amount:'1000',note:'原始 note',sourceRefs:[]},{id:'p1',kind:'payment',date:'2026-02-01',amount:'100',note:'Paid',sourceRefs:[]},{id:'p2',kind:'payment',date:'2026-03-01',amount:'200',note:'Paid',sourceRefs:[]}],unresolved:[],exclusions:[],plan:null});
 test('exact balances, direction, currency precision and opening context',()=>{const d=fixture();assert.equal(validate(d),70000);d.direction='borrowed';assert.equal(validate(d),70000);d.openingContext='opening-balance';d.records=[{...d.records[0],amount:'700'}, {...d.records[1],amount:'50'}];assert.equal(balance(d),65000);assert.equal(minorUnits('1.234','KWD'),1234);assert.throws(()=>minorUnits('1.1','JPY'));});
 test('malformed recovery, duplicate rows, unknown dates, precision and future payments reject without mutation',()=>{for(const mutate of [d=>d.records[0].note={},d=>d.records[0].sourceRefs=null,d=>d.records.push(d.records[0]),d=>d.currency='FAK',d=>d.records[0].date='2026-99-01',d=>d.extra='ignored']){const d=fixture();mutate(d);assert.throws(()=>reviewDraft(d));}assert.equal(validDate('2026-99-01'),false);const d=fixture();d.records[1].date='2199-01-01';assert.throws(()=>validate(d));d.records[1].date=null;assert.doesNotThrow(()=>reviewDraft(d));assert.throws(()=>validate(d));});
@@ -15,4 +15,13 @@ test('photo sizing preserves aspect ratio without enlarging, and rejects unsafe 
   assert.doesNotThrow(()=>validatePhotoFile({name:'LOAN.HEIC',size:1000}));
   assert.throws(()=>validatePhotoFile({name:'loan.jpg',size:20_000_001}));
   assert.throws(()=>validatePhotoFile({name:'loan.svg',size:1000}));
+});
+
+test('new interpretations include schedules and use device timezone only when missing',()=>{
+  const raw=fixture();raw.plan={include:false,interestFree:true,payment:'100',frequency:'monthly',nextDueDate:'2027-01-01',timeZone:null};
+  const d=interpretedDraft(raw,'Europe/Paris');assert.equal(d.plan.include,true);assert.equal(d.plan.timeZone,'Europe/Paris');assert.equal(validate(d),70000);
+  raw.plan.timeZone='Asia/Tokyo';assert.equal(interpretedDraft(raw,'Europe/Paris').plan.timeZone,'Asia/Tokyo');
+  assert.equal(raw.plan.include,false);assert.equal(reviewDraft(raw).plan.include,false); // Recovery does not re-enable an opt-out.
+  raw.plan.interestFree=null;assert.throws(()=>validate(interpretedDraft(raw)));
+  assert.equal(interpretedDraft(fixture()).plan,null);
 });

@@ -2,7 +2,7 @@ import {loanAllowanceMessage} from './loan-import-errors.mjs';
 import {loanImportInputStage} from './loan-import-analytics.mjs';
 import {prepareLoanPhoto,photoQualityCopy} from './loan-import-image.mjs';
 import {enabled,localPreview,apiBase,continuationBase} from './loan-import-config.mjs';
-import {currencies,limits,manualDraft,newRow,balance,money,validate,reference,envelope,reviewDraft,recoveryState} from './loan-import-model.mjs';
+import {currencies,limits,manualDraft,newRow,balance,money,validate,reference,envelope,reviewDraft,recoveryState,interpretedDraft} from './loan-import-model.mjs';
 export function startLoanImport(root){
   if(!enabled || root.dataset.initialized) return;
   root.dataset.initialized='true';
@@ -116,7 +116,7 @@ export function startLoanImport(root){
     if(draft){status('Your current review is preserved. Download it or finish it before starting a new interpretation.');return;}
     const body=file?{format:file.format,base64:file.base64,...(file.format==='image'?{text:$('loan-import-text').value}:{})}:{format:'paste',text:$('loan-import-text').value};if(body.format==='paste'&&!body.text.trim()){status('Paste loan notes or choose a file first.');return;}
     controller=new AbortController();lockInput(true);loading(true);status('Preparing your loan…');event('interpret_requested');event(loanImportInputStage(body.format));
-    try{const result=await post('loanInterpret',body,controller.signal);draft=reviewDraft(result.draft);source=result.source;file=null;change();render();status('Check each amount and date. You can edit anything below.');focusPanel($('loan-import-review'));event('interpret_ready');}
+    try{const result=await post('loanInterpret',body,controller.signal);draft=interpretedDraft(result.draft);source=result.source;file=null;change();render();status('Check each amount and date. You can edit anything below.');focusPanel($('loan-import-review'));event('interpret_ready');}
     catch(error){if(error.name!=='AbortError'){status(error.message);event('interpret_failed');}}
     finally{controller=null;loading(false);lockInput(false);if(!draft)focusPanel($('loan-import-intake'));}
   });
@@ -149,8 +149,8 @@ export function startLoanImport(root){
       const label=node('label',null),check=node('input',null,{type:'checkbox'});check.checked=p.include;const planFields=node('div',null);planFields.hidden=!p.include;check.addEventListener('change',()=>{p.include=check.checked;planFields.hidden=!p.include;change();});label.append(check,document.createTextNode('Include a future schedule'));section.append(label);
       field(planFields,'Interest-free agreement',p.interestFree===null?'':String(p.interestFree),v=>p.interestFree=v==='true'?true:v==='false'?false:null,{choices:[['true','Explicitly interest-free'],['false','Interest or other charges apply — history only']]});
       field(planFields,'Regular payment',p.payment,v=>p.payment=v,{maxlength:20}).inputMode='decimal';field(planFields,'Frequency',p.frequency,v=>p.frequency=v,{choices:[['weekly','Weekly'],['biweekly','Every two weeks'],['monthly','Monthly']]});
-      field(planFields,'Confirmed next due date',p.nextDueDate,v=>p.nextDueDate=v,{type:'date'});field(planFields,'Schedule timezone',p.timeZone,v=>p.timeZone=v,{maxlength:80});
-      planFields.append(button('Use this device’s timezone',()=>{p.timeZone=Intl.DateTimeFormat().resolvedOptions().timeZone;change();render();}));section.append(planFields);panel.append(section);
+      field(planFields,'Confirmed next due date',p.nextDueDate,v=>p.nextDueDate=v,{type:'date'});const zoneDetails=node('details',null);zoneDetails.append(node('summary','Timezone'));field(zoneDetails,'Schedule timezone',p.timeZone,v=>p.timeZone=v,{maxlength:80});
+      zoneDetails.append(button('Use this device’s timezone',()=>{p.timeZone=Intl.DateTimeFormat().resolvedOptions().timeZone;change();render();}));planFields.append(zoneDetails);section.append(planFields);panel.append(section);
     }
     const capacity=node('details',null);capacity.append(node('summary','Will this fit in the free app?'),node('p','Free includes 3 people, 30 entries and 2 active loans, including existing records. Each loan, repayment or advance uses an entry. Plans have a separate allowance. The app checks capacity before saving; larger histories may need an upgrade.'));panel.append(capacity);
     const actions=node('div',null,{class:'loan-import-actions'});const proceed=button('Continue on iPhone',prepare);proceed.className='lt-primaryCta';actions.append(proceed,button('Save a backup file',recovery));const restart=node('details',null);restart.append(node('summary','Start another import'),node('p','Save a backup first if you want to keep this review.'),button('Discard draft and start again',()=>{if(controller)return;revision++;draft=null;source=null;file=null;photo=null;prepared=null;showSource(null);lockInput(false);persist();panel.hidden=true;$('loan-import-transfer').hidden=true;$('loan-import-intake').hidden=false;status('Ready for another loan.');focusPanel($('loan-import-intake'));}));panel.append(actions,restart);updateBalance();

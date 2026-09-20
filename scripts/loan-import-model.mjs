@@ -61,3 +61,10 @@ export function recoveryState(raw) {
   reviewDraft(d);const historical=structuredClone(d);if(historical.plan)historical.plan.include=false;validate(historical);
   return {state,draft:d};
 }
+
+// Only newly interpreted input gets these defaults. Recovery keeps the user's choices.
+export function interpretedDraft(raw,timeZone=Intl.DateTimeFormat().resolvedOptions().timeZone){
+  const draft=reviewDraft(raw);
+  if(draft.plan){draft.plan.include=true;draft.plan.timeZone??=timeZone;}
+  return draft;
+}
