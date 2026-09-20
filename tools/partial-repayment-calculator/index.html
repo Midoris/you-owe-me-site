@@ -167,6 +167,7 @@
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="../../styles/partial-repayment-calculator.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
+      <link rel="stylesheet" href="/styles/loan-import-entry.css" />
   </head>
 
   <body class="is-preload tools-page partial-repayment-calculator-page site-nav-page">
@@ -237,6 +238,8 @@
               />
             </figure>
           </section>
+
+          <div id="loan-import-offer" data-loan-offer="partial-repayment" hidden></div>
 
           <section class="lt-toolsSection prc-tool-section" id="partial-repayment-calculator" aria-labelledby="partial-repayment-calculator-title">
             <div class="prc-tool-shell">
@@ -759,5 +762,6 @@
     <script type="module" src="../../scripts/analytics.js"></script>
     <script src="../../scripts/partial-repayment-calculator.js"></script>
     <script src="/scripts/app-language-support.js"></script>
+      <script type="module" src="/scripts/loan-import-entry.mjs"></script>
   </body>
 </html>

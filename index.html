@@ -145,6 +145,7 @@
     <link rel="stylesheet" href="styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
+      <link rel="stylesheet" href="/styles/loan-import-entry.css" />
   </head>
 
   <body class="is-preload site-nav-page homepage-page">
@@ -202,6 +203,7 @@
                 <a href="#situations" class="lt-textCta" data-cta-location="hero-secondary">Find your situation</a>
                 <span class="lt-salePill" aria-label="Current app sale" hidden>Sale - Now on Sale</span>
               </div>
+              <p class="loan-import-hero-link" data-loan-rollout hidden><a href="#loan-import-offer">Already have loan records? Import them</a></p>
               <div class="homepage-download-reassurance">
                 <span>Free download &middot; In-app purchases available</span>
                 <span>Core tracking works offline without an account.</span>
@@ -269,6 +271,8 @@
             <p class="homepage-loan-value__trust">Face ID / Touch ID app lock &middot; Available in 10 languages. <a href="/privacy-and-data/">Privacy and data</a>.</p>
             <p class="lt-maintenanceProof"><span class="lt-maintenanceProof__since">Since 2016</span> &middot; <span class="lt-maintenanceProof__text">Actively maintained.</span></p>
           </section>
+
+          <div id="loan-import-offer" data-loan-offer="home" hidden></div>
 
           <figure class="homepage-review-teaser">
             <blockquote>This app is a lifesaver! I finally have an easy way to track money I&rsquo;ve loaned or am owed.</blockquote>
@@ -977,5 +981,6 @@
     <script src="./assets/js/util.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
+      <script type="module" src="/scripts/loan-import-entry.mjs"></script>
   </body>
 </html>

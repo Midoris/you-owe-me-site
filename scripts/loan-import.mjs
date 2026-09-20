@@ -3,10 +3,9 @@ import {loanImportInputStage} from './loan-import-analytics.mjs';
 import {prepareLoanPhoto,photoQualityCopy} from './loan-import-image.mjs';
 import {enabled,localPreview,apiBase,continuationBase} from './loan-import-config.mjs';
 import {currencies,limits,manualDraft,newRow,balance,money,validate,reference,envelope,reviewDraft,recoveryState} from './loan-import-model.mjs';
-if(enabled)document.querySelectorAll('[data-loan-rollout]').forEach(e=>e.hidden=false);
-const root=document.querySelector('#import-loan-history');
-if(root&&enabled) start(root);
-function start(root){
+export function startLoanImport(root){
+  if(!enabled || root.dataset.initialized) return;
+  root.dataset.initialized='true';
   root.hidden=false;
   const $=id=>root.querySelector('#'+id), key='uomi.loan-import.review.v1';
   let draft=null,source=null,file=null,controller=null,prepared=null,revision=0,storageWarning=false,photo=null,inputMode=null;

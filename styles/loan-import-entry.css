@@ -1,0 +1,27 @@
+/* Shared inset module; each host retains its existing design-contract shell. */
+[data-loan-offer][hidden], [data-loan-import-root][hidden], [data-loan-rollout][hidden], .loan-import-entry [hidden] {display:none!important}
+#loan-import-offer {scroll-margin-top:2rem}
+#main .loan-import-entry {margin:2rem 0;text-align:left;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#212931}
+#main .loan-import-offer {display:block;padding:clamp(1.25rem,3vw,2rem);border:1px solid rgba(15, 23, 42, 0.08);border-radius:20px;background:linear-gradient(135deg,rgba(175,230,126,.16),#fff 65%);box-shadow:0 14px 36px rgba(15, 23, 42, 0.08)}
+#main .loan-import-offer h2 {margin:0 0 .75rem;font-family:inherit;font-size:clamp(1.35rem,2.5vw,1.8rem);font-weight:750;line-height:1.2;letter-spacing:-.02em;text-transform:none;color:#18212b}
+#main .loan-import-offer p {margin:0 0 1rem;max-width:65ch;font-family:inherit;text-align:left;line-height:1.55;font-size:1rem;color:#212931}
+#main .loan-import-offer .loan-import-offer__eyebrow {margin-bottom:.65rem;font-size:.72rem;font-weight:700;letter-spacing:.08em;text-transform:uppercase;color:rgba(33, 41, 49, 0.88)}
+#main .loan-import-offer .loan-import-offer__formats {font-size:.85rem;color:#53616d}
+#main .loan-import-offer__actions {display:flex;align-items:center;gap:1rem;flex-wrap:wrap}
+#main .loan-import-offer__button {height:auto;min-height:48px;line-height:1.4;padding:.8rem 1.25rem;border:0;border-radius:12px;background:#afe67e;color:#18212b!important;font:700 1rem/1.4 system-ui,sans-serif;text-transform:none;letter-spacing:normal;white-space:normal;box-shadow:none;cursor:pointer}
+#main .loan-import-offer__button:hover {background:#bcf18c}
+#main .loan-import-offer__button:focus-visible, .loan-import-hero-link a:focus-visible {outline:3px solid rgba(53, 84, 40, 0.32);outline-offset:4px}
+#main .loan-import-offer__button:disabled {opacity:.7;cursor:wait}
+#main .loan-import-offer__reassurance {font:400 .85rem/1.5 system-ui,sans-serif;color:#53616d}
+#main .loan-import-offer--featured {display:grid;grid-template-columns:minmax(0,1.5fr) minmax(0,1fr);align-items:center;gap:2rem;padding:clamp(1.5rem,4vw,2.5rem)}
+#main .loan-import-offer--featured h2 {font-size:clamp(1.6rem,3vw,2.3rem);max-width:22ch}
+#main .loan-import-offer__image {display:block;width:100%;height:auto;border-radius:20px;mix-blend-mode:multiply}
+#main .loan-import-hero-link {margin:.9rem 0;font:600 .95rem/1.5 system-ui,sans-serif;text-align:left}
+#main .loan-import-hero-link a {color:#355428;text-decoration:underline;text-underline-offset:4px;border:0;display:inline-block;padding:.35rem 0}
+#loan-import-workspace {scroll-margin-top:1rem}
+@media(max-width:736px){
+  #main .loan-import-offer--featured {grid-template-columns:1fr;gap:0}
+  #main .loan-import-offer__image {display:none}
+  #main .loan-import-offer__actions {align-items:flex-start;flex-direction:column;gap:.65rem}
+  #main .loan-import-offer__button {width:100%}
+}
