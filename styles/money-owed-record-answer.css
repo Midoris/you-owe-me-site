@@ -222,3 +222,9 @@ body.money-owed-record-page .mow-hero h1 {
     min-width: 720px;
   }
 }
+
+/* Keep the copyable record readable as rows, including on narrow screens. */
+body.blog-page #simple-record .template-card__message {
+  white-space: pre-wrap;
+  overflow-wrap: anywhere;
+}

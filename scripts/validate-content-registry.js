@@ -7,7 +7,7 @@ const { pathToFileURL } = require("url");
 const rootDir = path.resolve(__dirname, "..");
 const registryPath = path.join(rootDir, "content", "content-registry.mjs");
 const bestNextStepComponentPath = path.join(rootDir, "scripts", "best-next-step-component.mjs");
-const registryOptionalNoindexRoutes = new Set(["/connect/", "/invite/"]);
+const registryOptionalNoindexRoutes = new Set(["/connect/", "/invite/", "/app-clip-review/", "/private-continuation/loan/", "/private-continuation/split/"]);
 
 const requiredFields = [
   "url",

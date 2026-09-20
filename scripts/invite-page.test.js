@@ -318,7 +318,7 @@ test("invite stays outside sitemap and registry while all audits keep scoped noi
     const source = fs.readFileSync(path.join(root, relativePath), "utf8");
     assert.match(
       source,
-      /registryOptionalNoindexRoutes\s*=\s*new Set\(\["\/connect\/", "\/invite\/"\]\)/
+      /registryOptionalNoindexRoutes\s*=\s*new Set\(\["\/connect\/", "\/invite\/", "\/app-clip-review\/", "\/private-continuation\/loan\/", "\/private-continuation\/split\/"\]\)/
     );
     assert.match(source, /registryOptionalNoindexRoutes\.has\(route\)/);
   }

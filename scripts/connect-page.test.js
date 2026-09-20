@@ -136,7 +136,7 @@ test("connect page has static privacy, security, and accessibility protections",
   assert.doesNotMatch(sitemap, /you-owe-me\.com\/connect\/?/i);
 });
 
-test("only the private connect and invite utility routes may omit content-registry metadata", () => {
+test("only explicitly listed noindex utility routes may omit content-registry metadata", () => {
   const auditPaths = [
     "scripts/audit-content-routing.mjs",
     "scripts/audit-seo-ai-hygiene.mjs",
@@ -145,7 +145,7 @@ test("only the private connect and invite utility routes may omit content-regist
 
   for (const relativePath of auditPaths) {
     const source = fs.readFileSync(path.join(root, relativePath), "utf8");
-    assert.match(source, /registryOptionalNoindexRoutes\s*=\s*new Set\(\["\/connect\/", "\/invite\/"\]\)/);
+    assert.match(source, /registryOptionalNoindexRoutes\s*=\s*new Set\(\["\/connect\/", "\/invite\/", "\/app-clip-review\/", "\/private-continuation\/loan\/", "\/private-continuation\/split\/"\]\)/);
     assert.match(source, /registryOptionalNoindexRoutes\.has\(route\)/);
     assert.doesNotMatch(source, /!byUrl\.has\(route\)\s*&&\s*!isNoindex\(html\)/);
   }

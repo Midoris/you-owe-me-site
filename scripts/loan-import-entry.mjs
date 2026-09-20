@@ -26,7 +26,12 @@ async function openImporter(host) {
   importer ||= Promise.all([import('./loan-import-ui.mjs'), import('./loan-import.mjs'), loadStyles(), loadQR()])
     .catch(error => { importer = null; throw error; });
   const [{loanImportMarkup}, {startLoanImport}] = await importer;
-  if (!host.querySelector('#import-loan-history')) host.innerHTML = loanImportMarkup;
+  if (!host.querySelector('#import-loan-history')) {
+    // The direct page keeps a static link target while rollout is off. Once
+    // mounted, the actual intake owns that ID so it stays unique.
+    if (host.id === 'import-loan-history') host.removeAttribute('id');
+    host.innerHTML = loanImportMarkup;
+  }
   host.hidden = false;
   const root = host.querySelector('#import-loan-history');
   startLoanImport(root);

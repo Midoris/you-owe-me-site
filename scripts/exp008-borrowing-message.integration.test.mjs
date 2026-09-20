@@ -28,7 +28,7 @@ function cardMarkup(id) {
   return match[0];
 }
 
-test("EXP-008 keeps search identity and synchronizes exact descriptions and modification dates", () => {
+test("EXP-008 keeps search identity and synchronizes exact descriptions and modification dates", async () => {
   assert.match(page, /<title>How to Ask to Borrow Money From a Friend \| Text Examples \| You Owe Me<\/title>/);
   assert.match(page, /<link rel="canonical" href="https:\/\/you-owe-me\.com\/blog\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\/" \/>/);
   assert.equal((page.match(new RegExp(DESCRIPTION.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) ?? []).length, 4);
@@ -37,7 +37,9 @@ test("EXP-008 keeps search identity and synchronizes exact descriptions and modi
   assert.match(page, /"dateModified": "2026-09-14"/);
   assert.match(page, /Updated <time datetime="2026-09-14">September 14, 2026<\/time>/);
   assert.match(sitemap, /<loc>https:\/\/you-owe-me\.com\/blog\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\/<\/loc>\s*<lastmod>2026-09-14<\/lastmod>/);
-  assert.match(sitemap, /<loc>https:\/\/you-owe-me\.com\/<\/loc>\s*<lastmod>2026-09-05<\/lastmod>/);
+  const { contentRegistry } = await import("../content/content-registry.mjs");
+  const homeDate = contentRegistry.find(entry => entry.url === "/").updated;
+  assert.ok(sitemap.includes(`<loc>https://you-owe-me.com/</loc>\n    <lastmod>${homeDate}</lastmod>`));
 });
 
 test("EXP-008 puts all seven examples directly after the shortened hero and preserves the later guidance", () => {

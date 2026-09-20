@@ -30,7 +30,7 @@ test('all chosen routes mount one shared offer, hidden in static HTML',async()=>
   assert.doesNotMatch(page,/id="loan-import-text"|src="\/scripts\/loan-import.mjs"/);
  }
  const tracker=await read('tools/personal-loan-payment-tracker/index.html');
- assert.match(tracker,/<div data-loan-import-root hidden><\/div>/);
+ assert.match(tracker,/<div id="import-loan-history" data-loan-import-root hidden><\/div>/);
 });
 test('shared private intake has unique IDs and collapsed text/photo inputs',()=>{
  const ids=[...loanImportMarkup.matchAll(/\bid="([^"]+)"/g)].map(m=>m[1]);assert.equal(ids.length,new Set(ids).size);
