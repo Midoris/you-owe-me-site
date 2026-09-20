@@ -5,3 +5,6 @@
 
 # Local dependency links used while producing research artifacts
 **/_artifact_work/node_modules/
+
+# Firebase Hosting deployment cache
+.firebase/
