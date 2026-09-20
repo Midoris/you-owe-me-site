@@ -134,6 +134,17 @@
             </tbody></table></div><p class="plg-closing-line">History records reality. The plan describes the future. The current status connects them.</p>
           </section>
 
+          <section class="plg-section" id="preserve-known-history" aria-labelledby="preserve-history-title">
+            <h2 id="preserve-history-title">Three ways to read an existing loan history</h2>
+            <div class="plg-record-grid">
+              <section class="plg-record-card"><h3>Full known history: keep all three events</h3><p>Alex borrowed USD 1,000 from you on January 1, 2026, repaid USD 100 on February 1 and USD 200 on March 1. Keep the original 1,000 and both actual payments: 1,000 − 100 − 200 = <strong>USD 700 remaining</strong>. Another real payment of 50 leaves 650. Do not add a second entry for the 700 summary.</p></section>
+              <section class="plg-record-card"><h3>A dated opening balance: say what is unknown</h3><p>You and Alex confirm USD 700 was still owed on March 1, 2026, but the earlier history is unavailable. Start with <strong>“Opening balance, March 1: USD 700”</strong>. A payment of 50 on April 1 leaves 650. This preserves the known history from March 1; it does not recreate the original loan or missing payments.</p></section>
+              <section class="plg-record-card"><h3>An ambiguous sheet: avoid double subtraction</h3><p>A sheet says “balance 700” beside earlier payments of 100 and 200. If those payments already explain the 700, subtracting them again would wrongly show 400. Confirm what the balance includes and its date. Likewise, “03/04” and “$” do not reliably establish the date, year or currency. Leave those facts unresolved until checked.</p></section>
+            </div>
+            <p>A future agreement to pay USD 100 each month is a schedule, not seven payments that already happened. On USD 700 remaining, an interest-free prospective plan can have seven future installments; it belongs alongside the actual history.</p>
+            <p data-loan-rollout hidden><a href="/tools/personal-loan-payment-tracker/#import-loan-history">Bring these records into the loan-history importer</a>: paste notes, a copied table, UTF-8 CSV, XLSX or DOCX; check one complete review before continuing on iPhone. Manual history entry and portable recovery do not require AI. Formula-based or embedded content may need a reviewed values-only export.</p>
+          </section>
+
           <section class="plg-section plg-section--artifact" id="personal-loan-record" aria-labelledby="record-title">
             <p class="plg-eyebrow">Copyable template</p><h2 id="record-title">Copy the two-layer personal loan record</h2>
             <p>Use this blank record in Notes, a document, or a spreadsheet. Keep actual activity in its own history. Keep the current repayment plan in a separate block so an expectation is never mistaken for a payment.</p>
@@ -351,5 +362,6 @@ Flexibility note: [optional]</pre></div>
     <script type="module" src="/scripts/analytics.js"></script>
     <script src="/assets/js/jquery.min.js"></script><script src="/assets/js/jquery.scrollex.min.js"></script><script src="/assets/js/jquery.scrolly.min.js"></script><script src="/assets/js/browser.min.js"></script><script src="/assets/js/breakpoints.min.js"></script><script src="/assets/js/util.js"></script><script src="/assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
+    <script type="module" src="/scripts/loan-import.mjs"></script>
   </body>
 </html>

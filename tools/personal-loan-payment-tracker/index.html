@@ -75,6 +75,7 @@
     <link rel="stylesheet" href="../../styles/personal-loan-payment-tracker.css" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
+    <link rel="stylesheet" href="/styles/loan-import.css" />
   </head>
   <body class="is-preload tools-page personal-loan-payment-tracker-page site-nav-page">
     <div id="wrapper" class="fade-in">
@@ -101,11 +102,12 @@
               <p class="lt-eyebrow">Free browser tool &middot; No sign-up</p>
               <header class="major"><h1 id="page-title">Personal Loan Payment Tracker</h1></header>
               <p class="lt-heroBody">Record payments on a loan between friends or family and see what&rsquo;s still owed. Use it with an agreed repayment schedule or simply keep a payment log without one.</p>
-              <p class="plpt-hero-note">Your record stays in this tab unless you choose &ldquo;Save this tracker on this device.&rdquo; Saving keeps one copy in this browser; it does not sync with the iPhone app.</p>
+              <p class="plpt-hero-note">The manual tracker’s record stays in this tab unless you choose &ldquo;Save this tracker on this device.&rdquo; Saving keeps one copy in this browser; it does not sync with the iPhone app.</p>
               <p class="plpt-boundary">For personal loans between people you know. This tool does not lend money, move payments, create a legal agreement, or enforce repayment.</p>
               <p class="plpt-boundary">If this is a bank, credit-union, vehicle-finance, or other formal installment debt, use the <a href="/solutions/debt-repayment-tracker/">Debt Repayment Tracker</a> for the lender-statement reconciliation method and the limits of manual projections.</p>
               <p class="plpt-boundary">Not sure what belongs in the record? Read <a href="/blog/how-to-track-a-personal-loan-between-friends-or-family/">how to track a personal loan between friends or family</a> before entering the current balance and payments.</p>
               <div class="lt-ctaRow">
+                <a href="#import-loan-history" class="lt-primaryCta" data-loan-rollout hidden>Import loan history</a>
                 <a href="#loan-payment-tracker" class="lt-primaryCta">Start tracking payments</a>
                 <button type="button" class="plpt-text-button" data-action="load-example">Load a worked example</button>
               </div>
@@ -114,6 +116,50 @@
               <img src="/images/tools/personal-loan-payment-tracker-hero.webp" width="1600" height="1200" loading="eager" fetchpriority="high" decoding="async" alt="Illustration of planned loan installments and real payments being reconciled into one clear remaining balance." />
             </figure>
           </section>
+
+<section id="import-loan-history" class="loan-import" data-loan-private hidden aria-labelledby="loan-import-title">
+  <p class="lt-eyebrow">Import loan history</p>
+  <h2 id="loan-import-title">Bring your existing loan</h2>
+  <p>Add a photo, file or notes for one loan. Review the result, then keep tracking it on your iPhone.</p>
+  <div id="loan-import-intake">
+    <h3>1. Choose how to import</h3>
+    <div class="loan-import-source-choices" aria-label="Import source">
+      <button type="button" id="loan-import-source-text" aria-expanded="false" aria-controls="loan-import-text-panel"><span class="loan-import-source-icon" aria-hidden="true">Aa</span><span><strong>Text</strong><small>Paste notes or a copied table</small></span><span aria-hidden="true">›</span></button>
+      <button type="button" id="loan-import-source-document"><span class="loan-import-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8zM14 2v6h6M8 13h8M8 17h6"/></svg></span><span><strong>Document</strong><small>CSV, Excel (.xlsx), Word (.docx) or a saved loan draft · up to 2 MB</small></span><span aria-hidden="true">›</span></button>
+      <button type="button" id="loan-import-source-photo" aria-expanded="false" aria-controls="loan-import-photo-options"><span class="loan-import-source-icon" aria-hidden="true"><svg viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="3"/><circle cx="8" cy="8" r="1.5"/><path d="m4 18 6-6 4 4 3-3 4 4"/></svg></span><span><strong>Photo</strong><small>Choose a photo or take one on your phone</small></span><span aria-hidden="true">›</span></button>
+    </div>
+    <p id="loan-import-photo-quality" class="loan-import-disclosure"></p>
+    <div id="loan-import-photo-options" class="loan-import-actions" hidden>
+      <button type="button" id="loan-import-photo-library">Choose from photo library</button>
+      <button type="button" id="loan-import-photo-take" class="loan-import-camera-option">Take a photo</button>
+      <p class="loan-import-hint">One image · up to 20 MB</p>
+    </div>
+    <input id="loan-import-file" type="file" accept=".csv,.xlsx,.docx,.uomiloan,.json" hidden />
+    <input id="loan-import-photo" type="file" accept="image/jpeg,image/png,image/webp,image/heic,image/heif" hidden />
+    <input id="loan-import-camera" type="file" accept="image/*" capture="environment" hidden />
+    <p id="loan-import-selected-document" hidden></p>
+    <button type="button" id="loan-import-photo-notes" hidden>Add details (optional)</button>
+    <div id="loan-import-text-panel" hidden>
+      <label id="loan-import-text-label" for="loan-import-text">Paste notes or a table</label>
+      <textarea id="loan-import-text" rows="4" placeholder="Who lent to whom? Include the currency, dates, loan amount and repayments." maxlength="48000"></textarea>
+    </div>
+    <details id="loan-import-image" hidden open><summary>Inspect your photo</summary><p>Check every amount and date against this photo before saving.</p><button id="loan-import-photo-zoom" type="button">Enlarge photo</button><img id="loan-import-image-preview" alt="Your selected loan record" /><button id="loan-import-photo-remove" type="button">Remove photo</button></details>
+    <div id="loan-import-processing-actions" hidden>
+      <p class="loan-import-disclosure">Review sends your input to You Owe Me and OpenAI. Check the result before saving. <a href="/privacy-and-data/#loan-import-privacy">Privacy and temporary storage</a>.</p>
+      <div class="loan-import-actions"><button type="button" id="loan-import-interpret" class="lt-primaryCta">Review my loan</button></div>
+    </div>
+    <div class="loan-import-actions"><button type="button" id="loan-import-manual">Enter manually · no AI</button></div>
+  </div>
+  <p id="loan-import-status" role="status" aria-live="polite"></p>
+  <div id="loan-import-loading" class="loan-import-loading" hidden tabindex="-1" aria-labelledby="loan-import-loading-title">
+    <div class="loan-import-orbit" aria-hidden="true"><span class="loan-import-document"><i></i><i></i><i></i></span></div>
+    <h3 id="loan-import-loading-title">Preparing your loan…</h3>
+    <p id="loan-import-loading-note">Turning your history into a loan you can review.<br>This may take a few moments.</p>
+    <button type="button" id="loan-import-cancel">Stop waiting</button>
+  </div>
+  <div id="loan-import-review" hidden></div>
+  <div id="loan-import-transfer" hidden></div>
+</section>
 
           <section class="lt-toolsSection plpt-tool-section" id="loan-payment-tracker" aria-labelledby="loan-payment-tracker-title">
             <div class="plpt-tool-shell">
@@ -328,7 +374,8 @@
             <details><summary>Can both people edit the browser record?</summary><p>No. This browser tool is a one-person record. You can copy, print, or export the current snapshot, but it does not provide shared editing or create a two-party agreement.</p></details>
           </section>
 
-          <section class="lt-finalCta plpt-final-cta" aria-labelledby="plpt-final-title"><h2 id="plpt-final-title">Start with the facts you know</h2><p>Enter the current amount owed and the payments you can confirm. The tracker will show the current snapshot without requiring an account.</p><div class="lt-ctaRow"><a href="#loan-payment-tracker" class="lt-primaryCta">Start tracking payments</a><button type="button" class="plpt-text-button" data-action="load-example">Load the worked example</button></div></section>
+          <section class="lt-finalCta plpt-final-cta" aria-labelledby="plpt-final-title"><h2 id="plpt-final-title">Start with the facts you know</h2><p>Enter the current amount owed and the payments you can confirm. The tracker will show the current snapshot without requiring an account.</p><div class="lt-ctaRow"><a href="#import-loan-history" class="lt-primaryCta" data-loan-rollout hidden>Import loan history</a>
+                <a href="#loan-payment-tracker" class="lt-primaryCta">Start tracking payments</a><button type="button" class="plpt-text-button" data-action="load-example">Load the worked example</button></div></section>
           <p class="lt-pageMeta">Updated <time datetime="2026-08-20">August 20, 2026</time></p>
         </article>
       </div>
@@ -345,5 +392,7 @@
     <script type="module" src="../../scripts/analytics.js"></script>
     <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/jquery.scrollex.min.js"></script><script src="../../assets/js/jquery.scrolly.min.js"></script><script src="../../assets/js/browser.min.js"></script><script src="../../assets/js/breakpoints.min.js"></script><script src="../../assets/js/util.js"></script><script src="../../assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
+    <script src="/scripts/vendor/qrcode-2.0.4.js" defer></script>
+    <script type="module" src="/scripts/loan-import.mjs"></script>
   </body>
 </html>

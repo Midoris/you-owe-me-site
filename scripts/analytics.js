@@ -1,3 +1,4 @@
+import { loanImportEventName } from "./loan-import-analytics.mjs";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import {
   getAnalytics,
@@ -492,6 +493,7 @@ function bindAppStoreCtaViews() {
   const links = document.querySelectorAll("a[href*='apps.apple.com']");
 
   links.forEach(function (link) {
+    if (link.closest("[data-loan-private]")) return;
     if (link.href.indexOf(APP_STORE_HOST_MATCH) === -1) return;
     appStoreCtaViewTracker.register(link);
   });
@@ -501,6 +503,7 @@ function bindAppStoreClicks() {
   const links = document.querySelectorAll("a[href*='apps.apple.com']");
 
   links.forEach(function (link) {
+    if (link.closest("[data-loan-private]")) return;
     if (link.dataset.analyticsBound === "1") return;
     if (link.href.indexOf(APP_STORE_HOST_MATCH) === -1) return;
     if (link.href.indexOf(APP_STORE_ID_MATCH) === -1) return;
@@ -532,6 +535,7 @@ function bindMediumClicks() {
   const links = document.querySelectorAll("a[href*='medium.com']");
 
   links.forEach(function (link) {
+    if (link.closest("[data-loan-private]")) return;
     if (link.dataset.mediumAnalyticsBound === "1") return;
 
     link.dataset.mediumAnalyticsBound = "1";
@@ -549,6 +553,7 @@ function bindTrackedLinkClicks() {
   const links = document.querySelectorAll("a[data-track-event]");
 
   links.forEach(function (link) {
+    if (link.closest("[data-loan-private]")) return;
     if (link.dataset.linkAnalyticsBound === "1") return;
     if (link.href && link.href.indexOf(APP_STORE_HOST_MATCH) !== -1 && link.href.indexOf(APP_STORE_ID_MATCH) !== -1) return;
 
@@ -702,6 +707,10 @@ function onSplitCalculatorEvent(event) {
 }
 
 function initEventTracking() {
+  window.addEventListener("youoweme:loan-import-event", event => {
+    const name = loanImportEventName(event.detail?.name);
+    if (name) void trackEvent(name);
+  });
   activeSale = getActiveSale();
   trackPageVisited();
   bindAppStoreClicks();

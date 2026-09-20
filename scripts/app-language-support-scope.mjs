@@ -28,6 +28,7 @@ export const EXCLUDED_EXACT_ROUTES = new Set([
 
 export const EXCLUDED_ROUTE_PREFIXES = Object.freeze([
   "/events/",
+  "/private-continuation/", // Private Firebase handoff pages have no marketing widgets.
 ]);
 
 export function normalizeRoute(route) {

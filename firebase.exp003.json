@@ -39,6 +39,15 @@
             "value": "application/json"
           }
         ]
+      },
+      {
+        "source": "/loan/**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'none'; style-src 'self'; script-src 'self'; connect-src https://us-central1-you-owe-me-app.cloudfunctions.net/loanTransfer; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+          }
+        ]
       }
     ]
   }

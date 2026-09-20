@@ -5,7 +5,8 @@
       {
         "appID": "3YKZSY3MBA.com.midori.s.You-owe-me",
         "paths": [
-          "/split/*"
+          "/split/*",
+          "/loan/*"
         ]
       }
     ]

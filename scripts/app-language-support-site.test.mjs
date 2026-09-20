@@ -14,7 +14,7 @@ test("every site route satisfies the language-support inclusion and exclusion co
   const result = auditWholeSite();
   assert.deepEqual(result.errors, []);
   assert.equal(result.counts.included, 79);
-  assert.equal(result.counts.excluded, 8);
+  assert.equal(result.counts.excluded, 11);
   assert.equal(result.counts.unclassified, 0);
 });
 
