@@ -37,7 +37,7 @@ test('shared private intake has unique IDs and collapsed text/photo inputs',()=>
  assert.match(loanImportMarkup,/data-loan-private hidden/);
  assert.match(loanImportMarkup,/id="loan-import-text-panel" hidden/);
  assert.match(loanImportMarkup,/id="loan-import-photo-options"[^>]*hidden>[\s\S]*?id="loan-import-photo-quality"/);
- assert.match(loanImportMarkup,/Review sends your input to You Owe Me and OpenAI/);
+ assert.match(loanImportMarkup,/You Owe Me send your text, photo or file to OpenAI/);
 });
 test('discovery analytics accept only fixed event names, without extra payload fields',()=>{
  assert.equal(loanImportEventName('offer_viewed'),'uomi_web_loan_offer_viewed');

@@ -27,8 +27,8 @@ export const loanImportMarkup = `<section id="import-loan-history" class="loan-i
     </div>
     <details id="loan-import-image" hidden open><summary>Inspect your photo</summary><p>Check every amount and date against this photo before saving.</p><button id="loan-import-photo-zoom" type="button">Enlarge photo</button><img id="loan-import-image-preview" alt="Your selected loan record" /><button id="loan-import-photo-remove" type="button">Remove photo</button></details>
     <div id="loan-import-processing-actions" hidden>
-      <p class="loan-import-disclosure">Review sends your input to You Owe Me and OpenAI. Check the result before saving. <a href="/privacy-and-data/#loan-import-privacy">Privacy and temporary storage</a>.</p>
-      <div class="loan-import-actions"><button type="button" id="loan-import-interpret" class="lt-primaryCta">Review my loan</button></div>
+      <p class="loan-import-disclosure">Tapping below lets You Owe Me send your text, photo or file to OpenAI. You’ll review the loan before saving. <a href="/privacy-and-data/#loan-import-privacy">Privacy and temporary storage</a>.</p>
+      <div class="loan-import-actions"><button type="button" id="loan-import-interpret" class="lt-primaryCta">Convert to a loan</button></div>
     </div>
     <div class="loan-import-actions"><button type="button" id="loan-import-manual">Enter manually</button></div>
   </div>

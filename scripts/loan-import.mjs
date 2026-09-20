@@ -107,7 +107,7 @@ export function startLoanImport(root){
     }
     if(!['csv','xlsx','docx'].includes(ext)){status('Choose CSV, XLSX, DOCX or a saved loan draft.');return;}
     photo=null;showPhoto();file={format:ext,name:selected.name,base64:btoa(Array.from(new Uint8Array(await selected.arrayBuffer()),b=>String.fromCharCode(b)).join(''))};
-    showSource('document');persist();status('Document ready. Choose Review my loan.');
+    showSource('document');persist();status('Document ready. Choose Convert to a loan.');
   });
   $('loan-import-manual').addEventListener('click',()=>{event(loanImportInputStage('manual'));draft=manualDraft();source=null;photo=null;file=null;showPhoto();change();render();status('Enter actual history. Manual entry does not use AI.');});
   $('loan-import-cancel').addEventListener('click',()=>{controller?.abort();status('Stopped waiting. The server may finish processing; no loan has been imported. Your input is still here.');});
