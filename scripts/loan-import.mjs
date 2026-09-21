@@ -1,7 +1,7 @@
 import {LoanImportLimitError} from './loan-import-errors.mjs';
 import {loanImportInputStage} from './loan-import-analytics.mjs';
 import {prepareLoanPhoto,photoQualityCopy} from './loan-import-image.mjs';
-import {enabled,localPreview,apiBase,continuationBase} from './loan-import-config.mjs';
+import {enabled,localPreview,apiBase,continuationBase} from './loan-import-config.mjs?v=20260922';
 import {currencies,limits,manualDraft,newRow,balance,money,validate,reference,envelope,reviewDraft,recoveryState,interpretedDraft} from './loan-import-model.mjs';
 export function startLoanImport(root){
   if(!enabled || root.dataset.initialized) return;

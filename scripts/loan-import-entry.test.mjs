@@ -26,7 +26,7 @@ test('all chosen routes mount one shared offer, hidden in static HTML',async()=>
   const page=await read(route+'index.html');
   assert.equal((page.match(/data-loan-offer=/g)||[]).length,1,route);
   assert.ok(page.includes(`data-loan-offer="${key}" hidden`),route);
-  assert.equal((page.match(/src="\/scripts\/loan-import-entry.mjs"/g)||[]).length,1,route);
+  assert.equal((page.match(/src="\/scripts\/loan-import-entry.mjs\?v=20260922"/g)||[]).length,1,route);
   assert.doesNotMatch(page,/id="loan-import-text"|src="\/scripts\/loan-import.mjs"/);
  }
  const tracker=await read('tools/personal-loan-payment-tracker/index.html');

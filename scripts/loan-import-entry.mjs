@@ -1,4 +1,4 @@
-import {enabled, localPreview} from './loan-import-config.mjs';
+import {enabled, localPreview} from './loan-import-config.mjs?v=20260922';
 import {loanImportOffers} from './loan-import-offers.mjs';
 
 let importer;
@@ -23,7 +23,7 @@ function element(tag, text, className) {
   return node;
 }
 async function openImporter(host) {
-  importer ||= Promise.all([import('./loan-import-ui.mjs'), import('./loan-import.mjs'), loadStyles(), loadQR()])
+  importer ||= Promise.all([import('./loan-import-ui.mjs'), import('./loan-import.mjs?v=20260922'), loadStyles(), loadQR()])
     .catch(error => { importer = null; throw error; });
   const [{loanImportMarkup}, {startLoanImport}] = await importer;
   if (!host.querySelector('#import-loan-history')) {
