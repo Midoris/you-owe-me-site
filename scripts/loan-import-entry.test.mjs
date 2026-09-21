@@ -8,14 +8,14 @@ const root=new URL('../',import.meta.url);
 const read=path=>readFile(new URL(path,root),'utf8');
 const config=await read('scripts/loan-import-config.mjs');
 async function configuration(hostname,search){return import('data:text/javascript,'+encodeURIComponent(`const globalThis={location:${JSON.stringify({hostname,search})}};\n`+config));}
-test('rollout remains off on real hosts even with a preview query',async()=>{
+test('public rollout uses the production API regardless of preview query',async()=>{
  for(const host of ['you-owe-me.com','www.you-owe-me.com','continue.you-owe-me.com','localhost.evil.example']){
-  for(const query of ['', '?loan-import=1']){const c=await configuration(host,query);assert.equal(c.enabled,false);assert.equal(c.localPreview,false);}
+  for(const query of ['', '?loan-import=1']){const c=await configuration(host,query);assert.equal(c.enabled,true);assert.equal(c.localPreview,false);assert.equal(c.apiBase,"https://us-central1-you-owe-me-app.cloudfunctions.net/");}
  }
 });
 test('local preview is explicit and selects only the local API',async()=>{
  for(const host of ['localhost','127.0.0.1']){
-  assert.equal((await configuration(host,'')).enabled,false);
+  assert.equal((await configuration(host,'')).enabled,true);
   const c=await configuration(host,'?loan-import=1');assert.equal(c.enabled,true);assert.match(c.apiBase,/^http:\/\/127\.0\.0\.1:5001\//);
  }
 });
