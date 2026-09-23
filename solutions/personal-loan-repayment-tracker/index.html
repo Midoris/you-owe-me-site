@@ -30,7 +30,7 @@
       "description": "Track one personal loan, record real repayments, and keep the balance, next payment, reminders, and projected payoff current with You Owe Me.",
       "url": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
       "isPartOf": "https://you-owe-me.com/solutions/",
-      "dateModified": "2026-08-20",
+      "dateModified": "2026-09-23",
       "publisher": {
         "@type": "Organization",
         "name": "You Owe Me"
@@ -76,7 +76,7 @@
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="../../styles/personal-loan-repayment-tracker.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
-      <link rel="stylesheet" href="/styles/loan-import-entry.css" />
+      <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260923-discovery1" />
   </head>
 
   <body class="is-preload personal-loan-repayment-tracker-page solutions-page solution-detail-page site-nav-page">
@@ -158,7 +158,25 @@
             <p class="plrt-concept-line">Loans organize what is owed. Repayment plans organize how it gets paid back.</p>
           </section>
 
-          <div id="loan-import-offer" data-loan-offer="personal-loan" hidden></div>
+          <!-- loan-import-offer:start -->
+          <div id="loan-import-offer" class="loan-import-entry" data-loan-offer="personal-loan">
+            <section class="loan-import-offer" aria-labelledby="loan-import-offer-title">
+              <div class="loan-import-offer__copy">
+                <p class="loan-import-offer__eyebrow">Start with what you already have</p>
+                <h2 id="loan-import-offer-title">Bring the loan you’re already tracking</h2>
+                <p class="loan-import-offer__intro">Start with your existing records, whether you lent or borrowed. Review the loan, past repayments and any supported interest-free schedule, then continue on iPhone.</p>
+                <p class="loan-import-offer__formats">Text · CSV · Excel (.xlsx) · Word (.docx) · Photo</p>
+                <p class="loan-import-offer__limits">One loan at a time. Review and correct the details before saving. Import does not keep a spreadsheet in sync.</p>
+                <div class="loan-import-offer__actions">
+                  <button type="button" class="loan-import-offer__button" data-loan-import-open aria-expanded="false" aria-controls="loan-import-workspace" hidden>Import loan history</button>
+                  <a class="loan-import-offer__guide" href="/tools/personal-loan-payment-tracker/#loan-import-guide">How loan import works</a>
+                  <span class="loan-import-offer__reassurance">Review here. Keep tracking in You Owe Me on iPhone.</span>
+                </div>
+              </div>
+            </section>
+            <div id="loan-import-workspace" hidden></div>
+          </div>
+          <!-- loan-import-offer:end -->
 
           <section class="plrt-section plrt-section--artifact" id="loan-example" aria-labelledby="demo-heading">
             <div class="plrt-section-heading">
@@ -495,7 +513,7 @@
             <p class="plrt-support-line">One active repayment plan is available free. iPhone app. The app records and plans; it does not move money.</p>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-08-20">August 20, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-09-23">September 23, 2026</time></p>
         </article>
       </main>
 
@@ -527,6 +545,6 @@
     <script src="../../assets/js/util.js"></script>
     <script src="../../assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
-  <script type="module" src="/scripts/loan-import-entry.mjs?v=20260922"></script>
+  <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
 </body>
 </html>

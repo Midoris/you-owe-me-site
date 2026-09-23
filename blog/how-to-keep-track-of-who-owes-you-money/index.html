@@ -30,7 +30,7 @@
     <meta property="og:image:height" content="992" />
     <meta property="og:image:alt" content="A calm illustration of a simple money record showing who owes money, what was repaid, and what is still open." />
     <meta property="article:published_time" content="2026-06-27" />
-    <meta property="article:modified_time" content="2026-06-27" />
+    <meta property="article:modified_time" content="2026-09-23" />
     <meta property="article:author" content="Ievgenii Iablonskyi" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="How to Keep Track of Who Owes You Money" />
@@ -106,7 +106,7 @@
             }
           ],
           "datePublished": "2026-06-27",
-          "dateModified": "2026-09-20",
+          "dateModified": "2026-09-23",
           "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/"
@@ -214,7 +214,7 @@
     <link rel="stylesheet" href="/styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/money-owed-record-answer.css?v=20260920" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
-      <link rel="stylesheet" href="/styles/loan-import-entry.css" />
+      <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260923-discovery1" />
   </head>
 
   <body class="is-preload blog-page running-balance-answer-page money-owed-record-page site-nav-page">
@@ -330,7 +330,25 @@ Next payment or check-in: [date or not agreed]</p>
             </div>
           </section>
 
-          <div id="loan-import-offer" data-loan-offer="record-guide" hidden></div>
+          <!-- loan-import-offer:start -->
+          <div id="loan-import-offer" class="loan-import-entry" data-loan-offer="record-guide">
+            <section class="loan-import-offer" aria-labelledby="loan-import-offer-title">
+              <div class="loan-import-offer__copy">
+                <p class="loan-import-offer__eyebrow">Start with what you already have</p>
+                <h2 id="loan-import-offer-title">Start with one loan you already have recorded</h2>
+                <p class="loan-import-offer__intro">Bring its notes, spreadsheet or photo, check the details, and continue tracking repayments on iPhone. Import one personal loan at a time.</p>
+                <p class="loan-import-offer__formats">Text · CSV · Excel (.xlsx) · Word (.docx) · Photo</p>
+                <p class="loan-import-offer__limits">One loan at a time. Review and correct the details before saving. Import does not keep a spreadsheet in sync.</p>
+                <div class="loan-import-offer__actions">
+                  <button type="button" class="loan-import-offer__button" data-loan-import-open aria-expanded="false" aria-controls="loan-import-workspace" hidden>Import loan history</button>
+                  <a class="loan-import-offer__guide" href="/tools/personal-loan-payment-tracker/#loan-import-guide">How loan import works</a>
+                  <span class="loan-import-offer__reassurance">Review here. Keep tracking in You Owe Me on iPhone.</span>
+                </div>
+              </div>
+            </section>
+            <div id="loan-import-workspace" hidden></div>
+          </div>
+          <!-- loan-import-offer:end -->
 
           <section class="lt-toolsSection rb-answer-section" aria-labelledby="example-ledger-title">
             <h2 id="example-ledger-title">Example money-owed ledger</h2>
@@ -673,7 +691,7 @@ Next payment or check-in: [date or not agreed]</p>
             </div>
           </section>
 
-          <p class="lt-pageMeta">Published <time datetime="2026-06-27">June 27, 2026</time> &middot; Updated <time datetime="2026-09-20">September 20, 2026</time></p>
+          <p class="lt-pageMeta">Published <time datetime="2026-06-27">June 27, 2026</time> &middot; Updated <time datetime="2026-09-23">September 23, 2026</time></p>
 
           <ul class="actions lt-actions">
             <li><a href="/blog/" class="button">Back to blog</a></li>
@@ -710,6 +728,6 @@ Next payment or check-in: [date or not agreed]</p>
     <script src="/assets/js/util.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
-      <script type="module" src="/scripts/loan-import-entry.mjs?v=20260922"></script>
+      <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
   </body>
 </html>

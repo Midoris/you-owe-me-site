@@ -28,7 +28,7 @@
           "name": "Free Personal Loan Payment Tracker | You Owe Me",
           "description": "Track personal loan payments and the remaining balance with this free browser tool. Use it with or without a repayment schedule. Copy, print or export CSV.",
           "url": "https://you-owe-me.com/tools/personal-loan-payment-tracker/",
-          "dateModified": "2026-09-14",
+          "dateModified": "2026-09-23",
           "isPartOf": { "@type": "CollectionPage", "name": "Money Tools and Templates", "url": "https://you-owe-me.com/tools/" },
           "publisher": { "@type": "Organization", "name": "You Owe Me" }
         },
@@ -56,7 +56,7 @@
             { "@type": "Question", "name": "What if there is no regular repayment plan?", "acceptedAnswer": { "@type": "Answer", "text": "You can still record payments, additional borrowing, and the current remaining balance. Without a regular plan, the tracker cannot show ahead, overdue, next-payment, or projected-payoff states." } },
             { "@type": "Question", "name": "What happens when a payment is smaller or larger than planned?", "acceptedAnswer": { "@type": "Answer", "text": "A smaller payment leaves part of the oldest installment open. A larger payment completes the oldest unpaid amount and applies the excess forward." } },
             { "@type": "Question", "name": "What if more money is borrowed later?", "acceptedAnswer": { "@type": "Answer", "text": "Record it as additional borrowing. The remaining balance increases and the future projection extends, while payments already recorded stay in the history." } },
-            { "@type": "Question", "name": "Does this page save my information?", "acceptedAnswer": { "@type": "Answer", "text": "By default, the tracker remains only in the current tab. If you select “Save this tracker on this device,” the page stores one local copy in this browser. It is not synced to You Owe Me, cannot be imported automatically, and may disappear if browser data is cleared." } },
+            { "@type": "Question", "name": "Does this page save my information?", "acceptedAnswer": { "@type": "Answer", "text": "By default, the manual tracker remains only in the current tab. If you select “Save this tracker on this device,” the page stores one local copy in this browser. It is not synced to You Owe Me, has no automatic transfer to the app, and may disappear if browser data is cleared. The separate loan-history importer above lets you review existing source records before continuing on iPhone." } },
             { "@type": "Question", "name": "Is this a legal loan record or payment service?", "acceptedAnswer": { "@type": "Answer", "text": "No. This tool does not lend money, move payments, collect money, enforce repayment, provide legal or tax advice, or create a binding agreement." } },
             { "@type": "Question", "name": "Can both people edit the browser record?", "acceptedAnswer": { "@type": "Answer", "text": "No. This browser tool is a one-person record. You can copy, print, or export the current snapshot, but it does not provide shared editing or create a two-party agreement." } }
           ]
@@ -76,7 +76,7 @@
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/loan-import.css" />
-      <link rel="stylesheet" href="/styles/loan-import-entry.css" />
+      <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260923-discovery1" />
   </head>
   <body class="is-preload tools-page personal-loan-payment-tracker-page site-nav-page">
     <div id="wrapper" class="fade-in">
@@ -116,6 +116,28 @@
             <figure class="plpt-hero-visual">
               <img src="/images/tools/personal-loan-payment-tracker-hero.webp" width="1600" height="1200" loading="eager" fetchpriority="high" decoding="async" alt="Illustration of planned loan installments and real payments being reconciled into one clear remaining balance." />
             </figure>
+          </section>
+
+          <section id="loan-import-guide" class="loan-import-entry" aria-labelledby="loan-import-guide-title">
+            <div class="loan-import-offer">
+              <p class="loan-import-offer__eyebrow">Bring your existing records</p>
+              <h2 id="loan-import-guide-title">Import one loan’s history, then keep tracking</h2>
+              <p>You Owe Me can turn existing records for one personal loan into a loan history you review before saving. Start with pasted notes or a copied table, a CSV, Excel (.xlsx) or Word (.docx) file, or a photo of typed or handwritten notes. Records can be in different languages; check the interpretation carefully.</p>
+              <ol class="loan-import-guide__steps">
+                <li><strong>Bring one loan.</strong> Include who lent to whom, the currency, the original loan or starting balance, and the dates and amounts of real repayments or additional advances.</li>
+                <li><strong>Review the result.</strong> Check and correct the person, dates, currency and amounts. Actual repayments stay separate from future scheduled payments. A supported interest-free repayment plan can be reviewed when provided.</li>
+                <li><strong>Continue on iPhone.</strong> Open the reviewed loan through the private iPhone link or QR code. Use the App Clip to continue into the full You Owe Me app, save the loan, and record later repayments against the same history.</li>
+              </ol>
+              <p class="loan-import-offer__limits">Import handles one loan at a time. It does not automatically synchronize a spreadsheet, merge into an existing loan, or move this page’s manual browser tracker into the app. App capacity and repayment-plan limits still apply.</p>
+              <p>Choosing “Convert to a loan” sends the selected text, photo or supported file contents to You Owe Me’s service and OpenAI for interpretation. You review the result before continuing. Manual entry is also available.</p>
+              <p><a href="/privacy-and-data/#loan-import-privacy">Privacy and temporary storage</a></p>
+              <p>Already using the app? Choose New loan → Import loan history from Records or a borrower’s screen.</p>
+              <details class="loan-import-guide__example">
+                <summary>Example: past payments and the next repayment</summary>
+                <p>Illustrative records in USD: Alex lent Jordan $1,200 on July 10, 2026. Jordan repaid $150 on August 1 and $300 on September 1. Alex advanced another $100 on September 10. The remaining balance is $850: $1,200 − $150 − $300 + $100. After reviewing and saving that history, a later actual repayment of $100 leaves $750. A planned future payment does not reduce the balance until it actually happens.</p>
+              </details>
+              <noscript><p>JavaScript is required to review and import a loan on this website. You can still read the steps above or use New loan → Import loan history in the You Owe Me app.</p></noscript>
+            </div>
           </section>
 
 <div id="import-loan-history" data-loan-import-root hidden></div>
@@ -250,7 +272,7 @@
               <div class="plpt-summary-wrap"><h3>Copyable summary</h3><p id="plpt-summary" class="plpt-summary" tabindex="0"></p></div>
               <dl id="plpt-print-details" class="plpt-print-details"><div><dt>Person</dt><dd id="plpt-print-person"></dd></div><div><dt>Loan</dt><dd id="plpt-print-loan"></dd></div><div><dt>Perspective</dt><dd id="plpt-print-perspective"></dd></div><div><dt>Currency</dt><dd id="plpt-print-currency"></dd></div><div><dt>Tracking start</dt><dd id="plpt-print-tracking-start"></dd></div><div><dt>Starting/current balance</dt><dd id="plpt-print-starting-balance"></dd></div><div><dt>Paid before tracking</dt><dd id="plpt-print-paid-before"></dd></div><div><dt>Plan details</dt><dd id="plpt-print-plan"></dd></div><div><dt>Generated date</dt><dd id="plpt-print-generated"></dd></div></dl>
               <p class="plpt-local-copy">Saved data stays in this browser only. It is not synced to You Owe Me or sent through analytics. Clearing browser data can remove it.</p>
-              <p class="plpt-local-copy">A browser tracker cannot be imported automatically into the You Owe Me app.</p>
+              <p class="plpt-local-copy">This manual browser tracker has no automatic transfer to the app. To bring an existing loan history into You Owe Me, use the separate <a href="#loan-import-guide">loan-history importer above</a> and review the source records before continuing.</p>
               <p id="plpt-storage-unavailable" class="plpt-result-notice" hidden>This browser is not allowing local saving. You can still copy, print, or export the record.</p>
             </section>
 
@@ -328,14 +350,14 @@
             <details><summary>What if there is no regular repayment plan?</summary><p>You can still record payments, additional borrowing, and the current remaining balance. Without a regular plan, the tracker cannot show ahead, overdue, next-payment, or projected-payoff states.</p></details>
             <details><summary>What happens when a payment is smaller or larger than planned?</summary><p>A smaller payment leaves part of the oldest installment open. A larger payment completes the oldest unpaid amount and applies the excess forward.</p></details>
             <details><summary>What if more money is borrowed later?</summary><p>Record it as additional borrowing. The remaining balance increases and the future projection extends, while payments already recorded stay in the history.</p></details>
-            <details><summary>Does this page save my information?</summary><p>By default, the tracker remains only in the current tab. If you select “Save this tracker on this device,” the page stores one local copy in this browser. It is not synced to You Owe Me, cannot be imported automatically, and may disappear if browser data is cleared.</p></details>
+            <details><summary>Does this page save my information?</summary><p>By default, the manual tracker remains only in the current tab. If you select “Save this tracker on this device,” the page stores one local copy in this browser. It is not synced to You Owe Me, has no automatic transfer to the app, and may disappear if browser data is cleared. The separate loan-history importer above lets you review existing source records before continuing on iPhone.</p></details>
             <details><summary>Is this a legal loan record or payment service?</summary><p>No. This tool does not lend money, move payments, collect money, enforce repayment, provide legal or tax advice, or create a binding agreement.</p></details>
             <details><summary>Can both people edit the browser record?</summary><p>No. This browser tool is a one-person record. You can copy, print, or export the current snapshot, but it does not provide shared editing or create a two-party agreement.</p></details>
           </section>
 
           <section class="lt-finalCta plpt-final-cta" aria-labelledby="plpt-final-title"><h2 id="plpt-final-title">Start with the facts you know</h2><p>Enter the current amount owed and the payments you can confirm. The tracker will show the current snapshot without requiring an account.</p><div class="lt-ctaRow"><a href="#import-loan-history" class="lt-primaryCta" data-loan-rollout hidden>Import loan history</a>
                 <a href="#loan-payment-tracker" class="lt-primaryCta">Start tracking payments</a><button type="button" class="plpt-text-button" data-action="load-example">Load the worked example</button></div></section>
-          <p class="lt-pageMeta">Updated <time datetime="2026-09-14">September 14, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-09-23">September 23, 2026</time></p>
         </article>
       </div>
       <div id="copyright"><ul><li>&copy; 2026 Ievgenii Iablonskyi</li><li><a href="/solutions/">Solutions</a></li><li><a href="/features/">Features</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/tools/">Tools</a></li><li><a href="/compare/">Compare</a></li><li><a href="/blog/">Blog</a></li><li><a href="/privacy-and-data/">Privacy &amp; Data</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/contact/">Contact</a></li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul></div>
@@ -351,6 +373,6 @@
     <script type="module" src="../../scripts/analytics.js"></script>
     <script src="../../assets/js/jquery.min.js"></script><script src="../../assets/js/jquery.scrollex.min.js"></script><script src="../../assets/js/jquery.scrolly.min.js"></script><script src="../../assets/js/browser.min.js"></script><script src="../../assets/js/breakpoints.min.js"></script><script src="../../assets/js/util.js"></script><script src="../../assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
-    <script type="module" src="/scripts/loan-import-entry.mjs?v=20260922"></script>
+    <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
   </body>
 </html>

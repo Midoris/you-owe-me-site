@@ -33,7 +33,7 @@
       "publisher": { "@type": "Organization", "name": "You Owe Me" },
       "articleSection": "Personal loan recordkeeping",
       "datePublished": "2026-08-04",
-      "dateModified": "2026-08-09",
+      "dateModified": "2026-09-23",
       "mainEntityOfPage": { "@type": "WebPage", "@id": "https://you-owe-me.com/blog/how-to-track-a-personal-loan-between-friends-or-family/" }
     }
     </script>
@@ -74,7 +74,7 @@
     <link rel="stylesheet" href="/styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/personal-loan-record-guide.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
-      <link rel="stylesheet" href="/styles/loan-import-entry.css" />
+      <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260923-discovery1" />
   </head>
   <body class="is-preload personal-loan-record-guide-page site-nav-page">
     <div id="wrapper" class="fade-in">
@@ -145,7 +145,25 @@
             <p>A future agreement to pay USD 100 each month is a schedule, not seven payments that already happened. On USD 700 remaining, an interest-free prospective plan can have seven future installments; it belongs alongside the actual history.</p>
           </section>
 
-          <div id="loan-import-offer" data-loan-offer="loan-guide" hidden></div>
+          <!-- loan-import-offer:start -->
+          <div id="loan-import-offer" class="loan-import-entry" data-loan-offer="loan-guide">
+            <section class="loan-import-offer" aria-labelledby="loan-import-offer-title">
+              <div class="loan-import-offer__copy">
+                <p class="loan-import-offer__eyebrow">Start with what you already have</p>
+                <h2 id="loan-import-offer-title">Already have these loan records?</h2>
+                <p class="loan-import-offer__intro">Bring your existing notes, file or photo for one loan. Check the details here, then keep adding repayments in You Owe Me on iPhone.</p>
+                <p class="loan-import-offer__formats">Text · CSV · Excel (.xlsx) · Word (.docx) · Photo</p>
+                <p class="loan-import-offer__limits">One loan at a time. Review and correct the details before saving. Import does not keep a spreadsheet in sync.</p>
+                <div class="loan-import-offer__actions">
+                  <button type="button" class="loan-import-offer__button" data-loan-import-open aria-expanded="false" aria-controls="loan-import-workspace" hidden>Import loan history</button>
+                  <a class="loan-import-offer__guide" href="/tools/personal-loan-payment-tracker/#loan-import-guide">How loan import works</a>
+                  <span class="loan-import-offer__reassurance">Review here. Keep tracking in You Owe Me on iPhone.</span>
+                </div>
+              </div>
+            </section>
+            <div id="loan-import-workspace" hidden></div>
+          </div>
+          <!-- loan-import-offer:end -->
 
           <section class="plg-section plg-section--artifact" id="personal-loan-record" aria-labelledby="record-title">
             <p class="plg-eyebrow">Copyable template</p><h2 id="record-title">Copy the two-layer personal loan record</h2>
@@ -354,7 +372,7 @@ Flexibility note: [optional]</pre></div>
 
           <section class="plg-section plg-related" aria-labelledby="related-title"><h2 id="related-title">Related tools and guides</h2><div class="plg-related-grid"><article><h3>Was the money a gift or a loan?</h3><p>Clarify whether repayment was actually understood before creating an owed balance.</p><a href="/blog/how-to-clarify-if-money-was-a-gift-or-a-loan/">Clarify the expectation</a></article><article><h3>Suggest a realistic repayment plan</h3><p>Use a calm conversation to agree on an amount, timing, and first step.</p><a href="/blog/how-to-suggest-a-repayment-plan-to-someone-who-owes-you-money/">Plan the conversation</a></article><article><h3>Record actual loan payments</h3><p>Enter real payments and see the current balance, installment status, and projected payoff in the browser.</p><a href="/tools/personal-loan-payment-tracker/">Open the payment tracker</a></article><article><h3>Create the initial schedule</h3><p>Compare payment amounts, payoff dates, and installment counts before payments begin.</p><a href="/tools/payment-plan-calculator/">Open the plan calculator</a></article><article><h3>Track general money owed</h3><p>Use the broader guide when the situation includes everyday IOUs, group costs, partial repayments, or mixed balances rather than one named loan.</p><a href="/blog/how-to-keep-track-of-who-owes-you-money/">Read the broader tracking guide</a></article><article><h3>Keep the loan current over time</h3><p>See how You Owe Me connects a named loan, actual payments, repayment-plan progress, reminders, and history.</p><a href="/solutions/personal-loan-repayment-tracker/">See the personal-loan workflow</a></article></div></section>
 
-          <p class="plg-page-meta">Published <time datetime="2026-08-04">August 4, 2026</time> &middot; Updated <time datetime="2026-08-09">August 9, 2026</time></p>
+          <p class="plg-page-meta">Published <time datetime="2026-08-04">August 4, 2026</time> &middot; Updated <time datetime="2026-09-23">September 23, 2026</time></p>
         </article>
       </main>
       <footer id="copyright"><ul><li>&copy; 2026 Ievgenii Iablonskyi</li><li><a href="/solutions/">Solutions</a></li><li><a href="/features/">Features</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/tools/">Tools</a></li><li><a href="/compare/">Compare</a></li><li><a href="/blog/">Blog</a></li><li><a href="/privacy-and-data/">Privacy &amp; Data</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/contact/">Contact</a></li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul></footer>
@@ -364,6 +382,6 @@ Flexibility note: [optional]</pre></div>
     <script type="module" src="/scripts/analytics.js"></script>
     <script src="/assets/js/jquery.min.js"></script><script src="/assets/js/jquery.scrollex.min.js"></script><script src="/assets/js/jquery.scrolly.min.js"></script><script src="/assets/js/browser.min.js"></script><script src="/assets/js/breakpoints.min.js"></script><script src="/assets/js/util.js"></script><script src="/assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
-    <script type="module" src="/scripts/loan-import-entry.mjs?v=20260922"></script>
+    <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
   </body>
 </html>

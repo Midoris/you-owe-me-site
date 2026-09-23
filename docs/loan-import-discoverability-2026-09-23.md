@@ -1,0 +1,43 @@
+# Loan-import discoverability implementation — September 23, 2026
+
+## Scope and starting point
+
+Started from clean `master` at `4fb78101970f2701676d2e6755e3d98d74c355b7`. The work implements the thirteen existing HTML routes in the September 23 implementation brief. No new route, importer business logic, analytics event, config flag, native code or backend behavior was added. The later owner instruction authorized publishing after local verification; this report records the local implementation check before release.
+
+Nine contextual offers are now present in the initial HTML at their existing placements: `/`, `/tools/payment-plan-calculator/`, `/tools/partial-repayment-calculator/`, `/solutions/app-to-track-money-owed/`, `/solutions/personal-loan-repayment-tracker/`, `/blog/how-to-track-a-personal-loan-between-friends-or-family/`, `/blog/how-to-remind-someone-they-owe-you-money-politely/`, `/blog/what-is-a-running-balance-between-two-people/`, and `/blog/how-to-keep-track-of-who-owes-you-money/`.
+
+The direct `/tools/personal-loan-payment-tracker/` page has the static guide outside its replaceable intake and clarifies the manual tracker's separate storage. `/features/` has the dedicated illustrated card; `/quick-start/` has one Loan Records paragraph; `/compare/spreadsheet-vs-app-for-tracking-money-owed/` exposes its existing import explanation and aligns the visible and structured FAQ. `llms.txt` has only the specified factual synchronization. All thirteen sitemap and registry modification dates are September 23; canonical URLs and sitemap URL membership are unchanged.
+
+## Implementation
+
+`scripts/loan-import-offers.mjs` is the single source for offer routes, titles, bodies and shared text. `scripts/render-loan-import-offers.mjs` validates all nine marked targets before writing, escapes HTML and attributes, and changes only those blocks. Generated HTML is committed. The entry module now binds and reveals existing buttons once; the descriptive card and guide link remain when interaction cannot start. The disabled gate remains inert, and the original direct intake, retry/focus behavior, fixed import events, local-preview suppression and private data boundary remain in place. The production flag and import dependencies were not changed.
+
+The supplied 768×512 and 1536×1024 WebPs were copied to `images/pages/features/`. The master PNG was not added. The Features illustration remains 3:2 without cropping. Existing feature screenshots and homepage artwork were retained. Shared CSS adds only the specified limits, guide-link, steps and details rules. The entry script and shared entry stylesheet use `?v=20260923-discovery1` on ten pages; Features CSS uses the same suffix.
+
+Modified source groups: thirteen scoped `index.html` pages, `llms.txt`, `sitemap.xml`, `content/content-registry.mjs`, `styles/loan-import-entry.css`, `styles/features.css`, `scripts/loan-import-offers.mjs`, `scripts/loan-import-entry.mjs`, the new renderer, and two supplied WebPs. Tests changed in `scripts/loan-import-entry.test.mjs`, `scripts/homepage-loan-value.test.mjs`, and `scripts/polite-reminder-post-copy.test.mjs`; `scripts/loan-import-static.test.mjs` is new. `docs/loan-import-discovery.md` now records the September 22 release authorization, the interactive gate versus public HTML, and generation commands.
+
+## Automated verification
+
+- `node scripts/render-loan-import-offers.mjs --write` updated nine pages once; `--check` then passed, and a repeated `--write` produced no change in the generator fixture.
+- `node --test scripts/*.test.mjs scripts/*.test.js tests/*.test.cjs`: 147 passing tests after updating deliberate date expectations. Baseline at the starting HEAD was 140 passing tests.
+- `node scripts/audit-seo-ai-hygiene.mjs`: 0 hard errors, 6 warnings (baseline: 0 and 8). The remaining warnings concern existing generic App Store CTA labels and one untouched article date mismatch.
+- `node scripts/audit-content-routing.mjs`: 0 hard errors, 20 warnings (same as baseline).
+- `node scripts/validate-content-registry.js`: passed with its existing one-card-count warning.
+- All thirteen scoped `node scripts/audit-page-design.mjs /route/` runs: 0 hard errors.
+- Modified JSON-LD parses. The two changed visible FAQ answers match their structured answers. All new guide fragments target the direct tracker guide. `git diff --check` passed. No canonical or sitemap URL changed.
+
+The focused tests cover initial HTML and generator drift/escaping/safe failure, enabled binding, rapid and repeated activation, failure and retry, focus, the original direct anchor, disabled bootstrap, local-preview event suppression, and 50% visible-document exposure. Existing private-root, analytics, page-action, platform and language tests remain in the full suite.
+
+## Local browser verification
+
+Chrome served the repository from localhost. Import openings used `?loan-import=1` and did not submit source records, request interpretation or prepare a transfer. At **390×844** and **1440×1000**, all nine offers appeared once, had no horizontal overflow, kept their guide links, and opened one existing intake with “Return to your import” and `aria-expanded="true"`. The direct tracker guide and intake were visible and separate at both sizes; both existing direct-import links and its manual form remained. The three supporting pages were readable and had no horizontal overflow at both sizes. At **320 CSS pixels**, the homepage card, tracker guide and Features illustration had no overflow; the illustration kept its 3:2 ratio and caption.
+
+The homepage hero shortcut, both calculator jumps, the personal-loan worked-example jump, and reminder copy/post-copy handoff worked. Keyboard Enter opened the offer and native details; Tab and Shift+Tab exposed 3px focus outlines on the guide link and button. A one-time stylesheet failure showed “Try opening again”; retry opened the intake while the guide remained available. In a disabled-config fixture, static content remained visible and controls stayed hidden. With the entry module blocked, the solution offer remained readable and its guide link reached the static tracker guide. With the Features image blocked, its text, caption and guide link remained usable.
+
+A CSP `script-src 'none'` fixture was checked on all thirteen routes at 390px: explanations stayed visible, offer buttons stayed hidden, and native details and guide navigation worked. This blocks page scripts but does not make `<noscript>` render. Chrome's browser settings page was blocked by the browser-control policy, so a true browser-level JavaScript-disabled `<noscript>` rendering check remains unverified; the exact `<noscript>` markup is covered by the static test. No production request was sent during local import QA.
+
+Representative screenshots: [home mobile](verification/loan-import-discoverability-2026-09-23/home-mobile.png), [home desktop](verification/loan-import-discoverability-2026-09-23/home-desktop.png), [solution mobile](verification/loan-import-discoverability-2026-09-23/solution-mobile.png), [solution desktop](verification/loan-import-discoverability-2026-09-23/solution-desktop.png), [tracker guide mobile](verification/loan-import-discoverability-2026-09-23/tracker-guide-mobile.png), [tracker guide desktop](verification/loan-import-discoverability-2026-09-23/tracker-guide-desktop.png), [tracker intake mobile](verification/loan-import-discoverability-2026-09-23/tracker-intake-mobile.png), [tracker intake desktop](verification/loan-import-discoverability-2026-09-23/tracker-intake-desktop.png), [Features mobile copy](verification/loan-import-discoverability-2026-09-23/features-mobile.png), [Features mobile illustration](verification/loan-import-discoverability-2026-09-23/features-mobile-illustration.png), [Features desktop](verification/loan-import-discoverability-2026-09-23/features-desktop.png), [comparison mobile](verification/loan-import-discoverability-2026-09-23/comparison-mobile.png), and [comparison desktop](verification/loan-import-discoverability-2026-09-23/comparison-desktop.png).
+
+## Release checklist
+
+The owner subsequently authorized push and production publication through the established `master`-branch GitHub Pages process. After publication, verify deployed HTML with page scripts blocked, the existing importer and original page actions, the asset responses, canonical/indexability and sitemap dates; record the actual publication time and deployed revision. Observe existing page-level offer/intake signals separately from Apple aggregate assistant-attributed downloads. An accepted indexing request is not proof of indexing or acquisition lift.

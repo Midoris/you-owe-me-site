@@ -135,8 +135,8 @@ test("existing analytics and copy contracts remain intact", () => {
 test("search-facing article metadata preserves canonical and dates with approved copy", () => {
   assert.match(page, /<link rel="canonical" href="https:\/\/you-owe-me\.com\/blog\/how-to-remind-someone-they-owe-you-money-politely\/" \/>/);
   assert.match(page, /name="description"[\s\S]*Copy polite texts to ask for money back: friendly reminders, overdue repayments and partial payments\./);
-  assert.match(page, /"dateModified": "2026-09-05"/);
-  assert.match(page, /article:modified_time" content="2026-09-05T00:00:00\+07:00"/);
-  assert.match(page, /Updated <time datetime="2026-09-05">September 5, 2026<\/time>/);
+  assert.match(page, /"dateModified": "2026-09-23"/);
+  assert.match(page, /article:modified_time" content="2026-09-23T00:00:00\+07:00"/);
+  assert.match(page, /Updated <time datetime="2026-09-23">September 23, 2026<\/time>/);
   assert.match(page, /href="\/styles\/polite-money-reminder-answer\.css\?v=conversion-polish-20260905-3"/);
 });

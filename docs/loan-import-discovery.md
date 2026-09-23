@@ -1,10 +1,12 @@
 # Loan import discovery (EXP-011, 20 September 2026)
 
-Nine additional entry points share the original import/review/transfer flow. Page introductions live in `scripts/loan-import-offers.mjs`; mounting, dependencies and offer UI in `scripts/loan-import-entry.mjs`; intake markup in `scripts/loan-import-ui.mjs`. Change the shared formats, CTA, styling or importer once. Each HTML page owns only its intentional placement and copy key.
+Nine additional entry points share the original import/review/transfer flow. Page introductions, shared offer text and route mappings live in `scripts/loan-import-offers.mjs`. `scripts/render-loan-import-offers.mjs` generates the nine marked HTML blocks, and those blocks are committed so their explanations and guide links are present in the initial response. `scripts/loan-import-entry.mjs` enhances each existing block with a working button; intake markup remains in `scripts/loan-import-ui.mjs`. Each HTML page owns its intentional placement.
 
 ## Release gate
 
-`loanImportEnabled` in `scripts/loan-import-config.mjs` is **false**. Keep it false until the owner confirms the new iOS version and loan App Clip experience are live and accepted. That single switch controls the original tracker, every new card and the homepage shortcut. Local preview only: `?loan-import=1` on localhost/127.0.0.1. It cannot enable production. Hidden placeholders contain no intake controls; the disabled bootstrap does not load the UI, QR library, image or recovery state. No separate flags per page.
+The original September 20 release note kept `loanImportEnabled` false pending owner acceptance. **Correction, September 23, 2026:** public rollout was authorized September 22, and `loanImportEnabled` is now **true**. The switch controls the direct intake, the nine offer buttons and the homepage shortcut. The visible public explanations and guide links remain in HTML even if interaction is disabled or JavaScript fails. With the switch off, the bootstrap does not access the DOM, read recovery state, load importer dependencies or emit events. `?loan-import=1` on localhost/127.0.0.1 selects the local preview endpoint and suppresses import analytics; it does not enable a disabled production flag. No separate flags per page.
+
+To change an offer, edit `scripts/loan-import-offers.mjs`, then run `node scripts/render-loan-import-offers.mjs --write` and commit its nine marked HTML blocks. Run `node scripts/render-loan-import-offers.mjs --check` in verification. The generator validates every target before writing and leaves all other page content alone. The direct tracker guide and three supporting pages are authored in their HTML files; the generator does not own them.
 
 ## Placements
 
@@ -28,4 +30,4 @@ Primary diagnostic: same-page users choosing import among exposed users, then in
 
 ## Verification
 
-Run `node --test scripts/*.test.mjs scripts/*.test.js tests/*.test.cjs`, plus the page-design audit on the ten affected routes. Manual browser checks cover narrow and desktop screens, rollout disabled, all nine new mounts, original direct anchor, duplicate prevention, recovery, missing-name validation and QR loading. Synthetic local API responses verify UI wiring; extraction quality is covered by the earlier EXP-011 live evaluation, not retested with paid calls here.
+Run `node --test scripts/*.test.mjs scripts/*.test.js tests/*.test.cjs`, `node scripts/render-loan-import-offers.mjs --check`, and the page-design audit on all thirteen affected routes. Local browser verification should cover visible text without JavaScript, narrow and desktop screens, the nine enhanced offers, the original direct anchor, disabled and load-failure fixtures, and existing page actions. Use `?loan-import=1` when opening intake locally; do not send an interpretation or transfer request for this presentation change. Extraction quality is covered by the earlier EXP-011 live evaluation.

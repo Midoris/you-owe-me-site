@@ -110,7 +110,7 @@ test("homepage registry remains the generated module source of truth", () => {
 
   for (const copy of [
     'relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/shared-expense-tracker/", "/solutions/personal-loan-repayment-tracker/", "/solutions/family-reimbursement-tracker/"]',
-    'updated: "2026-09-14"',
+    'updated: "2026-09-23"',
     'enabled: true',
     'variant: "hub"',
     'placement: "after-loan-value"',

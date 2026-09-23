@@ -30,7 +30,7 @@
     <meta property="og:image:height" content="630" />
     <meta property="og:image:alt" content="Illustration of a calm running balance timeline between two people with expenses and repayments." />
     <meta property="article:published_time" content="2026-05-26" />
-    <meta property="article:modified_time" content="2026-08-27" />
+    <meta property="article:modified_time" content="2026-09-23" />
     <meta property="article:author" content="Ievgenii Iablonskyi" />
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:title" content="What Is a Running Balance? Meaning and Simple Example" />
@@ -104,7 +104,7 @@
             }
           ],
           "datePublished": "2026-05-26",
-          "dateModified": "2026-08-27",
+          "dateModified": "2026-09-23",
           "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://you-owe-me.com/blog/what-is-a-running-balance-between-two-people/"
@@ -235,7 +235,7 @@
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
-      <link rel="stylesheet" href="/styles/loan-import-entry.css" />
+      <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260923-discovery1" />
   </head>
 
   <body class="is-preload blog-page running-balance-answer-page site-nav-page">
@@ -648,7 +648,25 @@
             <p>A clear running balance gives money between people a shared record, so the next conversation can start with the current balance instead of a reconstruction of every favor and payment.</p>
           </section>
 
-          <div id="loan-import-offer" data-loan-offer="running-balance" hidden></div>
+          <!-- loan-import-offer:start -->
+          <div id="loan-import-offer" class="loan-import-entry" data-loan-offer="running-balance">
+            <section class="loan-import-offer" aria-labelledby="loan-import-offer-title">
+              <div class="loan-import-offer__copy">
+                <p class="loan-import-offer__eyebrow">Start with what you already have</p>
+                <h2 id="loan-import-offer-title">Tracking one loan and its repayments?</h2>
+                <p class="loan-import-offer__intro">If your records belong to one personal loan, you can import them and review the balance. For mixed expenses or money moving both ways, keep using the running-balance tools above.</p>
+                <p class="loan-import-offer__formats">Text · CSV · Excel (.xlsx) · Word (.docx) · Photo</p>
+                <p class="loan-import-offer__limits">One loan at a time. Review and correct the details before saving. Import does not keep a spreadsheet in sync.</p>
+                <div class="loan-import-offer__actions">
+                  <button type="button" class="loan-import-offer__button" data-loan-import-open aria-expanded="false" aria-controls="loan-import-workspace" hidden>Import loan history</button>
+                  <a class="loan-import-offer__guide" href="/tools/personal-loan-payment-tracker/#loan-import-guide">How loan import works</a>
+                  <span class="loan-import-offer__reassurance">Review here. Keep tracking in You Owe Me on iPhone.</span>
+                </div>
+              </div>
+            </section>
+            <div id="loan-import-workspace" hidden></div>
+          </div>
+          <!-- loan-import-offer:end -->
 
           <section class="lt-toolsSection rb-answer-section" aria-labelledby="calculator-vs-app-title">
             <h2 id="calculator-vs-app-title">When a calculator is enough &mdash; and when an app is better</h2>
@@ -912,7 +930,7 @@
             </div>
           </section>
 
-          <p class="lt-pageMeta">Published <time datetime="2026-05-26">May 26, 2026</time> &middot; Updated <time datetime="2026-08-27">August 27, 2026</time></p>
+          <p class="lt-pageMeta">Published <time datetime="2026-05-26">May 26, 2026</time> &middot; Updated <time datetime="2026-09-23">September 23, 2026</time></p>
 
           <ul class="actions lt-actions">
             <li><a href="../" class="button">Back to blog</a></li>
@@ -949,6 +967,6 @@
     <script src="/assets/js/util.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
-      <script type="module" src="/scripts/loan-import-entry.mjs?v=20260922"></script>
+      <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
   </body>
 </html>

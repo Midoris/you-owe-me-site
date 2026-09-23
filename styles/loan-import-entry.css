@@ -25,3 +25,45 @@
   #main .loan-import-offer__actions {align-items:flex-start;flex-direction:column;gap:.65rem}
   #main .loan-import-offer__button {width:100%}
 }
+#main .loan-import-offer .loan-import-offer__limits {
+  font-size: 0.9rem;
+  line-height: 1.55;
+  color: rgba(33, 41, 49, 0.88);
+}
+#main .loan-import-offer__guide {
+  display: inline-block;
+  padding: 0.35rem 0;
+  font: 600 0.95rem/1.5 system-ui, sans-serif;
+  color: #355428;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 4px;
+}
+#main .loan-import-offer__guide:focus-visible,
+#loan-import-guide a:focus-visible,
+#loan-import-guide summary:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 4px;
+}
+#loan-import-guide { scroll-margin-top: 2rem; }
+#loan-import-guide .loan-import-guide__steps {
+  max-width: 65ch;
+  margin: 0 0 1rem;
+  padding-left: 1.4rem;
+  text-align: left;
+  font: 400 1rem/1.55 system-ui, sans-serif;
+  color: #212931;
+}
+#loan-import-guide .loan-import-guide__steps li { margin-bottom: 0.65rem; }
+#loan-import-guide .loan-import-guide__example {
+  max-width: 65ch;
+  margin-top: 1rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+  padding-top: 1rem;
+}
+#loan-import-guide .loan-import-guide__example summary {
+  cursor: pointer;
+  font: 700 0.95rem/1.5 system-ui, sans-serif;
+  color: #18212b;
+}
+#loan-import-guide .loan-import-guide__example p { margin-top: 0.75rem; }

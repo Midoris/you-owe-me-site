@@ -145,7 +145,7 @@
     <link rel="stylesheet" href="styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
-      <link rel="stylesheet" href="/styles/loan-import-entry.css" />
+      <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260923-discovery1" />
   </head>
 
   <body class="is-preload site-nav-page homepage-page">
@@ -272,7 +272,26 @@
             <p class="lt-maintenanceProof"><span class="lt-maintenanceProof__since">Since 2016</span> &middot; <span class="lt-maintenanceProof__text">Actively maintained.</span></p>
           </section>
 
-          <div id="loan-import-offer" data-loan-offer="home" hidden></div>
+          <!-- loan-import-offer:start -->
+          <div id="loan-import-offer" class="loan-import-entry" data-loan-offer="home">
+            <section class="loan-import-offer loan-import-offer--featured" aria-labelledby="loan-import-offer-title">
+              <div class="loan-import-offer__copy">
+                <p class="loan-import-offer__eyebrow">Start with what you already have</p>
+                <h2 id="loan-import-offer-title">Your loan history. Without starting over.</h2>
+                <p class="loan-import-offer__intro">Already keeping a loan in notes, a spreadsheet or on paper? Bring it here, check the details, and carry on in You Owe Me.</p>
+                <p class="loan-import-offer__formats">Text · CSV · Excel (.xlsx) · Word (.docx) · Photo</p>
+                <p class="loan-import-offer__limits">One loan at a time. Review and correct the details before saving. Import does not keep a spreadsheet in sync.</p>
+                <div class="loan-import-offer__actions">
+                  <button type="button" class="loan-import-offer__button" data-loan-import-open aria-expanded="false" aria-controls="loan-import-workspace" hidden>Import loan history</button>
+                  <a class="loan-import-offer__guide" href="/tools/personal-loan-payment-tracker/#loan-import-guide">How loan import works</a>
+                  <span class="loan-import-offer__reassurance">Review here. Keep tracking in You Owe Me on iPhone.</span>
+                </div>
+              </div>
+              <img class="loan-import-offer__image" src="/images/shared/loan-import-history.webp" width="640" height="427" alt="" loading="lazy" decoding="async" />
+            </section>
+            <div id="loan-import-workspace" hidden></div>
+          </div>
+          <!-- loan-import-offer:end -->
 
           <figure class="homepage-review-teaser">
             <blockquote>This app is a lifesaver! I finally have an easy way to track money I&rsquo;ve loaned or am owed.</blockquote>
@@ -981,6 +1000,6 @@
     <script src="./assets/js/util.js"></script>
     <script src="./assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
-      <script type="module" src="/scripts/loan-import-entry.mjs?v=20260922"></script>
+      <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
   </body>
 </html>

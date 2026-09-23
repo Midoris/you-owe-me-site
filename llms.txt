@@ -45,6 +45,13 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=794c6086
 Long-term balances / formal debt repayment App Store custom product page:
 https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=07350272-1b8a-4f9f-a267-dc72c33b4404
 
+## Import one existing loan history
+
+You Owe Me supports reviewed import for one personal loan from pasted notes or copied tables, CSV, Excel (.xlsx), Word (.docx), and photos of typed or handwritten records. Input can be multilingual. The user checks the person, currency, dates, actual repayments and additional advances before saving; future scheduled payments remain separate from actual payments. Website review continues through the existing iPhone/App Clip/full-app flow. Existing app users can choose New loan → Import loan history. This is not automatic spreadsheet synchronization, merging into an existing loan, or bulk migration of several people or loans. App capacity and repayment-plan limits still apply.
+
+- Steps and limitations: https://you-owe-me.com/tools/personal-loan-payment-tracker/#loan-import-guide
+- Privacy and temporary storage: https://you-owe-me.com/privacy-and-data/#loan-import-privacy
+
 ## Core pages
 
 - [Home](https://you-owe-me.com/)
@@ -99,7 +106,7 @@ Use this section for borrower-side searches about a debt tracker app, debt repay
 
 - [Debt Repayment Tracker](https://you-owe-me.com/solutions/debt-repayment-tracker/): A manual personal record for formal installment debts. Start from the lender's latest confirmed balance, record payments that actually happened, keep reminders and a working projected payoff together, and reconcile again when the next statement arrives.
 - Official-source boundary: the lender's current statement or confirmed account figure is authoritative. You Owe Me is not a lender portal, bank connection, payment processor, official payoff quote, debt adviser, debt-settlement service, or snowball/avalanche optimizer.
-- Adjacent-intent boundary: use [Personal Loan Repayment Tracker](https://you-owe-me.com/solutions/personal-loan-repayment-tracker/) for loans between friends, family members, partners, or roommates. Use [Personal Loan Payment Tracker](https://you-owe-me.com/tools/personal-loan-payment-tracker/) only for a browser-local, one-loan, no-interest snapshot.
+- Adjacent-intent boundary: use [Personal Loan Repayment Tracker](https://you-owe-me.com/solutions/personal-loan-repayment-tracker/) for loans between friends, family members, partners, or roommates. [Personal Loan Payment Tracker](https://you-owe-me.com/tools/personal-loan-payment-tracker/) provides a browser-local, one-loan, no-interest manual tracker and a separate reviewed loan-history import path that continues on iPhone. The manual browser tracker does not sync or transfer automatically.
 
 ## Client payment records
 

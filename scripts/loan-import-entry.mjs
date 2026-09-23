@@ -1,16 +1,19 @@
 import {enabled, localPreview} from './loan-import-config.mjs?v=20260922';
-import {loanImportOffers} from './loan-import-offers.mjs';
 
 let importer;
+const initializedOffers = new WeakSet();
+let offerViewed = false;
+let offerChosen = false;
 
-// No template, image, importer, storage read or request while rollout is off.
+// Public explanations are already in HTML; the rollout gate controls interaction only.
+// No DOM, importer, storage read or request while rollout is off.
 if (enabled) {
   document.querySelectorAll('[data-loan-rollout]').forEach(element => { element.hidden = false; });
   const direct = document.querySelector('[data-loan-import-root]');
   if (direct) void openImporter(direct).then(root => {
     if (location.hash === '#import-loan-history') root.scrollIntoView({block: 'start'});
   }).catch(() => showLoadError(direct));
-  document.querySelectorAll('[data-loan-offer]').forEach(renderOffer);
+  document.querySelectorAll('[data-loan-offer]').forEach(enhanceOffer);
 }
 
 function event(name) {
@@ -63,30 +66,14 @@ function showLoadError(host) {
   const note = element('p', 'The importer could not load. Please try again.');
   note.setAttribute('role', 'alert'); host.replaceChildren(note);
 }
-function renderOffer(host) {
-  const copy = loanImportOffers[host.dataset.loanOffer];
-  if (!copy) return;
-  host.className = 'loan-import-entry';
-  const card = element('section', null, 'loan-import-offer' + (copy.featured ? ' loan-import-offer--featured' : ''));
-  const content = element('div', null, 'loan-import-offer__copy');
-  const title = element('h2', copy.title); title.id = 'loan-import-offer-title';
-  card.setAttribute('aria-labelledby', title.id);
-  content.append(element('p', 'Start with what you already have', 'loan-import-offer__eyebrow'), title,
-    element('p', copy.body, 'loan-import-offer__intro'),
-    element('p', 'Text · CSV · Excel (.xlsx) · Word (.docx) · Photo', 'loan-import-offer__formats'));
-  const button = element('button', 'Import loan history', 'loan-import-offer__button');
-  button.type = 'button'; button.setAttribute('aria-expanded', 'false'); button.setAttribute('aria-controls', 'loan-import-workspace');
-  const actions = element('div', null, 'loan-import-offer__actions');
-  actions.append(button, element('span', 'Review here. Keep tracking on iPhone.', 'loan-import-offer__reassurance'));
-  content.append(actions); card.append(content);
-  if (copy.featured) {
-    const image = element('img'); image.src = '/images/shared/loan-import-history.webp';
-    image.width = 640; image.height = 427; image.alt = ''; image.loading = 'lazy'; image.decoding = 'async';
-    image.className = 'loan-import-offer__image'; card.append(image);
-  }
-  const workspace = element('div'); workspace.id = 'loan-import-workspace'; workspace.hidden = true;
-  host.append(card, workspace); host.hidden = false;
-  let loading = false, opened = false;
+function enhanceOffer(host) {
+  if (initializedOffers.has(host)) return;
+  const card = host.querySelector('.loan-import-offer');
+  const button = card?.querySelector('[data-loan-import-open]');
+  const workspace = host.querySelector('#loan-import-workspace');
+  if (!card || !button || !workspace || !workspace.hidden) return;
+  initializedOffers.add(host);
+  let loading = false;
   button.addEventListener('click', async () => {
     if (loading) return;
     loading = true; button.disabled = true; button.textContent = 'Opening…';
@@ -94,17 +81,19 @@ function renderOffer(host) {
       const root = await openImporter(workspace);
       button.setAttribute('aria-expanded', 'true'); button.textContent = 'Return to your import';
       root.tabIndex = -1; root.focus({preventScroll: true}); root.scrollIntoView({block: 'start'});
-      if (!opened) {event('offer_chosen'); opened = true;}
+      if (!offerChosen) {event('offer_chosen'); offerChosen = true;}
     } catch {
       showLoadError(workspace); button.textContent = 'Try opening again';
     } finally {loading = false; button.disabled = false;}
   });
+  button.hidden = false;
   // One actual viewport exposure per page, not merely a rendered hidden module.
   if (typeof IntersectionObserver === 'function') {
     let visible = false;
     const report = () => {
       if (!visible || document.visibilityState !== 'visible') return;
-      event('offer_viewed'); observer.disconnect(); document.removeEventListener('visibilitychange', report);
+      if (!offerViewed) {event('offer_viewed'); offerViewed = true;}
+      observer.disconnect(); document.removeEventListener('visibilitychange', report);
     };
     const observer = new IntersectionObserver(entries => {
       visible = entries.some(entry => entry.isIntersecting && entry.intersectionRatio >= .5); report();
