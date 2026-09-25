@@ -1,7 +1,7 @@
 /* Shared inset module; each host retains its existing design-contract shell. */
 [data-loan-offer][hidden], [data-loan-import-root][hidden], [data-loan-rollout][hidden], .loan-import-entry [hidden] {display:none!important}
 #loan-import-offer {scroll-margin-top:2rem}
-#main .loan-import-entry {margin:2rem 0;text-align:left;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#212931}
+#main .loan-import-entry {margin:2rem auto;text-align:left;font-family:system-ui,-apple-system,BlinkMacSystemFont,"Segoe UI",sans-serif;color:#212931}
 #main .loan-import-offer {display:block;padding:clamp(1.25rem,3vw,2rem);border:1px solid rgba(15, 23, 42, 0.08);border-radius:20px;background:linear-gradient(135deg,rgba(175,230,126,.16),#fff 65%);box-shadow:0 14px 36px rgba(15, 23, 42, 0.08)}
 #main .loan-import-offer h2 {margin:0 0 .75rem;font-family:inherit;font-size:clamp(1.35rem,2.5vw,1.8rem);font-weight:750;line-height:1.2;letter-spacing:-.02em;text-transform:none;color:#18212b}
 #main .loan-import-offer p {margin:0 0 1rem;max-width:65ch;font-family:inherit;text-align:left;line-height:1.55;font-size:1rem;color:#212931}

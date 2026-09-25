@@ -29,7 +29,7 @@ test('nine initial HTML offers are readable, bounded, and match the generator', 
     assert.match(block, /<div id="loan-import-workspace" hidden><\/div>/);
     assert.doesNotMatch(block, /data-loan-private|<form\b|<input\b/);
     assert.equal((html.match(/data-loan-offer=/g) || []).length, 1, file);
-    assert.ok(html.includes('loan-import-entry.css?v=20260923-discovery1'), file);
+    assert.ok(html.includes('loan-import-entry.css?v=20260925-mobile-layout-1'), file);
     assert.ok(html.includes('loan-import-entry.mjs?v=20260923-discovery1'), file);
   }
 });

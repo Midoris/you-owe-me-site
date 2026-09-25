@@ -147,7 +147,7 @@ test("homepage styles are scoped, responsive, and keep the example legible", () 
   assert.match(styles, /body\.homepage-page \.homepage-loan-value__steps\s*\{[\s\S]*?grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
   assert.match(styles, /body\.homepage-page \.homepage-loan-value__trust a:focus-visible/);
   assert.doesNotMatch(styles.match(/body\.homepage-page \.homepage-loan-value\s*\{[\s\S]*?\n      \}/)?.[0] ?? "", /(?:min-)?height\s*:/);
-  assert.match(page, /href="\.\/styles\/landing\.css\?v=exp-009-homepage-record-20260914-1"/);
+  assert.match(page, /href="\.\/styles\/landing\.css\?v=20260925-mobile-layout-1"/);
   assert.match(page, /<meta name="viewport" content="width=device-width, initial-scale=1" \/>/);
 });
 

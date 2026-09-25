@@ -2982,6 +2982,10 @@
           max-width: calc(100vw - 2.1rem) !important;
           margin-left: auto;
           margin-right: auto;
+        }
+
+        /* Full-width sections shed the article gutter; inset cards keep their own padding. */
+        body.homepage-page article.post.featured > *:not(.lt-heroMedia):not(.lt-anniversaryCallout):not(.homepage-loan-value):not(.homepage-review-teaser) {
           padding-left: 0;
           padding-right: 0;
         }
