@@ -2775,7 +2775,7 @@
 
       body.homepage-page .lt-checkGrid li {
         display: grid;
-        grid-template-columns: auto minmax(0, 1fr);
+        grid-template-columns: 0.48rem minmax(0, 1fr);
         gap: 0.56rem;
         align-items: start;
         margin: 0;
