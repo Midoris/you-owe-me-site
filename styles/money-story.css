@@ -30,7 +30,7 @@
 #money-story.is-ready .money-story__fallback{display:none}
 
 #money-story .money-story__track{height:560svh;background:var(--story-canvas)}
-#money-story .money-story__stage{position:sticky;top:52px;height:calc(100svh - 52px);overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#eaf6e6 0%,#f4f6f8 50%,#f4f6f8 100%)}
+#money-story .money-story__stage{position:sticky;top:52px;height:calc(100vh - 52px);height:calc(var(--story-viewport-height,100dvh) - 52px);overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#eaf6e6 0%,#f4f6f8 50%,#f4f6f8 100%)}
 #money-story .money-story__copy{position:absolute;z-index:5;top:28px;left:22px;right:22px;text-align:center}
 #money-story .money-story__kicker{color:var(--story-muted);font-size:10px;letter-spacing:2.5px}
 #money-story .money-story__copy h3{margin:12px 0 11px;color:var(--story-heading);font-size:clamp(30px,3.25vw,47px);font-weight:480;line-height:1.08;letter-spacing:-.045em;text-align:center}
@@ -64,7 +64,7 @@
 #money-story .money-story__toggle:after{content:"";position:absolute;top:2px;right:2px;width:12px;height:12px;border-radius:50%;background:var(--story-heading)}
 #money-story .money-story__track.has-reminder .money-story__reminder{opacity:1;transform:none}
 #money-story .money-story__track.has-reminder .money-story__balance{transform:translateX(-70px)}
-#money-story .money-story__document{position:absolute;z-index:4;top:0;left:50%;width:326px;opacity:0;transform:translate(-50%,55px) rotate(-4deg) scale(.92);transition:opacity .5s,transform .75s cubic-bezier(.2,.8,.2,1);pointer-events:none}
+#money-story .money-story__document{--story-document-scale:1;--story-document-rest-scale:.92;position:absolute;z-index:4;top:0;left:50%;width:326px;opacity:0;transform:translate(-50%,55px) rotate(-4deg) scale(var(--story-document-rest-scale));transform-origin:top center;transition:opacity .5s,transform .75s cubic-bezier(.2,.8,.2,1);pointer-events:none}
 #money-story .money-story__statement{padding:19px 24px;border:1px solid #dfe5e9;border-radius:3px;background:#fff;color:var(--story-ink);box-shadow:0 24px 70px #23313c23;text-align:left}
 #money-story .money-story__statement-mast{display:flex;align-items:center;justify-content:space-between;font-size:10px;font-weight:650}
 #money-story .money-story__statement-mast svg{width:17px;height:17px;color:#687583}
@@ -86,7 +86,7 @@
 #money-story .money-story__statement-amount{font-size:11px;font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
 #money-story .money-story__statement-foot{margin-top:7px;padding-top:9px;border-top:1px solid #e3e8ec;color:#667481;font-size:9px}
 #money-story .money-story__track[data-chapter="share"] .money-story__account{opacity:0;transform:translateY(-25px) scale(.96);pointer-events:none}
-#money-story .money-story__track[data-chapter="share"] .money-story__document{opacity:1;transform:translate(-50%,0) rotate(0) scale(1)}
+#money-story .money-story__track[data-chapter="share"] .money-story__document{opacity:1;transform:translate(-50%,0) rotate(0) scale(var(--story-document-scale))}
 #money-story .money-story__steps{position:absolute;z-index:7;bottom:25px;left:50%;display:flex;width:min(770px,calc(100% - 42px));padding-top:11px;border-top:1px solid #18212b24;transform:translateX(-50%)}
 #money-story .money-story__steps button{position:relative;display:flex;flex:1;align-items:center;justify-content:center;gap:7px;min-width:0;min-height:44px;height:auto;padding:8px 3px;border:0;border-radius:0;background:none;color:var(--story-muted);font-size:11px;font-weight:500;text-align:center;white-space:normal}
 #money-story .money-story__steps button:before{content:"";position:absolute;top:-12px;right:0;left:0;height:2px;background:#8dc363;transform:scaleX(0);transition:transform .4s}
@@ -144,27 +144,34 @@
   #money-story .money-story__steps button span{font-size:9px}
   #money-story .money-story__steps button b{font-size:9px}
 }
-@media(max-width:700px) and (max-height:750px){
-  #money-story .money-story__copy{top:18px}
-  #money-story .money-story__copy h3{margin:9px 0 7px;font-size:27px}
-  #money-story .money-story__copy p{font-size:12px;line-height:1.35}
-  #money-story .money-story__canvas{top:149px;bottom:83px}
-  #money-story .money-story__person{display:none}
-  #money-story .money-story__balance{top:12px}
-  #money-story .money-story__big-balance{font-size:86px}
-  #money-story .money-story__success{top:12px;gap:10px}
-  #money-story .money-story__success-check{width:38px;height:38px;font-size:23px}
-  #money-story .money-story__success-text{font-size:52px}
-  #money-story .money-story__reminder{top:165px}
-  #money-story .money-story__document{width:min(286px,calc(100% - 6px))}
-  #money-story .money-story__statement{padding:14px 19px}
-  #money-story .money-story__statement-title{margin:10px 0 6px;font-size:19px}
-  #money-story .money-story__statement-total{margin-top:9px;padding:6px 0}
-  #money-story .money-story__statement-total strong{font-size:26px}
-  #money-story .money-story__statement-summary{margin:9px 0 3px}
-  #money-story .money-story__statement-row{padding:5px 0}
-  #money-story .money-story__statement-foot{margin-top:5px;padding-top:6px}
-  #money-story .money-story__steps{bottom:13px}
+@media(max-width:700px){
+  #money-story.is-compact-height .money-story__copy{top:18px}
+  #money-story.is-compact-height .money-story__copy h3{margin:9px 0 7px;font-size:27px}
+  #money-story.is-compact-height .money-story__copy p{font-size:12px;line-height:1.35}
+  #money-story.is-compact-height .money-story__canvas{top:149px;bottom:83px}
+  #money-story.is-compact-height .money-story__person{display:none}
+  #money-story.is-compact-height .money-story__balance{top:12px}
+  #money-story.is-compact-height .money-story__big-balance{font-size:86px}
+  #money-story.is-compact-height .money-story__success{top:12px;gap:10px}
+  #money-story.is-compact-height .money-story__success-check{width:38px;height:38px;font-size:23px}
+  #money-story.is-compact-height .money-story__success-text{font-size:52px}
+  #money-story.is-compact-height .money-story__reminder{top:165px}
+  #money-story.is-compact-height .money-story__document{--story-document-scale:.92;--story-document-rest-scale:.86;width:min(286px,calc(100% - 6px))}
+  #money-story.is-compact-height .money-story__statement{padding:14px 19px}
+  #money-story.is-compact-height .money-story__statement-title{margin:10px 0 6px;font-size:19px}
+  #money-story.is-compact-height .money-story__statement-total{margin-top:9px;padding:6px 0}
+  #money-story.is-compact-height .money-story__statement-total strong{font-size:26px}
+  #money-story.is-compact-height .money-story__statement-summary{margin:9px 0 3px}
+  #money-story.is-compact-height .money-story__statement-row{padding:5px 0}
+  #money-story.is-compact-height .money-story__statement-foot{margin-top:5px;padding-top:6px}
+  #money-story.is-compact-height .money-story__steps{bottom:13px}
+  #money-story.is-tight-height .money-story__history{grid-template-columns:repeat(3,minmax(0,1fr));gap:8px 10px}
+  #money-story.is-tight-height .money-story__document{--story-document-scale:.84;--story-document-rest-scale:.79}
+  #money-story.is-extra-compact-height .money-story__success{top:6px;gap:6px}
+  #money-story.is-extra-compact-height .money-story__success-check{width:34px;height:34px;font-size:21px}
+  #money-story.is-extra-compact-height .money-story__success-text{font-size:48px}
+  #money-story.is-extra-compact-height .money-story__reminder{top:135px}
+  #money-story.is-extra-compact-height .money-story__document{--story-document-scale:.7;--story-document-rest-scale:.66}
 }
 @media(max-width:380px){
   #money-story .money-story__intro{padding-bottom:80px}

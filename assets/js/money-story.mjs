@@ -115,6 +115,7 @@ export function initMoneyStory(root, data = homepageStory) {
   let target = 0;
   let position = 0;
   let frame = 0;
+  let measureFrame = 0;
   let numberFrame = 0;
   let numberRun = 0;
   let displayed = chapters[0].balance;
@@ -122,6 +123,8 @@ export function initMoneyStory(root, data = homepageStory) {
   let wasReduced = motion.matches;
   let firstRender = true;
   let destroyed = false;
+  let measuredViewportHeight = 0;
+  const viewportHeight = () => window.visualViewport?.height || window.innerHeight;
 
   function cancelNumber() {
     cancelAnimationFrame(numberFrame);
@@ -220,15 +223,34 @@ export function initMoneyStory(root, data = homepageStory) {
 
   function read() {
     if (destroyed) return;
+    if (Math.abs(viewportHeight() - measuredViewportHeight) > .5) {
+      scheduleMeasure();
+      return;
+    }
     target = clamp((window.scrollY - start) / distance);
     if (!frame) frame = requestAnimationFrame(render);
   }
 
   function measure() {
     if (destroyed) return;
-    start = track.getBoundingClientRect().top + window.scrollY - 52;
-    distance = Math.max(1, track.offsetHeight - window.innerHeight + 52);
+    measuredViewportHeight = viewportHeight();
+    const stickyTop = Number.parseFloat(getComputedStyle(stage).top) || 0;
+    root.style.setProperty('--story-viewport-height', measuredViewportHeight.toFixed(2) + 'px');
+    const isMobile = window.innerWidth <= 700;
+    root.classList.toggle('is-compact-height', isMobile && measuredViewportHeight <= 750);
+    root.classList.toggle('is-tight-height', isMobile && measuredViewportHeight <= 650);
+    root.classList.toggle('is-extra-compact-height', isMobile && measuredViewportHeight <= 620);
+    start = track.getBoundingClientRect().top + window.scrollY - stickyTop;
+    distance = Math.max(1, track.offsetHeight - measuredViewportHeight + stickyTop);
     read();
+  }
+
+  function scheduleMeasure() {
+    if (destroyed || measureFrame) return;
+    measureFrame = requestAnimationFrame(() => {
+      measureFrame = 0;
+      measure();
+    });
   }
 
   function go(index) {
@@ -249,14 +271,15 @@ export function initMoneyStory(root, data = homepageStory) {
   begin.addEventListener('click', onBegin);
   steps.addEventListener('click', onStep);
   window.addEventListener('scroll', read, { passive: true });
-  window.addEventListener('resize', measure);
-  window.addEventListener('load', measure, { once: true });
+  window.addEventListener('resize', scheduleMeasure);
+  window.visualViewport?.addEventListener('resize', scheduleMeasure);
+  window.addEventListener('load', scheduleMeasure, { once: true });
   motion.addEventListener('change', read);
-  const observer = typeof ResizeObserver === 'function' ? new ResizeObserver(measure) : null;
+  const observer = typeof ResizeObserver === 'function' ? new ResizeObserver(scheduleMeasure) : null;
   observer?.observe(document.documentElement);
   observer?.observe(root);
   observer?.observe(track);
-  document.fonts?.ready.then(measure);
+  document.fonts?.ready.then(scheduleMeasure);
 
   root.dataset.storyInitialized = 'true';
   root.classList.add('is-ready');
@@ -266,15 +289,19 @@ export function initMoneyStory(root, data = homepageStory) {
     destroy() {
       destroyed = true;
       cancelAnimationFrame(frame);
+      cancelAnimationFrame(measureFrame);
       cancelNumber();
       observer?.disconnect();
       begin.removeEventListener('click', onBegin);
       steps.removeEventListener('click', onStep);
       window.removeEventListener('scroll', read);
-      window.removeEventListener('resize', measure);
-      window.removeEventListener('load', measure);
+      window.removeEventListener('resize', scheduleMeasure);
+      window.visualViewport?.removeEventListener('resize', scheduleMeasure);
+      window.removeEventListener('load', scheduleMeasure);
       motion.removeEventListener('change', read);
       root.classList.remove('is-ready');
+      root.classList.remove('is-compact-height', 'is-tight-height', 'is-extra-compact-height');
+      root.style.removeProperty('--story-viewport-height');
       delete root.dataset.storyInitialized;
     }
   };
