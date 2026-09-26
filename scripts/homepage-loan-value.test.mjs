@@ -77,6 +77,7 @@ test("story, import, definition, and generated situation hub stay in the intende
   assert.ok(storyStart < importStart && importStart < reviewIndex && reviewIndex < definitionIndex && definitionIndex < hubStart, "story → import → review → definition → generated situation hub order should be preserved");
   assert.ok(hubStart < anniversaryIndex && anniversaryIndex < featureIndex && featureIndex < includedIndex && includedIndex < moreSituationsIndex && moreSituationsIndex < researchIndex, "later homepage sections should remain in order");
   assert.equal((page.match(/<!-- money-story:start -->/g) ?? []).length, 1);
+  assert.match(page, /<h3>Alex asks, “What do I still owe\?”<\/h3><p>You share a PDF with every entry and the \$160 balance\.<\/p>/);
   assert.equal((page.match(/<!-- loan-import-offer:start -->/g) ?? []).length, 1);
   assert.equal((page.match(/id="situations"/g) ?? []).length, 1);
   assert.equal((page.match(/class="homepage-review-teaser"/g) ?? []).length, 1);

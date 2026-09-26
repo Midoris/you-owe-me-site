@@ -18,6 +18,8 @@ test('homepage story balances reconcile, and the share and settlement keep their
 
   const share = chapters.find(chapter => chapter.id === 'share');
   const settled = chapters.find(chapter => chapter.id === 'settle');
+  assert.equal(share.title, 'Alex asks, “What do I still owe?”');
+  assert.equal(share.description, 'You share a PDF with every entry and the $160 balance.');
   assert.deepEqual(share.rows.map(row => row.date), ['May 4', 'May 9', 'May 10', 'May 22']);
   assert.equal(share.covered, 340);
   assert.equal(share.repaid, 180);

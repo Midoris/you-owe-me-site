@@ -1,4 +1,4 @@
-import { homepageStory } from './money-story-data.mjs';
+import { homepageStory } from './money-story-data.mjs?v=20260926-2';
 
 const money = amount => '$' + Math.round(amount).toLocaleString('en-US');
 const make = (tag, className, value) => {
