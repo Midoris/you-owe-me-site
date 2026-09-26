@@ -16,8 +16,8 @@ function sectionMarkup(className) {
 
 function heroMarkup() {
   const start = page.indexOf('<section class="lt-hero"');
-  const end = page.indexOf('\n\n          <section class="homepage-loan-value"', start);
-  assert.ok(start >= 0 && end > start, "homepage hero should be present before the loan-value section");
+  const end = page.indexOf('\n\n          <!-- money-story:start -->', start);
+  assert.ok(start >= 0 && end > start, "homepage hero should end before the money story");
   return page.slice(start, end);
 }
 
@@ -28,84 +28,81 @@ function homepageRegistryMarkup() {
   return registry.slice(start, end);
 }
 
-test("homepage starts with the continuing-record hero and preserves its handoffs", () => {
+test("homepage hero keeps its primary download and separate QR handoff", () => {
   const hero = heroMarkup();
+  const heroCopyStart = hero.indexOf('<div class="lt-heroCopy">');
+  const handoffStart = hero.indexOf('<section class="iphone-handoff homepage-iphone-handoff"');
+  const heroCopyEnd = hero.lastIndexOf('</div>', handoffStart);
+  assert.ok(heroCopyStart >= 0 && handoffStart > heroCopyStart && heroCopyEnd > heroCopyStart, "hero copy should end before its QR handoff sibling");
+  const heroCopy = hero.slice(heroCopyStart, heroCopyEnd);
 
   for (const copy of [
     "Loan &amp; IOU tracker for iPhone",
     "Know what&rsquo;s still owed.",
     "Keep loans, shared costs and repayments in one clear record. See the balance with each person&mdash;even when payments arrive in parts.",
-    "Free download &middot; In-app purchases available",
-    "Core tracking works offline without an account.",
-    "Keep your own records. Others don&rsquo;t need the app.",
-    "Example: a loan repaid in part",
-    "You record the payment. You Owe Me updates the balance.",
-    "A running balance in You Owe Me",
   ]) {
     assert.ok(hero.includes(copy), `hero should include approved copy: ${copy}`);
   }
 
-  assert.match(hero, /<dl class="homepage-balance-example__amounts">[\s\S]*?<dt>Lent<\/dt>[\s\S]*?<dd>\$500<\/dd>[\s\S]*?<dt>Repaid<\/dt>[\s\S]*?<dd>\$100<\/dd>[\s\S]*?<dt>Still owed<\/dt>[\s\S]*?<dd>\$400<\/dd>[\s\S]*?<\/dl>/);
-  assert.match(hero, /class="homepage-balance-example__remaining"/);
+  assert.doesNotMatch(hero, /homepage-balance-example|6\.8\.5_one_running_balance\.webp|6\.8\.5_money_between_people\.webp|homepage-hero-shot-caption/);
+  assert.doesNotMatch(hero, /homepage-download-reassurance|Core tracking works offline without an account\.|Keep your own records\./);
+  assert.doesNotMatch(heroCopy, /Find your situation|data-cta-location="hero-secondary"/);
   assert.doesNotMatch(hero, /<(?:button|input|select|textarea|form|script)\b|on\w+=|animation/i);
-  assert.match(hero, /src="\/images\/shared\/app-screenshots\/6\.8\.5_one_running_balance\.webp" alt="You Owe Me showing a person&rsquo;s current balance and dated repayments\." loading="eager" fetchpriority="high" decoding="async" width="1290" height="2796"/);
-  assert.doesNotMatch(hero, /6\.8\.5_money_between_people\.webp/);
 
   assert.match(hero, new RegExp(APP_STORE_URL.replace(/[.*+?^${}()|[\]\\]/g, "\\$&")));
   assert.match(hero, /class="lt-appStoreBtn"[\s\S]*?data-cta-location="hero"/);
   assert.match(hero, /<img src="https:\/\/tools\.applemediaservices\.com\/api\/badges\/download-on-the-app-store\/black\/en-us\?size=250x83" alt="Download You Owe Me on the App Store"/);
-  assert.match(hero, /<a href="#situations" class="lt-textCta" data-cta-location="hero-secondary">Find your situation<\/a>/);
   assert.match(hero, /<span class="lt-salePill" aria-label="Current app sale" hidden>Sale - Now on Sale<\/span>/);
-  assert.match(hero, /data-iphone-handoff-mode="visible" data-cta-location="homepage_iphone_handoff"/);
-  assert.match(hero, /data-iphone-handoff-qr src="\/images\/shared\/iphone-handoff\/home\.png" width="408" height="408"/);
+
+  assert.ok(handoffStart > heroCopyEnd, "QR handoff should be a sibling after the hero copy");
+  assert.match(hero.slice(handoffStart), /data-iphone-handoff-mode="visible" data-cta-location="homepage_iphone_handoff"/);
+  assert.match(hero.slice(handoffStart), /data-iphone-handoff-qr src="\/images\/shared\/iphone-handoff\/home\.png" width="408" height="408"/);
   assert.equal((hero.match(/data-app-language-support-anchor/g) ?? []).length, 1);
 });
 
-test("homepage section order favors proof, three paths, and then preserves lower routes", () => {
-  const loanValue = sectionMarkup("homepage-loan-value");
-  const loanIndex = page.indexOf(loanValue);
+test("story, import, definition, and generated situation hub stay in the intended order", () => {
+  const storyStart = page.indexOf('<!-- money-story:start -->');
+  const storyEnd = page.indexOf('<!-- money-story:end -->', storyStart);
+  const importStart = page.indexOf('<!-- loan-import-offer:start -->');
   const reviewIndex = page.indexOf('<figure class="homepage-review-teaser">');
-  const situationsIndex = page.indexOf('<div id="situations">');
-  const generatedIndex = page.indexOf('<!-- best-next-step:start -->');
   const definitionIndex = page.indexOf('class="lt-pageSection lt-definitionPanel"');
+  const hubStart = page.indexOf('<!-- best-next-step:start -->');
+  const anniversaryIndex = page.indexOf('<section class="lt-anniversaryCallout"');
+  const featureIndex = page.indexOf('id="core-capabilities-title"');
+  const includedIndex = page.indexOf('class="lt-pageSection lt-includedSection"');
   const moreSituationsIndex = page.indexOf('<section id="more-situations"');
   const researchIndex = page.indexOf('class="lt-pageSection lt-researchPanel"');
-  const moreSituations = sectionMarkup("lt-situationsSection");
 
-  assert.equal((page.match(/<section\b[^>]*\bhomepage-loan-value\b/gi) ?? []).length, 1);
+  assert.ok(storyStart >= 0 && storyEnd > storyStart, "the story block should be present");
+  assert.ok(storyStart < importStart && importStart < reviewIndex && reviewIndex < definitionIndex && definitionIndex < hubStart, "story → import → review → definition → generated situation hub order should be preserved");
+  assert.ok(hubStart < anniversaryIndex && anniversaryIndex < featureIndex && featureIndex < includedIndex && includedIndex < moreSituationsIndex && moreSituationsIndex < researchIndex, "later homepage sections should remain in order");
+  assert.equal((page.match(/<!-- money-story:start -->/g) ?? []).length, 1);
+  assert.equal((page.match(/<!-- loan-import-offer:start -->/g) ?? []).length, 1);
   assert.equal((page.match(/id="situations"/g) ?? []).length, 1);
   assert.equal((page.match(/class="homepage-review-teaser"/g) ?? []).length, 1);
-  assert.ok(loanIndex < reviewIndex && reviewIndex < situationsIndex && situationsIndex < generatedIndex && generatedIndex < definitionIndex && definitionIndex < moreSituationsIndex && moreSituationsIndex < researchIndex, "required homepage document order should be preserved");
+  assert.doesNotMatch(page, /homepage-loan-value|id="how-it-works-title"|How YouOweMe keeps shared money clear/);
 
-  for (const copy of [
-    "From the first amount to the final repayment",
-    "Keep the history as the balance changes",
-    "Record the person and amount",
-    "Add money lent, borrowed or paid for someone, with a note when you need one.",
-    "Add each repayment",
-    "Record what was actually paid. The balance updates while earlier entries stay in the history.",
-    "Keep the next step clear",
-    "For a longer loan, use a repayment plan, reminders or a PDF statement when you need them.",
-    "Face ID / Touch ID app lock &middot; Available in 10 languages.",
-    "Since 2016",
-    "Actively maintained.",
-  ]) {
-    assert.ok(loanValue.includes(copy), `loan-value section should include approved copy: ${copy}`);
-  }
+  const definition = sectionMarkup("lt-definitionPanel");
+  assert.match(definition, /<h2 id="what-is-youoweme">What is You Owe Me\?<\/h2>[\s\S]*?You Owe Me is an iPhone app for tracking money you lend, borrow or cover for someone\./);
+  assert.match(definition, /Track on your own—the other person doesn’t need the app\.[\s\S]*?Share a statement or a live balance/);
+  const definitionCta = definition.match(/<a\b[^>]*data-cta-location="homepage-definition"[^>]*>[\s\S]*?<\/a>/)?.[0] ?? "";
+  assert.ok(definitionCta, "definition should offer an App Store download");
+  assert.ok(definitionCta.includes(`href="${APP_STORE_URL}"`));
+  assert.match(definitionCta, /class="lt-appStoreBtn"/);
+  assert.match(definitionCta, /aria-label="Download You Owe Me on the App Store"/);
+  assert.match(definitionCta, /<img src="https:\/\/tools\.applemediaservices\.com\/api\/badges\/download-on-the-app-store\/black\/en-us\?size=250x83" alt="Download You Owe Me on the App Store"/);
+  assert.match(definition, /class="homepage-definition-trust"[^>]*>Available in 10 languages\.<\/p>/);
+  assert.doesNotMatch(definition, /Face ID|Touch ID|Privacy and data|Since 2016|actively maintained/);
 
-  assert.equal((loanValue.match(/<li>/g) ?? []).length, 3);
-  assert.match(loanValue, /<a href="\/privacy-and-data\/">Privacy and data<\/a>/);
-  assert.doesNotMatch(loanValue, /apps\.apple\.com|<(?:button|input|select|textarea|form|script)\b|on\w+=|animation/i);
-  assert.match(page, /class="homepage-review-teaser"[\s\S]*?This app is a lifesaver![\s\S]*?<a href="\/reviews\/">App Store review<\/a> &middot; ThePres_560/);
-  assert.doesNotMatch(page, /class="lt-bnsProof"/);
-
+  assert.match(page, /<figure class="homepage-review-teaser">[\s\S]*?<blockquote><strong>This app is a lifesaver!<\/strong> I finally have an easy way to track money I&rsquo;ve loaned or am owed\.<\/blockquote>\s*<figcaption><a href="\/reviews\/">ThePres_560<\/a>/);
+  const moreSituations = sectionMarkup("lt-situationsSection");
   assert.match(moreSituations, /id="more-situations"[\s\S]*?aria-labelledby="more-situations-title"/);
   assert.match(moreSituations, /Other situations and tools[\s\S]*?<h2 id="more-situations-title">More ways to use You Owe Me<\/h2>[\s\S]*?Explore other situations, or use a free tool for a one-time calculation\./);
   assert.equal((moreSituations.match(/class="lt-situationCard\b/g) ?? []).length, 8);
   assert.match(moreSituations, /href="\/find\/" class="lt-findNudge"/);
 });
 
-test("homepage registry remains the generated module source of truth", () => {
+test("generated hub retains its registered homepage content and placement", () => {
   const homepageRegistry = homepageRegistryMarkup();
 
   for (const copy of [
@@ -113,7 +110,7 @@ test("homepage registry remains the generated module source of truth", () => {
     'updated: "2026-09-23"',
     'enabled: true',
     'variant: "hub"',
-    'placement: "after-loan-value"',
+    'placement: "after-definition"',
     'template: "custom"',
     'eyebrow: "Find your situation"',
     'heading: "See how it fits your situation"',
@@ -130,23 +127,32 @@ test("homepage registry remains the generated module source of truth", () => {
   assert.match(homepageRegistry, /label: "Personal loans"[\s\S]*?href: "\/solutions\/personal-loan-repayment-tracker\/"[\s\S]*?type: "solution"[\s\S]*?intent: "track_ongoing_balance"/);
   assert.match(homepageRegistry, /label: "Family costs"[\s\S]*?href: "\/solutions\/family-reimbursement-tracker\/"[\s\S]*?type: "solution"[\s\S]*?intent: "track_ongoing_balance"/);
   assert.doesNotMatch(homepageRegistry, /home_find_situation|home_running_balance|app-store:self/);
+  assert.match(page, /<!-- best-next-step:start -->[\s\S]*?<!-- Generated by scripts\/build-best-next-steps\.mjs\. Edit content\/content-registry\.mjs instead\./);
 });
 
-test("homepage styles are scoped, responsive, and keep the example legible", () => {
+test("the condensed feature section and included-tools links remain intact", () => {
+  const featureGrid = page.match(/<div class="lt-coreFeatureGrid">([\s\S]*?)<\/div>\s*<\/section>/)?.[1] ?? "";
+  assert.ok(featureGrid, "core feature grid should be present");
+  assert.equal((featureGrid.match(/class="lt-coreFeatureCard"/g) ?? []).length, 3);
+  for (const label of ["Loan Records", "Repayment plans", "Live Link"]) {
+    assert.ok(featureGrid.includes(label), `feature card should retain ${label}`);
+  }
+
+  const included = sectionMarkup("lt-includedSection");
+  assert.equal((included.match(/<li>/g) ?? []).length, 4);
+  for (const copy of ["Recurring entries and multi-currency records", "Reminders and Money Conversations", "Balance Sync", "CSV export"]) {
+    assert.ok(included.includes(copy), `included tools should retain ${copy}`);
+  }
+  assert.match(included, /href="\.\/features\/" class="lt-textCta" data-cta-location="features-link">View all features<\/a>/);
+  assert.match(included, /href="\.\/quick-start\/" class="lt-textCta" data-cta-location="quick-start-link">See how it works<\/a>/);
+});
+
+test("homepage styles remain scoped and responsive", () => {
   assert.match(styles, /body\.homepage-page \.lt-hero h1\s*\{[\s\S]*?max-width: 14ch;[\s\S]*?font-size: clamp\(2\.5rem, 4\.5vw, 4rem\) !important;[\s\S]*?line-height: 1\.04;/);
   assert.match(styles, /body\.homepage-page \.lt-heroLead,[\s\S]*?max-width: 50ch;[\s\S]*?font-size: 18px;[\s\S]*?line-height: 1\.5;/);
-  assert.match(styles, /body\.homepage-page \.homepage-balance-example__amounts\s*\{[\s\S]*?grid-template-columns: repeat\(3, minmax\(0, 1fr\)\);[\s\S]*?gap: 8px;/);
-  assert.match(styles, /body\.homepage-page \.homepage-balance-example__amounts dt\s*\{[\s\S]*?font-size: 12px;/);
-  assert.match(styles, /body\.homepage-page \.homepage-balance-example__amounts dd\s*\{[\s\S]*?font-size: 24px;/);
-  assert.match(styles, /body\.homepage-page \.homepage-balance-example__amounts \.homepage-balance-example__remaining dd\s*\{[\s\S]*?font-size: 28px;/);
-  assert.match(styles, /body\.homepage-page \.lt-heroMedia \.lt-heroShot\s*\{[\s\S]*?max-width: 280px;/);
   assert.match(styles, /body\.homepage-page #situations\s*\{[\s\S]*?scroll-margin-top: 6rem;/);
   assert.match(styles, /@media \(min-width: 737px\)\s*\{[\s\S]*?body\.homepage-page #situations \.best-next-step__grid\s*\{[\s\S]*?grid-template-columns: repeat\(3, minmax\(0, 1fr\)\);/);
-  assert.match(styles, /@media \(max-width: 736px\)\s*\{[\s\S]*?body\.homepage-page \.lt-hero h1\s*\{[\s\S]*?max-width: 17ch;[\s\S]*?font-size: clamp\(2\.25rem, 8\.8vw, 2\.75rem\) !important;[\s\S]*?line-height: 1\.08;/);
-  assert.match(styles, /@media \(max-width: 736px\)\s*\{[\s\S]*?body\.homepage-page \.lt-heroMedia \.lt-heroShot\s*\{[\s\S]*?max-width: 210px;/);
-  assert.match(styles, /body\.homepage-page \.homepage-loan-value__steps\s*\{[\s\S]*?grid-template-columns: repeat\(3, minmax\(0, 1fr\)\)/);
-  assert.match(styles, /body\.homepage-page \.homepage-loan-value__trust a:focus-visible/);
-  assert.doesNotMatch(styles.match(/body\.homepage-page \.homepage-loan-value\s*\{[\s\S]*?\n      \}/)?.[0] ?? "", /(?:min-)?height\s*:/);
+  assert.match(styles, /@media \(max-width: 736px\)\s*\{[\s\S]*?body\.homepage-page \.lt-hero h1\s*\{[\s\S]*?font-size: clamp\(2\.25rem, 8\.8vw, 2\.75rem\) !important;/);
   assert.match(page, /href="\.\/styles\/landing\.css\?v=20260925-mobile-layout-2"/);
   assert.match(page, /<meta name="viewport" content="width=device-width, initial-scale=1" \/>/);
 });

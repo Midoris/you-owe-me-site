@@ -146,6 +146,8 @@
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
       <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260925-mobile-layout-1" />
+    <link rel="stylesheet" href="./styles/money-story.css?v=20260926-2" />
+    <link rel="stylesheet" href="./styles/landing-cleanup.css?v=20260926-2" />
   </head>
 
   <body class="is-preload site-nav-page homepage-page">
@@ -200,77 +202,77 @@
                   <span class="sr-only">Download You Owe Me on the App Store</span>
                   <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" />
                 </a>
-                <a href="#situations" class="lt-textCta" data-cta-location="hero-secondary">Find your situation</a>
                 <span class="lt-salePill" aria-label="Current app sale" hidden>Sale - Now on Sale</span>
               </div>
-              <p class="loan-import-hero-link" data-loan-rollout hidden><a href="#loan-import-offer">Already have loan records? Import them</a></p>
-              <div class="homepage-download-reassurance">
-                <span>Free download &middot; In-app purchases available</span>
-                <span>Core tracking works offline without an account.</span>
-                <span>Keep your own records. Others don&rsquo;t need the app.</span>
-              </div>
-              <section class="iphone-handoff homepage-iphone-handoff" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="homepage_iphone_handoff" data-iphone-handoff-replaces="homepage-primary-download" aria-labelledby="homepage-iphone-handoff-title" hidden>
-                <div class="iphone-handoff__visible-layout">
-                  <div class="iphone-handoff__visible-copy">
-                    <h2 id="homepage-iphone-handoff-title">Get You Owe Me on your iPhone</h2>
-                    <p class="iphone-handoff__benefit">Keep loans, shared costs and repayments together.</p>
-                    <p class="iphone-handoff__instruction" data-iphone-handoff-instruction>Scan with your iPhone camera to open the App Store.</p>
-                    <p class="iphone-handoff__reassurance">Free download &middot; In-app purchases available.</p>
-                    <a class="iphone-handoff__fallback" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8">View app details on the App Store</a>
-                  </div>
-                  <img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/shared/iphone-handoff/home.png" width="408" height="408" alt="QR code to open You Owe Me on the App Store." />
-                </div>
-              </section>
             </div>
 
-            <div class="lt-heroMedia" aria-label="YouOweMe app screenshots">
-              <div class="homepage-balance-example">
-                <p class="homepage-balance-example__label">Example: a loan repaid in part</p>
-                <dl class="homepage-balance-example__amounts">
-                  <div>
-                    <dt>Lent</dt>
-                    <dd>$500</dd>
-                  </div>
-                  <div>
-                    <dt>Repaid</dt>
-                    <dd>$100</dd>
-                  </div>
-                  <div class="homepage-balance-example__remaining">
-                    <dt>Still owed</dt>
-                    <dd>$400</dd>
-                  </div>
-                </dl>
-                <p class="homepage-balance-example__explanation">You record the payment. You Owe Me updates the balance.</p>
-              </div>
-              <div class="lt-heroGallery">
-                <div class="lt-heroShot">
-                  <img src="/images/shared/app-screenshots/6.8.5_one_running_balance.webp" alt="You Owe Me showing a person&rsquo;s current balance and dated repayments." loading="eager" fetchpriority="high" decoding="async" width="1290" height="2796" />
+            <section class="iphone-handoff homepage-iphone-handoff" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="homepage_iphone_handoff" data-iphone-handoff-replaces="homepage-primary-download" aria-labelledby="homepage-iphone-handoff-title" hidden>
+              <div class="iphone-handoff__visible-layout">
+                <div class="iphone-handoff__visible-copy">
+                  <h2 id="homepage-iphone-handoff-title">Get You Owe Me on your iPhone</h2>
+                  <p class="iphone-handoff__benefit">Keep loans, shared costs and repayments together.</p>
+                  <p class="iphone-handoff__instruction" data-iphone-handoff-instruction>Scan with your iPhone camera to open the App Store.</p>
+                  <a class="iphone-handoff__fallback" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8">View app details on the App Store</a>
                 </div>
+                <img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/shared/iphone-handoff/home.png" width="408" height="408" alt="QR code to open You Owe Me on the App Store." />
               </div>
-              <p class="homepage-hero-shot-caption">A running balance in You Owe Me</p>
-            </div>
+            </section>
           </section>
 
-          <section class="homepage-loan-value" aria-labelledby="homepage-loan-value-title">
-            <p class="homepage-loan-value__eyebrow">From the first amount to the final repayment</p>
-            <h2 id="homepage-loan-value-title">Keep the history as the balance changes</h2>
-            <ol class="homepage-loan-value__steps">
-              <li>
-                <span class="homepage-loan-value__number" aria-hidden="true">1</span>
-                <span class="homepage-loan-value__copy"><strong>Record the person and amount</strong><span>Add money lent, borrowed or paid for someone, with a note when you need one.</span></span>
-              </li>
-              <li>
-                <span class="homepage-loan-value__number" aria-hidden="true">2</span>
-                <span class="homepage-loan-value__copy"><strong>Add each repayment</strong><span>Record what was actually paid. The balance updates while earlier entries stay in the history.</span></span>
-              </li>
-              <li>
-                <span class="homepage-loan-value__number" aria-hidden="true">3</span>
-                <span class="homepage-loan-value__copy"><strong>Keep the next step clear</strong><span>For a longer loan, use a repayment plan, reminders or a PDF statement when you need them.</span></span>
-              </li>
-            </ol>
-            <p class="homepage-loan-value__trust">Face ID / Touch ID app lock &middot; Available in 10 languages. <a href="/privacy-and-data/">Privacy and data</a>.</p>
-            <p class="lt-maintenanceProof"><span class="lt-maintenanceProof__since">Since 2016</span> &middot; <span class="lt-maintenanceProof__text">Actively maintained.</span></p>
+          <!-- money-story:start -->
+          <section id="money-story" class="money-story" data-money-story="homepage" aria-labelledby="money-story-intro-title">
+            <div class="money-story__intro">
+              <div class="money-story__eyebrow"><span class="money-story__dot" aria-hidden="true"></span> How it works</div>
+              <h2 id="money-story-intro-title">“I’ll pay<br><span>you back.”</span></h2>
+              <p>Track what you cover, what comes back, and what’s left.</p>
+              <a class="money-story__begin" href="#money-story-fallback" data-story-begin>Follow the story <span aria-hidden="true">↓</span></a>
+              <a class="money-story__skip" href="#money-story-end">Skip story <span aria-hidden="true">↓</span></a>
+              <div class="money-story__orbit" aria-hidden="true"></div>
+            </div>
+
+            <div class="money-story__fallback" id="money-story-fallback">
+              <ol>
+                <li><h3>You cover Alex’s bill.</h3><p>Record the $300 Alex will pay back.</p><span>May 4 · $300 remaining</span></li>
+                <li><h3>The first $100 comes back.</h3><p>You record the payment. The balance updates.</p><span>May 9 · $200 remaining</span></li>
+                <li><h3>Then you cover groceries.</h3><p>Add $40 to Alex’s record. Keep every change together.</p><span>May 10 · $240 remaining</span></li>
+                <li><h3>A reminder for you.</h3><p>Choose a day to check in with Alex.</p><span>May 14 · Personal reminder for May 22</span></li>
+                <li><h3>Another $80 paid back.</h3><p>Record it. The balance changes; the history stays.</p><span>May 22 · $160 remaining</span></li>
+                <li><h3>“What do I still owe?”</h3><p>Share a PDF with Alex: every entry and the balance.</p><span>May 22 · $340 covered · $180 repaid · $160 remaining</span></li>
+                <li><h3>Alex pays back the rest.</h3><p>Record the last $160. Keep the full history.</p><span>May 30 · Paid in full</span></li>
+              </ol>
+            </div>
+
+            <div class="money-story__track money-story__enhanced" data-story-track aria-label="Helping Alex, in seven moments">
+              <div class="money-story__stage" data-story-stage tabindex="-1">
+                <div class="money-story__copy">
+                  <span class="money-story__kicker" data-story-kicker></span>
+                  <h3 data-story-title></h3>
+                  <p data-story-description></p>
+                </div>
+                <div class="money-story__canvas">
+                  <div class="money-story__account" data-story-account>
+                    <div class="money-story__person" data-story-person><span class="money-story__avatar" data-story-avatar aria-hidden="true">A</span><span data-story-person-name>Alex</span></div>
+                    <div class="money-story__balance" data-story-balance-display>
+                      <span class="money-story__balance-label" data-story-balance-label>Alex owes you</span>
+                      <div class="money-story__big-balance"><span data-story-amount>$300</span><span class="money-story__decimal">.00</span></div>
+                    </div>
+                    <div class="money-story__success" data-story-success role="status" aria-hidden="true"><span class="money-story__success-check" aria-hidden="true">✓</span><span class="money-story__success-text">Paid <br class="money-story__mobile-break">in full</span></div>
+                    <div class="money-story__history" data-story-history></div>
+                    <div class="money-story__reminder" data-story-reminder aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg>
+                      <span><strong data-story-reminder-title>Check in with Alex</strong><small data-story-reminder-date>Personal reminder · May 22</small></span>
+                      <span class="money-story__toggle" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                  <div class="money-story__document" data-story-document aria-hidden="true"></div>
+                </div>
+                <nav class="money-story__steps" data-story-steps aria-label="Story chapters"></nav>
+                <div class="money-story__progress" data-story-progress aria-hidden="true"></div>
+              </div>
+            </div>
           </section>
+          <div id="money-story-end" tabindex="-1"></div>
+          <!-- money-story:end -->
 
           <!-- loan-import-offer:start -->
           <div id="loan-import-offer" class="loan-import-entry" data-loan-offer="home">
@@ -294,9 +296,21 @@
           <!-- loan-import-offer:end -->
 
           <figure class="homepage-review-teaser">
-            <blockquote>This app is a lifesaver! I finally have an easy way to track money I&rsquo;ve loaned or am owed.</blockquote>
-            <figcaption><a href="/reviews/">App Store review</a> &middot; ThePres_560</figcaption>
+            <p class="homepage-review-teaser__eyebrow">App Store review</p>
+            <blockquote><strong>This app is a lifesaver!</strong> I finally have an easy way to track money I&rsquo;ve loaned or am owed.</blockquote>
+            <figcaption><a href="/reviews/">ThePres_560</a></figcaption>
           </figure>
+
+          <section class="lt-pageSection lt-definitionPanel" aria-labelledby="what-is-youoweme">
+            <h2 id="what-is-youoweme">What is You Owe Me?</h2>
+            <p>You Owe Me is an iPhone app for tracking money you lend, borrow or cover for someone. Keep each person’s balance and repayment history together.</p>
+            <p>Track on your own—the other person doesn’t need the app. Share a statement or a live balance when you want to keep them in the loop.</p>
+            <a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" class="lt-appStoreBtn" aria-label="Download You Owe Me on the App Store" data-cta-location="homepage-definition">
+              <span class="sr-only">Download You Owe Me on the App Store</span>
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" />
+            </a>
+            <p class="homepage-definition-trust">Available in 10 languages.</p>
+          </section>
 
           <div id="situations">
           <!-- best-next-step:start -->
@@ -326,39 +340,7 @@
 <!-- best-next-step:end -->
           </div>
 
-          <section class="lt-pageSection lt-definitionPanel" aria-labelledby="what-is-youoweme">
-            <h2 id="what-is-youoweme">What is You Owe Me?</h2>
-            <p>
-              You Owe Me is an iPhone app for tracking money between people. It helps with IOUs, shared bills, temporary support, informal loans, repayments, recurring costs, reminders, Live Links, PDF statements, and follow-up messages &mdash; so you can see who owes whom, what changed, and what to say next.
-            </p>
-            <p>
-              Use it when the amount does not stay simple: someone repays part, another cost is added, a due date changes, a recurring bill renews, or you need to share the balance without forcing the other person into the app.
-            </p>
-          </section>
 
-          <section class="lt-pageSection" aria-labelledby="how-it-works-title">
-            <div class="lt-sectionHeader">
-              <h2 id="how-it-works-title">How YouOweMe keeps shared money clear</h2>
-            </div>
-            <div class="lt-stepGrid">
-              <article class="lt-card">
-                <p class="lt-stepNumber">1</p>
-                <h3>Log what happened</h3>
-                <p>Add money lent, money borrowed, bills paid, shared expenses, recurring costs, or repayments.</p>
-              </article>
-              <article class="lt-card">
-                <p class="lt-stepNumber">2</p>
-                <h3>See the balance and timeline</h3>
-                <p>Every entry updates the balance. Timeline keeps the money story with that person organized beyond a simple transaction list.</p>
-              </article>
-              <article class="lt-card">
-                <p class="lt-stepNumber">3</p>
-                <h3>Follow up or share clearly</h3>
-                <p>Check what already happened, then set a reminder for a due date, bill, balance, or follow-up, generate a calmer money message, send a Live Link, or create a PDF statement when the situation needs more clarity.</p>
-              </article>
-            </div>
-            <p class="lt-note">New to YouOweMe? Read the <a href="./quick-start/">Quick Start guide</a> to see how people, entries, repayments, running balances, and shareable records fit together.</p>
-          </section>
 
           <section class="lt-pageSection lt-proofSection" aria-labelledby="proof-title">
             <div class="lt-sectionHeader">
@@ -398,9 +380,9 @@
             <section class="lt-reviewVideoModule" aria-labelledby="lt-review-video-title">
               <div class="lt-reviewVideoCopy">
                 <p class="lt-reviewVideoEyebrow">Why it works</p>
-                <h3 id="lt-review-video-title" class="lt-reviewVideoTitle">See how YouOweMe handles follow-ups, repayments, and shared expenses</h3>
+                <h3 id="lt-review-video-title" class="lt-reviewVideoTitle">See You Owe Me in action</h3>
                 <p class="lt-reviewVideoBody">
-                  The video is here for context, not as the main pitch: YouOweMe keeps the balance, the history, and the next message in one place.
+                  Watch how the app keeps repayments, shared expenses and follow-ups together.
                 </p>
                 <ul class="lt-reviewVideoList">
                   <li>Track who owes whom clearly</li>
@@ -618,21 +600,9 @@
             <div class="lt-coreFeatureGrid">
               <article class="lt-coreFeatureCard">
                 <div>
-                  <p class="lt-kicker">Running balances</p>
-                  <h3>One running balance per person</h3>
-                  <p>Track money lent, borrowed, repaid, split, or covered in one history. As you scroll back, the balance updates with the entry you are viewing.</p>
-                </div>
-                <picture>
-                  <source srcset="./images/shared/app-screenshots/6.8.5_one_running_balance.webp" type="image/webp" />
-                  <img src="./images/shared/app-screenshots/6.8.5_one_running_balance.png" alt="YouOweMe showing one running balance and transaction history for a person" loading="lazy" decoding="async" width="1290" height="2796" />
-                </picture>
-              </article>
-
-              <article class="lt-coreFeatureCard">
-                <div>
                   <p class="lt-kicker"><a href="./features/#loan-records">Loan Records</a></p>
                   <h3>Separate important loans</h3>
-                  <p>Give each loan its own name, remaining balance, updates, and status while the full balance with that person stays correct.</p>
+                  <p>Keep a separate name, balance and repayment history for each important loan.</p>
                 </div>
                 <picture>
                   <img src="./images/shared/app-screenshots/EN_AppStore_Separate_Loan_Records.webp" alt="YouOweMe Loans screen showing separate moving deposit, laptop purchase, and bike repair loan records, with one active repayment plan" loading="lazy" decoding="async" width="1290" height="2796" />
@@ -643,8 +613,7 @@
                 <div>
                   <p class="lt-kicker"><a href="./features/#repayment-plans">Repayment plans</a></p>
                   <h3>Choose a realistic path to repayment</h3>
-                  <p>Choose a regular amount, target date, or number of payments&mdash;or compare three practical options. As you record partial or extra payments, the plan updates what remains, the projected payoff, and the next reminder.</p>
-                  <p>Need to choose a schedule before tracking it? Use the <a href="/tools/payment-plan-calculator/">payment plan calculator for money owed between people</a>.</p>
+                  <p>Choose an amount, target date or payment count. The plan updates as repayments are recorded.</p>
                 </div>
                 <picture>
                   <img src="./images/shared/app-screenshots/EN_AppStore_Choose_a_Payback_Plan.webp" alt="YouOweMe repayment-plan builder comparing lower payment, balanced, and faster payoff options" loading="lazy" decoding="async" width="1290" height="2796" />
@@ -653,51 +622,13 @@
 
               <article class="lt-coreFeatureCard">
                 <div>
-                  <p class="lt-kicker">Smart Money Check-Ins</p>
-                  <h3>Know when to follow up</h3>
-                  <p>Smart Money Check-Ins look at real balances, repayment progress, reminders, promised dates, shared statements, and silence to suggest when a balance needs attention.</p>
-                </div>
-                <picture>
-                  <source srcset="./images/shared/app-screenshots/6.8.5_know_when_to_follow_up.webp" type="image/webp" />
-                  <img src="./images/shared/app-screenshots/6.8.5_know_when_to_follow_up.png" alt="YouOweMe Smart Money Check-Ins suggesting when to follow up about money owed" loading="lazy" decoding="async" width="1290" height="2796" />
-                </picture>
-              </article>
-
-              <article class="lt-coreFeatureCard">
-                <div>
-                  <p class="lt-kicker">Money Conversations</p>
-                  <h3>Send the right message</h3>
-                  <p>Generate follow-up, ask-for-loan, and repayment-update messages from the real balance and history, with a tone that fits the relationship.</p>
-                  <p>Need a one-time message first? Try the free <a href="./tools/polite-payback-reminder-generator/">Payback Reminder Generator</a> or read <a href="./blog/how-to-remind-someone-they-owe-you-money-politely/">how to remind someone they owe you money politely</a>.</p>
-                </div>
-                <picture>
-                  <source srcset="./images/shared/app-screenshots/6.8.5_know_what_to_say.webp" type="image/webp" />
-                  <img src="./images/shared/app-screenshots/6.8.5_know_what_to_say.png" alt="YouOweMe Money Conversations generating a calm repayment follow-up message" loading="lazy" decoding="async" width="1290" height="2796" />
-                </picture>
-              </article>
-
-              <article class="lt-coreFeatureCard">
-                <div>
                   <p class="lt-kicker">Live Link</p>
                   <h3>Share a live balance</h3>
-                  <p>Share one always-current statement link so the other person can see the latest balance and history in a browser without installing the app.</p>
+                  <p>Share a current balance and history through a browser link. The other person does not need the app.</p>
                 </div>
                 <picture>
                   <source srcset="./images/shared/app-screenshots/6.8.5_share_live_balance.webp" type="image/webp" />
                   <img src="./images/shared/app-screenshots/6.8.5_share_live_balance.png" alt="YouOweMe Live Link for sharing an always-current balance without requiring the other person to install the app" loading="lazy" decoding="async" width="1290" height="2796" />
-                </picture>
-              </article>
-
-              <article class="lt-coreFeatureCard">
-                <div>
-                  <p class="lt-kicker">Balance Sync</p>
-                  <h3>Two people. In sync.</h3>
-                  <p>Privately connect one balance between exactly two You Owe Me users, so supported connected entries changed on either phone stay aligned.</p>
-                  <a href="/features/#balance-sync" class="lt-cardCta">Explore Balance Sync</a>
-                </div>
-                <picture>
-                  <source srcset="./images/shared/app-screenshots/6.8.5_one_running_balance.webp" type="image/webp" />
-                  <img src="./images/shared/app-screenshots/6.8.5_one_running_balance.png" alt="YouOweMe running balance that exactly two users can optionally connect with Balance Sync" loading="lazy" decoding="async" width="1290" height="2796" />
                 </picture>
               </article>
             </div>
@@ -705,36 +636,14 @@
 
           <section class="lt-pageSection lt-includedSection" aria-labelledby="included-title">
             <div class="lt-sectionHeader">
-              <h2 id="included-title">Everything included</h2>
-              <p>For simple IOUs or long-running balances, YouOweMe keeps the tools you need in one place, including percentage interest that grows over time and fixed interest added once.</p>
+              <h2 id="included-title">More tools, when you need them</h2>
             </div>
 
             <ul class="lt-checkGrid">
-              <li><span>Unlimited <a href="/features/#spaces">Spaces for keeping personal, work, family, or debt records separate</a></span></li>
-              <li>Running balances</li>
-              <li>Balance Replay</li>
-              <li>Relationship Timeline</li>
-              <li>Loan Records</li>
-              <li>Repayment plans that follow real payments</li>
-              <li>IOU tracking</li>
-              <li>Temporary support tracking</li>
-              <li>Shared expense splits</li>
-              <li>Partial repayments</li>
-              <li>Payment reminders with context</li>
-              <li>Recurring entries</li>
-              <li>Smart Money Check-Ins</li>
-              <li>Money Conversations</li>
-              <li>Live Link</li>
-              <li>Balance Sync between two users</li>
-              <li>PDF statements</li>
-              <li>Percentage and fixed interest tracking</li>
-              <li>Voice to Entry</li>
-              <li>CSV export</li>
-              <li>Multi-currency support</li>
-              <li>Sync across devices and multiple cloud profiles</li>
-              <li>Face ID / Touch ID lock</li>
-              <li>Works offline</li>
-              <li>No mandatory sign-up</li>
+              <li>Recurring entries and multi-currency records</li>
+              <li>Reminders and Money Conversations for follow-ups</li>
+              <li><span><a href="/features/#spaces">Spaces</a> for separate records, with optional device sync and Balance Sync between two users</span></li>
+              <li>Percentage or fixed interest, plus CSV export</li>
             </ul>
 
             <div class="lt-ctaRow">
@@ -1001,5 +910,6 @@
     <script src="./assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
       <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
+    <script type="module" src="./assets/js/money-story.mjs?v=20260926-1"></script>
   </body>
 </html>

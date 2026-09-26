@@ -27,17 +27,21 @@ function phaseBRoot(page, location) {
 
 test("all Phase-B cards are automatic desktop QR cards with truthful copy and ordinary fallback attribution", () => {
   const cards = [
-    [phaseBRoot(home, "homepage_iphone_handoff"), "Get You Owe Me on your iPhone", "Keep loans, shared costs and repayments together.", "Scan with your iPhone camera to open the App Store.", expectedFallbacks.home, "/images/shared/iphone-handoff/home.png", "408"],
-    [phaseBRoot(roommate, "roommate_template_iphone_handoff"), "Prefer tracking on your iPhone?", "Record shared costs and repayments, and see what each roommate still owes.", "Start a new record in the app. Your spreadsheet is not imported.", expectedFallbacks.roommate, "/images/shared/iphone-handoff/roommate.png", "472"],
-    [phaseBRoot(split, "split_result_iphone_handoff"), "Track repayments on your iPhone", "See what is still owed as people pay you back.", "This opens the App Store. Your calculator result is not transferred.", expectedFallbacks.split, "/images/shared/iphone-handoff/split.png", "472"],
+    ["home", phaseBRoot(home, "homepage_iphone_handoff"), "Get You Owe Me on your iPhone", "Keep loans, shared costs and repayments together.", "Scan with your iPhone camera to open the App Store.", expectedFallbacks.home, "/images/shared/iphone-handoff/home.png", "408"],
+    ["roommate", phaseBRoot(roommate, "roommate_template_iphone_handoff"), "Prefer tracking on your iPhone?", "Record shared costs and repayments, and see what each roommate still owes.", "Start a new record in the app. Your spreadsheet is not imported.", expectedFallbacks.roommate, "/images/shared/iphone-handoff/roommate.png", "472"],
+    ["split", phaseBRoot(split, "split_result_iphone_handoff"), "Track repayments on your iPhone", "See what is still owed as people pay you back.", "This opens the App Store. Your calculator result is not transferred.", expectedFallbacks.split, "/images/shared/iphone-handoff/split.png", "472"],
   ];
 
-  for (const [card, heading, benefit, limitation, fallback, image, intrinsicSize] of cards) {
+  for (const [name, card, heading, benefit, limitation, fallback, image, intrinsicSize] of cards) {
     assert.ok(card.includes("hidden>"), "initial HTML remains hidden until desktop eligibility runs");
     assert.ok(card.includes(heading));
     assert.ok(card.includes(benefit));
     assert.ok(card.includes(limitation));
-    assert.ok(card.includes("Free download &middot; In-app purchases available."));
+    if (name === "home") {
+      assert.doesNotMatch(card, /class="iphone-handoff__reassurance"/);
+    } else {
+      assert.ok(card.includes("Free download &middot; In-app purchases available."));
+    }
     assert.ok(card.includes("View app details on the App Store"));
     assert.ok(card.includes(`href="${fallback}"`));
     assert.ok(card.includes(`src="${image}" width="${intrinsicSize}" height="${intrinsicSize}"`));
@@ -49,11 +53,12 @@ test("all Phase-B cards are automatic desktop QR cards with truthful copy and or
 });
 
 test("Phase-B placement preserves home/template actions and confines split QR to valid result actions", () => {
-  const homeReassurance = home.indexOf('class="homepage-download-reassurance"');
+  const homeHero = home.indexOf('<section class="lt-hero"');
   const homeCard = home.indexOf('data-cta-location="homepage_iphone_handoff"');
   const homeReview = home.indexOf('class="homepage-review-teaser"');
-  assert.ok(homeReassurance < homeCard && homeCard < homeReview);
-  assert.ok(!home.slice(home.indexOf('class="lt-heroCtas"'), homeReassurance).includes("data-iphone-handoff"));
+  assert.ok(homeHero < homeCard && homeCard < homeReview);
+  assert.ok(!home.slice(home.indexOf('class="lt-heroCtas"'), homeCard).includes("data-iphone-handoff"));
+  assert.doesNotMatch(home, /class="homepage-download-reassurance"/);
   assert.ok(home.includes("Find your situation"));
   assert.match(home, /id="homepage-primary-download"[\s\S]*?data-cta-location="hero"[\s\S]*?data-iphone-handoff-replaceable/);
   assert.match(home, /data-cta-location="homepage_iphone_handoff" data-iphone-handoff-replaces="homepage-primary-download"/);

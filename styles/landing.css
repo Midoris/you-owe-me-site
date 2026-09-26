@@ -3510,66 +3510,14 @@
         height: auto;
       }
 
-      body.homepage-page .homepage-balance-example {
-        width: 100%;
-        max-width: 360px;
-        margin: 0 auto;
-      }
 
-      body.homepage-page .homepage-balance-example__label {
-        margin: 0 0 0.55rem;
-        color: #18212b;
-        font-size: 0.86rem;
-        font-weight: 800;
-        line-height: 1.35;
-      }
 
-      body.homepage-page .homepage-balance-example__amounts {
-        display: grid;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-        gap: 8px;
-        margin: 0;
-      }
 
-      body.homepage-page .homepage-balance-example__amounts > div {
-        min-width: 0;
-        padding: 0.72rem 0.55rem;
-        border: 1px solid rgba(15, 23, 42, 0.12);
-        border-radius: 12px;
-        background: rgba(255, 255, 255, 0.78);
-      }
 
-      body.homepage-page .homepage-balance-example__amounts dt {
-        color: rgba(33, 41, 49, 0.76);
-        font-size: 12px;
-        font-weight: 750;
-        line-height: 1.25;
-        overflow-wrap: anywhere;
-      }
 
-      body.homepage-page .homepage-balance-example__amounts dd {
-        margin: 0.3rem 0 0;
-        color: #18212b;
-        font-size: 24px;
-        font-weight: 900;
-        line-height: 1;
-      }
 
-      body.homepage-page .homepage-balance-example__amounts .homepage-balance-example__remaining {
-        border-color: rgba(53, 84, 40, 0.32);
-        background: rgba(175, 230, 126, 0.26);
-      }
 
-      body.homepage-page .homepage-balance-example__amounts .homepage-balance-example__remaining dd {
-        font-size: 28px;
-      }
 
-      body.homepage-page .homepage-balance-example__explanation {
-        margin: 0.72rem 0 0;
-        color: rgba(33, 41, 49, 0.84);
-        font-size: 0.94rem;
-        line-height: 1.45;
-      }
 
       body.homepage-page .homepage-hero-shot-caption {
         margin: 0.5rem 0 0;
@@ -3726,17 +3674,8 @@
           border-radius: 18px;
         }
 
-        body.homepage-page .homepage-balance-example {
-          max-width: 360px;
-        }
 
-        body.homepage-page .homepage-balance-example__label {
-          font-size: 0.82rem;
-        }
 
-        body.homepage-page .homepage-balance-example__explanation {
-          font-size: 0.9rem;
-        }
 
         body.homepage-page #situations .best-next-step__grid {
           grid-template-columns: 1fr;

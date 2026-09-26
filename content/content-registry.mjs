@@ -800,7 +800,7 @@ export const contentRegistry = [
     bestNextSteps: {
       enabled: true,
       variant: "hub",
-      placement: "after-loan-value",
+      placement: "after-definition",
       template: "custom",
       eyebrow: "Find your situation",
       heading: "See how it fits your situation",
