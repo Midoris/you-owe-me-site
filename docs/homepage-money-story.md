@@ -1,14 +1,14 @@
 # Homepage money story
 
-The approved Quiet Focus story sits after the homepage hero. It replaces the small loan-repaid-in-part example; the hero is focused on the download action, with real app screenshots retained in the feature section. The story ends at Paid in full with no extra promotional outro.
+The approved Quiet Focus story sits after the homepage hero. It replaces the small loan-repaid-in-part example; the hero is focused on the download action, with real app screenshots retained in the feature section. The original released version ended at Paid in full with no extra promotional outro. The September 26 uncommitted preview adds a restrained eighth chapter after that payoff.
 
 `styles/money-story.css` scopes the presentation to `#money-story`. The deliberate design exception is a centered, lighter-weight system-font display inside this self-contained narrative; surrounding site typography remains unchanged. The white introduction and pale stage use the site’s ink and lime palette.
 
-`assets/js/money-story.mjs` exports `initMoneyStory(root, data)` and uses `money-story-data.mjs` for the seven chapters. A later story can reuse the renderer with its own chapter data and matching static fallback. Reminder and statement chapters do not alter the balance. The final amount animates to zero, then disappears in favor of Paid in full. Reverse navigation cancels pending animation. Reduced motion snaps to each result.
+`assets/js/money-story.mjs` exports `initMoneyStory(root, data)` and uses `money-story-data.mjs` for seven narrative chapters plus a final app invitation. Other stories reuse the renderer with their own chapter data and matching static fallback. Reminder and statement chapters do not alter the balance. The final amount animates to zero, then disappears in favor of Paid in full; the invitation follows as a separate chapter. Reverse navigation cancels pending animation. Reduced motion snaps to each result.
 
-Without JavaScript, the seven-step ordered list remains readable. Chapter buttons and a Skip story link provide alternatives to scrolling. No wheel or touch events are intercepted. The homepage shell changes overflow from scroll-container clipping to visible ancestors plus body clipping so sticky positioning works on mobile. The stage leaves 52px for the mobile menu.
+Without JavaScript, the eight-step ordered list and its App Store action remain usable. Chapter buttons and a Skip story link provide alternatives to scrolling. No wheel or touch events are intercepted. The homepage shell changes overflow from scroll-container clipping to visible ancestors plus body clipping so sticky positioning works on mobile. The stage leaves 52px for the mobile menu.
 
-Local validation: homepage regression tests, scoped page-design audit, desktop and narrow viewport browser review. This change does not add analytics or initiate an experiment.
+The eighth chapter keeps the same scroll interval as the previous seven. Its copy and action sit directly on the pale stage, with no enclosing card. The official App Store badge appears on mobile; eligible desktops use the existing QR handoff behavior and image. Existing analytics events use separate homepage-story CTA locations. No new event schema or experiment is introduced by this preview.
 
 ## Homepage cleanup (local, September 26)
 

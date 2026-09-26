@@ -8,7 +8,7 @@ import {
   setUserProperties,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
 import { createAppStoreCtaViewTracker } from "./app-store-cta-view-tracker.mjs";
-import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs?v=iphone-handoff-phase-d-20260914-1";
+import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs?v=20260926-story-1";
 
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyDOsFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",

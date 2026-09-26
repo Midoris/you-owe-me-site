@@ -561,3 +561,190 @@ body.roommate-template-page #money-story-end { scroll-margin-top: 0; }
     height: 128px;
   }
 }
+
+/* Shared open-stage closing chapter for the homepage and both story pages. */
+#money-story.money-story--homepage .money-story__track { height: 626svh; }
+#money-story.money-story--open-close .money-story__fallback-download { margin-top: 16px; }
+#money-story.money-story--open-close .money-story__closing-check { display: none; }
+/* The resolved scene must not ghost through the closing slide as it exits. */
+#money-story.money-story--open-close .money-story__track.is-cta .money-story__account {
+  visibility: hidden;
+  opacity: 0;
+  transition: none;
+}
+#money-story.money-story--open-close .money-story__track.is-settled .money-story__person,
+#money-story.money-story--open-close .money-story__track.is-settled .money-story__balance {
+  visibility: hidden;
+  transition: none;
+}
+#money-story.money-story--open-close .money-story__track.is-cta .money-story__copy h3 {
+  max-width: 760px;
+  margin: 14px auto 10px;
+  font-size: clamp(38px, 4.1vw, 56px);
+  font-weight: 500;
+  line-height: 1.08;
+}
+#money-story.money-story--open-close .money-story__track.is-cta .money-story__closing-check {
+  display: grid;
+  width: 38px;
+  height: 38px;
+  margin: 0 auto 20px;
+  place-items: center;
+  border-radius: 50%;
+  background: var(--story-lime);
+  box-shadow: 0 0 0 7px #afe67e33;
+  color: var(--story-heading);
+  font-size: 25px;
+  font-weight: 500;
+  line-height: 1;
+}
+#money-story.money-story--open-close .money-story__track.is-cta .money-story__copy p {
+  max-width: 540px;
+  font-size: 15px;
+  line-height: 1.5;
+}
+#money-story.money-story--open-close .money-story__track.is-cta .money-story__canvas {
+  top: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  transform: none;
+}
+#money-story.money-story--open-close .money-story__cta--open {
+  padding: 200px 22px 75px;
+  pointer-events: none;
+}
+#money-story.money-story--open-close .money-story__cta-open-body {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: min(100%, 320px);
+  text-align: center;
+  animation: money-story-open-in .6s cubic-bezier(.16, 1, .3, 1) both;
+}
+#money-story.money-story--open-close .money-story__cta-open-icon {
+  display: block;
+  width: 52px;
+  height: 52px;
+  border-radius: 14px;
+  box-shadow: 0 14px 32px #18212b26;
+}
+#money-story.money-story--open-close .money-story__cta-open-name {
+  margin-top: 9px;
+  color: var(--story-heading);
+  font-size: 19px;
+  font-weight: 620;
+  letter-spacing: -.035em;
+  line-height: 1.2;
+}
+#money-story.money-story--open-close .money-story__cta-download {
+  width: 194px;
+  margin-top: 20px;
+  align-self: center;
+  pointer-events: auto;
+}
+#money-story.money-story--open-close .money-story__cta-trust {
+  max-width: 340px;
+  margin: 14px auto 0 !important;
+  color: var(--story-muted) !important;
+  font-size: 11px !important;
+  line-height: 1.45;
+  text-align: center;
+  text-align-last: center;
+}
+#money-story.money-story--open-close .money-story__iphone-handoff[data-iphone-handoff-mode="visible"] {
+  width: 100%;
+  max-width: none;
+  margin: 13px 0 0;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  pointer-events: auto;
+}
+#money-story.money-story--open-close .money-story__iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__visible-layout {
+  display: flex !important;
+  flex-direction: column;
+  align-items: center;
+  gap: 9px;
+}
+#money-story.money-story--open-close .money-story__iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__qr {
+  order: 0;
+  width: 160px;
+  height: 160px;
+  padding: 7px;
+  border-radius: 14px;
+  background: #fff;
+  box-shadow: 0 14px 34px #18212b14;
+}
+#money-story.money-story--open-close .money-story__iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__visible-copy { order: 1; }
+#money-story.money-story--open-close .money-story__iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__instruction {
+  font-size: 11px !important;
+  line-height: 1.4 !important;
+}
+#money-story.money-story--open-close .money-story__iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__fallback {
+  display: inline-flex;
+  justify-content: center;
+  min-height: 30px;
+  margin-top: 2px;
+  padding: 0;
+  border: 0;
+  border-radius: 0;
+  background: none;
+  box-shadow: none;
+  font-size: 11px !important;
+  line-height: 1.3 !important;
+}
+#money-story.money-story--open-close .money-story__iphone-handoff[data-iphone-handoff-mode="visible"] .iphone-handoff__fallback:hover {
+  background: none;
+}
+#money-story.money-story--roommate .money-story__cta-trust {
+  margin-top: 8px !important;
+}
+@keyframes money-story-open-in {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+@media (max-width: 700px) {
+  #money-story.money-story--open-close .money-story__track.is-cta .money-story__copy h3 {
+    max-width: 355px;
+    margin: 12px auto 9px;
+    font-size: clamp(32px, 8.6vw, 40px);
+  }
+  #money-story.money-story--open-close .money-story__track.is-cta .money-story__closing-check {
+    width: 36px;
+    height: 36px;
+    margin-bottom: 17px;
+    font-size: 23px;
+  }
+  #money-story.money-story--open-close .money-story__track.is-cta .money-story__copy p {
+    max-width: 330px;
+    font-size: 13px;
+  }
+  #money-story.money-story--open-close .money-story__cta--open { padding: 220px 20px 120px; }
+  #money-story.money-story--open-close .money-story__cta-open-icon { width: 62px; height: 62px; border-radius: 16px; }
+  #money-story.money-story--open-close .money-story__cta-open-name { margin-top: 10px; font-size: 20px; }
+  #money-story.money-story--open-close .money-story__cta-download { width: 190px; margin-top: 25px; }
+  #money-story.money-story--borrower .money-story__track.is-cta .money-story__copy h3 {
+    max-width: 320px;
+    font-size: 30px;
+  }
+}
+@media (max-width: 700px) and (max-height: 740px) {
+  #money-story.money-story--open-close .money-story__track.is-cta .money-story__closing-check { margin-bottom: 10px; }
+  #money-story.money-story--open-close .money-story__cta--open { padding-top: 195px; padding-bottom: 75px; }
+}
+@media (max-width: 700px) and (max-height: 500px) and (orientation: landscape) {
+  #money-story.money-story--open-close .money-story__track.is-cta .money-story__closing-check { display: none; }
+  #money-story.money-story--open-close .money-story__track.is-cta .money-story__copy h3 { margin: 5px auto 4px; font-size: 26px; }
+  #money-story.money-story--open-close .money-story__cta--open { padding: 84px 15px 38px; }
+  #money-story.money-story--open-close .money-story__cta-open-body { flex-direction: row; justify-content: center; gap: 12px; width: 100%; }
+  #money-story.money-story--open-close .money-story__cta-open-icon { width: 43px; height: 43px; border-radius: 11px; }
+  #money-story.money-story--open-close .money-story__cta-open-name,
+  #money-story.money-story--open-close .money-story__cta-download { margin: 0; }
+  #money-story.money-story--open-close .money-story__cta-download { width: 148px; }
+}
+@media (prefers-reduced-motion: reduce) {
+  #money-story.money-story--open-close .money-story__cta-open-body { animation: none; }
+}

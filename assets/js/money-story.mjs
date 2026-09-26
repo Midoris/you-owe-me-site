@@ -1,4 +1,4 @@
-import { borrowerStory, homepageStory, roommateStory } from './money-story-data.mjs?v=20260926-9';
+import { borrowerStory, homepageStory, roommateStory } from './money-story-data.mjs?v=20260926-11';
 
 const money = amount => '$' + Math.round(amount).toLocaleString('en-US');
 const make = (tag, className, value) => {
@@ -204,7 +204,8 @@ export function initMoneyStory(root, data = homepageStory) {
     if (index === previous) return;
 
     cancelNumber();
-    revealSuccess(false);
+    const alreadySettled = Boolean(chapter.settled && Math.abs(displayed - chapter.balance) < .001);
+    revealSuccess(alreadySettled);
     kicker.textContent = String(index + 1).padStart(2, '0') + ' / ' + String(chapters.length).padStart(2, '0');
     title.textContent = chapter.title;
     stage.setAttribute('aria-label', chapter.title);
@@ -231,7 +232,12 @@ export function initMoneyStory(root, data = homepageStory) {
       displayAmount(displayed, chapter);
       if (chapter.settled) revealSuccess(true);
     } else {
-      animateAmount(chapter.balance, chapter, chapter.settled ? () => revealSuccess(true) : undefined);
+      if (alreadySettled) {
+        displayed = chapter.balance;
+        displayAmount(displayed, chapter);
+      } else {
+        animateAmount(chapter.balance, chapter, chapter.settled ? () => revealSuccess(true) : undefined);
+      }
       title.animate?.([{ opacity: .25, transform: 'translateY(9px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 450, easing: 'ease-out' });
     }
 

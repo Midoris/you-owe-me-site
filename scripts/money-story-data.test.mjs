@@ -6,9 +6,9 @@ test('homepage story balances reconcile, and the share and settlement keep their
   const { chapters } = homepageStory;
 
   assert.deepEqual(chapters.map(chapter => chapter.id), [
-    'begin', 'repay', 'change', 'remind', 'again', 'share', 'settle'
+    'begin', 'repay', 'change', 'remind', 'again', 'share', 'settle', 'app'
   ]);
-  assert.deepEqual(chapters.map(chapter => chapter.balance), [300, 200, 240, 240, 160, 160, 0]);
+  assert.deepEqual(chapters.map(chapter => chapter.balance), [300, 200, 240, 240, 160, 160, 0, 0]);
 
   for (const chapter of chapters) {
     const rowBalance = chapter.rows.reduce((balance, row) => balance + row.amount, 0);
@@ -26,6 +26,10 @@ test('homepage story balances reconcile, and the share and settlement keep their
   assert.equal(settled.rows.length, 5);
   assert.equal(settled.repaid, 340);
   assert.equal(settled.balance, 0);
+  assert.equal(settled.settled, true);
+  assert.equal(chapters.at(-1).cta, true);
+  assert.equal(chapters.at(-1).title, 'Start with a clear record.');
+  assert.equal(chapters.at(-1).description, 'Track what’s owed and every payment in You Owe Me.');
 });
 
 test('borrower story preserves the borrower perspective and reconciles every payment', () => {
@@ -51,7 +55,7 @@ test('borrower story preserves the borrower perspective and reconciles every pay
   assert.equal(chapters.find(chapter => chapter.id === 'settle').settled, true);
   assert.equal(chapters.at(-1).repaid, 120);
   assert.equal(chapters.at(-1).cta, true);
-  assert.equal(chapters.at(-1).title, 'Next time, keep it this clear.');
+  assert.equal(chapters.at(-1).title, 'Stay on top of what you owe.');
 });
 
 test('roommate story changes direction only after the second agreed bill, then settles', () => {

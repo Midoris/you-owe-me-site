@@ -210,4 +210,5 @@ test("existing copy, analytics, metadata, and responsive contracts remain intact
   assert.match(page, /"dateModified": "2026-09-14"/);
   assert.match(page, /Updated <time datetime="2026-09-14">September 14, 2026<\/time>/);
   assert.match(page, /href="\/styles\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\.css\?v=conversion-polish-20260905-3"/);
+  assert.match(page, /class="iphone-handoff__fallback"[^>]*data-cta-location="friend_borrow_story_qr_fallback"/);
 });

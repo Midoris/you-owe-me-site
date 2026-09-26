@@ -15,7 +15,8 @@ export const homepageStory = {
     { id: 'remind', title: 'A reminder for you.', description: 'Choose a day to check in with Alex.', date: 'May 14', balance: 240, covered: 340, repaid: 100, rows: entries.slice(0, 3), reminder: 'Check in with Alex · May 22', step: 'Remind' },
     { id: 'again', title: 'Another $80 paid back.', description: 'Record it. The balance changes; the history stays.', date: 'May 22', balance: 160, covered: 340, repaid: 180, rows: entries.slice(0, 4), step: 'Update' },
     { id: 'share', title: 'Alex asks, “What do I still owe?”', description: 'You share a PDF with every entry and the $160 balance.', date: 'May 22', balance: 160, covered: 340, repaid: 180, rows: entries.slice(0, 4), step: 'Share' },
-    { id: 'settle', title: 'Alex pays back the rest.', description: 'Record the last $160. Keep the full history.', date: 'May 30', balance: 0, covered: 340, repaid: 340, rows: entries.slice(), step: 'Settled', settled: true }
+    { id: 'settle', title: 'Alex pays back the rest.', description: 'Record the last $160. Keep the full history.', date: 'May 30', balance: 0, covered: 340, repaid: 340, rows: entries.slice(), step: 'Settled', settled: true },
+    { id: 'app', title: 'Start with a clear record.', description: 'Track what’s owed and every payment in You Owe Me.', date: 'May 30', balance: 0, covered: 340, repaid: 340, rows: entries.slice(), step: 'Start', cta: true }
   ]
 };
 
@@ -62,7 +63,7 @@ export const borrowerStory = {
     { id: 'second', title: 'You repay $50 more.', description: 'The history stays. $30 remains.', date: 'July 25', balance: 30, covered: 120, repaid: 90, rows: borrowerEntries.slice(0, 3), step: 'More' },
     { id: 'share', title: 'Maya asks, “What’s left?”', description: 'Share one current record: $30.', date: 'July 25', balance: 30, covered: 120, repaid: 90, rows: borrowerEntries.slice(0, 3), step: 'Share' },
     { id: 'settle', title: 'You repay the final $30.', description: 'The balance closes. The history stays.', date: 'July 30', balance: 0, covered: 120, repaid: 120, rows: borrowerEntries.slice(), step: 'Settled', settled: true },
-    { id: 'app', title: 'Next time, keep it this clear.', description: 'You Owe Me keeps the plan, repayments, and balance in one private record.', date: 'July 30', balance: 0, covered: 120, repaid: 120, rows: borrowerEntries.slice(), step: 'App', cta: true }
+    { id: 'app', title: 'Stay on top of what you owe.', description: 'Keep your plan, updates, and repayments together in You Owe Me.', date: 'July 30', balance: 0, covered: 120, repaid: 120, rows: borrowerEntries.slice(), step: 'App', cta: true }
   ]
 };
 

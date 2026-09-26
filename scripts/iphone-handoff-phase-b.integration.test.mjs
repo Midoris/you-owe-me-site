@@ -98,8 +98,11 @@ test("visible cards use the shared desktop-only layout and cache-busted module p
   assert.match(css, /\.lt-heroCtas:has\(#homepage-primary-download\[hidden\]\) \.lt-textCta/);
   assert.match(css, /#split-result-primary-download\[hidden\] ~ \.split-result-app-card__price/);
 
+  for (const page of [home, roommate]) {
+    assert.ok(page.includes("analytics.js?v=20260926-story-1"));
+  }
+  assert.ok(split.includes("analytics.js?v=iphone-handoff-phase-d-20260914-1"));
   for (const page of [home, roommate, split]) {
-    assert.ok(page.includes("analytics.js?v=iphone-handoff-phase-d-20260914-1"));
     assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"));
     assert.ok(page.includes("styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1"));
   }

@@ -171,6 +171,7 @@ assert.equal(
 );
 assert.equal(anchorsWithHref(story, cppUrl).length, 3, "story fallback, iPhone badge, and desktop fallback use the roommate CPP");
 assert.ok(story.includes('data-iphone-handoff-replaces="roommate-story-primary-download"'));
+assert.match(story, /class="iphone-handoff__fallback"[^>]*data-cta-location="roommate_expense_story_qr_fallback"/);
 
 const comparisonPosition = page.indexOf("When the spreadsheet is enough—and when it is not");
 const productPosition = page.indexOf("When the spreadsheet becomes hard to maintain");

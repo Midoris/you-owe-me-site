@@ -82,7 +82,7 @@ test("borrower story closes with a responsive iPhone download handoff", () => {
   assert.match(story, /aria-label="Repaying Maya, in eight moments"/);
   assert.equal((story.match(/<li(?:\s|>)/g) ?? []).length, 8);
   assert.match(story, /data-story-cta hidden inert aria-hidden="true"/);
-  assert.match(story, /Next time, keep it this clear\./);
+  assert.match(story, /Stay on top of what you owe\./);
   assert.doesNotMatch(story, /money-story__outro/);
   assert.match(story, /id="friend-borrow-story-primary-download"[\s\S]*?data-iphone-handoff-replaceable/);
   assert.match(story, /data-cta-location="friend_borrow_story_iphone_handoff"/);

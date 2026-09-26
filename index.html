@@ -146,7 +146,7 @@
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
       <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260925-mobile-layout-1" />
-    <link rel="stylesheet" href="./styles/money-story.css?v=20260926-8" />
+    <link rel="stylesheet" href="./styles/money-story.css?v=20260926-13" />
     <link rel="stylesheet" href="./styles/landing-cleanup.css?v=20260926-2" />
   </head>
 
@@ -220,7 +220,7 @@
           </section>
 
           <!-- money-story:start -->
-          <section id="money-story" class="money-story" data-money-story="homepage" aria-labelledby="money-story-intro-title">
+          <section id="money-story" class="money-story money-story--homepage money-story--open-close" data-money-story="homepage" aria-labelledby="money-story-intro-title">
             <div class="money-story__intro">
               <div class="money-story__eyebrow"><span class="money-story__dot" aria-hidden="true"></span> How it works</div>
               <h2 id="money-story-intro-title">“I’ll pay<br><span>you back.”</span></h2>
@@ -239,10 +239,11 @@
                 <li><h3>Another $80 paid back.</h3><p>Record it. The balance changes; the history stays.</p><span>May 22 · $160 remaining</span></li>
                 <li><h3>Alex asks, “What do I still owe?”</h3><p>You share a PDF with every entry and the $160 balance.</p><span>May 22 · $340 covered · $180 repaid · $160 remaining</span></li>
                 <li><h3>Alex pays back the rest.</h3><p>Record the last $160. Keep the full history.</p><span>May 30 · Paid in full</span></li>
+                <li><h3>Start with a clear record.</h3><p>Track what’s owed and every payment in You Owe Me.</p><a class="lt-appStoreBtn money-story__fallback-download" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" aria-label="Download You Owe Me on the App Store" data-cta-location="homepage_story_fallback_app_store"><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" /></a></li>
               </ol>
             </div>
 
-            <div class="money-story__track money-story__enhanced" data-story-track aria-label="Helping Alex, in seven moments">
+            <div class="money-story__track money-story__enhanced" data-story-track aria-label="Helping Alex, then starting your own record, in eight moments">
               <div class="money-story__stage" data-story-stage tabindex="-1">
                 <div class="money-story__copy">
                   <span class="money-story__status">
@@ -254,6 +255,7 @@
                       </svg>
                     </span>
                   </span>
+                  <span class="money-story__closing-check" aria-hidden="true">✓</span>
                   <h3 data-story-title></h3>
                   <p data-story-description></p>
                 </div>
@@ -273,6 +275,32 @@
                     </div>
                   </div>
                   <div class="money-story__document" data-story-document aria-hidden="true"></div>
+                  <div class="money-story__cta money-story__cta--open" data-story-cta hidden inert aria-hidden="true">
+                    <div class="money-story__cta-open-body">
+                      <img class="money-story__cta-open-icon" src="/images/shared/brand/icon_3_0.png" alt="" width="1024" height="1024" aria-hidden="true" />
+                      <span class="money-story__cta-open-name">You Owe Me</span>
+                      <a
+                        href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8"
+                        class="lt-appStoreBtn money-story__cta-download"
+                        id="homepage-story-primary-download"
+                        aria-label="Download You Owe Me on the App Store"
+                        data-cta-location="homepage_story_app_store"
+                        data-iphone-handoff-replaceable
+                      >
+                        <span class="sr-only">Download You Owe Me on the App Store</span>
+                        <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+                      </a>
+                      <section class="iphone-handoff money-story__iphone-handoff" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="homepage_story_iphone_handoff" data-iphone-handoff-replaces="homepage-story-primary-download" aria-label="Get You Owe Me on your iPhone" hidden>
+                        <div class="iphone-handoff__visible-layout">
+                          <img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/shared/iphone-handoff/home.png" width="408" height="408" alt="QR code to open You Owe Me on the App Store." loading="eager" />
+                          <div class="iphone-handoff__visible-copy">
+                            <p class="iphone-handoff__instruction" data-iphone-handoff-instruction>Scan with your iPhone to open the App Store.</p>
+                            <a class="iphone-handoff__fallback" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" data-cta-location="homepage_story_qr_fallback">View on the App Store</a>
+                          </div>
+                        </div>
+                      </section>
+                    </div>
+                  </div>
                 </div>
                 <nav class="money-story__steps" data-story-steps aria-label="Story chapters"></nav>
                 <div class="money-story__progress" data-story-progress aria-hidden="true"></div>
@@ -906,7 +934,7 @@
     <script src="./scripts/sales.js"></script>
     <script src="./scripts/video-embed.js"></script>
     <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
-    <script type="module" src="./scripts/analytics.js?v=iphone-handoff-phase-d-20260914-1"></script>
+    <script type="module" src="./scripts/analytics.js?v=20260926-story-1"></script>
     <script type="module" src="./scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"></script>
     <script src="./scripts/reviews.js"></script>
     <script src="./assets/js/jquery.min.js"></script>
@@ -918,6 +946,6 @@
     <script src="./assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
       <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
-    <script type="module" src="./assets/js/money-story.mjs?v=20260926-7"></script>
+    <script type="module" src="./assets/js/money-story.mjs?v=20260926-10"></script>
   </body>
 </html>
