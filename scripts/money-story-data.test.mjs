@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { homepageStory } from '../assets/js/money-story-data.mjs';
+import { borrowerStory, homepageStory } from '../assets/js/money-story-data.mjs';
 
 test('homepage story balances reconcile, and the share and settlement keep their distinct histories', () => {
   const { chapters } = homepageStory;
@@ -26,4 +26,30 @@ test('homepage story balances reconcile, and the share and settlement keep their
   assert.equal(settled.rows.length, 5);
   assert.equal(settled.repaid, 340);
   assert.equal(settled.balance, 0);
+});
+
+test('borrower story preserves the borrower perspective and reconciles every payment', () => {
+  const { chapters } = borrowerStory;
+
+  assert.equal(borrowerStory.balanceLabel, 'You owe Maya');
+  assert.deepEqual(chapters.map(chapter => chapter.id), [
+    'agree', 'record', 'first', 'update', 'second', 'share', 'settle', 'app'
+  ]);
+  assert.deepEqual(chapters.map(chapter => chapter.balance), [120, 120, 80, 80, 30, 30, 0, 0]);
+
+  for (const chapter of chapters) {
+    const rowBalance = chapter.rows.reduce((balance, row) => balance + row.amount, 0);
+    assert.equal(rowBalance, chapter.balance, `${chapter.id}: row history should sum to the displayed balance`);
+    assert.equal(chapter.covered - chapter.repaid, chapter.balance, `${chapter.id}: totals should reconcile`);
+  }
+
+  assert.equal(chapters[0].message.response, 'Yes — I can help.');
+  const update = chapters.find(chapter => chapter.id === 'update');
+  assert.equal(update.description, 'You Owe Me drafts the update. You decide when to send it.');
+  assert.equal(update.reminder, 'Update Maya · July 18');
+  assert.equal(chapters.find(chapter => chapter.id === 'share').description, 'Share one current record: $30.');
+  assert.equal(chapters.find(chapter => chapter.id === 'settle').settled, true);
+  assert.equal(chapters.at(-1).repaid, 120);
+  assert.equal(chapters.at(-1).cta, true);
+  assert.equal(chapters.at(-1).title, 'Next time, keep it this clear.');
 });

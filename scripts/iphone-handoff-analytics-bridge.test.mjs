@@ -46,6 +46,7 @@ test("maps only approved handoff events and cta_location into the logger", () =>
     "roommate_calculator_iphone_handoff",
     "payment_plan_results_iphone_handoff",
     "polite_reminder_post_copy_iphone_handoff",
+    "friend_borrow_story_iphone_handoff",
   ]) {
     eventTarget.emit(IPHONE_QR_VIEWED_EVENT, {
       cta_location: ctaLocation,
@@ -83,6 +84,10 @@ test("maps only approved handoff events and cta_location into the logger", () =>
     {
       name: "uomi_web_iphone_qr_viewed",
       params: { cta_location: "polite_reminder_post_copy_iphone_handoff" },
+    },
+    {
+      name: "uomi_web_iphone_qr_viewed",
+      params: { cta_location: "friend_borrow_story_iphone_handoff" },
     },
   ]);
 });

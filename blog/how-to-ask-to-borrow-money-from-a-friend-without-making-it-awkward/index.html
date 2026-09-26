@@ -171,6 +171,8 @@
     <link rel="stylesheet" href="/styles/tools.css" />
     <link rel="stylesheet" href="/styles/repayment-reminder-text-examples.css" />
     <link rel="stylesheet" href="/styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css?v=conversion-polish-20260905-3" />
+    <link rel="stylesheet" href="/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1" />
+    <link rel="stylesheet" href="/styles/money-story.css?v=20260926-8" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
   </head>
@@ -345,9 +347,132 @@
             <p>If you are on the receiving side of a request and need kind wording, read <a href="/blog/how-to-politely-say-no-when-people-ask-for-money/">how to politely say no when people ask for money</a>.</p>
           </section>
 
+          <!-- money-story:start -->
+          <section id="money-story" class="money-story money-story--borrower" data-money-story="borrower" aria-labelledby="money-story-intro-title">
+            <div class="money-story__intro">
+              <div class="money-story__eyebrow"><span class="money-story__dot" aria-hidden="true"></span> After they say yes</div>
+              <h2 id="money-story-intro-title">Your friend said yes.<br><span>Keep the rest clear.</span></h2>
+              <p>Follow one honest record from the first message to paid in full.</p>
+              <a class="money-story__begin" href="#money-story-fallback" data-story-begin>Follow the record <span aria-hidden="true">↓</span></a>
+              <a class="money-story__skip" href="#money-story-end">Skip story <span aria-hidden="true">↓</span></a>
+              <div class="money-story__orbit" aria-hidden="true"></div>
+            </div>
+
+            <div class="money-story__fallback" id="money-story-fallback">
+              <ol>
+                <li><h3>Maya says yes.</h3><p>You borrow $120 for your phone bill and plan to repay it July 18.</p><span>July 8 · $120 remaining</span></li>
+                <li><h3>Keep the promise clear.</h3><p>Amount, reason, and date stay together.</p><span>July 8 · One clear record</span></li>
+                <li><h3>You repay $40.</h3><p>Record it. $80 remains.</p><span>July 18 · $80 remaining</span></li>
+                <li><h3>Your payday moves.</h3><p>You Owe Me drafts the update. You decide when to send it.</p><span>July 18 · Repayment update</span></li>
+                <li><h3>You repay $50 more.</h3><p>The history stays. $30 remains.</p><span>July 25 · $30 remaining</span></li>
+                <li><h3>Maya asks, “What’s left?”</h3><p>Share one current record: $30.</p><span>July 25 · $120 borrowed · $90 repaid</span></li>
+                <li><h3>You repay the final $30.</h3><p>The balance closes. The history stays.</p><span>July 30 · Paid in full</span></li>
+                <li class="money-story__fallback-app">
+                  <h3>Next time, keep it this clear.</h3>
+                  <p>You Owe Me keeps the plan, repayments, and balance in one private record.</p>
+                  <span>For iPhone · Your friend doesn’t need the app</span>
+                  <a
+                    href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&amp;pt=117888502&amp;ct=website_cta&amp;mt=8"
+                    class="lt-appStoreBtn money-story__fallback-download"
+                    aria-label="Download You Owe Me on the App Store to keep a friend loan clear"
+                    data-track-location="friend_borrow_story_fallback_app_store"
+                    data-source-cluster="temporary-support"
+                  >
+                    <span class="sr-only">Download You Owe Me on the App Store</span>
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+                  </a>
+                </li>
+              </ol>
+            </div>
+
+            <div class="money-story__track money-story__enhanced" data-story-track aria-label="Repaying Maya, in eight moments">
+              <div class="money-story__stage" data-story-stage tabindex="-1">
+                <div class="money-story__copy">
+                  <span class="money-story__status">
+                    <span class="money-story__kicker" data-story-kicker></span>
+                    <span class="money-story__chapter-meter" data-story-chapter-meter aria-hidden="true">
+                      <svg viewBox="0 0 28 28" aria-hidden="true">
+                        <circle class="money-story__chapter-meter-track" cx="14" cy="14" r="11.5" pathLength="1"></circle>
+                        <circle class="money-story__chapter-meter-value" cx="14" cy="14" r="11.5" pathLength="1"></circle>
+                      </svg>
+                    </span>
+                  </span>
+                  <h3 data-story-title></h3>
+                  <p data-story-description></p>
+                </div>
+                <div class="money-story__canvas">
+                  <div class="money-story__message" data-story-message aria-hidden="true">
+                    <div class="money-story__message-label">Your message</div>
+                    <p class="money-story__message-request" data-story-message-request></p>
+                    <p class="money-story__message-response" data-story-message-response></p>
+                  </div>
+                  <div class="money-story__account" data-story-account>
+                    <div class="money-story__person" data-story-person><span class="money-story__avatar" data-story-avatar aria-hidden="true">M</span><span data-story-person-name>Maya</span></div>
+                    <div class="money-story__balance" data-story-balance-display>
+                      <span class="money-story__balance-label" data-story-balance-label>You owe Maya</span>
+                      <div class="money-story__big-balance"><span data-story-amount>$120</span><span class="money-story__decimal">.00</span></div>
+                    </div>
+                    <div class="money-story__success" data-story-success role="status" aria-hidden="true"><span class="money-story__success-check" aria-hidden="true">✓</span><span class="money-story__success-text">Paid <br class="money-story__mobile-break">in full</span></div>
+                    <div class="money-story__history" data-story-history></div>
+                    <div class="money-story__reminder money-story__reminder--update" data-story-reminder aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h12M13 8l4 4-4 4"/><path d="M4 5h10a5 5 0 0 1 5 5v9"/></svg>
+                      <span><strong data-story-reminder-title>Update Maya</strong><small data-story-reminder-date>Repayment update · July 18</small></span>
+                      <span class="money-story__toggle" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                  <div class="money-story__document" data-story-document aria-hidden="true"></div>
+                  <div class="money-story__cta" data-story-cta hidden inert aria-hidden="true">
+                    <div class="money-story__cta-card">
+                      <div class="money-story__cta-copy">
+                        <div class="money-story__cta-lockup">
+                          <img class="money-story__cta-icon" src="/images/shared/brand/icon_3_0.png" alt="" width="1024" height="1024" aria-hidden="true" />
+                          <div class="money-story__cta-name">
+                            <span>You Owe Me</span>
+                            <strong>Loan &amp; IOU tracker</strong>
+                          </div>
+                        </div>
+                        <div class="money-story__cta-record" aria-hidden="true">
+                          <span>Plan</span><i></i><span>Repayments</span><i></i><span>Paid in full</span>
+                        </div>
+                        <p class="money-story__cta-trust">For iPhone <span aria-hidden="true">&middot;</span> Your friend doesn&rsquo;t need the app.</p>
+                        <div data-app-language-support-anchor hidden></div>
+                        <a
+                          href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&amp;pt=117888502&amp;ct=website_cta&amp;mt=8"
+                          class="lt-appStoreBtn money-story__cta-download"
+                          id="friend-borrow-story-primary-download"
+                          aria-label="Download You Owe Me on the App Store to keep a friend loan clear"
+                          data-track-location="friend_borrow_story_app_store"
+                          data-source-cluster="temporary-support"
+                          data-iphone-handoff-replaceable
+                        >
+                          <span class="sr-only">Download You Owe Me on the App Store</span>
+                          <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+                        </a>
+                      </div>
+                      <section class="iphone-handoff money-story__iphone-handoff" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="friend_borrow_story_iphone_handoff" data-iphone-handoff-replaces="friend-borrow-story-primary-download" aria-labelledby="friend-borrow-story-iphone-handoff-title" hidden>
+                        <div class="iphone-handoff__visible-layout">
+                          <div class="iphone-handoff__visible-copy">
+                            <h4 id="friend-borrow-story-iphone-handoff-title" class="sr-only">Open You Owe Me on your iPhone</h4>
+                            <p class="iphone-handoff__instruction" data-iphone-handoff-instruction>Scan with your iPhone camera to open the App Store.</p>
+                            <a class="iphone-handoff__fallback" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&amp;pt=117888502&amp;ct=website_cta&amp;mt=8">View app details on the App Store</a>
+                          </div>
+                          <img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/shared/iphone-handoff/repayment-plan.png" width="472" height="472" alt="QR code to open You Owe Me on the App Store." loading="eager" />
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+                <nav class="money-story__steps" data-story-steps aria-label="Story chapters"></nav>
+                <div class="money-story__progress" data-story-progress aria-hidden="true"></div>
+              </div>
+            </div>
+          </section>
+          <div id="money-story-end" tabindex="-1"></div>
+          <!-- money-story:end -->
+
           <aside class="friend-borrow-callout" aria-labelledby="borrow-or-repayment-title">
             <h2 id="borrow-or-repayment-title">Are you asking to borrow money&mdash;or asking for money back?</h2>
-            <p>This guide is for asking a friend for a new loan or temporary cover. If someone already owes you money, do not use a borrowing request: read <a href="/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/">how to ask someone to pay you back without being rude</a> or copy a message from the <a href="/tools/repayment-reminder-text-examples/">repayment reminder text examples</a>.</p>
+            <p>This story is for a new loan or temporary cover. If someone already owes you money, use a repayment request instead: read <a href="/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/">how to ask someone to pay you back without being rude</a> or copy a message from the <a href="/tools/repayment-reminder-text-examples/">repayment reminder text examples</a>.</p>
           </aside>
 
           <section class="lt-toolsSection" aria-labelledby="before-you-ask-title">
@@ -527,21 +652,6 @@ Remaining balance: $120</pre>
               </article>
             </div>
             <p>If you already know the amount but need repayment steps, the <a href="/tools/payment-plan-calculator/">Payment Plan Calculator</a> can turn the amount into a weekly, biweekly, or monthly plan.</p>
-            <div class="friend-borrow-product-bridge">
-              <h3>If your friend says yes, keep the agreement clear</h3>
-              <p>You Owe Me helps you keep the amount, repayments, reminders, and history clear without making the arrangement feel more formal than it is. Create a named loan, then add a repayment plan if both people want a schedule.</p>
-              <p>Build the plan around an amount you can realistically pay, a target date, or one of three practical options. When a payment is smaller or larger than planned, the remaining schedule and next reminder update from the loan&rsquo;s current balance.</p>
-              <p>The app does not lend money or process payments. It helps you keep money between people organized once an agreement exists.</p>
-              <div data-app-language-support-anchor hidden></div>
-              <div class="lt-ctaRow">
-                <a
-                  href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&amp;pt=117888502&amp;ct=website_cta&amp;mt=8"
-                  class="lt-primaryCta"
-                  data-track-location="friend_borrow_article_product_bridge_app_store"
-                >Track temporary support clearly in You Owe Me</a>
-              </div>
-              <p>For how records, sharing, exports, AI tools, and App Lock are handled, read <a href="/privacy-and-data/">Privacy and Data in You Owe Me</a>. For a broader product walkthrough, see the <a href="/solutions/temporary-financial-support-tracker/">Temporary Financial Support Tracker</a>.</p>
-            </div>
           </section>
 
           <!-- best-next-step:start -->
@@ -665,5 +775,7 @@ Remaining balance: $120</pre>
     <script src="/assets/js/util.js"></script>
     <script src="/assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
+    <script type="module" src="/scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"></script>
+    <script type="module" src="/assets/js/money-story.mjs?v=20260926-7"></script>
   </body>
 </html>

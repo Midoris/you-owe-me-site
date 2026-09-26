@@ -1,4 +1,4 @@
-import { homepageStory } from './money-story-data.mjs?v=20260926-2';
+import { borrowerStory, homepageStory } from './money-story-data.mjs?v=20260926-7';
 
 const money = amount => '$' + Math.round(amount).toLocaleString('en-US');
 const make = (tag, className, value) => {
@@ -20,7 +20,9 @@ function renderHistory(rows) {
   });
 }
 
-function renderStatement(chapter, person) {
+function renderStatement(chapter, data) {
+  const person = String(data.person || 'Alex');
+  const statement = data.statement || {};
   const sheet = make('div', 'money-story__statement');
   const mast = make('div', 'money-story__statement-mast');
   const icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
@@ -37,14 +39,23 @@ function renderStatement(chapter, person) {
   mast.append(make('span', '', 'You Owe Me'), icon);
 
   const title = make('div', 'money-story__statement-title');
-  title.append(document.createTextNode('A clear record'), document.createElement('br'), document.createTextNode('for ' + person + '.'));
+  const titleLines = Array.isArray(statement.title) && statement.title.length
+    ? statement.title
+    : ['A clear record', 'for ' + person + '.'];
+  titleLines.forEach((line, index) => {
+    if (index) title.append(document.createElement('br'));
+    title.append(document.createTextNode(line));
+  });
   const total = make('div', 'money-story__statement-total');
   const totalValue = make('strong', '', money(chapter.balance));
   totalValue.append(make('span', '', '.00'));
-  total.append(make('span', '', 'Remaining balance'), totalValue);
+  total.append(make('span', '', statement.totalLabel || 'Remaining balance'), totalValue);
 
   const summary = make('div', 'money-story__statement-summary');
-  for (const [label, value] of [['Total covered', chapter.covered], ['Total repaid', chapter.repaid]]) {
+  const summaryItems = Array.isArray(statement.summary) && statement.summary.length
+    ? statement.summary.map(item => [item.label, chapter[item.key]])
+    : [['Total covered', chapter.covered], ['Total repaid', chapter.repaid]];
+  for (const [label, value] of summaryItems) {
     const item = make('div');
     item.append(make('small', '', label), make('b', '', money(value)));
     summary.append(item);
@@ -59,7 +70,15 @@ function renderStatement(chapter, person) {
     ledger.append(item);
   }
 
-  sheet.append(mast, title, make('div', 'money-story__statement-date', 'Statement · ' + chapter.date), total, summary, ledger, make('div', 'money-story__statement-foot', 'Prepared by you · Ready to share'));
+  sheet.append(
+    mast,
+    title,
+    make('div', 'money-story__statement-date', (statement.dateLabel || 'Statement') + ' · ' + chapter.date),
+    total,
+    summary,
+    ledger,
+    make('div', 'money-story__statement-foot', statement.foot || 'Prepared by you · Ready to share')
+  );
   return sheet;
 }
 
@@ -86,7 +105,11 @@ export function initMoneyStory(root, data = homepageStory) {
   const reminder = query('reminder');
   const reminderTitle = query('reminder-title');
   const reminderDate = query('reminder-date');
+  const message = query('message');
+  const messageRequest = query('message-request');
+  const messageResponse = query('message-response');
   const success = query('success');
+  const cta = query('cta');
   const steps = query('steps');
   const progress = query('progress');
   const begin = query('begin');
@@ -97,9 +120,9 @@ export function initMoneyStory(root, data = homepageStory) {
   const friend = String(data.person || 'Alex');
   avatar.textContent = friend.charAt(0).toUpperCase();
   personName.textContent = friend;
-  balanceLabel.textContent = friend + ' owes you';
+  balanceLabel.textContent = data.balanceLabel || friend + ' owes you';
   stage.setAttribute('role', 'region');
-  documentView.replaceChildren(renderStatement(shareChapter, friend));
+  documentView.replaceChildren(renderStatement(shareChapter, data));
   steps.replaceChildren(...chapters.map((chapter, index) => {
     const button = make('button');
     button.type = 'button';
@@ -180,7 +203,11 @@ export function initMoneyStory(root, data = homepageStory) {
     if (chapter.reminder) {
       const [label, ...date] = chapter.reminder.split(' · ');
       reminderTitle.textContent = label;
-      reminderDate.textContent = 'Personal reminder' + (date.length ? ' · ' + date.join(' · ') : '');
+      reminderDate.textContent = (data.reminderPrefix || 'Personal reminder') + (date.length ? ' · ' + date.join(' · ') : '');
+    }
+    if (message && messageRequest && messageResponse && chapter.message) {
+      messageRequest.textContent = chapter.message.request;
+      messageResponse.textContent = chapter.message.response;
     }
 
     if (motion.matches) {
@@ -193,11 +220,21 @@ export function initMoneyStory(root, data = homepageStory) {
     }
 
     const isShare = chapter.id === 'share';
+    const isCta = Boolean(chapter.cta && cta);
+    const hasMessage = Boolean(chapter.message && message);
     track.dataset.chapter = chapter.id;
     track.classList.toggle('has-reminder', Boolean(chapter.reminder));
-    account.setAttribute('aria-hidden', String(isShare));
+    track.classList.toggle('has-message', hasMessage);
+    track.classList.toggle('is-cta', isCta);
+    if (cta) {
+      cta.hidden = !isCta;
+      cta.toggleAttribute('inert', !isCta);
+      cta.setAttribute('aria-hidden', String(!isCta));
+    }
+    account.setAttribute('aria-hidden', String(isShare || hasMessage || isCta));
     documentView.setAttribute('aria-hidden', String(!isShare));
     reminder.setAttribute('aria-hidden', String(!chapter.reminder || isShare));
+    message?.setAttribute('aria-hidden', String(!hasMessage));
     for (const button of steps.querySelectorAll('button')) {
       const active = Number(button.dataset.storyStep) === index;
       button.classList.toggle('is-active', active);
@@ -308,4 +345,8 @@ export function initMoneyStory(root, data = homepageStory) {
   };
 }
 
-document.querySelectorAll('[data-money-story="homepage"]').forEach(root => initMoneyStory(root));
+const stories = { homepage: homepageStory, borrower: borrowerStory };
+document.querySelectorAll('[data-money-story]').forEach(root => {
+  const data = stories[root.dataset.moneyStory];
+  if (data) initMoneyStory(root, data);
+});

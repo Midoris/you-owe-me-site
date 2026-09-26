@@ -18,3 +18,50 @@ export const homepageStory = {
     { id: 'settle', title: 'Alex pays back the rest.', description: 'Record the last $160. Keep the full history.', date: 'May 30', balance: 0, covered: 340, repaid: 340, rows: entries.slice(), step: 'Settled', settled: true }
   ]
 };
+
+const borrowerEntries = [
+  { label: 'Phone bill', date: 'July 8', amount: 120 },
+  { label: 'Repayment', date: 'July 18', amount: -40 },
+  { label: 'Repayment', date: 'July 25', amount: -50 },
+  { label: 'Final repayment', date: 'July 30', amount: -30 }
+];
+
+export const borrowerStory = {
+  person: 'Maya',
+  balanceLabel: 'You owe Maya',
+  reminderPrefix: 'Repayment update',
+  statement: {
+    title: ['A clear record', 'for Maya.'],
+    dateLabel: 'Current record',
+    totalLabel: 'Remaining balance',
+    summary: [
+      { label: 'Borrowed', key: 'covered' },
+      { label: 'Repaid', key: 'repaid' }
+    ],
+    foot: 'Ready to share with Maya'
+  },
+  chapters: [
+    {
+      id: 'agree',
+      title: 'Maya says yes.',
+      description: 'You borrow $120 for your phone bill and plan to repay it July 18.',
+      date: 'July 8',
+      balance: 120,
+      covered: 120,
+      repaid: 0,
+      rows: borrowerEntries.slice(0, 1),
+      step: 'Yes',
+      message: {
+        request: 'Could I borrow $120 for my phone bill? I can pay you back July 18.',
+        response: 'Yes — I can help.'
+      }
+    },
+    { id: 'record', title: 'Keep the promise clear.', description: 'Amount, reason, and date stay together.', date: 'July 8', balance: 120, covered: 120, repaid: 0, rows: borrowerEntries.slice(0, 1), step: 'Record' },
+    { id: 'first', title: 'You repay $40.', description: 'Record it. $80 remains.', date: 'July 18', balance: 80, covered: 120, repaid: 40, rows: borrowerEntries.slice(0, 2), step: 'Pay' },
+    { id: 'update', title: 'Your payday moves.', description: 'You Owe Me drafts the update. You decide when to send it.', date: 'July 18', balance: 80, covered: 120, repaid: 40, rows: borrowerEntries.slice(0, 2), reminder: 'Update Maya · July 18', step: 'Update' },
+    { id: 'second', title: 'You repay $50 more.', description: 'The history stays. $30 remains.', date: 'July 25', balance: 30, covered: 120, repaid: 90, rows: borrowerEntries.slice(0, 3), step: 'More' },
+    { id: 'share', title: 'Maya asks, “What’s left?”', description: 'Share one current record: $30.', date: 'July 25', balance: 30, covered: 120, repaid: 90, rows: borrowerEntries.slice(0, 3), step: 'Share' },
+    { id: 'settle', title: 'You repay the final $30.', description: 'The balance closes. The history stays.', date: 'July 30', balance: 0, covered: 120, repaid: 120, rows: borrowerEntries.slice(), step: 'Settled', settled: true },
+    { id: 'app', title: 'Next time, keep it this clear.', description: 'You Owe Me keeps the plan, repayments, and balance in one private record.', date: 'July 30', balance: 0, covered: 120, repaid: 120, rows: borrowerEntries.slice(), step: 'App', cta: true }
+  ]
+};

@@ -5,10 +5,12 @@ import vm from "node:vm";
 
 const root = new URL("../", import.meta.url);
 const routePath = "blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/index.html";
-const [page, analytics, sitemap] = await Promise.all([
+const [page, analytics, sitemap, storyStyles, storyScript] = await Promise.all([
   readFile(new URL(routePath, root), "utf8"),
   readFile(new URL("scripts/analytics.js", root), "utf8"),
   readFile(new URL("sitemap.xml", root), "utf8"),
+  readFile(new URL("styles/money-story.css", root), "utf8"),
+  readFile(new URL("assets/js/money-story.mjs", root), "utf8"),
 ]);
 
 const DESCRIPTION = "Copy respectful text messages to ask a friend for a loan. Include the amount, repayment timing and an easy way to say no—even when your plans are uncertain.";
@@ -46,12 +48,13 @@ test("EXP-008 puts all seven examples directly after the shortened hero and pres
   const heroEnd = page.indexOf("</section>", page.indexOf('class="lt-toolsHero friend-borrow-hero"'));
   const examples = page.indexOf('id="copyable-text-examples"');
   const callout = page.indexOf('id="borrow-or-repayment-title"');
+  const story = page.indexOf('<!-- money-story:start -->');
   const before = page.indexOf('id="before-you-ask-title"');
   const how = page.indexOf('id="how-to-ask-title"');
   const remaining = page.indexOf('id="kind-of-help-title"');
   const examplesMarkup = page.match(/<section class="lt-toolsSection" id="copyable-text-examples"[\s\S]*?<\/section>/)?.[0] || "";
 
-  assert.ok(heroEnd < examples && examples < callout && callout < before && before < how && how < remaining);
+  assert.ok(heroEnd < examples && examples < story && story < callout && callout < before && before < how && how < remaining);
   assert.equal((examplesMarkup.match(/data-template-id=/g) ?? []).length, 7);
   assert.equal((page.match(/id="copyable-text-examples"/g) ?? []).length, 1);
   assert.match(page, /<h1>How to Ask to Borrow Money From a Friend<\/h1>/);
@@ -62,6 +65,38 @@ test("EXP-008 puts all seven examples directly after the shortened hero and pres
   assert.doesNotMatch(page.slice(page.indexOf('class="friend-borrow-hero"'), heroEnd), /friend-borrow-keypoints/);
   assert.match(page, /Text Messages to Ask a Friend for a Loan/);
   assert.match(page, /Only promise a repayment date you can reasonably meet; if you are unsure, use the check-in example\./);
+});
+
+test("borrower story closes with a responsive iPhone download handoff", () => {
+  const storyStart = page.indexOf('<!-- money-story:start -->');
+  const storyEnd = page.indexOf('<!-- money-story:end -->', storyStart);
+  const story = page.slice(storyStart, storyEnd);
+
+  assert.equal((page.match(/<!-- money-story:start -->/g) ?? []).length, 1);
+  assert.equal((page.match(/data-money-story="borrower"/g) ?? []).length, 1);
+  const stageStart = story.indexOf('class="money-story__stage"');
+  const stageEnd = story.indexOf('<nav class="money-story__steps"', stageStart);
+  const ctaStart = story.indexOf('data-story-cta');
+
+  assert.ok(stageStart >= 0 && ctaStart > stageStart && ctaStart < stageEnd, "the app handoff should be an eighth slide inside the sticky stage");
+  assert.match(story, /aria-label="Repaying Maya, in eight moments"/);
+  assert.equal((story.match(/<li(?:\s|>)/g) ?? []).length, 8);
+  assert.match(story, /data-story-cta hidden inert aria-hidden="true"/);
+  assert.match(story, /Next time, keep it this clear\./);
+  assert.doesNotMatch(story, /money-story__outro/);
+  assert.match(story, /id="friend-borrow-story-primary-download"[\s\S]*?data-iphone-handoff-replaceable/);
+  assert.match(story, /data-cta-location="friend_borrow_story_iphone_handoff"/);
+  assert.match(story, /data-iphone-handoff-replaces="friend-borrow-story-primary-download"/);
+  assert.match(story, /src="\/images\/shared\/iphone-handoff\/repayment-plan\.png" width="472" height="472"/);
+  assert.match(page, /href="\/styles\/iphone-handoff\.css\?v=iphone-handoff-phase-d-20260914-1"/);
+  assert.match(page, /src="\/scripts\/iphone-handoff\.mjs\?v=iphone-handoff-phase-d-20260914-1"/);
+  assert.match(storyStyles, /@media\(min-width:701px\) and \(max-height:500px\) and \(orientation:landscape\)/);
+  assert.match(storyStyles, /@media\(max-width:700px\) and \(max-height:500px\) and \(orientation:landscape\)/);
+  assert.match(storyStyles, /#money-story \.money-story__canvas\{top:86px;bottom:50px;/);
+  assert.match(storyStyles, /#money-story\.is-compact-height \.money-story__canvas\{top:86px;bottom:50px;width:calc\(100% - 30px\)\}/);
+  assert.match(storyStyles, /#money-story\.money-story--borrower \.money-story__track\{height:626svh\}/);
+  assert.match(storyScript, /cta\.hidden = !isCta;/);
+  assert.match(storyScript, /cta\.toggleAttribute\('inert', !isCta\);/);
 });
 
 test("EXP-008 keeps the exact changed messages in both rendered and copy attributes", () => {

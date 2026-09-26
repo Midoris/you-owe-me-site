@@ -10,6 +10,7 @@ const LOCATION_VALUES = new Set([
   "roommate_calculator_iphone_handoff",
   "payment_plan_results_iphone_handoff",
   "polite_reminder_post_copy_iphone_handoff",
+  "friend_borrow_story_iphone_handoff",
 ]);
 
 const FIREBASE_EVENTS = {
