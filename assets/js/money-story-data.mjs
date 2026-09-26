@@ -65,3 +65,24 @@ export const borrowerStory = {
     { id: 'app', title: 'Next time, keep it this clear.', description: 'You Owe Me keeps the plan, repayments, and balance in one private record.', date: 'July 30', balance: 0, covered: 120, repaid: 120, rows: borrowerEntries.slice(), step: 'App', cta: true }
   ]
 };
+
+const roommateEntries = [
+  { label: 'Electricity · Alex’s half', date: 'May 4', amount: 60, displayAmount: '$60 owed', kind: 'expense' },
+  { label: 'Alex paid you', date: 'May 16', amount: -30, displayAmount: '$30 paid', kind: 'payment' },
+  { label: 'Internet · your half', date: 'June 3', amount: -40, displayAmount: '$40 owed', kind: 'expense' },
+  { label: 'You paid Alex', date: 'June 6', amount: 10, displayAmount: '$10 paid', kind: 'payment' }
+];
+
+export const roommateStory = {
+  person: 'Alex',
+  balanceLabel: 'Alex owes you',
+  negativeBalanceLabel: 'You owe Alex',
+  chapters: [
+    { id: 'bill', title: 'You cover the electricity bill.', description: 'Alex’s agreed half of $120 is $60.', date: 'May 4', balance: 60, rows: roommateEntries.slice(0, 1), step: 'Bill' },
+    { id: 'partial', title: 'Alex pays you $30.', description: 'Record it. $30 remains.', date: 'May 16', balance: 30, rows: roommateEntries.slice(0, 2), step: 'Part' },
+    { id: 'new-bill', title: 'Then Alex covers June’s internet bill.', description: 'It’s $80; your agreed half is $40.', date: 'June 3', balance: 30, rows: roommateEntries.slice(0, 2), step: 'June', bill: { title: 'June · Internet', amount: '$80', detail: 'Alex paid · Your agreed half is $40' } },
+    { id: 'reverse', title: 'Now you owe Alex $10.', description: 'The balance changes sides. Every entry stays.', date: 'June 3', balance: -10, rows: roommateEntries.slice(0, 3), step: 'Flip' },
+    { id: 'settle', title: 'You settle the $10.', description: 'Record the payment. Paid in full.', date: 'June 6', balance: 0, rows: roommateEntries.slice(), step: 'Settled', settled: true },
+    { id: 'app', title: 'Keep the next bill clear.', description: 'Track agreed shares and repayments in one current record.', date: 'June 6', balance: 0, rows: roommateEntries.slice(), step: 'App', cta: true }
+  ]
+};

@@ -1,6 +1,6 @@
 import assert from 'node:assert/strict';
 import test from 'node:test';
-import { borrowerStory, homepageStory } from '../assets/js/money-story-data.mjs';
+import { borrowerStory, homepageStory, roommateStory } from '../assets/js/money-story-data.mjs';
 
 test('homepage story balances reconcile, and the share and settlement keep their distinct histories', () => {
   const { chapters } = homepageStory;
@@ -52,4 +52,25 @@ test('borrower story preserves the borrower perspective and reconciles every pay
   assert.equal(chapters.at(-1).repaid, 120);
   assert.equal(chapters.at(-1).cta, true);
   assert.equal(chapters.at(-1).title, 'Next time, keep it this clear.');
+});
+
+test('roommate story changes direction only after the second agreed bill, then settles', () => {
+  const { chapters } = roommateStory;
+  assert.deepEqual(chapters.map(chapter => chapter.id), [
+    'bill', 'partial', 'new-bill', 'reverse', 'settle', 'app'
+  ]);
+  assert.deepEqual(chapters.map(chapter => chapter.balance), [60, 30, 30, -10, 0, 0]);
+  for (const chapter of chapters) {
+    assert.equal(
+      chapter.rows.reduce((balance, row) => balance + row.amount, 0),
+      chapter.balance,
+      `${chapter.id}: the signed roommate history should reconcile`
+    );
+  }
+  assert.equal(chapters[2].bill.amount, '$80');
+  assert.equal(chapters[2].bill.detail, 'Alex paid · Your agreed half is $40');
+  assert.equal(chapters[3].balance, -10);
+  assert.equal(roommateStory.negativeBalanceLabel, 'You owe Alex');
+  assert.equal(chapters[4].settled, true);
+  assert.equal(chapters[5].cta, true);
 });

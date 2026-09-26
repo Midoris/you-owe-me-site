@@ -18,6 +18,7 @@ const cppKey = "roommates-shared-household-costs";
 const cppUrl = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&pt=117888502&ct=website_cta&mt=8";
 const expectedUpdatedByUrl = new Map([
   ["/find/", "2026-08-24"],
+  ["/compare/spreadsheet-vs-app-for-tracking-money-owed/", "2026-09-23"],
   [route, "2026-09-10"],
 ]);
 
@@ -129,6 +130,11 @@ for (const url of relationshipUrls) {
 
 const page = read("tools/roommate-expense-tracker-template/index.html");
 const pageCss = read("styles/roommate-expense-tracker-template.css");
+const storyStart = page.indexOf("<!-- money-story:start -->");
+const storyEnd = page.indexOf("<!-- money-story:end -->");
+assert.ok(storyStart > 0 && storyEnd > storyStart, "roommate story markers are missing");
+const story = page.slice(storyStart, storyEnd);
+const originalPage = page.slice(0, storyStart) + page.slice(storyEnd);
 assert.ok(!page.includes("youoweme.io"));
 assert.ok(page.includes("<title>Roommate Expense Tracker Template | Excel &amp; Google Sheets</title>"));
 const sheetsCopyUrl = "https://docs.google.com/spreadsheets/d/1KZc83lodHIoj59chDqy2cgADRiScW4FrPBRwatUrekQ/copy";
@@ -148,21 +154,23 @@ for (const absoluteUrl of [
 }
 const smartBanner = '<meta name="apple-itunes-app" content="app-id=1147058670, affiliate-data=pt=117888502&amp;ct=website_smart_banner" />';
 assert.equal(occurrences(page, smartBanner), 1);
-assert.equal(occurrences(page, "data-app-language-support-anchor hidden"), 1);
+assert.equal(occurrences(originalPage, "data-app-language-support-anchor hidden"), 1);
 assert.equal(occurrences(page, '<link rel="stylesheet" href="/styles/app-language-support.css" />'), 1);
 assert.equal(occurrences(page, '<script src="/scripts/app-language-support.js"></script>'), 1);
-const templateCppAnchors = anchorsWithHref(page, cppUrl);
+const templateCppAnchors = anchorsWithHref(originalPage, cppUrl);
 assert.equal(templateCppAnchors.length, 2, "the original product badge and QR fallback preserve the same CPP");
 const originalProductBadge = templateCppAnchors.find((match) => match[0].includes('class="lt-appStoreBtn"'));
 assert.ok(originalProductBadge);
-assert.ok(page.slice(originalProductBadge.index, originalProductBadge.index + 1_000).includes("download-on-the-app-store/black/en-us"));
-const handoffFallbacks = [...page.matchAll(/<a\b[^>]*class="iphone-handoff__fallback"[^>]*href="([^"]+)"[^>]*>/g)];
+assert.ok(originalPage.slice(originalProductBadge.index, originalProductBadge.index + 1_000).includes("download-on-the-app-store/black/en-us"));
+const handoffFallbacks = [...originalPage.matchAll(/<a\b[^>]*class="iphone-handoff__fallback"[^>]*href="([^"]+)"[^>]*>/g)];
 assert.equal(handoffFallbacks.length, 1, "the template has one QR fallback link");
 assert.equal(
   decodeHtmlAttribute(handoffFallbacks[0][1]),
   cppUrl,
   "the QR fallback preserves the template CPP and ordinary website_cta attribution",
 );
+assert.equal(anchorsWithHref(story, cppUrl).length, 3, "story fallback, iPhone badge, and desktop fallback use the roommate CPP");
+assert.ok(story.includes('data-iphone-handoff-replaces="roommate-story-primary-download"'));
 
 const comparisonPosition = page.indexOf("When the spreadsheet is enough—and when it is not");
 const productPosition = page.indexOf("When the spreadsheet becomes hard to maintain");

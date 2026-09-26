@@ -159,6 +159,7 @@
     <link rel="stylesheet" href="../../styles/tools.css" />
     <link rel="stylesheet" href="../../styles/roommate-expense-tracker-template.css" />
     <link rel="stylesheet" href="../../styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1" />
+    <link rel="stylesheet" href="../../styles/money-story.css?v=20260926-roommate-1" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
   </head>
@@ -299,6 +300,135 @@
             </article>
             <p class="roommate-template-privacy">You Owe Me does not receive the expenses you enter. Excel data stays in your file unless you upload or share it. Google Sheets data is stored in your Google account and is accessible to people you choose to share your copy with.</p>
           </section>
+
+          <!-- money-story:start -->
+          <section id="money-story" class="money-story money-story--roommate" data-money-story="roommate" aria-labelledby="money-story-intro-title">
+            <div class="money-story__intro">
+              <div class="money-story__eyebrow"><span class="money-story__dot" aria-hidden="true"></span> Shared bills, changing balance</div>
+              <h2 id="money-story-intro-title">One more bill.<br><span>The balance changes sides.</span></h2>
+              <p>Your spreadsheet keeps the household picture. Follow how one repayment and a new bill change who owes whom.</p>
+              <a class="money-story__begin" href="#money-story-fallback" data-story-begin>Follow the record <span aria-hidden="true">↓</span></a>
+              <a class="money-story__skip" href="#money-story-end">Continue to the workbook <span aria-hidden="true">↓</span></a>
+              <div class="money-story__orbit" aria-hidden="true"></div>
+            </div>
+
+            <div class="money-story__fallback" id="money-story-fallback">
+              <ol>
+                <li><h3>You cover the electricity bill.</h3><p>Alex’s agreed half of $120 is $60.</p><span>May · Alex owes you $60</span></li>
+                <li><h3>Alex pays you $30.</h3><p>Record it. $30 remains.</p><span>May · $30 remains</span></li>
+                <li><h3>Then Alex covers June’s internet bill.</h3><p>It’s $80; your agreed half is $40.</p><span>June · A new agreed share</span></li>
+                <li><h3>Now you owe Alex $10.</h3><p>The balance changes sides. Every entry stays.</p><span>June · The balance changes sides</span></li>
+                <li><h3>You settle the $10.</h3><p>Record the payment. Paid in full.</p><span>June · Paid in full</span></li>
+                <li class="money-story__fallback-app">
+                  <h3>Keep the next bill clear.</h3>
+                  <p>Track agreed shares and repayments in one current record. Start a new record in the app; your spreadsheet is not imported.</p>
+                  <span>You Owe Me · For iPhone</span>
+                  <a
+                    href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&amp;pt=117888502&amp;ct=website_cta&amp;mt=8"
+                    class="lt-appStoreBtn money-story__fallback-download"
+                    aria-label="Download You Owe Me on the App Store to keep roommate bills clear"
+                    data-track-location="roommate_expense_story_fallback_app_store"
+                    data-source-cluster="roommate-expense-template"
+                  >
+                    <span class="sr-only">Download You Owe Me on the App Store</span>
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+                  </a>
+                </li>
+              </ol>
+            </div>
+
+            <div class="money-story__track money-story__enhanced" data-story-track aria-label="Two roommates, shared bills and a changing balance">
+              <div class="money-story__stage" data-story-stage tabindex="-1">
+                <div class="money-story__copy">
+                  <span class="money-story__status">
+                    <span class="money-story__kicker" data-story-kicker></span>
+                    <span class="money-story__chapter-meter" data-story-chapter-meter aria-hidden="true">
+                      <svg viewBox="0 0 28 28" aria-hidden="true">
+                        <circle class="money-story__chapter-meter-track" cx="14" cy="14" r="11.5" pathLength="1"></circle>
+                        <circle class="money-story__chapter-meter-value" cx="14" cy="14" r="11.5" pathLength="1"></circle>
+                      </svg>
+                    </span>
+                  </span>
+                  <h3 data-story-title></h3>
+                  <p data-story-description></p>
+                </div>
+                <div class="money-story__canvas">
+                  <div class="money-story__message" data-story-message aria-hidden="true">
+                    <div class="money-story__message-label">Record update</div>
+                    <p class="money-story__message-request" data-story-message-request></p>
+                    <p class="money-story__message-response" data-story-message-response></p>
+                  </div>
+                  <div class="money-story__account" data-story-account>
+                    <div class="money-story__person" data-story-person><span class="money-story__avatar" data-story-avatar aria-hidden="true">A</span><span data-story-person-name>Alex</span></div>
+                    <div class="money-story__balance" data-story-balance-display>
+                      <span class="money-story__balance-label" data-story-balance-label>Alex owes you</span>
+                      <div class="money-story__big-balance"><span data-story-amount>$60</span><span class="money-story__decimal">.00</span></div>
+                    </div>
+                    <div class="money-story__success" data-story-success role="status" aria-hidden="true"><span class="money-story__success-check" aria-hidden="true">✓</span><span class="money-story__success-text">Paid <br class="money-story__mobile-break">in full</span></div>
+                    <div class="money-story__history" data-story-history></div>
+                    <div class="money-story__reminder" data-story-reminder aria-hidden="true">
+                      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h12M13 8l4 4-4 4"/><path d="M4 5h10a5 5 0 0 1 5 5v9"/></svg>
+                      <span><strong data-story-reminder-title></strong><small data-story-reminder-date></small></span>
+                      <span class="money-story__toggle" aria-hidden="true"></span>
+                    </div>
+                  </div>
+                  <div class="money-story__bill" data-story-bill aria-hidden="true">
+                    <div class="money-story__bill-heading">
+                      <span class="money-story__bill-mark" aria-hidden="true">↗</span>
+                      <span>Shared household bill</span>
+                    </div>
+                    <strong class="money-story__bill-title" data-story-bill-title></strong>
+                    <span class="money-story__bill-amount" data-story-bill-amount></span>
+                    <p class="money-story__bill-detail" data-story-bill-detail></p>
+                  </div>
+                  <div class="money-story__document" data-story-document aria-hidden="true"></div>
+                  <div class="money-story__cta" data-story-cta hidden inert aria-hidden="true">
+                    <div class="money-story__cta-card">
+                      <div class="money-story__cta-copy">
+                        <div class="money-story__cta-lockup">
+                          <img class="money-story__cta-icon" src="/images/shared/brand/icon_3_0.png" alt="" width="1024" height="1024" aria-hidden="true" />
+                          <div class="money-story__cta-name">
+                            <span>You Owe Me</span>
+                            <strong>Loan &amp; IOU tracker</strong>
+                          </div>
+                        </div>
+                        <div class="money-story__cta-record" aria-hidden="true">
+                          <span>Agreed shares</span><i></i><span>Repayments</span><i></i><span>Current balance</span>
+                        </div>
+                        <p class="money-story__cta-trust">Start a new record in the app. Your spreadsheet is not imported.</p>
+                        <a
+                          href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&amp;pt=117888502&amp;ct=website_cta&amp;mt=8"
+                          class="lt-appStoreBtn money-story__cta-download"
+                          id="roommate-story-primary-download"
+                          aria-label="Download You Owe Me on the App Store to track shared roommate bills"
+                          data-track-location="roommate_expense_story_app_store"
+                          data-source-cluster="roommate-expense-template"
+                          data-iphone-handoff-replaceable
+                        >
+                          <span class="sr-only">Download You Owe Me on the App Store</span>
+                          <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" />
+                        </a>
+                      </div>
+                      <section class="iphone-handoff money-story__iphone-handoff" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="roommate_expense_story_iphone_handoff" data-iphone-handoff-replaces="roommate-story-primary-download" aria-labelledby="roommate-story-iphone-handoff-title" hidden>
+                        <div class="iphone-handoff__visible-layout">
+                          <div class="iphone-handoff__visible-copy">
+                            <h4 id="roommate-story-iphone-handoff-title" class="sr-only">Open You Owe Me on your iPhone</h4>
+                            <p class="iphone-handoff__instruction" data-iphone-handoff-instruction>Scan the QR code with your iPhone camera to open the App Store.</p>
+                            <a class="iphone-handoff__fallback" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&amp;pt=117888502&amp;ct=website_cta&amp;mt=8">Open You Owe Me on the App Store</a>
+                          </div>
+                          <img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/shared/iphone-handoff/roommate.png" width="472" height="472" alt="QR code to open You Owe Me on the App Store." loading="eager" />
+                        </div>
+                      </section>
+                    </div>
+                  </div>
+                </div>
+                <nav class="money-story__steps" data-story-steps aria-label="Story chapters"></nav>
+                <div class="money-story__progress" data-story-progress aria-hidden="true"></div>
+              </div>
+            </div>
+          </section>
+          <div id="money-story-end" tabindex="-1"></div>
+          <!-- money-story:end -->
 
           <section class="roommate-template-section" aria-labelledby="workbook-title">
             <p class="lt-sectionEyebrow">Inside the workbook</p>
@@ -568,6 +698,7 @@
     <script src="../../scripts/sales.js"></script>
     <script type="module" src="../../scripts/analytics.js?v=iphone-handoff-phase-d-20260914-1"></script>
     <script type="module" src="../../scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"></script>
+    <script type="module" src="../../assets/js/money-story.mjs?v=20260926-roommate-1"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>
     <script src="../../assets/js/jquery.scrolly.min.js"></script>

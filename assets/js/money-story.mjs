@@ -1,4 +1,4 @@
-import { borrowerStory, homepageStory } from './money-story-data.mjs?v=20260926-7';
+import { borrowerStory, homepageStory, roommateStory } from './money-story-data.mjs?v=20260926-9';
 
 const money = amount => '$' + Math.round(amount).toLocaleString('en-US');
 const make = (tag, className, value) => {
@@ -10,11 +10,11 @@ const make = (tag, className, value) => {
 
 function renderHistory(rows) {
   return rows.map(row => {
-    const entry = make('div', 'money-story__entry ' + (row.amount < 0 ? 'money-story__entry--payment' : 'money-story__entry--expense'));
+    const entry = make('div', 'money-story__entry ' + ((row.kind || (row.amount < 0 ? 'payment' : 'expense')) === 'payment' ? 'money-story__entry--payment' : 'money-story__entry--expense'));
     entry.append(
       make('small', '', row.date),
       make('strong', '', row.label),
-      make('b', '', (row.amount < 0 ? '−' : '+') + money(Math.abs(row.amount)))
+      make('b', '', row.displayAmount || (row.amount < 0 ? '−' : '+') + money(Math.abs(row.amount)))
     );
     return entry;
   });
@@ -102,6 +102,10 @@ export function initMoneyStory(root, data = homepageStory) {
   const balanceDisplay = query('balance-display');
   const balanceLabel = query('balance-label');
   const documentView = query('document');
+  const bill = query('bill');
+  const billTitle = query('bill-title');
+  const billAmount = query('bill-amount');
+  const billDetail = query('bill-detail');
   const reminder = query('reminder');
   const reminderTitle = query('reminder-title');
   const reminderDate = query('reminder-date');
@@ -116,13 +120,12 @@ export function initMoneyStory(root, data = homepageStory) {
   if ([track, stage, title, description, kicker, chapterMeter, amount, history, account, person, avatar, personName, balanceDisplay, balanceLabel, documentView, reminder, reminderTitle, reminderDate, success, steps, progress, begin].some(item => !item)) return null;
 
   const shareChapter = chapters.find(chapter => chapter.id === 'share');
-  if (!shareChapter) return null;
   const friend = String(data.person || 'Alex');
   avatar.textContent = friend.charAt(0).toUpperCase();
   personName.textContent = friend;
   balanceLabel.textContent = data.balanceLabel || friend + ' owes you';
   stage.setAttribute('role', 'region');
-  documentView.replaceChildren(renderStatement(shareChapter, data));
+  if (shareChapter) documentView.replaceChildren(renderStatement(shareChapter, data));
   steps.replaceChildren(...chapters.map((chapter, index) => {
     const button = make('button');
     button.type = 'button';
@@ -163,7 +166,14 @@ export function initMoneyStory(root, data = homepageStory) {
     balanceDisplay.setAttribute('aria-hidden', String(revealed));
   }
 
-  function animateAmount(next, onComplete) {
+  function displayAmount(value, chapter) {
+    amount.textContent = money(Math.abs(value));
+    if (!data.negativeBalanceLabel) return;
+    if (Math.abs(value) < .001 && chapter.settled) return;
+    balanceLabel.textContent = value < 0 ? data.negativeBalanceLabel : data.balanceLabel;
+  }
+
+  function animateAmount(next, chapter, onComplete) {
     const from = displayed;
     const started = performance.now();
     const run = numberRun;
@@ -171,12 +181,12 @@ export function initMoneyStory(root, data = homepageStory) {
       if (run !== numberRun || destroyed) return;
       const fraction = Math.min(1, (now - started) / 600);
       displayed = from + (next - from) * (1 - (1 - fraction) ** 3);
-      amount.textContent = money(displayed);
+      displayAmount(displayed, chapter);
       if (fraction < 1) numberFrame = requestAnimationFrame(tick);
       else {
         numberFrame = 0;
         displayed = next;
-        amount.textContent = money(next);
+        displayAmount(next, chapter);
         onComplete?.();
       }
     };
@@ -187,7 +197,7 @@ export function initMoneyStory(root, data = homepageStory) {
     if (motion.matches && !wasReduced) {
       cancelNumber();
       displayed = chapter.balance;
-      amount.textContent = money(displayed);
+      displayAmount(displayed, chapter);
       if (chapter.settled) revealSuccess(true);
     }
     wasReduced = motion.matches;
@@ -205,6 +215,12 @@ export function initMoneyStory(root, data = homepageStory) {
       reminderTitle.textContent = label;
       reminderDate.textContent = (data.reminderPrefix || 'Personal reminder') + (date.length ? ' · ' + date.join(' · ') : '');
     }
+    const hasBill = Boolean(chapter.bill && bill && billTitle && billAmount && billDetail);
+    if (hasBill) {
+      billTitle.textContent = chapter.bill.title;
+      billAmount.textContent = chapter.bill.amount;
+      billDetail.textContent = chapter.bill.detail;
+    }
     if (message && messageRequest && messageResponse && chapter.message) {
       messageRequest.textContent = chapter.message.request;
       messageResponse.textContent = chapter.message.response;
@@ -212,10 +228,10 @@ export function initMoneyStory(root, data = homepageStory) {
 
     if (motion.matches) {
       displayed = chapter.balance;
-      amount.textContent = money(displayed);
+      displayAmount(displayed, chapter);
       if (chapter.settled) revealSuccess(true);
     } else {
-      animateAmount(chapter.balance, chapter.settled ? () => revealSuccess(true) : undefined);
+      animateAmount(chapter.balance, chapter, chapter.settled ? () => revealSuccess(true) : undefined);
       title.animate?.([{ opacity: .25, transform: 'translateY(9px)' }, { opacity: 1, transform: 'translateY(0)' }], { duration: 450, easing: 'ease-out' });
     }
 
@@ -225,14 +241,16 @@ export function initMoneyStory(root, data = homepageStory) {
     track.dataset.chapter = chapter.id;
     track.classList.toggle('has-reminder', Boolean(chapter.reminder));
     track.classList.toggle('has-message', hasMessage);
+    track.classList.toggle('has-bill', hasBill);
     track.classList.toggle('is-cta', isCta);
     if (cta) {
       cta.hidden = !isCta;
       cta.toggleAttribute('inert', !isCta);
       cta.setAttribute('aria-hidden', String(!isCta));
     }
-    account.setAttribute('aria-hidden', String(isShare || hasMessage || isCta));
+    account.setAttribute('aria-hidden', String(isShare || hasMessage || hasBill || isCta));
     documentView.setAttribute('aria-hidden', String(!isShare));
+    bill?.setAttribute('aria-hidden', String(!hasBill));
     reminder.setAttribute('aria-hidden', String(!chapter.reminder || isShare));
     message?.setAttribute('aria-hidden', String(!hasMessage));
     for (const button of steps.querySelectorAll('button')) {
@@ -345,7 +363,7 @@ export function initMoneyStory(root, data = homepageStory) {
   };
 }
 
-const stories = { homepage: homepageStory, borrower: borrowerStory };
+const stories = { homepage: homepageStory, borrower: borrowerStory, roommate: roommateStory };
 document.querySelectorAll('[data-money-story]').forEach(root => {
   const data = stories[root.dataset.moneyStory];
   if (data) initMoneyStory(root, data);
