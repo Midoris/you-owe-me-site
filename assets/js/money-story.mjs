@@ -73,6 +73,7 @@ export function initMoneyStory(root, data = homepageStory) {
   const title = query('title');
   const description = query('description');
   const kicker = query('kicker');
+  const chapterMeter = query('chapter-meter');
   const amount = query('amount');
   const history = query('history');
   const account = query('account');
@@ -89,7 +90,7 @@ export function initMoneyStory(root, data = homepageStory) {
   const steps = query('steps');
   const progress = query('progress');
   const begin = query('begin');
-  if ([track, stage, title, description, kicker, amount, history, account, person, avatar, personName, balanceDisplay, balanceLabel, documentView, reminder, reminderTitle, reminderDate, success, steps, progress, begin].some(item => !item)) return null;
+  if ([track, stage, title, description, kicker, chapterMeter, amount, history, account, person, avatar, personName, balanceDisplay, balanceLabel, documentView, reminder, reminderTitle, reminderDate, success, steps, progress, begin].some(item => !item)) return null;
 
   const shareChapter = chapters.find(chapter => chapter.id === 'share');
   if (!shareChapter) return null;
@@ -121,7 +122,6 @@ export function initMoneyStory(root, data = homepageStory) {
   let displayed = chapters[0].balance;
   let previous = -1;
   let wasReduced = motion.matches;
-  let firstRender = true;
   let destroyed = false;
   let measuredViewportHeight = 0;
   const viewportHeight = () => window.visualViewport?.height || window.innerHeight;
@@ -210,15 +210,16 @@ export function initMoneyStory(root, data = homepageStory) {
   function render() {
     frame = 0;
     if (destroyed) return;
-    position = firstRender || motion.matches ? target : position + (target - position) * .2;
-    firstRender = false;
-    if (Math.abs(target - position) < .00002) position = target;
+    // Keep chapter boundaries tied to fixed scroll positions. Easing the story
+    // position made a fast swipe change chapters later than a slow drag.
+    position = target;
     const scaled = position * chapters.length;
     const index = Math.min(chapters.length - 1, Math.floor(scaled));
+    const chapterProgress = clamp(scaled - index);
     track.dataset.active = String(index);
+    chapterMeter.style.setProperty('--story-chapter-progress', chapterProgress.toFixed(4));
     progress.style.transform = 'scaleX(' + position + ')';
     update(index, chapters[index]);
-    if (position !== target) frame = requestAnimationFrame(render);
   }
 
   function read() {

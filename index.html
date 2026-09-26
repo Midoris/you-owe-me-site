@@ -146,7 +146,7 @@
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
       <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260925-mobile-layout-1" />
-    <link rel="stylesheet" href="./styles/money-story.css?v=20260926-3" />
+    <link rel="stylesheet" href="./styles/money-story.css?v=20260926-4" />
     <link rel="stylesheet" href="./styles/landing-cleanup.css?v=20260926-2" />
   </head>
 
@@ -245,7 +245,15 @@
             <div class="money-story__track money-story__enhanced" data-story-track aria-label="Helping Alex, in seven moments">
               <div class="money-story__stage" data-story-stage tabindex="-1">
                 <div class="money-story__copy">
-                  <span class="money-story__kicker" data-story-kicker></span>
+                  <span class="money-story__status">
+                    <span class="money-story__kicker" data-story-kicker></span>
+                    <span class="money-story__chapter-meter" data-story-chapter-meter aria-hidden="true">
+                      <svg viewBox="0 0 28 28" aria-hidden="true">
+                        <circle class="money-story__chapter-meter-track" cx="14" cy="14" r="11.5" pathLength="1"></circle>
+                        <circle class="money-story__chapter-meter-value" cx="14" cy="14" r="11.5" pathLength="1"></circle>
+                      </svg>
+                    </span>
+                  </span>
                   <h3 data-story-title></h3>
                   <p data-story-description></p>
                 </div>
@@ -910,6 +918,6 @@
     <script src="./assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
       <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
-    <script type="module" src="./assets/js/money-story.mjs?v=20260926-3"></script>
+    <script type="module" src="./assets/js/money-story.mjs?v=20260926-4"></script>
   </body>
 </html>

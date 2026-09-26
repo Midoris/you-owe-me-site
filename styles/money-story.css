@@ -32,7 +32,14 @@
 #money-story .money-story__track{height:560svh;background:var(--story-canvas)}
 #money-story .money-story__stage{position:sticky;top:52px;height:calc(100vh - 52px);height:calc(var(--story-viewport-height,100dvh) - 52px);overflow:hidden;background:radial-gradient(ellipse at 50% 45%,#eaf6e6 0%,#f4f6f8 50%,#f4f6f8 100%)}
 #money-story .money-story__copy{position:absolute;z-index:5;top:28px;left:22px;right:22px;text-align:center}
+#money-story .money-story__status{position:relative;display:inline-flex;align-items:center;justify-content:center}
 #money-story .money-story__kicker{color:var(--story-muted);font-size:10px;letter-spacing:2.5px}
+#money-story .money-story__chapter-meter{--story-chapter-progress:0;position:absolute;top:50%;left:calc(100% + 11px);display:grid;width:28px;height:28px;place-items:center;transform:translateY(-50%);pointer-events:none}
+#money-story .money-story__chapter-meter svg{display:block;width:100%;height:100%;overflow:visible;transform:rotate(-90deg)}
+#money-story .money-story__chapter-meter circle{fill:none}
+#money-story .money-story__chapter-meter-track{stroke:#18212b2b;stroke-width:1.15}
+#money-story .money-story__chapter-meter-value{stroke:#86c853;stroke-width:2.2;stroke-linecap:round;stroke-dasharray:1;stroke-dashoffset:calc(1 - var(--story-chapter-progress));transition:stroke-dashoffset .08s linear}
+#money-story .money-story__chapter-meter:after{content:"";position:absolute;width:5px;height:5px;margin-top:-2px;border-right:1.5px solid var(--story-heading);border-bottom:1.5px solid var(--story-heading);transform:rotate(45deg);opacity:.8}
 #money-story .money-story__copy h3{margin:12px 0 11px;color:var(--story-heading);font-size:clamp(30px,3.25vw,47px);font-weight:480;line-height:1.08;letter-spacing:-.045em;text-align:center}
 #money-story .money-story__copy p{max-width:500px;margin:0 auto;color:var(--story-muted);font-size:14px;line-height:1.45;text-align:center;text-align-last:center}
 #money-story .money-story__canvas{position:absolute;top:160px;bottom:90px;left:50%;width:min(1000px,88%);transform:translateX(-50%)}
@@ -108,6 +115,7 @@
   #money-story .money-story__statement-foot{margin-top:5px;padding-top:6px}
 }
 @media(max-width:700px){
+  #money-story .money-story__chapter-meter{left:calc(100% + 9px);width:26px;height:26px}
   #money-story .money-story__intro{padding:98px 25px 42px}
   #money-story .money-story__intro h2{margin:18px 0 14px;font-size:clamp(47px,12vw,64px)}
   #money-story .money-story__intro p{max-width:320px;font-size:15px}
@@ -178,7 +186,7 @@
   #money-story .money-story__skip{left:25px;right:auto;bottom:25px}
 }
 @media(prefers-reduced-motion:reduce){
-  #money-story .money-story__document,#money-story .money-story__account,#money-story .money-story__reminder,#money-story .money-story__success,#money-story .money-story__person,#money-story .money-story__balance,#money-story .money-story__steps button:before{transition:none}
+  #money-story .money-story__document,#money-story .money-story__account,#money-story .money-story__reminder,#money-story .money-story__success,#money-story .money-story__person,#money-story .money-story__balance,#money-story .money-story__steps button:before,#money-story .money-story__chapter-meter-value{transition:none}
 }
 
 /* Homepage shell: clipping ancestors create scroll containers and break sticky. */
