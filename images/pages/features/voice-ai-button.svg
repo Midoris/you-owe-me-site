@@ -1,0 +1,22 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="64" height="64" viewBox="0 0 64 64" role="img" aria-labelledby="title">
+  <title id="title">You Owe Me AI button: five white voice bars on a lime circle</title>
+  <!-- Static illustration of VoiceEntryFloatingButton in 7.1.7; native resting geometry. -->
+  <defs>
+    <linearGradient id="surface" x1="25%" y1="0%" x2="75%" y2="100%">
+      <stop stop-color="#b8ef87"/>
+      <stop offset=".5" stop-color="#afe67e"/>
+      <stop offset="1" stop-color="#a1d474"/>
+    </linearGradient>
+    <filter id="bar-shadow" x="-50%" y="-20%" width="200%" height="160%">
+      <feDropShadow dx="0" dy=".5" stdDeviation=".7" flood-opacity=".13"/>
+    </filter>
+  </defs>
+  <circle cx="32" cy="32" r="28" fill="url(#surface)" stroke="#fff" stroke-opacity=".3"/>
+  <g fill="#fff" filter="url(#bar-shadow)">
+    <rect x="18" y="27.5" width="3.2" height="9" rx="1.6"/>
+    <rect x="24.2" y="24" width="3.2" height="16" rx="1.6"/>
+    <rect x="30.4" y="20.5" width="3.2" height="23" rx="1.6"/>
+    <rect x="36.6" y="24" width="3.2" height="16" rx="1.6"/>
+    <rect x="42.8" y="27.5" width="3.2" height="9" rx="1.6"/>
+  </g>
+</svg>
