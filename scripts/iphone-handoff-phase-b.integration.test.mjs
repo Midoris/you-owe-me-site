@@ -80,7 +80,7 @@ test("Phase-B placement preserves home/template actions and confines split QR to
   const maintenanceProof = split.indexOf('class="lt-maintenanceProof"', splitActions);
   assert.ok(splitActions < splitCard && splitCard < maintenanceProof);
   assert.ok(split.indexOf('data-result-actions hidden') < splitCard, "the QR remains inside the hidden result surface");
-  assert.ok(split.includes("Track this split"), "the separate iPhone App Clip flow is retained");
+  assert.ok(split.includes("Track repayments"), "the separate iPhone App Clip flow is retained");
   assert.match(split, /id="split-result-primary-download"[\s\S]*?data-track-location="split_expense_result_app_store_cta"[\s\S]*?data-iphone-handoff-replaceable/);
   assert.match(split, /data-cta-location="split_result_iphone_handoff" data-iphone-handoff-replaces="split-result-primary-download"/);
 });
@@ -106,7 +106,7 @@ test("visible cards use the shared desktop-only layout and cache-busted module p
     assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"));
     assert.ok(page.includes("styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1"));
   }
-  assert.match(split, /split-expense-calculator\.js\?v=iphone-handoff-phase-b-20260914-2/);
+  assert.match(split, /split-expense-calculator\.js\?v=organic-handoff-20261002/);
 });
 
 test("the QR manifest and reproducible generator retain the original pooled-campaign destinations", () => {

@@ -1,6 +1,7 @@
 import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
+import vm from "node:vm";
 
 const root = new URL("../", import.meta.url);
 const page = await readFile(new URL("tools/split-expense-calculator/index.html", root), "utf8");
@@ -94,9 +95,41 @@ test("result-ready remains an explicit, once-per-page-load milestone", () => {
   assert.match(calculator, /if \(error && error\.name === "AbortError"\) return;/);
 });
 
-test("desktop QR rendering leaves the existing iPhone App Clip condition intact", () => {
+test("iOS fallback and desktop QR leave App Clip eligibility intact", () => {
   assert.match(calculator, /function isDesktopIphoneHandoffEligible\(\)[\s\S]*?platform === "MacIntel"[\s\S]*?maxTouchPoints[\s\S]*?\(min-width: 768px\)[\s\S]*?\(hover: hover\) and \(pointer: fine\)/);
   assert.match(calculator, /area\.hidden = !\(allowed && iphone && meaningfulEdit && supported\);/);
-  assert.match(calculator, /appCard\.hidden = !\(shouldShow && \(isDesktopIphoneHandoffEligible\(\) \|\| !area\.hidden\)\);/);
+  assert.match(calculator, /appCard\.hidden = !\(shouldShow && area\.hidden && \(ios \|\| isDesktopIphoneHandoffEligible\(\)\)\);/);
   assert.match(calculator, /mediaQuery\.addEventListener\("change", refreshResultContinuationForViewport\)/);
+});
+
+
+test("valid iOS results retain an app destination when transfer is unavailable", () => {
+  const start = calculator.indexOf("  function renderTransferOffer(shouldShow)");
+  const end = calculator.indexOf("  function refreshResultContinuationForViewport", start);
+  const source = calculator.slice(start, end);
+  const cases = [
+    { name: "iPhone multiple payers", ua: "iPhone", supported: false, show: true, card: true, transfer: false },
+    { name: "iPhone disabled transfer", ua: "iPhone", supported: true, enabled: false, show: true, card: true, transfer: false },
+    { name: "iPhone example result", ua: "iPhone", supported: true, edited: false, show: true, card: true, transfer: false },
+    { name: "iPhone eligible transfer", ua: "iPhone", supported: true, show: true, card: false, transfer: true },
+    { name: "before interaction", ua: "iPhone", supported: false, show: false, card: false, transfer: false },
+    { name: "iPad desktop UA", ua: "Macintosh", platform: "MacIntel", touch: 5, supported: true, show: true, card: true, transfer: false },
+    { name: "desktop QR", ua: "Windows NT", desktop: true, supported: true, show: true, card: true, transfer: false },
+    { name: "Android tool", ua: "Android Mobile", supported: true, show: true, card: false, transfer: false },
+  ];
+  for (const scenario of cases) {
+    const area = { hidden: true }, card = { hidden: true }, events = [];
+    const context = {
+      document: { querySelector(selector) { return selector === "[data-tool-transfer]" ? area : card; } },
+      window: { UomiToolTransfer: { config: { enabled: scenario.enabled !== false }, prepare: () => scenario.supported } },
+      navigator: { userAgent: scenario.ua, platform: scenario.platform || "", maxTouchPoints: scenario.touch || 0 },
+      state: {}, meaningfulEdit: scenario.edited !== false, transferExposureEmitted: false,
+      isDesktopIphoneHandoffEligible: () => Boolean(scenario.desktop),
+      dispatchCalculatorEvent: (event) => events.push(event),
+    };
+    vm.runInNewContext(source + `\nrenderTransferOffer(${scenario.show}); renderTransferOffer(${scenario.show});`, context);
+    assert.equal(!card.hidden, scenario.card, scenario.name + " app fallback");
+    assert.equal(!area.hidden, scenario.transfer, scenario.name + " transfer");
+    assert.equal(events.length, scenario.transfer ? 1 : 0, scenario.name + " exposure count");
+  }
 });

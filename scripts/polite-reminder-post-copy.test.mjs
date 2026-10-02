@@ -2,6 +2,7 @@ import assert from "node:assert/strict";
 import { readdir, readFile } from "node:fs/promises";
 import path from "node:path";
 import test from "node:test";
+import vm from "node:vm";
 import { fileURLToPath } from "node:url";
 
 const root = new URL("../", import.meta.url);
@@ -46,16 +47,19 @@ async function walkIndexFiles(directory) {
   return files;
 }
 
-test("the old bridge is replaced by one initially hidden post-copy prompt with exact copy", () => {
+test("the old bridge is replaced by one initially visible tracking prompt after the main message examples", () => {
   const prompt = promptMarkup();
 
   assert.doesNotMatch(page, /polite-reminder-product-bridge/);
   assert.equal((page.match(/data-post-copy-app-prompt/g) || []).length, 1);
-  assert.match(prompt, /data-post-copy-app-prompt[\s\S]*\bhidden\b/);
+  assert.doesNotMatch(prompt.match(/<aside\b[^>]*>/)[0], /\bhidden\b/);
+  assert.ok(page.indexOf('class="tone-grid"') < page.indexOf('data-reminder-tracking-home'));
+  assert.ok(page.indexOf('data-reminder-tracking-home') < page.indexOf('How to tell someone they forgot to pay you'));
   assert.match(prompt, /aria-labelledby="polite-reminder-post-copy-title"/);
-  assert.match(prompt, />Reminder copied</);
+  assert.match(prompt, />After the reminder</);
   assert.match(prompt, />Keep track until you&rsquo;re paid back<\/h3>/);
-  assert.match(prompt, /Record each repayment in You Owe Me and see what&rsquo;s left\. When you need another reminder, start with the current balance\./);
+  assert.match(prompt, /If the money will be repaid later or in parts/);
+  assert.match(prompt, /You Owe Me is an iPhone app/);
   assert.match(styles, /polite-reminder-post-copy\[hidden\]\s*\{\s*display:\s*none/);
 });
 
@@ -71,7 +75,7 @@ test("the post-copy prompt retains attributed App Store and secondary solution a
   assert.ok(appStoreIndex >= 0 && appStoreIndex < solutionIndex, "App Store action precedes the solution link");
   assert.match(prompt, /href="\/solutions\/app-to-track-money-owed\/"/);
   assert.match(prompt, /data-track-event="site_link_click"/);
-  assert.match(prompt, />See how the balance tracker works<\/a>/);
+  assert.match(prompt, />See how to track money owed<\/a>/);
   assert.match(prompt, /Free download &middot; In-app purchases available/);
   assert.doesNotMatch(prompt, /lt-primaryCta/);
 });
@@ -91,7 +95,7 @@ test("the page uses explicit eligibility and preserves one language-support anch
 
 test("the page-only controller is loaded after the shared copy script and is not loaded elsewhere", async () => {
   const sharedScriptIndex = page.indexOf('/scripts/repayment-reminder-text-examples.js');
-  const controllerIndex = page.indexOf('/scripts/polite-reminder-post-copy.js?v=polite-reminder-post-copy-1');
+  const controllerIndex = page.indexOf('/scripts/polite-reminder-post-copy.js?v=organic-handoff-20261002');
 
   assert.ok(sharedScriptIndex >= 0 && controllerIndex > sharedScriptIndex);
   assert.ok(controllerIndex < page.indexOf('/scripts/analytics.js'));
@@ -115,9 +119,9 @@ test("the controller consumes only successful copy events and moves the existing
   assert.match(controller, new RegExp(`var targetPage = ${JSON.stringify(TARGET_PAGE)}`));
   assert.match(controller, /detail\.page !== targetPage/);
   assert.match(controller, /card\.hasAttribute\("data-post-copy-app-eligible"\)/);
-  assert.match(controller, /postCopyPrompt\.hidden = true;/);
+  assert.match(controller, /promptHome\.appendChild\(postCopyPrompt\)/);
   assert.match(controller, /button\.insertAdjacentElement\("afterend", postCopyPrompt\)/);
-  assert.match(controller, /postCopyPrompt\.hidden = false;/);
+  assert.doesNotMatch(controller, /postCopyPrompt\.hidden = true/);
   assert.doesNotMatch(controller, /cloneNode|innerHTML|insertAdjacentHTML|navigator\.clipboard|copyText\(|addEventListener\("click"/);
 });
 
@@ -135,8 +139,53 @@ test("existing analytics and copy contracts remain intact", () => {
 test("search-facing article metadata preserves canonical and dates with approved copy", () => {
   assert.match(page, /<link rel="canonical" href="https:\/\/you-owe-me\.com\/blog\/how-to-remind-someone-they-owe-you-money-politely\/" \/>/);
   assert.match(page, /name="description"[\s\S]*Copy polite texts to ask for money back: friendly reminders, overdue repayments and partial payments\./);
-  assert.match(page, /"dateModified": "2026-09-23"/);
-  assert.match(page, /article:modified_time" content="2026-09-23T00:00:00\+07:00"/);
-  assert.match(page, /Updated <time datetime="2026-09-23">September 23, 2026<\/time>/);
+  assert.match(page, /"dateModified": "2026-10-02"/);
+  assert.match(page, /article:modified_time" content="2026-10-02T00:00:00\+07:00"/);
+  assert.match(page, /Updated <time datetime="2026-10-02">October 2, 2026<\/time>/);
   assert.match(page, /href="\/styles\/polite-money-reminder-answer\.css\?v=conversion-polish-20260905-3"/);
+});
+
+
+test("tracking stays visible and one prompt moves only for repayment copies", () => {
+  const listeners = new Map();
+  const home = { appendChild(node) { node.location = "home"; } };
+  const eyebrow = { textContent: "After the reminder" };
+  const prompt = { hidden: false, location: "home", querySelector: () => eyebrow };
+  function card(id, eligible, buttonId = id) {
+    return {
+      getAttribute: () => id,
+      hasAttribute: () => eligible,
+      querySelector: () => ({
+        getAttribute: () => buttonId,
+        insertAdjacentElement(where, node) { assert.equal(where, "afterend"); node.location = id; },
+      }),
+    };
+  }
+  const cards = [card("friendly-reminder", true), card("partial-repayment-reminder", true),
+    card("promised-gift-timing", false), card("mismatched-button", true, "other")];
+  vm.runInNewContext(controller, {
+    document: {
+      readyState: "complete",
+      querySelector(selector) { return selector === "[data-post-copy-app-prompt]" ? prompt : home; },
+      querySelectorAll: () => cards,
+    },
+    window: { addEventListener(name, callback) { listeners.set(name, callback); } },
+  });
+  assert.equal(prompt.hidden, false);
+  assert.equal(prompt.location, "home");
+  const copy = listeners.get("youoweme:tool-template-copy");
+  function emit(template_id, page = TARGET_PAGE) { copy({ detail: { template_id, page } }); }
+  emit("friendly-reminder", "another_page");
+  emit("missing-card");
+  emit("mismatched-button");
+  assert.equal(prompt.location, "home");
+  emit("friendly-reminder");
+  assert.equal(prompt.location, "friendly-reminder");
+  assert.equal(eyebrow.textContent, "Reminder copied");
+  emit("partial-repayment-reminder");
+  assert.equal(prompt.location, "partial-repayment-reminder");
+  emit("promised-gift-timing");
+  assert.equal(prompt.location, "home");
+  assert.equal(eyebrow.textContent, "After the reminder");
+  assert.equal(prompt.hidden, false);
 });

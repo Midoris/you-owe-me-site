@@ -20,6 +20,10 @@
     var postCopyPrompt = document.querySelector("[data-post-copy-app-prompt]");
     if (!postCopyPrompt) return;
 
+    var promptHome = document.querySelector("[data-reminder-tracking-home]");
+    var eyebrow = postCopyPrompt.querySelector("[data-reminder-tracking-eyebrow]");
+    if (!promptHome) return;
+
     var cards = Array.prototype.slice.call(document.querySelectorAll(".template-card[data-template-id]"));
 
     function handleSuccessfulCopy(event) {
@@ -33,7 +37,10 @@
       if (!card) return;
 
       if (!cardShowsPostCopyPrompt(card)) {
-        postCopyPrompt.hidden = true;
+        // Gift/help examples are not debts. Restore the independent tracking
+        // explanation instead of attaching it to a non-repayment message.
+        promptHome.appendChild(postCopyPrompt);
+        if (eyebrow) eyebrow.textContent = "After the reminder";
         return;
       }
 
@@ -41,7 +48,7 @@
       if (!button || button.getAttribute("data-copy-template") !== detail.template_id) return;
 
       button.insertAdjacentElement("afterend", postCopyPrompt);
-      postCopyPrompt.hidden = false;
+      if (eyebrow) eyebrow.textContent = "Reminder copied";
     }
 
     window.addEventListener("youoweme:tool-template-copy", handleSuccessfulCopy);

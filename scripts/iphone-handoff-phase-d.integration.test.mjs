@@ -84,7 +84,7 @@ test("Phase D adds four exact, bounded desktop QR handoffs without changing thei
       location: "polite_reminder_post_copy_iphone_handoff",
       heading: '<h4 id="polite-reminder-iphone-handoff-title">Keep the next repayment clear on your iPhone</h4>',
       benefit: "Record payments and check what&rsquo;s still owed before your next reminder.",
-      clarification: "Start a new record in the app. Your copied message is not imported.",
+      clarification: "Start a new record in the app. Your message is not imported.",
       pairing: "polite-reminder-post-copy-primary-download",
       badgeLocation: "polite_reminder_post_copy_app_store_cta",
       image: "money-owed.png",

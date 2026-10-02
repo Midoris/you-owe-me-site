@@ -386,10 +386,10 @@
   function renderResultActions(result) {
     if (result.transfers.length > 0) {
       els.resultAppTitle.textContent = "Keep track until everyone has paid";
-      els.resultAppMessage.textContent = "Record repayments and new shared costs in You Owe Me, so you always know what’s still owed.";
+      els.resultAppMessage.textContent = "Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.";
     } else {
       els.resultAppTitle.textContent = "Keep future shared costs in one place";
-      els.resultAppMessage.textContent = "Use You Owe Me to record the next shared expense and any repayments, with a clear balance for each person.";
+      els.resultAppMessage.textContent = "This split is settled. If you share costs again, You Owe Me on iPhone keeps new expenses and repayments in one balance for each person.";
     }
     const shouldShow = hasExplicitInteraction && hasValidResult(result);
     els.resultActions.hidden = !shouldShow;
@@ -415,7 +415,12 @@
     const iphone = /iPhone/.test(navigator.userAgent);
     area.hidden = !(allowed && iphone && meaningfulEdit && supported);
     const appCard = document.querySelector(".split-result-app-card");
-    if (appCard) appCard.hidden = !(shouldShow && (isDesktopIphoneHandoffEligible() || !area.hidden));
+    // The transfer supports fewer splits than the app. Keep an ordinary app
+    // destination for iOS results that cannot be transferred, without two
+    // competing app actions when the App Clip offer is available.
+    const ios = /iPhone|iPad|iPod/.test(navigator.userAgent || "")
+      || (navigator.platform === "MacIntel" && Number(navigator.maxTouchPoints || 0) > 1);
+    if (appCard) appCard.hidden = !(shouldShow && area.hidden && (ios || isDesktopIphoneHandoffEligible()));
     if (!area.hidden && !transferExposureEmitted) {
       transferExposureEmitted = true;
       dispatchCalculatorEvent("split_transfer_offer_viewed");
