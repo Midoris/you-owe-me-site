@@ -13,8 +13,12 @@ entries, currencies, repeats, interest and due-date reminders, improved dictatio
 and faster interpretation. They do not announce voice bill splitting,
 new-person creation or existing-loan links.
 
-The released native baseline `4f21e7fe` is version 7.1.7/build 206. Direct source
-inspection of `FirebaseOpenAIClient.swift` shows batch requests using
+The inspected 7.1.7 Git baseline `4f21e7fe` declares build 206. Git contains
+both builds 205 and 206 under marketing version 7.1.7; the public App Store
+listing confirms only marketing version 7.1.7. The exact submitted/live build
+was not independently established by this website review, so this baseline is
+source evidence rather than proof that build 206 is live. Direct inspection of
+`FirebaseOpenAIClient.swift` shows batch requests using
 `parseEntriesV2`. `RelaunchStartViewController+AiButton.swift` hides the AI button
 until a non-demo borrower exists; its recording flow already supports manual
 first dictation and eligible automatic starts after successful use.
@@ -72,9 +76,36 @@ coordinating native review; source inspection does not substitute for them.
 
 ## Production acceptance
 
-Deploy the reviewed commit through the established master-branch GitHub Pages
-workflow, wait for success, then compare the live HTML, versioned CSS/script,
-social image, AI SVG, sitemap and llms.txt with committed bytes. Independently
-inspect live desktop/mobile layouts, preview labels, tabs, deep links and the
-Features/Quick Start navigation. Capture final production screenshots and
-record the commit and successful workflow in the completion report.
+The frontend changes were committed as
+`81cbc2f7f3707322ba595783eb21917b1af210e8` and deployed through the established
+master-branch GitHub Pages process. [Workflow 37008002084](https://github.com/Midoris/you-owe-me-site/actions/runs/37008002084)
+completed successfully at 12:40:21 UTC on October 2, 2026.
+
+All ten checked production resources returned HTTP 200 and matched the
+committed bytes by SHA-256: Voice to Entry, Features, Quick Start, Privacy and
+Data, versioned voice CSS, versioned voice script, versioned social JPEG, AI
+button SVG, sitemap.xml and llms.txt. The attributed App Store CTA also returned
+HTTP 200. Both OG and Twitter point to the verified versioned social image.
+
+Live inspection covered all six example states at 1440, 390 and 320px, with one
+selected panel, loaded images and no horizontal overflow. Features and Quick
+Start links reached the loan preview and selected loan example. Desktop/mobile
+preview labels and the released two-entry hero were visually checked. The
+coordinating root independently reloaded Voice, Features and Quick Start at
+390px and reported correct release labels, canonical URLs, anchors and no
+horizontal overflow.
+
+Local completion evidence and production screenshots are saved under
+`/Users/ievgeniiiablonskyi/.codex/visualizations/2026/10/01/01a0f9b0-e3c0-77c3-a92c-fca6c7d92c5e/voice-landing/release-readiness/`:
+
+- `completion-evidence.json` and `production-assets.json` record deployment,
+  checks, resource hashes and byte comparisons.
+- `production-features-desktop.jpg` and `production-features-mobile.jpg` show
+  the final Features presentation.
+- `production-desktop-hero.jpg`, `production-mobile-hero.jpg` and
+  `production-mobile-loan-preview.jpg` show released and preview wording on the
+  dedicated Voice page.
+
+This documentation correction does not change frontend resources. A subsequent
+docs-only commit or Pages run is separate from the verified frontend deployment
+above.
