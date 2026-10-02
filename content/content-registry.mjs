@@ -1627,7 +1627,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/temporary-financial-support-tracker/", "/solutions/personal-loan-repayment-tracker/", "/solutions/shared-expense-tracker/", "/solutions/family-reimbursement-tracker/"],
     appStoreCpp: "money-owed-followups",
     tags: ["money-owed", "iou", "repayments", "running-balance", "simple-app", "who-owes-me", "money-owed-tracker", "spreadsheets", "personal-loan-repayments"],
-    updated: "2026-09-23",
+    updated: "2026-10-02",
     status: "live",
     priority: "core",
     primaryCta: "Download You Owe Me",
