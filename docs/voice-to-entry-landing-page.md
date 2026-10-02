@@ -47,7 +47,8 @@ landmark has a keyboard skip target, the tabs use roving focus with Left/Right,
 Home/End and named panels, and FAQ answers remain native disclosures. New
 controls have dark focus outlines; tab colors override the inherited cyan
 hover rule. Tab changes are static, with no animation. Reduce Motion suppresses
-inherited transitions. The footer text is dark on the light page background.
+inherited transitions. The footer text is dark on the light page background. The inherited mobile
+menu close icon has a readable label and Escape closes it and restores focus.
 
 Metadata includes a unique title/description, canonical, OG/Twitter art and
 image descriptions, breadcrumbs and FAQ JSON-LD matching the five visible

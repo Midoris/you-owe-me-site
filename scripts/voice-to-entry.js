@@ -1,6 +1,18 @@
 /* Local, prewritten examples only. This page never captures or interprets input. */
 (function () {
   'use strict';
+  // Name the inherited icon-only menu control and provide a keyboard dismissal.
+  const navClose = document.querySelector('#navPanel .close');
+  if (navClose) {
+    navClose.setAttribute('aria-label', 'Close navigation');
+    document.addEventListener('keydown', event => {
+      if (event.key !== 'Escape' || !document.body.classList.contains('is-navPanel-visible')) return;
+      event.preventDefault();
+      navClose.click();
+      const toggle = document.querySelector('#navPanelToggle');
+      if (toggle) toggle.focus();
+    });
+  }
   const tabs = document.querySelector('[data-voice-tabs]');
   const buttons = tabs ? Array.from(tabs.querySelectorAll('[data-voice-tab]')) : [];
   const panels = Array.from(document.querySelectorAll('[data-voice-panel]'));
