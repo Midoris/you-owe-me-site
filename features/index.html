@@ -47,7 +47,7 @@
           "@type": "WebPageElement",
           "@id": "https://you-owe-me.com/features/#voice-to-entry",
           "name": "Voice to Entry",
-          "description": "Turn speech or typed text into regular entries, including explicit bill splits, currencies, recurrence, interest and due dates. Confirm new people explicitly and select among ambiguous names. Clear entries can save after validation and allowance checks; uncertain entries need review. Requires internet."
+          "description": "Turn speech or typed text into regular entries, including explicit bill splits and payments linked to existing loans. Regular entries support currencies, recurrence, interest and due dates. Confirm new people explicitly and select among ambiguous names. Clear entries can save after validation and allowance checks; uncertain entries need review. Requires internet."
         },
         {
           "@type": "WebPageElement",
@@ -313,7 +313,7 @@
               <div class="features-voice-lead">
                 <p class="lt-eyebrow">Voice to Entry</p>
                 <h2 id="voice-title">One dictation.<br />Multiple entries.</h2>
-                <p class="features-voice-intro">Describe what happened by voice or typed text. Create one regular entry or several, split a bill, and confirm a new person—even before you have added your first person.</p>
+                <p class="features-voice-intro">Describe what happened by voice or typed text. Create one regular entry or several, split a bill, link a payment to an existing loan, and confirm a new person—even before you have added your first person.</p>
               </div>
 
               <figure class="features-voice-demo" aria-labelledby="voice-demo-caption">
@@ -354,6 +354,7 @@
                   <li>Interest</li>
                   <li>Due dates &amp; reminders</li>
                 </ul>
+                <p><strong>Name the loan with the payment.</strong> “Alex paid me €50 towards his Car loan” can link to Alex’s existing Loan Record. Unclear loan matches need review and selection. <a href="/voice-to-entry/#loan-linking">See loan payments by voice</a>.</p>
                 <p class="features-voice-control"><strong>You stay in control.</strong> New people need your explicit confirmation. Anything unclear needs review; saved entries have Edit and Undo.</p>
                 <div class="lt-ctaRow">
                   <a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" class="lt-appStoreBtn" aria-label="Download You Owe Me on the App Store" data-cta-location="features_voice">
@@ -366,7 +367,7 @@
             </div>
 
             <ol class="features-voice-steps" role="list" aria-label="How Voice to Entry works">
-              <li><span aria-hidden="true">01</span><div><h3>Describe</h3><p>Tap the AI button on Home. Use Dictate or type your words, then tap Create entry.</p></div></li>
+              <li><span aria-hidden="true">01</span><div><h3>Describe</h3><p>Tap the AI button on Home. Tap Dictate if recording has not started, describe what happened, then Create entry. Typing works too.</p></div></li>
               <li><span aria-hidden="true">02</span><div><h3>Save</h3><p>Clear entries for known people can save automatically after validation and allowance checks. Saved entries have Edit and Undo.</p></div></li>
               <li><span aria-hidden="true">03</span><div><h3>Confirm &amp; review</h3><p>Confirm new people, select among same-name matches, and correct unclear details on individual result cards.</p></div></li>
             </ol>
@@ -379,6 +380,11 @@
                 <p>For a quick bill split, state the total, participants and allocation: “I paid 60 euros for lunch; split equally between me, Alex and Sam.” This creates two regular €20 entries, one for Alex and one for Sam. Your own €20 share is excluded.</p>
               </details>
               <details>
+                <summary>Payments linked to existing loans</summary>
+                <p>Name the loan under the matched person to link a repayment or additional principal advance. A clear, unique loan name can match among several loans; a generic “his loan” selects automatically only when that person has exactly one eligible loan. “Paid me back” alone never links just because a loan exists.</p>
+                <p>Duplicate, unclear or missing loan matches preserve the entry for review and selection. Voice does not create a loan or change its terms or repayment plan. Linked payments can keep date, note, currency, recurrence and due-reminder settings; interest belongs to the loan. <a href="#loan-records">Explore Loan Records</a>.</p>
+              </details>
+              <details>
                 <summary>New people &amp; unclear details</summary>
                 <p>An unknown named person needs explicit confirmation: review the name and entry, then choose <strong>Add person &amp; save entry</strong> or <strong>Add person &amp; review entry</strong>. A person is never created silently. Same-name matches require you to select the right person.</p>
                 <p>Unclear entries stay unsaved. Open the prefilled editor, correct the details, and save.</p>
@@ -386,7 +392,7 @@
               </details>
               <details>
                 <summary>Getting started, connection &amp; limits</summary>
-                <p>Open the AI button on Home, even before adding your first person. Adding people first is optional. Tap Dictate to speak, or type your description, then tap Create entry. The Voice guide inside the app offers examples whenever you need them.</p>
+                <p>Open the AI button on Home, even before adding your first person. Adding people first is optional. Tap Dictate if recording has not started, describe what happened, then Create entry. Typing works too. The Voice guide inside the app offers examples whenever you need them.</p>
                 <p>Record for up to three minutes. Interpretation supports up to ten entries per request, subject to allowances. Voice is available to free and paid users with applicable limits.</p>
                 <p>Transcription and interpretation need internet. You can still add entries manually and access local records offline.</p>
               </details>
@@ -464,7 +470,7 @@
                   <span class="features-voice-teaser-caption">Illustrative example</span>
                 </div>
                 <h3><a href="#voice-to-entry">Log several entries by voice</a></h3>
-                <p>Speak or type to create regular entries, split bills, and confirm new people. Include currencies, repeats, interest and due dates. Clear entries can save after validation and allowance checks; uncertain details need review.</p>
+                <p>Speak or type to record entries, split bills, link payments to existing loans, and confirm new people. Regular entries support currencies, repeats, interest and due dates. Clear entries can save after validation and allowance checks; uncertain details need review.</p>
                 <a href="/voice-to-entry/" class="lt-cardCta" data-track-event="site_link_click" data-track-location="features_voice_card" data-cta-location="features_voice_card">Explore Voice to Entry</a>
               </article>
 
@@ -1497,7 +1503,7 @@
                   <li>Balance Sync between two users</li>
                   <li>PDF statements</li>
                   <li>Percentage and fixed interest tracking</li>
-                  <li>Voice to Entry: speech or typed text, multiple entries, bill splits and confirmed new people (requires internet)</li>
+                  <li>Voice to Entry: speech or typed text, multiple entries, bill splits, existing-loan links and confirmed new people (requires internet)</li>
                   <li>CSV export</li>
                   <li>Multi-currency support</li>
                   <li>App interface thoughtfully localized in 10 languages</li>

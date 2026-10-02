@@ -52,4 +52,21 @@
   });
   select(0, false);
   tabs.hidden = false;
+
+  // Deep links reveal their example, including when its panel starts hidden.
+  function revealLinkedExample(hash = window.location.hash) {
+    const index = buttons.findIndex(button => {
+      const panel = panels.find(item => item.dataset.voicePanel === button.dataset.voiceTab);
+      return '#' + panel.id === hash;
+    });
+    if (index < 0) return;
+    select(index, false);
+    const panel = panels.find(item => item.dataset.voicePanel === buttons[index].dataset.voiceTab);
+    panel.scrollIntoView({ behavior: 'auto', block: 'start' });
+  }
+  document.querySelectorAll('a[href^="#example-"]').forEach(link => {
+    link.addEventListener('click', () => revealLinkedExample(link.hash));
+  });
+  window.addEventListener('hashchange', () => revealLinkedExample());
+  revealLinkedExample();
 })();

@@ -78,6 +78,15 @@ body.voice-to-entry-page figcaption { color: #54616c; font-size: 12px; line-heig
 body.voice-to-entry-page .ve-section { margin-top: clamp(2.7rem, 5vw, 5rem); scroll-margin-top: 2rem; }
 body.voice-to-entry-page .ve-section-heading { max-width: 78ch; margin-bottom: 1.75rem; }
 body.voice-to-entry-page .ve-section-heading > p:last-child { color: var(--ve-muted); }
+body.voice-to-entry-page .ve-loan { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; padding: clamp(1.4rem, 3vw, 2.75rem); border: var(--ve-border); border-radius: 20px; background: rgba(255, 255, 255, 0.74); box-shadow: var(--ve-card-shadow); }
+body.voice-to-entry-page .ve-loan-copy, body.voice-to-entry-page .ve-loan-demo { min-width: 0; }
+body.voice-to-entry-page .ve-loan-copy > p { max-width: 68ch; }
+body.voice-to-entry-page .ve-page .ve-loan-note { color: var(--ve-muted); font-size: 16px; }
+body.voice-to-entry-page .ve-loan-demo { margin: 0; padding: 1.2rem; border: var(--ve-border); border-radius: 20px; background: #f2f7ed; }
+body.voice-to-entry-page .ve-loan-demo .ve-demo-label { margin-bottom: 0.9rem; }
+body.voice-to-entry-page .ve-loan-demo figcaption { margin-top: 0.8rem; }
+body.voice-to-entry-page .ve-loan-badge { display: inline-flex; align-items: center; gap: 0.4rem; max-width: 100%; margin: 0 0 0.8rem; padding: 0.35rem 0.65rem; border: 1px solid #cbdcbe; border-radius: 999px; background: #edf6e7; color: #355428; font: 700 14px/1.5 "Source Sans Pro", sans-serif; overflow-wrap: anywhere; }
+body.voice-to-entry-page .ve-loan-badge svg { flex-shrink: 0; }
 body.voice-to-entry-page .ve-steps { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.5rem; padding: 0; margin: 0; list-style: none; }
 body.voice-to-entry-page .ve-steps li { padding: 0 1.5rem 0 0; border-right: var(--ve-border); min-width: 0; }
 body.voice-to-entry-page .ve-steps li:last-child { border: 0; }
@@ -128,6 +137,7 @@ body.voice-to-entry-page .ve-page .ve-updated { margin-top: 2rem; color: #54616c
   body.voice-to-entry-page .ve-dictation img { width: 40px; height: 40px; margin-bottom: 0.5rem; }
   body.voice-to-entry-page .ve-hero-results { grid-template-columns: minmax(0, 1fr); }
   body.voice-to-entry-page .ve-steps,
+  body.voice-to-entry-page .ve-loan,
   body.voice-to-entry-page .ve-example-panel,
   body.voice-to-entry-page .ve-control-grid,
   body.voice-to-entry-page .ve-start { grid-template-columns: minmax(0, 1fr); }

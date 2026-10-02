@@ -90,3 +90,46 @@ files with the committed bytes, inspect the page in the live browser, exercise
 its tabs and incoming/outgoing links, and capture production screenshots.
 Search Console indexing remains with the orchestrating iOS task; this task does
 not operate Safari or the user's private browsing windows.
+
+## Existing-loan linking update — October 2, 2026
+
+A compact loan-payment presentation follows the hero, ahead of the flow and
+examples. The second example tab shows a fictional €50 Alex → You repayment
+and €100 You → Alex principal advance, each visibly linked to the existing Car
+loan. Both can be spoken individually or in a batch. The illustrated result
+labels describe the transfer; they do not invent a dictated note or interest
+setting. The existing hero and social image remain suitable.
+
+The FAQ and matching structured data describe named unique loans, the generic
+single-eligible-loan rule, preservation for review on unclear/duplicate/missing
+matches, explicit scoped split linking and identity/eligibility revalidation.
+A plain repayment does not acquire a loan link automatically. Loan creation,
+terms and repayment-plan changes remain outside voice capture; interest stays
+with the loan. Date, note, currency, recurrence and due-reminder support remain.
+Facts came from the coordinating native task; no native repository or Simulator
+was operated for this website change. The coordinating task confirmed the final app facts and approved commit and
+production deployment after local review.
+
+Features, Quick Start, the privacy AI-context paragraph, registry and llms
+summary are aligned. The privacy section now describes conditional automatic
+saving and candidate existing loan names/identifiers. Canonical route, sitemap,
+in-app guide route, social assets and attributed App Store links are stable.
+
+Verification before publishing: 154 repository tests pass; all four affected
+page design audits have zero errors. Registry/routing/SEO/language audits have
+zero hard errors, with existing unrelated warnings. Generated Best Next Step
+modules and the 81-route sitemap have no drift. Six visible FAQ answers match
+schema text exactly; 363 local references/anchors across the three acquisition
+pages resolve. All 30 example/viewport combinations (1440/1024/768/390/320)
+show one selected panel, loaded images and no overflow or clipped text. Keyboard
+arrows, Home/End, skip link, mobile Escape dismissal, FAQ and initial/repeated
+loan deep links work. Features and Quick Start links reach the correct section
+or selected loan panel. The script-disabled 320px fixture displays all six
+examples and a working loan FAQ; forcing the Reduce Motion CSS branch produces
+no animation or transition. These are the local checks preceding production deployment.
+
+Recording instructions retain the actual visible Create entry label: first capture
+starts manually through Dictate, while eligible future sessions may record on
+opening the AI button. The Voice page, Features and Quick Start use the same
+short flow. The coordinating task approved linked recurrence/due-reminder
+support and privacy context wording.
