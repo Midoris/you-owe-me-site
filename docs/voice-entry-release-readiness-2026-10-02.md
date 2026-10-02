@@ -1,11 +1,12 @@
 # Voice Entry website release-readiness review — October 2, 2026
 
-This review supersedes the evergreen release wording recorded in the earlier
-landing-page notes. It keeps the existing presentation and corrects availability
-claims across Voice to Entry, Features, Quick Start, Privacy and Data, metadata,
-FAQ schema, the content registry and llms.txt.
+This document preserves the release-readiness review and its deployment history.
+The later explicitly authorized pre-release publication decision below supersedes
+the review’s public release-label requirement. App Store availability evidence
+and the distinction between inspected source and a confirmed live build remain
+historical facts; the new website wording does not establish an App Store release.
 
-## Release evidence and correction
+## Historical release evidence and correction
 
 The public [US App Store listing](https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670)
 lists 7.1.7 as its latest version on October 2. Its notes announce multiple
@@ -50,7 +51,7 @@ labels. Both OG and Twitter use the replaced social image with
 amounts, labels and financial states remain accessible HTML, with the existing
 native-inspired AI-button SVG. These are fictional illustrations.
 
-## Verification before deployment
+## Historical verification before deployment
 
 - All 154 repository tests passed; four affected page-design audits and content
   registry, routing, SEO/AI and language-support audits have zero hard errors.
@@ -74,7 +75,7 @@ No native/backend files were edited and no native build, simulator test or model
 evaluation was run by this website review. Those release checks belong to the
 coordinating native review; source inspection does not substitute for them.
 
-## Production acceptance
+## Historical production acceptance
 
 The frontend changes were committed as
 `81cbc2f7f3707322ba595783eb21917b1af210e8` and deployed through the established
@@ -109,3 +110,47 @@ Local completion evidence and production screenshots are saved under
 This documentation correction does not change frontend resources. A subsequent
 docs-only commit or Pages run is separate from the verified frontend deployment
 above.
+
+
+## Explicitly authorized pre-release publication — October 2, 2026
+
+After the review, the user directly asked to present the supported 7.1.7 and
+7.1.8 capabilities together as available and to publish now, knowing 7.1.8 was
+not yet released. This is an intentional pre-release publication decision, not
+a new claim that App Store approval or release was independently verified. The
+user’s estimate of the release window is not presented as a promised date.
+
+Voice to Entry, Features, Quick Start, related Privacy and Data text, FAQ/schema,
+metadata, the content registry and llms.txt now use evergreen wording without
+upcoming/preview version distinctions. The combined presentation includes voice
+bill splits, explicit new-person confirmation, existing-loan payment links and
+optional initial person setup. The underlying requirements remain: validation
+and allowances before saving, review for ambiguity, explicit consent for new
+people, and existing eligible loans without creating loans or changing terms.
+Internet and plan limits remain clear.
+
+The dedicated hero, Quick Start example and social art again show the fictional
+€60 lunch split into two €20 entries, excluding the user's own €20 share. The
+main amounts and labels remain accessible HTML. The social image and CSS use
+`?v=20261002-evergreen2` to avoid cached release-label assets; OG and Twitter
+share the same versioned image URL. Historical review screenshots and resource
+hashes above remain evidence of the earlier deployment, not the new wording.
+
+Before this publication, all 154 repository tests passed again. The four page
+design audits, registry/routing/SEO/language audits, syntax and whitespace checks
+had zero hard errors, with the existing unrelated warnings unchanged. Generated
+Best Next Step modules had no drift and the sitemap retained 81 URLs. All 363
+local references resolved, six FAQ answers matched their schema, and sampled
+text contrast remained at least 5.85:1.
+
+All six examples fit 1440, 390 and 320px, with one selected panel, loaded images
+and no clipped text or horizontal overflow. The related three pages fit those
+same widths. Keyboard tab selection, skip link, mobile Escape/focus restoration
+and incoming loan-example links worked. At 320px the script-blocked fixture
+displayed all six examples and a functioning FAQ, with no animation or transition
+under the forced Reduce Motion CSS branch.
+
+This publication's evidence and final screenshots are kept separately under the
+same visualization root in `voice-landing/evergreen-publication/`; production
+resource comparisons and deployment identity are recorded in its completion
+evidence and the final completion report.

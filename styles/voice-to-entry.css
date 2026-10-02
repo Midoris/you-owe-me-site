@@ -78,9 +78,6 @@ body.voice-to-entry-page figcaption { color: #54616c; font-size: 12px; line-heig
 body.voice-to-entry-page .ve-section { margin-top: clamp(2.7rem, 5vw, 5rem); scroll-margin-top: 2rem; }
 body.voice-to-entry-page .ve-section-heading { max-width: 78ch; margin-bottom: 1.75rem; }
 body.voice-to-entry-page .ve-section-heading > p:last-child { color: var(--ve-muted); }
-body.voice-to-entry-page .ve-release-note { margin-top: 2rem; padding: 1.2rem 1.5rem; border: var(--ve-border); border-radius: 20px; background: #edf6e7; color: #212931; }
-body.voice-to-entry-page .ve-release-note strong { font-family: "Source Sans Pro", sans-serif; font-size: 18px; }
-body.voice-to-entry-page .ve-release-note p { margin: 0.4rem 0 0; font-size: 16px; line-height: 1.7; }
 body.voice-to-entry-page .ve-loan { display: grid; grid-template-columns: minmax(0, 1.3fr) minmax(0, 0.7fr); gap: clamp(1.5rem, 4vw, 4rem); align-items: center; padding: clamp(1.4rem, 3vw, 2.75rem); border: var(--ve-border); border-radius: 20px; background: rgba(255, 255, 255, 0.74); box-shadow: var(--ve-card-shadow); }
 body.voice-to-entry-page .ve-loan-copy, body.voice-to-entry-page .ve-loan-demo { min-width: 0; }
 body.voice-to-entry-page .ve-loan-copy > p { max-width: 68ch; }
