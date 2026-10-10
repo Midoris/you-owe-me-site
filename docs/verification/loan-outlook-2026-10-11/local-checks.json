@@ -1,0 +1,98 @@
+[
+  {
+    "route": "/features/",
+    "width": 320,
+    "overflow": false,
+    "schemas": 2
+  },
+  {
+    "route": "/features/",
+    "width": 390,
+    "overflow": false,
+    "schemas": 2
+  },
+  {
+    "route": "/features/",
+    "width": 768,
+    "overflow": false,
+    "schemas": 2
+  },
+  {
+    "route": "/features/",
+    "width": 1440,
+    "overflow": false,
+    "schemas": 2
+  },
+  {
+    "route": "/solutions/personal-loan-repayment-tracker/",
+    "width": 320,
+    "overflow": false,
+    "schemas": 2
+  },
+  {
+    "route": "/solutions/personal-loan-repayment-tracker/",
+    "width": 390,
+    "overflow": false,
+    "schemas": 2
+  },
+  {
+    "route": "/solutions/personal-loan-repayment-tracker/",
+    "width": 768,
+    "overflow": false,
+    "schemas": 2
+  },
+  {
+    "route": "/solutions/personal-loan-repayment-tracker/",
+    "width": 1440,
+    "overflow": false,
+    "schemas": 2
+  },
+  {
+    "route": "/solutions/debt-repayment-tracker/",
+    "width": 320,
+    "overflow": false,
+    "schemas": 3
+  },
+  {
+    "route": "/solutions/debt-repayment-tracker/",
+    "width": 390,
+    "overflow": false,
+    "schemas": 3
+  },
+  {
+    "route": "/solutions/debt-repayment-tracker/",
+    "width": 768,
+    "overflow": false,
+    "schemas": 3
+  },
+  {
+    "route": "/solutions/debt-repayment-tracker/",
+    "width": 1440,
+    "overflow": false,
+    "schemas": 3
+  },
+  {
+    "route": "/quick-start/",
+    "width": 320,
+    "overflow": false,
+    "schemas": 1
+  },
+  {
+    "route": "/quick-start/",
+    "width": 390,
+    "overflow": false,
+    "schemas": 1
+  },
+  {
+    "route": "/quick-start/",
+    "width": 768,
+    "overflow": false,
+    "schemas": 1
+  },
+  {
+    "route": "/quick-start/",
+    "width": 1440,
+    "overflow": false,
+    "schemas": 1
+  }
+]
