@@ -62,9 +62,11 @@ test("Phase D adds four exact, bounded desktop QR handoffs without changing thei
       page: roommate,
       location: "roommate_calculator_iphone_handoff",
       heading: '<h2 id="roommate-calculator-iphone-handoff-title">Keep roommate balances clear on your iPhone</h2>',
-      benefit: "Record new shared costs and repayments without rebuilding the balance each month.",
+      benefit: "For ongoing bills, record shared costs and repayments in You Owe Me and see what you owe each other.",
+      common: true,
       clarification: "Start a new record in the app. Your calculator result is not transferred.",
-      pairing: null,
+      pairing: "roommate-calculator-primary-download",
+      badgeLocation: "roommate_calculator_bottom_app_store_cta",
       image: "roommate.png",
       fallback: `${appStoreBase}?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&amp;pt=117888502&amp;ct=website_cta&amp;mt=8`,
     },
@@ -96,16 +98,17 @@ test("Phase D adds four exact, bounded desktop QR handoffs without changing thei
     const card = rootMarkup(configuration.page, configuration.location);
     assert.equal(count(configuration.page, `data-cta-location="${configuration.location}"`), 1);
     assert.ok(card.includes("hidden>"), "the authored QR root starts hidden");
-    assert.ok(card.includes(configuration.heading));
-    assert.ok(card.includes(configuration.benefit));
+    const copy = configuration.common ? roommate.slice(roommate.indexOf('<section class="roommate-app-continuation"'), roommate.indexOf('<section class="iphone-handoff roommate-calculator-iphone-handoff"')) : card;
+    assert.ok(copy.includes(configuration.heading));
+    assert.ok(copy.includes(configuration.benefit));
     assert.ok(card.includes("Scan with your iPhone camera to get You Owe Me."));
-    assert.ok(card.includes("Free download &middot; In-app purchases available."));
+    assert.ok(copy.includes("Free download &middot; In-app purchases available."));
     assert.ok(card.includes(`href="${configuration.fallback}"`));
     assert.ok(card.includes(`src="/images/shared/iphone-handoff/${configuration.image}" width="472" height="472"`));
     assert.ok(card.includes('alt="QR code to open You Owe Me on the App Store." loading="eager"'));
     assert.ok(card.includes("data-iphone-handoff-qr"));
     assert.ok(card.includes("data-iphone-handoff-instruction"));
-    if (configuration.clarification) assert.ok(card.includes(configuration.clarification));
+    if (configuration.clarification) assert.ok(copy.includes(configuration.clarification));
     else assert.doesNotMatch(card, /iphone-handoff__clarification/);
 
     assert.equal(count(configuration.page, `styles/iphone-handoff.css?v=${phaseD}`), 1);
@@ -129,7 +132,7 @@ test("Phase D adds four exact, bounded desktop QR handoffs without changing thei
   const roommateRootIndex = roommate.indexOf('data-cta-location="roommate_calculator_iphone_handoff"');
   assert.ok(roommate.indexOf('id="calculator"') < roommateRootIndex);
   assert.ok(roommateRootIndex < roommate.indexOf("data-anniversary-announcement"));
-  assert.match(roommate, /<section\b[^>]*id="calculator"[\s\S]*?<\/section>\s*<section class="iphone-handoff roommate-calculator-iphone-handoff"/);
+  assert.match(roommate, /<section\b[^>]*id="calculator"[\s\S]*?<\/section>\s*<section class="roommate-app-continuation"/);
 
   const paymentRootIndex = paymentPlan.indexOf('data-cta-location="payment_plan_results_iphone_handoff"');
   assert.ok(paymentPlan.indexOf('class="pp-app-actions"') < paymentRootIndex);

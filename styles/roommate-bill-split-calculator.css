@@ -1,5 +1,68 @@
+/* A scrollbar can leave less than 320px of content width in Safari's narrow
+   preview. Fit that width instead of inheriting the legacy document minimum. */
+html.roommate-bill-document,
+body.roommate-bill-page {
+  min-width: 0;
+}
+
 body.roommate-bill-page article.post.featured {
   max-width: none;
+}
+
+body.roommate-bill-page .roommate-app-continuation {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 1.5rem 0 2rem;
+  padding: 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  text-align: left;
+}
+
+body.roommate-bill-page article.post.featured .roommate-app-continuation > h2 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.5rem);
+  letter-spacing: -0.02em;
+}
+
+body.roommate-bill-page article.post.featured .roommate-app-continuation > p {
+  width: 100%;
+  max-width: 100%;
+  font-size: 0.95rem;
+  margin: 0 0 0.7rem;
+  line-height: 1.55;
+}
+
+body.roommate-bill-page article.post.featured .roommate-app-continuation > .lt-appStoreBtn {
+  display: inline-flex;
+  width: min(190px, 100%);
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0.4rem 0 0.6rem;
+}
+
+body.roommate-bill-page article.post.featured .roommate-app-continuation > .roommate-app-continuation__price {
+  font-size: 0.875rem;
+}
+
+/* One common card owns the explanation; the desktop QR is only its scan row. */
+body.roommate-bill-page .roommate-app-continuation > .roommate-calculator-iphone-handoff {
+  margin: 1rem 0 0;
+  padding: 0;
+  border: 0;
+  background: transparent;
+  box-shadow: none;
+}
+
+body.roommate-bill-page article.post.featured .roommate-app-continuation a:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
 }
 
 .roommate-hero {
