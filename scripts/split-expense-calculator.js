@@ -132,6 +132,7 @@
   }
 
   function renderPeople() {
+    els.peopleSummary.textContent = `People (${state.people.length}): edit names or remove people`;
     clearNode(els.peopleList);
     els.peopleMessage.textContent = state.message || "";
 
@@ -218,7 +219,6 @@
       });
 
       fields.append(
-        makeField("Description", description),
         makeField("Amount", amount),
         makeField("Paid by", select)
       );
@@ -270,7 +270,7 @@
       validation.id = `expense-validation-${expense.id}`;
       validation.setAttribute("aria-live", "polite");
 
-      card.append(header, fields, included, splitType, validation);
+      card.append(header, fields, included, makeField("Description (optional)", description), splitType, validation);
       els.expensesList.appendChild(card);
       renderExpenseValidation(expense, card);
     });
@@ -384,6 +384,7 @@
   }
 
   function renderResultActions(result) {
+    els.exampleMarker.hidden = meaningfulEdit || !hasValidResult(result);
     if (result.transfers.length > 0) {
       els.resultAppTitle.textContent = "Keep track until everyone has paid";
       els.resultAppMessage.textContent = "Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.";
@@ -806,6 +807,8 @@
     const root = document.querySelector(".split-calculator");
     if (!root) return;
     els.currency = getRequiredElement("#currency-symbol");
+    els.peopleSummary = getRequiredElement("[data-people-summary]");
+    els.exampleMarker = getRequiredElement("[data-example-marker]");
     els.peopleList = getRequiredElement("[data-people-list]");
     els.peopleMessage = getRequiredElement("#people-message");
     els.expensesList = getRequiredElement("[data-expenses-list]");

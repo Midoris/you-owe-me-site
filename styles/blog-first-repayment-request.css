@@ -1,0 +1,78 @@
+/* First-request cards share the article row and retain the existing copy UI. */
+/* The legacy 320px root minimum can exceed a 320px preview's scrollbar-reduced
+   content width. Let this document fit its available width without clipping. */
+html.first-request-document,
+body.first-request-page {
+  min-width: 0;
+}
+
+.first-request-page #main > article.post.featured,
+.first-request-page .first-request-templates,
+.first-request-page .repayment-template-grid,
+.first-request-page .template-card,
+.first-request-page .template-card__message {
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+.first-request-page .first-request-templates {
+  margin: 1.5rem 0 2rem;
+}
+
+.first-request-page .first-request-templates .repayment-template-grid {
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  margin-top: 1rem;
+}
+
+.first-request-page .template-card {
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.first-request-page .template-card h3 {
+  margin-top: 0;
+}
+
+.first-request-page .template-card__best {
+  max-width: 100%;
+}
+
+.first-request-page .copy-button {
+  min-height: 2.75rem;
+  background: #afe67e;
+  color: #18212b;
+}
+
+.first-request-page .copy-button:hover {
+  background: #bcf18c;
+}
+
+.first-request-page .copy-button:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32) !important;
+  outline-offset: 3px;
+}
+
+.first-request-page .repayment-copy-status:not(:empty) {
+  margin-top: 0.8rem !important;
+}
+
+.first-request-page .first-request-follow-up {
+  margin-top: 1rem;
+}
+
+@media (max-width: 980px) {
+  .first-request-page .first-request-templates .repayment-template-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 736px) {
+  .first-request-page .template-card {
+    padding: 1rem;
+    border-radius: 20px;
+  }
+
+  .first-request-page .template-card__message {
+    padding: 0.8rem;
+  }
+}

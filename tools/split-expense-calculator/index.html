@@ -53,7 +53,7 @@
             "height": 630,
             "caption": "Split expense calculator showing who paid, fair shares, net balances, and who owes whom."
           },
-          "dateModified": "2026-10-02",
+          "dateModified": "2026-10-11",
           "isPartOf": {
             "@type": "CollectionPage",
             "name": "Money Tools and Templates",
@@ -208,7 +208,7 @@
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="../../styles/site-nav.css" />
     <link rel="stylesheet" href="../../styles/tools.css" />
-    <link rel="stylesheet" href="../../styles/split-expense-calculator.css?v=conversion-polish-20260905-3" />
+    <link rel="stylesheet" href="../../styles/split-expense-calculator.css?v=organic-entry-20261011" />
     <link rel="stylesheet" href="../../styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
@@ -250,12 +250,8 @@
                 <h1>Split Money &amp; Expenses Calculator</h1>
               </header>
               <p class="lt-heroBody">
-                Use this free split money calculator to divide one total equally or settle several shared expenses. Enter who paid and who shared each cost to see everyone&rsquo;s fair share and who owes whom.
+                Split a shared bill equally, or enter several expenses to work out who owes whom.
               </p>
-              <p class="lt-heroSupport">
-                Use it for dinners, trips, groceries, shared purchases, or any one-time split. It supports different payers and lets you leave people out of costs they did not share.
-              </p>
-              <p class="lt-heroSupport">Not sure whether an even split is fair because someone ordered less? <a href="/blog/how-to-split-a-bill-fairly-when-one-person-ordered-less/">Choose the split method</a> before calculating the shares.</p>
               <p class="privacy-note">Your calculations stay in this browser unless you choose to continue in You Owe Me.</p>
               <div class="lt-ctaRow">
                 <a href="#calculator" class="lt-primaryCta">Start calculating</a>
@@ -272,16 +268,24 @@
           <section class="lt-toolsSection split-calculator" id="calculator" aria-labelledby="calculator-title">
             <div class="calculator-card">
               <div class="calculator-card-header">
-                <div>
-                  <h2 id="calculator-title">Add people and shared expenses</h2>
-                  <p>Add people, enter each expense, choose who paid, and select who should share that cost. The result shows what everyone paid, each person&rsquo;s fair share, and who should pay whom to settle the group.</p>
-                  <p>Only select the people who should share that expense. If someone was not part of a taxi, meal, or purchase, leave them unchecked.</p>
-                </div>
+                <h2 id="calculator-title">Split a shared expense</h2>
+                <p>Enter one bill as one expense. Check who paid and who shares it.</p>
+              </div>
+
+              <div class="calculator-controls">
                 <div class="currency-control">
-                  <label for="currency-symbol">Currency symbol</label>
-                  <input id="currency-symbol" class="calculator-input" type="text" inputmode="text" maxlength="6" value="$" autocomplete="off" />
+                  <label for="currency-symbol">Currency</label>
+                  <input id="currency-symbol" class="calculator-input" type="text" value="$" maxlength="6" inputmode="text" autocomplete="off" aria-label="Currency symbol" />
+                </div>
+                <div class="people-controls">
+                  <details class="people-disclosure">
+                    <summary id="people-title" data-people-summary>People (3): edit names or remove people</summary>
+                    <div class="people-list" data-people-list></div>
+                  </details>
+                  <button type="button" class="small-action" data-action="add-person">+ Add person</button>
                 </div>
               </div>
+              <div class="validation-message people-limit-message" id="people-message" aria-live="polite"></div>
 
               <div class="calculator-actions">
                 <button type="button" class="secondary-action" data-action="use-example">Use example</button>
@@ -290,14 +294,7 @@
 
               <div class="calculator-grid">
                 <div class="calculator-editor">
-                  <section class="calculator-panel" aria-labelledby="people-title">
-                    <div class="panel-heading">
-                      <h3 id="people-title">People</h3>
-                      <button type="button" class="small-action" data-action="add-person">+ Add person</button>
-                    </div>
-                    <div class="validation-message" id="people-message" aria-live="polite"></div>
-                    <div class="people-list" data-people-list></div>
-                  </section>
+                  <p class="calculator-example" data-example-marker>Example — edit the details or choose Clear all.</p>
 
                   <section class="calculator-panel" aria-labelledby="expenses-title">
                     <div class="panel-heading">
@@ -305,6 +302,7 @@
                       <button type="button" class="small-action" data-action="add-expense">+ Add another expense</button>
                     </div>
                     <div class="expenses-list" data-expenses-list></div>
+                    <p class="expense-entry-help">Everyone selected shares that expense equally. If several people paid, enter a separate expense for each payment.</p>
                   </section>
 
                   <p class="privacy-note calculator-note">Your calculations stay in this browser unless you choose to continue in You Owe Me.</p>
@@ -382,6 +380,8 @@
               </div>
             </div>
           </section>
+
+          <p class="calculator-use-cases">Use this for dinners, trips, groceries and other shared purchases. Each expense can have a different payer and a different set of people sharing it. If someone ordered less, <a href="/blog/how-to-split-a-bill-fairly-when-one-person-ordered-less/">choose a fair split method</a> before entering the amounts.</p>
 
           <aside
             class="lt-anniversaryNotice"
@@ -761,7 +761,7 @@
             </div>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-10-02">October 2, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-10-11">October 11, 2026</time></p>
         </article>
       </div>
 
@@ -784,7 +784,7 @@
 
     <script src="../../scripts/sales.js"></script>
     <script src="../../scripts/tool-transfer.js?v=exp003-live-20260909"></script>
-    <script src="../../scripts/split-expense-calculator.js?v=organic-handoff-20261002"></script>
+    <script src="../../scripts/split-expense-calculator.js?v=organic-entry-20261011"></script>
     <script src="/scripts/anniversary-announcement.js?v=anniversary-announcement-1"></script>
     <script type="module" src="../../scripts/analytics.js?v=iphone-handoff-phase-d-20260914-1"></script>
     <script type="module" src="../../scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"></script>
