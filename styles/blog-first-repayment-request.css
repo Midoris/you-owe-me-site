@@ -60,6 +60,60 @@ body.first-request-page {
   margin-top: 1rem;
 }
 
+.first-request-page .first-request-continuation {
+  width: 100%;
+  min-width: 0;
+  max-width: 100%;
+  box-sizing: border-box;
+  margin: 1.5rem 0 2rem;
+  padding: 1.1rem 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  text-align: left;
+}
+
+body.first-request-page article.post.featured .first-request-continuation > h2 {
+  width: 100%;
+  max-width: 100%;
+  margin: 0 0 0.7rem;
+  font-size: clamp(1.2rem, 1.1rem + 0.4vw, 1.5rem);
+  letter-spacing: -0.02em;
+}
+
+body.first-request-page article.post.featured .first-request-continuation > p {
+  width: 100%;
+  font-size: 0.95rem;
+  margin: 0 0 0.7rem;
+  max-width: 100%;
+  line-height: 1.55;
+}
+
+body.first-request-page article.post.featured .first-request-continuation > .lt-appStoreBtn {
+  display: inline-flex;
+  width: min(190px, 100%);
+  max-width: 100%;
+  min-height: 44px;
+  margin: 0.4rem 0 0.6rem;
+}
+
+body.first-request-page article.post.featured .first-request-continuation > .first-request-continuation__price {
+  font-size: 0.875rem;
+}
+
+body.first-request-page article.post.featured .first-request-continuation__link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  font-weight: 700;
+}
+
+body.first-request-page article.post.featured .first-request-continuation a:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
 @media (max-width: 980px) {
   .first-request-page .first-request-templates .repayment-template-grid {
     grid-template-columns: 1fr;
@@ -67,6 +121,10 @@ body.first-request-page {
 }
 
 @media (max-width: 736px) {
+  .first-request-page .first-request-continuation {
+    padding: 1rem;
+  }
+
   .first-request-page .template-card {
     padding: 1rem;
     border-radius: 20px;
