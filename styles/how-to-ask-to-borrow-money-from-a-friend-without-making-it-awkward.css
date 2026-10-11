@@ -441,6 +441,14 @@ body.friend-borrow-money-page .friend-borrow-post-copy__message {
   line-height: 1.52;
 }
 
+body.blog-page.friend-borrow-money-page article.post.featured .friend-borrow-post-copy > .friend-borrow-post-copy__boundary {
+  margin: 0.6rem 0 0;
+  max-width: 100%;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
 body.friend-borrow-money-page .friend-borrow-post-copy__actions {
   display: flex;
   flex-direction: column;

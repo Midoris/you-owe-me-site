@@ -6,88 +6,80 @@
       document.addEventListener("DOMContentLoaded", callback, { once: true });
       return;
     }
-
     callback();
   }
 
   ready(function () {
     var prompt = document.querySelector("[data-friend-borrow-post-copy]");
-    if (!prompt) return;
+    if (!prompt || prompt.__friendBorrowTrackingInitialized) return;
 
-    var eyebrow = document.querySelector("[data-friend-borrow-post-copy-eyebrow]");
-    var heading = document.querySelector("#friend-borrow-post-copy-title");
-    var message = document.querySelector(".friend-borrow-post-copy__message");
-    if (!eyebrow || !heading || !message) return;
+    var home = document.querySelector("[data-friend-borrow-tracking-home]");
+    var eyebrow = prompt.querySelector("[data-friend-borrow-post-copy-eyebrow]");
+    var heading = prompt.querySelector("#friend-borrow-post-copy-title");
+    var message = prompt.querySelector(".friend-borrow-post-copy__message");
+    var boundary = prompt.querySelector(".friend-borrow-post-copy__boundary");
+    if (!home || !eyebrow || !heading || !message || !boundary) return;
 
-    var eligibleButtons = Array.prototype.slice.call(
-      document.querySelectorAll("[data-friend-borrow-post-copy-eligible]")
+    var buttons = Array.prototype.slice.call(
+      document.querySelectorAll("[data-copy-template], [data-copy-text-target]")
     );
-
+    var defaultCopy = {
+      eyebrow: "After they agree",
+      heading: "Keep the repayment plan clear",
+      message: "If your friend agrees to lend you money, use You Owe Me on iPhone to record what you borrowed, any agreed repayment date, and each payment you make."
+    };
     var copyVariants = {
       "template:reply-after-yes": {
         eyebrow: "Reply copied",
-        heading: "Keep the amount and repayment date together",
-        message: "Use You Owe Me to record what you borrowed, when you agreed to repay it, and each payment you make."
+        heading: "Keep the amount and repayment plan together",
+        message: defaultCopy.message
       },
       "record:friend-borrow-example-record": {
         eyebrow: "Record copied",
-        heading: "Keep this record up to date as you repay",
-        message: "Record each payment in You Owe Me and see what’s left, without rewriting your notes."
+        heading: "Keep repayments and the remaining amount together",
+        message: "If you’re tracking a loan like this, use You Owe Me on iPhone to record repayments and see what remains."
       },
       "template:need-more-time-update": {
         eyebrow: "Update copied",
         heading: "Keep the revised plan clear",
-        message: "Record what you’ve repaid, what’s left, and the next agreed date in You Owe Me."
+        message: "If you and your friend agree on a revised plan, record repayments, the remaining amount, and any agreed repayment date in You Owe Me on iPhone."
       }
     };
 
     function matchingButton(detail) {
-      if (!detail) return null;
-
-      for (var index = 0; index < eligibleButtons.length; index += 1) {
-        var button = eligibleButtons[index];
-
-        if (detail.copy_type === "template" && button.getAttribute("data-copy-template") === detail.id) {
-          return button;
-        }
-
-        if (detail.copy_type === "record" && button.getAttribute("data-copy-text-target") === detail.id) {
-          return button;
-        }
-      }
-
-      return null;
+      if (!detail || typeof detail.id !== "string") return null;
+      if (detail.copy_type !== "template" && detail.copy_type !== "record") return null;
+      var attribute = detail.copy_type === "template" ? "data-copy-template" : "data-copy-text-target";
+      return buttons.find(function (button) {
+        return button.getAttribute(attribute) === detail.id
+          && document.contains(button)
+          && button.closest(".template-card, .friend-borrow-card");
+      }) || null;
     }
 
-    function matchingVariant(detail) {
-      if (!detail) return null;
-      return copyVariants[`${detail.copy_type}:${detail.id}`] || null;
+    function applyCopy(copy) {
+      eyebrow.textContent = copy.eyebrow;
+      heading.textContent = copy.heading;
+      message.textContent = copy.message;
     }
 
     function handleSuccessfulCopy(event) {
-      var detail = event && event.detail ? event.detail : null;
+      var detail = event && event.detail;
       var button = matchingButton(detail);
-      var variant = matchingVariant(detail);
+      if (!button) return;
 
-      if (!button || !variant) {
-        prompt.hidden = true;
-        return;
-      }
-
-      eyebrow.textContent = variant.eyebrow;
-      heading.textContent = variant.heading;
-      message.textContent = variant.message;
-
-      var card = button.closest(".template-card, .friend-borrow-card");
-      if (card) {
-        card.insertAdjacentElement("afterend", prompt);
+      var variant = button.hasAttribute("data-friend-borrow-post-copy-eligible")
+        ? copyVariants[detail.copy_type + ":" + detail.id] : null;
+      if (variant) {
+        button.closest(".template-card, .friend-borrow-card").insertAdjacentElement("afterend", prompt);
+        applyCopy(variant);
       } else {
-        button.insertAdjacentElement("afterend", prompt);
+        home.appendChild(prompt);
+        applyCopy(defaultCopy);
       }
-
-      prompt.hidden = false;
     }
 
+    prompt.__friendBorrowTrackingInitialized = true;
     window.addEventListener("youoweme:friend-borrow-money-copy", handleSuccessfulCopy);
   });
 })();
