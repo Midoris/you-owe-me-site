@@ -106,7 +106,7 @@ test("visible cards use the shared desktop-only layout and cache-busted module p
     assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"));
     assert.ok(page.includes("styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1"));
   }
-  assert.match(split, /split-expense-calculator\.js\?v=organic-handoff-20261002/);
+  assert.match(split, /split-expense-calculator\.js\?v=organic-entry-20261011/);
 });
 
 test("the QR manifest and reproducible generator retain the original pooled-campaign destinations", () => {
