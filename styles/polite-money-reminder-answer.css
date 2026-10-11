@@ -1,3 +1,10 @@
+/* Fit the available width when a narrow Safari viewport includes a scrollbar;
+   the legacy document minimum must not make the right card edge unreachable. */
+html.polite-reminder-document,
+html.polite-reminder-document body.polite-reminder-answer-page {
+  min-width: 0;
+}
+
 body.polite-reminder-answer-page {
   overflow-x: hidden;
 }
@@ -10,6 +17,14 @@ body.polite-reminder-answer-page *::after {
 
 body.polite-reminder-answer-page article.post.featured {
   max-width: none;
+}
+
+html.polite-reminder-document body.polite-reminder-answer-page [data-reminder-tracking-home],
+html.polite-reminder-document body.polite-reminder-answer-page .template-card,
+html.polite-reminder-document body.polite-reminder-answer-page .template-card__message,
+html.polite-reminder-document body.polite-reminder-answer-page .polite-reminder-post-copy {
+  min-width: 0;
+  max-width: 100%;
 }
 
 body.polite-reminder-answer-page #main article.post.featured header.major > h1,
@@ -499,6 +514,14 @@ body.polite-no-answer-page .template-card h3 {
     max-width: calc(100vw - 1.24rem);
     margin-left: 0;
     margin-right: 0;
+  }
+
+  html.polite-reminder-document body.polite-reminder-answer-page .lt-breadcrumb,
+  html.polite-reminder-document body.polite-reminder-answer-page .lt-toolsHero,
+  html.polite-reminder-document body.polite-reminder-answer-page .lt-toolsSection,
+  html.polite-reminder-document body.polite-reminder-answer-page .lt-finalCta {
+    width: 100%;
+    max-width: 100%;
   }
 
   body.confront-answer-page .lt-breadcrumb,
