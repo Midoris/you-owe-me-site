@@ -38,3 +38,7 @@ Implementation is local and uncommitted, not a production release. The clearer-l
 ### October 14 publication follow-through
 
 The owner subsequently approved committing and deploying this selected version. The local/uncommitted paragraph above records the pre-publication stage. Final commit, deployment receipt and live verification are recorded in the Business workspace under `workshops/2026-10-14-static-homepage-stories/implementation/RELEASE.md`. The retained template and the restoration instructions above remain part of the deployed source.
+
+### October 14 caption cleanup
+
+The owner approved removing “Illustrative example” after reviewing its value. The compact card now stands on its own, without a replacement caption. Card typography, green treatment, amounts, labels, surrounding padding and the retained original-story template remain unchanged. The homepage stylesheet cache version is incremented for this follow-up.

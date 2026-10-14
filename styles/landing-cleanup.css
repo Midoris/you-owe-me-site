@@ -288,7 +288,6 @@ body.homepage-page #money-story p.homepage-balance-example__totals{
   padding-top:22px;
   margin-top:11px;
 }
-body.homepage-page #money-story p.homepage-balance-example__note{margin:18px 0 0;font-size:11px;color:#79838c;text-align:center;line-height:1.5}
 @media(max-width:736px){
   body.homepage-page #money-story.homepage-balance-example{padding:30px 24px 30px}
   body.homepage-page .homepage-balance-example__card{max-width:340px;min-height:205px;padding:21px 16px 22px;border-radius:16px}
@@ -296,5 +295,4 @@ body.homepage-page #money-story p.homepage-balance-example__note{margin:18px 0 0
   body.homepage-page #money-story p.homepage-balance-example__amount{font-size:68px;margin-bottom:15px}
   body.homepage-page #money-story p.homepage-balance-example__person{font-size:11px}
   body.homepage-page #money-story p.homepage-balance-example__totals{font-size:9px;padding-top:14px;margin-top:7px}
-  body.homepage-page #money-story p.homepage-balance-example__note{margin-top:14px;font-size:10px}
 }
