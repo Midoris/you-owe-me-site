@@ -69,11 +69,18 @@ test("Phase-B placement preserves home/template actions and confines split QR to
   assert.ok(roommateHero < roommateCard && roommateCard < roommateFit);
   assert.ok(roommate.includes("Download the Excel template"));
   assert.ok(roommate.includes("Use in Google Sheets"));
-  const roommateStoryStart = roommate.indexOf('<!-- money-story:start -->');
-  assert.ok(roommateFit < roommateStoryStart);
-  assert.doesNotMatch(roommate.slice(0, roommateStoryStart), /data-iphone-handoff-replaces|data-iphone-handoff-replaceable/);
-  assert.match(roommate.slice(roommateStoryStart), /id="roommate-story-primary-download"[\s\S]*?data-iphone-handoff-replaceable/);
-  assert.match(roommate.slice(roommateStoryStart), /data-cta-location="roommate_expense_story_iphone_handoff" data-iphone-handoff-replaces="roommate-story-primary-download"/);
+  const archivedStory = roommate.match(/<template id="roommate-interactive-story-backup">([\s\S]*?)<\/template>/)?.[1];
+  assert.ok(archivedStory, "the original roommate story remains available for restoration");
+  assert.match(archivedStory, /data-money-story="roommate"/);
+  assert.match(archivedStory, /data-cta-location="roommate_expense_story_iphone_handoff"/);
+  const activeRoommate = roommate.replace(/<template\b[^>]*>[\s\S]*?<\/template>/g, "");
+  assert.doesNotMatch(activeRoommate, /data-money-story|data-story-track|data-iphone-handoff-replaces|data-iphone-handoff-replaceable/);
+  assert.doesNotMatch(activeRoommate, /(?:src|href)="[^"]*money-story\.(?:mjs|css)/);
+  const downloadsEnd = activeRoommate.indexOf('class="roommate-template-privacy"');
+  const workbookStart = activeRoommate.indexOf('aria-labelledby="workbook-title"');
+  assert.ok(downloadsEnd > roommateFit && workbookStart > downloadsEnd, "workbook guidance follows the download choices");
+  assert.match(activeRoommate, /id="roommate-summary-message"[\s\S]*?data-copy-target="roommate-summary-message"/);
+
 
   const splitActions = split.indexOf('class="split-result-app-card__actions"');
   const splitCard = split.indexOf('data-cta-location="split_result_iphone_handoff"');
