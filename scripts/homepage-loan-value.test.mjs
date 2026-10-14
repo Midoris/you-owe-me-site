@@ -77,14 +77,17 @@ test("story, import, definition, and generated situation hub stay in the intende
   assert.ok(storyStart < importStart && importStart < reviewIndex && reviewIndex < definitionIndex && definitionIndex < hubStart, "story → import → review → definition → generated situation hub order should be preserved");
   assert.ok(hubStart < anniversaryIndex && anniversaryIndex < featureIndex && featureIndex < includedIndex && includedIndex < moreSituationsIndex && moreSituationsIndex < researchIndex, "later homepage sections should remain in order");
   assert.equal((page.match(/<!-- money-story:start -->/g) ?? []).length, 1);
-  assert.match(page, /<h3>Alex asks, “What do I still owe\?”<\/h3><p>You share a PDF with every entry and the \$160 balance\.<\/p>/);
   const story = page.slice(storyStart, storyEnd);
-  assert.match(story, /aria-label="Helping Alex, then starting your own record, in eight moments"/);
-  assert.match(story, /<h3>Start with a clear record\.<\/h3><p>Track what’s owed and every payment in You Owe Me\.<\/p><a class="lt-appStoreBtn money-story__fallback-download"/);
-  assert.match(story, /class="money-story__cta money-story__cta--open" data-story-cta hidden inert aria-hidden="true"/);
-  assert.doesNotMatch(story, /money-story__cta-card/);
-  assert.match(story, /id="homepage-story-primary-download"[\s\S]*?data-cta-location="homepage_story_app_store"[\s\S]*?data-iphone-handoff-replaceable/);
-  assert.match(story, /data-cta-location="homepage_story_iphone_handoff" data-iphone-handoff-replaces="homepage-story-primary-download"/);
+  assert.doesNotMatch(story, /data-money-story|data-story-track|data-story-begin|Follow the story|Skip story|<template/);
+  assert.match(story, /aria-labelledby="homepage-balance-example-title"/);
+  for (const copy of ['May → August', '$160', 'Alex owes you', '$340 covered · $180 repaid']) {
+    assert.ok(story.includes(copy), `static balance should retain approved copy: ${copy}`);
+  }
+  assert.doesNotMatch(page, /<script[^>]+src="[^"]*money-story\.mjs/);
+  const backup = page.match(/<template id="homepage-interactive-story-backup">([\s\S]*?)<\/template>/)?.[1];
+  assert.ok(backup, 'original interactive homepage markup remains inactive and reversible');
+  assert.match(backup, /data-money-story="homepage"/);
+  assert.match(backup, /data-cta-location="homepage_story_iphone_handoff"/);
   assert.equal((page.match(/<!-- loan-import-offer:start -->/g) ?? []).length, 1);
   assert.equal((page.match(/id="situations"/g) ?? []).length, 1);
   assert.equal((page.match(/class="homepage-review-teaser"/g) ?? []).length, 1);

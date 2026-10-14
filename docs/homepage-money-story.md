@@ -23,3 +23,18 @@ The hero’s screenshot and competing situation/import text links are removed. T
 On September 26 the owner authorized commit and production deployment after final verification. Hero reassurance copy is removed, the review teaser is a prominent testimonial card, and the video heading uses the full available column instead of a 15-character measure. The import guide and website-to-iPhone explanation are retained. Story subtitles explicitly center their last line to override the legacy paragraph rule.
 
 Publish through the existing master-branch GitHub Pages workflow. Verify the released HTML, styles and story modules match the committed files and inspect desktop and iPhone layouts after publication.
+
+
+## October 14, 2026 · Static homepage balance (local implementation)
+
+The owner selected the green compact “May → August” workshop with its original “$340 covered · $180 repaid” wording. The active homepage block is now one static illustration: $160, Alex owes you, and those totals. The story remains after the hero and before loan import. Desktop scales the same card to 530px wide / roughly 320px tall with surrounding space; mobile keeps the compact 340px maximum width. No extra narrative, story controls, sticky track or viewport-height requirement is added. The existing hero App Store action and desktop QR remain intact.
+
+This self-contained display deliberately retains the workshop’s lighter system-font typography, neutral line, pale lime background and thin green border; the surrounding homepage design contract is unchanged. The illustration is synthetic: $300 bill + $40 groceries − $100 repayment − $80 repayment = $160. The compact totals aggregate that example over May–August; there is no new event schema or automatic-payment claim.
+
+The original eight-chapter markup remains inside the inert `homepage-interactive-story-backup` template. Shared story CSS/JS/data remain in the repository and continue to serve the borrower and roommate pages. To restore the homepage story, replace the active block with that template’s content, remove the template, and restore the homepage stylesheet/module links from the previous Git revision. The static CSS is isolated to the homepage. Existing hero/definition/closing handoffs and tracking are retained; old story CTA locations are now inactive.
+
+Implementation is local and uncommitted, not a production release. The clearer-label alternative is kept in the Business workshop for comparison; it is not the selected homepage wording.
+
+### October 14 publication follow-through
+
+The owner subsequently approved committing and deploying this selected version. The local/uncommitted paragraph above records the pre-publication stage. Final commit, deployment receipt and live verification are recorded in the Business workspace under `workshops/2026-10-14-static-homepage-stories/implementation/RELEASE.md`. The retained template and the restoration instructions above remain part of the deployed source.

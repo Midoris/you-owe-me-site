@@ -146,8 +146,7 @@
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
       <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260925-mobile-layout-1" />
-    <link rel="stylesheet" href="./styles/money-story.css?v=20260926-13" />
-    <link rel="stylesheet" href="./styles/landing-cleanup.css?v=20260926-2" />
+    <link rel="stylesheet" href="./styles/landing-cleanup.css?v=20261014-static-balance-1" />
   </head>
 
   <body class="is-preload site-nav-page homepage-page">
@@ -220,6 +219,21 @@
           </section>
 
           <!-- money-story:start -->
+          <section id="money-story" class="homepage-balance-example" aria-labelledby="homepage-balance-example-title">
+            <h2 id="homepage-balance-example-title" class="sr-only">A clear balance across months of partial repayments</h2>
+            <div class="homepage-balance-example__card">
+              <p class="homepage-balance-example__period">May → August</p>
+              <p class="homepage-balance-example__amount">$160</p>
+              <p class="homepage-balance-example__person">Alex owes you</p>
+              <p class="homepage-balance-example__totals">$340 covered · $180 repaid</p>
+            </div>
+            <p class="homepage-balance-example__note">Illustrative example</p>
+          </section>
+          <div id="money-story-end" tabindex="-1"></div>
+          <!-- money-story:end -->
+
+          <!-- Temporarily inactive: retain the original story for a reversible homepage change. -->
+          <template id="homepage-interactive-story-backup">
           <section id="money-story" class="money-story money-story--homepage money-story--open-close" data-money-story="homepage" aria-labelledby="money-story-intro-title">
             <div class="money-story__intro">
               <div class="money-story__eyebrow"><span class="money-story__dot" aria-hidden="true"></span> How it works</div>
@@ -308,7 +322,7 @@
             </div>
           </section>
           <div id="money-story-end" tabindex="-1"></div>
-          <!-- money-story:end -->
+          </template>
 
           <!-- loan-import-offer:start -->
           <div id="loan-import-offer" class="loan-import-entry" data-loan-offer="home">
@@ -946,6 +960,5 @@
     <script src="./assets/js/main.js"></script>
     <script src="/scripts/app-language-support.js"></script>
       <script type="module" src="/scripts/loan-import-entry.mjs?v=20260923-discovery1"></script>
-    <script type="module" src="./assets/js/money-story.mjs?v=20260926-10"></script>
   </body>
 </html>
