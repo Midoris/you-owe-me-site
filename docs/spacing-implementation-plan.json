@@ -13676,13 +13676,14 @@
         "All six links have 44px height and valid targets at 390px; the following section remains about 40px away. Clicked the worked-example link and confirmed its hash and destination heading.",
         "Desktop flex navigation is preserved at 1440px without overflow. Debt design audit passes. Reviewed the mobile-only CSS diff; all link text and anchor destinations are unchanged. Saved both screenshots."
       ],
-      "commitSubject": "fix: spacing audit #27 debt page contents links wrap into a tight inline cluster",
-      "implementation": "Turned the mobile contents cluster into a vertical set of full-width links with 10px gaps and 44px minimum tap height."
+      "commitSubject": "Fix spacing audit #27 mobile Debt contents navigation",
+      "implementation": "Turned the mobile contents cluster into a vertical set of full-width links with 10px gaps and 44px minimum tap height.",
+      "commitHash": "6cfd267fe740b9422843cc3c74f291cb97be411f"
     },
     {
       "id": 28,
       "title": "Blog transition CTA has almost no button padding",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile",
@@ -13716,8 +13717,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Checked 360px, 390px and 1440px: the action is at least 44px high with exact padding and 16px preceding gap, without overflow. Saved mobile and desktop screenshots.",
+        "Clicked the action and confirmed the intended support-transition guide loads on localhost. Blog design audit passes. Reviewed the CSS-only diff and preserved the original URL and wording."
+      ],
+      "commitSubject": "fix: spacing audit #28 blog transition cta has almost no button padding",
+      "implementation": "Styled the Blog card action as a rounded, padded CTA with 12px vertical and 18px horizontal padding, 16px above it and a visible keyboard focus outline."
     }
   ],
   "testBaseline": {
