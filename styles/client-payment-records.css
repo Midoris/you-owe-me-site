@@ -379,7 +379,15 @@ body.client-payment-records-page .client-microcopy {
 
   body.client-payment-records-page .client-clean-record dl {
     grid-template-columns: 1fr;
-    gap: 0.35rem;
+    gap: 6px;
+  }
+
+  body.client-payment-records-page .client-clean-record dt {
+    margin: 0;
+  }
+
+  body.client-payment-records-page .client-clean-record dd + dt {
+    margin-top: 12px;
   }
 
   body.client-payment-records-page .client-feature-map li {

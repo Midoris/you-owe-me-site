@@ -1,6 +1,6 @@
 # Sequential spacing implementation plan
 
-Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **21 of 26 complete**.
+Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **22 of 26 complete**.
 
 The [scope ledger](spacing-implementation-plan.json) freezes each finding’s affected routes, sections, stylesheets and success criteria. The original [numbered audit](../audits/spacing-2026-10-15/review.html) remains the before reference. After screenshots and measurements are saved under `audits/spacing-implementation-2026-10-15/`.
 
@@ -43,8 +43,8 @@ Spacing numbers are design starting points, not blanket padding rules. Keep text
 | 20 | Text-heavy desktop grids have too many narrow columns | 26 | Desktop | complete (`d12d13e`) |
 | 21 | Tools hub gives long titles a disproportionately small column | 1 | Desktop | complete (`f2aefcb`) |
 | 22 | Tools hub introduction crowds many pathways before the choices | 1 | Mobile | excluded |
-| 23 | Solutions cards crowd tags, status and action together | 1 | Mobile + Desktop | complete |
-| 24 | Client example does not clearly separate label/value pairs | 1 | Mobile | pending |
+| 23 | Solutions cards crowd tags, status and action together | 1 | Mobile + Desktop | complete (`ab4a3b8`) |
+| 24 | Client example does not clearly separate label/value pairs | 1 | Mobile | complete |
 | 25 | Parent-expense example needs stronger grouping inside each entry | 1 | Mobile | pending |
 | 26 | Roommate result packs many responsibility labels into one narrow stack | 1 | Mobile + Desktop | pending |
 | 27 | Debt page contents links wrap into a tight inline cluster | 1 | Mobile | pending |

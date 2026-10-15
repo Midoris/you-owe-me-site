@@ -13476,13 +13476,14 @@
         "All 11 scenario cards checked at 390px and 1440px: 22 action gaps are 24px, all available guidance gaps are 16px, and neither size overflows. Screenshots and measurements saved.",
         "Solutions design audit passes. Reviewed CSS-only change scoped to scenario cards; all text, destinations and checklist behavior are preserved."
       ],
-      "commitSubject": "fix: spacing audit #23 solutions cards crowd tags, status and action together",
-      "implementation": "Separated scenario content, audience tags and status with 16px gaps; added a deliberate 24px lead-in to each primary action and 16px before secondary guidance."
+      "commitSubject": "Fix spacing audit #23 Solutions action grouping",
+      "implementation": "Separated scenario content, audience tags and status with 16px gaps; added a deliberate 24px lead-in to each primary action and 16px before secondary guidance.",
+      "commitHash": "ab4a3b801c7e58cf4a3f8356dbdeb9fb48bf0de1"
     },
     {
       "id": 24,
       "title": "Client example does not clearly separate label/value pairs",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile"
@@ -13517,8 +13518,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All eight pairs measured at 390px: 6px within each pair and 18px between pairs. Desktop retains its two-column definition list at 1440px. Both screenshots saved.",
+        "Client design audit and diff whitespace checks pass. Reviewed the mobile-only CSS change; example values and source HTML are unchanged."
+      ],
+      "commitSubject": "fix: spacing audit #24 client example does not clearly separate label/value pairs",
+      "implementation": "Gave the mobile clean client record a 6px label-to-value gap and an 18px gap before the next pair."
     },
     {
       "id": 25,
