@@ -12360,8 +12360,9 @@
         "Homepage scoped design audit and homepage/App Store CTA tests passed. Mobile/desktop screenshots inspected.",
         "Reviewed the seven-line home-only CSS diff; copy, links and the excluded capability-card arrangement are unchanged."
       ],
-      "commitSubject": "fix: spacing audit #13 homepage secondary guidance links form a cramped cluster",
-      "implementation": "Set 12px gaps between homepage scenario action items and an extra 4px before the first secondary guide, giving 16px primary-to-guide separation."
+      "commitSubject": "fix: spacing audit #13 group homepage secondary guidance",
+      "implementation": "Set 12px gaps between homepage scenario action items and an extra 4px before the first secondary guide, giving 16px primary-to-guide separation.",
+      "commitHash": "3dd37c26cdf43e60c09cfe9466c37eb51963a8d3"
     },
     {
       "id": 14,
@@ -12409,7 +12410,7 @@
     {
       "id": 15,
       "title": "Homepage resource rows give titles and descriptions little separation",
-      "status": "pending",
+      "status": "complete",
       "priority": "Low",
       "devices": [
         "Mobile",
@@ -12447,8 +12448,13 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All 6 rows checked at 360px, 390px and 1440px: 18 checks passed; title/body separation and tap areas verified.",
+        "Homepage design audit and relevant homepage/App Store CTA tests passed. Mobile/desktop screenshots inspected.",
+        "Reviewed the home-resource-only CSS diff. Excluded #14 remains unchanged."
+      ],
+      "commitSubject": "fix: spacing audit #15 homepage resource rows give titles and descriptions little separation",
+      "implementation": "Gave homepage resource links an 8px title-to-description gap and 12px vertical padding per row, preserving existing separators and all destinations."
     },
     {
       "id": 16,

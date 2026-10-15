@@ -6,6 +6,12 @@ body.homepage-page .lt-situationPrimaryCta + :is(.lt-situationMicroLink, .lt-sit
   margin-top: 4px;
 }
 
+body.homepage-page .lt-resourceShelfLink {
+  gap: 8px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+}
+
 body.homepage-page .lt-hero{
   grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
   align-items:center;
