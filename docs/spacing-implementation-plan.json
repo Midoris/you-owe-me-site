@@ -12641,13 +12641,14 @@
         "Checked all three pairs at 360px and 390px: 8px label gaps, 12px within pairs, 24px between pairs, and no overflow. Desktop columns and labels preserved at 1440px.",
         "Scoped design audit passes; reviewed full diff and verified only six presentation data-label attributes were added to HTML. Calculator code and wording unchanged. Screenshots and geometry saved."
       ],
-      "commitSubject": "fix: spacing audit #19 “do not say / try instead” examples lose their pairing on mobile",
-      "implementation": "Grouped each mobile before/after wording pair into one padded card, repeating the two labels inside each pair. Kept the desktop two-column comparison."
+      "commitSubject": "Fix spacing audit #19 mobile conversation pair grouping",
+      "implementation": "Grouped each mobile before/after wording pair into one padded card, repeating the two labels inside each pair. Kept the desktop two-column comparison.",
+      "commitHash": "964f747838ad32a0ea4be12cc8daab49897c633b"
     },
     {
       "id": 20,
       "title": "Text-heavy desktop grids have too many narrow columns",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Desktop"
@@ -13341,8 +13342,14 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Verified all 33 grids at 981px, 1101px and 1440px: 99 desktop grid checks pass with no card overflow and every card at least 300px wide. Checked all 26 routes at 390px; mobile grid rules remain unchanged.",
+        "Quick Start has a pre-existing 15px document scrollbar-width discrepancy at 390px; none of its main content or changed grid extends beyond the client viewport. No new mobile grid overflow.",
+        "Visually reviewed long copyable messages and related-resource cards. All 26 design audits pass. Full suite retains baseline 174/175 with only the known EXP-008 metadata failure.",
+        "Reviewed the full diff; removing the added presentation class reproduces every HTML file exactly, preserving all text, links and controls. Saved the explicit grid map, measurements and screenshots."
+      ],
+      "commitSubject": "fix: spacing audit #20 text-heavy desktop grids have too many narrow columns",
+      "implementation": "Annotated precisely the 33 audited grids across 26 routes. Desktop grids now fit at most three columns, use a 300px minimum card width and 24px gaps, and drop to two columns when their own available width requires it."
     },
     {
       "id": 21,

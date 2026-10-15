@@ -137,6 +137,14 @@ body.site-nav-page #navPanelToggle:focus-visible {
   }
 }
 
+/* Long explanations and messages need a wider desktop reading measure. */
+@media screen and (min-width: 981px) {
+  body.site-nav-page #main .lt-readableGrid {
+    grid-template-columns: repeat(auto-fit, minmax(min(100%, max(300px, calc(33.333% - 16px))), 1fr)) !important;
+    gap: 24px !important;
+  }
+}
+
 @media screen and (max-width: 980px) {
   body.site-nav-page #wrapper::after {
     content: none;
