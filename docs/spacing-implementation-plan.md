@@ -1,6 +1,6 @@
 # Sequential spacing implementation plan
 
-Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **1 of 26 complete**.
+Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **2 of 26 complete**.
 
 The [scope ledger](spacing-implementation-plan.json) freezes each finding’s affected routes, sections, stylesheets and success criteria. The original [numbered audit](../audits/spacing-2026-10-15/review.html) remains the before reference. After screenshots and measurements are saved under `audits/spacing-implementation-2026-10-15/`.
 
@@ -21,8 +21,8 @@ Spacing numbers are design starting points, not blanket padding rules. Keep text
 
 | Audit number | Finding | Affected routes | Sizes | Status |
 | --- | --- | ---: | --- | --- |
-| 01 | Solutions checklist collapses linked text into a zero-width column | 1 | Mobile + Desktop | complete |
-| 02 | Privacy summary turns into one very long disclosure column | 1 | Mobile + Desktop | pending |
+| 01 | Solutions checklist collapses linked text into a zero-width column | 1 | Mobile + Desktop | complete (`86994dd`) |
+| 02 | Privacy summary turns into one very long disclosure column | 1 | Mobile + Desktop | complete |
 | 03 | Working-agreement fields have almost no inner padding | 1 | Mobile + Desktop | pending |
 | 04 | Mobile Menu covers long breadcrumbs | 28 | Mobile | pending |
 | 05 | Invitation-page navigation clips off mobile destinations | 2 | Mobile | pending |

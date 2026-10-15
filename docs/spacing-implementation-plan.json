@@ -409,13 +409,14 @@
         "Code diff reviewed; no content or destinations changed.",
         "390px and 1440px local browser checks passed; both linked phrases have normal 18.5px line height and positive width. After screenshots: 01-mobile.jpg and 01-desktop.jpg."
       ],
-      "commitSubject": "fix: spacing audit #01 solutions checklist collapses linked text into a zero-width column",
-      "implementation": "Moved checklist bullets out of the text flow; linked phrases and the rest of each sentence now wrap together. Set 16px row gaps."
+      "commitSubject": "fix: spacing audit #01 solutions checklist text flow",
+      "implementation": "Moved checklist bullets out of the text flow; linked phrases and the rest of each sentence now wrap together. Set 16px row gaps.",
+      "commitHash": "86994dd16b13603fd3c334c8c0af559b6e621986"
     },
     {
       "id": 2,
       "title": "Privacy summary turns into one very long disclosure column",
-      "status": "pending",
+      "status": "complete",
       "priority": "High",
       "devices": [
         "Mobile",
@@ -449,8 +450,14 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Design audit /privacy-and-data/: passed.",
+        "15 Connect/Invite privacy and handoff tests and 8 loan import/Phase-B tests passed. Paragraph, heading and link text compared unchanged.",
+        "390px/1440px browser checks passed: 4 concise summary cards, no nested sections; desktop card height reduced from 2458px to 215px. Saved summary and disclosure screenshots.",
+        "Reviewed markup regrouping and heading/ARIA IDs."
+      ],
+      "commitSubject": "fix: spacing audit #02 privacy summary turns into one very long disclosure column",
+      "implementation": "Separated prepared split transfer and loan-history import into their own full-width Privacy sections with the existing heading and content-block styles. Preserved disclosure text, links and anchor."
     },
     {
       "id": 3,
