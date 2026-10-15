@@ -26,6 +26,35 @@ body.site-nav-page #main p.lt-actionLead {
   margin-bottom: 1rem !important;
 }
 
+body.site-nav-page #main h3.lt-cardHeadingGap {
+  margin-bottom: 1rem !important;
+}
+
+body.site-nav-page #main .lt-roomyCard {
+  padding: 20px !important;
+}
+
+/* Retain larger cards and the space occupied by numbered step markers. */
+body.site-nav-page #main .pd-card.lt-roomyCard {
+  padding: max(20px, 1.55rem) !important;
+}
+
+body.site-nav-page #main .lt-detailCard.lt-roomyCard {
+  padding: max(20px, 1.45rem) !important;
+}
+
+body.site-nav-page #main .ces-app-card.lt-roomyCard {
+  padding: max(20px, 1.75rem) !important;
+}
+
+body.site-nav-page #main .lt-roomyCard:is(.parent-workflow-card, .family-step-card) {
+  padding-left: 4rem !important;
+}
+
+body.site-nav-page #main .lt-roomyCard > :is(.parent-step-number, .family-step-number) {
+  left: 20px;
+}
+
 body.site-nav-page #navPanelToggle:focus-visible {
   outline: 3px solid rgba(var(--site-menu-accent-rgb), 0.4);
   outline-offset: 3px;
@@ -168,6 +197,11 @@ body.site-nav-page #navPanelToggle:focus-visible {
 }
 
 @media screen and (max-width: 736px) {
+  body.site-nav-page #main .lt-roomyCard:is(.parent-workflow-card, .family-step-card) {
+    padding-top: 3.75rem !important;
+    padding-left: 20px !important;
+  }
+
   /* One page gutter; nested cards keep their own existing padding. */
   body.site-nav-page:is(.blog-page, .solutions-page, .tools-page, .compare-page,
       .features-page, .privacy-data-page, .legal-page, .ten-years-page,

@@ -11032,19 +11032,20 @@
         "Reviewed CSS and confirmed all 20 HTML diffs only add the targeted description class; text, action attributes and destinations unchanged.",
         "Accurately positioned mobile feature card and desktop support-message screenshots inspected and saved."
       ],
-      "commitSubject": "fix: spacing audit #09 actions attach directly to the paragraph above",
-      "implementation": "Added spacing after the 80 audited descriptions, rather than overriding action margins, preserving existing automatic action alignment in card grids."
+      "commitSubject": "fix: spacing audit #09 separate descriptions from actions",
+      "implementation": "Added spacing after the 80 audited descriptions, rather than overriding action margins, preserving existing automatic action alignment in card grids.",
+      "commitHash": "6204aa8685d99637db1e3dbd798c3ea0e430aecd"
     },
     {
       "id": 10,
       "title": "Dense cards need more room around headings",
-      "status": "pending",
+      "status": "complete",
       "priority": "Low",
       "devices": [
         "Mobile",
         "Desktop"
       ],
-      "pageCount": 9,
+      "pageCount": 11,
       "problem": "Many longer cards use only 5–8px between a heading and its description, often with about 14–18px inner padding. Short cards remain readable; cards containing several lines feel compressed.",
       "direction": "For longer cards, try 12–16px after the heading and 20–24px inner padding. Keep compact labels compact. Review this as optional polish rather than applying it blindly to every card.",
       "successCriteria": "Long audited cards have clearer heading/body separation and comfortable inner padding. Short labels and unrelated grids are not enlarged indiscriminately.",
@@ -11882,10 +11883,67 @@
               "auditedInstances": 2
             }
           ]
+        },
+        {
+          "route": "/blog/",
+          "file": "blog/index.html",
+          "stylesheets": [
+            "assets/css/fontawesome-all.min.css",
+            "assets/css/main.css",
+            "assets/css/noscript.css",
+            "styles/app-language-support.css",
+            "styles/best-next-step.css",
+            "styles/blog.css",
+            "styles/site-nav.css"
+          ],
+          "sections": [
+            {
+              "section": "Long article directory cards, including Start here",
+              "devices": [
+                "Mobile",
+                "Desktop"
+              ],
+              "auditedInstances": 52
+            }
+          ]
+        },
+        {
+          "route": "/solutions/client-payment-records/",
+          "file": "solutions/client-payment-records/index.html",
+          "stylesheets": [
+            "assets/css/fontawesome-all.min.css",
+            "assets/css/main.css",
+            "assets/css/noscript.css",
+            "styles/app-language-support.css",
+            "styles/best-next-step.css",
+            "styles/client-payment-records.css",
+            "styles/site-nav.css",
+            "styles/solution-detail.css",
+            "styles/solutions.css"
+          ],
+          "sections": [
+            {
+              "section": "Freelancers and the other audience cards",
+              "devices": [
+                "Mobile",
+                "Desktop"
+              ],
+              "auditedInstances": 6
+            }
+          ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "326 card checks passed across mobile and desktop: headings have at least 12px separation and card padding is at least 20px.",
+        "24 numbered-card checks passed with no badge/heading overlap. Inspected Blog directory, family workflow and client audience screenshots.",
+        "All 11 scoped design audits passed; full suite retains 174/175 baseline result. All source edits reviewed as spacing-class additions only; text and links unchanged."
+      ],
+      "commitSubject": "fix: spacing audit #10 dense cards need more room around headings",
+      "originalOccurrenceListPageCount": 9,
+      "scopeAdjustments": [
+        "Include the two approved representative screenshot routes omitted by the original <=8px occurrence filter: Blog directory and client audience cards. Preserve their existing larger padding."
+      ],
+      "implementation": "Added heading separation and at least 20px card padding to audited long cards, preserving larger Privacy/client padding and numbered-marker space. Reconciled the two screenshot routes missing from the original occurrence list, bringing the scope to 11 routes."
     },
     {
       "id": 11,
