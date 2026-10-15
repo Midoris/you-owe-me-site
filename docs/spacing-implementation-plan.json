@@ -13813,7 +13813,14 @@
         "finding": 20,
         "change": "Extend the readable-grid rule to 737px and above, covering tablet widths previously left to narrow legacy three-column layouts.",
         "validation": "All 33 grids at 736/737/768/980/981px: 165 grid checks pass; 26 design audits pass. Before/after tablet screenshots inspected.",
-        "commitSubject": "fix: preserve readable card widths through tablet breakpoints"
+        "commitSubject": "fix: preserve readable card widths through tablet breakpoints",
+        "commitHash": "5a56b02"
+      },
+      {
+        "finding": "verification",
+        "change": "Repair the existing EXP-008 test pinned to the superseded September date. It now checks structured modification date, Open Graph timestamp, visible date and sitemap stay synchronized, while retaining the exact publication date and search identity assertions.",
+        "validation": "All 175 existing tests pass. No article copy or publication metadata changed.",
+        "commitSubject": "test: verify borrowing article dates stay synchronized"
       }
     ]
   }

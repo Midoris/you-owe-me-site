@@ -77,3 +77,5 @@ The [numbered after-review](../audits/spacing-implementation-2026-10-15/review.h
 The owner subsequently authorized a fresh combined review, corrections, commit and production deployment. The earlier no-deployment statements describe the implementation stage.
 
 The second review found narrow legacy three-column layouts at tablet widths in two of the audited grid types. The #20 readable-grid rule now starts at 737px, so those cards retain a minimum 300px width between the phone and desktop layouts. All 33 grids were checked at 736, 737, 768, 980 and 981px (165 grid checks); all pass, with 26 scoped design audits passing. Before/after tablet screenshots are under `audits/spacing-implementation-2026-10-15/recheck/`.
+
+The pre-existing EXP-008 failure came from a hardcoded September modification date. The page, Open Graph timestamp, visible date and sitemap already agree on October 11. The integration test now verifies those dates remain synchronized rather than pinning the obsolete release date; the publication date and exact search identity checks remain. No public article metadata or copy changed. All 175 existing tests now pass.

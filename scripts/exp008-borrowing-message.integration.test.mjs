@@ -34,12 +34,18 @@ test("EXP-008 keeps search identity and synchronizes exact descriptions and modi
   assert.match(page, /<title>How to Ask to Borrow Money From a Friend \| Text Examples \| You Owe Me<\/title>/);
   assert.match(page, /<link rel="canonical" href="https:\/\/you-owe-me\.com\/blog\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\/" \/>/);
   assert.equal((page.match(new RegExp(DESCRIPTION.replace(/[.*+?^${}()|[\]\\]/g, "\\$&"), "g")) ?? []).length, 4);
-  assert.match(page, /article:modified_time" content="2026-09-14T00:00:00\+07:00"/);
   assert.match(page, /"datePublished": "2026-07-08"/);
-  assert.match(page, /"dateModified": "2026-09-14"/);
-  assert.match(page, /Updated <time datetime="2026-09-14">September 14, 2026<\/time>/);
-  assert.match(sitemap, /<loc>https:\/\/you-owe-me\.com\/blog\/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward\/<\/loc>\s*<lastmod>2026-09-14<\/lastmod>/);
   const { contentRegistry } = await import("../content/content-registry.mjs");
+  const route = "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/";
+  const updated = page.match(/"dateModified": "(\d{4}-\d{2}-\d{2})"/)?.[1];
+  assert.match(updated, /^\d{4}-\d{2}-\d{2}$/);
+  const visibleDate = new Intl.DateTimeFormat("en-US", {
+    month: "long", day: "numeric", year: "numeric", timeZone: "UTC",
+  }).format(new Date(`${updated}T12:00:00Z`));
+  assert.ok(page.includes(`article:modified_time" content="${updated}T00:00:00+07:00"`));
+  assert.ok(page.includes(`"dateModified": "${updated}"`));
+  assert.ok(page.includes(`Updated <time datetime="${updated}">${visibleDate}</time>`));
+  assert.ok(sitemap.includes(`<loc>https://you-owe-me.com${route}</loc>\n    <lastmod>${updated}</lastmod>`));
   const homeDate = contentRegistry.find(entry => entry.url === "/").updated;
   assert.ok(sitemap.includes(`<loc>https://you-owe-me.com/</loc>\n    <lastmod>${homeDate}</lastmod>`));
 });
