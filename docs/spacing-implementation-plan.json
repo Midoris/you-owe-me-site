@@ -12453,13 +12453,14 @@
         "Homepage design audit and relevant homepage/App Store CTA tests passed. Mobile/desktop screenshots inspected.",
         "Reviewed the home-resource-only CSS diff. Excluded #14 remains unchanged."
       ],
-      "commitSubject": "fix: spacing audit #15 homepage resource rows give titles and descriptions little separation",
-      "implementation": "Gave homepage resource links an 8px title-to-description gap and 12px vertical padding per row, preserving existing separators and all destinations."
+      "commitSubject": "fix: spacing audit #15 separate homepage resource rows",
+      "implementation": "Gave homepage resource links an 8px title-to-description gap and 12px vertical padding per row, preserving existing separators and all destinations.",
+      "commitHash": "d157b6058e4b8f95d3e8035debfd9b77369245da"
     },
     {
       "id": 16,
       "title": "Features participation table is cramped on a phone",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile"
@@ -12494,8 +12495,13 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Verified all three options and nine field labels at 360px and 390px; no table or document overflow. Desktop remains a four-column table at 1440px.",
+        "Saved mobile and desktop screenshots; final label fonts have 12px and option-title fonts 16px minimums.",
+        "Features design audit and relevant loan-import, Connect, and language support tests pass. Reviewed source diff and preserved all cell copy and links."
+      ],
+      "commitSubject": "fix: spacing audit #16 features participation table is cramped on a phone",
+      "implementation": "Stacked the participation comparison into labelled, full-width option groups below 736px while retaining the accessible desktop table."
     },
     {
       "id": 17,

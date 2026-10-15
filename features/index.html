@@ -1096,10 +1096,10 @@
               </article>
 
               <article class="features-card features-card--text">
-                <h3>Choose how the other person should participate</h3>
+                <h3 id="participation-title">Choose how the other person should participate</h3>
                 <p>You do not need the same setup for every balance. Choose based on whether the other person only needs visibility or also needs to update the record.</p>
-                <div class="table-wrapper">
-                  <table>
+                <div class="table-wrapper features-participation">
+                  <table role="table" aria-labelledby="participation-title">
                     <thead>
                       <tr>
                         <th scope="col">Setup</th>
@@ -1111,21 +1111,21 @@
                     <tbody>
                       <tr>
                         <th scope="row">Keep it private</th>
-                        <td>Only you need the working record.</td>
-                        <td>Only you.</td>
-                        <td>Nothing unless you decide to share a message, receipt, or statement.</td>
+                        <td data-label="Best when">Only you need the working record.</td>
+                        <td data-label="Who changes the record">Only you.</td>
+                        <td data-label="What the other person needs">Nothing unless you decide to share a message, receipt, or statement.</td>
                       </tr>
                       <tr>
                         <th scope="row">Live Link</th>
-                        <td>The other person needs an always-current browser view but does not need editing access.</td>
-                        <td>You maintain the record; the viewer gets a read-only view.</td>
-                        <td>No app or account is required to view the link.</td>
+                        <td data-label="Best when">The other person needs an always-current browser view but does not need editing access.</td>
+                        <td data-label="Who changes the record">You maintain the record; the viewer gets a read-only view.</td>
+                        <td data-label="What the other person needs">No app or account is required to view the link.</td>
                       </tr>
                       <tr>
                         <th scope="row">Balance Sync</th>
-                        <td>Exactly two people both want connected balance activity in their apps.</td>
-                        <td>Either connected person can change supported entries.</td>
-                        <td>Both use You Owe Me and Sign in with Apple.</td>
+                        <td data-label="Best when">Exactly two people both want connected balance activity in their apps.</td>
+                        <td data-label="Who changes the record">Either connected person can change supported entries.</td>
+                        <td data-label="What the other person needs">Both use You Owe Me and Sign in with Apple.</td>
                       </tr>
                     </tbody>
                   </table>

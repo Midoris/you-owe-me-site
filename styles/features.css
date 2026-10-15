@@ -373,6 +373,74 @@ body.features-page .lt-finalCta {
 }
 
 @media (max-width: 736px) {
+  body.features-page .features-participation {
+    margin: 20px 0;
+    overflow: visible;
+  }
+
+  body.features-page .features-participation :is(table, tbody, tr, th, td) {
+    display: block;
+    width: 100%;
+    min-width: 0;
+  }
+
+  body.features-page .features-participation table {
+    margin: 0;
+  }
+
+  body.features-page .features-participation thead {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+    white-space: nowrap;
+  }
+
+  body.features-page .features-participation tbody tr {
+    padding: 24px 0;
+    border: 0;
+    border-top: 1px solid rgba(15, 23, 42, 0.08);
+    background: transparent;
+  }
+
+  body.features-page .features-participation tbody tr:first-child {
+    border-top: 0;
+    padding-top: 0;
+  }
+
+  body.features-page .features-participation tbody tr:last-child {
+    padding-bottom: 0;
+  }
+
+  body.features-page .features-participation tbody :is(th, td) {
+    padding: 0;
+    border: 0;
+    text-align: left;
+  }
+
+  body.features-page .features-participation tbody th {
+    margin-bottom: 16px;
+    color: #18212b;
+    font-size: max(16px, 1.12rem);
+    letter-spacing: 0;
+    text-transform: none;
+  }
+
+  body.features-page .features-participation td + td {
+    margin-top: 16px;
+  }
+
+  body.features-page .features-participation td::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 6px;
+    color: rgba(33, 41, 49, 0.68);
+    font-size: max(12px, 0.85rem);
+    font-weight: 700;
+    line-height: 1.4;
+  }
+
   body.features-page {
     overflow-x: hidden;
   }
