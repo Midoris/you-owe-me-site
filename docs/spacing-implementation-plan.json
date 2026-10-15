@@ -1609,13 +1609,14 @@
         "14 scoped design audits passed; final CSS diff reviewed with desktop styles unchanged.",
         "All 14 affected routes checked at 360px, 390px and 1440px: 42 checks passed. Mobile title widths exceed 260px and do not overlap the menu; after screenshot saved."
       ],
-      "commitSubject": "fix: spacing audit #06 article titles use an unnecessarily narrow mobile measure",
-      "implementation": "Removed the 12.5ch title cap and unused right inset on mobile/tablet. Legacy article headers reserve a separate row above the title for the fixed Menu; increased title-to-content separation."
+      "commitSubject": "fix: spacing audit #06 give mobile article titles room",
+      "implementation": "Removed the 12.5ch title cap and unused right inset on mobile/tablet. Legacy article headers reserve a separate row above the title for the fixed Menu; increased title-to-content separation.",
+      "commitHash": "66e500946473114dadfbc46747642e377c471db4"
     },
     {
       "id": 7,
       "title": "Bare mobile text sits too close to the screen edge",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile"
@@ -7838,8 +7839,14 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "148 local browser checks across all 74 affected routes at 390px and 360px passed: no near-edge paragraph boxes and no document overflow. Separate 390px left/right reading-gutter pass on all 74 routes passed.",
+        "Inspected 360px split-calculator inputs, mobile reading sections and desktop counterpart; after screenshots saved. Existing nested card padding retained.",
+        "73 of 74 design audits passed; Privacy Policy retains only its 8 documented baseline failures. Full suite: 174/175 passed, only the documented baseline metadata failure.",
+        "Reviewed all CSS changes and updated the existing continuation containment assertion to the new parent-width sizing; its class-isolation protections remain intact."
+      ],
+      "commitSubject": "fix: spacing audit #07 bare mobile text sits too close to the screen edge",
+      "implementation": "Established a 20px mobile page gutter for the affected content families, converted viewport-based child widths to parent widths, contained the story sections without scrollbar overflow, and corrected one nested FAQ box."
     },
     {
       "id": 8,

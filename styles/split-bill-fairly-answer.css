@@ -797,6 +797,11 @@ body.split-bill-fairly-page #copyright ul li {
 }
 
 @media (max-width: 736px) {
+  body.split-bill-fairly-page .faq-list details p {
+    box-sizing: border-box;
+    width: 100%;
+  }
+
   body.split-bill-fairly-page #main {
     padding: 0.65rem 0.7rem 0;
   }

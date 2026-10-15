@@ -158,6 +158,14 @@ body.site-nav-page #navPanelToggle:focus-visible {
 }
 
 @media screen and (max-width: 736px) {
+  /* One page gutter; nested cards keep their own existing padding. */
+  body.site-nav-page:is(.blog-page, .solutions-page, .tools-page, .compare-page,
+      .features-page, .privacy-data-page, .legal-page, .ten-years-page,
+      .personal-loan-record-guide-page) #main {
+    padding-left: 20px !important;
+    padding-right: 20px !important;
+  }
+
   body.site-nav-page #wrapper::after {
     content: none;
     display: none;

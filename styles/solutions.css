@@ -842,7 +842,7 @@ body.solutions-page #copyright ul li {
   }
 
   body.solutions-index-page article.post.featured {
-    width: min(100%, calc(100vw - 1.24rem));
+    width: 100%;
     overflow-wrap: break-word;
   }
 

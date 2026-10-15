@@ -510,8 +510,8 @@ body.polite-no-answer-page .template-card h3 {
   body.polite-reminder-answer-page .lt-toolsHero,
   body.polite-reminder-answer-page .lt-toolsSection,
   body.polite-reminder-answer-page .lt-finalCta {
-    width: calc(100vw - 1.24rem);
-    max-width: calc(100vw - 1.24rem);
+    width: 100%;
+    max-width: 100%;
     margin-left: 0;
     margin-right: 0;
   }

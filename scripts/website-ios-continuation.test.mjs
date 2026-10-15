@@ -66,7 +66,8 @@ test("reminder containment requires its unique document class and leaves other a
   for (const rule of rules) {
     for (const selector of rule[1].split(",")) assert.ok(selector.trim().startsWith("html.polite-reminder-document"));
   }
-  assert.match(reminderStyles, /body\.polite-reminder-answer-page \.lt-finalCta \{\s*width: calc\(100vw - 1\.24rem\);\s*max-width: calc\(100vw - 1\.24rem\);/);
+  // Cards follow the available parent width as the reading gutter changes.
+  assert.match(reminderStyles, /body\.polite-reminder-answer-page \.lt-finalCta \{\s*width: 100%;\s*max-width: 100%;/);
   for (const slug of ["how-to-politely-say-no-when-people-ask-for-money", "how-do-you-confront-someone-who-owes-you-money-without-ruining-the-relationship", "how-to-handle-a-friend-who-keeps-borrowing-money", "how-to-follow-up-after-a-partial-repayment", "am-i-wrong-for-asking-for-my-money-back"]) {
     const html = await read(`blog/${slug}/index.html`);
     assert.match(html, /polite-reminder-answer-page/);

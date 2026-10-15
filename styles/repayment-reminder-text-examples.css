@@ -459,8 +459,8 @@ body.repayment-reminder-page #main article.post.featured header.major > h1 {
   body.repayment-reminder-page .lt-toolsHero,
   body.repayment-reminder-page .lt-toolsSection,
   body.repayment-reminder-page .lt-finalCta {
-    width: calc(100vw - 1.24rem);
-    max-width: calc(100vw - 1.24rem);
+    width: 100%;
+    max-width: 100%;
     margin-left: 0;
     margin-right: 0;
   }

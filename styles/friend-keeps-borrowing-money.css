@@ -176,8 +176,8 @@ body.blog-page.friend-borrowing-page article.post.featured .template-card h3 {
   body.friend-borrowing-page .lt-toolsHero,
   body.friend-borrowing-page .lt-toolsSection,
   body.friend-borrowing-page .lt-finalCta {
-    width: calc(100vw - 1.24rem);
-    max-width: calc(100vw - 1.24rem);
+    width: 100%;
+    max-width: 100%;
     margin-left: 0;
     margin-right: 0;
   }

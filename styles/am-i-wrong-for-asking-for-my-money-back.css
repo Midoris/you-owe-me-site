@@ -392,8 +392,8 @@ body.blog-page.am-i-wrong-money-back-page article.post.featured .lt-actions li:f
   body.am-i-wrong-money-back-page .lt-toolsHero,
   body.am-i-wrong-money-back-page .lt-toolsSection,
   body.am-i-wrong-money-back-page .lt-finalCta {
-    width: calc(100vw - 1.24rem);
-    max-width: calc(100vw - 1.24rem);
+    width: 100%;
+    max-width: 100%;
     margin-left: 0;
     margin-right: 0;
   }

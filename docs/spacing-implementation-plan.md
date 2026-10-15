@@ -1,6 +1,6 @@
 # Sequential spacing implementation plan
 
-Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **6 of 26 complete**.
+Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **7 of 26 complete**.
 
 The [scope ledger](spacing-implementation-plan.json) freezes each finding’s affected routes, sections, stylesheets and success criteria. The original [numbered audit](../audits/spacing-2026-10-15/review.html) remains the before reference. After screenshots and measurements are saved under `audits/spacing-implementation-2026-10-15/`.
 
@@ -26,8 +26,8 @@ Spacing numbers are design starting points, not blanket padding rules. Keep text
 | 03 | Working-agreement fields have almost no inner padding | 1 | Mobile + Desktop | complete (`473eaee`) |
 | 04 | Mobile Menu covers long breadcrumbs | 28 | Mobile | complete (`0d03a8e`) |
 | 05 | Invitation-page navigation clips off mobile destinations | 2 | Mobile | complete (`1bfaae3`) |
-| 06 | Article titles use an unnecessarily narrow mobile measure | 14 | Mobile | complete |
-| 07 | Bare mobile text sits too close to the screen edge | 74 | Mobile | pending |
+| 06 | Article titles use an unnecessarily narrow mobile measure | 14 | Mobile | complete (`66e5009`) |
+| 07 | Bare mobile text sits too close to the screen edge | 74 | Mobile | complete |
 | 08 | Separate paragraphs run together into one block | 47 | Mobile + Desktop | pending |
 | 09 | Actions attach directly to the paragraph above | 20 | Mobile + Desktop | pending |
 | 10 | Dense cards need more room around headings | 9 | Mobile + Desktop | pending |

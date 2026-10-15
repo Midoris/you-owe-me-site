@@ -693,8 +693,8 @@ body.i-pay-more-than-my-partner-page #copyright ul li {
   body.i-pay-more-than-my-partner-page .ipmp-section,
   body.i-pay-more-than-my-partner-page .best-next-step,
   body.i-pay-more-than-my-partner-page .lt-finalCta {
-    width: calc(100vw - 1.24rem);
-    max-width: calc(100vw - 1.24rem);
+    width: 100%;
+    max-width: 100%;
     margin-left: 0;
     margin-right: 0;
   }

@@ -381,6 +381,19 @@ body.roommate-template-page article.post.featured > #money-story {
 }
 body.roommate-template-page #money-story-end { scroll-margin-top: 0; }
 
+@media (max-width: 736px) {
+  /* The story spans the page gutter, not the scrollbar-inclusive viewport. */
+  body:is(.friend-borrow-money-page, .roommate-template-page) article.post.featured > #money-story {
+    width: calc(100% + 40px) !important;
+    margin-left: -20px !important;
+  }
+
+  body:is(.friend-borrow-money-page, .roommate-template-page) #money-story .money-story__copy {
+    left: 20px;
+    right: 20px;
+  }
+}
+
 #money-story.money-story--roommate .money-story__intro {
   background: linear-gradient(135deg,#fff 0%,#fff 58%,#f5faef 100%);
 }
