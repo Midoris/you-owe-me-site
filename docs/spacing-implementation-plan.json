@@ -13392,8 +13392,9 @@
         "All 15 cards checked at 1440px: title-to-body gaps are 16px and final-body-to-action gaps are 20px. Also checked 1100px and 390px with no overflow; mobile rules are unchanged.",
         "Tools design audit passes. Reviewed the CSS-only diff and saved final screenshot and measurements. The introduction and destinations excluded by #22 are unchanged."
       ],
-      "commitSubject": "fix: spacing audit #21 tools hub gives long titles a disproportionately small column",
-      "implementation": "Replaced the Tools desktop card internal title/body columns with a full-width vertical reading flow. Titles no longer have a narrow measure; descriptions and actions follow below."
+      "commitSubject": "Fix spacing audit #21 full-width Tools card titles",
+      "implementation": "Replaced the Tools desktop card internal title/body columns with a full-width vertical reading flow. Titles no longer have a narrow measure; descriptions and actions follow below.",
+      "commitHash": "f2aefcb34e44b45e1678398a7b8bff23a6760380"
     },
     {
       "id": 22,
@@ -13437,7 +13438,7 @@
     {
       "id": 23,
       "title": "Solutions cards crowd tags, status and action together",
-      "status": "pending",
+      "status": "complete",
       "priority": "Low",
       "devices": [
         "Mobile",
@@ -13471,8 +13472,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All 11 scenario cards checked at 390px and 1440px: 22 action gaps are 24px, all available guidance gaps are 16px, and neither size overflows. Screenshots and measurements saved.",
+        "Solutions design audit passes. Reviewed CSS-only change scoped to scenario cards; all text, destinations and checklist behavior are preserved."
+      ],
+      "commitSubject": "fix: spacing audit #23 solutions cards crowd tags, status and action together",
+      "implementation": "Separated scenario content, audience tags and status with 16px gaps; added a deliberate 24px lead-in to each primary action and 16px before secondary guidance."
     },
     {
       "id": 24,
