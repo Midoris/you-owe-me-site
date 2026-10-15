@@ -456,13 +456,14 @@
         "390px/1440px browser checks passed: 4 concise summary cards, no nested sections; desktop card height reduced from 2458px to 215px. Saved summary and disclosure screenshots.",
         "Reviewed markup regrouping and heading/ARIA IDs."
       ],
-      "commitSubject": "fix: spacing audit #02 privacy summary turns into one very long disclosure column",
-      "implementation": "Separated prepared split transfer and loan-history import into their own full-width Privacy sections with the existing heading and content-block styles. Preserved disclosure text, links and anchor."
+      "commitSubject": "fix: spacing audit #02 separate privacy disclosures",
+      "implementation": "Separated prepared split transfer and loan-history import into their own full-width Privacy sections with the existing heading and content-block styles. Preserved disclosure text, links and anchor.",
+      "commitHash": "fa09b8e1c7b90bd577a191bf6ff0f796406c0ccf"
     },
     {
       "id": 3,
       "title": "Working-agreement fields have almost no inner padding",
-      "status": "pending",
+      "status": "complete",
       "priority": "High",
       "devices": [
         "Mobile",
@@ -497,8 +498,13 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Scoped design audit and couple split-method model tests passed.",
+        "Reviewed CSS scope and HTML changes; labels, helper IDs and calculator logic retained.",
+        "390px and 1440px screenshots checked. Mobile fields are 325px wide with roughly 10px/11px padding; text and date entry confirmed."
+      ],
+      "commitSubject": "fix: spacing audit #03 working-agreement fields have almost no inner padding",
+      "implementation": "Reused calculator field styles for agreement inputs, added 20px field-group gaps and keyboard focus outlines, and shortened placeholders to fit narrow controls."
     },
     {
       "id": 4,

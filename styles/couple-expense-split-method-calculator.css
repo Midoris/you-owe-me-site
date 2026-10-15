@@ -149,6 +149,7 @@ body.couple-expense-split-method-calculator-page article.post.featured {
 .ces-calculator-shell select:focus-visible,
 .ces-calculator-shell textarea:focus-visible,
 .ces-calculator-shell summary:focus-visible,
+.ces-agreement input:focus-visible,
 .ces-method-card button:focus-visible,
 .ces-mode-control input:focus-visible {
   outline: 3px solid rgba(53, 84, 40, 0.32);
@@ -325,6 +326,8 @@ body.couple-expense-split-method-calculator-page article.post.featured {
 
 .ces-agreement-grid {
   grid-template-columns: minmax(0, 1.4fr) minmax(10rem, 0.6fr) minmax(0, 1fr);
+  gap: 1.25rem;
+  margin-top: 1.25rem;
 }
 
 .ces-field {
@@ -344,8 +347,11 @@ body.couple-expense-split-method-calculator-page article.post.featured {
 
 .ces-calculator-shell input,
 .ces-calculator-shell select,
-.ces-calculator-shell textarea {
+.ces-calculator-shell textarea,
+.ces-agreement input {
   width: 100%;
+  min-width: 0;
+  box-sizing: border-box;
   border: 1px solid rgba(15, 23, 42, 0.14);
   border-radius: 13px;
   background: rgba(255, 255, 255, 0.96);
@@ -356,7 +362,8 @@ body.couple-expense-split-method-calculator-page article.post.featured {
 }
 
 .ces-calculator-shell input,
-.ces-calculator-shell select {
+.ces-calculator-shell select,
+.ces-agreement input {
   min-height: 2.85rem;
   padding: 0.65rem 0.78rem;
 }
