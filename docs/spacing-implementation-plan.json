@@ -12016,19 +12016,20 @@
         "Scoped design audit passed and CSS diff reviewed. Caregiving filter reports 4 matches and All restores the full directory.",
         "Mobile and desktop action-group screenshots inspected and saved; no markup, links or scripts changed."
       ],
-      "commitSubject": "fix: spacing audit #11 find directory actions stack with no added gap",
+      "commitSubject": "fix: spacing audit #11 separate paired Find actions",
       "originalAuditDevices": [
         "Mobile"
       ],
       "scopeAdjustments": [
         "Desktop verification found the same zero-gap action pairing in 3 of the 5 cards and excess auto spacing in the other 2. Normalize all 5 pairs at both sizes, retaining first-action auto alignment."
       ],
-      "implementation": "Applied a consistent 12px gap to the five adjacent Find action pairs. Kept the first action auto-margin rule. Desktop verification exposed the same issue, so the same five pairs are corrected at both sizes."
+      "implementation": "Applied a consistent 12px gap to the five adjacent Find action pairs. Kept the first action auto-margin rule. Desktop verification exposed the same issue, so the same five pairs are corrected at both sizes.",
+      "commitHash": "10530254e2f1e19bb14801470e443919e78567a3"
     },
     {
       "id": 12,
       "title": "Notes and new sections hug the edge of the preceding card",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile",
@@ -12055,7 +12056,7 @@
           ],
           "sections": [
             {
-              "section": "Choose the lightest system that will stay clear",
+              "section": "When this is not the best setup → note after comparison cards",
               "devices": [
                 "Both"
               ],
@@ -12123,7 +12124,7 @@
           ],
           "sections": [
             {
-              "section": "An agreed model and a lender account",
+              "section": "Use a projection only when it matches the terms you know → note after boundary callout",
               "devices": [
                 "Both"
               ],
@@ -12301,8 +12302,16 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All 22 mobile/desktop note checks passed, plus new-topic gaps of 38px mobile and 58px desktop. Inspected legal transition and review-source note screenshots.",
+        "All 11 pages preserve paragraph/heading/link text. Code review confirmed targeted class additions and the labelled legal heading.",
+        "10 scoped design audits passed; Privacy Policy retains its 8 baseline token errors. Full suite remains at 174/175 baseline result."
+      ],
+      "commitSubject": "fix: spacing audit #12 notes and new sections hug the edge of the preceding card",
+      "scopeClarifications": [
+        "Resolved descriptive audit section labels to actual headings for the shared-expense guide and debt projection follow-up. Existing already-spaced debt emphasis/table notes are preserved."
+      ],
+      "implementation": "Separated 11 specific card/table follow-up notes using the shared follow-up spacing rule. Gave the prepared-transfer disclosure its own existing legal-section treatment and labelled heading."
     },
     {
       "id": 13,

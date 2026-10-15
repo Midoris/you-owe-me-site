@@ -26,6 +26,10 @@ body.site-nav-page #main p.lt-actionLead {
   margin-bottom: 1rem !important;
 }
 
+body.site-nav-page #main p.lt-cardFollowup {
+  margin-top: 1.25rem !important;
+}
+
 body.site-nav-page #main h3.lt-cardHeadingGap {
   margin-bottom: 1rem !important;
 }
