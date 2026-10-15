@@ -12307,16 +12307,17 @@
         "All 11 pages preserve paragraph/heading/link text. Code review confirmed targeted class additions and the labelled legal heading.",
         "10 scoped design audits passed; Privacy Policy retains its 8 baseline token errors. Full suite remains at 174/175 baseline result."
       ],
-      "commitSubject": "fix: spacing audit #12 notes and new sections hug the edge of the preceding card",
+      "commitSubject": "fix: spacing audit #12 separate supporting notes and new topics",
       "scopeClarifications": [
         "Resolved descriptive audit section labels to actual headings for the shared-expense guide and debt projection follow-up. Existing already-spaced debt emphasis/table notes are preserved."
       ],
-      "implementation": "Separated 11 specific card/table follow-up notes using the shared follow-up spacing rule. Gave the prepared-transfer disclosure its own existing legal-section treatment and labelled heading."
+      "implementation": "Separated 11 specific card/table follow-up notes using the shared follow-up spacing rule. Gave the prepared-transfer disclosure its own existing legal-section treatment and labelled heading.",
+      "commitHash": "0d6bd758227e26ea1f7bf755590b03fc0a04ee8e"
     },
     {
       "id": 13,
       "title": "Homepage secondary guidance links form a cramped cluster",
-      "status": "pending",
+      "status": "complete",
       "priority": "Low",
       "devices": [
         "Mobile",
@@ -12354,8 +12355,13 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All applicable scenario cards checked at 360px, 390px and 1440px; first guide gaps are at least 16px and subsequent guide gaps at least 12px.",
+        "Homepage scoped design audit and homepage/App Store CTA tests passed. Mobile/desktop screenshots inspected.",
+        "Reviewed the seven-line home-only CSS diff; copy, links and the excluded capability-card arrangement are unchanged."
+      ],
+      "commitSubject": "fix: spacing audit #13 homepage secondary guidance links form a cramped cluster",
+      "implementation": "Set 12px gaps between homepage scenario action items and an extra 4px before the first secondary guide, giving 16px primary-to-guide separation."
     },
     {
       "id": 14,

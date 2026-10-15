@@ -1,4 +1,11 @@
 /* Home only: give the story a quieter, more direct surrounding page. */
+body.homepage-page .lt-situationCardActions {
+  gap: 12px;
+}
+body.homepage-page .lt-situationPrimaryCta + :is(.lt-situationMicroLink, .lt-situationMicroCopy) {
+  margin-top: 4px;
+}
+
 body.homepage-page .lt-hero{
   grid-template-columns:minmax(0,1.12fr) minmax(0,.88fr);
   align-items:center;

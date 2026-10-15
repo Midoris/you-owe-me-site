@@ -1,6 +1,6 @@
 # Sequential spacing implementation plan
 
-Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **12 of 26 complete**.
+Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **13 of 26 complete**.
 
 The [scope ledger](spacing-implementation-plan.json) freezes each finding’s affected routes, sections, stylesheets and success criteria. The original [numbered audit](../audits/spacing-2026-10-15/review.html) remains the before reference. After screenshots and measurements are saved under `audits/spacing-implementation-2026-10-15/`.
 
@@ -32,8 +32,8 @@ Spacing numbers are design starting points, not blanket padding rules. Keep text
 | 09 | Actions attach directly to the paragraph above | 20 | Mobile + Desktop | complete (`6204aa8`) |
 | 10 | Dense cards need more room around headings | 11 | Mobile + Desktop | complete (`53a50a1`) |
 | 11 | Find directory actions stack with no added gap | 1 | Mobile + Desktop | complete (`1053025`) |
-| 12 | Notes and new sections hug the edge of the preceding card | 11 | Mobile + Desktop | complete |
-| 13 | Homepage secondary guidance links form a cramped cluster | 1 | Mobile + Desktop | pending |
+| 12 | Notes and new sections hug the edge of the preceding card | 11 | Mobile + Desktop | complete (`0d6bd75`) |
+| 13 | Homepage secondary guidance links form a cramped cluster | 1 | Mobile + Desktop | complete |
 | 14 | Homepage capability cards squeeze text beside a narrow poster | 1 | Mobile | excluded |
 | 15 | Homepage resource rows give titles and descriptions little separation | 1 | Mobile + Desktop | pending |
 | 16 | Features participation table is cramped on a phone | 1 | Mobile | pending |
