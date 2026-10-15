@@ -16,6 +16,11 @@
   border: 0 !important;
 }
 
+/* Separate changes of thought without expanding compact labels or fact rows. */
+body.site-nav-page #main p.lt-paragraphGap {
+  margin-top: 1rem !important;
+}
+
 body.site-nav-page #navPanelToggle:focus-visible {
   outline: 3px solid rgba(var(--site-menu-accent-rgb), 0.4);
   outline-offset: 3px;

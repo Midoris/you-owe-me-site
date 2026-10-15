@@ -7845,13 +7845,14 @@
         "73 of 74 design audits passed; Privacy Policy retains only its 8 documented baseline failures. Full suite: 174/175 passed, only the documented baseline metadata failure.",
         "Reviewed all CSS changes and updated the existing continuation containment assertion to the new parent-width sizing; its class-isolation protections remain intact."
       ],
-      "commitSubject": "fix: spacing audit #07 bare mobile text sits too close to the screen edge",
-      "implementation": "Established a 20px mobile page gutter for the affected content families, converted viewport-based child widths to parent widths, contained the story sections without scrollbar overflow, and corrected one nested FAQ box."
+      "commitSubject": "fix: spacing audit #07 establish comfortable mobile reading gutters",
+      "implementation": "Established a 20px mobile page gutter for the affected content families, converted viewport-based child widths to parent widths, contained the story sections without scrollbar overflow, and corrected one nested FAQ box.",
+      "commitHash": "30e497be79d995ecf23e52d1633683e35bb28ef3"
     },
     {
       "id": 8,
       "title": "Separate paragraphs run together into one block",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile",
@@ -10021,8 +10022,14 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All 506 audited mobile/desktop paragraph pairs checked across 47 routes; every pair has at least 12px separation.",
+        "All 47 scoped design audits passed. Full suite: 174/175, with only the existing metadata failure.",
+        "Code review confirmed every HTML diff contains only the intended class attributes; paragraph/heading/link text unchanged across all 47 pages.",
+        "Homepage proof and Quick Start mobile/desktop screenshots visually checked and saved."
+      ],
+      "commitSubject": "fix: spacing audit #08 separate paragraphs run together into one block",
+      "implementation": "Added an explicit paragraph-gap class to the 249 audited zero-gap paragraphs, using one shared rem of separation. Preserved the four already-spaced Privacy disclosure pairs and all compact labels."
     },
     {
       "id": 9,
