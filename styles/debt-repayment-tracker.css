@@ -826,6 +826,22 @@ body.debt-repayment-tracker-page #copyright {
 }
 
 @media (max-width: 736px) {
+  body.debt-repayment-tracker-page .drt-contents {
+    display: grid;
+    gap: 10px;
+    padding: 16px 0;
+  }
+
+  body.debt-repayment-tracker-page .drt-contents a {
+    display: flex;
+    align-items: center;
+    min-height: 44px;
+    padding: 10px 12px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 12px;
+    background: rgba(255, 255, 255, 0.9);
+  }
+
   body.debt-repayment-tracker-page .lt-breadcrumb {
     padding-right: 4.75rem;
   }

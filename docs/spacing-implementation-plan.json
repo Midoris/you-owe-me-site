@@ -13630,13 +13630,14 @@
         "Changed the rent input from 1800 to 2100: settlements changed from Alex 410 / Sam 550 to Alex 510 / Sam 650, and Reset example restored the original values.",
         "Scoped design audit and Roommate model/UI integration tests pass. Reviewed CSS-only diff; all calculator logic, data and controls are unchanged."
       ],
-      "commitSubject": "fix: spacing audit #26 roommate result packs many responsibility labels into one narrow stack",
-      "implementation": "Added 16px between bill/person cards, 12px between responsibility rows, 6px mobile label/value gaps and 24px section padding. Cards and the settlement summary now have 20px inner padding."
+      "commitSubject": "Fix spacing audit #26 Roommate result grouping",
+      "implementation": "Added 16px between bill/person cards, 12px between responsibility rows, 6px mobile label/value gaps and 24px section padding. Cards and the settlement summary now have 20px inner padding.",
+      "commitHash": "b032040b7f2dc7d343d05e0b468439dcb10d6075"
     },
     {
       "id": 27,
       "title": "Debt page contents links wrap into a tight inline cluster",
-      "status": "pending",
+      "status": "complete",
       "priority": "Low",
       "devices": [
         "Mobile"
@@ -13671,8 +13672,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All six links have 44px height and valid targets at 390px; the following section remains about 40px away. Clicked the worked-example link and confirmed its hash and destination heading.",
+        "Desktop flex navigation is preserved at 1440px without overflow. Debt design audit passes. Reviewed the mobile-only CSS diff; all link text and anchor destinations are unchanged. Saved both screenshots."
+      ],
+      "commitSubject": "fix: spacing audit #27 debt page contents links wrap into a tight inline cluster",
+      "implementation": "Turned the mobile contents cluster into a vertical set of full-width links with 10px gaps and 44px minimum tap height."
     },
     {
       "id": 28,
