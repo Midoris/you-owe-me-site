@@ -374,6 +374,10 @@ body.find-page a {
   margin-top: auto;
 }
 
+.find-registry-card > .lt-cardCta + .lt-cardCta {
+  margin-top: 12px;
+}
+
 .find-start-card ul + .lt-cardCta {
   margin-top: 1rem;
 }

@@ -1,6 +1,6 @@
 # Sequential spacing implementation plan
 
-Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **10 of 26 complete**.
+Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **11 of 26 complete**.
 
 The [scope ledger](spacing-implementation-plan.json) freezes each finding’s affected routes, sections, stylesheets and success criteria. The original [numbered audit](../audits/spacing-2026-10-15/review.html) remains the before reference. After screenshots and measurements are saved under `audits/spacing-implementation-2026-10-15/`.
 
@@ -30,8 +30,8 @@ Spacing numbers are design starting points, not blanket padding rules. Keep text
 | 07 | Bare mobile text sits too close to the screen edge | 74 | Mobile | complete (`30e497b`) |
 | 08 | Separate paragraphs run together into one block | 47 | Mobile + Desktop | complete (`66ed278`) |
 | 09 | Actions attach directly to the paragraph above | 20 | Mobile + Desktop | complete (`6204aa8`) |
-| 10 | Dense cards need more room around headings | 11 | Mobile + Desktop | complete |
-| 11 | Find directory actions stack with no added gap | 1 | Mobile | pending |
+| 10 | Dense cards need more room around headings | 11 | Mobile + Desktop | complete (`53a50a1`) |
+| 11 | Find directory actions stack with no added gap | 1 | Mobile + Desktop | complete |
 | 12 | Notes and new sections hug the edge of the preceding card | 11 | Mobile + Desktop | pending |
 | 13 | Homepage secondary guidance links form a cramped cluster | 1 | Mobile + Desktop | pending |
 | 14 | Homepage capability cards squeeze text beside a narrow poster | 1 | Mobile | excluded |

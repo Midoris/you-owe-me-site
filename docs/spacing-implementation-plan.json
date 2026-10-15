@@ -11938,25 +11938,27 @@
         "24 numbered-card checks passed with no badge/heading overlap. Inspected Blog directory, family workflow and client audience screenshots.",
         "All 11 scoped design audits passed; full suite retains 174/175 baseline result. All source edits reviewed as spacing-class additions only; text and links unchanged."
       ],
-      "commitSubject": "fix: spacing audit #10 dense cards need more room around headings",
+      "commitSubject": "fix: spacing audit #10 give long card headings breathing room",
       "originalOccurrenceListPageCount": 9,
       "scopeAdjustments": [
         "Include the two approved representative screenshot routes omitted by the original <=8px occurrence filter: Blog directory and client audience cards. Preserve their existing larger padding."
       ],
-      "implementation": "Added heading separation and at least 20px card padding to audited long cards, preserving larger Privacy/client padding and numbered-marker space. Reconciled the two screenshot routes missing from the original occurrence list, bringing the scope to 11 routes."
+      "implementation": "Added heading separation and at least 20px card padding to audited long cards, preserving larger Privacy/client padding and numbered-marker space. Reconciled the two screenshot routes missing from the original occurrence list, bringing the scope to 11 routes.",
+      "commitHash": "53a50a11a69928f647184b761a4c429f15ee53d6"
     },
     {
       "id": 11,
       "title": "Find directory actions stack with no added gap",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
-        "Mobile"
+        "Mobile",
+        "Desktop"
       ],
       "pageCount": 1,
       "problem": "Five Find directory cards place two pill links immediately below each other on mobile. Their rounded edges touch: elderly-parent expenses, recurring family bills, parent-expense guidance, group payback and the privacy guide.",
       "direction": "Put related actions in a consistent flex/grid wrapper with a 10–12px gap. Stack them deliberately on narrow phones.",
-      "successCriteria": "Each of the five audited Find registry action pairs has a deliberate 10–12px gap on mobile, and filter/search behavior still works.",
+      "successCriteria": "All five Find registry action pairs have a consistent 12px gap at mobile and desktop sizes. Filtering and first-action alignment remain intact.",
       "scope": [
         {
           "route": "/find/",
@@ -12009,8 +12011,19 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "15 pair checks passed at 360px, 390px and 1440px; every pair has exactly 12px separation.",
+        "Scoped design audit passed and CSS diff reviewed. Caregiving filter reports 4 matches and All restores the full directory.",
+        "Mobile and desktop action-group screenshots inspected and saved; no markup, links or scripts changed."
+      ],
+      "commitSubject": "fix: spacing audit #11 find directory actions stack with no added gap",
+      "originalAuditDevices": [
+        "Mobile"
+      ],
+      "scopeAdjustments": [
+        "Desktop verification found the same zero-gap action pairing in 3 of the 5 cards and excess auto spacing in the other 2. Normalize all 5 pairs at both sizes, retaining first-action auto alignment."
+      ],
+      "implementation": "Applied a consistent 12px gap to the five adjacent Find action pairs. Kept the first action auto-margin rule. Desktop verification exposed the same issue, so the same five pairs are corrected at both sizes."
     },
     {
       "id": 12,
