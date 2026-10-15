@@ -1199,13 +1199,14 @@
         "All 28 desktop headers checked: no added breadcrumb padding. Mobile drawer opens with 8 links and closes with Escape; saved header/menu screenshots.",
         "Reviewed shared selector scope, breakpoint and safe-area handling."
       ],
-      "commitSubject": "fix: spacing audit #04 mobile menu covers long breadcrumbs",
-      "implementation": "Reserved a dedicated breadcrumb clearance area beside the fixed mobile Menu, without narrowing hero titles; allowed the current page label to wrap."
+      "commitSubject": "fix: spacing audit #04 keep mobile breadcrumbs clear of menu",
+      "implementation": "Reserved a dedicated breadcrumb clearance area beside the fixed mobile Menu, without narrowing hero titles; allowed the current page label to wrap.",
+      "commitHash": "0d03a8e2b480b2eeaefe9d885edccece8f244667"
     },
     {
       "id": 5,
       "title": "Invitation-page navigation clips off mobile destinations",
-      "status": "pending",
+      "status": "complete",
       "priority": "High",
       "devices": [
         "Mobile"
@@ -1250,8 +1251,13 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Both scoped design audits and all 15 Connect/Invite tests passed.",
+        "All 7 destinations visible on both pages at 360px, 390px and 1440px; 6 local browser checks and screenshots saved.",
+        "Reviewed breakpoint-only CSS; no token handling, link destinations or script changes."
+      ],
+      "commitSubject": "fix: spacing audit #05 invitation-page navigation clips off mobile destinations",
+      "implementation": "Made Connect/Invite mobile navigation wrap into spaced visible rows with 44px-high links; desktop navigation and handoff scripts are unchanged."
     },
     {
       "id": 6,
