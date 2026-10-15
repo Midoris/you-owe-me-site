@@ -13567,13 +13567,14 @@
         "All five entries checked at 360px and 390px without overflow. Desktop keeps its four-column layout at 1440px. The open amount remains $57.10.",
         "Parent solution design audit and whitespace checks pass. Reviewed the mobile-only CSS diff; example source and values are unchanged. Saved responsive screenshots and measurements."
       ],
-      "commitSubject": "fix: spacing audit #25 parent-expense example needs stronger grouping inside each entry",
-      "implementation": "Increased the mobile parent ledger to 8px inside each entry, 16px inner padding and 16px between entries."
+      "commitSubject": "Fix spacing audit #25 parent expense entry spacing",
+      "implementation": "Increased the mobile parent ledger to 8px inside each entry, 16px inner padding and 16px between entries.",
+      "commitHash": "bc8fec97bd3ce0872b888fa64193d99ee2b5c7db"
     },
     {
       "id": 26,
       "title": "Roommate result packs many responsibility labels into one narrow stack",
-      "status": "pending",
+      "status": "complete",
       "priority": "Low",
       "devices": [
         "Mobile",
@@ -13624,8 +13625,13 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Checked result groups at 360px, 390px and 1440px without overflow. Removed inherited definition-label margins so pair spacing remains intentional. Screenshots and geometry saved.",
+        "Changed the rent input from 1800 to 2100: settlements changed from Alex 410 / Sam 550 to Alex 510 / Sam 650, and Reset example restored the original values.",
+        "Scoped design audit and Roommate model/UI integration tests pass. Reviewed CSS-only diff; all calculator logic, data and controls are unchanged."
+      ],
+      "commitSubject": "fix: spacing audit #26 roommate result packs many responsibility labels into one narrow stack",
+      "implementation": "Added 16px between bill/person cards, 12px between responsibility rows, 6px mobile label/value gaps and 24px section padding. Cards and the settlement summary now have 20px inner padding."
     },
     {
       "id": 27,

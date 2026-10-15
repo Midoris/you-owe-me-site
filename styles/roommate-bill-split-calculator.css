@@ -673,24 +673,24 @@ body.roommate-bill-page article.post.featured .roommate-app-continuation a:focus
 }
 
 .roommate-result-block {
-  padding: 1rem 0;
+  padding: 24px 0;
   border-top: 1px solid rgba(15, 23, 42, 0.08);
 }
 
-.roommate-results-header + .roommate-result-block {
+.roommate-results-header + .roommate-result-block:not(.roommate-result-block--primary) {
   border-top: 0;
   padding-top: 0.8rem;
 }
 
 .roommate-result-block h4 {
-  margin-bottom: 0.7rem !important;
+  margin-bottom: 16px !important;
   font-size: 1rem !important;
   line-height: 1.25;
 }
 
 .roommate-result-block--primary {
   margin-top: 0.75rem;
-  padding: 1rem;
+  padding: 20px;
   border: 1px solid rgba(107, 161, 69, 0.2);
   border-radius: 18px;
   background: rgba(175, 230, 126, 0.13);
@@ -711,11 +711,11 @@ body.roommate-bill-page article.post.featured .roommate-app-continuation a:focus
   border: 1px solid rgba(15, 23, 42, 0.07);
   border-radius: 16px;
   background: rgba(248, 250, 252, 0.74);
-  padding: 0.9rem;
+  padding: 20px;
 }
 
 .roommate-bill-result-card {
-  padding: 0.9rem;
+  padding: 20px;
   border: 1px solid rgba(15, 23, 42, 0.07);
   border-radius: 16px;
   background: rgba(248, 250, 252, 0.74);
@@ -739,7 +739,7 @@ body.roommate-bill-page article.post.featured .roommate-app-continuation a:focus
 
 .roommate-bill-method {
   width: fit-content;
-  margin: 0.45rem 0 0 !important;
+  margin: 12px 0 0 !important;
   padding: 0.25rem 0.55rem;
   border-radius: 999px;
   background: rgba(175, 230, 126, 0.2);
@@ -751,7 +751,7 @@ body.roommate-bill-page article.post.featured .roommate-app-continuation a:focus
 
 .roommate-method-details,
 .roommate-responsibility-details {
-  padding-top: 0.7rem;
+  padding-top: 16px;
   border-top: 1px solid rgba(15, 23, 42, 0.07);
 }
 
@@ -809,8 +809,13 @@ body.roommate-bill-page article.post.featured .roommate-app-continuation a:focus
 
 .roommate-balance-details {
   display: grid;
-  gap: 0.4rem;
-  margin: 0.75rem 0 0;
+  gap: 12px;
+  margin: 16px 0 0;
+}
+
+.roommate-bill-breakdown,
+.roommate-balance-grid {
+  gap: 16px;
 }
 
 .roommate-balance-details div,
@@ -824,6 +829,7 @@ body.roommate-bill-page article.post.featured .roommate-app-continuation a:focus
 }
 
 .roommate-balance-details dt {
+  margin: 0;
   color: rgba(24, 33, 43, 0.66);
 }
 
@@ -1216,7 +1222,7 @@ body.roommate-bill-page article.post.featured .roommate-app-continuation a:focus
   .roommate-result-row {
     display: grid;
     grid-template-columns: 1fr;
-    gap: 0.12rem;
+    gap: 6px;
   }
 
   .roommate-balance-details dd {
