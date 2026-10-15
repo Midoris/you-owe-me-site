@@ -13806,7 +13806,7 @@
     "delivery": "26 finding commits plus preparation and final verification documentation. No push or deployment."
   },
   "publicationRecheck": {
-    "status": "in_progress",
+    "status": "verified_for_release",
     "authorizedProductionDeployment": true,
     "corrections": [
       {
@@ -13827,8 +13827,39 @@
         "finding": 8,
         "change": "Add the existing paragraph-spacing class to the homepage family-reimbursement paragraph after its source note; it was omitted from the original paragraph pairs.",
         "validation": "Source-note boundary now has 1rem separation at 360/390/1440px; mobile and desktop screenshots inspected. Homepage design audit passes. Only one class attribute changed.",
-        "commitSubject": "fix: separate homepage research topics after source note"
+        "commitSubject": "fix: separate homepage research topics after source note",
+        "commitHash": "d3f27b3"
       }
-    ]
+    ],
+    "verification": {
+      "routes": 82,
+      "widths": [
+        360,
+        768,
+        1024,
+        1440
+      ],
+      "routeDeviceChecks": 328,
+      "paragraphChecks": 1000,
+      "actionChecks": 320,
+      "headingChecks": 652,
+      "cardChecks": 652,
+      "issues": 0,
+      "gridBreakpointChecks": 165,
+      "testsPassed": 175,
+      "testsTotal": 175,
+      "designAuditsPassed": 81,
+      "designAuditsTotal": 82,
+      "remainingDesignFailures": "Only the eight recorded Privacy Policy token omissions, unchanged from baseline.",
+      "contentAndLinksPreservedHtmlFiles": 63,
+      "excludedFindingsPreserved": [
+        14,
+        22
+      ],
+      "analyticsExecuted": false,
+      "screenshots": "audits/spacing-implementation-2026-10-15/recheck/",
+      "deploymentTarget": "GitHub Pages from master",
+      "releaseReceipt": "audits/spacing-implementation-2026-10-15/recheck/production-release.json"
+    }
   }
 }
