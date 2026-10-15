@@ -508,27 +508,16 @@ body.tools-page a {
 
 @media (min-width: 1100px) {
   .lt-plannedGrid > .lt-toolCard {
-    display: grid;
-    grid-template-columns: minmax(12rem, 0.38fr) minmax(0, 1fr);
-    column-gap: clamp(1rem, 2vw, 1.45rem);
-    row-gap: 0.68rem;
-    align-items: start;
+    gap: 16px;
   }
 
-  .lt-plannedGrid > .lt-toolCard::before,
-  .lt-plannedGrid > .lt-toolCard .lt-statusChip,
-  .lt-plannedGrid > .lt-toolCard h3 {
-    grid-column: 1;
-  }
-
-  .lt-plannedGrid > .lt-toolCard p,
-  .lt-plannedGrid > .lt-toolCard .lt-cardCta {
-    grid-column: 2;
+  body.tools-page article.post.featured .lt-plannedGrid > .lt-toolCard h3 {
+    max-width: none;
+    margin: 0;
   }
 
   .lt-plannedGrid > .lt-toolCard .lt-cardCta {
-    align-self: start;
-    margin-top: 0.25rem;
+    margin-top: 4px;
   }
 }
 

@@ -13348,13 +13348,14 @@
         "Visually reviewed long copyable messages and related-resource cards. All 26 design audits pass. Full suite retains baseline 174/175 with only the known EXP-008 metadata failure.",
         "Reviewed the full diff; removing the added presentation class reproduces every HTML file exactly, preserving all text, links and controls. Saved the explicit grid map, measurements and screenshots."
       ],
-      "commitSubject": "fix: spacing audit #20 text-heavy desktop grids have too many narrow columns",
-      "implementation": "Annotated precisely the 33 audited grids across 26 routes. Desktop grids now fit at most three columns, use a 300px minimum card width and 24px gaps, and drop to two columns when their own available width requires it."
+      "commitSubject": "Fix spacing audit #20 text-heavy desktop grid widths",
+      "implementation": "Annotated precisely the 33 audited grids across 26 routes. Desktop grids now fit at most three columns, use a 300px minimum card width and 24px gaps, and drop to two columns when their own available width requires it.",
+      "commitHash": "d12d13e7387700e23cca44fa64d360b39d36a6b0"
     },
     {
       "id": 21,
       "title": "Tools hub gives long titles a disproportionately small column",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Desktop"
@@ -13387,8 +13388,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All 15 cards checked at 1440px: title-to-body gaps are 16px and final-body-to-action gaps are 20px. Also checked 1100px and 390px with no overflow; mobile rules are unchanged.",
+        "Tools design audit passes. Reviewed the CSS-only diff and saved final screenshot and measurements. The introduction and destinations excluded by #22 are unchanged."
+      ],
+      "commitSubject": "fix: spacing audit #21 tools hub gives long titles a disproportionately small column",
+      "implementation": "Replaced the Tools desktop card internal title/body columns with a full-width vertical reading flow. Titles no longer have a narrow measure; descriptions and actions follow below."
     },
     {
       "id": 22,
