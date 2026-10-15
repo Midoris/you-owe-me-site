@@ -370,7 +370,7 @@
     {
       "id": 1,
       "title": "Solutions checklist collapses linked text into a zero-width column",
-      "status": "pending",
+      "status": "complete",
       "priority": "High",
       "devices": [
         "Mobile",
@@ -404,8 +404,13 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Design audit /solutions/: passed.",
+        "Code diff reviewed; no content or destinations changed.",
+        "390px and 1440px local browser checks passed; both linked phrases have normal 18.5px line height and positive width. After screenshots: 01-mobile.jpg and 01-desktop.jpg."
+      ],
+      "commitSubject": "fix: spacing audit #01 solutions checklist collapses linked text into a zero-width column",
+      "implementation": "Moved checklist bullets out of the text flow; linked phrases and the rest of each sentence now wrap together. Set 16px row gaps."
     },
     {
       "id": 2,
