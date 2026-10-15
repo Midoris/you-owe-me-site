@@ -13522,13 +13522,14 @@
         "All eight pairs measured at 390px: 6px within each pair and 18px between pairs. Desktop retains its two-column definition list at 1440px. Both screenshots saved.",
         "Client design audit and diff whitespace checks pass. Reviewed the mobile-only CSS change; example values and source HTML are unchanged."
       ],
-      "commitSubject": "fix: spacing audit #24 client example does not clearly separate label/value pairs",
-      "implementation": "Gave the mobile clean client record a 6px label-to-value gap and an 18px gap before the next pair."
+      "commitSubject": "Fix spacing audit #24 client record pair spacing",
+      "implementation": "Gave the mobile clean client record a 6px label-to-value gap and an 18px gap before the next pair.",
+      "commitHash": "f11b4649857a2cdccd6830e2c6a6542d8c45a107"
     },
     {
       "id": 25,
       "title": "Parent-expense example needs stronger grouping inside each entry",
-      "status": "pending",
+      "status": "complete",
       "priority": "Low",
       "devices": [
         "Mobile"
@@ -13562,8 +13563,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All five entries checked at 360px and 390px without overflow. Desktop keeps its four-column layout at 1440px. The open amount remains $57.10.",
+        "Parent solution design audit and whitespace checks pass. Reviewed the mobile-only CSS diff; example source and values are unchanged. Saved responsive screenshots and measurements."
+      ],
+      "commitSubject": "fix: spacing audit #25 parent-expense example needs stronger grouping inside each entry",
+      "implementation": "Increased the mobile parent ledger to 8px inside each entry, 16px inner padding and 16px between entries."
     },
     {
       "id": 26,

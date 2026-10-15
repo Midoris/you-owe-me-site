@@ -2608,14 +2608,15 @@ body.elderly-parent-expense-page .elderly-wide-visual img {
   }
 
   body.elderly-parent-expense-page .elderly-ledger-card {
+    gap: 16px;
     padding: 0.8rem;
     border-radius: 18px;
   }
 
   body.elderly-parent-expense-page .elderly-ledger-row {
     grid-template-columns: 1fr;
-    gap: 0.25rem;
-    padding: 0.85rem;
+    gap: 8px;
+    padding: 16px;
   }
 
   body.elderly-parent-expense-page .elderly-ledger-row span:nth-child(3) {
