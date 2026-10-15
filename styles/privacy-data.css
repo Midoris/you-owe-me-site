@@ -757,7 +757,7 @@ body.privacy-data-page .pd-updated {
   }
 
   body.privacy-data-page .pd-table tr {
-    margin-bottom: 0.85rem;
+    margin-bottom: 20px;
     border: 1px solid rgba(15, 23, 42, 0.08);
     border-radius: 20px;
     background: #ffffff;
@@ -767,17 +767,21 @@ body.privacy-data-page .pd-updated {
 
   body.privacy-data-page .pd-table th,
   body.privacy-data-page .pd-table td {
-    padding: 0.78rem 0.9rem;
+    padding: 16px 20px;
     border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  }
+
+  body.privacy-data-page .pd-table tbody th {
+    width: 100%;
   }
 
   body.privacy-data-page .pd-table td::before,
   body.privacy-data-page .pd-table tbody th::before {
     content: attr(data-label);
     display: block;
-    margin-bottom: 0.25rem;
+    margin-bottom: 6px;
     color: rgba(33, 41, 49, 0.58);
-    font-size: 0.76rem;
+    font-size: max(12px, 0.76rem);
     font-weight: 850;
     line-height: 1.2;
     text-transform: uppercase;

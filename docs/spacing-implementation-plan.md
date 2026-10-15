@@ -1,6 +1,6 @@
 # Sequential spacing implementation plan
 
-Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **15 of 26 complete**.
+Implement the 26 approved findings from the 15 October 2026 audit, one finding at a time. Findings **14 and 22 are excluded**. The accepted scope covers **82 routes**. Progress: **16 of 26 complete**.
 
 The [scope ledger](spacing-implementation-plan.json) freezes each finding’s affected routes, sections, stylesheets and success criteria. The original [numbered audit](../audits/spacing-2026-10-15/review.html) remains the before reference. After screenshots and measurements are saved under `audits/spacing-implementation-2026-10-15/`.
 
@@ -36,8 +36,8 @@ Spacing numbers are design starting points, not blanket padding rules. Keep text
 | 13 | Homepage secondary guidance links form a cramped cluster | 1 | Mobile + Desktop | complete (`3dd37c2`) |
 | 14 | Homepage capability cards squeeze text beside a narrow poster | 1 | Mobile | excluded |
 | 15 | Homepage resource rows give titles and descriptions little separation | 1 | Mobile + Desktop | complete (`d157b60`) |
-| 16 | Features participation table is cramped on a phone | 1 | Mobile | complete |
-| 17 | Privacy table headings keep a narrow desktop column width | 1 | Mobile | pending |
+| 16 | Features participation table is cramped on a phone | 1 | Mobile | complete (`71e3938`) |
+| 17 | Privacy table headings keep a narrow desktop column width | 1 | Mobile | complete |
 | 18 | Compare hub keeps dense label/value columns on mobile | 1 | Mobile | pending |
 | 19 | “Do not say / Try instead” examples lose their pairing on mobile | 1 | Mobile | pending |
 | 20 | Text-heavy desktop grids have too many narrow columns | 26 | Desktop | pending |

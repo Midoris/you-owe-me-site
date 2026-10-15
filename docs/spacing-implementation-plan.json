@@ -12500,13 +12500,14 @@
         "Saved mobile and desktop screenshots; final label fonts have 12px and option-title fonts 16px minimums.",
         "Features design audit and relevant loan-import, Connect, and language support tests pass. Reviewed source diff and preserved all cell copy and links."
       ],
-      "commitSubject": "fix: spacing audit #16 features participation table is cramped on a phone",
-      "implementation": "Stacked the participation comparison into labelled, full-width option groups below 736px while retaining the accessible desktop table."
+      "commitSubject": "Fix spacing audit #16 mobile participation comparison",
+      "implementation": "Stacked the participation comparison into labelled, full-width option groups below 736px while retaining the accessible desktop table.",
+      "commitHash": "71e393852fd5b30e25b0efb78d9dba38fa0ebc1a"
     },
     {
       "id": 17,
       "title": "Privacy table headings keep a narrow desktop column width",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile"
@@ -12546,8 +12547,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Both tables checked at 360px and 390px: all 26 header measurements are full width and no document overflow. Desktop remains native tables at 1440px.",
+        "Privacy design audit passes. Reviewed CSS-only diff and saved responsive screenshots and measurements."
+      ],
+      "commitSubject": "fix: spacing audit #17 privacy table headings keep a narrow desktop column width",
+      "implementation": "Corrected the mobile table row-header specificity so all 13 labels use full width, with 16px cell padding, 6px label gaps and 20px between entries."
     },
     {
       "id": 18,
