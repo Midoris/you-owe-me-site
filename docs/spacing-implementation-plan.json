@@ -12551,13 +12551,14 @@
         "Both tables checked at 360px and 390px: all 26 header measurements are full width and no document overflow. Desktop remains native tables at 1440px.",
         "Privacy design audit passes. Reviewed CSS-only diff and saved responsive screenshots and measurements."
       ],
-      "commitSubject": "fix: spacing audit #17 privacy table headings keep a narrow desktop column width",
-      "implementation": "Corrected the mobile table row-header specificity so all 13 labels use full width, with 16px cell padding, 6px label gaps and 20px between entries."
+      "commitSubject": "Fix spacing audit #17 mobile privacy table headings",
+      "implementation": "Corrected the mobile table row-header specificity so all 13 labels use full width, with 16px cell padding, 6px label gaps and 20px between entries.",
+      "commitHash": "fa94e7c4f68e438d9ea45a40e4b20daa90e7da82"
     },
     {
       "id": 18,
       "title": "Compare hub keeps dense label/value columns on mobile",
-      "status": "pending",
+      "status": "complete",
       "priority": "Low",
       "devices": [
         "Mobile"
@@ -12591,8 +12592,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All 44 cells checked at 360px and 390px; no overflow. Desktop keeps four columns at 1440px. Screenshots saved for both sizes.",
+        "Compare design audit passes; reviewed CSS-only diff and confirmed the override is limited to compare-index-page."
+      ],
+      "commitSubject": "fix: spacing audit #18 compare hub keeps dense label/value columns on mobile",
+      "implementation": "Scoped the Compare hub decision table to full-width mobile labels and answers, with 6px label gaps, 16px field separation and 24px row padding."
     },
     {
       "id": 19,

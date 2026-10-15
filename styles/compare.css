@@ -1205,6 +1205,25 @@ body.shared-expense-vs-running-balance-page .compare-card p {
     font-weight: 800;
   }
 
+  body.compare-index-page .compare-table--decision tr {
+    padding: 24px 20px;
+  }
+
+  body.compare-index-page .compare-table--decision td {
+    display: block;
+    padding: 0;
+  }
+
+  body.compare-index-page .compare-table--decision td + td {
+    margin-top: 16px;
+  }
+
+  body.compare-index-page .compare-table--decision td::before {
+    display: block;
+    margin-bottom: 6px;
+    font-size: max(12px, 0.72rem);
+  }
+
   .compare-disabled-cta,
   .compare-card .lt-cardCta,
   .compare-related-grid .lt-cardCta {
