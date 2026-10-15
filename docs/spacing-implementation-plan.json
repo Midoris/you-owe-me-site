@@ -13820,7 +13820,14 @@
         "finding": "verification",
         "change": "Repair the existing EXP-008 test pinned to the superseded September date. It now checks structured modification date, Open Graph timestamp, visible date and sitemap stay synchronized, while retaining the exact publication date and search identity assertions.",
         "validation": "All 175 existing tests pass. No article copy or publication metadata changed.",
-        "commitSubject": "test: verify borrowing article dates stay synchronized"
+        "commitSubject": "test: verify borrowing article dates stay synchronized",
+        "commitHash": "f6ab695"
+      },
+      {
+        "finding": 8,
+        "change": "Add the existing paragraph-spacing class to the homepage family-reimbursement paragraph after its source note; it was omitted from the original paragraph pairs.",
+        "validation": "Source-note boundary now has 1rem separation at 360/390/1440px; mobile and desktop screenshots inspected. Homepage design audit passes. Only one class attribute changed.",
+        "commitSubject": "fix: separate homepage research topics after source note"
       }
     ]
   }
