@@ -1256,13 +1256,14 @@
         "All 7 destinations visible on both pages at 360px, 390px and 1440px; 6 local browser checks and screenshots saved.",
         "Reviewed breakpoint-only CSS; no token handling, link destinations or script changes."
       ],
-      "commitSubject": "fix: spacing audit #05 invitation-page navigation clips off mobile destinations",
-      "implementation": "Made Connect/Invite mobile navigation wrap into spaced visible rows with 44px-high links; desktop navigation and handoff scripts are unchanged."
+      "commitSubject": "fix: spacing audit #05 expose all mobile invitation navigation",
+      "implementation": "Made Connect/Invite mobile navigation wrap into spaced visible rows with 44px-high links; desktop navigation and handoff scripts are unchanged.",
+      "commitHash": "1bfaae37a4b63cef03fc83f43e30e20a04bbd96a"
     },
     {
       "id": 6,
       "title": "Article titles use an unnecessarily narrow mobile measure",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile"
@@ -1604,8 +1605,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "14 scoped design audits passed; final CSS diff reviewed with desktop styles unchanged.",
+        "All 14 affected routes checked at 360px, 390px and 1440px: 42 checks passed. Mobile title widths exceed 260px and do not overlap the menu; after screenshot saved."
+      ],
+      "commitSubject": "fix: spacing audit #06 article titles use an unnecessarily narrow mobile measure",
+      "implementation": "Removed the 12.5ch title cap and unused right inset on mobile/tablet. Legacy article headers reserve a separate row above the title for the fixed Menu; increased title-to-content separation."
     },
     {
       "id": 7,
