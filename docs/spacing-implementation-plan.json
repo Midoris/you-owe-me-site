@@ -12596,13 +12596,14 @@
         "All 44 cells checked at 360px and 390px; no overflow. Desktop keeps four columns at 1440px. Screenshots saved for both sizes.",
         "Compare design audit passes; reviewed CSS-only diff and confirmed the override is limited to compare-index-page."
       ],
-      "commitSubject": "fix: spacing audit #18 compare hub keeps dense label/value columns on mobile",
-      "implementation": "Scoped the Compare hub decision table to full-width mobile labels and answers, with 6px label gaps, 16px field separation and 24px row padding."
+      "commitSubject": "Fix spacing audit #18 mobile comparison labels",
+      "implementation": "Scoped the Compare hub decision table to full-width mobile labels and answers, with 6px label gaps, 16px field separation and 24px row padding.",
+      "commitHash": "86c2fbf23f11cac26cea40d93eeaca32ca62efbf"
     },
     {
       "id": 19,
       "title": "“Do not say / Try instead” examples lose their pairing on mobile",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile"
@@ -12636,8 +12637,12 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "Checked all three pairs at 360px and 390px: 8px label gaps, 12px within pairs, 24px between pairs, and no overflow. Desktop columns and labels preserved at 1440px.",
+        "Scoped design audit passes; reviewed full diff and verified only six presentation data-label attributes were added to HTML. Calculator code and wording unchanged. Screenshots and geometry saved."
+      ],
+      "commitSubject": "fix: spacing audit #19 “do not say / try instead” examples lose their pairing on mobile",
+      "implementation": "Grouped each mobile before/after wording pair into one padded card, repeating the two labels inside each pair. Kept the desktop two-column comparison."
     },
     {
       "id": 20,

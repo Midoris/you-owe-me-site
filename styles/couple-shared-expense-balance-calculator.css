@@ -913,6 +913,43 @@ body.couple-balance-page article.post.featured {
     flex-direction: column;
   }
 
+  .cb-doDontTable {
+    gap: 24px;
+  }
+
+  .cb-doDontHeader {
+    position: absolute;
+    width: 1px;
+    height: 1px;
+    overflow: hidden;
+    clip: rect(0, 0, 0, 0);
+  }
+
+  .cb-doDontRow {
+    gap: 12px;
+    padding: 20px;
+    border: 1px solid rgba(15, 23, 42, 0.08);
+    border-radius: 16px;
+    background: rgba(255, 255, 255, 0.86);
+  }
+
+  .cb-doDontRow span {
+    padding: 0;
+    border: 0;
+    border-radius: 0;
+    background: transparent;
+  }
+
+  .cb-doDontRow span::before {
+    content: attr(data-label);
+    display: block;
+    margin-bottom: 8px;
+    color: rgba(24, 33, 43, 0.62);
+    font-size: max(12px, 0.78rem);
+    font-weight: 800;
+    line-height: 1.4;
+  }
+
   .cb-input,
   .cb-select {
     height: 3rem;
