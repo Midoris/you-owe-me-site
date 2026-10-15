@@ -48,7 +48,7 @@ Spacing numbers are design starting points, not blanket padding rules. Keep text
 | 25 | Parent-expense example needs stronger grouping inside each entry | 1 | Mobile | complete (`bc8fec9`) |
 | 26 | Roommate result packs many responsibility labels into one narrow stack | 1 | Mobile + Desktop | complete (`b032040`) |
 | 27 | Debt page contents links wrap into a tight inline cluster | 1 | Mobile | complete (`6cfd267`) |
-| 28 | Blog transition CTA has almost no button padding | 1 | Mobile + Desktop | complete |
+| 28 | Blog transition CTA has almost no button padding | 1 | Mobile + Desktop | complete (`52558bd`) |
 
 ## Baseline checks
 
@@ -59,3 +59,15 @@ The design audit passes on 81 of the 82 affected routes. `/privacy-policy/` has 
 The full existing test suite passes 174 of 175 tests. The existing EXP-008 metadata test expects an older article modification date. Compare subsequent runs to this baseline; any new failure must be resolved before the relevant fix is committed.
 
 All browser verification uses the analytics-free localhost preview. No production navigation, push, publication or deployment is part of this task. Raw audit images remain local and are not included in the source commits.
+
+## Final verification — complete
+
+All 26 accepted findings have separate verified commits, recorded above and in the JSON ledger. Findings 14 and 22 remain excluded.
+
+The combined browser pass covers all 82 affected routes at 390px and 1440px (164 route/device checks). All 498 paragraph checks, 160 action checks, 326 heading checks, 326 card-padding checks and 33 targeted desktop grids pass. The earlier per-finding evidence includes additional 360px and desktop-breakpoint checks, and affected navigation/calculator interactions.
+
+All body words and links across the 63 edited HTML files match the baseline. Both excluded sections have identical HTML, and their specific layout rules are unchanged. Three small document-width discrepancies were compared with isolated local renders of the original HTML and CSS: homepage and Quick Start at 390px (15px), and the borrower story at 1440px (7px). Each matches the baseline exactly; there are no new overflow regressions.
+
+The full test suite remains at 174/175 with only the existing EXP-008 metadata-date failure. Design audits remain at 81/82 with only the eight existing Privacy Policy token failures. No new failures were introduced.
+
+The [numbered after-review](../audits/spacing-implementation-2026-10-15/review.html) provides curated mobile/desktop screenshots, original audit evidence, implementation notes, validation and route lists. Open it through the [analytics-free local preview](http://127.0.0.1:8787/audits/spacing-implementation-2026-10-15/review.html). Raw evidence stays local and untracked. No production navigation, push or deployment was performed during implementation.

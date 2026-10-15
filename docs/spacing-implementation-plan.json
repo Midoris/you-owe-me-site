@@ -13721,8 +13721,9 @@
         "Checked 360px, 390px and 1440px: the action is at least 44px high with exact padding and 16px preceding gap, without overflow. Saved mobile and desktop screenshots.",
         "Clicked the action and confirmed the intended support-transition guide loads on localhost. Blog design audit passes. Reviewed the CSS-only diff and preserved the original URL and wording."
       ],
-      "commitSubject": "fix: spacing audit #28 blog transition cta has almost no button padding",
-      "implementation": "Styled the Blog card action as a rounded, padded CTA with 12px vertical and 18px horizontal padding, 16px above it and a visible keyboard focus outline."
+      "commitSubject": "Fix spacing audit #28 Blog transition button padding",
+      "implementation": "Styled the Blog card action as a rounded, padded CTA with 12px vertical and 18px horizontal padding, 16px above it and a visible keyboard focus outline.",
+      "commitHash": "52558bd2a0478c9094840a0b44c86cbe567bc97d"
     }
   ],
   "testBaseline": {
@@ -13732,5 +13733,76 @@
     "failed": 1,
     "knownFailure": "EXP-008 keeps search identity and synchronizes exact descriptions and modification dates",
     "reason": "Existing article modification date differs from the date expected by scripts/exp008-borrowing-message.integration.test.mjs."
+  },
+  "finalRegression": {
+    "status": "complete",
+    "date": "2026-10-15",
+    "routes": 82,
+    "browserRouteDeviceChecks": 164,
+    "widths": [
+      390,
+      1440
+    ],
+    "sharedSpacingChecks": {
+      "paragraphs": 498,
+      "actions": 160,
+      "headings": 326,
+      "cards": 326,
+      "readableDesktopGrids": 33,
+      "failures": 0
+    },
+    "designAudits": {
+      "passed": 81,
+      "total": 82,
+      "baselineFailureRoute": "/privacy-policy/",
+      "baselineMissingTokens": 8,
+      "newFailures": 0
+    },
+    "testSuite": {
+      "passed": 174,
+      "total": 175,
+      "baselineFailure": "EXP-008 keeps search identity and synchronizes exact descriptions and modification dates",
+      "newFailures": 0
+    },
+    "contentPreservation": {
+      "changedHtmlFiles": 63,
+      "allBodyWordsPreserved": true,
+      "allLinksPreserved": true
+    },
+    "exclusions": {
+      "14": "Homepage capability/poster section HTML identical to baseline; its layout rules are unchanged.",
+      "22": "Tools hero HTML identical to baseline; its content and destinations are unchanged."
+    },
+    "widthBaselineComparison": {
+      "method": "Rendered original HTML and styles from aa1d90a as isolated analytics-free local baseline pages, compared with current routes.",
+      "unchangedDiscrepancies": [
+        {
+          "route": "/",
+          "width": 390,
+          "extraWidth": 15
+        },
+        {
+          "route": "/quick-start/",
+          "width": 390,
+          "extraWidth": 15
+        },
+        {
+          "route": "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
+          "width": 1440,
+          "extraWidth": 7
+        }
+      ],
+      "newOverflowRegressions": 0
+    },
+    "analytics": "No analytics scripts in any of the 164 final route/device checks; preview CSP blocks outbound connections.",
+    "review": "audits/spacing-implementation-2026-10-15/review.html",
+    "evidence": [
+      "final-responsive-checks.json",
+      "final-design-results.json",
+      "final-content-preservation.json",
+      "final-exclusions.json",
+      "final-baseline-width-comparison.json"
+    ],
+    "delivery": "26 finding commits plus preparation and final verification documentation. No push or deployment."
   }
 }
