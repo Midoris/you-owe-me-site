@@ -10028,13 +10028,14 @@
         "Code review confirmed every HTML diff contains only the intended class attributes; paragraph/heading/link text unchanged across all 47 pages.",
         "Homepage proof and Quick Start mobile/desktop screenshots visually checked and saved."
       ],
-      "commitSubject": "fix: spacing audit #08 separate paragraphs run together into one block",
-      "implementation": "Added an explicit paragraph-gap class to the 249 audited zero-gap paragraphs, using one shared rem of separation. Preserved the four already-spaced Privacy disclosure pairs and all compact labels."
+      "commitSubject": "fix: spacing audit #08 separate explanatory paragraphs",
+      "implementation": "Added an explicit paragraph-gap class to the 249 audited zero-gap paragraphs, using one shared rem of separation. Preserved the four already-spaced Privacy disclosure pairs and all compact labels.",
+      "commitHash": "66ed2785c35865d42a2fedcdf590ac5e67b0dfc6"
     },
     {
       "id": 9,
       "title": "Actions attach directly to the paragraph above",
-      "status": "pending",
+      "status": "complete",
       "priority": "Medium",
       "devices": [
         "Mobile",
@@ -11025,8 +11026,14 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All 160 action gaps checked across 20 routes at mobile/desktop sizes: minimum 12px passed.",
+        "All 20 scoped design audits passed. Full suite remains 174/175 with only the known baseline metadata failure.",
+        "Reviewed CSS and confirmed all 20 HTML diffs only add the targeted description class; text, action attributes and destinations unchanged.",
+        "Accurately positioned mobile feature card and desktop support-message screenshots inspected and saved."
+      ],
+      "commitSubject": "fix: spacing audit #09 actions attach directly to the paragraph above",
+      "implementation": "Added spacing after the 80 audited descriptions, rather than overriding action margins, preserving existing automatic action alignment in card grids."
     },
     {
       "id": 10,
