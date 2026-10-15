@@ -13804,5 +13804,17 @@
       "final-baseline-width-comparison.json"
     ],
     "delivery": "26 finding commits plus preparation and final verification documentation. No push or deployment."
+  },
+  "publicationRecheck": {
+    "status": "in_progress",
+    "authorizedProductionDeployment": true,
+    "corrections": [
+      {
+        "finding": 20,
+        "change": "Extend the readable-grid rule to 737px and above, covering tablet widths previously left to narrow legacy three-column layouts.",
+        "validation": "All 33 grids at 736/737/768/980/981px: 165 grid checks pass; 26 design audits pass. Before/after tablet screenshots inspected.",
+        "commitSubject": "fix: preserve readable card widths through tablet breakpoints"
+      }
+    ]
   }
 }

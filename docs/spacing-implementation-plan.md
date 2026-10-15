@@ -71,3 +71,9 @@ All body words and links across the 63 edited HTML files match the baseline. Bot
 The full test suite remains at 174/175 with only the existing EXP-008 metadata-date failure. Design audits remain at 81/82 with only the eight existing Privacy Policy token failures. No new failures were introduced.
 
 The [numbered after-review](../audits/spacing-implementation-2026-10-15/review.html) provides curated mobile/desktop screenshots, original audit evidence, implementation notes, validation and route lists. Open it through the [analytics-free local preview](http://127.0.0.1:8787/audits/spacing-implementation-2026-10-15/review.html). Raw evidence stays local and untracked. No production navigation, push or deployment was performed during implementation.
+
+## Pre-publication recheck
+
+The owner subsequently authorized a fresh combined review, corrections, commit and production deployment. The earlier no-deployment statements describe the implementation stage.
+
+The second review found narrow legacy three-column layouts at tablet widths in two of the audited grid types. The #20 readable-grid rule now starts at 737px, so those cards retain a minimum 300px width between the phone and desktop layouts. All 33 grids were checked at 736, 737, 768, 980 and 981px (165 grid checks); all pass, with 26 scoped design audits passing. Before/after tablet screenshots are under `audits/spacing-implementation-2026-10-15/recheck/`.
