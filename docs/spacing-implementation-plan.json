@@ -503,13 +503,14 @@
         "Reviewed CSS scope and HTML changes; labels, helper IDs and calculator logic retained.",
         "390px and 1440px screenshots checked. Mobile fields are 325px wide with roughly 10px/11px padding; text and date entry confirmed."
       ],
-      "commitSubject": "fix: spacing audit #03 working-agreement fields have almost no inner padding",
-      "implementation": "Reused calculator field styles for agreement inputs, added 20px field-group gaps and keyboard focus outlines, and shortened placeholders to fit narrow controls."
+      "commitSubject": "fix: spacing audit #03 pad working agreement fields",
+      "implementation": "Reused calculator field styles for agreement inputs, added 20px field-group gaps and keyboard focus outlines, and shortened placeholders to fit narrow controls.",
+      "commitHash": "473eaee75f7e40ec3c6426c59f17ef5b0c87e0c8"
     },
     {
       "id": 4,
       "title": "Mobile Menu covers long breadcrumbs",
-      "status": "pending",
+      "status": "complete",
       "priority": "High",
       "devices": [
         "Mobile"
@@ -1192,8 +1193,14 @@
           ]
         }
       ],
-      "validation": [],
-      "commitSubject": null
+      "validation": [
+        "All 28 scoped page-design audits passed.",
+        "All 28 affected routes checked at 390px and 360px: 56 checks with at least 12px menu clearance where rows overlap.",
+        "All 28 desktop headers checked: no added breadcrumb padding. Mobile drawer opens with 8 links and closes with Escape; saved header/menu screenshots.",
+        "Reviewed shared selector scope, breakpoint and safe-area handling."
+      ],
+      "commitSubject": "fix: spacing audit #04 mobile menu covers long breadcrumbs",
+      "implementation": "Reserved a dedicated breadcrumb clearance area beside the fixed mobile Menu, without narrowing hero titles; allowed the current page label to wrap."
     },
     {
       "id": 5,

@@ -124,6 +124,17 @@ body.site-nav-page #navPanelToggle:focus-visible {
     margin-right: 0;
   }
 
+  /* Keep the fixed Menu pill clear of the breadcrumb without narrowing titles. */
+  body.site-nav-page #main nav[aria-label="Breadcrumb"] {
+    box-sizing: border-box;
+    padding-right: calc(7rem + env(safe-area-inset-right, 0px));
+  }
+
+  body.site-nav-page #main nav[aria-label="Breadcrumb"] [aria-current="page"] {
+    min-width: 0;
+    overflow-wrap: anywhere;
+  }
+
   body.site-nav-page #navPanelToggle,
   body.site-nav-page #navPanelToggle:hover,
   body.site-nav-page #navPanelToggle.alt,
