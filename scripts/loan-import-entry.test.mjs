@@ -27,7 +27,7 @@ test('all chosen routes serve one visible offer before enhancement',async()=>{
   assert.equal((page.match(/data-loan-offer=/g)||[]).length,1,route);
   assert.ok(page.includes(`data-loan-offer="${key}"`),route);
   assert.doesNotMatch(page,new RegExp(`data-loan-offer="${key}" hidden`));
-  assert.equal((page.match(/src="\/scripts\/loan-import-entry.mjs\?v=20260923-discovery1"/g)||[]).length,1,route);
+  assert.equal((page.match(/src="\/scripts\/loan-import-entry.mjs\?v=20261018-review1"/g)||[]).length,1,route);
   assert.match(page,/<button[^>]*data-loan-import-open[^>]*hidden>/);
   assert.doesNotMatch(page,/id="loan-import-text"|src="\/scripts\/loan-import.mjs"/);
  }
@@ -93,7 +93,7 @@ async function offerHarness({preview=false, failures=0, gate=null, malformed=fal
  const docListeners=new Map();
  const document={visibilityState:'visible',
   querySelectorAll(selector){return selector==='[data-loan-offer]'?[host]:[];},
-  querySelector(selector){return selector==='link[href="/styles/loan-import.css"]'?{}:null;},
+  querySelector(selector){return selector==='link[href="/styles/loan-import.css?v=20261018-review1"]'?{}:null;},
   addEventListener(name,handler){docListeners.set(name,handler);},
   removeEventListener(name){docListeners.delete(name);},
   createElement(tag){return {tag,setAttribute(name,value){this[name]=value;}};}};
@@ -180,4 +180,17 @@ test('viewport exposure requires half a card in a visible document and emits onc
  const malformed=await offerHarness({malformed:true});
  assert.equal(malformed.button.hidden,true);
  assert.equal(malformed.observed,0);
+});
+
+test('all ten import entry routes pin the changed controller/model, style and analytics graph',async()=>{
+ const version='20261018-review1';
+ for(const route of [...Object.values(routes),'tools/personal-loan-payment-tracker/']){
+  const html=await read(route+'index.html');
+  assert.ok(html.includes('loan-import-entry.mjs?v='+version),route);
+  assert.ok(html.includes('analytics.js?v='+version),route);
+ }
+ const entry=await read('scripts/loan-import-entry.mjs');
+ assert.ok(entry.includes('loan-import.mjs?v='+version));assert.ok(entry.includes('/styles/loan-import.css?v='+version));
+ const controller=await read('scripts/loan-import.mjs');assert.ok(controller.includes('loan-import-model.mjs?v='+version));assert.ok(controller.includes('loan-import-analytics.mjs?v='+version));
+ assert.ok((await read('scripts/analytics.js')).includes('loan-import-analytics.mjs?v='+version));
 });

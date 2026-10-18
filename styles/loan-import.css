@@ -97,3 +97,13 @@
 #import-loan-history .loan-import-source-icon {background:var(--li-accent);color:#18212b}
 #import-loan-history button.lt-primaryCta {min-height:56px;padding:1rem 1.5rem;font-weight:700}
 #import-loan-history input[type=checkbox] {accent-color:#355428}
+
+/* One persistent action row: strict guidance links to the next correction. */
+#import-loan-history .loan-import-review-actions {position:sticky;top:0;z-index:2;padding:.85rem 1rem;background:#fff;border:1px solid var(--li-line);border-radius:20px;box-shadow:0 14px 36px rgba(15, 23, 42, 0.08);margin:1rem 0}
+#import-loan-history .loan-import-review-actions p {font-size:.95rem;line-height:1.5;margin:0 0 .6rem}
+#import-loan-history .loan-import-review-actions .loan-import-actions {margin:0;flex-direction:row;align-items:center}
+#import-loan-history .loan-import-review-actions button {width:auto;flex:0 1 auto;line-height:1.35}
+@media(max-width:640px){#import-loan-history .loan-import-review-actions{padding:.75rem}#import-loan-history .loan-import-review-actions .lt-primaryCta{flex:1 1 auto;min-height:48px;padding:.75rem}#import-loan-history .loan-import-review-actions .loan-import-actions{gap:.5rem}}
+
+#import-loan-history .loan-import-review-actions .loan-import-correction {display:block;width:100%;padding:.2rem 0 .5rem;min-height:44px;border:0;border-radius:0;background:transparent;box-shadow:none;text-align:left;font-weight:400;font-size:.95rem;line-height:1.5;text-decoration:underline;text-underline-offset:3px}
+@media(max-width:640px){#import-loan-history .loan-import-review-actions .loan-import-actions button{flex:1 1 0;padding:.7rem .6rem;min-height:48px}}

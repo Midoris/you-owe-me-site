@@ -26,7 +26,7 @@ function element(tag, text, className) {
   return node;
 }
 async function openImporter(host) {
-  importer ||= Promise.all([import('./loan-import-ui.mjs'), import('./loan-import.mjs?v=20260922'), loadStyles(), loadQR()])
+  importer ||= Promise.all([import('./loan-import-ui.mjs'), import('./loan-import.mjs?v=20261018-review1'), loadStyles(), loadQR()])
     .catch(error => { importer = null; throw error; });
   const [{loanImportMarkup}, {startLoanImport}] = await importer;
   if (!host.querySelector('#import-loan-history')) {
@@ -52,10 +52,10 @@ function loadQR() {
   });
 }
 function loadStyles() {
-  if (document.querySelector('link[href="/styles/loan-import.css"]')) return Promise.resolve();
+  if (document.querySelector('link[href="/styles/loan-import.css?v=20261018-review1"]')) return Promise.resolve();
   return new Promise((resolve, reject) => {
     const link = document.createElement('link');
-    link.rel = 'stylesheet'; link.href = '/styles/loan-import.css';
+    link.rel = 'stylesheet'; link.href = '/styles/loan-import.css?v=20261018-review1';
     link.onload = resolve;
     link.onerror = () => {link.remove(); reject(new Error('Styles unavailable'));};
     document.head.append(link);

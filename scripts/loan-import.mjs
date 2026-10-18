@@ -1,21 +1,36 @@
 import {LoanImportLimitError} from './loan-import-errors.mjs';
-import {loanImportInputStage} from './loan-import-analytics.mjs';
+import {loanImportInputStage} from './loan-import-analytics.mjs?v=20261018-review1';
 import {prepareLoanPhoto,photoQualityCopy} from './loan-import-image.mjs';
 import {enabled,localPreview,apiBase,continuationBase} from './loan-import-config.mjs?v=20260922';
-import {currencies,limits,manualDraft,newRow,balance,money,validate,reference,envelope,reviewDraft,recoveryState,interpretedDraft} from './loan-import-model.mjs';
+import {currencies,limits,manualDraft,newRow,balance,money,validate,reference,envelope,reviewDraft,editableDraft,reviewIssue,recoveryState,interpretedDraft} from './loan-import-model.mjs?v=20261018-review1';
 export function startLoanImport(root){
   if(!enabled || root.dataset.initialized) return;
   root.dataset.initialized='true';
   root.hidden=false;
   const $=id=>root.querySelector('#'+id), key='uomi.loan-import.review.v1';
-  let draft=null,source=null,file=null,controller=null,prepared=null,revision=0,storageWarning=false,photo=null,inputMode=null;
+  let draft=null,source=null,file=null,controller=null,prepared=null,revision=0,storageWarning=false,photo=null,inputMode=null,attemptLocked=false;
   $('loan-import-photo-quality').textContent=photoQualityCopy;
   const status=message=>{$('loan-import-status').textContent=message;};
   const event=name=>{if(!localPreview)window.dispatchEvent(new CustomEvent('youoweme:loan-import-event',{detail:{name}}));};
   root.insertBefore($('loan-import-image'),$('loan-import-review'));
   function focusPanel(panel){panel.tabIndex=-1;panel.focus({preventScroll:true});panel.scrollIntoView({block:'start'});}
   function persist(){try{if(!draft){sessionStorage.removeItem(key);return;}sessionStorage.setItem(key,JSON.stringify({draft,source,file:file?.format==='image'?{format:'image'}:file,photo,text:$('loan-import-text').value,prepared,revision}));}catch{storageWarning=true;status('This browser could not save recovery state. Keep this tab open and download your loan draft.');}}
-  try{const saved=JSON.parse(sessionStorage.getItem(key)||'null');if(saved?.draft){draft=saved.draft?reviewDraft(saved.draft):null;source=saved.source;file=saved.file;photo=typeof saved.photo==='string'&&/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(saved.photo)?saved.photo:null;if(file?.format==='image')file=photo?{format:'image',base64:photo.split(',')[1]}:null;prepared=saved.prepared;revision=saved.revision||0;$('loan-import-text').value=saved.text||'';showPhoto();if(draft)render();if(prepared)showTransfer();}else{sessionStorage.removeItem(key);}}catch{status('Saved review could not be read. Paste or choose your recovery file.');}
+  try{const saved=JSON.parse(sessionStorage.getItem(key)||'null');if(saved?.draft){draft=saved.draft?editableDraft(saved.draft):null;source=saved.source;file=saved.file;photo=typeof saved.photo==='string'&&/^data:image\/jpeg;base64,[A-Za-z0-9+/=]+$/.test(saved.photo)?saved.photo:null;if(file?.format==='image')file=photo?{format:'image',base64:photo.split(',')[1]}:null;prepared=checkedPrepared(saved.prepared,draft);revision=saved.revision||0;$('loan-import-text').value=saved.text||'';showPhoto();if(draft)render();if(prepared)showTransfer();}else{sessionStorage.removeItem(key);}}catch{status('Saved review could not be read. Paste or choose your recovery file.');}
+  function sameDraft(a,b){return JSON.stringify(a)===JSON.stringify(b);}
+  function checkedPrepared(value,currentDraft){
+    if(!value)return null;
+    try{
+      if(value.state){
+        const recovered=recoveryState(value.state);
+        if(!sameDraft(recovered.draft,currentDraft)||!sameDraft(value.envelope,recovered.state.envelope))return null;
+        return {envelope:recovered.state.envelope,state:recovered.state,reference:null};
+      }
+      if(reviewIssue(currentDraft)||!/^[a-f0-9]{64}$/.test(value.reference))return null;
+      const recovered=recoveryState({version:1,envelope:value.envelope,payments:[],adoptionIntent:false,acceptedAt:Date.now()});
+      if(!sameDraft(recovered.draft,currentDraft)||value.envelope.origin!=='web')return null;
+      return {envelope:value.envelope,reference:value.reference};
+    }catch{return null;}
+  }
   function showSource(mode){
     inputMode=mode;
     $('loan-import-text-panel').hidden=mode!=='text';
@@ -68,11 +83,11 @@ export function startLoanImport(root){
   for(const id of ['loan-import-photo','loan-import-camera'])$(id).addEventListener('change',async e=>{if(controller||draft)return;const selected=e.target.files[0];if(selected)await choosePhoto(selected);e.target.value='';});
   $('loan-import-photo-zoom').addEventListener('click',()=>{const image=$('loan-import-image-preview');image.classList.toggle('enlarged');$('loan-import-photo-zoom').textContent=image.classList.contains('enlarged')?'Fit photo to screen':'Enlarge photo';});
   $('loan-import-photo-remove').addEventListener('click',()=>{if(controller||draft)return;photo=null;file=null;showSource('photo');persist();status('Photo removed.');});
-  function change(){revision++;prepared=null;$('loan-import-transfer').hidden=true;persist();updateBalance();}
+  function change(){revision++;prepared=null;$('loan-import-transfer').hidden=true;persist();updateBalance();updateReadiness();}
   function node(tag,text,attributes={}){const e=document.createElement(tag);if(text!==null)e.textContent=text;for(const [key,value] of Object.entries(attributes))e.setAttribute(key,value);return e;}
   function button(label,action){const b=node('button',label,{type:'button'});b.addEventListener('click',action);return b;}
-  function field(parent,label,value,set,{type='text',choices=null,maxlength=null}={}){
-    const wrapper=node('div',null), id='loan-field-'+crypto.randomUUID();wrapper.append(node('label',label,{for:id}));
+  function field(parent,label,value,set,{type='text',choices=null,maxlength=null,id='loan-field-'+crypto.randomUUID()}={}){
+    const wrapper=node('div',null);wrapper.append(node('label',label,{for:id}));
     const input=node(choices?'select':type==='textarea'?'textarea':'input',null,{id});
     if(choices){input.append(node('option','Choose…',{value:''}));for(const [v,label] of choices)input.append(node('option',label,{value:v}));}
     else if(type!=='textarea')input.type=type;
@@ -83,7 +98,7 @@ export function startLoanImport(root){
     const blob=new Blob([JSON.stringify(value,null,2)],{type:'application/json'}), url=URL.createObjectURL(blob),a=document.createElement('a');
     a.href=url;a.download='You-Owe-Me-loan.'+extension;a.referrerPolicy='no-referrer';a.click();setTimeout(()=>URL.revokeObjectURL(url),1000);
   }
-  async function recovery(){try{validate(draft);if(prepared?.state){download(prepared.state);return;}const env=prepared?.envelope??await envelope(draft);download({version:1,envelope:env,payments:[],adoptionIntent:false,acceptedAt:Date.now()});}catch{download({version:1,type:'loan-review-recovery',draft,source},'json');status('Review saved with its unresolved questions. Reopen it here to finish before importing.');}}
+  async function recovery(){try{if(prepared?.state){const recovered=recoveryState(prepared.state);if(!sameDraft(recovered.draft,draft))throw Error('Recovery does not match this review.');download(recovered.state);return;}validate(draft);const env=prepared?.envelope??await envelope(draft);download({version:1,envelope:env,payments:[],adoptionIntent:false,acceptedAt:Date.now()});}catch{download({version:1,type:'loan-review-recovery',draft,source},'json');status('Review saved with its unresolved questions. Reopen it here to finish before importing.');}}
   async function post(endpoint,body,signal){
     const r=await fetch(apiBase+endpoint,{method:'POST',headers:{'Content-Type':'application/json'},body:JSON.stringify(body),signal,cache:'no-store',credentials:'omit',referrerPolicy:'no-referrer'});
     let data;try{data=await r.json();}catch{throw Error('Could not finish. Please try again shortly.');}if(r.status===429)throw new LoanImportLimitError(data,r.headers.get('Retry-After'));if(!r.ok)throw Error(errors[data.error]||'The service could not finish. Please try again later.');return data;
@@ -98,7 +113,7 @@ export function startLoanImport(root){
       try{
         const raw=JSON.parse(await selected.text());
         let candidate,nextSource=null,nextPrepared=null;
-        if(raw.type==='loan-review-recovery'){candidate=reviewDraft(raw.draft);nextSource=raw.source;}
+        if(raw.type==='loan-review-recovery'){candidate=editableDraft(raw.draft);nextSource=raw.source;}
         else if(raw.envelope){const recovery=recoveryState(raw);candidate=recovery.draft;nextPrepared={envelope:raw.envelope,state:recovery.state,reference:null};}
         else if(raw.type==='loan-history'){candidate=reviewDraft(raw);}else throw Error('Choose a You Owe Me loan recovery file.');
         draft=candidate;source=nextSource;file=null;photo=null;showPhoto();change();prepared=nextPrepared;persist();render();event(loanImportInputStage('recovery'));
@@ -111,55 +126,102 @@ export function startLoanImport(root){
   });
   function enterManually(){event(loanImportInputStage('manual'));draft=manualDraft();source=null;photo=null;file=null;$('loan-import-text').value='';showPhoto();change();render();status('Enter the loan amount and any repayments below.');focusPanel($('loan-import-review'));}
   $('loan-import-manual').addEventListener('click',enterManually);
-  $('loan-import-cancel').addEventListener('click',()=>{controller?.abort();status('Stopped waiting. The server may finish processing; no loan has been imported. Your input is still here.');});
+  $('loan-import-cancel').addEventListener('click',()=>{if(!controller||controller.signal.aborted||draft)return;controller.abort();event('import_cancelled');status('Stopped waiting. The server may finish processing; no loan has been imported. Your input is still here.');});
   $('loan-import-interpret').addEventListener('click',async()=>{
     if(controller)return;
     if(draft){status('Your current review is preserved. Download it or finish it before starting a new interpretation.');return;}
     const body=file?{format:file.format,base64:file.base64,...(file.format==='image'?{text:$('loan-import-text').value}:{})}:{format:'paste',text:$('loan-import-text').value};if(body.format==='paste'&&!body.text.trim()){status('Paste loan notes or choose a file first.');return;}
     let limitError=false;controller=new AbortController();lockInput(true);loading(true);status('Preparing your loan…');event('interpret_requested');event(loanImportInputStage(body.format));
-    try{const result=await post('loanInterpret',body,controller.signal);draft=interpretedDraft(result.draft);source=result.source;file=null;change();render();status('Check each amount and date. You can edit anything below.');focusPanel($('loan-import-review'));event('interpret_ready');}
-    catch(error){if(error.name!=='AbortError'){status(error.message);limitError=error instanceof LoanImportLimitError;if(limitError){$('loan-import-status').append(document.createTextNode(' '),button('Enter manually',enterManually));}event('interpret_failed');}}
+    const request=controller;
+    try{const result=await post('loanInterpret',body,request.signal);if(request.signal.aborted)return;draft=interpretedDraft(result.draft);source=result.source;file=null;change();render();status('Check each amount and date. You can edit anything below.');focusPanel($('loan-import-review'));event('interpret_ready');}
+    catch(error){if(!request.signal.aborted&&error.name!=='AbortError'){status(error.message);limitError=error instanceof LoanImportLimitError;if(limitError){$('loan-import-status').append(document.createTextNode(' '),button('Enter manually',enterManually));}event('interpret_failed');}}
     finally{controller=null;loading(false);lockInput(false);if(!draft)focusPanel($(limitError?'loan-import-status':'loan-import-intake'));}
   });
   function updateBalance(){const output=$('loan-review-balance');if(!output||!draft)return;try{output.textContent='Remaining: '+money(balance(draft),draft.currency);}catch(e){output.textContent=e.message;}}
+  function focusCorrection(target){
+    const control=target&&$(target);
+    if(target?.startsWith('loan-review-plan-')&&$('loan-review-plan-fields'))$('loan-review-plan-fields').hidden=false;
+    if(!control){focusPanel($('loan-import-review'));return;}
+    // A timezone or an opted-out plan may be inside a disclosure.
+    for(let parent=control.parentElement;parent&&parent!==root;parent=parent.parentElement){if(parent.tagName==='DETAILS')parent.open=true;}
+    control.focus({preventScroll:true});control.scrollIntoView({block:'center'});
+  }
+  function historyOnlyBlocked(){
+    if(!draft?.plan)return false;
+    if(draft.plan.payment&&!draft.currency)return true;
+    // Inspect the plan independently so another field error cannot mask malformed terms.
+    const candidate=manualDraft();candidate.currency=draft.currency;candidate.plan=draft.plan;
+    try{reviewDraft(candidate);return false;}catch{return true;}
+  }
+  function updateReadiness(){
+    if(!draft||!$('loan-review-readiness'))return;
+    const issue=reviewIssue(draft);
+    $('loan-review-ready').textContent=issue?'':'Ready to continue. Review every amount and date before opening on iPhone.';
+    $('loan-review-ready').hidden=!!issue;
+    $('loan-review-fix').textContent=issue?issue.message:'';
+    $('loan-review-fix').setAttribute('aria-label',issue?'Fix: '+issue.message:'No correction needed');
+    $('loan-review-fix').hidden=!issue;
+    const blocked=historyOnlyBlocked();
+    $('loan-review-history-only').hidden=blocked||!(draft.plan?.include&&issue?.target?.startsWith('loan-review-plan-'));
+    if($('loan-review-plan-history-only'))$('loan-review-plan-history-only').hidden=!draft.plan?.include||blocked;
+  }
+  function historyOnly(){
+    if(!draft?.plan?.include||controller)return;
+    if(historyOnlyBlocked()){focusCorrection(reviewIssue(draft)?.target);return;}
+    draft.plan.include=false;change();render();
+    status('History only selected. The schedule terms are kept in this review if you change your mind.');
+    focusCorrection('loan-review-continue');
+  }
+  function renderAndFocus(target){render();focusCorrection(target);}
   function render(){
     const panel=$('loan-import-review');panel.hidden=false;panel.replaceChildren();$('loan-import-intake').hidden=true;
     panel.append(node('h3','2. Check your loan'));showPhoto();lockInput(false);
+    const dock=node('div',null,{class:'loan-import-review-actions'});
+    const readiness=node('div',null,{id:'loan-review-readiness'});dock.append(readiness);
+    const dockButtons=node('div',null,{class:'loan-import-actions'});
+    const proceed=button('Continue on iPhone',prepare);proceed.id='loan-review-continue';proceed.className='lt-primaryCta';
+    const fix=button('',()=>focusCorrection(reviewIssue(draft)?.target));fix.id='loan-review-fix';fix.className='loan-import-correction';
+    readiness.append(fix,node('p','',{id:'loan-review-ready'}));
+    const historyChoice=button('Use history only',historyOnly);historyChoice.id='loan-review-history-only';
+    dockButtons.append(proceed,historyChoice);dock.append(dockButtons);panel.append(dock);
     if(photo)panel.append(node('p','Compare each amount and date with your photo. AI can make mistakes.'));
-    if(draft.unresolved?.length){const questions=node('div',null,{class:'loan-import-questions'});questions.append(node('h4','Resolve these questions first'));
-      draft.unresolved.forEach((question,index)=>{const row=node('div',null);row.append(node('p',question),button('I’ve corrected this',()=>{draft.unresolved.splice(index,1);change();render();}));questions.append(row);});panel.append(questions);}
+    if(draft.unresolved?.length){const questions=node('div',null,{class:'loan-import-questions'});questions.append(node('h4','Confirm unclear details'),node('p','Correct the details below, then confirm each question is resolved.'));
+      draft.unresolved.forEach((question,index)=>{const row=node('div',null);const confirm=button('Confirm resolved',()=>{draft.unresolved.splice(index,1);change();renderAndFocus(draft.unresolved.length?'loan-review-question-'+Math.min(index,draft.unresolved.length-1):'loan-review-continue');});confirm.id='loan-review-question-'+index;row.append(node('p',question),confirm);questions.append(row);});panel.append(questions);}
     const grid=node('div',null,{class:'loan-import-grid'});panel.append(grid);
-    field(grid,'Person',draft.person,v=>draft.person=v,{maxlength:100});field(grid,'Loan name',draft.title,v=>draft.title=v,{maxlength:120});
-    field(grid,'Who lent the money?',draft.direction,v=>draft.direction=v,{choices:[['lent','I lent to this person'],['borrowed','I borrowed from this person']]});
-    field(grid,'Currency',draft.currency,v=>draft.currency=v,{choices:currencies.map(c=>[c,c])});
-    field(grid,'Where does this history begin?',draft.openingContext,v=>draft.openingContext=v,{choices:[['full-history','Original loan, with all known payments'],['opening-balance','Known balance on a stated date']]});
+    field(grid,'Person',draft.person,v=>draft.person=v,{maxlength:100,id:'loan-review-person'});field(grid,'Loan name',draft.title,v=>draft.title=v??'',{maxlength:120,id:'loan-review-title'});
+    field(grid,'Who lent the money?',draft.direction,v=>draft.direction=v,{id:'loan-review-direction',choices:[['lent','I lent to this person'],['borrowed','I borrowed from this person']]});
+    field(grid,'Currency',draft.currency,v=>draft.currency=v,{id:'loan-review-currency',choices:currencies.map(c=>[c,c])});
+    field(grid,'Where does this history begin?',draft.openingContext,v=>draft.openingContext=v,{id:'loan-review-opening-context',choices:[['full-history','Original loan, with all known payments'],['opening-balance','Known balance on a stated date']]});
     const openingHelp=node('details',null);openingHelp.append(node('summary','What is an opening balance?'),node('p','The amount owed on a known date. Earlier payments are already included; add only payments made after that date.'));panel.append(openingHelp);
     const history=node('div',null);
     draft.records.forEach((row,index)=>{
       const card=node('section',null,{class:'loan-import-row'});card.append(node('h4',index===0?'Opening loan or balance':`Record ${index+1}`));const fields=node('div',null,{class:'loan-import-grid'});card.append(fields);
       if(index)field(fields,'Activity',row.kind,v=>row.kind=v,{choices:[['payment','Repayment'],['advance','Additional amount lent / borrowed']]});
-      field(fields,'Date',row.date,v=>row.date=v,{type:'date'});field(fields,'Amount',row.amount,v=>row.amount=v,{maxlength:20}).inputMode='decimal';
+      field(fields,'Date',row.date,v=>row.date=v,{type:'date',id:`loan-review-record-${index}-date`});field(fields,'Amount',row.amount,v=>row.amount=v,{maxlength:20,id:`loan-review-record-${index}-amount`}).inputMode='decimal';
       field(card,'Note',row.note,v=>row.note=v??'',{type:'textarea',maxlength:1000});
       if(row.sourceRefs?.length&&source){const details=node('details',null);details.append(node('summary','Inspect source'));row.sourceRefs.forEach(ref=>details.append(node('pre',source.lines.find(l=>l.id===ref)?.text??'Source reference unavailable')));card.append(details);}
-      if(index)card.append(button('Remove this record',()=>{draft.records.splice(index,1);change();render();}));history.append(card);
+      if(index)card.append(button('Remove this record',()=>{draft.records.splice(index,1);change();renderAndFocus(`loan-review-record-${Math.min(index,draft.records.length-1)}-date`);}));history.append(card);
     });
-    panel.append(history,button('Add actual payment or advance',()=>{if(draft.records.length>=100){status('Maximum 100 financial records. Keep the full source for recovery.');return;}draft.records.push(newRow());change();render();}));
+    panel.append(history,button('Add actual payment or advance',()=>{if(draft.records.length>=100){status('Maximum 100 financial records. Keep the full source for recovery.');return;}draft.records.push(newRow());change();renderAndFocus(`loan-review-record-${draft.records.length-1}-date`);}));
     panel.append(node('p','',{id:'loan-review-balance',class:'loan-import-balance','aria-live':'polite'}));
     if(draft.exclusions?.length){const list=node('section',null,{class:'loan-import-questions'});list.append(node('h4','Not counted as payments'));draft.exclusions.forEach(e=>list.append(node('p',e.reason)));panel.append(list);}
-    if(draft.plan){const p=draft.plan,section=node('section',null,{class:'loan-import-row'});section.append(node('h4','Repayment schedule found'),node('p','Optional. Add future payments from the remaining balance. Past payments stay unchanged; reminders start off.'));
-      const label=node('label',null),check=node('input',null,{type:'checkbox'});check.checked=p.include;const planFields=node('div',null);planFields.hidden=!p.include;check.addEventListener('change',()=>{p.include=check.checked;planFields.hidden=!p.include;change();});label.append(check,document.createTextNode('Include a future schedule'));section.append(label);
-      field(planFields,'Interest-free agreement',p.interestFree===null?'':String(p.interestFree),v=>p.interestFree=v==='true'?true:v==='false'?false:null,{choices:[['true','Explicitly interest-free'],['false','Interest or other charges apply — history only']]});
-      field(planFields,'Regular payment',p.payment,v=>p.payment=v,{maxlength:20}).inputMode='decimal';field(planFields,'Frequency',p.frequency,v=>p.frequency=v,{choices:[['weekly','Weekly'],['biweekly','Every two weeks'],['monthly','Monthly']]});
-      field(planFields,'Confirmed next due date',p.nextDueDate,v=>p.nextDueDate=v,{type:'date'});const zoneDetails=node('details',null);zoneDetails.append(node('summary','Timezone'));field(zoneDetails,'Schedule timezone',p.timeZone,v=>p.timeZone=v,{maxlength:80});
-      zoneDetails.append(button('Use this device’s timezone',()=>{p.timeZone=Intl.DateTimeFormat().resolvedOptions().timeZone;change();render();}));planFields.append(zoneDetails);section.append(planFields);panel.append(section);
+    if(draft.plan){const p=draft.plan,section=node('section',null,{class:'loan-import-row'});section.append(node('h4','Repayment schedule found'),node('p','Optional. Confirm the terms to include future payments, or use history only. Past payments stay unchanged; reminders start off.'));
+      const label=node('label',null),check=node('input',null,{type:'checkbox'});check.checked=p.include;const planFields=node('div',null,{id:'loan-review-plan-fields'});planFields.hidden=!p.include;check.addEventListener('change',()=>{p.include=check.checked;planFields.hidden=!p.include;onlyHistory.hidden=!p.include;planNote.hidden=p.include;change();});label.append(check,document.createTextNode('Include a future schedule'));section.append(label);const onlyHistory=button('Use history only',historyOnly);onlyHistory.id='loan-review-plan-history-only';onlyHistory.hidden=!p.include||historyOnlyBlocked();section.append(onlyHistory);const planNote=node('p','History only. Schedule terms stay in this review; no future schedule will be imported.',{class:'loan-import-hint'});planNote.hidden=p.include;section.append(planNote);
+      field(planFields,'Interest-free agreement',p.interestFree===null?'':String(p.interestFree),v=>p.interestFree=v==='true'?true:v==='false'?false:null,{id:'loan-review-plan-interest',choices:[['true','Explicitly interest-free'],['false','Interest or other charges apply — history only']]});
+      field(planFields,'Regular payment',p.payment,v=>p.payment=v,{maxlength:20,id:'loan-review-plan-payment'}).inputMode='decimal';field(planFields,'Frequency',p.frequency,v=>p.frequency=v,{id:'loan-review-plan-frequency',choices:[['weekly','Weekly'],['biweekly','Every two weeks'],['monthly','Monthly']]});
+      field(planFields,'Confirmed next due date',p.nextDueDate,v=>p.nextDueDate=v,{type:'date',id:'loan-review-plan-date'});const zoneDetails=node('details',null);zoneDetails.append(node('summary','Timezone'));field(zoneDetails,'Schedule timezone',p.timeZone,v=>p.timeZone=v,{maxlength:80,id:'loan-review-plan-zone'});
+      zoneDetails.append(button('Use this device’s timezone',()=>{p.timeZone=Intl.DateTimeFormat().resolvedOptions().timeZone;change();renderAndFocus('loan-review-plan-zone');}));planFields.append(zoneDetails);section.append(planFields);panel.append(section);
     }
     const capacity=node('details',null);capacity.append(node('summary','Will this fit in the free app?'),node('p','Free includes 3 people, 30 entries and 2 active loans, including existing records. Each loan, repayment or advance uses an entry. Plans have a separate allowance. The app checks capacity before saving; larger histories may need an upgrade.'));panel.append(capacity);
-    const actions=node('div',null,{class:'loan-import-actions'});const proceed=button('Continue on iPhone',prepare);proceed.className='lt-primaryCta';actions.append(proceed,button('Save a backup file',recovery));const restart=node('details',null);restart.append(node('summary','Start another import'),node('p','Save a backup first if you want to keep this review.'),button('Discard draft and start again',()=>{if(controller)return;revision++;draft=null;source=null;file=null;photo=null;prepared=null;showSource(null);lockInput(false);persist();panel.hidden=true;$('loan-import-transfer').hidden=true;$('loan-import-intake').hidden=false;status('Ready for another loan.');focusPanel($('loan-import-intake'));}));panel.append(actions,restart);updateBalance();
+    const actions=node('div',null,{class:'loan-import-actions'});actions.append(button('Save a backup file',recovery));const restart=node('details',null);restart.append(node('summary','Start another import'),node('p','Save a backup first if you want to keep this review.'),button('Discard draft and start again',()=>{if(controller||!draft)return;event('import_cancelled');revision++;draft=null;source=null;file=null;photo=null;prepared=null;showSource(null);lockInput(false);persist();panel.hidden=true;$('loan-import-transfer').hidden=true;$('loan-import-intake').hidden=false;status('Ready for another loan.');focusPanel($('loan-import-intake'));}));panel.append(actions,restart);updateBalance();updateReadiness();
   }
-  async function prepare(){
-    if(controller)return;
-    try{validate(draft);}catch(error){status(error.message);$('loan-import-status').scrollIntoView({block:'nearest'});return;}
+  async function prepare(activation){
+    if(controller||attemptLocked||activation?.detail>1)return;
     if(prepared){showTransfer();focusPanel($('loan-import-transfer'));return;}
+    // Coalesce same-task activation; a browser's second double-click has detail=2.
+    attemptLocked=true;queueMicrotask(()=>{attemptLocked=false;});
+    event('continue_attempt');
+    try{validate(draft);}catch(error){event('continue_rejected');status(error.message);updateReadiness();focusCorrection(error.reviewTarget);return;}
     const currentRevision=revision,ref=reference();controller=new AbortController();$('loan-import-review').inert=true;loading(true,true);status('Preparing your iPhone link…');
     try{const result=await post('loanTransfer',{action:'create',reference:ref,origin:'web',draft},controller.signal);if(currentRevision!==revision){status('Your review changed while preparing. Continue again to transfer the corrected history.');return;}prepared={reference:ref,envelope:result};persist();showTransfer();focusPanel($('loan-import-transfer'));event('transfer_prepared');status('Your loan is ready to open on iPhone.');}
     catch(error){status(error.message);}finally{controller=null;loading(false);$('loan-import-review').inert=false;if(!prepared)focusPanel($('loan-import-review'));}

@@ -1,0 +1,22 @@
+{
+  "mobile": {
+    "active": "loan-review-record-25-amount",
+    "dockBottom": 124.0390625,
+    "scrollWidth": 375,
+    "targetTop": 400.015625,
+    "viewport": [
+      390,
+      844
+    ]
+  },
+  "narrow": {
+    "active": "loan-review-record-25-amount",
+    "dockBottom": 117.3125,
+    "scrollWidth": 320,
+    "targetTop": 261.75,
+    "viewport": [
+      320,
+      568
+    ]
+  }
+}

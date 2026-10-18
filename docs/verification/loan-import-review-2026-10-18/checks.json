@@ -1,0 +1,48 @@
+{
+  "checkpoint": "local technical review; not pushed or deployed",
+  "baseline_sha": "1a2ca53c5ba9cf830311f40d9cf1ac880e1030b0",
+  "full_suite": {
+    "passed": 193,
+    "failed": 0
+  },
+  "focused_import_suite": {
+    "passed": 45,
+    "failed": 0
+  },
+  "strict_baseline_regression_combinations": 576,
+  "page_design_route_audits": {
+    "routes": 10,
+    "hard_errors": 0
+  },
+  "standalone_inset_stylesheet_audit": {
+    "baseline_missing_host_tokens": 6,
+    "current_missing_host_tokens": 6,
+    "documented_exception": "Tool inherits host page/hero shell; no new audit drift"
+  },
+  "offers_generator_check": "passed",
+  "diff_whitespace_check": "passed",
+  "browser_dimensions": [
+    [
+      1440,
+      1000
+    ],
+    [
+      390,
+      844
+    ],
+    [
+      320,
+      568
+    ]
+  ],
+  "production_requests_or_analytics_for_QA": false,
+  "native_repository_touched": false,
+  "new_event_names": [
+    "uomi_web_loan_continue_attempt",
+    "uomi_web_loan_continue_rejected",
+    "uomi_web_loan_import_cancelled"
+  ],
+  "new_analytics_parameter_names": [],
+  "new_GA_custom_definitions": [],
+  "original_recovery_identity_tests": "overdue original native recovery restores and downloads original state; malformed/mismatched cached state rejected; financial editing invalidates identity"
+}

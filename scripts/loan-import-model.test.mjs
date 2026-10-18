@@ -25,3 +25,38 @@ test('new interpretations include schedules and use device timezone only when mi
   raw.plan.interestFree=null;assert.throws(()=>validate(interpretedDraft(raw)));
   assert.equal(interpretedDraft(fixture()).plan,null);
 });
+
+import {reviewIssue} from './loan-import-model.mjs';
+test('readiness uses strict validation, targets missing facts and never treats editing as confirmation',()=>{
+  const d=fixture();d.person=null;d.unresolved=['Confirm the lender'];
+  assert.equal(reviewIssue(d).target,'loan-review-person');d.person='Corrected Synthetic';
+  assert.equal(reviewIssue(d).target,'loan-review-question-0');assert.equal(d.unresolved.length,1);
+  d.unresolved=[];assert.equal(reviewIssue(d),null);d.records[1].amount='1001';
+  assert.equal(reviewIssue(d).target,'loan-review-record-1-amount');assert.throws(()=>validate(d));
+});
+test('malformed excluded schedule terms still require explicit correction; incomplete terms can be history only',()=>{
+  const d=fixture();d.plan={include:false,interestFree:null,payment:null,frequency:null,nextDueDate:null,timeZone:null};
+  assert.equal(reviewIssue(d),null);const before=structuredClone(d);d.plan.include=true;assert.throws(()=>validate(d));
+  d.plan.include=false;assert.deepEqual(d,before);
+  d.plan.payment='100,50';assert.equal(reviewIssue(d).target,'loan-review-plan-payment');assert.throws(()=>reviewDraft(d));
+  d.plan.payment=null;d.plan.timeZone='Synthetic/Invalid';assert.equal(reviewIssue(d).target,'loan-review-plan-zone');assert.throws(()=>reviewDraft(d));
+  d.plan.timeZone=null;assert.equal(reviewIssue(d),null);
+});
+test('strict readiness retains malformed recovery, precision, date and overpayment boundaries',()=>{
+  for(const mutate of [d=>d.records[0].date='2026-02-30',d=>d.records[1].date=null,d=>d.records[1].date='2199-01-01',d=>d.records[1].date='2025-01-01',d=>d.records[0].amount='1.001',d=>d.records[0].amount='-100',d=>d.records[0].amount='0',d=>d.extra='private',d=>d.records.push({...d.records[0]})]){
+    const d=fixture();mutate(d);const before=structuredClone(d);assert.ok(reviewIssue(d));assert.throws(()=>validate(d));assert.deepEqual(d,before);
+  }
+});
+
+import {editableDraft} from './loan-import-model.mjs';
+test('editable recovery preserves unfinished amounts and timezone without weakening any handoff boundary',async()=>{
+  const d=fixture();d.records[1].amount='100,';d.plan={include:false,interestFree:null,payment:'50,',frequency:null,nextDueDate:null,timeZone:'Synthetic/unfinished'};
+  const restored=editableDraft(JSON.parse(JSON.stringify(d)));assert.deepEqual(restored,d);
+  assert.throws(()=>validate(restored));assert.throws(()=>reviewDraft(restored));
+  const {envelope}=await import('./loan-import-model.mjs');await assert.rejects(envelope(restored));
+  const raw={version:1,envelope:{version:1,importID:'a'.repeat(64),createdAt:1000,expiresAt:86401000,origin:'web',draft:d},payments:[],adoptionIntent:false,acceptedAt:2000};
+  assert.throws(()=>recoveryState(raw));
+  for(const mutate of [d=>d.extra='ignored',d=>d.person='a'.repeat(101),d=>d.records[0].amount={},d=>d.plan.payment='1'.repeat(21),d=>d.plan.timeZone='z'.repeat(81),d=>d.records[0].date='2026-02-30',d=>d.records[0].note='\u0000',d=>d.records.push(d.records[0])]){
+    const malformed=structuredClone(d);mutate(malformed);assert.throws(()=>editableDraft(malformed));
+  }
+});

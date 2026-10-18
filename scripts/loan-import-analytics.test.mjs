@@ -14,3 +14,9 @@ test('existing funnel stages remain accepted; arbitrary event fields cannot ente
   for(const stage of ['interpret_requested','interpret_ready','interpret_failed','transfer_prepared'])assert.equal(loanImportEventName(stage),'uomi_web_loan_'+stage);
   assert.equal(loanImportEventName({name:'input_photo',person:'private'}),null);
 });
+test('three diagnostic stages are event-only, bounded and carry no rejection or cancellation payload',()=>{
+  for(const stage of ['continue_attempt','continue_rejected','import_cancelled']){
+    const name=loanImportEventName(stage);assert.equal(name,'uomi_web_loan_'+stage);assert.ok(name.length<=40);
+  }
+  for(const stage of ['continue_rejected_private','import_cancelled_navigation','continue_attempt_100USD','import_saved',{},null])assert.equal(loanImportEventName(stage),null);
+});

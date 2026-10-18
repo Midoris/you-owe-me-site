@@ -1,0 +1,40 @@
+Page design audit: /
+Body class: homepage-page
+Audited stylesheets: styles/landing.css, styles/iphone-handoff.css, styles/anniversary-signals.css, styles/loan-import-entry.css, styles/landing-cleanup.css
+Hard errors: 0
+Page design audit: /tools/personal-loan-payment-tracker/
+Body class: tools-page
+Audited stylesheets: styles/tools.css, styles/personal-loan-payment-tracker.css
+Hard errors: 0
+Page design audit: /tools/payment-plan-calculator/
+Body class: tools-page
+Audited stylesheets: styles/tools.css, styles/payment-plan-calculator.css
+Hard errors: 0
+Page design audit: /tools/partial-repayment-calculator/
+Body class: tools-page
+Audited stylesheets: styles/tools.css, styles/partial-repayment-calculator.css
+Hard errors: 0
+Page design audit: /solutions/app-to-track-money-owed/
+Body class: solutions-page
+Audited stylesheets: styles/solutions.css
+Hard errors: 0
+Page design audit: /solutions/personal-loan-repayment-tracker/
+Body class: personal-loan-repayment-tracker-page
+Audited stylesheets: styles/personal-loan-repayment-tracker.css
+Hard errors: 0
+Page design audit: /blog/how-to-track-a-personal-loan-between-friends-or-family/
+Body class: personal-loan-record-guide-page
+Audited stylesheets: styles/personal-loan-record-guide.css
+Hard errors: 0
+Page design audit: /blog/how-to-remind-someone-they-owe-you-money-politely/
+Body class: blog-page
+Audited stylesheets: styles/blog.css
+Hard errors: 0
+Page design audit: /blog/what-is-a-running-balance-between-two-people/
+Body class: blog-page
+Audited stylesheets: styles/blog.css
+Hard errors: 0
+Page design audit: /blog/how-to-keep-track-of-who-owes-you-money/
+Body class: blog-page
+Audited stylesheets: styles/blog.css
+Hard errors: 0
