@@ -1,0 +1,444 @@
+{
+  "application_sha": "c4bf0704cb1eb223d1be726c4cde95aaf137eca0",
+  "verified_at_utc": "2026-10-18T11:43:06.400314+00:00",
+  "all_match": true,
+  "html_routes": 10,
+  "resources": 29,
+  "results": [
+    {
+      "url": "https://you-owe-me.com/",
+      "file": "index.html",
+      "status": 200,
+      "expected_sha256": "326d03feb39ec6955e614aa8fc4cec153117ad79863747919cde28c1837f3216",
+      "public_sha256": "326d03feb39ec6955e614aa8fc4cec153117ad79863747919cde28c1837f3216",
+      "matches": true,
+      "bytes": 70685,
+      "headers": {
+        "ETag": "\"6ad4b0aa-1141d\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/",
+      "file": "blog/how-to-keep-track-of-who-owes-you-money/index.html",
+      "status": 200,
+      "expected_sha256": "99b2922a3270d852ff70f80c09dc6359e865b93592c774c895031b97882db3e1",
+      "public_sha256": "99b2922a3270d852ff70f80c09dc6359e865b93592c774c895031b97882db3e1",
+      "matches": true,
+      "bytes": 47722,
+      "headers": {
+        "ETag": "\"6ad4b0aa-ba6a\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/blog/how-to-remind-someone-they-owe-you-money-politely/",
+      "file": "blog/how-to-remind-someone-they-owe-you-money-politely/index.html",
+      "status": 200,
+      "expected_sha256": "b3fdd0364f83fe5e62196d4cf050919599ec2ed95236da13e46e4ddac4c8d7ec",
+      "public_sha256": "b3fdd0364f83fe5e62196d4cf050919599ec2ed95236da13e46e4ddac4c8d7ec",
+      "matches": true,
+      "bytes": 72586,
+      "headers": {
+        "ETag": "\"6ad4b0aa-11b8a\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/blog/how-to-track-a-personal-loan-between-friends-or-family/",
+      "file": "blog/how-to-track-a-personal-loan-between-friends-or-family/index.html",
+      "status": 200,
+      "expected_sha256": "ad5497a974b8c042d4fd410a0ba385d4ba01c218022ea62c30e09cdc9afa1fb6",
+      "public_sha256": "ad5497a974b8c042d4fd410a0ba385d4ba01c218022ea62c30e09cdc9afa1fb6",
+      "matches": true,
+      "bytes": 68473,
+      "headers": {
+        "ETag": "\"6ad4b0aa-10b79\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/blog/what-is-a-running-balance-between-two-people/",
+      "file": "blog/what-is-a-running-balance-between-two-people/index.html",
+      "status": 200,
+      "expected_sha256": "09c10cd03952b209c75efc9523f1d9a171f00353a6ec62d9a5d215e01193522a",
+      "public_sha256": "09c10cd03952b209c75efc9523f1d9a171f00353a6ec62d9a5d215e01193522a",
+      "matches": true,
+      "bytes": 65978,
+      "headers": {
+        "ETag": "\"6ad4b0aa-101ba\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/analytics.js",
+      "file": "scripts/analytics.js",
+      "status": 200,
+      "expected_sha256": "b4e54ca32e29357c223ee618a0e2f6a24febe01a794efb8d19c21b7620d59cf1",
+      "public_sha256": "b4e54ca32e29357c223ee618a0e2f6a24febe01a794efb8d19c21b7620d59cf1",
+      "matches": true,
+      "bytes": 34547,
+      "headers": {
+        "ETag": "\"6ad4b0aa-86f3\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "application/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/analytics.js?v=20261018-review1",
+      "file": "scripts/analytics.js",
+      "status": 200,
+      "expected_sha256": "b4e54ca32e29357c223ee618a0e2f6a24febe01a794efb8d19c21b7620d59cf1",
+      "public_sha256": "b4e54ca32e29357c223ee618a0e2f6a24febe01a794efb8d19c21b7620d59cf1",
+      "matches": true,
+      "bytes": 34547,
+      "headers": {
+        "ETag": "\"6ad4b0aa-86f3\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "application/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/app-store-cta-view-tracker.mjs",
+      "file": "scripts/app-store-cta-view-tracker.mjs",
+      "status": 200,
+      "expected_sha256": "ff71ebd173e738636fba11fa8d2407c66571ec06e9b2b8cba9f93536e241fff8",
+      "public_sha256": "ff71ebd173e738636fba11fa8d2407c66571ec06e9b2b8cba9f93536e241fff8",
+      "matches": true,
+      "bytes": 4087,
+      "headers": {
+        "ETag": "\"6ad4b0aa-ff7\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/iphone-handoff-analytics-bridge.mjs?v=20260926-story-1",
+      "file": "scripts/iphone-handoff-analytics-bridge.mjs",
+      "status": 200,
+      "expected_sha256": "ae40f3855b5f2cbc0b70bc4355ec1267555f50ad3ba405ab62974f4559348d00",
+      "public_sha256": "ae40f3855b5f2cbc0b70bc4355ec1267555f50ad3ba405ab62974f4559348d00",
+      "matches": true,
+      "bytes": 1864,
+      "headers": {
+        "ETag": "\"6ad4b0aa-748\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-analytics.mjs",
+      "file": "scripts/loan-import-analytics.mjs",
+      "status": 200,
+      "expected_sha256": "1900cc870a9a45ac1edf5b4ef7cdd01c7a5370c9e98d6d46a29c87ffc97705d5",
+      "public_sha256": "1900cc870a9a45ac1edf5b4ef7cdd01c7a5370c9e98d6d46a29c87ffc97705d5",
+      "matches": true,
+      "bytes": 679,
+      "headers": {
+        "ETag": "\"6ad4b0aa-2a7\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-analytics.mjs?v=20261018-review1",
+      "file": "scripts/loan-import-analytics.mjs",
+      "status": 200,
+      "expected_sha256": "1900cc870a9a45ac1edf5b4ef7cdd01c7a5370c9e98d6d46a29c87ffc97705d5",
+      "public_sha256": "1900cc870a9a45ac1edf5b4ef7cdd01c7a5370c9e98d6d46a29c87ffc97705d5",
+      "matches": true,
+      "bytes": 679,
+      "headers": {
+        "ETag": "\"6ad4b0aa-2a7\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-config.mjs?v=20260922",
+      "file": "scripts/loan-import-config.mjs",
+      "status": 200,
+      "expected_sha256": "f3ed51fe19e20c724a2f1ab67f00a1951fcf4c31854d9706434c1180c6a5b77b",
+      "public_sha256": "f3ed51fe19e20c724a2f1ab67f00a1951fcf4c31854d9706434c1180c6a5b77b",
+      "matches": true,
+      "bytes": 572,
+      "headers": {
+        "ETag": "\"6ad4b0aa-23c\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-entry.mjs",
+      "file": "scripts/loan-import-entry.mjs",
+      "status": 200,
+      "expected_sha256": "7d29478034734bbdf918efa034cdb048fc86590b311a18497f0cda27a8293605",
+      "public_sha256": "7d29478034734bbdf918efa034cdb048fc86590b311a18497f0cda27a8293605",
+      "matches": true,
+      "bytes": 4708,
+      "headers": {
+        "ETag": "\"6ad4b0aa-1264\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-entry.mjs?v=20261018-review1",
+      "file": "scripts/loan-import-entry.mjs",
+      "status": 200,
+      "expected_sha256": "7d29478034734bbdf918efa034cdb048fc86590b311a18497f0cda27a8293605",
+      "public_sha256": "7d29478034734bbdf918efa034cdb048fc86590b311a18497f0cda27a8293605",
+      "matches": true,
+      "bytes": 4708,
+      "headers": {
+        "ETag": "\"6ad4b0aa-1264\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-errors.mjs",
+      "file": "scripts/loan-import-errors.mjs",
+      "status": 200,
+      "expected_sha256": "25f382a6ea0d25ce90d2ae6b1da6e00c0891fc534e607e9ef0f424328f9c2452",
+      "public_sha256": "25f382a6ea0d25ce90d2ae6b1da6e00c0891fc534e607e9ef0f424328f9c2452",
+      "matches": true,
+      "bytes": 812,
+      "headers": {
+        "ETag": "\"6ad4b0aa-32c\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-image.mjs",
+      "file": "scripts/loan-import-image.mjs",
+      "status": 200,
+      "expected_sha256": "2b46529f10f157733ec2b53b93fc200afc756c26a76d6501ef56c86b91092e7a",
+      "public_sha256": "2b46529f10f157733ec2b53b93fc200afc756c26a76d6501ef56c86b91092e7a",
+      "matches": true,
+      "bytes": 2853,
+      "headers": {
+        "ETag": "\"6ad4b0aa-b25\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-model.mjs",
+      "file": "scripts/loan-import-model.mjs",
+      "status": 200,
+      "expected_sha256": "f113c6f09308704df8b38a6fe3e93b319338e77f03559e727faacbd1ca6c019f",
+      "public_sha256": "f113c6f09308704df8b38a6fe3e93b319338e77f03559e727faacbd1ca6c019f",
+      "matches": true,
+      "bytes": 10693,
+      "headers": {
+        "ETag": "\"6ad4b0aa-29c5\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-model.mjs?v=20261018-review1",
+      "file": "scripts/loan-import-model.mjs",
+      "status": 200,
+      "expected_sha256": "f113c6f09308704df8b38a6fe3e93b319338e77f03559e727faacbd1ca6c019f",
+      "public_sha256": "f113c6f09308704df8b38a6fe3e93b319338e77f03559e727faacbd1ca6c019f",
+      "matches": true,
+      "bytes": 10693,
+      "headers": {
+        "ETag": "\"6ad4b0aa-29c5\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-ui.mjs",
+      "file": "scripts/loan-import-ui.mjs",
+      "status": 200,
+      "expected_sha256": "067f89d43504ae8a40bb1d4d329396694d267ad25cf21e0170ec98e04fec4857",
+      "public_sha256": "067f89d43504ae8a40bb1d4d329396694d267ad25cf21e0170ec98e04fec4857",
+      "matches": true,
+      "bytes": 4630,
+      "headers": {
+        "ETag": "\"6ad4b0aa-1216\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import.mjs",
+      "file": "scripts/loan-import.mjs",
+      "status": 200,
+      "expected_sha256": "e68e292b719ad880d451cba8e1a732aa3110cb5805550d35a75a601bd4bc87fd",
+      "public_sha256": "e68e292b719ad880d451cba8e1a732aa3110cb5805550d35a75a601bd4bc87fd",
+      "matches": true,
+      "bytes": 30534,
+      "headers": {
+        "ETag": "\"6ad4b0aa-7746\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import.mjs?v=20261018-review1",
+      "file": "scripts/loan-import.mjs",
+      "status": 200,
+      "expected_sha256": "e68e292b719ad880d451cba8e1a732aa3110cb5805550d35a75a601bd4bc87fd",
+      "public_sha256": "e68e292b719ad880d451cba8e1a732aa3110cb5805550d35a75a601bd4bc87fd",
+      "matches": true,
+      "bytes": 30534,
+      "headers": {
+        "ETag": "\"6ad4b0aa-7746\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/vendor/qrcode-2.0.4.js",
+      "file": "scripts/vendor/qrcode-2.0.4.js",
+      "status": 200,
+      "expected_sha256": "79ec86f82856005b1c887905cfccfcfbec3821ca61c7fd5a952faa5f778f791c",
+      "public_sha256": "79ec86f82856005b1c887905cfccfcfbec3821ca61c7fd5a952faa5f778f791c",
+      "matches": true,
+      "bytes": 56694,
+      "headers": {
+        "ETag": "\"6ad4b0aa-dd76\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "application/javascript; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/solutions/app-to-track-money-owed/",
+      "file": "solutions/app-to-track-money-owed/index.html",
+      "status": 200,
+      "expected_sha256": "379087a0bac257713fa3c8fa0acd9fafb1fa252a6a7e86009b18147f723f67eb",
+      "public_sha256": "379087a0bac257713fa3c8fa0acd9fafb1fa252a6a7e86009b18147f723f67eb",
+      "matches": true,
+      "bytes": 69993,
+      "headers": {
+        "ETag": "\"6ad4b0aa-11169\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
+      "file": "solutions/personal-loan-repayment-tracker/index.html",
+      "status": 200,
+      "expected_sha256": "4cf6dabdafd8b813731cc69b6b85be6ce314ee0835be0eabb1820f0c243ba71a",
+      "public_sha256": "4cf6dabdafd8b813731cc69b6b85be6ce314ee0835be0eabb1820f0c243ba71a",
+      "matches": true,
+      "bytes": 45239,
+      "headers": {
+        "ETag": "\"6ad4b0aa-b0b7\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/loan-import.css",
+      "file": "styles/loan-import.css",
+      "status": 200,
+      "expected_sha256": "61f3f1161148c385197f5f1564b7eaf574758a42173bad11f4b3914dcde86960",
+      "public_sha256": "61f3f1161148c385197f5f1564b7eaf574758a42173bad11f4b3914dcde86960",
+      "matches": true,
+      "bytes": 11228,
+      "headers": {
+        "ETag": "\"6ad4b0aa-2bdc\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/css; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/loan-import.css?v=20261018-review1",
+      "file": "styles/loan-import.css",
+      "status": 200,
+      "expected_sha256": "61f3f1161148c385197f5f1564b7eaf574758a42173bad11f4b3914dcde86960",
+      "public_sha256": "61f3f1161148c385197f5f1564b7eaf574758a42173bad11f4b3914dcde86960",
+      "matches": true,
+      "bytes": 11228,
+      "headers": {
+        "ETag": "\"6ad4b0aa-2bdc\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/css; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/tools/partial-repayment-calculator/",
+      "file": "tools/partial-repayment-calculator/index.html",
+      "status": 200,
+      "expected_sha256": "3a8551c377981b6fe191003fbe71f7a5f9f52962811391c48d50571f52ae7634",
+      "public_sha256": "3a8551c377981b6fe191003fbe71f7a5f9f52962811391c48d50571f52ae7634",
+      "matches": true,
+      "bytes": 52161,
+      "headers": {
+        "ETag": "\"6ad4b0aa-cbc1\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/tools/payment-plan-calculator/",
+      "file": "tools/payment-plan-calculator/index.html",
+      "status": 200,
+      "expected_sha256": "5e0fe8bc9ae7fa8eb222cb0c78bba11342403bd6e363ace4e7b762c5b435a252",
+      "public_sha256": "5e0fe8bc9ae7fa8eb222cb0c78bba11342403bd6e363ace4e7b762c5b435a252",
+      "matches": true,
+      "bytes": 77937,
+      "headers": {
+        "ETag": "\"6ad4b0aa-13071\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/tools/personal-loan-payment-tracker/",
+      "file": "tools/personal-loan-payment-tracker/index.html",
+      "status": 200,
+      "expected_sha256": "585daeaad43622edf52e7d3d83247d3b8e88eff98266aebf141cc00c975a114c",
+      "public_sha256": "585daeaad43622edf52e7d3d83247d3b8e88eff98266aebf141cc00c975a114c",
+      "matches": true,
+      "bytes": 53695,
+      "headers": {
+        "ETag": "\"6ad4b0aa-d1bf\"",
+        "Last-Modified": "Sun, 18 Oct 2026 11:42:34 GMT",
+        "Cache-Control": "max-age=600",
+        "Content-Type": "text/html; charset=utf-8"
+      }
+    }
+  ]
+}

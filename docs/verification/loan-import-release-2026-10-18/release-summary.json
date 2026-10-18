@@ -1,0 +1,84 @@
+{
+  "application_sha": "c4bf0704cb1eb223d1be726c4cde95aaf137eca0",
+  "reviewed_patch_sha256": "29aaa899269c10c95d6f93e0c5b7ddf0284348cdf33cf19f016facd4349f0acf",
+  "reviewed_file_count": 35,
+  "pages_run_id": 39124273825,
+  "pages_run_url": "https://github.com/Midoris/you-owe-me-site/actions/runs/39124273825",
+  "pages_run_conclusion": "success",
+  "deployment_id": 7154058457,
+  "deployment_status": "success",
+  "deployment_job_completed_at_utc": "2026-10-18T11:42:49Z",
+  "live_success_receipt_at_utc": "2026-10-18T11:42:50Z",
+  "live_success_receipt_at_bangkok": "2026-10-18T18:42:50+07:00",
+  "url": "https://you-owe-me.com/",
+  "public_parity": {
+    "all_match": true,
+    "url_count": 29,
+    "html_routes": 10,
+    "verified_at_utc": "2026-10-18T11:43:06.400314+00:00"
+  },
+  "browser_smoke": {
+    "direct_intake": true,
+    "embedded_home_offer": true,
+    "manual_blank_review": true,
+    "correction_focus": "loan-review-person",
+    "dimensions": [
+      [
+        1440,
+        1000
+      ],
+      [
+        390,
+        844
+      ]
+    ],
+    "horizontal_overflow": false,
+    "console_errors_or_warnings_observed": [],
+    "paid_interpretation_requests": 0,
+    "transfer_requests": 0,
+    "real_customer_data_used": false,
+    "physical_iphone_or_native_commit_tested": false
+  },
+  "qa_exclusion_window": {
+    "utc": [
+      "2026-10-18T11:43:00Z",
+      "2026-10-18T11:46:59Z"
+    ],
+    "bangkok": [
+      "2026-10-18T18:43:00+07:00",
+      "2026-10-18T18:46:59+07:00"
+    ],
+    "paths": [
+      "/tools/personal-loan-payment-tracker/",
+      "/"
+    ],
+    "accepted_actions": {
+      "implementation": {
+        "uomi_web_loan_input_manual": 1,
+        "uomi_web_loan_offer_chosen": 1
+      },
+      "coordinator_reported": {
+        "uomi_web_loan_input_manual": 1
+      }
+    },
+    "other_possible_events": [
+      "uomi_web_loan_offer_viewed",
+      "uomi_web_page_visited",
+      "uomi_web_app_store_cta_viewed"
+    ],
+    "new_diagnostic_action_activations": 0,
+    "analytics_delivery_verified": false
+  },
+  "rollback_application_baseline": "1a2ca53c5ba9cf830311f40d9cf1ac880e1030b0",
+  "unrelated_audits_preserved": true,
+  "native_repository_touched": false,
+  "publication_method": "Existing SSH identity: git push git@github.com:Midoris/you-owe-me-site.git master; HTTPS remote retained",
+  "evidence_commit": "Separate later documentation-only commit; application source unchanged",
+  "independent_coordinator_smoke": {
+    "reported_window_utc": "2026-10-18 11:44\u201311:46 UTC",
+    "route": "/tools/personal-loan-payment-tracker/",
+    "result": "Versioned graph visible; blank manual review; correction focused loan-review-person",
+    "continue_interpret_transfer_backup_native_actions": false,
+    "evidence": "coordinator-live-web-review.png"
+  }
+}

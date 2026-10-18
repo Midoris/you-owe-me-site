@@ -1,0 +1,21 @@
+{
+  "active": "loan-review-person",
+  "dock": {
+    "bottom": 378.1796875,
+    "height": 116,
+    "left": 39.328125,
+    "right": 335.671875,
+    "top": 262.1796875,
+    "width": 296.34375,
+    "x": 39.328125,
+    "y": 262.1796875
+  },
+  "hiddenHistory": "none",
+  "route": "/tools/personal-loan-payment-tracker/",
+  "scrollWidth": 375,
+  "targetTop": 430.9609375,
+  "viewport": [
+    390,
+    844
+  ]
+}

@@ -1,5 +1,7 @@
 # EXP-011 website review refinement — 2026-10-18
 
+The accepted application patch was subsequently published as `c4bf0704cb1eb223d1be726c4cde95aaf137eca0`; see [release verification](loan-import-release-2026-10-18.md). The sections below preserve the local review checkpoint.
+
 Local technical review checkpoint. This refines EXP-011; it does not create a new experiment. No production publication has occurred at this checkpoint. The native application is outside this change.
 
 ## Behavior
