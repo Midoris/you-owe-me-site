@@ -3,6 +3,7 @@ import path from "node:path";
 export const INCLUDED_EXACT_ROUTES = new Set([
   "/",
   "/features/",
+  "/live-link/",
   "/voice-to-entry/",
   "/reviews/",
   "/find/",

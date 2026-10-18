@@ -55,7 +55,7 @@ test("money-owed hero leads to a separate first-balance setup module", async () 
     "Record the $120 Alex owes you and what it was for.",
     "Log a repayment",
     "When Alex pays back $30, log the repayment. The app shows $90 still owed.",
-    "Share when you’re ready. A read-only Live Link opens in the other person’s browser without an app or account.",
+    "Share when you’re ready. A Live Link opens in the other person’s browser without an app or account.",
     "Face ID / Touch ID app lock",
   ]) {
     assert.ok(sectionText.includes(copy), `first-minute block should include: ${copy}`);

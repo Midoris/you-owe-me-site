@@ -2,7 +2,7 @@
 
 You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, temporary financial support, Balance Replay, Relationship Timeline, Loan Records, Loan Outlook, payment plans, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, optional two-person Balance Sync, supporting photos, PDF statements with photo appendices, percentage or fixed interest, and calm money conversations.
 
-You Owe Me is available for iPhone only; there is no Android app. The website’s free browser tools work independently on Android, and an Android user can view a read-only Live Link created by an iPhone app user.
+You Owe Me is available for iPhone only; there is no Android app. The website’s free browser tools work independently on Android, and an Android user can view a Live Link created by an iPhone app user and, with a reporting invitation, report a payment for owner review.
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
 You Owe Me is not a lender. It does not provide loans, approve credit, advance cash, process payments, or connect users with lenders.
@@ -51,6 +51,17 @@ You Owe Me supports reviewed import for one personal loan from pasted notes or c
 
 - Steps and limitations: https://you-owe-me.com/tools/personal-loan-payment-tracker/#loan-import-guide
 - Privacy and temporary storage: https://you-owe-me.com/privacy-and-data/#loan-import-privacy
+
+## Live Link and payment reports
+
+- [Live Link guide](https://you-owe-me.com/live-link/): One person maintains the record in the iPhone app. The recipient views the published balance and transaction history in a browser without an app or account, including on Android.
+- For a person's regular balance (not a Loan Record), the owner signs in, enables **Allow payment reports** for that Live Link, and shares the reporting invitation. Previously shared bare view URLs stay view-only. Reporting is optional per link; ordinary Live Links continue working.
+- The recipient reports a positive amount, payment date, and optional note. Currency follows the shared balance. Reports describe money paid by the recipient to the owner. Reporting is supported for positive, zero, or reversed normal balances; the payment direction stays the same.
+- The owner reviews in iOS: **Record** creates a payment; **Match** links an eligible existing payment without a duplicate; **Decline** creates no payment. Reporting does not transfer money, verify a bank transaction, or automatically change the balance.
+- **Refresh** checks the recipient's private receipt status and reloads the published balance and transactions. Statement publication can lag the owner decision. Do not describe this as automatic settlement or guaranteed immediate updating.
+- Original reported values stay unchanged; the recorded amount or date may differ. Recorded acknowledges the owner decision and does not mirror later payment edits or deletions.
+- Live Link reporting is distinct from Balance Sync, where exactly two authenticated app users can update supported connected entries. Payment reports do not provide direct editing access, loan-link responses, bank verification, or payment processing.
+- Visible setup and trust context: [Quick Start](https://you-owe-me.com/quick-start/) and [Privacy & Data](https://you-owe-me.com/privacy-and-data/).
 
 ## Loan Outlook
 
@@ -223,7 +234,7 @@ Use this section for money owed, repayment communication, borrower-side repaymen
 - [Running Balance Calculator](https://you-owe-me.com/tools/running-balance-calculator/)
 - [Shared Expense Tracker](https://you-owe-me.com/solutions/shared-expense-tracker/): Product solution page that distinguishes private tracking, always-current Live Link visibility, optional Balance Sync between exactly two app users, and multi-person group-ledger workflows.
 - [How to Split Costs When People Pay at Different Times](https://you-owe-me.com/blog/how-to-split-costs-when-people-pay-at-different-times/): Choose between a split calculator, running balance, group payback record, partial repayment check, or You Owe Me when shared costs were paid or repaid at different times.
-- [Can One Person Track Shared Money Without Everyone Installing an App?](https://you-owe-me.com/blog/can-one-person-track-shared-money-without-everyone-installing-an-app/): Answers whether one person can track shared money without everyone installing the same app. It preserves Live Link as the always-current, read-only browser option and explains Balance Sync separately for exactly two app users who both want to update supported entries.
+- [Can One Person Track Shared Money Without Everyone Installing an App?](https://you-owe-me.com/blog/can-one-person-track-shared-money-without-everyone-installing-an-app/): Answers whether one person can track shared money without everyone installing the same app. It explains browser visibility and optional owner-reviewed payment reports through Live Link, with Balance Sync separately for exactly two app users who both want to update supported entries.
 - [How to Track Who Paid You Back for a Group Expense](https://you-owe-me.com/blog/how-to-track-who-paid-you-back-for-a-group-expense/): Explains how to track who paid back a group expense after one person paid first, including what to record, partial paybacks, an example payback table, copyable reminder messages, and when to use a split calculator, Group Payback Tracker, running balance, or full group expense app.
 - [How to Track Shared Expenses Without Constantly Reconciling Every Transaction](https://you-owe-me.com/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/)
 

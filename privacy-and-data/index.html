@@ -44,7 +44,7 @@
           "name": "Privacy and Data in You Owe Me",
           "description": "A plain-English guide to how You Owe Me handles local records, iCloud sync, optional Cloud Accounts, Balance Sync, sharing links, AI features, reminders, exports, App Lock, and sensitive money records.",
           "url": "https://you-owe-me.com/privacy-and-data/",
-          "dateModified": "2026-08-11",
+          "dateModified": "2026-10-18",
           "image": "https://you-owe-me.com/images/privacy-data-hero.webp",
           "publisher": {
             "@type": "Organization",
@@ -105,7 +105,7 @@
               "name": "What happens when I create a Live Link?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "A Live Link creates a read-only web statement at an unlisted link. The other person does not need the app, but anyone with the link can view the active statement. A Live Link may show selected balance history, totals, dates, amounts, currencies, notes/reasons, and interest details where relevant."
+                "text": "A Live Link publishes a web statement at an unlisted link. Anyone with the active link can view selected balance history, totals, dates, amounts, currencies, notes/reasons, and interest details where relevant. Optional payment reports for normal balance links require a reporting invitation. The recipient needs no app or account, and the owner reviews reports before changing the record."
               }
             },
             {
@@ -481,13 +481,15 @@
 
             <div class="pd-info-card">
               <h3>Live Links are convenient, but they are still links.</h3>
-              <p>When you create a Live Link, You Owe Me publishes a read-only web statement at an unlisted link. The other person does not need to install the app or create an account, but anyone with the link can view the active statement. Only share it with people who should see that balance history.</p>
-              <p class="lt-paragraphGap">If your main question is whether the other person needs the app, read <a href="/blog/can-one-person-track-shared-money-without-everyone-installing-an-app/">how one person can keep the record and still share the balance clearly</a>.</p>
+              <p>When you create a Live Link, You Owe Me publishes a web statement at an unlisted link. The other person does not need to install the app or create an account, but anyone with the link can view the active statement. Only share it with people who should see that balance history.</p>
+              <p class="lt-paragraphGap">See <a href="/live-link/">how Live Link and optional payment reports work</a>, including the difference between a report decision and the published statement.</p>
               <ul>
                 <li>A Live Link can show selected balance history, totals, dates, amounts, currencies, notes/reasons, and interest details where relevant.</li>
                 <li>A Live Link may update as you add, edit, or delete related entries.</li>
                 <li>You can stop sharing, which removes transaction rows from the public page, or delete the Live Link record.</li>
                 <li>They are link-based statements, not signed-in account pages.</li>
+                <li>For normal balance links, you can enable Allow payment reports and share the reporting invitation. Anyone with that invitation can submit payment details for your review; treat it with the same care as the statement link. Previously shared view-only URLs do not gain reporting access.</li>
+                <li>The report contains an amount, date, and optional note. It does not transfer money or verify a bank payment. Private report status is checked from the recipient’s receipt, rather than published as a status feed on the statement.</li>
               </ul>
             </div>
 
@@ -738,7 +740,7 @@
               </details>
               <details>
                 <summary>What happens when I create a Live Link?</summary>
-                <p>A Live Link creates a read-only web statement at an unlisted link. The other person does not need the app, but anyone with the link can view the active statement. A Live Link may show selected balance history, totals, dates, amounts, currencies, notes/reasons, and interest details where relevant.</p>
+                <p>A Live Link publishes a web statement at an unlisted link. Anyone with the active link can view selected balance history, totals, dates, amounts, currencies, notes/reasons, and interest details where relevant. Optional payment reports for normal balance links require a reporting invitation. The recipient needs no app or account, and the owner reviews reports before changing the record.</p>
               </details>
               <details>
                 <summary>How does Balance Sync handle shared records?</summary>
@@ -784,7 +786,7 @@
               <a href="/privacy-policy/" class="lt-textCta" data-track-location="privacy_data_final_policy">Read the full Privacy Policy</a>
             </div>
             <p class="pd-cta-note">Free download. Core tracking works without a mandatory You Owe Me cloud account.</p>
-            <p class="pd-updated">Updated August 11, 2026</p>
+            <p class="pd-updated">Updated <time datetime="2026-10-18">October 18, 2026</time></p>
           </section>
         </article>
       </div>

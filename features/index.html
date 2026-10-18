@@ -15,12 +15,12 @@
     <link rel="canonical" href="https://you-owe-me.com/features/" />
     <meta
       name="description"
-      content="Record money between people by voice or text. Explore Loan Outlook for upcoming repayments, Spaces, running balances, reminders, sharing and PDF statements."
+      content="Track money between people with Voice to Entry, Loan Outlook, Spaces, Live Link payment reports, Balance Sync, reminders, and PDF statements."
     />
     <meta property="og:title" content="You Owe Me App Features | Voice Entry, IOUs &amp; Reminders" />
     <meta
       property="og:description"
-      content="Record money between people by voice or text. Explore Loan Outlook for upcoming repayments, Spaces, running balances, reminders, sharing and PDF statements."
+      content="Track money between people with Voice to Entry, Loan Outlook, Spaces, Live Link payment reports, Balance Sync, reminders, and PDF statements."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://you-owe-me.com/features/" />
@@ -29,7 +29,7 @@
     <meta name="twitter:title" content="You Owe Me App Features | Voice Entry, IOUs &amp; Reminders" />
     <meta
       name="twitter:description"
-      content="Record money between people by voice or text. Explore Loan Outlook for upcoming repayments, Spaces, running balances, reminders, sharing and PDF statements."
+      content="Track money between people with Voice to Entry, Loan Outlook, Spaces, Live Link payment reports, Balance Sync, reminders, and PDF statements."
     />
     <meta name="twitter:image" content="https://you-owe-me.com/images/pages/features/main.png" />
 
@@ -38,11 +38,17 @@
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "You Owe Me App Features",
-      "description": "Record money between people by voice or text. Explore Loan Outlook for upcoming repayments, Spaces, running balances, reminders, sharing and PDF statements.",
+      "description": "Track money between people with Voice to Entry, Loan Outlook, Spaces, Live Link payment reports, Balance Sync, reminders, and PDF statements.",
       "url": "https://you-owe-me.com/features/",
-      "dateModified": "2026-10-11",
+      "dateModified": "2026-10-18",
       "inLanguage": "en",
       "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://you-owe-me.com/features/#live-link",
+          "name": "Live Link and payment reports",
+          "description": "Share a published balance without an app or account. Optional payment reports for normal balance links let the recipient send an amount, date, and optional note for owner review. Record creates a payment, Match links an eligible existing payment without a duplicate, and Decline creates no payment. Reporting does not transfer money, verify bank payments, or automatically change the balance."
+        },
         {
           "@type": "WebPageElement",
           "@id": "https://you-owe-me.com/features/#voice-to-entry",
@@ -137,7 +143,7 @@
           "name": "How is Balance Sync different from Live Link?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Live Link is the one-way option: one person maintains the record while the other person gets an always-current, read-only browser view without installing the app. Balance Sync is the two-way option: exactly two You Owe Me users can both update supported connected entries from their own phones."
+            "text": "With Live Link, one person maintains the record and the other views it in a browser without an app or account. Optional payment reports let the recipient report a payment for owner review; they do not edit the balance. Balance Sync lets exactly two app users update supported connected entries from their own phones."
           }
         },
         {
@@ -145,7 +151,7 @@
           "name": "Can Live Link and Balance Sync be active for the same connected person?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Not at the same time. Use Live Link when one person maintains the record and the other person only needs browser visibility. Use Balance Sync when exactly two app users both need to update supported entries."
+            "text": "Not at the same time. Use Live Link for browser visibility and optional owner-reviewed payment reports. Use Balance Sync when exactly two app users both need to update supported entries."
           }
         },
         {
@@ -232,7 +238,7 @@
     <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="../styles/site-nav.css" />
     <link rel="stylesheet" href="../styles/solutions.css?v=features-base-1" />
-    <link rel="stylesheet" href="../styles/features.css?v=20261002-voice" />
+    <link rel="stylesheet" href="../styles/features.css?v=20261018-live-link" />
     <link rel="stylesheet" href="../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
@@ -1118,8 +1124,8 @@
                       <tr>
                         <th scope="row">Live Link</th>
                         <td data-label="Best when">The other person needs an always-current browser view but does not need editing access.</td>
-                        <td data-label="Who changes the record">You maintain the record; the viewer gets a read-only view.</td>
-                        <td data-label="What the other person needs">No app or account is required to view the link.</td>
+                        <td data-label="Who changes the record">You maintain the record and review any optional payment reports.</td>
+                        <td data-label="What the other person needs">No app or account to view or, when invited, report a payment.</td>
                       </tr>
                       <tr>
                         <th scope="row">Balance Sync</th>
@@ -1136,17 +1142,18 @@
               <article class="features-card" id="live-link">
                 <div>
                   <p class="lt-eyebrow">Live Link</p>
-                  <h3>Share an always-current balance without requiring the app</h3>
-                  <p>You keep the record in You Owe Me. The other person opens one read-only browser link to see the latest balance and history as you update it&mdash;without installing the app or creating an account.</p>
-                  <p>Use Live Link when the other person needs visibility but does not need to edit the balance. The same link remains useful as entries, repayments, and the current balance change.</p>
-                  <p>If the main question is whether everyone needs to install the same app, read the <a href="/blog/can-one-person-track-shared-money-without-everyone-installing-an-app/">one-person shared-money tracking guide</a>.</p>
+                  <h3>Share the balance. Make room for “I’ve paid.”</h3>
+                  <p>You keep the record in You Owe Me. The other person opens a Live Link to see the published balance and history without an app or account, including on Android.</p>
+                  <p>Enable <strong>Allow payment reports</strong> for a normal balance Live Link and share the reporting invitation. The recipient sends an amount, date, and optional note. You review it in the app: <strong>Record</strong> creates a payment, <strong>Match</strong> links an eligible existing payment without a duplicate, and <strong>Decline</strong> creates no payment.</p>
+                  <p>A report does not transfer money, verify a bank payment, or change the balance automatically. The recipient can use Refresh to check private status and reload the published statement, which can lag your decision.</p>
                   <h4>Main use cases</h4>
                   <ul>
                     <li>Sharing a live balance with family, partners, roommates, or clients</li>
                     <li>Replacing repeated screenshots with one current link</li>
-                    <li>Giving the other person visibility without asking them to install the app</li>
+                    <li>Letting someone report a payment while you keep control of the record</li>
                   </ul>
-                  <a href="/events/live-link/" class="lt-cardCta">See Live Link update</a>
+                  <p class="features-boundary-line">Payment reports are optional for each normal balance link. Existing view-only URLs stay view-only; Loan Record links do not accept reports.</p>
+                  <a href="/live-link/" class="lt-cardCta">See Live Link and payment reports</a>
                 </div>
                 <picture>
                   <source srcset="../images/shared/app-screenshots/6.8.5_share_live_balance.webp" type="image/webp" />
@@ -1182,8 +1189,8 @@
             <h2 id="balance-sync-faq-title">Balance Sync FAQ</h2>
             <div class="features-grid">
               <article class="features-card features-card--text"><h3>Do both people need You Owe Me for Balance Sync?</h3><p>Yes. Balance Sync connects exactly two You Owe Me users. Both participants need full Sign in with Apple accounts and a compatible version of the app, currently You Owe Me 6.9.4 or later. If only one person wants the app, use Live Link or another shareable summary instead.</p></article>
-              <article class="features-card features-card--text"><h3>How is Balance Sync different from Live Link?</h3><p>Live Link is the one-way option: one person maintains the record while the other person gets an always-current, read-only browser view without installing the app. Balance Sync is the two-way option: exactly two You Owe Me users can both update supported connected entries from their own phones.</p></article>
-              <article class="features-card features-card--text"><h3>Can Live Link and Balance Sync be active for the same connected person?</h3><p>Not at the same time. Use Live Link when one person maintains the record and the other person only needs browser visibility. Use Balance Sync when exactly two app users both need to update supported entries.</p></article>
+              <article class="features-card features-card--text"><h3>How is Balance Sync different from Live Link?</h3><p>With Live Link, one person maintains the record and the other views it in a browser without an app or account. Optional payment reports let the recipient report a payment for owner review; they do not edit the balance. Balance Sync lets exactly two app users update supported connected entries from their own phones.</p></article>
+              <article class="features-card features-card--text"><h3>Can Live Link and Balance Sync be active for the same connected person?</h3><p>Not at the same time. Use Live Link for browser visibility and optional owner-reviewed payment reports. Use Balance Sync when exactly two app users both need to update supported entries.</p></article>
               <article class="features-card features-card--text"><h3>How does someone connect with Balance Sync?</h3><p>The sender opens a person, chooses Share and then Balance Sync, reviews what will be shared, and creates a private invitation by QR code or link. The invitation expires after seven days and should only be sent to the intended person. The recipient signs in, reviews the invitation and data disclosure, and accepts the balance into a new, separate person record.</p></article>
               <article class="features-card features-card--text"><h3>Does Balance Sync update instantly?</h3><p>Do not treat it as instantaneous or real-time. Synchronization runs after local changes, when the app becomes active, when connectivity returns, and when someone manually refreshes or retries.</p></article>
               <article class="features-card features-card--text"><h3>What information synchronizes?</h3><p>Balance Sync synchronizes the supported information needed to reproduce connected balance entries, including amount, debt direction, currency, date, note or reason, entry icon, archived status, and supported interest or linked balance-record information.</p></article>
@@ -1550,7 +1557,7 @@
               <a href="/solutions/" class="lt-textCta">Browse solutions</a>
             </div>
           </section>
-          <p class="lt-pageMeta">Updated <time datetime="2026-10-11">October 11, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-10-18">October 18, 2026</time></p>
         </article>
       </main>
 
