@@ -60,11 +60,11 @@ test("homepage and money-owed solution state Android availability consistently",
 
     assert.ok(text.includes(question), `${relativePath} should contain the exact question`);
     assert.match(text, /\bThere is no Android app\b/i);
-    assert.match(text, /\bavailable for iPhone only\b/i);
+    assert.match(text, /\bavailable for iPhone and iPad\b/i);
     assert.match(text, /\bLive Link\b/i);
     assert.match(text, /report a payment in the browser without an account/i);
     assert.match(text, /owner reviews it before recording anything/i);
-    assert.match(text, /Maintaining the ongoing record requires the iPhone app/i);
+    assert.match(text, /Maintaining the ongoing record requires the iPhone or iPad app/i);
     assert.match(text, /\bBalance Sync is not available to an Android participant\b/i);
     assert.match(section, /href=["']\/tools\/["']/i);
     assert.match(section, /href=["']\/features\/#live-link["']/i);
@@ -95,12 +95,12 @@ test("homepage SoftwareApplication remains iOS-only structured data", () => {
   assert.equal(softwareApplication.operatingSystem, "iOS");
 });
 
-test("llms.txt communicates iPhone-only availability and Android browser limits", () => {
+test("llms.txt communicates iPhone and iPad availability and Android browser limits", () => {
   const llms = read("llms.txt");
-  assert.match(llms, /\bavailable for iPhone only\b/i);
+  assert.match(llms, /\bavailable for iPhone and iPad\b/i);
   assert.match(llms, /\bthere is no Android app\b/i);
   assert.match(llms, /\bbrowser tools work independently on Android\b/i);
-  assert.match(llms, /\bAndroid user can view a Live Link created by an iPhone app user\b/i);
+  assert.match(llms, /\bAndroid user can view a Live Link created by an iPhone or iPad app user\b/i);
   assert.match(llms, /with a reporting invitation, report a payment for owner review/i);
 });
 

@@ -2,7 +2,7 @@
 
 You Owe Me is an iPhone app for tracking money between real people. It helps with IOUs, shared expenses, running balances, temporary financial support, Balance Replay, Relationship Timeline, Loan Records, Loan Outlook, payment plans, repayments, partial repayments, recurring costs, family reimbursements, roommate bills, couple spending, reminders, Live Links, optional two-person Balance Sync, supporting photos, PDF statements with photo appendices, percentage or fixed interest, and calm money conversations.
 
-You Owe Me is available for iPhone only; there is no Android app. The website’s free browser tools work independently on Android, and an Android user can view a Live Link created by an iPhone app user and, with a reporting invitation, report a payment for owner review.
+You Owe Me is available for iPhone and iPad; there is no Android app. The website’s free browser tools work independently on Android, and an Android user can view a Live Link created by an iPhone or iPad app user and, with a reporting invitation, report a payment for owner review.
 
 The app is not only a loan tracker. It is a relationship-safe running balance app for money between people.
 You Owe Me is not a lender. It does not provide loans, approve credit, advance cash, process payments, or connect users with lenders.
