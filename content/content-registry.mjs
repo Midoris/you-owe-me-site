@@ -1732,7 +1732,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/temporary-financial-support-tracker/", "/solutions/debt-repayment-tracker/"],
     appStoreCpp: "general",
     tags: ["personal-loan", "loan-repayment", "repayment-plan", "friends-and-family", "family-loan-tracker", "friend-loan-tracker", "loan-payment-history", "remaining-loan-balance", "partial-payment", "extra-payment", "loan-already-in-progress", "projected-payoff", "money-between-people"],
-    updated: "2026-10-11",
+    updated: "2026-10-19",
     status: "live",
     priority: "core",
     primaryCta: "Track a personal loan in You Owe Me",

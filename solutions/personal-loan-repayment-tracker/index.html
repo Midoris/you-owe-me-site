@@ -30,7 +30,7 @@
       "description": "Keep each personal loan and its real repayments clear. Follow the balance and plan, then see upcoming payments across loans with Loan Outlook on iPhone.",
       "url": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
       "isPartOf": "https://you-owe-me.com/solutions/",
-      "dateModified": "2026-10-11",
+      "dateModified": "2026-10-19",
       "publisher": {
         "@type": "Organization",
         "name": "You Owe Me"
@@ -74,8 +74,9 @@
     <link rel="stylesheet" href="../../styles/solutions.css" />
     <link rel="stylesheet" href="../../styles/solution-detail.css" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
-    <link rel="stylesheet" href="../../styles/personal-loan-repayment-tracker.css" />
+    <link rel="stylesheet" href="../../styles/personal-loan-repayment-tracker.css?v=record-once-20261019-1" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
+    <link rel="stylesheet" href="../../styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1" />
       <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260925-mobile-layout-1" />
   </head>
 
@@ -178,107 +179,48 @@
           </div>
           <!-- loan-import-offer:end -->
 
-          <section class="plrt-section plrt-section--artifact" id="loan-example" aria-labelledby="demo-heading">
-            <div class="plrt-section-heading">
-              <p class="plrt-eyebrow">Worked example</p>
-              <h2 id="demo-heading">A repayment plan should change when real payments do</h2>
-              <p>A calculator might show six payments of 200. But what happens when the first payment is 150, the next is 300, or another 100 is borrowed later?</p>
-              <p class="plrt-scenario">Alex lent Jordan 1,200 for a laptop. They chose a regular payment of 200 each month, starting on 1 August. All amounts in this example use one currency.</p>
-            </div>
-
-            <div class="plrt-demo" data-loan-demo>
-              <div class="plrt-demo__controls" role="group" aria-label="Loan lifecycle example states">
-                <button type="button" class="plrt-demo__control is-active" data-loan-state="1" aria-pressed="true">1. Plan created</button>
-                <button type="button" class="plrt-demo__control" data-loan-state="2" aria-pressed="false">2. 150 paid</button>
-                <button type="button" class="plrt-demo__control" data-loan-state="3" aria-pressed="false">3. 300 paid</button>
-                <button type="button" class="plrt-demo__control" data-loan-state="4" aria-pressed="false">4. 100 added later</button>
+          <section class="plrt-section plrt-section--artifact plrt-record-once" id="loan-example" aria-labelledby="demo-heading">
+            <div class="plrt-record-once__grid">
+              <div class="plrt-record-once__copy">
+                <p class="plrt-eyebrow">Repayments in real life</p>
+                <h2 id="demo-heading">Record the payment.<br>Keep the loan current.</h2>
+                <p>Log what you actually received. You Owe Me updates the loan, plan and enabled reminder together.</p>
               </div>
-              <p class="sr-only" aria-live="polite" aria-atomic="true" data-loan-live>Showing example state 1 of 4: Plan created.</p>
-
-              <div class="plrt-demo__overview">
-                <section class="plrt-summary-card" aria-labelledby="current-loan-heading">
-                  <h3 id="current-loan-heading">Current loan and plan</h3>
-                  <dl data-loan-summary>
-                    <div><dt>Remaining loan balance</dt><dd>1,200</dd></div>
-                    <div><dt>Paid since tracking</dt><dd>0</dd></div>
-                    <div><dt>Current installment</dt><dd>Upcoming</dd></div>
-                    <div><dt>Regular payment</dt><dd>200 monthly</dd></div>
-                    <div><dt>Next payment</dt><dd>200 on 1 August</dd></div>
-                    <div><dt>Plan status</dt><dd><span class="plrt-status" data-loan-status>On track</span></dd></div>
-                    <div><dt>Projected payoff</dt><dd>1 January</dd></div>
-                  </dl>
-                </section>
-                <div class="plrt-demo__details">
-                  <section class="plrt-activity-card" aria-labelledby="real-activity-heading">
-                    <h3 id="real-activity-heading">Real activity</h3>
-                    <ul data-loan-activity>
-                      <li>10 July — Laptop purchase loan started: 1,200</li>
-                    </ul>
-                  </section>
-                  <section class="plrt-schedule-card" aria-labelledby="schedule-heading">
-                    <h3 id="schedule-heading">What the plan shows</h3>
-                    <ul data-loan-schedule>
-                      <li>1 August — 200 — Upcoming</li>
-                      <li>1 September — 200 — Upcoming</li>
-                      <li>1 October — 200 — Upcoming</li>
-                      <li>Later installments continue to the projected payoff.</li>
-                    </ul>
-                  </section>
+              <div class="plrt-record-once__connected" role="group" aria-label="One recorded payment and its connected updates">
+                <div class="plrt-record-once__event">
+                  <span>You recorded a payment</span>
+                  <strong>$150 received</strong>
+                </div>
+                <p class="plrt-record-once__loan">Laptop loan &middot; $200 monthly installment</p>
+                <dl class="plrt-record-once__results">
+                  <div><dt>Whole loan left<span>From $1,200</span></dt><dd>$1,050</dd></div>
+                  <div><dt>Unpaid installment</dt><dd>$50</dd></div>
+                  <div><dt>Enabled plan reminder</dt><dd>$50<span>Due 1 November</span></dd></div>
+                </dl>
+              </div>
+              <div class="plrt-record-once__handoff">
+                <div class="iphone-handoff plrt-record-once__qr" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="personal_loan_example_iphone_handoff" aria-label="Get You Owe Me on your iPhone" hidden>
+                  <img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/shared/iphone-handoff/home.png" width="408" height="408" alt="QR code to open You Owe Me on the App Store." loading="eager" />
+                  <p data-iphone-handoff-instruction>Scan with your iPhone camera.</p>
+                </div>
+                <div class="plrt-record-once__download">
+                  <a class="lt-appStoreBtn" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" aria-label="Download You Owe Me on the App Store" data-track-location="personal_loan_example_app_store">
+                    <span class="sr-only">Download You Owe Me on the App Store</span>
+                    <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" width="250" height="83" loading="lazy" />
+                  </a>
+                  <p>One active repayment plan free.</p>
                 </div>
               </div>
-              <p class="plrt-demo__explanation" data-loan-explanation>The schedule is a projection. No repayment has happened yet, so the real loan balance is still 1,200.</p>
             </div>
-
-            <noscript><p class="plrt-noscript">The interactive view is unavailable, but the complete example is shown in the table below.</p></noscript>
-
-            <div class="plrt-table-wrap">
-              <h3>How the same loan changes after each real event</h3>
-              <table class="plrt-table">
-                <caption>How the same loan changes after each real event</caption>
-                <thead>
-                  <tr>
-                    <th scope="col">What happened</th>
-                    <th scope="col">What remains part of history</th>
-                    <th scope="col">What updates now</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <th scope="row" data-label="What happened">The repayment plan is created</th>
-                    <td data-label="What remains part of history">The opening balance and original projection</td>
-                    <td data-label="What updates now">The first payment, schedule, and projected payoff become visible</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" data-label="What happened">Jordan pays 150</th>
-                    <td data-label="What remains part of history">The real payment of 150</td>
-                    <td data-label="What updates now">The remaining loan balance becomes 1,050 and 50 stays due on the current installment</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" data-label="What happened">Jordan later pays 300</th>
-                    <td data-label="What remains part of history">Both real payments: 150 and 300</td>
-                    <td data-label="What updates now">The unpaid 50 is completed, 200 covers the next installment, and 50 moves forward</td>
-                  </tr>
-                  <tr>
-                    <th scope="row" data-label="What happened">Another 100 is borrowed</th>
-                    <td data-label="What remains part of history">The original loan and both earlier payments</td>
-                    <td data-label="What updates now">The balance becomes 850 and the future schedule, reminder, and projected payoff recalculate</td>
-                  </tr>
-                </tbody>
-              </table>
+            <p class="plrt-record-once__context">Fictional example &middot; USD &middot; No interest &middot; As of 1 Nov 2026</p>
+            <div class="plrt-record-once__continuation">
+              <h3>When more happens</h3>
+              <ul role="list">
+                <li><strong>Jordan later pays $300.</strong> The unpaid $50 is completed, $200 covers the next installment, and $50 moves forward. The whole loan has $750 left.</li>
+                <li><strong>Another $100 is borrowed.</strong> The balance becomes $850. Earlier payments stay in history; the future schedule, enabled reminder, and projected payoff recalculate.</li>
+              </ul>
             </div>
-            <p class="plrt-table-note">A payment is a real entry. An installment is a projected row in the schedule. Keeping those separate is what lets the history stay honest when the future plan changes.</p>
-            <aside class="plrt-compact-bridge" aria-labelledby="static-schedule-heading">
-              <div>
-                <h3 id="static-schedule-heading">More than a static schedule</h3>
-                <p>You Owe Me connects the repayment plan to the loan you are actually tracking. Future payments, corrections, reminders, and plan changes can stay connected to the same record.</p>
-              </div>
-              <div class="plrt-compact-bridge__actions">
-                <span>Want to use your own numbers? Record actual payments in the Personal Loan Payment Tracker to see the current balance, installment status, next payment, and projected payoff in your browser.</span>
-                <a href="/tools/personal-loan-payment-tracker/">Track actual repayments in the browser</a>
-                <a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" aria-label="Keep this loan current in You Owe Me on the App Store">Keep this loan current in You Owe Me <span aria-hidden="true">→</span></a>
-                <span>Only need the initial schedule? <a href="/tools/payment-plan-calculator/">Use the Payment Plan Calculator</a>.</span>
-              </div>
-            </aside>
+            <p class="plrt-record-once__tools">Try your own numbers: <a href="/tools/personal-loan-payment-tracker/">track actual repayments in your browser</a> or <a href="/tools/payment-plan-calculator/">create a one-time plan</a>.</p>
           </section>
 
           <section class="plrt-section plrt-media-section" aria-labelledby="separate-loans-heading">
@@ -287,17 +229,17 @@
               <p>Give each real-world loan its own name, balance, history, status, and optional repayment plan. You can keep “Laptop purchase” separate from “Moving deposit” without losing the complete balance with the person.</p>
               <p class="plrt-concept-line">Loans organize what is owed. Repayment plans organize how it gets paid back.</p>
               <section class="plrt-mini-record" aria-labelledby="two-loans-heading">
-                <h3 id="two-loans-heading">Two loans, two clear records, one relationship total</h3>
+                <h3 id="two-loans-heading">After the first payment: two loans, one total</h3>
                 <dl>
-                  <div><dt>Laptop purchase —</dt><dd>750 remaining</dd></div>
-                  <div><dt>Moving deposit —</dt><dd>400 remaining</dd></div>
-                  <div class="plrt-mini-record__total"><dt>Overall balance with Jordan —</dt><dd>1,150</dd></div>
+                  <div><dt>Laptop purchase —</dt><dd>$1,050 remaining</dd></div>
+                  <div><dt>Moving deposit —</dt><dd>$400 remaining</dd></div>
+                  <div class="plrt-mini-record__total"><dt>Overall balance with Jordan —</dt><dd>$1,450</dd></div>
                 </dl>
               </section>
               <p>Each loan can keep its own currency, start date, note, visual identity, updates, interest context, and settled state. Every loan update still contributes to the person’s overall balance, so the detail stays precise without hiding the full picture.</p>
               <p class="plrt-support-copy">Need one balance for mixed IOUs, shared costs, and repayments instead? See how You Owe Me <a href="/solutions/app-to-track-money-owed/">tracks money owed between two people</a>.</p>
             </div>
-            <div class="plrt-relationship-map" role="group" aria-label="Two separate loans with Jordan contributing to one overall relationship balance.">
+            <div class="plrt-relationship-map" role="group" aria-label="After the first $150 payment: the $1,050 laptop loan and $400 moving deposit total $1,450 with Jordan.">
               <div class="plrt-relationship-map__person">
                 <span class="plrt-relationship-map__person-mark" aria-hidden="true"></span>
                 <p>Jordan</p>
@@ -306,17 +248,17 @@
               <div class="plrt-relationship-map__loans">
                 <article class="plrt-relationship-map__loan">
                   <p class="plrt-relationship-map__loan-name">Laptop purchase</p>
-                  <p class="plrt-relationship-map__amount">750 remaining</p>
+                  <p class="plrt-relationship-map__amount">$1,050 remaining</p>
                 </article>
                 <article class="plrt-relationship-map__loan">
                   <p class="plrt-relationship-map__loan-name">Moving deposit</p>
-                  <p class="plrt-relationship-map__amount">400 remaining</p>
+                  <p class="plrt-relationship-map__amount">$400 remaining</p>
                 </article>
               </div>
               <span class="plrt-relationship-map__connector plrt-relationship-map__connector--summary" aria-hidden="true"></span>
               <div class="plrt-relationship-map__summary">
                 <p class="plrt-relationship-map__summary-label">Overall balance with Jordan</p>
-                <p class="plrt-relationship-map__summary-amount">1,150</p>
+                <p class="plrt-relationship-map__summary-amount">$1,450</p>
               </div>
             </div>
           </section>
@@ -368,19 +310,8 @@
           <section class="plrt-section plrt-reminder-section" aria-labelledby="reminder-heading">
             <div class="plrt-reminder-section__copy">
               <h2 id="reminder-heading">A reminder that follows the real next payment</h2>
-              <p>The plan reminder is not a repeating alert that keeps using the original amount forever. After a partial, full, or extra payment, You Owe Me updates the reminder to the next unpaid installment, its current remaining amount, and the correct due date.</p>
-              <div class="plrt-table-wrap">
-                <h3>After a partial payment</h3>
-                <table class="plrt-table plrt-table--compact">
-                  <caption>After a partial payment</caption>
-                  <thead><tr><th scope="col">Before the payment</th><th scope="col">After 150 is paid</th></tr></thead>
-                  <tbody>
-                    <tr><th scope="row" data-label="Before the payment">200 is due on 1 August</th><td data-label="After 150 is paid">50 remains on the current installment</td></tr>
-                    <tr><th scope="row" data-label="Before the payment">The reminder refers to 200</th><td data-label="After 150 is paid">The reminder updates to 50 on 1 August</td></tr>
-                    <tr><th scope="row" data-label="Before the payment">The plan shows the original projection</th><td data-label="After 150 is paid">The plan shows the current payment progress</td></tr>
-                  </tbody>
-                </table>
-              </div>
+              <p>With plan reminders enabled, You Owe Me follows the next unpaid installment, its remaining amount, and original due date after a partial, full, or extra payment.</p>
+              <p>In the <a href="#loan-example">example above</a>, the enabled plan reminder follows the unpaid $50 and its original 1 November due date.</p>
               <p>The reminder also understands who should act. If you borrowed the money, it reminds you to make the payment. If you lent the money, it reminds you that a payment is expected.</p>
               <p>A payment can be recorded from the reminder flow. That real entry updates the loan, the schedule, and the following reminder.</p>
             </div>
@@ -520,7 +451,7 @@
             <p class="plrt-support-line">One active repayment plan is available free. iPhone app. The app records and plans; it does not move money.</p>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-10-11">October 11, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-10-19">October 19, 2026</time></p>
         </article>
       </main>
 
@@ -542,8 +473,8 @@
     </div>
 
     <script src="../../scripts/sales.js"></script>
-    <script type="module" src="../../scripts/analytics.js?v=20261018-review1"></script>
-    <script src="../../scripts/personal-loan-repayment-tracker.js"></script>
+    <script type="module" src="../../scripts/analytics.js?v=record-once-20261019-1"></script>
+    <script type="module" src="../../scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>
     <script src="../../assets/js/jquery.scrolly.min.js"></script>

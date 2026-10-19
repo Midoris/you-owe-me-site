@@ -13,6 +13,7 @@ const LOCATION_VALUES = new Set([
   "friend_borrow_story_iphone_handoff",
   "homepage_story_iphone_handoff",
   "roommate_expense_story_iphone_handoff",
+  "personal_loan_example_iphone_handoff",
 ]);
 
 const FIREBASE_EVENTS = {

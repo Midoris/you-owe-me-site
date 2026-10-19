@@ -187,7 +187,8 @@ test('all ten import entry routes pin the changed controller/model, style and an
  for(const route of [...Object.values(routes),'tools/personal-loan-payment-tracker/']){
   const html=await read(route+'index.html');
   assert.ok(html.includes('loan-import-entry.mjs?v='+version),route);
-  assert.ok(html.includes('analytics.js?v='+version),route);
+  const analyticsVersion=route==='solutions/personal-loan-repayment-tracker/'?'record-once-20261019-1':version;
+  assert.ok(html.includes('analytics.js?v='+analyticsVersion),route);
  }
  const entry=await read('scripts/loan-import-entry.mjs');
  assert.ok(entry.includes('loan-import.mjs?v='+version));assert.ok(entry.includes('/styles/loan-import.css?v='+version));
