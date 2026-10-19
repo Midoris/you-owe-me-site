@@ -30,7 +30,6 @@ body.client-payment-records-page .client-checklist,
 body.client-payment-records-page .client-decision-grid,
 body.client-payment-records-page .client-record-panel,
 body.client-payment-records-page .client-ledger-grid,
-body.client-payment-records-page .client-pdf-grid,
 body.client-payment-records-page .client-message-grid {
   display: grid;
   gap: 1.25rem;
@@ -104,20 +103,219 @@ body.client-payment-records-page .client-workflow-grid {
   grid-template-columns: repeat(3, minmax(0, 1fr));
 }
 
-body.client-payment-records-page .client-pdf-grid {
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+body.client-payment-records-page #main .client-statement-sample {
+  scroll-margin-top: 5rem;
 }
 
-body.client-payment-records-page .client-pdf-grid .lt-detailCard {
-  padding: 1.35rem;
+body.client-payment-records-page #main .client-statement-pair {
+  display: grid;
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.05fr);
+  gap: clamp(1.25rem, 3vw, 2.5rem);
+  align-items: start;
+  margin-top: 1.6rem;
 }
 
-body.client-payment-records-page .client-pdf-grid .lt-detailCard h3 {
-  margin-top: 0;
+body.client-payment-records-page #main .client-sample-record {
+  min-width: 0;
+  padding: clamp(1rem, 2.2vw, 1.65rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, 0.92);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
 }
 
-body.client-payment-records-page .client-pdf-screenshot {
-  width: min(100%, 23.5rem);
+body.client-payment-records-page #main .client-sample-record > .lt-eyebrow {
+  margin: 0 0 0.5rem;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: max(0.78rem, 12px);
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  line-height: 1.5;
+}
+
+body.client-payment-records-page #main .client-sample-record h3 {
+  margin: 0 0 0.35rem;
+  font-size: 1.6rem;
+  letter-spacing: -0.02em;
+  text-transform: none;
+}
+
+body.client-payment-records-page #main .client-sample-context {
+  margin: 0;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: max(0.87rem, 14px);
+  line-height: 1.6;
+}
+
+body.client-payment-records-page #main .client-sample-entries {
+  margin: 1rem 0 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.client-payment-records-page #main .client-sample-entries li {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) auto;
+  gap: 0.75rem;
+  align-items: center;
+  margin: 0;
+  padding: 0.85rem 0;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+body.client-payment-records-page #main .client-sample-entry time,
+body.client-payment-records-page #main .client-sample-entry > span,
+body.client-payment-records-page #main .client-sample-amount > span,
+body.client-payment-records-page #main .client-sample-amount strong {
+  display: block;
+}
+
+body.client-payment-records-page #main .client-sample-entry time,
+body.client-payment-records-page #main .client-sample-amount > span {
+  margin-bottom: 0.2rem;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: max(0.78rem, 12px);
+  line-height: 1.45;
+}
+
+body.client-payment-records-page #main .client-sample-entry > span {
+  color: #212931;
+  font-size: max(0.96rem, 15px);
+  line-height: 1.5;
+}
+
+body.client-payment-records-page #main .client-sample-amount {
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  white-space: nowrap;
+}
+
+body.client-payment-records-page #main .client-sample-amount strong {
+  color: #18212b;
+  font-size: max(1.06rem, 16px);
+  line-height: 1.5;
+}
+
+body.client-payment-records-page #main .client-sample-total {
+  margin-top: 0.4rem;
+  padding: 1rem;
+  border-radius: 16px;
+  background: rgba(175, 230, 126, 0.2);
+}
+
+body.client-payment-records-page #main .client-sample-total p {
+  margin: 0;
+  color: #212931;
+  font-size: max(0.87rem, 14px);
+  line-height: 1.6;
+}
+
+body.client-payment-records-page #main .client-sample-total > strong {
+  display: block;
+  margin: 0.3rem 0;
+  color: #18212b;
+  font-size: clamp(2.1rem, 4vw, 2.75rem);
+  line-height: 1.15;
+  font-variant-numeric: tabular-nums;
+}
+
+body.client-payment-records-page #main .client-sample-total > strong span {
+  font-size: 0.85rem;
+}
+
+body.client-payment-records-page #main .client-sample-total .client-sample-payable {
+  margin-top: 0.5rem;
+  font-size: max(0.78rem, 12px);
+}
+
+body.client-payment-records-page #main .client-sample-document {
+  min-width: 0;
+}
+
+body.client-payment-records-page #main .client-sample-document h3 {
+  margin: 0 0 0.9rem;
+  color: #18212b;
+  font-size: 1.15rem;
+  letter-spacing: -0.01em;
+  text-transform: none;
+}
+
+body.client-payment-records-page #main .client-sample-document figure {
+  margin: 0;
+}
+
+body.client-payment-records-page #main .client-sample-document img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+body.client-payment-records-page #main .client-sample-document figcaption {
+  margin-top: 0.8rem;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: max(0.83rem, 13px);
+  line-height: 1.6;
+}
+
+body.client-payment-records-page #main .client-sample-pdf-link {
+  display: inline-flex;
+  align-items: center;
+  min-height: 44px;
+  margin-top: 0.55rem;
+  padding: 0.45rem 0;
+  color: #18212b;
+  font-weight: 700;
+  line-height: 1.6;
+  text-underline-offset: 0.2em;
+}
+
+body.client-payment-records-page #main .client-sample-pdf-link:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 4px;
+  border-radius: 4px;
+}
+
+body.client-payment-records-page #main .client-statement-sample > .client-sample-options {
+  margin-top: 1.6rem;
+}
+
+body.client-payment-records-page #main .client-sample-additions {
+  margin-top: 1rem;
+}
+
+body.client-payment-records-page #main .client-sample-additions p {
+  margin: 0 0 0.55rem;
+  color: rgba(33, 41, 49, 0.88);
+  font-size: max(0.83rem, 13px);
+  font-weight: 700;
+}
+
+body.client-payment-records-page #main .client-sample-additions ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+body.client-payment-records-page #main .client-sample-additions li {
+  margin: 0;
+  padding: 0.3rem 0.7rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 999px;
+  background: rgba(175, 230, 126, 0.12);
+  color: #212931;
+  font-size: max(0.78rem, 12px);
+  line-height: 1.5;
+}
+
+body.client-payment-records-page #main .client-statement-sample > .client-pdf-disclaimer {
+  margin-top: 1rem;
 }
 
 body.client-payment-records-page .client-pdf-disclaimer {
@@ -336,10 +534,6 @@ body.client-payment-records-page .client-microcopy {
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
-  body.client-payment-records-page .client-pdf-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-
   body.client-payment-records-page .client-record-panel {
     grid-template-columns: 1fr;
   }
@@ -366,7 +560,7 @@ body.client-payment-records-page .client-microcopy {
   body.client-payment-records-page .client-two-column,
   body.client-payment-records-page .client-workflow-grid,
   body.client-payment-records-page .client-decision-grid,
-  body.client-payment-records-page .client-pdf-grid,
+  body.client-payment-records-page #main .client-statement-pair,
   body.client-payment-records-page .client-ledger-grid,
   body.client-payment-records-page .client-message-grid {
     grid-template-columns: 1fr;

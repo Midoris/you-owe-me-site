@@ -1915,7 +1915,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/shared-expense-tracker/"],
     appStoreCpp: "client-payment-records",
     tags: ["client-payments", "client-balances", "freelancers", "small-business-records", "deposits", "partial-payments", "payment-history", "running-balance", "repayment-receipts", "pdf-statements", "not-accounting-software"],
-    updated: "2026-10-18",
+    updated: "2026-10-19",
     status: "live",
     priority: "high",
     primaryCta: "Download You Owe Me",

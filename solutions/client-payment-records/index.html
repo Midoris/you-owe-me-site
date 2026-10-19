@@ -41,7 +41,7 @@
       "description": "A solution page for simple client payment records, deposits, partial payments, recurring service charges, contextual reminders, notes, receipt-style confirmations, and lightweight payment history without replacing accounting or invoicing software.",
       "url": "https://you-owe-me.com/solutions/client-payment-records/",
       "isPartOf": "https://you-owe-me.com/solutions/",
-      "dateModified": "2026-10-18",
+      "dateModified": "2026-10-19",
       "publisher": {
         "@type": "Organization",
         "name": "You Owe Me"
@@ -180,7 +180,7 @@
     <link rel="stylesheet" href="../../styles/site-nav.css" />
     <link rel="stylesheet" href="../../styles/solutions.css" />
     <link rel="stylesheet" href="../../styles/solution-detail.css" />
-    <link rel="stylesheet" href="../../styles/client-payment-records.css" />
+    <link rel="stylesheet" href="../../styles/client-payment-records.css?v=client-statement-20261019-1" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
   </head>
@@ -470,46 +470,71 @@
             </div>
           </section>
 
-          <section class="lt-detailSection">
-            <h2>Create client-facing PDF statements when a simple record needs to look clearer</h2>
-            <p>Sometimes a client does not need a full invoice or accounting report. They just need a clear summary of what was recorded, what was paid, what remains open, and when the next payment is expected.</p>
-            <p>You Owe Me can help turn a simple client balance into a more polished PDF statement or summary. This is useful when you want the record to feel clearer than a chat message, but you still do not need a full accounting or invoicing system.</p>
-            <div class="client-pdf-grid">
-              <article class="lt-detailCard">
-                <h3>Choose the records to include</h3>
-                <p>Create a PDF from the relevant entries instead of sending screenshots or rebuilding the history manually.</p>
-              </article>
-              <article class="lt-detailCard">
-                <h3>Add a due date</h3>
-                <p>Include a payment due date or next check-in date when timing matters for the remaining balance.</p>
-              </article>
-              <article class="lt-detailCard">
-                <h3>Add your logo or image</h3>
-                <p>Use optional logo or image branding when the summary should feel easier to recognize or more professional for a client.</p>
-              </article>
-              <article class="lt-detailCard">
-                <h3>Include payment details</h3>
-                <p>Add payment details when the client needs to know how the remaining amount should be paid.</p>
-              </article>
-              <article class="lt-detailCard">
-                <h3>Keep it tied to the real history</h3>
-                <p>The PDF summary comes from the records you keep in the app, so it stays grounded in the actual charges, payments, notes, and balance history.</p>
-              </article>
+          <section class="lt-detailSection client-statement-sample" id="sample-client-statement" aria-labelledby="sample-client-statement-title">
+            <h2 id="sample-client-statement-title">From client history to a clear statement.</h2>
+            <p>This fictional record has two part-payments and a later session. The sample includes all five entries shown.</p>
+            <div class="client-statement-pair">
+              <div class="client-sample-record" role="group" aria-labelledby="sample-client-name">
+                <p class="lt-eyebrow">The recorded history</p>
+                <h3 id="sample-client-name">Alex Morgan</h3>
+                <p class="client-sample-context">Client of Taylor Reed &middot; All amounts in USD</p>
+                <ol class="client-sample-entries" role="list" aria-label="Client history in chronological order">
+                  <li>
+                    <div class="client-sample-entry"><time datetime="2026-10-02">Oct 2, 2026</time><span>Two sessions</span></div>
+                    <div class="client-sample-amount"><span>Charge</span><strong>+$80</strong></div>
+                  </li>
+                  <li>
+                    <div class="client-sample-entry"><time datetime="2026-10-06">Oct 6, 2026</time><span>Two sessions</span></div>
+                    <div class="client-sample-amount"><span>Charge</span><strong>+$80</strong></div>
+                  </li>
+                  <li>
+                    <div class="client-sample-entry"><time datetime="2026-10-08">Oct 8, 2026</time><span>Payment received</span></div>
+                    <div class="client-sample-amount"><span>Payment</span><strong>−$50</strong></div>
+                  </li>
+                  <li>
+                    <div class="client-sample-entry"><time datetime="2026-10-11">Oct 11, 2026</time><span>Payment received</span></div>
+                    <div class="client-sample-amount"><span>Payment</span><strong>−$30</strong></div>
+                  </li>
+                  <li>
+                    <div class="client-sample-entry"><time datetime="2026-10-15">Oct 15, 2026</time><span>Another session</span></div>
+                    <div class="client-sample-amount"><span>Charge</span><strong>+$40</strong></div>
+                  </li>
+                </ol>
+                <div class="client-sample-total">
+                  <p>Remaining balance</p>
+                  <strong>$120 <span>USD</span></strong>
+                  <p>$200 in sessions &middot; $80 received</p>
+                  <p class="client-sample-payable">Payable by Alex Morgan to Taylor Reed</p>
+                </div>
+              </div>
+              <div class="client-sample-document">
+                <h3>The statement from these entries</h3>
+                <figure>
+                  <img
+                    src="/images/solutions/client-payment-records/client-statement-preview.webp"
+                    alt="Preview of Alex Morgan’s statement showing five entries and a $120 balance payable to Taylor Reed."
+                    loading="lazy"
+                    decoding="async"
+                    width="1192"
+                    height="1010"
+                  />
+                  <figcaption>Fictional example created in You Owe Me.</figcaption>
+                </figure>
+                <a class="client-sample-pdf-link" href="/downloads/samples/you-owe-me-fictional-client-statement.pdf">Open sample statement (PDF)</a>
+              </div>
             </div>
-            <figure class="lt-detailVisual client-pdf-screenshot">
-              <picture>
-                <source srcset="../../images/shared/app-screenshots/pdf-logo-due-date-payment-details.webp" type="image/webp" />
-                <img
-                  src="../../images/shared/app-screenshots/pdf-logo-due-date-payment-details.png"
-                  alt="YouOweMe PDF statement screen showing optional logo, payment due date, and payment details for client-facing records."
-                  loading="lazy"
-                  decoding="async"
-                  width="1290"
-                  height="2796"
-                />
-              </picture>
-            </figure>
-            <p class="client-pdf-disclaimer">A You Owe Me PDF statement is a clear payment record or summary. It is not a formal invoice, tax document, legal contract, accounting report, or payment-processing tool.</p>
+            <p class="client-sample-options">Choose the entries to share, then add details when useful.</p>
+            <div class="client-sample-additions">
+              <p>Optional additions</p>
+              <ul role="list" aria-label="Optional PDF additions">
+                <li>Logo</li>
+                <li>Due date</li>
+                <li>Payment details</li>
+                <li>Entry photos</li>
+                <li>Receipt or screenshot</li>
+              </ul>
+            </div>
+            <p class="client-pdf-disclaimer">A payment record summary, not a formal invoice or accounting document.</p>
             <p class="lt-sectionClose">See <a href="/features/">PDF statements and formal record features</a>.</p>
           </section>
 
@@ -519,16 +544,8 @@
             <div class="client-ledger-grid">
               <article class="client-ledger-card">
                 <h3>Tutor with weekly lessons</h3>
-                <p>A tutor teaches four weekly lessons at $40 each. The family pays $80 now and the rest at the end of the month.</p>
-                <ul class="client-mini-ledger" aria-label="Tutor lesson ledger">
-                  <li><span>Week 1 lesson:</span> <strong>+$40</strong></li>
-                  <li><span>Week 2 lesson:</span> <strong>+$40</strong></li>
-                  <li><span>Payment received:</span> <strong>-$80</strong></li>
-                  <li><span>Week 3 lesson:</span> <strong>+$40</strong></li>
-                  <li><span>Week 4 lesson:</span> <strong>+$40</strong></li>
-                  <li class="client-mini-ledger-total"><span>Remaining balance:</span> <strong>$80</strong></li>
-                </ul>
-                <p><strong>Takeaway:</strong> The tutor can see the current balance without checking every message.</p>
+                <p>The <a href="#sample-client-statement">sample record and statement above</a> show $200 in sessions, $80 received in two part-payments, and $120 remaining.</p>
+                <p><strong>Takeaway:</strong> The tutor can share the same history as lessons and payments continue.</p>
               </article>
               <article class="client-ledger-card">
                 <h3>Freelancer with deposit and final payment</h3>
@@ -887,7 +904,7 @@
             <p class="client-microcopy">New to the app? Start with the <a href="/quick-start/">Quick Start guide</a>.</p>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-10-18">October 18, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-10-19">October 19, 2026</time></p>
         </article>
       </div>
 
