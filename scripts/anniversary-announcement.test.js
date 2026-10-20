@@ -72,6 +72,24 @@ function inlineModule() {
   return moduleElement;
 }
 
+test("Spanish announcements translate active/final states and label the English story", () => {
+  const standard = standardModule();
+  const inline = inlineModule();
+  const documentObject = new FakeDocument([standard, inline]);
+  documentObject.documentElement = { lang: "es" };
+  anniversary.render(documentObject, new Date(2026, 7, 26, 12));
+  assert.equal(standard.querySelector("[data-anniversary-heading]").textContent, "You Owe Me cumple 10 años.");
+  assert.match(standard.querySelector("[data-anniversary-cta]").textContent, /\(en inglés\)$/);
+  assert.equal(standard.querySelector("[data-anniversary-cta]").getAttribute("href"), "/10-years/");
+  assert.equal(inline.querySelector("[data-anniversary-inline-label]").textContent, "Celebramos el aniversario");
+  anniversary.render(documentObject, new Date(2026, 8, 4, 12));
+  assert.equal(standard.querySelector("[data-anniversary-heading]").textContent, "La oferta de aniversario termina el 4 de septiembre.");
+  assert.equal(inline.querySelector("[data-anniversary-inline-label]").textContent, "Últimos días");
+  anniversary.render(documentObject, new Date(2026, 8, 5, 12));
+  assert.equal(standard.hidden, true);
+  assert.equal(inline.hidden, true);
+});
+
 test("campaign dates resolve using local calendar boundaries", () => {
   assert.equal(anniversary.phaseForDate(new Date(2026, 7, 25, 12)), "inactive");
   assert.equal(anniversary.phaseForDate(new Date(2026, 7, 26, 0, 0)), "active");

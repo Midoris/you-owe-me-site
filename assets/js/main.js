@@ -127,7 +127,9 @@
 
 		// Toggle.
 			$navPanelToggle = $(
-				'<a href="#navPanel" id="navPanelToggle">Menu</a>'
+				document.documentElement.lang === 'es'
+					? '<a href="#navPanel" id="navPanelToggle">Menú</a>'
+					: '<a href="#navPanel" id="navPanelToggle">Menu</a>'
 			)
 				.appendTo($wrapper);
 
@@ -147,7 +149,9 @@
 				'<div id="navPanel">' +
 					'<nav>' +
 					'</nav>' +
-					'<a href="#navPanel" class="close"></a>' +
+					(document.documentElement.lang === 'es'
+						? '<a href="#navPanel" class="close" aria-label="Cerrar menú"></a>'
+						: '<a href="#navPanel" class="close"></a>') +
 				'</div>'
 			)
 				.appendTo($body)

@@ -1,0 +1,41 @@
+# Spanish publication record — 20 October 2026
+
+Scope: five static Spanish publications, international Spanish, one public batch after individual page reviews and commits. Base: `3f78611`. Existing untracked `audits/`, `tmp/`, and `docs/verification/loan-plan-record-once-2026-10-19/` are preserved and excluded. Implementation branch: `codex/spanish-localization`. Model configuration: GPT-6.1 Sol, high; independent reviews use the same model/effort, not human-native certification.
+
+## Routes and terminology
+
+| English | Spanish |
+| --- | --- |
+| `/` | `/es/` |
+| `/solutions/app-to-track-money-owed/` | `/es/soluciones/app-para-registrar-dinero-adeudado/` |
+| `/blog/how-to-keep-track-of-who-owes-you-money/` | `/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/` |
+| `/solutions/personal-loan-repayment-tracker/` | `/es/soluciones/seguimiento-de-prestamos-personales/` |
+| `/tools/split-expense-calculator/` | `/es/herramientas/calculadora-de-gastos-compartidos/` |
+
+Use `saldo pendiente` for remaining balance, `pagos`/`devoluciones` for repayments (context decides), `pago parcial` for partial repayment, `plan de pagos` for repayment plan, `registro de préstamo` for Loan Record, `recordatorio` for reminder, `gastos compartidos` for shared expenses. Retain You Owe Me, Live Link and Balance Sync as product names with Spanish explanations. Avoid region-specific legal/financial guarantees. Language selection never changes currency: dollar examples are explicitly USD where ambiguous. Published examples are illustrative, not fabricated native app captures.
+
+## Foundation
+
+`content/site-locales.mjs` is the route/discovery source. `complete` admits reviewed pages only; `scripts/sync-site-locales.mjs` writes normal HTML alternates, explicit switches, Spanish section links and completed counterpart links. Each page has its own canonical. No browser-language redirect or client translation dependency. Locale registry entries retain source clusters but use the general Store destination; no new analytics keys/events. English source content and assets stay intact.
+
+English text-bearing app captures are replaced by labeled Spanish HTML/SVG examples. Existing secondary English resources, video, and loan-import intake are explicitly labeled `en inglés`; no inline untranslated importer is mounted on Spanish pages. Primary app-download/QR journey is Spanish and uses the storefront-neutral app-ID destination, preserving existing campaign parameters and omitting unverified English custom-product pages. Private continuation remains noindex.
+
+## Page acceptance record
+
+| Page | Language review | Technical/product review | Checks | Commit |
+| --- | --- | --- | --- | --- |
+| Homepage | Pending | Pending | Pending | Pending |
+| Money owed solution | Pending | Pending | Pending | Pending |
+| Recordkeeping guide | Pending | Pending | Pending | Pending |
+| Personal loan solution | Pending | Pending | Pending | Pending |
+| Split calculator | Pending | Pending | Pending | Pending |
+
+## Crawl/retrieval audit
+
+Official references checked 20 October 2026: [Google multilingual URLs](https://developers.google.com/search/docs/specialty/international/managing-multi-regional-sites), [localized versions](https://developers.google.com/search/docs/specialty/international/localized-versions), [Google AI features](https://developers.google.com/search/docs/appearance/ai-features), [Google common crawlers](https://developers.google.com/crawling/docs/crawlers-fetchers/google-common-crawlers), [OpenAI crawler roles](https://developers.openai.com/api/docs/bots), [Anthropic crawler roles](https://support.claude.com/en/articles/8896518-does-anthropic-crawl-data-from-the-web-and-how-can-site-owners-block-the-crawler), [Perplexity crawlers](https://docs.perplexity.ai/docs/resources/perplexity-crawlers).
+
+Google recommends separate URLs, readable translated content, explicit language choice and reciprocal alternates. Google Search AI features use ordinary search eligibility; Google-Extended separately governs specified training/grounding uses. OAI-SearchBot, Claude-SearchBot and PerplexityBot concern search; user-requested fetchers and training bots have distinct roles. Existing explicit search/fetch/training allowances and wildcard allowance are preserved. The wildcard permits PerplexityBot; no blanket permission changes are needed. Public HTML, normal links, successful responses and existing discovery files establish technical eligibility, not actual indexing, ranking or citations. Live responses and bot/noindex checks will be recorded after release.
+
+## Final review and publication
+
+Pending the complete reviewed batch. GitHub Pages is the existing public-site workflow; private continuation uses the existing Firebase Hosting target if that dependency changes. A commit alone is not a deployment or evidence of indexing.

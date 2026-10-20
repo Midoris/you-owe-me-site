@@ -1,0 +1,16 @@
+{
+  "arguments" : [
+    "--spanish"
+  ],
+  "codes" : [
+    {
+      "filename" : "app-store.png",
+      "sha256" : "c242f9fa09e3c1f8ae14adb264ab0f925c0c54061db095052db04577a6b30516",
+      "url" : "https:\/\/apps.apple.com\/app\/id1147058670?pt=117888502&ct=website_qr_exp006&mt=8"
+    }
+  ],
+  "correction_level" : "M",
+  "extra_quiet_zone_modules" : 4,
+  "generator" : "scripts\/generate-iphone-handoff-qr.swift",
+  "pixel_scale" : 8
+}

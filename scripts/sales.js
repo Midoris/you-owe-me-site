@@ -4,6 +4,20 @@
   const ENABLE_DEBUG_SALE = false;
   const REFRESH_INTERVAL_MS = 60000;
   const SALE_CHANGED_EVENT = "youoweme:sale-changed";
+  const SPANISH_SALE_NAMES = Object.freeze({
+    Debug: "Prueba",
+    "Father's Day": "Día del Padre",
+    "Independence Day": "Día de la Independencia de Estados Unidos",
+    "Black Friday": "Black Friday",
+    "Cyber Monday": "Cyber Monday",
+    Christmas: "Navidad",
+    "New Year": "Año Nuevo",
+    "Valentine's Day": "San Valentín",
+    Easter: "Pascua",
+    Halloween: "Halloween",
+    "Singles' Day": "Día del Soltero",
+    Thanksgiving: "Acción de Gracias",
+  });
   let currentActiveSale = null;
 
   /**
@@ -209,6 +223,9 @@
   }
 
   function saleBadgeLabel(sale) {
+    if (document.documentElement?.lang === "es") {
+      return sale ? SPANISH_SALE_NAMES[sale.saleName] + " • Oferta por tiempo limitado" : "";
+    }
     return sale ? sale.saleName + " • Limited-Time Event" : "";
   }
 
@@ -229,7 +246,9 @@
     badges.forEach((badge) => {
       badge.hidden = false;
       badge.textContent = label;
-      badge.setAttribute("aria-label", sale.saleName + " sale is active");
+      badge.setAttribute("aria-label", document.documentElement?.lang === "es"
+        ? "Oferta activa: " + SPANISH_SALE_NAMES[sale.saleName]
+        : sale.saleName + " sale is active");
       badge.dataset.saleId = sale.id;
     });
   }

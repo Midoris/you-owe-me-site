@@ -1,5 +1,6 @@
 // Internal content map for search, routing, related content, CPP routing, and audits.
 // Keep this file infrastructure-only; public pages should import it only when needed.
+import { localizedRegistryEntries } from "./site-locales.mjs";
 
 export const appStoreCppUrls = {
   general: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&ct=website_cta&mt=8",
@@ -7176,5 +7177,7 @@ export const contentRegistry = [
     },
   },
 ];
+
+contentRegistry.push(...localizedRegistryEntries(contentRegistry));
 
 export default contentRegistry;

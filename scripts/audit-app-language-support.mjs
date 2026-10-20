@@ -182,8 +182,9 @@ export function auditHtmlForRoute(route, html) {
     if (authoredRenderTargetCount !== 0) {
       errors.push(`${normalizedRoute}: rendered targets must be created only by the shared component`);
     }
-    if (!/<html\b[^>]*\blang=["']en["']/i.test(html)) {
-      errors.push(`${normalizedRoute}: the document language must remain English`);
+    const expectedLanguage = normalizedRoute.startsWith("/es/") ? "es" : "en";
+    if (!new RegExp(`<html\\b[^>]*\\blang=["']${expectedLanguage}["']`, "i").test(html)) {
+      errors.push(`${normalizedRoute}: the document language must be ${expectedLanguage}`);
     }
     if (!fs.existsSync(path.join(rootDir, STYLE_HREF.slice(1)))) {
       errors.push(`${normalizedRoute}: shared stylesheet does not exist at ${STYLE_HREF}`);

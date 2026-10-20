@@ -12,7 +12,10 @@ struct HandoffCode {
   let url: String
 }
 
-let codes = [
+let isSpanish = CommandLine.arguments.contains("--spanish")
+let codes = isSpanish ? [
+  HandoffCode(filename: "app-store.png", url: "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_qr_exp006&mt=8"),
+] : [
   HandoffCode(filename: "home.png", url: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&ct=website_qr_exp006&mt=8"),
   HandoffCode(filename: "roommate.png", url: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&pt=117888502&ct=website_qr_exp006&mt=8"),
   HandoffCode(filename: "split.png", url: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=7f9074ac-4090-4e07-aebe-c5722e76eedc&pt=117888502&ct=website_qr_exp006&mt=8"),
@@ -21,7 +24,7 @@ let codes = [
 ]
 
 let outputDirectory = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)
-  .appendingPathComponent("images/shared/iphone-handoff", isDirectory: true)
+  .appendingPathComponent(isSpanish ? "images/es/iphone-handoff" : "images/shared/iphone-handoff", isDirectory: true)
 let context = CIContext(options: [.useSoftwareRenderer: false])
 let pixelScale: CGFloat = 8
 let quietZoneModules: CGFloat = 4
@@ -102,13 +105,14 @@ for code in codes {
   ])
 }
 
-let manifest: [String: Any] = [
+var manifest: [String: Any] = [
   "generator": "scripts/generate-iphone-handoff-qr.swift",
   "correction_level": "M",
   "pixel_scale": Int(pixelScale),
   "extra_quiet_zone_modules": Int(quietZoneModules),
   "codes": manifestCodes,
 ]
+if isSpanish { manifest["arguments"] = ["--spanish"] }
 guard let manifestData = try? JSONSerialization.data(withJSONObject: manifest, options: [.prettyPrinted, .sortedKeys]) else {
   fail("Could not encode QR manifest.")
 }

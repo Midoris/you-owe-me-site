@@ -13,9 +13,20 @@ function includedHtml(body) {
 test("every site route satisfies the language-support inclusion and exclusion contract", () => {
   const result = auditWholeSite();
   assert.deepEqual(result.errors, []);
-  assert.equal(result.counts.included, 81);
+  const spanishPages = result.files.filter(file => /[/\\]es[/\\]/.test(file)).length;
+  assert.equal(result.counts.included, 81 + spanishPages);
   assert.equal(result.counts.excluded, 11);
   assert.equal(result.counts.unclassified, 0);
+});
+
+test("Spanish routes require Spanish document language while English routes keep English", () => {
+  const html = includedHtml(`
+    <div data-app-language-support-anchor hidden></div>
+    <a class="lt-primaryCta" href="/es/">You Owe Me</a>
+  `).replace('lang="en"', 'lang="es"');
+  assert.deepEqual(auditHtmlForRoute("/es/", html), []);
+  assert.ok(auditHtmlForRoute("/", html).some(error => error.includes("document language must be en")));
+  assert.ok(auditHtmlForRoute("/es/", html.replace('lang="es"', 'lang="en"')).some(error => error.includes("document language must be es")));
 });
 
 test("the route audit rejects missing and duplicate integration assets", () => {

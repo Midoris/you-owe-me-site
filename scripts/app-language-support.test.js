@@ -95,6 +95,17 @@ function flattenedText(node) {
   return [node.textContent, ...(node.children || []).map(flattenedText)].join("");
 }
 
+test("Spanish publications use Spanish regardless of browser language and link to the Spanish home", () => {
+  const documentObject = new FakeDocument();
+  documentObject.documentElement = { lang: "es" };
+  const anchor = languageSupport.render(documentObject, { language: "en-US" });
+  assert.equal(flattenedText(anchor), "✓You Owe Me está disponible en español.");
+  const productLink = anchor.children[1].children[0];
+  assert.equal(productLink.tagName, "A");
+  assert.equal(productLink.getAttribute("href"), "/es/");
+  assert.equal(anchor.getAttribute("lang"), "es");
+});
+
 test("normalizes valid locale variants and rejects malformed input", () => {
   const cases = new Map([
     ["en", "en"],

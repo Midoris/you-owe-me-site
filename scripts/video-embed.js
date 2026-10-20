@@ -36,7 +36,7 @@
     iframe.src = src;
     iframe.title =
       link.getAttribute("data-video-title") ||
-      "Embedded YouTube video";
+      (document.documentElement.lang === "es" ? "Vídeo de YouTube" : "Embedded YouTube video");
     if (link.hasAttribute("aria-describedby")) {
       iframe.setAttribute(
         "aria-describedby",

@@ -120,7 +120,14 @@
 
     const productName = documentObject.createElement("bdi");
     productName.textContent = PRODUCT_NAME;
-    text.appendChild(productName);
+    if (documentObject.documentElement?.lang === "es") {
+      const productLink = documentObject.createElement("a");
+      productLink.setAttribute("href", "/es/");
+      productLink.appendChild(productName);
+      text.appendChild(productLink);
+    } else {
+      text.appendChild(productName);
+    }
 
     if (message.after) text.appendChild(documentObject.createTextNode(message.after));
 
@@ -140,7 +147,7 @@
     const existing = documentObject.querySelector(RENDERED_SELECTOR);
     if (existing) return existing;
 
-    const language = matchedAppLanguage(
+    const language = documentObject.documentElement?.lang === "es" ? "es" : matchedAppLanguage(
       localPreviewLocale(locationLike) || primaryBrowserLocale(navigatorLike),
     );
     if (!language) return null;

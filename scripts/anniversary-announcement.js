@@ -50,6 +50,34 @@
     }),
   });
 
+  const SPANISH_ACTIVE_STATES = Object.freeze({
+    inactive: Object.freeze({}),
+    active: Object.freeze({
+      standard: Object.freeze({
+        eyebrow: "2016–2026",
+        heading: "You Owe Me cumple 10 años.",
+        body: "Descubre diez años ayudando a llevar cuentas claras entre personas. Los usuarios de la versión gratuita que cumplan los requisitos también encontrarán en la app una oferta de aniversario para pasar a la versión de pago hasta el 4 de septiembre.",
+        cta: "Descubre la historia de estos diez años (en inglés)",
+      }),
+      inline: Object.freeze({
+        label: "Celebramos el aniversario",
+        body: "You Owe Me cumple 10 años. Los usuarios de la versión gratuita que cumplan los requisitos también encontrarán la oferta de aniversario en la app hasta el 4 de septiembre.",
+      }),
+    }),
+    final: Object.freeze({
+      standard: Object.freeze({
+        eyebrow: "Últimos días",
+        heading: "La oferta de aniversario termina el 4 de septiembre.",
+        body: "La historia de estos diez años seguirá disponible. Si usas la versión gratuita y cumples los requisitos, puedes encontrar en la app la oferta para pasar a la versión de pago hasta el 4 de septiembre.",
+        cta: "Descubre el aniversario (en inglés)",
+      }),
+      inline: Object.freeze({
+        label: "Últimos días",
+        body: "La oferta de aniversario para los usuarios de la versión gratuita que cumplan los requisitos termina el 4 de septiembre. La historia de estos diez años seguirá disponible.",
+      }),
+    }),
+  });
+
   function localDateKey(date) {
     if (!date || typeof date.getFullYear !== "function" || Number.isNaN(date.getTime())) {
       return null;
@@ -70,7 +98,7 @@
     if (node) node.textContent = value;
   }
 
-  function applyState(moduleElement, phase) {
+  function applyState(moduleElement, phase, documentObject = moduleElement?.ownerDocument) {
     if (!moduleElement || typeof moduleElement.setAttribute !== "function") return false;
 
     const safePhase = ACTIVE_STATES[phase] ? phase : "inactive";
@@ -85,7 +113,8 @@
     if (typeof moduleElement.querySelector !== "function") return false;
 
     const variant = moduleElement.getAttribute("data-anniversary-variant");
-    const state = ACTIVE_STATES[safePhase][variant];
+    const states = documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
+    const state = states[safePhase][variant];
     if (!state) {
       moduleElement.hidden = true;
       moduleElement.setAttribute("aria-hidden", "true");
@@ -121,7 +150,7 @@
 
     Array.prototype.forEach.call(modules, function (moduleElement) {
       try {
-        updated = applyState(moduleElement, phase) || updated;
+        updated = applyState(moduleElement, phase, documentObject) || updated;
       } catch (error) {
         try {
           applyState(moduleElement, "inactive");
