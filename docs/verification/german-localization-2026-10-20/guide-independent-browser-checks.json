@@ -1,0 +1,140 @@
+[
+  {
+    "width": 390,
+    "pageWidth": 390,
+    "lang": "de",
+    "faqMatch": true,
+    "faqCount": 7,
+    "ledger": [
+      [
+        "10. Juni",
+        "Alex",
+        "Abendessen und Tickets",
+        "80 USD",
+        "30 USD",
+        "50 USD",
+        "Teilweise bezahlt",
+        "Am Freitag nachfragen"
+      ],
+      [
+        "12. Juni",
+        "Maya",
+        "Taxi-Anteil",
+        "18 USD",
+        "18 USD",
+        "0 USD",
+        "Bezahlt",
+        "Nichts zu tun"
+      ],
+      [
+        "15. Juni",
+        "Chris",
+        "Lebensmittel",
+        "42 USD",
+        "0 USD",
+        "42 USD",
+        "Offen",
+        "Nächste Woche erinnern"
+      ],
+      [
+        "18. Juni",
+        "Gruppengeschenk",
+        "Gemeinsames Geburtstagsgeschenk",
+        "120 USD",
+        "75 USD",
+        "45 USD",
+        "Teilweise bezahlt",
+        "Offene Anteile der anderen prüfen"
+      ]
+    ],
+    "scrollRegions": [
+      {
+        "focusable": true,
+        "label": "Beispielübersicht über offene Beträge",
+        "width": 348,
+        "scrollWidth": 894
+      },
+      {
+        "focusable": true,
+        "label": "Tabelle zur Wahl einer Methode für offene Beträge",
+        "width": 348,
+        "scrollWidth": 720
+      }
+    ],
+    "storeLinks": [
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8"
+    ],
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "pageWidth": 1440,
+    "lang": "de",
+    "faqMatch": true,
+    "faqCount": 7,
+    "ledger": [
+      [
+        "10. Juni",
+        "Alex",
+        "Abendessen und Tickets",
+        "80 USD",
+        "30 USD",
+        "50 USD",
+        "Teilweise bezahlt",
+        "Am Freitag nachfragen"
+      ],
+      [
+        "12. Juni",
+        "Maya",
+        "Taxi-Anteil",
+        "18 USD",
+        "18 USD",
+        "0 USD",
+        "Bezahlt",
+        "Nichts zu tun"
+      ],
+      [
+        "15. Juni",
+        "Chris",
+        "Lebensmittel",
+        "42 USD",
+        "0 USD",
+        "42 USD",
+        "Offen",
+        "Nächste Woche erinnern"
+      ],
+      [
+        "18. Juni",
+        "Gruppengeschenk",
+        "Gemeinsames Geburtstagsgeschenk",
+        "120 USD",
+        "75 USD",
+        "45 USD",
+        "Teilweise bezahlt",
+        "Offene Anteile der anderen prüfen"
+      ]
+    ],
+    "scrollRegions": [
+      {
+        "focusable": true,
+        "label": "Beispielübersicht über offene Beträge",
+        "width": 1342,
+        "scrollWidth": 1342
+      },
+      {
+        "focusable": true,
+        "label": "Tabelle zur Wahl einer Methode für offene Beträge",
+        "width": 1342,
+        "scrollWidth": 1342
+      }
+    ],
+    "storeLinks": [
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8"
+    ],
+    "errors": []
+  }
+]

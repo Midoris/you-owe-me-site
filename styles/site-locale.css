@@ -26,7 +26,7 @@ html:is([lang="es"],[lang="de"]) .split-calculator .calculator-select { box-sizi
 }
 
 html[lang="de"] #main { overflow-wrap:break-word; }
-/* Keep German solution discovery links below the fixed mobile menu control. */
+/* Keep German content-page discovery links below the fixed mobile menu control. */
 @media(max-width:980px) {
-  html[lang="de"] body.solutions-page .site-locale-section { padding-top:3rem; }
+  html[lang="de"] body:not(.homepage-page) .site-locale-section { padding-top:3rem; }
 }

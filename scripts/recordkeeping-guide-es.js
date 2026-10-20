@@ -1,5 +1,13 @@
-// Spanish recordkeeping guide only. Keep existing copy events and fallback behavior.
+// Shared recordkeeping copy UI. Retain this public filename for Spanish compatibility.
+// Templates come from static localized HTML; event fields never contain their text.
 (function () {
+  var messages = {
+    en: { copied: "Copied", prefix: "Copied: ", fallback: "message", failure: "Could not copy. Select the text and copy it manually." },
+    es: { copied: "Copiado", prefix: "Copiado: ", fallback: "mensaje", failure: "No se pudo copiar. Selecciona el texto y cópialo manualmente." },
+    de: { copied: "Kopiert", prefix: "Kopiert: ", fallback: "Text", failure: "Kopieren nicht möglich. Markiere den Text und kopiere ihn manuell." },
+  };
+  var copyUi = messages[document.documentElement.lang] || messages.en;
+
   function ready(callback) {
     if (document.readyState === "loading") {
       document.addEventListener("DOMContentLoaded", callback, { once: true });
@@ -74,8 +82,8 @@
         var textToCopy = (message.getAttribute("data-template") || message.textContent).trim();
 
         copyText(textToCopy).then(function () {
-          button.textContent = "Copiado";
-          if (status) status.textContent = "Copiado: " + (card.querySelector("h3") ? card.querySelector("h3").textContent : "mensaje") + ".";
+          button.textContent = copyUi.copied;
+          if (status) status.textContent = copyUi.prefix + (card.querySelector("h3") ? card.querySelector("h3").textContent : copyUi.fallback) + ".";
           trackTemplateCopy(card);
 
           window.setTimeout(function () {
@@ -83,7 +91,7 @@
             if (status) status.textContent = "";
           }, 1800);
         }).catch(function () {
-          if (status) status.textContent = "No se pudo copiar. Selecciona el texto y cópialo manualmente.";
+          if (status) status.textContent = copyUi.failure;
         });
       });
     });

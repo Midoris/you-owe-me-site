@@ -1,0 +1,125 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "from": "en",
+      "to": "es",
+      "route": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "de",
+      "route": "/de/blog/wer-schuldet-mir-geld/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "en",
+      "route": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "de",
+      "route": "/de/blog/wer-schuldet-mir-geld/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "en",
+      "route": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "es",
+      "route": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "es",
+      "route": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "de",
+      "route": "/de/blog/wer-schuldet-mir-geld/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "en",
+      "route": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "de",
+      "route": "/de/blog/wer-schuldet-mir-geld/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "en",
+      "route": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "es",
+      "route": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    }
+  ]
+}

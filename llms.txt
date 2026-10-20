@@ -280,4 +280,5 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 
 - [You Owe Me: Geldforderungen, Darlehen und Ausgaben im Blick](https://you-owe-me.com/de/)
 - [App für Geldforderungen](https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/)
+- [Wer schuldet mir Geld? So behältst du den Überblick](https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/)
 <!-- german-pages:end -->

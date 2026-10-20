@@ -12,6 +12,7 @@ export const sharedAssetVersions = {
   "/scripts/video-embed.js": "locales20261020",
   "/assets/js/main.js": "locales20261020",
   "/styles/site-locale.css": "locales20261020",
+  "/scripts/recordkeeping-guide-es.js": "locales20261020",
 };
 export const spanishVersionedAssets = [
   "/scripts/analytics.js", "/scripts/sales.js", "/scripts/anniversary-announcement.js",
@@ -44,7 +45,7 @@ export const spanishShared = Object.freeze({
 export const germanPages = [
   { en: "/", de: "/de/", title: "You Owe Me: Geldforderungen, Darlehen und Ausgaben im Blick", complete: true },
   { en: "/solutions/app-to-track-money-owed/", de: "/de/loesungen/app-fuer-geldforderungen/", title: "App für Geldforderungen", complete: true },
-  { en: "/blog/how-to-keep-track-of-who-owes-you-money/", de: "/de/blog/wer-schuldet-mir-geld/", title: "Wer schuldet mir Geld? So behältst du den Überblick", complete: false },
+  { en: "/blog/how-to-keep-track-of-who-owes-you-money/", de: "/de/blog/wer-schuldet-mir-geld/", title: "Wer schuldet mir Geld? So behältst du den Überblick", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", de: "/de/loesungen/private-darlehen-verwalten/", title: "Private Darlehen und Rückzahlungen verwalten", complete: false },
   { en: "/tools/split-expense-calculator/", de: "/de/tools/ausgaben-aufteilen/", title: "Ausgaben aufteilen: Rechner für gemeinsame Kosten", complete: false },
 ];
@@ -68,7 +69,7 @@ export const germanShared = Object.freeze({
 export const siteLocales = [
   { code: "en", label: "English", home: "/", pages: [], shared: { languageLabel: "Page language" } },
   { code: "es", label: "Español", home: "/es/", pages: spanishPages, shared: spanishShared, assetVersion: spanishAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "spanish", sectionClass: "site-spanish-section", nextStepComment: "Spanish next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Spanish next steps are translated in the public HTML; the English module generator must not overwrite them." },
-  { code: "de", label: "Deutsch", home: "/de/", pages: germanPages, shared: germanShared, assetVersion: germanAssetVersion, versionedAssets: spanishVersionedAssets.filter(asset => asset !== "/scripts/recordkeeping-guide-es.js"), sectionMarker: "german", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
+  { code: "de", label: "Deutsch", home: "/de/", pages: germanPages, shared: germanShared, assetVersion: germanAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "german", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
 ];
 
 export function localeAssetVersion(locale, asset) {

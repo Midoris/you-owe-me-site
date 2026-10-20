@@ -1,0 +1,24 @@
+{
+  "allPassed": true,
+  "focusedTests": 29,
+  "designErrors": 0,
+  "registryErrors": 0,
+  "seoErrors": 0,
+  "legacySeoWarnings": 6,
+  "idempotent": true,
+  "browserWidths": [
+    320,
+    390,
+    600,
+    1440
+  ],
+  "onlyIntentionalScrollableTableOverflow": true,
+  "noJsMainTextAtBrowserCheck": 13758,
+  "rawStaticChars": 23143,
+  "all60LinksAndFragmentsValid": true,
+  "threeCopyTemplatesAllModesPassed": true,
+  "spanishAndEnglishCopyRegressionsPassed": true,
+  "eventsContainIdentifiersOnly": true,
+  "independentReviewsAccepted": true,
+  "mobileMenuOverlapFixed": true
+}
