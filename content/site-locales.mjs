@@ -11,11 +11,11 @@ export const sharedAssetVersions = {
   "/scripts/app-language-support.js": "fr20261020",
   "/scripts/video-embed.js": "fr20261020",
   "/assets/js/main.js": "fr20261020",
-  "/styles/site-locale.css": "fr20261020",
+  "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "fr20261020",
   "/scripts/split-expense-locale.js": "fr20261020",
-  "/scripts/split-expense-calculator.js": "fr20261020",
+  "/scripts/split-expense-calculator.js": "review20261020",
   "/scripts/tool-transfer.js": "fr20261020",
 };
 export const spanishVersionedAssets = [

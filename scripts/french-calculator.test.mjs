@@ -117,3 +117,77 @@ test("French private continuation preserves all four accepted sections and priva
  vm.runInNewContext(read("private-continuation/split/locale.js"),{window,document,fetch(){throw Error("No network")}});
  for(const from of ["en","es","de","ar","fr"])for(const to of ["en","es","de","ar","fr","unknown"]){hash="#"+from;change();hash="#"+to;change();const selected=to==="unknown"?"en":to;assert.equal(document.documentElement.lang,selected);assert.equal(document.documentElement.dir,selected==="ar"?"rtl":"ltr");assert.equal(document.querySelectorAll("[data-locale]").filter(s=>!s.hidden).length,1);assert.equal(document.title,document.querySelector(`[data-locale="${selected}"]`).getAttribute("data-title"));}
 });
+
+// Independent October 20 review: a private-page language switch can return to
+// another calculator locale in the same tab. Exercise actual consent/storage.
+async function returnSnapshot(language, amount, blankLabels = false) {
+  const env = localizedCalculator(language);
+  Object.assign(env.api.state, { currency: "EUR", people: [
+    { id: "audit-p0", name: blankLabels ? "" : "Élodie" }, { id: "audit-p1", name: "أحمد (Alex 2)" },
+  ], expenses: [{ id: "audit-e0", description: blankLabels ? "" : "Synthetic return check", amount,
+    paidBy: "audit-p0", includedPeople: ["audit-p0", "audit-p1"] }], nextPersonNumber: 3, nextExpenseNumber: 2 });
+  env.api.render(); env.edit("#amount-audit-e0", amount);
+  env.action("track-split"); await flush();
+  assert.equal(env.requests.length, 1); assert.equal(env.navigations.length, 1);
+  return JSON.parse(env.storage.get("uomi-exp003-return"));
+}
+test("consented return preserves money across every source/target page language", async () => {
+  const inputs = { en: "90.50", es: "90.50", de: "90.50", ar: "٩٠٫٥٠", fr: "90,50" };
+  for (const [source, raw] of Object.entries(inputs)) {
+    const snapshot = await returnSnapshot(source, raw);
+    assert.equal(snapshot.locale, source);
+    const original = JSON.parse(snapshot.transferAttempt.fingerprint);
+    assert.equal(original.costs[0].amount, 9050);
+    for (const target of Object.keys(inputs)) {
+      const env = localizedCalculator(target, { storage: [["uomi-exp003-return", JSON.stringify(snapshot)]] });
+      assert.equal(env.api.calculate().total, 90.5, `${source} -> ${target}`);
+      assert.equal(env.api.state.currency, "EUR");
+      assert.equal(env.api.state.expenses[0].amount, source === target ? raw : "90.50");
+      assert.equal(JSON.stringify(env.window.UomiToolTransfer.prepare(env.api.transferState())), snapshot.transferAttempt.fingerprint);
+      assert.equal(env.storage.size, 0); assert.equal(env.requests.length, 0, "restoring never uploads");
+      env.action("track-split"); await flush();
+      assert.equal(env.requests.length, 1);
+      const sent = JSON.parse(env.requests[0][1].body);
+      assert.equal(sent.reference, snapshot.transferAttempt.reference, "same accepted split reuses its reference");
+      assert.equal(sent.draft.costs[0].amount, 9050);
+      assert.equal(sent.draft.participants[1].name, "أحمد (Alex 2)");
+    }
+  }
+});
+test("legacy untagged return snapshots use accepted cents instead of guessing separators", async () => {
+  for (const [source, raw] of [["fr", "90,50"], ["ar", "٩٠٫٥٠"]]) {
+    const snapshot = await returnSnapshot(source, raw); delete snapshot.locale;
+    for (const target of ["en", "es", "de", "ar", "fr"]) {
+      const env = localizedCalculator(target, { storage: [["uomi-exp003-return", JSON.stringify(snapshot)]] });
+      assert.equal(env.api.calculate().total, 90.5, `${source} legacy -> ${target}`);
+      assert.equal(JSON.stringify(env.window.UomiToolTransfer.prepare(env.api.transferState())), snapshot.transferAttempt.fingerprint);
+    }
+  }
+});
+test("cross-locale return canonicalizes accepted exponent input and preserves fallback labels", async () => {
+  const exponent = await returnSnapshot("en", "1e3");
+  const fr = localizedCalculator("fr", { storage: [["uomi-exp003-return", JSON.stringify(exponent)]] });
+  assert.equal(fr.api.state.expenses[0].amount, "1000.00"); assert.equal(fr.api.calculate().total, 1000);
+  const blank = await returnSnapshot("fr", "90,50", true);
+  for (const target of ["en", "es", "de", "ar"]) {
+    const env = localizedCalculator(target, { storage: [["uomi-exp003-return", JSON.stringify(blank)]] });
+    assert.equal(env.api.calculate().total, 90.5);
+    assert.equal(JSON.stringify(env.window.UomiToolTransfer.prepare(env.api.transferState())), blank.transferAttempt.fingerprint);
+  }
+});
+test("invalid return snapshots cannot restore a changed financial draft or upload", async () => {
+  const original = await returnSnapshot("fr", "90,50");
+  const variants = [
+    { ...original, transferAttempt: { ...original.transferAttempt, fingerprint: "null" }, state: { ...original.state, expenses: [] } },
+    { ...original, transferAttempt: { ...original.transferAttempt, fingerprint: "{invalid" } },
+    { ...original, transferAttempt: { ...original.transferAttempt, fingerprint: undefined } },
+    { ...original, state: { ...original.state, currency: "USD" } },
+    { ...original, state: { ...original.state, people: null } },
+    { ...original, state: { ...original.state, expenses: [{ ...original.state.expenses[0], id: "wrong-id" }] } },
+  ];
+  for (const snapshot of variants) {
+    const env = localizedCalculator("en", { storage: [["uomi-exp003-return", JSON.stringify(snapshot)]] });
+    assert.equal(env.api.state.people.length, 3); assert.equal(env.api.calculate().total, 90);
+    assert.equal(env.requests.length, 0); assert.equal(env.storage.size, 0);
+  }
+});

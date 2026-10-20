@@ -110,9 +110,9 @@ html[lang="fr"] body #main .solution-step-item .site-locale-fallback {
   display: inline; width: auto; height: auto; border-radius: 0;
   background: none; color: inherit; font: inherit;
 }
-/* Stacked French loan-table headers need the full mobile card width. */
+/* Stacked loan-table headers need the full mobile card width in both locales. */
 @media(max-width:736px) {
-  html[lang="fr"] body.personal-loan-repayment-tracker-page .plrt-table--compact tbody th { width: 100%; }
+  html:is([lang="fr"],[lang="de"]) body.personal-loan-repayment-tracker-page .plrt-table--compact tbody th { width: 100%; }
 }
 /* French download text needs the same readable measure as the Arabic label. */
 html[lang="fr"] body.personal-loan-repayment-tracker-page #main .plrt-record-once__download .lt-appStoreBtn {

@@ -1,3 +1,4 @@
+import { normalizeReviewedLanguageCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import fs from 'node:fs';
@@ -29,7 +30,7 @@ test('French admission requires review and produces reciprocal idempotent five-l
  for(const p of frenchPages.slice(1)) assert.ok(!html.includes(p.fr));
 });
 test('all four released languages retain authored bytes outside owned locale blocks and shared cache queries',()=>{
- function normalize(html,route){return html.replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g,'').replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g,'').replace(/((?:src|href)=")([^"?]+)(?:\?[^" ]*)?(")/g,(original,start,ref,end)=>sharedAssetVersions[new URL(ref,'https://you-owe-me.com'+route).pathname]?`${start}${ref}?v=shared-cache${end}`:original);}
+ function normalize(html,route){return normalizeReviewedLanguageCopy(html).replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g,'').replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g,'').replace(/((?:src|href)=")([^"?]+)(?:\?[^" ]*)?(")/g,(original,start,ref,end)=>sharedAssetVersions[new URL(ref,'https://you-owe-me.com'+route).pathname]?`${start}${ref}?v=shared-cache${end}`:original);}
  for(const p of siteLocales.filter(l=>l.code==='ar').flatMap(l=>l.pages))for(const l of siteLocales.filter(l=>l.code!=='fr')){
   const route=l.code==='en'?p.en:l.pages.find(x=>x.en===p.en)[l.code];
   const file=route==='/'?'index.html':route.slice(1)+'index.html';

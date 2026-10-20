@@ -1,3 +1,4 @@
+import { normalizeReviewedLanguageCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -49,7 +50,7 @@ test("only completed translations join the registry and have substantive public 
 
 test("English authored content differs from the accepted base only by locale links and declared shared cache queries", () => {
   function stripOwned(html, route) {
-    html = html.replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
+    html = normalizeReviewedLanguageCopy(html).replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
       .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "");
     return html.replace(/((?:src|href)=")([^"?]+)(?:\?[^" ]*)?("|\s)/g, (original, start, reference, end) => {
       const asset = new URL(reference, "https://you-owe-me.com" + route).pathname;
@@ -75,7 +76,7 @@ test("locale routes are unique, stable and contain no financial inputs", () => {
 });
 
 test("Spanish authored HTML stays byte-for-byte intact from the accepted public release", () => {
-  const stripOwned = html => html
+  const stripOwned = html => normalizeReviewedLanguageCopy(html)
     .replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
     .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "")
     // Only explicitly changed shared dependencies may receive cache URL updates.

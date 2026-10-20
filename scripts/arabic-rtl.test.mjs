@@ -1,3 +1,4 @@
+import { normalizeReviewedLanguageCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
@@ -43,7 +44,7 @@ test("an unreviewed Arabic batch cannot leak into switches, registry, discovery 
 });
 
 test("German authored pages remain identical to their finalized release outside generated switches and shared cache pins", () => {
-  const normalize = html => html
+  const normalize = html => normalizeReviewedLanguageCopy(html)
     .replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
     .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "")
     .replace(/((?:src|href)=")([^"?]+)(?:\?v=[^"&]+)?(")/g, (original, start, asset, end) => sharedAssetVersions[asset] ? `${start}${asset}?v=reviewed-shared-cache${end}` : original);

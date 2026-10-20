@@ -4,7 +4,7 @@
   const EPSILON = 0.005;
   const MAX_PEOPLE = 12;
   const MAX_EXPENSES = 30;
-  const locale = document.documentElement?.lang;
+  const locale = document.documentElement?.lang || "en";
   const isArabic = locale === "ar";
   const isFrench = locale === "fr";
   const localizedNumberInput = isArabic ? window.UomiArabicNumberInput : isFrench ? window.UomiFrenchNumberInput : null;
@@ -46,6 +46,45 @@
     return { ...source, expenses: source.expenses.map(expense => ({ ...expense,
       amount: localizedNumberInput?.normalizeAmount(expense.amount) ?? "NaN",
     })) };
+  }
+  // The return snapshot can be reopened in another page language. Restore
+  // money from the accepted native draft, never reinterpret another locale's
+  // decimal separators. Keep same-language raw fields when they still match.
+  function restoreReturnState(snapshot) {
+    const previous = snapshot?.state;
+    const attempt = snapshot?.transferAttempt;
+    if (!previous || typeof previous.currency !== "string" ||
+        !Array.isArray(previous.people) || !Array.isArray(previous.expenses) ||
+        !Number.isInteger(previous.nextPersonNumber) || previous.nextPersonNumber < 1 ||
+        !Number.isInteger(previous.nextExpenseNumber) || previous.nextExpenseNumber < 1 ||
+        !previous.people.every(person => typeof person.id === "string" && typeof person.name === "string") ||
+        !previous.expenses.every(expense => typeof expense.id === "string" && typeof expense.description === "string" &&
+          (typeof expense.amount === "string" || typeof expense.amount === "number") &&
+          typeof expense.paidBy === "string" && Array.isArray(expense.includedPeople)) ||
+        typeof attempt?.fingerprint !== "string") return null;
+    let candidate = previous;
+    const rawDraft = window.UomiToolTransfer.prepare(transferState(previous));
+    if (!rawDraft || (snapshot.locale && snapshot.locale !== locale) || JSON.stringify(rawDraft) !== attempt.fingerprint) {
+      const accepted = JSON.parse(attempt.fingerprint);
+      const people = new Map(accepted.participants.map(person => [person.id, person]));
+      const costs = new Map(accepted.costs.map(cost => [cost.id, cost]));
+      candidate = { ...previous,
+        people: previous.people.map(person => ({ ...person, name: person.name.trim() || people.get(person.id).name })),
+        expenses: previous.expenses.map(expense => {
+          const cost = costs.get(expense.id);
+          if (!Number.isSafeInteger(cost.amount) || cost.amount < 1 || cost.amount > 100000000) throw new Error("Invalid return amount");
+          return { ...expense, amount: (cost.amount / 100).toFixed(2), description: expense.description.trim() || cost.label };
+        }),
+      };
+    }
+    const restoredDraft = window.UomiToolTransfer.prepare(transferState(candidate));
+    if (!restoredDraft || JSON.stringify(restoredDraft) !== attempt.fingerprint) return null;
+    return {
+      state: { currency: candidate.currency, people: candidate.people, expenses: candidate.expenses,
+        nextPersonNumber: candidate.nextPersonNumber, nextExpenseNumber: candidate.nextExpenseNumber, message: "" },
+      transferAttempt: /^[a-f0-9]{64}$/.test(attempt.reference)
+        ? { fingerprint: attempt.fingerprint, reference: attempt.reference } : null,
+    };
   }
   const SPLIT_CALCULATOR_EVENT = "youoweme:split-calculator-event";
 
@@ -528,7 +567,7 @@
       if (!meaningfulEdit || !transferAttempt || transferAttempt.fingerprint !== fingerprint ||
           JSON.stringify(window.UomiToolTransfer.prepare(transferState())) !== fingerprint) throw new Error("changed");
       // Preserve input only following explicit consent. Cleared when restored on Back.
-      sessionStorage.setItem("uomi-exp003-return", JSON.stringify({state, transferAttempt}));
+      sessionStorage.setItem("uomi-exp003-return", JSON.stringify({locale: locale || "en", state, transferAttempt}));
       location.assign(window.UomiToolTransfer.config.continuation + "?ref=" + transferAttempt.reference + (localizedStrings ? "#" + locale : ""));
     } catch (_) {
       status.textContent = translate("Couldn’t prepare the transfer. Your split is still here. Try again, or copy your result.");
@@ -894,10 +933,10 @@
       const saved = sessionStorage.getItem("uomi-exp003-return");
       sessionStorage.removeItem("uomi-exp003-return");
       if (saved && saved.length < 16384) {
-        const restored = JSON.parse(saved), previous = restored.state;
-        if (previous && window.UomiToolTransfer.prepare(transferState(previous))) {
-          Object.assign(state, previous); meaningfulEdit = true; hasExplicitInteraction = true;
-          if (restored.transferAttempt && /^[a-f0-9]{64}$/.test(restored.transferAttempt.reference)) transferAttempt = restored.transferAttempt;
+        const restored = restoreReturnState(JSON.parse(saved));
+        if (restored) {
+          Object.assign(state, restored.state); meaningfulEdit = true; hasExplicitInteraction = true;
+          transferAttempt = restored.transferAttempt;
         }
       }
     } catch (_) { /* Unavailable session storage does not affect local calculation. */ }
