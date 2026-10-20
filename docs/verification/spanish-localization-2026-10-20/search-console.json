@@ -1,0 +1,53 @@
+{
+  "checkedAtUTC": "2026-10-20T04:55:39.744767+00:00",
+  "property": "sc-domain:you-owe-me.com",
+  "sitemap": {
+    "url": "https://you-owe-me.com/sitemap.xml",
+    "existingSubmissionStatus": "Success",
+    "lastReadDisplayed": "2026-10-20",
+    "submissionChanged": false,
+    "reason": "Existing healthy submission; same live sitemap now contains all five Spanish URLs."
+  },
+  "requests": [
+    {
+      "url": "https://you-owe-me.com/es/",
+      "inspectionStatus": "URL is not on Google; Page is not indexed: URL is unknown to Google",
+      "crawlAndCanonicalData": "N/A",
+      "requestStatus": "failed",
+      "error": "We had a problem submitting your indexing request. Please try again later.",
+      "serviceMessage": "Could not connect to the reCAPTCHA service. Please check your internet connection and reload to get a reCAPTCHA challenge."
+    },
+    {
+      "url": "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "inspectionStatus": "URL is not on Google; Page is not indexed: URL is unknown to Google",
+      "crawlAndCanonicalData": "N/A",
+      "requestStatus": "failed",
+      "error": "We had a problem submitting your indexing request. Please try again later.",
+      "serviceMessage": "Could not connect to the reCAPTCHA service. Please check your internet connection and reload to get a reCAPTCHA challenge."
+    },
+    {
+      "url": "https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "inspectionStatus": "URL is not on Google; Page is not indexed: URL is unknown to Google",
+      "crawlAndCanonicalData": "N/A",
+      "requestStatus": "not submitted: repeated reCAPTCHA service connection failure blocks the request workflow"
+    },
+    {
+      "url": "https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/",
+      "inspectionStatus": "URL is not on Google; Page is not indexed: URL is unknown to Google",
+      "crawlAndCanonicalData": "N/A",
+      "requestStatus": "not submitted: repeated reCAPTCHA service connection failure blocks the request workflow"
+    },
+    {
+      "url": "https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/",
+      "inspectionStatus": "URL is not on Google; Page is not indexed: URL is unknown to Google",
+      "crawlAndCanonicalData": "N/A",
+      "requestStatus": "not submitted: repeated reCAPTCHA service connection failure blocks the request workflow"
+    }
+  ],
+  "indexingConfirmed": false,
+  "acceptedRequestsConfirmed": 0,
+  "indexingAPIUsed": false,
+  "recoveryAttempt": "Dismissed initial error, reloaded, inspected the next URL and attempted a fresh request; same submission error and reCAPTCHA service connection failure.",
+  "manualStep": "When Google reCAPTCHA connectivity works, retry Request indexing for all five listed URLs in the existing property. No successful submission or actual indexing is confirmed.",
+  "screenshot": "search-console-request-error.jpg"
+}

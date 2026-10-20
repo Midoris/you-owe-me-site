@@ -1,0 +1,30 @@
+{
+  "verifiedAtUTC": "2026-10-20T04:42:57.637579+00:00",
+  "target": "tool-continuation",
+  "project": "you-owe-me-app",
+  "status": "released",
+  "resources": [
+    {
+      "url": "https://continue.you-owe-me.com/split/",
+      "sameAsReviewedBytes": true,
+      "sha256": "d1c4cca41fe343042275ab55d73cc66299cdec52bd4f84c616370b76b04f6a14",
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive"
+      }
+    },
+    {
+      "url": "https://continue.you-owe-me.com/split/locale.js?v=es20261020",
+      "sameAsReviewedBytes": true,
+      "sha256": "ae62e261cefcccbdbfb9d9b8ad3eefff0b0bb582b956b64e5c911006744715d2",
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive"
+      }
+    }
+  ]
+}
