@@ -15,6 +15,8 @@ html[lang="es"] body.money-owed-record-page .actions.lt-actions { flex-wrap:wrap
 html[lang="es"] body.money-owed-record-page .actions.lt-actions > li { min-width:0; max-width:100%; padding:0; }
 html[lang="es"] body.money-owed-record-page .actions.lt-actions .button { white-space:normal; height:auto; line-height:1.4; padding:.85rem 1.25rem; }
 html[lang="es"] body.money-owed-record-page .mow-hero > .site-locale-example { align-self:center; }
+html[lang="es"] .plrt-record-once__results dt,
+html[lang="es"] .plrt-table th { min-width:0; overflow-wrap:anywhere; }
 @media(max-width:736px) { .site-spanish-section { font-size:.8rem; } }
 /* Text examples need the whole card width where English used narrow screenshots. */
 @media(max-width:736px) {

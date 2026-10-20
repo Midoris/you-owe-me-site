@@ -269,4 +269,5 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 - [You Owe Me: controla préstamos, gastos y pagos](https://you-owe-me.com/es/)
 - [App para registrar el dinero que te deben](https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/)
 - [Cómo llevar el control de quién te debe dinero](https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/)
+- [Seguimiento de préstamos personales y sus pagos](https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/)
 <!-- spanish-pages:end -->
