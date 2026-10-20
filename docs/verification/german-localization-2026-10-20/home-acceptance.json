@@ -1,0 +1,19 @@
+{
+  "allPassed": true,
+  "focusedTests": 27,
+  "designErrors": 0,
+  "registryErrors": 0,
+  "seoErrors": 0,
+  "seoWarnings": 6,
+  "idempotent": true,
+  "reciprocal": true,
+  "reviewedGermanPages": 1,
+  "noJsMainText": 21563,
+  "browserWidths": [
+    320,
+    390,
+    600,
+    1440
+  ],
+  "sixIllustrativeExamplesAndGermanVideoPoster": true
+}

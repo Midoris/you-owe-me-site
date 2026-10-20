@@ -1,0 +1,43 @@
+[
+  {
+    "width": 390,
+    "scrollWidth": 390,
+    "lang": "de",
+    "support": "✓\nYou Owe Me ist auf Deutsch verfügbar.",
+    "heroCtaVisible": true,
+    "handoffVisible": false,
+    "qrLoaded": true,
+    "qrInstruction": "Scanne den QR-Code mit der Kamera deines iPhones, um den App Store zu öffnen.",
+    "storeLinks": [
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8"
+    ],
+    "exampleCount": 6,
+    "inlineAnniversaryHidden": true,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "scrollWidth": 1440,
+    "lang": "de",
+    "support": "✓\nYou Owe Me ist auf Deutsch verfügbar.",
+    "heroCtaVisible": false,
+    "handoffVisible": true,
+    "qrLoaded": true,
+    "qrInstruction": "Scanne den QR-Code mit der Kamera deines iPhones, um den App Store zu öffnen.",
+    "storeLinks": [
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8"
+    ],
+    "exampleCount": 6,
+    "inlineAnniversaryHidden": true,
+    "qrFailureRestoresDownload": true,
+    "errors": []
+  }
+]

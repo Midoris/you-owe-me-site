@@ -272,3 +272,11 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 - [Seguimiento de préstamos personales y sus pagos](https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/)
 - [Calculadora de gastos compartidos](https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/)
 <!-- spanish-pages:end -->
+
+<!-- german-pages:start -->
+## Seiten auf Deutsch
+
+Öffentliche Inhalte auf Deutsch. Jede Seite hat ihre eigene kanonische URL. Links zu Ressourcen, die bisher nur auf Englisch verfügbar sind, sind entsprechend gekennzeichnet.
+
+- [You Owe Me: Geldforderungen, Darlehen und Ausgaben im Blick](https://you-owe-me.com/de/)
+<!-- german-pages:end -->

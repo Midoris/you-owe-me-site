@@ -1,0 +1,47 @@
+{
+  "allPassed": true,
+  "route": "/de/",
+  "lang": "de",
+  "canonical": [
+    "https://you-owe-me.com/de/"
+  ],
+  "alternates": {
+    "en": "https://you-owe-me.com/",
+    "es": "https://you-owe-me.com/es/",
+    "de": "https://you-owe-me.com/de/",
+    "x-default": "https://you-owe-me.com/"
+  },
+  "staticTextCharacters": 32728,
+  "staticLinkCount": 80,
+  "localAssets": [
+    "/assets/css/fontawesome-all.min.css",
+    "/assets/css/main.css",
+    "/assets/css/noscript.css",
+    "/styles/landing.css?v=20260925-mobile-layout-2",
+    "/styles/site-nav.css",
+    "/styles/site-locale.css?v=locales20261020",
+    "/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1",
+    "/styles/best-next-step.css",
+    "/styles/app-language-support.css",
+    "/styles/anniversary-signals.css?v=anniversary-signals-1",
+    "/styles/loan-import-entry.css?v=20260925-mobile-layout-1",
+    "/styles/landing-cleanup.css?v=20261014-static-balance-2",
+    "/images/de/iphone-handoff/app-store.png",
+    "/scripts/sales.js?v=locales20261020",
+    "/scripts/video-embed.js?v=locales20261020",
+    "/scripts/anniversary-announcement.js?v=locales20261020",
+    "/scripts/analytics.js?v=locales20261020",
+    "/scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1",
+    "/scripts/reviews.js",
+    "/assets/js/jquery.min.js",
+    "/assets/js/jquery.scrollex.min.js",
+    "/assets/js/jquery.scrolly.min.js",
+    "/assets/js/browser.min.js",
+    "/assets/js/breakpoints.min.js",
+    "/assets/js/util.js",
+    "/assets/js/main.js?v=locales20261020",
+    "/scripts/app-language-support.js?v=locales20261020"
+  ],
+  "missingLinksOrFragments": [],
+  "noJavaScriptTranslationRequired": true
+}

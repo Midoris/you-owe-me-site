@@ -1,0 +1,27 @@
+# German homepage independent language review
+
+20 October 2026. Reviewer: independent model agent, GPT-6.1 Sol/high; no human native-speaker certification. Reviewed actual `de/index.html` against English `index.html` and `docs/german-localization-2026-10-20.md`. Read-only page review; no homepage edits, indexing or network publication.
+
+Decision: **accepted after root corrections**. No open material language or product-meaning findings remain. No money-direction, repayment-plan, Live Link/Sync, pricing or privacy mistranslation found. Final reviewed homepage SHA-256: `b70b55a620d95d9b8de0dd9b376d03816ded6ab96974e6bdd205da57b8ff99f8`.
+
+## Findings resolved and rechecked
+
+1. **P2 — untranslated review-rail guidance**, `de/index.html:381–382`: `Scroll ->` and `Swipe ->` remain English UI instructions. Use German, for example `Weiter scrollen →` / `Wische nach links →` (or short `Scrollen →` / `Wischen →` if space requires). These are page UI, rather than retained product names or quoted source attribution. **Resolved:** root changed them to `Scrollen →` and `Wischen →`; re-read in the saved file.
+2. **P3 — direct-address convention**, `de/index.html:649` and `:658`: `Organisiert …` and `Ihr möchtet … Nutzt …` address plural readers, while the release convention specifies informal singular du/dein. Suggested replacements: `Organisiere gemeinsame Ausgaben ohne Gemeinschaftskonto` and `Du möchtest den Monat abrechnen? Nutze den Rechner für WG-Kosten.` Contextual references to a couple or their shared balance elsewhere are natural and do not need to be changed. **Resolved:** root uses `Organisiere …` and `Du möchtest den Monat mit deiner WG abrechnen? Nutze …`; re-read in the saved file. The contextual `Ihr führt getrennte Bankkonten?` naturally addresses the couple’s situation and the following instruction remains singular.
+
+Optional wording polish, not an acceptance issue: `:287` could read `Behalte die Zahlungen, den Saldo und den Rückzahlungsplan eines Darlehens zusammen im Blick` instead of the slightly literal `Halte … zusammen`.
+
+## Reviewed and accepted meaning
+
+- Title, meta description, Open Graph, Twitter and German website/software JSON-LD describe recordkeeping rather than transferring money or promising collection. The video JSON-LD correctly keeps `inLanguage: en` and visibly identifies its language. JSON parses successfully.
+- Money direction is clear: Alex owes the reader 160 USD after 340 USD advanced and 180 USD repaid. The definition includes money lent, borrowed and advanced for others. DDB3019's two directions and family/group repayment wording remain intact.
+- Loan Record is explained as Darlehensübersicht; named important loans remain separate. The plan supports amount, target date or payment count and changes when repayments are recorded. The final CTA retains actual payments, projected completion and next reminder connected to the same loan record.
+- Live Link allows viewing without app/account; payment reporting is optional and reviewed by the record owner before recording. Balance Sync remains for exactly two app users updating supported connected entries; Android exclusion remains explicit. No automatic payment approval or payment execution is implied.
+- Free use remains within included limits; monthly/yearly/lifetime upgrades and the separate Spaces cloud-storage one-time purchase remain clear. Offline recordkeeping and no mandatory registration preserve the English scope. There are no stronger security, privacy, legal or repayment guarantees introduced by the translation.
+- Loan import is explicitly an English browser destination; one-loan scope, review/correction before saving and absence of ongoing spreadsheet synchronization remain clear. The German page does not mount an untranslated importer.
+- All 21 full review cards retain author identities in the original order, plus the same unnamed review. RAZZATAZZTAZZ retains USA/app version 7.0.9; MiiMiiah retains excerpt status. The teaser preserves ThePres_560. Translations are visibly identified as translations. The quoted meaning, rather than the original English wording, is preserved throughout.
+- Every audited internal English destination outside the explicit English language switch carries `auf Englisch`; sources and the English video also have visible language labels. Product names remain intentional. German accessible labels cover downloads, QR, stars, language switch, review rail and video.
+- The only image/source element is the German QR graphic at `/images/de/iphone-handoff/app-store.png`, with German alt text. There are no English app screenshots, image source sets or English Store badges. USD units remain explicit.
+- Inventory clarification: the DOM contains **seven** `.site-locale-example` elements, but **six** explicitly illustrative examples with `Illustratives Beispiel` and `Kein Screenshot der App`. The seventh is a German text video poster clearly marked `Video auf Englisch`, rather than an app capture. This is not misleading, but acceptance notes should describe the inventory accurately rather than claiming seven literal illustrative/no-screenshot labels. The balance story also states `Beispiel`.
+
+This review covers source language/product meaning and static accessibility text, not rendered responsive behavior, QR decoding, runtime generated UI or physical-device behavior. Those require separate technical verification. German production completion remains false during this review.
