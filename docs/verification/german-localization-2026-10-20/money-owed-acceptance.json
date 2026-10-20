@@ -1,0 +1,22 @@
+{
+  "allPassed": true,
+  "focusedTests": 23,
+  "designErrors": 0,
+  "registryErrors": 0,
+  "seoErrors": 0,
+  "legacySeoWarnings": 6,
+  "idempotent": true,
+  "browserWidths": [
+    320,
+    390,
+    600,
+    1440
+  ],
+  "zeroElementOverflow": true,
+  "noJsMainText": 24561,
+  "rawStaticChars": 40451,
+  "all104LinksAndFragmentsValid": true,
+  "independentReviewsAccepted": true,
+  "mobileNavOverlapFixed": true,
+  "twoIllustrativeUsdExamples": true
+}

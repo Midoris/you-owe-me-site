@@ -279,4 +279,5 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 Öffentliche Inhalte auf Deutsch. Jede Seite hat ihre eigene kanonische URL. Links zu Ressourcen, die bisher nur auf Englisch verfügbar sind, sind entsprechend gekennzeichnet.
 
 - [You Owe Me: Geldforderungen, Darlehen und Ausgaben im Blick](https://you-owe-me.com/de/)
+- [App für Geldforderungen](https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/)
 <!-- german-pages:end -->
