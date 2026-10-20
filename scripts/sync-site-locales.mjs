@@ -42,7 +42,7 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
     return footer;
   });
   for (const target of completed) {
-    html = html.replace(new RegExp(`(<a\\b[^>]*href=")${regexEsc(target.en)}(#[^"]*)?("[^>]*>)([\\s\\S]*?)(<\\/a>)`, "g"), (original, start, hash, end, label, close) => /\blang="en"/.test(start + end) ? original : `${start}${target[lang]}${hash || ""}${end}${label.replace(new RegExp(`\\s*\\(${regexEsc(locale.shared.englishFallback)}\\)`, "g"), "")}${close}`);
+    html = html.replace(new RegExp(`(<a\\b[^>]*href=")${regexEsc(target.en)}(#[^"]*)?("[^>]*>)([\\s\\S]*?)(<\\/a>)`, "g"), (original, start, hash, end, label, close) => /\blang="en"/.test(start + end) ? original : `${start}${target[lang]}${hash || ""}${end}${label.replace(new RegExp(`\\s*\\(${regexEsc(locale.shared.englishFallback)}\\)`, "g"), "").replace(/<span class="site-locale-fallback">\s*<\/span>/g, "")}${close}`);
   }
   const nav = completed.map(target => `<a href="${target[lang]}"${target[lang] === route ? ' aria-current="page"' : ""}>${esc(target.title)}</a>`).join("\n              ");
   const marker = locale.sectionMarker;

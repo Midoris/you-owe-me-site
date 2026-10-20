@@ -1,0 +1,42 @@
+{
+  "allPassed": true,
+  "networkRequests": 0,
+  "checks": [
+    {
+      "function": "verify_page",
+      "header": "",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "function": "verify_bot",
+      "header": "",
+      "accepted": true,
+      "expected": true
+    },
+    {
+      "function": "verify_page",
+      "header": "NOINDEX",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "function": "verify_bot",
+      "header": "NOINDEX",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "function": "verify_page",
+      "header": "googlebot: NONE",
+      "accepted": false,
+      "expected": false
+    },
+    {
+      "function": "verify_bot",
+      "header": "googlebot: NONE",
+      "accepted": false,
+      "expected": false
+    }
+  ]
+}

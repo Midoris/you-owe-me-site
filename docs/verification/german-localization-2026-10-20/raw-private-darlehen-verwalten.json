@@ -11,8 +11,8 @@
     "de": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
     "x-default": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/"
   },
-  "staticTextCharacters": 23926,
-  "staticLinkCount": 55,
+  "staticTextCharacters": 23992,
+  "staticLinkCount": 56,
   "localAssets": [
     "/assets/css/fontawesome-all.min.css",
     "/assets/css/main.css",

@@ -11,8 +11,8 @@
     "de": "https://you-owe-me.com/de/",
     "x-default": "https://you-owe-me.com/"
   },
-  "staticTextCharacters": 32728,
-  "staticLinkCount": 80,
+  "staticTextCharacters": 32873,
+  "staticLinkCount": 84,
   "localAssets": [
     "/assets/css/fontawesome-all.min.css",
     "/assets/css/main.css",

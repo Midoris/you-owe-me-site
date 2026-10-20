@@ -1,0 +1,22 @@
+{
+  "allPassed": true,
+  "results": [
+    {
+      "command": "node scripts/sync-site-locales.mjs",
+      "output": "Updated 15 reviewed language pages."
+    },
+    {
+      "command": "node scripts/build-best-next-steps.mjs",
+      "output": "Best Next Step modules built for 80 page(s); 0 file(s) changed."
+    },
+    {
+      "command": "node scripts/build-sitemap.mjs",
+      "output": "Sitemap built with 92 indexable URL(s)."
+    },
+    {
+      "command": "node scripts/render-loan-import-offers.mjs --check",
+      "output": "Nine committed offer blocks match the renderer"
+    }
+  ],
+  "unexpectedChanged": []
+}

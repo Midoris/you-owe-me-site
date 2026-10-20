@@ -28,6 +28,7 @@ class Document(HTMLParser):
 def fetch(url,ua=None):
  req=urllib.request.Request(url,headers={**HEADERS,**({'User-Agent':ua} if ua else {})})
  with urllib.request.urlopen(req,timeout=20) as response:
+  assert response.status==200 and response.url==url, f'Unexpected response/redirect: {url} -> {response.url} ({response.status})'
   body=response.read();headers={k.lower():v for k,v in response.headers.items()}
   return {'url':url,'finalUrl':response.url,'status':response.status,'sha256':hashlib.sha256(body).hexdigest(),'bytes':len(body),'headers':{k:v for k,v in headers.items() if k in ['content-type','x-robots-tag','referrer-policy','cache-control','content-security-policy','last-modified','date']},'_body':body}
 def local_bytes(route):
@@ -38,7 +39,7 @@ def verify_page(pair,lang):
  d=Document();d.feed(r['_body'].decode());assert d.lang==lang
  assert d.canonical==[ORIGIN+route],route
  assert d.alternates=={'en':ORIGIN+pair['en'],'es':ORIGIN+pair['es'],'de':ORIGIN+pair['de'],'x-default':ORIGIN+pair['en']},route
- assert 'noindex' not in d.robots and 'noindex' not in r['headers'].get('x-robots-tag','')
+ assert not re.search(r'\b(?:noindex|none)\b', (d.robots+' '+r['headers'].get('x-robots-tag','')).lower()),route
  assert len(' '.join(d.text))>2000
  r['lang']=lang;r['canonical']=d.canonical[0];r['alternates']=d.alternates;r['htmlTextLength']=len(' '.join(d.text));r['_resources']=d.resources
  return r
@@ -69,11 +70,16 @@ bots=['Googlebot','bingbot','OAI-SearchBot','ChatGPT-User','Claude-SearchBot','C
 expected={p['url']:p['sha256'] for p in pages}
 def verify_bot(job):
  page,bot=job;r=fetch(ORIGIN+page['de'],bot);assert r['sha256']==expected[r['url']],f'Bot differs: {bot} {r["url"]}'
+ assert not re.search(r'\b(?:noindex|none)\b',r['headers'].get('x-robots-tag','').lower()),f'Bot noindex: {bot}'
  return {'url':r['url'],'userAgent':bot,'status':r['status'],'samePublicHTML':True,'xRobotsTag':r['headers'].get('x-robots-tag')}
 with ThreadPoolExecutor(max_workers=8) as executor:bot_checks=list(executor.map(verify_bot,[(p,b) for p in PAGES for b in bots]))
 private=fetch('https://continue.you-owe-me.com/split/');assert 'noindex' in private['headers'].get('x-robots-tag','');assert private['headers'].get('referrer-policy')=='no-referrer';assert 'no-store' in private['headers'].get('cache-control','');assert private['_body']==(ROOT/'private-continuation/split/index.html').read_bytes();private.pop('_body')
-assert "script-src 'self'" in private['headers'].get('content-security-policy','')
+config=json.loads((ROOT/'firebase.exp003.json').read_text())
+def expected_csp(source):return next(h['value'] for group in config['hosting']['headers'] if group['source']==source for h in group['headers'] if h['key']=='Content-Security-Policy')
+assert private['headers'].get('content-security-policy','')==expected_csp('/split/**')
 private_script=fetch('https://continue.you-owe-me.com/split/locale.js?v=de20261020');assert private_script['_body']==(ROOT/'private-continuation/split/locale.js').read_bytes();private_script.pop('_body')
+assert private_script['headers'].get('content-security-policy','')==expected_csp('/split/**')
+assert 'noindex' in private_script['headers'].get('x-robots-tag','').lower() and 'no-store' in private_script['headers'].get('cache-control','').lower() and private_script['headers'].get('referrer-policy')=='no-referrer'
 class RedirectLog(urllib.request.HTTPRedirectHandler):
  def __init__(self):super().__init__();self.chain=[]
  def redirect_request(self,req,fp,code,msg,headers,newurl):
@@ -90,6 +96,7 @@ def verify_private_dependency(file):
  path=file.removeprefix('private-continuation/').removesuffix('index.html');r=fetch('https://continue.you-owe-me.com/'+path)
  assert r['_body']==(ROOT/file).read_bytes(),file
  assert 'noindex' in r['headers'].get('x-robots-tag','') and 'no-store' in r['headers'].get('cache-control','') and r['headers'].get('referrer-policy')=='no-referrer'
+ assert r['headers'].get('content-security-policy','')==expected_csp('/loan/**' if '/loan/' in file else '**')
  r.pop('_body');return r
 private_files=subprocess.check_output(['git','ls-files','private-continuation'],text=True).splitlines()
 with ThreadPoolExecutor(max_workers=5) as executor:private_dependencies=list(executor.map(verify_private_dependency,[f for f in private_files if '/split/' not in f]))

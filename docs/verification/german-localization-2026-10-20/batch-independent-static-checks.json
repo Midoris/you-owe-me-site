@@ -1,0 +1,173 @@
+{
+  "allPassed": true,
+  "checkedPages": 15,
+  "nestedLocaleConfigPinned": true,
+  "privateSitemapExclusion": true,
+  "pages": [
+    {
+      "code": "en",
+      "route": "/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 44,
+      "discovery": true
+    },
+    {
+      "code": "es",
+      "route": "/es/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 36,
+      "discovery": true
+    },
+    {
+      "code": "de",
+      "route": "/de/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 36,
+      "discovery": true
+    },
+    {
+      "code": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 36,
+      "discovery": true
+    },
+    {
+      "code": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 34,
+      "discovery": true
+    },
+    {
+      "code": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 34,
+      "discovery": true
+    },
+    {
+      "code": "en",
+      "route": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 34,
+      "discovery": true
+    },
+    {
+      "code": "es",
+      "route": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 33,
+      "discovery": true
+    },
+    {
+      "code": "de",
+      "route": "/de/blog/wer-schuldet-mir-geld/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 33,
+      "discovery": true
+    },
+    {
+      "code": "en",
+      "route": "/solutions/personal-loan-repayment-tracker/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 36,
+      "discovery": true
+    },
+    {
+      "code": "es",
+      "route": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 33,
+      "discovery": true
+    },
+    {
+      "code": "de",
+      "route": "/de/loesungen/private-darlehen-verwalten/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 33,
+      "discovery": true
+    },
+    {
+      "code": "en",
+      "route": "/tools/split-expense-calculator/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 34,
+      "discovery": true
+    },
+    {
+      "code": "es",
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 36,
+      "discovery": true
+    },
+    {
+      "code": "de",
+      "route": "/de/tools/ausgaben-aufteilen/",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "threeLanguageSwitches": true,
+      "sourceClusterPreserved": true,
+      "staticText": true,
+      "localResources": 36,
+      "discovery": true
+    }
+  ]
+}

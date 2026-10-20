@@ -11,8 +11,8 @@
     "de": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
     "x-default": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/"
   },
-  "staticTextCharacters": 23143,
-  "staticLinkCount": 60,
+  "staticTextCharacters": 23255,
+  "staticLinkCount": 62,
   "localAssets": [
     "/assets/css/fontawesome-all.min.css",
     "/assets/css/main.css",

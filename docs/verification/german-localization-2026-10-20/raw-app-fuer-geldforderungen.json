@@ -11,8 +11,8 @@
     "de": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
     "x-default": "https://you-owe-me.com/solutions/app-to-track-money-owed/"
   },
-  "staticTextCharacters": 40451,
-  "staticLinkCount": 104,
+  "staticTextCharacters": 40616,
+  "staticLinkCount": 107,
   "localAssets": [
     "/assets/css/fontawesome-all.min.css",
     "/assets/css/main.css",
