@@ -1,0 +1,46 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "brokenQR": false,
+      "arabicSupport": true,
+      "correctPrimaryVisibility": true,
+      "qrEligibility": true,
+      "generalStoreIdCampaignPreserved": true,
+      "faqKeyboardInterest": true,
+      "writeOffHistoryAndReopen": true
+    },
+    {
+      "width": 390,
+      "brokenQR": true,
+      "arabicSupport": true,
+      "correctPrimaryVisibility": true,
+      "qrEligibility": true,
+      "generalStoreIdCampaignPreserved": true,
+      "faqKeyboardInterest": true,
+      "writeOffHistoryAndReopen": true
+    },
+    {
+      "width": 1440,
+      "brokenQR": false,
+      "arabicSupport": true,
+      "correctPrimaryVisibility": true,
+      "qrEligibility": true,
+      "generalStoreIdCampaignPreserved": true,
+      "faqKeyboardInterest": true,
+      "writeOffHistoryAndReopen": true
+    },
+    {
+      "width": 1440,
+      "brokenQR": true,
+      "arabicSupport": true,
+      "correctPrimaryVisibility": true,
+      "qrEligibility": true,
+      "generalStoreIdCampaignPreserved": true,
+      "faqKeyboardInterest": true,
+      "writeOffHistoryAndReopen": true
+    }
+  ],
+  "limits": "No App Store opening, real QR scan, production upload or native-device test."
+}

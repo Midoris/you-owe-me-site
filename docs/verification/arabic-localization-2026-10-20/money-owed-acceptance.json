@@ -1,0 +1,21 @@
+{
+  "route": "/ar/solutions/app-to-track-money-owed/",
+  "designHardErrors": 0,
+  "focusedTestsPassed": 31,
+  "responsiveWidths": [
+    320,
+    390,
+    600,
+    1440
+  ],
+  "visibleElementOverflow": false,
+  "staticLinks": 105,
+  "brokenLocalLinks": 0,
+  "languageSwitchPaths": 24,
+  "generatorIdempotent": true,
+  "independentReviews": [
+    "money-owed-language-review.md",
+    "money-owed-technical-review.md"
+  ],
+  "productionUploads": 0
+}

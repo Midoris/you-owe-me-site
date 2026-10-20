@@ -1,0 +1,15 @@
+# Independent Arabic money-owed solution language review
+
+Reviewer: arabic_language, GPT-6.1 Sol/high; independent of page author. Read actual `ar/solutions/app-to-track-money-owed/index.html` against the current English source, including all body sections, 18 visible FAQ answers and their JSON-LD, WebPage/BreadcrumbList metadata, hidden anniversary text, navigation/footer, next steps, link/accessibility labels, neutral QR caption and both HTML illustrations.
+
+The contemporary MSA text preserves creditor/debtor direction and the product's limits. The illustration and first-minute explanation agree: Alex originally owes 120 USD, repays 30 USD, and owes 90 USD. USD and Western digits stay unchanged. The checklist illustration and account example are honestly labeled as illustrative, not app screenshots. Remaining English resource destinations and the English importer are clear.
+
+Specific semantic checks accepted: individual Loan Records still contribute to a person's overall balance; partial-payment remainder versus unpaid installment; plan updates from actual payments; enabled reminders follow the next unpaid installment; timeline context; eligible individual unpaid closure retains history, differs from money received and can reopen; percentage interest versus one fixed extra amount; optional Live Link reporting with owner review before any balance change; exactly two app users for Balance Sync supported entries; iPhone/iPad availability and Android limitations; free download/in-app purchases; personal records rather than banking, legal enforcement or full accounting. No country, calendar, currency conversion, legal or religious assumption was added.
+
+Polish findings repaired by author and confirmed in final source: added whitespace after links followed immediately by Arabic words (`</a>ليطّلع`, `</a>قبل`, `</a>كيف`), removed spaces before punctuation outside links and matching JSON-LD `«(بالإنجليزية) .»`. Root also proposed benefit wording refinement; reviewer accepted «المزايا تتجاوز مجرد الحساب» to avoid potential ambiguity with financial interest «الفائدة», and author applied it.
+
+Independent Chrome at 390/1440 with Arabic browser locale confirms Arabic title, document direction, app-language-support message, Arabic seven-link mobile menu and close label, two readable RTL examples, Western digits/LTR isolated USD amounts, and a loaded neutral QR with Arabic caption. Viewed both actual hero screenshots; text shapes/joins correctly with the Arabic font stack, with no language-content clipping. Runtime evidence: `language-app-to-track-money-owed-browser.json`, `language-app-to-track-money-owed-hero-{390,1440}.png`, corresponding full and menu screenshots. Separate technical review owns full responsive/interaction acceptance.
+
+This is independent model language review, not human native-speaker certification. Synthetic examples only; no transfer, App Store opening or native save.
+
+Final money-owed solution language disposition: accepted after these repairs.

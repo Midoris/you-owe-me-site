@@ -30,6 +30,8 @@ Foundation commit `6fe7611`.
 
 | Page | Independent reviews | Verification | Commit |
 | --- | --- | --- | --- |
-| Homepage `/ar/` | Arabic language and technical/product/RTL accepted; repaired wording, inherited fonts/alignment, mixed CTA wrapping and keyboard focus. | 42 focused tests; design/routing/SEO zero hard errors (six legacy SEO warnings); 81 static links with no missing fragments/assets; no-JS main 16,072 characters; Chrome 320/390/600/1440, QR failure recovery and neutral Store/campaign; reciprocal en/es/de/ar/default; generation idempotent. | recorded in next page commit |
+| Homepage `/ar/` | Arabic language and technical/product/RTL accepted; repaired wording, inherited fonts/alignment, mixed CTA wrapping and keyboard focus. | 42 focused tests; design/routing/SEO zero hard errors (six legacy SEO warnings); 81 static links with no missing fragments/assets; no-JS main 16,072 characters; Chrome 320/390/600/1440, QR failure recovery and neutral Store/campaign; reciprocal en/es/de/ar/default; generation idempotent. | `292f0c6` |
+
+| Money owed `/ar/solutions/app-to-track-money-owed/` | Independent Arabic language and technical/product/RTL accepted, spacing/benefit wording polished. | 31 focused tests; design zero hard errors; 105 static links; Chrome all four widths zero overflow; 24 language-switch paths; QR failure, keyboard/menu/FAQ; generation idempotent. | recorded in next page commit |
 
 No incomplete Arabic batch is deployed.

@@ -291,4 +291,5 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 محتوى عام باللغة العربية. لكل صفحة رابط أساسي مستقل، وتُميّز الروابط التي تقود إلى موارد متاحة بالإنجليزية فقط.
 
 - [You Owe Me: تابع الديون والقروض والمصروفات](https://you-owe-me.com/ar/)
+- [تطبيق لتتبّع المبالغ المستحقة لك](https://you-owe-me.com/ar/solutions/app-to-track-money-owed/)
 <!-- arabic-pages:end -->
