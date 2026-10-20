@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+import { sharedAssetVersions } from "../content/site-locales.mjs";
+
 const root = new URL("../", import.meta.url);
 const [home, roommate, split, css, manifestText, generator] = await Promise.all([
   readFile(new URL("index.html", root), "utf8"),
@@ -106,14 +108,14 @@ test("visible cards use the shared desktop-only layout and cache-busted module p
   assert.match(css, /#split-result-primary-download\[hidden\] ~ \.split-result-app-card__price/);
 
   for (const page of [home, roommate]) {
-    assert.ok(page.includes(`analytics.js?v=${page.includes("loan-import-entry.mjs") ? "20261018-review1" : "20260926-story-1"}`));
+    assert.ok(page.includes(`analytics.js?v=${page.includes('hreflang="ar"') ? sharedAssetVersions["/scripts/analytics.js"] : page.includes("loan-import-entry.mjs") ? "20261018-review1" : "20260926-story-1"}`));
   }
-  assert.ok(split.includes("analytics.js?v=iphone-handoff-phase-d-20260914-1"));
+  assert.ok(split.includes(`analytics.js?v=${sharedAssetVersions["/scripts/analytics.js"]}`));
   for (const page of [home, roommate, split]) {
     assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"));
     assert.ok(page.includes("styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1"));
   }
-  assert.match(split, /split-expense-calculator\.js\?v=organic-entry-20261011/);
+  assert.ok(split.includes(`split-expense-calculator.js?v=${sharedAssetVersions["/scripts/split-expense-calculator.js"]}`));
 });
 
 test("the QR manifest and reproducible generator retain the original pooled-campaign destinations", () => {

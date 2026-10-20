@@ -1,0 +1,346 @@
+TAP version 13
+# Subtest: Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+ok 1 - Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+  ---
+  duration_ms: 84.962208
+  type: 'test'
+  ...
+# Subtest: Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+ok 2 - Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+  ---
+  duration_ms: 36.942292
+  type: 'test'
+  ...
+# Subtest: Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+ok 3 - Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+  ---
+  duration_ms: 17.14075
+  type: 'test'
+  ...
+# Subtest: Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+ok 4 - Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+  ---
+  duration_ms: 34.634125
+  type: 'test'
+  ...
+# Subtest: Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+ok 5 - Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+  ---
+  duration_ms: 17.150792
+  type: 'test'
+  ...
+# Subtest: private locale selection resets every RTL/LTR transition using only the fragment
+ok 6 - private locale selection resets every RTL/LTR transition using only the fragment
+  ---
+  duration_ms: 1.26225
+  type: 'test'
+  ...
+# Subtest: Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+ok 7 - Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+  ---
+  duration_ms: 0.805083
+  type: 'test'
+  ...
+# Subtest: ambiguous separators and malformed values never silently become positive money
+ok 8 - ambiguous separators and malformed values never silently become positive money
+  ---
+  duration_ms: 0.129167
+  type: 'test'
+  ...
+# Subtest: a reviewed RTL counterpart isolates language links without reordering authored content
+ok 9 - a reviewed RTL counterpart isolates language links without reordering authored content
+  ---
+  duration_ms: 3.568792
+  type: 'test'
+  ...
+# Subtest: an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+ok 10 - an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+  ---
+  duration_ms: 0.5005
+  type: 'test'
+  ...
+# Subtest: German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+ok 11 - German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+  ---
+  duration_ms: 97.273666
+  type: 'test'
+  ...
+# Subtest: Arabic sale presentation preserves campaign IDs, timing and event privacy
+ok 12 - Arabic sale presentation preserves campaign IDs, timing and event privacy
+  ---
+  duration_ms: 3.731833
+  type: 'test'
+  ...
+# Subtest: SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks
+ok 13 - SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks
+  ---
+  duration_ms: 1.588416
+  type: 'test'
+  ...
+# Subtest: English shared cache pins preserve every authored path form and leave unrelated queries intact
+ok 14 - English shared cache pins preserve every authored path form and leave unrelated queries intact
+  ---
+  duration_ms: 0.945583
+  type: 'test'
+  ...
+# Subtest: People disclosure preserves node, open state, identities and results across edits
+ok 15 - People disclosure preserves node, open state, identities and results across edits
+  ---
+  duration_ms: 38.978
+  type: 'test'
+  ...
+# Subtest: expense DOM and keyboard order puts amount and payer before participants and optional description
+ok 16 - expense DOM and keyboard order puts amount and payer before participants and optional description
+  ---
+  duration_ms: 14.146708
+  type: 'test'
+  ...
+# Subtest: existing person/expense limits, payer removal, validation and reset semantics survive compact entry
+ok 17 - existing person/expense limits, payer removal, validation and reset semantics survive compact entry
+  ---
+  duration_ms: 174.383625
+  type: 'test'
+  ...
+# Subtest: copy/share success, cancellation and fallback keep canonical URLs and fixed action metadata
+ok 18 - copy/share success, cancellation and fallback keep canonical URLs and fixed action metadata
+  ---
+  duration_ms: 46.853375
+  type: 'test'
+  ...
+# Subtest: only explicit continuation uploads, rejects stale replies and restores edited state on Back
+ok 19 - only explicit continuation uploads, rejects stale replies and restores edited state on Back
+  ---
+  duration_ms: 45.625958
+  type: 'test'
+  ...
+# Subtest: three article messages are selectable before the image, with matching templates and one shared controller
+ok 20 - three article messages are selectable before the image, with matching templates and one shared controller
+  ---
+  duration_ms: 1.753625
+  type: 'test'
+  ...
+# Subtest: all three article copies emit only existing fixed metadata and leave app actions in place
+ok 21 - all three article copies emit only existing fixed metadata and leave app actions in place
+  ---
+  duration_ms: 6.816542
+  type: 'test'
+  ...
+# Subtest: article clipboard denial falls back; complete failure reports manual copying without a success event
+ok 22 - article clipboard denial falls back; complete failure reports manual copying without a success event
+  ---
+  duration_ms: 8.264417
+  type: 'test'
+  ...
+# Subtest: only completed translations join the registry and have substantive public HTML
+ok 23 - only completed translations join the registry and have substantive public HTML
+  ---
+  duration_ms: 11.473958
+  type: 'test'
+  ...
+# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries
+ok 24 - English authored content differs from the accepted base only by locale links and declared shared cache queries
+  ---
+  duration_ms: 99.026291
+  type: 'test'
+  ...
+# Subtest: locale routes are unique, stable and contain no financial inputs
+ok 25 - locale routes are unique, stable and contain no financial inputs
+  ---
+  duration_ms: 0.60125
+  type: 'test'
+  ...
+# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release
+ok 26 - Spanish authored HTML stays byte-for-byte intact from the accepted public release
+  ---
+  duration_ms: 93.245833
+  type: 'test'
+  ...
+# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out
+ok 27 - one generator produces reciprocal three-language switches and leaves planned pages out
+  ---
+  duration_ms: 2.915
+  type: 'test'
+  ...
+# Subtest: German registry inherits source routing without linking to unfinished locale pages
+ok 28 - German registry inherits source routing without linking to unfinished locale pages
+  ---
+  duration_ms: 0.132542
+  type: 'test'
+  ...
+# Subtest: unreviewed German routes do not enter public discovery or runtime matching
+ok 29 - unreviewed German routes do not enter public discovery or runtime matching
+  ---
+  duration_ms: 0.324125
+  type: 'test'
+  ...
+# Subtest: a missing reviewed counterpart fails before any existing page is changed
+ok 30 - a missing reviewed counterpart fails before any existing page is changed
+  ---
+  duration_ms: 1.261458
+  type: 'test'
+  ...
+# Subtest: analytics preserves English metadata and maps only completed localized routes
+ok 31 - analytics preserves English metadata and maps only completed localized routes
+  ---
+  duration_ms: 18.377667
+  type: 'test'
+  ...
+# Subtest: Spanish dictionary covers every generated phrase and retains interpolation fields
+ok 32 - Spanish dictionary covers every generated phrase and retains interpolation fields
+  ---
+  duration_ms: 1.637416
+  type: 'test'
+  ...
+# Subtest: Spanish calculator localizes generated names, rows, validation and empty/settled results
+ok 33 - Spanish calculator localizes generated names, rows, validation and empty/settled results
+  ---
+  duration_ms: 39.872208
+  type: 'test'
+  ...
+# Subtest: Spanish display changes decimal formatting while numerical results, input and currency semantics match English
+ok 34 - Spanish display changes decimal formatting while numerical results, input and currency semantics match English
+  ---
+  duration_ms: 26.52425
+  type: 'test'
+  ...
+# Subtest: Spanish copy/share use the authored canonical, Spanish summaries/statuses and unchanged fixed events
+ok 35 - Spanish copy/share use the authored canonical, Spanish summaries/statuses and unchanged fixed events
+  ---
+  duration_ms: 28.527333
+  type: 'test'
+  ...
+# Subtest: Spanish clipboard/share fallbacks and cancellation report the appropriate localized state
+ok 36 - Spanish clipboard/share fallbacks and cancellation report the appropriate localized state
+  ---
+  duration_ms: 44.704333
+  type: 'test'
+  ...
+# Subtest: Spanish limits and example/reset preserve established calculator state behavior
+ok 37 - Spanish limits and example/reset preserve established calculator state behavior
+  ---
+  duration_ms: 159.412917
+  type: 'test'
+  ...
+# Subtest: Spanish transfer preserves exact draft cents/schema and sole ref while language travels only in fragment
+ok 38 - Spanish transfer preserves exact draft cents/schema and sole ref while language travels only in fragment
+  ---
+  duration_ms: 44.3765
+  type: 'test'
+  ...
+# Subtest: Spanish transfer eligibility and cents match the existing shared financial fixture matrix
+ok 39 - Spanish transfer eligibility and cents match the existing shared financial fixture matrix
+  ---
+  duration_ms: 22.708167
+  type: 'test'
+  ...
+# Subtest: the initial result actions preserve the attributed App Store CTA
+ok 40 - the initial result actions preserve the attributed App Store CTA
+  ---
+  duration_ms: 0.4605
+  type: 'test'
+  ...
+# Subtest: results put settlement first, then actions, then a native breakdown disclosure
+ok 41 - results put settlement first, then actions, then a native breakdown disclosure
+  ---
+  duration_ms: 0.779625
+  type: 'test'
+  ...
+# Subtest: summary, copy, and share use one canonical calculator URL
+ok 42 - summary, copy, and share use one canonical calculator URL
+  ---
+  duration_ms: 0.163833
+  type: 'test'
+  ...
+# Subtest: calculator events are sanitized fixed actions with no result payload
+ok 43 - calculator events are sanitized fixed actions with no result payload
+  ---
+  duration_ms: 0.179792
+  type: 'test'
+  ...
+# Subtest: result-ready remains an explicit, once-per-page-load milestone
+ok 44 - result-ready remains an explicit, once-per-page-load milestone
+  ---
+  duration_ms: 0.087041
+  type: 'test'
+  ...
+# Subtest: iOS fallback and desktop QR leave App Clip eligibility intact
+ok 45 - iOS fallback and desktop QR leave App Clip eligibility intact
+  ---
+  duration_ms: 0.084791
+  type: 'test'
+  ...
+# Subtest: valid iOS results retain an app destination when transfer is unavailable
+ok 46 - valid iOS results retain an app destination when transfer is unavailable
+  ---
+  duration_ms: 2.158708
+  type: 'test'
+  ...
+# Subtest: German dictionary covers every generated phrase and preserves interpolation fields
+ok 47 - German dictionary covers every generated phrase and preserves interpolation fields
+  ---
+  duration_ms: 0.626792
+  type: 'test'
+  ...
+# Subtest: German generated fields, accessibility, validation, empty and settled states are localized
+ok 48 - German generated fields, accessibility, validation, empty and settled states are localized
+  ---
+  duration_ms: 25.495667
+  type: 'test'
+  ...
+# Subtest: German formatting preserves English/Spanish financial math, parsing, and currency labels
+ok 49 - German formatting preserves English/Spanish financial math, parsing, and currency labels
+  ---
+  duration_ms: 55.650125
+  type: 'test'
+  ...
+# Subtest: German copy/share, clipboard fallback, cancellation and errors preserve privacy and canonical
+ok 50 - German copy/share, clipboard fallback, cancellation and errors preserve privacy and canonical
+  ---
+  duration_ms: 57.725417
+  type: 'test'
+  ...
+# Subtest: German reset and capacity states retain the established limits
+ok 51 - German reset and capacity states retain the established limits
+  ---
+  duration_ms: 141.233084
+  type: 'test'
+  ...
+# Subtest: German transfer preserves cents/schema, consent, sole ref, retry and Back restoration
+ok 52 - German transfer preserves cents/schema, consent, sole ref, retry and Back restoration
+  ---
+  duration_ms: 28.217292
+  type: 'test'
+  ...
+# Subtest: German transfer eligibility matches existing financial fixtures and English/Spanish
+ok 53 - German transfer eligibility matches existing financial fixtures and English/Spanish
+  ---
+  duration_ms: 32.798125
+  type: 'test'
+  ...
+# Subtest: English and Spanish default summaries retain exact accepted text, order and monetary formatting
+ok 54 - English and Spanish default summaries retain exact accepted text, order and monetary formatting
+  ---
+  duration_ms: 22.265041
+  type: 'test'
+  ...
+# Subtest: native import is withheld when rounded debts exceed the browser settlement credit
+ok 55 - native import is withheld when rounded debts exceed the browser settlement credit
+  ---
+  duration_ms: 0.994292
+  type: 'test'
+  ...
+# Subtest: accepted residual and precision fixtures keep their existing eligibility and values
+ok 56 - accepted residual and precision fixtures keep their existing eligibility and values
+  ---
+  duration_ms: 0.2025
+  type: 'test'
+  ...
+1..56
+# tests 56
+# suites 0
+# pass 56
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 782.0565

@@ -1,0 +1,1428 @@
+TAP version 13
+# Subtest: all fifteen refusal controls copy rendered text and preserve the shared success event schema
+ok 1 - all fifteen refusal controls copy rendered text and preserve the shared success event schema
+  ---
+  duration_ms: 112.804042
+  type: 'test'
+  ...
+# Subtest: refusal textarea fallback succeeds and a denied fallback only announces failure
+ok 2 - refusal textarea fallback succeeds and a denied fallback only announces failure
+  ---
+  duration_ms: 36.576125
+  type: 'test'
+  ...
+# Subtest: family opening copies the exact visible gift-or-loan conversation without changing its event
+ok 3 - family opening copies the exact visible gift-or-loan conversation without changing its event
+  ---
+  duration_ms: 15.668542
+  type: 'test'
+  ...
+# Subtest: borrower supported language travels once with the prompt; English and unsupported locales stay silent
+ok 4 - borrower supported language travels once with the prompt; English and unsupported locales stay silent
+  ---
+  duration_ms: 68.177666
+  type: 'test'
+  ...
+# Subtest: static group results order retains all five full-controller outputs through selection, partial repayment, settlement and reset
+ok 5 - static group results order retains all five full-controller outputs through selection, partial repayment, settlement and reset
+  ---
+  duration_ms: 356.316084
+  type: 'test'
+  ...
+# Subtest: Spanish announcements translate active/final states and label the English story
+ok 6 - Spanish announcements translate active/final states and label the English story
+  ---
+  duration_ms: 1.970125
+  type: 'test'
+  ...
+# Subtest: campaign dates resolve using local calendar boundaries
+ok 7 - campaign dates resolve using local calendar boundaries
+  ---
+  duration_ms: 0.134583
+  type: 'test'
+  ...
+# Subtest: active standard state uses the exact copy and destination
+ok 8 - active standard state uses the exact copy and destination
+  ---
+  duration_ms: 0.11275
+  type: 'test'
+  ...
+# Subtest: final standard state uses the exact copy and destination
+ok 9 - final standard state uses the exact copy and destination
+  ---
+  duration_ms: 0.056042
+  type: 'test'
+  ...
+# Subtest: active and final inline states use the exact copy
+ok 10 - active and final inline states use the exact copy
+  ---
+  duration_ms: 0.629291
+  type: 'test'
+  ...
+# Subtest: inactive restores hidden and aria-hidden after a visible phase
+ok 11 - inactive restores hidden and aria-hidden after a visible phase
+  ---
+  duration_ms: 0.071083
+  type: 'test'
+  ...
+# Subtest: render updates multiple modules
+ok 12 - render updates multiple modules
+  ---
+  duration_ms: 0.133209
+  type: 'test'
+  ...
+# Subtest: missing optional nodes fail safely
+ok 13 - missing optional nodes fail safely
+  ---
+  duration_ms: 0.096042
+  type: 'test'
+  ...
+# Subtest: initialize uses the injected timer seam once after DOM readiness
+ok 14 - initialize uses the injected timer seam once after DOM readiness
+  ---
+  duration_ms: 0.306042
+  type: 'test'
+  ...
+# Subtest: German announcements translate active/final states and label the English story
+ok 15 - German announcements translate active/final states and label the English story
+  ---
+  duration_ms: 0.3145
+  type: 'test'
+  ...
+# Subtest: every site route satisfies the language-support inclusion and exclusion contract
+ok 16 - every site route satisfies the language-support inclusion and exclusion contract
+  ---
+  duration_ms: 74.076291
+  type: 'test'
+  ...
+# Subtest: Spanish routes require Spanish document language while English routes keep English
+ok 17 - Spanish routes require Spanish document language while English routes keep English
+  ---
+  duration_ms: 0.2805
+  type: 'test'
+  ...
+# Subtest: the route audit rejects missing and duplicate integration assets
+ok 18 - the route audit rejects missing and duplicate integration assets
+  ---
+  duration_ms: 0.099292
+  type: 'test'
+  ...
+# Subtest: the route audit rejects anchors in navigation and sticky UI
+ok 19 - the route audit rejects anchors in navigation and sticky UI
+  ---
+  duration_ms: 0.090084
+  type: 'test'
+  ...
+# Subtest: the route audit requires a real conversion context and no authored render target
+ok 20 - the route audit requires a real conversion context and no authored render target
+  ---
+  duration_ms: 0.16425
+  type: 'test'
+  ...
+# Subtest: excluded routes reject every language-support integration surface
+ok 21 - excluded routes reject every language-support integration surface
+  ---
+  duration_ms: 0.06075
+  type: 'test'
+  ...
+# Subtest: German routes require German document language
+ok 22 - German routes require German document language
+  ---
+  duration_ms: 0.147417
+  type: 'test'
+  ...
+# Subtest: Spanish publications use Spanish regardless of browser language and link to the Spanish home
+ok 23 - Spanish publications use Spanish regardless of browser language and link to the Spanish home
+  ---
+  duration_ms: 0.670167
+  type: 'test'
+  ...
+# Subtest: normalizes valid locale variants and rejects malformed input
+ok 24 - normalizes valid locale variants and rejects malformed input
+  ---
+  duration_ms: 7.055208
+  type: 'test'
+  ...
+# Subtest: uses only the primary browser language and falls back to navigator.language
+ok 25 - uses only the primary browser language and falls back to navigator.language
+  ---
+  duration_ms: 0.105291
+  type: 'test'
+  ...
+# Subtest: the visual-QA locale override works only on local development hosts
+ok 26 - the visual-QA locale override works only on local development hosts
+  ---
+  duration_ms: 0.160625
+  type: 'test'
+  ...
+# Subtest: local preview takes precedence without changing production detection
+ok 27 - local preview takes precedence without changing production detection
+  ---
+  duration_ms: 0.151958
+  type: 'test'
+  ...
+# Subtest: matches all supported non-English regional variants
+ok 28 - matches all supported non-English regional variants
+  ---
+  duration_ms: 0.167334
+  type: 'test'
+  ...
+# Subtest: suppresses English, unsupported, blank, and malformed languages
+ok 29 - suppresses English, unsupported, blank, and malformed languages
+  ---
+  duration_ms: 0.104875
+  type: 'test'
+  ...
+# Subtest: provides the exact localized copy for every supported non-English language
+ok 30 - provides the exact localized copy for every supported non-English language
+  ---
+  duration_ms: 0.38325
+  type: 'test'
+  ...
+# Subtest: renders one passive localized label and is idempotent
+ok 31 - renders one passive localized label and is idempotent
+  ---
+  duration_ms: 0.310708
+  type: 'test'
+  ...
+# Subtest: renders Arabic with rtl direction and an isolated product name
+ok 32 - renders Arabic with rtl direction and an isolated product name
+  ---
+  duration_ms: 0.307083
+  type: 'test'
+  ...
+# Subtest: does not render for English, unsupported languages, or a missing target
+ok 33 - does not render for English, unsupported languages, or a missing target
+  ---
+  duration_ms: 0.153166
+  type: 'test'
+  ...
+# Subtest: never renders into navigation or sticky UI
+ok 34 - never renders into navigation or sticky UI
+  ---
+  duration_ms: 0.047625
+  type: 'test'
+  ...
+# Subtest: initializes safely both before and after DOMContentLoaded
+ok 35 - initializes safely both before and after DOMContentLoaded
+  ---
+  duration_ms: 0.07875
+  type: 'test'
+  ...
+# Subtest: rendering never reads or mutates links and does not require analytics
+ok 36 - rendering never reads or mutates links and does not require analytics
+  ---
+  duration_ms: 0.140375
+  type: 'test'
+  ...
+# Subtest: the production component contains no tracking, storage, network, or debug hooks
+ok 37 - the production component contains no tracking, storage, network, or debug hooks
+  ---
+  duration_ms: 0.259917
+  type: 'test'
+  ...
+# Subtest: German publications use German regardless of browser language and link to the German home
+ok 38 - German publications use German regardless of browser language and link to the German home
+  ---
+  duration_ms: 0.047209
+  type: 'test'
+  ...
+# Subtest: logs once after one continuous qualifying interval
+ok 39 - logs once after one continuous qualifying interval
+  ---
+  duration_ms: 0.857333
+  type: 'test'
+  ...
+# Subtest: cancels a pending view when visibility drops below half
+ok 40 - cancels a pending view when visibility drops below half
+  ---
+  duration_ms: 0.1175
+  type: 'test'
+  ...
+# Subtest: tracks separate links independently, including an initially hidden link
+ok 41 - tracks separate links independently, including an initially hidden link
+  ---
+  duration_ms: 0.152583
+  type: 'test'
+  ...
+# Subtest: a hidden document cancels pending time and re-observes unviewed links
+ok 42 - a hidden document cancels pending time and re-observes unviewed links
+  ---
+  duration_ms: 0.562625
+  type: 'test'
+  ...
+# Subtest: does not throw or schedule views without IntersectionObserver
+ok 43 - does not throw or schedule views without IntersectionObserver
+  ---
+  duration_ms: 0.15725
+  type: 'test'
+  ...
+# Subtest: Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+ok 44 - Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+  ---
+  duration_ms: 116.028375
+  type: 'test'
+  ...
+# Subtest: Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+ok 45 - Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+  ---
+  duration_ms: 48.975292
+  type: 'test'
+  ...
+# Subtest: Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+ok 46 - Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+  ---
+  duration_ms: 24.563708
+  type: 'test'
+  ...
+# Subtest: Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+ok 47 - Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+  ---
+  duration_ms: 41.181292
+  type: 'test'
+  ...
+# Subtest: Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+ok 48 - Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+  ---
+  duration_ms: 18.441709
+  type: 'test'
+  ...
+# Subtest: private locale selection resets every RTL/LTR transition using only the fragment
+ok 49 - private locale selection resets every RTL/LTR transition using only the fragment
+  ---
+  duration_ms: 1.404625
+  type: 'test'
+  ...
+# Subtest: Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+ok 50 - Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+  ---
+  duration_ms: 0.831
+  type: 'test'
+  ...
+# Subtest: ambiguous separators and malformed values never silently become positive money
+ok 51 - ambiguous separators and malformed values never silently become positive money
+  ---
+  duration_ms: 0.127083
+  type: 'test'
+  ...
+# Subtest: a reviewed RTL counterpart isolates language links without reordering authored content
+ok 52 - a reviewed RTL counterpart isolates language links without reordering authored content
+  ---
+  duration_ms: 4.932167
+  type: 'test'
+  ...
+# Subtest: an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+ok 53 - an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+  ---
+  duration_ms: 0.729417
+  type: 'test'
+  ...
+# Subtest: German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+ok 54 - German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+  ---
+  duration_ms: 138.096958
+  type: 'test'
+  ...
+# Subtest: Arabic sale presentation preserves campaign IDs, timing and event privacy
+ok 55 - Arabic sale presentation preserves campaign IDs, timing and event privacy
+  ---
+  duration_ms: 5.203041
+  type: 'test'
+  ...
+# Subtest: SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks
+ok 56 - SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks
+  ---
+  duration_ms: 3.213625
+  type: 'test'
+  ...
+# Subtest: English shared cache pins preserve every authored path form and leave unrelated queries intact
+ok 57 - English shared cache pins preserve every authored path form and leave unrelated queries intact
+  ---
+  duration_ms: 2.20775
+  type: 'test'
+  ...
+# Subtest: connect page has static privacy, security, and accessibility protections
+ok 58 - connect page has static privacy, security, and accessibility protections
+  ---
+  duration_ms: 1.380584
+  type: 'test'
+  ...
+# Subtest: only explicitly listed noindex utility routes may omit content-registry metadata
+ok 59 - only explicitly listed noindex utility routes may omit content-registry metadata
+  ---
+  duration_ms: 1.323875
+  type: 'test'
+  ...
+# Subtest: AASA copies are byte-identical, valid, and preserve every prior route
+ok 60 - AASA copies are byte-identical, valid, and preserve every prior route
+  ---
+  duration_ms: 0.620083
+  type: 'test'
+  ...
+# Subtest: a canonical fragment invitation is never rendered, logged, or networked and copies exactly
+ok 61 - a canonical fragment invitation is never rendered, logged, or networked and copies exactly
+  ---
+  duration_ms: 1.748791
+  type: 'test'
+  ...
+# Subtest: missing, misplaced, malformed, and noncanonical invitations show only the missing state
+ok 62 - missing, misplaced, malformed, and noncanonical invitations show only the missing state
+  ---
+  duration_ms: 4.164334
+  type: 'test'
+  ...
+# Subtest: clipboard failure gives recovery guidance without exposing the invitation
+ok 63 - clipboard failure gives recovery guidance without exposing the invitation
+  ---
+  duration_ms: 0.382875
+  type: 'test'
+  ...
+# Subtest: both privacy pages disclose the same Balance Sync lifecycle and data boundaries
+ok 64 - both privacy pages disclose the same Balance Sync lifecycle and data boundaries
+  ---
+  duration_ms: 2.523708
+  type: 'test'
+  ...
+# couple-expense-split-method-model tests passed
+# Subtest: scripts/couple-expense-split-method-model.test.js
+ok 10 - scripts/couple-expense-split-method-model.test.js
+  ---
+  duration_ms: 54.109042
+  type: 'test'
+  ...
+# Subtest: EXP-008 keeps search identity and synchronizes exact descriptions and modification dates
+ok 66 - EXP-008 keeps search identity and synchronizes exact descriptions and modification dates
+  ---
+  duration_ms: 18.933375
+  type: 'test'
+  ...
+# Subtest: EXP-008 puts all seven examples directly after the shortened hero and preserves the later guidance
+ok 67 - EXP-008 puts all seven examples directly after the shortened hero and preserves the later guidance
+  ---
+  duration_ms: 0.306167
+  type: 'test'
+  ...
+# Subtest: borrower story closes with a responsive iPhone download handoff
+ok 68 - borrower story closes with a responsive iPhone download handoff
+  ---
+  duration_ms: 0.230791
+  type: 'test'
+  ...
+# Subtest: EXP-008 keeps the exact changed messages in both rendered and copy attributes
+ok 69 - EXP-008 keeps the exact changed messages in both rendered and copy attributes
+  ---
+  duration_ms: 0.327209
+  type: 'test'
+  ...
+# Subtest: EXP-008 connects one friend-copy event to the existing sanitized analytics handler
+ok 70 - EXP-008 connects one friend-copy event to the existing sanitized analytics handler
+  ---
+  duration_ms: 0.180666
+  type: 'test'
+  ...
+# Subtest: EXP-008 sends friend template and record copies through the existing two event paths once
+ok 71 - EXP-008 sends friend template and record copies through the existing two event paths once
+  ---
+  duration_ms: 1.967375
+  type: 'test'
+  ...
+# Subtest: authored prompt is visible after the whole grid with ordinary attributed actions and one language slot
+ok 72 - authored prompt is visible after the whole grid with ordinary attributed actions and one language slot
+  ---
+  duration_ms: 25.973041
+  type: 'test'
+  ...
+# Subtest: initialization is idempotent in a complete document
+ok 73 - initialization is idempotent in a complete document
+  ---
+  duration_ms: 36.413375
+  type: 'test'
+  ...
+# Subtest: initialization is idempotent in a loading document
+ok 74 - initialization is idempotent in a loading document
+  ---
+  duration_ms: 30.735583
+  type: 'test'
+  ...
+# Subtest: each eligible copy moves the same prompt; every real other template returns it home
+ok 75 - each eligible copy moves the same prompt; every real other template returns it home
+  ---
+  duration_ms: 303.508958
+  type: 'test'
+  ...
+# Subtest: unknown, malformed, mismatched and cardless events preserve the current state
+ok 76 - unknown, malformed, mismatched and cardless events preserve the current state
+  ---
+  duration_ms: 35.811833
+  type: 'test'
+  ...
+# Subtest: missing required nodes fail open without partially binding the controller
+ok 77 - missing required nodes fail open without partially binding the controller
+  ---
+  duration_ms: 30.76875
+  type: 'test'
+  ...
+# Subtest: real shared copy success moves the prompt while failed clipboard and fallback never do
+ok 78 - real shared copy success moves the prompt while failed clipboard and fallback never do
+  ---
+  duration_ms: 40.058667
+  type: 'test'
+  ...
+# group-payback-calculator tests passed
+# Subtest: scripts/group-payback-calculator.test.js
+ok 13 - scripts/group-payback-calculator.test.js
+  ---
+  duration_ms: 47.449125
+  type: 'test'
+  ...
+# Subtest: homepage hero keeps its primary download and separate QR handoff
+ok 80 - homepage hero keeps its primary download and separate QR handoff
+  ---
+  duration_ms: 0.864209
+  type: 'test'
+  ...
+# Subtest: story, import, definition, and generated situation hub stay in the intended order
+ok 81 - story, import, definition, and generated situation hub stay in the intended order
+  ---
+  duration_ms: 0.962708
+  type: 'test'
+  ...
+# Subtest: generated hub retains its registered homepage content and placement
+ok 82 - generated hub retains its registered homepage content and placement
+  ---
+  duration_ms: 0.27825
+  type: 'test'
+  ...
+# Subtest: the condensed feature section and included-tools links remain intact
+ok 83 - the condensed feature section and included-tools links remain intact
+  ---
+  duration_ms: 0.236458
+  type: 'test'
+  ...
+# Subtest: homepage styles remain scoped and responsive
+ok 84 - homepage styles remain scoped and responsive
+  ---
+  duration_ms: 0.323542
+  type: 'test'
+  ...
+# Subtest: homepage search-facing metadata and software schema remain unchanged
+ok 85 - homepage search-facing metadata and software schema remain unchanged
+  ---
+  duration_ms: 0.133041
+  type: 'test'
+  ...
+# Subtest: invite page has local-only privacy, CSP, accessibility, and restrained Boost Pack copy
+ok 86 - invite page has local-only privacy, CSP, accessibility, and restrained Boost Pack copy
+  ---
+  duration_ms: 1.300584
+  type: 'test'
+  ...
+# Subtest: canonical invitation fragments show the ready state and copy only after a click
+ok 87 - canonical invitation fragments show the ready state and copy only after a click
+  ---
+  duration_ms: 3.181542
+  type: 'test'
+  ...
+# Subtest: missing, query, ambiguous, unsafe, and noncanonical invitations show only missing state
+ok 88 - missing, query, ambiguous, unsafe, and noncanonical invitations show only missing state
+  ---
+  duration_ms: 3.519792
+  type: 'test'
+  ...
+# Subtest: same-document fragment changes cannot leave a stale invitation state
+ok 89 - same-document fragment changes cannot leave a stale invitation state
+  ---
+  duration_ms: 0.61225
+  type: 'test'
+  ...
+# Subtest: clipboard denial or absence gives recovery guidance without exposing the token
+ok 90 - clipboard denial or absence gives recovery guidance without exposing the token
+  ---
+  duration_ms: 0.497958
+  type: 'test'
+  ...
+# Subtest: AASA copies are identical, preserve prior routes, and add only exact invite paths
+ok 91 - AASA copies are identical, preserve prior routes, and add only exact invite paths
+  ---
+  duration_ms: 0.239375
+  type: 'test'
+  ...
+# Subtest: invite stays outside sitemap and registry while all audits keep scoped noindex checks
+ok 92 - invite stays outside sitemap and registry while all audits keep scoped noindex checks
+  ---
+  duration_ms: 1.273375
+  type: 'test'
+  ...
+# Subtest: both privacy pages disclose the same minimal referral metadata and lifecycle
+ok 93 - both privacy pages disclose the same minimal referral metadata and lifecycle
+  ---
+  duration_ms: 1.419042
+  type: 'test'
+  ...
+# Subtest: maps only approved handoff events and cta_location into the logger
+ok 94 - maps only approved handoff events and cta_location into the logger
+  ---
+  duration_ms: 0.76525
+  type: 'test'
+  ...
+# Subtest: all Phase-B cards are automatic desktop QR cards with truthful copy and ordinary fallback attribution
+ok 95 - all Phase-B cards are automatic desktop QR cards with truthful copy and ordinary fallback attribution
+  ---
+  duration_ms: 0.625375
+  type: 'test'
+  ...
+# Subtest: Phase-B placement preserves home/template actions and confines split QR to valid result actions
+ok 96 - Phase-B placement preserves home/template actions and confines split QR to valid result actions
+  ---
+  duration_ms: 1.101125
+  type: 'test'
+  ...
+# Subtest: visible cards use the shared desktop-only layout and cache-busted module path
+ok 97 - visible cards use the shared desktop-only layout and cache-busted module path
+  ---
+  duration_ms: 0.349625
+  type: 'test'
+  ...
+# Subtest: the QR manifest and reproducible generator retain the original pooled-campaign destinations
+ok 98 - the QR manifest and reproducible generator retain the original pooled-campaign destinations
+  ---
+  duration_ms: 0.449542
+  type: 'test'
+  ...
+# Subtest: Phase D adds four exact, bounded desktop QR handoffs without changing their ordinary mobile/failure paths
+ok 99 - Phase D adds four exact, bounded desktop QR handoffs without changing their ordinary mobile/failure paths
+  ---
+  duration_ms: 1.837083
+  type: 'test'
+  ...
+# Subtest: uses the conservative desktop eligibility table
+ok 100 - uses the conservative desktop eligibility table
+  ---
+  duration_ms: 1.602292
+  type: 'test'
+  ...
+# Subtest: records a qualifying view once and resets without events when eligibility changes
+ok 101 - records a qualifying view once and resets without events when eligibility changes
+  ---
+  duration_ms: 1.54325
+  type: 'test'
+  ...
+# Subtest: a quick deliberate request records offer before request and close returns focus
+ok 102 - a quick deliberate request records offer before request and close returns focus
+  ---
+  duration_ms: 0.142166
+  type: 'test'
+  ...
+# Subtest: repeated initialization shares one controller and one offer/request sequence
+ok 103 - repeated initialization shares one controller and one offer/request sequence
+  ---
+  duration_ms: 0.162167
+  type: 'test'
+  ...
+# Subtest: visible mode only records a loaded QR after foreground dwell, never a legacy offer or request
+ok 104 - visible mode only records a loaded QR after foreground dwell, never a legacy offer or request
+  ---
+  duration_ms: 0.340917
+  type: 'test'
+  ...
+# Subtest: visible mode hides a broken QR and cancels/deduplicates through breakpoint and lifecycle changes
+ok 105 - visible mode hides a broken QR and cancels/deduplicates through breakpoint and lifecycle changes
+  ---
+  duration_ms: 0.273834
+  type: 'test'
+  ...
+# Subtest: a loaded eligible visible QR hides only its explicitly paired App Store anchor
+ok 106 - a loaded eligible visible QR hides only its explicitly paired App Store anchor
+  ---
+  duration_ms: 0.179667
+  type: 'test'
+  ...
+# Subtest: paired anchors stay available for pending or failed QR images and restore on eligibility changes or destroy
+ok 107 - paired anchors stay available for pending or failed QR images and restore on eligibility changes or destroy
+  ---
+  duration_ms: 0.231167
+  type: 'test'
+  ...
+# Subtest: a paired badge with keyboard focus is hidden only after focus leaves it
+ok 108 - a paired badge with keyboard focus is hidden only after focus leaves it
+  ---
+  duration_ms: 0.254417
+  type: 'test'
+  ...
+# Subtest: loss of desktop eligibility returns focus from a visible QR panel to its restored paired badge
+ok 109 - loss of desktop eligibility returns focus from a visible QR panel to its restored paired badge
+  ---
+  duration_ms: 0.322375
+  type: 'test'
+  ...
+# Subtest: a missing or initially hidden replacement target is harmless and keeps the visible QR behavior
+ok 110 - a missing or initially hidden replacement target is harmless and keeps the visible QR behavior
+  ---
+  duration_ms: 0.174834
+  type: 'test'
+  ...
+# Subtest: a QR inside a hidden ancestor never records an exposure
+ok 111 - a QR inside a hidden ancestor never records an exposure
+  ---
+  duration_ms: 0.066625
+  type: 'test'
+  ...
+# Subtest: all input modes emit bounded names without new parameters or content
+ok 112 - all input modes emit bounded names without new parameters or content
+  ---
+  duration_ms: 0.43275
+  type: 'test'
+  ...
+# Subtest: existing funnel stages remain accepted; arbitrary event fields cannot enter the name
+ok 113 - existing funnel stages remain accepted; arbitrary event fields cannot enter the name
+  ---
+  duration_ms: 0.1035
+  type: 'test'
+  ...
+# Subtest: three diagnostic stages are event-only, bounded and carry no rejection or cancellation payload
+ok 114 - three diagnostic stages are event-only, bounded and carry no rejection or cancellation payload
+  ---
+  duration_ms: 0.060167
+  type: 'test'
+  ...
+# Subtest: guidance and rerendering emit nothing; rejection focuses the required field and coalesces double-clicks
+ok 115 - guidance and rerendering emit nothing; rejection focuses the required field and coalesces double-clicks
+  ---
+  duration_ms: 24.309542
+  type: 'test'
+  ...
+# Subtest: incomplete detected plan has an explicit reversible history-only choice; transfer is not a committed import
+ok 116 - incomplete detected plan has an explicit reversible history-only choice; transfer is not a committed import
+  ---
+  duration_ms: 15.278958
+  type: 'test'
+  ...
+# Subtest: pending double activation creates one transfer; a failed request can be retried
+ok 117 - pending double activation creates one transfer; a failed request can be retried
+  ---
+  duration_ms: 4.579125
+  type: 'test'
+  ...
+# Subtest: explicit discard counts once, not disclosure, edit, backup or rendering
+ok 118 - explicit discard counts once, not disclosure, edit, backup or rendering
+  ---
+  duration_ms: 4.008916
+  type: 'test'
+  ...
+# Subtest: Stop waiting counts once even if a late successful response ignores abort; retry still works
+ok 119 - Stop waiting counts once even if a late successful response ignores abort; retry still works
+  ---
+  duration_ms: 3.016292
+  type: 'test'
+  ...
+# Subtest: local preview suppresses every action event, including rejection and explicit cancellation
+ok 120 - local preview suppresses every action event, including rejection and explicit cancellation
+  ---
+  duration_ms: 4.058125
+  type: 'test'
+  ...
+# Subtest: question acknowledgment and record removal retain logical keyboard focus
+ok 121 - question acknowledgment and record removal retain logical keyboard focus
+  ---
+  duration_ms: 12.432959
+  type: 'test'
+  ...
+# Subtest: malformed optional plan edits cannot offer a misleading history-only shortcut or lose the raw edit
+ok 122 - malformed optional plan edits cannot offer a misleading history-only shortcut or lose the raw edit
+  ---
+  duration_ms: 13.471417
+  type: 'test'
+  ...
+# Subtest: bad history cannot mask malformed plan; editable local recovery resumes both errors without losing either
+ok 123 - bad history cannot mask malformed plan; editable local recovery resumes both errors without losing either
+  ---
+  duration_ms: 8.088959
+  type: 'test'
+  ...
+# Subtest: unfinished editor backup reopens for correction while signed recovery still rejects those same terms
+ok 124 - unfinished editor backup reopens for correction while signed recovery still rejects those same terms
+  ---
+  duration_ms: 2.865292
+  type: 'test'
+  ...
+# Subtest: validated native recovery retains original identity after reload and overdue schedule backup
+ok 125 - validated native recovery retains original identity after reload and overdue schedule backup
+  ---
+  duration_ms: 12.022792
+  type: 'test'
+  ...
+# Subtest: invalid or mismatched cached prepared recovery cannot bypass the current review
+ok 126 - invalid or mismatched cached prepared recovery cannot bypass the current review
+  ---
+  duration_ms: 23.662334
+  type: 'test'
+  ...
+# Subtest: public rollout uses the production API regardless of preview query
+ok 127 - public rollout uses the production API regardless of preview query
+  ---
+  duration_ms: 2.731333
+  type: 'test'
+  ...
+# Subtest: local preview is explicit and selects only the local API
+ok 128 - local preview is explicit and selects only the local API
+  ---
+  duration_ms: 0.92575
+  type: 'test'
+  ...
+# Subtest: all chosen routes serve one visible offer before enhancement
+ok 129 - all chosen routes serve one visible offer before enhancement
+  ---
+  duration_ms: 13.149417
+  type: 'test'
+  ...
+# Subtest: shared private intake has unique IDs and collapsed text/photo inputs
+ok 130 - shared private intake has unique IDs and collapsed text/photo inputs
+  ---
+  duration_ms: 0.193625
+  type: 'test'
+  ...
+# Subtest: discovery analytics accept only fixed event names, without extra payload fields
+ok 131 - discovery analytics accept only fixed event names, without extra payload fields
+  ---
+  duration_ms: 0.069666
+  type: 'test'
+  ...
+# Subtest: mismatched group and pre-loan journeys keep their existing paths
+ok 132 - mismatched group and pre-loan journeys keep their existing paths
+  ---
+  duration_ms: 3.958459
+  type: 'test'
+  ...
+# Subtest: original tracker initializes immediately and honors a direct import anchor
+ok 133 - original tracker initializes immediately and honors a direct import anchor
+  ---
+  duration_ms: 1.221208
+  type: 'test'
+  ...
+# Subtest: disabled bootstrap touches neither the DOM nor private recovery storage
+ok 134 - disabled bootstrap touches neither the DOM nor private recovery storage
+  ---
+  duration_ms: 1.039583
+  type: 'test'
+  ...
+# Subtest: enhancement binds once, reveals after binding, focuses success and counts only successful choice
+ok 135 - enhancement binds once, reveals after binding, focuses success and counts only successful choice
+  ---
+  duration_ms: 1.380583
+  type: 'test'
+  ...
+# Subtest: rapid activation, load failure and retry retain the static guide and event boundaries
+ok 136 - rapid activation, load failure and retry retain the static guide and event boundaries
+  ---
+  duration_ms: 2.573125
+  type: 'test'
+  ...
+# Subtest: viewport exposure requires half a card in a visible document and emits once
+ok 137 - viewport exposure requires half a card in a visible document and emits once
+  ---
+  duration_ms: 3.837125
+  type: 'test'
+  ...
+# Subtest: all ten import entry routes pin the changed controller/model, style and analytics graph
+ok 138 - all ten import entry routes pin the changed controller/model, style and analytics graph
+  ---
+  duration_ms: 8.451625
+  type: 'test'
+  ...
+# Subtest: daily allowance shows local reset time without retention promises
+ok 139 - daily allowance shows local reset time without retention promises
+  ---
+  duration_ms: 10.937458
+  type: 'test'
+  ...
+# Subtest: unusable retry time is safely omitted
+ok 140 - unusable retry time is safely omitted
+  ---
+  duration_ms: 0.086917
+  type: 'test'
+  ...
+# Subtest: temporary pressure does not imply tomorrow and old responses still work
+ok 141 - temporary pressure does not imply tomorrow and old responses still work
+  ---
+  duration_ms: 0.132125
+  type: 'test'
+  ...
+# Subtest: exact balances, direction, currency precision and opening context
+ok 142 - exact balances, direction, currency precision and opening context
+  ---
+  duration_ms: 12.946583
+  type: 'test'
+  ...
+# Subtest: malformed recovery, duplicate rows, unknown dates, precision and future payments reject without mutation
+ok 143 - malformed recovery, duplicate rows, unknown dates, precision and future payments reject without mutation
+  ---
+  duration_ms: 1.019
+  type: 'test'
+  ...
+# Subtest: recovery keeps original identity and Clip additions after server expiry
+ok 144 - recovery keeps original identity and Clip additions after server expiry
+  ---
+  duration_ms: 1.34975
+  type: 'test'
+  ...
+# Subtest: 100 full records preserved, 101 rejected, overpayment never clipped
+ok 145 - 100 full records preserved, 101 rejected, overpayment never clipped
+  ---
+  duration_ms: 3.985541
+  type: 'test'
+  ...
+# Subtest: optional future plan never creates historical payments and unsupported terms can be history only
+ok 146 - optional future plan never creates historical payments and unsupported terms can be history only
+  ---
+  duration_ms: 3.183208
+  type: 'test'
+  ...
+# Subtest: photo sizing preserves aspect ratio without enlarging, and rejects unsafe inputs
+ok 147 - photo sizing preserves aspect ratio without enlarging, and rejects unsafe inputs
+  ---
+  duration_ms: 0.498167
+  type: 'test'
+  ...
+# Subtest: new interpretations include schedules and use device timezone only when missing
+ok 148 - new interpretations include schedules and use device timezone only when missing
+  ---
+  duration_ms: 1.262416
+  type: 'test'
+  ...
+# Subtest: readiness uses strict validation, targets missing facts and never treats editing as confirmation
+ok 149 - readiness uses strict validation, targets missing facts and never treats editing as confirmation
+  ---
+  duration_ms: 0.685958
+  type: 'test'
+  ...
+# Subtest: malformed excluded schedule terms still require explicit correction; incomplete terms can be history only
+ok 150 - malformed excluded schedule terms still require explicit correction; incomplete terms can be history only
+  ---
+  duration_ms: 1.017083
+  type: 'test'
+  ...
+# Subtest: strict readiness retains malformed recovery, precision, date and overpayment boundaries
+ok 151 - strict readiness retains malformed recovery, precision, date and overpayment boundaries
+  ---
+  duration_ms: 1.378917
+  type: 'test'
+  ...
+# Subtest: editable recovery preserves unfinished amounts and timezone without weakening any handoff boundary
+ok 152 - editable recovery preserves unfinished amounts and timezone without weakening any handoff boundary
+  ---
+  duration_ms: 1.886708
+  type: 'test'
+  ...
+# Subtest: nine initial HTML offers are readable, bounded, and match the generator
+ok 153 - nine initial HTML offers are readable, bounded, and match the generator
+  ---
+  duration_ms: 18.232334
+  type: 'test'
+  ...
+# Subtest: renderer escapes content, is idempotent, and validates all pages before writing
+ok 154 - renderer escapes content, is idempotent, and validates all pages before writing
+  ---
+  duration_ms: 69.755333
+  type: 'test'
+  ...
+# Subtest: tracker guide and supporting explanations are in public HTML
+ok 155 - tracker guide and supporting explanations are in public HTML
+  ---
+  duration_ms: 17.527292
+  type: 'test'
+  ...
+# Subtest: feature assets and changed FAQ answers match their declared public facts
+ok 156 - feature assets and changed FAQ answers match their declared public facts
+  ---
+  duration_ms: 3.545208
+  type: 'test'
+  ...
+# Subtest: money-owed hero leads to a separate first-balance setup module
+ok 157 - money-owed hero leads to a separate first-balance setup module
+  ---
+  duration_ms: 6.973834
+  type: 'test'
+  ...
+# Subtest: first-minute reassurance styles remain page-scoped and responsive
+ok 158 - first-minute reassurance styles remain page-scoped and responsive
+  ---
+  duration_ms: 1.475791
+  type: 'test'
+  ...
+# Subtest: homepage story balances reconcile, and the share and settlement keep their distinct histories
+ok 159 - homepage story balances reconcile, and the share and settlement keep their distinct histories
+  ---
+  duration_ms: 0.724625
+  type: 'test'
+  ...
+# Subtest: borrower story preserves the borrower perspective and reconciles every payment
+ok 160 - borrower story preserves the borrower perspective and reconciles every payment
+  ---
+  duration_ms: 0.156542
+  type: 'test'
+  ...
+# Subtest: roommate story changes direction only after the second agreed bill, then settles
+ok 161 - roommate story changes direction only after the second agreed bill, then settles
+  ---
+  duration_ms: 0.088875
+  type: 'test'
+  ...
+# Subtest: People disclosure preserves node, open state, identities and results across edits
+ok 162 - People disclosure preserves node, open state, identities and results across edits
+  ---
+  duration_ms: 54.967708
+  type: 'test'
+  ...
+# Subtest: expense DOM and keyboard order puts amount and payer before participants and optional description
+ok 163 - expense DOM and keyboard order puts amount and payer before participants and optional description
+  ---
+  duration_ms: 14.63275
+  type: 'test'
+  ...
+# Subtest: existing person/expense limits, payer removal, validation and reset semantics survive compact entry
+ok 164 - existing person/expense limits, payer removal, validation and reset semantics survive compact entry
+  ---
+  duration_ms: 182.851041
+  type: 'test'
+  ...
+# Subtest: copy/share success, cancellation and fallback keep canonical URLs and fixed action metadata
+ok 165 - copy/share success, cancellation and fallback keep canonical URLs and fixed action metadata
+  ---
+  duration_ms: 45.271042
+  type: 'test'
+  ...
+# Subtest: only explicit continuation uploads, rejects stale replies and restores edited state on Back
+ok 166 - only explicit continuation uploads, rejects stale replies and restores edited state on Back
+  ---
+  duration_ms: 43.474916
+  type: 'test'
+  ...
+# Subtest: three article messages are selectable before the image, with matching templates and one shared controller
+ok 167 - three article messages are selectable before the image, with matching templates and one shared controller
+  ---
+  duration_ms: 1.613875
+  type: 'test'
+  ...
+# Subtest: all three article copies emit only existing fixed metadata and leave app actions in place
+ok 168 - all three article copies emit only existing fixed metadata and leave app actions in place
+  ---
+  duration_ms: 6.675791
+  type: 'test'
+  ...
+# Subtest: article clipboard denial falls back; complete failure reports manual copying without a success event
+ok 169 - article clipboard denial falls back; complete failure reports manual copying without a success event
+  ---
+  duration_ms: 8.425209
+  type: 'test'
+  ...
+# partial-repayment-calculator tests passed
+# Subtest: scripts/partial-repayment-calculator.test.js
+ok 29 - scripts/partial-repayment-calculator.test.js
+  ---
+  duration_ms: 42.828833
+  type: 'test'
+  ...
+# personal-loan-payment-tracker tests passed
+# Subtest: scripts/personal-loan-payment-tracker.test.js
+ok 30 - scripts/personal-loan-payment-tracker.test.js
+  ---
+  duration_ms: 54.717042
+  type: 'test'
+  ...
+# Subtest: homepage and money-owed solution state Android availability consistently
+ok 172 - homepage and money-owed solution state Android availability consistently
+  ---
+  duration_ms: 2.476417
+  type: 'test'
+  ...
+# Subtest: solution FAQPage schema agrees with the visible availability answer
+ok 173 - solution FAQPage schema agrees with the visible availability answer
+  ---
+  duration_ms: 0.638292
+  type: 'test'
+  ...
+# Subtest: homepage SoftwareApplication remains iOS-only structured data
+ok 174 - homepage SoftwareApplication remains iOS-only structured data
+  ---
+  duration_ms: 0.225375
+  type: 'test'
+  ...
+# Subtest: llms.txt communicates iPhone and iPad availability and Android browser limits
+ok 175 - llms.txt communicates iPhone and iPad availability and Android browser limits
+  ---
+  duration_ms: 0.955917
+  type: 'test'
+  ...
+# Subtest: no Android launch surface or roadmap claim was introduced
+ok 176 - no Android launch surface or roadmap claim was introduced
+  ---
+  duration_ms: 4.875083
+  type: 'test'
+  ...
+# Subtest: the old bridge is replaced by one initially visible tracking prompt after the complete opening formula
+ok 177 - the old bridge is replaced by one initially visible tracking prompt after the complete opening formula
+  ---
+  duration_ms: 0.71025
+  type: 'test'
+  ...
+# Subtest: the post-copy prompt retains attributed App Store and secondary solution actions in order
+ok 178 - the post-copy prompt retains attributed App Store and secondary solution actions in order
+  ---
+  duration_ms: 0.164917
+  type: 'test'
+  ...
+# Subtest: the page uses explicit eligibility and preserves one language-support anchor
+ok 179 - the page uses explicit eligibility and preserves one language-support anchor
+  ---
+  duration_ms: 0.60025
+  type: 'test'
+  ...
+# Subtest: the page-only controller is loaded after the shared copy script and is not loaded elsewhere
+ok 180 - the page-only controller is loaded after the shared copy script and is not loaded elsewhere
+  ---
+  duration_ms: 94.272
+  type: 'test'
+  ...
+# Subtest: the controller consumes only successful copy events and moves the existing prompt safely
+ok 181 - the controller consumes only successful copy events and moves the existing prompt safely
+  ---
+  duration_ms: 0.261917
+  type: 'test'
+  ...
+# Subtest: existing analytics and copy contracts remain intact
+ok 182 - existing analytics and copy contracts remain intact
+  ---
+  duration_ms: 0.138917
+  type: 'test'
+  ...
+# Subtest: search-facing article metadata preserves canonical and dates with approved copy
+ok 183 - search-facing article metadata preserves canonical and dates with approved copy
+  ---
+  duration_ms: 0.206208
+  type: 'test'
+  ...
+# Subtest: tracking stays visible and one prompt moves only for repayment copies
+ok 184 - tracking stays visible and one prompt moves only for repayment copies
+  ---
+  duration_ms: 0.701167
+  type: 'test'
+  ...
+# roommate-bill-split-model tests passed
+# Subtest: scripts/roommate-bill-split-model.test.js
+ok 33 - scripts/roommate-bill-split-model.test.js
+  ---
+  duration_ms: 49.261125
+  type: 'test'
+  ...
+# roommate-bill-split UI integration tests passed
+# Subtest: scripts/roommate-bill-split-ui.test.js
+ok 34 - scripts/roommate-bill-split-ui.test.js
+  ---
+  duration_ms: 38.865875
+  type: 'test'
+  ...
+# Subtest: Spanish sale labels preserve the campaign identity, dates and emitted English state
+ok 187 - Spanish sale labels preserve the campaign identity, dates and emitted English state
+  ---
+  duration_ms: 5.549208
+  type: 'test'
+  ...
+# Subtest: Spanish sale badges remain hidden outside an active campaign
+ok 188 - Spanish sale badges remain hidden outside an active campaign
+  ---
+  duration_ms: 0.410667
+  type: 'test'
+  ...
+# Subtest: German sale labels preserve campaigns, dates and analytics state
+ok 189 - German sale labels preserve campaigns, dates and analytics state
+  ---
+  duration_ms: 3.628667
+  type: 'test'
+  ...
+# Subtest: only completed translations join the registry and have substantive public HTML
+ok 190 - only completed translations join the registry and have substantive public HTML
+  ---
+  duration_ms: 12.512875
+  type: 'test'
+  ...
+# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries
+ok 191 - English authored content differs from the accepted base only by locale links and declared shared cache queries
+  ---
+  duration_ms: 107.676791
+  type: 'test'
+  ...
+# Subtest: locale routes are unique, stable and contain no financial inputs
+ok 192 - locale routes are unique, stable and contain no financial inputs
+  ---
+  duration_ms: 0.610834
+  type: 'test'
+  ...
+# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release
+ok 193 - Spanish authored HTML stays byte-for-byte intact from the accepted public release
+  ---
+  duration_ms: 92.386209
+  type: 'test'
+  ...
+# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out
+ok 194 - one generator produces reciprocal three-language switches and leaves planned pages out
+  ---
+  duration_ms: 2.96825
+  type: 'test'
+  ...
+# Subtest: German registry inherits source routing without linking to unfinished locale pages
+ok 195 - German registry inherits source routing without linking to unfinished locale pages
+  ---
+  duration_ms: 0.131875
+  type: 'test'
+  ...
+# Subtest: unreviewed German routes do not enter public discovery or runtime matching
+ok 196 - unreviewed German routes do not enter public discovery or runtime matching
+  ---
+  duration_ms: 0.36
+  type: 'test'
+  ...
+# Subtest: a missing reviewed counterpart fails before any existing page is changed
+ok 197 - a missing reviewed counterpart fails before any existing page is changed
+  ---
+  duration_ms: 1.202833
+  type: 'test'
+  ...
+# Subtest: analytics preserves English metadata and maps only completed localized routes
+ok 198 - analytics preserves English metadata and maps only completed localized routes
+  ---
+  duration_ms: 17.759125
+  type: 'test'
+  ...
+# Subtest: Spanish dictionary covers every generated phrase and retains interpolation fields
+ok 199 - Spanish dictionary covers every generated phrase and retains interpolation fields
+  ---
+  duration_ms: 1.818584
+  type: 'test'
+  ...
+# Subtest: Spanish calculator localizes generated names, rows, validation and empty/settled results
+ok 200 - Spanish calculator localizes generated names, rows, validation and empty/settled results
+  ---
+  duration_ms: 44.74975
+  type: 'test'
+  ...
+# Subtest: Spanish display changes decimal formatting while numerical results, input and currency semantics match English
+ok 201 - Spanish display changes decimal formatting while numerical results, input and currency semantics match English
+  ---
+  duration_ms: 26.648958
+  type: 'test'
+  ...
+# Subtest: Spanish copy/share use the authored canonical, Spanish summaries/statuses and unchanged fixed events
+ok 202 - Spanish copy/share use the authored canonical, Spanish summaries/statuses and unchanged fixed events
+  ---
+  duration_ms: 30.461625
+  type: 'test'
+  ...
+# Subtest: Spanish clipboard/share fallbacks and cancellation report the appropriate localized state
+ok 203 - Spanish clipboard/share fallbacks and cancellation report the appropriate localized state
+  ---
+  duration_ms: 45.385041
+  type: 'test'
+  ...
+# Subtest: Spanish limits and example/reset preserve established calculator state behavior
+ok 204 - Spanish limits and example/reset preserve established calculator state behavior
+  ---
+  duration_ms: 157.149
+  type: 'test'
+  ...
+# Subtest: Spanish transfer preserves exact draft cents/schema and sole ref while language travels only in fragment
+ok 205 - Spanish transfer preserves exact draft cents/schema and sole ref while language travels only in fragment
+  ---
+  duration_ms: 44.011
+  type: 'test'
+  ...
+# Subtest: Spanish transfer eligibility and cents match the existing shared financial fixture matrix
+ok 206 - Spanish transfer eligibility and cents match the existing shared financial fixture matrix
+  ---
+  duration_ms: 23.746375
+  type: 'test'
+  ...
+# Subtest: the initial result actions preserve the attributed App Store CTA
+ok 207 - the initial result actions preserve the attributed App Store CTA
+  ---
+  duration_ms: 0.475375
+  type: 'test'
+  ...
+# Subtest: results put settlement first, then actions, then a native breakdown disclosure
+ok 208 - results put settlement first, then actions, then a native breakdown disclosure
+  ---
+  duration_ms: 0.761458
+  type: 'test'
+  ...
+# Subtest: summary, copy, and share use one canonical calculator URL
+ok 209 - summary, copy, and share use one canonical calculator URL
+  ---
+  duration_ms: 0.15025
+  type: 'test'
+  ...
+# Subtest: calculator events are sanitized fixed actions with no result payload
+ok 210 - calculator events are sanitized fixed actions with no result payload
+  ---
+  duration_ms: 0.182042
+  type: 'test'
+  ...
+# Subtest: result-ready remains an explicit, once-per-page-load milestone
+ok 211 - result-ready remains an explicit, once-per-page-load milestone
+  ---
+  duration_ms: 0.09175
+  type: 'test'
+  ...
+# Subtest: iOS fallback and desktop QR leave App Clip eligibility intact
+ok 212 - iOS fallback and desktop QR leave App Clip eligibility intact
+  ---
+  duration_ms: 0.082
+  type: 'test'
+  ...
+# Subtest: valid iOS results retain an app destination when transfer is unavailable
+ok 213 - valid iOS results retain an app destination when transfer is unavailable
+  ---
+  duration_ms: 2.202833
+  type: 'test'
+  ...
+# Subtest: German dictionary covers every generated phrase and preserves interpolation fields
+ok 214 - German dictionary covers every generated phrase and preserves interpolation fields
+  ---
+  duration_ms: 0.636792
+  type: 'test'
+  ...
+# Subtest: German generated fields, accessibility, validation, empty and settled states are localized
+ok 215 - German generated fields, accessibility, validation, empty and settled states are localized
+  ---
+  duration_ms: 26.832375
+  type: 'test'
+  ...
+# Subtest: German formatting preserves English/Spanish financial math, parsing, and currency labels
+ok 216 - German formatting preserves English/Spanish financial math, parsing, and currency labels
+  ---
+  duration_ms: 57.301625
+  type: 'test'
+  ...
+# Subtest: German copy/share, clipboard fallback, cancellation and errors preserve privacy and canonical
+ok 217 - German copy/share, clipboard fallback, cancellation and errors preserve privacy and canonical
+  ---
+  duration_ms: 61.250125
+  type: 'test'
+  ...
+# Subtest: German reset and capacity states retain the established limits
+ok 218 - German reset and capacity states retain the established limits
+  ---
+  duration_ms: 152.416167
+  type: 'test'
+  ...
+# Subtest: German transfer preserves cents/schema, consent, sole ref, retry and Back restoration
+ok 219 - German transfer preserves cents/schema, consent, sole ref, retry and Back restoration
+  ---
+  duration_ms: 29.791834
+  type: 'test'
+  ...
+# Subtest: German transfer eligibility matches existing financial fixtures and English/Spanish
+ok 220 - German transfer eligibility matches existing financial fixtures and English/Spanish
+  ---
+  duration_ms: 35.579833
+  type: 'test'
+  ...
+# Subtest: English and Spanish default summaries retain exact accepted text, order and monetary formatting
+ok 221 - English and Spanish default summaries retain exact accepted text, order and monetary formatting
+  ---
+  duration_ms: 23.294125
+  type: 'test'
+  ...
+# Subtest: campaign dates resolve to the expected phases
+ok 222 - campaign dates resolve to the expected phases
+  ---
+  duration_ms: 1.724
+  type: 'test'
+  ...
+# Subtest: prelaunch uses the normal App Store listing
+ok 223 - prelaunch uses the normal App Store listing
+  ---
+  duration_ms: 0.069459
+  type: 'test'
+  ...
+# Subtest: active uses the public App Store event
+ok 224 - active uses the public App Store event
+  ---
+  duration_ms: 0.093417
+  type: 'test'
+  ...
+# Subtest: retrospective returns to the normal App Store listing
+ok 225 - retrospective returns to the normal App Store listing
+  ---
+  duration_ms: 0.049916
+  type: 'test'
+  ...
+# Subtest: native import is withheld when rounded debts exceed the browser settlement credit
+ok 226 - native import is withheld when rounded debts exceed the browser settlement credit
+  ---
+  duration_ms: 1.047542
+  type: 'test'
+  ...
+# Subtest: accepted residual and precision fixtures keep their existing eligibility and values
+ok 227 - accepted residual and precision fixtures keep their existing eligibility and values
+  ---
+  duration_ms: 0.200125
+  type: 'test'
+  ...
+# trip-booking page tests passed
+# Subtest: scripts/trip-booking-page.test.js
+ok 40 - scripts/trip-booking-page.test.js
+  ---
+  duration_ms: 31.645417
+  type: 'test'
+  ...
+# trip-booking-share-planner tests passed
+# Subtest: scripts/trip-booking-share-planner.test.js
+ok 41 - scripts/trip-booking-share-planner.test.js
+  ---
+  duration_ms: 29.827125
+  type: 'test'
+  ...
+# Subtest: reminder containment requires its unique document class and leaves other articles on shared mobile sizing
+ok 230 - reminder containment requires its unique document class and leaves other articles on shared mobile sizing
+  ---
+  duration_ms: 4.777583
+  type: 'test'
+  ...
+# Subtest: each continuation preserves one historical action, language anchor and unique IDs outside hidden QR roots
+ok 231 - each continuation preserves one historical action, language anchor and unique IDs outside hidden QR roots
+  ---
+  duration_ms: 24.750083
+  type: 'test'
+  ...
+# Subtest: supported and unsupported local language previews use the relocated common anchor and dedupe
+ok 232 - supported and unsupported local language previews use the relocated common anchor and dedupe
+  ---
+  duration_ms: 36.859583
+  type: 'test'
+  ...
+# Subtest: real successful reminder copies move the same prompt; gift/help restore its new home; failure and focus stay put
+ok 233 - real successful reminder copies move the same prompt; gift/help restore its new home; failure and focus stay put
+  ---
+  duration_ms: 29.187416
+  type: 'test'
+  ...
+# Subtest: roommate authored pairing keeps mobile/no-JS common content and badge independent of desktop QR
+ok 234 - roommate authored pairing keeps mobile/no-JS common content and badge independent of desktop QR
+  ---
+  duration_ms: 18.254834
+  type: 'test'
+  ...
+# Subtest: roommate real markup pairing protects focus, handles load/error and restores badge on resize
+ok 235 - roommate real markup pairing protects focus, handles load/error and restores badge on resize
+  ---
+  duration_ms: 4.589042
+  type: 'test'
+  ...
+1..235
+# tests 235
+# suites 0
+# pass 235
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 1031.241708

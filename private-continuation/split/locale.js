@@ -2,15 +2,16 @@
 (function () {
   function renderLocale() {
     var fragment = window.location.hash;
-    var locale = fragment === "#es" ? "es" : fragment === "#de" ? "de" : "en";
+    var locale = fragment === "#ar" ? "ar" : fragment === "#es" ? "es" : fragment === "#de" ? "de" : "en";
     document.documentElement.lang = locale;
+    document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
     document.querySelectorAll("[data-locale]").forEach(function (section) {
       section.hidden = section.getAttribute("data-locale") !== locale;
       if (!section.hidden) document.title = section.getAttribute("data-title");
     });
     var navigation = document.querySelector("[data-language-navigation]");
     if (navigation) {
-      navigation.setAttribute("aria-label", locale === "es" ? "Idioma de la página" : locale === "de" ? "Sprache der Seite" : "Page language");
+      navigation.setAttribute("aria-label", locale === "ar" ? "لغة الصفحة" : locale === "es" ? "Idioma de la página" : locale === "de" ? "Sprache der Seite" : "Page language");
       navigation.querySelectorAll("a").forEach(function (link) {
         if (link.getAttribute("lang") === locale) link.setAttribute("aria-current", "page");
         else link.removeAttribute("aria-current");

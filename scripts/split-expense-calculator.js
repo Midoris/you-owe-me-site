@@ -5,6 +5,7 @@
   const MAX_PEOPLE = 12;
   const MAX_EXPENSES = 30;
   const locale = document.documentElement?.lang;
+  const isArabic = locale === "ar";
   const localizedStrings = window.UomiSplitExpenseLocales?.[locale];
   const CANONICAL_CALCULATOR_URL = localizedStrings
     ? document.querySelector('link[rel="canonical"]').getAttribute("href")
@@ -13,6 +14,36 @@
   function translate(message, values = {}) {
     const template = localizedStrings?.[message] || message;
     return template.replace(/\{(\w+)\}/g, (_, key) => values[key] ?? "");
+  }
+  // Markup isolates rendered tokens; only user-facing plain-text summaries and
+  // aria labels need Unicode isolates. Never write them to state/native drafts.
+  const ltrKeys = new Set(["amount", "url", "number", "count"]);
+  function translatePlain(message, values = {}) {
+    if (!isArabic) return translate(message, values);
+    const isolated = Object.fromEntries(Object.entries(values).map(([key, value]) =>
+      [key, `${ltrKeys.has(key) ? "\u2066" : "\u2068"}${value}\u2069`]));
+    return translate(message, isolated);
+  }
+  function setTranslatedContent(parent, message, values = {}) {
+    if (!isArabic) { parent.textContent = translate(message, values); return; }
+    clearNode(parent);
+    const template = localizedStrings?.[message] || message;
+    const tokens = template.split(/(\{\w+\}|You Owe Me|iPhone|Live Link|Balance Sync)/g);
+    for (const token of tokens) {
+      const match = token.match(/^\{(\w+)\}$/);
+      if (match || ["You Owe Me", "iPhone", "Live Link", "Balance Sync"].includes(token)) {
+        const isolate = document.createElement("bdi");
+        isolate.setAttribute("dir", !match || ltrKeys.has(match[1]) ? "ltr" : "auto");
+        isolate.textContent = match ? values[match[1]] ?? "" : token;
+        parent.appendChild(isolate);
+      } else appendText(parent, token);
+    }
+  }
+  function transferState(source = state) {
+    if (!isArabic) return source;
+    return { ...source, expenses: source.expenses.map(expense => ({ ...expense,
+      amount: window.UomiArabicNumberInput?.normalizeAmount(expense.amount) ?? "NaN",
+    })) };
   }
   const SPLIT_CALCULATOR_EVENT = "youoweme:split-calculator-event";
 
@@ -73,7 +104,9 @@
 
   function parseAmount(value) {
     if (typeof value === "number") return value;
-    const normalized = String(value || "").trim().replace(/,/g, "");
+    const normalized = isArabic
+      ? window.UomiArabicNumberInput?.normalizeAmount(value) ?? ""
+      : String(value || "").trim().replace(/,/g, "");
     const amount = Number(normalized);
     return Number.isFinite(amount) ? amount : 0;
   }
@@ -85,14 +118,14 @@
 
   function formatNumber(value) {
     const rounded = roundMoney(value);
-    if (localizedStrings) return new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(rounded);
+    if (localizedStrings) return new Intl.NumberFormat(isArabic ? "ar-u-nu-latn" : locale, { maximumFractionDigits: 2 }).format(rounded);
     if (Number.isInteger(rounded)) return String(rounded);
     return rounded.toFixed(2).replace(/\.?0+$/, "");
   }
 
   function formatMoney(value) {
     const symbol = sanitizeCurrency(state.currency);
-    if (locale === "de") return `${formatNumber(value)} ${symbol}`;
+    if (locale === "de" || isArabic) return `${formatNumber(value)} ${symbol}`;
     const space = symbol.length > 1 ? " " : "";
     return `${symbol}${space}${formatNumber(value)}`;
   }
@@ -122,6 +155,7 @@
     input.type = type || "text";
     input.value = value;
     input.autocomplete = "off";
+    if (isArabic) input.setAttribute("dir", "auto");
     return input;
   }
 
@@ -164,7 +198,7 @@
       const remove = document.createElement("button");
       remove.type = "button";
       remove.className = "remove-action";
-      remove.setAttribute("aria-label", translate("Remove {name}", { name: getPersonName(person, index) }));
+      remove.setAttribute("aria-label", translatePlain("Remove {name}", { name: getPersonName(person, index) }));
       remove.textContent = translate("Remove");
       remove.addEventListener("click", () => removePerson(person.id));
 
@@ -188,7 +222,7 @@
       const remove = document.createElement("button");
       remove.type = "button";
       remove.className = "remove-action";
-      remove.setAttribute("aria-label", translate("Remove expense {expense}", { expense: expense.description || expenseIndex + 1 }));
+      remove.setAttribute("aria-label", translatePlain("Remove expense {expense}", { expense: expense.description || expenseIndex + 1 }));
       remove.textContent = translate("Remove");
       remove.addEventListener("click", () => removeExpense(expense.id));
       header.append(title, remove);
@@ -204,10 +238,12 @@
         renderResults(calculate());
       });
 
-      const amount = makeInput(`amount-${expense.id}`, expense.amount, "number");
+      const amount = makeInput(`amount-${expense.id}`, expense.amount, isArabic ? "text" : "number");
       amount.min = "0";
       amount.step = "0.01";
       amount.inputMode = "decimal";
+      amount.setAttribute("aria-describedby", `expense-validation-${expense.id}`);
+      if (isArabic) amount.setAttribute("dir", "ltr");
       amount.addEventListener("input", () => {
         expense.amount = amount.value;
         renderResults(calculate());
@@ -217,9 +253,11 @@
       const select = document.createElement("select");
       select.id = `paid-${expense.id}`;
       select.className = "calculator-select";
+      if (isArabic) select.setAttribute("dir", "auto");
       state.people.forEach((person, index) => {
         const option = document.createElement("option");
         option.value = person.id;
+        if (isArabic) option.setAttribute("dir", "auto");
         option.textContent = getPersonName(person, index);
         option.selected = person.id === expense.paidBy;
         select.appendChild(option);
@@ -260,7 +298,10 @@
           renderExpenseValidation(expense, card);
         });
         const text = document.createElement("span");
-        text.textContent = getPersonName(person, index);
+        if (isArabic) {
+          const name = document.createElement("bdi"); name.setAttribute("dir", "auto");
+          name.textContent = getPersonName(person, index); text.appendChild(name);
+        } else text.textContent = getPersonName(person, index);
         label.append(checkbox, text);
         checkboxGrid.appendChild(label);
       });
@@ -292,7 +333,10 @@
     if (!validation) return;
     const amount = parseAmount(expense.amount);
     let message = "";
-    if (String(expense.amount || "").trim() && amount <= 0) {
+    const hasInput = String(expense.amount || "").trim();
+    if (isArabic && hasInput && window.UomiArabicNumberInput?.normalizeAmount(expense.amount) == null) {
+      message = localizedStrings["Invalid amount format"];
+    } else if (hasInput && amount <= 0) {
       message = translate("Enter an amount greater than zero.");
     } else if (amount > 0 && !state.people.some((person) => person.id === expense.paidBy)) {
       message = translate("Choose who paid for this expense.");
@@ -300,6 +344,7 @@
       message = translate("Select at least one person to share this expense.");
     }
     validation.textContent = message;
+    if (isArabic) card.querySelector(`[id="amount-${expense.id}"]`).setAttribute("aria-invalid", message ? "true" : "false");
   }
 
   function calculate() {
@@ -383,8 +428,8 @@
 
   function renderResults(result) {
     renderSummary(result);
-    renderMoneyRows(els.paid, result.net.map((row) => [translate("{name} paid", { name: row.name }), row.paid]));
-    renderMoneyRows(els.share, result.net.map((row) => [translate("{name}'s share", { name: row.name }), row.share]));
+    renderMoneyRows(els.paid, result.net.map((row) => [{ message: "{name} paid", values: { name: row.name } }, row.paid]));
+    renderMoneyRows(els.share, result.net.map((row) => [{ message: "{name}'s share", values: { name: row.name } }, row.share]));
     renderNetRows(result);
     renderSettlement(result);
     renderResultActions(result);
@@ -398,10 +443,10 @@
     els.exampleMarker.hidden = meaningfulEdit || !hasValidResult(result);
     if (result.transfers.length > 0) {
       els.resultAppTitle.textContent = translate("Keep track until everyone has paid");
-      els.resultAppMessage.textContent = translate("Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.");
+      setTranslatedContent(els.resultAppMessage, "Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.");
     } else {
       els.resultAppTitle.textContent = translate("Keep future shared costs in one place");
-      els.resultAppMessage.textContent = translate("This split is settled. If you share costs again, You Owe Me on iPhone keeps new expenses and repayments in one balance for each person.");
+      setTranslatedContent(els.resultAppMessage, "This split is settled. If you share costs again, You Owe Me on iPhone keeps new expenses and repayments in one balance for each person.");
     }
     const shouldShow = hasExplicitInteraction && hasValidResult(result);
     els.resultActions.hidden = !shouldShow;
@@ -422,7 +467,7 @@
   function renderTransferOffer(shouldShow) {
     const area = document.querySelector("[data-tool-transfer]");
     if (!area) return;
-    const supported = window.UomiToolTransfer && window.UomiToolTransfer.prepare(state);
+    const supported = window.UomiToolTransfer && window.UomiToolTransfer.prepare(transferState());
     const allowed = window.UomiToolTransfer && window.UomiToolTransfer.config.enabled;
     const iphone = /iPhone/.test(navigator.userAgent);
     area.hidden = !(allowed && iphone && meaningfulEdit && supported);
@@ -454,7 +499,7 @@
 
   async function continueSplit() {
     if (transferBusy || !meaningfulEdit || !window.UomiToolTransfer.config.enabled) return;
-    const draft = window.UomiToolTransfer.prepare(state);
+    const draft = window.UomiToolTransfer.prepare(transferState());
     if (!draft) return;
     const status = document.querySelector("[data-transfer-status]");
     const button = document.querySelector('[data-action="track-split"]');
@@ -478,7 +523,7 @@
       }
       // A response for an earlier edit must not navigate away with a stale split.
       if (!meaningfulEdit || !transferAttempt || transferAttempt.fingerprint !== fingerprint ||
-          JSON.stringify(window.UomiToolTransfer.prepare(state)) !== fingerprint) throw new Error("changed");
+          JSON.stringify(window.UomiToolTransfer.prepare(transferState())) !== fingerprint) throw new Error("changed");
       // Preserve input only following explicit consent. Cleared when restored on Back.
       sessionStorage.setItem("uomi-exp003-return", JSON.stringify({state, transferAttempt}));
       location.assign(window.UomiToolTransfer.config.continuation + "?ref=" + transferAttempt.reference + (localizedStrings ? "#" + locale : ""));
@@ -502,13 +547,13 @@
   function renderNetRows(result) {
     clearNode(els.net);
     result.net.forEach((row) => {
-      let label = translate("{name} is settled", { name: row.name });
+      let label = { message: "{name} is settled", values: { name: row.name } };
       let value = "";
       if (row.net > EPSILON) {
-        label = translate("{name} should receive", { name: row.name });
+        label = { message: "{name} should receive", values: { name: row.name } };
         value = formatMoney(row.net);
       } else if (row.net < -EPSILON) {
-        label = translate("{name} owes", { name: row.name });
+        label = { message: "{name} owes", values: { name: row.name } };
         value = formatMoney(Math.abs(row.net));
       }
       appendResultItem(els.net, label, value);
@@ -528,7 +573,7 @@
     result.transfers.forEach((transfer) => {
       const item = document.createElement("div");
       item.className = "settlement-item";
-      item.textContent = translate("{from} owes {to} {amount}", { from: transfer.from, to: transfer.to, amount: formatMoney(transfer.amount) });
+      setTranslatedContent(item, "{from} owes {to} {amount}", { from: transfer.from, to: transfer.to, amount: formatMoney(transfer.amount) });
       els.settlement.appendChild(item);
     });
   }
@@ -537,9 +582,13 @@
     const item = document.createElement("div");
     item.className = "result-item";
     const left = document.createElement("span");
-    left.textContent = label;
+    if (typeof label === "object") setTranslatedContent(left, label.message, label.values);
+    else left.textContent = label;
     const right = document.createElement("strong");
-    right.textContent = value;
+    if (isArabic && value) {
+      const amount = document.createElement("bdi"); amount.setAttribute("dir", "ltr");
+      amount.textContent = value; right.appendChild(amount);
+    } else right.textContent = value;
     item.append(left, right);
     container.appendChild(item);
   }
@@ -645,22 +694,24 @@
   function buildSummaryText(result) {
     if (result.validCount === 0) return "";
     const lines = [];
-    lines.push(translate("Shared expense summary"), "");
-    lines.push(translate("Total shared expenses: {amount}", { amount: formatMoney(result.total) }), "");
-    lines.push(translate("Paid:"));
-    result.net.forEach((row) => lines.push(translate("{name} paid {amount}", { name: row.name, amount: formatMoney(row.paid) })));
-    lines.push("", translate("Fair share:"));
-    result.net.forEach((row) => lines.push(translate("{name}'s share: {amount}", { name: row.name, amount: formatMoney(row.share) })));
-    lines.push("", translate("Settlement:"));
+    lines.push(translatePlain("Shared expense summary"), "");
+    lines.push(translatePlain("Total shared expenses: {amount}", { amount: formatMoney(result.total) }), "");
+    lines.push(translatePlain("Paid:"));
+    result.net.forEach((row) => lines.push(translatePlain("{name} paid {amount}", { name: row.name, amount: formatMoney(row.paid) })));
+    lines.push("", translatePlain("Fair share:"));
+    result.net.forEach((row) => lines.push(translatePlain("{name}'s share: {amount}", { name: row.name, amount: formatMoney(row.share) })));
+    lines.push("", translatePlain("Settlement:"));
     if (result.transfers.length === 0) {
-      lines.push(translate("Everyone is settled."));
+      lines.push(translatePlain("Everyone is settled."));
     } else {
       result.transfers.forEach((transfer) => {
-        lines.push(translate("{from} owes {to} {amount}", { from: transfer.from, to: transfer.to, amount: formatMoney(transfer.amount) }));
+        lines.push(translatePlain("{from} owes {to} {amount}", { from: transfer.from, to: transfer.to, amount: formatMoney(transfer.amount) }));
       });
     }
-    lines.push("", translate("Calculate your own split: {url}", { url: CANONICAL_CALCULATOR_URL }));
-    return lines.join("\n");
+    lines.push("", translatePlain("Calculate your own split: {url}", { url: CANONICAL_CALCULATOR_URL }));
+    // A copied line may be pasted into an explicitly LTR paragraph. Its Arabic
+    // base direction must travel with it, in addition to the isolated tokens.
+    return (isArabic ? lines.map(line => line ? `\u2067${line}\u2069` : line) : lines).join("\n");
   }
 
   function dispatchCalculatorEvent(eventName) {
@@ -841,7 +892,7 @@
       sessionStorage.removeItem("uomi-exp003-return");
       if (saved && saved.length < 16384) {
         const restored = JSON.parse(saved), previous = restored.state;
-        if (previous && window.UomiToolTransfer.prepare(previous)) {
+        if (previous && window.UomiToolTransfer.prepare(transferState(previous))) {
           Object.assign(state, previous); meaningfulEdit = true; hasExplicitInteraction = true;
           if (restored.transferAttempt && /^[a-f0-9]{64}$/.test(restored.transferAttempt.reference)) transferAttempt = restored.transferAttempt;
         }

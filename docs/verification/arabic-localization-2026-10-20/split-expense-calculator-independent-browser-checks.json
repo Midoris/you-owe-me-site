@@ -1,0 +1,125 @@
+[
+  {
+    "width": 320,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 320,
+    "overflows": [],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [
+      {
+        "src": "/images/ar/iphone-handoff/app-store.png",
+        "loaded": true,
+        "transform": "none"
+      }
+    ],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "حاسبة تقسيم الأموال والمصروفات",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "55px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "errors": []
+  },
+  {
+    "width": 390,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 390,
+    "overflows": [],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [
+      {
+        "src": "/images/ar/iphone-handoff/app-store.png",
+        "loaded": true,
+        "transform": "none"
+      }
+    ],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "حاسبة تقسيم الأموال والمصروفات",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "60.5px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "menu": {
+      "text": "You Owe Me\nالحلول (بالإنجليزية)\nالمزايا (بالإنجليزية)\nالتقييمات (بالإنجليزية)\nالأدوات (بالإنجليزية)\nالمقارنة (بالإنجليزية)\nالمدونة (بالإنجليزية)",
+      "direction": "rtl",
+      "closeFocus": {
+        "focused": true,
+        "outline": "rgba(53, 84, 40, 0.32) solid 3px"
+      },
+      "keyboardClosed": true
+    },
+    "errors": []
+  },
+  {
+    "width": 600,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 600,
+    "overflows": [],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [
+      {
+        "src": "/images/ar/iphone-handoff/app-store.png",
+        "loaded": true,
+        "transform": "none"
+      }
+    ],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "حاسبة تقسيم الأموال والمصروفات",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "60.5px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 1440,
+    "overflows": [],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [
+      {
+        "src": "/images/ar/iphone-handoff/app-store.png",
+        "loaded": true,
+        "transform": "none"
+      }
+    ],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "حاسبة تقسيم الأموال والمصروفات",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "105.6px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "errors": []
+  },
+  {
+    "noJS": true,
+    "textLength": 12027,
+    "lang": "ar",
+    "dir": "rtl"
+  }
+]

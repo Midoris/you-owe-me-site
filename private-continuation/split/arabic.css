@@ -1,0 +1,7 @@
+[data-locale="ar"], html[lang="ar"] body { font-family: "Geeza Pro", "Noto Naskh Arabic", Tahoma, Arial, sans-serif; line-height: 1.9; }
+[data-locale="ar"] h1 { letter-spacing: normal; line-height: 1.65; }
+[data-locale="ar"] :is(p,h1) { text-align: start; }
+[data-language-navigation] a { margin-block-end: .5rem; unicode-bidi: isolate; }
+[data-language-navigation] a[aria-current="page"] { box-shadow: inset 0 0 0 2px #18212b; }
+html[lang="ar"] main { margin-inline: auto; }
+bdi { unicode-bidi: isolate; }

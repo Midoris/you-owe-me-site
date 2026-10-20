@@ -1,0 +1,216 @@
+{
+  "allPassed": true,
+  "paths": 60,
+  "results": [
+    {
+      "width": 390,
+      "source": "/ar/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/solutions/app-to-track-money-owed/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/solutions/app-to-track-money-owed/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/solutions/app-to-track-money-owed/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/solutions/personal-loan-repayment-tracker/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/solutions/personal-loan-repayment-tracker/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/solutions/personal-loan-repayment-tracker/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/tools/split-expense-calculator/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/tools/split-expense-calculator/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 390,
+      "source": "/ar/tools/split-expense-calculator/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/solutions/app-to-track-money-owed/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/solutions/app-to-track-money-owed/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/solutions/app-to-track-money-owed/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/solutions/personal-loan-repayment-tracker/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/solutions/personal-loan-repayment-tracker/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/solutions/personal-loan-repayment-tracker/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/tools/split-expense-calculator/",
+      "via": "en",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/tools/split-expense-calculator/",
+      "via": "es",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    },
+    {
+      "width": 1440,
+      "source": "/ar/tools/split-expense-calculator/",
+      "via": "de",
+      "equivalentArabicReturn": true,
+      "arabicLabel": "العربية"
+    }
+  ]
+}

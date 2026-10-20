@@ -1,0 +1,15 @@
+{
+  "allPassed": true,
+  "iPhoneChromeSimulation": true,
+  "explicitConsentNoPrematureUpload": true,
+  "failedRetrySameReference": true,
+  "arabic90Point50Native9050Cents": true,
+  "rawMixedNamesUnchangedAndNoInsertedControls": true,
+  "soleRefPlusArabicFragment": true,
+  "privateRTLUnderConfiguredCSP": true,
+  "backRestoresRawArabicInputThenClearsStorage": true,
+  "legacyHalfCentAndMultiPayerFallback": true,
+  "mockedUploads": 2,
+  "productionUploads": 0,
+  "limits": "Browser simulation with entirely mocked endpoint/private responses; no physical iPhone, native save or actual upload."
+}

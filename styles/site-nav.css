@@ -240,3 +240,10 @@ body.site-nav-page #navPanelToggle:focus-visible {
     padding-top: 5.15rem !important;
   }
 }
+/* Arabic language names retain connected script typography on every locale. */
+#copyright .site-language-switch a[lang="ar"] {
+  font-family: "Geeza Pro", "Noto Naskh Arabic", Tahoma, Arial, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+  unicode-bidi: isolate;
+}

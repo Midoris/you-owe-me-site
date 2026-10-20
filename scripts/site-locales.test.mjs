@@ -47,14 +47,20 @@ test("only completed translations join the registry and have substantive public 
   }
 });
 
-test("English page content differs from the accepted base only by explicit locale links", () => {
+test("English authored content differs from the accepted base only by locale links and declared shared cache queries", () => {
+  function stripOwned(html, route) {
+    html = html.replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
+      .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "");
+    return html.replace(/((?:src|href)=")([^"?]+)(?:\?[^" ]*)?("|\s)/g, (original, start, reference, end) => {
+      const asset = new URL(reference, "https://you-owe-me.com" + route).pathname;
+      return sharedAssetVersions[asset] ? `${start}${reference}?v=declared-shared-cache${end}` : original;
+    });
+  }
   for (const page of spanishPages) {
     const file = page.en === "/" ? "index.html" : `${page.en.slice(1)}index.html`;
     const original = execFileSync("git", ["show", `3f78611:${file}`], { encoding: "utf8" });
-    const current = fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8")
-      .replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
-      .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "");
-    assert.equal(current, original, `English source unexpectedly changed: ${page.en}`);
+    const current = fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
+    assert.equal(stripOwned(current, page.en), stripOwned(original, page.en), `English source unexpectedly changed: ${page.en}`);
   }
 });
 
@@ -73,8 +79,8 @@ test("Spanish authored HTML stays byte-for-byte intact from the accepted public 
     .replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
     .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "")
     // Only explicitly changed shared dependencies may receive cache URL updates.
-    .replace(/((?:src|href)=")([^"?]+)\?v=([^"&]+)(")/g, (original, start, asset, version, end) =>
-      sharedAssetVersions[asset] && [sharedAssetVersions[asset], "es20261020"].includes(version) ? `${start}${asset}?v=shared-cache-version${end}` : original);
+    .replace(/((?:src|href)=")([^"?]+)(?:\?v=([^"&]+))?(")/g, (original, start, asset, version, end) =>
+      sharedAssetVersions[asset] && [undefined, sharedAssetVersions[asset], "es20261020"].includes(version) ? `${start}${asset}?v=shared-cache-version${end}` : original);
   for (const page of spanishPages) {
     const file = `${page.es.slice(1)}index.html`;
     const original = execFileSync("git", ["show", `bfd69d7:${file}`], { encoding: "utf8" });

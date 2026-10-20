@@ -2,7 +2,7 @@
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath, pathToFileURL } from "node:url";
-import { siteLocales, localeOrigin, completedCounterparts, localeAssetVersion } from "../content/site-locales.mjs";
+import { siteLocales, localeOrigin, completedCounterparts, localeAssetVersion, sharedAssetVersions } from "../content/site-locales.mjs";
 
 const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const esc = value => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
@@ -21,13 +21,20 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
   const switchLinks = counterparts.map(({ code, route }) => `<a href="${route}" lang="${code}"${code === "ar" ? ' dir="rtl"' : lang === "ar" ? ' dir="ltr"' : ""} hreflang="${code}"${lang === code ? ' aria-current="page"' : ""}>${locales.find(locale => locale.code === code).label}</a>`).join('<span aria-hidden="true"> · </span>');
   const switcher = `\n        <!-- locale-switch:start -->\n        <li class="site-language-switch" aria-label="${esc(locale.shared.languageLabel)}">${switchLinks}</li>\n        <!-- locale-switch:end -->`;
   html = html.replace(/(<div id="copyright">\s*<ul>)/, "$1" + switcher);
+  // Shared correctness fixes also need fresh URLs in the English sources.
+  // Preserve authored relative/absolute paths; only the cache query is owned.
+  const assets = lang === "en" ? Object.keys(sharedAssetVersions) : locale.versionedAssets;
+  for (const asset of assets) {
+    const relative = path.posix.relative(englishRoute, asset);
+    const references = lang === "en" ? [asset, relative, `./${relative}`] : [asset];
+    for (const reference of references) {
+      html = html.replace(new RegExp(`((?:src|href)=")${regexEsc(reference)}(?:\\?[^\"]*)?(\")`, "g"), `$1${reference}?v=${localeAssetVersion(locale, asset)}$2`);
+    }
+  }
   if (lang === "en") return html;
 
   const completed = locale.pages.filter(page => page.complete);
   const localized = url => completed.find(page => page.en === url)?.[lang] || url;
-  for (const asset of locale.versionedAssets) {
-    html = html.replace(new RegExp(`((?:src|href)=")${regexEsc(asset)}(?:\\?[^\"]*)?(\")`, "g"), `$1${asset}?v=${localeAssetVersion(locale, asset)}$2`);
-  }
   // The English Best Next Step builder never owns translated modules.
   html = html.replaceAll("<!-- best-next-step:start -->", "<!-- localized-next-step:start -->")
     .replaceAll("<!-- best-next-step:end -->", "<!-- localized-next-step:end -->")

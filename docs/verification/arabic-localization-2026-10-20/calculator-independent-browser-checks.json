@@ -1,0 +1,30 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "realArabicPersianWesternEntry": true,
+      "strictGroupingValidation": true,
+      "worked180And98DividedBy8": true,
+      "settledAndNoIncluded": true,
+      "mixedLongNamesSemanticBdi": true,
+      "copySharePresentationIsolates": true,
+      "fallbackCancelFailure": true,
+      "privateValuesExcludedFromEvents": true,
+      "noOverflowOrRuntimeErrors": true
+    },
+    {
+      "width": 1440,
+      "realArabicPersianWesternEntry": true,
+      "strictGroupingValidation": true,
+      "worked180And98DividedBy8": true,
+      "settledAndNoIncluded": true,
+      "mixedLongNamesSemanticBdi": true,
+      "copySharePresentationIsolates": true,
+      "fallbackCancelFailure": true,
+      "privateValuesExcludedFromEvents": true,
+      "noOverflowOrRuntimeErrors": true
+    }
+  ],
+  "limits": "Local Chrome with clipboard/share mocks. No real financial upload, native device or App Store opening."
+}

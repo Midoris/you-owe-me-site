@@ -3,6 +3,8 @@ import { createHash } from "node:crypto";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 
+import { sharedAssetVersions } from "../content/site-locales.mjs";
+
 const root = new URL("../", import.meta.url);
 const phaseD = "iphone-handoff-phase-d-20260914-1";
 const appStoreBase = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670";
@@ -112,7 +114,7 @@ test("Phase D adds four exact, bounded desktop QR handoffs without changing thei
     else assert.doesNotMatch(card, /iphone-handoff__clarification/);
 
     assert.equal(count(configuration.page, `styles/iphone-handoff.css?v=${phaseD}`), 1);
-    assert.equal(count(configuration.page, `analytics.js?v=${configuration.page.includes("loan-import-entry.mjs") ? "20261018-review1" : phaseD}`), 1);
+    assert.equal(count(configuration.page, `analytics.js?v=${configuration.page.includes('hreflang="ar"') ? sharedAssetVersions["/scripts/analytics.js"] : configuration.page.includes("loan-import-entry.mjs") ? "20261018-review1" : phaseD}`), 1);
     assert.equal(count(configuration.page, `iphone-handoff.mjs?v=${phaseD}`), 1);
 
     if (configuration.pairing) {

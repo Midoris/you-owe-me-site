@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+ok 1 - Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+  ---
+  duration_ms: 81.250667
+  type: 'test'
+  ...
+# Subtest: Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+ok 2 - Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+  ---
+  duration_ms: 33.577625
+  type: 'test'
+  ...
+# Subtest: Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+ok 3 - Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+  ---
+  duration_ms: 15.637125
+  type: 'test'
+  ...
+# Subtest: Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+ok 4 - Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+  ---
+  duration_ms: 32.643792
+  type: 'test'
+  ...
+# Subtest: Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+ok 5 - Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+  ---
+  duration_ms: 16.127125
+  type: 'test'
+  ...
+# Subtest: private locale selection resets every RTL/LTR transition using only the fragment
+ok 6 - private locale selection resets every RTL/LTR transition using only the fragment
+  ---
+  duration_ms: 1.187958
+  type: 'test'
+  ...
+# Subtest: Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+ok 7 - Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+  ---
+  duration_ms: 0.865209
+  type: 'test'
+  ...
+# Subtest: ambiguous separators and malformed values never silently become positive money
+ok 8 - ambiguous separators and malformed values never silently become positive money
+  ---
+  duration_ms: 0.146917
+  type: 'test'
+  ...
+# Subtest: native import is withheld when rounded debts exceed the browser settlement credit
+ok 9 - native import is withheld when rounded debts exceed the browser settlement credit
+  ---
+  duration_ms: 1.224834
+  type: 'test'
+  ...
+# Subtest: accepted residual and precision fixtures keep their existing eligibility and values
+ok 10 - accepted residual and precision fixtures keep their existing eligibility and values
+  ---
+  duration_ms: 0.197625
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 224.288208

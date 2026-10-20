@@ -1,0 +1,26 @@
+[
+  {
+    "page": "/",
+    "text": "العربية",
+    "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+    "spacing": "0.88px",
+    "direction": "rtl",
+    "transform": "uppercase"
+  },
+  {
+    "page": "/es/",
+    "text": "العربية",
+    "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+    "spacing": "0.88px",
+    "direction": "rtl",
+    "transform": "uppercase"
+  },
+  {
+    "page": "/de/",
+    "text": "العربية",
+    "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+    "spacing": "0.88px",
+    "direction": "rtl",
+    "transform": "uppercase"
+  }
+]

@@ -1,0 +1,7 @@
+{
+  "allPassed": true,
+  "pages": 20,
+  "idempotentHtmlAndLlms": true,
+  "declaredSharedCachePins": 145,
+  "unownedQueryRegressionTestPassed": true
+}

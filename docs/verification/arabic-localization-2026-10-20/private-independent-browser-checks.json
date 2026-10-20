@@ -1,0 +1,44 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "transitions": 16,
+      "unknownDefaultsLTR": true,
+      "soleReferencePreserved": true,
+      "noPrivateFetchOrReferrer": true,
+      "noCspOrRuntimeErrors": true,
+      "headers": {
+        "Cache-Control": "no-store",
+        "Referrer-Policy": "no-referrer",
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+        "Content-Security-Policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff"
+      },
+      "originalThreeSectionBytesPreserved": true
+    },
+    {
+      "width": 1440,
+      "transitions": 16,
+      "unknownDefaultsLTR": true,
+      "soleReferencePreserved": true,
+      "noPrivateFetchOrReferrer": true,
+      "noCspOrRuntimeErrors": true,
+      "headers": {
+        "Cache-Control": "no-store",
+        "Referrer-Policy": "no-referrer",
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+        "Content-Security-Policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff"
+      },
+      "originalThreeSectionBytesPreserved": true
+    },
+    {
+      "noJavaScript": true,
+      "allFourSectionsReadable": true,
+      "arabicOwnDirection": true,
+      "requests": 3
+    }
+  ],
+  "limits": "Local route-fulfilled deployment-policy simulation; no real transfer reference or upload. Live deployed CSP verification remains separate."
+}

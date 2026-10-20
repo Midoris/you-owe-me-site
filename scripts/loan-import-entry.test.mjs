@@ -4,6 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {loanImportMarkup} from './loan-import-ui.mjs';
 import {loanImportOffers} from './loan-import-offers.mjs';
 import {loanImportEventName} from './loan-import-analytics.mjs';
+import {sharedAssetVersions} from '../content/site-locales.mjs';
 const root=new URL('../',import.meta.url);
 const read=path=>readFile(new URL(path,root),'utf8');
 const config=await read('scripts/loan-import-config.mjs');
@@ -187,7 +188,7 @@ test('all ten import entry routes pin the changed controller/model, style and an
  for(const route of [...Object.values(routes),'tools/personal-loan-payment-tracker/']){
   const html=await read(route+'index.html');
   assert.ok(html.includes('loan-import-entry.mjs?v='+version),route);
-  const analyticsVersion=route==='solutions/personal-loan-repayment-tracker/'?'record-once-20261019-1':version;
+  const analyticsVersion=html.includes('hreflang="ar"')?sharedAssetVersions['/scripts/analytics.js']:version;
   assert.ok(html.includes('analytics.js?v='+analyticsVersion),route);
  }
  const entry=await read('scripts/loan-import-entry.mjs');

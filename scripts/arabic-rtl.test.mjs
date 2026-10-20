@@ -46,7 +46,7 @@ test("German authored pages remain identical to their finalized release outside 
   const normalize = html => html
     .replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
     .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "")
-    .replace(/((?:src|href)=")([^"?]+)\?v=[^"&]+(")/g, (original, start, asset, end) => sharedAssetVersions[asset] ? `${start}${asset}?v=reviewed-shared-cache${end}` : original);
+    .replace(/((?:src|href)=")([^"?]+)(?:\?v=[^"&]+)?(")/g, (original, start, asset, end) => sharedAssetVersions[asset] ? `${start}${asset}?v=reviewed-shared-cache${end}` : original);
   for (const page of germanPages) {
     const file = `${page.de.slice(1)}index.html`;
     const baseline = execFileSync("git", ["show", `f3aee78:${file}`], { encoding: "utf8" });
@@ -91,4 +91,19 @@ test("SEO extraction preserves actual inline bidi punctuation and affixes while 
     ['<div>Loan</div><div>Record</div>', 'Loan Record'],
   ]) assert.equal(context.extractText(html), visibleText.toLowerCase());
   assert.notEqual(context.extractText('القرض (<bdi dir="ltr">Loan Record</bdi>)'), context.extractText('القرض (Different Record)'), 'Substantive schema mismatches remain distinguishable');
+});
+
+test("English shared cache pins preserve every authored path form and leave unrelated queries intact", () => {
+  for (const [route,references] of [
+    ["/",["/scripts/tool-transfer.js","scripts/tool-transfer.js","./scripts/tool-transfer.js"]],
+    ["/tools/split-expense-calculator/",["/scripts/tool-transfer.js","../../scripts/tool-transfer.js","./../../scripts/tool-transfer.js"]],
+  ]) {
+    const assets=references.map(reference=>`<script src="${reference}?v=old-release"></script>`).join("");
+    const untouched='<script src="/scripts/unowned.js?v=keep&amp;mode=test"></script><script src="https://example.invalid/scripts/tool-transfer.js?v=external"></script>';
+    const html=fixture.replace("</head>",`${assets}${untouched}</head>`);
+    const rendered=renderLocaleHtml(html,route,"en");
+    for (const reference of references) assert.ok(rendered.includes(`src="${reference}?v=${sharedAssetVersions['/scripts/tool-transfer.js']}"`),reference);
+    assert.ok(rendered.includes(untouched));
+    assert.equal(renderLocaleHtml(rendered,route,"en"),rendered);
+  }
 });

@@ -1,0 +1,21 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "iPhoneUserAgentSimulation": true,
+      "explicitConsentOnly": true,
+      "failedRetrySameReference": true,
+      "arabicRaw90Point50To9050Cents": true,
+      "mixedNamesBytePreserved": true,
+      "noPresentationControlsInNativeDraft": true,
+      "soleReferenceAndArabicFragment": true,
+      "arabicPrivateDirection": true,
+      "backRestoresRawInputAndClearsSavedState": true,
+      "multiplePayerAppFallback": true,
+      "noRuntimeErrors": true,
+      "mockedPosts": 2,
+      "productionUploads": 0
+    }
+  ],
+  "limits": "Synthetic data and intercepted transfers only. Chrome iPhone UA simulation is not Safari/App Clip/native-save acceptance."
+}

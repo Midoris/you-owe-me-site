@@ -1,0 +1,28 @@
+[
+  {
+    "lang": "en",
+    "raw": "90.50",
+    "nativeEligible": false,
+    "browserNet": "",
+    "browserSettlements": "Person 2 owes Person 1 $30.17\nPerson 3 owes Person 1 $30.16",
+    "transferOfferVisible": false,
+    "expectedNativeNonorganizerCents": [
+      3017,
+      3017
+    ],
+    "productionUploads": 0
+  },
+  {
+    "lang": "ar",
+    "raw": "٩٠٫٥٠",
+    "nativeEligible": false,
+    "browserNet": "",
+    "browserSettlements": "على الشخص 2 سداد 30.17 $ إلى الشخص 1\nعلى الشخص 3 سداد 30.16 $ إلى الشخص 1",
+    "transferOfferVisible": false,
+    "expectedNativeNonorganizerCents": [
+      3017,
+      3017
+    ],
+    "productionUploads": 0
+  }
+]

@@ -3,6 +3,9 @@
   "use strict";
   const config = Object.freeze({enabled: true, endpoint: "https://us-central1-you-owe-me-app.cloudfunctions.net/toolTransfer", continuation: "https://continue.you-owe-me.com/split/"});
   function fallbackText(message, number) {
+    if (root.document?.documentElement?.lang === "ar") {
+      return message === "Person" ? `الشخص ${number}` : "مصروف مشترك";
+    }
     if (root.document?.documentElement?.lang === "es") {
       return message === "Person" ? `Persona ${number}` : "Gasto compartido";
     }
@@ -31,6 +34,7 @@
       return Object.values(row).some(v => v < 0) ? null : row;
     });
     if (rows.some(r => !r)) return null;
+    let nativeOwed = 0;
     for (const p of participants.filter(p => p.id !== organizerID)) {
       const actual = rows.reduce((s, r) => s + (r[p.id] || 0), 0);
       const displayed = Math.floor((costs.reduce((s, c) => s + (c.participantIDs.includes(p.id) ? c.amount * 12 / c.participantIDs.length : 0), 0) + 6) / 12);
@@ -39,7 +43,18 @@
       const browserDisplayed = Math.round(state.expenses.reduce((sum, e) => sum +
         (e.includedPeople.includes(p.id) ? Number(String(e.amount).replace(/,/g, "")) / e.includedPeople.length : 0), 0) * 100);
       if (actual <= 0 || actual !== displayed || actual !== browserDisplayed) return null;
+      nativeOwed += actual;
     }
+    // The calculator caps its final settlements at the organizer's rounded
+    // credit. When rounded debtor shares exceed that credit (90.50 / 3), its
+    // last settlement is smaller than the native per-person obligation. Keep
+    // the existing math/accepted residual fixtures; withhold only mismatched
+    // imports. This comparison uses IDs/amounts, never participant names.
+    const browserPaid = Math.round(state.expenses.reduce((sum, e) => sum + Number(String(e.amount).replace(/,/g, "")), 0) * 100) / 100;
+    const browserShare = Math.round(state.expenses.reduce((sum, e) => sum +
+      (e.includedPeople.includes(organizerID) ? Number(String(e.amount).replace(/,/g, "")) / e.includedPeople.length : 0), 0) * 100) / 100;
+    const browserCredit = Math.round((browserPaid - browserShare) * 100);
+    if (nativeOwed > browserCredit) return null;
     return draft;
   }
   const api = {config, prepare};

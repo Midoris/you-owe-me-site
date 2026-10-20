@@ -1,0 +1,532 @@
+{
+  "allPassed": true,
+  "width": 390,
+  "pages": [
+    {
+      "route": "/",
+      "language": "en",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/es/",
+      "language": "es",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/de/",
+      "language": "de",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/ar/",
+      "language": "ar",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/solutions/app-to-track-money-owed/",
+      "language": "en",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "language": "es",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "language": "de",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "language": "ar",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "language": "en",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "language": "es",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/de/blog/wer-schuldet-mir-geld/",
+      "language": "de",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "language": "ar",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/solutions/personal-loan-repayment-tracker/",
+      "language": "en",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "language": "es",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/de/loesungen/private-darlehen-verwalten/",
+      "language": "de",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/ar/solutions/personal-loan-repayment-tracker/",
+      "language": "ar",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/tools/split-expense-calculator/",
+      "language": "en",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "language": "es",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/de/tools/ausgaben-aufteilen/",
+      "language": "de",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    },
+    {
+      "route": "/ar/tools/split-expense-calculator/",
+      "language": "ar",
+      "canonical": true,
+      "reciprocalAlternates": true,
+      "direction": true,
+      "widthExact": true
+    }
+  ],
+  "switches": [
+    {
+      "from": "/",
+      "to": "/es/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/",
+      "to": "/de/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/",
+      "to": "/ar/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/es/",
+      "to": "/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/es/",
+      "to": "/de/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/es/",
+      "to": "/ar/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/de/",
+      "to": "/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/de/",
+      "to": "/es/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/de/",
+      "to": "/ar/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/",
+      "to": "/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/",
+      "to": "/es/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/",
+      "to": "/de/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/solutions/app-to-track-money-owed/",
+      "to": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/solutions/app-to-track-money-owed/",
+      "to": "/de/loesungen/app-fuer-geldforderungen/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/solutions/app-to-track-money-owed/",
+      "to": "/ar/solutions/app-to-track-money-owed/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "to": "/solutions/app-to-track-money-owed/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "to": "/de/loesungen/app-fuer-geldforderungen/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "to": "/ar/solutions/app-to-track-money-owed/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/de/loesungen/app-fuer-geldforderungen/",
+      "to": "/solutions/app-to-track-money-owed/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/de/loesungen/app-fuer-geldforderungen/",
+      "to": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/de/loesungen/app-fuer-geldforderungen/",
+      "to": "/ar/solutions/app-to-track-money-owed/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/solutions/app-to-track-money-owed/",
+      "to": "/solutions/app-to-track-money-owed/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/solutions/app-to-track-money-owed/",
+      "to": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/solutions/app-to-track-money-owed/",
+      "to": "/de/loesungen/app-fuer-geldforderungen/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "to": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "to": "/de/blog/wer-schuldet-mir-geld/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "to": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "to": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "to": "/de/blog/wer-schuldet-mir-geld/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "to": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/de/blog/wer-schuldet-mir-geld/",
+      "to": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/de/blog/wer-schuldet-mir-geld/",
+      "to": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/de/blog/wer-schuldet-mir-geld/",
+      "to": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "to": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "to": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "to": "/de/blog/wer-schuldet-mir-geld/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/solutions/personal-loan-repayment-tracker/",
+      "to": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/solutions/personal-loan-repayment-tracker/",
+      "to": "/de/loesungen/private-darlehen-verwalten/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/solutions/personal-loan-repayment-tracker/",
+      "to": "/ar/solutions/personal-loan-repayment-tracker/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "to": "/solutions/personal-loan-repayment-tracker/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "to": "/de/loesungen/private-darlehen-verwalten/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "to": "/ar/solutions/personal-loan-repayment-tracker/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/de/loesungen/private-darlehen-verwalten/",
+      "to": "/solutions/personal-loan-repayment-tracker/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/de/loesungen/private-darlehen-verwalten/",
+      "to": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/de/loesungen/private-darlehen-verwalten/",
+      "to": "/ar/solutions/personal-loan-repayment-tracker/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/solutions/personal-loan-repayment-tracker/",
+      "to": "/solutions/personal-loan-repayment-tracker/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/solutions/personal-loan-repayment-tracker/",
+      "to": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/solutions/personal-loan-repayment-tracker/",
+      "to": "/de/loesungen/private-darlehen-verwalten/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/tools/split-expense-calculator/",
+      "to": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/tools/split-expense-calculator/",
+      "to": "/de/tools/ausgaben-aufteilen/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/tools/split-expense-calculator/",
+      "to": "/ar/tools/split-expense-calculator/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "to": "/tools/split-expense-calculator/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "to": "/de/tools/ausgaben-aufteilen/",
+      "language": "de",
+      "directionReset": true
+    },
+    {
+      "from": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "to": "/ar/tools/split-expense-calculator/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/de/tools/ausgaben-aufteilen/",
+      "to": "/tools/split-expense-calculator/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/de/tools/ausgaben-aufteilen/",
+      "to": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/de/tools/ausgaben-aufteilen/",
+      "to": "/ar/tools/split-expense-calculator/",
+      "language": "ar",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/tools/split-expense-calculator/",
+      "to": "/tools/split-expense-calculator/",
+      "language": "en",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/tools/split-expense-calculator/",
+      "to": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "language": "es",
+      "directionReset": true
+    },
+    {
+      "from": "/ar/tools/split-expense-calculator/",
+      "to": "/de/tools/ausgaben-aufteilen/",
+      "language": "de",
+      "directionReset": true
+    }
+  ],
+  "errors": [],
+  "all20SitemapEntries": true,
+  "all5ArabicLlmsEntries": true,
+  "limits": "Independent local Chrome actual navigation; no deployment/indexing/financial upload."
+}

@@ -1,0 +1,26 @@
+[
+  {
+    "page": "/",
+    "text": "العربية",
+    "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "spacing": "normal",
+    "direction": "rtl",
+    "transform": "none"
+  },
+  {
+    "page": "/es/",
+    "text": "العربية",
+    "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "spacing": "normal",
+    "direction": "rtl",
+    "transform": "none"
+  },
+  {
+    "page": "/de/",
+    "text": "العربية",
+    "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "spacing": "normal",
+    "direction": "rtl",
+    "transform": "none"
+  }
+]
