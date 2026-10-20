@@ -1,0 +1,59 @@
+{
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T08:57:53.714528+00:00",
+  "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+  "generatorByteIdempotent": true,
+  "checks": [
+    {
+      "command": [
+        "node",
+        "scripts/sync-site-locales.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Updated 24 reviewed language pages.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build-sitemap.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Sitemap built with 101 indexable URL(s).\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/fr/solutions/suivi-remboursement-pret-personnel/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /fr/solutions/suivi-remboursement-pret-personnel/\nBody class: personal-loan-repayment-tracker-page\nAudited stylesheets: styles/personal-loan-repayment-tracker.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/french-localization-2026-10-20/raw-html-check.py",
+        "/fr/solutions/suivi-remboursement-pret-personnel/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/fr/solutions/suivi-remboursement-pret-personnel/\", \"lang\": \"fr\", \"direction\": \"ltr\", \"canonical\": [\"https://you-owe-me.com/fr/solutions/suivi-remboursement-pret-personnel/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/solutions/personal-loan-repayment-tracker/\", \"es\": \"https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/\", \"de\": \"https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/\", \"ar\": \"https://you-owe-me.com/ar/solutions/personal-loan-repayment-tracker/\", \"fr\": \"https://you-owe-me.com/fr/solutions/suivi-remboursement-pret-personnel/\", \"x-default\": \"https://you-owe-me.com/solutions/personal-loan-repayment-tracker/\"}, \"staticMainTextCharacters\": 22276, \"staticLinkCount\": 57, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "scripts/french-locales.test.mjs",
+        "scripts/site-locales.test.mjs",
+        "scripts/personal-loan-payment-tracker.test.js",
+        "scripts/app-language-support-site.test.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "TAP version 13\n# Subtest: every site route satisfies the language-support inclusion and exclusion contract\nok 1 - every site route satisfies the language-support inclusion and exclusion contract\n  ---\n  duration_ms: 50.696416\n  type: 'test'\n  ...\n# Subtest: Spanish routes require Spanish document language while English routes keep English\nok 2 - Spanish routes require Spanish document language while English routes keep English\n  ---\n  duration_ms: 0.354\n  type: 'test'\n  ...\n# Subtest: the route audit rejects missing and duplicate integration assets\nok 3 - the route audit rejects missing and duplicate integration assets\n  ---\n  duration_ms: 0.108666\n  type: 'test'\n  ...\n# Subtest: the route audit rejects anchors in navigation and sticky UI\nok 4 - the route audit rejects anchors in navigation and sticky UI\n  ---\n  duration_ms: 0.088167\n  type: 'test'\n  ...\n# Subtest: the route audit requires a real conversion context and no authored render target\nok 5 - the route audit requires a real conversion context and no authored render target\n  ---\n  duration_ms: 0.178417\n  type: 'test'\n  ...\n# Subtest: excluded routes reject every language-support integration surface\nok 6 - excluded routes reject every language-support integration surface\n  ---\n  duration_ms: 0.061916\n  type: 'test'\n  ...\n# Subtest: German routes require German document language\nok 7 - German routes require German document language\n  ---\n  duration_ms: 0.14825\n  type: 'test'\n  ...\n# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters\nok 8 - French admission requires review and produces reciprocal idempotent five-language clusters\n  ---\n  duration_ms: 4.44325\n  type: 'test'\n  ...\n# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries\nok 9 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries\n  ---\n  duration_ms: 243.071333\n  type: 'test'\n  ...\n# personal-loan-payment-tracker tests passed\n# Subtest: scripts/personal-loan-payment-tracker.test.js\nok 3 - scripts/personal-loan-payment-tracker.test.js\n  ---\n  duration_ms: 41.228166\n  type: 'test'\n  ...\n# Subtest: only completed translations join the registry and have substantive public HTML\nok 11 - only completed translations join the registry and have substantive public HTML\n  ---\n  duration_ms: 14.056916\n  type: 'test'\n  ...\n# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries\nok 12 - English authored content differs from the accepted base only by locale links and declared shared cache queries\n  ---\n  duration_ms: 67.101042\n  type: 'test'\n  ...\n# Subtest: locale routes are unique, stable and contain no financial inputs\nok 13 - locale routes are unique, stable and contain no financial inputs\n  ---\n  duration_ms: 0.639959\n  type: 'test'\n  ...\n# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release\nok 14 - Spanish authored HTML stays byte-for-byte intact from the accepted public release\n  ---\n  duration_ms: 59.291667\n  type: 'test'\n  ...\n# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out\nok 15 - one generator produces reciprocal three-language switches and leaves planned pages out\n  ---\n  duration_ms: 3.018042\n  type: 'test'\n  ...\n# Subtest: German registry inherits source routing without linking to unfinished locale pages\nok 16 - German registry inherits source routing without linking to unfinished locale pages\n  ---\n  duration_ms: 0.15875\n  type: 'test'\n  ...\n# Subtest: unreviewed German routes do not enter public discovery or runtime matching\nok 17 - unreviewed German routes do not enter public discovery or runtime matching\n  ---\n  duration_ms: 0.259416\n  type: 'test'\n  ...\n# Subtest: a missing reviewed counterpart fails before any existing page is changed\nok 18 - a missing reviewed counterpart fails before any existing page is changed\n  ---\n  duration_ms: 1.212875\n  type: 'test'\n  ...\n# Subtest: analytics preserves English metadata and maps only completed localized routes\nok 19 - analytics preserves English metadata and maps only completed localized routes\n  ---\n  duration_ms: 11.172833\n  type: 'test'\n  ...\n1..19\n# tests 19\n# suites 0\n# pass 19\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 291.443625\n",
+      "stderr": ""
+    }
+  ]
+}

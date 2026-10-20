@@ -1,0 +1,48 @@
+[
+  {
+    "width": 390,
+    "controls": [
+      {
+        "text": "Télécharger sur l’App Store",
+        "width": 225,
+        "height": 61.5625,
+        "display": "inline-block"
+      },
+      {
+        "text": "Créer un plan de remboursement ponctuel (en anglais)",
+        "width": 350,
+        "height": 59.34375,
+        "display": "block"
+      },
+      {
+        "text": "Créer plutôt un plan de remboursement ponctuel (en anglais)",
+        "width": 312.8125,
+        "height": 58.3125,
+        "display": "block"
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "controls": [
+      {
+        "text": "Télécharger sur l’App Store",
+        "width": 225,
+        "height": 67.1875,
+        "display": "inline-block"
+      },
+      {
+        "text": "Créer un plan de remboursement ponctuel (en anglais)",
+        "width": 458.390625,
+        "height": 48,
+        "display": "block"
+      },
+      {
+        "text": "Créer plutôt un plan de remboursement ponctuel (en anglais)",
+        "width": 514.375,
+        "height": 48,
+        "display": "block"
+      }
+    ]
+  }
+]

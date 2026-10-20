@@ -1,0 +1,125 @@
+TAP version 13
+# Subtest: every site route satisfies the language-support inclusion and exclusion contract
+ok 1 - every site route satisfies the language-support inclusion and exclusion contract
+  ---
+  duration_ms: 50.785292
+  type: 'test'
+  ...
+# Subtest: Spanish routes require Spanish document language while English routes keep English
+ok 2 - Spanish routes require Spanish document language while English routes keep English
+  ---
+  duration_ms: 0.328083
+  type: 'test'
+  ...
+# Subtest: the route audit rejects missing and duplicate integration assets
+ok 3 - the route audit rejects missing and duplicate integration assets
+  ---
+  duration_ms: 0.097416
+  type: 'test'
+  ...
+# Subtest: the route audit rejects anchors in navigation and sticky UI
+ok 4 - the route audit rejects anchors in navigation and sticky UI
+  ---
+  duration_ms: 0.10275
+  type: 'test'
+  ...
+# Subtest: the route audit requires a real conversion context and no authored render target
+ok 5 - the route audit requires a real conversion context and no authored render target
+  ---
+  duration_ms: 0.180542
+  type: 'test'
+  ...
+# Subtest: excluded routes reject every language-support integration surface
+ok 6 - excluded routes reject every language-support integration surface
+  ---
+  duration_ms: 0.073542
+  type: 'test'
+  ...
+# Subtest: German routes require German document language
+ok 7 - German routes require German document language
+  ---
+  duration_ms: 0.147166
+  type: 'test'
+  ...
+# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters
+ok 8 - French admission requires review and produces reciprocal idempotent five-language clusters
+  ---
+  duration_ms: 4.543791
+  type: 'test'
+  ...
+# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+ok 9 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+  ---
+  duration_ms: 352.023667
+  type: 'test'
+  ...
+# personal-loan-payment-tracker tests passed
+# Subtest: scripts/personal-loan-payment-tracker.test.js
+ok 3 - scripts/personal-loan-payment-tracker.test.js
+  ---
+  duration_ms: 39.639375
+  type: 'test'
+  ...
+# Subtest: only completed translations join the registry and have substantive public HTML
+ok 11 - only completed translations join the registry and have substantive public HTML
+  ---
+  duration_ms: 14.014959
+  type: 'test'
+  ...
+# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries
+ok 12 - English authored content differs from the accepted base only by locale links and declared shared cache queries
+  ---
+  duration_ms: 90.402084
+  type: 'test'
+  ...
+# Subtest: locale routes are unique, stable and contain no financial inputs
+ok 13 - locale routes are unique, stable and contain no financial inputs
+  ---
+  duration_ms: 0.567916
+  type: 'test'
+  ...
+# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release
+ok 14 - Spanish authored HTML stays byte-for-byte intact from the accepted public release
+  ---
+  duration_ms: 85.987208
+  type: 'test'
+  ...
+# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out
+ok 15 - one generator produces reciprocal three-language switches and leaves planned pages out
+  ---
+  duration_ms: 3.25925
+  type: 'test'
+  ...
+# Subtest: German registry inherits source routing without linking to unfinished locale pages
+ok 16 - German registry inherits source routing without linking to unfinished locale pages
+  ---
+  duration_ms: 0.150416
+  type: 'test'
+  ...
+# Subtest: unreviewed German routes do not enter public discovery or runtime matching
+ok 17 - unreviewed German routes do not enter public discovery or runtime matching
+  ---
+  duration_ms: 0.277166
+  type: 'test'
+  ...
+# Subtest: a missing reviewed counterpart fails before any existing page is changed
+ok 18 - a missing reviewed counterpart fails before any existing page is changed
+  ---
+  duration_ms: 1.10825
+  type: 'test'
+  ...
+# Subtest: analytics preserves English metadata and maps only completed localized routes
+ok 19 - analytics preserves English metadata and maps only completed localized routes
+  ---
+  duration_ms: 15.478083
+  type: 'test'
+  ...
+1..19
+# tests 19
+# suites 0
+# pass 19
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 398.833625

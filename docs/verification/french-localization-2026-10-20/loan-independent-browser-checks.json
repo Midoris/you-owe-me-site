@@ -1,0 +1,621 @@
+{
+  "accepted": true,
+  "rows": [
+    {
+      "width": 320,
+      "pageWidth": 320,
+      "lang": "fr",
+      "dir": "ltr",
+      "overflows": [
+        {
+          "tag": "CAPTION",
+          "class": "",
+          "text": "Questions pour reprendre un prêt en cours à partir de la situation actuelle",
+          "scroll": 434,
+          "width": 1
+        },
+        {
+          "tag": "CAPTION",
+          "class": "",
+          "text": "Choisir la méthode la plus simple qui restera exacte",
+          "scroll": 302,
+          "width": 1
+        }
+      ],
+      "labels": [
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        }
+      ],
+      "button": [
+        {
+          "text": "Télécharger sur l’App Store",
+          "width": 225,
+          "client": 225,
+          "scroll": 225,
+          "font": "13.3333px",
+          "lineHeight": "17.3333px"
+        }
+      ],
+      "anchor": {
+        "top": 117.296875,
+        "bottom": 238.234375
+      },
+      "errors": [],
+      "financialStagesCorrect": true
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "lang": "fr",
+      "dir": "ltr",
+      "overflows": [
+        {
+          "tag": "CAPTION",
+          "class": "",
+          "text": "Questions pour reprendre un prêt en cours à partir de la situation actuelle",
+          "scroll": 477,
+          "width": 1
+        },
+        {
+          "tag": "CAPTION",
+          "class": "",
+          "text": "Choisir la méthode la plus simple qui restera exacte",
+          "scroll": 332,
+          "width": 1
+        }
+      ],
+      "labels": [
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        }
+      ],
+      "button": [
+        {
+          "text": "Télécharger sur l’App Store",
+          "width": 225,
+          "client": 225,
+          "scroll": 225,
+          "font": "14.6667px",
+          "lineHeight": "19.0667px"
+        }
+      ],
+      "anchor": {
+        "top": 109.5625,
+        "bottom": 170.03125
+      },
+      "errors": [],
+      "financialStagesCorrect": true
+    },
+    {
+      "width": 600,
+      "pageWidth": 600,
+      "lang": "fr",
+      "dir": "ltr",
+      "overflows": [
+        {
+          "tag": "CAPTION",
+          "class": "",
+          "text": "Questions pour reprendre un prêt en cours à partir de la situation actuelle",
+          "scroll": 477,
+          "width": 1
+        },
+        {
+          "tag": "CAPTION",
+          "class": "",
+          "text": "Choisir la méthode la plus simple qui restera exacte",
+          "scroll": 332,
+          "width": 1
+        }
+      ],
+      "labels": [
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Question",
+          "before": "\"Question\"",
+          "display": "block"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "\"Quoi noter\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        },
+        {
+          "label": "Situation",
+          "before": "\"Situation\"",
+          "display": "block"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "\"Méthode adaptée\"",
+          "display": "block"
+        }
+      ],
+      "button": [
+        {
+          "text": "Télécharger sur l’App Store",
+          "width": 225,
+          "client": 225,
+          "scroll": 225,
+          "font": "14.6667px",
+          "lineHeight": "19.0667px"
+        }
+      ],
+      "anchor": {
+        "top": 109.25,
+        "bottom": 169.71875
+      },
+      "errors": [],
+      "financialStagesCorrect": true
+    },
+    {
+      "width": 1440,
+      "pageWidth": 1440,
+      "lang": "fr",
+      "dir": "ltr",
+      "overflows": [
+        {
+          "tag": "CAPTION",
+          "class": "",
+          "text": "Questions pour reprendre un prêt en cours à partir de la situation actuelle",
+          "scroll": 520,
+          "width": 1
+        },
+        {
+          "tag": "CAPTION",
+          "class": "",
+          "text": "Choisir la méthode la plus simple qui restera exacte",
+          "scroll": 363,
+          "width": 1
+        }
+      ],
+      "labels": [
+        {
+          "label": "Question",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Question",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Question",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Question",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Question",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Quoi noter",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Situation",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Situation",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Situation",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Situation",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Situation",
+          "before": "none",
+          "display": "inline"
+        },
+        {
+          "label": "Méthode adaptée",
+          "before": "none",
+          "display": "inline"
+        }
+      ],
+      "button": [
+        {
+          "text": "Télécharger sur l’App Store",
+          "width": 150,
+          "client": 150,
+          "scroll": 150,
+          "font": "16px",
+          "lineHeight": "20.8px"
+        }
+      ],
+      "anchor": {
+        "top": 63.671875,
+        "bottom": 150.046875
+      },
+      "errors": [],
+      "financialStagesCorrect": true
+    },
+    {
+      "width": 390,
+      "target": "en",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 390,
+      "target": "es",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 390,
+      "target": "de",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 390,
+      "target": "ar",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 1440,
+      "target": "en",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 1440,
+      "target": "es",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 1440,
+      "target": "de",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 1440,
+      "target": "ar",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 390,
+      "brokenQR": true,
+      "downloadAvailable": true
+    },
+    {
+      "width": 1440,
+      "brokenQR": true,
+      "downloadAvailable": true
+    },
+    {
+      "noJS": true,
+      "mainTextLength": 17379,
+      "staticFinancialExamples": true
+    }
+  ],
+  "limits": "Chrome viewport emulation. Analytics/external hosts blocked; no physical-device, QR scan, Store opening or upload."
+}

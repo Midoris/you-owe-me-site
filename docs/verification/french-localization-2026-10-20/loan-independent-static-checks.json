@@ -1,0 +1,11 @@
+{
+  "accepted": true,
+  "checkedAt": "2026-10-20T08:58:19.344Z",
+  "htmlSha256": "c39753d83d019229d68053427fb3705d14c5a47173e112a32338bdf5e88b8ac2",
+  "checks": [
+    "Original semantic sections, cards, table rows/mobile-label count and content destinations are complete",
+    "Exact financial stages and separate first-payment snapshot preserve all USD values and allocation",
+    "Record/plan, free-plan, enabled-reminder, no-double-deduction and native/import boundaries remain explicit",
+    "Translated schema, reciprocal counterparts, declared caches, neutral Store campaigns and generator ownership are correct"
+  ]
+}

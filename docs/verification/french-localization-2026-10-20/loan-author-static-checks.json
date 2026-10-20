@@ -1,0 +1,52 @@
+{
+  "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+  "direct_local_urls": 71,
+  "duplicate_ids": [],
+  "errors": [],
+  "main_french_text_chars": 17114,
+  "mobile_pseudo_labels": [
+    "Méthode adaptée",
+    "Question",
+    "Quoi noter",
+    "Situation"
+  ],
+  "mobile_label_count": 20,
+  "initial_usd": 1200,
+  "recorded_usd": 150,
+  "monthly_installment_usd": 200,
+  "connected_results_usd": [
+    1050,
+    50,
+    50
+  ],
+  "later_payment_allocation_usd": [
+    300,
+    50,
+    200,
+    50,
+    750
+  ],
+  "additional_borrowing_usd": [
+    100,
+    850
+  ],
+  "separate_snapshot_usd": [
+    1050,
+    400,
+    1450
+  ],
+  "financial_invariants": {
+    "first_payment": true,
+    "installment_remainder": true,
+    "enabled_reminder_matches_remainder": true,
+    "later_allocation": true,
+    "later_loan_remainder": true,
+    "additional_borrowing": true,
+    "separate_snapshot": true,
+    "snapshot_after_first_stage": true
+  },
+  "illustration_count": 3,
+  "english_badge_pixels": false,
+  "english_screenshot_pixels": false,
+  "custom_product_page_parameter": false
+}

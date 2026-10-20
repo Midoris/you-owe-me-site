@@ -1,0 +1,52 @@
+{
+  "allPassed": true,
+  "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+  "lang": "fr",
+  "direction": "ltr",
+  "canonical": [
+    "https://you-owe-me.com/fr/solutions/suivi-remboursement-pret-personnel/"
+  ],
+  "alternates": {
+    "en": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
+    "es": "https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/",
+    "de": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+    "ar": "https://you-owe-me.com/ar/solutions/personal-loan-repayment-tracker/",
+    "fr": "https://you-owe-me.com/fr/solutions/suivi-remboursement-pret-personnel/",
+    "x-default": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/"
+  },
+  "staticMainTextCharacters": 22276,
+  "staticLinkCount": 57,
+  "assets": [
+    "/favicon.ico",
+    "/images/shared/brand/icon_3_0.png",
+    "/images/shared/brand/icon_3_0.png",
+    "/images/shared/brand/icon_3_0.png",
+    "/assets/css/fontawesome-all.min.css",
+    "https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic%7CSource+Sans+Pro:900&display=swap",
+    "/assets/css/main.css",
+    "/assets/css/noscript.css",
+    "/styles/site-locale.css?v=fr20261020",
+    "/styles/site-nav.css?v=ar20261020",
+    "/styles/solutions.css",
+    "/styles/solution-detail.css",
+    "/styles/best-next-step.css",
+    "/styles/personal-loan-repayment-tracker.css?v=record-once-20261019-1",
+    "/styles/app-language-support.css",
+    "/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1",
+    "/styles/loan-import-entry.css?v=20260925-mobile-layout-1",
+    "/images/fr/iphone-handoff/app-store.png",
+    "/scripts/sales.js?v=fr20261020",
+    "/scripts/analytics.js?v=fr20261020",
+    "/scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1",
+    "/assets/js/jquery.min.js",
+    "/assets/js/jquery.scrollex.min.js",
+    "/assets/js/jquery.scrolly.min.js",
+    "/assets/js/browser.min.js",
+    "/assets/js/breakpoints.min.js",
+    "/assets/js/util.js",
+    "/assets/js/main.js?v=fr20261020",
+    "/scripts/app-language-support.js?v=fr20261020"
+  ],
+  "missingLinksOrFragments": [],
+  "noJavaScriptTranslationRequired": true
+}

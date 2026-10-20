@@ -37,3 +37,9 @@ Money-owed solution `/fr/solutions/application-suivi-argent-du/`: static/schema/
 Money-owed scoped accepted commit: `0705085`.
 
 Recordkeeping guide `/fr/blog/suivre-qui-vous-doit-de-l-argent/`: all static/structured/accessible content, two labeled scroll tables and three copy templates localized. USD ledger equations remain 80−30=50, 18−18=0, 42−0=42 and 120−75=45. Root checks pass four widths, substantial no-JS main, all 40 directed language switches and all three copy controls in success/fallback/failure across all five locales. Copied text/line breaks match templates; failure sends no copy event; temporary fields are removed. Separate French language and technical reviews are in the verification directory. Final scoped commit follows independent acceptance.
+
+Recordkeeping guide scoped accepted commit: `9d680b4`.
+
+Personal-loan solution `/fr/solutions/suivi-remboursement-pret-personnel/`: full static/schema/accessible French, three labeled HTML illustrations, relationship map and 20 mobile table labels. Root Chrome verifies exact staged USD arithmetic and separate first-payment two-loan snapshot at all four widths, conditional 50 USD reminder, neutral QR/download and no-JS main over17,000 characters. All40 directed switches pass. Independent rendered review found inherited 50% compact table headers too narrow in stacked mobile rows; a French-only736px rule gives those headers their full card width while desktop and other locales retain their source rules. Final independent acceptance and scoped commit follow the targeted recheck.
+
+Loan rendered acceptance also restores a readable225px desktop download label and normal inline flow for English fallback text in French loan buttons. These narrow CSS repairs retain all other language rules.

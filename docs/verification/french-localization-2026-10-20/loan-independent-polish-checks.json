@@ -1,0 +1,405 @@
+{
+  "accepted": true,
+  "rows": [
+    {
+      "width": 320,
+      "pageWidth": 320,
+      "overflows": [],
+      "table": [
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 10541,
+          "tdTop": 10626.265625
+        },
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 10693.265625,
+          "tdTop": 10755.875
+        },
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 10822.875,
+          "tdTop": 10908.140625
+        },
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 10997.53125,
+          "tdTop": 11060.140625
+        },
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 11149.53125,
+          "tdTop": 11234.796875
+        },
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 13696.53125,
+          "tdTop": 13781.796875
+        },
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 13848.796875,
+          "tdTop": 13956.71875
+        },
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 14046.109375,
+          "tdTop": 14154.03125
+        },
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 14243.421875,
+          "tdTop": 14351.34375
+        },
+        {
+          "rowWidth": 278,
+          "thWidth": 251.34375,
+          "tdWidth": 251.34375,
+          "thTop": 14440.734375,
+          "tdTop": 14571.3125
+        }
+      ],
+      "download": [
+        {
+          "width": 225,
+          "display": "inline-block",
+          "text": "Télécharger sur l’App Store",
+          "scroll": 225,
+          "client": 225
+        }
+      ],
+      "fallbackButtons": [
+        {
+          "display": "block",
+          "align": "center",
+          "whiteSpace": "normal",
+          "text": "Créer un plan de remboursement ponctuel (en anglais)"
+        },
+        {
+          "display": "block",
+          "align": "center",
+          "whiteSpace": "normal",
+          "text": "Créer plutôt un plan de remboursement ponctuel (en anglais)"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "overflows": [],
+      "table": [
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 10351.296875,
+          "tdTop": 10420.21875
+        },
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 10493.859375,
+          "tdTop": 10562.78125
+        },
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 10636.421875,
+          "tdTop": 10730.28125
+        },
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 10828.671875,
+          "tdTop": 10897.59375
+        },
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 10971.234375,
+          "tdTop": 11040.15625
+        },
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 13448.359375,
+          "tdTop": 13542.21875
+        },
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 13615.859375,
+          "tdTop": 13709.71875
+        },
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 13808.109375,
+          "tdTop": 13901.96875
+        },
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 14000.359375,
+          "tdTop": 14119.15625
+        },
+        {
+          "rowWidth": 348,
+          "thWidth": 318.6875,
+          "tdWidth": 318.6875,
+          "thTop": 14192.796875,
+          "tdTop": 14336.53125
+        }
+      ],
+      "download": [
+        {
+          "width": 225,
+          "display": "inline-block",
+          "text": "Télécharger sur l’App Store",
+          "scroll": 225,
+          "client": 225
+        }
+      ],
+      "fallbackButtons": [
+        {
+          "display": "block",
+          "align": "center",
+          "whiteSpace": "normal",
+          "text": "Créer un plan de remboursement ponctuel (en anglais)"
+        },
+        {
+          "display": "block",
+          "align": "center",
+          "whiteSpace": "normal",
+          "text": "Créer plutôt un plan de remboursement ponctuel (en anglais)"
+        }
+      ]
+    },
+    {
+      "width": 600,
+      "pageWidth": 600,
+      "overflows": [],
+      "table": [
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 8386.515625,
+          "tdTop": 8455.4375
+        },
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 8529.640625,
+          "tdTop": 8573.625
+        },
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 8647.828125,
+          "tdTop": 8716.75
+        },
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 8790.953125,
+          "tdTop": 8834.9375
+        },
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 8909.140625,
+          "tdTop": 8978.0625
+        },
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 10991.53125,
+          "tdTop": 11060.453125
+        },
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 11134.65625,
+          "tdTop": 11203.578125
+        },
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 11277.78125,
+          "tdTop": 11346.703125
+        },
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 11420.90625,
+          "tdTop": 11489.828125
+        },
+        {
+          "rowWidth": 558,
+          "thWidth": 528.6875,
+          "tdWidth": 528.6875,
+          "thTop": 11564.03125,
+          "tdTop": 11657.890625
+        }
+      ],
+      "download": [
+        {
+          "width": 225,
+          "display": "inline-block",
+          "text": "Télécharger sur l’App Store",
+          "scroll": 225,
+          "client": 225
+        }
+      ],
+      "fallbackButtons": [
+        {
+          "display": "block",
+          "align": "center",
+          "whiteSpace": "normal",
+          "text": "Créer un plan de remboursement ponctuel (en anglais)"
+        },
+        {
+          "display": "block",
+          "align": "center",
+          "whiteSpace": "normal",
+          "text": "Créer plutôt un plan de remboursement ponctuel (en anglais)"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "pageWidth": 1440,
+      "overflows": [],
+      "table": [
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 6517.296875,
+          "tdTop": 6517.296875
+        },
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 6609.046875,
+          "tdTop": 6609.046875
+        },
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 6671.421875,
+          "tdTop": 6671.421875
+        },
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 6763.171875,
+          "tdTop": 6763.171875
+        },
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 6825.546875,
+          "tdTop": 6825.546875
+        },
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 8824.71875,
+          "tdTop": 8824.71875
+        },
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 8916.46875,
+          "tdTop": 8916.46875
+        },
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 9008.21875,
+          "tdTop": 9008.21875
+        },
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 9099.96875,
+          "tdTop": 9099.96875
+        },
+        {
+          "rowWidth": 1342,
+          "thWidth": 671,
+          "tdWidth": 671,
+          "thTop": 9191.71875,
+          "tdTop": 9191.71875
+        }
+      ],
+      "download": [
+        {
+          "width": 225,
+          "display": "inline-block",
+          "text": "Télécharger sur l’App Store",
+          "scroll": 225,
+          "client": 225
+        }
+      ],
+      "fallbackButtons": [
+        {
+          "display": "block",
+          "align": "center",
+          "whiteSpace": "normal",
+          "text": "Créer un plan de remboursement ponctuel (en anglais)"
+        },
+        {
+          "display": "block",
+          "align": "center",
+          "whiteSpace": "normal",
+          "text": "Créer plutôt un plan de remboursement ponctuel (en anglais)"
+        }
+      ]
+    }
+  ]
+}
