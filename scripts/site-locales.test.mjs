@@ -18,7 +18,7 @@ test("only completed translations join the registry and have substantive public 
     assert.equal(Boolean(entry), page.complete);
     if (!page.complete) continue;
     const html = fs.readFileSync(new URL(`..${route}index.html`, import.meta.url), "utf8");
-    assert.match(html, new RegExp(`<html lang="${locale.code}">`));
+    assert.match(html, new RegExp(`<html lang="${locale.code}"${locale.code === "ar" ? ' dir="rtl"' : ""}>`));
     assert.ok(html.includes(`rel="canonical" href="https://you-owe-me.com${route}"`));
     assert.match(html, /<h1\b/);
     assert.ok(html.replace(/<[^>]+>/g, "").length > 2000);
@@ -27,7 +27,7 @@ test("only completed translations join the registry and have substantive public 
     }
     const english = fs.readFileSync(new URL(`..${page.en}index.html`, import.meta.url), "utf8");
     assert.ok(english.includes(`hreflang="${locale.code}" href="https://you-owe-me.com${route}"`));
-    assert.match(html, new RegExp(`<a href="${page.en}" lang="en" hreflang="en">English</a>`));
+    assert.match(html, new RegExp(`<a href="${page.en}" lang="en"${locale.code === "ar" ? ' dir="ltr"' : ""} hreflang="en">English</a>`));
     assert.equal(entry.appStoreCpp, "general");
     assert.equal(entry.translationOf, page.en);
     assert.ok(html.includes("<!-- localized-next-step:start -->") && html.includes("<!-- localized-next-step:end -->"));
@@ -59,7 +59,7 @@ test("English page content differs from the accepted base only by explicit local
 });
 
 test("locale routes are unique, stable and contain no financial inputs", () => {
-  assert.deepEqual(siteLocales.map(locale => locale.code), ["en", "es", "de"]);
+  assert.deepEqual(siteLocales.map(locale => locale.code), ["en", "es", "de", "ar"]);
   const routes = siteLocales.flatMap(locale => locale.pages.map(page => page[locale.code]));
   assert.equal(new Set(routes).size, routes.length);
   for (const locale of siteLocales) for (const page of locale.pages) {
@@ -162,7 +162,7 @@ test("analytics preserves English metadata and maps only completed localized rou
   const baseline = execFileSync("git", ["show", "bfd69d7:scripts/analytics.js"], { encoding: "utf8" });
   const metadata = source.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0];
   assert.equal(metadata, baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
-  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=locales20261020"/);
+  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=ar20261020"/);
   const functions = source.match(/function normalizePath\(path\) \{[\s\S]*?\nfunction sanitizeText/)[0].replace(/\nfunction sanitizeText$/, "");
   const context = { window: { location: { pathname: "/" } }, localizedSourceRoute: route => localizedSourceRoute(route, threeLocales()) };
   vm.createContext(context);

@@ -182,7 +182,7 @@ export function auditHtmlForRoute(route, html) {
     if (authoredRenderTargetCount !== 0) {
       errors.push(`${normalizedRoute}: rendered targets must be created only by the shared component`);
     }
-    const expectedLanguage = normalizedRoute.startsWith("/de/") ? "de" : normalizedRoute.startsWith("/es/") ? "es" : "en";
+    const expectedLanguage = normalizedRoute.startsWith("/ar/") ? "ar" : normalizedRoute.startsWith("/de/") ? "de" : normalizedRoute.startsWith("/es/") ? "es" : "en";
     if (!new RegExp(`<html\\b[^>]*\\blang=["']${expectedLanguage}["']`, "i").test(html)) {
       errors.push(`${normalizedRoute}: the document language must be ${expectedLanguage}`);
     }

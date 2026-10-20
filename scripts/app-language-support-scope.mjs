@@ -14,6 +14,7 @@ export const INCLUDED_EXACT_ROUTES = new Set([
 export const INCLUDED_ROUTE_PREFIXES = Object.freeze([
   "/es/",
   "/de/",
+  "/ar/",
   "/blog/",
   "/solutions/",
   "/tools/",

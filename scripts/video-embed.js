@@ -36,7 +36,7 @@
     iframe.src = src;
     iframe.title =
       link.getAttribute("data-video-title") ||
-      (document.documentElement.lang === "de" ? "Eingebettetes YouTube-Video" : document.documentElement.lang === "es" ? "Vídeo de YouTube" : "Embedded YouTube video");
+      (document.documentElement.lang === "ar" ? "فيديو YouTube مضمّن" : document.documentElement.lang === "de" ? "Eingebettetes YouTube-Video" : document.documentElement.lang === "es" ? "Vídeo de YouTube" : "Embedded YouTube video");
     if (link.hasAttribute("aria-describedby")) {
       iframe.setAttribute(
         "aria-describedby",

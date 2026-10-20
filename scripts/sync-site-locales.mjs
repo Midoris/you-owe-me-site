@@ -18,7 +18,7 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
   const alternates = `\n    <!-- locale-alternates:start -->\n${[...counterparts, { code: "x-default", route: englishRoute }].map(({ code, route }) => `    <link rel="alternate" hreflang="${code}" href="${localeOrigin}${route}" />`).join("\n")}\n    <!-- locale-alternates:end -->`;
   html = html.replace(/<link rel="canonical"[^>]*>/, match => match + alternates);
   html = html.replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "");
-  const switchLinks = counterparts.map(({ code, route }) => `<a href="${route}" lang="${code}" hreflang="${code}"${lang === code ? ' aria-current="page"' : ""}>${locales.find(locale => locale.code === code).label}</a>`).join('<span aria-hidden="true"> · </span>');
+  const switchLinks = counterparts.map(({ code, route }) => `<a href="${route}" lang="${code}"${code === "ar" ? ' dir="rtl"' : lang === "ar" ? ' dir="ltr"' : ""} hreflang="${code}"${lang === code ? ' aria-current="page"' : ""}>${locales.find(locale => locale.code === code).label}</a>`).join('<span aria-hidden="true"> · </span>');
   const switcher = `\n        <!-- locale-switch:start -->\n        <li class="site-language-switch" aria-label="${esc(locale.shared.languageLabel)}">${switchLinks}</li>\n        <!-- locale-switch:end -->`;
   html = html.replace(/(<div id="copyright">\s*<ul>)/, "$1" + switcher);
   if (lang === "en") return html;

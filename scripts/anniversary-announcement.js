@@ -104,6 +104,21 @@
     }),
   });
 
+  const ARABIC_ACTIVE_STATES = Object.freeze({
+    inactive: Object.freeze({}),
+    active: Object.freeze({
+      standard: Object.freeze({ eyebrow: "2016–2026", heading: "مرّت 10 سنوات على You Owe Me.",
+        body: "اكتشف عشر سنوات من مساعدة الناس على توضيح حساباتهم. يمكن لمستخدمي النسخة المجانية المؤهلين أيضاً العثور على عرض ترقية لفترة محدودة بمناسبة الذكرى السنوية داخل التطبيق حتى 4 سبتمبر.",
+        cta: "اكتشف قصة السنوات العشر (بالإنجليزية)" }),
+      inline: Object.freeze({ label: "الذكرى السنوية", body: "مرّت 10 سنوات على You Owe Me. يتوفر عرض الذكرى السنوية داخل التطبيق لمستخدمي النسخة المجانية المؤهلين حتى 4 سبتمبر." }),
+    }),
+    final: Object.freeze({
+      standard: Object.freeze({ eyebrow: "الأيام الأخيرة", heading: "ينتهي عرض الذكرى السنوية في 4 سبتمبر.",
+        body: "ستظل قصة السنوات العشر متاحة. إذا كنت من مستخدمي النسخة المجانية المؤهلين، فستجد عرض الترقية لفترة محدودة داخل التطبيق حتى 4 سبتمبر.",
+        cta: "اكتشف قصة الذكرى السنوية (بالإنجليزية)" }),
+      inline: Object.freeze({ label: "الأيام الأخيرة", body: "ينتهي عرض الذكرى السنوية لمستخدمي النسخة المجانية المؤهلين في 4 سبتمبر. وستظل قصة السنوات العشر متاحة." }),
+    }),
+  });
   function localDateKey(date) {
     if (!date || typeof date.getFullYear !== "function" || Number.isNaN(date.getTime())) {
       return null;
@@ -139,7 +154,7 @@
     if (typeof moduleElement.querySelector !== "function") return false;
 
     const variant = moduleElement.getAttribute("data-anniversary-variant");
-    const states = documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
+    const states = documentObject?.documentElement?.lang === "ar" ? ARABIC_ACTIVE_STATES : documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
     const state = states[safePhase][variant];
     if (!state) {
       moduleElement.hidden = true;

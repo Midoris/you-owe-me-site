@@ -24,6 +24,12 @@
     "New Year": "Neujahr", "Valentine's Day": "Valentinstag", Easter: "Ostern",
     Halloween: "Halloween", "Singles' Day": "Singles’ Day", Thanksgiving: "Thanksgiving",
   });
+  const ARABIC_SALE_NAMES = Object.freeze({
+    Debug: "اختبار", "Father's Day": "عيد الأب في الولايات المتحدة", "Independence Day": "عيد الاستقلال الأمريكي",
+    "Black Friday": "الجمعة السوداء", "Cyber Monday": "الاثنين الإلكتروني", Christmas: "عيد الميلاد",
+    "New Year": "رأس السنة", "Valentine's Day": "عيد الحب", Easter: "عيد الفصح",
+    Halloween: "هالوين", "Singles' Day": "يوم العزّاب", Thanksgiving: "عيد الشكر الأمريكي",
+  });
   let currentActiveSale = null;
 
   /**
@@ -229,6 +235,7 @@
   }
 
   function saleBadgeLabel(sale) {
+    if (document.documentElement?.lang === "ar") return sale ? ARABIC_SALE_NAMES[sale.saleName] + " • عرض لفترة محدودة" : "";
     if (document.documentElement?.lang === "de") {
       return sale ? GERMAN_SALE_NAMES[sale.saleName] + " • Zeitlich begrenztes Angebot" : "";
     }
@@ -255,7 +262,9 @@
     badges.forEach((badge) => {
       badge.hidden = false;
       badge.textContent = label;
-      badge.setAttribute("aria-label", document.documentElement?.lang === "de"
+      badge.setAttribute("aria-label", document.documentElement?.lang === "ar"
+        ? "عرض سارٍ: " + ARABIC_SALE_NAMES[sale.saleName]
+        : document.documentElement?.lang === "de"
         ? "Aktives Angebot: " + GERMAN_SALE_NAMES[sale.saleName]
         : document.documentElement?.lang === "es"
         ? "Oferta activa: " + SPANISH_SALE_NAMES[sale.saleName]

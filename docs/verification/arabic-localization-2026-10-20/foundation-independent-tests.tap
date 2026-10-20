@@ -1,0 +1,262 @@
+TAP version 13
+# Subtest: Spanish announcements translate active/final states and label the English story
+ok 1 - Spanish announcements translate active/final states and label the English story
+  ---
+  duration_ms: 1.25825
+  type: 'test'
+  ...
+# Subtest: campaign dates resolve using local calendar boundaries
+ok 2 - campaign dates resolve using local calendar boundaries
+  ---
+  duration_ms: 0.125708
+  type: 'test'
+  ...
+# Subtest: active standard state uses the exact copy and destination
+ok 3 - active standard state uses the exact copy and destination
+  ---
+  duration_ms: 0.107333
+  type: 'test'
+  ...
+# Subtest: final standard state uses the exact copy and destination
+ok 4 - final standard state uses the exact copy and destination
+  ---
+  duration_ms: 0.05625
+  type: 'test'
+  ...
+# Subtest: active and final inline states use the exact copy
+ok 5 - active and final inline states use the exact copy
+  ---
+  duration_ms: 0.591292
+  type: 'test'
+  ...
+# Subtest: inactive restores hidden and aria-hidden after a visible phase
+ok 6 - inactive restores hidden and aria-hidden after a visible phase
+  ---
+  duration_ms: 0.069375
+  type: 'test'
+  ...
+# Subtest: render updates multiple modules
+ok 7 - render updates multiple modules
+  ---
+  duration_ms: 0.1265
+  type: 'test'
+  ...
+# Subtest: missing optional nodes fail safely
+ok 8 - missing optional nodes fail safely
+  ---
+  duration_ms: 0.096417
+  type: 'test'
+  ...
+# Subtest: initialize uses the injected timer seam once after DOM readiness
+ok 9 - initialize uses the injected timer seam once after DOM readiness
+  ---
+  duration_ms: 0.303958
+  type: 'test'
+  ...
+# Subtest: German announcements translate active/final states and label the English story
+ok 10 - German announcements translate active/final states and label the English story
+  ---
+  duration_ms: 0.309417
+  type: 'test'
+  ...
+# Subtest: Spanish publications use Spanish regardless of browser language and link to the Spanish home
+ok 11 - Spanish publications use Spanish regardless of browser language and link to the Spanish home
+  ---
+  duration_ms: 0.76875
+  type: 'test'
+  ...
+# Subtest: normalizes valid locale variants and rejects malformed input
+ok 12 - normalizes valid locale variants and rejects malformed input
+  ---
+  duration_ms: 6.238167
+  type: 'test'
+  ...
+# Subtest: uses only the primary browser language and falls back to navigator.language
+ok 13 - uses only the primary browser language and falls back to navigator.language
+  ---
+  duration_ms: 0.0925
+  type: 'test'
+  ...
+# Subtest: the visual-QA locale override works only on local development hosts
+ok 14 - the visual-QA locale override works only on local development hosts
+  ---
+  duration_ms: 0.154209
+  type: 'test'
+  ...
+# Subtest: local preview takes precedence without changing production detection
+ok 15 - local preview takes precedence without changing production detection
+  ---
+  duration_ms: 0.159167
+  type: 'test'
+  ...
+# Subtest: matches all supported non-English regional variants
+ok 16 - matches all supported non-English regional variants
+  ---
+  duration_ms: 0.230334
+  type: 'test'
+  ...
+# Subtest: suppresses English, unsupported, blank, and malformed languages
+ok 17 - suppresses English, unsupported, blank, and malformed languages
+  ---
+  duration_ms: 0.113875
+  type: 'test'
+  ...
+# Subtest: provides the exact localized copy for every supported non-English language
+ok 18 - provides the exact localized copy for every supported non-English language
+  ---
+  duration_ms: 0.349458
+  type: 'test'
+  ...
+# Subtest: renders one passive localized label and is idempotent
+ok 19 - renders one passive localized label and is idempotent
+  ---
+  duration_ms: 0.293042
+  type: 'test'
+  ...
+# Subtest: renders Arabic with rtl direction and an isolated product name
+ok 20 - renders Arabic with rtl direction and an isolated product name
+  ---
+  duration_ms: 0.291417
+  type: 'test'
+  ...
+# Subtest: does not render for English, unsupported languages, or a missing target
+ok 21 - does not render for English, unsupported languages, or a missing target
+  ---
+  duration_ms: 0.160708
+  type: 'test'
+  ...
+# Subtest: never renders into navigation or sticky UI
+ok 22 - never renders into navigation or sticky UI
+  ---
+  duration_ms: 0.047541
+  type: 'test'
+  ...
+# Subtest: initializes safely both before and after DOMContentLoaded
+ok 23 - initializes safely both before and after DOMContentLoaded
+  ---
+  duration_ms: 0.095958
+  type: 'test'
+  ...
+# Subtest: rendering never reads or mutates links and does not require analytics
+ok 24 - rendering never reads or mutates links and does not require analytics
+  ---
+  duration_ms: 0.147708
+  type: 'test'
+  ...
+# Subtest: the production component contains no tracking, storage, network, or debug hooks
+ok 25 - the production component contains no tracking, storage, network, or debug hooks
+  ---
+  duration_ms: 0.228292
+  type: 'test'
+  ...
+# Subtest: German publications use German regardless of browser language and link to the German home
+ok 26 - German publications use German regardless of browser language and link to the German home
+  ---
+  duration_ms: 0.044958
+  type: 'test'
+  ...
+# Subtest: a reviewed RTL counterpart isolates language links without reordering authored content
+ok 27 - a reviewed RTL counterpart isolates language links without reordering authored content
+  ---
+  duration_ms: 2.606583
+  type: 'test'
+  ...
+# Subtest: an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+ok 28 - an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+  ---
+  duration_ms: 0.464042
+  type: 'test'
+  ...
+# Subtest: German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+ok 29 - German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+  ---
+  duration_ms: 83.977791
+  type: 'test'
+  ...
+# Subtest: Arabic sale presentation preserves campaign IDs, timing and event privacy
+ok 30 - Arabic sale presentation preserves campaign IDs, timing and event privacy
+  ---
+  duration_ms: 3.567291
+  type: 'test'
+  ...
+# Subtest: Spanish sale labels preserve the campaign identity, dates and emitted English state
+ok 31 - Spanish sale labels preserve the campaign identity, dates and emitted English state
+  ---
+  duration_ms: 3.924041
+  type: 'test'
+  ...
+# Subtest: Spanish sale badges remain hidden outside an active campaign
+ok 32 - Spanish sale badges remain hidden outside an active campaign
+  ---
+  duration_ms: 0.383458
+  type: 'test'
+  ...
+# Subtest: German sale labels preserve campaigns, dates and analytics state
+ok 33 - German sale labels preserve campaigns, dates and analytics state
+  ---
+  duration_ms: 2.410583
+  type: 'test'
+  ...
+# Subtest: only completed translations join the registry and have substantive public HTML
+ok 34 - only completed translations join the registry and have substantive public HTML
+  ---
+  duration_ms: 7.871209
+  type: 'test'
+  ...
+# Subtest: English page content differs from the accepted base only by explicit locale links
+ok 35 - English page content differs from the accepted base only by explicit locale links
+  ---
+  duration_ms: 76.464666
+  type: 'test'
+  ...
+# Subtest: locale routes are unique, stable and contain no financial inputs
+ok 36 - locale routes are unique, stable and contain no financial inputs
+  ---
+  duration_ms: 0.719375
+  type: 'test'
+  ...
+# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release
+ok 37 - Spanish authored HTML stays byte-for-byte intact from the accepted public release
+  ---
+  duration_ms: 80.189542
+  type: 'test'
+  ...
+# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out
+ok 38 - one generator produces reciprocal three-language switches and leaves planned pages out
+  ---
+  duration_ms: 1.920042
+  type: 'test'
+  ...
+# Subtest: German registry inherits source routing without linking to unfinished locale pages
+ok 39 - German registry inherits source routing without linking to unfinished locale pages
+  ---
+  duration_ms: 0.127417
+  type: 'test'
+  ...
+# Subtest: unreviewed German routes do not enter public discovery or runtime matching
+ok 40 - unreviewed German routes do not enter public discovery or runtime matching
+  ---
+  duration_ms: 0.256291
+  type: 'test'
+  ...
+# Subtest: a missing reviewed counterpart fails before any existing page is changed
+ok 41 - a missing reviewed counterpart fails before any existing page is changed
+  ---
+  duration_ms: 1.308208
+  type: 'test'
+  ...
+# Subtest: analytics preserves English metadata and maps only completed localized routes
+ok 42 - analytics preserves English metadata and maps only completed localized routes
+  ---
+  duration_ms: 15.7365
+  type: 'test'
+  ...
+1..42
+# tests 42
+# suites 0
+# pass 42
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 232.2365

@@ -79,6 +79,8 @@ function normalizeRelative(filePath) {
 }
 
 function preferredCssFiles(input, bodyClass, cssFiles) {
+  // Short locale roots can accidentally substring-match auxiliary CSS names.
+  if (bodyClass === "homepage-page") return cssFiles.filter(cssPath => path.basename(cssPath) === "landing.css");
   const routeSlug = input
     .replace(/^\/|\/$/g, "")
     .split("/")

@@ -6,23 +6,23 @@
 .site-locale-example__label { font:700 .8rem/1.5 "Source Sans Pro",sans-serif; letter-spacing:.02em; margin:0 0 1rem; color:rgba(33, 41, 49, 0.88); }
 .site-locale-example strong { display:block; color:#18212b; font:900 clamp(1.2rem,3vw,1.8rem)/1.25 "Source Sans Pro",sans-serif; margin-bottom:1rem; }
 .site-locale-example ul { padding-left:1.2rem; margin:0; }
-html:is([lang="es"],[lang="de"]) body .site-locale-store-link.lt-appStoreBtn { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding: .8rem 1.3rem; border-radius:12px; background:#afe67e; color:#18212b!important; font:900 1rem/1.3 "Source Sans Pro",sans-serif; white-space:normal; text-align:center; height:auto; }
-html:is([lang="es"],[lang="de"]) body .site-locale-store-link.lt-appStoreBtn:hover { background:#bcf18c; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) body .site-locale-store-link.lt-appStoreBtn { display:inline-flex; align-items:center; justify-content:center; min-height:54px; padding: .8rem 1.3rem; border-radius:12px; background:#afe67e; color:#18212b!important; font:900 1rem/1.3 "Source Sans Pro",sans-serif; white-space:normal; text-align:center; height:auto; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) body .site-locale-store-link.lt-appStoreBtn:hover { background:#bcf18c; }
 .site-locale-store-link:focus-visible,:is(.site-spanish-section,.site-locale-section) a:focus-visible { outline:3px solid rgba(53, 84, 40, 0.32); outline-offset:3px; }
-html:is([lang="es"],[lang="de"]) .lt-appStoreBtn { max-width:100%; }
-html:is([lang="es"],[lang="de"]) .site-language-switch a { white-space:nowrap; }
-html:is([lang="es"],[lang="de"]) body.money-owed-record-page .actions.lt-actions { flex-wrap:wrap; gap:.8rem; }
-html:is([lang="es"],[lang="de"]) body.money-owed-record-page .actions.lt-actions > li { min-width:0; max-width:100%; padding:0; }
-html:is([lang="es"],[lang="de"]) body.money-owed-record-page .actions.lt-actions .button { white-space:normal; height:auto; line-height:1.4; padding:.85rem 1.25rem; }
-html:is([lang="es"],[lang="de"]) body.money-owed-record-page .mow-hero > .site-locale-example { align-self:center; }
-html:is([lang="es"],[lang="de"]) .plrt-record-once__results dt,
-html:is([lang="es"],[lang="de"]) .plrt-table th { min-width:0; overflow-wrap:anywhere; }
-html:is([lang="es"],[lang="de"]) .split-calculator .calculator-input,
-html:is([lang="es"],[lang="de"]) .split-calculator .calculator-select { box-sizing:border-box; min-width:0; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) .lt-appStoreBtn { max-width:100%; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) .site-language-switch a { white-space:nowrap; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) body.money-owed-record-page .actions.lt-actions { flex-wrap:wrap; gap:.8rem; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) body.money-owed-record-page .actions.lt-actions > li { min-width:0; max-width:100%; padding:0; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) body.money-owed-record-page .actions.lt-actions .button { white-space:normal; height:auto; line-height:1.4; padding:.85rem 1.25rem; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) body.money-owed-record-page .mow-hero > .site-locale-example { align-self:center; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) .plrt-record-once__results dt,
+html:is([lang="es"],[lang="de"],[lang="ar"]) .plrt-table th { min-width:0; overflow-wrap:anywhere; }
+html:is([lang="es"],[lang="de"],[lang="ar"]) .split-calculator .calculator-input,
+html:is([lang="es"],[lang="de"],[lang="ar"]) .split-calculator .calculator-select { box-sizing:border-box; min-width:0; }
 @media(max-width:736px) { :is(.site-spanish-section,.site-locale-section) { font-size:.8rem; } }
 /* Text examples need the whole card width where English used narrow screenshots. */
 @media(max-width:736px) {
-  html:is([lang="es"],[lang="de"]) body.homepage-page .lt-coreFeatureCard { grid-template-columns:minmax(0,1fr); }
+  html:is([lang="es"],[lang="de"],[lang="ar"]) body.homepage-page .lt-coreFeatureCard { grid-template-columns:minmax(0,1fr); }
 }
 
 html[lang="de"] #main { overflow-wrap:break-word; }
@@ -30,3 +30,41 @@ html[lang="de"] #main { overflow-wrap:break-word; }
 @media(max-width:980px) {
   html[lang="de"] body:not(.homepage-page) .site-locale-section { padding-top:3rem; }
 }
+
+/* Arabic has a semantic HTML base direction. These overrides adapt legacy
+   physical alignment without reversing source/focus order or bitmap assets. */
+html[lang="ar"] body, html[lang="ar"] input, html[lang="ar"] select,
+html[lang="ar"] textarea, html[lang="ar"] button {
+  font-family: "Geeza Pro", "Noto Naskh Arabic", Tahoma, Arial, sans-serif;
+}
+html[lang="ar"] body { line-height: 1.9; }
+html[lang="ar"] :is(h1,h2,h3,h4,h5,h6,.button,button,label,#nav,#navPanel,.site-locale-section,.site-locale-example__label) {
+  letter-spacing: normal; text-transform: none; line-height: 1.65;
+}
+html[lang="ar"] :is(#main,.site-locale-example,.lt-heroCopy,.lt-featureCopy,.plrt-table th,.plrt-table td) { text-align: start; }
+html[lang="ar"] :is(p,li,dd,dt,a,button,label) { overflow-wrap: break-word; }
+html[lang="ar"] :is(ul,ol):not(.links,.actions,.icons) { padding-inline-start: 1.25rem; padding-inline-end: 0; }
+html[lang="ar"] .site-language-switch { unicode-bidi: isolate; }
+html[lang="ar"] .site-language-switch a { unicode-bidi: isolate; display: inline-block; }
+html[lang="ar"] :is(.site-locale-example,.site-locale-section) { font-family: inherit; }
+html[lang="ar"] .site-locale-example strong { font-family: inherit; line-height: 1.65; }
+html[lang="ar"] .site-locale-example__label { font-family: inherit; }
+html[lang="ar"] :is(input,select,button,.button) { max-inline-size: 100%; }
+html[lang="ar"] :is(th,td) { text-align: start; }
+html[lang="ar"] bdi { unicode-bidi: isolate; }
+html[lang="ar"] :is(.button,button) { white-space: normal; height: auto; min-height: 44px; }
+@media(max-width:980px) {
+  html[lang="ar"] body:not(.homepage-page) .site-locale-section { padding-block-start: 3rem; }
+}
+/* The retained English landing/content rules set fonts and physical alignment
+   on descendants. Override those explicitly only within Arabic documents. */
+html[lang="ar"] body * { letter-spacing: normal !important; text-transform: none !important; }
+html[lang="ar"] body :is(h1,h2,h3,h4,h5,h6,p,a,label,button,input,select,textarea,li,dt,dd,th,td,summary,strong,span) {
+  font-family: "Geeza Pro", "Noto Naskh Arabic", Tahoma, Arial, sans-serif !important;
+}
+html[lang="ar"] body #main :is(h1,h2,h3,h4,h5,h6,p,li,dt,dd,th,td) { text-align: start !important; }
+html[lang="ar"] body :is(h1,h2,h3,h4,h5,h6) { line-height: 1.65 !important; }
+html[lang="ar"] body :is(p,li,dt,dd,label,summary) { line-height: 1.9; }
+html[lang="ar"] body .site-locale-store-link.lt-appStoreBtn { gap: .35em; }
+html[lang="ar"] body #main :is(.lt-cardCta,.lt-textCta) { display: inline-block; line-height: 1.7; }
+html[lang="ar"] body #main :is(p,li,dt,dd,label,summary) { line-height: 1.9 !important; }

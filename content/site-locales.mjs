@@ -5,17 +5,17 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "locales20261020",
-  "/scripts/sales.js": "locales20261020",
-  "/scripts/anniversary-announcement.js": "locales20261020",
-  "/scripts/app-language-support.js": "locales20261020",
-  "/scripts/video-embed.js": "locales20261020",
-  "/assets/js/main.js": "locales20261020",
-  "/styles/site-locale.css": "locales20261020",
-  "/scripts/recordkeeping-guide-es.js": "locales20261020",
-  "/scripts/split-expense-locale.js": "locales20261020",
-  "/scripts/split-expense-calculator.js": "locales20261020",
-  "/scripts/tool-transfer.js": "locales20261020",
+  "/scripts/analytics.js": "ar20261020",
+  "/scripts/sales.js": "ar20261020",
+  "/scripts/anniversary-announcement.js": "ar20261020",
+  "/scripts/app-language-support.js": "ar20261020",
+  "/scripts/video-embed.js": "ar20261020",
+  "/assets/js/main.js": "ar20261020",
+  "/styles/site-locale.css": "ar20261020",
+  "/scripts/recordkeeping-guide-es.js": "ar20261020",
+  "/scripts/split-expense-locale.js": "ar20261020",
+  "/scripts/split-expense-calculator.js": "ar20261020",
+  "/scripts/tool-transfer.js": "ar20261020",
 };
 export const spanishVersionedAssets = [
   "/scripts/analytics.js", "/scripts/sales.js", "/scripts/anniversary-announcement.js",
@@ -69,10 +69,29 @@ export const germanShared = Object.freeze({
 
 // Spanish names remain public compatibility exports. All generation consumes
 // this common configuration, so adding a locale never needs another generator.
+export const arabicPages = [
+  { en: "/", ar: "/ar/", title: "You Owe Me: تابع الديون والقروض والمصروفات", complete: false },
+  { en: "/solutions/app-to-track-money-owed/", ar: "/ar/solutions/app-to-track-money-owed/", title: "تطبيق لتتبّع المبالغ المستحقة لك", complete: false },
+  { en: "/blog/how-to-keep-track-of-who-owes-you-money/", ar: "/ar/blog/how-to-keep-track-of-who-owes-you-money/", title: "كيف تتابع من يدين لك بالمال", complete: false },
+  { en: "/solutions/personal-loan-repayment-tracker/", ar: "/ar/solutions/personal-loan-repayment-tracker/", title: "تتبّع القروض الشخصية وسدادها", complete: false },
+  { en: "/tools/split-expense-calculator/", ar: "/ar/tools/split-expense-calculator/", title: "حاسبة تقسيم المصروفات المشتركة", complete: false },
+];
+export const arabicShared = Object.freeze({
+  languageLabel: "لغة الصفحة", exampleLabel: "مثال توضيحي؛ ليس لقطة شاشة من التطبيق",
+  englishFallback: "بالإنجليزية", storeLabel: "تنزيل من App Store",
+  navigation: { home: "الرئيسية", solutions: "الحلول", features: "المزايا", reviews: "التقييمات", tools: "الأدوات", compare: "المقارنة", blog: "المدونة" },
+  footer: { "/privacy-and-data/": "الخصوصية والبيانات", "/privacy-policy/": "سياسة الخصوصية", "/contact/": "التواصل" },
+  sectionLabel: "صفحات بالعربية",
+  discoveryDescription: "محتوى عام باللغة العربية. لكل صفحة رابط أساسي مستقل، وتُميّز الروابط التي تقود إلى موارد متاحة بالإنجليزية فقط.",
+  primaryAudience: "لمن يريد سجلاً واضحاً للمبالغ المستحقة والقروض والمصروفات المشتركة.",
+  useWhen: "لقراءة هذه الصفحة بالعربية واختيار الخطوة التالية.",
+  nextStep: "اطّلع على الموارد ذات الصلة أو تابع في You Owe Me على iPhone.",
+});
 export const siteLocales = [
   { code: "en", label: "English", home: "/", pages: [], shared: { languageLabel: "Page language" } },
   { code: "es", label: "Español", home: "/es/", pages: spanishPages, shared: spanishShared, assetVersion: spanishAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "spanish", sectionClass: "site-spanish-section", nextStepComment: "Spanish next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Spanish next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "de", label: "Deutsch", home: "/de/", pages: germanPages, shared: germanShared, assetVersion: germanAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "german", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
+  { code: "ar", label: "العربية", direction: "rtl", home: "/ar/", pages: arabicPages, shared: arabicShared, assetVersion: "ar20261020", versionedAssets: spanishVersionedAssets, sectionMarker: "arabic", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
 ];
 
 export function localeAssetVersion(locale, asset) {
