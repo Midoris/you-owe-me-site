@@ -1,0 +1,23 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "threeLanguageSwitches": true,
+      "effectiveLiveCsp": true,
+      "noReferenceSupplied": true,
+      "noFinancialTransfer": true,
+      "noOverflow": true,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "threeLanguageSwitches": true,
+      "effectiveLiveCsp": true,
+      "noReferenceSupplied": true,
+      "noFinancialTransfer": true,
+      "noOverflow": true,
+      "errors": []
+    }
+  ]
+}

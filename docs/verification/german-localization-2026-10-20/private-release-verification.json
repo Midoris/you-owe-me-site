@@ -1,0 +1,30 @@
+{
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T06:15:57.351122+00:00",
+  "resources": [
+    {
+      "url": "https://continue.you-owe-me.com/split/",
+      "status": 200,
+      "sameReviewedBytes": true,
+      "sha256": "3241c2e59e75f2040070745827c0796e57baea1acee4fcd4547849d173293b39",
+      "headers": {
+        "cache-control": "no-store",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+      }
+    },
+    {
+      "url": "https://continue.you-owe-me.com/split/locale.js?v=de20261020",
+      "status": 200,
+      "sameReviewedBytes": true,
+      "sha256": "b1591aea5af9ac22d7db420b090b19aa7e42a9eee0c2abde35a2655813834f8f",
+      "headers": {
+        "cache-control": "no-store",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+      }
+    }
+  ]
+}

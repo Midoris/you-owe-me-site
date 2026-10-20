@@ -1,0 +1,12 @@
+{
+  "status": "released",
+  "target": "tool-continuation",
+  "project": "you-owe-me-app",
+  "verifiedAtUTC": "2026-10-20T06:14:53.722394+00:00",
+  "cliResult": {
+    "status": "success",
+    "result": {
+      "hosting": "projects/1056899447246/sites/you-owe-me-tool-continuation/versions/6330fc32550347ef"
+    }
+  }
+}

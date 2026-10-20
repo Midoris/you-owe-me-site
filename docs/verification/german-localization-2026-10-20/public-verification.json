@@ -1,0 +1,1653 @@
+{
+  "verifiedAtUTC": "2026-10-20T06:20:11.958290+00:00",
+  "gitCommit": "7053aeca8a76b92412f698bc2774496cdb845b57",
+  "allPassed": true,
+  "pages": [
+    {
+      "url": "https://you-owe-me.com/",
+      "finalUrl": "https://you-owe-me.com/",
+      "status": 200,
+      "sha256": "cfd0d5b280f706e0b5099c3cb63b7f9cb189a0c649fe72683db27bb13c7cbfc9",
+      "bytes": 71850,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "en",
+      "canonical": "https://you-owe-me.com/",
+      "alternates": {
+        "en": "https://you-owe-me.com/",
+        "es": "https://you-owe-me.com/es/",
+        "de": "https://you-owe-me.com/de/",
+        "x-default": "https://you-owe-me.com/"
+      },
+      "htmlTextLength": 29568
+    },
+    {
+      "url": "https://you-owe-me.com/es/",
+      "finalUrl": "https://you-owe-me.com/es/",
+      "status": 200,
+      "sha256": "2836e0266eda87f7b043f57920d3bc41c7c2d17a5fca4984dfc1ed9c761583e8",
+      "bytes": 68766,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "es",
+      "canonical": "https://you-owe-me.com/es/",
+      "alternates": {
+        "en": "https://you-owe-me.com/",
+        "es": "https://you-owe-me.com/es/",
+        "de": "https://you-owe-me.com/de/",
+        "x-default": "https://you-owe-me.com/"
+      },
+      "htmlTextLength": 31374
+    },
+    {
+      "url": "https://you-owe-me.com/de/",
+      "finalUrl": "https://you-owe-me.com/de/",
+      "status": 200,
+      "sha256": "5cceb53e1d38e4757d96decc629ed899b4b50773a6ec08c8a696796906527177",
+      "bytes": 69826,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "de",
+      "canonical": "https://you-owe-me.com/de/",
+      "alternates": {
+        "en": "https://you-owe-me.com/",
+        "es": "https://you-owe-me.com/es/",
+        "de": "https://you-owe-me.com/de/",
+        "x-default": "https://you-owe-me.com/"
+      },
+      "htmlTextLength": 32873
+    },
+    {
+      "url": "https://you-owe-me.com/solutions/app-to-track-money-owed/",
+      "finalUrl": "https://you-owe-me.com/solutions/app-to-track-money-owed/",
+      "status": 200,
+      "sha256": "0353d0fe6734b241bb254ec8a904de33bc7a3e550f62561256b8f643cc09b559",
+      "bytes": 71064,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "en",
+      "canonical": "https://you-owe-me.com/solutions/app-to-track-money-owed/",
+      "alternates": {
+        "en": "https://you-owe-me.com/solutions/app-to-track-money-owed/",
+        "es": "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/",
+        "de": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+        "x-default": "https://you-owe-me.com/solutions/app-to-track-money-owed/"
+      },
+      "htmlTextLength": 34689
+    },
+    {
+      "url": "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "finalUrl": "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "status": 200,
+      "sha256": "8e62cb67c53367d2ebbae1d087f62eb9169109ba26bbdac4d3ba99b6454ebb8d",
+      "bytes": 76026,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "es",
+      "canonical": "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "alternates": {
+        "en": "https://you-owe-me.com/solutions/app-to-track-money-owed/",
+        "es": "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/",
+        "de": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+        "x-default": "https://you-owe-me.com/solutions/app-to-track-money-owed/"
+      },
+      "htmlTextLength": 39604
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "finalUrl": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "status": 200,
+      "sha256": "85c5a4c0fbc3c774ba5d365d1456746a084b85a28dbbb570b1906fb3a1a72452",
+      "bytes": 80191,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "de",
+      "canonical": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "alternates": {
+        "en": "https://you-owe-me.com/solutions/app-to-track-money-owed/",
+        "es": "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/",
+        "de": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+        "x-default": "https://you-owe-me.com/solutions/app-to-track-money-owed/"
+      },
+      "htmlTextLength": 40616
+    },
+    {
+      "url": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/",
+      "finalUrl": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/",
+      "status": 200,
+      "sha256": "518bfa1983c286d771e341750b14768ed1df2d59a7e02dea0ecd6df300583320",
+      "bytes": 48782,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "en",
+      "canonical": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/",
+      "alternates": {
+        "en": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/",
+        "es": "https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+        "de": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+        "x-default": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/"
+      },
+      "htmlTextLength": 20332
+    },
+    {
+      "url": "https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "finalUrl": "https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "status": 200,
+      "sha256": "a1e1368f9ed60d51bcb23bc7caad273fd038c33d58692bf87e6ae37f38183b5a",
+      "bytes": 50462,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "es",
+      "canonical": "https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "alternates": {
+        "en": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/",
+        "es": "https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+        "de": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+        "x-default": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/"
+      },
+      "htmlTextLength": 22472
+    },
+    {
+      "url": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "finalUrl": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "status": 200,
+      "sha256": "4d55a1a2d57ef70c649345127f518044a0c6fd3599ae4a2acd7a332c5739c6b3",
+      "bytes": 51090,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "de",
+      "canonical": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "alternates": {
+        "en": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/",
+        "es": "https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+        "de": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+        "x-default": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/"
+      },
+      "htmlTextLength": 23255
+    },
+    {
+      "url": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
+      "finalUrl": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
+      "status": 200,
+      "sha256": "2794ff17ad73fc0c71952962ca2c09547f550ef7559a2b8e9e8a312a2afd2b77",
+      "bytes": 41804,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "en",
+      "canonical": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
+      "alternates": {
+        "en": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
+        "es": "https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/",
+        "de": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+        "x-default": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/"
+      },
+      "htmlTextLength": 19702
+    },
+    {
+      "url": "https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/",
+      "finalUrl": "https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/",
+      "status": 200,
+      "sha256": "358f65d580a1bd2ac60decc7eda5470fdc6f73d7c87d919808041e1238c0e68e",
+      "bytes": 44526,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "es",
+      "canonical": "https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/",
+      "alternates": {
+        "en": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
+        "es": "https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/",
+        "de": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+        "x-default": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/"
+      },
+      "htmlTextLength": 22751
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "finalUrl": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "status": 200,
+      "sha256": "6bcc27d3ea27af745e4841f0ee2849da22da5155f5bb8d5f1a0856c2c85956da",
+      "bytes": 45519,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "de",
+      "canonical": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "alternates": {
+        "en": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
+        "es": "https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/",
+        "de": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+        "x-default": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/"
+      },
+      "htmlTextLength": 23992
+    },
+    {
+      "url": "https://you-owe-me.com/tools/split-expense-calculator/",
+      "finalUrl": "https://you-owe-me.com/tools/split-expense-calculator/",
+      "status": 200,
+      "sha256": "408bac587395df81cbc4a196d9d9ab828971a08f96eea71f1c73aa958f87c262",
+      "bytes": 56700,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "en",
+      "canonical": "https://you-owe-me.com/tools/split-expense-calculator/",
+      "alternates": {
+        "en": "https://you-owe-me.com/tools/split-expense-calculator/",
+        "es": "https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/",
+        "de": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+        "x-default": "https://you-owe-me.com/tools/split-expense-calculator/"
+      },
+      "htmlTextLength": 25606
+    },
+    {
+      "url": "https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/",
+      "finalUrl": "https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/",
+      "status": 200,
+      "sha256": "fa390dbf1ea5a211fea5cc30d5e2a8a8c26418fce753b99923fac5292b2030a2",
+      "bytes": 61014,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "es",
+      "canonical": "https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/",
+      "alternates": {
+        "en": "https://you-owe-me.com/tools/split-expense-calculator/",
+        "es": "https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/",
+        "de": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+        "x-default": "https://you-owe-me.com/tools/split-expense-calculator/"
+      },
+      "htmlTextLength": 29578
+    },
+    {
+      "url": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "finalUrl": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "status": 200,
+      "sha256": "b10dccfdcbc76adc4fae86383eedb17beb88984264c55b42461582c07f89fb8e",
+      "bytes": 61389,
+      "headers": {
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:02 GMT"
+      },
+      "lang": "de",
+      "canonical": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "alternates": {
+        "en": "https://you-owe-me.com/tools/split-expense-calculator/",
+        "es": "https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/",
+        "de": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+        "x-default": "https://you-owe-me.com/tools/split-expense-calculator/"
+      },
+      "htmlTextLength": 30078
+    }
+  ],
+  "assets": [
+    {
+      "url": "https://you-owe-me.com/assets/css/fontawesome-all.min.css",
+      "finalUrl": "https://you-owe-me.com/assets/css/fontawesome-all.min.css",
+      "status": 200,
+      "sha256": "533143d96607d94d5d4292838e364aef656d3de58fe74368263776eab9c07542",
+      "bytes": 55967,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/css/main.css",
+      "finalUrl": "https://you-owe-me.com/assets/css/main.css",
+      "status": 200,
+      "sha256": "8ca1b32dee0e783b2ed964cafeccae2d805e4b28c34e290a090a5527a4b2febd",
+      "bytes": 84027,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/css/noscript.css",
+      "finalUrl": "https://you-owe-me.com/assets/css/noscript.css",
+      "status": 200,
+      "sha256": "f6ba47d7ec9847ac703b128b4a0f37779670836b4914eb71c624193cb745f039",
+      "bytes": 969,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/js/breakpoints.min.js",
+      "finalUrl": "https://you-owe-me.com/assets/js/breakpoints.min.js",
+      "status": 200,
+      "sha256": "309febcd6d6e0cf092201532215f03a6a9f30b30f26203272a4861d704e7cd52",
+      "bytes": 2439,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/js/browser.min.js",
+      "finalUrl": "https://you-owe-me.com/assets/js/browser.min.js",
+      "status": 200,
+      "sha256": "87910d5ed0053d90caf83230a2f1811d8679815da01f7bdec7548e776d7f04c4",
+      "bytes": 1851,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/js/jquery.min.js",
+      "finalUrl": "https://you-owe-me.com/assets/js/jquery.min.js",
+      "status": 200,
+      "sha256": "0925e8ad7bd971391a8b1e98be8e87a6971919eb5b60c196485941c3c1df089a",
+      "bytes": 88145,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/js/jquery.scrollex.min.js",
+      "finalUrl": "https://you-owe-me.com/assets/js/jquery.scrollex.min.js",
+      "status": 200,
+      "sha256": "fc25b75fb3fc8b42756413be387e0d7a602813125283d2384551961d73ea784e",
+      "bytes": 2257,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/js/jquery.scrolly.min.js",
+      "finalUrl": "https://you-owe-me.com/assets/js/jquery.scrolly.min.js",
+      "status": 200,
+      "sha256": "8b6571ea2c3631ff50bb4b96e7f9081c6e33ebaadef9cb2ca5955d5e0b625a02",
+      "bytes": 831,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/js/main.js",
+      "finalUrl": "https://you-owe-me.com/assets/js/main.js",
+      "status": 200,
+      "sha256": "5dceaeb4804b9c4b76dea0d92d4187b5d633dcc15464da07642c6aafb5c0386f",
+      "bytes": 5814,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/js/main.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/assets/js/main.js?v=locales20261020",
+      "status": 200,
+      "sha256": "5dceaeb4804b9c4b76dea0d92d4187b5d633dcc15464da07642c6aafb5c0386f",
+      "bytes": 5814,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/assets/js/util.js",
+      "finalUrl": "https://you-owe-me.com/assets/js/util.js",
+      "status": 200,
+      "sha256": "c2e1e72b0de356f6ce184e3af4fa8ab6590a2581162905a27d77886b2d960e00",
+      "bytes": 12433,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/content/site-locales.mjs?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/content/site-locales.mjs?v=locales20261020",
+      "status": 200,
+      "sha256": "d0d624ac9dbae34dd59b82386e4ade45695b886c404b863bd85d651353b50c38",
+      "bytes": 8504,
+      "headers": {
+        "content-type": "text/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:30 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/blog/how-to-keep-track-of-who-owes-you-money/money-owed-record-hero.webp",
+      "finalUrl": "https://you-owe-me.com/images/blog/how-to-keep-track-of-who-owes-you-money/money-owed-record-hero.webp",
+      "status": 200,
+      "sha256": "01b431b036aa9b5fb9942c6b55838500f5aa48e7fac2aee2eb1281d145df538f",
+      "bytes": 83704,
+      "headers": {
+        "content-type": "image/webp",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/de/iphone-handoff/app-store.png",
+      "finalUrl": "https://you-owe-me.com/images/de/iphone-handoff/app-store.png",
+      "status": 200,
+      "sha256": "c242f9fa09e3c1f8ae14adb264ab0f925c0c54061db095052db04577a6b30516",
+      "bytes": 5521,
+      "headers": {
+        "content-type": "image/png",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/es/iphone-handoff/app-store.png",
+      "finalUrl": "https://you-owe-me.com/images/es/iphone-handoff/app-store.png",
+      "status": 200,
+      "sha256": "c242f9fa09e3c1f8ae14adb264ab0f925c0c54061db095052db04577a6b30516",
+      "bytes": 5521,
+      "headers": {
+        "content-type": "image/png",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/pages/10-years/you-owe-me-10-years-hero-wide.webp",
+      "finalUrl": "https://you-owe-me.com/images/pages/10-years/you-owe-me-10-years-hero-wide.webp",
+      "status": 200,
+      "sha256": "3525b5c2b6143f9501ff960ebd59b6c65a8984ce50bb69f2a04e0e390264bad5",
+      "bytes": 75790,
+      "headers": {
+        "content-type": "image/webp",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:03 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/shared/brand/icon_3_0.png",
+      "finalUrl": "https://you-owe-me.com/images/shared/brand/icon_3_0.png",
+      "status": 200,
+      "sha256": "84946e5783baac61852ad54bb39b342e205801082ef0803cffad242e01345561",
+      "bytes": 58748,
+      "headers": {
+        "content-type": "image/png",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/shared/iphone-handoff/home.png",
+      "finalUrl": "https://you-owe-me.com/images/shared/iphone-handoff/home.png",
+      "status": 200,
+      "sha256": "0a07d156ea5ab01be9ad8609b10be8c01b66e1ab21593d7b8fe72a97fa36b65a",
+      "bytes": 6500,
+      "headers": {
+        "content-type": "image/png",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/shared/iphone-handoff/money-owed.png",
+      "finalUrl": "https://you-owe-me.com/images/shared/iphone-handoff/money-owed.png",
+      "status": 200,
+      "sha256": "d514dd538a9c7007b64c8a31a6c2d5a33a390e5de28153fef49646eb77d89c91",
+      "bytes": 8358,
+      "headers": {
+        "content-type": "image/png",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/shared/iphone-handoff/split.png",
+      "finalUrl": "https://you-owe-me.com/images/shared/iphone-handoff/split.png",
+      "status": 200,
+      "sha256": "abeb73e2adf67567fc83c9fc6c08a183b01756f9a57a23ea2312810104abcc95",
+      "bytes": 8437,
+      "headers": {
+        "content-type": "image/png",
+        "last-modified": "Tue, 20 Oct 2026 06:17:30 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/shared/loan-import-history.webp",
+      "finalUrl": "https://you-owe-me.com/images/shared/loan-import-history.webp",
+      "status": 200,
+      "sha256": "641cc19cd0738fe15033988c20401f994686f5e74607ce719b40a5130bb37b73",
+      "bytes": 6830,
+      "headers": {
+        "content-type": "image/webp",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/solutions/app-to-track-money-owed/app-to-track-money-owed-app-hero.webp",
+      "finalUrl": "https://you-owe-me.com/images/solutions/app-to-track-money-owed/app-to-track-money-owed-app-hero.webp",
+      "status": 200,
+      "sha256": "49f20dcb3796bac750578608bf6e00ef9452ed962730381bd78fad1afe6e719b",
+      "bytes": 64706,
+      "headers": {
+        "content-type": "image/webp",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/images/tools/split-expense-calculator/split-expense-calculator-og.webp",
+      "finalUrl": "https://you-owe-me.com/images/tools/split-expense-calculator/split-expense-calculator-og.webp",
+      "status": 200,
+      "sha256": "466f0254209ec8a3928951db1e724d71362e6c44eb491db6cee4fc48af812efe",
+      "bytes": 28532,
+      "headers": {
+        "content-type": "image/webp",
+        "last-modified": "Tue, 20 Oct 2026 06:17:30 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/analytics.js?v=20261018-review1",
+      "finalUrl": "https://you-owe-me.com/scripts/analytics.js?v=20261018-review1",
+      "status": 200,
+      "sha256": "a6b1b9a2457ef44f2b85ded523da9b701e4cdc561eee9b85f3736a2a77c922c8",
+      "bytes": 34826,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/analytics.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/scripts/analytics.js?v=locales20261020",
+      "status": 200,
+      "sha256": "a6b1b9a2457ef44f2b85ded523da9b701e4cdc561eee9b85f3736a2a77c922c8",
+      "bytes": 34826,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/anniversary-announcement.js?v=anniversary-announcement-1",
+      "finalUrl": "https://you-owe-me.com/scripts/anniversary-announcement.js?v=anniversary-announcement-1",
+      "status": 200,
+      "sha256": "a7f4c659b63b568917eff467ac25da4961bfed9346731ec6abe87e2b9adaf449",
+      "bytes": 8940,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/anniversary-announcement.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/scripts/anniversary-announcement.js?v=locales20261020",
+      "status": 200,
+      "sha256": "a7f4c659b63b568917eff467ac25da4961bfed9346731ec6abe87e2b9adaf449",
+      "bytes": 8940,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/app-language-support.js",
+      "finalUrl": "https://you-owe-me.com/scripts/app-language-support.js",
+      "status": 200,
+      "sha256": "63f324da89c3889adb8bb8d0475d6c10d9c6916da662a4ae4c20d97268cdeed7",
+      "bytes": 6551,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/app-language-support.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/scripts/app-language-support.js?v=locales20261020",
+      "status": 200,
+      "sha256": "63f324da89c3889adb8bb8d0475d6c10d9c6916da662a4ae4c20d97268cdeed7",
+      "bytes": 6551,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/app-store-cta-view-tracker.mjs",
+      "finalUrl": "https://you-owe-me.com/scripts/app-store-cta-view-tracker.mjs",
+      "status": 200,
+      "sha256": "ff71ebd173e738636fba11fa8d2407c66571ec06e9b2b8cba9f93536e241fff8",
+      "bytes": 4087,
+      "headers": {
+        "content-type": "text/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/iphone-handoff-analytics-bridge.mjs?v=record-once-20261019-1",
+      "finalUrl": "https://you-owe-me.com/scripts/iphone-handoff-analytics-bridge.mjs?v=record-once-20261019-1",
+      "status": 200,
+      "sha256": "8186deaa100e18c52d274749d840f0b98446116655eece2484abdc2dd56b4289",
+      "bytes": 1906,
+      "headers": {
+        "content-type": "text/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1",
+      "finalUrl": "https://you-owe-me.com/scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1",
+      "status": 200,
+      "sha256": "4d1780f2c9a6fe148224f73a39b97d254d050cd9787fff6c1751b1e1893b50db",
+      "bytes": 10747,
+      "headers": {
+        "content-type": "text/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-analytics.mjs?v=20261018-review1",
+      "finalUrl": "https://you-owe-me.com/scripts/loan-import-analytics.mjs?v=20261018-review1",
+      "status": 200,
+      "sha256": "1900cc870a9a45ac1edf5b4ef7cdd01c7a5370c9e98d6d46a29c87ffc97705d5",
+      "bytes": 679,
+      "headers": {
+        "content-type": "text/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-config.mjs?v=20260922",
+      "finalUrl": "https://you-owe-me.com/scripts/loan-import-config.mjs?v=20260922",
+      "status": 200,
+      "sha256": "f3ed51fe19e20c724a2f1ab67f00a1951fcf4c31854d9706434c1180c6a5b77b",
+      "bytes": 572,
+      "headers": {
+        "content-type": "text/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/loan-import-entry.mjs?v=20261018-review1",
+      "finalUrl": "https://you-owe-me.com/scripts/loan-import-entry.mjs?v=20261018-review1",
+      "status": 200,
+      "sha256": "7d29478034734bbdf918efa034cdb048fc86590b311a18497f0cda27a8293605",
+      "bytes": 4708,
+      "headers": {
+        "content-type": "text/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:04 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/recordkeeping-guide-es.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/scripts/recordkeeping-guide-es.js?v=locales20261020",
+      "status": 200,
+      "sha256": "1e4c78b37d6cd80bb19538f31c5f2ff99043bfc00571c4d4b304672a34ebc73f",
+      "bytes": 3958,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/repayment-reminder-text-examples.js",
+      "finalUrl": "https://you-owe-me.com/scripts/repayment-reminder-text-examples.js",
+      "status": 200,
+      "sha256": "b60ff58be288f09ceb50275e9da956a111d27234de98b82751b548fba9048267",
+      "bytes": 5694,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/reviews.js",
+      "finalUrl": "https://you-owe-me.com/scripts/reviews.js",
+      "status": 200,
+      "sha256": "a8d3abee47ae3d25bbe456d706cc6184712cfcab1458fd7d8f981e7f9f76e6a7",
+      "bytes": 1460,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/sales.js",
+      "finalUrl": "https://you-owe-me.com/scripts/sales.js",
+      "status": 200,
+      "sha256": "2334cd1b955399f6b2baf0d74de3ae64ab4bf4c41be09f67350cd19748429d19",
+      "bytes": 9282,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/sales.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/scripts/sales.js?v=locales20261020",
+      "status": 200,
+      "sha256": "2334cd1b955399f6b2baf0d74de3ae64ab4bf4c41be09f67350cd19748429d19",
+      "bytes": 9282,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/split-expense-calculator.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/scripts/split-expense-calculator.js?v=locales20261020",
+      "status": 200,
+      "sha256": "df1a69461f5c2d28327ee0b84bdc5ebee8f6cedf10a2f34c19fb15e19d109711",
+      "bytes": 32663,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/split-expense-locale.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/scripts/split-expense-locale.js?v=locales20261020",
+      "status": 200,
+      "sha256": "b2eee1ed30313aaf724c075dafbadeff4fbf015ae9e27281b908121edc4e6e16",
+      "bytes": 8850,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/tool-transfer.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/scripts/tool-transfer.js?v=locales20261020",
+      "status": 200,
+      "sha256": "1aa5301b898e395378d003305983c966500264f10799faaddce696188b5629d3",
+      "bytes": 3161,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/scripts/video-embed.js?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/scripts/video-embed.js?v=locales20261020",
+      "status": 200,
+      "sha256": "1fa96d4041ed6210551b2925a4180ee274589f880e59d5398dc0c98e7ea71fea",
+      "bytes": 2320,
+      "headers": {
+        "content-type": "application/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/anniversary-signals.css?v=anniversary-signals-1",
+      "finalUrl": "https://you-owe-me.com/styles/anniversary-signals.css?v=anniversary-signals-1",
+      "status": 200,
+      "sha256": "0afbaface14de3a8cca11db39c9978f131ca3bc56b4ab8c6bd6eb4f70d7a364a",
+      "bytes": 4380,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/app-language-support.css",
+      "finalUrl": "https://you-owe-me.com/styles/app-language-support.css",
+      "status": 200,
+      "sha256": "c22718d5e09816643a4ae5dd292d7961d14794875f7e3d62a38f8c16bfaed245",
+      "bytes": 1242,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/best-next-step.css",
+      "finalUrl": "https://you-owe-me.com/styles/best-next-step.css",
+      "status": 200,
+      "sha256": "10c02cc67c5bc6bd6cf90a44751dcd6e3a1205bafcdaa5917639e62eed380342",
+      "bytes": 3842,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/blog.css",
+      "finalUrl": "https://you-owe-me.com/styles/blog.css",
+      "status": 200,
+      "sha256": "e60923fe3a4390ccd92a4b3f1ab4d351d52e32d7d2df6ba090eddcda3a1f4b48",
+      "bytes": 14724,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1",
+      "finalUrl": "https://you-owe-me.com/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1",
+      "status": 200,
+      "sha256": "c047be7c1fb9ee97b0d5956e93d7d57e461dc23c9e5bff056e3ec475f850b686",
+      "bytes": 6595,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/landing-cleanup.css?v=20261014-static-balance-2",
+      "finalUrl": "https://you-owe-me.com/styles/landing-cleanup.css?v=20261014-static-balance-2",
+      "status": 200,
+      "sha256": "2ce5afbd70ac85de53497f856ac205f6d6078b1a4e27673b87bd5dcabbca3fe9",
+      "bytes": 10265,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/landing.css?v=20260925-mobile-layout-2",
+      "finalUrl": "https://you-owe-me.com/styles/landing.css?v=20260925-mobile-layout-2",
+      "status": 200,
+      "sha256": "ae49de44b04a6cd96f911c07acf37c88057834cd1c526489415e3d95c22f795b",
+      "bytes": 102800,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/loan-import-entry.css?v=20260925-mobile-layout-1",
+      "finalUrl": "https://you-owe-me.com/styles/loan-import-entry.css?v=20260925-mobile-layout-1",
+      "status": 200,
+      "sha256": "18321d214fdb98b992ea333cb2f281a620b4ff131f3d1f23d134c8f6b1117911",
+      "bytes": 4230,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/money-owed-record-answer.css?v=20260920",
+      "finalUrl": "https://you-owe-me.com/styles/money-owed-record-answer.css?v=20260920",
+      "status": 200,
+      "sha256": "41c2c33597dea2f59950dfcdf3cd40a23b6b34344a31742af036940e415273d7",
+      "bytes": 4522,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:05 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/personal-loan-repayment-tracker.css?v=record-once-20261019-1",
+      "finalUrl": "https://you-owe-me.com/styles/personal-loan-repayment-tracker.css?v=record-once-20261019-1",
+      "status": 200,
+      "sha256": "1478ab8f0e124890cb78abd14bd5735edec157adb5b3b257c05231d18015f10d",
+      "bytes": 32725,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/repayment-reminder-text-examples.css",
+      "finalUrl": "https://you-owe-me.com/styles/repayment-reminder-text-examples.css",
+      "status": 200,
+      "sha256": "c357882f56342edbd0ad29e87b83ca7f51eb0720984fccc43a8743014a432318",
+      "bytes": 10534,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/running-balance-answer.css",
+      "finalUrl": "https://you-owe-me.com/styles/running-balance-answer.css",
+      "status": 200,
+      "sha256": "c9fe816e74ed8f8d8d56fd394f7a6df0b561e75f579b333c1364e7b2e0a3a3ba",
+      "bytes": 17095,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/site-locale.css?v=locales20261020",
+      "finalUrl": "https://you-owe-me.com/styles/site-locale.css?v=locales20261020",
+      "status": 200,
+      "sha256": "f764c73a604666f5ee5937ad58f38c2d340121a455ec6c10b21a4169d47d881c",
+      "bytes": 3352,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/site-nav.css",
+      "finalUrl": "https://you-owe-me.com/styles/site-nav.css",
+      "status": 200,
+      "sha256": "f7b2bd57a4ac2974031db7837ebfdf2c65db38e11411c0040927d9092bdddcd5",
+      "bytes": 6455,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/solution-detail.css",
+      "finalUrl": "https://you-owe-me.com/styles/solution-detail.css",
+      "status": 200,
+      "sha256": "14a4f9094d1d1bf5c320c1ed5429aa9f4a11620c48637de85352a164e5f8ef95",
+      "bytes": 67724,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/solution-detail.css?v=conversion-polish-20260905-3",
+      "finalUrl": "https://you-owe-me.com/styles/solution-detail.css?v=conversion-polish-20260905-3",
+      "status": 200,
+      "sha256": "14a4f9094d1d1bf5c320c1ed5429aa9f4a11620c48637de85352a164e5f8ef95",
+      "bytes": 67724,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/solutions.css",
+      "finalUrl": "https://you-owe-me.com/styles/solutions.css",
+      "status": 200,
+      "sha256": "6ce39038da4d392ea4780ff49806175ef33a5e998660a861c51b5e9e71d27c9d",
+      "bytes": 21800,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/split-expense-calculator.css?v=organic-entry-20261011",
+      "finalUrl": "https://you-owe-me.com/styles/split-expense-calculator.css?v=organic-entry-20261011",
+      "status": 200,
+      "sha256": "8cc700a8241284a594049f567b3ada1bc4e129a62fb1b7be89cc5a7f6ee4d8b4",
+      "bytes": 16040,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/styles/tools.css",
+      "finalUrl": "https://you-owe-me.com/styles/tools.css",
+      "status": 200,
+      "sha256": "236eb6b3b4d3a5d178c4e3df4219868406de1bd05fb49fa71e94e8bcd683dcd4",
+      "bytes": 17867,
+      "headers": {
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:29 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:06 GMT"
+      }
+    }
+  ],
+  "discovery": [
+    {
+      "url": "https://you-owe-me.com/robots.txt",
+      "finalUrl": "https://you-owe-me.com/robots.txt",
+      "status": 200,
+      "sha256": "aefbd5452351298adfc7c933c8457c88b6102d11f9d662fc1ea234539069e767",
+      "bytes": 664,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:07 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/sitemap.xml",
+      "finalUrl": "https://you-owe-me.com/sitemap.xml",
+      "status": 200,
+      "sha256": "2939b447f3540c5c2cb1a8aa8b82f30f1a862cf37582905db86fbfddabf9109e",
+      "bytes": 18264,
+      "headers": {
+        "content-type": "application/xml",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:07 GMT"
+      }
+    },
+    {
+      "url": "https://you-owe-me.com/llms.txt",
+      "finalUrl": "https://you-owe-me.com/llms.txt",
+      "status": 200,
+      "sha256": "639d72a725f94563c9fa9d9fa5a6b41592bd3ed268c6d9b1670c5b74e46c1c48",
+      "bytes": 51169,
+      "headers": {
+        "content-type": "text/plain; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:17:28 GMT",
+        "cache-control": "max-age=600",
+        "date": "Tue, 20 Oct 2026 06:19:07 GMT"
+      }
+    }
+  ],
+  "botUserAgentProbes": [
+    {
+      "url": "https://you-owe-me.com/de/",
+      "userAgent": "Googlebot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/",
+      "userAgent": "bingbot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/",
+      "userAgent": "OAI-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/",
+      "userAgent": "ChatGPT-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/",
+      "userAgent": "Claude-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/",
+      "userAgent": "Claude-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/",
+      "userAgent": "PerplexityBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/",
+      "userAgent": "Perplexity-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "userAgent": "Googlebot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "userAgent": "bingbot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "userAgent": "OAI-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "userAgent": "ChatGPT-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "userAgent": "Claude-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "userAgent": "Claude-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "userAgent": "PerplexityBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "userAgent": "Perplexity-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "userAgent": "Googlebot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "userAgent": "bingbot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "userAgent": "OAI-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "userAgent": "ChatGPT-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "userAgent": "Claude-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "userAgent": "Claude-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "userAgent": "PerplexityBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "userAgent": "Perplexity-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "userAgent": "Googlebot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "userAgent": "bingbot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "userAgent": "OAI-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "userAgent": "ChatGPT-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "userAgent": "Claude-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "userAgent": "Claude-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "userAgent": "PerplexityBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "userAgent": "Perplexity-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "userAgent": "Googlebot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "userAgent": "bingbot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "userAgent": "OAI-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "userAgent": "ChatGPT-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "userAgent": "Claude-SearchBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "userAgent": "Claude-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "userAgent": "PerplexityBot",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    },
+    {
+      "url": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "userAgent": "Perplexity-User",
+      "status": 200,
+      "samePublicHTML": true,
+      "xRobotsTag": null
+    }
+  ],
+  "privateContinuation": {
+    "url": "https://continue.you-owe-me.com/split/",
+    "finalUrl": "https://continue.you-owe-me.com/split/",
+    "status": 200,
+    "sha256": "3241c2e59e75f2040070745827c0796e57baea1acee4fcd4547849d173293b39",
+    "bytes": 3898,
+    "headers": {
+      "cache-control": "no-store",
+      "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "content-type": "text/html; charset=utf-8",
+      "last-modified": "Tue, 20 Oct 2026 06:14:38 GMT",
+      "referrer-policy": "no-referrer",
+      "x-robots-tag": "noindex, nofollow, noarchive",
+      "date": "Tue, 20 Oct 2026 06:19:28 GMT"
+    }
+  },
+  "privateLocaleScript": {
+    "url": "https://continue.you-owe-me.com/split/locale.js?v=de20261020",
+    "finalUrl": "https://continue.you-owe-me.com/split/locale.js?v=de20261020",
+    "status": 200,
+    "sha256": "b1591aea5af9ac22d7db420b090b19aa7e42a9eee0c2abde35a2655813834f8f",
+    "bytes": 1075,
+    "headers": {
+      "cache-control": "no-store",
+      "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "content-type": "text/javascript; charset=utf-8",
+      "last-modified": "Tue, 20 Oct 2026 06:14:38 GMT",
+      "referrer-policy": "no-referrer",
+      "x-robots-tag": "noindex, nofollow, noarchive",
+      "date": "Tue, 20 Oct 2026 06:19:48 GMT"
+    }
+  },
+  "unchangedPrivateDependencies": [
+    {
+      "url": "https://continue.you-owe-me.com/.well-known/apple-app-site-association",
+      "finalUrl": "https://continue.you-owe-me.com/.well-known/apple-app-site-association",
+      "status": 200,
+      "sha256": "f4af99ba0623216ac8df4fb79c0c5de3385c42091755f491de026b0b841cec6e",
+      "bytes": 294,
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "content-type": "application/json",
+        "last-modified": "Tue, 20 Oct 2026 06:14:38 GMT",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive",
+        "date": "Tue, 20 Oct 2026 06:20:11 GMT"
+      }
+    },
+    {
+      "url": "https://continue.you-owe-me.com/continuation.css",
+      "finalUrl": "https://continue.you-owe-me.com/continuation.css",
+      "status": 200,
+      "sha256": "d9276657e3bbc4b304753e53d407d858aecf2cd750ed31310fafd124aab1d8d1",
+      "bytes": 591,
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:14:38 GMT",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive",
+        "date": "Tue, 20 Oct 2026 06:20:11 GMT"
+      }
+    },
+    {
+      "url": "https://continue.you-owe-me.com/loan/",
+      "finalUrl": "https://continue.you-owe-me.com/loan/",
+      "status": 200,
+      "sha256": "c93594fd93f2f370274c87ce309f1b37c829e3de2bc9a255aabf12787deba37c",
+      "bytes": 1951,
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; connect-src https://us-central1-you-owe-me-app.cloudfunctions.net/loanTransfer; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "content-type": "text/html; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:14:38 GMT",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive",
+        "date": "Tue, 20 Oct 2026 06:20:11 GMT"
+      }
+    },
+    {
+      "url": "https://continue.you-owe-me.com/loan/loan.css",
+      "finalUrl": "https://continue.you-owe-me.com/loan/loan.css",
+      "status": 200,
+      "sha256": "2ac02490cb0763d0cc5f01a74b3fe47861d1982fd33faac672b4fa21ecfa970f",
+      "bytes": 612,
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; connect-src https://us-central1-you-owe-me-app.cloudfunctions.net/loanTransfer; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "content-type": "text/css; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:14:38 GMT",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive",
+        "date": "Tue, 20 Oct 2026 06:20:11 GMT"
+      }
+    },
+    {
+      "url": "https://continue.you-owe-me.com/loan/recovery.js",
+      "finalUrl": "https://continue.you-owe-me.com/loan/recovery.js",
+      "status": 200,
+      "sha256": "205e3a3d3948ee886c32a50ab0fec1a134968b19d82942ad0c3fb05a84608342",
+      "bytes": 1792,
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; connect-src https://us-central1-you-owe-me-app.cloudfunctions.net/loanTransfer; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "content-type": "text/javascript; charset=utf-8",
+        "last-modified": "Tue, 20 Oct 2026 06:14:38 GMT",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive",
+        "date": "Tue, 20 Oct 2026 06:20:11 GMT"
+      }
+    }
+  ],
+  "germanTrailingSlashRedirects": [
+    {
+      "requested": "https://you-owe-me.com/de",
+      "finalUrl": "https://you-owe-me.com/de/",
+      "chain": [
+        {
+          "from": "https://you-owe-me.com/de",
+          "status": 301,
+          "to": "https://you-owe-me.com/de/"
+        }
+      ]
+    },
+    {
+      "requested": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen",
+      "finalUrl": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+      "chain": [
+        {
+          "from": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen",
+          "status": 301,
+          "to": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/"
+        }
+      ]
+    },
+    {
+      "requested": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld",
+      "finalUrl": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+      "chain": [
+        {
+          "from": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld",
+          "status": 301,
+          "to": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/"
+        }
+      ]
+    },
+    {
+      "requested": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten",
+      "finalUrl": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+      "chain": [
+        {
+          "from": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten",
+          "status": 301,
+          "to": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/"
+        }
+      ]
+    },
+    {
+      "requested": "https://you-owe-me.com/de/tools/ausgaben-aufteilen",
+      "finalUrl": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/",
+      "chain": [
+        {
+          "from": "https://you-owe-me.com/de/tools/ausgaben-aufteilen",
+          "status": 301,
+          "to": "https://you-owe-me.com/de/tools/ausgaben-aufteilen/"
+        }
+      ]
+    }
+  ],
+  "limits": "User-agent probes are ordinary client requests, not actual verified crawler-IP observations; no indexing, rankings or AI citations are established."
+}
