@@ -149,7 +149,7 @@ export function auditHtmlForRoute(route, html) {
   const classification = classifyRoute(normalizedRoute);
   const errors = [];
   const styleCount = countMatches(html, new RegExp(`<link\\b[^>]*\\bhref=["']${STYLE_HREF.replaceAll("/", "\\/")}["']`, "gi"));
-  const scriptCount = countMatches(html, new RegExp(`<script\\b[^>]*\\bsrc=["']${SCRIPT_SRC.replaceAll("/", "\\/")}["'][^>]*>`, "gi"));
+  const scriptCount = countMatches(html, new RegExp(`<script\\b[^>]*\\bsrc=["']${SCRIPT_SRC.replaceAll("/", "\\/")}(?:\\?[^"']*)?["'][^>]*>`, "gi"));
   const anchorCount = countMatches(html, new RegExp(`\\b${ANCHOR_ATTRIBUTE}(?:\\s|=|>)`, "gi"));
   const authoredRenderTargetCount = countMatches(html, new RegExp(`\\b${RENDERED_ATTRIBUTE}(?:\\s|=|>)`, "gi"));
 

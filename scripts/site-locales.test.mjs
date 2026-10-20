@@ -2,7 +2,7 @@ import test from "node:test";
 import assert from "node:assert/strict";
 import fs from "node:fs";
 import { execFileSync } from "node:child_process";
-import { spanishPages, localizedRegistryEntries } from "../content/site-locales.mjs";
+import { spanishPages, localizedRegistryEntries, spanishAssetVersion, spanishVersionedAssets } from "../content/site-locales.mjs";
 import { contentRegistry } from "../content/content-registry.mjs";
 
 test("only completed translations join the registry and have substantive public HTML", () => {
@@ -28,6 +28,9 @@ test("only completed translations join the registry and have substantive public 
     assert.ok(html.includes("<!-- localized-next-step:start -->") && html.includes("<!-- localized-next-step:end -->"));
     assert.ok(html.includes('data-module="best-next-step"'));
     assert.ok(!html.includes("<!-- best-next-step:start -->"), "Localized hand-authored modules must not claim English generator ownership");
+    for (const asset of spanishVersionedAssets) {
+      if (html.includes(asset)) assert.ok(html.includes(`${asset}?v=${spanishAssetVersion}"`), `Spanish dependency must bypass earlier English caches: ${asset}`);
+    }
     assert.ok(!/<a\b[^>]*href="https:\/\/apps\.apple\.com\/(?:us|es)\//.test(html), "Spanish Store links must not force a country");
     assert.ok(!/<a\b[^>]*href="https:\/\/apps\.apple\.com\/[^\"]*ppid=/.test(html), "No unverified English custom-product page");
     for (const block of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {

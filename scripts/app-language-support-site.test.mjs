@@ -25,6 +25,8 @@ test("Spanish routes require Spanish document language while English routes keep
     <a class="lt-primaryCta" href="/es/">You Owe Me</a>
   `).replace('lang="en"', 'lang="es"');
   assert.deepEqual(auditHtmlForRoute("/es/", html), []);
+  assert.deepEqual(auditHtmlForRoute("/es/", html.replace('/scripts/app-language-support.js"', '/scripts/app-language-support.js?v=es20261020"')), []);
+  assert.ok(auditHtmlForRoute("/es/", html.replace('</body>', '<script src="/scripts/app-language-support.js?v=es20261020"></script></body>')).some(error => error.includes('script, found 2')));
   assert.ok(auditHtmlForRoute("/", html).some(error => error.includes("document language must be en")));
   assert.ok(auditHtmlForRoute("/es/", html.replace('lang="es"', 'lang="en"')).some(error => error.includes("document language must be es")));
 });

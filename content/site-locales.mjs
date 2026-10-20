@@ -1,5 +1,12 @@
 // Public locale counterparts. A route joins discovery only after its page review.
 export const localeOrigin = "https://you-owe-me.com";
+export const spanishAssetVersion = "es20261020";
+export const spanishVersionedAssets = [
+  "/scripts/analytics.js", "/scripts/sales.js", "/scripts/anniversary-announcement.js",
+  "/scripts/app-language-support.js", "/scripts/video-embed.js", "/assets/js/main.js",
+  "/scripts/split-expense-locale.js", "/scripts/tool-transfer.js", "/scripts/split-expense-calculator.js",
+  "/scripts/recordkeeping-guide-es.js", "/styles/site-locale.css",
+];
 export const spanishPages = [
   { en: "/", es: "/es/", title: "You Owe Me: controla préstamos, gastos y pagos", complete: true },
   { en: "/solutions/app-to-track-money-owed/", es: "/es/soluciones/app-para-registrar-dinero-adeudado/", title: "App para registrar el dinero que te deben", complete: true },
