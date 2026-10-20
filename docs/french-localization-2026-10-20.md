@@ -1,6 +1,6 @@
 # French release record — 20 October 2026
 
-Five owner-authorized French pages were implemented directly from the current English pages, in the requested order, on `codex/french-localization` from `a2eb93d`. Each page received separate GPT-6.1 Sol/high French-language and technical/product reviews before its scoped commit. These are independent model reviews, not human native-speaker certification. Both independent final batch reviews accepted the complete release candidate with no unresolved material finding; live receipts are recorded below after deployment.
+Five owner-authorized French pages were implemented directly from the current English pages, in the requested order, on `codex/french-localization` from `a2eb93d`. Each page received separate GPT-6.1 Sol/high French-language and technical/product reviews before its scoped commit. These are independent model reviews, not human native-speaker certification. Both independent final batch reviews accepted the complete release candidate with no unresolved material finding; the complete batch is now deployed and verified live.
 
 No Google Search Console access, indexing requests, sitemap submission/resubmission, indexing API or indexing follow-up was performed. Indexing remains with the owner. Public discovery and crawl eligibility do not establish indexing, ranking, AI citation or customer impact. Unrelated untracked `audits/`, `tmp/` and `docs/verification/loan-plan-record-once-2026-10-19/` remain untouched.
 
@@ -49,7 +49,15 @@ The private continuation adds French presentation and hash selection only. Exist
 
 ## Publication and live evidence
 
-Both [final language](verification/french-localization-2026-10-20/batch-language-review.md) and [final technical](verification/french-localization-2026-10-20/batch-technical-review.md) reviews accepted. Final reviewed hashes and live preflight confirm unchanged private resources and policy. Pending the accepted batch commit, coherent public/private deployment and ordinary live verification. This section is completed with actual deployment receipts before final handoff.
+Both [final language](verification/french-localization-2026-10-20/batch-language-review.md) and [final technical](verification/french-localization-2026-10-20/batch-technical-review.md) reviews accepted. Coherent application batch commit: `23b6fd0c9302c25e1ab680e2094d49929294617b`. After automatic approval review requested explicit production authorization, the owner approved the Firebase deployment and production push. The existing production branch advanced normally from `a2eb93d` to the accepted batch.
+
+[GitHub Pages run 39402557109](https://github.com/Midoris/you-owe-me-site/actions/runs/39402557109) successfully deployed that exact SHA at **2026-10-20 09:42:47 UTC / 16:42:47 Asia/Bangkok**, deployment `7196505761` (`application-pages-deployment.json`). Firebase reports success for `projects/1056899447246/sites/you-owe-me-tool-continuation/versions/e7f3c2a6a57a7fb9` (`firebase-release.json`). Five unchanged non-split private resources matched the accepted checkout before deployment (`private-target-preflight.json`).
+
+Actual deployed private checks pass all 50 five-language transitions at 390/1440, unknown-fragment LTR fallback, all five no-JavaScript sections and exact configured CSP/privacy headers (`live-private-checks.json`). No financial reference, referrer or production upload was sent. Ordinary live verification passes exact local-byte comparisons for all **25 counterpart pages**, **111 effective assets** and `robots.txt`, `sitemap.xml` and `llms.txt` (`public-verification.json`). Every page has the expected static language/direction, own canonical, exact reciprocal/default alternates, substantial main content and public robot eligibility. All five French no-slash routes redirect safely to their slash canonicals. Private HTML, five effective split dependency checks and five unchanged non-split resources match accepted bytes and exact privacy/CSP policy. The only dependency exception is the unchanged legacy import described below. No financial reference or production upload was sent.
+
+All **200 live directed language-switch paths** pass at 390/1440, including every calculator example and Arabic↔LTR reset (`live-batch-checks.json`). These are real production navigations with external analytics blocked. All 844 accepted application files remain byte-identical after deployment (`accepted-application-hashes.json`, `release-completion.json`).
+
+The final release-evidence commit contains documentation and verification only; accepted production source bytes remain unchanged. It is pushed through the existing Pages workflow, with its exact final-commit deployment checked separately before handoff. No Search Console or indexing action occurred.
 
 ## Practical limits
 

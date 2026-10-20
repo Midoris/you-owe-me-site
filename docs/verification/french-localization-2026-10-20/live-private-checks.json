@@ -1,0 +1,73 @@
+{
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T09:41:54.915Z",
+  "checks": [
+    {
+      "width": 390,
+      "actualDeployedCsp": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "allLanguageTransitions": 25,
+      "unknownFragmentResetsLtr": true,
+      "noOverflow": true,
+      "noPrivateReference": true,
+      "noReferrers": true,
+      "requests": [
+        {
+          "url": "https://continue.you-owe-me.com/split/",
+          "method": "GET",
+          "referrer": null
+        },
+        {
+          "url": "https://continue.you-owe-me.com/continuation.css",
+          "method": "GET",
+          "referrer": null
+        },
+        {
+          "url": "https://continue.you-owe-me.com/split/arabic.css?v=ar20261020",
+          "method": "GET",
+          "referrer": null
+        },
+        {
+          "url": "https://continue.you-owe-me.com/split/locale.js?v=fr20261020",
+          "method": "GET",
+          "referrer": null
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "actualDeployedCsp": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "allLanguageTransitions": 25,
+      "unknownFragmentResetsLtr": true,
+      "noOverflow": true,
+      "noPrivateReference": true,
+      "noReferrers": true,
+      "requests": [
+        {
+          "url": "https://continue.you-owe-me.com/split/",
+          "method": "GET",
+          "referrer": null
+        },
+        {
+          "url": "https://continue.you-owe-me.com/continuation.css",
+          "method": "GET",
+          "referrer": null
+        },
+        {
+          "url": "https://continue.you-owe-me.com/split/arabic.css?v=ar20261020",
+          "method": "GET",
+          "referrer": null
+        },
+        {
+          "url": "https://continue.you-owe-me.com/split/locale.js?v=fr20261020",
+          "method": "GET",
+          "referrer": null
+        }
+      ],
+      "errors": []
+    }
+  ],
+  "noJavaScriptAllFiveSections": true,
+  "productionUploads": 0,
+  "financialReferencesSent": 0
+}

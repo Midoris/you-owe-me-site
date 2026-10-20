@@ -1,0 +1,15 @@
+{
+  "verifiedAtUTC": "2026-10-20T09:46:04.524351+00:00",
+  "applicationCommit": "23b6fd0c9302c25e1ab680e2094d49929294617b",
+  "allPassed": true,
+  "publicPages": 25,
+  "publicEffectiveAssets": 111,
+  "discoveryFiles": 3,
+  "directedLiveBrowserPaths": 200,
+  "privateLiveTransitions": 50,
+  "acceptedApplicationFilesUnchanged": 844,
+  "financialReferencesSent": 0,
+  "productionUploads": 0,
+  "indexingActions": 0,
+  "evidenceCommitScope": "Documentation and verification evidence only; exact final commit deployment is checked separately after push."
+}

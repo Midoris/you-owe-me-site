@@ -1,0 +1,39 @@
+{
+  "verifiedAtUTC": "2026-10-20T09:42:51.641948+00:00",
+  "sha": "23b6fd0c9302c25e1ab680e2094d49929294617b",
+  "success": true,
+  "deployments": [
+    {
+      "deploymentId": 7196505761,
+      "sha": "23b6fd0c9302c25e1ab680e2094d49929294617b",
+      "environment": "github-pages",
+      "createdAt": "2026-10-20T09:42:18Z",
+      "statuses": [
+        {
+          "state": "success",
+          "createdAt": "2026-10-20T09:42:47Z",
+          "logUrl": "https://github.com/Midoris/you-owe-me-site/actions/runs/39402557109/job/118560808408",
+          "environmentUrl": "https://you-owe-me.com/"
+        },
+        {
+          "state": "in_progress",
+          "createdAt": "2026-10-20T09:42:22Z",
+          "logUrl": "https://github.com/Midoris/you-owe-me-site/actions/runs/39402557109/job/118560808408",
+          "environmentUrl": ""
+        },
+        {
+          "state": "queued",
+          "createdAt": "2026-10-20T09:42:20Z",
+          "logUrl": "https://github.com/Midoris/you-owe-me-site/actions/runs/39402557109/job/118560808408",
+          "environmentUrl": ""
+        },
+        {
+          "state": "waiting",
+          "createdAt": "2026-10-20T09:42:19Z",
+          "logUrl": "https://github.com/Midoris/you-owe-me-site/actions/runs/39402557109/job/118560808408",
+          "environmentUrl": ""
+        }
+      ]
+    }
+  ]
+}
