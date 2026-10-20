@@ -1,0 +1,125 @@
+{
+  "allPassed": true,
+  "policies": [
+    {
+      "context": 0,
+      "url": "https://continue.you-owe-me.com/split/",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "context": 0,
+      "url": "https://continue.you-owe-me.com/split/locale.js?v=fr20261020",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "context": 0,
+      "url": "https://continue.you-owe-me.com/split/?ref",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 0,
+      "url": "https://continue.you-owe-me.com/split/?ref=",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 0,
+      "url": "https://continue.you-owe-me.com/split/?ref=secret",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 0,
+      "url": "https://continue.you-owe-me.com/split/?amount=90",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 0,
+      "url": "https://continue.you-owe-me.com/split/?v=ok&name=secret",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 0,
+      "url": "https://continue.you-owe-me.com/split/",
+      "method": "POST",
+      "allowed": false
+    },
+    {
+      "context": 0,
+      "url": "https://example.com/split/",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 0,
+      "url": "http://continue.you-owe-me.com/split/",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 1,
+      "url": "https://continue.you-owe-me.com/split/",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "context": 1,
+      "url": "https://continue.you-owe-me.com/split/locale.js?v=fr20261020",
+      "method": "GET",
+      "allowed": true
+    },
+    {
+      "context": 1,
+      "url": "https://continue.you-owe-me.com/split/?ref",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 1,
+      "url": "https://continue.you-owe-me.com/split/?ref=",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 1,
+      "url": "https://continue.you-owe-me.com/split/?ref=secret",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 1,
+      "url": "https://continue.you-owe-me.com/split/?amount=90",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 1,
+      "url": "https://continue.you-owe-me.com/split/?v=ok&name=secret",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 1,
+      "url": "https://continue.you-owe-me.com/split/",
+      "method": "POST",
+      "allowed": false
+    },
+    {
+      "context": 1,
+      "url": "https://example.com/split/",
+      "method": "GET",
+      "allowed": false
+    },
+    {
+      "context": 1,
+      "url": "http://continue.you-owe-me.com/split/",
+      "method": "GET",
+      "allowed": false
+    }
+  ]
+}

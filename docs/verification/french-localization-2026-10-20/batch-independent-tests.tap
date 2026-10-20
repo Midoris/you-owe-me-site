@@ -1,0 +1,454 @@
+TAP version 13
+# Subtest: every site route satisfies the language-support inclusion and exclusion contract
+ok 1 - every site route satisfies the language-support inclusion and exclusion contract
+  ---
+  duration_ms: 92.720042
+  type: 'test'
+  ...
+# Subtest: Spanish routes require Spanish document language while English routes keep English
+ok 2 - Spanish routes require Spanish document language while English routes keep English
+  ---
+  duration_ms: 0.287709
+  type: 'test'
+  ...
+# Subtest: the route audit rejects missing and duplicate integration assets
+ok 3 - the route audit rejects missing and duplicate integration assets
+  ---
+  duration_ms: 0.097333
+  type: 'test'
+  ...
+# Subtest: the route audit rejects anchors in navigation and sticky UI
+ok 4 - the route audit rejects anchors in navigation and sticky UI
+  ---
+  duration_ms: 0.082958
+  type: 'test'
+  ...
+# Subtest: the route audit requires a real conversion context and no authored render target
+ok 5 - the route audit requires a real conversion context and no authored render target
+  ---
+  duration_ms: 0.165958
+  type: 'test'
+  ...
+# Subtest: excluded routes reject every language-support integration surface
+ok 6 - excluded routes reject every language-support integration surface
+  ---
+  duration_ms: 0.063167
+  type: 'test'
+  ...
+# Subtest: German routes require German document language
+ok 7 - German routes require German document language
+  ---
+  duration_ms: 0.144792
+  type: 'test'
+  ...
+# Subtest: Spanish publications use Spanish regardless of browser language and link to the Spanish home
+ok 8 - Spanish publications use Spanish regardless of browser language and link to the Spanish home
+  ---
+  duration_ms: 0.637208
+  type: 'test'
+  ...
+# Subtest: normalizes valid locale variants and rejects malformed input
+ok 9 - normalizes valid locale variants and rejects malformed input
+  ---
+  duration_ms: 6.387709
+  type: 'test'
+  ...
+# Subtest: uses only the primary browser language and falls back to navigator.language
+ok 10 - uses only the primary browser language and falls back to navigator.language
+  ---
+  duration_ms: 0.077917
+  type: 'test'
+  ...
+# Subtest: the visual-QA locale override works only on local development hosts
+ok 11 - the visual-QA locale override works only on local development hosts
+  ---
+  duration_ms: 0.139292
+  type: 'test'
+  ...
+# Subtest: local preview takes precedence without changing production detection
+ok 12 - local preview takes precedence without changing production detection
+  ---
+  duration_ms: 0.136917
+  type: 'test'
+  ...
+# Subtest: matches all supported non-English regional variants
+ok 13 - matches all supported non-English regional variants
+  ---
+  duration_ms: 0.159083
+  type: 'test'
+  ...
+# Subtest: suppresses English, unsupported, blank, and malformed languages
+ok 14 - suppresses English, unsupported, blank, and malformed languages
+  ---
+  duration_ms: 0.099208
+  type: 'test'
+  ...
+# Subtest: provides the exact localized copy for every supported non-English language
+ok 15 - provides the exact localized copy for every supported non-English language
+  ---
+  duration_ms: 0.353708
+  type: 'test'
+  ...
+# Subtest: renders one passive localized label and is idempotent
+ok 16 - renders one passive localized label and is idempotent
+  ---
+  duration_ms: 0.282292
+  type: 'test'
+  ...
+# Subtest: renders Arabic with rtl direction and an isolated product name
+ok 17 - renders Arabic with rtl direction and an isolated product name
+  ---
+  duration_ms: 0.294375
+  type: 'test'
+  ...
+# Subtest: does not render for English, unsupported languages, or a missing target
+ok 18 - does not render for English, unsupported languages, or a missing target
+  ---
+  duration_ms: 0.150875
+  type: 'test'
+  ...
+# Subtest: never renders into navigation or sticky UI
+ok 19 - never renders into navigation or sticky UI
+  ---
+  duration_ms: 0.046791
+  type: 'test'
+  ...
+# Subtest: initializes safely both before and after DOMContentLoaded
+ok 20 - initializes safely both before and after DOMContentLoaded
+  ---
+  duration_ms: 0.075375
+  type: 'test'
+  ...
+# Subtest: rendering never reads or mutates links and does not require analytics
+ok 21 - rendering never reads or mutates links and does not require analytics
+  ---
+  duration_ms: 0.138833
+  type: 'test'
+  ...
+# Subtest: the production component contains no tracking, storage, network, or debug hooks
+ok 22 - the production component contains no tracking, storage, network, or debug hooks
+  ---
+  duration_ms: 0.237333
+  type: 'test'
+  ...
+# Subtest: German publications use German regardless of browser language and link to the German home
+ok 23 - German publications use German regardless of browser language and link to the German home
+  ---
+  duration_ms: 0.048042
+  type: 'test'
+  ...
+# Subtest: French publications keep French text and home links for all browser languages
+ok 24 - French publications keep French text and home links for all browser languages
+  ---
+  duration_ms: 0.115333
+  type: 'test'
+  ...
+# Subtest: Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+ok 25 - Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+  ---
+  duration_ms: 82.633333
+  type: 'test'
+  ...
+# Subtest: Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+ok 26 - Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+  ---
+  duration_ms: 36.647042
+  type: 'test'
+  ...
+# Subtest: Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+ok 27 - Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+  ---
+  duration_ms: 16.624292
+  type: 'test'
+  ...
+# Subtest: Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+ok 28 - Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+  ---
+  duration_ms: 34.599708
+  type: 'test'
+  ...
+# Subtest: Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+ok 29 - Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+  ---
+  duration_ms: 17.290667
+  type: 'test'
+  ...
+# Subtest: private locale selection resets every RTL/LTR transition using only the fragment
+ok 30 - private locale selection resets every RTL/LTR transition using only the fragment
+  ---
+  duration_ms: 1.325875
+  type: 'test'
+  ...
+# Subtest: Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+ok 31 - Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+  ---
+  duration_ms: 1.659333
+  type: 'test'
+  ...
+# Subtest: ambiguous separators and malformed values never silently become positive money
+ok 32 - ambiguous separators and malformed values never silently become positive money
+  ---
+  duration_ms: 0.149292
+  type: 'test'
+  ...
+# Subtest: a reviewed RTL counterpart isolates language links without reordering authored content
+ok 33 - a reviewed RTL counterpart isolates language links without reordering authored content
+  ---
+  duration_ms: 4.207375
+  type: 'test'
+  ...
+# Subtest: an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+ok 34 - an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+  ---
+  duration_ms: 0.546125
+  type: 'test'
+  ...
+# Subtest: German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+ok 35 - German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+  ---
+  duration_ms: 103.155167
+  type: 'test'
+  ...
+# Subtest: Arabic sale presentation preserves campaign IDs, timing and event privacy
+ok 36 - Arabic sale presentation preserves campaign IDs, timing and event privacy
+  ---
+  duration_ms: 3.818792
+  type: 'test'
+  ...
+# Subtest: SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks
+ok 37 - SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks
+  ---
+  duration_ms: 1.353542
+  type: 'test'
+  ...
+# Subtest: English shared cache pins preserve every authored path form and leave unrelated queries intact
+ok 38 - English shared cache pins preserve every authored path form and leave unrelated queries intact
+  ---
+  duration_ms: 0.947792
+  type: 'test'
+  ...
+# Subtest: French raw decimal/grouping inputs preserve existing browser/native fixture values
+ok 39 - French raw decimal/grouping inputs preserve existing browser/native fixture values
+  ---
+  duration_ms: 122.36125
+  type: 'test'
+  ...
+# Subtest: French ambiguity and invalid amounts cannot create results or native drafts
+ok 40 - French ambiguity and invalid amounts cannot create results or native drafts
+  ---
+  duration_ms: 132.104583
+  type: 'test'
+  ...
+# Subtest: French retains the accepted native rounding/capacity eligibility guard
+ok 41 - French retains the accepted native rounding/capacity eligibility guard
+  ---
+  duration_ms: 59.543209
+  type: 'test'
+  ...
+# Subtest: French retry and Back preserve raw comma input, names, cents and sole-reference privacy
+ok 42 - French retry and Back preserve raw comma input, names, cents and sole-reference privacy
+  ---
+  duration_ms: 33.698875
+  type: 'test'
+  ...
+# Subtest: French copied/shared summaries retain currency, creditor direction and localized canonical
+ok 43 - French copied/shared summaries retain currency, creditor direction and localized canonical
+  ---
+  duration_ms: 16.305208
+  type: 'test'
+  ...
+# Subtest: French restored numeric values follow the same fail-closed input boundary
+ok 44 - French restored numeric values follow the same fail-closed input boundary
+  ---
+  duration_ms: 18.350166
+  type: 'test'
+  ...
+# Subtest: French blank identity fallbacks agree between visible calculator and native draft
+ok 45 - French blank identity fallbacks agree between visible calculator and native draft
+  ---
+  duration_ms: 28.947541
+  type: 'test'
+  ...
+# Subtest: French private continuation preserves all four accepted sections and privacy configuration
+ok 46 - French private continuation preserves all four accepted sections and privacy configuration
+  ---
+  duration_ms: 42.057709
+  type: 'test'
+  ...
+# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters
+ok 47 - French admission requires review and produces reciprocal idempotent five-language clusters
+  ---
+  duration_ms: 4.820167
+  type: 'test'
+  ...
+# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+ok 48 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+  ---
+  duration_ms: 374.476042
+  type: 'test'
+  ...
+# Subtest: French boundary follows independently authored valid, ambiguous and malformed fixtures
+ok 49 - French boundary follows independently authored valid, ambiguous and malformed fixtures
+  ---
+  duration_ms: 0.674167
+  type: 'test'
+  ...
+# Subtest: Spanish sale labels preserve the campaign identity, dates and emitted English state
+ok 50 - Spanish sale labels preserve the campaign identity, dates and emitted English state
+  ---
+  duration_ms: 7.240042
+  type: 'test'
+  ...
+# Subtest: Spanish sale badges remain hidden outside an active campaign
+ok 51 - Spanish sale badges remain hidden outside an active campaign
+  ---
+  duration_ms: 0.44175
+  type: 'test'
+  ...
+# Subtest: German sale labels preserve campaigns, dates and analytics state
+ok 52 - German sale labels preserve campaigns, dates and analytics state
+  ---
+  duration_ms: 3.010125
+  type: 'test'
+  ...
+# Subtest: French campaign presentation preserves original dates, identity and analytics
+ok 53 - French campaign presentation preserves original dates, identity and analytics
+  ---
+  duration_ms: 2.309083
+  type: 'test'
+  ...
+# Subtest: only completed translations join the registry and have substantive public HTML
+ok 54 - only completed translations join the registry and have substantive public HTML
+  ---
+  duration_ms: 15.130208
+  type: 'test'
+  ...
+# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries
+ok 55 - English authored content differs from the accepted base only by locale links and declared shared cache queries
+  ---
+  duration_ms: 101.35825
+  type: 'test'
+  ...
+# Subtest: locale routes are unique, stable and contain no financial inputs
+ok 56 - locale routes are unique, stable and contain no financial inputs
+  ---
+  duration_ms: 0.626792
+  type: 'test'
+  ...
+# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release
+ok 57 - Spanish authored HTML stays byte-for-byte intact from the accepted public release
+  ---
+  duration_ms: 92.460542
+  type: 'test'
+  ...
+# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out
+ok 58 - one generator produces reciprocal three-language switches and leaves planned pages out
+  ---
+  duration_ms: 3.16075
+  type: 'test'
+  ...
+# Subtest: German registry inherits source routing without linking to unfinished locale pages
+ok 59 - German registry inherits source routing without linking to unfinished locale pages
+  ---
+  duration_ms: 0.156167
+  type: 'test'
+  ...
+# Subtest: unreviewed German routes do not enter public discovery or runtime matching
+ok 60 - unreviewed German routes do not enter public discovery or runtime matching
+  ---
+  duration_ms: 0.263833
+  type: 'test'
+  ...
+# Subtest: a missing reviewed counterpart fails before any existing page is changed
+ok 61 - a missing reviewed counterpart fails before any existing page is changed
+  ---
+  duration_ms: 1.294042
+  type: 'test'
+  ...
+# Subtest: analytics preserves English metadata and maps only completed localized routes
+ok 62 - analytics preserves English metadata and maps only completed localized routes
+  ---
+  duration_ms: 18.116458
+  type: 'test'
+  ...
+# Subtest: native import is withheld when rounded debts exceed the browser settlement credit
+ok 63 - native import is withheld when rounded debts exceed the browser settlement credit
+  ---
+  duration_ms: 1.0345
+  type: 'test'
+  ...
+# Subtest: accepted residual and precision fixtures keep their existing eligibility and values
+ok 64 - accepted residual and precision fixtures keep their existing eligibility and values
+  ---
+  duration_ms: 0.373833
+  type: 'test'
+  ...
+# Subtest: released App Clip offer is enabled
+ok 65 - released App Clip offer is enabled
+  ---
+  duration_ms: 0.476666
+  type: 'test'
+  ...
+# Subtest: preserves unambiguous identity, costs and ambiguous dollar label
+ok 66 - preserves unambiguous identity, costs and ambiguous dollar label
+  ---
+  duration_ms: 0.293916
+  type: 'test'
+  ...
+# Subtest: multi-payer and incomplete costs retain web result without upload
+ok 67 - multi-payer and incomplete costs retain web result without upload
+  ---
+  duration_ms: 0.068083
+  type: 'test'
+  ...
+# Subtest: precision and capacity limits
+ok 68 - precision and capacity limits
+  ---
+  duration_ms: 0.127791
+  type: 'test'
+  ...
+# Subtest: supported residual and unsupported accumulated rounding
+ok 69 - supported residual and unsupported accumulated rounding
+  ---
+  duration_ms: 0.177542
+  type: 'test'
+  ...
+# Subtest: private continuation allows only its local locale selector with no personal previews
+ok 70 - private continuation allows only its local locale selector with no personal previews
+  ---
+  duration_ms: 1.628959
+  type: 'test'
+  ...
+# Subtest: shared cross-language financial fixtures
+ok 71 - shared cross-language financial fixtures
+  ---
+  duration_ms: 0.413
+  type: 'test'
+  ...
+# Subtest: rejects a native half-cent that disagrees with the existing browser answer
+ok 72 - rejects a native half-cent that disagrees with the existing browser answer
+  ---
+  duration_ms: 0.066375
+  type: 'test'
+  ...
+# Subtest: private continuation preserves accepted English/Spanish copy and all three no-JS sections
+ok 73 - private continuation preserves accepted English/Spanish copy and all three no-JS sections
+  ---
+  duration_ms: 1.754042
+  type: 'test'
+  ...
+# Subtest: private fragment switching changes only language, title and visible section while retaining sole ref
+ok 74 - private fragment switching changes only language, title and visible section while retaining sole ref
+  ---
+  duration_ms: 11.38075
+  type: 'test'
+  ...
+1..74
+# tests 74
+# suites 0
+# pass 74
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 501.2465

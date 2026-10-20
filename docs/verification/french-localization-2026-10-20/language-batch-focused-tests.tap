@@ -1,0 +1,70 @@
+TAP version 13
+# Subtest: French raw decimal/grouping inputs preserve existing browser/native fixture values
+ok 1 - French raw decimal/grouping inputs preserve existing browser/native fixture values
+  ---
+  duration_ms: 124.835333
+  type: 'test'
+  ...
+# Subtest: French ambiguity and invalid amounts cannot create results or native drafts
+ok 2 - French ambiguity and invalid amounts cannot create results or native drafts
+  ---
+  duration_ms: 131.018625
+  type: 'test'
+  ...
+# Subtest: French retains the accepted native rounding/capacity eligibility guard
+ok 3 - French retains the accepted native rounding/capacity eligibility guard
+  ---
+  duration_ms: 62.14575
+  type: 'test'
+  ...
+# Subtest: French retry and Back preserve raw comma input, names, cents and sole-reference privacy
+ok 4 - French retry and Back preserve raw comma input, names, cents and sole-reference privacy
+  ---
+  duration_ms: 35.207625
+  type: 'test'
+  ...
+# Subtest: French copied/shared summaries retain currency, creditor direction and localized canonical
+ok 5 - French copied/shared summaries retain currency, creditor direction and localized canonical
+  ---
+  duration_ms: 16.566542
+  type: 'test'
+  ...
+# Subtest: French restored numeric values follow the same fail-closed input boundary
+ok 6 - French restored numeric values follow the same fail-closed input boundary
+  ---
+  duration_ms: 18.856917
+  type: 'test'
+  ...
+# Subtest: French blank identity fallbacks agree between visible calculator and native draft
+ok 7 - French blank identity fallbacks agree between visible calculator and native draft
+  ---
+  duration_ms: 30.874334
+  type: 'test'
+  ...
+# Subtest: French private continuation preserves all four accepted sections and privacy configuration
+ok 8 - French private continuation preserves all four accepted sections and privacy configuration
+  ---
+  duration_ms: 50.731709
+  type: 'test'
+  ...
+# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters
+ok 9 - French admission requires review and produces reciprocal idempotent five-language clusters
+  ---
+  duration_ms: 4.160167
+  type: 'test'
+  ...
+# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+ok 10 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+  ---
+  duration_ms: 391.434167
+  type: 'test'
+  ...
+1..10
+# tests 10
+# suites 0
+# pass 10
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 514.134

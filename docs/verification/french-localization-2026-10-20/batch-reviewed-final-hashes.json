@@ -1,0 +1,13 @@
+{
+  "llms.txt": "5a09d49205ea5da86d2a0085045cf84a597a1bd23ddf79cde62c2cac9fbef389",
+  "sitemap.xml": "d117f060ec2008b73ed16348219e00ca5b8b33208a017f07add8062b84d6866f",
+  "robots.txt": "aefbd5452351298adfc7c933c8457c88b6102d11f9d662fc1ea234539069e767",
+  "firebase.exp003.json": "0a0d1a43448d7bc2936a33c59eb53132def4135361d3e214a21dcb9eedca971f",
+  "private-continuation/split/index.html": "898a8bd1cefe7c4a54c91fda9fa9a8f414c63c4c223a0694477e55f85b66ccbb",
+  "private-continuation/split/locale.js": "ccf5559f67d8379e722cdcea73cd14a8af23823e30f07c481148f3f34082e74b",
+  "docs/verification/french-localization-2026-10-20/verify-public.py": "9ad8a08dd6d5ae04256e97b30f06e40cd3175e1d0566897925d9ad7cb1e9e488",
+  "docs/verification/french-localization-2026-10-20/live-private-check.cjs": "06e4e30ee1c42ea60c5416ff15bfd947ec3544c9ff57ebc4df2039743360d4cd",
+  "docs/verification/french-localization-2026-10-20/pages-status.py": "e881f510f17c605b3ae9e208be9c868c6747cce8478d246fdbc879693fe95140",
+  "docs/verification/french-localization-2026-10-20/raw-html-check.py": "374ffb9cbcf80e3ef3da8d56cf1955b989160587fd4bcbd8141fac05f2936617",
+  "docs/verification/french-localization-2026-10-20/batch-audit.py": "56b4e79f07f6afc3904a7a20f8923c002a69680acb5fb2a83c1c244e48d34f88"
+}

@@ -14,9 +14,13 @@
     "fr": "https://you-owe-me.com/fr/",
     "x-default": "https://you-owe-me.com/"
   },
-  "staticMainTextCharacters": 31703,
-  "staticLinkCount": 82,
+  "staticMainTextCharacters": 31867,
+  "staticLinkCount": 86,
   "assets": [
+    "/favicon.ico",
+    "/images/shared/brand/icon_3_0.png",
+    "/images/shared/brand/icon_3_0.png",
+    "/images/shared/brand/icon_3_0.png",
     "https://you-owe-me.com/images/shared/brand/icon_3_0.png",
     "https://you-owe-me.com/images/shared/brand/icon_3_0.png",
     "/assets/css/fontawesome-all.min.css",

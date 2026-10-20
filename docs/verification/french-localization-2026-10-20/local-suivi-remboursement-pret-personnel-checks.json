@@ -67,6 +67,7 @@
       "/fr/solutions/application-suivi-argent-du/",
       "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
       "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "/fr/outils/calculateur-partage-depenses/",
       "/fr/",
       "/solutions/",
       "/solutions/debt-repayment-tracker/",
@@ -196,6 +197,7 @@
       "/fr/solutions/application-suivi-argent-du/",
       "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
       "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "/fr/outils/calculateur-partage-depenses/",
       "/fr/",
       "/solutions/",
       "/solutions/debt-repayment-tracker/",
@@ -325,6 +327,7 @@
       "/fr/solutions/application-suivi-argent-du/",
       "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
       "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "/fr/outils/calculateur-partage-depenses/",
       "/fr/",
       "/solutions/",
       "/solutions/debt-repayment-tracker/",
@@ -408,7 +411,7 @@
       },
       {
         "text": "Télécharger sur l’App Store",
-        "height": 87.984375,
+        "height": 67.1875,
         "lineHeight": "20.8px",
         "background": "rgb(175, 230, 126)"
       },
@@ -461,6 +464,7 @@
       "/fr/solutions/application-suivi-argent-du/",
       "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
       "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "/fr/outils/calculateur-partage-depenses/",
       "/fr/",
       "/solutions/",
       "/solutions/debt-repayment-tracker/",
@@ -517,6 +521,6 @@
   },
   {
     "noJavaScript": true,
-    "mainTextLength": 17379
+    "mainTextLength": 17415
   }
 ]

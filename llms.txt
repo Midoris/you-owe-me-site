@@ -11,7 +11,7 @@ It is also not a bank, debt collector, payment processor, cash advance provider,
 For formal installment debts owed to a bank, credit union, vehicle-finance provider, or another lender, You Owe Me can be used as a manually maintained personal working record. It does not connect to lender accounts or provide an official lender balance; the user reconciles the working record with the lender's current statement.
 
 App language availability:
-The You Owe Me app interface is localized in 10 languages: English, Arabic, French, German, Italian, Japanese, Korean, Polish, Portuguese, and Spanish. This applies to the app only. The website at you-owe-me.com is currently available in English only.
+The You Owe Me app interface is localized in 10 languages: English, Arabic, French, German, Italian, Japanese, Korean, Polish, Portuguese, and Spanish. This applies to the app only. The full website at you-owe-me.com is available in English, with selected pages also available in Spanish, German, Arabic, and French.
 
 Core concept:
 A running balance between two people is one current total that updates after each expense, repayment, partial repayment, interest, or adjustment. Interest can be percentage-based, where it grows over time from a rate and frequency, or fixed, where one exact amount is added once. Balance Replay lets users scroll through entry history and see the balance around the entry being viewed, including interest-aware historical context. Relationship Timeline is the per-person history that keeps entries, loans, payment plans, shared statements, exports, follow-ups, repayment updates, and loan requests in context. You Owe Me is built for ongoing money between real people where the balance, history, reminders, and next conversation need to stay clear.

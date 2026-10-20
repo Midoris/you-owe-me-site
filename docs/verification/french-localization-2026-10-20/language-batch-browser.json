@@ -1,0 +1,2226 @@
+{
+  "allPassed": true,
+  "visitedPages": [
+    "/",
+    "/ar/",
+    "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+    "/ar/solutions/app-to-track-money-owed/",
+    "/ar/solutions/personal-loan-repayment-tracker/",
+    "/ar/tools/split-expense-calculator/",
+    "/blog/how-to-keep-track-of-who-owes-you-money/",
+    "/de/",
+    "/de/blog/wer-schuldet-mir-geld/",
+    "/de/loesungen/app-fuer-geldforderungen/",
+    "/de/loesungen/private-darlehen-verwalten/",
+    "/de/tools/ausgaben-aufteilen/",
+    "/es/",
+    "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+    "/es/herramientas/calculadora-de-gastos-compartidos/",
+    "/es/soluciones/app-para-registrar-dinero-adeudado/",
+    "/es/soluciones/seguimiento-de-prestamos-personales/",
+    "/fr/",
+    "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+    "/fr/outils/calculateur-partage-depenses/",
+    "/fr/solutions/application-suivi-argent-du/",
+    "/fr/solutions/suivi-remboursement-pret-personnel/",
+    "/solutions/app-to-track-money-owed/",
+    "/solutions/personal-loan-repayment-tracker/",
+    "/tools/split-expense-calculator/"
+  ],
+  "directedPaths": 80,
+  "checks": [
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "en",
+      "route": "/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Track Money Between People | IOU, Loan & Repayment App | YouOweMe",
+      "h1": "Know what’s still owed.",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre les prêts et remboursements entre particuliers | YouOweMe",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "Controla el dinero entre personas | App para registrar préstamos y pagos | YouOweMe",
+      "h1": "Ten claro cuánto queda por pagar.",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre les prêts et remboursements entre particuliers | YouOweMe",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Geld zwischen Menschen im Blick | Darlehen und Rückzahlungen | YouOweMe",
+      "h1": "Wissen, was noch offen ist.",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre les prêts et remboursements entre particuliers | YouOweMe",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "تتبّع الأموال بين الأشخاص | القروض والسداد | YouOweMe",
+      "h1": "اعرف المبلغ الذي لم يُسدَّد بعد.",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre les prêts et remboursements entre particuliers | YouOweMe",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Simple App to Track Who Owes You Money | You Owe Me",
+      "h1": "Simple App to Track Who Owes You Money",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Une application simple pour suivre qui vous doit de l’argent | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": "page"
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "App sencilla para registrar quién te debe dinero | You Owe Me",
+      "h1": "Una app sencilla para registrar quién te debe dinero",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Une application simple pour suivre qui vous doit de l’argent | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": "page"
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Wer schuldet dir Geld? Die App für klare Salden | You Owe Me",
+      "h1": "Behalte im Blick, wer dir Geld schuldet",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Une application simple pour suivre qui vous doit de l’argent | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": "page"
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "تطبيق بسيط لتتبّع من يدين لك بالمال | You Owe Me",
+      "h1": "تطبيق بسيط لتتبّع من يدين لك بالمال",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Une application simple pour suivre qui vous doit de l’argent | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": "page"
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "en",
+      "route": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Track Who Owes You Money: Simple Record & Template",
+      "h1": "How to Keep Track of Who Owes You Money",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre qui vous doit de l’argent : relevé et modèle simple",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "Quién te debe dinero: registro sencillo y plantilla",
+      "h1": "Cómo llevar el control de quién te debe dinero",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre qui vous doit de l’argent : relevé et modèle simple",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/blog/wer-schuldet-mir-geld/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Wer schuldet mir Geld? Einfache Übersicht und Vorlage",
+      "h1": "Wer schuldet dir Geld? So behältst du den Überblick",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre qui vous doit de l’argent : relevé et modèle simple",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "كيف تسجّل من يدين لك بالمال: سجلّ وقالب بسيطان",
+      "h1": "كيف تسجّل من يدين لك بالمال",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre qui vous doit de l’argent : relevé et modèle simple",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "en",
+      "route": "/solutions/personal-loan-repayment-tracker/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Personal Loan Repayment Tracker for Friends & Family | You Owe Me",
+      "h1": "Track a Personal Loan and Keep the Repayment Plan Current",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivi des remboursements de prêts entre proches | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "Registro de pagos de préstamos entre amigos y familiares | You Owe Me",
+      "h1": "Registra un préstamo personal y mantén al día el plan de pagos",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivi des remboursements de prêts entre proches | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/loesungen/private-darlehen-verwalten/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Private Darlehen und Rückzahlungen verwalten | You Owe Me",
+      "h1": "Ein privates Darlehen verwalten und den Rückzahlungsplan aktuell halten",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivi des remboursements de prêts entre proches | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/solutions/personal-loan-repayment-tracker/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "تتبّع سداد القروض الشخصية للأصدقاء والعائلة | You Owe Me",
+      "h1": "تتبّع القرض الشخصي وأبقِ خطة السداد محدّثة",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivi des remboursements de prêts entre proches | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "en",
+      "route": "/tools/split-expense-calculator/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Free Split Money & Expense Calculator: Who Owes What",
+      "h1": "Split Money & Expenses Calculator",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      },
+      "settlements": [
+        "Sam owes Alex $25",
+        "Sam owes Mia $10"
+      ]
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Calculateur gratuit de partage des dépenses : qui doit combien à qui",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": "page"
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "Calculadora gratuita de gastos compartidos: quién debe a quién",
+      "h1": "Calculadora de gastos compartidos",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      },
+      "settlements": [
+        "Sam debe $25 a Alex",
+        "Sam debe $10 a Mia"
+      ]
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Calculateur gratuit de partage des dépenses : qui doit combien à qui",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": "page"
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/tools/ausgaben-aufteilen/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Ausgaben aufteilen: Kostenloser Rechner für gemeinsame Kosten",
+      "h1": "Gemeinsame Ausgaben aufteilen",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      },
+      "settlements": [
+        "Sam schuldet Alex 25 $",
+        "Sam schuldet Mia 10 $"
+      ]
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Calculateur gratuit de partage des dépenses : qui doit combien à qui",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": "page"
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/tools/split-expense-calculator/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "حاسبة مجانية لتقسيم المصروفات: من يدين لمن؟",
+      "h1": "حاسبة تقسيم الأموال والمصروفات",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      },
+      "settlements": [
+        "على Sam سداد 25 $ إلى Alex",
+        "على Sam سداد 10 $ إلى Mia"
+      ]
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Calculateur gratuit de partage des dépenses : qui doit combien à qui",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": "page"
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "en",
+      "route": "/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Track Money Between People | IOU, Loan & Repayment App | YouOweMe",
+      "h1": "Know what’s still owed.",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre les prêts et remboursements entre particuliers | YouOweMe",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "Controla el dinero entre personas | App para registrar préstamos y pagos | YouOweMe",
+      "h1": "Ten claro cuánto queda por pagar.",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre les prêts et remboursements entre particuliers | YouOweMe",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Geld zwischen Menschen im Blick | Darlehen und Rückzahlungen | YouOweMe",
+      "h1": "Wissen, was noch offen ist.",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre les prêts et remboursements entre particuliers | YouOweMe",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "تتبّع الأموال بين الأشخاص | القروض والسداد | YouOweMe",
+      "h1": "اعرف المبلغ الذي لم يُسدَّد بعد.",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre les prêts et remboursements entre particuliers | YouOweMe",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Simple App to Track Who Owes You Money | You Owe Me",
+      "h1": "Simple App to Track Who Owes You Money",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Une application simple pour suivre qui vous doit de l’argent | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": "page"
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "App sencilla para registrar quién te debe dinero | You Owe Me",
+      "h1": "Una app sencilla para registrar quién te debe dinero",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Une application simple pour suivre qui vous doit de l’argent | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": "page"
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Wer schuldet dir Geld? Die App für klare Salden | You Owe Me",
+      "h1": "Behalte im Blick, wer dir Geld schuldet",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Une application simple pour suivre qui vous doit de l’argent | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": "page"
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "تطبيق بسيط لتتبّع من يدين لك بالمال | You Owe Me",
+      "h1": "تطبيق بسيط لتتبّع من يدين لك بالمال",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Une application simple pour suivre qui vous doit de l’argent | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": "page"
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "en",
+      "route": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Track Who Owes You Money: Simple Record & Template",
+      "h1": "How to Keep Track of Who Owes You Money",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre qui vous doit de l’argent : relevé et modèle simple",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "Quién te debe dinero: registro sencillo y plantilla",
+      "h1": "Cómo llevar el control de quién te debe dinero",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre qui vous doit de l’argent : relevé et modèle simple",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/blog/wer-schuldet-mir-geld/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Wer schuldet mir Geld? Einfache Übersicht und Vorlage",
+      "h1": "Wer schuldet dir Geld? So behältst du den Überblick",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre qui vous doit de l’argent : relevé et modèle simple",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "كيف تسجّل من يدين لك بالمال: سجلّ وقالب بسيطان",
+      "h1": "كيف تسجّل من يدين لك بالمال",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivre qui vous doit de l’argent : relevé et modèle simple",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": "page"
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "en",
+      "route": "/solutions/personal-loan-repayment-tracker/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Personal Loan Repayment Tracker for Friends & Family | You Owe Me",
+      "h1": "Track a Personal Loan and Keep the Repayment Plan Current",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivi des remboursements de prêts entre proches | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "Registro de pagos de préstamos entre amigos y familiares | You Owe Me",
+      "h1": "Registra un préstamo personal y mantén al día el plan de pagos",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivi des remboursements de prêts entre proches | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/loesungen/private-darlehen-verwalten/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Private Darlehen und Rückzahlungen verwalten | You Owe Me",
+      "h1": "Ein privates Darlehen verwalten und den Rückzahlungsplan aktuell halten",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivi des remboursements de prêts entre proches | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/solutions/personal-loan-repayment-tracker/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "تتبّع سداد القروض الشخصية للأصدقاء والعائلة | You Owe Me",
+      "h1": "تتبّع القرض الشخصي وأبقِ خطة السداد محدّثة",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      }
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Suivi des remboursements de prêts entre proches | You Owe Me",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": "page"
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": null
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "en",
+      "route": "/tools/split-expense-calculator/",
+      "lang": "en",
+      "dir": "ltr",
+      "title": "Free Split Money & Expense Calculator: Who Owes What",
+      "h1": "Split Money & Expenses Calculator",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      },
+      "settlements": [
+        "Sam owes Alex $25",
+        "Sam owes Mia $10"
+      ]
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Calculateur gratuit de partage des dépenses : qui doit combien à qui",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": "page"
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "lang": "es",
+      "dir": "ltr",
+      "title": "Calculadora gratuita de gastos compartidos: quién debe a quién",
+      "h1": "Calculadora de gastos compartidos",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      },
+      "settlements": [
+        "Sam debe $25 a Alex",
+        "Sam debe $10 a Mia"
+      ]
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Calculateur gratuit de partage des dépenses : qui doit combien à qui",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": "page"
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/tools/ausgaben-aufteilen/",
+      "lang": "de",
+      "dir": "ltr",
+      "title": "Ausgaben aufteilen: Kostenloser Rechner für gemeinsame Kosten",
+      "h1": "Gemeinsame Ausgaben aufteilen",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      },
+      "settlements": [
+        "Sam schuldet Alex 25 $",
+        "Sam schuldet Mia 10 $"
+      ]
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Calculateur gratuit de partage des dépenses : qui doit combien à qui",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": "page"
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/tools/split-expense-calculator/",
+      "lang": "ar",
+      "dir": "rtl",
+      "title": "حاسبة مجانية لتقسيم المصروفات: من يدين لمن؟",
+      "h1": "حاسبة تقسيم الأموال والمصروفات",
+      "arabicLink": {
+        "text": "العربية",
+        "dir": "rtl",
+        "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif"
+      },
+      "settlements": [
+        "على Sam سداد 25 $ إلى Alex",
+        "على Sam سداد 10 $ إلى Mia"
+      ]
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "lang": "fr",
+      "dir": "ltr",
+      "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+      "title": "Calculateur gratuit de partage des dépenses : qui doit combien à qui",
+      "navigation": [
+        {
+          "href": "/fr/",
+          "text": "You Owe Me : suivez vos prêts, dépenses et remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/application-suivi-argent-du/",
+          "text": "Application pour suivre l’argent qu’on vous doit",
+          "current": null
+        },
+        {
+          "href": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+          "text": "Comment savoir qui vous doit de l’argent",
+          "current": null
+        },
+        {
+          "href": "/fr/solutions/suivi-remboursement-pret-personnel/",
+          "text": "Suivez vos prêts personnels et leurs remboursements",
+          "current": null
+        },
+        {
+          "href": "/fr/outils/calculateur-partage-depenses/",
+          "text": "Calculateur de partage des dépenses",
+          "current": "page"
+        }
+      ],
+      "badFrenchFallbacks": [],
+      "englishCounterpartLeaks": []
+    }
+  ],
+  "externalRequestsBlocked": true
+}

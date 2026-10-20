@@ -1,0 +1,96 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 320,
+      "route": "/fr/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 320,
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 320,
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 320,
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 320,
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 600,
+      "route": "/fr/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 600,
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 600,
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 600,
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 600,
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "allFiveNavLinks": true,
+      "noPageOverflow": true
+    },
+    {
+      "noJS": true,
+      "width": 320,
+      "route": "/fr/",
+      "mainTextCharacters": 22034
+    },
+    {
+      "noJS": true,
+      "width": 320,
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "mainTextCharacters": 25441
+    },
+    {
+      "noJS": true,
+      "width": 320,
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "mainTextCharacters": 13981
+    },
+    {
+      "noJS": true,
+      "width": 320,
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "mainTextCharacters": 17369
+    },
+    {
+      "noJS": true,
+      "width": 320,
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "mainTextCharacters": 16254
+    }
+  ],
+  "externalRequestsBlocked": true
+}

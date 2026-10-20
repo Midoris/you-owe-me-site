@@ -1,0 +1,315 @@
+{
+  "allPassed": true,
+  "checkedAt": "2026-10-20T09:20:56.389Z",
+  "checks": [
+    {
+      "route": "/fr/",
+      "widths": [
+        {
+          "width": 320,
+          "pageWidth": 320,
+          "overflows": [
+            {
+              "tag": "SECTION",
+              "class": "lt-pageSection lt-proofSection",
+              "parent": "post featured",
+              "text": "\n            \n              Pour les dépenses du quotidien aussi, pas seulement les prêts ponctuels\n",
+              "scroll": 306,
+              "width": 292
+            },
+            {
+              "tag": "DIV",
+              "class": "lt-reviewRail",
+              "parent": "lt-pageSection lt-proofSection",
+              "text": "\n              \n                ★★★★★\n                L’amour d’une mère\n                \n          ",
+              "scroll": 4954,
+              "width": 320
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "pageWidth": 390,
+          "overflows": [
+            {
+              "tag": "SECTION",
+              "class": "lt-pageSection lt-proofSection",
+              "parent": "post featured",
+              "text": "\n            \n              Pour les dépenses du quotidien aussi, pas seulement les prêts ponctuels\n",
+              "scroll": 375,
+              "width": 359
+            },
+            {
+              "tag": "DIV",
+              "class": "lt-reviewRail",
+              "parent": "lt-pageSection lt-proofSection",
+              "text": "\n              \n                ★★★★★\n                L’amour d’une mère\n                \n          ",
+              "scroll": 5930,
+              "width": 390
+            }
+          ]
+        },
+        {
+          "width": 600,
+          "pageWidth": 600,
+          "overflows": [
+            {
+              "tag": "SECTION",
+              "class": "lt-pageSection lt-proofSection",
+              "parent": "post featured",
+              "text": "\n            \n              Pour les dépenses du quotidien aussi, pas seulement les prêts ponctuels\n",
+              "scroll": 585,
+              "width": 569
+            },
+            {
+              "tag": "DIV",
+              "class": "lt-reviewRail",
+              "parent": "lt-pageSection lt-proofSection",
+              "text": "\n              \n                ★★★★★\n                L’amour d’une mère\n                \n          ",
+              "scroll": 5932,
+              "width": 600
+            }
+          ]
+        },
+        {
+          "width": 1440,
+          "pageWidth": 1440,
+          "overflows": [
+            {
+              "tag": "DIV",
+              "class": "lt-reviewRail",
+              "parent": "lt-pageSection lt-proofSection",
+              "text": "\n              \n                ★★★★★\n                L’amour d’une mère\n                \n          ",
+              "scroll": 7243,
+              "width": 1303
+            }
+          ]
+        }
+      ],
+      "noJavaScriptMain": 22040
+    },
+    {
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "widths": [
+        {
+          "width": 320,
+          "pageWidth": 320,
+          "overflows": []
+        },
+        {
+          "width": 390,
+          "pageWidth": 390,
+          "overflows": []
+        },
+        {
+          "width": 600,
+          "pageWidth": 600,
+          "overflows": []
+        },
+        {
+          "width": 1440,
+          "pageWidth": 1440,
+          "overflows": []
+        }
+      ],
+      "noJavaScriptMain": 25441
+    },
+    {
+      "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+      "widths": [
+        {
+          "width": 320,
+          "pageWidth": 320,
+          "overflows": [
+            {
+              "tag": "DIV",
+              "class": "rb-tableWrap",
+              "parent": "lt-toolsSection rb-answer-section",
+              "text": "\n              \n                Exemple de relevé des sommes dues, des remboursements et du solde re",
+              "scroll": 860,
+              "width": 278
+            },
+            {
+              "tag": "DIV",
+              "class": "rb-tableWrap",
+              "parent": "lt-toolsSection rb-answer-section",
+              "text": "\n              \n                Choisir entre une note, un calculateur, un solde évolutif, un suivi ",
+              "scroll": 720,
+              "width": 278
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "pageWidth": 390,
+          "overflows": [
+            {
+              "tag": "DIV",
+              "class": "rb-tableWrap",
+              "parent": "lt-toolsSection rb-answer-section",
+              "text": "\n              \n                Exemple de relevé des sommes dues, des remboursements et du solde re",
+              "scroll": 860,
+              "width": 348
+            },
+            {
+              "tag": "DIV",
+              "class": "rb-tableWrap",
+              "parent": "lt-toolsSection rb-answer-section",
+              "text": "\n              \n                Choisir entre une note, un calculateur, un solde évolutif, un suivi ",
+              "scroll": 720,
+              "width": 348
+            }
+          ]
+        },
+        {
+          "width": 600,
+          "pageWidth": 600,
+          "overflows": [
+            {
+              "tag": "DIV",
+              "class": "rb-tableWrap",
+              "parent": "lt-toolsSection rb-answer-section",
+              "text": "\n              \n                Exemple de relevé des sommes dues, des remboursements et du solde re",
+              "scroll": 860,
+              "width": 558
+            },
+            {
+              "tag": "DIV",
+              "class": "rb-tableWrap",
+              "parent": "lt-toolsSection rb-answer-section",
+              "text": "\n              \n                Choisir entre une note, un calculateur, un solde évolutif, un suivi ",
+              "scroll": 720,
+              "width": 558
+            }
+          ]
+        },
+        {
+          "width": 1440,
+          "pageWidth": 1440,
+          "overflows": []
+        }
+      ],
+      "noJavaScriptMain": 13981
+    },
+    {
+      "route": "/fr/solutions/suivi-remboursement-pret-personnel/",
+      "widths": [
+        {
+          "width": 320,
+          "pageWidth": 320,
+          "overflows": [
+            {
+              "tag": "CAPTION",
+              "class": "",
+              "parent": "plrt-table plrt-table--compact",
+              "text": "Questions pour reprendre un prêt en cours à partir de la situation actuelle",
+              "scroll": 434,
+              "width": 1
+            },
+            {
+              "tag": "CAPTION",
+              "class": "",
+              "parent": "plrt-table plrt-table--compact",
+              "text": "Choisir la méthode la plus simple qui restera exacte",
+              "scroll": 302,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "width": 390,
+          "pageWidth": 390,
+          "overflows": [
+            {
+              "tag": "CAPTION",
+              "class": "",
+              "parent": "plrt-table plrt-table--compact",
+              "text": "Questions pour reprendre un prêt en cours à partir de la situation actuelle",
+              "scroll": 477,
+              "width": 1
+            },
+            {
+              "tag": "CAPTION",
+              "class": "",
+              "parent": "plrt-table plrt-table--compact",
+              "text": "Choisir la méthode la plus simple qui restera exacte",
+              "scroll": 332,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "width": 600,
+          "pageWidth": 600,
+          "overflows": [
+            {
+              "tag": "CAPTION",
+              "class": "",
+              "parent": "plrt-table plrt-table--compact",
+              "text": "Questions pour reprendre un prêt en cours à partir de la situation actuelle",
+              "scroll": 477,
+              "width": 1
+            },
+            {
+              "tag": "CAPTION",
+              "class": "",
+              "parent": "plrt-table plrt-table--compact",
+              "text": "Choisir la méthode la plus simple qui restera exacte",
+              "scroll": 332,
+              "width": 1
+            }
+          ]
+        },
+        {
+          "width": 1440,
+          "pageWidth": 1440,
+          "overflows": [
+            {
+              "tag": "CAPTION",
+              "class": "",
+              "parent": "plrt-table plrt-table--compact",
+              "text": "Questions pour reprendre un prêt en cours à partir de la situation actuelle",
+              "scroll": 520,
+              "width": 1
+            },
+            {
+              "tag": "CAPTION",
+              "class": "",
+              "parent": "plrt-table plrt-table--compact",
+              "text": "Choisir la méthode la plus simple qui restera exacte",
+              "scroll": 363,
+              "width": 1
+            }
+          ]
+        }
+      ],
+      "noJavaScriptMain": 17415
+    },
+    {
+      "route": "/fr/outils/calculateur-partage-depenses/",
+      "widths": [
+        {
+          "width": 320,
+          "pageWidth": 320,
+          "overflows": []
+        },
+        {
+          "width": 390,
+          "pageWidth": 390,
+          "overflows": []
+        },
+        {
+          "width": 600,
+          "pageWidth": 600,
+          "overflows": []
+        },
+        {
+          "width": 1440,
+          "pageWidth": 1440,
+          "overflows": []
+        }
+      ],
+      "noJavaScriptMain": 16254
+    }
+  ]
+}

@@ -14,8 +14,8 @@
     "fr": "https://you-owe-me.com/fr/solutions/application-suivi-argent-du/",
     "x-default": "https://you-owe-me.com/solutions/app-to-track-money-owed/"
   },
-  "staticMainTextCharacters": 40350,
-  "staticLinkCount": 106,
+  "staticMainTextCharacters": 40501,
+  "staticLinkCount": 109,
   "assets": [
     "/favicon.ico",
     "/images/shared/brand/icon_3_0.png",

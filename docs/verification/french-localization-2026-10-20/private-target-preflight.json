@@ -1,0 +1,72 @@
+{
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T09:24:41.698089+00:00",
+  "unchangedResources": [
+    {
+      "file": "private-continuation/.well-known/apple-app-site-association",
+      "url": "https://continue.you-owe-me.com/.well-known/apple-app-site-association",
+      "status": 200,
+      "sameReviewedBytes": true,
+      "sha256": "f4af99ba0623216ac8df4fb79c0c5de3385c42091755f491de026b0b841cec6e",
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive"
+      }
+    },
+    {
+      "file": "private-continuation/continuation.css",
+      "url": "https://continue.you-owe-me.com/continuation.css",
+      "status": 200,
+      "sameReviewedBytes": true,
+      "sha256": "d9276657e3bbc4b304753e53d407d858aecf2cd750ed31310fafd124aab1d8d1",
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive"
+      }
+    },
+    {
+      "file": "private-continuation/loan/index.html",
+      "url": "https://continue.you-owe-me.com/loan/",
+      "status": 200,
+      "sameReviewedBytes": true,
+      "sha256": "c93594fd93f2f370274c87ce309f1b37c829e3de2bc9a255aabf12787deba37c",
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; connect-src https://us-central1-you-owe-me-app.cloudfunctions.net/loanTransfer; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive"
+      }
+    },
+    {
+      "file": "private-continuation/loan/loan.css",
+      "url": "https://continue.you-owe-me.com/loan/loan.css",
+      "status": 200,
+      "sameReviewedBytes": true,
+      "sha256": "2ac02490cb0763d0cc5f01a74b3fe47861d1982fd33faac672b4fa21ecfa970f",
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; connect-src https://us-central1-you-owe-me-app.cloudfunctions.net/loanTransfer; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive"
+      }
+    },
+    {
+      "file": "private-continuation/loan/recovery.js",
+      "url": "https://continue.you-owe-me.com/loan/recovery.js",
+      "status": 200,
+      "sameReviewedBytes": true,
+      "sha256": "205e3a3d3948ee886c32a50ab0fec1a134968b19d82942ad0c3fb05a84608342",
+      "headers": {
+        "cache-control": "no-store",
+        "content-security-policy": "default-src 'none'; style-src 'self'; script-src 'self'; connect-src https://us-central1-you-owe-me-app.cloudfunctions.net/loanTransfer; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "referrer-policy": "no-referrer",
+        "x-robots-tag": "noindex, nofollow, noarchive"
+      }
+    }
+  ],
+  "financialReferencesSent": 0
+}
