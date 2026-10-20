@@ -13,7 +13,7 @@ export const sharedAssetVersions = {
   "/assets/js/main.js": "fr20261020",
   "/styles/site-locale.css": "fr20261020",
   "/styles/site-nav.css": "ar20261020",
-  "/scripts/recordkeeping-guide-es.js": "ar20261020",
+  "/scripts/recordkeeping-guide-es.js": "fr20261020",
   "/scripts/split-expense-locale.js": "ar20261020",
   "/scripts/split-expense-calculator.js": "ar20261020",
   "/scripts/tool-transfer.js": "ar20261020",
@@ -91,7 +91,7 @@ export const arabicShared = Object.freeze({
 export const frenchPages = [
   { en: "/", fr: "/fr/", title: "You Owe Me : suivez vos prêts, dépenses et remboursements", complete: true },
   { en: "/solutions/app-to-track-money-owed/", fr: "/fr/solutions/application-suivi-argent-du/", title: "Application pour suivre l’argent qu’on vous doit", complete: true },
-  { en: "/blog/how-to-keep-track-of-who-owes-you-money/", fr: "/fr/blog/suivre-qui-vous-doit-de-l-argent/", title: "Comment savoir qui vous doit de l’argent", complete: false },
+  { en: "/blog/how-to-keep-track-of-who-owes-you-money/", fr: "/fr/blog/suivre-qui-vous-doit-de-l-argent/", title: "Comment savoir qui vous doit de l’argent", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", fr: "/fr/solutions/suivi-remboursement-pret-personnel/", title: "Suivez vos prêts personnels et leurs remboursements", complete: false },
   { en: "/tools/split-expense-calculator/", fr: "/fr/outils/calculateur-partage-depenses/", title: "Calculateur de partage des dépenses", complete: false },
 ];

@@ -1,0 +1,11 @@
+{
+  "accepted": true,
+  "checkedAt": "2026-10-20T08:47:05.997Z",
+  "htmlSha256": "504005c31b6b9c08c79b04b98a4e163c5821d474dd8ea6f1fff2eaeb58a648fa",
+  "checks": [
+    "Every English source content destination survives at reviewed French counterpart or working English destination",
+    "Source table/card/FAQ/template structure and tracking identities remain complete",
+    "Per-person/currency, actual-repayment, source USD and scoped importer boundaries are retained",
+    "Counterparts, declared cache queries, native Store campaign and authored generator ownership are stable"
+  ]
+}

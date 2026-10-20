@@ -1,0 +1,271 @@
+{
+  "accepted": true,
+  "rows": [
+    {
+      "width": 320,
+      "pageWidth": 320,
+      "lang": "fr",
+      "dir": "ltr",
+      "overflows": [],
+      "ledger": [
+        [
+          80,
+          30,
+          50
+        ],
+        [
+          18,
+          18,
+          0
+        ],
+        [
+          42,
+          0,
+          42
+        ],
+        [
+          120,
+          75,
+          45
+        ]
+      ],
+      "tables": [
+        {
+          "label": "Exemple de relevé des sommes dues",
+          "role": "region",
+          "tabIndex": 0,
+          "width": 278,
+          "scrollWidth": 860,
+          "direction": "ltr",
+          "outline": "rgb(0, 95, 204) auto 1px",
+          "focused": true,
+          "keyboardScrolled": true
+        },
+        {
+          "label": "Tableau de choix d’une méthode de suivi des sommes dues",
+          "role": "region",
+          "tabIndex": 0,
+          "width": 278,
+          "scrollWidth": 720,
+          "direction": "ltr",
+          "outline": "rgb(0, 95, 204) auto 1px",
+          "focused": true,
+          "keyboardScrolled": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "lang": "fr",
+      "dir": "ltr",
+      "overflows": [],
+      "ledger": [
+        [
+          80,
+          30,
+          50
+        ],
+        [
+          18,
+          18,
+          0
+        ],
+        [
+          42,
+          0,
+          42
+        ],
+        [
+          120,
+          75,
+          45
+        ]
+      ],
+      "tables": [
+        {
+          "label": "Exemple de relevé des sommes dues",
+          "role": "region",
+          "tabIndex": 0,
+          "width": 348,
+          "scrollWidth": 860,
+          "direction": "ltr",
+          "outline": "rgb(0, 95, 204) auto 1px",
+          "focused": true,
+          "keyboardScrolled": true
+        },
+        {
+          "label": "Tableau de choix d’une méthode de suivi des sommes dues",
+          "role": "region",
+          "tabIndex": 0,
+          "width": 348,
+          "scrollWidth": 720,
+          "direction": "ltr",
+          "outline": "rgb(0, 95, 204) auto 1px",
+          "focused": true,
+          "keyboardScrolled": true
+        }
+      ],
+      "fragment": {
+        "top": 62.734375,
+        "text": "Le relevé simple dont vous avez besoin"
+      },
+      "errors": []
+    },
+    {
+      "width": 600,
+      "pageWidth": 600,
+      "lang": "fr",
+      "dir": "ltr",
+      "overflows": [],
+      "ledger": [
+        [
+          80,
+          30,
+          50
+        ],
+        [
+          18,
+          18,
+          0
+        ],
+        [
+          42,
+          0,
+          42
+        ],
+        [
+          120,
+          75,
+          45
+        ]
+      ],
+      "tables": [
+        {
+          "label": "Exemple de relevé des sommes dues",
+          "role": "region",
+          "tabIndex": 0,
+          "width": 558,
+          "scrollWidth": 860,
+          "direction": "ltr",
+          "outline": "rgb(0, 95, 204) auto 1px",
+          "focused": true,
+          "keyboardScrolled": true
+        },
+        {
+          "label": "Tableau de choix d’une méthode de suivi des sommes dues",
+          "role": "region",
+          "tabIndex": 0,
+          "width": 558,
+          "scrollWidth": 720,
+          "direction": "ltr",
+          "outline": "rgb(0, 95, 204) auto 1px",
+          "focused": true,
+          "keyboardScrolled": true
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "pageWidth": 1440,
+      "lang": "fr",
+      "dir": "ltr",
+      "overflows": [],
+      "ledger": [
+        [
+          80,
+          30,
+          50
+        ],
+        [
+          18,
+          18,
+          0
+        ],
+        [
+          42,
+          0,
+          42
+        ],
+        [
+          120,
+          75,
+          45
+        ]
+      ],
+      "tables": [
+        {
+          "label": "Exemple de relevé des sommes dues",
+          "role": "region",
+          "tabIndex": 0,
+          "width": 1342,
+          "scrollWidth": 1342,
+          "direction": "ltr",
+          "outline": "rgb(0, 95, 204) auto 1px",
+          "focused": true,
+          "keyboardScrolled": false
+        },
+        {
+          "label": "Tableau de choix d’une méthode de suivi des sommes dues",
+          "role": "region",
+          "tabIndex": 0,
+          "width": 1342,
+          "scrollWidth": 1342,
+          "direction": "ltr",
+          "outline": "rgb(0, 95, 204) auto 1px",
+          "focused": true,
+          "keyboardScrolled": false
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "target": "en",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 390,
+      "target": "es",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 390,
+      "target": "de",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 390,
+      "target": "ar",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 1440,
+      "target": "en",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 1440,
+      "target": "es",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 1440,
+      "target": "de",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "width": 1440,
+      "target": "ar",
+      "frenchReturnDirection": "ltr"
+    },
+    {
+      "noJS": true,
+      "mainTextLength": 13906,
+      "selectableTemplates": 3
+    }
+  ],
+  "limits": "Chrome viewport emulation; external hosts/analytics blocked; no native device, messages, uploads or Store opening."
+}

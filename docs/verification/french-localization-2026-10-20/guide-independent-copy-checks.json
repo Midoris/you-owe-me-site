@@ -1,0 +1,411 @@
+{
+  "accepted": true,
+  "checks": [
+    {
+      "lang": "fr",
+      "mode": "clipboard",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "fr",
+      "mode": "fallback",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "fr",
+      "mode": "failure",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": false,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 0,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "ar",
+      "mode": "clipboard",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "ar",
+      "mode": "fallback",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "ar",
+      "mode": "failure",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": false,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 0,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "de",
+      "mode": "clipboard",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "de",
+      "mode": "fallback",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "de",
+      "mode": "failure",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": false,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 0,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "es",
+      "mode": "clipboard",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "es",
+      "mode": "fallback",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "es",
+      "mode": "failure",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": false,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 0,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "en",
+      "mode": "clipboard",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "en",
+      "mode": "fallback",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": true,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": true,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 3,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "lang": "en",
+      "mode": "failure",
+      "cases": [
+        {
+          "id": "money-owed-blank-record",
+          "exactPayload": false,
+          "lines": 9,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-full",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        },
+        {
+          "id": "record-confirmation-short",
+          "exactPayload": false,
+          "lines": 1,
+          "originalButtonRestored": true
+        }
+      ],
+      "eventCount": 0,
+      "metadataOnly": true,
+      "temporaryTextareaRemoved": true
+    }
+  ],
+  "limits": "Synthetic clipboard and fallback seams. Exact public placeholders only; no external message or customer data."
+}

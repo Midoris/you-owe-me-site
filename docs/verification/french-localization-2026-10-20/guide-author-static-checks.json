@@ -1,0 +1,56 @@
+{
+  "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+  "direct_local_urls": 78,
+  "duplicate_ids": [],
+  "errors": [],
+  "main_french_text_chars": 15161,
+  "template_count": 3,
+  "templates": [
+    {
+      "exact_visible_matches_copied": true,
+      "line_count": 9
+    },
+    {
+      "exact_visible_matches_copied": true,
+      "line_count": 1
+    },
+    {
+      "exact_visible_matches_copied": true,
+      "line_count": 1
+    }
+  ],
+  "financial_rows": [
+    {
+      "person": "Alex",
+      "original_usd": 80,
+      "repaid_usd": 30,
+      "remaining_usd": 50,
+      "math_ok": true
+    },
+    {
+      "person": "Maya",
+      "original_usd": 18,
+      "repaid_usd": 18,
+      "remaining_usd": 0,
+      "math_ok": true
+    },
+    {
+      "person": "Chris",
+      "original_usd": 42,
+      "repaid_usd": 0,
+      "remaining_usd": 42,
+      "math_ok": true
+    },
+    {
+      "person": "Cadeau de groupe",
+      "original_usd": 120,
+      "repaid_usd": 75,
+      "remaining_usd": 45,
+      "math_ok": true
+    }
+  ],
+  "illustration_count": 1,
+  "english_badge_pixels": false,
+  "english_hero_pixels": false,
+  "custom_product_page_parameter": false
+}

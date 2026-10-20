@@ -1,0 +1,59 @@
+{
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T08:44:46.481268+00:00",
+  "route": "/fr/blog/suivre-qui-vous-doit-de-l-argent/",
+  "generatorByteIdempotent": true,
+  "checks": [
+    {
+      "command": [
+        "node",
+        "scripts/sync-site-locales.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Updated 23 reviewed language pages.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build-sitemap.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Sitemap built with 100 indexable URL(s).\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/fr/blog/suivre-qui-vous-doit-de-l-argent/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /fr/blog/suivre-qui-vous-doit-de-l-argent/\nBody class: blog-page\nAudited stylesheets: styles/blog.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/french-localization-2026-10-20/raw-html-check.py",
+        "/fr/blog/suivre-qui-vous-doit-de-l-argent/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/fr/blog/suivre-qui-vous-doit-de-l-argent/\", \"lang\": \"fr\", \"direction\": \"ltr\", \"canonical\": [\"https://you-owe-me.com/fr/blog/suivre-qui-vous-doit-de-l-argent/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/\", \"es\": \"https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/\", \"de\": \"https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/\", \"ar\": \"https://you-owe-me.com/ar/blog/how-to-keep-track-of-who-owes-you-money/\", \"fr\": \"https://you-owe-me.com/fr/blog/suivre-qui-vous-doit-de-l-argent/\", \"x-default\": \"https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/\"}, \"staticMainTextCharacters\": 22037, \"staticLinkCount\": 62, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "scripts/french-locales.test.mjs",
+        "scripts/site-locales.test.mjs",
+        "scripts/arabic-rtl.test.mjs",
+        "scripts/app-language-support-site.test.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "TAP version 13\n# Subtest: every site route satisfies the language-support inclusion and exclusion contract\nok 1 - every site route satisfies the language-support inclusion and exclusion contract\n  ---\n  duration_ms: 94.448375\n  type: 'test'\n  ...\n# Subtest: Spanish routes require Spanish document language while English routes keep English\nok 2 - Spanish routes require Spanish document language while English routes keep English\n  ---\n  duration_ms: 0.277083\n  type: 'test'\n  ...\n# Subtest: the route audit rejects missing and duplicate integration assets\nok 3 - the route audit rejects missing and duplicate integration assets\n  ---\n  duration_ms: 0.095625\n  type: 'test'\n  ...\n# Subtest: the route audit rejects anchors in navigation and sticky UI\nok 4 - the route audit rejects anchors in navigation and sticky UI\n  ---\n  duration_ms: 0.081959\n  type: 'test'\n  ...\n# Subtest: the route audit requires a real conversion context and no authored render target\nok 5 - the route audit requires a real conversion context and no authored render target\n  ---\n  duration_ms: 0.165916\n  type: 'test'\n  ...\n# Subtest: excluded routes reject every language-support integration surface\nok 6 - excluded routes reject every language-support integration surface\n  ---\n  duration_ms: 0.059291\n  type: 'test'\n  ...\n# Subtest: German routes require German document language\nok 7 - German routes require German document language\n  ---\n  duration_ms: 0.141917\n  type: 'test'\n  ...\n# Subtest: a reviewed RTL counterpart isolates language links without reordering authored content\nok 8 - a reviewed RTL counterpart isolates language links without reordering authored content\n  ---\n  duration_ms: 3.506125\n  type: 'test'\n  ...\n# Subtest: an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping\nok 9 - an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping\n  ---\n  duration_ms: 0.509125\n  type: 'test'\n  ...\n# Subtest: German authored pages remain identical to their finalized release outside generated switches and shared cache pins\nok 10 - German authored pages remain identical to their finalized release outside generated switches and shared cache pins\n  ---\n  duration_ms: 70.268916\n  type: 'test'\n  ...\n# Subtest: Arabic sale presentation preserves campaign IDs, timing and event privacy\nok 11 - Arabic sale presentation preserves campaign IDs, timing and event privacy\n  ---\n  duration_ms: 3.763291\n  type: 'test'\n  ...\n# Subtest: SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks\nok 12 - SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks\n  ---\n  duration_ms: 2.330625\n  type: 'test'\n  ...\n# Subtest: English shared cache pins preserve every authored path form and leave unrelated queries intact\nok 13 - English shared cache pins preserve every authored path form and leave unrelated queries intact\n  ---\n  duration_ms: 0.925458\n  type: 'test'\n  ...\n# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters\nok 14 - French admission requires review and produces reciprocal idempotent five-language clusters\n  ---\n  duration_ms: 4.668666\n  type: 'test'\n  ...\n# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries\nok 15 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries\n  ---\n  duration_ms: 264.879708\n  type: 'test'\n  ...\n# Subtest: only completed translations join the registry and have substantive public HTML\nok 16 - only completed translations join the registry and have substantive public HTML\n  ---\n  duration_ms: 13.618667\n  type: 'test'\n  ...\n# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries\nok 17 - English authored content differs from the accepted base only by locale links and declared shared cache queries\n  ---\n  duration_ms: 65.167125\n  type: 'test'\n  ...\n# Subtest: locale routes are unique, stable and contain no financial inputs\nok 18 - locale routes are unique, stable and contain no financial inputs\n  ---\n  duration_ms: 0.591208\n  type: 'test'\n  ...\n# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release\nok 19 - Spanish authored HTML stays byte-for-byte intact from the accepted public release\n  ---\n  duration_ms: 61.310666\n  type: 'test'\n  ...\n# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out\nok 20 - one generator produces reciprocal three-language switches and leaves planned pages out\n  ---\n  duration_ms: 3.005417\n  type: 'test'\n  ...\n# Subtest: German registry inherits source routing without linking to unfinished locale pages\nok 21 - German registry inherits source routing without linking to unfinished locale pages\n  ---\n  duration_ms: 0.139583\n  type: 'test'\n  ...\n# Subtest: unreviewed German routes do not enter public discovery or runtime matching\nok 22 - unreviewed German routes do not enter public discovery or runtime matching\n  ---\n  duration_ms: 0.275584\n  type: 'test'\n  ...\n# Subtest: a missing reviewed counterpart fails before any existing page is changed\nok 23 - a missing reviewed counterpart fails before any existing page is changed\n  ---\n  duration_ms: 1.4275\n  type: 'test'\n  ...\n# Subtest: analytics preserves English metadata and maps only completed localized routes\nok 24 - analytics preserves English metadata and maps only completed localized routes\n  ---\n  duration_ms: 11.538375\n  type: 'test'\n  ...\n1..24\n# tests 24\n# suites 0\n# pass 24\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 313.145208\n",
+      "stderr": ""
+    }
+  ]
+}
