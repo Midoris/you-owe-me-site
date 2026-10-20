@@ -8,7 +8,19 @@ test('preserves unambiguous identity, costs and ambiguous dollar label', () => {
 test('multi-payer and incomplete costs retain web result without upload', () => {const d=fixture(); d.expenses.push({...d.expenses[0],id:'taxi',paidBy:'mia'}); assert.equal(prepare(d),null); d.expenses[1].paidBy='alex'; d.expenses[1].amount=''; assert.equal(prepare(d),null);});
 test('precision and capacity limits', () => {for(const amount of ['0','1.001','Infinity','1000000.01']) {const d=fixture(); d.expenses[0].amount=amount; assert.equal(prepare(d),null);} const d=fixture(); d.people.push({id:'four',name:'Four'},{id:'five',name:'Five'}); assert.equal(prepare(d),null);});
 test('supported residual and unsupported accumulated rounding', () => {const d=fixture(); d.expenses[0].amount='10'; assert.ok(prepare(d)); d.expenses.push({...d.expenses[0],id:'second'}); assert.equal(prepare(d),null);});
-test('private continuation has no analytics, inline scripts or personal previews', () => {const html=fs.readFileSync('private-continuation/split/index.html','utf8'); assert.ok(!/<script|analytics|og:|app-argument/i.test(html)); assert.ok(html.includes('no-referrer')); const cfg=JSON.parse(fs.readFileSync('firebase.exp003.json')); assert.ok(cfg.hosting.headers[0].headers.some(h=>h.key==='Cache-Control' && h.value==='no-store'));});
+test('private continuation allows only its local locale selector with no personal previews', () => {
+  const html=fs.readFileSync('private-continuation/split/index.html','utf8');
+  assert.ok(!/analytics|og:|app-argument/i.test(html));
+  assert.equal((html.match(/<script\b/g)||[]).length,1);
+  assert.deepEqual([...html.matchAll(/<script\b[^>]*src="([^"]+)"[^>]*>([\s\S]*?)<\/script>/g)].map(match=>[match[1],match[2]]), [['locale.js?v=es20261020','']]);
+  assert.ok(html.includes('no-referrer') && html.includes('noindex,nofollow,noarchive'));
+  const cfg=JSON.parse(fs.readFileSync('firebase.exp003.json'));
+  for(const [key,value] of [['Cache-Control','no-store'],['Referrer-Policy','no-referrer'],['X-Robots-Tag','noindex, nofollow, noarchive']]) assert.ok(cfg.hosting.headers[0].headers.some(h=>h.key===key&&h.value===value));
+  const policy=cfg.hosting.headers.find(h=>h.source==='/split/**').headers.find(h=>h.key==='Content-Security-Policy').value;
+  assert.ok(policy.includes("script-src 'self'") && policy.includes("default-src 'none'") && !policy.includes('connect-src'));
+  const selector=fs.readFileSync('private-continuation/split/locale.js','utf8');
+  assert.ok(!/fetch\(|XMLHttpRequest|localStorage|sessionStorage|location\.search|document\.cookie/.test(selector));
+});
 
 test('shared cross-language financial fixtures',()=>{
   for(const c of JSON.parse(fs.readFileSync('tests/fixtures/tool-transfer-fixtures.json','utf8'))){

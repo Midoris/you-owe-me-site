@@ -1,0 +1,20 @@
+[
+  {
+    "path": "private-continuation/loan/index.html",
+    "sameAsLive": true,
+    "localSHA256": "c93594fd93f2f370274c87ce309f1b37c829e3de2bc9a255aabf12787deba37c",
+    "publicSHA256": "c93594fd93f2f370274c87ce309f1b37c829e3de2bc9a255aabf12787deba37c"
+  },
+  {
+    "path": "private-continuation/loan/recovery.js",
+    "sameAsLive": true,
+    "localSHA256": "205e3a3d3948ee886c32a50ab0fec1a134968b19d82942ad0c3fb05a84608342",
+    "publicSHA256": "205e3a3d3948ee886c32a50ab0fec1a134968b19d82942ad0c3fb05a84608342"
+  },
+  {
+    "path": "private-continuation/loan/loan.css",
+    "sameAsLive": true,
+    "localSHA256": "2ac02490cb0763d0cc5f01a74b3fe47861d1982fd33faac672b4fa21ecfa970f",
+    "publicSHA256": "2ac02490cb0763d0cc5f01a74b3fe47861d1982fd33faac672b4fa21ecfa970f"
+  }
+]

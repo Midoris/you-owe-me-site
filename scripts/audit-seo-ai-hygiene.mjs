@@ -288,7 +288,10 @@ function auditToolFallback(entry, html, warnings) {
 
   const crawlable = crawlableText(html);
   const hasNoscriptExample = /<noscript[\s\S]{120,}?<\/noscript>/i.test(html);
-  const hasVisibleExample = /example (result|calculation|plan|messages|output|summary)|worked example|final result|result:|copy a repayment reminder text|template library|what the copied summary can look like|static example/i.test(crawlable);
+  const examplePattern = entry.locale === "es"
+    ? /ejemplo (?:de |con |resuelto|estático)|resultado final|resultado:/i
+    : /example (result|calculation|plan|messages|output|summary)|worked example|final result|result:|copy a repayment reminder text|template library|what the copied summary can look like|static example/i;
+  const hasVisibleExample = examplePattern.test(crawlable);
 
   if (!hasNoscriptExample && !hasVisibleExample) {
     add(warnings, `${entry.url}: dynamic tool output has no obvious crawlable example or noscript fallback`);

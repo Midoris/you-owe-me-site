@@ -17,6 +17,8 @@ html[lang="es"] body.money-owed-record-page .actions.lt-actions .button { white-
 html[lang="es"] body.money-owed-record-page .mow-hero > .site-locale-example { align-self:center; }
 html[lang="es"] .plrt-record-once__results dt,
 html[lang="es"] .plrt-table th { min-width:0; overflow-wrap:anywhere; }
+html[lang="es"] .split-calculator .calculator-input,
+html[lang="es"] .split-calculator .calculator-select { box-sizing:border-box; min-width:0; }
 @media(max-width:736px) { .site-spanish-section { font-size:.8rem; } }
 /* Text examples need the whole card width where English used narrow screenshots. */
 @media(max-width:736px) {

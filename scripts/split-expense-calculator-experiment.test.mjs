@@ -2,6 +2,8 @@ import assert from "node:assert/strict";
 import { readFile } from "node:fs/promises";
 import test from "node:test";
 import vm from "node:vm";
+import { webcrypto } from "node:crypto";
+import { parseStaticPage } from "../tests/helpers/static-dom.mjs";
 
 const root = new URL("../", import.meta.url);
 const page = await readFile(new URL("tools/split-expense-calculator/index.html", root), "utf8");
@@ -10,6 +12,210 @@ const analytics = await readFile(new URL("scripts/analytics.js", root), "utf8");
 const styles = await readFile(new URL("styles/split-expense-calculator.css", root), "utf8");
 
 const RESULT_APP_STORE_URL = "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=7f9074ac-4090-4e07-aebe-c5722e76eedc&amp;pt=117888502&amp;ct=website_cta&amp;mt=8";
+const spanishLocale = await readFile(new URL("scripts/split-expense-locale.js", root), "utf8");
+const transferScript = await readFile(new URL("scripts/tool-transfer.js", root), "utf8");
+const spanishCanonical = "https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/";
+const plain = value => JSON.parse(JSON.stringify(value));
+const flush = () => new Promise(resolve => setImmediate(resolve));
+
+function localizedCalculator(lang = "es", options = {}) {
+  const document = parseStaticPage(page);
+  document.documentElement = { lang };
+  if (lang === "es") document.querySelector('link[rel="canonical"]').setAttribute("href", spanishCanonical);
+  const copied = [], shared = [], events = [], requests = [], navigations = [], timers = [];
+  const storage = new Map(options.storage || []);
+  const window = {
+    matchMedia: () => ({ matches: false, addEventListener() {} }),
+    setTimeout(callback) { timers.push(callback); return timers.length; }, clearTimeout() {},
+    dispatchEvent(event) { events.push(plain(event)); }, document,
+  };
+  const navigator = { userAgent: "iPhone", platform: "iPhone", maxTouchPoints: 1,
+    clipboard: { async writeText(text) { if (options.clipboardFails) throw new Error("denied"); copied.push(text); } },
+    async share(payload) { shared.push(payload); if (options.shareError) throw options.shareError; },
+  };
+  document.execCommand = () => {
+    if (options.fallbackFails) return false;
+    copied.push(document.querySelector("textarea").value); return true;
+  };
+  const context = vm.createContext({ window, document, navigator, crypto: webcrypto, AbortController,
+    location: { assign(url) { navigations.push(url); } },
+    sessionStorage: { getItem: key => storage.get(key), setItem: (key, value) => storage.set(key, value), removeItem: key => storage.delete(key) },
+    CustomEvent: class { constructor(type, init) { this.type = type; this.detail = init.detail; } },
+    fetch: async (...args) => { requests.push(args); return options.fetch ? options.fetch(...args) : { ok: true }; },
+    setTimeout: window.setTimeout, clearTimeout: window.clearTimeout,
+  });
+  vm.runInContext(spanishLocale, context);
+  vm.runInContext(transferScript, context);
+  vm.runInContext(calculator.replace('  if (document.readyState === "loading")',
+    '  window.testCalculator = {state, calculate, render, formatNumber, parseAmount, buildSummaryText, renderExpenseValidation};\n  if (document.readyState === "loading")'), context);
+  const query = selector => { const node = document.querySelector(selector); assert.ok(node, selector); return node; };
+  const edit = (selector, value, type = "input") => {
+    const node = query(selector); if (typeof value === "boolean") node.checked = value; else node.value = value;
+    node.dispatchEvent({ type });
+  };
+  const action = name => query(`[data-action="${name}"]`).dispatchEvent({ type: "click" });
+  return { document, window, api: window.testCalculator, query, edit, action, copied, shared, events, requests, navigations, storage, timers };
+}
+
+test("Spanish dictionary covers every generated phrase and retains interpolation fields", () => {
+  const root = { window: {} }; vm.runInNewContext(spanishLocale, root);
+  const messages = root.window.UomiSplitExpenseLocale;
+  for (const [, english] of calculator.matchAll(/translate\("([^"]+)"/g)) {
+    assert.ok(messages[english], `missing Spanish: ${english}`);
+    assert.deepEqual([...english.matchAll(/\{\w+\}/g)].map(m => m[0]).sort(), [...messages[english].matchAll(/\{\w+\}/g)].map(m => m[0]).sort());
+  }
+});
+
+test("Spanish calculator localizes generated names, rows, validation and empty/settled results", () => {
+  const env = localizedCalculator();
+  assert.equal(env.api.state.currency, "$");
+  assert.equal(env.api.state.people[0].name, "Persona 1");
+  assert.equal(env.api.state.expenses[0].description, "Cena");
+  assert.equal(env.query("[data-people-summary]").textContent, "Personas (3): editar nombres o quitar personas");
+  assert.equal(env.query(".remove-action").getAttribute("aria-label"), "Quitar a Persona 1");
+  assert.equal(env.query(`#description-${env.api.state.expenses[0].id}`).placeholder, "Cena, alimentos, alquiler, taxi…");
+  assert.match(env.query("[data-settlement]").textContent, /Persona 2 debe \$30 a Persona 1/);
+  const expense = env.api.state.expenses[0];
+  env.edit(`#amount-${expense.id}`, "-1");
+  assert.match(env.query(".expense-validation").textContent, /mayor que cero/);
+  assert.match(env.query("[data-settlement]").textContent, /Añade un gasto/);
+  expense.amount = "12.50"; expense.includedPeople = []; env.api.render();
+  assert.match(env.query(".expense-validation").textContent, /Selecciona al menos una persona/);
+  expense.includedPeople = [expense.paidBy]; env.api.render();
+  assert.equal(env.query("[data-settlement]").textContent, "Todas las cuentas están saldadas.");
+  assert.match(env.query("[data-result-app-message]").textContent, /Este reparto está saldado/);
+  expense.paidBy = "unknown";
+  env.api.renderExpenseValidation(expense, env.query(".expense-card"));
+  assert.equal(env.query(".expense-validation").textContent, "Elige quién pagó este gasto.");
+});
+
+test("Spanish display changes decimal formatting while numerical results, input and currency semantics match English", () => {
+  const spanish = localizedCalculator(), english = localizedCalculator("en");
+  for (const amount of ["0.29", "10.01", "1234.56", "1,234.56"]) {
+    const state = { currency: "MXN", people: [{ id: "a", name: "Alex" }, { id: "b", name: "Mía" }, { id: "c", name: "Sam" }], expenses: [
+      { id: "one", amount, description: "Dinner", paidBy: "a", includedPeople: ["a", "b", "c"] },
+      { id: "two", amount: "0.1", description: "Taxi", paidBy: "b", includedPeople: ["a", "b"] },
+    ] };
+    Object.assign(spanish.api.state, plain(state)); Object.assign(english.api.state, plain(state));
+    assert.deepEqual(plain(spanish.api.calculate()), plain(english.api.calculate()));
+    assert.equal(spanish.api.parseAmount(amount), english.api.parseAmount(amount));
+    assert.equal(spanish.api.state.currency, "MXN");
+  }
+  assert.equal(spanish.api.formatNumber(12.5), "12,5");
+  assert.equal(english.api.formatNumber(12.5), "12.5");
+  assert.equal(spanish.api.parseAmount("12,50"), english.api.parseAmount("12,50"));
+  assert.equal(spanish.api.parseAmount("12,50"), 1250, "legacy parsing stays unchanged; HTML explains dot input");
+});
+
+test("Spanish copy/share use the authored canonical, Spanish summaries/statuses and unchanged fixed events", async () => {
+  const env = localizedCalculator();
+  env.edit("#currency-symbol", "EUR");
+  env.action("copy-summary"); await flush();
+  assert.match(env.copied[0], /Resumen de gastos compartidos/);
+  assert.match(env.copied[0], /Parte correspondiente:/);
+  assert.match(env.copied[0], /Persona 2 debe EUR 30 a Persona 1/);
+  assert.ok(env.copied[0].endsWith(spanishCanonical));
+  assert.equal(env.query("[data-copy-status]").textContent, "Se han copiado el resumen y el enlace de la calculadora.");
+  env.action("share-summary"); await flush();
+  assert.equal(env.shared[0].url, spanishCanonical);
+  assert.equal(env.shared[0].title, "Resumen de gastos compartidos");
+  assert.equal(env.query("[data-copy-status]").textContent, "Resultado compartido.");
+  for (const event of env.events) assert.deepEqual(Object.keys(event.detail), ["eventName"]);
+  assert.ok(env.events.some(event => event.detail.eventName === "split_summary_shared"));
+  env.action("clear-all"); env.action("copy-summary"); await flush();
+  assert.equal(env.query("[data-copy-status]").textContent, "Añade un gasto antes de copiar el resumen.");
+  env.action("share-summary"); await flush();
+  assert.equal(env.query("[data-copy-status]").textContent, "Añade un gasto antes de compartir el resumen.");
+});
+
+test("Spanish clipboard/share fallbacks and cancellation report the appropriate localized state", async () => {
+  const fallback = localizedCalculator("es", { clipboardFails: true, shareError: new Error("unavailable") });
+  fallback.action("share-summary"); await flush();
+  assert.match(fallback.copied[0], /Resumen de gastos compartidos/);
+  assert.equal(fallback.query("[data-copy-status]").textContent, "No se pudo compartir; se ha copiado el resultado.");
+  const denied = localizedCalculator("es", { clipboardFails: true, fallbackFails: true, shareError: new Error("unavailable") });
+  denied.action("copy-summary"); await flush();
+  assert.equal(denied.query("[data-copy-status]").textContent, "No se pudo copiar el resultado.");
+  denied.action("share-summary"); await flush();
+  assert.equal(denied.query("[data-copy-status]").textContent, "No se pudo compartir ni copiar el resultado.");
+  assert.ok(!denied.events.some(event => /copied|shared/.test(event.detail.eventName)));
+  const cancelled = localizedCalculator("es", { shareError: { name: "AbortError" } });
+  cancelled.action("share-summary"); await flush();
+  assert.equal(cancelled.query("[data-copy-status]").textContent, "");
+  assert.equal(cancelled.copied.length, 0);
+});
+
+test("Spanish limits and example/reset preserve established calculator state behavior", () => {
+  const env = localizedCalculator();
+  env.action("use-example");
+  assert.deepEqual(plain(env.api.state.expenses.map(expense => expense.description)), ["Alimentos", "Cena", "Taxi"]);
+  assert.equal(env.api.calculate().total, 180);
+  env.action("clear-all");
+  assert.equal(env.api.state.currency, "$");
+  assert.equal(env.api.state.expenses[0].amount, "");
+  env.query(".remove-action").dispatchEvent({ type: "click" });
+  env.query(".remove-action").dispatchEvent({ type: "click" });
+  assert.equal(env.query("#people-message").textContent, "Añade al menos dos personas para repartir un gasto.");
+  for (let i = 0; i < 11; i++) env.action("add-person");
+  assert.equal(env.api.state.people.length, 12);
+  assert.equal(env.query("#people-message").textContent, "Puedes añadir hasta 12 personas.");
+  for (let i = 0; i < 30; i++) env.action("add-expense");
+  assert.equal(env.api.state.expenses.length, 30);
+  assert.equal(env.query("#people-message").textContent, "Puedes añadir hasta 30 gastos.");
+});
+
+test("Spanish transfer preserves exact draft cents/schema and sole ref while language travels only in fragment", async () => {
+  const env = localizedCalculator();
+  env.edit("#currency-symbol", "MXN");
+  env.api.state.people.forEach(person => { person.name = ""; });
+  env.api.state.expenses[0].description = "";
+  const draft = env.window.UomiToolTransfer.prepare(env.api.state);
+  assert.equal(draft.participants[0].name, "Persona 1");
+  assert.equal(draft.costs[0].label, "Gasto compartido");
+  assert.equal(draft.costs[0].amount, 9000);
+  assert.equal(draft.currencyLabel, "MXN");
+  env.action("track-split");
+  assert.equal(env.query("[data-transfer-status]").textContent, "Preparando el reparto…");
+  await flush();
+  const request = JSON.parse(env.requests[0][1].body);
+  assert.deepEqual(Object.keys(request).sort(), ["action", "draft", "reference"]);
+  assert.deepEqual(request.draft, plain(draft));
+  const url = new URL(env.navigations[0]);
+  assert.equal(url.origin + url.pathname, env.window.UomiToolTransfer.config.continuation);
+  assert.deepEqual([...url.searchParams.keys()], ["ref"]);
+  assert.match(url.searchParams.get("ref"), /^[a-f0-9]{64}$/);
+  assert.equal(url.hash, "#es");
+  const restored = localizedCalculator("es", { storage: [...env.storage] });
+  assert.equal(restored.api.state.currency, "MXN");
+  assert.equal(restored.api.state.expenses[0].amount, "90");
+  assert.equal(restored.storage.size, 0);
+  const failed = localizedCalculator("es", { fetch: async () => ({ ok: false, status: 503 }) });
+  failed.edit("#currency-symbol", "USD"); failed.action("track-split"); await flush();
+  assert.equal(failed.navigations.length, 0);
+  assert.match(failed.query("[data-transfer-status]").textContent, /Tu reparto sigue aquí/);
+});
+
+test("Spanish transfer eligibility and cents match the existing shared financial fixture matrix", async () => {
+  const spanish = localizedCalculator(), english = localizedCalculator("en");
+  const fixtures = JSON.parse(await readFile(new URL("tests/fixtures/tool-transfer-fixtures.json", root), "utf8"));
+  for (const fixture of fixtures) {
+    const state = { currency: fixture.draft.currencyLabel, people: fixture.draft.participants,
+      expenses: fixture.draft.costs.map(cost => ({ id: cost.id, description: cost.label,
+        amount: (cost.amount / 100).toFixed(2), paidBy: cost.payerID, includedPeople: cost.participantIDs })) };
+    const spanishDraft = spanish.window.UomiToolTransfer.prepare(state);
+    const englishDraft = english.window.UomiToolTransfer.prepare(state);
+    assert.deepEqual(plain(spanishDraft), plain(englishDraft), fixture.name);
+    if (fixture.expected) assert.deepEqual(plain(spanishDraft), fixture.draft, fixture.name);
+    else assert.equal(spanishDraft, null, fixture.name);
+  }
+  const halfCent = { currency: "$", people: [{ id: "a", name: "Alex" }, { id: "b", name: "Mia" }], expenses: [
+    { id: "one", description: "Taxi", amount: "0.29", paidBy: "a", includedPeople: ["a", "b"] },
+  ] };
+  assert.equal(spanish.window.UomiToolTransfer.prepare(halfCent), null);
+  halfCent.expenses[0].amount = "90";
+  halfCent.expenses.push({ ...halfCent.expenses[0], id: "two", paidBy: "b" });
+  assert.equal(spanish.window.UomiToolTransfer.prepare(halfCent), null);
+});
 
 test("the initial result actions preserve the attributed App Store CTA", () => {
   const actionsIndex = page.indexOf('data-result-actions hidden');
@@ -59,9 +265,10 @@ test("results put settlement first, then actions, then a native breakdown disclo
 });
 
 test("summary, copy, and share use one canonical calculator URL", () => {
-  assert.match(calculator, /const CANONICAL_CALCULATOR_URL = "https:\/\/you-owe-me\.com\/tools\/split-expense-calculator\/"/);
-  assert.match(calculator, /Calculate your own split: \$\{CANONICAL_CALCULATOR_URL\}/);
-  assert.match(calculator, /title: "Shared expense summary"/);
+  assert.match(calculator, /const CANONICAL_CALCULATOR_URL = isSpanish/);
+  assert.match(calculator, /document\.querySelector\('link\[rel="canonical"\]'\)\.getAttribute\("href"\)/);
+  assert.match(calculator, /Calculate your own split: \{url\}.*url: CANONICAL_CALCULATOR_URL/);
+  assert.match(calculator, /title: translate\("Shared expense summary"\)/);
   assert.match(calculator, /url: CANONICAL_CALCULATOR_URL/);
   assert.match(calculator, /Copied summary and calculator link\./);
   assert.match(calculator, /Sharing wasn’t available, so the result was copied\./);

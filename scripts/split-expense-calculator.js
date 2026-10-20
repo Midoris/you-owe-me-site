@@ -4,7 +4,16 @@
   const EPSILON = 0.005;
   const MAX_PEOPLE = 12;
   const MAX_EXPENSES = 30;
-  const CANONICAL_CALCULATOR_URL = "https://you-owe-me.com/tools/split-expense-calculator/";
+  const isSpanish = document.documentElement?.lang === "es";
+  const spanishStrings = isSpanish ? window.UomiSplitExpenseLocale : null;
+  const CANONICAL_CALCULATOR_URL = isSpanish
+    ? document.querySelector('link[rel="canonical"]').getAttribute("href")
+    : "https://you-owe-me.com/tools/split-expense-calculator/";
+
+  function translate(message, values = {}) {
+    const template = spanishStrings?.[message] || message;
+    return template.replace(/\{(\w+)\}/g, (_, key) => values[key] ?? "");
+  }
   const SPLIT_CALCULATOR_EVENT = "youoweme:split-calculator-event";
 
   const state = {
@@ -32,7 +41,7 @@
   function createPerson(name) {
     return {
       id: makeId("p"),
-      name: name || `Person ${state.nextPersonNumber++}`
+      name: name || translate("Person {number}", { number: state.nextPersonNumber++ })
     };
   }
 
@@ -48,12 +57,12 @@
 
   function getPersonName(person, index) {
     const name = (person && person.name ? person.name : "").trim();
-    return name || `Person ${index + 1}`;
+    return name || translate("Person {number}", { number: index + 1 });
   }
 
   function getPersonNameById(id) {
     const index = state.people.findIndex((person) => person.id === id);
-    if (index === -1) return "Someone";
+    if (index === -1) return translate("Someone");
     return getPersonName(state.people[index], index);
   }
 
@@ -76,6 +85,7 @@
 
   function formatNumber(value) {
     const rounded = roundMoney(value);
+    if (isSpanish) return new Intl.NumberFormat("es", { maximumFractionDigits: 2 }).format(rounded);
     if (Number.isInteger(rounded)) return String(rounded);
     return rounded.toFixed(2).replace(/\.?0+$/, "");
   }
@@ -132,7 +142,7 @@
   }
 
   function renderPeople() {
-    els.peopleSummary.textContent = `People (${state.people.length}): edit names or remove people`;
+    els.peopleSummary.textContent = translate("People ({count}): edit names or remove people", { count: state.people.length });
     clearNode(els.peopleList);
     els.peopleMessage.textContent = state.message || "";
 
@@ -153,11 +163,11 @@
       const remove = document.createElement("button");
       remove.type = "button";
       remove.className = "remove-action";
-      remove.setAttribute("aria-label", `Remove ${getPersonName(person, index)}`);
-      remove.textContent = "Remove";
+      remove.setAttribute("aria-label", translate("Remove {name}", { name: getPersonName(person, index) }));
+      remove.textContent = translate("Remove");
       remove.addEventListener("click", () => removePerson(person.id));
 
-      row.append(makeField(`Person ${index + 1}`, input), remove);
+      row.append(makeField(translate("Person {number}", { number: index + 1 }), input), remove);
       els.peopleList.appendChild(row);
     });
   }
@@ -173,12 +183,12 @@
       header.className = "expense-card-header";
       const title = document.createElement("h4");
       title.className = "expense-card-title";
-      title.textContent = `Expense ${expenseIndex + 1}`;
+      title.textContent = translate("Expense {number}", { number: expenseIndex + 1 });
       const remove = document.createElement("button");
       remove.type = "button";
       remove.className = "remove-action";
-      remove.setAttribute("aria-label", `Remove expense ${expense.description || expenseIndex + 1}`);
-      remove.textContent = "Remove";
+      remove.setAttribute("aria-label", translate("Remove expense {expense}", { expense: expense.description || expenseIndex + 1 }));
+      remove.textContent = translate("Remove");
       remove.addEventListener("click", () => removeExpense(expense.id));
       header.append(title, remove);
 
@@ -186,7 +196,7 @@
       fields.className = "expense-fields";
 
       const description = makeInput(`description-${expense.id}`, expense.description, "text");
-      description.placeholder = "Dinner, groceries, rent, taxi...";
+      description.placeholder = translate("Dinner, groceries, rent, taxi...");
       description.maxLength = 70;
       description.addEventListener("input", () => {
         expense.description = description.value;
@@ -219,14 +229,14 @@
       });
 
       fields.append(
-        makeField("Amount", amount),
-        makeField("Paid by", select)
+        makeField(translate("Amount"), amount),
+        makeField(translate("Paid by"), select)
       );
 
       const included = document.createElement("fieldset");
       included.className = "included-people";
       const legend = document.createElement("legend");
-      legend.textContent = "Split between / included people";
+      legend.textContent = translate("Split between / included people");
       included.appendChild(legend);
 
       const checkboxGrid = document.createElement("div");
@@ -259,10 +269,10 @@
       splitType.className = "split-type";
       const splitLabel = document.createElement("span");
       splitLabel.className = "split-type-label";
-      splitLabel.textContent = "Split type";
+      splitLabel.textContent = translate("Split type");
       const splitValue = document.createElement("span");
       splitValue.className = "split-type-value";
-      splitValue.textContent = "Equal";
+      splitValue.textContent = translate("Equal");
       splitType.append(splitLabel, splitValue);
 
       const validation = document.createElement("p");
@@ -270,7 +280,7 @@
       validation.id = `expense-validation-${expense.id}`;
       validation.setAttribute("aria-live", "polite");
 
-      card.append(header, fields, included, makeField("Description (optional)", description), splitType, validation);
+      card.append(header, fields, included, makeField(translate("Description (optional)"), description), splitType, validation);
       els.expensesList.appendChild(card);
       renderExpenseValidation(expense, card);
     });
@@ -282,11 +292,11 @@
     const amount = parseAmount(expense.amount);
     let message = "";
     if (String(expense.amount || "").trim() && amount <= 0) {
-      message = "Enter an amount greater than zero.";
+      message = translate("Enter an amount greater than zero.");
     } else if (amount > 0 && !state.people.some((person) => person.id === expense.paidBy)) {
-      message = "Choose who paid for this expense.";
+      message = translate("Choose who paid for this expense.");
     } else if (amount > 0 && expense.includedPeople.length === 0) {
-      message = "Select at least one person to share this expense.";
+      message = translate("Select at least one person to share this expense.");
     }
     validation.textContent = message;
   }
@@ -372,8 +382,8 @@
 
   function renderResults(result) {
     renderSummary(result);
-    renderMoneyRows(els.paid, result.net.map((row) => [`${row.name} paid`, row.paid]));
-    renderMoneyRows(els.share, result.net.map((row) => [`${row.name}'s share`, row.share]));
+    renderMoneyRows(els.paid, result.net.map((row) => [translate("{name} paid", { name: row.name }), row.paid]));
+    renderMoneyRows(els.share, result.net.map((row) => [translate("{name}'s share", { name: row.name }), row.share]));
     renderNetRows(result);
     renderSettlement(result);
     renderResultActions(result);
@@ -386,11 +396,11 @@
   function renderResultActions(result) {
     els.exampleMarker.hidden = meaningfulEdit || !hasValidResult(result);
     if (result.transfers.length > 0) {
-      els.resultAppTitle.textContent = "Keep track until everyone has paid";
-      els.resultAppMessage.textContent = "Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.";
+      els.resultAppTitle.textContent = translate("Keep track until everyone has paid");
+      els.resultAppMessage.textContent = translate("Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.");
     } else {
-      els.resultAppTitle.textContent = "Keep future shared costs in one place";
-      els.resultAppMessage.textContent = "This split is settled. If you share costs again, You Owe Me on iPhone keeps new expenses and repayments in one balance for each person.";
+      els.resultAppTitle.textContent = translate("Keep future shared costs in one place");
+      els.resultAppMessage.textContent = translate("This split is settled. If you share costs again, You Owe Me on iPhone keeps new expenses and repayments in one balance for each person.");
     }
     const shouldShow = hasExplicitInteraction && hasValidResult(result);
     els.resultActions.hidden = !shouldShow;
@@ -452,7 +462,7 @@
       const bytes = crypto.getRandomValues(new Uint8Array(26));
       transferAttempt = {fingerprint, reference: Date.now().toString(16).padStart(12, "0") + Array.from(bytes, b => b.toString(16).padStart(2, "0")).join("")};
     }
-    transferBusy = true; button.disabled = true; status.textContent = "Preparing your split…";
+    transferBusy = true; button.disabled = true; status.textContent = translate("Preparing your split…");
     dispatchCalculatorEvent("split_transfer_chosen");
     try {
       const controller = new AbortController();
@@ -470,17 +480,17 @@
           JSON.stringify(window.UomiToolTransfer.prepare(state)) !== fingerprint) throw new Error("changed");
       // Preserve input only following explicit consent. Cleared when restored on Back.
       sessionStorage.setItem("uomi-exp003-return", JSON.stringify({state, transferAttempt}));
-      location.assign(window.UomiToolTransfer.config.continuation + "?ref=" + transferAttempt.reference);
+      location.assign(window.UomiToolTransfer.config.continuation + "?ref=" + transferAttempt.reference + (isSpanish ? "#es" : ""));
     } catch (_) {
-      status.textContent = "Couldn’t prepare the transfer. Your split is still here. Try again, or copy your result.";
+      status.textContent = translate("Couldn’t prepare the transfer. Your split is still here. Try again, or copy your result.");
     } finally { transferBusy = false; button.disabled = false; }
   }
 
   function renderSummary(result) {
     clearNode(els.summary);
-    appendResultItem(els.summary, "Total expenses", formatMoney(result.total));
-    appendResultItem(els.summary, "People", String(result.peopleCount));
-    appendResultItem(els.summary, "Expenses included", String(result.validCount));
+    appendResultItem(els.summary, translate("Total expenses"), formatMoney(result.total));
+    appendResultItem(els.summary, translate("People"), String(result.peopleCount));
+    appendResultItem(els.summary, translate("Expenses included"), String(result.validCount));
   }
 
   function renderMoneyRows(container, rows) {
@@ -491,13 +501,13 @@
   function renderNetRows(result) {
     clearNode(els.net);
     result.net.forEach((row) => {
-      let label = `${row.name} is settled`;
+      let label = translate("{name} is settled", { name: row.name });
       let value = "";
       if (row.net > EPSILON) {
-        label = `${row.name} should receive`;
+        label = translate("{name} should receive", { name: row.name });
         value = formatMoney(row.net);
       } else if (row.net < -EPSILON) {
-        label = `${row.name} owes`;
+        label = translate("{name} owes", { name: row.name });
         value = formatMoney(Math.abs(row.net));
       }
       appendResultItem(els.net, label, value);
@@ -507,17 +517,17 @@
   function renderSettlement(result) {
     clearNode(els.settlement);
     if (result.validCount === 0) {
-      appendEmpty(els.settlement, "Add an expense to see who owes whom.");
+      appendEmpty(els.settlement, translate("Add an expense to see who owes whom."));
       return;
     }
     if (result.transfers.length === 0) {
-      appendEmpty(els.settlement, "Everyone is settled.");
+      appendEmpty(els.settlement, translate("Everyone is settled."));
       return;
     }
     result.transfers.forEach((transfer) => {
       const item = document.createElement("div");
       item.className = "settlement-item";
-      item.textContent = `${transfer.from} owes ${transfer.to} ${formatMoney(transfer.amount)}`;
+      item.textContent = translate("{from} owes {to} {amount}", { from: transfer.from, to: transfer.to, amount: formatMoney(transfer.amount) });
       els.settlement.appendChild(item);
     });
   }
@@ -542,7 +552,7 @@
 
   function addPerson() {
     if (state.people.length >= MAX_PEOPLE) {
-      state.message = "You can add up to 12 people.";
+      state.message = translate("You can add up to 12 people.");
       render();
       return;
     }
@@ -557,7 +567,7 @@
 
   function removePerson(id) {
     if (state.people.length <= 2) {
-      state.message = "Add at least two people to split an expense.";
+      state.message = translate("Add at least two people to split an expense.");
       renderPeople();
       return;
     }
@@ -574,7 +584,7 @@
 
   function addExpense() {
     if (state.expenses.length >= MAX_EXPENSES) {
-      state.message = "You can add up to 30 expenses.";
+      state.message = translate("You can add up to 30 expenses.");
       renderPeople();
       return;
     }
@@ -594,10 +604,10 @@
     state.currency = "$";
     state.nextPersonNumber = 1;
     state.nextExpenseNumber = 1;
-    state.people = [createPerson("Person 1"), createPerson("Person 2"), createPerson("Person 3")];
+    state.people = [createPerson(translate("Person 1")), createPerson(translate("Person 2")), createPerson(translate("Person 3"))];
     state.nextPersonNumber = 4;
     state.expenses = [
-      createExpense("Dinner", "90", state.people[0].id, state.people.map((person) => person.id))
+      createExpense(translate("Dinner"), "90", state.people[0].id, state.people.map((person) => person.id))
     ];
     state.message = "";
   }
@@ -612,9 +622,9 @@
     const mia = state.people[1].id;
     const sam = state.people[2].id;
     state.expenses = [
-      createExpense("Groceries", "90", alex, [alex, mia, sam]),
-      createExpense("Dinner", "60", mia, [alex, mia, sam]),
-      createExpense("Taxi", "30", sam, [alex, sam])
+      createExpense(translate("Groceries"), "90", alex, [alex, mia, sam]),
+      createExpense(translate("Dinner"), "60", mia, [alex, mia, sam]),
+      createExpense(translate("Taxi"), "30", sam, [alex, sam])
     ];
     state.message = "";
     els.currency.value = state.currency;
@@ -634,21 +644,21 @@
   function buildSummaryText(result) {
     if (result.validCount === 0) return "";
     const lines = [];
-    lines.push("Shared expense summary", "");
-    lines.push(`Total shared expenses: ${formatMoney(result.total)}`, "");
-    lines.push("Paid:");
-    result.net.forEach((row) => lines.push(`${row.name} paid ${formatMoney(row.paid)}`));
-    lines.push("", "Fair share:");
-    result.net.forEach((row) => lines.push(`${row.name}'s share: ${formatMoney(row.share)}`));
-    lines.push("", "Settlement:");
+    lines.push(translate("Shared expense summary"), "");
+    lines.push(translate("Total shared expenses: {amount}", { amount: formatMoney(result.total) }), "");
+    lines.push(translate("Paid:"));
+    result.net.forEach((row) => lines.push(translate("{name} paid {amount}", { name: row.name, amount: formatMoney(row.paid) })));
+    lines.push("", translate("Fair share:"));
+    result.net.forEach((row) => lines.push(translate("{name}'s share: {amount}", { name: row.name, amount: formatMoney(row.share) })));
+    lines.push("", translate("Settlement:"));
     if (result.transfers.length === 0) {
-      lines.push("Everyone is settled.");
+      lines.push(translate("Everyone is settled."));
     } else {
       result.transfers.forEach((transfer) => {
-        lines.push(`${transfer.from} owes ${transfer.to} ${formatMoney(transfer.amount)}`);
+        lines.push(translate("{from} owes {to} {amount}", { from: transfer.from, to: transfer.to, amount: formatMoney(transfer.amount) }));
       });
     }
-    lines.push("", `Calculate your own split: ${CANONICAL_CALCULATOR_URL}`);
+    lines.push("", translate("Calculate your own split: {url}", { url: CANONICAL_CALCULATOR_URL }));
     return lines.join("\n");
   }
 
@@ -699,7 +709,7 @@
   async function copySummary() {
     const text = getCurrentSummary();
     if (!text) {
-      setActionStatus("Add an expense before copying a summary.");
+      setActionStatus(translate("Add an expense before copying a summary."));
       return;
     }
 
@@ -707,10 +717,10 @@
     try {
       const copied = await copyTextToClipboard(text);
       if (!copied) {
-        setActionStatus("Couldn’t copy the result.");
+        setActionStatus(translate("Couldn’t copy the result."));
         return;
       }
-      setActionStatus("Copied summary and calculator link.");
+      setActionStatus(translate("Copied summary and calculator link."));
       dispatchCalculatorEvent("split_summary_copied");
     } finally {
       els.copySummary.disabled = false;
@@ -722,7 +732,7 @@
 
     const text = getCurrentSummary();
     if (!text) {
-      setActionStatus("Add an expense before sharing a summary.");
+      setActionStatus(translate("Add an expense before sharing a summary."));
       return;
     }
 
@@ -730,21 +740,21 @@
     setActionStatus("");
     try {
       await navigator.share({
-        title: "Shared expense summary",
+        title: translate("Shared expense summary"),
         text,
         url: CANONICAL_CALCULATOR_URL
       });
-      setActionStatus("Shared result.");
+      setActionStatus(translate("Shared result."));
       dispatchCalculatorEvent("split_summary_shared");
     } catch (error) {
       if (error && error.name === "AbortError") return;
 
       const copied = await copyTextToClipboard(text);
       if (copied) {
-        setActionStatus("Sharing wasn’t available, so the result was copied.");
+        setActionStatus(translate("Sharing wasn’t available, so the result was copied."));
         dispatchCalculatorEvent("split_share_fallback_copied");
       } else {
-        setActionStatus("Couldn’t share or copy the result.");
+        setActionStatus(translate("Couldn’t share or copy the result."));
       }
     } finally {
       els.shareSummary.disabled = false;

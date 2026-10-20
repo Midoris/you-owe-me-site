@@ -2,15 +2,21 @@
 (function (root) {
   "use strict";
   const config = Object.freeze({enabled: true, endpoint: "https://us-central1-you-owe-me-app.cloudfunctions.net/toolTransfer", continuation: "https://continue.you-owe-me.com/split/"});
+  function fallbackText(message, number) {
+    if (root.document?.documentElement?.lang === "es") {
+      return message === "Person" ? `Persona ${number}` : "Gasto compartido";
+    }
+    return message === "Person" ? `Person ${number}` : "Shared expense";
+  }
   function prepare(state) {
     if (state.people.length < 2 || state.people.length > 4 || !state.expenses.length || state.expenses.length > 6) return null;
     const organizerID = state.expenses[0].paidBy;
-    const participants = state.people.map((p, index) => ({id: p.id, name: p.name.trim() || `Person ${index + 1}`}));
+    const participants = state.people.map((p, index) => ({id: p.id, name: p.name.trim() || fallbackText("Person", index + 1)}));
     const costs = [];
     for (const e of state.expenses) {
       const value = Number(String(e.amount).replace(/,/g, "")), amount = Math.round(value * 100);
       if (!Number.isFinite(value) || Math.abs(value * 100 - amount) > 0.000001 || amount < 1 || amount > 100000000 || e.paidBy !== organizerID || !e.includedPeople.length) return null;
-      costs.push({id: e.id, label: e.description.trim() || "Shared expense", amount, payerID: organizerID, participantIDs: [...e.includedPeople]});
+      costs.push({id: e.id, label: e.description.trim() || fallbackText("Shared expense"), amount, payerID: organizerID, participantIDs: [...e.includedPeople]});
     }
     const draft = {version: 1, source: "split-calculator", type: "payer-split", currencyLabel: state.currency, organizerID, participants, costs};
     const rows = costs.map(c => {

@@ -41,6 +41,15 @@
         ]
       },
       {
+        "source": "/split/**",
+        "headers": [
+          {
+            "key": "Content-Security-Policy",
+            "value": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+          }
+        ]
+      },
+      {
         "source": "/loan/**",
         "headers": [
           {
