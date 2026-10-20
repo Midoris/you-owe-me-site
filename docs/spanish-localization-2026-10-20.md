@@ -24,8 +24,8 @@ English text-bearing app captures are replaced by labeled Spanish HTML/SVG examp
 
 | Page | Language review | Technical/product review | Checks | Commit |
 | --- | --- | --- | --- | --- |
-| Homepage | Independent model review passed; clarified title and separate-loan wording. Shared dictionaries independently reviewed by page translator. | Independent review passed after fixing text download CTA cascade and stacking mobile text examples. | Design/registry/SEO: zero hard errors; 47 foundation/runtime tests; no-JS HTML 20,020 characters; Chrome 320/390/600/1440 px, images, CTA heights, mobile menu. Seven English image modules replaced with labeled Spanish examples; preserved translated review attribution. | See page commit following foundation `5510956` |
-| Money owed solution | Pending | Pending | Pending | Pending |
+| Homepage | Independent model review passed; clarified title and separate-loan wording. Shared dictionaries independently reviewed by page translator. | Independent review passed after fixing text download CTA cascade and stacking mobile text examples. | Design/registry/SEO: zero hard errors; 47 foundation/runtime tests; no-JS HTML 20,020 characters; Chrome 320/390/600/1440 px, images, CTA heights, mobile menu. Seven English image modules replaced with labeled Spanish examples; preserved translated review attribution. | `dae9d2a` (foundation `5510956`) |
+| Money owed solution | Independent review passed; fixed spacing and card heading capitalization. | Independent review passed after aligning visible/structured English-hub breadcrumb. Preserved write-off, per-entry interest, actual-payment plans and Live Link/Sync distinctions. | Design/registry/SEO zero hard errors; reciprocal locale checks; Chrome 320/390/600/1440 px, zero element/page overflow, menu and assets; no-JS main text 23,834 characters; two text-bearing visuals replaced with labeled USD examples. | Page commit after `dae9d2a` |
 | Recordkeeping guide | Pending | Pending | Pending | Pending |
 | Personal loan solution | Pending | Pending | Pending | Pending |
 | Split calculator | Pending | Pending | Pending | Pending |
@@ -39,3 +39,5 @@ Google recommends separate URLs, readable translated content, explicit language 
 ## Final review and publication
 
 Pending the complete reviewed batch. GitHub Pages is the existing public-site workflow; private continuation uses the existing Firebase Hosting target if that dependency changes. A commit alone is not a deployment or evidence of indexing.
+
+Final owner instruction: after the reviewed batch is publicly deployed and verified, inspect these five exact Spanish URLs in the existing Search Console property and request indexing where eligible/needed. Check the existing sitemap submission and submit only if necessary. Record requests separately from actual indexing; use no Indexing API for these ordinary pages. An access, quota, CAPTCHA or tool restriction must be reported concretely after unaffected work finishes.

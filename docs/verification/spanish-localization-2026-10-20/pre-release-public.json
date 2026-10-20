@@ -1,0 +1,71 @@
+[
+  {
+    "requested": "https://you-owe-me.com/robots.txt",
+    "url": "https://you-owe-me.com/robots.txt",
+    "status": 200,
+    "headers": {
+      "Server": "GitHub.com",
+      "Content-Type": "text/plain; charset=utf-8",
+      "Last-Modified": "Mon, 19 Oct 2026 10:54:34 GMT",
+      "Cache-Control": "max-age=600",
+      "Date": "Tue, 20 Oct 2026 04:17:09 GMT"
+    },
+    "bytes": 664
+  },
+  {
+    "requested": "https://you-owe-me.com/sitemap.xml",
+    "url": "https://you-owe-me.com/sitemap.xml",
+    "status": 200,
+    "headers": {
+      "Server": "GitHub.com",
+      "Content-Type": "application/xml",
+      "Last-Modified": "Mon, 19 Oct 2026 10:54:34 GMT",
+      "Cache-Control": "max-age=600",
+      "Date": "Tue, 20 Oct 2026 04:17:09 GMT"
+    },
+    "bytes": 16360
+  },
+  {
+    "requested": "https://you-owe-me.com/",
+    "url": "https://you-owe-me.com/",
+    "status": 200,
+    "headers": {
+      "Server": "GitHub.com",
+      "Content-Type": "text/html; charset=utf-8",
+      "Last-Modified": "Mon, 19 Oct 2026 10:54:34 GMT",
+      "Cache-Control": "max-age=600",
+      "Date": "Tue, 20 Oct 2026 04:17:10 GMT"
+    },
+    "bytes": 71083
+  },
+  {
+    "requested": "https://continue.you-owe-me.com/split/",
+    "url": "https://continue.you-owe-me.com/split/",
+    "status": 200,
+    "headers": {
+      "Cache-Control": "no-store",
+      "Content-Security-Policy": "default-src 'none'; style-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "Content-Type": "text/html; charset=utf-8",
+      "Last-Modified": "Sun, 20 Sep 2026 07:47:45 GMT",
+      "Referrer-Policy": "no-referrer",
+      "X-Content-Type-Options": "nosniff",
+      "X-Robots-Tag": "noindex, nofollow, noarchive",
+      "Date": "Tue, 20 Oct 2026 04:17:35 GMT"
+    },
+    "bytes": 1216
+  },
+  {
+    "requested": "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+    "url": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ct=website_cta&pt=117888502",
+    "status": 200,
+    "headers": {
+      "Server": "daiquiri/5",
+      "Content-Type": "text/html",
+      "cache-control": "public, max-age=900",
+      "content-security-policy": "upgrade-insecure-requests; default-src 'none'; manifest-src 'self' https://*.apple.com; img-src 'self' https://*.apple.com https://*.mzstatic.com data:; font-src 'self' https://*.apple.com; style-src 'self' https://*.apple.com 'unsafe-inline'; script-src 'self' https://*.apple.com; connect-src 'self' https://*.apple.com https://*.mzstatic.com; media-src 'self' https://*.apple.com blob:; child-src 'self' https://*.apple.com; frame-src 'self' https://*.apple.com itms-appss: macappstore:; worker-src blob:; frame-ancestors 'none'; block-all-mixed-content; report-uri /api/csp-report",
+      "x-content-type-options": "nosniff",
+      "Date": "Tue, 20 Oct 2026 04:18:26 GMT"
+    },
+    "bytes": 698818
+  }
+]

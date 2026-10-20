@@ -267,4 +267,5 @@ For one-time math, use the free tools. For ongoing balances, use the app.
 Contenido público en español. Cada página conserva su propia URL canónica; los recursos todavía disponibles solo en inglés se indican en sus enlaces.
 
 - [You Owe Me: controla préstamos, gastos y pagos](https://you-owe-me.com/es/)
+- [App para registrar el dinero que te deben](https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/)
 <!-- spanish-pages:end -->
