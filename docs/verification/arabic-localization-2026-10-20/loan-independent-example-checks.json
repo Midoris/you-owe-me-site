@@ -1,0 +1,529 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 320,
+      "labels": [
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        }
+      ],
+      "snapshotValuesCorrect": true,
+      "laterSequenceCorrect": true,
+      "firstPaymentTwoLoanTotalCorrect": true,
+      "qrVisible": false,
+      "downloadAvailable": true,
+      "overflow": []
+    },
+    {
+      "width": 390,
+      "labels": [
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        }
+      ],
+      "snapshotValuesCorrect": true,
+      "laterSequenceCorrect": true,
+      "firstPaymentTwoLoanTotalCorrect": true,
+      "qrVisible": false,
+      "downloadAvailable": true,
+      "overflow": []
+    },
+    {
+      "width": 600,
+      "labels": [
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "\"السؤال\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "\"ما الذي تسجّله\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "\"الحالة\"",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "\"الأنسب\"",
+          "spacing": "normal",
+          "align": "start"
+        }
+      ],
+      "snapshotValuesCorrect": true,
+      "laterSequenceCorrect": true,
+      "firstPaymentTwoLoanTotalCorrect": true,
+      "qrVisible": false,
+      "downloadAvailable": true,
+      "overflow": []
+    },
+    {
+      "width": 1440,
+      "labels": [
+        {
+          "label": "السؤال",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "السؤال",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "ما الذي تسجّله",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الحالة",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        },
+        {
+          "label": "الأنسب",
+          "before": "none",
+          "spacing": "normal",
+          "align": "start"
+        }
+      ],
+      "snapshotValuesCorrect": true,
+      "laterSequenceCorrect": true,
+      "firstPaymentTwoLoanTotalCorrect": true,
+      "qrVisible": true,
+      "downloadAvailable": true,
+      "overflow": []
+    }
+  ]
+}

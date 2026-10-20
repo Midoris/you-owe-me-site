@@ -1,0 +1,40 @@
+TAP version 13
+# Subtest: a reviewed RTL counterpart isolates language links without reordering authored content
+ok 1 - a reviewed RTL counterpart isolates language links without reordering authored content
+  ---
+  duration_ms: 2.5875
+  type: 'test'
+  ...
+# Subtest: an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+ok 2 - an unreviewed Arabic batch cannot leak into switches, registry, discovery or runtime mapping
+  ---
+  duration_ms: 0.407625
+  type: 'test'
+  ...
+# Subtest: German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+ok 3 - German authored pages remain identical to their finalized release outside generated switches and shared cache pins
+  ---
+  duration_ms: 84.416125
+  type: 'test'
+  ...
+# Subtest: Arabic sale presentation preserves campaign IDs, timing and event privacy
+ok 4 - Arabic sale presentation preserves campaign IDs, timing and event privacy
+  ---
+  duration_ms: 3.4135
+  type: 'test'
+  ...
+# Subtest: SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks
+ok 5 - SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks
+  ---
+  duration_ms: 1.14925
+  type: 'test'
+  ...
+1..5
+# tests 5
+# suites 0
+# pass 5
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 138.181166

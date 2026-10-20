@@ -75,3 +75,20 @@ test("Arabic sale presentation preserves campaign IDs, timing and event privacy"
   }
   assert.equal(run("ar", 10, 20).badge.hidden, true);
 });
+
+test("SEO extraction preserves actual inline bidi punctuation and affixes while separating blocks", () => {
+  const source = fs.readFileSync(new URL("./audit-seo-ai-hygiene.mjs", import.meta.url), "utf8");
+  const implementation = source.match(/function normalizeText\(value\) \{[\s\S]*?\n\}/)?.[0];
+  const decodeHtml = source.match(/function decodeHtml\(value\) \{[\s\S]*?\n\}/)?.[0];
+  assert.ok(implementation, "Exercise the production extractor");
+  const context = vm.createContext({});
+  vm.runInContext(`${decodeHtml}\n${implementation}\nglobalThis.extractText = normalizeText;`, context);
+  for (const [html, visibleText] of [
+    ['هل يتوفر على <bdi dir="ltr">Android</bdi>؟', 'هل يتوفر على Android؟'],
+    ['على <bdi dir="ltr">iPhone</bdi> و<bdi dir="ltr">iPad</bdi>.', 'على iPhone وiPad.'],
+    ['سجلّ القرض (<bdi dir="ltr">Loan Record</bdi>)', 'سجلّ القرض (Loan Record)'],
+    ['<p>القرض</p><p>السداد</p>', 'القرض السداد'],
+    ['<div>Loan</div><div>Record</div>', 'Loan Record'],
+  ]) assert.equal(context.extractText(html), visibleText.toLowerCase());
+  assert.notEqual(context.extractText('القرض (<bdi dir="ltr">Loan Record</bdi>)'), context.extractText('القرض (Different Record)'), 'Substantive schema mismatches remain distinguishable');
+});

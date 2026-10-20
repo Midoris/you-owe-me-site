@@ -75,3 +75,17 @@ html[lang="ar"] .iphone-handoff__fallback { display: inline-block; }
 html[lang="ar"] .iphone-handoff__instruction bdi { white-space: nowrap; }
 /* Keep a financial value and its code together; wide tables scroll as a unit. */
 html[lang="ar"] td bdi[dir="ltr"] { white-space: nowrap; }
+html[lang="ar"] body.personal-loan-repayment-tracker-page .plrt-rule-callout {
+  border-inline-end: 0; border-inline-start: 4px solid #afe67e;
+  border-start-start-radius: 0; border-end-start-radius: 0;
+  border-start-end-radius: 16px; border-end-end-radius: 16px;
+}
+html[lang="ar"] body.personal-loan-repayment-tracker-page .plrt-table :is(th,td)::before {
+  letter-spacing: normal; text-transform: none; line-height: 1.7; text-align: start;
+}
+html[lang="ar"] body.personal-loan-repayment-tracker-page #main bdi[dir="ltr"] { white-space: nowrap; }
+html[lang="ar"] body.personal-loan-repayment-tracker-page #main .plrt-record-once__download .lt-appStoreBtn {
+  display: inline-block; text-align: center; width: min(225px, 100%) !important;
+}
+/* Arabic start-aligned anchor headings need room below the fixed menu control. */
+html[lang="ar"] #main :is(section[id],h1[id],h2[id],h3[id]) { scroll-margin-block-start: 4rem; }

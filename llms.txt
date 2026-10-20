@@ -293,4 +293,5 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 - [You Owe Me: تابع الديون والقروض والمصروفات](https://you-owe-me.com/ar/)
 - [تطبيق لتتبّع المبالغ المستحقة لك](https://you-owe-me.com/ar/solutions/app-to-track-money-owed/)
 - [كيف تتابع من يدين لك بالمال](https://you-owe-me.com/ar/blog/how-to-keep-track-of-who-owes-you-money/)
+- [تتبّع القروض الشخصية وسدادها](https://you-owe-me.com/ar/solutions/personal-loan-repayment-tracker/)
 <!-- arabic-pages:end -->

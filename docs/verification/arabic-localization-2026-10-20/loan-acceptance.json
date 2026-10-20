@@ -1,0 +1,27 @@
+{
+  "route": "/ar/solutions/personal-loan-repayment-tracker/",
+  "focusedTestsPassed": 15,
+  "designHardErrors": 0,
+  "routingHardErrors": 0,
+  "seoHardErrors": 0,
+  "seoLegacyWarnings": 6,
+  "responsiveWidths": [
+    320,
+    390,
+    600,
+    1440
+  ],
+  "financialStagesPreserved": true,
+  "initialTwoLoanTotal1450USD": true,
+  "threeHonestIllustrations": true,
+  "all20MobileTableLabelsArabic": true,
+  "anchorMenuDoesNotOverlap": true,
+  "staticLinks": 56,
+  "languageSwitchPaths": 24,
+  "generatorIdempotent": true,
+  "independentReviews": [
+    "loan-language-review.md",
+    "loan-technical-review.md"
+  ],
+  "productionUploads": 0
+}

@@ -106,6 +106,9 @@ function normalizeText(value) {
     .replace(/<script[\s\S]*?<\/script>/gi, " ")
     .replace(/<style[\s\S]*?<\/style>/gi, " ")
     .replace(/<svg[\s\S]*?<\/svg>/gi, " ")
+    // Bidi isolation is inline; it does not add spaces around punctuation,
+    // affixes or names in the actual DOM text.
+    .replace(/<\/?bdi\b[^>]*>/gi, "")
     .replace(/<[^>]+>/g, " ")
     .replace(/\s+/g, " ")
     .trim();
