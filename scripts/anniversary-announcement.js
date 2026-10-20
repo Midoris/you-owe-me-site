@@ -78,6 +78,32 @@
     }),
   });
 
+  const GERMAN_ACTIVE_STATES = Object.freeze({
+    inactive: Object.freeze({}),
+    active: Object.freeze({
+      standard: Object.freeze({
+        eyebrow: "2016–2026", heading: "You Owe Me wird 10.",
+        body: "Entdecke, wie You Owe Me seit zehn Jahren hilft, Geld zwischen Menschen übersichtlich festzuhalten. Berechtigte Nutzer der kostenlosen Version finden in der App außerdem bis zum 4. September ein zeitlich begrenztes Jubiläumsangebot für ein Upgrade.",
+        cta: "Zehn Jahre You Owe Me entdecken (auf Englisch)",
+      }),
+      inline: Object.freeze({
+        label: "Wir feiern Jubiläum",
+        body: "You Owe Me wird 10. Berechtigte Nutzer der kostenlosen Version finden das zeitlich begrenzte Jubiläumsangebot in der App bis zum 4. September.",
+      }),
+    }),
+    final: Object.freeze({
+      standard: Object.freeze({
+        eyebrow: "Letzte Tage", heading: "Das Jubiläumsangebot endet am 4. September.",
+        body: "Die Geschichte der letzten zehn Jahre bleibt verfügbar. Als berechtigter Nutzer der kostenlosen Version findest du das zeitlich begrenzte Upgrade-Angebot bis zum 4. September in der App.",
+        cta: "Das Jubiläum entdecken (auf Englisch)",
+      }),
+      inline: Object.freeze({
+        label: "Letzte Tage",
+        body: "Das Jubiläumsangebot für berechtigte Nutzer der kostenlosen Version endet am 4. September. Die Geschichte der letzten zehn Jahre bleibt verfügbar.",
+      }),
+    }),
+  });
+
   function localDateKey(date) {
     if (!date || typeof date.getFullYear !== "function" || Number.isNaN(date.getTime())) {
       return null;
@@ -113,7 +139,7 @@
     if (typeof moduleElement.querySelector !== "function") return false;
 
     const variant = moduleElement.getAttribute("data-anniversary-variant");
-    const states = documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
+    const states = documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
     const state = states[safePhase][variant];
     if (!state) {
       moduleElement.hidden = true;

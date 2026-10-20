@@ -1,5 +1,5 @@
 import { loanImportEventName } from "./loan-import-analytics.mjs?v=20261018-review1";
-import { spanishPages } from "../content/site-locales.mjs";
+import { localizedSourceRoute } from "../content/site-locales.mjs?v=locales20261020";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import {
   getAnalytics,
@@ -223,9 +223,9 @@ function normalizePath(path) {
 
 function getPageMetadata() {
   const normalizedPath = normalizePath(window.location.pathname);
-  const counterpart = spanishPages.find(page => page.complete && page.es === normalizedPath);
-  if (counterpart && PAGE_METADATA[counterpart.en]) {
-    return { ...PAGE_METADATA[counterpart.en], app_store_cpp: "default" };
+  const sourceRoute = localizedSourceRoute(normalizedPath);
+  if (sourceRoute && PAGE_METADATA[sourceRoute]) {
+    return { ...PAGE_METADATA[sourceRoute], app_store_cpp: "default" };
   }
   return PAGE_METADATA[normalizedPath] || {
     page_type: "hub",

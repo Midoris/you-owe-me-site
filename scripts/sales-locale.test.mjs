@@ -45,3 +45,16 @@ test("Spanish sale badges remain hidden outside an active campaign", () => {
   assert.equal(badge.hidden, true);
   assert.equal(sale, null);
 });
+
+
+test("German sale labels preserve campaigns, dates and analytics state", () => {
+  for (const [month, day, label] of [[12, 24, "Weihnachten"], [1, 1, "Neujahr"], [6, 19, "US-Vatertag"], [7, 4, "US-Unabhängigkeitstag"]]) {
+    const english = runSale("en", month, day);
+    const german = runSale("de", month, day);
+    assert.equal(german.badge.textContent, label + " • Zeitlich begrenztes Angebot");
+    assert.equal(german.badge.attributes["aria-label"], "Aktives Angebot: " + label);
+    assert.equal(JSON.stringify(german.sale), JSON.stringify(english.sale));
+    assert.equal(JSON.stringify(german.events), JSON.stringify(english.events));
+  }
+  assert.equal(runSale("de", 10, 20).badge.hidden, true);
+});

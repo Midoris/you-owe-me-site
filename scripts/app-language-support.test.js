@@ -308,3 +308,15 @@ test("the production component contains no tracking, storage, network, or debug 
     /analytics|firebase|sendBeacon|XMLHttpRequest|localStorage|sessionStorage|document\.cookie|fetch\s*\(|console\./i,
   );
 });
+
+
+test("German publications use German regardless of browser language and link to the German home", () => {
+  const documentObject = new FakeDocument();
+  documentObject.documentElement = { lang: "de" };
+  const anchor = languageSupport.render(documentObject, { language: "en-US" });
+  assert.equal(flattenedText(anchor), "✓You Owe Me ist auf Deutsch verfügbar.");
+  const productLink = anchor.children[1].children[0];
+  assert.equal(productLink.tagName, "A");
+  assert.equal(productLink.getAttribute("href"), "/de/");
+  assert.equal(anchor.getAttribute("lang"), "de");
+});

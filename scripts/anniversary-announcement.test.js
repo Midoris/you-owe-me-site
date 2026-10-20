@@ -182,3 +182,22 @@ test("initialize uses the injected timer seam once after DOM readiness", () => {
   assert.equal(moduleElement.getAttribute("data-anniversary-phase"), "active");
   assert.equal(anniversary.initialize(documentObject, FixedDate, () => {}), false);
 });
+
+
+test("German announcements translate active/final states and label the English story", () => {
+  const standard = standardModule();
+  const inline = inlineModule();
+  const documentObject = new FakeDocument([standard, inline]);
+  documentObject.documentElement = { lang: "de" };
+  anniversary.render(documentObject, new Date(2026, 7, 26, 12));
+  assert.equal(standard.querySelector("[data-anniversary-heading]").textContent, "You Owe Me wird 10.");
+  assert.match(standard.querySelector("[data-anniversary-cta]").textContent, /\(auf Englisch\)$/);
+  assert.equal(standard.querySelector("[data-anniversary-cta]").getAttribute("href"), "/10-years/");
+  assert.equal(inline.querySelector("[data-anniversary-inline-label]").textContent, "Wir feiern Jubiläum");
+  anniversary.render(documentObject, new Date(2026, 8, 4, 12));
+  assert.equal(standard.querySelector("[data-anniversary-heading]").textContent, "Das Jubiläumsangebot endet am 4. September.");
+  assert.equal(inline.querySelector("[data-anniversary-inline-label]").textContent, "Letzte Tage");
+  anniversary.render(documentObject, new Date(2026, 8, 5, 12));
+  assert.equal(standard.hidden, true);
+  assert.equal(inline.hidden, true);
+});

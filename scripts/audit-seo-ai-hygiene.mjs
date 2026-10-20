@@ -288,7 +288,9 @@ function auditToolFallback(entry, html, warnings) {
 
   const crawlable = crawlableText(html);
   const hasNoscriptExample = /<noscript[\s\S]{120,}?<\/noscript>/i.test(html);
-  const examplePattern = entry.locale === "es"
+  const examplePattern = entry.locale === "de"
+    ? /(?:beispiel|muster|ergebnis|beispielrechnung)/i
+    : entry.locale === "es"
     ? /ejemplo (?:de |con |resuelto|estático)|resultado final|resultado:/i
     : /example (result|calculation|plan|messages|output|summary)|worked example|final result|result:|copy a repayment reminder text|template library|what the copied summary can look like|static example/i;
   const hasVisibleExample = examplePattern.test(crawlable);
@@ -303,7 +305,7 @@ function auditExtractability(entry, html, warnings) {
   if (!["home", "hub", "solution", "tool", "guide", "compare", "feature", "reviews", "quick-start"].includes(entry.pageType)) return;
 
   const text = visibleText(html);
-  const truths = entry.locale === "es" ? ["dinero entre personas", "saldo pendiente", "registro claro", "pagos parciales", "historial de pagos", "gastos compartidos"] : strategicTruths;
+  const truths = entry.locale === "de" ? ["geld zwischen menschen", "offener betrag", "laufender saldo", "teilrückzahlung", "rückzahlungen", "gemeinsame ausgaben", "darlehen"] : entry.locale === "es" ? ["dinero entre personas", "saldo pendiente", "registro claro", "pagos parciales", "historial de pagos", "gastos compartidos"] : strategicTruths;
   const truthCount = truths.filter((truth) => text.includes(truth)).length;
   if (truthCount === 0) {
     add(warnings, `${entry.url}: visible text does not clearly reinforce the money-between-people positioning truths`);

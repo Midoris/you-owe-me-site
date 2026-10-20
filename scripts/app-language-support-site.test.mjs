@@ -13,8 +13,8 @@ function includedHtml(body) {
 test("every site route satisfies the language-support inclusion and exclusion contract", () => {
   const result = auditWholeSite();
   assert.deepEqual(result.errors, []);
-  const spanishPages = result.files.filter(file => /[/\\]es[/\\]/.test(file)).length;
-  assert.equal(result.counts.included, 81 + spanishPages);
+  const localizedPages = result.files.filter(file => /[/\\](?:es|de)[/\\]/.test(file)).length;
+  assert.equal(result.counts.included, 81 + localizedPages);
   assert.equal(result.counts.excluded, 11);
   assert.equal(result.counts.unclassified, 0);
 });
@@ -72,4 +72,11 @@ test("excluded routes reject every language-support integration surface", () => 
   assert.ok(errors.some((error) => error.includes("excluded route includes the language-support stylesheet")));
   assert.ok(errors.some((error) => error.includes("excluded route includes the language-support script")));
   assert.ok(errors.some((error) => error.includes("excluded route contains a language-support anchor")));
+});
+
+
+test("German routes require German document language", () => {
+  const html = includedHtml(`<div data-app-language-support-anchor hidden></div><a class="lt-primaryCta" href="/de/">You Owe Me</a>`).replace('lang="en"', 'lang="de"');
+  assert.deepEqual(auditHtmlForRoute("/de/", html), []);
+  assert.ok(auditHtmlForRoute("/de/", html.replace('lang="de"', 'lang="en"')).some(error => error.includes("document language must be de")));
 });
