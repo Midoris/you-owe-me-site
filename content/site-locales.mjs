@@ -14,9 +14,9 @@ export const sharedAssetVersions = {
   "/styles/site-locale.css": "fr20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "fr20261020",
-  "/scripts/split-expense-locale.js": "ar20261020",
-  "/scripts/split-expense-calculator.js": "ar20261020",
-  "/scripts/tool-transfer.js": "ar20261020",
+  "/scripts/split-expense-locale.js": "fr20261020",
+  "/scripts/split-expense-calculator.js": "fr20261020",
+  "/scripts/tool-transfer.js": "fr20261020",
 };
 export const spanishVersionedAssets = [
   "/scripts/analytics.js", "/scripts/sales.js", "/scripts/anniversary-announcement.js",
@@ -93,7 +93,7 @@ export const frenchPages = [
   { en: "/solutions/app-to-track-money-owed/", fr: "/fr/solutions/application-suivi-argent-du/", title: "Application pour suivre l’argent qu’on vous doit", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", fr: "/fr/blog/suivre-qui-vous-doit-de-l-argent/", title: "Comment savoir qui vous doit de l’argent", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", fr: "/fr/solutions/suivi-remboursement-pret-personnel/", title: "Suivez vos prêts personnels et leurs remboursements", complete: true },
-  { en: "/tools/split-expense-calculator/", fr: "/fr/outils/calculateur-partage-depenses/", title: "Calculateur de partage des dépenses", complete: false },
+  { en: "/tools/split-expense-calculator/", fr: "/fr/outils/calculateur-partage-depenses/", title: "Calculateur de partage des dépenses", complete: true },
 ];
 export const frenchShared = Object.freeze({
   languageLabel: "Langue de la page", exampleLabel: "Exemple illustratif ; ce n’est pas une capture de l’application",
@@ -111,7 +111,7 @@ export const siteLocales = [
   { code: "es", label: "Español", home: "/es/", pages: spanishPages, shared: spanishShared, assetVersion: spanishAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "spanish", sectionClass: "site-spanish-section", nextStepComment: "Spanish next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Spanish next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "de", label: "Deutsch", home: "/de/", pages: germanPages, shared: germanShared, assetVersion: germanAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "german", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "ar", label: "العربية", direction: "rtl", home: "/ar/", pages: arabicPages, shared: arabicShared, assetVersion: "ar20261020", versionedAssets: [...spanishVersionedAssets, "/scripts/arabic-number-input.js"], sectionMarker: "arabic", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
-  { code: "fr", label: "Français", home: "/fr/", pages: frenchPages, shared: frenchShared, assetVersion: "fr20261020", versionedAssets: spanishVersionedAssets, sectionMarker: "french", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
+  { code: "fr", label: "Français", home: "/fr/", pages: frenchPages, shared: frenchShared, assetVersion: "fr20261020", versionedAssets: [...spanishVersionedAssets, "/scripts/french-number-input.js"], sectionMarker: "french", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
 ];
 
 export function localeAssetVersion(locale, asset) {

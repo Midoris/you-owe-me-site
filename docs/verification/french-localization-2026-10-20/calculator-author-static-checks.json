@@ -1,0 +1,61 @@
+{
+  "route": "/fr/outils/calculateur-partage-depenses/",
+  "direct_local_urls": 115,
+  "duplicate_ids": [],
+  "errors": [],
+  "main_french_text_chars": 20976,
+  "source_example": {
+    "expenses_usd": [
+      90,
+      60,
+      30
+    ],
+    "shares_usd": {
+      "Alex": 65,
+      "Mia": 50,
+      "Sam": 65
+    },
+    "paid_usd": {
+      "Alex": 90,
+      "Mia": 60,
+      "Sam": 30
+    },
+    "settlement_usd": {
+      "Sam_to_Alex": 25,
+      "Sam_to_Mia": 10
+    }
+  },
+  "source_example_direction_present": true,
+  "equal_98_8_present": true,
+  "parser_before_runtime": true,
+  "locale_dictionary_before_runtime": true,
+  "number_help_present": true,
+  "currency_field_unchanged": true,
+  "english_badge_pixels": false,
+  "english_social_pixels": false,
+  "custom_product_page_parameter": false,
+  "private_existing_sections": {
+    "en": {
+      "byte_identical": true,
+      "sha256": "e3d45b24163dac74b4c1e91a4d7247efd13aab168234231770aefce4a668a34c"
+    },
+    "es": {
+      "byte_identical": true,
+      "sha256": "f5bd51c691f2c9a0db8dd32c5bfb292b421364154edf401215ebe9b0654bc464"
+    },
+    "de": {
+      "byte_identical": true,
+      "sha256": "a9a555caf34cd275add2f5b6061c895c79152f4e6f3778ca5e67eb9f793385d8"
+    },
+    "ar": {
+      "byte_identical": true,
+      "sha256": "b22bd2d7cf39a727109792d4f5cbe7b32abfe7193f687b8347a2dbbc00d4865a"
+    }
+  },
+  "private_fr_has_ltr": true,
+  "private_fr_return": true,
+  "private_noindex_meta": true,
+  "private_no_referrer_meta": true,
+  "private_selector_query": true,
+  "private_arabic_css_query_unchanged": true
+}

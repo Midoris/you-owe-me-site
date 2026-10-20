@@ -12,7 +12,7 @@ test('private continuation allows only its local locale selector with no persona
   const html=fs.readFileSync('private-continuation/split/index.html','utf8');
   assert.ok(!/analytics|og:|app-argument/i.test(html));
   assert.equal((html.match(/<script\b/g)||[]).length,1);
-  assert.deepEqual([...html.matchAll(/<script\b[^>]*src="([^"]+)"[^>]*>([\s\S]*?)<\/script>/g)].map(match=>[match[1],match[2]]), [['locale.js?v=de20261020','']]);
+  assert.deepEqual([...html.matchAll(/<script\b[^>]*src="([^"]+)"[^>]*>([\s\S]*?)<\/script>/g)].map(match=>[match[1],match[2]]), [['locale.js?v=fr20261020','']]);
   assert.ok(html.includes('no-referrer') && html.includes('noindex,nofollow,noarchive'));
   const cfg=JSON.parse(fs.readFileSync('firebase.exp003.json'));
   for(const [key,value] of [['Cache-Control','no-store'],['Referrer-Policy','no-referrer'],['X-Robots-Tag','noindex, nofollow, noarchive']]) assert.ok(cfg.hosting.headers[0].headers.some(h=>h.key===key&&h.value===value));

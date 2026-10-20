@@ -1,0 +1,70 @@
+{
+  "allPassed": true,
+  "sourceSHA256": "af8ec5d28dec5efeeba79df8f59a78424557dcba8215b49e210f543657a7dfe7",
+  "checks": [
+    {
+      "width": 320,
+      "good": 2,
+      "rejected": 4,
+      "worked180And98Over8": true,
+      "exactCopySharePayload": true,
+      "clipboardFallbackShareFallbackCancelAndFailure": true,
+      "validationAccessible": true,
+      "noPageOverflow": true,
+      "mixedNamesRaw": true
+    },
+    {
+      "width": 390,
+      "good": 16,
+      "rejected": 46,
+      "worked180And98Over8": true,
+      "exactCopySharePayload": true,
+      "clipboardFallbackShareFallbackCancelAndFailure": true,
+      "validationAccessible": true,
+      "noPageOverflow": true,
+      "mixedNamesRaw": true
+    },
+    {
+      "width": 600,
+      "good": 2,
+      "rejected": 4,
+      "worked180And98Over8": true,
+      "exactCopySharePayload": true,
+      "clipboardFallbackShareFallbackCancelAndFailure": true,
+      "validationAccessible": true,
+      "noPageOverflow": true,
+      "mixedNamesRaw": true
+    },
+    {
+      "width": 1440,
+      "good": 2,
+      "rejected": 4,
+      "worked180And98Over8": true,
+      "exactCopySharePayload": true,
+      "clipboardFallbackShareFallbackCancelAndFailure": true,
+      "validationAccessible": true,
+      "noPageOverflow": true,
+      "mixedNamesRaw": true
+    },
+    {
+      "priorLocale": "en",
+      "amount": "USD 12.5"
+    },
+    {
+      "priorLocale": "es",
+      "amount": "USD 12,5"
+    },
+    {
+      "priorLocale": "de",
+      "amount": "12,5 USD"
+    },
+    {
+      "priorLocale": "ar",
+      "amount": "90.5 USD"
+    },
+    {
+      "noJSMainCharacters": 16254
+    }
+  ],
+  "limits": "Local real Chrome with intercepted clipboard/share and blocked external requests; no native device or real upload."
+}

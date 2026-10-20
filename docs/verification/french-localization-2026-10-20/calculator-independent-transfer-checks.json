@@ -1,0 +1,17 @@
+{
+  "allPassed": true,
+  "privateLanguageDirectionTransitions": 30,
+  "exactConfiguredCSP": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+  "iPhoneChromeSimulation": true,
+  "explicitConsentNoPrematureUpload": true,
+  "failedRetrySameReference": true,
+  "french90Point50Native9050Cents": true,
+  "rawMixedNamesUnchangedAndNoInsertedControls": true,
+  "soleRefPlusFrenchFragment": true,
+  "privateLTRUnderConfiguredCSP": true,
+  "backRestoresRawFrenchInputThenClearsStorage": true,
+  "legacyHalfCentAndMultiPayerFallback": true,
+  "mockedUploads": 2,
+  "productionUploads": 0,
+  "limits": "Browser simulation with entirely mocked endpoint/private responses; no physical iPhone, native save or actual upload."
+}

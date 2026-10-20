@@ -1,0 +1,101 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "en",
+      "route": "/tools/split-expense-calculator/"
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/"
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/"
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/"
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/tools/ausgaben-aufteilen/"
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/"
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/tools/split-expense-calculator/"
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/"
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "en",
+      "route": "/tools/split-expense-calculator/"
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/"
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/"
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/"
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/tools/ausgaben-aufteilen/"
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/"
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/tools/split-expense-calculator/"
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/outils/calculateur-partage-depenses/"
+    }
+  ]
+}

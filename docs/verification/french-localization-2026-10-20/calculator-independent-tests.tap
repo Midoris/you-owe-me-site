@@ -1,0 +1,184 @@
+TAP version 13
+# Subtest: Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+ok 1 - Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+  ---
+  duration_ms: 80.407041
+  type: 'test'
+  ...
+# Subtest: Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+ok 2 - Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+  ---
+  duration_ms: 37.65175
+  type: 'test'
+  ...
+# Subtest: Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+ok 3 - Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+  ---
+  duration_ms: 17.124417
+  type: 'test'
+  ...
+# Subtest: Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+ok 4 - Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+  ---
+  duration_ms: 34.420167
+  type: 'test'
+  ...
+# Subtest: Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+ok 5 - Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+  ---
+  duration_ms: 18.374708
+  type: 'test'
+  ...
+# Subtest: private locale selection resets every RTL/LTR transition using only the fragment
+ok 6 - private locale selection resets every RTL/LTR transition using only the fragment
+  ---
+  duration_ms: 1.321583
+  type: 'test'
+  ...
+# Subtest: Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+ok 7 - Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+  ---
+  duration_ms: 0.831958
+  type: 'test'
+  ...
+# Subtest: ambiguous separators and malformed values never silently become positive money
+ok 8 - ambiguous separators and malformed values never silently become positive money
+  ---
+  duration_ms: 0.124625
+  type: 'test'
+  ...
+# Subtest: French raw decimal/grouping inputs preserve existing browser/native fixture values
+ok 9 - French raw decimal/grouping inputs preserve existing browser/native fixture values
+  ---
+  duration_ms: 120.345208
+  type: 'test'
+  ...
+# Subtest: French ambiguity and invalid amounts cannot create results or native drafts
+ok 10 - French ambiguity and invalid amounts cannot create results or native drafts
+  ---
+  duration_ms: 136.33225
+  type: 'test'
+  ...
+# Subtest: French retains the accepted native rounding/capacity eligibility guard
+ok 11 - French retains the accepted native rounding/capacity eligibility guard
+  ---
+  duration_ms: 60.727125
+  type: 'test'
+  ...
+# Subtest: French retry and Back preserve raw comma input, names, cents and sole-reference privacy
+ok 12 - French retry and Back preserve raw comma input, names, cents and sole-reference privacy
+  ---
+  duration_ms: 32.442875
+  type: 'test'
+  ...
+# Subtest: French copied/shared summaries retain currency, creditor direction and localized canonical
+ok 13 - French copied/shared summaries retain currency, creditor direction and localized canonical
+  ---
+  duration_ms: 15.647125
+  type: 'test'
+  ...
+# Subtest: French restored numeric values follow the same fail-closed input boundary
+ok 14 - French restored numeric values follow the same fail-closed input boundary
+  ---
+  duration_ms: 17.844125
+  type: 'test'
+  ...
+# Subtest: French blank identity fallbacks agree between visible calculator and native draft
+ok 15 - French blank identity fallbacks agree between visible calculator and native draft
+  ---
+  duration_ms: 29.474083
+  type: 'test'
+  ...
+# Subtest: French private continuation preserves all four accepted sections and privacy configuration
+ok 16 - French private continuation preserves all four accepted sections and privacy configuration
+  ---
+  duration_ms: 46.423666
+  type: 'test'
+  ...
+# Subtest: French boundary follows independently authored valid, ambiguous and malformed fixtures
+ok 17 - French boundary follows independently authored valid, ambiguous and malformed fixtures
+  ---
+  duration_ms: 0.68675
+  type: 'test'
+  ...
+# Subtest: native import is withheld when rounded debts exceed the browser settlement credit
+ok 18 - native import is withheld when rounded debts exceed the browser settlement credit
+  ---
+  duration_ms: 0.994958
+  type: 'test'
+  ...
+# Subtest: accepted residual and precision fixtures keep their existing eligibility and values
+ok 19 - accepted residual and precision fixtures keep their existing eligibility and values
+  ---
+  duration_ms: 0.19
+  type: 'test'
+  ...
+# Subtest: released App Clip offer is enabled
+ok 20 - released App Clip offer is enabled
+  ---
+  duration_ms: 0.444917
+  type: 'test'
+  ...
+# Subtest: preserves unambiguous identity, costs and ambiguous dollar label
+ok 21 - preserves unambiguous identity, costs and ambiguous dollar label
+  ---
+  duration_ms: 0.276459
+  type: 'test'
+  ...
+# Subtest: multi-payer and incomplete costs retain web result without upload
+ok 22 - multi-payer and incomplete costs retain web result without upload
+  ---
+  duration_ms: 0.069792
+  type: 'test'
+  ...
+# Subtest: precision and capacity limits
+ok 23 - precision and capacity limits
+  ---
+  duration_ms: 0.118959
+  type: 'test'
+  ...
+# Subtest: supported residual and unsupported accumulated rounding
+ok 24 - supported residual and unsupported accumulated rounding
+  ---
+  duration_ms: 0.174
+  type: 'test'
+  ...
+# Subtest: private continuation allows only its local locale selector with no personal previews
+ok 25 - private continuation allows only its local locale selector with no personal previews
+  ---
+  duration_ms: 0.789625
+  type: 'test'
+  ...
+# Subtest: shared cross-language financial fixtures
+ok 26 - shared cross-language financial fixtures
+  ---
+  duration_ms: 0.374917
+  type: 'test'
+  ...
+# Subtest: rejects a native half-cent that disagrees with the existing browser answer
+ok 27 - rejects a native half-cent that disagrees with the existing browser answer
+  ---
+  duration_ms: 0.061875
+  type: 'test'
+  ...
+# Subtest: private continuation preserves accepted English/Spanish copy and all three no-JS sections
+ok 28 - private continuation preserves accepted English/Spanish copy and all three no-JS sections
+  ---
+  duration_ms: 1.751083
+  type: 'test'
+  ...
+# Subtest: private fragment switching changes only language, title and visible section while retaining sole ref
+ok 29 - private fragment switching changes only language, title and visible section while retaining sole ref
+  ---
+  duration_ms: 8.943125
+  type: 'test'
+  ...
+1..29
+# tests 29
+# suites 0
+# pass 29
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 504.429583

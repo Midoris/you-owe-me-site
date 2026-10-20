@@ -1,0 +1,63 @@
+{
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T09:13:45.044678+00:00",
+  "route": "/fr/outils/calculateur-partage-depenses/",
+  "generatorByteIdempotent": true,
+  "checks": [
+    {
+      "command": [
+        "node",
+        "scripts/sync-site-locales.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Updated 25 reviewed language pages.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build-sitemap.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Sitemap built with 102 indexable URL(s).\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/fr/outils/calculateur-partage-depenses/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /fr/outils/calculateur-partage-depenses/\nBody class: tools-page\nAudited stylesheets: styles/tools.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/french-localization-2026-10-20/raw-html-check.py",
+        "/fr/outils/calculateur-partage-depenses/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/fr/outils/calculateur-partage-depenses/\", \"lang\": \"fr\", \"direction\": \"ltr\", \"canonical\": [\"https://you-owe-me.com/fr/outils/calculateur-partage-depenses/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/tools/split-expense-calculator/\", \"es\": \"https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/\", \"de\": \"https://you-owe-me.com/de/tools/ausgaben-aufteilen/\", \"ar\": \"https://you-owe-me.com/ar/tools/split-expense-calculator/\", \"fr\": \"https://you-owe-me.com/fr/outils/calculateur-partage-depenses/\", \"x-default\": \"https://you-owe-me.com/tools/split-expense-calculator/\"}, \"staticMainTextCharacters\": 29460, \"staticLinkCount\": 97, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "scripts/french-number-input.test.js",
+        "scripts/french-calculator.test.mjs",
+        "scripts/arabic-number-input.test.js",
+        "scripts/arabic-calculator.test.mjs",
+        "scripts/tool-transfer-rounding.test.js",
+        "tests/tool-transfer.test.cjs",
+        "scripts/site-locales.test.mjs",
+        "scripts/french-locales.test.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "TAP version 13\n# Subtest: Arabic digits preserve the complete existing calculator and native-fixture financial contracts\nok 1 - Arabic digits preserve the complete existing calculator and native-fixture financial contracts\n  ---\n  duration_ms: 83.043375\n  type: 'test'\n  ...\n# Subtest: Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation\nok 2 - Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation\n  ---\n  duration_ms: 36.703709\n  type: 'test'\n  ...\n# Subtest: Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates\nok 3 - Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates\n  ---\n  duration_ms: 17.515083\n  type: 'test'\n  ...\n# Subtest: Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract\nok 4 - Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract\n  ---\n  duration_ms: 35.365792\n  type: 'test'\n  ...\n# Subtest: Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary\nok 5 - Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary\n  ---\n  duration_ms: 17.777875\n  type: 'test'\n  ...\n# Subtest: private locale selection resets every RTL/LTR transition using only the fragment\nok 6 - private locale selection resets every RTL/LTR transition using only the fragment\n  ---\n  duration_ms: 1.293958\n  type: 'test'\n  ...\n# Subtest: Arabic numeric boundary preserves signs, digits, grouping and decimal precision\nok 7 - Arabic numeric boundary preserves signs, digits, grouping and decimal precision\n  ---\n  duration_ms: 0.949084\n  type: 'test'\n  ...\n# Subtest: ambiguous separators and malformed values never silently become positive money\nok 8 - ambiguous separators and malformed values never silently become positive money\n  ---\n  duration_ms: 0.131166\n  type: 'test'\n  ...\n# Subtest: French raw decimal/grouping inputs preserve existing browser/native fixture values\nok 9 - French raw decimal/grouping inputs preserve existing browser/native fixture values\n  ---\n  duration_ms: 121.823875\n  type: 'test'\n  ...\n# Subtest: French ambiguity and invalid amounts cannot create results or native drafts\nok 10 - French ambiguity and invalid amounts cannot create results or native drafts\n  ---\n  duration_ms: 130.537417\n  type: 'test'\n  ...\n# Subtest: French retains the accepted native rounding/capacity eligibility guard\nok 11 - French retains the accepted native rounding/capacity eligibility guard\n  ---\n  duration_ms: 58.281584\n  type: 'test'\n  ...\n# Subtest: French retry and Back preserve raw comma input, names, cents and sole-reference privacy\nok 12 - French retry and Back preserve raw comma input, names, cents and sole-reference privacy\n  ---\n  duration_ms: 32.00975\n  type: 'test'\n  ...\n# Subtest: French copied/shared summaries retain currency, creditor direction and localized canonical\nok 13 - French copied/shared summaries retain currency, creditor direction and localized canonical\n  ---\n  duration_ms: 15.377\n  type: 'test'\n  ...\n# Subtest: French restored numeric values follow the same fail-closed input boundary\nok 14 - French restored numeric values follow the same fail-closed input boundary\n  ---\n  duration_ms: 18.165666\n  type: 'test'\n  ...\n# Subtest: French blank identity fallbacks agree between visible calculator and native draft\nok 15 - French blank identity fallbacks agree between visible calculator and native draft\n  ---\n  duration_ms: 23.892375\n  type: 'test'\n  ...\n# Subtest: French private continuation preserves all four accepted sections and privacy configuration\nok 16 - French private continuation preserves all four accepted sections and privacy configuration\n  ---\n  duration_ms: 35.166583\n  type: 'test'\n  ...\n# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters\nok 17 - French admission requires review and produces reciprocal idempotent five-language clusters\n  ---\n  duration_ms: 4.782416\n  type: 'test'\n  ...\n# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries\nok 18 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries\n  ---\n  duration_ms: 270.083333\n  type: 'test'\n  ...\n# Subtest: French boundary follows independently authored valid, ambiguous and malformed fixtures\nok 19 - French boundary follows independently authored valid, ambiguous and malformed fixtures\n  ---\n  duration_ms: 0.647166\n  type: 'test'\n  ...\n# Subtest: only completed translations join the registry and have substantive public HTML\nok 20 - only completed translations join the registry and have substantive public HTML\n  ---\n  duration_ms: 15.422041\n  type: 'test'\n  ...\n# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries\nok 21 - English authored content differs from the accepted base only by locale links and declared shared cache queries\n  ---\n  duration_ms: 67.857792\n  type: 'test'\n  ...\n# Subtest: locale routes are unique, stable and contain no financial inputs\nok 22 - locale routes are unique, stable and contain no financial inputs\n  ---\n  duration_ms: 0.694084\n  type: 'test'\n  ...\n# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release\nok 23 - Spanish authored HTML stays byte-for-byte intact from the accepted public release\n  ---\n  duration_ms: 65.059459\n  type: 'test'\n  ...\n# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out\nok 24 - one generator produces reciprocal three-language switches and leaves planned pages out\n  ---\n  duration_ms: 3.111167\n  type: 'test'\n  ...\n# Subtest: German registry inherits source routing without linking to unfinished locale pages\nok 25 - German registry inherits source routing without linking to unfinished locale pages\n  ---\n  duration_ms: 0.144083\n  type: 'test'\n  ...\n# Subtest: unreviewed German routes do not enter public discovery or runtime matching\nok 26 - unreviewed German routes do not enter public discovery or runtime matching\n  ---\n  duration_ms: 0.271542\n  type: 'test'\n  ...\n# Subtest: a missing reviewed counterpart fails before any existing page is changed\nok 27 - a missing reviewed counterpart fails before any existing page is changed\n  ---\n  duration_ms: 1.175167\n  type: 'test'\n  ...\n# Subtest: analytics preserves English metadata and maps only completed localized routes\nok 28 - analytics preserves English metadata and maps only completed localized routes\n  ---\n  duration_ms: 12.973709\n  type: 'test'\n  ...\n# Subtest: native import is withheld when rounded debts exceed the browser settlement credit\nok 29 - native import is withheld when rounded debts exceed the browser settlement credit\n  ---\n  duration_ms: 0.96025\n  type: 'test'\n  ...\n# Subtest: accepted residual and precision fixtures keep their existing eligibility and values\nok 30 - accepted residual and precision fixtures keep their existing eligibility and values\n  ---\n  duration_ms: 0.199291\n  type: 'test'\n  ...\n# Subtest: released App Clip offer is enabled\nok 31 - released App Clip offer is enabled\n  ---\n  duration_ms: 0.487417\n  type: 'test'\n  ...\n# Subtest: preserves unambiguous identity, costs and ambiguous dollar label\nok 32 - preserves unambiguous identity, costs and ambiguous dollar label\n  ---\n  duration_ms: 0.295792\n  type: 'test'\n  ...\n# Subtest: multi-payer and incomplete costs retain web result without upload\nok 33 - multi-payer and incomplete costs retain web result without upload\n  ---\n  duration_ms: 0.066208\n  type: 'test'\n  ...\n# Subtest: precision and capacity limits\nok 34 - precision and capacity limits\n  ---\n  duration_ms: 0.122625\n  type: 'test'\n  ...\n# Subtest: supported residual and unsupported accumulated rounding\nok 35 - supported residual and unsupported accumulated rounding\n  ---\n  duration_ms: 0.172834\n  type: 'test'\n  ...\n# Subtest: private continuation allows only its local locale selector with no personal previews\nok 36 - private continuation allows only its local locale selector with no personal previews\n  ---\n  duration_ms: 0.795541\n  type: 'test'\n  ...\n# Subtest: shared cross-language financial fixtures\nok 37 - shared cross-language financial fixtures\n  ---\n  duration_ms: 0.373958\n  type: 'test'\n  ...\n# Subtest: rejects a native half-cent that disagrees with the existing browser answer\nok 38 - rejects a native half-cent that disagrees with the existing browser answer\n  ---\n  duration_ms: 0.063583\n  type: 'test'\n  ...\n# Subtest: private continuation preserves accepted English/Spanish copy and all three no-JS sections\nok 39 - private continuation preserves accepted English/Spanish copy and all three no-JS sections\n  ---\n  duration_ms: 1.839625\n  type: 'test'\n  ...\n# Subtest: private fragment switching changes only language, title and visible section while retaining sole ref\nok 40 - private fragment switching changes only language, title and visible section while retaining sole ref\n  ---\n  duration_ms: 9.836584\n  type: 'test'\n  ...\n1..40\n# tests 40\n# suites 0\n# pass 40\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 481.183416\n",
+      "stderr": ""
+    }
+  ]
+}

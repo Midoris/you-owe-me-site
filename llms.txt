@@ -306,4 +306,5 @@ Contenus publics en français. Chaque page possède sa propre URL canonique. Les
 - [Application pour suivre l’argent qu’on vous doit](https://you-owe-me.com/fr/solutions/application-suivi-argent-du/)
 - [Comment savoir qui vous doit de l’argent](https://you-owe-me.com/fr/blog/suivre-qui-vous-doit-de-l-argent/)
 - [Suivez vos prêts personnels et leurs remboursements](https://you-owe-me.com/fr/solutions/suivi-remboursement-pret-personnel/)
+- [Calculateur de partage des dépenses](https://you-owe-me.com/fr/outils/calculateur-partage-depenses/)
 <!-- french-pages:end -->

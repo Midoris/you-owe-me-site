@@ -1,0 +1,250 @@
+TAP version 13
+# Subtest: Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+ok 1 - Arabic digits preserve the complete existing calculator and native-fixture financial contracts
+  ---
+  duration_ms: 80.625209
+  type: 'test'
+  ...
+# Subtest: Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+ok 2 - Arabic malformed input is invalid in both calculation and native preparation without silent reinterpretation
+  ---
+  duration_ms: 36.674542
+  type: 'test'
+  ...
+# Subtest: Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+ok 3 - Mixed names receive semantic DOM isolation and only presentation summaries receive balanced Unicode isolates
+  ---
+  duration_ms: 17.381708
+  type: 'test'
+  ...
+# Subtest: Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+ok 4 - Arabic native retry and Back restoration preserve raw digits, names, cents and sole-reference contract
+  ---
+  duration_ms: 34.50525
+  type: 'test'
+  ...
+# Subtest: Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+ok 5 - Arabic edits invalidate in-flight transfers even when canonicalization is deferred to the boundary
+  ---
+  duration_ms: 17.418
+  type: 'test'
+  ...
+# Subtest: private locale selection resets every RTL/LTR transition using only the fragment
+ok 6 - private locale selection resets every RTL/LTR transition using only the fragment
+  ---
+  duration_ms: 1.201292
+  type: 'test'
+  ...
+# Subtest: Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+ok 7 - Arabic numeric boundary preserves signs, digits, grouping and decimal precision
+  ---
+  duration_ms: 0.836166
+  type: 'test'
+  ...
+# Subtest: ambiguous separators and malformed values never silently become positive money
+ok 8 - ambiguous separators and malformed values never silently become positive money
+  ---
+  duration_ms: 0.123375
+  type: 'test'
+  ...
+# Subtest: French raw decimal/grouping inputs preserve existing browser/native fixture values
+ok 9 - French raw decimal/grouping inputs preserve existing browser/native fixture values
+  ---
+  duration_ms: 120.227208
+  type: 'test'
+  ...
+# Subtest: French ambiguity and invalid amounts cannot create results or native drafts
+ok 10 - French ambiguity and invalid amounts cannot create results or native drafts
+  ---
+  duration_ms: 129.480292
+  type: 'test'
+  ...
+# Subtest: French retains the accepted native rounding/capacity eligibility guard
+ok 11 - French retains the accepted native rounding/capacity eligibility guard
+  ---
+  duration_ms: 59.42075
+  type: 'test'
+  ...
+# Subtest: French retry and Back preserve raw comma input, names, cents and sole-reference privacy
+ok 12 - French retry and Back preserve raw comma input, names, cents and sole-reference privacy
+  ---
+  duration_ms: 32.891458
+  type: 'test'
+  ...
+# Subtest: French copied/shared summaries retain currency, creditor direction and localized canonical
+ok 13 - French copied/shared summaries retain currency, creditor direction and localized canonical
+  ---
+  duration_ms: 16.097458
+  type: 'test'
+  ...
+# Subtest: French restored numeric values follow the same fail-closed input boundary
+ok 14 - French restored numeric values follow the same fail-closed input boundary
+  ---
+  duration_ms: 18.807833
+  type: 'test'
+  ...
+# Subtest: French blank identity fallbacks agree between visible calculator and native draft
+ok 15 - French blank identity fallbacks agree between visible calculator and native draft
+  ---
+  duration_ms: 28.140041
+  type: 'test'
+  ...
+# Subtest: French private continuation preserves all four accepted sections and privacy configuration
+ok 16 - French private continuation preserves all four accepted sections and privacy configuration
+  ---
+  duration_ms: 42.433334
+  type: 'test'
+  ...
+# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters
+ok 17 - French admission requires review and produces reciprocal idempotent five-language clusters
+  ---
+  duration_ms: 4.722208
+  type: 'test'
+  ...
+# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+ok 18 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+  ---
+  duration_ms: 371.6425
+  type: 'test'
+  ...
+# Subtest: French boundary follows independently authored valid, ambiguous and malformed fixtures
+ok 19 - French boundary follows independently authored valid, ambiguous and malformed fixtures
+  ---
+  duration_ms: 0.645334
+  type: 'test'
+  ...
+# Subtest: only completed translations join the registry and have substantive public HTML
+ok 20 - only completed translations join the registry and have substantive public HTML
+  ---
+  duration_ms: 18.695416
+  type: 'test'
+  ...
+# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries
+ok 21 - English authored content differs from the accepted base only by locale links and declared shared cache queries
+  ---
+  duration_ms: 95.303875
+  type: 'test'
+  ...
+# Subtest: locale routes are unique, stable and contain no financial inputs
+ok 22 - locale routes are unique, stable and contain no financial inputs
+  ---
+  duration_ms: 0.717875
+  type: 'test'
+  ...
+# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release
+ok 23 - Spanish authored HTML stays byte-for-byte intact from the accepted public release
+  ---
+  duration_ms: 93.607292
+  type: 'test'
+  ...
+# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out
+ok 24 - one generator produces reciprocal three-language switches and leaves planned pages out
+  ---
+  duration_ms: 2.881709
+  type: 'test'
+  ...
+# Subtest: German registry inherits source routing without linking to unfinished locale pages
+ok 25 - German registry inherits source routing without linking to unfinished locale pages
+  ---
+  duration_ms: 0.139208
+  type: 'test'
+  ...
+# Subtest: unreviewed German routes do not enter public discovery or runtime matching
+ok 26 - unreviewed German routes do not enter public discovery or runtime matching
+  ---
+  duration_ms: 1.855625
+  type: 'test'
+  ...
+# Subtest: a missing reviewed counterpart fails before any existing page is changed
+ok 27 - a missing reviewed counterpart fails before any existing page is changed
+  ---
+  duration_ms: 1.191292
+  type: 'test'
+  ...
+# Subtest: analytics preserves English metadata and maps only completed localized routes
+ok 28 - analytics preserves English metadata and maps only completed localized routes
+  ---
+  duration_ms: 18.709375
+  type: 'test'
+  ...
+# Subtest: native import is withheld when rounded debts exceed the browser settlement credit
+ok 29 - native import is withheld when rounded debts exceed the browser settlement credit
+  ---
+  duration_ms: 1.002792
+  type: 'test'
+  ...
+# Subtest: accepted residual and precision fixtures keep their existing eligibility and values
+ok 30 - accepted residual and precision fixtures keep their existing eligibility and values
+  ---
+  duration_ms: 0.195125
+  type: 'test'
+  ...
+# Subtest: released App Clip offer is enabled
+ok 31 - released App Clip offer is enabled
+  ---
+  duration_ms: 0.444334
+  type: 'test'
+  ...
+# Subtest: preserves unambiguous identity, costs and ambiguous dollar label
+ok 32 - preserves unambiguous identity, costs and ambiguous dollar label
+  ---
+  duration_ms: 0.277459
+  type: 'test'
+  ...
+# Subtest: multi-payer and incomplete costs retain web result without upload
+ok 33 - multi-payer and incomplete costs retain web result without upload
+  ---
+  duration_ms: 0.070375
+  type: 'test'
+  ...
+# Subtest: precision and capacity limits
+ok 34 - precision and capacity limits
+  ---
+  duration_ms: 0.12325
+  type: 'test'
+  ...
+# Subtest: supported residual and unsupported accumulated rounding
+ok 35 - supported residual and unsupported accumulated rounding
+  ---
+  duration_ms: 0.17025
+  type: 'test'
+  ...
+# Subtest: private continuation allows only its local locale selector with no personal previews
+ok 36 - private continuation allows only its local locale selector with no personal previews
+  ---
+  duration_ms: 0.918
+  type: 'test'
+  ...
+# Subtest: shared cross-language financial fixtures
+ok 37 - shared cross-language financial fixtures
+  ---
+  duration_ms: 0.820416
+  type: 'test'
+  ...
+# Subtest: rejects a native half-cent that disagrees with the existing browser answer
+ok 38 - rejects a native half-cent that disagrees with the existing browser answer
+  ---
+  duration_ms: 0.0785
+  type: 'test'
+  ...
+# Subtest: private continuation preserves accepted English/Spanish copy and all three no-JS sections
+ok 39 - private continuation preserves accepted English/Spanish copy and all three no-JS sections
+  ---
+  duration_ms: 1.790458
+  type: 'test'
+  ...
+# Subtest: private fragment switching changes only language, title and visible section while retaining sole ref
+ok 40 - private fragment switching changes only language, title and visible section while retaining sole ref
+  ---
+  duration_ms: 9.079
+  type: 'test'
+  ...
+1..40
+# tests 40
+# suites 0
+# pass 40
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 492.85075

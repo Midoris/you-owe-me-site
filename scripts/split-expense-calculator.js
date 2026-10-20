@@ -6,6 +6,8 @@
   const MAX_EXPENSES = 30;
   const locale = document.documentElement?.lang;
   const isArabic = locale === "ar";
+  const isFrench = locale === "fr";
+  const localizedNumberInput = isArabic ? window.UomiArabicNumberInput : isFrench ? window.UomiFrenchNumberInput : null;
   const localizedStrings = window.UomiSplitExpenseLocales?.[locale];
   const CANONICAL_CALCULATOR_URL = localizedStrings
     ? document.querySelector('link[rel="canonical"]').getAttribute("href")
@@ -19,7 +21,7 @@
   // aria labels need Unicode isolates. Never write them to state/native drafts.
   const ltrKeys = new Set(["amount", "url", "number", "count"]);
   function translatePlain(message, values = {}) {
-    if (!isArabic) return translate(message, values);
+    if (!isArabic && !isFrench) return translate(message, values);
     const isolated = Object.fromEntries(Object.entries(values).map(([key, value]) =>
       [key, `${ltrKeys.has(key) ? "\u2066" : "\u2068"}${value}\u2069`]));
     return translate(message, isolated);
@@ -40,9 +42,9 @@
     }
   }
   function transferState(source = state) {
-    if (!isArabic) return source;
+    if (!isArabic && !isFrench) return source;
     return { ...source, expenses: source.expenses.map(expense => ({ ...expense,
-      amount: window.UomiArabicNumberInput?.normalizeAmount(expense.amount) ?? "NaN",
+      amount: localizedNumberInput?.normalizeAmount(expense.amount) ?? "NaN",
     })) };
   }
   const SPLIT_CALCULATOR_EVENT = "youoweme:split-calculator-event";
@@ -103,9 +105,9 @@
   }
 
   function parseAmount(value) {
-    if (typeof value === "number") return value;
-    const normalized = isArabic
-      ? window.UomiArabicNumberInput?.normalizeAmount(value) ?? ""
+    if (typeof value === "number" && !isFrench) return value;
+    const normalized = isArabic || isFrench
+      ? localizedNumberInput?.normalizeAmount(value) ?? ""
       : String(value || "").trim().replace(/,/g, "");
     const amount = Number(normalized);
     return Number.isFinite(amount) ? amount : 0;
@@ -125,6 +127,7 @@
 
   function formatMoney(value) {
     const symbol = sanitizeCurrency(state.currency);
+    if (isFrench) return `${formatNumber(value)}\u00a0${symbol}`;
     if (locale === "de" || isArabic) return `${formatNumber(value)} ${symbol}`;
     const space = symbol.length > 1 ? " " : "";
     return `${symbol}${space}${formatNumber(value)}`;
@@ -238,11 +241,11 @@
         renderResults(calculate());
       });
 
-      const amount = makeInput(`amount-${expense.id}`, expense.amount, isArabic ? "text" : "number");
+      const amount = makeInput(`amount-${expense.id}`, expense.amount, isArabic || isFrench ? "text" : "number");
       amount.min = "0";
       amount.step = "0.01";
       amount.inputMode = "decimal";
-      amount.setAttribute("aria-describedby", `expense-validation-${expense.id}`);
+      amount.setAttribute("aria-describedby", `${isFrench ? "fr-number-help " : ""}expense-validation-${expense.id}`);
       if (isArabic) amount.setAttribute("dir", "ltr");
       amount.addEventListener("input", () => {
         expense.amount = amount.value;
@@ -333,8 +336,8 @@
     if (!validation) return;
     const amount = parseAmount(expense.amount);
     let message = "";
-    const hasInput = String(expense.amount || "").trim();
-    if (isArabic && hasInput && window.UomiArabicNumberInput?.normalizeAmount(expense.amount) == null) {
+    const hasInput = String(isFrench ? expense.amount ?? "" : expense.amount || "").trim();
+    if ((isArabic || isFrench) && hasInput && localizedNumberInput?.normalizeAmount(expense.amount) == null) {
       message = localizedStrings["Invalid amount format"];
     } else if (hasInput && amount <= 0) {
       message = translate("Enter an amount greater than zero.");
@@ -344,7 +347,7 @@
       message = translate("Select at least one person to share this expense.");
     }
     validation.textContent = message;
-    if (isArabic) card.querySelector(`[id="amount-${expense.id}"]`).setAttribute("aria-invalid", message ? "true" : "false");
+    if (isArabic || isFrench) card.querySelector(`[id="amount-${expense.id}"]`).setAttribute("aria-invalid", message ? "true" : "false");
   }
 
   function calculate() {
@@ -709,9 +712,9 @@
       });
     }
     lines.push("", translatePlain("Calculate your own split: {url}", { url: CANONICAL_CALCULATOR_URL }));
-    // A copied line may be pasted into an explicitly LTR paragraph. Its Arabic
-    // base direction must travel with it, in addition to the isolated tokens.
-    return (isArabic ? lines.map(line => line ? `\u2067${line}\u2069` : line) : lines).join("\n");
+    // Keep each copied paragraph’s language direction in either paste context;
+    // these isolates are presentation only and never enter raw/native state.
+    return (isArabic || isFrench ? lines.map(line => line ? `${isArabic ? "\u2067" : "\u2066"}${line}\u2069` : line) : lines).join("\n");
   }
 
   function dispatchCalculatorEvent(eventName) {

@@ -1,0 +1,11 @@
+{
+  "accepted": true,
+  "scope": "Preparatory runtime/source only; actual page/private/browser acceptance remains separate.",
+  "checks": [
+    "Independent accepted/malformed/ambiguous French fixtures pass actual normalizer",
+    "Entire accepted native prepare/rounding/eligibility implementation remains byte-identical to a2eb93d",
+    "All prior dictionaries unchanged; French covers every established dictionary key",
+    "French numeric values cannot bypass strict parsing",
+    "Only cloned amount canonicalized; raw state preserved and blank native names/descriptions use French"
+  ]
+}

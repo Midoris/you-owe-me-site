@@ -1,0 +1,19 @@
+{
+  "accepted": true,
+  "checkedAt": "2026-10-20T09:17:39.036Z",
+  "hashes": {
+    "fr/outils/calculateur-partage-depenses/index.html": "af8ec5d28dec5efeeba79df8f59a78424557dcba8215b49e210f543657a7dfe7",
+    "scripts/french-number-input.js": "8996e8157baebba70a15209f27bf048266e83a519e5f989670d24836c243f771",
+    "scripts/split-expense-calculator.js": "5d4b31bf9409776e5f54f59366b1b216a1fdaeb1d05d029514ce5285b7a17460",
+    "scripts/split-expense-locale.js": "355703fed3730d8a04bb8ea9fb9520b2404f713bc06800032da950b17bb72dbb",
+    "scripts/tool-transfer.js": "aa26d6371c660f7425414dc7cdb275115a7f7f73a3e43a0cb055dc0bead7b9f6",
+    "private-continuation/split/index.html": "898a8bd1cefe7c4a54c91fda9fa9a8f414c63c4c223a0694477e55f85b66ccbb",
+    "private-continuation/split/locale.js": "ccf5559f67d8379e722cdcea73cd14a8af23823e30f07c481148f3f34082e74b"
+  },
+  "checks": [
+    "Source sections, every content anchor, twenty related resources and selected/equal-share limits survive localization",
+    "All13 visible FAQ questions match schema; complete French WebPage, Breadcrumbs and locale generator remain correct",
+    "Strict helper load order, visible help, all declared caches, neutral Store/QR and translated assets are correct",
+    "Old private sections, exact privacy config and non-split files remain byte-identical; French has complete presentation-only continuation"
+  ]
+}

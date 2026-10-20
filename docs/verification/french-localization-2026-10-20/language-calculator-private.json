@@ -1,0 +1,103 @@
+{
+  "privateChecks": [
+    {
+      "width": 390,
+      "french": "You Owe Me\n\nVotre partage, prêt à être suivi\n\nOuvrez votre partage avec la carte ou le bandeau App Clip d’Apple. Vérifiez les noms, la devise et les soldes, puis commencez le suivi. Aucun compte nécessaire.\n\nSi aucune carte n’apparaît, ouvrez cette page dans Safari en dehors de la navigation privée. La disponibilité de l’App Clip dépend de votre appareil et de ses réglages.\n\nSi vous avez l’application complète, utilisez l’option d’ouverture du bandeau pour y poursuivre.\n\nVotre lien de transfert expire après 24 heures. Un relevé déjà accepté sur cet appareil reste utilisable.\n\nRetour au calculateur\n\nGardez ce lien privé : toute personne qui le possède peut récupérer le partage jusqu’à son expiration.",
+      "transitions": [
+        "ar→fr",
+        "en→fr",
+        "es→fr",
+        "de→fr",
+        "fr→fr"
+      ],
+      "requests": [
+        {
+          "origin": "https://continue.you-owe-me.com",
+          "path": "/split/",
+          "referrer": null
+        },
+        {
+          "origin": "https://continue.you-owe-me.com",
+          "path": "/continuation.css",
+          "referrer": null
+        },
+        {
+          "origin": "https://continue.you-owe-me.com",
+          "path": "/split/arabic.css",
+          "referrer": null
+        },
+        {
+          "origin": "https://continue.you-owe-me.com",
+          "path": "/split/locale.js",
+          "referrer": null
+        }
+      ],
+      "errors": [],
+      "headers": {
+        "Cache-Control": "no-store",
+        "Referrer-Policy": "no-referrer",
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+        "Content-Security-Policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff"
+      }
+    },
+    {
+      "width": 1440,
+      "french": "You Owe Me\n\nVotre partage, prêt à être suivi\n\nOuvrez votre partage avec la carte ou le bandeau App Clip d’Apple. Vérifiez les noms, la devise et les soldes, puis commencez le suivi. Aucun compte nécessaire.\n\nSi aucune carte n’apparaît, ouvrez cette page dans Safari en dehors de la navigation privée. La disponibilité de l’App Clip dépend de votre appareil et de ses réglages.\n\nSi vous avez l’application complète, utilisez l’option d’ouverture du bandeau pour y poursuivre.\n\nVotre lien de transfert expire après 24 heures. Un relevé déjà accepté sur cet appareil reste utilisable.\n\nRetour au calculateur\n\nGardez ce lien privé : toute personne qui le possède peut récupérer le partage jusqu’à son expiration.",
+      "transitions": [
+        "ar→fr",
+        "en→fr",
+        "es→fr",
+        "de→fr",
+        "fr→fr"
+      ],
+      "requests": [
+        {
+          "origin": "https://continue.you-owe-me.com",
+          "path": "/split/",
+          "referrer": null
+        },
+        {
+          "origin": "https://continue.you-owe-me.com",
+          "path": "/continuation.css",
+          "referrer": null
+        },
+        {
+          "origin": "https://continue.you-owe-me.com",
+          "path": "/split/arabic.css",
+          "referrer": null
+        },
+        {
+          "origin": "https://continue.you-owe-me.com",
+          "path": "/split/locale.js",
+          "referrer": null
+        }
+      ],
+      "errors": [],
+      "headers": {
+        "Cache-Control": "no-store",
+        "Referrer-Policy": "no-referrer",
+        "X-Robots-Tag": "noindex, nofollow, noarchive",
+        "Content-Security-Policy": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+        "X-Content-Type-Options": "nosniff"
+      }
+    }
+  ],
+  "nojs": {
+    "visibleSections": 5,
+    "french": "You Owe Me\n\nVotre partage, prêt à être suivi\n\nOuvrez votre partage avec la carte ou le bandeau App Clip d’Apple. Vérifiez les noms, la devise et les soldes, puis commencez le suivi. Aucun compte nécessaire.\n\nSi aucune carte n’apparaît, ouvrez cette page dans Safari en dehors de la navigation privée. La disponibilité de l’App Clip dépend de votre appareil et de ses réglages.\n\nSi vous avez l’application complète, utilisez l’option d’ouverture du bandeau pour y poursuivre.\n\nVotre lien de transfert expire après 24 heures. Un relevé déjà accepté sur cet appareil reste utilisable.\n\nRetour au calculateur\n\nGardez ce lien privé : toute personne qui le possède peut récupérer le partage jusqu’à son expiration.",
+    "direction": "ltr"
+  },
+  "transfer": {
+    "explicitConsent": true,
+    "mockedUploads": 2,
+    "productionUploads": 0,
+    "failure": "Le transfert n’a pas pu être préparé. Votre partage est toujours ici. Réessayez ou copiez le résultat.",
+    "sameReferenceRetry": true,
+    "nativeAmount": 9050,
+    "rawFrenchCommaRestoredOnBack": true,
+    "mixedNamesUnchanged": true,
+    "soleReferencePlusFrenchHash": true,
+    "roundedThreeWayAndMultipayerWithheld": true
+  }
+}

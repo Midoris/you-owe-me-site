@@ -185,7 +185,49 @@
     "Sharing wasn’t available, so the result was copied.": "لم تتوفّر المشاركة، فتم نسخ النتيجة.",
     "Couldn’t share or copy the result.": "تعذّرت مشاركة النتيجة ونسخها."
 });
-  root.UomiSplitExpenseLocales = Object.freeze({ es: spanish, de: german, ar: arabic });
+  const french = Object.freeze({
+    "Invalid amount format": "Saisissez un montant comme 1 234,50 ou 1234.50, avec deux décimales au maximum. Ne mélangez pas virgule et point.",
+    "Person {number}": "Personne {number}",
+    "Person 1": "Personne 1", "Person 2": "Personne 2", "Person 3": "Personne 3",
+    "Someone": "Une personne",
+    "People ({count}): edit names or remove people": "Personnes ({count}) : modifier les noms ou retirer des personnes",
+    "Remove {name}": "Retirer {name}", "Remove": "Retirer",
+    "Expense {number}": "Dépense {number}", "Remove expense {expense}": "Retirer la dépense {expense}",
+    "Dinner, groceries, rent, taxi...": "Dîner, courses, loyer, taxi…",
+    "Amount": "Montant", "Paid by": "Payé par", "Split between / included people": "À répartir entre",
+    "Split type": "Mode de répartition", "Equal": "À parts égales", "Description (optional)": "Description (facultative)",
+    "Enter an amount greater than zero.": "Saisissez un montant supérieur à zéro.",
+    "Choose who paid for this expense.": "Choisissez la personne qui a payé cette dépense.",
+    "Select at least one person to share this expense.": "Sélectionnez au moins une personne pour cette dépense.",
+    "{name} paid": "{name} a payé", "{name}'s share": "Part attribuée à {name}",
+    "{name} is settled": "Compte réglé pour {name}", "{name} should receive": "{name} doit recevoir", "{name} owes": "{name} doit",
+    "{from} owes {to} {amount}": "{from} doit {amount} à {to}",
+    "Keep track until everyone has paid": "Suivez les remboursements jusqu’au dernier paiement",
+    "Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.": "Conservez ce solde dans You Owe Me sur iPhone. Enregistrez chaque remboursement, total ou partiel, et voyez ce que chaque personne doit encore.",
+    "Keep future shared costs in one place": "Regroupez vos prochaines dépenses partagées",
+    "This split is settled. If you share costs again, You Owe Me on iPhone keeps new expenses and repayments in one balance for each person.": "Les comptes de ce partage sont réglés. Si vous partagez de nouvelles dépenses, You Owe Me sur iPhone regroupe les dépenses et remboursements dans un solde par personne.",
+    "Preparing your split…": "Préparation de votre partage…",
+    "Couldn’t prepare the transfer. Your split is still here. Try again, or copy your result.": "Le transfert n’a pas pu être préparé. Votre partage est toujours ici. Réessayez ou copiez le résultat.",
+    "Total expenses": "Total des dépenses", "People": "Personnes", "Expenses included": "Dépenses prises en compte",
+    "Add an expense to see who owes whom.": "Ajoutez une dépense pour voir qui doit combien à qui.",
+    "Everyone is settled.": "Tous les comptes sont réglés.",
+    "You can add up to 12 people.": "Vous pouvez ajouter jusqu’à 12 personnes.",
+    "Add at least two people to split an expense.": "Ajoutez au moins deux personnes pour partager une dépense.",
+    "You can add up to 30 expenses.": "Vous pouvez ajouter jusqu’à 30 dépenses.",
+    "Dinner": "Dîner", "Groceries": "Courses", "Taxi": "Taxi", "Shared expense": "Dépense partagée",
+    "Shared expense summary": "Résumé des dépenses partagées", "Total shared expenses: {amount}": "Total des dépenses partagées : {amount}",
+    "Paid:": "Montants payés :", "{name} paid {amount}": "{name} a payé {amount}",
+    "Fair share:": "Part de chacun :", "{name}'s share: {amount}": "Part attribuée à {name} : {amount}",
+    "Settlement:": "Règlements à effectuer :", "Calculate your own split: {url}": "Calculez votre propre partage : {url}",
+    "Add an expense before copying a summary.": "Ajoutez une dépense avant de copier le résumé.",
+    "Couldn’t copy the result.": "La copie du résultat a échoué.",
+    "Copied summary and calculator link.": "Le résumé et le lien du calculateur ont été copiés.",
+    "Add an expense before sharing a summary.": "Ajoutez une dépense avant de partager le résumé.",
+    "Shared result.": "Le résultat a été partagé.",
+    "Sharing wasn’t available, so the result was copied.": "Le partage n’était pas disponible. Le résultat a été copié.",
+    "Couldn’t share or copy the result.": "Le résultat n’a pu être ni partagé ni copié.",
+  });
+  root.UomiSplitExpenseLocales = Object.freeze({ es: spanish, de: german, ar: arabic, fr: french });
   // Keep the established selected-dictionary API for existing consumers.
   root.UomiSplitExpenseLocale = root.UomiSplitExpenseLocales[root.document?.documentElement?.lang || "es"];
-})(typeof window === "undefined" ? globalThis : window);
+})(typeof window === "undefined" ? globalThis : window);

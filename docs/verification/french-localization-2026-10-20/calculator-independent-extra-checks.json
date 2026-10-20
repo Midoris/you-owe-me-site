@@ -1,0 +1,42 @@
+{
+  "allPassed": true,
+  "desktopNeutralQR376": true,
+  "neutralStoreFallback": true,
+  "nativeEligibilityBrowserFixtures": [
+    {
+      "amount": "90,50",
+      "people": 2,
+      "eligible": true,
+      "cents": 9050
+    },
+    {
+      "amount": "90,50",
+      "people": 3,
+      "eligible": false,
+      "reason": "Rounded native debts exceed displayed browser organizer credit"
+    },
+    {
+      "amount": "0,29",
+      "people": 2,
+      "eligible": false,
+      "reason": "Existing browser/native cent-rounding disagreement"
+    },
+    {
+      "amount": "10",
+      "people": 3,
+      "eligible": true,
+      "cents": 1000
+    },
+    {
+      "amount": "98",
+      "people": 8,
+      "eligible": false,
+      "reason": "Native continuation supports at most four participants; browser remains valid"
+    }
+  ],
+  "staleInFlightEditPreventsNavigation": true,
+  "privateNoJSAllFiveSectionsReadable": true,
+  "privateNoJS320NoOverflow": true,
+  "mockedRequests": 1,
+  "productionUploads": 0
+}
