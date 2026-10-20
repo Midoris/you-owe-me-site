@@ -1,0 +1,1971 @@
+{
+  "accepted": true,
+  "rows": [
+    {
+      "width": 320,
+      "pageWidth": 320,
+      "overflows": [
+        {
+          "tag": "SPAN",
+          "class": "site-locale-fallback",
+          "scroll": 34,
+          "width": 22,
+          "text": "(en anglais)",
+          "parent": {
+            "tag": "A",
+            "class": "",
+            "text": "suivi des remboursements en famille (en anglais)",
+            "display": "inline"
+          }
+        }
+      ],
+      "ctaFlow": [
+        {
+          "class": "",
+          "text": "Solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-anniversaryNotice__link",
+          "text": "Découvrir ces dix ans d’histoire (en anglais)",
+          "display": "inline-flex",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "loan-import-offer__button",
+          "text": "Importer l’historique d’un prêt (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "loan-import-offer__guide",
+          "text": "Comprendre l’importation d’un prêt (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Live Link (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir le partage avec une seule personne chargée du suivi (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir Balance Sync (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "les différentes façons de suivre les sommes dues entre personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Comparez YouOweMe à Splitwise (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi des dépenses de colocation (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivre les dépenses que vous réglez pour des parents âgés (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "modèle gratuit de suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "solution de suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "dépenses partagées en couple (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi simple des paiements clients (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de remboursements partiels (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "solde évolutif entre deux personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de solde évolutif (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "relancer après un remboursement partiel (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "préparez un plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "reçu de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "reconstituer un historique accepté par les deux personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Calculer\n      Calculer un solde qui évolue\n      À utiliser si dépenses et remboursements se sont succédé et que vous avez besoin du montant actuel.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Message\n      Préparer un rappel de remboursement serein\n      À utiliser si le montant est clair, mais que vous ne savez pas comment le formuler.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Remboursement partiel\n      Faire le point après un remboursement partiel\n      À utiliser si quelqu’un a remboursé une partie du solde et que vous devez préciser ce qu’il reste.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi du remboursement d’un prêt personnel (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de remboursements partiels (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment rappeler poliment à quelqu’un qu’il vous doit de l’argent (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "générateur de rappels de remboursement courtois (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "exemples de messages de rappel de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour faire le point sur votre remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour aborder le sujet de l’argent dû (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Comprendre la clôture comme impayée et les écritures compatibles (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Petits soldes clients (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Remboursements en famille (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comparatif entre tableur et application (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "outils gratuits du site dans le navigateur (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Live Link (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Balance Sync (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "avis (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Confidentialité et données (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi simple des paiements clients (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi d’une aide financière temporaire (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "modèle de relevé d’aide financière temporaire (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour proposer un plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment demander une aide financière temporaire à votre famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Suivre une aide temporaire (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment refuser poliment une demande d’argent (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour dire non (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir les plans de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le suivi des paiements clients (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution d’aide temporaire (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour la personne qui aide (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un relevé d’aide (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide de demande d’aide familiale (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le générateur de rappels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un reçu (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un plan de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le calculateur (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des conversations sur l’argent (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des rappels courtois (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des remboursements partiels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide de demande de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des emprunts entre amis (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour aborder le sujet (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le suivi des dépenses de colocation (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution de remboursement en famille (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution de dépenses partagées (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir les exemples de rappels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le comparatif (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir la rubrique Solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-textCta",
+          "text": "\n                Lire le guide de demande de remboursement\n               (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-textCta lt-textCta--subtle",
+          "text": "\n                Retour aux solutions\n               (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        }
+      ],
+      "keyboardFAQToggles": 36,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "overflows": [
+        {
+          "tag": "SPAN",
+          "class": "site-locale-fallback",
+          "scroll": 37,
+          "width": 24,
+          "text": "(en anglais)",
+          "parent": {
+            "tag": "A",
+            "class": "",
+            "text": "suivi des remboursements en famille (en anglais)",
+            "display": "inline"
+          }
+        }
+      ],
+      "ctaFlow": [
+        {
+          "class": "",
+          "text": "Solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-anniversaryNotice__link",
+          "text": "Découvrir ces dix ans d’histoire (en anglais)",
+          "display": "inline-flex",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "loan-import-offer__button",
+          "text": "Importer l’historique d’un prêt (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "loan-import-offer__guide",
+          "text": "Comprendre l’importation d’un prêt (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Live Link (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir le partage avec une seule personne chargée du suivi (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir Balance Sync (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "les différentes façons de suivre les sommes dues entre personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Comparez YouOweMe à Splitwise (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi des dépenses de colocation (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivre les dépenses que vous réglez pour des parents âgés (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "modèle gratuit de suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "solution de suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "dépenses partagées en couple (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi simple des paiements clients (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de remboursements partiels (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "solde évolutif entre deux personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de solde évolutif (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "relancer après un remboursement partiel (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "préparez un plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "reçu de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "reconstituer un historique accepté par les deux personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Calculer\n      Calculer un solde qui évolue\n      À utiliser si dépenses et remboursements se sont succédé et que vous avez besoin du montant actuel.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Message\n      Préparer un rappel de remboursement serein\n      À utiliser si le montant est clair, mais que vous ne savez pas comment le formuler.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Remboursement partiel\n      Faire le point après un remboursement partiel\n      À utiliser si quelqu’un a remboursé une partie du solde et que vous devez préciser ce qu’il reste.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi du remboursement d’un prêt personnel (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de remboursements partiels (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment rappeler poliment à quelqu’un qu’il vous doit de l’argent (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "générateur de rappels de remboursement courtois (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "exemples de messages de rappel de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour faire le point sur votre remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour aborder le sujet de l’argent dû (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Comprendre la clôture comme impayée et les écritures compatibles (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Petits soldes clients (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Remboursements en famille (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comparatif entre tableur et application (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "outils gratuits du site dans le navigateur (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Live Link (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Balance Sync (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "avis (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Confidentialité et données (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi simple des paiements clients (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi d’une aide financière temporaire (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "modèle de relevé d’aide financière temporaire (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour proposer un plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment demander une aide financière temporaire à votre famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Suivre une aide temporaire (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment refuser poliment une demande d’argent (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour dire non (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir les plans de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le suivi des paiements clients (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution d’aide temporaire (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour la personne qui aide (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un relevé d’aide (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide de demande d’aide familiale (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le générateur de rappels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un reçu (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un plan de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le calculateur (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des conversations sur l’argent (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des rappels courtois (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des remboursements partiels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide de demande de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des emprunts entre amis (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour aborder le sujet (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le suivi des dépenses de colocation (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution de remboursement en famille (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution de dépenses partagées (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir les exemples de rappels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le comparatif (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir la rubrique Solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-textCta",
+          "text": "\n                Lire le guide de demande de remboursement\n               (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-textCta lt-textCta--subtle",
+          "text": "\n                Retour aux solutions\n               (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        }
+      ],
+      "keyboardFAQToggles": 36,
+      "menu": {
+        "text": "YOU OWE ME\nSOLUTIONS (EN ANGLAIS)\nFONCTIONNALITÉS (EN ANGLAIS)\nAVIS (EN ANGLAIS)\nOUTILS (EN ANGLAIS)\nCOMPARATIFS (EN ANGLAIS)\nBLOG (EN ANGLAIS)",
+        "closeLabel": "Fermer le menu"
+      },
+      "heroFragment": {
+        "top": 72.96875,
+        "text": "Commencez par un montant réellement dû"
+      },
+      "errors": []
+    },
+    {
+      "width": 600,
+      "pageWidth": 600,
+      "overflows": [
+        {
+          "tag": "SPAN",
+          "class": "site-locale-fallback",
+          "scroll": 37,
+          "width": 24,
+          "text": "(en anglais)",
+          "parent": {
+            "tag": "A",
+            "class": "",
+            "text": "suivi des remboursements en famille (en anglais)",
+            "display": "inline"
+          }
+        }
+      ],
+      "ctaFlow": [
+        {
+          "class": "",
+          "text": "Solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-anniversaryNotice__link",
+          "text": "Découvrir ces dix ans d’histoire (en anglais)",
+          "display": "inline-flex",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "loan-import-offer__button",
+          "text": "Importer l’historique d’un prêt (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "loan-import-offer__guide",
+          "text": "Comprendre l’importation d’un prêt (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Live Link (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir le partage avec une seule personne chargée du suivi (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir Balance Sync (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "les différentes façons de suivre les sommes dues entre personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Comparez YouOweMe à Splitwise (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi des dépenses de colocation (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivre les dépenses que vous réglez pour des parents âgés (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "modèle gratuit de suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "solution de suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "dépenses partagées en couple (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi simple des paiements clients (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de remboursements partiels (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "solde évolutif entre deux personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de solde évolutif (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "relancer après un remboursement partiel (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "préparez un plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "reçu de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "reconstituer un historique accepté par les deux personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Calculer\n      Calculer un solde qui évolue\n      À utiliser si dépenses et remboursements se sont succédé et que vous avez besoin du montant actuel.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Message\n      Préparer un rappel de remboursement serein\n      À utiliser si le montant est clair, mais que vous ne savez pas comment le formuler.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Remboursement partiel\n      Faire le point après un remboursement partiel\n      À utiliser si quelqu’un a remboursé une partie du solde et que vous devez préciser ce qu’il reste.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi du remboursement d’un prêt personnel (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de remboursements partiels (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment rappeler poliment à quelqu’un qu’il vous doit de l’argent (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "générateur de rappels de remboursement courtois (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "exemples de messages de rappel de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour faire le point sur votre remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour aborder le sujet de l’argent dû (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Comprendre la clôture comme impayée et les écritures compatibles (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Petits soldes clients (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Remboursements en famille (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comparatif entre tableur et application (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "outils gratuits du site dans le navigateur (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Live Link (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Balance Sync (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "avis (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Confidentialité et données (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi simple des paiements clients (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi d’une aide financière temporaire (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "modèle de relevé d’aide financière temporaire (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour proposer un plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment demander une aide financière temporaire à votre famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Suivre une aide temporaire (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment refuser poliment une demande d’argent (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour dire non (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir les plans de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le suivi des paiements clients (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution d’aide temporaire (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour la personne qui aide (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un relevé d’aide (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide de demande d’aide familiale (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le générateur de rappels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un reçu (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un plan de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le calculateur (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des conversations sur l’argent (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des rappels courtois (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des remboursements partiels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide de demande de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des emprunts entre amis (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour aborder le sujet (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le suivi des dépenses de colocation (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution de remboursement en famille (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution de dépenses partagées (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir les exemples de rappels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le comparatif (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir la rubrique Solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-textCta",
+          "text": "\n                Lire le guide de demande de remboursement\n               (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-textCta lt-textCta--subtle",
+          "text": "\n                Retour aux solutions\n               (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        }
+      ],
+      "keyboardFAQToggles": 36,
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "pageWidth": 1440,
+      "overflows": [
+        {
+          "tag": "SPAN",
+          "class": "site-locale-fallback",
+          "scroll": 40,
+          "width": 26,
+          "text": "(en anglais)",
+          "parent": {
+            "tag": "A",
+            "class": "",
+            "text": "suivi des remboursements en famille (en anglais)",
+            "display": "inline"
+          }
+        }
+      ],
+      "ctaFlow": [
+        {
+          "class": "",
+          "text": "Solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-anniversaryNotice__link",
+          "text": "Découvrir ces dix ans d’histoire (en anglais)",
+          "display": "inline-flex",
+          "whiteSpace": "nowrap"
+        },
+        {
+          "class": "loan-import-offer__button",
+          "text": "Importer l’historique d’un prêt (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "loan-import-offer__guide",
+          "text": "Comprendre l’importation d’un prêt (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Live Link (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir le partage avec une seule personne chargée du suivi (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir Balance Sync (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "les différentes façons de suivre les sommes dues entre personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Comparez YouOweMe à Splitwise (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi des dépenses de colocation (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivre les dépenses que vous réglez pour des parents âgés (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "modèle gratuit de suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "solution de suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "dépenses partagées en couple (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi simple des paiements clients (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de remboursements partiels (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "solde évolutif entre deux personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de solde évolutif (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "relancer après un remboursement partiel (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "préparez un plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "reçu de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "reconstituer un historique accepté par les deux personnes (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Calculer\n      Calculer un solde qui évolue\n      À utiliser si dépenses et remboursements se sont succédé et que vous avez besoin du montant actuel.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Message\n      Préparer un rappel de remboursement serein\n      À utiliser si le montant est clair, mais que vous ne savez pas comment le formuler.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "best-next-step__card",
+          "text": "\n      Remboursement partiel\n      Faire le point après un remboursement partiel\n      À utiliser si quelqu’un a remboursé une partie du solde et que vous devez préciser ce qu’il reste.\n     (en anglais)",
+          "display": "grid",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi du remboursement d’un prêt personnel (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de remboursements partiels (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment rappeler poliment à quelqu’un qu’il vous doit de l’argent (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "générateur de rappels de remboursement courtois (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "exemples de messages de rappel de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour faire le point sur votre remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour aborder le sujet de l’argent dû (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Comprendre la clôture comme impayée et les écritures compatibles (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Petits soldes clients (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Remboursements en famille (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comparatif entre tableur et application (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi des remboursements en famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "outils gratuits du site dans le navigateur (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Live Link (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Balance Sync (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "avis (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "Confidentialité et données (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi simple des paiements clients (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "suivi d’une aide financière temporaire (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "modèle de relevé d’aide financière temporaire (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "guide pour proposer un plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "calculateur de plan de remboursement (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment demander une aide financière temporaire à votre famille (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Suivre une aide temporaire (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "",
+          "text": "comment refuser poliment une demande d’argent (en anglais)",
+          "display": "inline",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour dire non (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir les plans de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le suivi des paiements clients (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution d’aide temporaire (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour la personne qui aide (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un relevé d’aide (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide de demande d’aide familiale (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le générateur de rappels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un reçu (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Créer un plan de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le calculateur (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des conversations sur l’argent (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des rappels courtois (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des remboursements partiels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide de demande de remboursement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide des emprunts entre amis (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le guide pour aborder le sujet (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir le suivi des dépenses de colocation (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution de remboursement en famille (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Découvrir la solution de dépenses partagées (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir les exemples de rappels (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Lire le comparatif (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-cardCta",
+          "text": "Ouvrir la rubrique Solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-textCta",
+          "text": "\n                Lire le guide de demande de remboursement\n               (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        },
+        {
+          "class": "lt-textCta lt-textCta--subtle",
+          "text": "\n                Retour aux solutions\n               (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal"
+        }
+      ],
+      "keyboardFAQToggles": 36,
+      "errors": []
+    },
+    {
+      "width": 390,
+      "target": "en",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 390,
+      "target": "es",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 390,
+      "target": "de",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 390,
+      "target": "ar",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 1440,
+      "target": "en",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 1440,
+      "target": "es",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 1440,
+      "target": "de",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 1440,
+      "target": "ar",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 390,
+      "brokenQR": true,
+      "primaryRestored": true
+    },
+    {
+      "width": 1440,
+      "brokenQR": true,
+      "primaryRestored": true
+    },
+    {
+      "noJS": true,
+      "mainTextLength": 25338,
+      "staticFrench": true,
+      "usdArithmeticPreserved": true,
+      "nativeFAQWorks": true
+    }
+  ],
+  "limits": "Desktop Chrome viewport emulation; analytics/external hosts blocked. No physical native device, QR scan or Store opening."
+}

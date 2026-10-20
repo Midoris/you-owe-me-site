@@ -1,0 +1,59 @@
+{
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T08:36:32.585337+00:00",
+  "route": "/fr/solutions/application-suivi-argent-du/",
+  "generatorByteIdempotent": true,
+  "checks": [
+    {
+      "command": [
+        "node",
+        "scripts/sync-site-locales.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Updated 22 reviewed language pages.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build-sitemap.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Sitemap built with 99 indexable URL(s).\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/fr/solutions/application-suivi-argent-du/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /fr/solutions/application-suivi-argent-du/\nBody class: solutions-page\nAudited stylesheets: styles/solutions.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/french-localization-2026-10-20/raw-html-check.py",
+        "/fr/solutions/application-suivi-argent-du/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/fr/solutions/application-suivi-argent-du/\", \"lang\": \"fr\", \"direction\": \"ltr\", \"canonical\": [\"https://you-owe-me.com/fr/solutions/application-suivi-argent-du/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/solutions/app-to-track-money-owed/\", \"es\": \"https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/\", \"de\": \"https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/\", \"ar\": \"https://you-owe-me.com/ar/solutions/app-to-track-money-owed/\", \"fr\": \"https://you-owe-me.com/fr/solutions/application-suivi-argent-du/\", \"x-default\": \"https://you-owe-me.com/solutions/app-to-track-money-owed/\"}, \"staticMainTextCharacters\": 40350, \"staticLinkCount\": 106, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "scripts/french-locales.test.mjs",
+        "scripts/site-locales.test.mjs",
+        "scripts/money-owed-first-minute.test.mjs",
+        "scripts/app-language-support-site.test.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "TAP version 13\n# Subtest: every site route satisfies the language-support inclusion and exclusion contract\nok 1 - every site route satisfies the language-support inclusion and exclusion contract\n  ---\n  duration_ms: 51.302083\n  type: 'test'\n  ...\n# Subtest: Spanish routes require Spanish document language while English routes keep English\nok 2 - Spanish routes require Spanish document language while English routes keep English\n  ---\n  duration_ms: 0.306166\n  type: 'test'\n  ...\n# Subtest: the route audit rejects missing and duplicate integration assets\nok 3 - the route audit rejects missing and duplicate integration assets\n  ---\n  duration_ms: 0.1005\n  type: 'test'\n  ...\n# Subtest: the route audit rejects anchors in navigation and sticky UI\nok 4 - the route audit rejects anchors in navigation and sticky UI\n  ---\n  duration_ms: 0.085416\n  type: 'test'\n  ...\n# Subtest: the route audit requires a real conversion context and no authored render target\nok 5 - the route audit requires a real conversion context and no authored render target\n  ---\n  duration_ms: 0.170083\n  type: 'test'\n  ...\n# Subtest: excluded routes reject every language-support integration surface\nok 6 - excluded routes reject every language-support integration surface\n  ---\n  duration_ms: 0.060417\n  type: 'test'\n  ...\n# Subtest: German routes require German document language\nok 7 - German routes require German document language\n  ---\n  duration_ms: 0.150375\n  type: 'test'\n  ...\n# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters\nok 8 - French admission requires review and produces reciprocal idempotent five-language clusters\n  ---\n  duration_ms: 4.76325\n  type: 'test'\n  ...\n# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries\nok 9 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries\n  ---\n  duration_ms: 275.774\n  type: 'test'\n  ...\n# Subtest: money-owed hero leads to a separate first-balance setup module\nok 10 - money-owed hero leads to a separate first-balance setup module\n  ---\n  duration_ms: 3.350958\n  type: 'test'\n  ...\n# Subtest: first-minute reassurance styles remain page-scoped and responsive\nok 11 - first-minute reassurance styles remain page-scoped and responsive\n  ---\n  duration_ms: 0.964917\n  type: 'test'\n  ...\n# Subtest: only completed translations join the registry and have substantive public HTML\nok 12 - only completed translations join the registry and have substantive public HTML\n  ---\n  duration_ms: 12.829542\n  type: 'test'\n  ...\n# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries\nok 13 - English authored content differs from the accepted base only by locale links and declared shared cache queries\n  ---\n  duration_ms: 67.093708\n  type: 'test'\n  ...\n# Subtest: locale routes are unique, stable and contain no financial inputs\nok 14 - locale routes are unique, stable and contain no financial inputs\n  ---\n  duration_ms: 0.731625\n  type: 'test'\n  ...\n# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release\nok 15 - Spanish authored HTML stays byte-for-byte intact from the accepted public release\n  ---\n  duration_ms: 69.633042\n  type: 'test'\n  ...\n# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out\nok 16 - one generator produces reciprocal three-language switches and leaves planned pages out\n  ---\n  duration_ms: 3.1355\n  type: 'test'\n  ...\n# Subtest: German registry inherits source routing without linking to unfinished locale pages\nok 17 - German registry inherits source routing without linking to unfinished locale pages\n  ---\n  duration_ms: 0.189917\n  type: 'test'\n  ...\n# Subtest: unreviewed German routes do not enter public discovery or runtime matching\nok 18 - unreviewed German routes do not enter public discovery or runtime matching\n  ---\n  duration_ms: 0.300708\n  type: 'test'\n  ...\n# Subtest: a missing reviewed counterpart fails before any existing page is changed\nok 19 - a missing reviewed counterpart fails before any existing page is changed\n  ---\n  duration_ms: 1.333958\n  type: 'test'\n  ...\n# Subtest: analytics preserves English metadata and maps only completed localized routes\nok 20 - analytics preserves English metadata and maps only completed localized routes\n  ---\n  duration_ms: 14.014375\n  type: 'test'\n  ...\n1..20\n# tests 20\n# suites 0\n# pass 20\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 324.5565\n",
+      "stderr": ""
+    }
+  ]
+}

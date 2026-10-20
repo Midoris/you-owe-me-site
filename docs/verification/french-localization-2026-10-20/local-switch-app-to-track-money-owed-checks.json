@@ -1,0 +1,405 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "from": "en",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "ar",
+      "to": "fr",
+      "route": "/fr/solutions/application-suivi-argent-du/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "en",
+      "route": "/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "es",
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "de",
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "fr",
+      "to": "ar",
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    }
+  ]
+}

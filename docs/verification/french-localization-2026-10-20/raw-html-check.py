@@ -2,17 +2,18 @@
 from pathlib import Path
 from html.parser import HTMLParser
 from urllib.parse import urlsplit,unquote,urljoin
-import json,sys,subprocess
+import json,sys,subprocess,re
 ROOT=Path.cwd();OUT=ROOT/'docs/verification/french-localization-2026-10-20';ORIGIN='https://you-owe-me.com'
 VOID={'area','base','br','col','embed','hr','img','input','link','meta','param','source','track','wbr'}
 class Doc(HTMLParser):
  def __init__(self):
-  super().__init__();self.lang='';self.direction='ltr';self.ids=set();self.links=[];self.assets=[];self.canonical=[];self.alternates={};self.robots='';self.h1=0;self.text=[];self.main=0;self.skip=0
+  super().__init__();self.lang='';self.direction='ltr';self.ids=set();self.links=[];self.assets=[];self.canonical=[];self.alternates={};self.robots=[];self.h1=0;self.text=[];self.main=0;self.skip=0
  def handle_starttag(self,tag,attrs):
   a=dict(attrs)
   if self.main and tag not in VOID:self.main+=1
   elif a.get('id')=='main':self.main=1
-  if 'id' in a:self.ids.add(a['id'])
+  if 'id' in a:
+   assert a['id'] not in self.ids,'Duplicate id: '+a['id'];self.ids.add(a['id'])
   if tag=='html':self.lang=a.get('lang','');self.direction=a.get('dir','ltr')
   if tag=='h1':self.h1+=1
   if tag in ['script','style']:self.skip+=1
@@ -21,9 +22,10 @@ class Doc(HTMLParser):
   if tag in ['img','source'] and a.get('srcset'):self.assets.extend(v.strip().split()[0] for v in a['srcset'].split(',') if v.strip())
   if tag=='link':
    if a.get('rel')=='canonical':self.canonical.append(a.get('href'))
-   if a.get('rel')=='alternate':self.alternates[a.get('hreflang')]=a.get('href')
-   if a.get('rel')=='stylesheet':self.assets.append(a.get('href',''))
-  if tag=='meta' and a.get('name')=='robots':self.robots=a.get('content','')
+   if a.get('rel')=='alternate':
+    code=a.get('hreflang');assert code not in self.alternates,'Duplicate hreflang: '+str(code);self.alternates[code]=a.get('href')
+   if a.get('rel') in ['stylesheet','icon','apple-touch-icon']:self.assets.append(a.get('href',''))
+  if tag=='meta' and a.get('name','').lower()=='robots':self.robots.append(a.get('content',''))
   if tag=='meta' and a.get('property',a.get('name')) in ['og:image','twitter:image']:self.assets.append(a.get('content',''))
  def handle_endtag(self,tag):
   if tag in ['script','style']:self.skip=max(0,self.skip-1)
@@ -33,7 +35,7 @@ class Doc(HTMLParser):
 def file_for(route):return ROOT/route.strip('/')/'index.html' if route!='/' else ROOT/'index.html'
 def read(route):
  d=Doc();d.feed(file_for(route).read_text());return d
-route=sys.argv[1];d=read(route);assert d.lang=='fr';assert d.direction=='ltr';assert d.canonical==[ORIGIN+route];assert d.h1==1;assert 'noindex' not in d.robots;assert len(' '.join(d.text))>2000
+route=sys.argv[1];d=read(route);assert d.lang=='fr';assert d.direction=='ltr';assert d.canonical==[ORIGIN+route];assert d.h1==1;assert not re.search(r'\b(?:noindex|none)\b',' '.join(d.robots).lower());assert len(' '.join(d.text))>2000
 pairs=json.loads(subprocess.check_output(['node','--input-type=module','-e','import {siteLocales,frenchPages,completedCounterparts} from "./content/site-locales.mjs";console.log(JSON.stringify(frenchPages.map(p=>({route:p.fr,counterparts:completedCounterparts(p.en)}))))'],text=True));pair=next(p for p in pairs if p['route']==route);expected={p['code']:ORIGIN+p['route'] for p in pair['counterparts']};expected['x-default']=expected['en'];assert d.alternates==expected
 missing=[]
 for resource in d.assets:

@@ -1,0 +1,141 @@
+{
+  "accepted": true,
+  "rows": [
+    {
+      "width": 320,
+      "pageWidth": 320,
+      "overflows": [],
+      "fallback": [
+        {
+          "display": "inline",
+          "background": "rgba(0, 0, 0, 0)",
+          "text": "(en anglais)"
+        }
+      ],
+      "numbers": [
+        {
+          "text": "1",
+          "display": "flex",
+          "width": "22px"
+        },
+        {
+          "text": "2",
+          "display": "flex",
+          "width": "22px"
+        },
+        {
+          "text": "3",
+          "display": "flex",
+          "width": "22px"
+        },
+        {
+          "text": "4",
+          "display": "flex",
+          "width": "22px"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "overflows": [],
+      "fallback": [
+        {
+          "display": "inline",
+          "background": "rgba(0, 0, 0, 0)",
+          "text": "(en anglais)"
+        }
+      ],
+      "numbers": [
+        {
+          "text": "1",
+          "display": "flex",
+          "width": "24.1875px"
+        },
+        {
+          "text": "2",
+          "display": "flex",
+          "width": "24.1875px"
+        },
+        {
+          "text": "3",
+          "display": "flex",
+          "width": "24.1875px"
+        },
+        {
+          "text": "4",
+          "display": "flex",
+          "width": "24.1875px"
+        }
+      ]
+    },
+    {
+      "width": 600,
+      "pageWidth": 600,
+      "overflows": [],
+      "fallback": [
+        {
+          "display": "inline",
+          "background": "rgba(0, 0, 0, 0)",
+          "text": "(en anglais)"
+        }
+      ],
+      "numbers": [
+        {
+          "text": "1",
+          "display": "flex",
+          "width": "24.1875px"
+        },
+        {
+          "text": "2",
+          "display": "flex",
+          "width": "24.1875px"
+        },
+        {
+          "text": "3",
+          "display": "flex",
+          "width": "24.1875px"
+        },
+        {
+          "text": "4",
+          "display": "flex",
+          "width": "24.1875px"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "pageWidth": 1440,
+      "overflows": [],
+      "fallback": [
+        {
+          "display": "inline",
+          "background": "rgba(0, 0, 0, 0)",
+          "text": "(en anglais)"
+        }
+      ],
+      "numbers": [
+        {
+          "text": "1",
+          "display": "flex",
+          "width": "26.3906px"
+        },
+        {
+          "text": "2",
+          "display": "flex",
+          "width": "26.3906px"
+        },
+        {
+          "text": "3",
+          "display": "flex",
+          "width": "26.3906px"
+        },
+        {
+          "text": "4",
+          "display": "flex",
+          "width": "26.3906px"
+        }
+      ]
+    }
+  ]
+}

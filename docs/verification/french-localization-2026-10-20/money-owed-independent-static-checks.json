@@ -1,0 +1,12 @@
+{
+  "accepted": true,
+  "checkedAt": "2026-10-20T08:38:47.434Z",
+  "htmlSha256": "ea259d67749c80409b46e5ccffab71510a03bffbbb863a478ca5a77a6ee51fa9",
+  "checks": [
+    "Authored semantic sections retain all source workflow, category, related and FAQ cards",
+    "Every English source content destination survives at its reviewed French counterpart or original working fallback",
+    "Structured data parses and retains all source FAQ entries with French page/breadcrumb identities",
+    "Actual-record, plan, write-off and reporting boundaries remain distinct",
+    "Neutral Store campaigns, reciprocal alternates and declared cache pins are correct and generation is byte-stable"
+  ]
+}

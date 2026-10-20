@@ -105,3 +105,8 @@ html[lang="fr"] #main { overflow-wrap: break-word; }
 html[lang="fr"] body #main :is(.lt-cardCta,.lt-textCta,.lt-situationPrimaryCta,.lt-reviewMoreLink) {
   display: inline-block; white-space: normal; line-height: 1.5;
 }
+/* Workflow number badges must not style nested English fallback text. */
+html[lang="fr"] body #main .solution-step-item .site-locale-fallback {
+  display: inline; width: auto; height: auto; border-radius: 0;
+  background: none; color: inherit; font: inherit;
+}
