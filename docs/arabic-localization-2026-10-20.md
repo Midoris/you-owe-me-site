@@ -35,7 +35,7 @@ Foundation commit `6fe7611`.
 | Recordkeeping guide `/ar/blog/how-to-keep-track-of-who-owes-you-money/` | Independent language and technical/product/RTL accepted; clarified neutral wording and kept amount/code together. | 27 focused tests; design zero hard errors; 61 static links; 3 copy controls in success/fallback/failure across all four languages; 24 switch paths; four-width responsive and keyboard table-scroll checks; idempotent generation. | `e9064c8` |
 | Personal-loan solution `/ar/solutions/personal-loan-repayment-tracker/` | Independent language and technical/product/RTL accepted; repaired mobile pseudo-labels, logical callout border, known-value wrapping, desktop CTA and anchor offset. | 15 focused tests; design/routing/SEO zero hard errors (six legacy warnings); 56 static links; exact staged USD math and separate 1,450 total; four-width real rendering; 24 switch paths; idempotent generation. | `e0cae7c` |
 
-| Split-expense calculator `/ar/tools/split-expense-calculator/` | Independent language and technical/product/RTL accepted; actual copied/shared RTL/LTR text, Arabic numeral boundary, consent/retry/Back and four-language private direction reviewed. | 56 focused tests; design zero hard errors; 96 static links; no-JS main 12,027 characters; 320/390/600/1440 render; exact native fixtures, rejected ambiguous separators, 98/8 rounding, two-person 90.50 retry; private exact-CSP simulation; no production uploads. | recorded in batch release commit |
+| Split-expense calculator `/ar/tools/split-expense-calculator/` | Independent language and technical/product/RTL accepted; actual copied/shared RTL/LTR text, Arabic numeral boundary, consent/retry/Back and four-language private direction reviewed. | 56 focused tests; design zero hard errors; 96 static links; no-JS main 12,027 characters; 320/390/600/1440 render; exact native fixtures, rejected ambiguous separators, 98/8 rounding, two-person 90.50 retry; private exact-CSP simulation; no production uploads. | `29a4f0a` |
 
 ### Calculator boundaries and reviewed shared changes
 
@@ -48,3 +48,14 @@ The private split page adds an Arabic section and stylesheet. Existing English/S
 Declared changed shared assets receive fresh cache URLs on all 20 counterpart pages, preserving authored relative/absolute paths. A narrow shared rule keeps the Arabic language-link font and connected-script typography correct on LTR pages. Authored English/Spanish/German content preservation tests allow only generated language blocks and declared cache queries.
 
 No incomplete Arabic batch is deployed.
+
+
+## Coherent batch acceptance
+
+Independent final language and technical/product/RTL reviews accepted all five Arabic pages and all 20 counterpart pages. Root Chrome verifies 120 directed language-switch paths at 390/1440 px; independent technical review verifies 60 paths at 390 px and language review verifies 60 Arabic↔LTR paths at 390/1440 px. All 235 repository tests pass. Five actual Arabic page-design audits, raw static link/asset/fragment checks, registry/routing audit, SEO audit and app-language-support audit report zero hard errors. Routing has 62 advisory warnings and SEO retains six existing warnings; these are recorded rather than presented as zero warnings.
+
+Generation of language clusters, discovery, sitemap and the 80 English next-step modules is byte-idempotent across all 20 counterparts and discovery files. There are 97 sitemap URLs, 102 registry entries and 107 route files. All five reviewed Arabic URLs are discoverable and have own canonicals and reciprocal en/es/de/ar/x-default alternates. Private preflight confirms five unchanged non-split resources and privacy headers match their deployed bytes.
+
+Release evidence: `batch-audits.json`, `full-suite.tap`, `local-batch-checks.json`, `batch-language-review.md`, `batch-technical-review.md`, `batch-independent-cache-checks.json` and individual page reviews in the Arabic verification directory. Application publication and live byte/CSP verification follow this accepted batch; their receipts are appended below after success.
+
+Residual limits: model language review is not human native-speaker certification. Chrome mobile viewports/iPhone user-agent and mocked transfers do not establish physical iPhone, Safari, App Clip/native save, real QR scanning or an actual Store journey. Zero real financial uploads/customer records are used. Successful release does not establish indexing, ranking, AI citation or customer impact.

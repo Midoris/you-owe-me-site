@@ -12,13 +12,13 @@
     "ar": "https://you-owe-me.com/ar/solutions/app-to-track-money-owed/",
     "x-default": "https://you-owe-me.com/solutions/app-to-track-money-owed/"
   },
-  "staticTextCharacters": 33176,
-  "staticLinkCount": 105,
+  "staticTextCharacters": 33284,
+  "staticLinkCount": 108,
   "localAssets": [
     "/assets/css/fontawesome-all.min.css",
     "/assets/css/main.css",
     "/assets/css/noscript.css",
-    "/styles/site-nav.css",
+    "/styles/site-nav.css?v=ar20261020",
     "/styles/site-locale.css?v=ar20261020",
     "/styles/solutions.css",
     "/styles/solution-detail.css?v=conversion-polish-20260905-3",

@@ -12,14 +12,14 @@
     "ar": "https://you-owe-me.com/ar/",
     "x-default": "https://you-owe-me.com/"
   },
-  "staticTextCharacters": 27349,
-  "staticLinkCount": 81,
+  "staticTextCharacters": 27451,
+  "staticLinkCount": 85,
   "localAssets": [
     "/assets/css/fontawesome-all.min.css",
     "/assets/css/main.css",
     "/assets/css/noscript.css",
     "/styles/landing.css?v=20260925-mobile-layout-2",
-    "/styles/site-nav.css",
+    "/styles/site-nav.css?v=ar20261020",
     "/styles/site-locale.css?v=ar20261020",
     "/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1",
     "/styles/best-next-step.css",

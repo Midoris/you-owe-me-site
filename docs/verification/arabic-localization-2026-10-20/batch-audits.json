@@ -1,0 +1,187 @@
+{
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T07:49:52.886142+00:00",
+  "gitCommit": "29a4f0af88cd95022873606dd41b40174fc01586",
+  "counterpartPages": 20,
+  "generatorsByteIdempotent": true,
+  "beforeAndAfterSha256": {
+    "index.html": "b54536fafcf7733c46c2fdd93c3a56ff131637630aa866376e8bb297c1c7d192",
+    "es/index.html": "0b6545115fb103fd3a00e07c5803ec01324a2dbce07ea6d32aa41dfe8c486d64",
+    "de/index.html": "9ec37d372933b2d59b3d63b9ed49310ab05b34a2bf99ce09f6168de5f4ca093e",
+    "ar/index.html": "750e539f860463d87d5ec757495ffca1b1c14dc769f20fb1d5b5bd484d528500",
+    "solutions/app-to-track-money-owed/index.html": "3b8f72dff9e2c836c905dddba74020e4e833da3255fc21339ce4545fd1e04ec6",
+    "es/soluciones/app-para-registrar-dinero-adeudado/index.html": "21b2a847fff58dda57e9f13d7f47c330e9705f2791cf93c03f367cbb5eec4758",
+    "de/loesungen/app-fuer-geldforderungen/index.html": "b814856bd7ba06f82aa6a8ac57fba8678a7d0815df3574bceb9f4ac56820a316",
+    "ar/solutions/app-to-track-money-owed/index.html": "3d31e9d9898dc84c44bbdf059e07ded5fb4c82a64b10e42b8855c9040ec808f2",
+    "blog/how-to-keep-track-of-who-owes-you-money/index.html": "e03d76b41d5c66fb41f4e548442180e9317515866f69a41185107fd03056079e",
+    "es/blog/como-llevar-el-control-de-quien-te-debe-dinero/index.html": "22b7a8c1200b33aac5b5dd2a5a0015d58865b008fac2c77f6468c86e71e5dcfd",
+    "de/blog/wer-schuldet-mir-geld/index.html": "37d0af95693668e6aa56283ed014e7eb342eae0a7f3a2ea925c1a457cdecd748",
+    "ar/blog/how-to-keep-track-of-who-owes-you-money/index.html": "4bb86eaf5a82c83860cdbec637264ee8eaeab4fde3ccdc004e82484830ee8de6",
+    "solutions/personal-loan-repayment-tracker/index.html": "1ec929237e9bf691c918c5a3e31aaa0b7fb1ff0e589c1727c6a70ed842843e7a",
+    "es/soluciones/seguimiento-de-prestamos-personales/index.html": "05c37f45e31c46ba3bba5694fa73c0638eedd70c9d2b8c27b7a571a1dc383f71",
+    "de/loesungen/private-darlehen-verwalten/index.html": "ded4e29477c88e246dd9e7b22d706352ad9f37afc8b2cf99c0961453214d5c3b",
+    "ar/solutions/personal-loan-repayment-tracker/index.html": "cce943c8c3f8cc6e54385adf82a95b14f0bfaeeb06ee938ad56195ef3a4ecc67",
+    "tools/split-expense-calculator/index.html": "e182e80b9ffb3b2bc3ff1986140837e353f8648cdfff54ded2a238d232eb6b87",
+    "es/herramientas/calculadora-de-gastos-compartidos/index.html": "9b71c1162fef7a74bbdaebeea7b70953c00f298b756489700553190ee18565e9",
+    "de/tools/ausgaben-aufteilen/index.html": "eabc3ad72a9f8a4de3d57327cd2e01ca97365a70318119579f7adfdeefd0be27",
+    "ar/tools/split-expense-calculator/index.html": "8325625672e4b19e729300080e52612decb1feb66b9adbb071626d0c314e24f9",
+    "sitemap.xml": "2561b117d400075f8335d270d66d960e667a254e62b773358a30ca8dd5a2ae84",
+    "llms.txt": "e0cbc3ecfa0e639eebbfb1cab578460dc37e27f9deb834dde22973e0ca8e3faa"
+  },
+  "checks": [
+    {
+      "command": [
+        "node",
+        "scripts/sync-site-locales.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Updated 20 reviewed language pages.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build-sitemap.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Sitemap built with 97 indexable URL(s).\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build-best-next-steps.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Best Next Step modules built for 80 page(s); 0 file(s) changed.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/ar/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /ar/\nBody class: homepage-page\nAudited stylesheets: styles/landing.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/ar/solutions/app-to-track-money-owed/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /ar/solutions/app-to-track-money-owed/\nBody class: solutions-page\nAudited stylesheets: styles/solutions.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/ar/blog/how-to-keep-track-of-who-owes-you-money/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /ar/blog/how-to-keep-track-of-who-owes-you-money/\nBody class: blog-page\nAudited stylesheets: styles/blog.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/ar/solutions/personal-loan-repayment-tracker/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /ar/solutions/personal-loan-repayment-tracker/\nBody class: personal-loan-repayment-tracker-page\nAudited stylesheets: styles/personal-loan-repayment-tracker.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/ar/tools/split-expense-calculator/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /ar/tools/split-expense-calculator/\nBody class: tools-page\nAudited stylesheets: styles/tools.css, styles/split-expense-calculator.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-content-routing.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Content routing audit\nLive route files: 107\nRegistry entries: 102\nSitemap URLs: 97\nStrategic BNS URLs: 80\nHard errors: 0\nWarnings: 62\n",
+      "stderr": "\nWarnings:\n- /find/: registry has 17 related links; confirm the page is not over-linked\n- /features/: registry has 17 related links; confirm the page is not over-linked\n- /tools/: registry has 16 related links; confirm the page is not over-linked\n- /solutions/: registry has 15 related links; confirm the page is not over-linked\n- /solutions/app-to-track-money-owed/: registry has 14 related links; confirm the page is not over-linked\n- /solutions/personal-loan-repayment-tracker/: strategic page uses the default App Store destination\n- /solutions/temporary-financial-support-tracker/: registry has 13 related links; confirm the page is not over-linked\n- /solutions/shared-expense-tracker/: registry has 17 related links; confirm the page is not over-linked\n- /solutions/group-payback-tracker/: registry has 15 related links; confirm the page is not over-linked\n- /tools/split-expense-calculator/: registry has 13 related links; confirm the page is not over-linked\n- /tools/group-payback-calculator/: registry has 13 related links; confirm the page is not over-linked\n- /tools/personal-loan-payment-tracker/: strategic page uses the default App Store destination\n- /tools/running-balance-calculator/: registry has 13 related links; confirm the page is not over-linked\n- /blog/how-to-track-who-paid-you-back-for-a-group-expense/: registry has 14 related links; confirm the page is not over-linked\n- /blog/how-to-split-costs-when-people-pay-at-different-times/: registry has 13 related links; confirm the page is not over-linked\n- /blog/how-to-keep-track-of-who-owes-you-money/: registry has 13 related links; confirm the page is not over-linked\n- /blog/how-to-track-a-personal-loan-between-friends-or-family/: strategic page uses the default App Store destination\n- /compare/spreadsheet-vs-app-for-tracking-money-owed/: registry has 13 related links; confirm the page is not over-linked\n- /compare/best-way-to-track-ious-between-people/: registry has 14 related links; confirm the page is not over-linked\n- /compare/splitwise-alternative/: registry has 13 related links; confirm the page is not over-linked\n- /es/soluciones/app-para-registrar-dinero-adeudado/: strategic page uses the default App Store destination\n- /es/soluciones/app-para-registrar-dinero-adeudado/: registry has 14 related links; confirm the page is not over-linked\n- /es/blog/como-llevar-el-control-de-quien-te-debe-dinero/: strategic page uses the default App Store destination\n- /es/blog/como-llevar-el-control-de-quien-te-debe-dinero/: registry has 13 related links; confirm the page is not over-linked\n- /es/soluciones/seguimiento-de-prestamos-personales/: strategic page uses the default App Store destination\n- /es/herramientas/calculadora-de-gastos-compartidos/: strategic page uses the default App Store destination\n- /es/herramientas/calculadora-de-gastos-compartidos/: registry has 13 related links; confirm the page is not over-linked\n- /de/loesungen/app-fuer-geldforderungen/: strategic page uses the default App Store destination\n- /de/loesungen/app-fuer-geldforderungen/: registry has 14 related links; confirm the page is not over-linked\n- /de/blog/wer-schuldet-mir-geld/: strategic page uses the default App Store destination\n- /de/blog/wer-schuldet-mir-geld/: registry has 13 related links; confirm the page is not over-linked\n- /de/loesungen/private-darlehen-verwalten/: strategic page uses the default App Store destination\n- /de/tools/ausgaben-aufteilen/: strategic page uses the default App Store destination\n- /de/tools/ausgaben-aufteilen/: registry has 13 related links; confirm the page is not over-linked\n- /ar/solutions/app-to-track-money-owed/: strategic page uses the default App Store destination\n- /ar/solutions/app-to-track-money-owed/: registry has 14 related links; confirm the page is not over-linked\n- /ar/blog/how-to-keep-track-of-who-owes-you-money/: strategic page uses the default App Store destination\n- /ar/blog/how-to-keep-track-of-who-owes-you-money/: registry has 13 related links; confirm the page is not over-linked\n- /ar/solutions/personal-loan-repayment-tracker/: strategic page uses the default App Store destination\n- /ar/tools/split-expense-calculator/: strategic page uses the default App Store destination\n- /ar/tools/split-expense-calculator/: registry has 13 related links; confirm the page is not over-linked\n- /es/soluciones/app-para-registrar-dinero-adeudado/: strategic solution is not linked from /solutions/\n- /es/soluciones/app-para-registrar-dinero-adeudado/: strategic page is not linked from /find/\n- /es/blog/como-llevar-el-control-de-quien-te-debe-dinero/: strategic page is not linked from /find/\n- /es/soluciones/seguimiento-de-prestamos-personales/: strategic solution is not linked from /solutions/\n- /es/soluciones/seguimiento-de-prestamos-personales/: strategic page is not linked from /find/\n- /es/herramientas/calculadora-de-gastos-compartidos/: strategic tool is not linked from /tools/\n- /es/herramientas/calculadora-de-gastos-compartidos/: strategic page is not linked from /find/\n- /de/loesungen/app-fuer-geldforderungen/: strategic solution is not linked from /solutions/\n- /de/loesungen/app-fuer-geldforderungen/: strategic page is not linked from /find/\n- /de/blog/wer-schuldet-mir-geld/: strategic page is not linked from /find/\n- /de/loesungen/private-darlehen-verwalten/: strategic solution is not linked from /solutions/\n- /de/loesungen/private-darlehen-verwalten/: strategic page is not linked from /find/\n- /de/tools/ausgaben-aufteilen/: strategic tool is not linked from /tools/\n- /de/tools/ausgaben-aufteilen/: strategic page is not linked from /find/\n- /ar/solutions/app-to-track-money-owed/: strategic solution is not linked from /solutions/\n- /ar/solutions/app-to-track-money-owed/: strategic page is not linked from /find/\n- /ar/blog/how-to-keep-track-of-who-owes-you-money/: strategic page is not linked from /find/\n- /ar/solutions/personal-loan-repayment-tracker/: strategic solution is not linked from /solutions/\n- /ar/solutions/personal-loan-repayment-tracker/: strategic page is not linked from /find/\n- /ar/tools/split-expense-calculator/: strategic tool is not linked from /tools/\n- /ar/tools/split-expense-calculator/: strategic page is not linked from /find/\n"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-seo-ai-hygiene.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Technical SEO and AI hygiene audit\nRoute files: 107\nRegistry entries: 102\nSitemap URLs: 97\nHard errors: 0\nWarnings: 6\n",
+      "stderr": "\nWarnings:\n- /solutions/personal-loan-repayment-tracker/: 3 App Store CTA label(s) are generic; situation-specific labels are stronger for agents and accessibility\n- /solutions/debt-repayment-tracker/: 3 App Store CTA label(s) are generic; situation-specific labels are stronger for agents and accessibility\n- /tools/roommate-expense-tracker-template/: JSON-LD dateModified 2026-10-14 does not match visible updated date 2026-10-11\n- /tools/personal-loan-payment-tracker/: 1 App Store CTA label(s) are generic; situation-specific labels are stronger for agents and accessibility\n- /blog/how-to-clarify-if-money-was-a-gift-or-a-loan/: 2 App Store CTA label(s) are generic; situation-specific labels are stronger for agents and accessibility\n- /blog/how-to-track-shared-expenses-without-a-joint-account/: 2 App Store CTA label(s) are generic; situation-specific labels are stronger for agents and accessibility\n"
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-app-language-support.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "App language support audit: 96 included, 11 excluded, 0 unclassified\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/arabic-localization-2026-10-20/raw-html-check.py",
+        "/ar/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/ar/\", \"lang\": \"ar\", \"canonical\": [\"https://you-owe-me.com/ar/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/\", \"es\": \"https://you-owe-me.com/es/\", \"de\": \"https://you-owe-me.com/de/\", \"ar\": \"https://you-owe-me.com/ar/\", \"x-default\": \"https://you-owe-me.com/\"}, \"staticTextCharacters\": 27451, \"staticLinkCount\": 85, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/arabic-localization-2026-10-20/raw-html-check.py",
+        "/ar/solutions/app-to-track-money-owed/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/ar/solutions/app-to-track-money-owed/\", \"lang\": \"ar\", \"canonical\": [\"https://you-owe-me.com/ar/solutions/app-to-track-money-owed/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/solutions/app-to-track-money-owed/\", \"es\": \"https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/\", \"de\": \"https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/\", \"ar\": \"https://you-owe-me.com/ar/solutions/app-to-track-money-owed/\", \"x-default\": \"https://you-owe-me.com/solutions/app-to-track-money-owed/\"}, \"staticTextCharacters\": 33284, \"staticLinkCount\": 108, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/arabic-localization-2026-10-20/raw-html-check.py",
+        "/ar/blog/how-to-keep-track-of-who-owes-you-money/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/ar/blog/how-to-keep-track-of-who-owes-you-money/\", \"lang\": \"ar\", \"canonical\": [\"https://you-owe-me.com/ar/blog/how-to-keep-track-of-who-owes-you-money/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/\", \"es\": \"https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/\", \"de\": \"https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/\", \"ar\": \"https://you-owe-me.com/ar/blog/how-to-keep-track-of-who-owes-you-money/\", \"x-default\": \"https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/\"}, \"staticTextCharacters\": 19217, \"staticLinkCount\": 63, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/arabic-localization-2026-10-20/raw-html-check.py",
+        "/ar/solutions/personal-loan-repayment-tracker/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/ar/solutions/personal-loan-repayment-tracker/\", \"lang\": \"ar\", \"canonical\": [\"https://you-owe-me.com/ar/solutions/personal-loan-repayment-tracker/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/solutions/personal-loan-repayment-tracker/\", \"es\": \"https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/\", \"de\": \"https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/\", \"ar\": \"https://you-owe-me.com/ar/solutions/personal-loan-repayment-tracker/\", \"x-default\": \"https://you-owe-me.com/solutions/personal-loan-repayment-tracker/\"}, \"staticTextCharacters\": 18784, \"staticLinkCount\": 57, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/arabic-localization-2026-10-20/raw-html-check.py",
+        "/ar/tools/split-expense-calculator/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/ar/tools/split-expense-calculator/\", \"lang\": \"ar\", \"canonical\": [\"https://you-owe-me.com/ar/tools/split-expense-calculator/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/tools/split-expense-calculator/\", \"es\": \"https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/\", \"de\": \"https://you-owe-me.com/de/tools/ausgaben-aufteilen/\", \"ar\": \"https://you-owe-me.com/ar/tools/split-expense-calculator/\", \"x-default\": \"https://you-owe-me.com/tools/split-expense-calculator/\"}, \"staticTextCharacters\": 25040, \"staticLinkCount\": 96, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    }
+  ]
+}

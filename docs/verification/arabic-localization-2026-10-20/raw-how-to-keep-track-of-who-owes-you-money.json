@@ -12,14 +12,14 @@
     "ar": "https://you-owe-me.com/ar/blog/how-to-keep-track-of-who-owes-you-money/",
     "x-default": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/"
   },
-  "staticTextCharacters": 19139,
-  "staticLinkCount": 61,
+  "staticTextCharacters": 19217,
+  "staticLinkCount": 63,
   "localAssets": [
     "/assets/css/fontawesome-all.min.css",
     "/assets/css/main.css",
     "/assets/css/noscript.css",
     "/styles/blog.css",
-    "/styles/site-nav.css",
+    "/styles/site-nav.css?v=ar20261020",
     "/styles/site-locale.css?v=ar20261020",
     "/styles/tools.css",
     "/styles/running-balance-answer.css",

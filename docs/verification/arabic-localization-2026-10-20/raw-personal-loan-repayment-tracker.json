@@ -12,13 +12,13 @@
     "ar": "https://you-owe-me.com/ar/solutions/personal-loan-repayment-tracker/",
     "x-default": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/"
   },
-  "staticTextCharacters": 18737,
-  "staticLinkCount": 56,
+  "staticTextCharacters": 18784,
+  "staticLinkCount": 57,
   "localAssets": [
     "/assets/css/fontawesome-all.min.css",
     "/assets/css/main.css",
     "/assets/css/noscript.css",
-    "/styles/site-nav.css",
+    "/styles/site-nav.css?v=ar20261020",
     "/styles/site-locale.css?v=ar20261020",
     "/styles/solutions.css",
     "/styles/solution-detail.css",
