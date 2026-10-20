@@ -1,0 +1,18 @@
+{
+  "productionParserRelativeSrcsetCasesPassed": true,
+  "resolved": [
+    "https://you-owe-me.com/tools/split-expense-calculator/styles/site-nav.css?v=1",
+    "https://you-owe-me.com/images/a.webp",
+    "https://you-owe-me.com/images/b.webp?v=2",
+    "https://you-owe-me.com/images/a.png",
+    "https://you-owe-me.com/scripts/analytics.js?v=3"
+  ],
+  "currentLoanEntryRecognizedImports": [
+    "./loan-import-config.mjs?v=20260922",
+    ";\n      root.tabIndex = -1; root.focus({preventScroll: true}); root.scrollIntoView({block: "
+  ],
+  "dynamicLoanDependenciesMissed": [
+    "./loan-import-ui.mjs",
+    "./loan-import.mjs?v=20261018-review1"
+  ]
+}

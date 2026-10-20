@@ -1,0 +1,255 @@
+{
+  "mainVoidFixturePass": true,
+  "mainVoidFixtureActual": "inside-ainside-binside-c",
+  "pages": [
+    {
+      "route": "/",
+      "mainTextLength": 28382
+    },
+    {
+      "route": "/es/",
+      "mainTextLength": 30011
+    },
+    {
+      "route": "/de/",
+      "mainTextLength": 31459
+    },
+    {
+      "route": "/ar/",
+      "mainTextLength": 26074
+    },
+    {
+      "route": "/solutions/app-to-track-money-owed/",
+      "mainTextLength": 33673
+    },
+    {
+      "route": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "mainTextLength": 38435
+    },
+    {
+      "route": "/de/loesungen/app-fuer-geldforderungen/",
+      "mainTextLength": 39363
+    },
+    {
+      "route": "/ar/solutions/app-to-track-money-owed/",
+      "mainTextLength": 32058
+    },
+    {
+      "route": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "mainTextLength": 19287
+    },
+    {
+      "route": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "mainTextLength": 21283
+    },
+    {
+      "route": "/de/blog/wer-schuldet-mir-geld/",
+      "mainTextLength": 21980
+    },
+    {
+      "route": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+      "mainTextLength": 17978
+    },
+    {
+      "route": "/solutions/personal-loan-repayment-tracker/",
+      "mainTextLength": 18702
+    },
+    {
+      "route": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "mainTextLength": 21600
+    },
+    {
+      "route": "/de/loesungen/private-darlehen-verwalten/",
+      "mainTextLength": 22769
+    },
+    {
+      "route": "/ar/solutions/personal-loan-repayment-tracker/",
+      "mainTextLength": 17541
+    },
+    {
+      "route": "/tools/split-expense-calculator/",
+      "mainTextLength": 24581
+    },
+    {
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "mainTextLength": 28386
+    },
+    {
+      "route": "/de/tools/ausgaben-aufteilen/",
+      "mainTextLength": 28803
+    },
+    {
+      "route": "/ar/tools/split-expense-calculator/",
+      "mainTextLength": 23741
+    }
+  ],
+  "assetCount": 106,
+  "resources": [
+    "/assets/css/fontawesome-all.min.css",
+    "/assets/css/main.css",
+    "/assets/css/noscript.css",
+    "/assets/js/breakpoints.min.js",
+    "/assets/js/browser.min.js",
+    "/assets/js/jquery.min.js",
+    "/assets/js/jquery.scrollex.min.js",
+    "/assets/js/jquery.scrolly.min.js",
+    "/assets/js/main.js?v=ar20261020",
+    "/assets/js/util.js",
+    "/assets/webfonts/fa-brands-400.eot",
+    "/assets/webfonts/fa-brands-400.svg",
+    "/assets/webfonts/fa-brands-400.ttf",
+    "/assets/webfonts/fa-brands-400.woff",
+    "/assets/webfonts/fa-brands-400.woff2",
+    "/assets/webfonts/fa-regular-400.eot",
+    "/assets/webfonts/fa-regular-400.svg",
+    "/assets/webfonts/fa-regular-400.ttf",
+    "/assets/webfonts/fa-regular-400.woff",
+    "/assets/webfonts/fa-regular-400.woff2",
+    "/assets/webfonts/fa-solid-900.eot",
+    "/assets/webfonts/fa-solid-900.svg",
+    "/assets/webfonts/fa-solid-900.ttf",
+    "/assets/webfonts/fa-solid-900.woff",
+    "/assets/webfonts/fa-solid-900.woff2",
+    "/content/site-locales.mjs?v=ar20261020",
+    "/images/ar/home/video-poster.svg",
+    "/images/ar/iphone-handoff/app-store.png",
+    "/images/blog/how-to-keep-track-of-who-owes-you-money/money-owed-record-hero.webp",
+    "/images/de/iphone-handoff/app-store.png",
+    "/images/es/iphone-handoff/app-store.png",
+    "/images/pages/10-years/you-owe-me-10-years-hero-wide.webp",
+    "/images/shared/app-screenshots/6.8.5_share_clear_records.png",
+    "/images/shared/app-screenshots/6.8.5_share_clear_records.webp",
+    "/images/shared/app-screenshots/6.8.5_share_live_balance.png",
+    "/images/shared/app-screenshots/6.8.5_share_live_balance.webp",
+    "/images/shared/app-screenshots/EN_AppStore_Choose_a_Payback_Plan.webp",
+    "/images/shared/app-screenshots/EN_AppStore_Separate_Loan_Records.webp",
+    "/images/shared/app-screenshots/relationship-timeline.webp",
+    "/images/shared/backgrounds/bg.jpg",
+    "/images/shared/backgrounds/overlay.png",
+    "/images/shared/brand/icon_3_0.png",
+    "/images/shared/iphone-handoff/home.png",
+    "/images/shared/iphone-handoff/money-owed.png",
+    "/images/shared/iphone-handoff/split.png",
+    "/images/shared/loan-import-history.webp",
+    "/images/shared/product-screenshots/image_app_to_track_money.png",
+    "/images/shared/product-screenshots/image_app_to_track_money.webp",
+    "/images/solutions/app-to-track-money-owed/app-to-track-money-owed-app-hero.webp",
+    "/images/tools/split-expense-calculator/split-expense-calculator-og.webp",
+    "/scripts/analytics.js",
+    "/scripts/analytics.js?v=ar20261020",
+    "/scripts/anniversary-announcement.js",
+    "/scripts/anniversary-announcement.js?v=ar20261020",
+    "/scripts/app-language-support.js",
+    "/scripts/app-language-support.js?v=ar20261020",
+    "/scripts/app-store-cta-view-tracker.mjs",
+    "/scripts/arabic-number-input.js",
+    "/scripts/arabic-number-input.js?v=ar20261020",
+    "/scripts/iphone-handoff-analytics-bridge.mjs?v=record-once-20261019-1",
+    "/scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1",
+    "/scripts/loan-import-analytics.mjs?v=20261018-review1",
+    "/scripts/loan-import-config.mjs?v=20260922",
+    "/scripts/loan-import-entry.mjs?v=20261018-review1",
+    "/scripts/loan-import-errors.mjs",
+    "/scripts/loan-import-image.mjs",
+    "/scripts/loan-import-model.mjs?v=20261018-review1",
+    "/scripts/loan-import-ui.mjs",
+    "/scripts/loan-import.mjs?v=20261018-review1",
+    "/scripts/recordkeeping-guide-es.js",
+    "/scripts/recordkeeping-guide-es.js?v=ar20261020",
+    "/scripts/repayment-reminder-text-examples.js",
+    "/scripts/reviews.js",
+    "/scripts/sales.js",
+    "/scripts/sales.js?v=ar20261020",
+    "/scripts/split-expense-calculator.js",
+    "/scripts/split-expense-calculator.js?v=ar20261020",
+    "/scripts/split-expense-locale.js",
+    "/scripts/split-expense-locale.js?v=ar20261020",
+    "/scripts/tool-transfer.js",
+    "/scripts/tool-transfer.js?v=ar20261020",
+    "/scripts/vendor/qrcode-2.0.4.js",
+    "/scripts/video-embed.js",
+    "/scripts/video-embed.js?v=ar20261020",
+    "/styles/anniversary-signals.css?v=anniversary-signals-1",
+    "/styles/app-language-support.css",
+    "/styles/best-next-step.css",
+    "/styles/blog.css",
+    "/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1",
+    "/styles/landing-cleanup.css?v=20261014-static-balance-2",
+    "/styles/landing.css?v=20260925-mobile-layout-2",
+    "/styles/loan-import-entry.css?v=20260925-mobile-layout-1",
+    "/styles/loan-import.css?v=20261018-review1",
+    "/styles/money-owed-record-answer.css?v=20260920",
+    "/styles/personal-loan-repayment-tracker.css?v=record-once-20261019-1",
+    "/styles/repayment-reminder-text-examples.css",
+    "/styles/running-balance-answer.css",
+    "/styles/site-locale.css",
+    "/styles/site-locale.css?v=ar20261020",
+    "/styles/site-nav.css",
+    "/styles/site-nav.css?v=ar20261020",
+    "/styles/solution-detail.css",
+    "/styles/solution-detail.css?v=conversion-polish-20260905-3",
+    "/styles/solutions.css",
+    "/styles/split-expense-calculator.css?v=organic-entry-20261011",
+    "/styles/tools.css"
+  ],
+  "missingNestedLocal": [],
+  "dynamicImportsAndRuntimeCssAndFontsFound": true,
+  "legacyMissing": [
+    {
+      "source": "/assets/css/noscript.css",
+      "missingLegacyAsset": "/assets/css/font-awesome.min.css",
+      "unchangedSince": "f3aee78",
+      "context": "Existing noscript fallback imports a missing legacy font stylesheet; every current document already loads fontawesome-all.min.css."
+    }
+  ],
+  "networkRequests": 0,
+  "requestPolicy": {
+    "invalidRequestsRejectedBeforeOpen": [
+      "http://you-owe-me.com/ar/",
+      "https://example.com/ar/",
+      "https://continue.you-owe-me.com/split/?ref",
+      "https://continue.you-owe-me.com/split/?ref=",
+      "https://continue.you-owe-me.com/split/?ref=financial-data",
+      "https://you-owe-me.com/ar/?v=ok&amount=90"
+    ],
+    "allowedOfflineRequests": [
+      {
+        "url": "https://you-owe-me.com/ar/",
+        "method": "GET",
+        "body": null
+      },
+      {
+        "url": "https://you-owe-me.com/scripts/tool-transfer.js?v=fixture",
+        "method": "GET",
+        "body": null
+      },
+      {
+        "url": "https://continue.you-owe-me.com/split/",
+        "method": "GET",
+        "body": null
+      }
+    ],
+    "exactByteFetchRedirectsRefused": true,
+    "unsafeRedirectsRejected": [
+      "http://you-owe-me.com/ar/",
+      "https://example.com/ar/",
+      "https://you-owe-me.com/ar/?ref",
+      "https://you-owe-me.com/ar/?v=anything"
+    ]
+  },
+  "relativeAndSrcsetFixture": [
+    "https://you-owe-me.com/ar/images/a.png",
+    "https://you-owe-me.com/ar/tools/example/small.webp",
+    "https://you-owe-me.com/images/large.webp",
+    "https://you-owe-me.com/ar/tools/wide.webp",
+    "https://you-owe-me.com/images/wider.webp"
+  ],
+  "unchangedNonSplitPrivateDependencies": [
+    "private-continuation/.well-known/apple-app-site-association",
+    "private-continuation/continuation.css",
+    "private-continuation/loan/index.html",
+    "private-continuation/loan/loan.css",
+    "private-continuation/loan/recovery.js"
+  ],
+  "privateSplitCspExact": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'"
+}

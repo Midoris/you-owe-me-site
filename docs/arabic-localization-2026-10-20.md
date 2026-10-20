@@ -59,3 +59,21 @@ Generation of language clusters, discovery, sitemap and the 80 English next-step
 Release evidence: `batch-audits.json`, `full-suite.tap`, `local-batch-checks.json`, `batch-language-review.md`, `batch-technical-review.md`, `batch-independent-cache-checks.json` and individual page reviews in the Arabic verification directory. Application publication and live byte/CSP verification follow this accepted batch; their receipts are appended below after success.
 
 Residual limits: model language review is not human native-speaker certification. Chrome mobile viewports/iPhone user-agent and mocked transfers do not establish physical iPhone, Safari, App Clip/native save, real QR scanning or an actual Store journey. Zero real financial uploads/customer records are used. Successful release does not establish indexing, ranking, AI citation or customer impact.
+
+
+## Publication and live verification
+
+Application release commit `1ff71dd` contains accepted calculator commit `29a4f0a` and all previous scoped Arabic commits. The existing production repository was fast-forwarded from `f3aee78` using its already-authenticated SSH identity after the HTTPS helper could not provide credentials; no credential or remote configuration changed.
+
+Scoped Firebase deployment succeeded: `projects/1056899447246/sites/you-owe-me-tool-continuation/versions/32a9e412ec1668a9` (`firebase-release.json`). Actual deployed private CSP, noindex/no-store/no-referrer headers, all 32 language transitions at 390/1440 px, unknown-language LTR fallback and all four static no-JS sections passed, with no financial reference and zero uploads (`live-private-checks.json`). The initial no-JS smoke threshold assumed a translation character count; it was replaced by exact accepted Arabic section-text equality and then passed. It did not reveal a product defect.
+
+Release-verifier review strengthened main-only static text checks, void-element parsing, relative/srcset resources, literal dynamic imports, nested CSS/font/runtime dependencies, unchanged-private baseline assertions and no-query/no-cross-origin-redirect scope. One pre-existing missing legacy font import in unchanged `assets/css/noscript.css` is explicitly recorded; current documents already load the working `fontawesome-all.min.css`. No other missing nested asset is silently skipped.
+
+
+The coherent Arabic application is **public**. [GitHub Pages run 39389565923](https://github.com/Midoris/you-owe-me-site/actions/runs/39389565923) deployed exact application SHA `1ff71dd7f3aebf4e94687341ef930dbbed08db88`; deployment `7194503246` reported success at **2026-10-20 07:54:39 UTC / 14:54:39 Asia/Bangkok** (`application-pages-deployment.json`).
+
+Live verification passed **all 20 counterpart pages**, **106 public asset URLs** including direct, srcset, nested modules/dynamic imports/CSS/font dependencies, all three discovery files (`robots.txt`, `sitemap.xml`, `llms.txt`), all five Arabic slash redirects, scoped Arabic private CSS/selector and all five unchanged non-split private resources. Raw public HTML and asset bytes equal the reviewed checkout, public languages/directions/canonicals and reciprocal alternates are correct, and no public noindex exclusion was introduced. The single unchanged legacy noscript font import is explicitly documented above (`public-verification.json`).
+
+Real live Chrome passed **120 directed language-switch/calculator checks at 390/1440 px**, including returning to each source language and checking the 180 example in all four locales (`live-batch-checks.json`). Live private acceptance independently passed actual deployed CSP and all 32 direction transitions, no-JS exact Arabic text and no private reference or uploads. Analytics were blocked during browser smoke.
+
+This final release-evidence commit changes documentation and verification sources only; all application/private production bytes remain those accepted and verified above. It is pushed through the existing Pages workflow as the final documentation release, and the exact final commit deployment is verified before returning the completion message. No Search Console, indexing request/submission/resubmission/API or indexing follow-up occurred.
