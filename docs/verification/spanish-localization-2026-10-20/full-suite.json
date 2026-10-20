@@ -1,0 +1,10 @@
+{
+  "tests": 209,
+  "pass": 209,
+  "fail": 0,
+  "cancelled": 0,
+  "skipped": 0,
+  "scope": "node --test scripts/*.test.js scripts/*.test.mjs tests/tool-transfer.test.cjs",
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T04:39:13.524953+00:00"
+}

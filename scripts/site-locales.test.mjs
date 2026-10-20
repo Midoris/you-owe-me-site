@@ -25,6 +25,9 @@ test("only completed translations join the registry and have substantive public 
     assert.match(html, new RegExp(`<a href="${page.en}" lang="en" hreflang="en">English</a>`));
     assert.equal(entry.appStoreCpp, "general");
     assert.equal(entry.translationOf, page.en);
+    assert.ok(html.includes("<!-- localized-next-step:start -->") && html.includes("<!-- localized-next-step:end -->"));
+    assert.ok(html.includes('data-module="best-next-step"'));
+    assert.ok(!html.includes("<!-- best-next-step:start -->"), "Localized hand-authored modules must not claim English generator ownership");
     assert.ok(!/<a\b[^>]*href="https:\/\/apps\.apple\.com\/(?:us|es)\//.test(html), "Spanish Store links must not force a country");
     assert.ok(!/<a\b[^>]*href="https:\/\/apps\.apple\.com\/[^\"]*ppid=/.test(html), "No unverified English custom-product page");
     for (const block of html.matchAll(/<script type="application\/ld\+json">([\s\S]*?)<\/script>/g)) {

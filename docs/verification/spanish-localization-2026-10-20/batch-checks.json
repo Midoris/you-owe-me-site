@@ -1,0 +1,87 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "english": "/",
+      "spanish": "/es/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 390,
+      "english": "/solutions/app-to-track-money-owed/",
+      "spanish": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 390,
+      "english": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "spanish": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 390,
+      "english": "/solutions/personal-loan-repayment-tracker/",
+      "spanish": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 390,
+      "english": "/tools/split-expense-calculator/",
+      "spanish": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true,
+      "englishCalculatorPreserved": true
+    },
+    {
+      "width": 1440,
+      "english": "/",
+      "spanish": "/es/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 1440,
+      "english": "/solutions/app-to-track-money-owed/",
+      "spanish": "/es/soluciones/app-para-registrar-dinero-adeudado/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 1440,
+      "english": "/blog/how-to-keep-track-of-who-owes-you-money/",
+      "spanish": "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 1440,
+      "english": "/solutions/personal-loan-repayment-tracker/",
+      "spanish": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true
+    },
+    {
+      "width": 1440,
+      "english": "/tools/split-expense-calculator/",
+      "spanish": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "explicitSwitchRoundTrip": true,
+      "completeSpanishSectionNavigation": true,
+      "noPageOverflow": true,
+      "englishCalculatorPreserved": true
+    }
+  ]
+}
