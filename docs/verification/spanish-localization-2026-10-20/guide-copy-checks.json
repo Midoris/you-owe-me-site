@@ -1,0 +1,29 @@
+{
+  "allPassed": true,
+  "cases": [
+    {
+      "mode": "clipboard",
+      "threeButtons": true,
+      "payloadMatchesVisibleSpanish": true,
+      "lineBreaksPreserved": true,
+      "events": 3,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "mode": "fallback",
+      "threeButtons": true,
+      "payloadMatchesVisibleSpanish": true,
+      "lineBreaksPreserved": true,
+      "events": 3,
+      "temporaryTextareaRemoved": true
+    },
+    {
+      "mode": "failure",
+      "threeButtons": true,
+      "payloadMatchesVisibleSpanish": false,
+      "lineBreaksPreserved": false,
+      "events": 0,
+      "temporaryTextareaRemoved": true
+    }
+  ]
+}

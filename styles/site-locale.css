@@ -11,6 +11,10 @@ html[lang="es"] body .site-locale-store-link.lt-appStoreBtn:hover { background:#
 .site-locale-store-link:focus-visible,.site-spanish-section a:focus-visible { outline:3px solid rgba(53, 84, 40, 0.32); outline-offset:3px; }
 html[lang="es"] .lt-appStoreBtn { max-width:100%; }
 html[lang="es"] .site-language-switch a { white-space:nowrap; }
+html[lang="es"] body.money-owed-record-page .actions.lt-actions { flex-wrap:wrap; gap:.8rem; }
+html[lang="es"] body.money-owed-record-page .actions.lt-actions > li { min-width:0; max-width:100%; padding:0; }
+html[lang="es"] body.money-owed-record-page .actions.lt-actions .button { white-space:normal; height:auto; line-height:1.4; padding:.85rem 1.25rem; }
+html[lang="es"] body.money-owed-record-page .mow-hero > .site-locale-example { align-self:center; }
 @media(max-width:736px) { .site-spanish-section { font-size:.8rem; } }
 /* Text examples need the whole card width where English used narrow screenshots. */
 @media(max-width:736px) {

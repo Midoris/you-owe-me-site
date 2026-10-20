@@ -21,6 +21,16 @@ for (const page of completed) {
     const switcher = `\n        <!-- locale-switch:start -->\n        <li class="site-language-switch" aria-label="${lang === "es" ? spanishShared.languageLabel : "Page language"}"><a href="${page.en}" lang="en" hreflang="en"${lang === "en" ? ' aria-current="page"' : ""}>English</a><span aria-hidden="true"> · </span><a href="${page.es}" lang="es" hreflang="es"${lang === "es" ? ' aria-current="page"' : ""}>Español</a></li>\n        <!-- locale-switch:end -->`;
     html = html.replace(/(<div id="copyright">\s*<ul>)/, "$1" + switcher);
     if (lang === "es") {
+      // The shared Spanish shell is generated as HTML, including explicit fallbacks.
+      const sections = ["solutions", "features", "reviews", "tools", "compare", "blog"];
+      const navItems = `<li${page.en === "/" ? ' class="active"' : ""}><a href="/es/">You Owe Me</a></li>` + sections.map(section => `<li${page.en.startsWith(`/${section}/`) ? ' class="active"' : ""}><a href="/${section}/">${spanishShared.navigation[section]} (en inglés)</a></li>`).join("");
+      html = html.replace(/(<nav id="nav">\s*<ul class="links">)[\s\S]*?(<\/ul>\s*<\/nav>)/, `$1\n          ${navItems}\n        $2`);
+      html = html.replace(/(<div id="copyright">)[\s\S]*?(<\/ul>)/, footer => {
+        for (const [href, label] of [...sections.map(section => [`/${section}/`, spanishShared.navigation[section]]), ...Object.entries(spanishShared.footer)]) {
+          footer = footer.replace(new RegExp(`(<a href="${href}">)[\\s\\S]*?(<\\/a>)`, "g"), `$1${label} (en inglés)$2`);
+        }
+        return footer;
+      });
       for (const target of completed) {
         const href = target.en.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
         html = html.replace(new RegExp(`(<a\\b[^>]*href=")${href}(#[^"]*)?("[^>]*>)([\\s\\S]*?)(<\\/a>)`, "g"), (original, start, hash, end, label, close) => /\blang="en"/.test(start + end) ? original : `${start}${target.es}${hash || ""}${end}${label.replace(/\s*\(en ingl[eé]s\)/g, "")}${close}`);
