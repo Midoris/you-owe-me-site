@@ -1,0 +1,45 @@
+{
+  "allPassed": true,
+  "route": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+  "lang": "ar",
+  "canonical": [
+    "https://you-owe-me.com/ar/blog/how-to-keep-track-of-who-owes-you-money/"
+  ],
+  "alternates": {
+    "en": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/",
+    "es": "https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/",
+    "de": "https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/",
+    "ar": "https://you-owe-me.com/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+    "x-default": "https://you-owe-me.com/blog/how-to-keep-track-of-who-owes-you-money/"
+  },
+  "staticTextCharacters": 19139,
+  "staticLinkCount": 61,
+  "localAssets": [
+    "/assets/css/fontawesome-all.min.css",
+    "/assets/css/main.css",
+    "/assets/css/noscript.css",
+    "/styles/blog.css",
+    "/styles/site-nav.css",
+    "/styles/site-locale.css?v=ar20261020",
+    "/styles/tools.css",
+    "/styles/running-balance-answer.css",
+    "/styles/repayment-reminder-text-examples.css",
+    "/styles/best-next-step.css",
+    "/styles/money-owed-record-answer.css?v=20260920",
+    "/styles/app-language-support.css",
+    "/styles/loan-import-entry.css?v=20260925-mobile-layout-1",
+    "/scripts/sales.js?v=ar20261020",
+    "/scripts/recordkeeping-guide-es.js?v=ar20261020",
+    "/scripts/analytics.js?v=ar20261020",
+    "/assets/js/jquery.min.js",
+    "/assets/js/jquery.scrollex.min.js",
+    "/assets/js/jquery.scrolly.min.js",
+    "/assets/js/browser.min.js",
+    "/assets/js/breakpoints.min.js",
+    "/assets/js/util.js",
+    "/assets/js/main.js?v=ar20261020",
+    "/scripts/app-language-support.js?v=ar20261020"
+  ],
+  "missingLinksOrFragments": [],
+  "noJavaScriptTranslationRequired": true
+}

@@ -1,0 +1,35 @@
+{
+  "route": "/ar/blog/how-to-keep-track-of-who-owes-you-money/",
+  "designHardErrors": 0,
+  "focusedTestsPassed": 27,
+  "responsiveWidths": [
+    320,
+    390,
+    600,
+    1440
+  ],
+  "onlyIntentionalTableScrolling": true,
+  "financialTokensDoNotWrap": true,
+  "staticLinks": 61,
+  "brokenLocalLinks": 0,
+  "languageSwitchPaths": 24,
+  "generatorIdempotent": true,
+  "copyControls": 3,
+  "copyModes": [
+    "clipboard",
+    "fallback",
+    "failure"
+  ],
+  "copyRegressionLanguages": [
+    "en",
+    "es",
+    "de",
+    "ar"
+  ],
+  "eventsHaveOnlyIdentifiers": true,
+  "independentReviews": [
+    "guide-language-review.md",
+    "guide-technical-review.md"
+  ],
+  "productionUploads": 0
+}

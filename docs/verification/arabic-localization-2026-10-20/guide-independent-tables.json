@@ -1,0 +1,96 @@
+[
+  {
+    "width": 390,
+    "ledger": [
+      [
+        80,
+        30,
+        50
+      ],
+      [
+        18,
+        18,
+        0
+      ],
+      [
+        42,
+        0,
+        42
+      ],
+      [
+        120,
+        75,
+        45
+      ]
+    ],
+    "tables": [
+      {
+        "label": "مثال لسجلّ الأموال المستحقة",
+        "role": "region",
+        "tabIndex": 0,
+        "width": 348,
+        "scrollWidth": 860,
+        "direction": "rtl",
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "keyboardScrolled": true
+      },
+      {
+        "label": "جدول اختيار طريقة لتسجيل الأموال المستحقة",
+        "role": "region",
+        "tabIndex": 0,
+        "width": 348,
+        "scrollWidth": 720,
+        "direction": "rtl",
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "keyboardScrolled": true
+      }
+    ]
+  },
+  {
+    "width": 1440,
+    "ledger": [
+      [
+        80,
+        30,
+        50
+      ],
+      [
+        18,
+        18,
+        0
+      ],
+      [
+        42,
+        0,
+        42
+      ],
+      [
+        120,
+        75,
+        45
+      ]
+    ],
+    "tables": [
+      {
+        "label": "مثال لسجلّ الأموال المستحقة",
+        "role": "region",
+        "tabIndex": 0,
+        "width": 1342,
+        "scrollWidth": 1342,
+        "direction": "rtl",
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "keyboardScrolled": false
+      },
+      {
+        "label": "جدول اختيار طريقة لتسجيل الأموال المستحقة",
+        "role": "region",
+        "tabIndex": 0,
+        "width": 1342,
+        "scrollWidth": 1342,
+        "direction": "rtl",
+        "outline": "rgb(0, 95, 204) auto 1px",
+        "keyboardScrolled": false
+      }
+    ]
+  }
+]

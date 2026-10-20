@@ -73,3 +73,5 @@ html[lang="ar"] body :is(a,button,input,select,textarea,summary):focus-visible {
 }
 html[lang="ar"] .iphone-handoff__fallback { display: inline-block; }
 html[lang="ar"] .iphone-handoff__instruction bdi { white-space: nowrap; }
+/* Keep a financial value and its code together; wide tables scroll as a unit. */
+html[lang="ar"] td bdi[dir="ltr"] { white-space: nowrap; }

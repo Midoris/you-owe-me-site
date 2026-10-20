@@ -2,6 +2,7 @@
 // Templates come from static localized HTML; event fields never contain their text.
 (function () {
   var messages = {
+    ar: { copied: "تم النسخ", prefix: "تم نسخ: ", fallback: "الرسالة", failure: "تعذّر النسخ. حدّد النص وانسخه يدويًا." },
     en: { copied: "Copied", prefix: "Copied: ", fallback: "message", failure: "Could not copy. Select the text and copy it manually." },
     es: { copied: "Copiado", prefix: "Copiado: ", fallback: "mensaje", failure: "No se pudo copiar. Selecciona el texto y cópialo manualmente." },
     de: { copied: "Kopiert", prefix: "Kopiert: ", fallback: "Text", failure: "Kopieren nicht möglich. Markiere den Text und kopiere ihn manuell." },

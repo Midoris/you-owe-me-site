@@ -1,0 +1,140 @@
+[
+  {
+    "width": 320,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 320,
+    "overflows": [
+      {
+        "tag": "DIV",
+        "class": "rb-tableWrap",
+        "scroll": 860,
+        "width": 278
+      },
+      {
+        "tag": "DIV",
+        "class": "rb-tableWrap",
+        "scroll": 720,
+        "width": 278
+      }
+    ],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "كيف تسجّل من يدين لك بالمال",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "40.04px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "errors": []
+  },
+  {
+    "width": 390,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 390,
+    "overflows": [
+      {
+        "tag": "DIV",
+        "class": "rb-tableWrap",
+        "scroll": 860,
+        "width": 348
+      },
+      {
+        "tag": "DIV",
+        "class": "rb-tableWrap",
+        "scroll": 720,
+        "width": 348
+      }
+    ],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "كيف تسجّل من يدين لك بالمال",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "47.619px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "menu": {
+      "text": "You Owe Me\nالحلول (بالإنجليزية)\nالمزايا (بالإنجليزية)\nالتقييمات (بالإنجليزية)\nالأدوات (بالإنجليزية)\nالمقارنة (بالإنجليزية)\nالمدونة (بالإنجليزية)",
+      "direction": "rtl",
+      "closeFocus": {
+        "focused": true,
+        "outline": "rgba(53, 84, 40, 0.32) solid 3px"
+      },
+      "keyboardClosed": true
+    },
+    "errors": []
+  },
+  {
+    "width": 600,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 600,
+    "overflows": [
+      {
+        "tag": "DIV",
+        "class": "rb-tableWrap",
+        "scroll": 860,
+        "width": 558
+      },
+      {
+        "tag": "DIV",
+        "class": "rb-tableWrap",
+        "scroll": 720,
+        "width": 558
+      }
+    ],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "كيف تسجّل من يدين لك بالمال",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "56.87px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 1440,
+    "overflows": [],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "كيف تسجّل من يدين لك بالمال",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "76.032px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "errors": []
+  },
+  {
+    "noJS": true,
+    "textLength": 10201,
+    "lang": "ar",
+    "dir": "rtl"
+  }
+]
