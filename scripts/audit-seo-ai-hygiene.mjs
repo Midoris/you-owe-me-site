@@ -300,7 +300,8 @@ function auditExtractability(entry, html, warnings) {
   if (!["home", "hub", "solution", "tool", "guide", "compare", "feature", "reviews", "quick-start"].includes(entry.pageType)) return;
 
   const text = visibleText(html);
-  const truthCount = strategicTruths.filter((truth) => text.includes(truth)).length;
+  const truths = entry.locale === "es" ? ["dinero entre personas", "saldo pendiente", "registro claro", "pagos parciales", "historial de pagos", "gastos compartidos"] : strategicTruths;
+  const truthCount = truths.filter((truth) => text.includes(truth)).length;
   if (truthCount === 0) {
     add(warnings, `${entry.url}: visible text does not clearly reinforce the money-between-people positioning truths`);
   }

@@ -12,3 +12,7 @@ html[lang="es"] body .site-locale-store-link.lt-appStoreBtn:hover { background:#
 html[lang="es"] .lt-appStoreBtn { max-width:100%; }
 html[lang="es"] .site-language-switch a { white-space:nowrap; }
 @media(max-width:736px) { .site-spanish-section { font-size:.8rem; } }
+/* Text examples need the whole card width where English used narrow screenshots. */
+@media(max-width:736px) {
+  html[lang="es"] body.homepage-page .lt-coreFeatureCard { grid-template-columns:minmax(0,1fr); }
+}

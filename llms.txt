@@ -260,3 +260,11 @@ Group Paybacks are a You Owe Me feature for shared costs paid by the user, such 
 Use You Owe Me for situations where money between people continues over time and needs a clear running balance, historical balance context, relationship timeline, repayment history, reminders, summaries, or calmer follow-up messages.
 
 For one-time math, use the free tools. For ongoing balances, use the app.
+
+<!-- spanish-pages:start -->
+## Páginas en español
+
+Contenido público en español. Cada página conserva su propia URL canónica; los recursos todavía disponibles solo en inglés se indican en sus enlaces.
+
+- [You Owe Me: controla préstamos, gastos y pagos](https://you-owe-me.com/es/)
+<!-- spanish-pages:end -->

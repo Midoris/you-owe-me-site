@@ -24,7 +24,7 @@ English text-bearing app captures are replaced by labeled Spanish HTML/SVG examp
 
 | Page | Language review | Technical/product review | Checks | Commit |
 | --- | --- | --- | --- | --- |
-| Homepage | Pending | Pending | Pending | Pending |
+| Homepage | Independent model review passed; clarified title and separate-loan wording. Shared dictionaries independently reviewed by page translator. | Independent review passed after fixing text download CTA cascade and stacking mobile text examples. | Design/registry/SEO: zero hard errors; 47 foundation/runtime tests; no-JS HTML 20,020 characters; Chrome 320/390/600/1440 px, images, CTA heights, mobile menu. Seven English image modules replaced with labeled Spanish examples; preserved translated review attribution. | See page commit following foundation `5510956` |
 | Money owed solution | Pending | Pending | Pending | Pending |
 | Recordkeeping guide | Pending | Pending | Pending | Pending |
 | Personal loan solution | Pending | Pending | Pending | Pending |

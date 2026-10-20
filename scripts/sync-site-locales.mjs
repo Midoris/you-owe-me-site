@@ -32,4 +32,10 @@ for (const page of completed) {
     fs.writeFileSync(file, html);
   }
 }
+const discoveryFile = path.join(root, "llms.txt");
+let discovery = fs.readFileSync(discoveryFile, "utf8").replace(/\n<!-- spanish-pages:start -->[\s\S]*?<!-- spanish-pages:end -->\n?/g, "\n");
+if (completed.length) {
+  discovery = discovery.trimEnd() + `\n\n<!-- spanish-pages:start -->\n## Páginas en español\n\nContenido público en español. Cada página conserva su propia URL canónica; los recursos todavía disponibles solo en inglés se indican en sus enlaces.\n\n${completed.map(page => `- [${page.title}](${localeOrigin}${page.es})`).join("\n")}\n<!-- spanish-pages:end -->\n`;
+}
+fs.writeFileSync(discoveryFile, discovery);
 console.log(`Updated ${completed.length} reviewed language pairs.`);
