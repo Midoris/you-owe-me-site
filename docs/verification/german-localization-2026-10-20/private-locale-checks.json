@@ -1,0 +1,31 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "germanSelected": true,
+      "englishCopyPreserved": true,
+      "explicitSwitch": true,
+      "queryContractUnchanged": true,
+      "noPrivateDataRead": true,
+      "noExternalRequests": true,
+      "effectiveCsp": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "errors": []
+    },
+    {
+      "width": 1440,
+      "germanSelected": true,
+      "englishCopyPreserved": true,
+      "explicitSwitch": true,
+      "queryContractUnchanged": true,
+      "noPrivateDataRead": true,
+      "noExternalRequests": true,
+      "effectiveCsp": "default-src 'none'; style-src 'self'; script-src 'self'; base-uri 'none'; form-action 'none'; frame-ancestors 'none'",
+      "errors": []
+    },
+    {
+      "noJavaScript": true,
+      "allThreeStaticLanguagesReadable": true
+    }
+  ]
+}

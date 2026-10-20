@@ -1,0 +1,34 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "browserLocale": "en-US",
+      "typed": "12,50",
+      "normalizedValue": "12.50",
+      "valid": true,
+      "unchangedParser": true
+    },
+    {
+      "browserLocale": "en-US",
+      "typed": "12.50",
+      "normalizedValue": "12.50",
+      "valid": true,
+      "unchangedParser": true
+    },
+    {
+      "browserLocale": "de-DE",
+      "typed": "12,50",
+      "normalizedValue": "12.50",
+      "valid": true,
+      "unchangedParser": true
+    },
+    {
+      "browserLocale": "de-DE",
+      "typed": "12.50",
+      "normalizedValue": "12.50",
+      "valid": true,
+      "unchangedParser": true
+    }
+  ],
+  "limits": "Actual Chrome keyboard input, not a physical Safari/iPhone test."
+}

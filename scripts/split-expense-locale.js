@@ -1,7 +1,7 @@
-// Spanish copy for the shared calculator; amounts and transfer contracts stay unchanged.
+// Shared calculator copy; amounts and transfer contracts stay unchanged.
 (function (root) {
   "use strict";
-  root.UomiSplitExpenseLocale = Object.freeze({
+  const spanish = Object.freeze({
     "Person {number}": "Persona {number}",
     "Person 1": "Persona 1",
     "Person 2": "Persona 2",
@@ -62,4 +62,68 @@
     "Sharing wasn’t available, so the result was copied.": "No se pudo compartir; se ha copiado el resultado.",
     "Couldn’t share or copy the result.": "No se pudo compartir ni copiar el resultado.",
   });
+  const german = Object.freeze({
+    "Person {number}": "Person {number}",
+    "Person 1": "Person 1",
+    "Person 2": "Person 2",
+    "Person 3": "Person 3",
+    "Someone": "Jemand",
+    "People ({count}): edit names or remove people": "Personen ({count}): Namen ändern oder Personen entfernen",
+    "Remove {name}": "{name} entfernen",
+    "Remove": "Entfernen",
+    "Expense {number}": "Ausgabe {number}",
+    "Remove expense {expense}": "Ausgabe {expense} entfernen",
+    "Dinner, groceries, rent, taxi...": "Abendessen, Lebensmittel, Miete, Taxi …",
+    "Amount": "Betrag",
+    "Paid by": "Bezahlt von",
+    "Split between / included people": "Auf diese Personen aufteilen",
+    "Split type": "Art der Aufteilung",
+    "Equal": "Zu gleichen Teilen",
+    "Description (optional)": "Beschreibung (optional)",
+    "Enter an amount greater than zero.": "Gib einen Betrag größer als null ein.",
+    "Choose who paid for this expense.": "Wähle aus, wer diese Ausgabe bezahlt hat.",
+    "Select at least one person to share this expense.": "Wähle mindestens eine Person aus, auf die diese Ausgabe aufgeteilt wird.",
+    "{name} paid": "{name} hat bezahlt",
+    "{name}'s share": "Anteil von {name}",
+    "{name} is settled": "Saldo von {name}: ausgeglichen",
+    "{name} should receive": "{name} bekommt",
+    "{name} owes": "{name} schuldet",
+    "{from} owes {to} {amount}": "{from} schuldet {to} {amount}",
+    "Keep track until everyone has paid": "Behalte den Überblick, bis alle bezahlt haben",
+    "Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.": "Übernimm diesen Saldo in You Owe Me auf dem iPhone. Halte jede vollständige oder teilweise Rückzahlung fest und sieh, wie viel jede Person noch schuldet.",
+    "Keep future shared costs in one place": "Behalte künftige gemeinsame Kosten an einem Ort im Blick",
+    "This split is settled. If you share costs again, You Owe Me on iPhone keeps new expenses and repayments in one balance for each person.": "Diese Aufteilung ist ausgeglichen. Wenn ihr wieder Kosten teilt, fasst You Owe Me auf dem iPhone neue Ausgaben und Rückzahlungen in einem Saldo pro Person zusammen.",
+    "Preparing your split…": "Deine Aufteilung wird vorbereitet …",
+    "Couldn’t prepare the transfer. Your split is still here. Try again, or copy your result.": "Die Übertragung konnte nicht vorbereitet werden. Deine Aufteilung ist noch hier. Versuche es erneut oder kopiere dein Ergebnis.",
+    "Total expenses": "Gesamtausgaben",
+    "People": "Personen",
+    "Expenses included": "Berücksichtigte Ausgaben",
+    "Add an expense to see who owes whom.": "Füge eine Ausgabe hinzu, um zu sehen, wer wem wie viel schuldet.",
+    "Everyone is settled.": "Alle Salden sind ausgeglichen.",
+    "You can add up to 12 people.": "Du kannst bis zu 12 Personen hinzufügen.",
+    "Add at least two people to split an expense.": "Zum Aufteilen einer Ausgabe brauchst du mindestens zwei Personen.",
+    "You can add up to 30 expenses.": "Du kannst bis zu 30 Ausgaben hinzufügen.",
+    "Dinner": "Abendessen",
+    "Groceries": "Lebensmittel",
+    "Taxi": "Taxi",
+    "Shared expense": "Gemeinsame Ausgabe",
+    "Shared expense summary": "Zusammenfassung der gemeinsamen Ausgaben",
+    "Total shared expenses: {amount}": "Gemeinsame Ausgaben insgesamt: {amount}",
+    "Paid:": "Bezahlt:",
+    "{name} paid {amount}": "{name} hat {amount} bezahlt",
+    "Fair share:": "Anteile:",
+    "{name}'s share: {amount}": "Anteil von {name}: {amount}",
+    "Settlement:": "Ausgleich:",
+    "Calculate your own split: {url}": "Berechne deine eigene Aufteilung: {url}",
+    "Add an expense before copying a summary.": "Füge eine Ausgabe hinzu, bevor du die Zusammenfassung kopierst.",
+    "Couldn’t copy the result.": "Das Ergebnis konnte nicht kopiert werden.",
+    "Copied summary and calculator link.": "Zusammenfassung und Link zum Rechner kopiert.",
+    "Add an expense before sharing a summary.": "Füge eine Ausgabe hinzu, bevor du die Zusammenfassung teilst.",
+    "Shared result.": "Ergebnis geteilt.",
+    "Sharing wasn’t available, so the result was copied.": "Teilen war nicht möglich. Das Ergebnis wurde kopiert.",
+    "Couldn’t share or copy the result.": "Das Ergebnis konnte weder geteilt noch kopiert werden."
+});
+  root.UomiSplitExpenseLocales = Object.freeze({ es: spanish, de: german });
+  // Keep the established selected-dictionary API for existing consumers.
+  root.UomiSplitExpenseLocale = root.UomiSplitExpenseLocales[root.document?.documentElement?.lang || "es"];
 })(typeof window === "undefined" ? globalThis : window);

@@ -6,6 +6,9 @@
     if (root.document?.documentElement?.lang === "es") {
       return message === "Person" ? `Persona ${number}` : "Gasto compartido";
     }
+    if (root.document?.documentElement?.lang === "de") {
+      return message === "Person" ? `Person ${number}` : "Gemeinsame Ausgabe";
+    }
     return message === "Person" ? `Person ${number}` : "Shared expense";
   }
   function prepare(state) {

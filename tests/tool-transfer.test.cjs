@@ -12,7 +12,7 @@ test('private continuation allows only its local locale selector with no persona
   const html=fs.readFileSync('private-continuation/split/index.html','utf8');
   assert.ok(!/analytics|og:|app-argument/i.test(html));
   assert.equal((html.match(/<script\b/g)||[]).length,1);
-  assert.deepEqual([...html.matchAll(/<script\b[^>]*src="([^"]+)"[^>]*>([\s\S]*?)<\/script>/g)].map(match=>[match[1],match[2]]), [['locale.js?v=es20261020','']]);
+  assert.deepEqual([...html.matchAll(/<script\b[^>]*src="([^"]+)"[^>]*>([\s\S]*?)<\/script>/g)].map(match=>[match[1],match[2]]), [['locale.js?v=de20261020','']]);
   assert.ok(html.includes('no-referrer') && html.includes('noindex,nofollow,noarchive'));
   const cfg=JSON.parse(fs.readFileSync('firebase.exp003.json'));
   for(const [key,value] of [['Cache-Control','no-store'],['Referrer-Policy','no-referrer'],['X-Robots-Tag','noindex, nofollow, noarchive']]) assert.ok(cfg.hosting.headers[0].headers.some(h=>h.key===key&&h.value===value));
@@ -32,4 +32,50 @@ test('shared cross-language financial fixtures',()=>{
 test('rejects a native half-cent that disagrees with the existing browser answer',()=>{
   const d=fixture();d.people.pop();d.expenses[0].includedPeople=['alex','mia'];d.expenses[0].amount='0.29';
   assert.equal(Math.round((0.29/2)*100),14);assert.equal(prepare(d),null);
+});
+
+test('private continuation preserves accepted English/Spanish copy and all three no-JS sections', () => {
+  const {createHash} = require('node:crypto');
+  const html = fs.readFileSync('private-continuation/split/index.html', 'utf8');
+  const accepted = {en: 'e3d45b24163dac74b4c1e91a4d7247efd13aab168234231770aefce4a668a34c', es: 'f5bd51c691f2c9a0db8dd32c5bfb292b421364154edf401215ebe9b0654bc464'};
+  for (const [locale, digest] of Object.entries(accepted)) {
+    const block = html.match(new RegExp(`<section id="${locale}"[\\s\\S]*?</section>`))[0];
+    assert.equal(createHash('sha256').update(block).digest('hex'), digest, `${locale} original copy preserved`);
+  }
+  for (const locale of ['en', 'es', 'de']) {
+    const opening = html.match(new RegExp(`<section id="${locale}"[^>]*>`))[0];
+    assert.ok(!/\bhidden\b/.test(opening), `${locale} readable without JS`);
+    assert.ok(opening.includes(`lang="${locale}"`) && opening.includes(`data-locale="${locale}"`));
+  }
+  assert.ok(html.includes('https://you-owe-me.com/de/tools/ausgaben-aufteilen/'));
+  assert.ok(html.includes('Dein Übertragungslink läuft nach 24 Stunden ab.'));
+  assert.ok(!/\?ref=|<form\b|<iframe\b/.test(html));
+});
+
+test('private fragment switching changes only language, title and visible section while retaining sole ref', async () => {
+  const vm = require('node:vm');
+  const {parseStaticPage} = await import('./helpers/static-dom.mjs');
+  const html = fs.readFileSync('private-continuation/split/index.html', 'utf8');
+  const selector = fs.readFileSync('private-continuation/split/locale.js', 'utf8');
+  const document = parseStaticPage(html); document.documentElement = {lang: 'en'};
+  for (const link of document.querySelectorAll('a')) link.removeAttribute = name => link.attributes.delete(name);
+  const listeners = {};
+  const location = {hash: '#de'};
+  Object.defineProperty(location, 'search', {get() { throw new Error('must not read reference'); }});
+  const context = {document, window: {location, addEventListener(type, fn) {listeners[type] = fn; }}};
+  vm.runInNewContext(selector, context);
+  for (const [fragment, locale, ariaLabel] of [['#de', 'de', 'Sprache der Seite'], ['#es', 'es', 'Idioma de la página'], ['#en', 'en', 'Page language'], ['#unrecognized', 'en', 'Page language'], ['', 'en', 'Page language']]) {
+    location.hash = fragment; listeners.hashchange();
+    assert.equal(document.documentElement.lang, locale);
+    assert.equal(document.querySelector('[data-language-navigation]').getAttribute('aria-label'), ariaLabel);
+    assert.equal(document.title, document.querySelector(`[data-locale="${locale}"]`).getAttribute('data-title'));
+    for (const section of document.querySelectorAll('[data-locale]')) assert.equal(section.hidden, section.getAttribute('data-locale') !== locale);
+    for (const link of document.querySelector('[data-language-navigation]').querySelectorAll('a')) {
+      assert.equal(link.getAttribute('aria-current'), link.getAttribute('lang') === locale ? 'page' : null);
+      const destination = new URL(link.getAttribute('href'), 'https://continue.you-owe-me.com/split/?ref=' + 'a'.repeat(64) + fragment);
+      assert.deepEqual([...destination.searchParams.keys()], ['ref']);
+      assert.equal(destination.searchParams.get('ref'), 'a'.repeat(64));
+      assert.equal(destination.hash, '#' + link.getAttribute('lang'));
+    }
+  }
 });

@@ -1,0 +1,125 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "from": "en",
+      "to": "es",
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "de",
+      "route": "/de/tools/ausgaben-aufteilen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "en",
+      "route": "/tools/split-expense-calculator/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "de",
+      "route": "/de/tools/ausgaben-aufteilen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "en",
+      "route": "/tools/split-expense-calculator/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "es",
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "es",
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "de",
+      "route": "/de/tools/ausgaben-aufteilen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "en",
+      "route": "/tools/split-expense-calculator/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "de",
+      "route": "/de/tools/ausgaben-aufteilen/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "en",
+      "route": "/tools/split-expense-calculator/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "es",
+      "route": "/es/herramientas/calculadora-de-gastos-compartidos/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": true
+    }
+  ]
+}

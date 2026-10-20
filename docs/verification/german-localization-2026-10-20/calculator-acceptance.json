@@ -1,0 +1,24 @@
+{
+  "allPassed": true,
+  "relevantTests": 55,
+  "designErrors": 0,
+  "registryErrors": 0,
+  "seoErrors": 0,
+  "legacySeoWarnings": 6,
+  "idempotent": true,
+  "browserWidths": [
+    320,
+    390,
+    600,
+    1440
+  ],
+  "onlyIntentionalExampleTableScrollingAt320": true,
+  "noJsMainText": 15867,
+  "rawStaticChars": 30078,
+  "all95LinksAndFragmentsValid": true,
+  "mathCopyShareErrorsCurrencyPrivacyPassed": true,
+  "mockedIphoneConsentRetryRefBackPassed": true,
+  "privateCspThreeLanguagesAndNoJsPassed": true,
+  "productionUploads": 0,
+  "independentReviewsAccepted": true
+}

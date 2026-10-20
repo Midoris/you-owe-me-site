@@ -1,0 +1,43 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "personControlsDoNotOverlap": true,
+      "workedExample180And25Plus10": true,
+      "copyAndShareGermanCanonical": true,
+      "shareFallbackAndCancellation": true,
+      "copyFailureGerman": true,
+      "emptyNegativeNoIncludedSettled": true,
+      "eightPeople98Each12Comma25": true,
+      "currencyUnconverted": true,
+      "privateValuesExcludedFromEvents": true,
+      "noRuntimeErrors": true
+    },
+    {
+      "width": 1440,
+      "personControlsDoNotOverlap": true,
+      "workedExample180And25Plus10": true,
+      "copyAndShareGermanCanonical": true,
+      "shareFallbackAndCancellation": true,
+      "copyFailureGerman": true,
+      "emptyNegativeNoIncludedSettled": true,
+      "eightPeople98Each12Comma25": true,
+      "currencyUnconverted": true,
+      "privateValuesExcludedFromEvents": true,
+      "noRuntimeErrors": true
+    },
+    {
+      "iPhoneWebSimulation": true,
+      "explicitTransferConsent": true,
+      "failedRetryRetainsReference": true,
+      "draftCentsSchemaAndCurrencyPreserved": true,
+      "soleReferenceAndGermanFragment": true,
+      "germanPrivateContinuation": true,
+      "backRestoresThenClearsSavedInput": true,
+      "multiplePayerFallbackAvailable": true,
+      "productionUploads": 0
+    }
+  ],
+  "limits": "Isolated Chrome iPhone user-agent simulation; no physical iPhone or native save performed."
+}

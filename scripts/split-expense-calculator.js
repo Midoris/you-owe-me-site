@@ -4,14 +4,14 @@
   const EPSILON = 0.005;
   const MAX_PEOPLE = 12;
   const MAX_EXPENSES = 30;
-  const isSpanish = document.documentElement?.lang === "es";
-  const spanishStrings = isSpanish ? window.UomiSplitExpenseLocale : null;
-  const CANONICAL_CALCULATOR_URL = isSpanish
+  const locale = document.documentElement?.lang;
+  const localizedStrings = window.UomiSplitExpenseLocales?.[locale];
+  const CANONICAL_CALCULATOR_URL = localizedStrings
     ? document.querySelector('link[rel="canonical"]').getAttribute("href")
     : "https://you-owe-me.com/tools/split-expense-calculator/";
 
   function translate(message, values = {}) {
-    const template = spanishStrings?.[message] || message;
+    const template = localizedStrings?.[message] || message;
     return template.replace(/\{(\w+)\}/g, (_, key) => values[key] ?? "");
   }
   const SPLIT_CALCULATOR_EVENT = "youoweme:split-calculator-event";
@@ -85,13 +85,14 @@
 
   function formatNumber(value) {
     const rounded = roundMoney(value);
-    if (isSpanish) return new Intl.NumberFormat("es", { maximumFractionDigits: 2 }).format(rounded);
+    if (localizedStrings) return new Intl.NumberFormat(locale, { maximumFractionDigits: 2 }).format(rounded);
     if (Number.isInteger(rounded)) return String(rounded);
     return rounded.toFixed(2).replace(/\.?0+$/, "");
   }
 
   function formatMoney(value) {
     const symbol = sanitizeCurrency(state.currency);
+    if (locale === "de") return `${formatNumber(value)} ${symbol}`;
     const space = symbol.length > 1 ? " " : "";
     return `${symbol}${space}${formatNumber(value)}`;
   }
@@ -480,7 +481,7 @@
           JSON.stringify(window.UomiToolTransfer.prepare(state)) !== fingerprint) throw new Error("changed");
       // Preserve input only following explicit consent. Cleared when restored on Back.
       sessionStorage.setItem("uomi-exp003-return", JSON.stringify({state, transferAttempt}));
-      location.assign(window.UomiToolTransfer.config.continuation + "?ref=" + transferAttempt.reference + (isSpanish ? "#es" : ""));
+      location.assign(window.UomiToolTransfer.config.continuation + "?ref=" + transferAttempt.reference + (localizedStrings ? "#" + locale : ""));
     } catch (_) {
       status.textContent = translate("Couldn’t prepare the transfer. Your split is still here. Try again, or copy your result.");
     } finally { transferBusy = false; button.disabled = false; }

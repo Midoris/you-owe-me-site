@@ -1,0 +1,7 @@
+# Calculator runtime implementation handoff
+
+Author: calc_runtime, GPT-6.1 Sol/high, independent of German HTML author and final reviewers. Extended one shared ES/DE dictionary registry, retained selected-dictionary compatibility API. German formatting/labels/canonical/fragment selection are presentation changes; financial/eligibility functions, payload schema, consent, retry/reference and session-return behavior stay unchanged.
+
+German transfer fallback names/expense labels and static German private continuation added; original EN/ES private section bytes preserved. Selector reads only the fragment; all three sections readable without JS. Existing effective CSP and noindex/no-store/no-referrer retained without config changes. Independent preliminary runtime language reading by HTML translator applied settled/credit-row and private h1/body polish; full separate language and technical reviews still required.
+
+Author reported **39/39** focused tests passing with `node --test scripts/split-expense-calculator-experiment.test.mjs tests/tool-transfer.test.cjs scripts/website-ios-continuation.test.mjs`: all dictionary keys/placeholders and dynamic states; exact accepted EN/ES summary snapshots;180and98÷8 math; cross-language financial fixture matrix/currency/rounding/eligibility; copy/share failure/cancel/fallback; consent,retry same reference,sole-ref#de,Back restore/clear; private EN/ES SHA256,three no-JS sections,fragment-only selector with throwing search getter,privacy/CSP. No commits/deployments/production uploads/indexing performed by the author.
