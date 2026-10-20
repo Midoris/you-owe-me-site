@@ -13,3 +13,5 @@ Three small repairs proposed and confirmed applied by root:
 The terminology guide records the coordinator's selected ASCII routes and MSA/numeral/product guardrails. This is a model language review of actual source strings, not human native-speaker certification or a substitute for the separate rendered RTL and product review.
 
 Foundation shared-language disposition: accepted after these repairs.
+
+Also reviewed Arabic-only matching added in `scripts/audit-seo-ai-hygiene.mjs`: «مثال / توضيحي / النتيجة / النتائج» correctly identify example/illustrative/result/results wording; the positioning terms correctly match authored money-between-people, outstanding-money, repayment, balance, shared-expense and loan language. Accepted as localized audit matching, not evidence that merely matching one word proves factual quality.

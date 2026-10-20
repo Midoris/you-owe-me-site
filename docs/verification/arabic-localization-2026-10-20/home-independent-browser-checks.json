@@ -1,0 +1,253 @@
+[
+  {
+    "width": 320,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 320,
+    "overflows": [
+      {
+        "tag": "ARTICLE",
+        "class": "post featured",
+        "scroll": 334,
+        "width": 320
+      },
+      {
+        "tag": "H2",
+        "class": "sr-only",
+        "scroll": 338,
+        "width": 1
+      },
+      {
+        "tag": "SECTION",
+        "class": "lt-pageSection lt-proofSection",
+        "scroll": 320,
+        "width": 292
+      },
+      {
+        "tag": "DIV",
+        "class": "lt-reviewRail",
+        "scroll": 4954,
+        "width": 320
+      },
+      {
+        "tag": "BDI",
+        "class": "",
+        "scroll": 10,
+        "width": 6
+      }
+    ],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [
+      {
+        "src": "/images/ar/iphone-handoff/app-store.png",
+        "loaded": true,
+        "transform": "none"
+      },
+      {
+        "src": "/images/ar/home/video-poster.svg",
+        "loaded": false,
+        "transform": "matrix(1.01, 0, 0, 1.01, 0, 0)"
+      }
+    ],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "اعرف المبلغ الذي لم يُسدَّد بعد.",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "49.5px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "errors": []
+  },
+  {
+    "width": 390,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 390,
+    "overflows": [
+      {
+        "tag": "ARTICLE",
+        "class": "post featured",
+        "scroll": 405,
+        "width": 390
+      },
+      {
+        "tag": "H2",
+        "class": "sr-only",
+        "scroll": 372,
+        "width": 1
+      },
+      {
+        "tag": "SECTION",
+        "class": "lt-pageSection lt-proofSection",
+        "scroll": 390,
+        "width": 359
+      },
+      {
+        "tag": "DIV",
+        "class": "lt-reviewRail",
+        "scroll": 5930,
+        "width": 390
+      },
+      {
+        "tag": "BDI",
+        "class": "",
+        "scroll": 11,
+        "width": 7
+      }
+    ],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [
+      {
+        "src": "/images/ar/iphone-handoff/app-store.png",
+        "loaded": true,
+        "transform": "none"
+      },
+      {
+        "src": "/images/ar/home/video-poster.svg",
+        "loaded": false,
+        "transform": "matrix(1.01, 0, 0, 1.01, 0, 0)"
+      }
+    ],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "اعرف المبلغ الذي لم يُسدَّد بعد.",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "56.628px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "menu": {
+      "text": "You Owe Me\nالحلول (بالإنجليزية)\nالمزايا (بالإنجليزية)\nالتقييمات (بالإنجليزية)\nالأدوات (بالإنجليزية)\nالمقارنة (بالإنجليزية)\nالمدونة (بالإنجليزية)",
+      "direction": "rtl",
+      "escapeClosed": false
+    },
+    "errors": []
+  },
+  {
+    "width": 600,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 600,
+    "overflows": [
+      {
+        "tag": "ARTICLE",
+        "class": "post featured",
+        "scroll": 615,
+        "width": 600
+      },
+      {
+        "tag": "H2",
+        "class": "sr-only",
+        "scroll": 372,
+        "width": 1
+      },
+      {
+        "tag": "SECTION",
+        "class": "lt-pageSection lt-proofSection",
+        "scroll": 600,
+        "width": 569
+      },
+      {
+        "tag": "DIV",
+        "class": "lt-reviewRail",
+        "scroll": 5932,
+        "width": 600
+      },
+      {
+        "tag": "BDI",
+        "class": "",
+        "scroll": 11,
+        "width": 7
+      }
+    ],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [
+      {
+        "src": "/images/ar/iphone-handoff/app-store.png",
+        "loaded": true,
+        "transform": "none"
+      },
+      {
+        "src": "/images/ar/home/video-poster.svg",
+        "loaded": false,
+        "transform": "matrix(1.01, 0, 0, 1.01, 0, 0)"
+      }
+    ],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "اعرف المبلغ الذي لم يُسدَّد بعد.",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "66.55px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "lang": "ar",
+    "dir": "rtl",
+    "pageWidth": 1440,
+    "overflows": [
+      {
+        "tag": "H2",
+        "class": "sr-only",
+        "scroll": 627,
+        "width": 1
+      },
+      {
+        "tag": "DIV",
+        "class": "lt-reviewRail",
+        "scroll": 7243,
+        "width": 1303
+      },
+      {
+        "tag": "BDI",
+        "class": "",
+        "scroll": 14,
+        "width": 8
+      }
+    ],
+    "arabicSpacing": [],
+    "leftAligned": [],
+    "images": [
+      {
+        "src": "/images/ar/iphone-handoff/app-store.png",
+        "loaded": true,
+        "transform": "none"
+      },
+      {
+        "src": "/images/ar/home/video-poster.svg",
+        "loaded": false,
+        "transform": "matrix(1.01, 0, 0, 1.01, 0, 0)"
+      }
+    ],
+    "hero": {
+      "tag": "H1",
+      "class": "",
+      "text": "اعرف المبلغ الذي لم يُسدَّد بعد.",
+      "align": "start",
+      "spacing": "normal",
+      "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+      "lineHeight": "105.6px"
+    },
+    "bodyFont": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+    "errors": []
+  },
+  {
+    "noJS": true,
+    "textLength": 16072,
+    "lang": "ar",
+    "dir": "rtl"
+  }
+]

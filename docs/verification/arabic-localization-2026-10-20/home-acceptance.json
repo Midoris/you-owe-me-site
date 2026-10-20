@@ -1,0 +1,27 @@
+{
+  "route": "/ar/",
+  "foundationCommit": "6fe7611",
+  "designHardErrors": 0,
+  "routingHardErrors": 0,
+  "seoHardErrors": 0,
+  "seoLegacyWarnings": 6,
+  "focusedTestsPassed": 42,
+  "noJavaScriptMainCharacters": 16072,
+  "staticTextCharacters": 27349,
+  "staticLinks": 81,
+  "missingLinksOrFragments": [],
+  "viewports": [
+    320,
+    390,
+    600,
+    1440
+  ],
+  "generatorIdempotent": true,
+  "productionUploads": 0,
+  "independentLanguageReview": "home-language-review.md",
+  "independentTechnicalReview": "home-technical-review.md",
+  "limitations": [
+    "Model review is not human native-speaker certification",
+    "No physical iPhone, QR scan or native save"
+  ]
+}

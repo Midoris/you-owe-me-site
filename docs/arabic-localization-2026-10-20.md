@@ -26,4 +26,10 @@ Implementation follows [W3C structural direction guidance](https://www.w3.org/In
 
 ## Per-page and release acceptance
 
-Pending. No incomplete Arabic batch is deployed.
+Foundation commit `6fe7611`.
+
+| Page | Independent reviews | Verification | Commit |
+| --- | --- | --- | --- |
+| Homepage `/ar/` | Arabic language and technical/product/RTL accepted; repaired wording, inherited fonts/alignment, mixed CTA wrapping and keyboard focus. | 42 focused tests; design/routing/SEO zero hard errors (six legacy SEO warnings); 81 static links with no missing fragments/assets; no-JS main 16,072 characters; Chrome 320/390/600/1440, QR failure recovery and neutral Store/campaign; reciprocal en/es/de/ar/default; generation idempotent. | recorded in next page commit |
+
+No incomplete Arabic batch is deployed.

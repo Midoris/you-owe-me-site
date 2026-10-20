@@ -284,3 +284,11 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 - [Private Darlehen und Rückzahlungen verwalten](https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/)
 - [Ausgaben aufteilen: Rechner für gemeinsame Kosten](https://you-owe-me.com/de/tools/ausgaben-aufteilen/)
 <!-- german-pages:end -->
+
+<!-- arabic-pages:start -->
+## صفحات بالعربية
+
+محتوى عام باللغة العربية. لكل صفحة رابط أساسي مستقل، وتُميّز الروابط التي تقود إلى موارد متاحة بالإنجليزية فقط.
+
+- [You Owe Me: تابع الديون والقروض والمصروفات](https://you-owe-me.com/ar/)
+<!-- arabic-pages:end -->

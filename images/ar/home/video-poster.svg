@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="720" viewBox="0 0 480 720" lang="ar" xml:lang="ar" role="img" aria-labelledby="title desc">
+  <title id="title">شاهد You Owe Me أثناء الاستخدام</title>
+  <desc id="desc">ملصق توضيحي لفيديو بالإنجليزية عن السداد والمصروفات المشتركة والتذكيرات. ليس لقطة شاشة من التطبيق.</desc>
+  <defs><linearGradient id="bg" x2="0.8" y2="1"><stop stop-color="#e5f4d8"/><stop offset="1" stop-color="#e4eef8"/></linearGradient></defs>
+  <rect width="480" height="720" rx="32" fill="url(#bg)"/>
+  <rect x="32" y="42" width="416" height="636" rx="26" fill="#fff" fill-opacity=".88" stroke="#dfe6eb"/>
+  <g font-family="Arial, Tahoma, sans-serif" text-anchor="middle" fill="#18212b">
+    <text x="240" y="128" font-size="29" font-weight="700" direction="ltr">You Owe Me</text>
+    <text x="240" y="190" font-size="27" font-weight="700" direction="rtl">شاهد التطبيق أثناء الاستخدام</text>
+    <text x="240" y="242" font-size="23" direction="rtl">فيديو بالإنجليزية</text>
+    <circle cx="240" cy="350" r="66" fill="#afe67e"/>
+    <path d="M222 318 L222 382 L271 350 Z" fill="#18212b"/>
+    <text x="240" y="470" font-size="25" direction="rtl">السداد والمصروفات المشتركة</text>
+    <text x="240" y="514" font-size="25" direction="rtl">والتذكيرات</text>
+    <text x="240" y="607" font-size="19" fill="#52616c" direction="rtl">ملصق توضيحي، وليس لقطة من التطبيق</text>
+  </g>
+</svg>

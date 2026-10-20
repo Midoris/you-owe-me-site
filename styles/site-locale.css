@@ -68,3 +68,8 @@ html[lang="ar"] body :is(p,li,dt,dd,label,summary) { line-height: 1.9; }
 html[lang="ar"] body .site-locale-store-link.lt-appStoreBtn { gap: .35em; }
 html[lang="ar"] body #main :is(.lt-cardCta,.lt-textCta) { display: inline-block; line-height: 1.7; }
 html[lang="ar"] body #main :is(p,li,dt,dd,label,summary) { line-height: 1.9 !important; }
+html[lang="ar"] body :is(a,button,input,select,textarea,summary):focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32) !important; outline-offset: 3px;
+}
+html[lang="ar"] .iphone-handoff__fallback { display: inline-block; }
+html[lang="ar"] .iphone-handoff__instruction bdi { white-space: nowrap; }
