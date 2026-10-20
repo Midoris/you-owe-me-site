@@ -1,0 +1,202 @@
+TAP version 13
+# Subtest: every site route satisfies the language-support inclusion and exclusion contract
+ok 1 - every site route satisfies the language-support inclusion and exclusion contract
+  ---
+  duration_ms: 78.125667
+  type: 'test'
+  ...
+# Subtest: Spanish routes require Spanish document language while English routes keep English
+ok 2 - Spanish routes require Spanish document language while English routes keep English
+  ---
+  duration_ms: 0.315375
+  type: 'test'
+  ...
+# Subtest: the route audit rejects missing and duplicate integration assets
+ok 3 - the route audit rejects missing and duplicate integration assets
+  ---
+  duration_ms: 0.119375
+  type: 'test'
+  ...
+# Subtest: the route audit rejects anchors in navigation and sticky UI
+ok 4 - the route audit rejects anchors in navigation and sticky UI
+  ---
+  duration_ms: 0.239542
+  type: 'test'
+  ...
+# Subtest: the route audit requires a real conversion context and no authored render target
+ok 5 - the route audit requires a real conversion context and no authored render target
+  ---
+  duration_ms: 0.233416
+  type: 'test'
+  ...
+# Subtest: excluded routes reject every language-support integration surface
+ok 6 - excluded routes reject every language-support integration surface
+  ---
+  duration_ms: 0.075916
+  type: 'test'
+  ...
+# Subtest: German routes require German document language
+ok 7 - German routes require German document language
+  ---
+  duration_ms: 0.175375
+  type: 'test'
+  ...
+# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters
+ok 8 - French admission requires review and produces reciprocal idempotent five-language clusters
+  ---
+  duration_ms: 4.298375
+  type: 'test'
+  ...
+# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+ok 9 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+  ---
+  duration_ms: 372.723375
+  type: 'test'
+  ...
+# Subtest: homepage hero keeps its primary download and separate QR handoff
+ok 10 - homepage hero keeps its primary download and separate QR handoff
+  ---
+  duration_ms: 0.723125
+  type: 'test'
+  ...
+# Subtest: story, import, definition, and generated situation hub stay in the intended order
+ok 11 - story, import, definition, and generated situation hub stay in the intended order
+  ---
+  duration_ms: 1.062917
+  type: 'test'
+  ...
+# Subtest: generated hub retains its registered homepage content and placement
+ok 12 - generated hub retains its registered homepage content and placement
+  ---
+  duration_ms: 0.318416
+  type: 'test'
+  ...
+# Subtest: the condensed feature section and included-tools links remain intact
+ok 13 - the condensed feature section and included-tools links remain intact
+  ---
+  duration_ms: 0.256583
+  type: 'test'
+  ...
+# Subtest: homepage styles remain scoped and responsive
+ok 14 - homepage styles remain scoped and responsive
+  ---
+  duration_ms: 0.332375
+  type: 'test'
+  ...
+# Subtest: homepage search-facing metadata and software schema remain unchanged
+ok 15 - homepage search-facing metadata and software schema remain unchanged
+  ---
+  duration_ms: 0.133917
+  type: 'test'
+  ...
+# Subtest: People disclosure preserves node, open state, identities and results across edits
+ok 16 - People disclosure preserves node, open state, identities and results across edits
+  ---
+  duration_ms: 37.720666
+  type: 'test'
+  ...
+# Subtest: expense DOM and keyboard order puts amount and payer before participants and optional description
+ok 17 - expense DOM and keyboard order puts amount and payer before participants and optional description
+  ---
+  duration_ms: 13.169166
+  type: 'test'
+  ...
+# Subtest: existing person/expense limits, payer removal, validation and reset semantics survive compact entry
+ok 18 - existing person/expense limits, payer removal, validation and reset semantics survive compact entry
+  ---
+  duration_ms: 163.180292
+  type: 'test'
+  ...
+# Subtest: copy/share success, cancellation and fallback keep canonical URLs and fixed action metadata
+ok 19 - copy/share success, cancellation and fallback keep canonical URLs and fixed action metadata
+  ---
+  duration_ms: 45.167334
+  type: 'test'
+  ...
+# Subtest: only explicit continuation uploads, rejects stale replies and restores edited state on Back
+ok 20 - only explicit continuation uploads, rejects stale replies and restores edited state on Back
+  ---
+  duration_ms: 42.68625
+  type: 'test'
+  ...
+# Subtest: three article messages are selectable before the image, with matching templates and one shared controller
+ok 21 - three article messages are selectable before the image, with matching templates and one shared controller
+  ---
+  duration_ms: 1.585791
+  type: 'test'
+  ...
+# Subtest: all three article copies emit only existing fixed metadata and leave app actions in place
+ok 22 - all three article copies emit only existing fixed metadata and leave app actions in place
+  ---
+  duration_ms: 6.636916
+  type: 'test'
+  ...
+# Subtest: article clipboard denial falls back; complete failure reports manual copying without a success event
+ok 23 - article clipboard denial falls back; complete failure reports manual copying without a success event
+  ---
+  duration_ms: 8.108667
+  type: 'test'
+  ...
+# Subtest: only completed translations join the registry and have substantive public HTML
+ok 24 - only completed translations join the registry and have substantive public HTML
+  ---
+  duration_ms: 13.121875
+  type: 'test'
+  ...
+# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries
+ok 25 - English authored content differs from the accepted base only by locale links and declared shared cache queries
+  ---
+  duration_ms: 94.921708
+  type: 'test'
+  ...
+# Subtest: locale routes are unique, stable and contain no financial inputs
+ok 26 - locale routes are unique, stable and contain no financial inputs
+  ---
+  duration_ms: 0.648708
+  type: 'test'
+  ...
+# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release
+ok 27 - Spanish authored HTML stays byte-for-byte intact from the accepted public release
+  ---
+  duration_ms: 92.299958
+  type: 'test'
+  ...
+# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out
+ok 28 - one generator produces reciprocal three-language switches and leaves planned pages out
+  ---
+  duration_ms: 3.017875
+  type: 'test'
+  ...
+# Subtest: German registry inherits source routing without linking to unfinished locale pages
+ok 29 - German registry inherits source routing without linking to unfinished locale pages
+  ---
+  duration_ms: 0.143333
+  type: 'test'
+  ...
+# Subtest: unreviewed German routes do not enter public discovery or runtime matching
+ok 30 - unreviewed German routes do not enter public discovery or runtime matching
+  ---
+  duration_ms: 1.264209
+  type: 'test'
+  ...
+# Subtest: a missing reviewed counterpart fails before any existing page is changed
+ok 31 - a missing reviewed counterpart fails before any existing page is changed
+  ---
+  duration_ms: 1.205375
+  type: 'test'
+  ...
+# Subtest: analytics preserves English metadata and maps only completed localized routes
+ok 32 - analytics preserves English metadata and maps only completed localized routes
+  ---
+  duration_ms: 19.03925
+  type: 'test'
+  ...
+1..32
+# tests 32
+# suites 0
+# pass 32
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 420.914583

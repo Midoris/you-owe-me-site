@@ -291,7 +291,9 @@ function auditToolFallback(entry, html, warnings) {
 
   const crawlable = crawlableText(html);
   const hasNoscriptExample = /<noscript[\s\S]{120,}?<\/noscript>/i.test(html);
-  const examplePattern = entry.locale === "ar"
+  const examplePattern = entry.locale === "fr"
+    ? /exemple|illustratif|résultat|modèle/i
+    : entry.locale === "ar"
     ? /مثال|توضيحي|النتيجة|النتائج/
     : entry.locale === "de"
     ? /(?:beispiel|muster|ergebnis|beispielrechnung)/i
@@ -310,7 +312,7 @@ function auditExtractability(entry, html, warnings) {
   if (!["home", "hub", "solution", "tool", "guide", "compare", "feature", "reviews", "quick-start"].includes(entry.pageType)) return;
 
   const text = visibleText(html);
-  const truths = entry.locale === "ar" ? ["الأموال بين الأشخاص", "المبالغ المستحقة", "الأموال المستحقة", "السداد", "الرصيد", "المصروفات المشتركة", "القروض"] : entry.locale === "de" ? ["geld zwischen menschen", "offener betrag", "laufender saldo", "teilrückzahlung", "rückzahlungen", "gemeinsame ausgaben", "darlehen"] : entry.locale === "es" ? ["dinero entre personas", "saldo pendiente", "registro claro", "pagos parciales", "historial de pagos", "gastos compartidos"] : strategicTruths;
+  const truths = entry.locale === "fr" ? ["argent entre personnes", "sommes dues", "remboursements", "solde", "dépenses partagées", "prêts"] : entry.locale === "ar" ? ["الأموال بين الأشخاص", "المبالغ المستحقة", "الأموال المستحقة", "السداد", "الرصيد", "المصروفات المشتركة", "القروض"] : entry.locale === "de" ? ["geld zwischen menschen", "offener betrag", "laufender saldo", "teilrückzahlung", "rückzahlungen", "gemeinsame ausgaben", "darlehen"] : entry.locale === "es" ? ["dinero entre personas", "saldo pendiente", "registro claro", "pagos parciales", "historial de pagos", "gastos compartidos"] : strategicTruths;
   const truthCount = truths.filter((truth) => text.includes(truth)).length;
   if (truthCount === 0) {
     add(warnings, `${entry.url}: visible text does not clearly reinforce the money-between-people positioning truths`);

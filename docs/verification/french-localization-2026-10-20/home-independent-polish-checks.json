@@ -1,0 +1,362 @@
+{
+  "accepted": true,
+  "rows": [
+    {
+      "width": 320,
+      "pageWidth": 320,
+      "primaryText": "Télécharger sur l’App Store",
+      "ctas": [
+        {
+          "text": "Lire d’autres avis de l’App Store (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 259.015625,
+          "client": 257,
+          "scroll": 257
+        },
+        {
+          "text": "Découvrir ces dix ans d’histoire (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal",
+          "width": 258,
+          "client": 256,
+          "scroll": 256
+        },
+        {
+          "text": "Découvrir Live Link et le signalement des paiements (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal",
+          "width": 263.34375,
+          "client": 261,
+          "scroll": 261
+        },
+        {
+          "text": "Voir toutes les fonctionnalités (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 288,
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "text": "Comprendre le fonctionnement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 288,
+          "client": 286,
+          "scroll": 286
+        },
+        {
+          "text": "Suivre l’argent qu’on me doit (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 263.34375,
+          "client": 263,
+          "scroll": 263
+        },
+        {
+          "text": "Suivre une aide temporaire (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 263.34375,
+          "client": 263,
+          "scroll": 263
+        },
+        {
+          "text": "Suivre les dépenses d’un parent (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 263.34375,
+          "client": 263,
+          "scroll": 263
+        },
+        {
+          "text": "Suivre les dépenses du couple (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 263.34375,
+          "client": 263,
+          "scroll": 263
+        },
+        {
+          "text": "Suivre les dépenses de colocation (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 263.34375,
+          "client": 263,
+          "scroll": 263
+        },
+        {
+          "text": "Suivre les dépenses partagées (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 263.34375,
+          "client": 263,
+          "scroll": 263
+        },
+        {
+          "text": "Calculer un solde évolutif (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 254.96875,
+          "client": 255,
+          "scroll": 255
+        },
+        {
+          "text": "Partager une dépense (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 231.796875,
+          "client": 232,
+          "scroll": 232
+        },
+        {
+          "text": "Parcourir les solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 254,
+          "client": 252,
+          "scroll": 252
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "pageWidth": 390,
+      "primaryText": "Télécharger sur l’App Store",
+      "ctas": [
+        {
+          "text": "Lire d’autres avis de l’App Store (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 284.703125,
+          "client": 283,
+          "scroll": 283
+        },
+        {
+          "text": "Découvrir ces dix ans d’histoire (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal",
+          "width": 318.1875,
+          "client": 316,
+          "scroll": 316
+        },
+        {
+          "text": "Découvrir Live Link et le signalement des paiements (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal",
+          "width": 327.875,
+          "client": 326,
+          "scroll": 326
+        },
+        {
+          "text": "Voir toutes les fonctionnalités (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 354.796875,
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "text": "Comprendre le fonctionnement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 354.796875,
+          "client": 353,
+          "scroll": 353
+        },
+        {
+          "text": "Suivre l’argent qu’on me doit (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 303.96875,
+          "client": 304,
+          "scroll": 304
+        },
+        {
+          "text": "Suivre une aide temporaire (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 293.234375,
+          "client": 293,
+          "scroll": 293
+        },
+        {
+          "text": "Suivre les dépenses d’un parent (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 322.3125,
+          "client": 322,
+          "scroll": 322
+        },
+        {
+          "text": "Suivre les dépenses du couple (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 309.46875,
+          "client": 309,
+          "scroll": 309
+        },
+        {
+          "text": "Suivre les dépenses de colocation (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 327.875,
+          "client": 328,
+          "scroll": 328
+        },
+        {
+          "text": "Suivre les dépenses partagées (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 309.3125,
+          "client": 309,
+          "scroll": 309
+        },
+        {
+          "text": "Calculer un solde évolutif (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 280.46875,
+          "client": 280,
+          "scroll": 280
+        },
+        {
+          "text": "Partager une dépense (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 254.984375,
+          "client": 255,
+          "scroll": 255
+        },
+        {
+          "text": "Parcourir les solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 317.59375,
+          "client": 316,
+          "scroll": 316
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "pageWidth": 1440,
+      "primaryText": "Télécharger sur l’App Store",
+      "ctas": [
+        {
+          "text": "Lire d’autres avis de l’App Store (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 332.1875,
+          "client": 330,
+          "scroll": 330
+        },
+        {
+          "text": "Découvrir ces dix ans d’histoire (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal",
+          "width": 381.703125,
+          "client": 380,
+          "scroll": 380
+        },
+        {
+          "text": "Découvrir Live Link et le signalement des paiements (en anglais)",
+          "display": "inline-block",
+          "whiteSpace": "normal",
+          "width": 373.75,
+          "client": 372,
+          "scroll": 372
+        },
+        {
+          "text": "Voir toutes les fonctionnalités (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 370.109375,
+          "client": 368,
+          "scroll": 368
+        },
+        {
+          "text": "Comprendre le fonctionnement (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 382.4375,
+          "client": 380,
+          "scroll": 380
+        },
+        {
+          "text": "Suivre l’argent qu’on me doit (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 331.609375,
+          "client": 332,
+          "scroll": 332
+        },
+        {
+          "text": "Suivre une aide temporaire (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 319.90625,
+          "client": 320,
+          "scroll": 320
+        },
+        {
+          "text": "Suivre les dépenses d’un parent (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 351.625,
+          "client": 352,
+          "scroll": 352
+        },
+        {
+          "text": "Suivre les dépenses du couple (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 337.609375,
+          "client": 338,
+          "scroll": 338
+        },
+        {
+          "text": "Suivre les dépenses de colocation (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 363.921875,
+          "client": 364,
+          "scroll": 364
+        },
+        {
+          "text": "Suivre les dépenses partagées (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 337.4375,
+          "client": 337,
+          "scroll": 337
+        },
+        {
+          "text": "Calculer un solde évolutif (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 305.984375,
+          "client": 306,
+          "scroll": 306
+        },
+        {
+          "text": "Partager une dépense (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 278.171875,
+          "client": 278,
+          "scroll": 278
+        },
+        {
+          "text": "Parcourir les solutions (en anglais)",
+          "display": "block",
+          "whiteSpace": "normal",
+          "width": 313.328125,
+          "client": 311,
+          "scroll": 311
+        }
+      ]
+    }
+  ]
+}

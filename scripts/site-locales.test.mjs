@@ -18,7 +18,7 @@ test("only completed translations join the registry and have substantive public 
     assert.equal(Boolean(entry), page.complete);
     if (!page.complete) continue;
     const html = fs.readFileSync(new URL(`..${route}index.html`, import.meta.url), "utf8");
-    assert.match(html, new RegExp(`<html lang="${locale.code}"${locale.code === "ar" ? ' dir="rtl"' : ""}>`));
+    assert.match(html, new RegExp(`<html lang="${locale.code}"${locale.code === "ar" ? ' dir="rtl"' : '(?: dir="ltr")?'}>`));
     assert.ok(html.includes(`rel="canonical" href="https://you-owe-me.com${route}"`));
     assert.match(html, /<h1\b/);
     assert.ok(html.replace(/<[^>]+>/g, "").length > 2000);

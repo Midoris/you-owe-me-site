@@ -21,3 +21,13 @@ French uses stable ASCII slugs under `/fr/`, static `lang="fr"` LTR HTML, self-c
 Common configuration adds five planned French routes with completion flags initially false. Shared labels, campaign display, anniversary states, video fallback, mobile menu accessibility and localized styles support French. Campaign identity/timing and analytics payloads are unchanged. French page-language priority repairs a shared availability-message gap; French pages use French regardless of browser language. Changed dependencies and analytics’ nested locale import receive `fr20261020` cache URLs across all existing counterparts. Arabic shaping/isolation remains scoped and intact on LTR pages.
 
 Independent GPT-6.1 Sol/high reviews and evidence live in `docs/verification/french-localization-2026-10-20/`. These are model reviews, not human native-speaker certification. Tests verify gated five-language clusters, idempotence, all 20 existing authored page bodies against `a2eb93d`, campaign privacy/identity, and French availability-message direction/linking across browser languages. Browser and page-specific acceptance follows separately.
+
+Foundation commit: `fc104ff`. Both independent reviews accepted after the French availability-message priority repair; 55 focused tests and 27 independent Chrome fixture/old-language transition checks pass.
+
+## Page acceptance
+
+| Page | Independent reviews and repairs | Verification | Commit |
+| --- | --- | --- | --- |
+| Homepage `/fr/` | Separate language and technical/product reviews; lender-perspective testimonial, neutral campaign QR, App Store nonbreaking typography and text-link fallback flow repaired. | 32 focused tests; design audit zero hard errors; 82 static links/assets/fragments; substantial no-JS main; Chrome 320/390/600/1440; 40 directed language-switch paths at 390/1440; QR failure recovery and neutral Store/campaign; generated files byte-idempotent. | Recorded in next scoped commit. |
+
+Homepage audit integration now classifies French routes and checks their actual language; the SEO auditor uses French example/positioning phrases. Routing has zero hard errors and 62 advisory warnings; SEO has zero hard errors and the same six pre-existing warnings. No incomplete French page is published.

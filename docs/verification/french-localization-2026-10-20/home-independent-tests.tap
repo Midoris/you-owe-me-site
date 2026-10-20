@@ -1,0 +1,328 @@
+TAP version 13
+# Subtest: every site route satisfies the language-support inclusion and exclusion contract
+ok 1 - every site route satisfies the language-support inclusion and exclusion contract
+  ---
+  duration_ms: 61.202417
+  type: 'test'
+  ...
+# Subtest: Spanish routes require Spanish document language while English routes keep English
+ok 2 - Spanish routes require Spanish document language while English routes keep English
+  ---
+  duration_ms: 0.258583
+  type: 'test'
+  ...
+# Subtest: the route audit rejects missing and duplicate integration assets
+ok 3 - the route audit rejects missing and duplicate integration assets
+  ---
+  duration_ms: 0.09525
+  type: 'test'
+  ...
+# Subtest: the route audit rejects anchors in navigation and sticky UI
+ok 4 - the route audit rejects anchors in navigation and sticky UI
+  ---
+  duration_ms: 0.079583
+  type: 'test'
+  ...
+# Subtest: the route audit requires a real conversion context and no authored render target
+ok 5 - the route audit requires a real conversion context and no authored render target
+  ---
+  duration_ms: 0.153084
+  type: 'test'
+  ...
+# Subtest: excluded routes reject every language-support integration surface
+ok 6 - excluded routes reject every language-support integration surface
+  ---
+  duration_ms: 0.061875
+  type: 'test'
+  ...
+# Subtest: German routes require German document language
+ok 7 - German routes require German document language
+  ---
+  duration_ms: 0.140333
+  type: 'test'
+  ...
+# Subtest: Spanish publications use Spanish regardless of browser language and link to the Spanish home
+ok 8 - Spanish publications use Spanish regardless of browser language and link to the Spanish home
+  ---
+  duration_ms: 0.664208
+  type: 'test'
+  ...
+# Subtest: normalizes valid locale variants and rejects malformed input
+ok 9 - normalizes valid locale variants and rejects malformed input
+  ---
+  duration_ms: 9.402083
+  type: 'test'
+  ...
+# Subtest: uses only the primary browser language and falls back to navigator.language
+ok 10 - uses only the primary browser language and falls back to navigator.language
+  ---
+  duration_ms: 0.231791
+  type: 'test'
+  ...
+# Subtest: the visual-QA locale override works only on local development hosts
+ok 11 - the visual-QA locale override works only on local development hosts
+  ---
+  duration_ms: 0.322625
+  type: 'test'
+  ...
+# Subtest: local preview takes precedence without changing production detection
+ok 12 - local preview takes precedence without changing production detection
+  ---
+  duration_ms: 0.27925
+  type: 'test'
+  ...
+# Subtest: matches all supported non-English regional variants
+ok 13 - matches all supported non-English regional variants
+  ---
+  duration_ms: 0.205375
+  type: 'test'
+  ...
+# Subtest: suppresses English, unsupported, blank, and malformed languages
+ok 14 - suppresses English, unsupported, blank, and malformed languages
+  ---
+  duration_ms: 0.117125
+  type: 'test'
+  ...
+# Subtest: provides the exact localized copy for every supported non-English language
+ok 15 - provides the exact localized copy for every supported non-English language
+  ---
+  duration_ms: 0.38575
+  type: 'test'
+  ...
+# Subtest: renders one passive localized label and is idempotent
+ok 16 - renders one passive localized label and is idempotent
+  ---
+  duration_ms: 0.294583
+  type: 'test'
+  ...
+# Subtest: renders Arabic with rtl direction and an isolated product name
+ok 17 - renders Arabic with rtl direction and an isolated product name
+  ---
+  duration_ms: 0.349708
+  type: 'test'
+  ...
+# Subtest: does not render for English, unsupported languages, or a missing target
+ok 18 - does not render for English, unsupported languages, or a missing target
+  ---
+  duration_ms: 0.196
+  type: 'test'
+  ...
+# Subtest: never renders into navigation or sticky UI
+ok 19 - never renders into navigation or sticky UI
+  ---
+  duration_ms: 0.05525
+  type: 'test'
+  ...
+# Subtest: initializes safely both before and after DOMContentLoaded
+ok 20 - initializes safely both before and after DOMContentLoaded
+  ---
+  duration_ms: 0.086958
+  type: 'test'
+  ...
+# Subtest: rendering never reads or mutates links and does not require analytics
+ok 21 - rendering never reads or mutates links and does not require analytics
+  ---
+  duration_ms: 0.15725
+  type: 'test'
+  ...
+# Subtest: the production component contains no tracking, storage, network, or debug hooks
+ok 22 - the production component contains no tracking, storage, network, or debug hooks
+  ---
+  duration_ms: 0.245542
+  type: 'test'
+  ...
+# Subtest: German publications use German regardless of browser language and link to the German home
+ok 23 - German publications use German regardless of browser language and link to the German home
+  ---
+  duration_ms: 0.052625
+  type: 'test'
+  ...
+# Subtest: French publications keep French text and home links for all browser languages
+ok 24 - French publications keep French text and home links for all browser languages
+  ---
+  duration_ms: 0.123875
+  type: 'test'
+  ...
+# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters
+ok 25 - French admission requires review and produces reciprocal idempotent five-language clusters
+  ---
+  duration_ms: 6.726375
+  type: 'test'
+  ...
+# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+ok 26 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries
+  ---
+  duration_ms: 382.713125
+  type: 'test'
+  ...
+# Subtest: homepage hero keeps its primary download and separate QR handoff
+ok 27 - homepage hero keeps its primary download and separate QR handoff
+  ---
+  duration_ms: 0.705708
+  type: 'test'
+  ...
+# Subtest: story, import, definition, and generated situation hub stay in the intended order
+ok 28 - story, import, definition, and generated situation hub stay in the intended order
+  ---
+  duration_ms: 1.458458
+  type: 'test'
+  ...
+# Subtest: generated hub retains its registered homepage content and placement
+ok 29 - generated hub retains its registered homepage content and placement
+  ---
+  duration_ms: 0.616375
+  type: 'test'
+  ...
+# Subtest: the condensed feature section and included-tools links remain intact
+ok 30 - the condensed feature section and included-tools links remain intact
+  ---
+  duration_ms: 0.284666
+  type: 'test'
+  ...
+# Subtest: homepage styles remain scoped and responsive
+ok 31 - homepage styles remain scoped and responsive
+  ---
+  duration_ms: 0.335667
+  type: 'test'
+  ...
+# Subtest: homepage search-facing metadata and software schema remain unchanged
+ok 32 - homepage search-facing metadata and software schema remain unchanged
+  ---
+  duration_ms: 0.134917
+  type: 'test'
+  ...
+# Subtest: uses the conservative desktop eligibility table
+ok 33 - uses the conservative desktop eligibility table
+  ---
+  duration_ms: 1.648667
+  type: 'test'
+  ...
+# Subtest: records a qualifying view once and resets without events when eligibility changes
+ok 34 - records a qualifying view once and resets without events when eligibility changes
+  ---
+  duration_ms: 1.416833
+  type: 'test'
+  ...
+# Subtest: a quick deliberate request records offer before request and close returns focus
+ok 35 - a quick deliberate request records offer before request and close returns focus
+  ---
+  duration_ms: 0.14525
+  type: 'test'
+  ...
+# Subtest: repeated initialization shares one controller and one offer/request sequence
+ok 36 - repeated initialization shares one controller and one offer/request sequence
+  ---
+  duration_ms: 0.169166
+  type: 'test'
+  ...
+# Subtest: visible mode only records a loaded QR after foreground dwell, never a legacy offer or request
+ok 37 - visible mode only records a loaded QR after foreground dwell, never a legacy offer or request
+  ---
+  duration_ms: 0.343541
+  type: 'test'
+  ...
+# Subtest: visible mode hides a broken QR and cancels/deduplicates through breakpoint and lifecycle changes
+ok 38 - visible mode hides a broken QR and cancels/deduplicates through breakpoint and lifecycle changes
+  ---
+  duration_ms: 0.277875
+  type: 'test'
+  ...
+# Subtest: a loaded eligible visible QR hides only its explicitly paired App Store anchor
+ok 39 - a loaded eligible visible QR hides only its explicitly paired App Store anchor
+  ---
+  duration_ms: 0.182542
+  type: 'test'
+  ...
+# Subtest: paired anchors stay available for pending or failed QR images and restore on eligibility changes or destroy
+ok 40 - paired anchors stay available for pending or failed QR images and restore on eligibility changes or destroy
+  ---
+  duration_ms: 0.237916
+  type: 'test'
+  ...
+# Subtest: a paired badge with keyboard focus is hidden only after focus leaves it
+ok 41 - a paired badge with keyboard focus is hidden only after focus leaves it
+  ---
+  duration_ms: 0.258167
+  type: 'test'
+  ...
+# Subtest: loss of desktop eligibility returns focus from a visible QR panel to its restored paired badge
+ok 42 - loss of desktop eligibility returns focus from a visible QR panel to its restored paired badge
+  ---
+  duration_ms: 0.602292
+  type: 'test'
+  ...
+# Subtest: a missing or initially hidden replacement target is harmless and keeps the visible QR behavior
+ok 43 - a missing or initially hidden replacement target is harmless and keeps the visible QR behavior
+  ---
+  duration_ms: 0.235208
+  type: 'test'
+  ...
+# Subtest: a QR inside a hidden ancestor never records an exposure
+ok 44 - a QR inside a hidden ancestor never records an exposure
+  ---
+  duration_ms: 0.088833
+  type: 'test'
+  ...
+# Subtest: only completed translations join the registry and have substantive public HTML
+ok 45 - only completed translations join the registry and have substantive public HTML
+  ---
+  duration_ms: 15.803292
+  type: 'test'
+  ...
+# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries
+ok 46 - English authored content differs from the accepted base only by locale links and declared shared cache queries
+  ---
+  duration_ms: 98.452666
+  type: 'test'
+  ...
+# Subtest: locale routes are unique, stable and contain no financial inputs
+ok 47 - locale routes are unique, stable and contain no financial inputs
+  ---
+  duration_ms: 0.709875
+  type: 'test'
+  ...
+# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release
+ok 48 - Spanish authored HTML stays byte-for-byte intact from the accepted public release
+  ---
+  duration_ms: 92.258417
+  type: 'test'
+  ...
+# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out
+ok 49 - one generator produces reciprocal three-language switches and leaves planned pages out
+  ---
+  duration_ms: 3.170709
+  type: 'test'
+  ...
+# Subtest: German registry inherits source routing without linking to unfinished locale pages
+ok 50 - German registry inherits source routing without linking to unfinished locale pages
+  ---
+  duration_ms: 0.150959
+  type: 'test'
+  ...
+# Subtest: unreviewed German routes do not enter public discovery or runtime matching
+ok 51 - unreviewed German routes do not enter public discovery or runtime matching
+  ---
+  duration_ms: 0.279833
+  type: 'test'
+  ...
+# Subtest: a missing reviewed counterpart fails before any existing page is changed
+ok 52 - a missing reviewed counterpart fails before any existing page is changed
+  ---
+  duration_ms: 1.177334
+  type: 'test'
+  ...
+# Subtest: analytics preserves English metadata and maps only completed localized routes
+ok 53 - analytics preserves English metadata and maps only completed localized routes
+  ---
+  duration_ms: 17.255042
+  type: 'test'
+  ...
+1..53
+# tests 53
+# suites 0
+# pass 53
+# fail 0
+# cancelled 0
+# skipped 0
+# todo 0
+# duration_ms 444.757084

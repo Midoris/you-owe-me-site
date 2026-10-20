@@ -15,6 +15,7 @@ export const INCLUDED_ROUTE_PREFIXES = Object.freeze([
   "/es/",
   "/de/",
   "/ar/",
+  "/fr/",
   "/blog/",
   "/solutions/",
   "/tools/",

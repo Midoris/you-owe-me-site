@@ -1,0 +1,395 @@
+{
+  "accepted": true,
+  "rows": [
+    {
+      "lang": "fr",
+      "dir": "ltr",
+      "width": 320,
+      "pageWidth": 320,
+      "hero": "Sachez ce qu’il reste à rembourser.",
+      "overflows": [
+        {
+          "tag": "H2",
+          "class": "sr-only",
+          "scroll": 633,
+          "width": 1,
+          "text": "Un solde clair après plusieurs mois de remboursements partiels"
+        },
+        {
+          "tag": "SECTION",
+          "class": "lt-pageSection lt-proofSection",
+          "scroll": 306,
+          "width": 292,
+          "text": "\n            \n              Pour les dépenses du quotidien aussi, pas seulement les prêts ponctuels\n            \n\n            \n             "
+        },
+        {
+          "tag": "DIV",
+          "class": "lt-reviewRail",
+          "scroll": 4954,
+          "width": 320,
+          "text": "\n              \n                ★★★★★\n                L’amour d’une mère\n                \n                  « You Owe Me me sauve la vie. Me"
+        }
+      ],
+      "switches": [
+        {
+          "lang": "en",
+          "dir": "",
+          "href": "/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.8px"
+        },
+        {
+          "lang": "es",
+          "dir": "",
+          "href": "/es/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.8px"
+        },
+        {
+          "lang": "de",
+          "dir": "",
+          "href": "/de/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.8px"
+        },
+        {
+          "lang": "ar",
+          "dir": "rtl",
+          "href": "/ar/",
+          "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+          "spacing": "normal"
+        },
+        {
+          "lang": "fr",
+          "dir": "",
+          "href": "/fr/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.8px"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/fr/iphone-handoff/app-store.png",
+          "loaded": true,
+          "transform": "none"
+        },
+        {
+          "src": "/images/fr/home/video-poster.svg",
+          "loaded": false,
+          "transform": "matrix(1.01, 0, 0, 1.01, 0, 0)"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "lang": "fr",
+      "dir": "ltr",
+      "width": 390,
+      "pageWidth": 390,
+      "hero": "Sachez ce qu’il reste à rembourser.",
+      "overflows": [
+        {
+          "tag": "H2",
+          "class": "sr-only",
+          "scroll": 697,
+          "width": 1,
+          "text": "Un solde clair après plusieurs mois de remboursements partiels"
+        },
+        {
+          "tag": "SECTION",
+          "class": "lt-pageSection lt-proofSection",
+          "scroll": 375,
+          "width": 359,
+          "text": "\n            \n              Pour les dépenses du quotidien aussi, pas seulement les prêts ponctuels\n            \n\n            \n             "
+        },
+        {
+          "tag": "DIV",
+          "class": "lt-reviewRail",
+          "scroll": 5930,
+          "width": 390,
+          "text": "\n              \n                ★★★★★\n                L’amour d’une mère\n                \n                  « You Owe Me me sauve la vie. Me"
+        }
+      ],
+      "switches": [
+        {
+          "lang": "en",
+          "dir": "",
+          "href": "/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.88px"
+        },
+        {
+          "lang": "es",
+          "dir": "",
+          "href": "/es/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.88px"
+        },
+        {
+          "lang": "de",
+          "dir": "",
+          "href": "/de/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.88px"
+        },
+        {
+          "lang": "ar",
+          "dir": "rtl",
+          "href": "/ar/",
+          "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+          "spacing": "normal"
+        },
+        {
+          "lang": "fr",
+          "dir": "",
+          "href": "/fr/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.88px"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/fr/iphone-handoff/app-store.png",
+          "loaded": true,
+          "transform": "none"
+        },
+        {
+          "src": "/images/fr/home/video-poster.svg",
+          "loaded": false,
+          "transform": "matrix(1.01, 0, 0, 1.01, 0, 0)"
+        }
+      ],
+      "menu": {
+        "text": "YOU OWE ME\nSOLUTIONS (EN ANGLAIS)\nFONCTIONNALITÉS (EN ANGLAIS)\nAVIS (EN ANGLAIS)\nOUTILS (EN ANGLAIS)\nCOMPARATIFS (EN ANGLAIS)\nBLOG (EN ANGLAIS)",
+        "closeLabel": "Fermer le menu"
+      },
+      "keyboardFocus": {
+        "tag": "A",
+        "text": "Importer l’historique d’un prêt (en anglais)",
+        "outline": "solid",
+        "outlineWidth": "3px"
+      },
+      "errors": []
+    },
+    {
+      "lang": "fr",
+      "dir": "ltr",
+      "width": 600,
+      "pageWidth": 600,
+      "hero": "Sachez ce qu’il reste à rembourser.",
+      "overflows": [
+        {
+          "tag": "H2",
+          "class": "sr-only",
+          "scroll": 697,
+          "width": 1,
+          "text": "Un solde clair après plusieurs mois de remboursements partiels"
+        },
+        {
+          "tag": "SECTION",
+          "class": "lt-pageSection lt-proofSection",
+          "scroll": 585,
+          "width": 569,
+          "text": "\n            \n              Pour les dépenses du quotidien aussi, pas seulement les prêts ponctuels\n            \n\n            \n             "
+        },
+        {
+          "tag": "DIV",
+          "class": "lt-reviewRail",
+          "scroll": 5932,
+          "width": 600,
+          "text": "\n              \n                ★★★★★\n                L’amour d’une mère\n                \n                  « You Owe Me me sauve la vie. Me"
+        }
+      ],
+      "switches": [
+        {
+          "lang": "en",
+          "dir": "",
+          "href": "/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.88px"
+        },
+        {
+          "lang": "es",
+          "dir": "",
+          "href": "/es/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.88px"
+        },
+        {
+          "lang": "de",
+          "dir": "",
+          "href": "/de/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.88px"
+        },
+        {
+          "lang": "ar",
+          "dir": "rtl",
+          "href": "/ar/",
+          "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+          "spacing": "normal"
+        },
+        {
+          "lang": "fr",
+          "dir": "",
+          "href": "/fr/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "0.88px"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/fr/iphone-handoff/app-store.png",
+          "loaded": true,
+          "transform": "none"
+        },
+        {
+          "src": "/images/fr/home/video-poster.svg",
+          "loaded": false,
+          "transform": "matrix(1.01, 0, 0, 1.01, 0, 0)"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "lang": "fr",
+      "dir": "ltr",
+      "width": 1440,
+      "pageWidth": 1440,
+      "hero": "Sachez ce qu’il reste à rembourser.",
+      "overflows": [
+        {
+          "tag": "H2",
+          "class": "sr-only",
+          "scroll": 1176,
+          "width": 1,
+          "text": "Un solde clair après plusieurs mois de remboursements partiels"
+        },
+        {
+          "tag": "DIV",
+          "class": "lt-reviewRail",
+          "scroll": 7243,
+          "width": 1303,
+          "text": "\n              \n                ★★★★★\n                L’amour d’une mère\n                \n                  « You Owe Me me sauve la vie. Me"
+        }
+      ],
+      "switches": [
+        {
+          "lang": "en",
+          "dir": "",
+          "href": "/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "1.2px"
+        },
+        {
+          "lang": "es",
+          "dir": "",
+          "href": "/es/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "1.2px"
+        },
+        {
+          "lang": "de",
+          "dir": "",
+          "href": "/de/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "1.2px"
+        },
+        {
+          "lang": "ar",
+          "dir": "rtl",
+          "href": "/ar/",
+          "font": "\"Geeza Pro\", \"Noto Naskh Arabic\", Tahoma, Arial, sans-serif",
+          "spacing": "normal"
+        },
+        {
+          "lang": "fr",
+          "dir": "",
+          "href": "/fr/",
+          "font": "\"Source Sans Pro\", Helvetica, sans-serif",
+          "spacing": "1.2px"
+        }
+      ],
+      "images": [
+        {
+          "src": "/images/fr/iphone-handoff/app-store.png",
+          "loaded": true,
+          "transform": "none"
+        },
+        {
+          "src": "/images/fr/home/video-poster.svg",
+          "loaded": false,
+          "transform": "matrix(1.01, 0, 0, 1.01, 0, 0)"
+        }
+      ],
+      "errors": []
+    },
+    {
+      "width": 390,
+      "brokenQR": true,
+      "primaryRestored": true,
+      "qrVisible": false
+    },
+    {
+      "width": 1440,
+      "brokenQR": true,
+      "primaryRestored": true,
+      "qrVisible": true
+    },
+    {
+      "width": 390,
+      "target": "en",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 390,
+      "target": "es",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 390,
+      "target": "de",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 390,
+      "target": "ar",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 1440,
+      "target": "en",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 1440,
+      "target": "es",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 1440,
+      "target": "de",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "width": 1440,
+      "target": "ar",
+      "frenchReturnDirection": "ltr",
+      "pageLocaleWins": true
+    },
+    {
+      "noJS": true,
+      "mainTextLength": 21940,
+      "staticFrench": true,
+      "usdArithmeticPreserved": true
+    }
+  ],
+  "limits": "Desktop Chrome with viewport emulation. Analytics/external hosts blocked. No real QR scan, Store opening, physical iPhone, Safari or native save."
+}

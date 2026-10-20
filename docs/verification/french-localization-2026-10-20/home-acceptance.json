@@ -1,0 +1,60 @@
+{
+  "allPassed": true,
+  "verifiedAtUTC": "2026-10-20T08:25:58.127012+00:00",
+  "route": "/fr/",
+  "generatorByteIdempotent": true,
+  "checks": [
+    {
+      "command": [
+        "node",
+        "scripts/sync-site-locales.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Updated 21 reviewed language pages.\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/build-sitemap.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "Sitemap built with 98 indexable URL(s).\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "scripts/audit-page-design.mjs",
+        "/fr/"
+      ],
+      "exitCode": 0,
+      "stdout": "Page design audit: /fr/\nBody class: homepage-page\nAudited stylesheets: styles/landing.css\nHard errors: 0\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "python3",
+        "docs/verification/french-localization-2026-10-20/raw-html-check.py",
+        "/fr/"
+      ],
+      "exitCode": 0,
+      "stdout": "{\"allPassed\": true, \"route\": \"/fr/\", \"lang\": \"fr\", \"direction\": \"ltr\", \"canonical\": [\"https://you-owe-me.com/fr/\"], \"alternates\": {\"en\": \"https://you-owe-me.com/\", \"es\": \"https://you-owe-me.com/es/\", \"de\": \"https://you-owe-me.com/de/\", \"ar\": \"https://you-owe-me.com/ar/\", \"fr\": \"https://you-owe-me.com/fr/\", \"x-default\": \"https://you-owe-me.com/\"}, \"staticMainTextCharacters\": 31703, \"staticLinkCount\": 82, \"missingLinksOrFragments\": [], \"noJavaScriptTranslationRequired\": true}\n",
+      "stderr": ""
+    },
+    {
+      "command": [
+        "node",
+        "--test",
+        "scripts/french-locales.test.mjs",
+        "scripts/site-locales.test.mjs",
+        "scripts/homepage-loan-value.test.mjs",
+        "scripts/organic-task-entry.test.mjs",
+        "scripts/app-language-support-site.test.mjs"
+      ],
+      "exitCode": 0,
+      "stdout": "TAP version 13\n# Subtest: every site route satisfies the language-support inclusion and exclusion contract\nok 1 - every site route satisfies the language-support inclusion and exclusion contract\n  ---\n  duration_ms: 48.4925\n  type: 'test'\n  ...\n# Subtest: Spanish routes require Spanish document language while English routes keep English\nok 2 - Spanish routes require Spanish document language while English routes keep English\n  ---\n  duration_ms: 0.26525\n  type: 'test'\n  ...\n# Subtest: the route audit rejects missing and duplicate integration assets\nok 3 - the route audit rejects missing and duplicate integration assets\n  ---\n  duration_ms: 0.096167\n  type: 'test'\n  ...\n# Subtest: the route audit rejects anchors in navigation and sticky UI\nok 4 - the route audit rejects anchors in navigation and sticky UI\n  ---\n  duration_ms: 0.081708\n  type: 'test'\n  ...\n# Subtest: the route audit requires a real conversion context and no authored render target\nok 5 - the route audit requires a real conversion context and no authored render target\n  ---\n  duration_ms: 0.154041\n  type: 'test'\n  ...\n# Subtest: excluded routes reject every language-support integration surface\nok 6 - excluded routes reject every language-support integration surface\n  ---\n  duration_ms: 0.056792\n  type: 'test'\n  ...\n# Subtest: German routes require German document language\nok 7 - German routes require German document language\n  ---\n  duration_ms: 0.137583\n  type: 'test'\n  ...\n# Subtest: French admission requires review and produces reciprocal idempotent five-language clusters\nok 8 - French admission requires review and produces reciprocal idempotent five-language clusters\n  ---\n  duration_ms: 4.425041\n  type: 'test'\n  ...\n# Subtest: all four released languages retain authored bytes outside owned locale blocks and shared cache queries\nok 9 - all four released languages retain authored bytes outside owned locale blocks and shared cache queries\n  ---\n  duration_ms: 266.367334\n  type: 'test'\n  ...\n# Subtest: homepage hero keeps its primary download and separate QR handoff\nok 10 - homepage hero keeps its primary download and separate QR handoff\n  ---\n  duration_ms: 0.75575\n  type: 'test'\n  ...\n# Subtest: story, import, definition, and generated situation hub stay in the intended order\nok 11 - story, import, definition, and generated situation hub stay in the intended order\n  ---\n  duration_ms: 1.022875\n  type: 'test'\n  ...\n# Subtest: generated hub retains its registered homepage content and placement\nok 12 - generated hub retains its registered homepage content and placement\n  ---\n  duration_ms: 0.285041\n  type: 'test'\n  ...\n# Subtest: the condensed feature section and included-tools links remain intact\nok 13 - the condensed feature section and included-tools links remain intact\n  ---\n  duration_ms: 0.2435\n  type: 'test'\n  ...\n# Subtest: homepage styles remain scoped and responsive\nok 14 - homepage styles remain scoped and responsive\n  ---\n  duration_ms: 0.322333\n  type: 'test'\n  ...\n# Subtest: homepage search-facing metadata and software schema remain unchanged\nok 15 - homepage search-facing metadata and software schema remain unchanged\n  ---\n  duration_ms: 0.1285\n  type: 'test'\n  ...\n# Subtest: People disclosure preserves node, open state, identities and results across edits\nok 16 - People disclosure preserves node, open state, identities and results across edits\n  ---\n  duration_ms: 37.842917\n  type: 'test'\n  ...\n# Subtest: expense DOM and keyboard order puts amount and payer before participants and optional description\nok 17 - expense DOM and keyboard order puts amount and payer before participants and optional description\n  ---\n  duration_ms: 13.023041\n  type: 'test'\n  ...\n# Subtest: existing person/expense limits, payer removal, validation and reset semantics survive compact entry\nok 18 - existing person/expense limits, payer removal, validation and reset semantics survive compact entry\n  ---\n  duration_ms: 168.702125\n  type: 'test'\n  ...\n# Subtest: copy/share success, cancellation and fallback keep canonical URLs and fixed action metadata\nok 19 - copy/share success, cancellation and fallback keep canonical URLs and fixed action metadata\n  ---\n  duration_ms: 45.628125\n  type: 'test'\n  ...\n# Subtest: only explicit continuation uploads, rejects stale replies and restores edited state on Back\nok 20 - only explicit continuation uploads, rejects stale replies and restores edited state on Back\n  ---\n  duration_ms: 43.028958\n  type: 'test'\n  ...\n# Subtest: three article messages are selectable before the image, with matching templates and one shared controller\nok 21 - three article messages are selectable before the image, with matching templates and one shared controller\n  ---\n  duration_ms: 1.535375\n  type: 'test'\n  ...\n# Subtest: all three article copies emit only existing fixed metadata and leave app actions in place\nok 22 - all three article copies emit only existing fixed metadata and leave app actions in place\n  ---\n  duration_ms: 6.468042\n  type: 'test'\n  ...\n# Subtest: article clipboard denial falls back; complete failure reports manual copying without a success event\nok 23 - article clipboard denial falls back; complete failure reports manual copying without a success event\n  ---\n  duration_ms: 8.57975\n  type: 'test'\n  ...\n# Subtest: only completed translations join the registry and have substantive public HTML\nok 24 - only completed translations join the registry and have substantive public HTML\n  ---\n  duration_ms: 12.082542\n  type: 'test'\n  ...\n# Subtest: English authored content differs from the accepted base only by locale links and declared shared cache queries\nok 25 - English authored content differs from the accepted base only by locale links and declared shared cache queries\n  ---\n  duration_ms: 63.560083\n  type: 'test'\n  ...\n# Subtest: locale routes are unique, stable and contain no financial inputs\nok 26 - locale routes are unique, stable and contain no financial inputs\n  ---\n  duration_ms: 0.65625\n  type: 'test'\n  ...\n# Subtest: Spanish authored HTML stays byte-for-byte intact from the accepted public release\nok 27 - Spanish authored HTML stays byte-for-byte intact from the accepted public release\n  ---\n  duration_ms: 60.311167\n  type: 'test'\n  ...\n# Subtest: one generator produces reciprocal three-language switches and leaves planned pages out\nok 28 - one generator produces reciprocal three-language switches and leaves planned pages out\n  ---\n  duration_ms: 3.291875\n  type: 'test'\n  ...\n# Subtest: German registry inherits source routing without linking to unfinished locale pages\nok 29 - German registry inherits source routing without linking to unfinished locale pages\n  ---\n  duration_ms: 0.156333\n  type: 'test'\n  ...\n# Subtest: unreviewed German routes do not enter public discovery or runtime matching\nok 30 - unreviewed German routes do not enter public discovery or runtime matching\n  ---\n  duration_ms: 0.287542\n  type: 'test'\n  ...\n# Subtest: a missing reviewed counterpart fails before any existing page is changed\nok 31 - a missing reviewed counterpart fails before any existing page is changed\n  ---\n  duration_ms: 1.1475\n  type: 'test'\n  ...\n# Subtest: analytics preserves English metadata and maps only completed localized routes\nok 32 - analytics preserves English metadata and maps only completed localized routes\n  ---\n  duration_ms: 12.228042\n  type: 'test'\n  ...\n1..32\n# tests 32\n# suites 0\n# pass 32\n# fail 0\n# cancelled 0\n# skipped 0\n# todo 0\n# duration_ms 369.475167\n",
+      "stderr": ""
+    }
+  ]
+}

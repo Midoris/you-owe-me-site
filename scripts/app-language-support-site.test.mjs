@@ -13,7 +13,7 @@ function includedHtml(body) {
 test("every site route satisfies the language-support inclusion and exclusion contract", () => {
   const result = auditWholeSite();
   assert.deepEqual(result.errors, []);
-  const localizedPages = result.files.filter(file => /[/\\](?:es|de|ar)[/\\]/.test(file)).length;
+  const localizedPages = result.files.filter(file => /[/\\](?:es|de|ar|fr)[/\\]/.test(file)).length;
   assert.equal(result.counts.included, 81 + localizedPages);
   assert.equal(result.counts.excluded, 11);
   assert.equal(result.counts.unclassified, 0);

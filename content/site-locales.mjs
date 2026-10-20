@@ -89,7 +89,7 @@ export const arabicShared = Object.freeze({
   nextStep: "اطّلع على الموارد ذات الصلة أو تابع في You Owe Me على iPhone.",
 });
 export const frenchPages = [
-  { en: "/", fr: "/fr/", title: "You Owe Me : suivez vos prêts, dépenses et remboursements", complete: false },
+  { en: "/", fr: "/fr/", title: "You Owe Me : suivez vos prêts, dépenses et remboursements", complete: true },
   { en: "/solutions/app-to-track-money-owed/", fr: "/fr/solutions/application-suivi-argent-du/", title: "Application pour suivre l’argent qu’on vous doit", complete: false },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", fr: "/fr/blog/suivre-qui-vous-doit-de-l-argent/", title: "Comment savoir qui vous doit de l’argent", complete: false },
   { en: "/solutions/personal-loan-repayment-tracker/", fr: "/fr/solutions/suivi-remboursement-pret-personnel/", title: "Suivez vos prêts personnels et leurs remboursements", complete: false },

@@ -1,0 +1,13 @@
+{
+  "accepted": true,
+  "checkedAt": "2026-10-20T08:27:36.129Z",
+  "htmlSha256": "baa69d0c04ff4f969000485b18e3ca5b4b1f7e730b65901cd857228fce53e174",
+  "checks": [
+    "Own French canonical, LTR/static content, crawlable robots and reciprocal reviewed cluster",
+    "Every authored local link, fragment and direct resource exists; IDs are unique",
+    "Native/browser/financial meaning preserves source boundaries and explicit USD examples",
+    "Only home is admitted and every incomplete French target remains a marked working English destination",
+    "Shared dependencies are fresh and storefront/campaign and media disclosures are preserved",
+    "Translated schema parses and keeps app identity, explicit source currency and English video language"
+  ]
+}

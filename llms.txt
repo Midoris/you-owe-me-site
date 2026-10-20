@@ -296,3 +296,11 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 - [تتبّع القروض الشخصية وسدادها](https://you-owe-me.com/ar/solutions/personal-loan-repayment-tracker/)
 - [حاسبة تقسيم المصروفات المشتركة](https://you-owe-me.com/ar/tools/split-expense-calculator/)
 <!-- arabic-pages:end -->
+
+<!-- french-pages:start -->
+## Pages en français
+
+Contenus publics en français. Chaque page possède sa propre URL canonique. Les liens vers des ressources disponibles uniquement en anglais sont signalés.
+
+- [You Owe Me : suivez vos prêts, dépenses et remboursements](https://you-owe-me.com/fr/)
+<!-- french-pages:end -->

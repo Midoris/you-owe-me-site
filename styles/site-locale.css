@@ -101,3 +101,7 @@ html[lang="fr"] #main { overflow-wrap: break-word; }
 @media(max-width:980px) {
   html[lang="fr"] body:not(.homepage-page) .site-locale-section { padding-top:3rem; }
 }
+/* Keep French fallback labels in the sentence instead of separate flex columns. */
+html[lang="fr"] body #main :is(.lt-cardCta,.lt-textCta,.lt-situationPrimaryCta,.lt-reviewMoreLink) {
+  display: inline-block; white-space: normal; line-height: 1.5;
+}
