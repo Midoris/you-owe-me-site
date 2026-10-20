@@ -4,9 +4,9 @@
 
 Decision: **accepted**. No material language, financial-direction, product-meaning or copy-template finding. Informal singular instructions and neutral record-confirmation tone are natural. Two optional polish notes below are not acceptance blockers.
 
-Reviewed hashes before optional polish:
+Reviewed hashes after root applied the optional polish (rechecked):
 
-- HTML: `9ad38d6b21aa380d9dd487d4622f7c66d09c1a20d64cc02ad401e9ca71e8b423`.
+- HTML: `103f09ffa2fdde3013818ec6872e4d51bb7a2a3f84ab2d56f577faeee0a564de`.
 - Shared copy runtime: `1e4c78b37d6cd80bb19538f31c5f2ff99043bfc00571c4d4b304672a34ebc73f`.
 
 ## Accepted checks
@@ -20,10 +20,10 @@ Reviewed hashes before optional polish:
 - Loan import is explicitly English, one private loan at a time, checked/corrected before saving, without ongoing spreadsheet synchronization. Browser calculations, copied notes and the maintained iPhone record remain distinct. One person can keep records and share context without requiring the other person to install the app. No unsupported payment execution, debt collection, full browser app or legal/security guarantee is introduced.
 - Related cards and final CTAs preserve source scope. The guide recommends the simplest adequate method and keeps private loan planning, group repayments, receipts, partial repayments and running balance concepts distinct. Existing analytics identifiers and success-only runtime event semantics are unchanged by copy wording.
 
-## Optional polish
+## Optional polish applied and rechecked
 
-- `de/blog/wer-schuldet-mir-geld/index.html:266`: `aria-label="Was du mit diesem Leitfaden festhalten kannst"` reads more smoothly than `Was dir dieser Leitfaden hilft festzuhalten`.
-- FAQ/schema phrase `gelassener zu erinnern` can be made more idiomatic with `gelassener nachzufragen` or `gelassener an Zahlungen zu erinnern`. Current intended meaning is understandable.
+- `de/blog/wer-schuldet-mir-geld/index.html:266`: `aria-label="Was du mit diesem Leitfaden festhalten kannst"` now replaces `Was dir dieser Leitfaden hilft festzuhalten`; verified in the saved page.
+- FAQ/schema phrase `gelassener zu erinnern` can be made more idiomatic with `gelassener nachzufragen` or `gelassener an Zahlungen zu erinnern`. Root chose `gelassener nachzufragen` in both visible text and schema; verified in the saved page.
 
 This is static language/product review. Actual Clipboard API/fallback/failure interactions, event payload verification, timer behavior, responsive layout and no-JS behavior require the separate root technical evidence. German production completion remains gated during review.
 

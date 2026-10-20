@@ -1,0 +1,125 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 390,
+      "from": "en",
+      "to": "es",
+      "route": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "en",
+      "to": "de",
+      "route": "/de/loesungen/private-darlehen-verwalten/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "en",
+      "route": "/solutions/personal-loan-repayment-tracker/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "es",
+      "to": "de",
+      "route": "/de/loesungen/private-darlehen-verwalten/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "en",
+      "route": "/solutions/personal-loan-repayment-tracker/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 390,
+      "from": "de",
+      "to": "es",
+      "route": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "es",
+      "route": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "en",
+      "to": "de",
+      "route": "/de/loesungen/private-darlehen-verwalten/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "en",
+      "route": "/solutions/personal-loan-repayment-tracker/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "es",
+      "to": "de",
+      "route": "/de/loesungen/private-darlehen-verwalten/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "en",
+      "route": "/solutions/personal-loan-repayment-tracker/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    },
+    {
+      "width": 1440,
+      "from": "de",
+      "to": "es",
+      "route": "/es/soluciones/seguimiento-de-prestamos-personales/",
+      "switchWorks": true,
+      "canonical": true,
+      "noOverflow": true,
+      "calculator": false
+    }
+  ]
+}

@@ -1,0 +1,5 @@
+# Personal-loan solution inventory
+
+English `/solutions/personal-loan-repayment-tracker/` → German `/de/loesungen/private-darlehen-verwalten/`. This is the solution, not the separate browser loan tool. Current English is meaning source.
+
+Hero/free one-active-plan scope; lender/borrower routing; external English import; initial1November2026 no-interest USD example1200−150=1050;200 installment−150=50 due1November; later300 allocation50+200+50 forward leaves750;100 newly borrowed leaves850. Separate diagram explicitly uses the initial snapshot: laptop1050+deposit400=person total1450. Loan Outlook totals stay separate by currency. Four plan-choice modes/interest terms; same-record corrections/history/reminders; already-in-progress table/no double subtraction; Timeline; PDF fields/product boundaries; method table; four nextsteps; finalCTA. Three English screenshots become honest labeled German HTML examples, not invented captures. Financial diagram stays translated HTML. Verified neutral QR reused.

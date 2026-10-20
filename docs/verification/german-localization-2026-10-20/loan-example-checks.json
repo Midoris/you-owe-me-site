@@ -1,0 +1,41 @@
+{
+  "allPassed": true,
+  "checks": [
+    {
+      "width": 320,
+      "snapshotValuesCorrect": true,
+      "laterSequenceCorrect": true,
+      "firstPaymentTwoLoanTotalCorrect": true,
+      "qrVisible": false,
+      "downloadAvailable": true,
+      "overflow": []
+    },
+    {
+      "width": 390,
+      "snapshotValuesCorrect": true,
+      "laterSequenceCorrect": true,
+      "firstPaymentTwoLoanTotalCorrect": true,
+      "qrVisible": false,
+      "downloadAvailable": true,
+      "overflow": []
+    },
+    {
+      "width": 600,
+      "snapshotValuesCorrect": true,
+      "laterSequenceCorrect": true,
+      "firstPaymentTwoLoanTotalCorrect": true,
+      "qrVisible": false,
+      "downloadAvailable": true,
+      "overflow": []
+    },
+    {
+      "width": 1440,
+      "snapshotValuesCorrect": true,
+      "laterSequenceCorrect": true,
+      "firstPaymentTwoLoanTotalCorrect": true,
+      "qrVisible": true,
+      "downloadAvailable": true,
+      "overflow": []
+    }
+  ]
+}

@@ -1,0 +1,44 @@
+{
+  "allPassed": true,
+  "route": "/de/loesungen/private-darlehen-verwalten/",
+  "lang": "de",
+  "canonical": [
+    "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/"
+  ],
+  "alternates": {
+    "en": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/",
+    "es": "https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/",
+    "de": "https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/",
+    "x-default": "https://you-owe-me.com/solutions/personal-loan-repayment-tracker/"
+  },
+  "staticTextCharacters": 23926,
+  "staticLinkCount": 55,
+  "localAssets": [
+    "/assets/css/fontawesome-all.min.css",
+    "/assets/css/main.css",
+    "/assets/css/noscript.css",
+    "/styles/site-nav.css",
+    "/styles/site-locale.css?v=locales20261020",
+    "/styles/solutions.css",
+    "/styles/solution-detail.css",
+    "/styles/best-next-step.css",
+    "/styles/personal-loan-repayment-tracker.css?v=record-once-20261019-1",
+    "/styles/app-language-support.css",
+    "/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1",
+    "/styles/loan-import-entry.css?v=20260925-mobile-layout-1",
+    "/images/de/iphone-handoff/app-store.png",
+    "/scripts/sales.js?v=locales20261020",
+    "/scripts/analytics.js?v=locales20261020",
+    "/scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1",
+    "/assets/js/jquery.min.js",
+    "/assets/js/jquery.scrollex.min.js",
+    "/assets/js/jquery.scrolly.min.js",
+    "/assets/js/browser.min.js",
+    "/assets/js/breakpoints.min.js",
+    "/assets/js/util.js",
+    "/assets/js/main.js?v=locales20261020",
+    "/scripts/app-language-support.js?v=locales20261020"
+  ],
+  "missingLinksOrFragments": [],
+  "noJavaScriptTranslationRequired": true
+}

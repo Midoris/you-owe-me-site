@@ -1,0 +1,23 @@
+{
+  "allPassed": true,
+  "focusedTests": 21,
+  "designErrors": 0,
+  "registryErrors": 0,
+  "seoErrors": 0,
+  "legacySeoWarnings": 6,
+  "idempotent": true,
+  "browserWidths": [
+    320,
+    390,
+    600,
+    1440
+  ],
+  "noVisibleElementOverflow": true,
+  "intentionallyHiddenCaptions": true,
+  "noJsMainText": 17838,
+  "rawStaticChars": 23926,
+  "all55LinksAndFragmentsValid": true,
+  "numericalSnapshotsAndLaterAllocationPassed": true,
+  "independentReviewsAccepted": true,
+  "threeIllustrativeExamples": true
+}

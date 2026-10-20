@@ -1,0 +1,89 @@
+[
+  {
+    "width": 390,
+    "pageWidth": 390,
+    "lang": "de",
+    "support": "✓You Owe Me ist auf Deutsch verfügbar.",
+    "initial": [
+      150,
+      200,
+      1200,
+      1050,
+      50,
+      50
+    ],
+    "snapshot": "Fiktives Beispiel · USD · Ohne Zinsen · Stand: 1. November 2026",
+    "continuations": [
+      [
+        300,
+        50,
+        200,
+        50,
+        750
+      ],
+      [
+        100,
+        850
+      ]
+    ],
+    "totals": [
+      1050,
+      400,
+      1450
+    ],
+    "storeLinks": [
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8"
+    ],
+    "mapLabel": "Nach der ersten Zahlung von 150 USD: 1.050 USD für das Laptop-Darlehen und 400 USD für die Kaution ergeben insgesamt 1.450 USD mit Jordan.",
+    "noDoubleSubtract": "Der offene Betrag ist der aktuelle Saldo. „Vor Beginn der Erfassung zurückgezahlt“ dient als Zusatzinformation und darf diesen Saldo nicht ein zweites Mal verringern.",
+    "examples": 3,
+    "errors": []
+  },
+  {
+    "width": 1440,
+    "pageWidth": 1440,
+    "lang": "de",
+    "support": "✓You Owe Me ist auf Deutsch verfügbar.",
+    "initial": [
+      150,
+      200,
+      1200,
+      1050,
+      50,
+      50
+    ],
+    "snapshot": "Fiktives Beispiel · USD · Ohne Zinsen · Stand: 1. November 2026",
+    "continuations": [
+      [
+        300,
+        50,
+        200,
+        50,
+        750
+      ],
+      [
+        100,
+        850
+      ]
+    ],
+    "totals": [
+      1050,
+      400,
+      1450
+    ],
+    "storeLinks": [
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8",
+      "https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8"
+    ],
+    "mapLabel": "Nach der ersten Zahlung von 150 USD: 1.050 USD für das Laptop-Darlehen und 400 USD für die Kaution ergeben insgesamt 1.450 USD mit Jordan.",
+    "noDoubleSubtract": "Der offene Betrag ist der aktuelle Saldo. „Vor Beginn der Erfassung zurückgezahlt“ dient als Zusatzinformation und darf diesen Saldo nicht ein zweites Mal verringern.",
+    "examples": 3,
+    "qrFailureLeavesDownload": true,
+    "errors": []
+  }
+]
