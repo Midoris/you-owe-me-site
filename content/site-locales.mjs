@@ -5,13 +5,13 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "ar20261020",
-  "/scripts/sales.js": "ar20261020",
-  "/scripts/anniversary-announcement.js": "ar20261020",
-  "/scripts/app-language-support.js": "ar20261020",
-  "/scripts/video-embed.js": "ar20261020",
-  "/assets/js/main.js": "ar20261020",
-  "/styles/site-locale.css": "ar20261020",
+  "/scripts/analytics.js": "fr20261020",
+  "/scripts/sales.js": "fr20261020",
+  "/scripts/anniversary-announcement.js": "fr20261020",
+  "/scripts/app-language-support.js": "fr20261020",
+  "/scripts/video-embed.js": "fr20261020",
+  "/assets/js/main.js": "fr20261020",
+  "/styles/site-locale.css": "fr20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "ar20261020",
   "/scripts/split-expense-locale.js": "ar20261020",
@@ -88,11 +88,30 @@ export const arabicShared = Object.freeze({
   useWhen: "لقراءة هذه الصفحة بالعربية واختيار الخطوة التالية.",
   nextStep: "اطّلع على الموارد ذات الصلة أو تابع في You Owe Me على iPhone.",
 });
+export const frenchPages = [
+  { en: "/", fr: "/fr/", title: "You Owe Me : suivez vos prêts, dépenses et remboursements", complete: false },
+  { en: "/solutions/app-to-track-money-owed/", fr: "/fr/solutions/application-suivi-argent-du/", title: "Application pour suivre l’argent qu’on vous doit", complete: false },
+  { en: "/blog/how-to-keep-track-of-who-owes-you-money/", fr: "/fr/blog/suivre-qui-vous-doit-de-l-argent/", title: "Comment savoir qui vous doit de l’argent", complete: false },
+  { en: "/solutions/personal-loan-repayment-tracker/", fr: "/fr/solutions/suivi-remboursement-pret-personnel/", title: "Suivez vos prêts personnels et leurs remboursements", complete: false },
+  { en: "/tools/split-expense-calculator/", fr: "/fr/outils/calculateur-partage-depenses/", title: "Calculateur de partage des dépenses", complete: false },
+];
+export const frenchShared = Object.freeze({
+  languageLabel: "Langue de la page", exampleLabel: "Exemple illustratif ; ce n’est pas une capture de l’application",
+  englishFallback: "en anglais", storeLabel: "Télécharger sur l’App Store",
+  navigation: { home: "Accueil", solutions: "Solutions", features: "Fonctionnalités", reviews: "Avis", tools: "Outils", compare: "Comparatifs", blog: "Blog" },
+  footer: { "/privacy-and-data/": "Confidentialité et données", "/privacy-policy/": "Politique de confidentialité", "/contact/": "Contact" },
+  sectionLabel: "Pages en français",
+  discoveryDescription: "Contenus publics en français. Chaque page possède sa propre URL canonique. Les liens vers des ressources disponibles uniquement en anglais sont signalés.",
+  primaryAudience: "Les personnes qui souhaitent suivre clairement leurs prêts, remboursements et dépenses partagées.",
+  useWhen: "Pour consulter cette page en français et choisir la suite.",
+  nextStep: "Consultez les ressources associées ou poursuivez dans You Owe Me sur iPhone.",
+});
 export const siteLocales = [
   { code: "en", label: "English", home: "/", pages: [], shared: { languageLabel: "Page language" } },
   { code: "es", label: "Español", home: "/es/", pages: spanishPages, shared: spanishShared, assetVersion: spanishAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "spanish", sectionClass: "site-spanish-section", nextStepComment: "Spanish next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Spanish next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "de", label: "Deutsch", home: "/de/", pages: germanPages, shared: germanShared, assetVersion: germanAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "german", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "ar", label: "العربية", direction: "rtl", home: "/ar/", pages: arabicPages, shared: arabicShared, assetVersion: "ar20261020", versionedAssets: [...spanishVersionedAssets, "/scripts/arabic-number-input.js"], sectionMarker: "arabic", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
+  { code: "fr", label: "Français", home: "/fr/", pages: frenchPages, shared: frenchShared, assetVersion: "fr20261020", versionedAssets: spanishVersionedAssets, sectionMarker: "french", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
 ];
 
 export function localeAssetVersion(locale, asset) {

@@ -1,0 +1,171 @@
+{
+  "accepted": true,
+  "checks": [
+    {
+      "width": 390,
+      "source": "en",
+      "target": "es",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "en",
+      "target": "de",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "en",
+      "target": "ar",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "es",
+      "target": "en",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "es",
+      "target": "de",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "es",
+      "target": "ar",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "de",
+      "target": "en",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "de",
+      "target": "es",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "de",
+      "target": "ar",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "ar",
+      "target": "en",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "ar",
+      "target": "es",
+      "directionReset": true
+    },
+    {
+      "width": 390,
+      "source": "ar",
+      "target": "de",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "en",
+      "target": "es",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "en",
+      "target": "de",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "en",
+      "target": "ar",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "es",
+      "target": "en",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "es",
+      "target": "de",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "es",
+      "target": "ar",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "de",
+      "target": "en",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "de",
+      "target": "es",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "de",
+      "target": "ar",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "ar",
+      "target": "en",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "ar",
+      "target": "es",
+      "directionReset": true
+    },
+    {
+      "width": 1440,
+      "source": "ar",
+      "target": "de",
+      "directionReset": true
+    },
+    {
+      "syntheticFrench": true,
+      "browserLocale": "en-US",
+      "pageLocaleWins": true,
+      "menuKeyboardCloses": true,
+      "anniversaryPhases": true
+    },
+    {
+      "syntheticFrench": true,
+      "browserLocale": "ar",
+      "pageLocaleWins": true,
+      "menuKeyboardCloses": true,
+      "anniversaryPhases": true
+    },
+    {
+      "syntheticFrench": true,
+      "browserLocale": "de",
+      "pageLocaleWins": true,
+      "menuKeyboardCloses": true,
+      "anniversaryPhases": true
+    }
+  ],
+  "limits": "Synthetic French fixture only; real French content acceptance follows separately. Analytics and external hosts blocked."
+}

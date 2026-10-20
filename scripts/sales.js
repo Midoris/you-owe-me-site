@@ -24,6 +24,12 @@
     "New Year": "Neujahr", "Valentine's Day": "Valentinstag", Easter: "Ostern",
     Halloween: "Halloween", "Singles' Day": "Singles’ Day", Thanksgiving: "Thanksgiving",
   });
+  const FRENCH_SALE_NAMES = Object.freeze({
+    Debug: "Test", "Father's Day": "Fête des pères aux États-Unis", "Independence Day": "Fête de l’indépendance des États-Unis",
+    "Black Friday": "Black Friday", "Cyber Monday": "Cyber Monday", Christmas: "Noël",
+    "New Year": "Nouvel An", "Valentine's Day": "Saint-Valentin", Easter: "Pâques",
+    Halloween: "Halloween", "Singles' Day": "Journée des célibataires", Thanksgiving: "Thanksgiving aux États-Unis",
+  });
   const ARABIC_SALE_NAMES = Object.freeze({
     Debug: "اختبار", "Father's Day": "عيد الأب في الولايات المتحدة", "Independence Day": "عيد الاستقلال الأمريكي",
     "Black Friday": "الجمعة السوداء", "Cyber Monday": "الاثنين الإلكتروني", Christmas: "عيد الميلاد",
@@ -235,6 +241,7 @@
   }
 
   function saleBadgeLabel(sale) {
+    if (document.documentElement?.lang === "fr") return sale ? FRENCH_SALE_NAMES[sale.saleName] + " • Offre à durée limitée" : "";
     if (document.documentElement?.lang === "ar") return sale ? ARABIC_SALE_NAMES[sale.saleName] + " • عرض لفترة محدودة" : "";
     if (document.documentElement?.lang === "de") {
       return sale ? GERMAN_SALE_NAMES[sale.saleName] + " • Zeitlich begrenztes Angebot" : "";
@@ -262,7 +269,9 @@
     badges.forEach((badge) => {
       badge.hidden = false;
       badge.textContent = label;
-      badge.setAttribute("aria-label", document.documentElement?.lang === "ar"
+      badge.setAttribute("aria-label", document.documentElement?.lang === "fr"
+        ? "Offre en cours : " + FRENCH_SALE_NAMES[sale.saleName]
+        : document.documentElement?.lang === "ar"
         ? "عرض سارٍ: " + ARABIC_SALE_NAMES[sale.saleName]
         : document.documentElement?.lang === "de"
         ? "Aktives Angebot: " + GERMAN_SALE_NAMES[sale.saleName]

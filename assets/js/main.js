@@ -159,6 +159,8 @@
 						? '<a href="#navPanel" class="close" aria-label="Menü schließen"></a>'
 						: document.documentElement.lang === 'es'
 						? '<a href="#navPanel" class="close" aria-label="Cerrar menú"></a>'
+						: document.documentElement.lang === 'fr'
+						? '<a href="#navPanel" class="close" aria-label="Fermer le menu"></a>'
 						: '<a href="#navPanel" class="close"></a>') +
 				'</div>'
 			)

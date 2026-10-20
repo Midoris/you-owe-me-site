@@ -320,3 +320,15 @@ test("German publications use German regardless of browser language and link to 
   assert.equal(productLink.getAttribute("href"), "/de/");
   assert.equal(anchor.getAttribute("lang"), "de");
 });
+
+test("French publications keep French text and home links for all browser languages", () => {
+  for (const language of ["en-US", "ar", "de", "es", "fr-CA"]) {
+    const documentObject = new FakeDocument();
+    documentObject.documentElement = { lang: "fr" };
+    const anchor = languageSupport.render(documentObject, { language });
+    assert.equal(flattenedText(anchor), "✓You Owe Me est disponible en français.");
+    assert.equal(anchor.children[1].children[0].getAttribute("href"), "/fr/");
+    assert.equal(anchor.getAttribute("lang"), "fr");
+    assert.equal(anchor.getAttribute("dir"), "ltr");
+  }
+});

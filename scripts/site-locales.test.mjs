@@ -65,7 +65,7 @@ test("English authored content differs from the accepted base only by locale lin
 });
 
 test("locale routes are unique, stable and contain no financial inputs", () => {
-  assert.deepEqual(siteLocales.map(locale => locale.code), ["en", "es", "de", "ar"]);
+  assert.deepEqual(siteLocales.map(locale => locale.code), ["en", "es", "de", "ar", "fr"]);
   const routes = siteLocales.flatMap(locale => locale.pages.map(page => page[locale.code]));
   assert.equal(new Set(routes).size, routes.length);
   for (const locale of siteLocales) for (const page of locale.pages) {
@@ -168,7 +168,7 @@ test("analytics preserves English metadata and maps only completed localized rou
   const baseline = execFileSync("git", ["show", "bfd69d7:scripts/analytics.js"], { encoding: "utf8" });
   const metadata = source.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0];
   assert.equal(metadata, baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
-  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=ar20261020"/);
+  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=fr20261020"/);
   const functions = source.match(/function normalizePath\(path\) \{[\s\S]*?\nfunction sanitizeText/)[0].replace(/\nfunction sanitizeText$/, "");
   const context = { window: { location: { pathname: "/" } }, localizedSourceRoute: route => localizedSourceRoute(route, threeLocales()) };
   vm.createContext(context);

@@ -1,0 +1,12 @@
+{
+  "accepted": true,
+  "baseline": "a2eb93d",
+  "checkedAt": "2026-10-20T08:19:07.512Z",
+  "checks": [
+    "All 20 preexisting counterpart authored documents retain accepted a2eb93d bytes outside generated locale blocks and declared shared cache queries",
+    "French is the fifth common locale and every planned route stays gated until complete",
+    "Current complete clusters have reciprocal self/default alternates, exactly one current switch and stable generator output",
+    "Arabic links keep shaping/isolation in French and French links keep explicit LTR in Arabic",
+    "Analytics nested configuration import has a fresh French batch URL"
+  ]
+}

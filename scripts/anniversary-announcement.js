@@ -119,6 +119,21 @@
       inline: Object.freeze({ label: "الأيام الأخيرة", body: "ينتهي عرض الذكرى السنوية لمستخدمي النسخة المجانية المؤهلين في 4 سبتمبر. وستظل قصة السنوات العشر متاحة." }),
     }),
   });
+  const FRENCH_ACTIVE_STATES = Object.freeze({
+    inactive: Object.freeze({}),
+    active: Object.freeze({
+      standard: Object.freeze({ eyebrow: "2016–2026", heading: "You Owe Me fête ses 10 ans.",
+        body: "Découvrez dix ans de comptes plus clairs entre personnes. Les utilisateurs de la formule gratuite qui remplissent les conditions peuvent aussi profiter d’une offre anniversaire à durée limitée pour passer à la formule payante dans l’application, jusqu’au 4 septembre.",
+        cta: "Découvrez ces dix années (en anglais)" }),
+      inline: Object.freeze({ label: "C’est l’anniversaire de You Owe Me", body: "You Owe Me fête ses 10 ans. Les utilisateurs de la formule gratuite qui remplissent les conditions peuvent aussi profiter de l’offre anniversaire dans l’application jusqu’au 4 septembre." }),
+    }),
+    final: Object.freeze({
+      standard: Object.freeze({ eyebrow: "Derniers jours", heading: "L’offre anniversaire se termine le 4 septembre.",
+        body: "L’histoire de ces dix années restera disponible. Si vous utilisez la formule gratuite et remplissez les conditions, l’offre à durée limitée pour passer à la formule payante vous attend dans l’application jusqu’au 4 septembre.",
+        cta: "Découvrez l’anniversaire (en anglais)" }),
+      inline: Object.freeze({ label: "Derniers jours", body: "L’offre anniversaire destinée aux utilisateurs de la formule gratuite qui remplissent les conditions se termine le 4 septembre. L’histoire de ces dix années restera disponible." }),
+    }),
+  });
   function localDateKey(date) {
     if (!date || typeof date.getFullYear !== "function" || Number.isNaN(date.getTime())) {
       return null;
@@ -154,7 +169,7 @@
     if (typeof moduleElement.querySelector !== "function") return false;
 
     const variant = moduleElement.getAttribute("data-anniversary-variant");
-    const states = documentObject?.documentElement?.lang === "ar" ? ARABIC_ACTIVE_STATES : documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
+    const states = documentObject?.documentElement?.lang === "fr" ? FRENCH_ACTIVE_STATES : documentObject?.documentElement?.lang === "ar" ? ARABIC_ACTIVE_STATES : documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
     const state = states[safePhase][variant];
     if (!state) {
       moduleElement.hidden = true;
