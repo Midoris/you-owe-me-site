@@ -2058,7 +2058,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/family-reimbursement-tracker/", "/solutions/temporary-financial-support-tracker/"],
     appStoreCpp: "elderly-parent-caregiving",
     tags: ["elderly-parents", "parent-expenses", "parent-bills", "caregiving-money", "adult-children", "family-reimbursements", "sibling-reimbursements", "recurring-bills", "pharmacy-purchases", "groceries", "utilities", "subscriptions", "partial-reimbursements", "running-balance", "monthly-review", "family-money"],
-    updated: "2026-06-13",
+    updated: "2026-10-23",
     status: "live",
     priority: "high",
     primaryCta: "Download You Owe Me",

@@ -41,7 +41,7 @@
       "description": "Track parent bills, subscriptions, groceries, pharmacy purchases, sibling reimbursements, recurring charges, repayments, and monthly reviews with You Owe Me.",
       "url": "https://you-owe-me.com/solutions/elderly-parent-expense-tracker/",
       "isPartOf": "https://you-owe-me.com/solutions/",
-      "dateModified": "2026-06-13",
+      "dateModified": "2026-10-23",
       "publisher": {
         "@type": "Organization",
         "name": "You Owe Me"
@@ -124,7 +124,7 @@
           "name": "Can I track recurring parent bills?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Yes. Recurring entries are useful for phone plans, utilities, subscriptions, internet, monthly services, and other parent-related costs that repeat automatically."
+            "text": "Yes. Recurring Entries schedules an agreed amount in the correct person's record and creates an entry when each repeat is due. It does not detect or verify bank or card charges. Review actual bills and correct changed amounts; charges and repayments happen outside the app."
           }
         },
         {
@@ -140,7 +140,7 @@
           "name": "What if some parent expenses are gifts?",
           "acceptedAnswer": {
             "@type": "Answer",
-            "text": "Gifts should not be added to the open amount unless they need private tracking only. The open balance should include costs that are expected to be reimbursed, shared, or reviewed later."
+            "text": "Gifts never enter an owed balance. If useful, keep a separate personal note. Add only agreed reimbursable amounts to the correct person's balance. If repayment expectations are unclear, keep the amount outside the owed balance until clarified."
           }
         },
         {
@@ -392,7 +392,7 @@
                   </tr>
                   <tr>
                     <td>Is reimbursement expected?</td>
-                    <td>Whether this should stay open, be reviewed later, or be treated as help.</td>
+                    <td>Whether reimbursement was agreed. Keep gifts and unclear expectations outside the owed balance; use separate notes until expectations are clarified.</td>
                   </tr>
                   <tr>
                     <td>Is this shared with siblings?</td>
@@ -458,48 +458,58 @@
               </article>
             </div>
             <p>If the parent expenses are mostly phone plans, utilities, subscriptions, memberships, or other charges that renew, the <a href="/blog/how-to-track-subscriptions-and-bills-you-pay-for-family/">recurring family bills guide</a> gives a more detailed monthly workflow.</p>
-            <p class="elderly-callout">Not every parent expense has to become something someone owes. If it was a gift, record it only if you want a personal history. If repayment or sharing is expected, track it clearly so nobody has to guess later.</p>
+            <p class="elderly-callout">Not every parent expense becomes something someone owes. Keep gifts outside owed balances and use a separate personal note if useful. Add only agreed reimbursable amounts to the correct person&rsquo;s balance; clarify uncertain expectations before including them.</p>
           </section>
 
           <section class="lt-detailSection">
             <h2>Example: one month of parent expenses</h2>
-            <div class="elderly-ledger-card" aria-label="Example ledger for one month of parent expenses">
+            <p>In this fictional USD example, you paid all three expenses below. Your parent agreed to reimburse the pharmacy pickup and phone bill, totaling $80.70. Your sister agreed to reimburse the $86.40 groceries. These are the agreed responsibilities for this example, not a rule for dividing family costs.</p>
+            <div class="elderly-ledger-card" aria-label="Fictional dated entries from separate parent and sister records">
               <div class="elderly-ledger-row">
                 <span>May 3</span>
-                <strong>Pharmacy pickup</strong>
+                <strong>Parent record: pharmacy pickup</strong>
                 <span>$42.70</span>
-                <span>paid by you</span>
+                <span>Parent owes $42.70</span>
               </div>
               <div class="elderly-ledger-row">
                 <span>May 5</span>
-                <strong>Phone bill</strong>
+                <strong>Parent record: phone bill</strong>
                 <span>$38.00</span>
-                <span>recurring monthly</span>
+                <span>Parent owes $80.70</span>
               </div>
               <div class="elderly-ledger-row">
                 <span>May 9</span>
-                <strong>Groceries</strong>
+                <strong>Sister record: groceries</strong>
                 <span>$86.40</span>
-                <span>paid by you</span>
+                <span>Sister owes $86.40</span>
               </div>
               <div class="elderly-ledger-row elderly-ledger-row--repayment">
                 <span>May 12</span>
-                <strong>Sister sent reimbursement</strong>
+                <strong>Sister record: reimbursement received</strong>
                 <span>-$60.00</span>
-                <span>reimbursement received</span>
+                <span>Sister owes $26.40</span>
               </div>
               <div class="elderly-ledger-row elderly-ledger-row--repayment">
                 <span>May 15</span>
-                <strong>Parent repaid part</strong>
+                <strong>Parent record: partial repayment received</strong>
                 <span>-$50.00</span>
-                <span>partial repayment</span>
+                <span>Parent owes $30.70</span>
               </div>
               <div class="elderly-open-amount">
-                <span>Open amount still to review</span>
-                <strong>$57.10</strong>
+                <span>Parent: $80.70 − $50.00</span>
+                <strong>$30.70 remaining</strong>
+              </div>
+              <div class="elderly-open-amount">
+                <span>Sister: $86.40 − $60.00</span>
+                <strong>$26.40 remaining</strong>
+              </div>
+              <div class="elderly-open-amount">
+                <span>Combined across two separate records</span>
+                <strong>$57.10 remaining</strong>
               </div>
             </div>
-            <p>Without a clear tracker, this month becomes five separate memories: receipts, texts, bank transfers, and verbal agreements. In You Owe Me, the entries and repayments stay in one timeline, so the remaining amount is visible without recalculating.</p>
+            <p>The expenses total $167.10. The combined $57.10 remaining is an aggregate of two separate person records, not one person&rsquo;s debt or a shared editable family ledger. Do not record the full $167.10 against both people.</p>
+            <p>Keep each person&rsquo;s dated expenses and repayments in their own history. The parent record contains the pharmacy pickup, phone bill, and $50 repayment; the sister record contains the groceries and $60 reimbursement. Each person&rsquo;s remaining amount can then be checked against their own entries.</p>
             <p>When a parent or sibling sends money back, the <a href="/tools/repayment-receipt-generator/">repayment receipt generator</a> can create a simple confirmation of what was received and what remains. If one known parent-related amount has already been repaid in parts, use the <a href="/tools/partial-repayment-calculator/">partial repayment calculator</a> to confirm what remains.</p>
             <p class="lt-sectionClose">If siblings are sharing costs, the person who reimburses you may be a sibling, not the parent. The important part is to keep each person&rsquo;s balance clear instead of mixing everything into one vague total.</p>
           </section>
@@ -533,12 +543,13 @@
                 <span class="lt-stepNumber" aria-hidden="true">3</span>
                 <h3>Recurring parent bills repeat monthly</h3>
                 <ol>
-                  <li>Add the regular bill once.</li>
-                  <li>Mark it as recurring if the app supports it.</li>
-                  <li>Let the ongoing record stay visible.</li>
-                  <li>Reconcile when the family is ready.</li>
+                  <li>Confirm the amount to be reimbursed and whose record it belongs in.</li>
+                  <li>Use <a href="/features/#recurring-entries">Recurring Entries</a> to schedule that agreed amount and billing rhythm.</li>
+                  <li>When a repeat is due, the app adds an entry to that person&rsquo;s record. This scheduled entry is not proof of a bank or card charge.</li>
+                  <li>Check actual bills, correct changed amounts, and record repayments separately. Charges and repayments happen outside the app.</li>
                 </ol>
                 <p class="elderly-use-case"><strong>Use case:</strong> Phone plan, subscription, utility, internet, or monthly service connected to a parent.</p>
+                <p>You Owe Me does not monitor a parent&rsquo;s bank or card spending or provide real-time purchase alerts.</p>
               </article>
             </div>
           </section>
@@ -551,12 +562,12 @@
                 <p>See what is still open without rebuilding the math from receipts, messages, and memory. If the term is new, start with the guide to <a href="/blog/what-is-a-running-balance-between-two-people/">what a running balance between two people means</a>.</p>
               </article>
               <article class="elderly-feature-card">
-                <h3>A timeline of parent-related entries</h3>
-                <p>Keep bills, purchases, repayments, notes, and summaries connected in one history.</p>
+                <h3>A history for each person</h3>
+                <p>Keep each person&rsquo;s bills, purchases, repayments, notes, and summaries connected in their own history.</p>
               </article>
               <article class="elderly-feature-card">
                 <h3>Recurring entries for monthly parent bills</h3>
-                <p>Phone plans, utilities, subscriptions, and regular services can be tracked without re-entering the same thing from scratch every month.</p>
+                <p>Schedule the agreed amount for phone plans, utilities, subscriptions, or regular services in the correct person&rsquo;s record. Check actual bills because scheduled entries do not verify bank or card charges.</p>
               </article>
               <article class="elderly-feature-card">
                 <h3>Partial reimbursements stay visible</h3>
@@ -702,7 +713,7 @@
               </article>
               <article>
                 <h3>Mixing gifts, reimbursements, and sibling shares into one unclear total</h3>
-                <p>Better: mark what is help, what is shared, and what should stay open for review.</p>
+                <p>Better: keep gifts and uncertain expectations in separate notes. Only agreed reimbursable amounts belong in an owed balance.</p>
               </article>
               <article>
                 <h3>Sending only a final number without showing what was included</h3>
@@ -726,7 +737,7 @@
               </article>
               <article>
                 <h3>Tracking things that were clearly meant as gifts</h3>
-                <p>Better: keep a personal note if useful, but do not include gifts in the amount to review.</p>
+                <p>Better: keep a separate personal note if useful, but never include gifts in an owed balance.</p>
               </article>
               <article>
                 <h3>Forgetting to record partial repayments</h3>
@@ -791,7 +802,7 @@
               </details>
               <details class="solution-faq-item">
                 <summary>Can I track recurring parent bills?</summary>
-                <p>Yes. Recurring entries are useful for phone plans, utilities, subscriptions, internet, monthly services, and other parent-related costs that repeat automatically.</p>
+                <p>Yes. Recurring Entries schedules an agreed amount in the correct person's record and creates an entry when each repeat is due. It does not detect or verify bank or card charges. Review actual bills and correct changed amounts; charges and repayments happen outside the app.</p>
               </details>
               <details class="solution-faq-item">
                 <summary>Can I track partial reimbursements?</summary>
@@ -799,7 +810,7 @@
               </details>
               <details class="solution-faq-item">
                 <summary>What if some parent expenses are gifts?</summary>
-                <p>Gifts should not be added to the open amount unless they need private tracking only. The open balance should include costs that are expected to be reimbursed, shared, or reviewed later.</p>
+                <p>Gifts never enter an owed balance. If useful, keep a separate personal note. Add only agreed reimbursable amounts to the correct person's balance. If repayment expectations are unclear, keep the amount outside the owed balance until clarified.</p>
               </details>
               <details class="solution-faq-item">
                 <summary>Is this the same as a family reimbursement tracker?</summary>
@@ -861,7 +872,7 @@
             </div>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-06-13">June 13, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-10-23">October 23, 2026</time></p>
         </article>
       </div>
 

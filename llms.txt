@@ -177,7 +177,7 @@ The temporary financial support cluster helps people handle informal support bet
 
 ## Roommate money and household bills
 
-- [Roommate Expense Tracker](https://you-owe-me.com/solutions/roommate-expense-tracker/): Product solution page for roommate running balances, including one-person Live Link visibility or Balance Sync when exactly two roommates both want supported editing access.
+- [Roommate Expense Tracker](https://you-owe-me.com/solutions/roommate-expense-tracker/): Track rent, utilities, groceries and repayments on iPhone and iPad. Share a current balance by Live Link without requiring roommates to install the app. Balance Sync supports exactly two app users who both want supported editing access.
 - [Roommate Bill Split Calculator](https://you-owe-me.com/tools/roommate-bill-split-calculator/): Free browser calculator for one monthly roommate settle-up across shared bills, with optional fixed and usage portions, days present, agreed usage weights, temporary occupants, repayments, and previous balances.
 - [Roommate Expense Tracker Spreadsheet](https://you-owe-me.com/tools/roommate-expense-tracker-template/): Downloadable Excel or Google Sheets manual record for recurring roommate costs. It is the spreadsheet option between the one-period calculator and ongoing app tracking.
 - [How to Split Rent, Utilities, and Groceries With Roommates](https://you-owe-me.com/blog/how-to-split-rent-utilities-and-groceries-with-roommates/): Practical guide to deciding fair roommate bill-splitting rules before calculating or tracking balances, including rent, utilities, groceries, household supplies, custom shares, repayments, and move-out settle-ups.
