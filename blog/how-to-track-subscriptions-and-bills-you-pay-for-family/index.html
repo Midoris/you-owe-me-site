@@ -15,12 +15,12 @@
     <link rel="canonical" href="https://you-owe-me.com/blog/how-to-track-subscriptions-and-bills-you-pay-for-family/" />
     <meta
       name="description"
-      content="Keep family subscriptions, parent bills, phone plans, utilities, reimbursements, recurring charges, and reminder dates clear with one simple monthly bill record."
+      content="Track family bills and subscriptions across cards with a simple renewal log. Keep payers, agreed reimbursements and payments received clear."
     />
     <meta property="og:title" content="How to Track Subscriptions and Bills You Pay for Family" />
     <meta
       property="og:description"
-      content="A practical recurring-bill log for family subscriptions, parent bills, sibling reimbursements, partial repayments, and monthly review."
+      content="Track family bills and subscriptions across cards with a simple renewal log. Keep payers, agreed reimbursements and payments received clear."
     />
     <meta property="og:type" content="article" />
     <meta property="og:url" content="https://you-owe-me.com/blog/how-to-track-subscriptions-and-bills-you-pay-for-family/" />
@@ -30,7 +30,7 @@
     <meta name="twitter:title" content="How to Track Subscriptions and Bills You Pay for Family" />
     <meta
       name="twitter:description"
-      content="Keep family subscriptions, parent bills, phone plans, utilities, reimbursements, recurring charges, and reminder dates clear with one simple monthly bill record."
+      content="Track family bills and subscriptions across cards with a simple renewal log. Keep payers, agreed reimbursements and payments received clear."
     />
     <meta name="twitter:image" content="https://you-owe-me.com/images/blog/how-to-track-subscriptions-and-bills-you-pay-for-family/family-recurring-bills-tracker-hero.webp" />
 
@@ -41,7 +41,7 @@
         {
           "@type": "Article",
           "headline": "How to Track Subscriptions and Bills You Pay for Family",
-          "description": "Keep family subscriptions, parent bills, phone plans, utilities, reimbursements, recurring charges, and reminder dates clear with one simple monthly bill record.",
+          "description": "Track family bills and subscriptions across cards with a simple renewal log. Keep payers, agreed reimbursements and payments received clear.",
           "image": "https://you-owe-me.com/images/blog/how-to-track-subscriptions-and-bills-you-pay-for-family/family-recurring-bills-tracker-hero.webp",
           "author": {
             "@type": "Person",
@@ -52,7 +52,7 @@
             "name": "You Owe Me"
           },
           "datePublished": "2026-06-17",
-          "dateModified": "2026-08-11",
+          "dateModified": "2026-10-23",
           "articleSection": "Family bills",
           "mainEntityOfPage": "https://you-owe-me.com/blog/how-to-track-subscriptions-and-bills-you-pay-for-family/"
         },
@@ -155,6 +155,29 @@
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/family-recurring-bills.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
+    <style>
+      /* This compact register fits the existing full-width family content row. */
+      body.family-bills-page .family-table--cards {
+        min-width: 0;
+        table-layout: fixed;
+      }
+      body.family-bills-page .family-table--cards col:nth-child(1) { width: 31%; }
+      body.family-bills-page .family-table--cards col:nth-child(2) { width: 39%; }
+      body.family-bills-page .family-table--cards col:nth-child(3) { width: 30%; }
+      body.family-bills-page .family-table--cards th,
+      body.family-bills-page .family-table--cards td { overflow-wrap: anywhere; }
+      body.family-bills-page .family-table--cards thead th {
+        text-transform: none;
+        letter-spacing: 0;
+      }
+      @media (max-width: 480px) {
+        body.family-bills-page .family-table--cards th,
+        body.family-bills-page .family-table--cards td {
+          padding: 0.6rem 0.35rem;
+          font-size: 14px;
+        }
+      }
+    </style>
   </head>
 
   <body class="is-preload blog-page blog-article-page family-bills-page site-nav-page">
@@ -395,20 +418,47 @@
             </div>
           </section>
 
+          <section class="family-wide-section" aria-labelledby="several-cards-title">
+            <h2 id="several-cards-title">Track family subscriptions across several cards</h2>
+            <p>Keep one row per service with who uses it, the account owner, the actual amount and billing cycle, the next renewal or review date, the person and card charged, and the agreed reimbursement. Simple card nicknames such as &ldquo;Your everyday card&rdquo; and &ldquo;Your subscriptions card&rdquo; are enough; no full card numbers are needed.</p>
+            <p>Separate where a charge lands from who agreed to pay it back. Moving a subscription to another card does not create a second expense or automatically make it another person&rsquo;s debt.</p>
+            <div class="family-table-scroll" tabindex="0" role="region" aria-label="Fictional family subscription register across two cards">
+              <table class="family-table family-table--cards">
+                <caption>Fictional subscription register (USD)</caption>
+                <colgroup><col /><col /><col /></colgroup>
+                <thead><tr><th scope="col">Service, cost and cycle</th><th scope="col">Card label</th><th scope="col">Agreed repayment</th></tr></thead>
+                <tbody>
+                  <tr><td>Phone plan<br />$38 monthly<br />Renews 1st</td><td>Your everyday card</td><td>Mom repays $38.</td></tr>
+                  <tr><td>Streaming<br />$12 monthly<br />Renews 8th</td><td>Your subscriptions card</td><td>Mom repays $12.</td></tr>
+                  <tr><td>Household service<br />$90 monthly<br />Renews 15th</td><td>Your everyday card</td><td>Sister repays $45; you cover $45.</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>The card labels show where to find a charge. They do not change the agreed shares. The following ledger records these fictional charges and repayments when they actually happen.</p>
+            <h3>Check the register each month</h3>
+            <ul>
+              <li>Compare the register with the service billing pages and card statements. Record each actual charge once, and record repayments separately.</li>
+              <li>Review upcoming renewals and unwanted services before the renewal date. A planned renewal is not proof that a payment happened.</li>
+              <li>When changing a card or cancelling a service, update the register and confirm the change with the service. Retain the old charges so past balances remain traceable.</li>
+            </ul>
+            <p>This is a manual recordkeeping workflow. It does not link bank accounts, detect subscriptions, or cancel services for you.</p>
+          </section>
+
           <section class="family-wide-section" aria-labelledby="example-log-title">
             <h2 id="example-log-title">Example: one month of family subscriptions and bills</h2>
+            <p>In this fictional USD example, Mom and Dad agreed to repay their listed bills in full. You and your sister split the $90 household service equally: her share is $45, and you cover your own $45. Each running balance belongs to the named person; this is not one shared family total.</p>
             <div class="family-table-scroll" tabindex="0" aria-label="Example family bill log table">
               <table class="family-table family-table--example">
-                <caption>Example family bill log</caption>
+                <caption>Fictional family bill log: a separate balance for each person (USD)</caption>
                 <thead>
                   <tr>
                     <th scope="col">Date</th>
                     <th scope="col">Family member</th>
                     <th scope="col">Bill or event</th>
                     <th scope="col">Type</th>
-                    <th scope="col">Paid by you</th>
+                    <th scope="col">Full bill paid by you</th>
                     <th scope="col">Repaid</th>
-                    <th scope="col">Running balance</th>
+                    <th scope="col">Balance owed by this person</th>
                     <th scope="col">Note</th>
                   </tr>
                 </thead>
@@ -455,13 +505,13 @@
                   </tr>
                   <tr>
                     <td>June 15</td>
-                    <td>Sibling group</td>
+                    <td>Sister</td>
                     <td>Parent household service</td>
                     <td>Shared cost</td>
                     <td>$90</td>
                     <td>-</td>
-                    <td>$90</td>
-                    <td>Split with sister later</td>
+                    <td>$45</td>
+                    <td>Sister&rsquo;s $45 share; your own $45 excluded</td>
                   </tr>
                   <tr>
                     <td>June 20</td>
@@ -470,8 +520,8 @@
                     <td>Repayment</td>
                     <td>-</td>
                     <td>$45</td>
-                    <td>$45</td>
-                    <td>Sister share received</td>
+                    <td>$0</td>
+                    <td>Sister&rsquo;s full share received; her balance is settled</td>
                   </tr>
                   <tr>
                     <td>July 1</td>
@@ -486,6 +536,7 @@
                 </tbody>
               </table>
             </div>
+            <p>The full bill and the amount owed are different when you cover part yourself. The $90 household service creates a $45 amount for your sister to repay, not a $90 debt. Her $45 payment settles it. Dad&rsquo;s $48 balance stays separate from both her balance and Mom&rsquo;s.</p>
             <p>Mom&rsquo;s July phone renewal shows why the balance should carry forward. The $25 still open from June is not reset or forgotten; the new $38 charge brings her current balance to $63.</p>
             <p>The important part is that bills and repayments are not overwritten. Each new charge and each repayment becomes part of the history. That way, the remaining amount is visible without rebuilding the math from messages, receipts, and memory.</p>
             <p>When new bills and repayments keep changing the amount, a <a href="/blog/what-is-a-running-balance-between-two-people/">running balance between two people</a> is clearer than a list of isolated transactions. If you already have a few entries and want to check the math, use the <a href="/tools/running-balance-calculator/">running balance calculator</a>.</p>
@@ -822,7 +873,7 @@
             </a>
           </section>
 
-          <p class="lt-pageMeta">Published <time datetime="2026-06-17">June 17, 2026</time> &middot; Updated <time datetime="2026-08-11">August 11, 2026</time></p>
+          <p class="lt-pageMeta">Published <time datetime="2026-06-17">June 17, 2026</time> &middot; Updated <time datetime="2026-10-23">October 23, 2026</time></p>
           <ul class="family-footer-links">
             <li><a href="/blog/" class="button">Back to blog</a></li>
           </ul>

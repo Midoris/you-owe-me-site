@@ -102,7 +102,7 @@
             }
           ],
           "datePublished": "2026-05-30",
-          "dateModified": "2026-08-23",
+          "dateModified": "2026-10-23",
           "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://you-owe-me.com/blog/how-to-split-rent-utilities-and-groceries-with-roommates/"
@@ -233,6 +233,25 @@
     <link rel="stylesheet" href="/styles/roommate-splitting-guide.css" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
+    <style>
+      /* Keep this three-column worked example readable without horizontal scrolling. */
+      body.roommate-splitting-guide-page .rms-couple-rent-table {
+        min-width: 0;
+        table-layout: fixed;
+      }
+      body.roommate-splitting-guide-page .rms-couple-rent-table col:nth-child(1) { width: 37%; }
+      body.roommate-splitting-guide-page .rms-couple-rent-table col:nth-child(2) { width: 20%; }
+      body.roommate-splitting-guide-page .rms-couple-rent-table col:nth-child(3) { width: 43%; }
+      body.roommate-splitting-guide-page .rms-couple-rent-table th,
+      body.roommate-splitting-guide-page .rms-couple-rent-table td { overflow-wrap: anywhere; }
+      @media (max-width: 480px) {
+        body.roommate-splitting-guide-page .rms-couple-rent-table th,
+        body.roommate-splitting-guide-page .rms-couple-rent-table td {
+          padding: 0.65rem 0.35rem;
+          font-size: 14px;
+        }
+      }
+    </style>
   </head>
 
   <body class="is-preload blog-page blog-article-page roommate-tracking-page roommate-splitting-guide-page site-nav-page">
@@ -446,6 +465,26 @@
               </article>
             </div>
             <p class="rm-small-close">The rule matters less than consistency. A rent split that everyone understands is usually better than a mathematically perfect split that creates tension every month.</p>
+          </section>
+
+          <section class="lt-toolsSection rm-section" aria-labelledby="couple-rent-title">
+            <h2 id="couple-rent-title">How to split rent when a couple shares one room</h2>
+            <p>Start by agreeing whether rent is divided by bedroom, by person, or by a combination. In this fictional example, monthly rent is $1,800 for two equal bedrooms. A couple shares one bedroom, a solo roommate has the other, and both partners split the couple&rsquo;s amount equally. These are three options to discuss, rather than one universally fairest rule.</p>
+            <div class="rm-table-wrap" role="region" aria-label="Three rent split options for a couple and a solo roommate" tabindex="0">
+              <table class="rm-table rms-couple-rent-table">
+                <caption>Three agreed rent options for the same $1,800 (USD)</caption>
+                <colgroup><col /><col /><col /></colgroup>
+                <thead><tr><th scope="col">Method</th><th scope="col">Solo</th><th scope="col">Couple</th></tr></thead>
+                <tbody>
+                  <tr><th scope="row">By bedroom</th><td>$900</td><td>$900 total<br />$450 each</td></tr>
+                  <tr><th scope="row">By person</th><td>$600</td><td>$1,200 total<br />$600 each</td></tr>
+                  <tr><th scope="row">Half by room, half by person</th><td>$750</td><td>$1,050 total<br />$525 each</td></tr>
+                </tbody>
+              </table>
+            </div>
+            <p>For the combined method, allocate $900 by the two equal rooms and $900 by the three adults. The solo roommate pays $450 for their room plus $300 per person, or $750. Each partner pays $225 toward their shared room plus $300 per person, or $525. Together, the couple pays $1,050.</p>
+            <p>Bedroom size, private amenities, and use of shared space may change the rule you choose. Agree on it before treating a calculated share as money owed. This example does not establish anyone&rsquo;s lease obligations. Utilities and groceries can follow their own agreed rules; they do not automatically use the rent split.</p>
+            <p>To calculate the chosen amounts, open the <a href="/tools/roommate-bill-split-calculator/">Roommate Bill Split Calculator</a>, add all three adults separately, and use custom shares for the rent bill. Enter the chosen rent amounts for the solo roommate and each partner.</p>
           </section>
 
           <section class="lt-toolsSection rm-section" aria-labelledby="utilities-title">
@@ -917,7 +956,7 @@ If someone moves out: [Final utilities, deposits, repairs, unpaid bills, and pre
             </div>
           </section>
 
-          <p class="lt-pageMeta">Published <time datetime="2026-05-30">May 30, 2026</time> &middot; Updated <time datetime="2026-08-23">August 23, 2026</time></p>
+          <p class="lt-pageMeta">Published <time datetime="2026-05-30">May 30, 2026</time> &middot; Updated <time datetime="2026-10-23">October 23, 2026</time></p>
 
           <ul class="actions lt-actions">
             <li><a href="/blog/" class="button">Browse money guides</a></li>
