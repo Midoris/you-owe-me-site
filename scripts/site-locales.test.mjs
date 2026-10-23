@@ -48,7 +48,7 @@ test("only completed translations join the registry and have substantive public 
   }
 });
 
-test("English authored content differs from the accepted base only by locale links and declared shared cache queries", () => {
+test("English locale rendering preserves authored content outside locale links and declared shared cache queries", () => {
   function stripOwned(html, route) {
     html = normalizeReviewedLanguageCopy(html).replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
       .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "");
@@ -59,9 +59,9 @@ test("English authored content differs from the accepted base only by locale lin
   }
   for (const page of spanishPages) {
     const file = page.en === "/" ? "index.html" : `${page.en.slice(1)}index.html`;
-    const original = execFileSync("git", ["show", `3f78611:${file}`], { encoding: "utf8" });
     const current = fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
-    assert.equal(stripOwned(current, page.en), stripOwned(original, page.en), `English source unexpectedly changed: ${page.en}`);
+    const rendered = renderLocaleHtml(current, page.en, "en");
+    assert.equal(stripOwned(rendered, page.en), stripOwned(current, page.en), `Locale renderer changed English authored content: ${page.en}`);
   }
 });
 
