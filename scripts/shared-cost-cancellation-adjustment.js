@@ -876,8 +876,8 @@
     }
     if (result.payment.status === "several") {
       var several = element("section", "planner-result-several");
-      several.append(element("h4", "", "Several people paid"), element("p", "", "The adjusted shares are ready, but several people contributed to the original cost. Enter these adjusted shares and the real payments in the Split Expense Calculator to see who should pay whom."));
-      var link = element("a", "", "Open the Split Expense Calculator");
+      several.append(element("h4", "", "Several people paid"), element("p", "", "This planner calculates adjusted shares, not settlement among several payers. Compare each person’s actual contribution with their agreed share in a manual record. Use the Split Expense Calculator only when each expense is shared equally among its selected people. Separate expense lines can represent genuinely different shared or personal items; the calculator does not accept arbitrary revised shares or custom percentages."));
+      var link = element("a", "", "Open the equal-share calculator");
       link.href = "/tools/split-expense-calculator/";
       several.appendChild(link);
       target.appendChild(several);
