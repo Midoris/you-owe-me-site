@@ -483,6 +483,23 @@
       "Repayment timing not fixed yet; use a check-in date.",
     ];
     var messageLines;
+    var messageUpdate;
+    var nextUpdate;
+    var circumstancesNote = values.flexChange ? "Circumstances note: " + values.flexChange : "";
+
+    if (values.updates === "not-discussed") {
+      messageUpdate = "We have not discussed updates yet.";
+      nextUpdate = "Agree whether updates are expected and when to check in.";
+    } else if (values.updates === "check-in") {
+      messageUpdate = "We will use the next check-in for updates.";
+      nextUpdate = "Use the next check-in for updates" + (values.flexDateRaw ? "." : "; agree on a date if you have not chosen one yet.");
+    } else if (values.updates === "if-changes") {
+      messageUpdate = values.perspective === "receiving" ? "I will send an update only if timing changes." : values.perspective === "helping" ? "You will send an update only if timing changes." : updateSentence(values);
+      nextUpdate = "Send an update if timing changes, as agreed.";
+    } else {
+      messageUpdate = values.perspective === "receiving" ? "I will send an update before you have to ask." : values.perspective === "helping" ? "You will send an update before I have to ask." : updateSentence(values);
+      nextUpdate = "Send updates before the helper has to ask, as agreed.";
+    }
 
     if (values.flexAmount) {
       recordLines.push("Expected repayment amount, if circumstances allow: " + values.flexAmount + ".");
@@ -494,35 +511,39 @@
       noteParts.push("Next check-in: " + values.flexDateFull + ".");
     }
 
-    recordLines.push(values.flexChange || updateSentence(values));
+    recordLines.push(updateSentence(values));
     addContext(recordLines, values);
     noteParts.push(updateSentence(values));
+    if (circumstancesNote) {
+      recordLines.push(circumstancesNote);
+      noteParts.push(circumstancesNote);
+    }
 
     if (values.perspective === "receiving") {
       messageLines = [
         "Thanks again for helping with " + conversationSubject(values) + ".",
         "I wrote this down as support with repayment expected when possible from " + values.dateShort + ".",
-        values.flexDateRaw ? "I have our next check-in as " + values.flexDateShort + "," : "I will keep you updated,",
-        "and I will send an update before then if anything changes.",
+        values.flexDateRaw ? "I have our next check-in as " + values.flexDateShort + "." : "",
       ];
     } else if (values.perspective === "helping") {
       messageLines = [
         "I wrote this down so it stays clear without pressure: I helped with " + supportSubject(values) + " on " + values.dateShort + ".",
-        "We are treating it as support with repayment expected when possible" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + " and updates if timing changes.",
+        "We are treating it as support with repayment expected when possible" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + ".",
       ];
     } else {
       messageLines = [
         "For clarity, we recorded that " + supportSentenceWithoutPeriod(values, false) + ".",
         "We are treating it as support with repayment expected when possible" + (values.flexDateRaw ? ", with a check-in on " + values.flexDateShort : "") + ".",
-        updateSentence(values),
       ];
     }
+    messageLines.push(messageUpdate);
+    if (circumstancesNote) messageLines.push(circumstancesNote);
 
     return {
       record: recordLines.join(" "),
-      message: messageLines.join(" "),
+      message: messageLines.filter(Boolean).join(" "),
       note: noteParts.join(" "),
-      next: "Repay-when-possible situations are where records help most. Set a check-in date, send updates before the other person has to ask, and use You Owe Me if the balance or timing keeps changing.",
+      next: nextUpdate + " Use You Owe Me if the balance or timing keeps changing.",
       context: "Repay-when-possible record generated.",
     };
   }

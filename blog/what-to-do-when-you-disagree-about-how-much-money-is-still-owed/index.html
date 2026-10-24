@@ -50,7 +50,7 @@
           "publisher": { "@type": "Organization", "name": "You Owe Me" },
           "articleSection": "Money owed",
           "datePublished": "2026-07-13",
-          "dateModified": "2026-07-13",
+          "dateModified": "2026-10-24",
           "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://you-owe-me.com/blog/what-to-do-when-you-disagree-about-how-much-money-is-still-owed/"
@@ -186,7 +186,7 @@
               <li><h3>Choose the oldest confirmed starting point</h3><p>Start from zero or from a balance both people already accept. Do not hide older uncertainty inside the starting number.</p></li>
               <li><h3>Review one row at a time</h3><p>Compare the date, amount, direction, purpose, and any shared reference for each expense, repayment, offset, or correction.</p></li>
               <li><h3>Classify each row</h3><p>Mark the row as Agreed, Unverified, Disputed, Duplicate, Correction, or Unrelated before assigning any balance effect.</p></li>
-              <li><h3>Confirm only the agreed result</h3><p>Only accepted rows change the agreed balance. Keep unresolved items visible but separate, then confirm the amount and date in writing.</p></li>
+              <li><h3>Confirm only the agreed result</h3><p>Only accepted rows change the subtotal. Keep unresolved items visible but separate. Confirm the final balance and date in writing only once both people agree how every unresolved item will be handled.</p></li>
             </ol>
             <p>Once the rows are agreed, see <a href="/blog/what-is-a-running-balance-between-two-people/">how a running balance changes</a> as expenses and repayments move both ways.</p>
           </section>
@@ -203,26 +203,26 @@
             </ul>
 
             <section class="reconciliation-example" aria-labelledby="worked-example-title">
-              <h3 id="worked-example-title">Worked example: the agreed balance is $26, with one $10 payment still unresolved</h3>
+              <h3 id="worked-example-title">Worked example: a $26 accepted-row subtotal, with the final balance unconfirmed</h3>
               <p>Maya and Eli agree that Eli was repaying shared costs Maya had covered. Their totals differ because Eli remembers a $10 cash payment and the restaurant offset was entered twice.</p>
               <div class="reconciliation-table-wrap">
                 <table class="reconciliation-table">
-                  <thead><tr><th scope="col">Date</th><th scope="col">Expense or payment</th><th scope="col">Direction and amount</th><th scope="col">Maya remembers</th><th scope="col">Eli remembers</th><th scope="col">Shared reference</th><th scope="col">Status</th><th scope="col">Agreed balance effect</th></tr></thead>
+                  <thead><tr><th scope="col">Date</th><th scope="col">Expense or payment</th><th scope="col">Direction and amount</th><th scope="col">Maya remembers</th><th scope="col">Eli remembers</th><th scope="col">Shared reference</th><th scope="col">Status</th><th scope="col">Accepted-row subtotal effect</th></tr></thead>
                   <tbody>
-                    <tr><td data-label="Date">Jan 4</td><td data-label="Expense or payment">Train tickets</td><td data-label="Direction and amount">Maya paid $80; Eli’s agreed share was $40</td><td data-label="Maya remembers">Eli would repay $40</td><td data-label="Eli remembers">Eli would repay $40</td><td data-label="Shared reference">Booking receipt</td><td data-label="Status"><span class="reconciliation-status">Agreed</span></td><td data-label="Agreed balance effect">+$40 owed by Eli to Maya</td></tr>
-                    <tr><td data-label="Date">Jan 12</td><td data-label="Expense or payment">Bank repayment</td><td data-label="Direction and amount">Eli sent Maya $20</td><td data-label="Maya remembers">Received $20 for the tickets</td><td data-label="Eli remembers">Paid $20 for the tickets</td><td data-label="Shared reference">Bank transfer</td><td data-label="Status"><span class="reconciliation-status">Agreed</span></td><td data-label="Agreed balance effect">−$20</td></tr>
-                    <tr><td data-label="Date">Jan 20</td><td data-label="Expense or payment">Groceries</td><td data-label="Direction and amount">Maya paid $30; Eli’s agreed share was $15</td><td data-label="Maya remembers">Eli would repay $15</td><td data-label="Eli remembers">Eli would repay $15</td><td data-label="Shared reference">Receipt and message</td><td data-label="Status"><span class="reconciliation-status">Agreed</span></td><td data-label="Agreed balance effect">+$15</td></tr>
-                    <tr><td data-label="Date">Jan 25</td><td data-label="Expense or payment">Cash repayment</td><td data-label="Direction and amount">Eli says he paid Maya $10</td><td data-label="Maya remembers">Does not remember receiving it</td><td data-label="Eli remembers">Paid $10 in cash</td><td data-label="Shared reference">None found</td><td data-label="Status"><span class="reconciliation-status">Unverified</span></td><td data-label="Agreed balance effect">$0 in the agreed balance</td></tr>
-                    <tr><td data-label="Date">Feb 2</td><td data-label="Expense or payment">Restaurant offset</td><td data-label="Direction and amount">Eli paid $18; both had agreed Maya’s $9 share would reduce the balance</td><td data-label="Maya remembers">The balance should reduce by $9</td><td data-label="Eli remembers">The balance should reduce by $9</td><td data-label="Shared reference">Receipt and message</td><td data-label="Status"><span class="reconciliation-status">Agreed</span></td><td data-label="Agreed balance effect">−$9</td></tr>
-                    <tr><td data-label="Date">Feb 2</td><td data-label="Expense or payment">Duplicate restaurant row</td><td data-label="Direction and amount">The same $9 offset was entered twice</td><td data-label="Maya remembers">Duplicate</td><td data-label="Eli remembers">Duplicate</td><td data-label="Shared reference">Same receipt</td><td data-label="Status"><span class="reconciliation-status">Duplicate</span></td><td data-label="Agreed balance effect">$0</td></tr>
+                    <tr><td data-label="Date">Jan 4</td><td data-label="Expense or payment">Train tickets</td><td data-label="Direction and amount">Maya paid $80; Eli’s agreed share was $40</td><td data-label="Maya remembers">Eli would repay $40</td><td data-label="Eli remembers">Eli would repay $40</td><td data-label="Shared reference">Booking receipt</td><td data-label="Status"><span class="reconciliation-status">Agreed</span></td><td data-label="Accepted-row subtotal effect">+$40 owed by Eli to Maya</td></tr>
+                    <tr><td data-label="Date">Jan 12</td><td data-label="Expense or payment">Bank repayment</td><td data-label="Direction and amount">Eli sent Maya $20</td><td data-label="Maya remembers">Received $20 for the tickets</td><td data-label="Eli remembers">Paid $20 for the tickets</td><td data-label="Shared reference">Bank transfer</td><td data-label="Status"><span class="reconciliation-status">Agreed</span></td><td data-label="Accepted-row subtotal effect">−$20</td></tr>
+                    <tr><td data-label="Date">Jan 20</td><td data-label="Expense or payment">Groceries</td><td data-label="Direction and amount">Maya paid $30; Eli’s agreed share was $15</td><td data-label="Maya remembers">Eli would repay $15</td><td data-label="Eli remembers">Eli would repay $15</td><td data-label="Shared reference">Receipt and message</td><td data-label="Status"><span class="reconciliation-status">Agreed</span></td><td data-label="Accepted-row subtotal effect">+$15</td></tr>
+                    <tr><td data-label="Date">Jan 25</td><td data-label="Expense or payment">Cash repayment</td><td data-label="Direction and amount">Eli says he paid Maya $10</td><td data-label="Maya remembers">Does not remember receiving it</td><td data-label="Eli remembers">Paid $10 in cash</td><td data-label="Shared reference">None found</td><td data-label="Status"><span class="reconciliation-status">Unverified</span></td><td data-label="Accepted-row subtotal effect">Not included while unresolved</td></tr>
+                    <tr><td data-label="Date">Feb 2</td><td data-label="Expense or payment">Restaurant offset</td><td data-label="Direction and amount">Eli paid $18; both had agreed Maya’s $9 share would reduce the balance</td><td data-label="Maya remembers">The balance should reduce by $9</td><td data-label="Eli remembers">The balance should reduce by $9</td><td data-label="Shared reference">Receipt and message</td><td data-label="Status"><span class="reconciliation-status">Agreed</span></td><td data-label="Accepted-row subtotal effect">−$9</td></tr>
+                    <tr><td data-label="Date">Feb 2</td><td data-label="Expense or payment">Duplicate restaurant row</td><td data-label="Direction and amount">The same $9 offset was entered twice</td><td data-label="Maya remembers">Duplicate</td><td data-label="Eli remembers">Duplicate</td><td data-label="Shared reference">Same receipt</td><td data-label="Status"><span class="reconciliation-status">Duplicate</span></td><td data-label="Accepted-row subtotal effect">$0</td></tr>
                   </tbody>
                 </table>
               </div>
               <div class="reconciliation-result-grid" aria-label="Worked example result">
-                <article class="reconciliation-result-card"><p>Agreed current balance</p><strong>Eli owes Maya $26 as of February 2.</strong></article>
-                <article class="reconciliation-result-card reconciliation-result-card--separate"><p>Kept separate</p><strong>A $10 cash repayment on January 25 remains unverified and is not included in the agreed balance.</strong></article>
+                <article class="reconciliation-result-card"><p>Accepted-row subtotal</p><strong>The accepted rows total $26 toward Maya as of February 2. The final balance is not yet confirmed.</strong></article>
+                <article class="reconciliation-result-card reconciliation-result-card--separate"><p>Kept separate</p><strong>Eli’s claimed $10 cash repayment on January 25 remains unverified and is not included in the subtotal.</strong></article>
               </div>
-              <aside class="reconciliation-important-rule">Do not present $16–$26 as one final balance. The agreed amount is $26. The $10 cash payment remains a separate unresolved item until both people decide how to handle it.</aside>
+              <aside class="reconciliation-important-rule">The accepted rows total $40 − $20 + $15 − $9 = $26. This is a subtotal, not a confirmed final amount or an instruction to collect $26. The worksheet does not decide whether the $10 cash payment happened. If both people later accept it, the balance becomes $16. Until they agree how to resolve it, keep the claim separate and the final balance unconfirmed; do not present $16–$26 as an agreed range.</aside>
             </section>
 
             <section class="reconciliation-copy-card" aria-labelledby="blank-worksheet-title">
@@ -245,7 +245,7 @@ Person A remembers:
 Person B remembers:
 Shared reference:
 Status: Agreed / Unverified / Disputed / Duplicate / Correction / Unrelated
-Agreed balance effect:
+Accepted-row subtotal effect:
 
 Repeat the row for each expense, repayment, offset, duplicate, or correction.
 
@@ -255,21 +255,25 @@ Agreed starting balance:
 Confirmed additions:
 Confirmed repayments or offsets:
 Agreed corrections:
-Agreed current balance:
-Agreed balance direction: [name] owes [name] [amount]
-Unresolved items kept outside the agreed balance:
-Balance confirmed as of:
+Accepted-row subtotal:
+Subtotal direction: [amount] toward [name]
+Unresolved items not included in the subtotal:
+Final balance status: Not yet confirmed / Confirmed by both people
+Final amount and direction, only if confirmed:
+Final balance confirmed as of, if applicable:
 Notes both people accepted:</pre>
             </section>
 
             <section class="reconciliation-copy-card" aria-labelledby="summary-template-title">
               <div class="reconciliation-copy-card__header">
-                <div><h3 id="summary-template-title">Copy a calm summary</h3><p>Use this after you have separated the agreed balance from anything still unresolved.</p></div>
+                <div><h3 id="summary-template-title">Copy a calm summary</h3><p>Use this to separate the accepted-row subtotal from unresolved items and say whether the final balance is confirmed.</p></div>
                 <button type="button" class="reconciliation-copy-button" data-copy-source="reconciliation-summary-template" data-copy-success="Summary copied." data-copy-failure="Copying did not work. Select the summary text and copy it manually.">Copy reconciliation summary</button>
               </div>
-              <blockquote id="reconciliation-summary-template" class="reconciliation-summary-template">Based on the rows we both accepted, [name] owes [name] [amount] as of [date]. This includes [short description of agreed additions] and [short description of agreed repayments or offsets].
+              <blockquote id="reconciliation-summary-template" class="reconciliation-summary-template">The rows we both accepted total [amount] toward [name] as of [date]. This subtotal includes [short description of accepted additions] and [short description of accepted repayments or offsets].
 
-We are keeping [unresolved item] separate because we do not yet agree on how it affects the balance. If we later agree on that item, we will add a dated correction rather than silently changing the history.</blockquote>
+Unresolved items not included: [list items, or none]. If any item remains unresolved, this subtotal is not a confirmed final balance. If we later agree on an item, we will add a dated correction rather than silently changing the history.
+
+Final balance confirmation: [not yet confirmed / amount, direction and date confirmed by both people].</blockquote>
             </section>
 
             <p class="reconciliation-tool-transition">Once the accepted rows are clear, use the Running Balance Calculator if you still need to calculate the current total.</p>
@@ -287,7 +291,7 @@ We are keeping [unresolved item] separate because we do not yet agree on how it 
               <article><h3>Correction</h3><p>Both people agree that an earlier amount, direction, share, or entry was wrong and should be corrected with a dated change.</p></article>
               <article><h3>Unrelated</h3><p>The event happened, but both people agree that it did not belong to this balance.</p></article>
             </div>
-            <aside class="reconciliation-key-rule">Only Agreed rows and mutually accepted Corrections affect the agreed balance. Unverified and Disputed rows remain visible but separate.</aside>
+            <aside class="reconciliation-key-rule">Only Agreed rows and mutually accepted Corrections affect the accepted-row subtotal. Unverified and Disputed rows remain visible but separate; a subtotal is not a confirmed final balance while those items remain unresolved.</aside>
           </section>
 
           <section class="lt-toolsSection" aria-labelledby="mismatch-title">
@@ -310,7 +314,7 @@ We are keeping [unresolved item] separate because we do not yet agree on how it 
               <article><p class="reconciliation-script-label">Raise a missing payment</p><blockquote id="script-missing-payment">I remember paying [amount] by [method] on or around [date]. Can we check what that payment covered before we finalize the balance?</blockquote><button type="button" class="reconciliation-copy-button" data-copy-source="script-missing-payment" data-copy-success="Message copied." data-copy-failure="Copying did not work. Select the message and copy it manually.">Copy message</button></article>
               <article><p class="reconciliation-script-label">Clarify an offset</p><blockquote id="script-clarify-offset">I had understood the [expense] as reducing the balance. Did you understand it that way too, or did you see it as a separate shared cost?</blockquote><button type="button" class="reconciliation-copy-button" data-copy-source="script-clarify-offset" data-copy-success="Message copied." data-copy-failure="Copying did not work. Select the message and copy it manually.">Copy message</button></article>
               <article><p class="reconciliation-script-label">Keep an item unresolved</p><blockquote id="script-unresolved">We do not seem to agree on this row yet. Let’s keep it outside the agreed total instead of presenting either version as final.</blockquote><button type="button" class="reconciliation-copy-button" data-copy-source="script-unresolved" data-copy-success="Message copied." data-copy-failure="Copying did not work. Select the message and copy it manually.">Copy message</button></article>
-              <article><p class="reconciliation-script-label">Confirm the result</p><blockquote id="script-confirm-result">Based on the rows we both accepted, the current balance is [amount] as of [date]. We are keeping [item] separate because it is still unresolved.</blockquote><button type="button" class="reconciliation-copy-button" data-copy-source="script-confirm-result" data-copy-success="Message copied." data-copy-failure="Copying did not work. Select the message and copy it manually.">Copy message</button></article>
+              <article><p class="reconciliation-script-label">Share a partial result</p><blockquote id="script-confirm-result">The rows we both accepted total [amount] toward [name] as of [date]. We are keeping [item] separate because it is still unresolved, so the final balance is not yet confirmed.</blockquote><button type="button" class="reconciliation-copy-button" data-copy-source="script-confirm-result" data-copy-success="Message copied." data-copy-failure="Copying did not work. Select the message and copy it manually.">Copy message</button></article>
             </div>
           </section>
 
@@ -319,7 +323,7 @@ We are keeping [unresolved item] separate because we do not yet agree on how it 
             <p>The correct next step depends on what became clear. Do not treat every reconciliation as an open balance that needs more tracking.</p>
             <div class="reconciliation-result-states">
               <article><h3>Fully reconciled</h3><p>You both accept the rows and the current balance. Calculate the final number, confirm the date, and discuss timing only if money remains open.</p><a href="/tools/running-balance-calculator/" class="lt-cardCta">Calculate the agreed balance</a></article>
-              <article><h3>Partly reconciled</h3><p>You have an agreed balance plus one or more unresolved rows. Share them separately. Do not fold the unresolved amount into the final number.</p><a href="#reconciliation-worksheet" class="lt-cardCta">Copy the reconciliation summary</a></article>
+              <article><h3>Partly reconciled</h3><p>You have an accepted-row subtotal plus one or more unresolved rows. Share them separately, and leave the final balance unconfirmed until both people agree how to resolve those rows.</p><a href="#reconciliation-worksheet" class="lt-cardCta">Copy the reconciliation summary</a></article>
               <article><h3>Nothing remains open</h3><p>The accepted repayments and offsets close the balance. Send a short confirmation and stop tracking it.</p><a href="/tools/repayment-receipt-generator/" class="lt-cardCta">Create a repayment confirmation</a></article>
               <article><h3>Repayment itself is unclear</h3><p>The real disagreement is whether the money was a gift, temporary support, or something to repay. Leave this workflow and clarify the expectation first.</p><a href="/blog/how-to-clarify-if-money-was-a-gift-or-a-loan/" class="lt-cardCta">Clarify gift or loan</a></article>
             </div>
@@ -352,7 +356,7 @@ We are keeping [unresolved item] separate because we do not yet agree on how it 
   <div class="best-next-step__grid">
     <a class="best-next-step__card" href="/tools/running-balance-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="blog_what_to_do_when_you_disagree_about_how_much_money_is_still_owed_best_next_step_1" data-source-page="blog_what_to_do_when_you_disagree_about_how_much_money_is_still_owed" data-source-cluster="money-owed" data-destination-cluster="running-balance" data-step-type="tool" data-step-intent="calculate_running_balance" data-step-destination="/tools/running-balance-calculator/" data-step-position="1" data-module-variant="guide" data-module-template="custom" data-step-analytics-id="disagree_money_owed_calculate">
       <span class="best-next-step__label">Calculate</span>
-      <strong>Calculate the agreed balance</strong>
+      <strong>Calculate the accepted rows</strong>
       <span>Enter only the rows you both accepted and see the balance update in order.</span>
     </a>
     <a class="best-next-step__card" href="/tools/repayment-receipt-generator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="blog_what_to_do_when_you_disagree_about_how_much_money_is_still_owed_best_next_step_2" data-source-page="blog_what_to_do_when_you_disagree_about_how_much_money_is_still_owed" data-source-cluster="money-owed" data-destination-cluster="repayments" data-step-type="tool" data-step-intent="confirm_payment" data-step-destination="/tools/repayment-receipt-generator/" data-step-position="2" data-module-variant="guide" data-module-template="custom" data-step-analytics-id="disagree_money_owed_confirm">
@@ -414,7 +418,7 @@ We are keeping [unresolved item] separate because we do not yet agree on how it 
           </section>
 
           <p class="reconciliation-copy-status" aria-live="polite" aria-atomic="true" data-copy-status></p>
-          <p class="lt-pageMeta">Published <time datetime="2026-07-13">July 13, 2026</time> &middot; Updated <time datetime="2026-07-13">July 13, 2026</time></p>
+          <p class="lt-pageMeta">Published <time datetime="2026-07-13">July 13, 2026</time> &middot; Updated <time datetime="2026-10-24">October 24, 2026</time></p>
           <ul class="actions lt-actions"><li><a href="/blog/" class="button">Back to blog</a></li><li><a href="/tools/running-balance-calculator/" class="button">Calculate a running balance</a></li></ul>
         </article>
       </main>

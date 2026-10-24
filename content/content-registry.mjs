@@ -3508,7 +3508,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/temporary-financial-support-tracker/", "/solutions/app-to-track-money-owed/"],
     appStoreCpp: "temporary-financial-support",
     tags: ["template", "temporary-support", "family-help", "repayment-updates"],
-    updated: "2026-06-10",
+    updated: "2026-10-24",
     status: "live",
     priority: "core",
     primaryCta: "Create a support record",
@@ -4753,11 +4753,11 @@ export const contentRegistry = [
       "disagree about amount owed",
       "reconcile money owed",
     ],
-    updated: "2026-07-13",
+    updated: "2026-10-24",
     status: "live",
     priority: "high",
     primaryCta: "Calculate the agreed rows",
-    nextStep: "Calculate only the rows both people accept, then keep unresolved items outside the agreed balance.",
+    nextStep: "Calculate the accepted-row subtotal, keep unresolved items separate, and confirm the final balance only after both people agree.",
     bestNextSteps: {
       enabled: true,
       variant: "guide",
@@ -4768,7 +4768,7 @@ export const contentRegistry = [
       steps: [
         {
           label: "Calculate",
-          title: "Calculate the agreed balance",
+          title: "Calculate the accepted rows",
           description: "Enter only the rows you both accepted and see the balance update in order.",
           href: "/tools/running-balance-calculator/",
           type: "tool",
