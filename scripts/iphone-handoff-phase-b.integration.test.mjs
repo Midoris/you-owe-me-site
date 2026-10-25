@@ -29,7 +29,7 @@ function phaseBRoot(page, location) {
 
 test("all Phase-B cards are automatic desktop QR cards with truthful copy and ordinary fallback attribution", () => {
   const cards = [
-    ["home", phaseBRoot(home, "homepage_iphone_handoff"), "Get You Owe Me on your iPhone", "Keep loans, shared costs and repayments together.", "Scan with your iPhone camera to open the App Store.", expectedFallbacks.home, "/images/shared/iphone-handoff/home.png", "408"],
+    ["home", phaseBRoot(home, "homepage_iphone_handoff"), "Get You Owe Me on your iPhone", "Keep the amount, repayments, and remaining balance together.", "Scan with your iPhone camera to open the App Store.", expectedFallbacks.home, "/images/shared/iphone-handoff/home.png", "408"],
     ["roommate", phaseBRoot(roommate, "roommate_template_iphone_handoff"), "Prefer tracking on your iPhone?", "Record shared costs and repayments, and see what each roommate still owes.", "Start a new record in the app. Your spreadsheet is not imported.", expectedFallbacks.roommate, "/images/shared/iphone-handoff/roommate.png", "472"],
     ["split", phaseBRoot(split, "split_result_iphone_handoff"), "Who has paid you back?", "Record full or partial repayments and see what each person still owes.", "This opens the App Store. Your calculator result is not transferred.", expectedFallbacks.split, "/images/shared/iphone-handoff/split.png", "472"],
   ];

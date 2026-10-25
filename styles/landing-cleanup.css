@@ -309,3 +309,53 @@ body.homepage-page #money-story p.homepage-balance-example__totals{
   body.homepage-page #money-story p.homepage-balance-example__person{font-size:11px}
   body.homepage-page #money-story p.homepage-balance-example__totals{font-size:9px;padding-top:14px;margin-top:7px}
 }
+
+/* English product basics: new classes leave existing localized homes untouched. */
+body.homepage-page .homepage-hero-participation {
+  text-align: left;
+  margin: .85rem 0 0;
+  color: rgba(33, 41, 49, .88);
+  font-size: .95rem;
+  line-height: 1.5;
+}
+body.homepage-page .homepage-hero-pricing {
+  text-align: left;
+  flex-basis: 100%;
+  margin: .15rem 0 0;
+  color: rgba(33, 41, 49, .72);
+  font-size: .84rem;
+  line-height: 1.5;
+}
+body.homepage-page .homepage-basics-steps {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 1.6rem;
+  margin: 1.25rem 0 0;
+  padding-left: 1.25rem;
+  text-align: left;
+}
+body.homepage-page .homepage-basics-steps li {
+  min-width: 0;
+  padding: 0 .5rem 0 .15rem;
+  color: rgba(33, 41, 49, .88);
+  font-size: .98rem;
+  line-height: 1.6;
+}
+body.homepage-page .homepage-basics-steps strong {
+  display: block;
+  margin-bottom: .3rem;
+  color: #18212b;
+  font-weight: 700;
+}
+body.homepage-page .homepage-final-pricing {
+  margin-top: .75rem;
+  color: rgba(33, 41, 49, .72);
+  font-size: .9rem;
+  line-height: 1.5;
+}
+@media (max-width: 736px) {
+  body.homepage-page .homepage-basics-steps {
+    grid-template-columns: 1fr;
+    gap: .9rem;
+  }
+}

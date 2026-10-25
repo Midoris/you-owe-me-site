@@ -17,7 +17,7 @@ function sectionMarkup(className) {
 function heroMarkup() {
   const start = page.indexOf('<section class="lt-hero"');
   const end = page.indexOf('\n\n          <!-- money-story:start -->', start);
-  assert.ok(start >= 0 && end > start, "homepage hero should end before the money story");
+  assert.ok(start >= 0 && end > start, "homepage hero should end before its static proof");
   return page.slice(start, end);
 }
 
@@ -39,7 +39,7 @@ test("homepage hero keeps its primary download and separate QR handoff", () => {
   for (const copy of [
     "Loan &amp; IOU tracker for iPhone",
     "Know what&rsquo;s still owed.",
-    "Keep loans, shared costs and repayments in one clear record. See the balance with each person&mdash;even when payments arrive in parts.",
+    "Track money you lend, borrow, or cover for someone. See the balance with each person, even when repayments arrive in parts.",
   ]) {
     assert.ok(hero.includes(copy), `hero should include approved copy: ${copy}`);
   }
@@ -74,8 +74,9 @@ test("story, import, definition, and generated situation hub stay in the intende
   const researchIndex = page.indexOf('class="lt-pageSection lt-researchPanel"');
 
   assert.ok(storyStart >= 0 && storyEnd > storyStart, "the story block should be present");
-  assert.ok(storyStart < importStart && importStart < reviewIndex && reviewIndex < definitionIndex && definitionIndex < hubStart, "story → import → review → definition → generated situation hub order should be preserved");
-  assert.ok(hubStart < anniversaryIndex && anniversaryIndex < featureIndex && featureIndex < includedIndex && includedIndex < moreSituationsIndex && moreSituationsIndex < researchIndex, "later homepage sections should remain in order");
+  assert.ok(storyStart < storyEnd && storyEnd < definitionIndex && definitionIndex < reviewIndex && reviewIndex < hubStart, "hero proof → basics → review → generated situation hub order should be preserved");
+  assert.ok(hubStart < anniversaryIndex && anniversaryIndex < featureIndex && featureIndex < includedIndex && includedIndex < importStart && importStart < moreSituationsIndex, "later homepage sections should remain in order");
+  assert.equal(researchIndex, -1, "the removed population-statistics section stays absent");
   assert.equal((page.match(/<!-- money-story:start -->/g) ?? []).length, 1);
   const story = page.slice(storyStart, storyEnd);
   assert.doesNotMatch(story, /data-money-story|data-story-track|data-story-begin|Follow the story|Skip story|<template/);
@@ -94,8 +95,8 @@ test("story, import, definition, and generated situation hub stay in the intende
   assert.doesNotMatch(page, /homepage-loan-value|id="how-it-works-title"|How YouOweMe keeps shared money clear/);
 
   const definition = sectionMarkup("lt-definitionPanel");
-  assert.match(definition, /<h2 id="what-is-youoweme">What is You Owe Me\?<\/h2>[\s\S]*?You Owe Me is an iPhone app for tracking money you lend, borrow or cover for someone\./);
-  assert.match(definition, /Track on your own—the other person doesn’t need the app\.[\s\S]*?Share a statement or a live balance/);
+  assert.match(definition, /<h2 id="what-is-youoweme">From the first IOU to the last repayment<\/h2>[\s\S]*?You Owe Me keeps a separate balance and history for each person\./);
+  assert.match(definition, /<ol class="homepage-basics-steps">[\s\S]*?Add a person\.[\s\S]*?Record a repayment\.[\s\S]*?Keep the details close\./);
   const definitionCta = definition.match(/<a\b[^>]*data-cta-location="homepage-definition"[^>]*>[\s\S]*?<\/a>/)?.[0] ?? "";
   assert.ok(definitionCta, "definition should offer an App Store download");
   assert.ok(definitionCta.includes(`href="${APP_STORE_URL}"`));
@@ -118,7 +119,7 @@ test("generated hub retains its registered homepage content and placement", () =
 
   for (const copy of [
     'relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/shared-expense-tracker/", "/solutions/personal-loan-repayment-tracker/", "/solutions/family-reimbursement-tracker/"]',
-    'updated: "2026-10-18"',
+    'updated: "2026-10-25"',
     'enabled: true',
     'variant: "hub"',
     'placement: "after-definition"',

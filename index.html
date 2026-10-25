@@ -93,7 +93,7 @@
           "url": "https://you-owe-me.com/",
           "downloadUrl": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670",
           "image": "https://you-owe-me.com/images/shared/app-screenshots/6.8.5_money_between_people.webp",
-          "description": "You Owe Me is an iPhone app for tracking money between people. It helps with IOUs, shared bills, separate personal loans, repayment plans that follow real payments, recurring costs, reminders, Live Links, PDF statements, and follow-up messages, so you can see who owes whom, what changed, and what comes next.",
+          "description": "You Owe Me is an iPhone and iPad app for tracking money between people. It helps with IOUs, shared bills, separate personal loans, repayment plans that follow real payments, recurring costs, reminders, Live Links, PDF statements, and follow-up messages, so you can see who owes whom, what changed, and what comes next.",
           "offers": {
             "@type": "Offer",
             "price": "0",
@@ -154,7 +154,7 @@
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
       <link rel="stylesheet" href="/styles/loan-import-entry.css?v=20260925-mobile-layout-1" />
-    <link rel="stylesheet" href="./styles/landing-cleanup.css?v=20261014-static-balance-2" />
+    <link rel="stylesheet" href="./styles/landing-cleanup.css?v=20261025-basics-1" />
   </head>
 
   <body class="is-preload site-nav-page homepage-page">
@@ -188,14 +188,15 @@
         <article class="post featured">
           <section class="lt-hero" aria-labelledby="homepage-hero-title">
             <div class="lt-heroCopy">
-              <p class="lt-eyebrow">Loan &amp; IOU tracker for iPhone</p>
+              <p class="lt-eyebrow">Loan &amp; IOU tracker for iPhone and iPad</p>
               <header class="major">
                 <h1 id="homepage-hero-title">Know what&rsquo;s still owed.</h1>
               </header>
               <p class="lt-heroLead">
-                Keep loans, shared costs and repayments in one clear record. See the balance with each person&mdash;even when payments arrive in parts.
+                Track money you lend, borrow, or cover for someone. See the balance with each person, even when repayments arrive in parts.
               </p>
 
+              <p class="homepage-hero-participation">Track on your own. The other person doesn’t need the app.</p>
               <div data-app-language-support-anchor hidden></div>
               <div class="lt-ctaRow lt-heroCtas">
                 <a
@@ -210,6 +211,7 @@
                   <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" />
                 </a>
                 <span class="lt-salePill" aria-label="Current app sale" hidden>Sale - Now on Sale</span>
+                <p class="homepage-hero-pricing">Free to download · In-app purchases available</p>
               </div>
             </div>
 
@@ -217,7 +219,7 @@
               <div class="iphone-handoff__visible-layout">
                 <div class="iphone-handoff__visible-copy">
                   <h2 id="homepage-iphone-handoff-title">Get You Owe Me on your iPhone</h2>
-                  <p class="iphone-handoff__benefit">Keep loans, shared costs and repayments together.</p>
+                  <p class="iphone-handoff__benefit">Keep the amount, repayments, and remaining balance together.</p>
                   <p class="iphone-handoff__instruction" data-iphone-handoff-instruction>Scan with your iPhone camera to open the App Store.</p>
                   <a class="iphone-handoff__fallback" href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8">View app details on the App Store</a>
                 </div>
@@ -238,6 +240,21 @@
           </section>
           <div id="money-story-end" tabindex="-1"></div>
           <!-- money-story:end -->
+
+          <section class="lt-pageSection lt-definitionPanel" aria-labelledby="what-is-youoweme">
+            <h2 id="what-is-youoweme">From the first IOU to the last repayment</h2>
+            <p>You Owe Me keeps a separate balance and history for each person. Start with one amount, then update the record as money changes hands.</p>
+            <ol class="homepage-basics-steps">
+              <li><strong>Add a person.</strong> Record what you lent, borrowed, or paid for them.</li>
+              <li><strong>Record a repayment.</strong> See the remaining balance without changing the original amount.</li>
+              <li><strong>Keep the details close.</strong> Add a reminder for yourself or share a statement when you need to follow up.</li>
+            </ol>
+            <a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" class="lt-appStoreBtn" aria-label="Download You Owe Me on the App Store" data-cta-location="homepage-definition">
+              <span class="sr-only">Download You Owe Me on the App Store</span>
+              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" />
+            </a>
+            <p class="homepage-definition-trust">Available in 10 languages.</p>
+          </section>
 
           <!-- Temporarily inactive: retain the original story for a reversible homepage change. -->
           <template id="homepage-interactive-story-backup">
@@ -331,43 +348,11 @@
           <div id="money-story-end" tabindex="-1"></div>
           </template>
 
-          <!-- loan-import-offer:start -->
-          <div id="loan-import-offer" class="loan-import-entry" data-loan-offer="home">
-            <section class="loan-import-offer loan-import-offer--featured" aria-labelledby="loan-import-offer-title">
-              <div class="loan-import-offer__copy">
-                <p class="loan-import-offer__eyebrow">Start with what you already have</p>
-                <h2 id="loan-import-offer-title">Your loan history. Without starting over.</h2>
-                <p class="loan-import-offer__intro">Already keeping a loan in notes, a spreadsheet or on paper? Bring it here, check the details, and carry on in You Owe Me.</p>
-                <p class="loan-import-offer__formats">Text · CSV · Excel (.xlsx) · Word (.docx) · Photo</p>
-                <p class="loan-import-offer__limits">One loan at a time. Review and correct the details before saving. Import does not keep a spreadsheet in sync.</p>
-                <div class="loan-import-offer__actions">
-                  <button type="button" class="loan-import-offer__button" data-loan-import-open aria-expanded="false" aria-controls="loan-import-workspace" hidden>Import loan history</button>
-                  <a class="loan-import-offer__guide" href="/tools/personal-loan-payment-tracker/#loan-import-guide">How loan import works</a>
-                  <span class="loan-import-offer__reassurance">Review here. Keep tracking in You Owe Me on iPhone.</span>
-                </div>
-              </div>
-              <img class="loan-import-offer__image" src="/images/shared/loan-import-history.webp" width="640" height="427" alt="" loading="lazy" decoding="async" />
-            </section>
-            <div id="loan-import-workspace" hidden></div>
-          </div>
-          <!-- loan-import-offer:end -->
-
           <figure class="homepage-review-teaser">
             <p class="homepage-review-teaser__eyebrow">App Store review</p>
             <blockquote><strong>This app is a lifesaver!</strong> I finally have an easy way to track money I&rsquo;ve loaned or am owed.</blockquote>
             <figcaption><a href="/reviews/">ThePres_560</a></figcaption>
           </figure>
-
-          <section class="lt-pageSection lt-definitionPanel" aria-labelledby="what-is-youoweme">
-            <h2 id="what-is-youoweme">What is You Owe Me?</h2>
-            <p>You Owe Me is an iPhone app for tracking money you lend, borrow or cover for someone. Keep each person’s balance and repayment history together.</p>
-            <p>Track on your own—the other person doesn’t need the app. Share a statement or a live balance when you want to keep them in the loop.</p>
-            <a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" class="lt-appStoreBtn" aria-label="Download You Owe Me on the App Store" data-cta-location="homepage-definition">
-              <span class="sr-only">Download You Owe Me on the App Store</span>
-              <img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" />
-            </a>
-            <p class="homepage-definition-trust">Available in 10 languages.</p>
-          </section>
 
           <div id="situations">
           <!-- best-next-step:start -->
@@ -396,8 +381,6 @@
 </section>
 <!-- best-next-step:end -->
           </div>
-
-
 
           <section class="lt-pageSection lt-proofSection" aria-labelledby="proof-title">
             <div class="lt-sectionHeader">
@@ -652,7 +635,7 @@
 
           <section class="lt-pageSection" aria-labelledby="core-capabilities-title">
             <div class="lt-sectionHeader">
-              <h2 id="core-capabilities-title">Built for the moments when money gets messy</h2>
+              <h2 id="core-capabilities-title">Simple for an IOU. Ready for a longer loan.</h2>
             </div>
             <div class="lt-coreFeatureGrid">
               <article class="lt-coreFeatureCard">
@@ -709,6 +692,27 @@
               <a href="./quick-start/" class="lt-textCta" data-cta-location="quick-start-link">See how it works</a>
             </div>
           </section>
+
+          <!-- loan-import-offer:start -->
+          <div id="loan-import-offer" class="loan-import-entry" data-loan-offer="home">
+            <section class="loan-import-offer loan-import-offer--featured" aria-labelledby="loan-import-offer-title">
+              <div class="loan-import-offer__copy">
+                <p class="loan-import-offer__eyebrow">Start with what you already have</p>
+                <h2 id="loan-import-offer-title">Your loan history. Without starting over.</h2>
+                <p class="loan-import-offer__intro">Already keeping a loan in notes, a spreadsheet or on paper? Bring it here, check the details, and carry on in You Owe Me.</p>
+                <p class="loan-import-offer__formats">Text · CSV · Excel (.xlsx) · Word (.docx) · Photo</p>
+                <p class="loan-import-offer__limits">One loan at a time. Review and correct the details before saving. Import does not keep a spreadsheet in sync.</p>
+                <div class="loan-import-offer__actions">
+                  <button type="button" class="loan-import-offer__button" data-loan-import-open aria-expanded="false" aria-controls="loan-import-workspace" hidden>Import loan history</button>
+                  <a class="loan-import-offer__guide" href="/tools/personal-loan-payment-tracker/#loan-import-guide">How loan import works</a>
+                  <span class="loan-import-offer__reassurance">Review here. Keep tracking in You Owe Me on iPhone.</span>
+                </div>
+              </div>
+              <img class="loan-import-offer__image" src="/images/shared/loan-import-history.webp" width="640" height="427" alt="" loading="lazy" decoding="async" />
+            </section>
+            <div id="loan-import-workspace" hidden></div>
+          </div>
+          <!-- loan-import-offer:end -->
 
           <section id="more-situations" class="lt-pageSection lt-situationsSection" aria-labelledby="more-situations-title">
             <div class="lt-sectionHeader">
@@ -797,37 +801,6 @@
             </div>
           </section>
 
-          <section class="lt-pageSection lt-researchPanel" aria-labelledby="clear-records-title">
-            <div class="lt-clearRecordsLayout">
-              <div>
-                <h2 id="clear-records-title">Why clear records matter</h2>
-                <p>
-                  Money between people is common, but it can become stressful quickly. Bankrate's 2025 survey found that about 70% of U.S. adults have lent money or paid a group expense expecting to be reimbursed, and 55% of them experienced at least one negative consequence.
-                </p>
-                <p class="lt-paragraphGap">
-                  YouOweMe helps with the part you can control: the balance, the history, the reminder, and the next message.
-                </p>
-                <p class="lt-sourceLine">
-                  Source: <a href="https://www.bankrate.com/banking/rules-for-lending-family-friends/" target="_blank" rel="noopener noreferrer">Bankrate</a>
-                </p>
-                <p class="lt-paragraphGap">
-                  Family reimbursements are common too. The 2025 Caregiving in the U.S. report says 63 million Americans provide ongoing care, and AARP reports that half of caregivers experience a negative financial impact.
-                  Need a practical parent-bill workflow? See the <a href="/solutions/elderly-parent-expense-tracker/">elderly parent expense tracker</a> or the <a href="/blog/how-to-track-money-you-pay-for-elderly-parents/">parent expense tracking guide</a>.
-                </p>
-                <p class="lt-sourceLine">
-                  Sources:
-                  <a href="https://www.caregivingintheus.org/" target="_blank" rel="noopener noreferrer">Caregiving in the U.S.</a>
-                  and
-                  <a href="https://www.aarp.org/pri/topics/ltss/family-caregiving/caregiving-in-the-us-2025/" target="_blank" rel="noopener noreferrer">AARP</a>
-                </p>
-              </div>
-              <picture>
-                <source srcset="./images/shared/app-screenshots/6.8.5_share_clear_records.webp" type="image/webp" />
-                <img src="./images/shared/app-screenshots/6.8.5_share_clear_records.png" alt="YouOweMe PDF statement screen for sharing clear records with selected entries and a due date" loading="lazy" decoding="async" width="1290" height="2796" />
-              </picture>
-            </div>
-          </section>
-
           <section class="lt-pageSection lt-resourceShelf" aria-labelledby="resource-shelf-title">
             <div class="lt-sectionHeader">
               <p class="lt-eyebrow">Helpful specific paths</p>
@@ -876,7 +849,7 @@
             <div class="lt-faqList">
               <article>
                 <h3>What is You Owe Me?</h3>
-                <p>You Owe Me is an iPhone app for tracking money between people. It helps with IOUs, shared bills, separate informal loans, repayment plans that follow real payments, recurring costs, reminders, Live Links, PDF statements, and follow-up messages.</p>
+                <p>You Owe Me is an iPhone and iPad app for tracking money between people. It helps with IOUs, shared bills, separate informal loans, repayment plans that follow real payments, recurring costs, reminders, Live Links, PDF statements, and follow-up messages.</p>
               </article>
               <article id="platform-availability">
                 <h3>Is You Owe Me available on Android?</h3>
@@ -918,8 +891,9 @@
           </section>
 
           <section class="lt-finalCta" aria-labelledby="final-cta-title">
-            <h2 id="final-cta-title">Keep money clear before it gets awkward</h2>
-            <p>For everyday IOUs, keep one running balance and history. For a longer loan, keep the agreed plan, real payments, projected payoff, and next reminder tied to the same record.</p>
+            <h2 id="final-cta-title">Start with the balance on your mind</h2>
+            <p>Add the person and what is owed. Keep repayments, reminders, and the history together in You Owe Me on iPhone or iPad.</p>
+            <p class="homepage-final-pricing">Start free within the included limits. Optional upgrades are available in the app.</p>
             <div class="lt-ctaRow">
               <a
                 href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8"

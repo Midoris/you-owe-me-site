@@ -793,7 +793,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/shared-expense-tracker/", "/solutions/personal-loan-repayment-tracker/", "/solutions/family-reimbursement-tracker/"],
     appStoreCpp: "general",
     tags: ["app", "overview", "money-between-people", "running-balance", "loan-records", "repayment-plans", "balance-sync", "live-links", "ten-languages", "app-localization"],
-    updated: "2026-10-18",
+    updated: "2026-10-25",
     status: "live",
     priority: "core",
     primaryCta: "Download You Owe Me",
