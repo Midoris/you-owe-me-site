@@ -47,19 +47,19 @@ async function walkIndexFiles(directory) {
   return files;
 }
 
-test("the old bridge is replaced by one initially visible tracking prompt after the complete opening formula", () => {
+test("the old bridge is replaced by one initially visible tracking prompt after the complete examples section", () => {
   const prompt = promptMarkup();
 
   assert.doesNotMatch(page, /polite-reminder-product-bridge/);
   assert.equal((page.match(/data-post-copy-app-prompt/g) || []).length, 1);
   assert.doesNotMatch(prompt.match(/<aside\b[^>]*>/)[0], /\bhidden\b/);
-  assert.match(page, /aria-labelledby="polite-formula-title"[\s\S]*?<\/section>\s*<div data-reminder-tracking-home>/);
+  assert.match(page, /id="polite-reminder-examples"[\s\S]*?<\/section>\s*<div data-reminder-tracking-home>/);
   assert.ok(page.indexOf('data-reminder-tracking-home') < page.indexOf('data-anniversary-announcement'));
   assert.ok(page.indexOf('data-reminder-tracking-home') < page.indexOf('id="promised-money"'));
   assert.match(prompt, /aria-labelledby="polite-reminder-post-copy-title"/);
   assert.match(prompt, />After the reminder</);
-  assert.match(prompt, />Keep track until you&rsquo;re paid back<\/h3>/);
-  assert.match(prompt, /If repayment will happen later or in parts, record each payment in You Owe Me on iPhone and see what is still owed\. Start a new record in the app; your message is not imported\./);
+  assert.match(prompt, />Know what’s left after each repayment<\/h3>/);
+  assert.match(prompt, /Lent \$120 and received \$40 back\? Record the payment in You Owe Me and keep the remaining \$80 beside the repayment history\. Add a reminder for the next follow-up\. Start a new record in the app; your message is not imported\./);
   assert.match(styles, /polite-reminder-post-copy\[hidden\]\s*\{\s*display:\s*none/);
 });
 
@@ -139,9 +139,9 @@ test("existing analytics and copy contracts remain intact", () => {
 test("search-facing article metadata preserves canonical and dates with approved copy", () => {
   assert.match(page, /<link rel="canonical" href="https:\/\/you-owe-me\.com\/blog\/how-to-remind-someone-they-owe-you-money-politely\/" \/>/);
   assert.match(page, /name="description"[\s\S]*Copy polite texts to ask for money back: friendly reminders, overdue repayments and partial payments\./);
-  assert.match(page, /"dateModified": "2026-10-11"/);
-  assert.match(page, /article:modified_time" content="2026-10-11T00:00:00\+07:00"/);
-  assert.match(page, /Updated <time datetime="2026-10-11">October 11, 2026<\/time>/);
+  assert.match(page, /"dateModified": "2026-10-25"/);
+  assert.match(page, /article:modified_time" content="2026-10-25T00:00:00\+07:00"/);
+  assert.match(page, /Updated <time datetime="2026-10-25">October 25, 2026<\/time>/);
   assert.match(page, /href="\/styles\/polite-money-reminder-answer\.css\?v=conversion-continuation-20261011-2"/);
 });
 
