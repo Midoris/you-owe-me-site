@@ -6540,7 +6540,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/temporary-financial-support-tracker/", "/solutions/app-to-track-money-owed/"],
     appStoreCpp: "temporary-financial-support",
     tags: ["guide", "boundaries", "family-help", "messages", "scripts", "lending-money", "family-boundaries", "friends"],
-    updated: "2026-08-12",
+    updated: "2026-10-25",
     status: "live",
     priority: "medium",
     primaryCta: "Read money conversation guidance",
