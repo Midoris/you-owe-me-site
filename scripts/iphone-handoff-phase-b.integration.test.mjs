@@ -30,7 +30,7 @@ function phaseBRoot(page, location) {
 test("all Phase-B cards are automatic desktop QR cards with truthful copy and ordinary fallback attribution", () => {
   const cards = [
     ["home", phaseBRoot(home, "homepage_iphone_handoff"), "Get You Owe Me on your iPhone", "Keep the amount, repayments, and remaining balance together.", "Scan with your iPhone camera to open the App Store.", expectedFallbacks.home, "/images/shared/iphone-handoff/home.png", "408"],
-    ["roommate", phaseBRoot(roommate, "roommate_template_iphone_handoff"), "Prefer tracking on your iPhone?", "Record shared costs and repayments, and see what each roommate still owes.", "Start a new record in the app. Your spreadsheet is not imported.", expectedFallbacks.roommate, "/images/shared/iphone-handoff/roommate.png", "472"],
+    ["roommate", phaseBRoot(roommate, "roommate_template_iphone_handoff"), "Keep the next repayment on your iPhone", "Record shared costs and repayments in You Owe Me, with a current balance for each roommate.", "Start a new record in the app. Your spreadsheet is not imported.", expectedFallbacks.roommate, "/images/shared/iphone-handoff/roommate.png", "472"],
     ["split", phaseBRoot(split, "split_result_iphone_handoff"), "Who has paid you back?", "Record full or partial repayments and see what each person still owes.", "This opens the App Store. Your calculator result is not transferred.", expectedFallbacks.split, "/images/shared/iphone-handoff/split.png", "472"],
   ];
 
@@ -67,8 +67,10 @@ test("Phase-B placement preserves home/template actions and confines split QR to
 
   const roommateHero = roommate.indexOf('class="lt-toolsHero roommate-template-hero"');
   const roommateCard = roommate.indexOf('data-cta-location="roommate_template_iphone_handoff"');
-  const roommateFit = roommate.indexOf('class="roommate-template-section roommate-template-fit"');
-  assert.ok(roommateHero < roommateCard && roommateCard < roommateFit);
+  const roommateDownloads = roommate.indexOf('aria-labelledby="download-title"');
+  const roommateExample = roommate.indexOf('aria-labelledby="example-title"');
+  const roommateWorkbook = roommate.indexOf('aria-labelledby="workbook-title"');
+  assert.ok(roommateHero < roommateDownloads && roommateDownloads < roommateExample && roommateExample < roommateCard && roommateCard < roommateWorkbook);
   assert.ok(roommate.includes("Download the Excel template"));
   assert.ok(roommate.includes("Use in Google Sheets"));
   const archivedStory = roommate.match(/<template id="roommate-interactive-story-backup">([\s\S]*?)<\/template>/)?.[1];
@@ -80,7 +82,7 @@ test("Phase-B placement preserves home/template actions and confines split QR to
   assert.doesNotMatch(activeRoommate, /(?:src|href)="[^"]*money-story\.(?:mjs|css)/);
   const downloadsEnd = activeRoommate.indexOf('class="roommate-template-privacy"');
   const workbookStart = activeRoommate.indexOf('aria-labelledby="workbook-title"');
-  assert.ok(downloadsEnd > roommateFit && workbookStart > downloadsEnd, "workbook guidance follows the download choices");
+  assert.ok(downloadsEnd > roommateDownloads && workbookStart > roommateCard, "worked example and desktop handoff follow downloads before workbook guidance");
   assert.match(activeRoommate, /id="roommate-summary-message"[\s\S]*?data-copy-target="roommate-summary-message"/);
 
 

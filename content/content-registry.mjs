@@ -3050,7 +3050,7 @@ export const contentRegistry = [
       "tracking payments with roommate spreadsheet",
       "shared expenses spreadsheet for roommates",
     ],
-    updated: "2026-09-10",
+    updated: "2026-10-25",
     status: "live",
     priority: "core",
     primaryCta: "Download the Excel template",
