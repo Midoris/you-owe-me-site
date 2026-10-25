@@ -74,7 +74,7 @@ body.first-request-page {
   text-align: left;
 }
 
-body.first-request-page article.post.featured .first-request-continuation > h2 {
+body.first-request-page article.post.featured .first-request-continuation > h3 {
   width: 100%;
   max-width: 100%;
   margin: 0 0 0.7rem;
@@ -133,4 +133,16 @@ body.first-request-page article.post.featured .first-request-continuation a:focu
   .first-request-page .template-card__message {
     padding: 0.8rem;
   }
+}
+
+body.first-request-page article.post.featured > .lt-breadcrumb {
+  margin-bottom: 1.25rem;
+}
+body.first-request-page article.post.featured > .lt-breadcrumb + header.major {
+  margin-top: 0 !important;
+  padding-top: 0 !important;
+  text-align: left !important;
+}
+body.first-request-page article.post.featured > header.major > h1 {
+  text-align: left !important;
 }

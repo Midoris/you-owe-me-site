@@ -103,7 +103,7 @@ test("each continuation preserves one historical action, language anchor and uni
   assert.equal(contextual.hasAttribute("data-track-event"), false);
   assert.equal(contextual.hasAttribute("data-track-location"), false);
   // The useful related-page link remains at the bottom; only the contextual link moves.
-  assert.equal(doc.querySelectorAll('a[href="/solutions/app-to-track-money-owed/"]').length, 2);
+  assert.equal(doc.querySelectorAll('a[href="/solutions/app-to-track-money-owed/"]').length, 3);
   assert.doesNotMatch(guide, /Looking for the product-focused version/);
 });
 
