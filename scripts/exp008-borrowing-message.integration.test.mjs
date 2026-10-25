@@ -58,9 +58,11 @@ test("EXP-008 puts all seven examples directly after the shortened hero and pres
   const before = page.indexOf('id="before-you-ask-title"');
   const how = page.indexOf('id="how-to-ask-title"');
   const remaining = page.indexOf('id="kind-of-help-title"');
+  const record = page.indexOf('id="simple-record"');
+  const recordEnd = page.indexOf('</section>', record);
   const examplesMarkup = page.match(/<section class="lt-toolsSection" id="copyable-text-examples"[\s\S]*?<\/section>/)?.[0] || "";
 
-  assert.ok(heroEnd < examples && examples < story && story < callout && callout < before && before < how && how < remaining);
+  assert.ok(heroEnd < examples && examples < callout && callout < before && before < how && how < remaining && remaining < record && recordEnd < story);
   assert.equal((examplesMarkup.match(/data-template-id=/g) ?? []).length, 7);
   assert.equal((page.match(/id="copyable-text-examples"/g) ?? []).length, 1);
   assert.match(page, /<h1>How to Ask to Borrow Money From a Friend<\/h1>/);
@@ -113,9 +115,9 @@ test("EXP-008 keeps the exact changed messages in both rendered and copy attribu
     assert.equal(decodeHtml(attribute?.[1] ?? ""), expected, `${id} data-template`);
     assert.equal(decodeHtml(visible?.[1] ?? ""), expected, `${id} visible copy`);
   }
-  assert.match(cardMarkup("cover-something-temporarily"), /Would you be okay covering this for me for now\?/);
+  assert.match(cardMarkup("cover-something-temporarily"), /Would you be able to cover \[expense\] for me\?/);
   assert.match(cardMarkup("respectful-reply-if-no"), /Thanks for being honest/);
-  assert.match(cardMarkup("reply-after-yes"), /Thank you - I really appreciate it/);
+  assert.match(cardMarkup("reply-after-yes"), /Thank you for helping/);
 });
 
 test("EXP-008 connects one friend-copy event to the existing sanitized analytics handler", () => {

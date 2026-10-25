@@ -8,8 +8,8 @@ const controller = await readFile(new URL('./friend-borrow-post-copy.js', import
 const engine = await readFile(new URL('./friend-borrow-money-answer.js', import.meta.url), 'utf8');
 const eventName = 'youoweme:friend-borrow-money-copy';
 const variants = [
-  ['template', 'reply-after-yes', 'Reply copied', 'Keep the amount and repayment plan together'],
-  ['record', 'friend-borrow-example-record', 'Record copied', 'Keep repayments and the remaining amount together'],
+  ['template', 'reply-after-yes', 'Reply copied', 'Keep track of your promise'],
+  ['record', 'friend-borrow-example-record', 'Record copied', 'See what you have left to repay'],
   ['template', 'need-more-time-update', 'Update copied', 'Keep the revised plan clear'],
 ];
 function fixture(options) {
@@ -39,7 +39,11 @@ function eligible(env, variant) {
   assert.equal(card.parentNode.children[card.parentNode.children.indexOf(card) + 1], env.prompt);
   assert.equal(state(env)[1], eyebrow);
   assert.equal(state(env)[2], heading);
-  assert.match(state(env)[3], /^If /);
+  assert.equal(state(env)[3], {
+    'reply-after-yes': 'Record what you borrowed and the repayment date you agreed on. As you pay it back, You Owe Me keeps the payments and remaining balance together, so your next update starts with the right amount.',
+    'friend-borrow-example-record': 'Create your loan record in You Owe Me, then add each repayment as you make it. Keep the original amount, payments, and remaining balance together.',
+    'need-more-time-update': 'If you and your friend agree on new timing, keep that update with the loan record. Record repayments as you make them and set a reminder for your next check-in.',
+  }[id]);
   invariant(env);
 }
 
@@ -49,8 +53,8 @@ test('authored prompt is visible after the whole grid with ordinary attributed a
   assert.ok(page.indexOf('data-friend-borrow-tracking-home') > page.indexOf('data-copy-template="reply-after-yes"'));
   assert.ok(page.indexOf('data-friend-borrow-tracking-home') < page.indexOf('Do not send a long emotional message'));
   assert.equal(state(env)[1], 'After they agree');
-  assert.equal(state(env)[2], 'Keep the repayment plan clear');
-  assert.match(state(env)[3], /any agreed repayment date/);
+  assert.equal(state(env)[2], 'Keep track of your promise');
+  assert.match(state(env)[3], /any repayment date you agreed on/);
   const app = env.prompt.querySelector('[data-track-location="friend_borrow_post_copy_app_store_cta"]');
   assert.equal(app.getAttribute('href'), 'https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&pt=117888502&ct=website_cta&mt=8');
   assert.equal(app.getAttribute('data-source-cluster'), 'temporary-support');
@@ -59,9 +63,9 @@ test('authored prompt is visible after the whole grid with ordinary attributed a
   assert.ok(env.prompt.querySelector('[data-track-location="friend_borrow_post_copy_solution_cta"]'));
   assert.equal(env.anchor.hidden, true);
   invariant(env);
-  assert.ok(page.indexOf('/scripts/friend-borrow-post-copy.js?v=additional-opportunities-20261011-1') > page.indexOf('/scripts/friend-borrow-money-answer.js'));
-  assert.match(page, /dateModified": "2026-10-11"/);
-  assert.match(page, /Updated <time datetime="2026-10-11">October 11, 2026/);
+  assert.ok(page.indexOf('/scripts/friend-borrow-post-copy.js?v=additional-opportunities-20261025-1') > page.indexOf('/scripts/friend-borrow-money-answer.js'));
+  assert.match(page, /dateModified": "2026-10-25"/);
+  assert.match(page, /Updated <time datetime="2026-10-25">October 25, 2026/);
   assert.doesNotMatch(controller, /innerHTML|cloneNode|scrollIntoView|\.focus\(|navigator|localStorage|CustomEvent/);
 });
 

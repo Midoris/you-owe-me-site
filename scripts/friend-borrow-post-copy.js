@@ -25,24 +25,24 @@
     );
     var defaultCopy = {
       eyebrow: "After they agree",
-      heading: "Keep the repayment plan clear",
-      message: "If your friend agrees to lend you money, use You Owe Me on iPhone to record what you borrowed, any agreed repayment date, and each payment you make."
+      heading: "Keep track of your promise",
+      message: "If your friend agrees to lend you money, record what you borrowed and any repayment date you agreed on. As you pay it back, You Owe Me keeps the payments and remaining balance together."
     };
     var copyVariants = {
       "template:reply-after-yes": {
         eyebrow: "Reply copied",
-        heading: "Keep the amount and repayment plan together",
-        message: defaultCopy.message
+        heading: "Keep track of your promise",
+        message: "Record what you borrowed and the repayment date you agreed on. As you pay it back, You Owe Me keeps the payments and remaining balance together, so your next update starts with the right amount."
       },
       "record:friend-borrow-example-record": {
         eyebrow: "Record copied",
-        heading: "Keep repayments and the remaining amount together",
-        message: "If you’re tracking a loan like this, use You Owe Me on iPhone to record repayments and see what remains."
+        heading: "See what you have left to repay",
+        message: "Create your loan record in You Owe Me, then add each repayment as you make it. Keep the original amount, payments, and remaining balance together."
       },
       "template:need-more-time-update": {
         eyebrow: "Update copied",
         heading: "Keep the revised plan clear",
-        message: "If you and your friend agree on a revised plan, record repayments, the remaining amount, and any agreed repayment date in You Owe Me on iPhone."
+        message: "If you and your friend agree on new timing, keep that update with the loan record. Record repayments as you make them and set a reminder for your next check-in."
       }
     };
 
