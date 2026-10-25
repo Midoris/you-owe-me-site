@@ -72,7 +72,7 @@ test("money-owed hero leads to a separate first-balance setup module", async () 
   assert.doesNotMatch(html.slice(heroIndex, heroEndIndex), /solution-hero-highlights|(?:class|id)="money-owed-first-minute/);
   assert.match(html, /You Owe Me is a private record and communication tool\. It does not lend money, move money, collect debts, or replace accounting software\./);
   assert.match(html, /<p class="lt-maintenanceProof">/);
-  assert.match(html, /href="\.\.\/\.\.\/styles\/solution-detail\.css\?v=conversion-polish-20260905-3"/);
+  assert.match(html, /href="\.\.\/\.\.\/styles\/solution-detail\.css\?v=money-owed-copy20261025"/);
 });
 
 test("first-minute reassurance styles remain page-scoped and responsive", async () => {

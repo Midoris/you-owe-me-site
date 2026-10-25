@@ -2637,3 +2637,35 @@ body.elderly-parent-expense-page .elderly-wide-visual img {
     flex-direction: column;
   }
 }
+
+/* Optional detail on the English money-owed page. */
+body.money-owed-solution-page .money-owed-disclosure {
+  min-width: 0;
+  margin-top: 1.25rem;
+  border: 1px solid rgba(15, 23, 42, .08);
+  border-radius: 20px;
+  background: rgba(255, 255, 255, .76);
+}
+body.money-owed-solution-page .money-owed-disclosure > summary {
+  padding: 1rem 1.25rem;
+  color: #18212b;
+  cursor: pointer;
+  font-weight: 700;
+  line-height: 1.5;
+}
+body.money-owed-solution-page .money-owed-disclosure > summary:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, .32);
+  outline-offset: 3px;
+  border-radius: 20px;
+}
+body.money-owed-solution-page .money-owed-disclosure > .solution-workflow-grid,
+body.money-owed-solution-page .money-owed-disclosure > .lt-relatedGrid {
+  margin: 0 1.25rem 1.25rem;
+}
+body.money-owed-solution-page .money-owed-related-directory > p {
+  margin: 0 1.25rem 1rem;
+}
+
+body.money-owed-solution-page .money-owed-capabilities .solution-workflow-card {
+  padding-left: 1.35rem;
+}
