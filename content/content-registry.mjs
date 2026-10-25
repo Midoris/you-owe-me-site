@@ -2494,7 +2494,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/group-payback-tracker/", "/solutions/shared-expense-tracker/", "/solutions/expense-tracker-for-couples/", "/solutions/roommate-expense-tracker/"],
     appStoreCpp: "shared-expenses-over-time",
     tags: ["calculator", "split-expense", "shared-costs", "group-paybacks", "settle-up", "who-owes-what", "money-split-calculator", "shared-expense-calculator", "selective-splits", "fair-share"],
-    updated: "2026-10-23",
+    updated: "2026-10-25",
     status: "live",
     priority: "core",
     primaryCta: "Calculate the split",

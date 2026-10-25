@@ -31,7 +31,7 @@ test("all Phase-B cards are automatic desktop QR cards with truthful copy and or
   const cards = [
     ["home", phaseBRoot(home, "homepage_iphone_handoff"), "Get You Owe Me on your iPhone", "Keep loans, shared costs and repayments together.", "Scan with your iPhone camera to open the App Store.", expectedFallbacks.home, "/images/shared/iphone-handoff/home.png", "408"],
     ["roommate", phaseBRoot(roommate, "roommate_template_iphone_handoff"), "Prefer tracking on your iPhone?", "Record shared costs and repayments, and see what each roommate still owes.", "Start a new record in the app. Your spreadsheet is not imported.", expectedFallbacks.roommate, "/images/shared/iphone-handoff/roommate.png", "472"],
-    ["split", phaseBRoot(split, "split_result_iphone_handoff"), "Track repayments on your iPhone", "See what is still owed as people pay you back.", "This opens the App Store. Your calculator result is not transferred.", expectedFallbacks.split, "/images/shared/iphone-handoff/split.png", "472"],
+    ["split", phaseBRoot(split, "split_result_iphone_handoff"), "Who has paid you back?", "Record full or partial repayments and see what each person still owes.", "This opens the App Store. Your calculator result is not transferred.", expectedFallbacks.split, "/images/shared/iphone-handoff/split.png", "472"],
   ];
 
   for (const [name, card, heading, benefit, limitation, fallback, image, intrinsicSize] of cards) {
@@ -115,7 +115,7 @@ test("visible cards use the shared desktop-only layout and cache-busted module p
     assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"));
     assert.ok(page.includes("styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1"));
   }
-  assert.ok(split.includes(`split-expense-calculator.js?v=${sharedAssetVersions["/scripts/split-expense-calculator.js"]}`));
+  assert.ok(split.includes("split-expense-calculator.js?v=copy20261025"), "English copy has its own cache version; localized outputs retain their accepted asset URLs");
 });
 
 test("the QR manifest and reproducible generator retain the original pooled-campaign destinations", () => {

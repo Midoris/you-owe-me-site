@@ -484,8 +484,8 @@
   function renderResultActions(result) {
     els.exampleMarker.hidden = meaningfulEdit || !hasValidResult(result);
     if (result.transfers.length > 0) {
-      els.resultAppTitle.textContent = translate("Keep track until everyone has paid");
-      setTranslatedContent(els.resultAppMessage, "Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.");
+      els.resultAppTitle.textContent = translate(localizedStrings ? "Keep track until everyone has paid" : "Keep track as repayments come in");
+      setTranslatedContent(els.resultAppMessage, localizedStrings ? "Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes." : "Create a record in You Owe Me for the amounts you need to track. Record each payment and keep the remaining balances clear.");
     } else {
       els.resultAppTitle.textContent = translate("Keep future shared costs in one place");
       setTranslatedContent(els.resultAppMessage, "This split is settled. If you share costs again, You Owe Me on iPhone keeps new expenses and repayments in one balance for each person.");
