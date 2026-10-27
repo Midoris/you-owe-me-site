@@ -26,7 +26,7 @@ body.roommate-move-in-page article.post.featured { max-width: 88rem !important; 
 .roommate-move-in-page .lt-primaryCta:hover { background: #bcf18c; }
 .move-in-secondary { display: inline-flex; align-items: center; justify-content: center; padding: 0.7rem 1.1rem; border: 1px solid rgba(15, 23, 42, 0.18); border-radius: 12px; color: #18212b; font-family: "Source Sans Pro", sans-serif; font-weight: 900; line-height: 1.4; }
 .move-in-secondary:hover { background: #fff; }
-.move-in-hero .lt-toolsHeroCopy > .move-in-secondary { padding: 0.35rem 0; border: 0; text-decoration: underline; font-family: inherit; font-size: 0.9rem; }
+.move-in-hero .lt-toolsHeroCopy > .move-in-secondary { padding: 0.35rem 0; border: 0; text-decoration: underline; font-size: 0.9rem; }
 .move-in-preview { min-width: 0; padding: clamp(1.2rem, 2.5vw, 2rem); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 22px; background: rgba(255, 255, 255, 0.74); box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1); }
 .roommate-move-in-page .move-in-preview h2 { font-size: 1.5rem; }
 .move-in-preview-row { padding: 1rem 0; border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
@@ -73,3 +73,19 @@ body.roommate-move-in-page article.post.featured { max-width: 88rem !important; 
  .move-in-preview { padding: 1.1rem; }
  .move-in-app .iphone-handoff__qr { max-width: 10rem; }
 }
+
+/* October 2026 resource-page polish. */
+.roommate-move-in-page .lt-primaryCta,
+.roommate-move-in-page .move-in-secondary { min-height: 44px; border-radius: 12px; font-family: "Source Sans Pro", sans-serif; font-weight: 900; }
+.roommate-move-in-page .move-in-app-jump { margin: 1rem 0 0; font-size: .95rem; line-height: 1.7; }
+.roommate-move-in-page .move-in-app-jump a { text-decoration: underline; text-underline-offset: .18em; }
+.roommate-move-in-page h2[id], .roommate-move-in-page section[id] { scroll-margin-top: 1.5rem; }
+.move-in-column-help { margin: 1.5rem 0; padding: 1rem 1.2rem; border: 1px solid rgba(15,23,42,.12); border-radius: 12px; background: rgba(255,255,255,.74); }
+.move-in-column-help > summary { cursor: pointer; font-family: "Source Sans Pro", sans-serif; font-weight: 900; color: #18212b; line-height: 1.6; }
+.move-in-column-help > summary:focus-visible { outline: 3px solid rgba(53, 84, 40, 0.32); outline-offset: 4px; }
+.move-in-column-help .move-in-definitions { margin-bottom: 0; }
+.move-in-table-cue { display: none; }
+@media (max-width: 736px) {
+ .move-in-table-cue { display: block; margin: 1rem 0 -.5rem; font-size: .9rem; line-height: 1.6; }
+}
+@media (max-width: 736px) { .move-in-preview { display: none; } }

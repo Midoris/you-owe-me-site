@@ -215,3 +215,23 @@ test("reviewed native registry prose overrides only five editorial fields and re
   assert.equal(safe.url, native.es);
   assert.equal(safe.appStoreCpp, "general");
 });
+
+
+test("native Spanish guide navigation is closed, preserves every link and is limited to its two routes", () => {
+  const targets = new Set(["/es/blog/como-pedir-dinero-prestado-a-un-amigo/", "/es/blog/como-pedir-que-te-devuelvan-dinero/"]);
+  for (const locale of siteLocales.filter(item => item.code !== "en")) for (const page of locale.pages.filter(item => item.complete)) {
+    const route = page[locale.code];
+    const baseline = execFileSync("git", ["show", `739ee644646dff36eeeb646e6848c7b884cdfb51:${route.slice(1)}index.html`], { encoding: "utf8" });
+    const rendered = renderLocaleHtml(baseline, page.en, locale.code);
+    assert.equal(renderLocaleHtml(rendered, page.en, locale.code), rendered, `Idempotent generation: ${route}`);
+    const nav = html => html.match(/<nav class="(?:site-spanish-section|site-locale-section)"[\s\S]*?<\/nav>/)[0];
+    assert.equal(nav(rendered), nav(baseline), `Navigation links, labels and current state: ${route}`);
+    if (targets.has(route)) {
+      const wrapper = `<details class="site-spanish-disclosure"><summary>Más guías en español</summary>${nav(baseline)}</details>`;
+      assert.ok(rendered.includes(wrapper), `Native closed disclosure: ${route}`);
+      assert.equal(rendered.replace(wrapper, nav(baseline)), baseline, `Only the generated wrapper changes: ${route}`);
+    } else {
+      assert.equal(rendered, baseline, `Other localized pages remain unchanged: ${route}`);
+    }
+  }
+});

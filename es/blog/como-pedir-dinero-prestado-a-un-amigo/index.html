@@ -138,7 +138,7 @@
     <link rel="stylesheet" href="/styles/site-locale.css?v=review20261020" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1" />
-    <link rel="stylesheet" href="/styles/borrow-es.css?v=20261027-1" />
+    <link rel="stylesheet" href="/styles/borrow-es.css?v=polish20261027" />
   </head>
   <body class="is-preload borrow-es-page site-nav-page">
     <div id="wrapper" class="fade-in">
@@ -151,22 +151,23 @@
       <main id="main">
         <article class="post featured">
           <!-- spanish-section:start -->
-          <nav class="site-spanish-section" aria-label="Páginas en español"><a href="/es/">You Owe Me: controla préstamos, gastos y pagos</a>
+          <details class="site-spanish-disclosure"><summary>Más guías en español</summary><nav class="site-spanish-section" aria-label="Páginas en español"><a href="/es/">You Owe Me: controla préstamos, gastos y pagos</a>
               <a href="/es/soluciones/app-para-registrar-dinero-adeudado/">App para registrar el dinero que te deben</a>
               <a href="/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/">Cómo llevar el control de quién te debe dinero</a>
               <a href="/es/blog/como-pedir-dinero-prestado-a-un-amigo/" aria-current="page">Cómo pedir dinero prestado a un amigo: mensajes y ejemplos</a>
               <a href="/es/blog/como-pedir-que-te-devuelvan-dinero/">Cómo pedir que te devuelvan dinero: mensajes y ejemplos</a>
               <a href="/es/soluciones/seguimiento-de-prestamos-personales/">Seguimiento de préstamos personales y sus pagos</a>
-              <a href="/es/herramientas/calculadora-de-gastos-compartidos/">Calculadora de gastos compartidos</a></nav>
+              <a href="/es/herramientas/calculadora-de-gastos-compartidos/">Calculadora de gastos compartidos</a></nav></details>
           <!-- spanish-section:end -->
           <nav class="borrow-es-breadcrumb" aria-label="Ruta de navegación"><a href="/es/">Inicio</a><span aria-hidden="true">/</span><span aria-current="page">Pedir dinero prestado a un amigo</span></nav>
           <section class="borrow-es-hero" aria-labelledby="page-title">
             <div class="borrow-es-hero-copy">
               <p class="borrow-es-eyebrow">Mensajes para pedir un préstamo entre amigos</p>
               <h1 id="page-title">Cómo pedir dinero prestado a un amigo</h1>
-              <p class="borrow-es-lead">Di cuánto necesitas, para qué y cuándo puedes devolverlo. Si no tienes una fecha clara, dilo también. Deja espacio para que tu amigo pueda responder que no, sin sentirse obligado.</p>
-              <p>Aquí tienes ejemplos para WhatsApp o cualquier mensaje de texto. Cambia los datos entre corchetes y promete solo lo que puedas cumplir.</p>
-              <div class="borrow-es-actions"><a class="borrow-es-primary" href="#mensajes">Elegir un mensaje</a><a class="borrow-es-secondary" href="#acuerdo">Qué anotar si acepta</a></div>
+              <p class="borrow-es-lead">Elige un mensaje para explicar cuánto necesitas, para qué y cómo podrías devolverlo, dejando a tu amigo espacio para decir que no.</p>
+              <p>Copia el ejemplo que encaje y cambia los datos entre corchetes. Propón solo lo que puedas cumplir.</p>
+              <div class="borrow-es-actions"><a class="borrow-es-primary" href="#mensajes">Ver los 8 mensajes</a><a class="borrow-es-secondary" href="#acuerdo">Qué anotar si acepta</a></div>
+              <p class="borrow-es-app-jump">Cuando recibas el préstamo, <a href="#app">registra el importe y las devoluciones en You Owe Me</a>.</p>
             </div>
             <aside class="borrow-es-visual" aria-labelledby="message-preview-title">
               <h2 id="message-preview-title">Un mensaje claro y sin presión</h2>
@@ -179,57 +180,57 @@
           <section class="borrow-es-section" id="mensajes" aria-labelledby="mensajes-title">
             <h2 id="mensajes-title">Ejemplos para pedir dinero prestado por WhatsApp</h2>
             <p>Elige el que se parezca a tu situación. Un mensaje breve puede ser suficiente: no necesitas contar detalles privados que no quieras compartir ni justificarte más de lo necesario.</p>
-            <div class="borrow-es-message-grid">
-              <article class="borrow-es-card template-card" data-template-id="short-ask">
+            <details class="borrow-es-situations"><summary>Buscar un mensaje por situación</summary><nav aria-label="Situaciones de los mensajes"><ul><li><a href="#mensaje-breve">Petición breve</a></li><li><a href="#mensaje-dos-pagos">Devolver en dos pagos</a></li><li><a href="#mensaje-sin-fecha">Sin fecha de devolución</a></li><li><a href="#mensaje-gasto">Pedir un adelanto para un gasto</a></li><li><a href="#mensaje-verguenza">Si te da vergüenza</a></li><li><a href="#mensaje-respuesta-no">Si te dice que no</a></li><li><a href="#mensaje-confirmar">Confirmar el acuerdo</a></li><li><a href="#mensaje-cambiar-fecha">Cambiar una fecha</a></li></ul></nav></details><div class="borrow-es-message-grid">
+              <article class="borrow-es-card template-card" id="mensaje-breve" tabindex="-1" data-template-id="short-ask">
                 <h3>Una petición breve</h3>
                 <p class="borrow-es-guidance">Cuando sabes cuánto necesitas y tienes una fecha de devolución realista.</p>
                 <blockquote class="template-card__message">Hola, [nombre]. ¿Podrías prestarme [importe y moneda] para [motivo]? Puedo devolvértelo el [fecha]. Si no te viene bien, lo entiendo.</blockquote>
                 <button class="copy-button" type="button" data-copy-template="short-ask" aria-label="Copiar mensaje: Una petición breve">Copiar mensaje</button>
                 <p class="borrow-es-copy-status" role="status" aria-live="polite" data-copy-status></p>
               </article>
-              <article class="borrow-es-card template-card" data-template-id="clear-ask-with-repayment-plan">
+              <article class="borrow-es-card template-card" id="mensaje-dos-pagos" tabindex="-1" data-template-id="clear-ask-with-repayment-plan">
                 <h3>Devolverlo en dos pagos</h3>
                 <p class="borrow-es-guidance">Comprueba que los dos pagos suman el importe que estás pidiendo.</p>
                 <blockquote class="template-card__message">Hola, [nombre]. Quería preguntarte si podrías prestarme [importe total y moneda] para [motivo]. Puedo devolverte [primer importe] el [primera fecha] y [segundo importe] el [segunda fecha]. ¿Te vendría bien? Si prefieres no hacerlo, lo entiendo.</blockquote>
                 <button class="copy-button" type="button" data-copy-template="clear-ask-with-repayment-plan" aria-label="Copiar mensaje: Devolverlo en dos pagos">Copiar mensaje</button>
                 <p class="borrow-es-copy-status" role="status" aria-live="polite" data-copy-status></p>
               </article>
-              <article class="borrow-es-card template-card" data-template-id="cannot-promise-exact-date">
+              <article class="borrow-es-card template-card" id="mensaje-sin-fecha" tabindex="-1" data-template-id="cannot-promise-exact-date">
                 <h3>Cuando todavía no sabes cuándo podrás devolverlo</h3>
                 <p class="borrow-es-guidance">Una fecha para volver a hablar no equivale a una fecha de pago. Distingue las dos cosas.</p>
                 <blockquote class="template-card__message">Hola, [nombre]. Necesito [importe y moneda] para [motivo], pero ahora mismo no puedo asegurar una fecha de devolución. Puedo contarte cómo va mi situación el [fecha para hablar]. Entiendo que, con esta incertidumbre, prefieras no prestármelo.</blockquote>
                 <button class="copy-button" type="button" data-copy-template="cannot-promise-exact-date" aria-label="Copiar mensaje: Cuando todavía no sabes cuándo podrás devolverlo">Copiar mensaje</button>
                 <p class="borrow-es-copy-status" role="status" aria-live="polite" data-copy-status></p>
               </article>
-              <article class="borrow-es-card template-card" data-template-id="cover-something-temporarily">
+              <article class="borrow-es-card template-card" id="mensaje-gasto" tabindex="-1" data-template-id="cover-something-temporarily">
                 <h3>Pedir que cubra un gasto por ti</h3>
                 <p class="borrow-es-guidance">Aclara que estás pidiendo un adelanto que piensas devolver.</p>
                 <blockquote class="template-card__message">¿Podrías pagar [gasto] por mí esta vez? Son [importe y moneda] y puedo devolvértelos el [fecha]. Prefiero preguntártelo antes de contar con ello. Si no puedes, lo entiendo.</blockquote>
                 <button class="copy-button" type="button" data-copy-template="cover-something-temporarily" aria-label="Copiar mensaje: Pedir que cubra un gasto por ti">Copiar mensaje</button>
                 <p class="borrow-es-copy-status" role="status" aria-live="polite" data-copy-status></p>
               </article>
-              <article class="borrow-es-card template-card" data-template-id="slightly-more-personal">
+              <article class="borrow-es-card template-card" id="mensaje-verguenza" tabindex="-1" data-template-id="slightly-more-personal">
                 <h3>Si te da vergüenza pedirlo</h3>
                 <p class="borrow-es-guidance">Puedes reconocer la incomodidad sin convertirla en una obligación para la otra persona.</p>
                 <blockquote class="template-card__message">Me da un poco de vergüenza preguntártelo, pero ¿podrías prestarme [importe y moneda] para [motivo]? Puedo devolvértelo el [fecha]. No quiero que te sientas obligado; si no te viene bien, lo entiendo.</blockquote>
                 <button class="copy-button" type="button" data-copy-template="slightly-more-personal" aria-label="Copiar mensaje: Si te da vergüenza pedirlo">Copiar mensaje</button>
                 <p class="borrow-es-copy-status" role="status" aria-live="polite" data-copy-status></p>
               </article>
-              <article class="borrow-es-card template-card" data-template-id="respectful-reply-if-no">
+              <article class="borrow-es-card template-card" id="mensaje-respuesta-no" tabindex="-1" data-template-id="respectful-reply-if-no">
                 <h3>Responder si te dice que no</h3>
                 <p class="borrow-es-guidance">Acepta la respuesta sin insistir ni pedir explicaciones.</p>
                 <blockquote class="template-card__message">Gracias por responderme. Lo entiendo; no te preocupes.</blockquote>
                 <button class="copy-button" type="button" data-copy-template="respectful-reply-if-no" aria-label="Copiar mensaje: Responder si te dice que no">Copiar mensaje</button>
                 <p class="borrow-es-copy-status" role="status" aria-live="polite" data-copy-status></p>
               </article>
-              <article class="borrow-es-card template-card" data-template-id="reply-after-yes">
+              <article class="borrow-es-card template-card" id="mensaje-confirmar" tabindex="-1" data-template-id="reply-after-yes">
                 <h3>Confirmar lo acordado si acepta</h3>
                 <p class="borrow-es-guidance">Antes de recibir el dinero, comprueba que ambos entendéis lo mismo.</p>
                 <blockquote class="template-card__message">Gracias por ayudarme. Confirmo lo que hemos acordado: me prestarás [importe y moneda] para [motivo] y te lo devolveré [fecha o detalle de los pagos]. Cuando reciba el dinero, te aviso. Si cambia mi situación, te escribiré antes de la fecha acordada.</blockquote>
                 <button class="copy-button" type="button" data-copy-template="reply-after-yes" aria-label="Copiar mensaje: Confirmar lo acordado si acepta">Copiar mensaje</button>
                 <p class="borrow-es-copy-status" role="status" aria-live="polite" data-copy-status></p>
               </article>
-              <article class="borrow-es-card template-card" data-template-id="need-more-time-update">
+              <article class="borrow-es-card template-card" id="mensaje-cambiar-fecha" tabindex="-1" data-template-id="need-more-time-update">
                 <h3>Avisar si no vas a llegar a la fecha</h3>
                 <p class="borrow-es-guidance">Escríbele en cuanto lo sepas. Propón solo un cambio que puedas sostener y espera su respuesta.</p>
                 <blockquote class="template-card__message">Hola, [nombre]. Te escribo antes del [fecha acordada] porque no voy a poder cumplir el pago como habíamos previsto. Puedo pagar [importe] el [fecha] y me gustaría hablar contigo sobre lo que quedaría pendiente. Siento el cambio. ¿Podemos revisarlo?</blockquote>
@@ -281,17 +282,17 @@ Próxima conversación, si hace falta: [fecha]</pre>
             <p>Las fechas del plan ayudan a organizarse. Solo los pagos realizados reducen el importe pendiente.</p>
           </section>
           <section class="borrow-es-section" id="app" aria-labelledby="app-title">
-            <h2 id="app-title">Después del acuerdo, You Owe Me te ayuda a llevar el registro</h2>
-            <p>Los mensajes de esta página se pueden usar sin instalar nada. Si después quieres llevar el préstamo en el iPhone o el iPad, You Owe Me permite registrar tanto lo que debes como lo que te deben.</p>
+            <h2 id="app-title">Ten claro cuánto te queda por devolver</h2>
+            <p>Cuando recibas el préstamo, registra el importe y cada devolución en You Owe Me para iPhone y iPad. Así puedes consultar lo que queda pendiente antes de acordar el siguiente pago.</p>
             <div class="borrow-es-feature-grid">
               <article class="borrow-es-card"><h3>Importe e historial</h3><p>Anota el dinero recibido, el motivo y cada devolución. Consulta cuánto queda pendiente sin borrar los pagos anteriores.</p></article>
               <article class="borrow-es-card"><h3>Plan de devolución</h3><p>Organiza un préstamo con un plan opcional de pagos semanales, quincenales o mensuales. Mantén separados los pagos previstos y los realizados.</p></article>
-              <article class="borrow-es-card"><h3>Recordatorios y contexto</h3><p>Usa recordatorios para el seguimiento y conserva notas junto al registro. Así puedes revisar el acuerdo antes de volver a hablar.</p></article>
+              <article class="borrow-es-card"><h3>Recordatorios y contexto</h3><p>Guarda notas del acuerdo y usa recordatorios para revisar el próximo paso.</p></article>
             </div>
-            <p>You Owe Me no presta dinero ni realiza transferencias. Tampoco garantiza que otra persona acepte la petición o devuelva el préstamo. Una persona puede llevar su registro sin que la otra instale la app.</p>
+            <p>You Owe Me registra préstamos; no presta dinero ni realiza transferencias. Puedes llevar tu registro aunque la otra persona no instale la app.</p>
             <div class="borrow-es-handoff">
               <h3>Ten claro lo que queda por devolver</h3>
-              <p>Lleva tus préstamos y devoluciones en You Owe Me para iPhone y iPad.</p>
+              <p>Conserva el importe original, los pagos realizados y lo que queda pendiente.</p>
               <div data-app-language-support-anchor hidden></div>
               <a class="lt-appStoreBtn borrow-es-store" id="borrow-es-download" href="https://apps.apple.com/app/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" data-track-location="es_friend_borrow_final_app_store_cta" data-iphone-handoff-replaceable aria-label="Descargar en el App Store"><img src="/images/es/app-store/download-on-the-app-store-black.svg" width="250" height="83" alt="Descargar en el App Store" loading="eager" /></a>
               <section class="iphone-handoff" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="es_friend_borrow_iphone_handoff" data-iphone-handoff-replaces="borrow-es-download" aria-label="Escanea con tu iPhone o iPad" hidden><div class="iphone-handoff__visible-layout"><div class="iphone-handoff__visible-copy"><p class="iphone-handoff__instruction" data-iphone-handoff-instruction>Escanea con tu iPhone o iPad</p><a class="iphone-handoff__fallback" href="https://apps.apple.com/app/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8" data-cta-location="es_friend_borrow_qr_fallback">Abrir en el App Store</a></div><img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/es/iphone-handoff/app-store.png" width="472" height="472" alt="Código QR para abrir You Owe Me en el App Store" loading="lazy" /></div></section>

@@ -8,6 +8,10 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const esc = value => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
 const regexEsc = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const sections = ["solutions", "features", "reviews", "tools", "compare", "blog"];
+const spanishDisclosureRoutes = new Set([
+  "/es/blog/como-pedir-dinero-prestado-a-un-amigo/",
+  "/es/blog/como-pedir-que-te-devuelvan-dinero/",
+]);
 
 export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales) {
   const locale = locales.find(locale => locale.code === lang);
@@ -54,7 +58,11 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
   const nav = completed.map(target => `<a href="${target[lang]}"${target[lang] === route ? ' aria-current="page"' : ""}>${lang === "ar" ? esc(target.title).replaceAll("You Owe Me", '<bdi dir="ltr">You Owe Me</bdi>') : esc(target.title)}</a>`).join("\n              ");
   const marker = locale.sectionMarker;
   html = html.replace(new RegExp(`\\s*<!-- ${marker}-section:start -->[\\s\\S]*?<!-- ${marker}-section:end -->`, "g"), "");
-  html = html.replace(/(<article\b[^>]*>)/, `$1\n          <!-- ${marker}-section:start -->\n          <nav class="${locale.sectionClass}" aria-label="${esc(locale.shared.sectionLabel)}">${nav}</nav>\n          <!-- ${marker}-section:end -->`);
+  const sectionNav = `<nav class="${locale.sectionClass}" aria-label="${esc(locale.shared.sectionLabel)}">${nav}</nav>`;
+  const sectionContent = lang === "es" && spanishDisclosureRoutes.has(route)
+    ? `<details class="site-spanish-disclosure"><summary>Más guías en español</summary>${sectionNav}</details>`
+    : sectionNav;
+  html = html.replace(/(<article\b[^>]*>)/, `$1\n          <!-- ${marker}-section:start -->\n          ${sectionContent}\n          <!-- ${marker}-section:end -->`);
   return html;
 }
 

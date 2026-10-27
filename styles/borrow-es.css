@@ -171,3 +171,49 @@ body.borrow-es-page [hidden] { display: none !important; }
   body.borrow-es-page .borrow-es-table-wrap table { min-width: 36rem; }
   body.borrow-es-page .borrow-es-faq details { padding: 1rem; }
 }
+
+/* Native guide and situation disclosures keep every destination in static HTML. */
+body.borrow-es-page .site-spanish-disclosure,
+body.borrow-es-page .borrow-es-situations {
+  margin: 0 0 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.74);
+}
+body.borrow-es-page .borrow-es-situations { margin: 1.25rem 0 0; }
+body.borrow-es-page .site-spanish-disclosure > summary,
+body.borrow-es-page .borrow-es-situations > summary {
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  color: #18212b;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.5;
+  cursor: pointer;
+}
+body.borrow-es-page .site-spanish-disclosure .site-spanish-section { margin: 0; border: 0; background: transparent; }
+body.borrow-es-page .borrow-es-situations ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 0.25rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem 1rem;
+}
+body.borrow-es-page .borrow-es-situations li { padding: 0; }
+body.borrow-es-page #main .borrow-es-situations a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5rem 0;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+body.borrow-es-page .template-card[id] { scroll-margin-top: 1rem; }
+body.borrow-es-page .template-card[id]:focus { outline: 3px solid rgba(53, 84, 40, 0.32); outline-offset: 4px; }
+body.borrow-es-page #main .borrow-es-app-jump { margin: 1.1rem 0 0; }
+@media (max-width: 736px) {
+  body.borrow-es-page .borrow-es-visual { display: none; }
+}
