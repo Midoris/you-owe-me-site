@@ -149,6 +149,8 @@ The client payment records cluster is for lightweight records where a freelancer
 
 ## Free tools
 
+- [Tutor payment tracker template](https://you-owe-me.com/tools/tutor-payment-tracker-template/): Free Excel workbook for lesson charges, actual payments and payer balances, with a separate CSV entry log and worked example. Supports money records, not scheduling, attendance, prepaid lesson units or invoicing.
+
 - [Roommate move-in checklist](https://you-owe-me.com/tools/roommate-move-in-checklist/): Free Excel and CSV planner for who brings what, planned purchases, ownership notes and agreed shared costs. Separate from ongoing expense and repayment tracking.
 
 - [Money Tools and Templates](https://you-owe-me.com/tools/): Free calculators, generators, examples, and templates for everyday money between people.

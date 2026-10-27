@@ -157,12 +157,14 @@ test("Phase D adds four exact, bounded desktop QR handoffs without changing thei
     "split.png",
     "money-owed.png",
     "repayment-plan.png",
+    "client-payments.png",
   ]);
   assert.equal(sha256(moneyOwedPng), "d514dd538a9c7007b64c8a31a6c2d5a33a390e5de28153fef49646eb77d89c91");
   assert.equal(sha256(repaymentPlanPng), "f75999df5cc513f3a007c9cfc40f839cbed2147bdb8aa803f4ef14689b249010");
   for (const [filename, ppid] of [
     ["money-owed.png", "0ad25f49-9026-4d8b-99ea-9581a98702db"],
     ["repayment-plan.png", "d845bed2-b88d-47a2-854a-9aa0c35eb049"],
+    ["client-payments.png", "15af0298-82ca-4a0e-8230-d12774916992"],
   ]) {
     const code = manifest.codes.find((item) => item.filename === filename);
     assert.equal(code.url, `${appStoreBase}?ppid=${ppid}&pt=117888502&ct=website_qr_exp006&mt=8`);

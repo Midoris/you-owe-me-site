@@ -780,6 +780,45 @@ export const bestNextStepClusterDefaults = {
 
 export const contentRegistry = [
   {
+    "url": "/tools/tutor-payment-tracker-template/",
+    "title": "Tutor Payment Tracker Template | Lessons, Payments & Balances",
+    "pageType": "tool",
+    "cluster": "client-records",
+    "primaryAudience": "Independent tutors and private teachers",
+    "problemSolved": "Keeping lesson charges, received payments and each payer's remaining balance clear",
+    "useWhen": "When tutoring charges and payments happen on different dates or in partial amounts",
+    "parent": "/tools/",
+    "relatedPages": [
+      "/solutions/client-payment-records/",
+      "/tools/partial-repayment-calculator/",
+      "/tools/repayment-reminder-text-examples/"
+    ],
+    "relatedTools": [
+      "/tools/partial-repayment-calculator/",
+      "/tools/repayment-reminder-text-examples/"
+    ],
+    "relatedSolutions": [
+      "/solutions/client-payment-records/"
+    ],
+    "appStoreCpp": "client-payment-records",
+    "tags": [
+      "tutor payment tracker",
+      "lesson payments",
+      "client balances",
+      "partial payments",
+      "spreadsheet"
+    ],
+    "updated": "2026-10-27",
+    "status": "live",
+    "priority": "high",
+    "primaryCta": "Download the Excel tracker",
+    "nextStep": "Keep ongoing client payment records in You Owe Me.",
+    "bestNextSteps": {
+      "enabled": false,
+      "skipReason": "Parent-approved related cards already provide the three next steps without a competing generated module."
+    }
+  },
+  {
     "url": "/tools/roommate-move-in-checklist/",
     "title": "Roommate Move-In Checklist & Who-Brings-What Spreadsheet",
     "pageType": "tool",
@@ -3476,7 +3515,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/temporary-financial-support-tracker/", "/solutions/personal-loan-repayment-tracker/", "/solutions/app-to-track-money-owed/"],
     appStoreCpp: "money-owed-followups",
     tags: ["partial-repayment", "remaining-balance", "repayment", "money-owed", "iou", "payment-history", "temporary-support", "family-reimbursement", "client-payment", "calculator", "tool"],
-    updated: "2026-09-23",
+    updated: "2026-10-27",
     status: "live",
     priority: "high",
     primaryCta: "Calculate what remains",

@@ -24,6 +24,11 @@
       "filename" : "repayment-plan.png",
       "sha256" : "f75999df5cc513f3a007c9cfc40f839cbed2147bdb8aa803f4ef14689b249010",
       "url" : "https:\/\/apps.apple.com\/us\/app\/loan-tracker-you-owe-me\/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&pt=117888502&ct=website_qr_exp006&mt=8"
+    },
+    {
+      "filename" : "client-payments.png",
+      "sha256" : "22c453d4ae61b7675449c074ad2979296a361660494e6d7c702dc9508b54bcfb",
+      "url" : "https:\/\/apps.apple.com\/us\/app\/loan-tracker-you-owe-me\/id1147058670?ppid=15af0298-82ca-4a0e-8230-d12774916992&pt=117888502&ct=website_qr_exp006&mt=8"
     }
   ],
   "correction_level" : "M",

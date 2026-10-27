@@ -6,6 +6,7 @@ const LOCATION_VALUES = new Set([
   "homepage_iphone_handoff",
   "roommate_template_iphone_handoff",
   "roommate_move_in_iphone_handoff",
+  "tutor_payment_tracker_iphone_handoff",
   "es_friend_borrow_iphone_handoff",
   "split_result_iphone_handoff",
   "money_owed_hero_iphone_handoff",

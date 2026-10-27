@@ -21,6 +21,7 @@ let codes = isSpanish ? [
   HandoffCode(filename: "split.png", url: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=7f9074ac-4090-4e07-aebe-c5722e76eedc&pt=117888502&ct=website_qr_exp006&mt=8"),
   HandoffCode(filename: "money-owed.png", url: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=0ad25f49-9026-4d8b-99ea-9581a98702db&pt=117888502&ct=website_qr_exp006&mt=8"),
   HandoffCode(filename: "repayment-plan.png", url: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=d845bed2-b88d-47a2-854a-9aa0c35eb049&pt=117888502&ct=website_qr_exp006&mt=8"),
+  HandoffCode(filename: "client-payments.png", url: "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=15af0298-82ca-4a0e-8230-d12774916992&pt=117888502&ct=website_qr_exp006&mt=8"),
 ]
 
 let outputDirectory = URL(fileURLWithPath: FileManager.default.currentDirectoryPath)

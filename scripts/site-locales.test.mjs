@@ -169,8 +169,8 @@ test("analytics preserves English metadata and maps only completed localized rou
   const source = fs.readFileSync(new URL("./analytics.js", import.meta.url), "utf8");
   const baseline = execFileSync("git", ["show", "bfd69d7:scripts/analytics.js"], { encoding: "utf8" });
   const metadata = source.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0];
-  assert.equal(metadata.replace("  \"/tools/roommate-move-in-checklist/\": { page_type: \"tool\", cluster: \"roommates_household_costs\", app_store_cpp: \"roommates_household_costs\" },\n", ""), baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
-  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=outreach20261027"/);
+  assert.equal(metadata.replace("  \"/tools/roommate-move-in-checklist/\": { page_type: \"tool\", cluster: \"roommates_household_costs\", app_store_cpp: \"roommates_household_costs\" },\n", "").replace("  \"/tools/tutor-payment-tracker-template/\": { page_type: \"tool\", cluster: \"client_payment_records\", app_store_cpp: \"client_payment_records\" },\n", ""), baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
+  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=tutor20261027"/);
   const functions = source.match(/function normalizePath\(path\) \{[\s\S]*?\nfunction sanitizeText/)[0].replace(/\nfunction sanitizeText$/, "");
   const context = { window: { location: { pathname: "/" } }, localizedSourceRoute: route => localizedSourceRoute(route, threeLocales()) };
   vm.createContext(context);

@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "outreach20261027",
+  "/scripts/analytics.js": "tutor20261027",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
