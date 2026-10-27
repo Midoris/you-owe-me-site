@@ -82,7 +82,8 @@ test("Spanish authored HTML stays byte-for-byte intact from the accepted public 
     // Only explicitly changed shared dependencies may receive cache URL updates.
     .replace(/((?:src|href)=")([^"?]+)(?:\?v=([^"&]+))?(")/g, (original, start, asset, version, end) =>
       sharedAssetVersions[asset] && [undefined, sharedAssetVersions[asset], "es20261020"].includes(version) ? `${start}${asset}?v=shared-cache-version${end}` : original);
-  for (const page of spanishPages) {
+  // This immutable-release guard covers its original five routes; the new guide did not exist then.
+  for (const page of spanishPages.filter(page => page.es !== "/es/blog/como-pedir-dinero-prestado-a-un-amigo/")) {
     const file = `${page.es.slice(1)}index.html`;
     const original = execFileSync("git", ["show", `bfd69d7:${file}`], { encoding: "utf8" });
     const current = fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
@@ -168,8 +169,8 @@ test("analytics preserves English metadata and maps only completed localized rou
   const source = fs.readFileSync(new URL("./analytics.js", import.meta.url), "utf8");
   const baseline = execFileSync("git", ["show", "bfd69d7:scripts/analytics.js"], { encoding: "utf8" });
   const metadata = source.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0];
-  assert.equal(metadata, baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
-  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=fr20261020"/);
+  assert.equal(metadata.replace("  \"/tools/roommate-move-in-checklist/\": { page_type: \"tool\", cluster: \"roommates_household_costs\", app_store_cpp: \"roommates_household_costs\" },\n", ""), baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
+  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=outreach20261027"/);
   const functions = source.match(/function normalizePath\(path\) \{[\s\S]*?\nfunction sanitizeText/)[0].replace(/\nfunction sanitizeText$/, "");
   const context = { window: { location: { pathname: "/" } }, localizedSourceRoute: route => localizedSourceRoute(route, threeLocales()) };
   vm.createContext(context);

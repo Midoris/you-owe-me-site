@@ -12,5 +12,16 @@ export function normalizeReviewedLanguageCopy(html) {
   // Keep Arabic bidi labels inside one flex item, without changing accepted words.
   html = html.replace('<li><span>تذكيرات ورسائل متابعة مع <bdi dir="ltr">Money Conversations</bdi></span></li>', '<li>تذكيرات ورسائل متابعة مع <bdi dir="ltr">Money Conversations</bdi></li>');
   html = html.replace('<li><span>فائدة بنسبة مئوية أو بمبلغ ثابت، مع تصدير <bdi dir="ltr">CSV</bdi></span></li>', '<li>فائدة بنسبة مئوية أو بمبلغ ثابت، مع تصدير <bdi dir="ltr">CSV</bdi></li>');
+  // October 27 outreach pages: allow only the approved new Spanish discovery and context links.
+  html = html.replace("                <a href=\"/es/blog/como-pedir-dinero-prestado-a-un-amigo/\" class=\"lt-resourceShelfLink\">\n                  <strong>Cómo pedir dinero prestado a un amigo</strong>\n                  <span>Mensajes para explicar lo que necesitas, acordar la devolución y dejar espacio para decir que no.</span>\n                </a>\n", "");
+  html = html.replace("            <p>Si todavía no hay un préstamo y quieres pedirlo, consulta los <a href=\"/es/blog/como-pedir-dinero-prestado-a-un-amigo/\">mensajes para pedir dinero prestado a un amigo</a>. Empieza el registro del dinero recibido cuando el préstamo se haga efectivo.</p>\n", "");
+  html = html.replace("          <p>¿Aún necesitas hablar del préstamo? Estos <a href=\"/es/blog/como-pedir-dinero-prestado-a-un-amigo/\">ejemplos para pedir dinero prestado a un amigo</a> te ayudan a plantear el importe y la devolución antes de registrarlos.</p>\n\n", "");
+  html = html.replace("\n              <a href=\"/es/blog/como-pedir-dinero-prestado-a-un-amigo/\">Cómo pedir dinero prestado a un amigo: mensajes y ejemplos</a>", "");
+  // These two Spanish pages received approved context links on October 27; publication dates stay intact.
+  if (html.includes('rel="canonical" href="https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/"') || html.includes('rel="canonical" href="https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/"')) {
+    html = html.replace('"dateModified": "2026-10-27"', '"dateModified": "2026-10-20"')
+      .replace('property="article:modified_time" content="2026-10-27"', 'property="article:modified_time" content="2026-10-20"')
+      .replace('Actualizado el <time datetime="2026-10-27">27 de octubre de 2026</time>', 'Actualizado el <time datetime="2026-10-20">20 de octubre de 2026</time>');
+  }
   return html;
 }

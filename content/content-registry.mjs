@@ -780,6 +780,45 @@ export const bestNextStepClusterDefaults = {
 
 export const contentRegistry = [
   {
+    "url": "/tools/roommate-move-in-checklist/",
+    "title": "Roommate Move-In Checklist & Who-Brings-What Spreadsheet",
+    "pageType": "tool",
+    "cluster": "roommates",
+    "primaryAudience": "Roommates planning a shared home",
+    "problemSolved": "Deciding who brings existing items, what to buy and which costs are agreed",
+    "useWhen": "Before moving in or buying shared household items",
+    "parent": "/tools/",
+    "relatedPages": [
+      "/tools/roommate-expense-tracker-template/",
+      "/blog/how-to-split-rent-utilities-and-groceries-with-roommates/",
+      "/solutions/roommate-expense-tracker/"
+    ],
+    "relatedTools": [
+      "/tools/roommate-expense-tracker-template/",
+      "/tools/roommate-bill-split-calculator/"
+    ],
+    "relatedSolutions": [
+      "/solutions/roommate-expense-tracker/"
+    ],
+    "appStoreCpp": "roommates-shared-household-costs",
+    "tags": [
+      "roommates",
+      "move-in checklist",
+      "who brings what",
+      "shared purchases",
+      "spreadsheet"
+    ],
+    "updated": "2026-10-27",
+    "status": "live",
+    "priority": "high",
+    "primaryCta": "Download the Excel planner",
+    "nextStep": "Use the roommate expense tracker template.",
+    "bestNextSteps": {
+      "enabled": false,
+      "skipReason": "Page-specific related cards provide the three approved next steps without a competing generated module."
+    }
+  },
+  {
     url: "/",
     title: "You Owe Me",
     pageType: "home",
@@ -1320,7 +1359,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/personal-loan-repayment-tracker/", "/solutions/debt-repayment-tracker/", "/solutions/shared-expense-tracker/", "/solutions/group-payback-tracker/", "/solutions/family-reimbursement-tracker/"],
     appStoreCpp: "general",
     tags: ["tools", "calculators", "templates", "message-examples", "formal-debt"],
-    updated: "2026-08-23",
+    updated: "2026-10-27",
     status: "live",
     priority: "core",
     primaryCta: "Choose a free tool",
@@ -2129,7 +2168,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/shared-expense-tracker/", "/solutions/app-to-track-money-owed/"],
     appStoreCpp: "roommates-shared-household-costs",
     tags: ["roommates", "rent", "utilities", "groceries", "shared-household-costs", "recurring-bills", "partial-repayments", "running-balance"],
-    updated: "2026-10-18",
+    updated: "2026-10-27",
     status: "live",
     priority: "core",
     primaryCta: "Download You Owe Me",
@@ -3050,7 +3089,7 @@ export const contentRegistry = [
       "tracking payments with roommate spreadsheet",
       "shared expenses spreadsheet for roommates",
     ],
-    updated: "2026-10-25",
+    updated: "2026-10-27",
     status: "live",
     priority: "core",
     primaryCta: "Download the Excel template",
@@ -4238,7 +4277,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/roommate-expense-tracker/", "/solutions/shared-expense-tracker/"],
     appStoreCpp: "roommates-shared-household-costs",
     tags: ["guide", "roommates", "rent", "utilities", "groceries"],
-    updated: "2026-10-23",
+    updated: "2026-10-27",
     status: "live",
     priority: "high",
     primaryCta: "Use the roommate bill split calculator",

@@ -1,6 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
+    <loc>https://you-owe-me.com/tools/roommate-move-in-checklist/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>weekly</changefreq>
+    <priority>0.88</priority>
+  </url>
+  <url>
     <loc>https://you-owe-me.com/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
@@ -50,7 +56,7 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/tools/</loc>
-    <lastmod>2026-08-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.9</priority>
   </url>
@@ -110,7 +116,7 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/solutions/roommate-expense-tracker/</loc>
-    <lastmod>2026-10-18</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -182,7 +188,7 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/tools/roommate-expense-tracker-template/</loc>
-    <lastmod>2026-10-25</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.88</priority>
   </url>
@@ -278,7 +284,7 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/blog/how-to-split-rent-utilities-and-groceries-with-roommates/</loc>
-    <lastmod>2026-10-23</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
@@ -506,13 +512,19 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://you-owe-me.com/es/blog/como-pedir-dinero-prestado-a-un-amigo/</loc>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>

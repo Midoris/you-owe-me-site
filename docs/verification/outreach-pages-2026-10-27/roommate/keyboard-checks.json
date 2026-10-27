@@ -1,0 +1,36 @@
+[
+  {
+    "width": 390,
+    "keyboard": {
+      "active": "roommate_move_in_planner_excel_download",
+      "outline": "rgba(53, 84, 40, 0.32) solid 3px",
+      "visible": true
+    }
+  },
+  {
+    "width": 390,
+    "table": {
+      "scrollWidth": 700,
+      "clientWidth": 348,
+      "scrollLeft": 40,
+      "outline": "rgba(53, 84, 40, 0.32) solid 3px"
+    }
+  },
+  {
+    "width": 1440,
+    "keyboard": {
+      "active": "roommate_move_in_planner_excel_download",
+      "outline": "rgba(53, 84, 40, 0.32) solid 3px",
+      "visible": true
+    }
+  },
+  {
+    "width": 1440,
+    "table": {
+      "scrollWidth": 1342,
+      "clientWidth": 1342,
+      "scrollLeft": 0,
+      "outline": "rgba(53, 84, 40, 0.32) solid 3px"
+    }
+  }
+]

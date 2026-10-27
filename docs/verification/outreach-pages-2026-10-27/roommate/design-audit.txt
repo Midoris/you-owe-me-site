@@ -1,0 +1,4 @@
+Page design audit: /tools/roommate-move-in-checklist/
+Body class: roommate-move-in-page
+Audited stylesheets: styles/roommate-move-in-checklist.css
+Hard errors: 0

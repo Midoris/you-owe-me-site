@@ -1,5 +1,5 @@
 import { loanImportEventName } from "./loan-import-analytics.mjs?v=20261018-review1";
-import { localizedSourceRoute } from "../content/site-locales.mjs?v=fr20261020";
+import { localizedSourceRoute } from "../content/site-locales.mjs?v=outreach20261027";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import {
   getAnalytics,
@@ -9,7 +9,7 @@ import {
   setUserProperties,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
 import { createAppStoreCtaViewTracker } from "./app-store-cta-view-tracker.mjs";
-import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs?v=record-once-20261019-1";
+import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs?v=outreach20261027";
 
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyDOsFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",
@@ -116,6 +116,7 @@ const PAGE_METADATA = {
   "/tools/couple-shared-expense-balance-calculator/": { page_type: "tool", cluster: "couples_relationship_spending", app_store_cpp: "couples_relationship_spending" },
   "/tools/running-balance-calculator/": { page_type: "tool", cluster: "running_balance", app_store_cpp: "shared_expenses" },
   "/tools/roommate-bill-split-calculator/": { page_type: "tool", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
+  "/tools/roommate-move-in-checklist/": { page_type: "tool", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/tools/roommate-expense-tracker-template/": { page_type: "tool", cluster: "roommates_household_costs", app_store_cpp: "roommates_household_costs" },
   "/tools/partial-repayment-calculator/": { page_type: "tool", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/tools/group-payback-calculator/": { page_type: "tool", cluster: "group_paybacks", app_store_cpp: "group_paybacks" },

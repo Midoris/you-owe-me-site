@@ -149,6 +149,8 @@ The client payment records cluster is for lightweight records where a freelancer
 
 ## Free tools
 
+- [Roommate move-in checklist](https://you-owe-me.com/tools/roommate-move-in-checklist/): Free Excel and CSV planner for who brings what, planned purchases, ownership notes and agreed shared costs. Separate from ongoing expense and repayment tracking.
+
 - [Money Tools and Templates](https://you-owe-me.com/tools/): Free calculators, generators, examples, and templates for everyday money between people.
 - [Split Money and Expense Calculator](https://you-owe-me.com/tools/split-expense-calculator/): Split one total equally or settle several expenses using equal shares among the people selected for each cost. Shows who owes whom after accounting for different payers. Does not use percentage or weighted shares. Use You Owe Me on iPhone when repayments continue; the calculator itself does not store repayment history.
 - [Group Payback Calculator](https://you-owe-me.com/tools/group-payback-calculator/): Calculate each person's share for one group cost, subtract what they already paid back, and see who is paid, partly paid, or still open after one person paid first.
@@ -276,6 +278,7 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 - [You Owe Me: controla préstamos, gastos y pagos](https://you-owe-me.com/es/)
 - [App para registrar el dinero que te deben](https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/)
 - [Cómo llevar el control de quién te debe dinero](https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/)
+- [Cómo pedir dinero prestado a un amigo: mensajes y ejemplos](https://you-owe-me.com/es/blog/como-pedir-dinero-prestado-a-un-amigo/)
 - [Seguimiento de préstamos personales y sus pagos](https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/)
 - [Calculadora de gastos compartidos](https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/)
 <!-- spanish-pages:end -->

@@ -1,0 +1,100 @@
+[
+  {
+    "width": 320,
+    "viewport": 320,
+    "pageWidth": 320,
+    "overflow": [],
+    "h1": "Roommate move-in checklist: who brings what?",
+    "qrVisible": false,
+    "appVisible": true,
+    "faq": 6,
+    "smartBanner": "app-id=1147058670, affiliate-data=pt=117888502&ct=website_smart_banner",
+    "errors": [],
+    "anchor": "#starter-checklist",
+    "focus": {
+      "active": "roommate_move_in_planner_excel_download",
+      "outline": "none"
+    },
+    "xlsx": "roommate-move-in-checklist.xlsx",
+    "csv": "roommate-move-in-checklist.csv",
+    "faqMatch": true
+  },
+  {
+    "width": 390,
+    "viewport": 390,
+    "pageWidth": 390,
+    "overflow": [],
+    "h1": "Roommate move-in checklist: who brings what?",
+    "qrVisible": false,
+    "appVisible": true,
+    "faq": 6,
+    "smartBanner": "app-id=1147058670, affiliate-data=pt=117888502&ct=website_smart_banner",
+    "errors": [],
+    "anchor": "#starter-checklist",
+    "focus": {
+      "active": "roommate_move_in_planner_excel_download",
+      "outline": "none"
+    },
+    "xlsx": "roommate-move-in-checklist.xlsx",
+    "csv": "roommate-move-in-checklist.csv",
+    "faqMatch": true
+  },
+  {
+    "width": 768,
+    "viewport": 768,
+    "pageWidth": 768,
+    "overflow": [],
+    "h1": "Roommate move-in checklist: who brings what?",
+    "qrVisible": true,
+    "appVisible": false,
+    "faq": 6,
+    "smartBanner": "app-id=1147058670, affiliate-data=pt=117888502&ct=website_smart_banner",
+    "errors": [],
+    "anchor": "#starter-checklist",
+    "focus": {
+      "active": "roommate_move_in_planner_excel_download",
+      "outline": "none"
+    },
+    "xlsx": "roommate-move-in-checklist.xlsx",
+    "csv": "roommate-move-in-checklist.csv",
+    "faqMatch": true
+  },
+  {
+    "width": 1440,
+    "viewport": 1440,
+    "pageWidth": 1440,
+    "overflow": [],
+    "h1": "Roommate move-in checklist: who brings what?",
+    "qrVisible": true,
+    "appVisible": false,
+    "faq": 6,
+    "smartBanner": "app-id=1147058670, affiliate-data=pt=117888502&ct=website_smart_banner",
+    "errors": [],
+    "anchor": "#starter-checklist",
+    "focus": {
+      "active": "roommate_move_in_planner_excel_download",
+      "outline": "none"
+    },
+    "xlsx": "roommate-move-in-checklist.xlsx",
+    "csv": "roommate-move-in-checklist.csv",
+    "faqMatch": true
+  },
+  {
+    "ios": {
+      "qrHidden": true,
+      "appVisible": true,
+      "appHref": "https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=18039f2b-da9e-4d5f-9ba1-b60f117ecf12&pt=117888502&ct=website_cta&mt=8",
+      "smartBanner": "app-id=1147058670, affiliate-data=pt=117888502&ct=website_smart_banner"
+    }
+  },
+  {
+    "noJS": {
+      "content": "Roommate move-in checklist: who brings what?",
+      "sections": 8,
+      "downloads": 4,
+      "appVisible": true,
+      "faqVisible": 6,
+      "pageWidth": 390
+    }
+  }
+]

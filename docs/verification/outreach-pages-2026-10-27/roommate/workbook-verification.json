@@ -1,0 +1,34 @@
+{
+  "status": "pass",
+  "parser": "openpyxl read-only inspection (no writes)",
+  "sheets": [
+    "Move-in planner",
+    "Example"
+  ],
+  "starter_items": 26,
+  "editable_rows": 100,
+  "blank_rows": 74,
+  "table": "A7:L107",
+  "freeze_panes": "C8",
+  "formulas": 0,
+  "macros": 0,
+  "external_links": 0,
+  "validations": [
+    {
+      "range": "C8:C107",
+      "formula": "\",Undecided,Bring,Buy,Skip\"",
+      "allow_blank": false,
+      "show_error_message": false
+    },
+    {
+      "range": "I8:I107",
+      "formula": "\",Not started,Bringing,Ordered,Ready,Skipped\"",
+      "allow_blank": false,
+      "show_error_message": false
+    }
+  ],
+  "blank_behavior": "Supported empty choice included in each dropdown. Export has no error alert. Artifact-tool help advertises allowBlank but runtime rejects that field; no unsupported XML patch applied.",
+  "example": "all 36 example cells match approved specification; 240/3=80 and 80-30=50",
+  "csv_rows": 27,
+  "visual_review": "Both sheets inspected in seven artifact-tool range renders; headers, numbers, wrapped notes and title/introduction visible."
+}
