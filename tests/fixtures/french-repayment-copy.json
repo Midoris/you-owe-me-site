@@ -1,0 +1,131 @@
+{
+  "messages": [
+    {
+      "number": 1,
+      "heading": "Premier rappel",
+      "guidance": "Rappelez le montant et la raison du prêt, puis demandez une date possible.",
+      "payload": "Salut [prénom], je reviens vers toi au sujet des [montant et devise] que je t’ai prêtés pour [motif]. Peux-tu me dire quand tu pourras me les rembourser ?",
+      "id": "message-premier-rappel",
+      "template": "fr_repayment_first_reminder",
+      "tone": "friendly"
+    },
+    {
+      "number": 2,
+      "heading": "Confirmer une date convenue",
+      "guidance": "À utiliser avant une date déjà acceptée, pour vérifier qu’elle convient toujours.",
+      "payload": "Salut [prénom], on avait prévu le remboursement des [montant et devise] pour le [date]. Est-ce toujours possible pour toi ? Préviens-moi si nous devons en reparler.",
+      "id": "message-confirmer-date",
+      "template": "fr_repayment_confirm_date",
+      "tone": "neutral"
+    },
+    {
+      "number": 3,
+      "heading": "Une date est passée",
+      "guidance": "Mentionnez la date convenue et le montant encore dû, sans ajouter de reproche.",
+      "payload": "Salut [prénom], la date du [date] que nous avions convenue est passée. Il reste [montant et devise] à rembourser. Peux-tu me confirmer une nouvelle date réaliste ?",
+      "id": "message-date-passee",
+      "template": "fr_repayment_date_passed",
+      "tone": "direct"
+    },
+    {
+      "number": 4,
+      "heading": "Après un remboursement partiel",
+      "guidance": "Confirmez ce qui est arrivé et indiquez le nouveau solde, pas le montant initial du prêt.",
+      "payload": "Merci pour les [montant reçu et devise] reçus le [date]. Sur les [montant initial et devise] prêtés, il reste maintenant [solde et devise] à rembourser. Quelle date te conviendrait pour la suite ?",
+      "id": "message-paiement-partiel",
+      "template": "fr_repayment_partial_payment",
+      "tone": "friendly"
+    },
+    {
+      "number": 5,
+      "heading": "Aucune date n’était fixée",
+      "guidance": "Proposez de convenir d’une date sans présenter l’absence de paiement comme un retard.",
+      "payload": "Salut [prénom], quand je t’ai prêté [montant et devise] pour [motif], nous n’avions pas fixé de date de remboursement. Est-ce qu’on peut en convenir maintenant ? Quelle date serait possible pour toi ?",
+      "id": "message-sans-date",
+      "template": "fr_repayment_no_date",
+      "tone": "neutral"
+    },
+    {
+      "number": 6,
+      "heading": "Une dépense partagée",
+      "guidance": "Demandez uniquement la part acceptée par cette personne. Ne supposez pas que toutes les parts sont égales.",
+      "payload": "Salut [prénom], il reste [montant et devise] pour ta part de [dépense], selon ce que nous avions convenu. Peux-tu me dire quand tu pourras me l’envoyer ? Si le montant ne correspond pas à ton calcul, regardons-le ensemble.",
+      "id": "message-depense-partagee",
+      "template": "fr_repayment_shared_expense",
+      "tone": "neutral"
+    },
+    {
+      "number": 7,
+      "heading": "Un message sans réponse",
+      "guidance": "Faites une relance courte. Évitez d’enchaîner les messages ou de relancer dans un groupe.",
+      "payload": "Salut [prénom], je reviens sur mon message au sujet des [montant et devise] restant à rembourser. Peux-tu me répondre pour que nous sachions quelle est la prochaine étape ? Si la date envisagée n’est plus possible, dis-le-moi.",
+      "id": "message-sans-reponse",
+      "template": "fr_repayment_no_reply",
+      "tone": "neutral"
+    },
+    {
+      "number": 8,
+      "heading": "La personne a besoin de temps",
+      "guidance": "Si vous êtes d’accord pour revoir le calendrier, distinguez ce qui est proposé de ce qui a déjà été payé.",
+      "payload": "Merci de m’avoir prévenu. Il reste [solde et devise] à rembourser. Quel montant pourrais-tu verser, et à quelle date ? Nous pourrons ensuite confirmer ensemble ce qui est possible pour le reste.",
+      "id": "message-besoin-de-temps",
+      "template": "fr_repayment_more_time",
+      "tone": "friendly"
+    },
+    {
+      "number": 9,
+      "heading": "Un doute entre prêt et cadeau",
+      "guidance": "Clarifiez ce que chacun avait compris avant de présenter un remboursement comme acquis.",
+      "payload": "Salut [prénom], je pensais que les [montant et devise] donnés pour [motif] devaient être remboursés. J’aimerais vérifier ce que tu avais compris de ton côté avant que nous parlions d’une date.",
+      "id": "message-pret-ou-cadeau",
+      "template": "fr_repayment_loan_or_gift",
+      "tone": "neutral"
+    },
+    {
+      "number": 10,
+      "heading": "Le prêt est entièrement remboursé",
+      "guidance": "Après vérification du dernier paiement, confirmez clairement que ce prêt est soldé.",
+      "payload": "Merci, les [dernier montant reçu et devise] sont bien arrivés. Le prêt de [montant initial et devise] est maintenant entièrement remboursé. Je mets mon suivi à jour.",
+      "id": "message-rembourse",
+      "template": "fr_repayment_settled",
+      "tone": "friendly"
+    }
+  ],
+  "record": "Personne : [prénom]\nMotif du prêt : [motif]\nMontant initial : [montant et devise]\nDate du prêt : [date]\nRemboursements reçus : [date — montant et devise, puis une ligne par paiement]\nTotal remboursé : [montant et devise]\nSolde restant : [montant et devise]\nProchaine date convenue ou prochain point : [date et ce qui a été convenu]\nDernière mise à jour : [date]",
+  "faq": [
+    {
+      "question": "Comment réclamer son argent poliment par SMS ?",
+      "answer": "Rappelez le montant et le contexte, puis posez une question précise sur une date de remboursement. Vérifiez d’abord ce qui a déjà été payé. Par exemple : « Salut [prénom], je reviens vers toi au sujet des [montant et devise] prêtés pour [motif]. Quelle date serait possible pour le remboursement ? »"
+    },
+    {
+      "question": "Que dire après un remboursement partiel ?",
+      "answer": "Remerciez la personne pour le paiement reçu et indiquez le nouveau solde. Si vous avez prêté 120 € et reçu 40 €, il reste 80 €. Une nouvelle date convenue ne réduit pas ce montant tant que le paiement n’est pas reçu."
+    },
+    {
+      "question": "Comment faire si aucune date n’avait été fixée ?",
+      "answer": "Proposez de convenir d’une date maintenant. Ne présentez pas le paiement comme en retard si vous n’aviez pas fixé d’échéance. Demandez ce qui est réaliste pour la personne et notez ce que vous acceptez ensemble."
+    },
+    {
+      "question": "Et si nous ne sommes pas d’accord sur le montant ?",
+      "answer": "Comparez le montant initial, les paiements reçus et leurs dates. Vérifiez aussi la part convenue s’il s’agit d’une dépense partagée. Si le désaccord porte sur la nature du versement, clarifiez d’abord s’il était compris comme un prêt ou un cadeau."
+    },
+    {
+      "question": "L’autre personne doit-elle installer You Owe Me ?",
+      "answer": "Non. Vous pouvez tenir votre propre suivi dans You Owe Me pour iPhone et iPad même si l’autre personne n’utilise pas l’app."
+    },
+    {
+      "question": "You Owe Me envoie-t-il ces messages ou transfère-t-il l’argent ?",
+      "answer": "Non. Vous copiez et envoyez vous-même les messages avec le moyen de votre choix. You Owe Me sert à conserver les montants, les remboursements et leur historique ; les paiements se font en dehors de l’app."
+    }
+  ],
+  "ui": {
+    "Initial message label": "Copier le message",
+    "Initial record label": "Copier le modèle de suivi",
+    "Busy label": "Copie en cours…",
+    "Successful button label": "Copié",
+    "Successful live status": "Texte copié.",
+    "Manual selection status": "Copie automatique indisponible. Le texte est sélectionné : copiez-le manuellement.",
+    "Terminal failure status": "Impossible de copier automatiquement. Sélectionnez le texte et copiez-le manuellement.",
+    "No-JavaScript hint": "JavaScript est désactivé. Sélectionnez le texte pour le copier."
+  }
+}

@@ -188,7 +188,7 @@ test('all ten import entry routes pin the changed controller/model, style and an
  for(const route of [...Object.values(routes),'tools/personal-loan-payment-tracker/']){
   const html=await read(route+'index.html');
   assert.ok(html.includes('loan-import-entry.mjs?v='+version),route);
-  const analyticsVersion=html.includes('<!-- locale-alternates:start -->')?sharedAssetVersions['/scripts/analytics.js']:version;
+  const analyticsVersion=sharedAssetVersions['/scripts/analytics.js'];
   assert.ok(html.includes('analytics.js?v='+analyticsVersion),route);
  }
  const entry=await read('scripts/loan-import-entry.mjs');

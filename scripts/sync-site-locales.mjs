@@ -8,6 +8,8 @@ const root = path.resolve(path.dirname(fileURLToPath(import.meta.url)), "..");
 const esc = value => value.replaceAll("&", "&amp;").replaceAll('"', "&quot;");
 const regexEsc = value => value.replace(/[.*+?^${}()|[\]\\]/g, "\\$&");
 const sections = ["solutions", "features", "reviews", "tools", "compare", "blog"];
+const frenchRepaymentRoute = "/fr/blog/comment-reclamer-son-argent-poliment/";
+const frenchRepaymentSource = "/blog/how-to-remind-someone-they-owe-you-money-politely/";
 const spanishDisclosureRoutes = new Set([
   "/es/blog/como-pedir-dinero-prestado-a-un-amigo/",
   "/es/blog/como-pedir-que-te-devuelvan-dinero/",
@@ -52,6 +54,10 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
     }
     return footer;
   });
+  // Only the reviewed French repayment counterpart receives this exact native label.
+  if (lang === "fr" && completed.some(page => page.en === frenchRepaymentSource)) {
+    html = html.replace(new RegExp(`(<a\\b[^>]*href=")${regexEsc(frenchRepaymentSource)}("[^>]*>)[\\s\\S]*?(<\\/a>)`, "g"), (original, start, end, close) => /\b(?:lang|hreflang)=/.test(start + end) ? original : `${start}${frenchRepaymentRoute}${end}${/\blt-cardCta\b/.test(start + end) ? "Messages pour demander un remboursement" : "messages pour demander un remboursement"}${close}`);
+  }
   for (const target of completed) {
     html = html.replace(new RegExp(`(<a\\b[^>]*href=")${regexEsc(target.en)}(#[^"]*)?("[^>]*>)([\\s\\S]*?)(<\\/a>)`, "g"), (original, start, hash, end, label, close) => /\blang="en"/.test(start + end) ? original : `${start}${target[lang]}${hash || ""}${end}${label.replace(new RegExp(`\\s*\\(${regexEsc(locale.shared.englishFallback)}\\)`, "g"), "").replace(/<span class="site-locale-fallback">\s*<\/span>/g, "")}${close}`);
   }
@@ -61,7 +67,9 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
   const sectionNav = `<nav class="${locale.sectionClass}" aria-label="${esc(locale.shared.sectionLabel)}">${nav}</nav>`;
   const sectionContent = lang === "es" && spanishDisclosureRoutes.has(route)
     ? `<details class="site-spanish-disclosure"><summary>Más guías en español</summary>${sectionNav}</details>`
-    : sectionNav;
+    : lang === "fr" && route === frenchRepaymentRoute
+      ? `<details class="site-french-disclosure"><summary>Pages en français</summary>${sectionNav}</details>`
+      : sectionNav;
   html = html.replace(/(<article\b[^>]*>)/, `$1\n          <!-- ${marker}-section:start -->\n          ${sectionContent}\n          <!-- ${marker}-section:end -->`);
   return html;
 }
@@ -75,7 +83,7 @@ export function renderLocaleDiscovery(discovery, locales = siteLocales) {
   for (const locale of translations) {
     const marker = locale.sectionMarker;
     const completed = locale.pages.filter(page => page.complete);
-    if (completed.length) discovery = discovery.trimEnd() + `\n\n<!-- ${marker}-pages:start -->\n## ${locale.shared.sectionLabel}\n\n${locale.shared.discoveryDescription}\n\n${completed.map(page => `- [${page.title}](${localeOrigin}${page[locale.code]})`).join("\n")}\n<!-- ${marker}-pages:end -->\n`;
+    if (completed.length) discovery = discovery.trimEnd() + `\n\n<!-- ${marker}-pages:start -->\n## ${locale.shared.sectionLabel}\n\n${locale.shared.discoveryDescription}\n\n${completed.map(page => `- [${page.title}](${localeOrigin}${page[locale.code]})${page.discoveryDescription ? ` — ${page.discoveryDescription}` : ""}`).join("\n")}\n<!-- ${marker}-pages:end -->\n`;
   }
   return discovery;
 }

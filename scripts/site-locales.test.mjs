@@ -170,7 +170,7 @@ test("analytics preserves English metadata and maps only completed localized rou
   const baseline = execFileSync("git", ["show", "bfd69d7:scripts/analytics.js"], { encoding: "utf8" });
   const metadata = source.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0];
   assert.equal(metadata.replace("  \"/blog/how-to-import-loan-history/\": { page_type: \"guide\", cluster: \"money_owed_followups\", app_store_cpp: \"default\" },\n", "").replace("  \"/tools/roommate-move-in-checklist/\": { page_type: \"tool\", cluster: \"roommates_household_costs\", app_store_cpp: \"roommates_household_costs\" },\n", "").replace("  \"/tools/tutor-payment-tracker-template/\": { page_type: \"tool\", cluster: \"client_payment_records\", app_store_cpp: \"client_payment_records\" },\n", ""), baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
-  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=repaymentes20261027"/);
+  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=repaymentfr20261027"/);
   const functions = source.match(/function normalizePath\(path\) \{[\s\S]*?\nfunction sanitizeText/)[0].replace(/\nfunction sanitizeText$/, "");
   const context = { window: { location: { pathname: "/" } }, localizedSourceRoute: route => localizedSourceRoute(route, threeLocales()) };
   vm.createContext(context);
@@ -204,11 +204,12 @@ test("reviewed native registry prose overrides only five editorial fields and re
   const authored = localizedRegistryEntries(sources);
   for (const current of authored) {
     const baseline = defaults.find(entry => entry.url === current.url);
-    if (current.url !== native.es) { assert.deepEqual(current, baseline); continue; }
+    const approvedNative = siteLocales.flatMap(locale => locale.pages).find(page => page.registry && Object.values(page).includes(current.url));
+    if (!approvedNative) { assert.deepEqual(current, baseline); continue; }
     assert.deepEqual(Object.keys(current).filter(key => JSON.stringify(current[key]) !== JSON.stringify(baseline[key])).sort(), [...fields].sort());
-    for (const field of fields) assert.equal(current[field], native.registry[field]);
+    for (const field of fields) assert.equal(current[field], approvedNative.registry[field]);
     assert.equal(current.appStoreCpp, "general");
-    assert.equal(current.translationOf, native.en);
+    assert.equal(current.translationOf, approvedNative.en);
   }
   const attemptedRoutingOverride = siteLocales.map(locale => ({ ...locale, pages: locale.pages.map(page => page.es === native.es ? { ...page, registry: { ...page.registry, url: "/wrong/", appStoreCpp: "money-owed-followups" } } : page) }));
   const safe = localizedRegistryEntries(sources, attemptedRoutingOverride).find(entry => entry.translationOf === native.en);
@@ -217,21 +218,55 @@ test("reviewed native registry prose overrides only five editorial fields and re
 });
 
 
-test("native Spanish guide navigation is closed, preserves every link and is limited to its two routes", () => {
-  const targets = new Set(["/es/blog/como-pedir-dinero-prestado-a-un-amigo/", "/es/blog/como-pedir-que-te-devuelvan-dinero/"]);
+test("native guide navigation is closed only on the three reviewed message routes", () => {
+  const targets = new Map([
+    ["/es/blog/como-pedir-dinero-prestado-a-un-amigo/", ["site-spanish-disclosure", "Más guías en español"]],
+    ["/es/blog/como-pedir-que-te-devuelvan-dinero/", ["site-spanish-disclosure", "Más guías en español"]],
+    ["/fr/blog/comment-reclamer-son-argent-poliment/", ["site-french-disclosure", "Pages en français"]],
+  ]);
   for (const locale of siteLocales.filter(item => item.code !== "en")) for (const page of locale.pages.filter(item => item.complete)) {
+    const route = page[locale.code];
+    const current = fs.readFileSync(new URL(`..${route}index.html`, import.meta.url), "utf8");
+    const rendered = renderLocaleHtml(current, page.en, locale.code);
+    assert.equal(rendered, current, `Idempotent generation: ${route}`);
+    const nav = current.match(/<nav class="(?:site-spanish-section|site-locale-section)"[\s\S]*?<\/nav>/)[0];
+    for (const target of locale.pages.filter(item => item.complete)) assert.ok(nav.includes(`href="${target[locale.code]}"`));
+    assert.equal((nav.match(/aria-current="page"/g) || []).length, 1);
+    if (targets.has(route)) {
+      const [className, summary] = targets.get(route);
+      assert.ok(current.includes(`<details class="${className}"><summary>${summary}</summary>${nav}</details>`), `Native closed disclosure: ${route}`);
+    } else assert.ok(!/class="site-(?:spanish|french)-disclosure"/.test(current), `Original navigation stays expanded: ${route}`);
+  }
+});
+
+// Preserve the immutable pre-polish navigation guard alongside current idempotence.
+// Only this release's exact French discovery link, counterpart annotations, three
+// inline labels/two standalone labels and the shared analytics cache URL normalize.
+test("original localized navigation retains its immutable pre-polish baseline", () => {
+  const frenchRoute = "/fr/blog/comment-reclamer-son-argent-poliment/";
+  const targets = new Set(["/es/blog/como-pedir-dinero-prestado-a-un-amigo/", "/es/blog/como-pedir-que-te-devuelvan-dinero/"]);
+  function approved(html, baseline) {
+    html = html.replace('\n              <a href="' + frenchRoute + '">Messages de remboursement</a>', "")
+      .replace('    <link rel="alternate" hreflang="fr" href="https://you-owe-me.com' + frenchRoute + '" />\n', "")
+      .replace('<span aria-hidden="true"> · </span><a href="' + frenchRoute + '" lang="fr" hreflang="fr">Français</a>', "");
+    for (const original of baseline.matchAll(/<a\b[^>]*href="\/blog\/how-to-remind-someone-they-owe-you-money-politely\/"[^>]*>[\s\S]*?<\/a>/g)) {
+      const opening = original[0].match(/^<a\b[^>]*>/)[0].replace('/blog/how-to-remind-someone-they-owe-you-money-politely/', frenchRoute);
+      const label = /\blt-cardCta\b/.test(opening) ? 'Messages pour demander un remboursement' : 'messages pour demander un remboursement';
+      html = html.replace(opening + label + '</a>', original[0]);
+    }
+    return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)(?:\?[^" ]*)?/g, '$1?v=approved-cache');
+  }
+  for (const locale of siteLocales.filter(item => item.code !== "en")) for (const page of locale.pages.filter(item => item.complete && item[locale.code] !== frenchRoute)) {
     const route = page[locale.code];
     const baseline = execFileSync("git", ["show", `739ee644646dff36eeeb646e6848c7b884cdfb51:${route.slice(1)}index.html`], { encoding: "utf8" });
     const rendered = renderLocaleHtml(baseline, page.en, locale.code);
-    assert.equal(renderLocaleHtml(rendered, page.en, locale.code), rendered, `Idempotent generation: ${route}`);
+    assert.equal(renderLocaleHtml(rendered, page.en, locale.code), rendered, `Historical source generation is idempotent: ${route}`);
     const nav = html => html.match(/<nav class="(?:site-spanish-section|site-locale-section)"[\s\S]*?<\/nav>/)[0];
-    assert.equal(nav(rendered), nav(baseline), `Navigation links, labels and current state: ${route}`);
+    assert.equal(approved(nav(rendered), baseline), nav(baseline), `Immutable navigation labels and current state: ${route}`);
     if (targets.has(route)) {
-      const wrapper = `<details class="site-spanish-disclosure"><summary>Más guías en español</summary>${nav(baseline)}</details>`;
+      const wrapper = `<details class="site-spanish-disclosure"><summary>Más guías en español</summary>${nav(rendered)}</details>`;
       assert.ok(rendered.includes(wrapper), `Native closed disclosure: ${route}`);
-      assert.equal(rendered.replace(wrapper, nav(baseline)), baseline, `Only the generated wrapper changes: ${route}`);
-    } else {
-      assert.equal(rendered, baseline, `Other localized pages remain unchanged: ${route}`);
-    }
+      assert.equal(approved(rendered.replace(wrapper, nav(rendered)), baseline), approved(baseline, baseline), `Only the approved wrapper/integration changes: ${route}`);
+    } else assert.equal(approved(rendered, baseline), approved(baseline, baseline), `Other historical locale rendering remains unchanged: ${route}`);
   }
 });

@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "importguide20261027",
+  "/scripts/analytics.js": "repaymentfr20261027",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -109,6 +109,21 @@ export const frenchPages = [
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", fr: "/fr/blog/suivre-qui-vous-doit-de-l-argent/", title: "Comment savoir qui vous doit de l’argent", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", fr: "/fr/solutions/suivi-remboursement-pret-personnel/", title: "Suivez vos prêts personnels et leurs remboursements", complete: true },
   { en: "/tools/split-expense-calculator/", fr: "/fr/outils/calculateur-partage-depenses/", title: "Calculateur de partage des dépenses", complete: true },
+  {
+    "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+    "fr": "/fr/blog/comment-reclamer-son-argent-poliment/",
+    "title": "Messages de remboursement",
+    "updated": "2026-10-27",
+    "complete": true,
+    "discoveryDescription": "10 messages en français, un exemple de remboursement partiel et un modèle de suivi.",
+    "registry": {
+      "primaryAudience": "Personnes qui suivent le remboursement d’un prêt entre proches ou d’une part de dépense partagée.",
+      "problemSolved": "Demander un remboursement avec un message adapté au solde réellement restant.",
+      "useWhen": "Après un prêt, un paiement partiel ou une date de remboursement à confirmer.",
+      "primaryCta": "Voir les 10 messages",
+      "nextStep": "Suivre le prêt dans You Owe Me"
+    }
+  },
 ];
 export const frenchShared = Object.freeze({
   languageLabel: "Langue de la page", exampleLabel: "Exemple illustratif ; ce n’est pas une capture de l’application",

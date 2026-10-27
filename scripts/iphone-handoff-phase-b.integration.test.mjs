@@ -110,7 +110,7 @@ test("visible cards use the shared desktop-only layout and cache-busted module p
   assert.match(css, /#split-result-primary-download\[hidden\] ~ \.split-result-app-card__price/);
 
   for (const page of [home, roommate]) {
-    assert.ok(page.includes(`analytics.js?v=${page.includes('hreflang="ar"') ? sharedAssetVersions["/scripts/analytics.js"] : page.includes("loan-import-entry.mjs") ? "20261018-review1" : "20260926-story-1"}`));
+    assert.ok(page.includes(`analytics.js?v=${sharedAssetVersions["/scripts/analytics.js"]}`));
   }
   assert.ok(split.includes(`analytics.js?v=${sharedAssetVersions["/scripts/analytics.js"]}`));
   for (const page of [home, roommate, split]) {
