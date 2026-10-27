@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "tutor20261027",
+  "/scripts/analytics.js": "repaymentes20261027",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -26,9 +26,23 @@ export const spanishVersionedAssets = [
 ];
 export const spanishPages = [
   { en: "/", es: "/es/", title: "You Owe Me: controla préstamos, gastos y pagos", updated: "2026-10-27", complete: true },
-  { en: "/solutions/app-to-track-money-owed/", es: "/es/soluciones/app-para-registrar-dinero-adeudado/", title: "App para registrar el dinero que te deben", complete: true },
+  { en: "/solutions/app-to-track-money-owed/", es: "/es/soluciones/app-para-registrar-dinero-adeudado/", title: "App para registrar el dinero que te deben", updated: "2026-10-27", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", es: "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/", title: "Cómo llevar el control de quién te debe dinero", updated: "2026-10-27", complete: true },
   { en: "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/", es: "/es/blog/como-pedir-dinero-prestado-a-un-amigo/", title: "Cómo pedir dinero prestado a un amigo: mensajes y ejemplos", updated: "2026-10-27", complete: true },
+  {
+    "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+    "es": "/es/blog/como-pedir-que-te-devuelvan-dinero/",
+    "title": "Cómo pedir que te devuelvan dinero: mensajes y ejemplos",
+    "updated": "2026-10-27",
+    "complete": true,
+    "registry": {
+      "primaryAudience": "Personas que necesitan pedir la devolución de un préstamo o un gasto compartido acordado",
+      "problemSolved": "Preparar un mensaje claro de devolución a partir del acuerdo y del importe pendiente",
+      "useWhen": "Cuando necesitas recordar una devolución, confirmar una fecha o dar seguimiento a un pago parcial",
+      "primaryCta": "Elegir un mensaje",
+      "nextStep": "Lleva el registro de importes y pagos en You Owe Me."
+    }
+  },
   { en: "/solutions/personal-loan-repayment-tracker/", es: "/es/soluciones/seguimiento-de-prestamos-personales/", title: "Seguimiento de préstamos personales y sus pagos", updated: "2026-10-27", complete: true },
   { en: "/tools/split-expense-calculator/", es: "/es/herramientas/calculadora-de-gastos-compartidos/", title: "Calculadora de gastos compartidos", complete: true },
 ];
@@ -140,18 +154,20 @@ export function localizedRegistryEntries(englishEntries, locales = siteLocales) 
     return locale.pages.filter(page => page.complete).map(page => {
       const source = byUrl.get(page.en);
       if (!source) throw new Error(`Missing English source: ${page.en}`);
+      // Only these five editorial fields may differ for a reviewed native adaptation.
+      const editorial = page.registry || {};
       return {
         ...source, url: page[locale.code], title: page.title, locale: locale.code, translationOf: page.en,
-        primaryAudience: locale.shared.primaryAudience,
-        problemSolved: page.title,
-        useWhen: locale.shared.useWhen,
+        primaryAudience: editorial.primaryAudience || locale.shared.primaryAudience,
+        problemSolved: editorial.problemSolved || page.title,
+        useWhen: editorial.useWhen || locale.shared.useWhen,
         parent: page[locale.code] === locale.home ? "/" : localized("/"),
         relatedPages: source.relatedPages.map(localized),
         relatedTools: source.relatedTools.map(localized),
         relatedSolutions: source.relatedSolutions.map(localized),
         appStoreCpp: "general", appStoreDestinationState: "defaultAppStore",
-        updated: page.updated || "2026-10-20", primaryCta: locale.shared.storeLabel,
-        nextStep: locale.shared.nextStep,
+        updated: page.updated || "2026-10-20", primaryCta: editorial.primaryCta || locale.shared.storeLabel,
+        nextStep: editorial.nextStep || locale.shared.nextStep,
         bestNextSteps: { enabled: false, skipReason: locale.registrySkipReason },
       };
     });

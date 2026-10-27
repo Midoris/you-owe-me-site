@@ -18,10 +18,19 @@ export function normalizeReviewedLanguageCopy(html) {
   html = html.replace("          <p>¿Aún necesitas hablar del préstamo? Estos <a href=\"/es/blog/como-pedir-dinero-prestado-a-un-amigo/\">ejemplos para pedir dinero prestado a un amigo</a> te ayudan a plantear el importe y la devolución antes de registrarlos.</p>\n\n", "");
   html = html.replace("\n              <a href=\"/es/blog/como-pedir-dinero-prestado-a-un-amigo/\">Cómo pedir dinero prestado a un amigo: mensajes y ejemplos</a>", "");
   // These two Spanish pages received approved context links on October 27; publication dates stay intact.
-  if (html.includes('rel="canonical" href="https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/"') || html.includes('rel="canonical" href="https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/"')) {
+  if (html.includes('rel="canonical" href="https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/"') || html.includes('rel="canonical" href="https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/"') || html.includes('rel="canonical" href="https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/"')) {
     html = html.replace('"dateModified": "2026-10-27"', '"dateModified": "2026-10-20"')
       .replace('property="article:modified_time" content="2026-10-27"', 'property="article:modified_time" content="2026-10-20"')
       .replace('Actualizado el <time datetime="2026-10-27">27 de octubre de 2026</time>', 'Actualizado el <time datetime="2026-10-20">20 de octubre de 2026</time>');
   }
+  // October 27 repayment guide: normalize only approved new Spanish discovery/context links.
+  html = html.replace("                <a href=\"/es/blog/como-pedir-que-te-devuelvan-dinero/\" class=\"lt-resourceShelfLink\">\n                  <strong>Mensajes para pedir que te devuelvan dinero</strong>\n                  <span>Elige un recordatorio, revisa los pagos recibidos y pide una fecha con claridad.</span>\n                  <span>Ver los mensajes</span>\n                </a>\n", "");
+  html = html.replace("            <p>Cuando tengas claro el saldo, puedes adaptar uno de estos <a href=\"/es/blog/como-pedir-que-te-devuelvan-dinero/\">mensajes para pedir que te devuelvan dinero</a> antes de escribir a la otra persona.</p>\n", "");
+  html = html.replace("            <p>Para preparar un recordatorio con el importe correcto, consulta la guía de <a href=\"/es/blog/como-pedir-que-te-devuelvan-dinero/\">mensajes para pedir una devolución</a>.</p>\n", "");
+  html = html.replace("\n              <a href=\"/es/blog/como-pedir-que-te-devuelvan-dinero/\">Cómo pedir que te devuelvan dinero: mensajes y ejemplos</a>", "");
+  // Existing locale generator retargets only these three exact authored anchor forms (five occurrences).
+  html = html.replaceAll("<a href=\"/es/blog/como-pedir-que-te-devuelvan-dinero/\">cómo recordar a alguien que te debe dinero con amabilidad</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">cómo recordar a alguien que te debe dinero con amabilidad (en inglés)</a>");
+  html = html.replaceAll("<a href=\"/es/blog/como-pedir-que-te-devuelvan-dinero/\" class=\"lt-cardCta\">Leer la guía de recordatorios amables</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">Leer la guía de recordatorios amables (en inglés)</a>");
+  html = html.replaceAll("<a href=\"/es/blog/como-pedir-que-te-devuelvan-dinero/\">mensajes amables para recordar un pago pendiente </a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">mensajes amables para recordar un pago pendiente <span class=\"site-locale-fallback\">(en inglés)</span></a>");
   return html;
 }

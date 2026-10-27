@@ -82,8 +82,8 @@ test("Spanish authored HTML stays byte-for-byte intact from the accepted public 
     // Only explicitly changed shared dependencies may receive cache URL updates.
     .replace(/((?:src|href)=")([^"?]+)(?:\?v=([^"&]+))?(")/g, (original, start, asset, version, end) =>
       sharedAssetVersions[asset] && [undefined, sharedAssetVersions[asset], "es20261020"].includes(version) ? `${start}${asset}?v=shared-cache-version${end}` : original);
-  // This immutable-release guard covers its original five routes; the new guide did not exist then.
-  for (const page of spanishPages.filter(page => page.es !== "/es/blog/como-pedir-dinero-prestado-a-un-amigo/")) {
+  // This immutable-release guard covers its original five routes; the later guides did not exist then.
+  for (const page of spanishPages.filter(page => !["/es/blog/como-pedir-dinero-prestado-a-un-amigo/", "/es/blog/como-pedir-que-te-devuelvan-dinero/"].includes(page.es))) {
     const file = `${page.es.slice(1)}index.html`;
     const original = execFileSync("git", ["show", `bfd69d7:${file}`], { encoding: "utf8" });
     const current = fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8");
@@ -170,7 +170,7 @@ test("analytics preserves English metadata and maps only completed localized rou
   const baseline = execFileSync("git", ["show", "bfd69d7:scripts/analytics.js"], { encoding: "utf8" });
   const metadata = source.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0];
   assert.equal(metadata.replace("  \"/tools/roommate-move-in-checklist/\": { page_type: \"tool\", cluster: \"roommates_household_costs\", app_store_cpp: \"roommates_household_costs\" },\n", "").replace("  \"/tools/tutor-payment-tracker-template/\": { page_type: \"tool\", cluster: \"client_payment_records\", app_store_cpp: \"client_payment_records\" },\n", ""), baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
-  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=tutor20261027"/);
+  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=repaymentes20261027"/);
   const functions = source.match(/function normalizePath\(path\) \{[\s\S]*?\nfunction sanitizeText/)[0].replace(/\nfunction sanitizeText$/, "");
   const context = { window: { location: { pathname: "/" } }, localizedSourceRoute: route => localizedSourceRoute(route, threeLocales()) };
   vm.createContext(context);
@@ -189,4 +189,27 @@ test("analytics preserves English metadata and maps only completed localized rou
   context.localizedSourceRoute = route => localizedSourceRoute(route, locales);
   context.window.location.pathname = germanPages[1].de;
   assert.deepEqual(JSON.parse(JSON.stringify(context.metadataFor())), { page_type: "solution", cluster: "money_owed_followups", app_store_cpp: "default" });
+});
+
+
+test("reviewed native registry prose overrides only five editorial fields and retains locale routing", () => {
+  const fields = ["primaryAudience", "problemSolved", "useWhen", "primaryCta", "nextStep"];
+  const native = spanishPages.find(page => page.es === "/es/blog/como-pedir-que-te-devuelvan-dinero/");
+  assert.ok(native.registry);
+  const sources = contentRegistry.filter(page => !page.locale);
+  const withoutOverrides = siteLocales.map(locale => ({ ...locale, pages: locale.pages.map(page => ({ ...page, registry: undefined })) }));
+  const defaults = localizedRegistryEntries(sources, withoutOverrides);
+  const authored = localizedRegistryEntries(sources);
+  for (const current of authored) {
+    const baseline = defaults.find(entry => entry.url === current.url);
+    if (current.url !== native.es) { assert.deepEqual(current, baseline); continue; }
+    assert.deepEqual(Object.keys(current).filter(key => JSON.stringify(current[key]) !== JSON.stringify(baseline[key])).sort(), [...fields].sort());
+    for (const field of fields) assert.equal(current[field], native.registry[field]);
+    assert.equal(current.appStoreCpp, "general");
+    assert.equal(current.translationOf, native.en);
+  }
+  const attemptedRoutingOverride = siteLocales.map(locale => ({ ...locale, pages: locale.pages.map(page => page.es === native.es ? { ...page, registry: { ...page.registry, url: "/wrong/", appStoreCpp: "money-owed-followups" } } : page) }));
+  const safe = localizedRegistryEntries(sources, attemptedRoutingOverride).find(entry => entry.translationOf === native.en);
+  assert.equal(safe.url, native.es);
+  assert.equal(safe.appStoreCpp, "general");
 });

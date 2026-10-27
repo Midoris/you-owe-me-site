@@ -281,6 +281,7 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 - [App para registrar el dinero que te deben](https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/)
 - [Cómo llevar el control de quién te debe dinero](https://you-owe-me.com/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/)
 - [Cómo pedir dinero prestado a un amigo: mensajes y ejemplos](https://you-owe-me.com/es/blog/como-pedir-dinero-prestado-a-un-amigo/)
+- [Cómo pedir que te devuelvan dinero: mensajes y ejemplos](https://you-owe-me.com/es/blog/como-pedir-que-te-devuelvan-dinero/)
 - [Seguimiento de préstamos personales y sus pagos](https://you-owe-me.com/es/soluciones/seguimiento-de-prestamos-personales/)
 - [Calculadora de gastos compartidos](https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/)
 <!-- spanish-pages:end -->

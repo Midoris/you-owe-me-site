@@ -512,7 +512,7 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/</loc>
-    <lastmod>2026-10-20</lastmod>
+    <lastmod>2026-10-27</lastmod>
     <changefreq>weekly</changefreq>
     <priority>0.85</priority>
   </url>
@@ -524,6 +524,12 @@
   </url>
   <url>
     <loc>https://you-owe-me.com/es/blog/como-pedir-dinero-prestado-a-un-amigo/</loc>
+    <lastmod>2026-10-27</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.8</priority>
+  </url>
+  <url>
+    <loc>https://you-owe-me.com/es/blog/como-pedir-que-te-devuelvan-dinero/</loc>
     <lastmod>2026-10-27</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
