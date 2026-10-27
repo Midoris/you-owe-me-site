@@ -1,0 +1,7 @@
+Content routing audit
+Live route files: 112
+Registry entries: 107
+Sitemap URLs: 102
+Strategic BNS URLs: 80
+Hard errors: 0
+Warnings: 76

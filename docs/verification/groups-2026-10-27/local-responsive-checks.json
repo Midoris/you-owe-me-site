@@ -1,0 +1,288 @@
+[
+  {
+    "canonical": "https://you-owe-me.com/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/es/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Grupos (en inglés)"
+    ],
+    "lang": "es",
+    "route": "/es/",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/de/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Gruppen (auf Englisch)"
+    ],
+    "lang": "de",
+    "route": "/de/",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/ar/",
+    "clientWidth": 375,
+    "dir": "rtl",
+    "groupsLinks": [
+      "المجموعات (بالإنجليزية)"
+    ],
+    "lang": "ar",
+    "route": "/ar/",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/fr/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groupes (en anglais)"
+    ],
+    "lang": "fr",
+    "route": "/fr/",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/features/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups",
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/features/",
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/quick-start/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/quick-start/",
+    "scrollWidth": 390,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/solutions/client-payment-records/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Clients group"
+    ],
+    "lang": "en",
+    "route": "/solutions/client-payment-records/",
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/solutions/group-payback-tracker/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/solutions/group-payback-tracker/",
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/compare/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [],
+    "lang": "en",
+    "route": "/compare/",
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/compare/splitwise-alternative/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/compare/splitwise-alternative/",
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/blog/how-to-keep-track-of-money-between-family-members/",
+    "clientWidth": 375,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Family group"
+    ],
+    "lang": "en",
+    "route": "/blog/how-to-keep-track-of-money-between-family-members/",
+    "scrollWidth": 375,
+    "width": 390
+  },
+  {
+    "canonical": "https://you-owe-me.com/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/es/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Grupos (en inglés)"
+    ],
+    "lang": "es",
+    "route": "/es/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/de/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Gruppen (auf Englisch)"
+    ],
+    "lang": "de",
+    "route": "/de/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/ar/",
+    "clientWidth": 1425,
+    "dir": "rtl",
+    "groupsLinks": [
+      "المجموعات (بالإنجليزية)"
+    ],
+    "lang": "ar",
+    "route": "/ar/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/fr/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groupes (en anglais)"
+    ],
+    "lang": "fr",
+    "route": "/fr/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/features/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups",
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/features/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/quick-start/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/quick-start/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/solutions/client-payment-records/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Clients group"
+    ],
+    "lang": "en",
+    "route": "/solutions/client-payment-records/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/solutions/group-payback-tracker/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/solutions/group-payback-tracker/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/compare/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [],
+    "lang": "en",
+    "route": "/compare/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/compare/splitwise-alternative/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Groups"
+    ],
+    "lang": "en",
+    "route": "/compare/splitwise-alternative/",
+    "scrollWidth": 1425,
+    "width": 1440
+  },
+  {
+    "canonical": "https://you-owe-me.com/blog/how-to-keep-track-of-money-between-family-members/",
+    "clientWidth": 1425,
+    "dir": "ltr",
+    "groupsLinks": [
+      "Family group"
+    ],
+    "lang": "en",
+    "route": "/blog/how-to-keep-track-of-money-between-family-members/",
+    "scrollWidth": 1425,
+    "width": 1440
+  }
+]

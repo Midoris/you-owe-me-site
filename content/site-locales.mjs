@@ -25,7 +25,7 @@ export const spanishVersionedAssets = [
   "/scripts/recordkeeping-guide-es.js", "/styles/site-locale.css", "/styles/site-nav.css",
 ];
 export const spanishPages = [
-  { en: "/", es: "/es/", title: "You Owe Me: controla préstamos, gastos y pagos", complete: true },
+  { en: "/", es: "/es/", title: "You Owe Me: controla préstamos, gastos y pagos", updated: "2026-10-27", complete: true },
   { en: "/solutions/app-to-track-money-owed/", es: "/es/soluciones/app-para-registrar-dinero-adeudado/", title: "App para registrar el dinero que te deben", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", es: "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/", title: "Cómo llevar el control de quién te debe dinero", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", es: "/es/soluciones/seguimiento-de-prestamos-personales/", title: "Seguimiento de préstamos personales y sus pagos", complete: true },
@@ -47,7 +47,7 @@ export const spanishShared = Object.freeze({
 });
 
 export const germanPages = [
-  { en: "/", de: "/de/", title: "You Owe Me: Geldforderungen, Darlehen und Ausgaben im Blick", complete: true },
+  { en: "/", de: "/de/", title: "You Owe Me: Geldforderungen, Darlehen und Ausgaben im Blick", updated: "2026-10-27", complete: true },
   { en: "/solutions/app-to-track-money-owed/", de: "/de/loesungen/app-fuer-geldforderungen/", title: "App für Geldforderungen", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", de: "/de/blog/wer-schuldet-mir-geld/", title: "Wer schuldet mir Geld? So behältst du den Überblick", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", de: "/de/loesungen/private-darlehen-verwalten/", title: "Private Darlehen und Rückzahlungen verwalten", complete: true },
@@ -71,7 +71,7 @@ export const germanShared = Object.freeze({
 // Spanish names remain public compatibility exports. All generation consumes
 // this common configuration, so adding a locale never needs another generator.
 export const arabicPages = [
-  { en: "/", ar: "/ar/", title: "You Owe Me: تابع الديون والقروض والمصروفات", complete: true },
+  { en: "/", ar: "/ar/", title: "You Owe Me: تابع الديون والقروض والمصروفات", updated: "2026-10-27", complete: true },
   { en: "/solutions/app-to-track-money-owed/", ar: "/ar/solutions/app-to-track-money-owed/", title: "تطبيق لتتبّع المبالغ المستحقة لك", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", ar: "/ar/blog/how-to-keep-track-of-who-owes-you-money/", title: "كيف تتابع من يدين لك بالمال", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", ar: "/ar/solutions/personal-loan-repayment-tracker/", title: "تتبّع القروض الشخصية وسدادها", complete: true },
@@ -89,7 +89,7 @@ export const arabicShared = Object.freeze({
   nextStep: "اطّلع على الموارد ذات الصلة أو تابع في You Owe Me على iPhone.",
 });
 export const frenchPages = [
-  { en: "/", fr: "/fr/", title: "You Owe Me : suivez vos prêts, dépenses et remboursements", complete: true },
+  { en: "/", fr: "/fr/", title: "You Owe Me : suivez vos prêts, dépenses et remboursements", updated: "2026-10-27", complete: true },
   { en: "/solutions/app-to-track-money-owed/", fr: "/fr/solutions/application-suivi-argent-du/", title: "Application pour suivre l’argent qu’on vous doit", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", fr: "/fr/blog/suivre-qui-vous-doit-de-l-argent/", title: "Comment savoir qui vous doit de l’argent", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", fr: "/fr/solutions/suivi-remboursement-pret-personnel/", title: "Suivez vos prêts personnels et leurs remboursements", complete: true },
@@ -149,7 +149,7 @@ export function localizedRegistryEntries(englishEntries, locales = siteLocales) 
         relatedTools: source.relatedTools.map(localized),
         relatedSolutions: source.relatedSolutions.map(localized),
         appStoreCpp: "general", appStoreDestinationState: "defaultAppStore",
-        updated: "2026-10-20", primaryCta: locale.shared.storeLabel,
+        updated: page.updated || "2026-10-20", primaryCta: locale.shared.storeLabel,
         nextStep: locale.shared.nextStep,
         bestNextSteps: { enabled: false, skipReason: locale.registrySkipReason },
       };

@@ -1,0 +1,6 @@
+Technical SEO and AI hygiene audit
+Route files: 112
+Registry entries: 107
+Sitemap URLs: 102
+Hard errors: 0
+Warnings: 5

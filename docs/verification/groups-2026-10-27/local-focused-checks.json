@@ -1,0 +1,52 @@
+[
+  {
+    "pageWidth": 320,
+    "sectionOverflow": [],
+    "width": 320
+  },
+  {
+    "pageWidth": 585,
+    "sectionOverflow": [],
+    "width": 600
+  },
+  {
+    "bounds": {
+      "left": 15.3984375,
+      "right": 374.59375
+    },
+    "text": "Recurring entries and multi-currency records\nReminders and Money Conversations for follow-ups\nSpaces for separate contexts; Groups to organize people within one context. Optional device sync and Balance Sync between two users\nPercentage or fixed interest, plus CSV export",
+    "width": 390
+  },
+  {
+    "bounds": {
+      "left": 15.3984375,
+      "right": 374.59375
+    },
+    "text": "Movimientos recurrentes y registros en varias monedas\nRecordatorios y Money Conversations para pedir un pago\nSpaces (en inglés) para separar contextos; Grupos (en inglés) para organizar a las personas dentro de un mismo contexto. Sincronización opcional entre dispositivos y Balance Sync entre dos usuarios\nIntereses porcentuales o fijos y exportación CSV",
+    "width": 390
+  },
+  {
+    "bounds": {
+      "left": 15.3984375,
+      "right": 374.59375
+    },
+    "text": "Wiederkehrende Einträge und Aufzeichnungen in mehreren Währungen\nErinnerungen und passende Nachrichten mit Money Conversations\nSpaces (auf Englisch) für getrennte Bereiche; Gruppen (auf Englisch) zum Ordnen von Personen innerhalb eines Bereichs. Optionale Synchronisierung zwischen Geräten und Balance Sync zwischen zwei Nutzern\nProzentuale Zinsen oder feste Zinsbeträge sowie CSV-Export",
+    "width": 390
+  },
+  {
+    "bounds": {
+      "left": 0.40625,
+      "right": 359.6015625
+    },
+    "text": "قيود متكررة وسجلات بعملات متعددة\nتذكيرات ورسائل متابعة مع\nMoney Conversations\nSpaces (بالإنجليزية) لفصل السجلات حسب السياق؛ والمجموعات (بالإنجليزية) لتنظيم الأشخاص داخل السياق نفسه. مزامنة اختيارية بين الأجهزة وميزة Balance Sync بين مستخدمين اثنين\nفائدة بنسبة مئوية أو بمبلغ ثابت، مع تصدير\nCSV",
+    "width": 390
+  },
+  {
+    "bounds": {
+      "left": 15.3984375,
+      "right": 374.59375
+    },
+    "text": "Écritures récurrentes et suivi dans plusieurs devises\nRappels et messages de suivi avec Money Conversations\nSpaces (en anglais) pour séparer les contextes ; Groupes (en anglais) pour organiser les personnes dans un même contexte. Synchronisation facultative entre appareils et Balance Sync entre deux utilisateurs\nIntérêts en pourcentage ou d’un montant fixe, et export CSV",
+    "width": 390
+  }
+]

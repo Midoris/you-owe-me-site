@@ -119,7 +119,7 @@ test("generated hub retains its registered homepage content and placement", () =
 
   for (const copy of [
     'relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/shared-expense-tracker/", "/solutions/personal-loan-repayment-tracker/", "/solutions/family-reimbursement-tracker/"]',
-    'updated: "2026-10-25"',
+    'updated: "2026-10-27"',
     'enabled: true',
     'variant: "hub"',
     'placement: "after-definition"',

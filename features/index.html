@@ -15,12 +15,12 @@
     <link rel="canonical" href="https://you-owe-me.com/features/" />
     <meta
       name="description"
-      content="Track money between people with Voice to Entry, Loan Outlook, Spaces, Live Link payment reports, Balance Sync, reminders, and PDF statements."
+      content="Organize people with Groups, separate records with Spaces, and track money with Voice to Entry, loans, reminders, Live Links, and PDF statements."
     />
     <meta property="og:title" content="You Owe Me App Features | Voice Entry, IOUs &amp; Reminders" />
     <meta
       property="og:description"
-      content="Track money between people with Voice to Entry, Loan Outlook, Spaces, Live Link payment reports, Balance Sync, reminders, and PDF statements."
+      content="Organize people with Groups, separate records with Spaces, and track money with Voice to Entry, loans, reminders, Live Links, and PDF statements."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://you-owe-me.com/features/" />
@@ -29,7 +29,7 @@
     <meta name="twitter:title" content="You Owe Me App Features | Voice Entry, IOUs &amp; Reminders" />
     <meta
       name="twitter:description"
-      content="Track money between people with Voice to Entry, Loan Outlook, Spaces, Live Link payment reports, Balance Sync, reminders, and PDF statements."
+      content="Organize people with Groups, separate records with Spaces, and track money with Voice to Entry, loans, reminders, Live Links, and PDF statements."
     />
     <meta name="twitter:image" content="https://you-owe-me.com/images/pages/features/main.png" />
 
@@ -38,11 +38,17 @@
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "You Owe Me App Features",
-      "description": "Track money between people with Voice to Entry, Loan Outlook, Spaces, Live Link payment reports, Balance Sync, reminders, and PDF statements.",
+      "description": "Organize people with Groups, separate records with Spaces, and track money with Voice to Entry, loans, reminders, Live Links, and PDF statements.",
       "url": "https://you-owe-me.com/features/",
-      "dateModified": "2026-10-18",
+      "dateModified": "2026-10-27",
       "inLanguage": "en",
       "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://you-owe-me.com/features/#groups",
+          "name": "Groups: organize people within one context",
+          "description": "Groups organize people within local records or one Space. Each person belongs to at most one group. Filter Main balances, cards and history, Owed, Loans in Records, and the Reminders list. Each screen has its own selection. Groups do not create shared accounts or split payments, and the Group Paybacks section is not filtered by Groups. Requires You Owe Me 7.2.4 or later."
+        },
         {
           "@type": "WebPageElement",
           "@id": "https://you-owe-me.com/features/#live-link",
@@ -238,7 +244,7 @@
     <noscript><link rel="stylesheet" href="../assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="../styles/site-nav.css" />
     <link rel="stylesheet" href="../styles/solutions.css?v=features-base-1" />
-    <link rel="stylesheet" href="../styles/features.css?v=20261018-live-link" />
+    <link rel="stylesheet" href="../styles/features.css?v=20261027-groups" />
     <link rel="stylesheet" href="../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
@@ -316,6 +322,7 @@
             <a href="#voice-to-entry">Voice to Entry <span aria-hidden="true">↗</span></a>
             <a href="#features-tour-title">See the app</a>
             <a href="#spaces">Spaces</a>
+            <a href="#groups">Groups</a>
             <a href="#loan-outlook">Loan Outlook</a>
             <a href="#balance-records-title">Balances &amp; records</a>
             <a href="#features-included-title">Everything included</a>
@@ -632,7 +639,7 @@
 
           <section class="lt-solutionsSection features-section" id="spaces" aria-labelledby="spaces-title">
             <h2 id="spaces-title">Keep personal, work, family, and debt records separate with Spaces</h2>
-            <p>Spaces are separate top-level record collections inside You Owe Me. Use one for Personal, another for Work, another for Family, or a dedicated Debt &amp; loans Space. Every Space keeps its own people, entries, Loan Records, repayment plans, and total; totals are not combined across Spaces.</p>
+            <p>Spaces are separate top-level record collections inside You Owe Me. Use one for Personal, another for Work, another for Family, or a dedicated Debt &amp; loans Space. Every Space keeps its own people, entries, Loan Records, repayment plans, and total; totals are not combined across Spaces. To organize people within one context instead, use <a href="#groups">Groups</a>.</p>
 
             <div class="features-grid">
               <article class="features-card features-spaces-media-card">
@@ -683,6 +690,37 @@
               <article class="features-card features-card--text"><h3>Do Spaces include backup and sync?</h3><p>Yes. Spaces includes an independent You Owe Me cloud backup and synchronization across your devices. Sign in inside the app to create or select a Space and start backup and sync.</p></article>
               <article class="features-card features-card--text"><h3>Are totals combined across Spaces?</h3><p>No. Every Space keeps its own people, entries, and total. Opening one Space does not combine its total with another Space.</p></article>
             </div>
+          </section>
+
+          <section class="lt-solutionsSection features-section" id="groups" aria-labelledby="groups-title">
+            <p class="lt-eyebrow">Groups</p>
+            <h2 id="groups-title">Focus on the people you need.</h2>
+            <p>Create Groups with your own names and colors, such as Friends, Family, or Clients, inside your local records or one Space. Choose a group to focus on its balances and history, or switch to <strong>All groups</strong> or <strong>Ungrouped</strong>.</p>
+            <p class="lt-helperNote">Requires You Owe Me 7.2.4 or later.</p>
+            <div class="features-card features-groups-card">
+              <div>
+                <h3>Spaces separate contexts. Groups organize people inside them.</h3>
+                <p>Use a Personal Space and a Work Space when each needs its own records and total. Within Personal, use Friends and Family groups to find the people you want to review. Groups also work with local records, without setting up Spaces.</p>
+                <p>On Main, the selected group filters the balance, person cards, and history together. You can also filter Owed, Loans in Records, and the Reminders list. Each screen has its own selection.</p>
+                <p>Reorganize people without losing their money history. Deleting a group keeps its people and financial records; those people become Ungrouped.</p>
+                <details class="features-groups-details">
+                  <summary>Manage people and group filters</summary>
+                  <p>Manage groups from All People/Clients. Give each group a name and color, arrange their order, and assign each person to at most one group. You can move a person directly to another group.</p>
+                  <p>Groups stay within one context. Moving a person to another Space clears their group membership. An optional setting remembers each screen&rsquo;s filter on this device between launches. Filtering the Reminders list does not change notification scheduling or delivery.</p>
+                </details>
+              </div>
+              <figure class="features-groups-example" aria-labelledby="groups-example-caption">
+                <p class="lt-eyebrow">One context</p>
+                <h3>Personal Space</h3>
+                <ul class="features-groups-tree">
+                  <li><strong>Friends</strong><span>Alex &middot; Sam</span></li>
+                  <li><strong>Family</strong><span>Mia</span></li>
+                  <li><strong>Ungrouped</strong><span>Jordan</span></li>
+                </ul>
+                <figcaption id="groups-example-caption">Illustrative organization, not an app screenshot. Each person keeps their own balance and history.</figcaption>
+              </figure>
+            </div>
+            <p class="features-boundary-note"><strong>Groups and Group Paybacks do different jobs.</strong> Groups organize people; they do not create shared accounts or split payments. <a href="#group-paybacks">Group Paybacks</a> tracks a shared cost you paid for, can include people from different groups, and its section is not filtered by Groups.</p>
           </section>
 
           <section class="lt-solutionsSection features-section" aria-labelledby="balance-records-title">
@@ -1431,7 +1469,7 @@
               <article class="features-card features-card--text features-card--languages">
                 <h3>A polished app experience in 10 languages</h3>
                 <p>Use You Owe Me in English, Arabic, French, German, Italian, Japanese, Korean, Polish, Portuguese, or Spanish—with the interface thoughtfully localized for each language.</p>
-                <p class="lt-helperNote">Language availability applies to the app interface. This website is currently available in English only.</p>
+                <p class="lt-helperNote">Language availability applies to the app interface. The full website is in English, with selected pages in Spanish, German, Arabic, and French.</p>
                 <h4>Supported app languages</h4>
                 <ul class="features-language-list" aria-label="Languages supported by the You Owe Me app interface">
                   <li><span lang="en">English</span></li>
@@ -1509,6 +1547,7 @@
                   <li>Unlimited Spaces for personal, work, family, debt, or other record contexts</li>
                   <li>Independent people, entries, Loan Records, repayment plans, and totals in each Space</li>
                   <li>Cloud backup and cross-device sync included with Spaces</li>
+                  <li>Groups for organizing people within local records or one Space (7.2.4 or later)</li>
                   <li>Running balances</li>
                   <li>Balance Replay</li>
                   <li>Relationship Timeline</li>
@@ -1557,7 +1596,7 @@
               <a href="/solutions/" class="lt-textCta">Browse solutions</a>
             </div>
           </section>
-          <p class="lt-pageMeta">Updated <time datetime="2026-10-18">October 18, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-10-27">October 27, 2026</time></p>
         </article>
       </main>
 

@@ -1,0 +1,115 @@
+{
+  "verifiedAtUTC": "2026-10-27T00:26:23.985772+00:00",
+  "mode": "local-static",
+  "pages": [
+    {
+      "route": "/",
+      "canonical": "https://you-owe-me.com/",
+      "schemaBlocks": 1,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 26993
+    },
+    {
+      "route": "/es/",
+      "canonical": "https://you-owe-me.com/es/",
+      "schemaBlocks": 1,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 29781
+    },
+    {
+      "route": "/de/",
+      "canonical": "https://you-owe-me.com/de/",
+      "schemaBlocks": 1,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 31274
+    },
+    {
+      "route": "/ar/",
+      "canonical": "https://you-owe-me.com/ar/",
+      "schemaBlocks": 1,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 25632
+    },
+    {
+      "route": "/fr/",
+      "canonical": "https://you-owe-me.com/fr/",
+      "schemaBlocks": 1,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 31611
+    },
+    {
+      "route": "/features/",
+      "canonical": "https://you-owe-me.com/features/",
+      "schemaBlocks": 2,
+      "groupsLinks": [
+        "#groups",
+        "#groups"
+      ],
+      "staticMainCharacters": 71895
+    },
+    {
+      "route": "/quick-start/",
+      "canonical": "https://you-owe-me.com/quick-start/",
+      "schemaBlocks": 1,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 20193
+    },
+    {
+      "route": "/solutions/client-payment-records/",
+      "canonical": "https://you-owe-me.com/solutions/client-payment-records/",
+      "schemaBlocks": 3,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 28977
+    },
+    {
+      "route": "/solutions/group-payback-tracker/",
+      "canonical": "https://you-owe-me.com/solutions/group-payback-tracker/",
+      "schemaBlocks": 3,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 22744
+    },
+    {
+      "route": "/compare/",
+      "canonical": "https://you-owe-me.com/compare/",
+      "schemaBlocks": 1,
+      "groupsLinks": [],
+      "staticMainCharacters": 18044
+    },
+    {
+      "route": "/compare/splitwise-alternative/",
+      "canonical": "https://you-owe-me.com/compare/splitwise-alternative/",
+      "schemaBlocks": 1,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 48135
+    },
+    {
+      "route": "/blog/how-to-keep-track-of-money-between-family-members/",
+      "canonical": "https://you-owe-me.com/blog/how-to-keep-track-of-money-between-family-members/",
+      "schemaBlocks": 1,
+      "groupsLinks": [
+        "/features/#groups"
+      ],
+      "staticMainCharacters": 16250
+    }
+  ],
+  "resources": [],
+  "accepted": true
+}
