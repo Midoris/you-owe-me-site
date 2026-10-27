@@ -9,7 +9,7 @@ import {
   setUserProperties,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
 import { createAppStoreCtaViewTracker } from "./app-store-cta-view-tracker.mjs";
-import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs?v=repaymentes20261027";
+import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs?v=importguide20261027";
 
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyDOsFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",
@@ -133,6 +133,7 @@ const PAGE_METADATA = {
   "/compare/spreadsheet-vs-app-for-tracking-money-owed/": { page_type: "comparison", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/compare/shared-expense-app-vs-running-balance-app/": { page_type: "compare", cluster: "shared_expenses", app_store_cpp: "shared_expenses" },
   "/blog/how-to-keep-track-of-who-owes-you-money/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
+  "/blog/how-to-import-loan-history/": { page_type: "guide", cluster: "money_owed_followups", app_store_cpp: "default" },
   "/blog/how-to-track-a-personal-loan-between-friends-or-family/": { page_type: "guide", cluster: "money_owed_followups", app_store_cpp: "default" },
   "/blog/what-to-do-when-you-disagree-about-how-much-money-is-still-owed/": { page_type: "guide", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },
   "/blog/how-to-suggest-a-repayment-plan-to-someone-who-owes-you-money/": { page_type: "blog", cluster: "money_owed_followups", app_store_cpp: "money_owed_followups" },

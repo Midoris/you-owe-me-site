@@ -26,7 +26,7 @@ export function renderOffer(key, offer, shared = loanImportOfferShared) {
     `      <p class="loan-import-offer__limits">${e(shared.limits)}</p>`,
     '      <div class="loan-import-offer__actions">',
     `        <button type="button" class="loan-import-offer__button" data-loan-import-open aria-expanded="false" aria-controls="loan-import-workspace" hidden>${e(shared.button)}</button>`,
-    `        <a class="loan-import-offer__guide" href="/tools/personal-loan-payment-tracker/#loan-import-guide">${e(shared.guide)}</a>`,
+    `        <a class="loan-import-offer__guide" href="/blog/how-to-import-loan-history/">${e(shared.guide)}</a>`,
     `        <span class="loan-import-offer__reassurance">${e(shared.reassurance)}</span>`,
     '      </div>',
     '    </div>'

@@ -169,12 +169,14 @@ test("analytics preserves English metadata and maps only completed localized rou
   const source = fs.readFileSync(new URL("./analytics.js", import.meta.url), "utf8");
   const baseline = execFileSync("git", ["show", "bfd69d7:scripts/analytics.js"], { encoding: "utf8" });
   const metadata = source.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0];
-  assert.equal(metadata.replace("  \"/tools/roommate-move-in-checklist/\": { page_type: \"tool\", cluster: \"roommates_household_costs\", app_store_cpp: \"roommates_household_costs\" },\n", "").replace("  \"/tools/tutor-payment-tracker-template/\": { page_type: \"tool\", cluster: \"client_payment_records\", app_store_cpp: \"client_payment_records\" },\n", ""), baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
+  assert.equal(metadata.replace("  \"/blog/how-to-import-loan-history/\": { page_type: \"guide\", cluster: \"money_owed_followups\", app_store_cpp: \"default\" },\n", "").replace("  \"/tools/roommate-move-in-checklist/\": { page_type: \"tool\", cluster: \"roommates_household_costs\", app_store_cpp: \"roommates_household_costs\" },\n", "").replace("  \"/tools/tutor-payment-tracker-template/\": { page_type: \"tool\", cluster: \"client_payment_records\", app_store_cpp: \"client_payment_records\" },\n", ""), baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
   assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=repaymentes20261027"/);
   const functions = source.match(/function normalizePath\(path\) \{[\s\S]*?\nfunction sanitizeText/)[0].replace(/\nfunction sanitizeText$/, "");
   const context = { window: { location: { pathname: "/" } }, localizedSourceRoute: route => localizedSourceRoute(route, threeLocales()) };
   vm.createContext(context);
   vm.runInContext(`${metadata}\n${functions}\nglobalThis.metadataFor = getPageMetadata;`, context);
+  context.window.location.pathname = "/blog/how-to-import-loan-history/";
+  assert.deepEqual(JSON.parse(JSON.stringify(context.metadataFor())), { page_type: "guide", cluster: "money_owed_followups", app_store_cpp: "default" });
   for (const page of spanishPages) {
     context.window.location.pathname = page.en;
     const english = JSON.parse(JSON.stringify(context.metadataFor()));

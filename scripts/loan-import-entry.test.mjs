@@ -89,7 +89,7 @@ async function offerHarness({preview=false, failures=0, gate=null, malformed=fal
   addEventListener(name,handler){if(name==='click')listeners.push(handler);},
   setAttribute(name,value){this.attributes[name]=value;}};
  const card={querySelector(selector){return selector==='[data-loan-import-open]'&&!malformed?button:null;}};
- const guide={href:'/tools/personal-loan-payment-tracker/#loan-import-guide'};
+ const guide={href:'/blog/how-to-import-loan-history/'};
  const host={querySelector(selector){return selector==='.loan-import-offer'?card:selector==='#loan-import-workspace'?workspace:null;},guide};
  const docListeners=new Map();
  const document={visibilityState:'visible',
@@ -133,7 +133,7 @@ test('enhancement binds once, reveals after binding, focuses success and counts 
  await h.listeners[0]();
  assert.equal(h.workspace.querySelector('#import-loan-history'),h.root);
  assert.deepEqual(h.events,['offer_chosen']);
- assert.equal(h.guide.href,'/tools/personal-loan-payment-tracker/#loan-import-guide');
+ assert.equal(h.guide.href,'/blog/how-to-import-loan-history/');
 });
 
 test('rapid activation, load failure and retry retain the static guide and event boundaries',async()=>{
@@ -153,7 +153,7 @@ test('rapid activation, load failure and retry retain the static guide and event
  assert.equal(retry.button.attributes['aria-expanded'],'false');
  assert.deepEqual(retry.events,[]);
  assert.equal(retry.workspace.note.role,'alert');
- assert.equal(retry.guide.href,'/tools/personal-loan-payment-tracker/#loan-import-guide');
+ assert.equal(retry.guide.href,'/blog/how-to-import-loan-history/');
  await retry.listeners[0]();
  assert.equal(retry.button.textContent,'Return to your import');
  assert.deepEqual(retry.events,['offer_chosen']);

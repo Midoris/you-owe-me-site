@@ -24,7 +24,7 @@ test('nine initial HTML offers are readable, bounded, and match the generator', 
     assert.ok(block.includes(escapeHtml(offer.title)), file);
     assert.ok(block.includes(escapeHtml(offer.body)), file);
     for (const text of [loanImportOfferShared.formats, loanImportOfferShared.limits, loanImportOfferShared.guide]) assert.ok(block.includes(text), file);
-    assert.match(block, /href="\/tools\/personal-loan-payment-tracker\/#loan-import-guide"/);
+    assert.match(block, /href="\/blog\/how-to-import-loan-history\/"/);
     assert.match(block, /<button[^>]*data-loan-import-open[^>]*hidden>/);
     assert.match(block, /<div id="loan-import-workspace" hidden><\/div>/);
     assert.doesNotMatch(block, /data-loan-private|<form\b|<input\b/);
@@ -72,7 +72,7 @@ test('tracker guide and supporting explanations are in public HTML', async () =>
   assert.match(guide, /JavaScript is required to review and import a loan on this website/);
   assert.equal((tracker.match(/id="import-loan-history"/g) || []).length, 1);
   assert.equal((tracker.match(/id="loan-import-guide"/g) || []).length, 1);
-  for (const {file} of entryPages) assert.match(await read(file), /href="\/tools\/personal-loan-payment-tracker\/#loan-import-guide"/);
+  for (const {file} of entryPages) assert.match(await read(file), /href="\/blog\/how-to-import-loan-history\/"/);
   const features = await read('features/index.html');
   assert.ok(features.indexOf('id="loan-records"') < features.indexOf('id="loan-history-import"'));
   assert.ok(features.indexOf('id="loan-history-import"') < features.indexOf('id="repayment-plans"'));

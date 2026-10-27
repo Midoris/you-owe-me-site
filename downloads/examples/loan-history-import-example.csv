@@ -1,0 +1,5 @@
+Date,Person,Entry,Amount,Currency,Note
+2026-01-10,Jordan,Initial lending,1200,USD,Alex lent Jordan money. One interest-free loan.
+2026-02-12,Jordan,Repayment received,150,USD,Jordan repaid Alex.
+2026-03-20,Jordan,Repayment received,300,USD,Jordan repaid Alex.
+2026-04-02,Jordan,Additional lending,100,USD,Alex lent Jordan more on the same loan.

@@ -1,0 +1,6 @@
+I am Alex. I lent money to Jordan. This is one interest-free loan in USD.
+2026-01-10: I lent Jordan 1200 USD.
+2026-02-12: Jordan repaid me 150 USD.
+2026-03-20: Jordan repaid me 300 USD.
+2026-04-02: I lent Jordan another 100 USD on the same loan.
+These are actual events. No future repayment schedule is included.

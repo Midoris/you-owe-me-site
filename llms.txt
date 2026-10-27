@@ -49,6 +49,7 @@ https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=07350272
 
 You Owe Me supports reviewed import for one personal loan from pasted notes or copied tables, CSV, Excel (.xlsx), Word (.docx), and photos of typed or handwritten records. Input can be multilingual. The user checks the person, currency, dates, actual repayments and additional advances before saving; future scheduled payments remain separate from actual payments. Website review continues through the existing iPhone/App Clip/full-app flow. Existing app users can choose New loan → Import loan history. This is not automatic spreadsheet synchronization, merging into an existing loan, or bulk migration of several people or loans. App capacity and repayment-plan limits still apply.
 
+- [Import loan history from Excel, CSV, notes or photos](https://you-owe-me.com/blog/how-to-import-loan-history/): Illustrated guide with fictional example files, source preparation, review checks and private iPhone continuation for one new loan. Explains privacy and limits; no spreadsheet synchronization or merging into an existing loan.
 - Steps and limitations: https://you-owe-me.com/tools/personal-loan-payment-tracker/#loan-import-guide
 - Privacy and temporary storage: https://you-owe-me.com/privacy-and-data/#loan-import-privacy
 
