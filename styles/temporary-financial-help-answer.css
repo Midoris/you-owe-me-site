@@ -481,3 +481,23 @@ body.blog-page.temporary-help-answer-page article.post.featured .lt-toolsSection
     width: 100%;
   }
 }
+
+body.blog-page.temporary-help-answer-page article.post.featured .lt-finalCta .temporary-help-app-pricing {
+  color: rgba(33, 41, 49, .72);
+  font-size: .85rem !important;
+  line-height: 1.5;
+}
+
+body.blog-page.temporary-help-answer-page article.post.featured .template-card h3 {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  justify-self: start;
+}
+
+body.blog-page.temporary-help-answer-page article.post.featured .lt-finalCta h2 {
+  text-align: left;
+  margin-left: 0;
+  margin-right: 0;
+  justify-self: start;
+}

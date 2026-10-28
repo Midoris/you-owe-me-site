@@ -4387,7 +4387,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/temporary-financial-support-tracker/", "/solutions/family-reimbursement-tracker/"],
     appStoreCpp: "temporary-financial-support",
     tags: ["guide", "temporary-support", "family-help", "message-templates"],
-    updated: "2026-07-05",
+    updated: "2026-10-28",
     status: "live",
     priority: "core",
     primaryCta: "Use the support record template",
