@@ -3212,7 +3212,7 @@ export const contentRegistry = [
       "weighted utilities",
       "prorate roommate bills",
     ],
-    updated: "2026-10-11",
+    updated: "2026-10-28",
     status: "live",
     priority: "core",
     primaryCta: "Calculate roommate bills",

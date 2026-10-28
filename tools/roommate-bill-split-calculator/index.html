@@ -43,7 +43,7 @@
           "name": "Roommate Bill Split Calculator",
           "description": "Split rent, utilities, groceries, subscriptions, and household costs with roommates. Add repayments and see who owes whom this month.",
           "url": "https://you-owe-me.com/tools/roommate-bill-split-calculator/",
-          "dateModified": "2026-10-11",
+          "dateModified": "2026-10-28",
           "isPartOf": {
             "@type": "CollectionPage",
             "name": "Money Tools and Templates",
@@ -154,7 +154,7 @@
               "name": "Is this better than a spreadsheet?",
               "acceptedAnswer": {
                 "@type": "Answer",
-                "text": "A spreadsheet can work for simple roommate bills, but it becomes harder when expenses, repayments, recurring costs, and previous balances keep changing. A running balance app is better when the situation repeats."
+                "text": "Use the calculator for one settle-up. Use a spreadsheet when you want a manual record your household can review. You Owe Me is useful when you prefer to keep ongoing balances, repayments, and reminders together on your iPhone or iPad."
               }
             },
             {
@@ -228,11 +228,8 @@
               <header class="major">
                 <h1>Roommate Bill Split Calculator</h1>
               </header>
-              <p class="lt-heroBody">Use this roommate bill split calculator for rent, utilities, groceries, and shared household costs &mdash; then see who owes whom this month.</p>
-              <p class="lt-heroSupport">Add the bills one roommate paid, choose who was included, include repayments or previous balance, and get a clear monthly household settle-up summary.</p>
-              <p class="roommate-search-summary">
-                The Roommate Bill Split Calculator helps you add shared household expenses, choose who paid, choose which roommates were included, add repayments or previous balances, and calculate who owes whom after everything is counted.
-              </p>
+              <p class="lt-heroBody">Add the household bills, who paid them, and any repayments already made. See who owes whom for the month.</p>
+              <p class="lt-heroSupport">Include a balance from last month if it is still unpaid. Split each bill only among the roommates who agreed to share it.</p>
               <div class="roommate-chip-row" aria-label="Calculator highlights">
                 <span>Rent, utilities, groceries</span>
                 <span>Partial repayments</span>
@@ -263,7 +260,7 @@
                 <div>
                   <p class="lt-sectionEyebrow">Browser calculator</p>
                   <h2 id="calculator-title">Calculate roommate bills</h2>
-                  <p>Add roommates, shared expenses, repayments, and any previous balance. The calculator will show each person&apos;s responsibility and the simplest way to settle up.</p>
+                  <p>Work through the bills and repayments below, then check the settle-up result together.</p>
                   <p class="roommate-privacy-note">This calculator runs in your browser. No account needed.</p>
                 </div>
                 <div class="roommate-toolbar" aria-label="Calculator controls">
@@ -312,14 +309,14 @@
                       <div>
                         <p class="roommate-step-kicker">Step 2</p>
                         <h3 id="expenses-title">Shared bills</h3>
-                        <p>Use this for rent, utilities, groceries, subscriptions, or any household cost one roommate paid for.</p>
+                        <p>Add each bill once. Choose who paid and which roommates shared it.</p>
                       </div>
                       <button type="button" class="roommate-small-button" data-action="add-expense">Add bill</button>
                     </div>
                     <div class="roommate-entry-list" data-expense-list></div>
                     <details class="roommate-presets">
                       <summary>Try an example split</summary>
-                      <p>Examples replace the calculator inputs. The ordinary equal month remains the default experience.</p>
+                      <p>Choosing an example replaces the current inputs. Use Start blank for your own household.</p>
                       <div class="roommate-preset-grid">
                         <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="ordinary">Ordinary equal month</button>
                         <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="away">Roommate away</button>
@@ -335,7 +332,7 @@
                       <div>
                         <p class="roommate-step-kicker">Step 3</p>
                         <h3 id="adjustments-title">Repayments or previous balance</h3>
-                        <p>Add money that already changed hands, or carry over a balance from last month if everyone did not settle fully.</p>
+                        <p>Count repayments already sent before you settle up, so nobody is asked to pay the same amount twice. Add a previous balance only if it is still unpaid.</p>
                       </div>
                     </div>
                     <div class="roommate-adjustment-grid">
@@ -427,8 +424,8 @@
           </section>
 
           <section class="roommate-app-continuation" aria-labelledby="roommate-calculator-iphone-handoff-title">
-            <h2 id="roommate-calculator-iphone-handoff-title">Keep roommate balances clear on your iPhone</h2>
-            <p>For ongoing bills, record shared costs and repayments in You Owe Me and see what you owe each other.</p>
+            <h2 id="roommate-calculator-iphone-handoff-title">Keep the next bill and repayment together</h2>
+            <p>Keep adding shared costs and repayments in You Owe Me, so each roommate’s balance stays up to date between monthly settle-ups.</p>
             <p>Start a new record in the app. Your calculator result is not transferred.</p>
             <div data-app-language-support-anchor hidden></div>
             <a
@@ -564,7 +561,7 @@
                 </ul>
               </div>
             </div>
-            <p class="roommate-example-note">The calculator does this automatically: it adds what each roommate paid, subtracts their fair share, counts repayments, and simplifies the final "who owes whom" result.</p>
+            <p class="roommate-example-note">The $200 Alex already sent is included. Alex has $410 left to pay and Sam has $550; Maya should receive $960 in total.</p>
           </section>
 
           <section class="lt-toolsSection" aria-labelledby="handles-title">
@@ -608,7 +605,7 @@
             <div class="roommate-section-heading">
               <p class="lt-sectionEyebrow">Fair splitting</p>
               <h2 id="fair-title">How to split roommate bills fairly</h2>
-              <p>The fairest system is usually simple: agree what counts as a shared household cost, record who paid, decide who was included, and settle the remaining balance from the same record. The hard part is not the math - it is remembering every bill, repayment, and exception later.</p>
+              <p>Agree which costs are shared and how each one should be split before using the result. The calculator applies those choices; it cannot decide the household’s agreement.</p>
               <p>Need help deciding which costs should be equal, custom, or excluded? Read the <a href="/blog/how-to-split-rent-utilities-and-groceries-with-roommates/">guide to splitting rent, utilities, and groceries with roommates</a> before calculating.</p>
             </div>
             <ol class="roommate-step-list">
@@ -630,7 +627,7 @@
               </li>
               <li>
                 <h3>Keep a record</h3>
-                <p>For one month, a calculator may be enough. For ongoing household costs, a running balance is usually easier. If the idea is new, read <a href="/blog/what-is-a-running-balance-between-two-people/">what a running balance means</a> before deciding whether to settle once or track the balance over time.</p>
+                <p>For one month, keep the checked result. For an ongoing record, add later bills and repayments as they happen. If the idea is new, read <a href="/blog/what-is-a-running-balance-between-two-people/">what a running balance means</a> before deciding whether to settle once or track the balance over time.</p>
               </li>
             </ol>
           </section>
@@ -668,9 +665,10 @@
             <div class="roommate-comparison-layout">
               <div>
                 <p class="lt-sectionEyebrow">Calculator vs running balance</p>
-                <h2 id="comparison-title">When this calculator is enough - and when a running balance helps</h2>
-                <p>Use the calculator for a quick answer. Use the <a href="/solutions/roommate-expense-tracker/">Roommate Expense Tracker</a> when roommate costs become an ongoing balance. Only splitting one bill, like one dinner or one grocery run? Use the <a href="/tools/split-expense-calculator/">Split Expense Calculator</a> instead. If this is a two-person balance that changes over time, the <a href="/tools/running-balance-calculator/">Running Balance Calculator</a> may be a better fit.</p>
-                <p>If the costs repeat but one person is comfortable maintaining a manual file, use the <a href="/tools/roommate-expense-tracker-template/">Roommate Expense Tracker Spreadsheet</a>. Use You Owe Me when repeated entries, partial repayments, reminders, or shareable history make that spreadsheet hard to maintain.</p>
+                <h2 id="comparison-title">One settle-up or an ongoing record?</h2>
+                <p>Use this calculator to settle a specific month. If you want to keep adding bills and repayments afterward, choose a spreadsheet or an app.</p>
+                <p>Only splitting one bill? Use the <a href="/tools/split-expense-calculator/">Split Expense Calculator</a>. For expenses and repayments between two people, use the <a href="/tools/running-balance-calculator/">Running Balance Calculator</a>. For an ongoing app record, see the <a href="/solutions/roommate-expense-tracker/">Roommate Expense Tracker</a>.</p>
+                <p>Prefer a manual file? Use the <a href="/tools/roommate-expense-tracker-template/">Roommate Expense Tracker Spreadsheet</a>. Prefer updating the record on your iPhone or iPad? You Owe Me keeps each person’s balance, payment history, and reminders together.</p>
                 <p>If your roommate record is becoming a spreadsheet that nobody wants to maintain, <a href="/compare/spreadsheet-vs-app-for-tracking-money-owed/">compare spreadsheet tracking with an app</a>.</p>
                 <p>Need a system for more than one monthly calculation? Read <a href="/blog/how-to-track-money-between-roommates/">how to track money between roommates</a> so rent, utilities, groceries, repayments, and old balances stay clear over time.</p>
                 <div class="roommate-comparison-grid">
@@ -722,7 +720,7 @@
             <div class="roommate-section-heading">
               <p class="lt-sectionEyebrow">Message examples</p>
               <h2 id="messages-title">Copyable roommate bill messages</h2>
-              <p>After you calculate the balance, the hardest part can be sending the message. Keep it factual, specific, and calm.</p>
+              <p>These messages use the worked example above. For your own amounts, copy the message in your calculator result.</p>
             </div>
             <div class="roommate-message-grid">
               <article class="roommate-message-card">
@@ -865,7 +863,7 @@
               </details>
               <details>
                 <summary>Is this better than a spreadsheet?</summary>
-                <p>A spreadsheet can work for simple roommate bills, but it becomes harder when expenses, repayments, recurring costs, and previous balances keep changing. A running balance app is better when the situation repeats.</p>
+                <p>Use the calculator for one settle-up. Use a spreadsheet when you want a manual record your household can review. You Owe Me is useful when you prefer to keep ongoing balances, repayments, and reminders together on your iPhone or iPad.</p>
               </details>
               <details>
                 <summary>Can this calculator handle rent, utilities, and groceries together?</summary>
@@ -879,15 +877,15 @@
           </section>
 
           <section class="lt-finalCta roommate-bottom-cta">
-            <h2>Roommate bills keep changing?</h2>
-            <p>A calculator is useful for one settle-up. You Owe Me is built for the ongoing version: rent, utilities, groceries, repayments, reminders, and old balances between real people.</p>
-            <p class="lt-paragraphGap">Keep one clear balance with each roommate instead of rebuilding the month from memory.</p>
+            <h2>Keep track between monthly settle-ups</h2>
+            <p>Rent, groceries, a partial repayment, the next utility bill: record each change in You Owe Me and see the balance with each roommate.</p>
+            <p class="lt-paragraphGap">Use it on iPhone or iPad, with reminders for you and a history you can share. Free to download, with in-app purchases available.</p>
             <div class="lt-ctaRow">
               <a
                 href="/solutions/roommate-expense-tracker/"
                 class="lt-primaryCta"
                 data-track-location="roommate_calculator_bottom_primary_cta"
-              >Track roommate expenses with You Owe Me</a>
+              >See roommate tracking in You Owe Me</a>
               <a href="#calculator" class="lt-textCta">Calculate another month</a>
             </div>
             <p class="lt-maintenanceProof">
@@ -897,7 +895,7 @@
             </p>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-10-11">October 11, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-10-28">October 28, 2026</time></p>
         </article>
       </div>
 

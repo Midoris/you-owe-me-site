@@ -63,8 +63,8 @@ test("Phase D adds four exact, bounded desktop QR handoffs without changing thei
     {
       page: roommate,
       location: "roommate_calculator_iphone_handoff",
-      heading: '<h2 id="roommate-calculator-iphone-handoff-title">Keep roommate balances clear on your iPhone</h2>',
-      benefit: "For ongoing bills, record shared costs and repayments in You Owe Me and see what you owe each other.",
+      heading: '<h2 id="roommate-calculator-iphone-handoff-title">Keep the next bill and repayment together</h2>',
+      benefit: "Keep adding shared costs and repayments in You Owe Me, so each roommate’s balance stays up to date between monthly settle-ups.",
       common: true,
       clarification: "Start a new record in the app. Your calculator result is not transferred.",
       pairing: "roommate-calculator-primary-download",
