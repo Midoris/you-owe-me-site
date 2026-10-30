@@ -15,12 +15,12 @@
     <link rel="canonical" href="https://you-owe-me.com/features/" />
     <meta
       name="description"
-      content="Organize people with Groups, separate records with Spaces, and track money with Voice to Entry, loans, reminders, Live Links, and PDF statements."
+      content="Organize people with Groups, separate records with Spaces, and review repayment statistics alongside Voice to Entry, loans, reminders, Live Links, and PDF statements."
     />
     <meta property="og:title" content="You Owe Me App Features | Voice Entry, IOUs &amp; Reminders" />
     <meta
       property="og:description"
-      content="Organize people with Groups, separate records with Spaces, and track money with Voice to Entry, loans, reminders, Live Links, and PDF statements."
+      content="Organize people with Groups, separate records with Spaces, and review repayment statistics alongside Voice to Entry, loans, reminders, Live Links, and PDF statements."
     />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://you-owe-me.com/features/" />
@@ -29,7 +29,7 @@
     <meta name="twitter:title" content="You Owe Me App Features | Voice Entry, IOUs &amp; Reminders" />
     <meta
       name="twitter:description"
-      content="Organize people with Groups, separate records with Spaces, and track money with Voice to Entry, loans, reminders, Live Links, and PDF statements."
+      content="Organize people with Groups, separate records with Spaces, and review repayment statistics alongside Voice to Entry, loans, reminders, Live Links, and PDF statements."
     />
     <meta name="twitter:image" content="https://you-owe-me.com/images/pages/features/main.png" />
 
@@ -38,11 +38,17 @@
       "@context": "https://schema.org",
       "@type": "CollectionPage",
       "name": "You Owe Me App Features",
-      "description": "Organize people with Groups, separate records with Spaces, and track money with Voice to Entry, loans, reminders, Live Links, and PDF statements.",
+      "description": "Organize people with Groups, separate records with Spaces, and review repayment statistics alongside Voice to Entry, loans, reminders, Live Links, and PDF statements.",
       "url": "https://you-owe-me.com/features/",
-      "dateModified": "2026-10-27",
+      "dateModified": "2026-10-30",
       "inLanguage": "en",
       "hasPart": [
+        {
+          "@type": "WebPageElement",
+          "@id": "https://you-owe-me.com/features/#stats",
+          "name": "Stats",
+          "description": "Review repayments, changes in amounts owed, and all-time progress, with time-period and group filters."
+        },
         {
           "@type": "WebPageElement",
           "@id": "https://you-owe-me.com/features/#groups",
@@ -245,9 +251,11 @@
     <link rel="stylesheet" href="../styles/site-nav.css" />
     <link rel="stylesheet" href="../styles/solutions.css?v=features-base-1" />
     <link rel="stylesheet" href="../styles/features.css?v=20261027-groups" />
+    <link rel="stylesheet" href="/styles/stats-feature.css?v=20261030-screens" />
     <link rel="stylesheet" href="../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
     <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
+    <script src="/scripts/stats-showcase.js?v=20261030" defer></script>
   </head>
 
   <body class="is-preload features-page solutions-page site-nav-page">
@@ -284,7 +292,7 @@
                 <h1>You Owe Me App Features</h1>
               </header>
               <p class="lt-heroBody">
-                Keep personal, work, family, or debt records in separate Spaces, each with its own people, entries, loans, repayment plans, and total. Capture everyday money by voice with less typing, then use running balances, reminders, sharing, and PDF statements inside the context that belongs together.
+                Keep personal, work, family, or debt records in separate Spaces, each with its own people, entries, loans, repayment plans, and total. Capture everyday money by voice with less typing, then use running balances, Stats, reminders, sharing, and PDF statements inside the context that belongs together.
               </p>
               <div data-app-language-support-anchor hidden></div>
               <div class="lt-ctaRow">
@@ -323,6 +331,7 @@
             <a href="#features-tour-title">See the app</a>
             <a href="#spaces">Spaces</a>
             <a href="#groups">Groups</a>
+            <a href="#stats">Stats</a>
             <a href="#loan-outlook">Loan Outlook</a>
             <a href="#balance-records-title">Balances &amp; records</a>
             <a href="#features-included-title">Everything included</a>
@@ -701,7 +710,7 @@
               <div>
                 <h3>Spaces separate contexts. Groups organize people inside them.</h3>
                 <p>Use a Personal Space and a Work Space when each needs its own records and total. Within Personal, use Friends and Family groups to find the people you want to review. Groups also work with local records, without setting up Spaces.</p>
-                <p>On Main, the selected group filters the balance, person cards, and history together. You can also filter Owed, Loans in Records, and the Reminders list. Each screen has its own selection.</p>
+                <p>On Main, the selected group filters the balance, person cards, and history together. You can also filter Owed, <a href="#stats">Stats</a>, Loans in Records, and the Reminders list. Each screen has its own selection.</p>
                 <p>Reorganize people without losing their money history. Deleting a group keeps its people and financial records; those people become Ungrouped.</p>
                 <details class="features-groups-details">
                   <summary>Manage people and group filters</summary>
@@ -721,6 +730,49 @@
               </figure>
             </div>
             <p class="features-boundary-note"><strong>Groups and Group Paybacks do different jobs.</strong> Groups organize people; they do not create shared accounts or split payments. <a href="#group-paybacks">Group Paybacks</a> tracks a shared cost you paid for, can include people from different groups, and its section is not filtered by Groups.</p>
+          </section>
+
+          <section class="lt-solutionsSection features-section stats-feature" id="stats" aria-labelledby="stats-title">
+            <div class="stats-feature__intro">
+              <p class="lt-eyebrow">Stats</p>
+              <h2 id="stats-title">See what came back. Understand what is still owed.</h2>
+              <p>Bring repayments, amounts owed, and your progress into one clear view. Start with the overview, then tap a card to understand the people and entries behind the numbers.</p>
+            </div>
+            <div class="stats-product-stage" data-stats-showcase>
+              <div class="stats-screen-picker" role="group" aria-label="Explore Stats app screens" hidden>
+                <button type="button" class="stats-screen-picker__button" aria-pressed="true" aria-controls="stats-screen-preview" data-stats-screen="overview" data-stats-image="/images/pages/features/stats-overview.webp" data-stats-alt="You Owe Me Stats screen with repayment totals and changes in amounts owed" data-stats-caption="Review recent repayments and changes in what is owed together.">
+                  <span class="stats-screen-picker__number" aria-hidden="true">01</span>
+                  <span><strong>Overview</strong><span class="stats-screen-picker__hint">Your money, at a glance.</span></span>
+                </button>
+                <button type="button" class="stats-screen-picker__button" aria-pressed="false" aria-controls="stats-screen-preview" data-stats-screen="repayments" data-stats-image="/images/pages/features/stats-repayments.webp" data-stats-alt="Repayments detail in You Owe Me showing recorded payments across the year" data-stats-caption="Explore repayments over time, then review them by person or payment.">
+                  <span class="stats-screen-picker__number" aria-hidden="true">02</span>
+                  <span><strong>Repayments</strong><span class="stats-screen-picker__hint">See the payments behind the total.</span></span>
+                </button>
+                <button type="button" class="stats-screen-picker__button" aria-pressed="false" aria-controls="stats-screen-preview" data-stats-screen="balance-changes" data-stats-image="/images/pages/features/stats-balance-changes.webp" data-stats-alt="Changes in amounts owed in You Owe Me showing the opening balance, closing balance, and activity across the year" data-stats-caption="See the amount at the start and end of a period, with the activity that explains the change.">
+                  <span class="stats-screen-picker__number" aria-hidden="true">03</span>
+                  <span><strong>Balance changes</strong><span class="stats-screen-picker__hint">Understand what moved the balance.</span></span>
+                </button>
+              </div>
+              <figure class="stats-screen-preview" id="stats-screen-preview" aria-labelledby="stats-screen-caption">
+                <div class="stats-phone">
+                  <img data-stats-preview src="/images/pages/features/stats-overview.webp" alt="You Owe Me Stats screen with repayment totals and changes in amounts owed" width="1206" height="2622" loading="lazy" decoding="async" />
+                </div>
+                <figcaption id="stats-screen-caption">
+                  <p data-stats-description aria-live="polite">Review recent repayments and changes in what is owed together.</p>
+                  <p class="stats-screen-preview__note">Actual app screens with sample data.</p>
+                </figcaption>
+              </figure>
+            </div>
+            <div class="stats-feature__questions">
+              <article><h3>What was repaid?</h3><p>See repayments to you or by you for the current week, month, year, or all time.</p></article>
+              <article><h3>Why did the balance change?</h3><p>Follow changes in amounts owed to you or by you, with a breakdown of the activity behind them.</p></article>
+              <article><h3>Which people are included?</h3><p>Review everyone together or focus on a group, such as family or clients. Carry that group into the details.</p></article>
+            </div>
+            <p class="stats-feature__scope">Activity follows your chosen period. Net balance shows where things stand now. Achievements and milestones keep your all-time progress in view.</p>
+            <details class="stats-feature__details">
+              <summary>A closer look, without losing your place</summary>
+              <p>Inside the activity details, change the time period or switch between money repaid to you and by you, or amounts owed to you and by you. Returning to Stats keeps your overview selections unchanged.</p>
+            </details>
           </section>
 
           <section class="lt-solutionsSection features-section" aria-labelledby="balance-records-title">
@@ -1550,6 +1602,7 @@
                   <li>Cloud backup and cross-device sync included with Spaces</li>
                   <li>Groups for organizing people within local records or one Space (7.2.4 or later)</li>
                   <li>Running balances</li>
+                  <li>Stats for repayments, changes in amounts owed, and all-time progress</li>
                   <li>Balance Replay</li>
                   <li>Relationship Timeline</li>
                   <li>Loan Records</li>
@@ -1597,7 +1650,7 @@
               <a href="/solutions/" class="lt-textCta">Browse solutions</a>
             </div>
           </section>
-          <p class="lt-pageMeta">Updated <time datetime="2026-10-27">October 27, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-10-30">October 30, 2026</time></p>
         </article>
       </main>
 

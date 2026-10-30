@@ -1,5 +1,20 @@
+import fs from "node:fs";
+const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
+
 // October 20 independent review: normalize only the approved stale website-language FAQ correction.
 export function normalizeReviewedLanguageCopy(html) {
+  // October 30 Stats release: allow only exact reviewed localized additions.
+  // Any later edit to these blocks remains visible to the preservation checks.
+  for (const [file, insertion] of Object.entries(statsApprovedCopy.insertions)) {
+    const route = "/" + file.replace(/index\.html$/, "");
+    if (!html.includes(`rel="canonical" href="https://you-owe-me.com${route}"`)) continue;
+    html = html.replace(insertion, "").replace(statsApprovedCopy.stylesheet, "");
+    const originalMeta = statsApprovedCopy.originalPageMeta[file];
+    if (originalMeta) {
+      html = html.replace(statsApprovedCopy.updatedPageMeta[file], originalMeta)
+        .replace(statsApprovedCopy.updatedDateModified[file], statsApprovedCopy.originalDateModified[file]);
+    }
+  }
   html = html.replace('The full website is available in English, with selected pages also available in Spanish, German, Arabic and French.', 'Language availability applies to the app; the You Owe Me website is currently available in English only.');
   html = html.replace('Este sitio web ofrece páginas en español, alemán, árabe y francés, además de todos sus contenidos en inglés. Los enlaces a recursos en inglés se indican como tales.', 'Este sitio web ofrece una sección en español; otros recursos siguen disponibles en inglés y se indican como tales.');
   html = html.replace('Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch und Französisch sowie alle Inhalte auf Englisch. Weiterführende Inhalte auf Englisch sind entsprechend gekennzeichnet.', 'Die Website bietet Bereiche auf Deutsch und Spanisch. Weiterführende Inhalte auf Englisch sind entsprechend gekennzeichnet.');

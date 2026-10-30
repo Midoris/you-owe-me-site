@@ -25,8 +25,8 @@ export const spanishVersionedAssets = [
   "/scripts/recordkeeping-guide-es.js", "/styles/site-locale.css", "/styles/site-nav.css",
 ];
 export const spanishPages = [
-  { en: "/", es: "/es/", title: "You Owe Me: controla préstamos, gastos y pagos", updated: "2026-10-27", complete: true },
-  { en: "/solutions/app-to-track-money-owed/", es: "/es/soluciones/app-para-registrar-dinero-adeudado/", title: "App para registrar el dinero que te deben", updated: "2026-10-27", complete: true },
+  { en: "/", es: "/es/", title: "You Owe Me: controla préstamos, gastos y pagos", updated: "2026-10-30", complete: true },
+  { en: "/solutions/app-to-track-money-owed/", es: "/es/soluciones/app-para-registrar-dinero-adeudado/", title: "App para registrar el dinero que te deben", updated: "2026-10-30", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", es: "/es/blog/como-llevar-el-control-de-quien-te-debe-dinero/", title: "Cómo llevar el control de quién te debe dinero", updated: "2026-10-27", complete: true },
   { en: "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/", es: "/es/blog/como-pedir-dinero-prestado-a-un-amigo/", title: "Cómo pedir dinero prestado a un amigo: mensajes y ejemplos", updated: "2026-10-27", complete: true },
   {
@@ -62,8 +62,8 @@ export const spanishShared = Object.freeze({
 });
 
 export const germanPages = [
-  { en: "/", de: "/de/", title: "You Owe Me: Geldforderungen, Darlehen und Ausgaben im Blick", updated: "2026-10-27", complete: true },
-  { en: "/solutions/app-to-track-money-owed/", de: "/de/loesungen/app-fuer-geldforderungen/", title: "App für Geldforderungen", complete: true },
+  { en: "/", de: "/de/", title: "You Owe Me: Geldforderungen, Darlehen und Ausgaben im Blick", updated: "2026-10-30", complete: true },
+  { en: "/solutions/app-to-track-money-owed/", de: "/de/loesungen/app-fuer-geldforderungen/", title: "App für Geldforderungen", updated: "2026-10-30", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", de: "/de/blog/wer-schuldet-mir-geld/", title: "Wer schuldet mir Geld? So behältst du den Überblick", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", de: "/de/loesungen/private-darlehen-verwalten/", title: "Private Darlehen und Rückzahlungen verwalten", complete: true },
   { en: "/tools/split-expense-calculator/", de: "/de/tools/ausgaben-aufteilen/", title: "Ausgaben aufteilen: Rechner für gemeinsame Kosten", complete: true },
@@ -86,8 +86,8 @@ export const germanShared = Object.freeze({
 // Spanish names remain public compatibility exports. All generation consumes
 // this common configuration, so adding a locale never needs another generator.
 export const arabicPages = [
-  { en: "/", ar: "/ar/", title: "You Owe Me: تابع الديون والقروض والمصروفات", updated: "2026-10-27", complete: true },
-  { en: "/solutions/app-to-track-money-owed/", ar: "/ar/solutions/app-to-track-money-owed/", title: "تطبيق لتتبّع المبالغ المستحقة لك", complete: true },
+  { en: "/", ar: "/ar/", title: "You Owe Me: تابع الديون والقروض والمصروفات", updated: "2026-10-30", complete: true },
+  { en: "/solutions/app-to-track-money-owed/", ar: "/ar/solutions/app-to-track-money-owed/", title: "تطبيق لتتبّع المبالغ المستحقة لك", updated: "2026-10-30", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", ar: "/ar/blog/how-to-keep-track-of-who-owes-you-money/", title: "كيف تتابع من يدين لك بالمال", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", ar: "/ar/solutions/personal-loan-repayment-tracker/", title: "تتبّع القروض الشخصية وسدادها", complete: true },
   { en: "/tools/split-expense-calculator/", ar: "/ar/tools/split-expense-calculator/", title: "حاسبة تقسيم المصروفات المشتركة", complete: true },
@@ -104,8 +104,8 @@ export const arabicShared = Object.freeze({
   nextStep: "اطّلع على الموارد ذات الصلة أو تابع في You Owe Me على iPhone.",
 });
 export const frenchPages = [
-  { en: "/", fr: "/fr/", title: "You Owe Me : suivez vos prêts, dépenses et remboursements", updated: "2026-10-27", complete: true },
-  { en: "/solutions/app-to-track-money-owed/", fr: "/fr/solutions/application-suivi-argent-du/", title: "Application pour suivre l’argent qu’on vous doit", complete: true },
+  { en: "/", fr: "/fr/", title: "You Owe Me : suivez vos prêts, dépenses et remboursements", updated: "2026-10-30", complete: true },
+  { en: "/solutions/app-to-track-money-owed/", fr: "/fr/solutions/application-suivi-argent-du/", title: "Application pour suivre l’argent qu’on vous doit", updated: "2026-10-30", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", fr: "/fr/blog/suivre-qui-vous-doit-de-l-argent/", title: "Comment savoir qui vous doit de l’argent", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", fr: "/fr/solutions/suivi-remboursement-pret-personnel/", title: "Suivez vos prêts personnels et leurs remboursements", complete: true },
   { en: "/tools/split-expense-calculator/", fr: "/fr/outils/calculateur-partage-depenses/", title: "Calculateur de partage des dépenses", complete: true },

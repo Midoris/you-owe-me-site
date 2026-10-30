@@ -1,0 +1,338 @@
+/* Real Stats screens are inset components; page shells stay with their hosts. */
+#main .stats-feature,
+#main .stats-overview {
+  scroll-margin-top: 5.5rem;
+}
+
+#main .stats-overview {
+  display: grid;
+  grid-template-columns: minmax(0, 0.9fr) minmax(0, 1.3fr);
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 3.5rem);
+}
+
+#main .stats-overview__copy,
+#main .stats-feature__intro {
+  min-width: 0;
+}
+
+#main .stats-overview__copy h2,
+#main .stats-feature__intro h2 {
+  color: #18212b;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  text-wrap: balance;
+}
+
+#main .stats-overview__copy > p,
+#main .stats-feature__intro > p {
+  max-width: 68ch;
+}
+
+#main .stats-product-stage,
+#main .stats-product-composition {
+  min-width: 0;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background:
+    radial-gradient(ellipse at top right, rgba(190, 216, 243, 0.7), transparent 62%),
+    radial-gradient(ellipse at bottom left, rgba(175, 230, 126, 0.38), transparent 58%),
+    linear-gradient(145deg, #f5f9ff, #eff4f7 62%, #fbfdf8);
+  color: #212931;
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+}
+
+#main .stats-product-stage {
+  display: grid;
+  align-items: center;
+  gap: clamp(1.5rem, 4vw, 4rem);
+  margin-block: 1.75rem 2rem;
+  padding: clamp(1.25rem, 4vw, 3rem);
+}
+
+#main .stats-product-stage.is-enhanced {
+  grid-template-columns: minmax(0, 0.95fr) minmax(0, 1fr);
+}
+
+#main .stats-phone {
+  box-sizing: border-box;
+  width: min(100%, 300px);
+  min-width: 0;
+  padding: 6px;
+  overflow: hidden;
+  border: 1px solid rgba(15, 23, 42, 0.78);
+  border-radius: 37px;
+  background: #17212c;
+  box-shadow: 0 24px 44px rgba(24, 33, 43, 0.2), 0 4px 10px rgba(24, 33, 43, 0.12);
+  line-height: 0;
+}
+
+#main .stats-phone img {
+  display: block;
+  width: 100%;
+  height: auto;
+  margin: 0;
+  border-radius: 30px;
+}
+
+#main .stats-screen-preview {
+  display: grid;
+  justify-items: center;
+  min-width: 0;
+  margin: 0;
+  text-align: center;
+}
+
+#main .stats-screen-preview figcaption {
+  max-width: 38ch;
+  margin-block-start: 1.5rem;
+  font-size: 0.95rem;
+  line-height: 1.55;
+}
+
+#main .stats-screen-preview figcaption p {
+  margin: 0;
+}
+
+#main .stats-screen-preview .stats-screen-preview__note {
+  margin-block-start: 0.65rem;
+  color: rgba(33, 41, 49, 0.7);
+  font-size: 0.8rem;
+}
+
+#main .stats-screen-picker {
+  display: grid;
+  gap: 0.7rem;
+  min-width: 0;
+}
+
+#main .stats-screen-picker[hidden] {
+  display: none;
+}
+
+#main .stats-screen-picker__button {
+  appearance: none;
+  display: grid;
+  grid-template-columns: 1.6rem minmax(0, 1fr);
+  align-items: baseline;
+  gap: 0.9rem;
+  width: 100%;
+  height: auto;
+  min-width: 0;
+  padding: 1.2rem;
+  border: 1px solid transparent;
+  border-radius: 20px;
+  background: transparent;
+  box-shadow: none;
+  color: #18212b !important;
+  font: inherit;
+  font-size: 1rem;
+  line-height: 1.5;
+  letter-spacing: normal;
+  text-align: start;
+  text-transform: none;
+  white-space: normal;
+  cursor: pointer;
+  transition: none;
+}
+
+#main .stats-screen-picker__button[aria-pressed="true"] {
+  border-color: rgba(15, 23, 42, 0.08);
+  background: rgba(255, 255, 255, 0.9);
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+#main .stats-screen-picker__button:hover {
+  background: rgba(255, 255, 255, 0.65);
+}
+
+#main .stats-screen-picker__button:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+#main .stats-screen-picker__number {
+  color: rgba(33, 41, 49, 0.55);
+  font-size: 0.78rem;
+  font-variant-numeric: tabular-nums;
+}
+
+#main .stats-screen-picker__button[aria-pressed="true"] .stats-screen-picker__number {
+  color: #355428;
+  text-decoration: underline;
+  text-decoration-color: #afe67e;
+  text-decoration-thickness: 3px;
+  text-underline-offset: 0.35rem;
+}
+
+#main .stats-screen-picker__button strong,
+#main .stats-screen-picker__hint {
+  display: block;
+}
+
+#main .stats-screen-picker__button strong {
+  font-size: 1.2rem;
+  font-weight: 700;
+}
+
+#main .stats-screen-picker__hint {
+  margin-block-start: 0.25rem;
+  color: rgba(33, 41, 49, 0.78);
+  font-size: 0.92rem;
+  font-weight: 400;
+}
+
+#main .stats-product-composition {
+  margin: 0;
+  padding: clamp(1rem, 2vw, 2rem);
+  text-align: center;
+}
+
+#main .stats-product-composition__phones {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 0.75rem;
+  padding-block: 0.4rem 1.5rem;
+}
+
+#main .stats-product-composition .stats-phone--overview {
+  width: 52%;
+  max-width: 270px;
+  z-index: 1;
+}
+
+#main .stats-product-composition .stats-phone--detail {
+  width: 44%;
+  max-width: 230px;
+  margin-block-start: 3.5rem;
+  border-radius: 32px;
+}
+
+#main .stats-product-composition .stats-phone--detail img {
+  border-radius: 25px;
+}
+
+#main .stats-product-composition figcaption {
+  margin: 0;
+  color: rgba(33, 41, 49, 0.78);
+  font-size: 0.8rem;
+  line-height: 1.6;
+}
+
+#main .stats-feature__questions {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: clamp(1rem, 2vw, 1.5rem);
+}
+
+#main .stats-feature__questions article {
+  min-width: 0;
+  padding: 1.4rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+#main .stats-feature__questions h3 {
+  margin-block-end: 0.75rem;
+  color: #18212b;
+}
+
+#main .stats-feature__questions p {
+  margin: 0;
+}
+
+#main .stats-feature__scope {
+  margin-block: 1.5rem 1rem;
+}
+
+#main .stats-feature__details {
+  padding-block-start: 1rem;
+  border-block-start: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+#main .stats-feature__details summary {
+  color: #18212b;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+#main .stats-feature__details summary:focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+#main .stats-feature__details p {
+  max-width: 80ch;
+  margin-block: 0.8rem 0;
+}
+
+@media (max-width: 1000px) {
+  #main .stats-overview {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #main .stats-product-composition__phones {
+    gap: 1.5rem;
+  }
+}
+
+@media (max-width: 800px) {
+  #main .stats-product-stage.is-enhanced,
+  #main .stats-feature__questions {
+    grid-template-columns: minmax(0, 1fr);
+  }
+
+  #main .stats-screen-picker {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 0.4rem;
+  }
+
+  #main .stats-screen-picker__button {
+    display: block;
+    padding: 0.7rem 0.25rem;
+    border: 0;
+    border-block-end: 3px solid transparent;
+    border-radius: 0;
+    text-align: center;
+  }
+
+  #main .stats-screen-picker__button strong {
+    font-size: 0.95rem;
+  }
+
+  #main .stats-screen-picker__button[aria-pressed="true"] {
+    border-block-end-color: #afe67e;
+    background: transparent;
+    box-shadow: none;
+  }
+
+  #main .stats-screen-picker__hint,
+  #main .stats-screen-picker__number {
+    display: none;
+  }
+
+  #main .stats-screen-preview .stats-phone {
+    width: min(100%, 260px);
+  }
+}
+
+@media (max-width: 600px) {
+  #main .stats-product-composition .stats-phone--overview {
+    width: min(100%, 260px);
+  }
+
+  #main .stats-product-composition .stats-phone--detail {
+    display: none;
+  }
+}
+
+/* Give the new section comfortable gutters within the inherited RTL shell. */
+@media (max-width: 736px) {
+  html[lang="ar"] body.homepage-page #main .stats-overview {
+    box-sizing: border-box;
+    padding-inline: 1rem;
+  }
+}

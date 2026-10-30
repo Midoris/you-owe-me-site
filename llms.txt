@@ -67,9 +67,14 @@ You Owe Me supports reviewed import for one personal loan from pasted notes or c
 ## Groups and Spaces
 
 - [Groups](https://you-owe-me.com/features/#groups) organize people such as Friends, Family, or Clients within local records or one Space. Requires You Owe Me 7.2.4 or later. Each person belongs to at most one group. All groups and Ungrouped views are available.
-- Main filters its balance, person cards, and history together. Group filters also exist in Owed, Loans in Records, and the Reminders list. Screen selections are independent; optional filter memory stays on the device. Filtering reminders does not change notification scheduling or delivery.
+- Main filters its balance, person cards, and history together. Group filters also exist in Owed, Stats, Loans in Records, and the Reminders list. Screen selections are independent; optional filter memory stays on the device. Filtering reminders does not change notification scheduling or delivery.
 - Groups have names, colors, and order, and are managed from All People/Clients. Reassigning people is supported. Deleting a group keeps people and financial records and makes those people Ungrouped. A group cannot span Spaces; moving someone to another Space clears membership.
 - [Spaces](https://you-owe-me.com/features/#spaces) separate record contexts with their own people, entries, loans, repayment plans, and total. Groups organize people inside a context. They do not create shared accounts, split payments, or a collaborative group ledger. Group Paybacks is a separate shared-cost feature that can include people from different groups; its section is not filtered by Groups.
+
+## Stats
+
+- [Stats](https://you-owe-me.com/features/#stats) shows repayments to you and by you, changes in amounts owed to you or by you, and all-time progress. Filter activity by the current calendar week, month, year, or all time, and focus on a group. Net balance shows where things stand now. Achievements and milestones remain all-time.
+- Activity details can use their own period and direction without changing the Stats overview selections. Groups carry into the details. Changes in amounts owed use each person's balance, so what you owe one person does not cancel out what someone else owes you.
 
 ## Loan Outlook
 
