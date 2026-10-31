@@ -96,7 +96,17 @@ export function normalizeReviewedArabicRoommateCopy(html) {
     .replace("            <p>لمصاريف المنزل المشتركة، يساعدك <a href=\"/ar/tools/roommate-expense-tracker-template/\">قالب مصاريف السكن المشترك</a> على فصل المصاريف الأصلية والدفعات اللاحقة والمبالغ المتبقية.</p>\n", "");
 }
 
+// LOC-09: exact approved French navigation and two contextual paragraphs only.
+// Keep every historical release baseline pinned.
+export function normalizeReviewedFrenchRoommateCopy(html) {
+  return html
+    .replace("\n              <a href=\"/fr/outils/tableau-depenses-colocation/\">Dépenses de colocation</a>", "")
+    .replace("\n              <p>Pour garder un historique des dépenses et des remboursements d’un mois sur l’autre, utilisez le <a href=\"/fr/outils/tableau-depenses-colocation/\">tableau des dépenses de colocation</a>. Il comprend des versions Excel et Google Sheets en français, ainsi qu’un registre CSV simple.</p>", "")
+    .replace("            <p>Pour les dépenses de la maison, le <a href=\"/fr/outils/tableau-depenses-colocation/\">tableau des dépenses de colocation</a> distingue les dépenses d’origine, les remboursements et les montants restants.</p>\n", "");
+}
+
 export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedFrenchRoommateCopy(html);
   html = normalizeReviewedArabicRoommateCopy(html);
   html = normalizeReviewedGermanRoommateCopy(html);
   html = normalizeReviewedSpanishRoommateCopy(html);

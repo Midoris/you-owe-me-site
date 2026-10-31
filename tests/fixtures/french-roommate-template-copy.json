@@ -1,0 +1,50 @@
+{
+  "message": "Voici le bilan des dépenses de la coloc pour ce mois-ci. Il reprend les dépenses saisies, la répartition convenue et les remboursements déjà effectués. Vérifiez-le avec vos notes. S’il manque un montant ou si quelque chose ne correspond pas, clarifions-le ensemble avant de régler les sommes restantes.",
+  "faq": [
+    {
+      "question": "Que permet de suivre ce tableau de colocation ?",
+      "answer": "Il rassemble les dépenses communes, la personne qui a payé, la part de chacun, les remboursements et les montants restants. Vous pouvez l’utiliser sur plusieurs périodes en créant une nouvelle copie pour chacune."
+    },
+    {
+      "question": "Peut-on prévoir des parts différentes ?",
+      "answer": "Oui. Choisissez Montants convenus si vous avez déjà fixé la part de chaque personne. La somme des parts doit correspondre au montant de la dépense."
+    },
+    {
+      "question": "Peut-on exclure une personne d’une dépense ?",
+      "answer": "Oui. Sélectionnez uniquement les personnes concernées. Un achat personnel ou réservé à certains colocataires n’a pas à être réparti entre tout le monde."
+    },
+    {
+      "question": "Comment saisir un remboursement entre deux personnes ?",
+      "answer": "Ajoutez-le séparément dans Remboursements, avec la date, la personne qui verse, celle qui reçoit et le montant. Le solde restant change sans modifier la dépense d’origine."
+    },
+    {
+      "question": "Peut-on reporter un montant sur le mois suivant ?",
+      "answer": "Oui. Reprenez une seule fois les soldes finaux vérifiés comme soldes de départ de la nouvelle période. Ne les ajoutez pas comme de nouvelles dépenses et ne comptez pas deux fois le même remboursement."
+    },
+    {
+      "question": "Le site reçoit-il les données de mon tableau ?",
+      "answer": "You Owe Me ne reçoit pas les dépenses que vous saisissez. Le fichier Excel reste là où vous l’enregistrez, sauf si vous le mettez en ligne ou le partagez. Votre copie Google Sheets reste dans votre compte Google ; vous choisissez qui peut y accéder."
+    },
+    {
+      "question": "Comment utiliser le modèle dans Google Sheets ?",
+      "answer": "Cliquez sur Utiliser Google Sheets, connectez-vous à Google si nécessaire, puis créez une copie dans votre Drive. Renseignez les noms dans Configuration, les saisies dans Dépenses et Remboursements, puis vérifiez le Bilan ensemble avant de solder les comptes."
+    },
+    {
+      "question": "Le fichier Excel fonctionne-t-il dans Apple Numbers ?",
+      "answer": "Le fichier utilise des formules courantes, mais la mise en forme, les listes déroulantes ou les calculs peuvent se comporter différemment dans Numbers. Vérifiez les résultats après ouverture. Pour Google Sheets, utilisez le modèle prévu à cet effet sur cette page."
+    },
+    {
+      "question": "Combien de saisies le modèle peut-il contenir ?",
+      "answer": "Chaque copie contient 200 lignes de dépenses et 200 lignes de remboursements. Pour la période suivante, créez une nouvelle copie et reportez une seule fois les soldes finaux vérifiés comme soldes de départ."
+    }
+  ],
+  "ui": {
+    "initial": "Copier le message",
+    "success": "Copié",
+    "successStatus": "Le message a été copié.",
+    "manual": "Le texte est sélectionné. Utilisez la commande Copier de votre appareil.",
+    "failure": "La copie a échoué. Sélectionnez le message et copiez-le manuellement.",
+    "noJS": "JavaScript est désactivé. Vous pouvez sélectionner le message et le copier manuellement.",
+    "busy": "Copie en cours…"
+  }
+}

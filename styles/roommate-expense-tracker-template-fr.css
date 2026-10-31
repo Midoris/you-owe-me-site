@@ -1,0 +1,14 @@
+/* Keep the copy control unavailable until its localized handler is installed. */
+.roommate-template-page.site-lang-fr .roommate-template-copy-button[hidden] {
+  display: none !important;
+}
+
+/* Preserve short amounts and the brand without preventing sentence wrapping. */
+.roommate-template-page.site-lang-fr .roommate-template-amount,
+.roommate-template-page.site-lang-fr .roommate-template-brand,
+.roommate-template-page.site-lang-fr .roommate-template-punctuation {
+  white-space: nowrap;
+}
+
+/* Keep the short machine-readable CSV date token intact. */
+.roommate-template-page.site-lang-fr .roommate-template-format { white-space: nowrap; }

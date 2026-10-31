@@ -1,0 +1,4 @@
+Date,Type de saisie,Dépense ou remboursement,Catégorie,Montant,Payé ou versé par,Reçu par,Répartition,Personnes participantes,Montants convenus,Notes
+2026-05-01,Dépense,Loyer,Loyer,1800.00,Camille,,À parts égales entre participants,"Camille, Hugo, Léa",Camille 600.00; Hugo 600.00; Léa 600.00,Exemple fictif en EUR. Remplacez cette ligne par vos données. Ce fichier CSV ne calcule pas les soldes.
+2026-05-05,Dépense,Internet,Internet,60.00,Hugo,,À parts égales entre participants,"Camille, Hugo, Léa",Camille 20.00; Hugo 20.00; Léa 20.00,Dépense d’exemple à remplacer ou à supprimer.
+2026-05-20,Remboursement,Remboursement à Camille,,200.00,Hugo,Camille,,,,"Remboursement d’exemple saisi séparément, à remplacer ou à supprimer."

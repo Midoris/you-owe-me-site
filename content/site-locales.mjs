@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "roommatear20261031",
+  "/scripts/analytics.js": "roommatefr20261031",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -242,6 +242,21 @@ export const frenchPages = [
       "useWhen": "Avant de demander un prêt à un ami et après son accord.",
       "nextStep": "Suivre un prêt personnel",
       "primaryCta": "Voir les 8 messages"
+    }
+  },
+  {
+    "en": "/tools/roommate-expense-tracker-template/",
+    "fr": "/fr/outils/tableau-depenses-colocation/",
+    "title": "Dépenses de colocation",
+    "updated": "2026-10-31",
+    "complete": true,
+    "discoveryDescription": "Loyer, charges, courses et remboursements : faites les comptes de la coloc avec un tableau gratuit en français pour Excel et Google Sheets, de 2 à 6 personnes.",
+    "registry": {
+      "primaryAudience": "Colocataires qui souhaitent suivre les dépenses convenues, les remboursements et les montants restants dans un fichier commun.",
+      "problemSolved": "Distinguer les dépenses d’origine des remboursements pour garder un solde compréhensible par personne.",
+      "useWhen": "Pour tenir les comptes de la colocation, faire le bilan du mois ou reporter les montants encore dus sur une nouvelle période.",
+      "primaryCta": "Télécharger le modèle Excel",
+      "nextStep": "Suivre les montants restants dans You Owe Me"
     }
   },
 ];

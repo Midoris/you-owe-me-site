@@ -1,3 +1,4 @@
+import { normalizeReviewedFrenchRoommateCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import { normalizeReviewedArabicRoommateCopy, normalizeReviewedGermanRoommateCopy, normalizeReviewedSpanishRoommateCopy, normalizeReviewedFrenchBorrowCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import assert from 'node:assert/strict';
 import test from 'node:test';
@@ -46,10 +47,10 @@ test('French borrowing guide retains reviewed payloads, matching FAQ, official b
  const visible=env.document.querySelectorAll('.borrow-fr-faq details');
  assert.deepEqual(visible.map(node=>({question:node.querySelector('summary').textContent,answer:node.querySelector('p').textContent})),expected.faq);
  assert.equal(localizedSourceRoute(route),sourceRoute);
- assert.equal(contentRegistry.length,121);
+ assert.equal(contentRegistry.length,122);
  const registry=contentRegistry.find(entry=>entry.url===route);
  assert.equal(registry.appStoreCpp,'general');assert.equal(registry.locale,'fr');
- assert.equal(siteLocales.find(locale=>locale.code==='fr').pages.length,7);
+ assert.equal(siteLocales.find(locale=>locale.code==='fr').pages.length,8);
  assert.equal(renderLocaleHtml(page,sourceRoute,'fr'),page);
  assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
  assert.equal(createHash('sha256').update(fs.readFileSync(new URL('../images/fr/app-store/download-on-the-app-store-black.svg',import.meta.url))).digest('hex'),'86b6a05f6c8ac9e9a0637edf4f15420d06c8c7bc69662792a46793c1f948b023');
@@ -98,7 +99,7 @@ test('French handoff allowlist forwards only existing metadata keys',()=>{
 
 
 test('prior borrowing guides and French repayment retain accepted authored bytes',()=>{
- const normalize=html=>normalizeReviewedSpanishRoommateCopy(normalizeReviewedFrenchBorrowCopy(normalizeReviewedArabicRoommateCopy(normalizeReviewedGermanRoommateCopy(html))))
+ const normalize=html=>normalizeReviewedFrenchRoommateCopy(normalizeReviewedSpanishRoommateCopy(normalizeReviewedFrenchBorrowCopy(normalizeReviewedArabicRoommateCopy(normalizeReviewedGermanRoommateCopy(html)))))
   .replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g,'')
   .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g,'')
   .replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)(?:\?[^" ]*)?/g,'$1?v=approved-cache');

@@ -28,6 +28,7 @@ APP_ROUTES = {
     "es": "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/",
     "de": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
     "ar": "https://you-owe-me.com/ar/solutions/app-to-track-money-owed/",
+    "fr": "https://you-owe-me.com/fr/solutions/application-suivi-argent-du/",
 }
 
 
@@ -213,7 +214,7 @@ def main() -> None:
     args = parser.parse_args()
     copy = json.loads(args.copy_file.read_text())
     if copy["locale"] not in APP_ROUTES:
-        raise ValueError("Only the reviewed Spanish, German and Arabic copies are implemented")
+        raise ValueError("Only the reviewed Spanish, German, Arabic and French copies are implemented")
     if args.output.resolve() == (ROOT / "downloads/roommate-expense-tracker-template.xlsx").resolve():
         raise ValueError("The English workbook must not be overwritten")
     if args.csv and any(len(row) != 11 for row in copy["csv"]):
