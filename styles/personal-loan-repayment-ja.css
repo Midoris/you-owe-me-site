@@ -1,0 +1,25 @@
+/* Japanese typography and captions on the current English personal-loan shell. */
+html[lang="ja"] body.personal-loan-repayment-tracker-page #navPanel,
+html[lang="ja"] body.personal-loan-repayment-tracker-page #main :is(.plrt-eyebrow,.plrt-card__eyebrow,.plrt-support-line,.lt-pageMeta,.plrt-record-once__connected,.plrt-relationship-map,.plrt-table,.plrt-button) {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+}
+html[lang="ja"] body.personal-loan-repayment-tracker-page #main .ja-loan-token,
+html[lang="ja"] body.personal-loan-repayment-tracker-page #main .ja-loan-phrase { white-space: nowrap; }
+html[lang="ja"] body.personal-loan-repayment-tracker-page #main :is(.plrt-hero__visual,.plrt-product-visual) img { object-fit: contain; }
+html[lang="ja"] body.personal-loan-repayment-tracker-page #main .ja-screen-caption { position: relative; z-index: 1; line-height: 1.7; }
+html[lang="ja"] body.personal-loan-repayment-tracker-page #main .plrt-record-once__results dt { overflow-wrap: anywhere; }
+html[lang="ja"] body.personal-loan-repayment-tracker-page #main .lt-breadcrumb > a { min-width: 0; }
+@media (max-width: 736px) {
+  html[lang="ja"] body.personal-loan-repayment-tracker-page #main h1 { font-size: clamp(1.55rem, 7.3vw, 2.1rem); }
+}
+/* Atomic amounts inherit their parent value's prominence, not the diagram's small labels. */
+html[lang="ja"] body.personal-loan-repayment-tracker-page #main .plrt-record-once__connected .ja-loan-token {
+  display: inline;
+  font: inherit;
+  line-height: inherit;
+  letter-spacing: inherit;
+  color: inherit;
+  margin: 0;
+}

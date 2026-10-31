@@ -23,9 +23,27 @@ export function normalizeReviewedJapaneseHomeIntegration(html) {
   return html;
 }
 
+// LOC-13: only the admitted personal-loan family annotations, Japanese section
+// navigation, and two exact approved inward links. Historical snapshots stay pinned.
+export function normalizeReviewedJapaneseLoanIntegration(html) {
+  html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/solutions/personal-loan-repayment-tracker/" />\n', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/solutions/personal-loan-repayment-tracker/" lang="ja" hreflang="ja">日本語</a>', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/solutions/personal-loan-repayment-tracker/" lang="ja" dir="ltr" hreflang="ja">日本語</a>', '');
+  html = html.replace('\n              <a href="/ja/solutions/personal-loan-repayment-tracker/">貸し借りと返済計画の管理</a>', '');
+  if (html.includes('rel="canonical" href="https://you-owe-me.com/ja/"')) {
+    html = html.replace('href="/ja/solutions/personal-loan-repayment-tracker/" data-module="best-next-step"', 'href="/solutions/personal-loan-repayment-tracker/" data-module="best-next-step"');
+    html = html.replace('<strong>ひとつの貸し借りを最後まで記録したい</strong>', '<strong>ひとつの貸し借りを最後まで記録したい<span class="site-locale-fallback">（英語）</span></strong>');
+  }
+  if (html.includes('rel="canonical" href="https://you-owe-me.com/ja/solutions/app-to-track-money-owed/"')) {
+    html = html.replace('<a href="/ja/solutions/personal-loan-repayment-tracker/">貸し借りと返済計画の管理</a>', '<a href="/solutions/personal-loan-repayment-tracker/">貸し借りと返済計画の管理<span class="site-locale-fallback">（英語）</span></a>');
+  }
+  return html;
+}
+
 // LOC-12: only the admitted guide annotations, one changed shared controller pin,
 // Japanese section navigation and the two exact reviewed homepage guide links.
 export function normalizeReviewedJapaneseRecordGuideIntegration(html) {
+  html = normalizeReviewedJapaneseLoanIntegration(html);
   html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/blog/how-to-keep-track-of-who-owes-you-money/" />\n', '');
   html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/blog/how-to-keep-track-of-who-owes-you-money/" lang="ja" hreflang="ja">日本語</a>', '');
   html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/blog/how-to-keep-track-of-who-owes-you-money/" lang="ja" dir="ltr" hreflang="ja">日本語</a>', '');

@@ -315,6 +315,21 @@ export const japanesePages = [
     "primaryCta": "記録テンプレートをコピー",
     "nextStep": "ひとりの相手とひとつの通貨から、今の残額を整理しましょう。"
   }
+},
+{
+  "en": "/solutions/personal-loan-repayment-tracker/",
+  "ja": "/ja/solutions/personal-loan-repayment-tracker/",
+  "title": "貸し借りと返済計画の管理",
+  "updated": "2026-10-31",
+  "complete": true,
+  "discoveryDescription": "友人や家族との貸し借りを分けて記録し、実際の返済に合わせて残額・次の支払い・返済計画を確認。貸す側も借りる側も使える、日本語対応のYou Owe Me。",
+  "registry": {
+    "primaryAudience": "友人や家族とのひとつの貸し借りを、実際の返済とともに記録し続けたい方。",
+    "problemSolved": "貸し借りごとの履歴、残額、返済計画、次の確認事項をまとめます。",
+    "useWhen": "一部返済や追加の貸し借りがあり、予定と実際の記録を合わせたいとき。",
+    "primaryCta": "App Storeからダウンロード",
+    "nextStep": "ひとつの貸し借りを登録し、実際に返済があったら記録しましょう。"
+  }
 }
 ];
 export const japaneseShared = Object.freeze({
