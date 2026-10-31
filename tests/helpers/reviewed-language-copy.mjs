@@ -6,6 +6,7 @@ const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-
 // generated Japanese home counterpart annotations, and five changed shared script pins.
 // Immutable historical commit IDs and all other authored bytes remain checked.
 export function normalizeReviewedJapaneseHomeIntegration(html) {
+  html = normalizeReviewedJapaneseRecordGuideIntegration(html);
   // LOC-11: exact new completed Japanese solution annotations only.
   html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/solutions/app-to-track-money-owed/" />\n', '');
   html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/solutions/app-to-track-money-owed/" lang="ja" hreflang="ja">日本語</a>', '');
@@ -19,6 +20,21 @@ export function normalizeReviewedJapaneseHomeIntegration(html) {
   html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/" lang="ja" hreflang="ja">日本語</a>', '');
   html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/" lang="ja" dir="ltr" hreflang="ja">日本語</a>', '');
   html = html.replace(/((?:src|href)="[^"?]*(?:scripts\/(?:sales|anniversary-announcement|app-language-support|video-embed)|assets\/js\/main)\.js)\?v=ja20261031(?=")/g, '$1?v=fr20261020');
+  return html;
+}
+
+// LOC-12: only the admitted guide annotations, one changed shared controller pin,
+// Japanese section navigation and the two exact reviewed homepage guide links.
+export function normalizeReviewedJapaneseRecordGuideIntegration(html) {
+  html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/blog/how-to-keep-track-of-who-owes-you-money/" />\n', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/blog/how-to-keep-track-of-who-owes-you-money/" lang="ja" hreflang="ja">日本語</a>', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/blog/how-to-keep-track-of-who-owes-you-money/" lang="ja" dir="ltr" hreflang="ja">日本語</a>', '');
+  html = html.replace('\n              <a href="/ja/blog/how-to-keep-track-of-who-owes-you-money/">貸したお金の記録方法</a>', '');
+  html = html.replaceAll('/scripts/recordkeeping-guide-es.js?v=jarecord20261031', '/scripts/recordkeeping-guide-es.js?v=fr20261020');
+  if (html.includes('rel="canonical" href="https://you-owe-me.com/ja/"')) {
+    html = html.replace('<a href="/ja/blog/how-to-keep-track-of-who-owes-you-money/" class="lt-situationMicroLink">まずは記録を整理したい方へ。貸し借りの記録の付け方</a>', '<a href="/blog/how-to-keep-track-of-who-owes-you-money/" class="lt-situationMicroLink">まずは記録を整理したい方へ。貸し借りの記録の付け方<span class="site-locale-fallback">（英語）</span></a>');
+    html = html.replace('<a href="/ja/blog/how-to-keep-track-of-who-owes-you-money/" class="lt-resourceShelfLink">\n                  <strong>貸し借りの記録の付け方</strong>', '<a href="/blog/how-to-keep-track-of-who-owes-you-money/" class="lt-resourceShelfLink">\n                  <strong>貸し借りの記録の付け方<span class="site-locale-fallback">（英語）</span></strong>');
+  }
   return html;
 }
 

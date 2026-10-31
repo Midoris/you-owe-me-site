@@ -84,7 +84,7 @@ test("Spanish authored HTML stays byte-for-byte intact from the accepted public 
     .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "")
     // Only explicitly changed shared dependencies may receive cache URL updates.
     .replace(/((?:src|href)=")([^"?]+)(?:\?v=([^"&]+))?(")/g, (original, start, asset, version, end) =>
-      sharedAssetVersions[asset] && ([undefined, sharedAssetVersions[asset], "es20261020"].includes(version) || (version === "fr20261020" && ["/scripts/sales.js", "/scripts/anniversary-announcement.js", "/scripts/app-language-support.js", "/scripts/video-embed.js", "/assets/js/main.js"].includes(asset))) ? `${start}${asset}?v=shared-cache-version${end}` : original);
+      sharedAssetVersions[asset] && ([undefined, sharedAssetVersions[asset], "es20261020"].includes(version) || (version === "fr20261020" && ["/scripts/sales.js", "/scripts/anniversary-announcement.js", "/scripts/app-language-support.js", "/scripts/video-embed.js", "/assets/js/main.js", "/scripts/recordkeeping-guide-es.js"].includes(asset))) ? `${start}${asset}?v=shared-cache-version${end}` : original);
   // This immutable-release guard covers its original five routes; the later guides did not exist then.
   for (const page of spanishPages.filter(page => !["/es/blog/como-pedir-dinero-prestado-a-un-amigo/", "/es/blog/como-pedir-que-te-devuelvan-dinero/", "/es/herramientas/plantilla-gastos-piso-compartido/"].includes(page.es))) {
     const file = `${page.es.slice(1)}index.html`;

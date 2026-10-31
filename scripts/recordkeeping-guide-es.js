@@ -7,8 +7,11 @@
     en: { copied: "Copied", prefix: "Copied: ", fallback: "message", failure: "Could not copy. Select the text and copy it manually." },
     es: { copied: "Copiado", prefix: "Copiado: ", fallback: "mensaje", failure: "No se pudo copiar. Selecciona el texto y cópialo manualmente." },
     de: { copied: "Kopiert", prefix: "Kopiert: ", fallback: "Text", failure: "Kopieren nicht möglich. Markiere den Text und kopiere ihn manuell." },
+    ja: { copied: "コピーしました", fallback: "文面", failure: "コピーできませんでした。本文を選択して、手動でコピーしてください。" },
   };
   var copyUi = messages[document.documentElement.lang] || messages.en;
+  var isJapanese = document.documentElement.lang === "ja";
+  var japaneseCopySequence = 0;
 
   function ready(callback) {
     if (document.readyState === "loading") {
@@ -22,6 +25,10 @@
   function copyTextWithTextarea(text) {
     return new Promise(function (resolve, reject) {
       var textarea = document.createElement("textarea");
+      var previousFocus = isJapanese ? document.activeElement : null;
+      function restoreJapaneseFocus() {
+        if (previousFocus && typeof previousFocus.focus === "function") previousFocus.focus({ preventScroll: true });
+      }
       textarea.value = text;
       textarea.setAttribute("readonly", "");
       textarea.style.position = "fixed";
@@ -33,9 +40,11 @@
       try {
         var success = document.execCommand("copy");
         document.body.removeChild(textarea);
+        restoreJapaneseFocus();
         success ? resolve() : reject(new Error("Copy command failed"));
       } catch (error) {
         document.body.removeChild(textarea);
+        restoreJapaneseFocus();
         reject(error);
       }
     });
@@ -71,6 +80,8 @@
     var buttons = Array.prototype.slice.call(document.querySelectorAll("[data-copy-template]"));
 
     buttons.forEach(function (button) {
+      var japaneseDefaultLabel = isJapanese ? button.textContent : null;
+      if (isJapanese) button.hidden = false;
       button.addEventListener("click", function () {
         var templateId = button.getAttribute("data-copy-template");
         var card = cards.find(function (item) {
@@ -80,20 +91,27 @@
 
         if (!message) return;
 
-        var originalText = button.textContent;
+        var originalText = isJapanese ? japaneseDefaultLabel : button.textContent;
+        var statusSequence = isJapanese ? ++japaneseCopySequence : 0;
+        if (isJapanese && status) {
+          card.appendChild(status);
+          status.textContent = "";
+        }
         var textToCopy = (message.getAttribute("data-template") || message.textContent).trim();
 
         copyText(textToCopy).then(function () {
           button.textContent = copyUi.copied;
-          if (status) status.textContent = copyUi.prefix + (card.querySelector("h3") ? card.querySelector("h3").textContent : copyUi.fallback) + ".";
+          if (status && (!isJapanese || statusSequence === japaneseCopySequence)) status.textContent = isJapanese
+            ? "「" + (card.querySelector("h3") ? card.querySelector("h3").textContent : copyUi.fallback) + "」をコピーしました。"
+            : copyUi.prefix + (card.querySelector("h3") ? card.querySelector("h3").textContent : copyUi.fallback) + ".";
           trackTemplateCopy(card);
 
           window.setTimeout(function () {
             button.textContent = originalText;
-            if (status) status.textContent = "";
+            if (status && (!isJapanese || statusSequence === japaneseCopySequence)) status.textContent = "";
           }, 1800);
         }).catch(function () {
-          if (status) status.textContent = copyUi.failure;
+          if (status && (!isJapanese || statusSequence === japaneseCopySequence)) status.textContent = copyUi.failure;
         });
       });
     });

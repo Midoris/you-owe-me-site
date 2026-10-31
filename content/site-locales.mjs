@@ -13,7 +13,7 @@ export const sharedAssetVersions = {
   "/assets/js/main.js": "ja20261031",
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
-  "/scripts/recordkeeping-guide-es.js": "fr20261020",
+  "/scripts/recordkeeping-guide-es.js": "jarecord20261031",
   "/scripts/split-expense-locale.js": "fr20261020",
   "/scripts/split-expense-calculator.js": "copy20261025",
   "/scripts/tool-transfer.js": "fr20261020",
@@ -299,6 +299,21 @@ export const japanesePages = [
     "useWhen": "返済が何回かに分かれるときや、同じ相手とのお金のやり取りが続くとき。",
     "primaryCta": "App Storeからダウンロード",
     "nextStep": "You Owe Meに相手と金額を登録し、返済があるたびに記録しましょう。"
+  }
+},
+{
+  "en": "/blog/how-to-keep-track-of-who-owes-you-money/",
+  "ja": "/ja/blog/how-to-keep-track-of-who-owes-you-money/",
+  "title": "貸したお金の記録方法",
+  "updated": "2026-10-31",
+  "complete": true,
+  "discoveryDescription": "貸したお金や立て替えた費用を、相手・返済・残額に分けて記録する方法。コピーできる記録テンプレートと確認メッセージ、円での記入例、メモ・表計算・アプリの選び方を紹介します。",
+  "registry": {
+    "primaryAudience": "貸したお金や立て替えを、無理なく記録する方法を知りたい方。",
+    "problemSolved": "元の金額、実際の返済、今の残額を分けて残し、確認漏れを防ぎます。",
+    "useWhen": "メモに何を書けばよいか、一部返済をどう残すか迷ったとき。",
+    "primaryCta": "記録テンプレートをコピー",
+    "nextStep": "ひとりの相手とひとつの通貨から、今の残額を整理しましょう。"
   }
 }
 ];

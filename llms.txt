@@ -345,4 +345,5 @@ Contenus publics en français. Chaque page possède sa propre URL canonique. Les
 
 - [お金の貸し借り・立て替えを記録](https://you-owe-me.com/ja/)
 - [貸したお金の管理アプリ](https://you-owe-me.com/ja/solutions/app-to-track-money-owed/) — 誰にいくら貸して、いくら返してもらったか。You Owe Meなら、貸し借りと返済を相手ごとに記録して残額を確認できます。日本語対応のiPhone・iPadアプリ。
+- [貸したお金の記録方法](https://you-owe-me.com/ja/blog/how-to-keep-track-of-who-owes-you-money/) — 貸したお金や立て替えた費用を、相手・返済・残額に分けて記録する方法。コピーできる記録テンプレートと確認メッセージ、円での記入例、メモ・表計算・アプリの選び方を紹介します。
 <!-- japanese-pages:end -->

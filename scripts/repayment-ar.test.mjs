@@ -48,7 +48,7 @@ test('Arabic repayment guide retains reviewed payloads, matching FAQ, official b
  const visible=env.document.querySelectorAll('.repayment-ar-faq details');
  assert.deepEqual(visible.map(node=>({question:node.querySelector('summary').textContent,answer:node.querySelector('p').textContent})),expected.faq);
  assert.equal(localizedSourceRoute(route),sourceRoute);
- assert.equal(contentRegistry.length,124);
+ assert.equal(contentRegistry.length,125);
  const registry=contentRegistry.find(entry=>entry.url===route);
  assert.equal(registry.appStoreCpp,'general');assert.equal(registry.locale,'ar');
  assert.equal(siteLocales.find(locale=>locale.code==='ar').pages.length,8);
