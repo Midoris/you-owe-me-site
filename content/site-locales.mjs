@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "roommatede20261031",
+  "/scripts/analytics.js": "roommatear20261031",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -179,6 +179,21 @@ export const arabicPages = [
       "useWhen": "قبل طلب قرض من صديق وبعد الموافقة عليه.",
       "nextStep": "متابعة سداد القرض",
       "primaryCta": "عرض الرسائل الثماني"
+    }
+  },
+  {
+    "en": "/tools/roommate-expense-tracker-template/",
+    "ar": "/ar/tools/roommate-expense-tracker-template/",
+    "title": "قالب مصاريف السكن",
+    "updated": "2026-10-31",
+    "complete": true,
+    "discoveryDescription": "سجّل مصاريف السكن والدفعات بين الشركاء واعرف ما تبقّى لكل شخص. قالب مجاني بالعربية لـ Excel وGoogle Sheets، من شخصين إلى ستة أشخاص.",
+    "registry": {
+      "primaryAudience": "شركاء السكن الذين يريدون تسجيل المصاريف المتفق عليها والدفعات بينهم ومراجعة المبالغ المتبقية.",
+      "problemSolved": "فصل المصاريف الأصلية عن الدفعات اللاحقة لمعرفة ما بقي لكل شخص أو عليه.",
+      "useWhen": "عند متابعة مصاريف السكن أو مراجعة حسابات الشهر أو نقل مبالغ متبقية إلى فترة جديدة.",
+      "nextStep": "متابعة المبالغ في You Owe Me",
+      "primaryCta": "تنزيل قالب Excel"
     }
   },
 ];

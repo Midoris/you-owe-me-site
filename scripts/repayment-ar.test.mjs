@@ -47,10 +47,10 @@ test('Arabic repayment guide retains reviewed payloads, matching FAQ, official b
  const visible=env.document.querySelectorAll('.repayment-ar-faq details');
  assert.deepEqual(visible.map(node=>({question:node.querySelector('summary').textContent,answer:node.querySelector('p').textContent})),expected.faq);
  assert.equal(localizedSourceRoute(route),sourceRoute);
- assert.equal(contentRegistry.length,120);
+ assert.equal(contentRegistry.length,121);
  const registry=contentRegistry.find(entry=>entry.url===route);
  assert.equal(registry.appStoreCpp,'general');assert.equal(registry.locale,'ar');
- assert.equal(siteLocales.find(locale=>locale.code==='ar').pages.length,7);
+ assert.equal(siteLocales.find(locale=>locale.code==='ar').pages.length,8);
  assert.equal(renderLocaleHtml(page,sourceRoute,'ar'),page);
  assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
  assert.equal(createHash('sha256').update(fs.readFileSync(new URL('../images/ar/app-store/download-on-the-app-store-black.svg',import.meta.url))).digest('hex'),'1824fcf05bd3d5a01d0992f6eae6f6d5b26e4a2db07a144d56fa0e12216c238d');

@@ -31,7 +31,9 @@ test('French admission requires review and produces reciprocal idempotent five-l
 });
 test('released translations retain accepted bytes and English rendering preserves current authored content',()=>{
  function normalize(html,route){return normalizeReviewedLanguageCopy(html).replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g,'').replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g,'').replace(/((?:src|href)=")([^"?]+)(?:\?[^" ]*)?(")/g,(original,start,ref,end)=>sharedAssetVersions[new URL(ref,'https://you-owe-me.com'+route).pathname]?`${start}${ref}?v=shared-cache${end}`:original);}
- for(const p of siteLocales.filter(l=>l.code==='ar').flatMap(l=>l.pages.filter(p=>p.ar!=='/ar/blog/how-to-remind-someone-they-owe-you-money-politely/'&&p.ar!=='/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/')))for(const l of siteLocales.filter(l=>l.code!=='fr')){
+ // These three Arabic clusters were released after the immutable a2eb93d baseline;
+ // their dedicated repayment/borrowing/template tests preserve their accepted history.
+ for(const p of siteLocales.filter(l=>l.code==='ar').flatMap(l=>l.pages.filter(p=>p.ar!=='/ar/blog/how-to-remind-someone-they-owe-you-money-politely/'&&p.ar!=='/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/'&&p.ar!=='/ar/tools/roommate-expense-tracker-template/')))for(const l of siteLocales.filter(l=>l.code!=='fr')){
   const route=l.code==='en'?p.en:l.pages.find(x=>x.en===p.en)[l.code];
   const file=route==='/'?'index.html':route.slice(1)+'index.html';
   const current=fs.readFileSync(file,'utf8');

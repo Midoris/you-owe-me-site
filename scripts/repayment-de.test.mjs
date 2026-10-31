@@ -45,7 +45,7 @@ test('German repayment guide retains reviewed payloads, matching FAQ, official b
  const visible=env.document.querySelectorAll('.repayment-de-faq details');
  assert.deepEqual(visible.map(node=>({question:node.querySelector('summary').textContent,answer:node.querySelector('p').textContent})),expected.faq);
  assert.equal(localizedSourceRoute(route),sourceRoute);
- assert.equal(contentRegistry.length,120);
+ assert.equal(contentRegistry.length,121);
  const registry=contentRegistry.find(entry=>entry.url===route);
  assert.equal(registry.appStoreCpp,'general');assert.equal(registry.locale,'de');
  assert.equal(siteLocales.find(locale=>locale.code==='de').pages.length,8);

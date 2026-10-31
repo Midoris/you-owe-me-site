@@ -1,5 +1,5 @@
 import { loanImportEventName } from "./loan-import-analytics.mjs?v=20261018-review1";
-import { localizedSourceRoute } from "../content/site-locales.mjs?v=roommatede20261031";
+import { localizedSourceRoute } from "../content/site-locales.mjs?v=roommatear20261031";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import {
   getAnalytics,
@@ -9,7 +9,7 @@ import {
   setUserProperties,
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
 import { createAppStoreCtaViewTracker } from "./app-store-cta-view-tracker.mjs";
-import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs?v=roommatede20261031";
+import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs?v=roommatear20261031";
 
 const FIREBASE_CONFIG = {
   apiKey: "AIzaSyDOsFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",

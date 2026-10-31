@@ -1,4 +1,4 @@
-import { normalizeReviewedGermanRoommateCopy, normalizeReviewedSpanishRoommateCopy, normalizeReviewedFrenchBorrowCopy } from "../tests/helpers/reviewed-language-copy.mjs";
+import { normalizeReviewedArabicRoommateCopy, normalizeReviewedGermanRoommateCopy, normalizeReviewedSpanishRoommateCopy, normalizeReviewedFrenchBorrowCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
@@ -46,7 +46,7 @@ test('French borrowing guide retains reviewed payloads, matching FAQ, official b
  const visible=env.document.querySelectorAll('.borrow-fr-faq details');
  assert.deepEqual(visible.map(node=>({question:node.querySelector('summary').textContent,answer:node.querySelector('p').textContent})),expected.faq);
  assert.equal(localizedSourceRoute(route),sourceRoute);
- assert.equal(contentRegistry.length,120);
+ assert.equal(contentRegistry.length,121);
  const registry=contentRegistry.find(entry=>entry.url===route);
  assert.equal(registry.appStoreCpp,'general');assert.equal(registry.locale,'fr');
  assert.equal(siteLocales.find(locale=>locale.code==='fr').pages.length,7);
@@ -98,7 +98,7 @@ test('French handoff allowlist forwards only existing metadata keys',()=>{
 
 
 test('prior borrowing guides and French repayment retain accepted authored bytes',()=>{
- const normalize=html=>normalizeReviewedSpanishRoommateCopy(normalizeReviewedFrenchBorrowCopy(normalizeReviewedGermanRoommateCopy(html)))
+ const normalize=html=>normalizeReviewedSpanishRoommateCopy(normalizeReviewedFrenchBorrowCopy(normalizeReviewedArabicRoommateCopy(normalizeReviewedGermanRoommateCopy(html))))
   .replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g,'')
   .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g,'')
   .replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)(?:\?[^" ]*)?/g,'$1?v=approved-cache');

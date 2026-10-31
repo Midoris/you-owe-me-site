@@ -87,7 +87,17 @@ export function normalizeReviewedGermanRoommateCopy(html) {
     .replace("            <p>Für gemeinsame Haushaltskosten hilft dir die <a href=\"/de/tools/wg-kasse-vorlage/\">WG-Kasse-Vorlage</a>, ursprüngliche Ausgaben, spätere Zahlungen und offene Beträge getrennt zu halten.</p>\n", "");
 }
 
+// LOC-08: exact approved Arabic navigation and two contextual paragraphs only.
+// Historical release baselines remain pinned and all other changes stay visible.
+export function normalizeReviewedArabicRoommateCopy(html) {
+  return html
+    .replace("\n              <a href=\"/ar/tools/roommate-expense-tracker-template/\">قالب مصاريف السكن</a>", "")
+    .replace("\n  <p>إذا أردت الاحتفاظ بمصاريف السكن والدفعات عبر فترات متعددة، استخدم <a href=\"/ar/tools/roommate-expense-tracker-template/\">قالب مصاريف السكن المشترك</a>. يتضمن <bdi dir=\"ltr\">Excel</bdi> و<bdi dir=\"ltr\">Google Sheets</bdi> وسجل <bdi dir=\"ltr\">CSV</bdi> بسيطًا بالعربية.</p>", "")
+    .replace("            <p>لمصاريف المنزل المشتركة، يساعدك <a href=\"/ar/tools/roommate-expense-tracker-template/\">قالب مصاريف السكن المشترك</a> على فصل المصاريف الأصلية والدفعات اللاحقة والمبالغ المتبقية.</p>\n", "");
+}
+
 export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedArabicRoommateCopy(html);
   html = normalizeReviewedGermanRoommateCopy(html);
   html = normalizeReviewedSpanishRoommateCopy(html);
   html = normalizeReviewedFrenchBorrowCopy(html);
