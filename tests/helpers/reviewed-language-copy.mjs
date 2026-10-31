@@ -78,7 +78,17 @@ export function normalizeReviewedSpanishRoommateCopy(html) {
     .replace('\n  <p>Para los gastos de una vivienda compartida, esta <a href="/es/herramientas/plantilla-gastos-piso-compartido/">plantilla para compañeros de piso</a> separa los gastos originales, los pagos entre personas y el saldo pendiente.</p>', '');
 }
 
+// LOC-07: only the exact approved German navigation and two contextual paragraphs.
+// Immutable historical snapshots stay pinned; all other source changes remain visible.
+export function normalizeReviewedGermanRoommateCopy(html) {
+  return html
+    .replace("\n              <a href=\"/de/tools/wg-kasse-vorlage/\">WG-Kasse-Vorlage</a>", "")
+    .replace("\n  <p>Wenn du WG-Ausgaben und Zahlungen über mehrere Zeiträume festhalten möchtest, nutze die <a href=\"/de/tools/wg-kasse-vorlage/\">WG-Kasse-Vorlage</a>. Sie enthält Excel, Google Sheets und eine einfache CSV-Liste auf Deutsch.</p>", "")
+    .replace("            <p>Für gemeinsame Haushaltskosten hilft dir die <a href=\"/de/tools/wg-kasse-vorlage/\">WG-Kasse-Vorlage</a>, ursprüngliche Ausgaben, spätere Zahlungen und offene Beträge getrennt zu halten.</p>\n", "");
+}
+
 export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedGermanRoommateCopy(html);
   html = normalizeReviewedSpanishRoommateCopy(html);
   html = normalizeReviewedFrenchBorrowCopy(html);
   html = normalizeReviewedArabicBorrowCopy(html);

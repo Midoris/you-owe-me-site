@@ -305,6 +305,7 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 - [Ausgaben aufteilen: Rechner für gemeinsame Kosten](https://you-owe-me.com/de/tools/ausgaben-aufteilen/)
 - [Freundlich um Rückzahlung bitten](https://you-owe-me.com/de/blog/geld-freundlich-zurueckfordern/) — 10 Nachrichten, ein Beispiel mit Teilzahlungen und eine Vorlage für deine Aufzeichnungen.
 - [Freunde um Geld bitten](https://you-owe-me.com/de/blog/freunde-um-geld-bitten/) — Wie fragst du Freunde nach einem kleinen Darlehen? 8 natürliche Nachrichten, klare Absprachen zur Rückzahlung und eine Vorlage für deinen Überblick.
+- [WG-Kasse-Vorlage](https://you-owe-me.com/de/tools/wg-kasse-vorlage/) — WG-Ausgaben, Zahlungen und offene Beträge übersichtlich festhalten. Kostenlose deutsche Vorlage für Excel und Google Sheets, für zwei bis sechs Personen.
 <!-- german-pages:end -->
 
 <!-- arabic-pages:start -->

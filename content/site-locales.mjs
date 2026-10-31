@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "roommatees20261031",
+  "/scripts/analytics.js": "roommatede20261031",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -110,6 +110,21 @@ export const germanPages = [
       "useWhen": "Vor einer privaten Bitte um Geld und nach einer Zusage.",
       "nextStep": "Private Darlehen festhalten",
       "primaryCta": "Zu den 8 Nachrichten"
+    }
+  },
+  {
+    "en": "/tools/roommate-expense-tracker-template/",
+    "de": "/de/tools/wg-kasse-vorlage/",
+    "title": "WG-Kasse-Vorlage",
+    "updated": "2026-10-31",
+    "complete": true,
+    "discoveryDescription": "WG-Ausgaben, Zahlungen und offene Beträge übersichtlich festhalten. Kostenlose deutsche Vorlage für Excel und Google Sheets, für zwei bis sechs Personen.",
+    "registry": {
+      "primaryAudience": "Menschen in einer WG, die vereinbarte Ausgaben, Zahlungen untereinander und offene Beträge gemeinsam nachvollziehen möchten.",
+      "problemSolved": "Gemeinsame Ausgaben und spätere Zahlungen getrennt erfassen, damit offene Beträge pro Person nachvollziehbar bleiben.",
+      "useWhen": "Beim Pflegen der WG-Kasse, bei der Monatsabrechnung oder beim Übernehmen noch offener Beträge in einen neuen Zeitraum.",
+      "nextStep": "Offene Beträge in You Owe Me festhalten",
+      "primaryCta": "Excel-Vorlage herunterladen"
     }
   },
 ];

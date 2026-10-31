@@ -48,7 +48,7 @@ test("German authored pages remain identical to their finalized release outside 
     .replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g, "")
     .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "")
     .replace(/((?:src|href)=")([^"?]+)(?:\?v=[^"&]+)?(")/g, (original, start, asset, end) => sharedAssetVersions[asset] ? `${start}${asset}?v=reviewed-shared-cache${end}` : original);
-  for (const page of germanPages.filter(page => page.de !== "/de/blog/geld-freundlich-zurueckfordern/" && page.de !== "/de/blog/freunde-um-geld-bitten/")) {
+  for (const page of germanPages.filter(page => page.de !== "/de/blog/geld-freundlich-zurueckfordern/" && page.de !== "/de/blog/freunde-um-geld-bitten/" && page.de !== "/de/tools/wg-kasse-vorlage/")) {
     const file = `${page.de.slice(1)}index.html`;
     const baseline = execFileSync("git", ["show", `f3aee78:${file}`], { encoding: "utf8" });
     assert.equal(normalize(fs.readFileSync(new URL(`../${file}`, import.meta.url), "utf8")), normalize(baseline), page.de);

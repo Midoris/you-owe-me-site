@@ -1,4 +1,4 @@
-import { normalizeReviewedSpanishRoommateCopy, normalizeReviewedArabicBorrowCopy } from "../tests/helpers/reviewed-language-copy.mjs";
+import { normalizeReviewedGermanRoommateCopy, normalizeReviewedSpanishRoommateCopy, normalizeReviewedArabicBorrowCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
@@ -47,7 +47,7 @@ test('Arabic borrowing guide retains reviewed payloads, matching FAQ, official b
  const visible=env.document.querySelectorAll('.borrow-ar-faq details');
  assert.deepEqual(visible.map(node=>({question:node.querySelector('summary').textContent,answer:node.querySelector('p').textContent})),expected.faq);
  assert.equal(localizedSourceRoute(route),sourceRoute);
- assert.equal(contentRegistry.length,119);
+ assert.equal(contentRegistry.length,120);
  const registry=contentRegistry.find(entry=>entry.url===route);
  assert.equal(registry.appStoreCpp,'general');assert.equal(registry.locale,'ar');
  assert.equal(siteLocales.find(locale=>locale.code==='ar').pages.length,7);
@@ -99,7 +99,7 @@ test('Arabic handoff allowlist forwards only existing metadata keys',()=>{
 
 
 test('previous borrowing guides and Arabic repayment guide preserve accepted authored bytes',()=>{
- const normalize=html=>normalizeReviewedSpanishRoommateCopy(normalizeReviewedArabicBorrowCopy(html))
+ const normalize=html=>normalizeReviewedSpanishRoommateCopy(normalizeReviewedArabicBorrowCopy(normalizeReviewedGermanRoommateCopy(html)))
   .replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g,'')
   .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g,'')
   .replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)(?:\?[^" ]*)?/g,'$1?v=approved-cache');

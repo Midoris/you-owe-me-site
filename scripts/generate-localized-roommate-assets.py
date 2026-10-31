@@ -20,6 +20,10 @@ ROOT = Path(__file__).resolve().parents[1]
 RUNTIME = Path.home() / ".cache/codex-runtimes/codex-primary-runtime/dependencies"
 BUILDER = ROOT / "scripts/build-roommate-expense-tracker-workbook.mjs"
 GENERATOR = ROOT / "scripts/generate-roommate-expense-tracker-assets.py"
+APP_ROUTES = {
+    "es": "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/",
+    "de": "https://you-owe-me.com/de/loesungen/app-fuer-geldforderungen/",
+}
 
 
 def js_string(value: str) -> str:
@@ -37,21 +41,24 @@ def localized_builder_source(copy: dict, edition: str = "excel") -> str:
         source = source.replace(js_string(original), js_string(translated))
         for quote in ("'",):
             source = source.replace(f"{quote}{original}{quote}", f"{quote}{translated}{quote}")
-    # These two labels are assembled dynamically by the canonical six-slot model.
+    # Derive the canonical six-slot labels from exact reviewed copy. Keep the
+    # Spanish emitted source identical while admitting the German labels.
+    slot = mappings["Roommate 1"].replace("1", "${index + 1}")
+    name_slot = mappings["Roommate 1 name"].replace("1", "${index + 1}")
     for index in range(1, 7):
-        assert mappings[f"Roommate {index}"] == f"Persona {index}"
-        assert mappings[f"Roommate {index} name"] == f"Nombre de la persona {index}"
-    source = source.replace("`Roommate ${index + 1} name`", "`Nombre de la persona ${index + 1}`")
-    source = source.replace('"Roommate ${index + 1}"', '"Persona ${index + 1}"')
+        assert mappings[f"Roommate {index}"] == slot.replace("${index + 1}", str(index))
+        assert mappings[f"Roommate {index} name"] == name_slot.replace("${index + 1}", str(index))
+    source = source.replace("`Roommate ${index + 1} name`", "`" + name_slot + "`")
+    source = source.replace('"Roommate ${index + 1}"', '"' + slot + '"')
     source = source.replace('const dateFormat = "yyyy-mm-dd";', f'const dateFormat = {js_string(copy["date_format"])};')
-    source = source.replace("https://you-owe-me.com/solutions/roommate-expense-tracker/", "https://you-owe-me.com/es/soluciones/app-para-registrar-dinero-adeudado/")
+    source = source.replace("https://you-owe-me.com/solutions/roommate-expense-tracker/", APP_ROUTES[copy["locale"]])
     # Current artifact-tool requires the explicit enum for the existing Sheets
     # hyperlink's single underline. This retains the canonical visual intent.
     source = source.replace("underline: true", 'underline: "single"')
     if edition == "google-sheets":
         # Google Sheets drops artifact-tool's ISO `t="d"` date cells on import.
         # Standard numeric Excel date serials retain the exact source dates and
-        # the existing dd/mm/yyyy display. The public Excel edition is unchanged.
+        # the reviewed date display. The public Excel edition is unchanged.
         for original, serial in [("2026-05-01", 46143), ("2026-05-05", 46147), ("2026-05-12", 46154), ("2026-05-20", 46162)]:
             token = f'new Date("{original}T00:00:00Z")'
             assert source.count(token) == 1
@@ -89,17 +96,17 @@ def main() -> None:
     parser.add_argument("--edition", choices=("excel", "google-sheets"), default="excel")
     parser.add_argument("--csv", type=Path)
     parser.add_argument("--hero", type=Path)
-    parser.add_argument("--hero-source", type=Path, help="Verified native Spain-locale worksheet-only render")
+    parser.add_argument("--hero-source", type=Path, help="Verified native localized worksheet-only render")
     args = parser.parse_args()
     copy = json.loads(args.copy_file.read_text())
-    if copy["locale"] != "es":
-        raise ValueError("Only the reviewed Spanish copy is implemented")
+    if copy["locale"] not in APP_ROUTES:
+        raise ValueError("Only the reviewed Spanish and German copies are implemented")
     if args.output.resolve() == (ROOT / "downloads/roommate-expense-tracker-template.xlsx").resolve():
         raise ValueError("The English workbook must not be overwritten")
     if args.csv and any(len(row) != 11 for row in copy["csv"]):
         raise ValueError("All CSV records must match the eleven-column header")
     if args.hero and not args.hero_source:
-        raise ValueError("Spanish hero requires a verified native Spain-locale worksheet render; artifact preview has English numeric separators")
+        raise ValueError("Localized hero requires a verified native locale worksheet render; artifact preview has English numeric separators")
     args.output.parent.mkdir(parents=True, exist_ok=True)
     args.preview_dir.mkdir(parents=True, exist_ok=True)
     with tempfile.TemporaryDirectory(prefix="localized-roommate-builder-") as temporary:

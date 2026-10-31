@@ -1,0 +1,10 @@
+/* Keep the copy control unavailable until its localized handler is installed. */
+.roommate-template-page.site-lang-de .roommate-template-copy-button[hidden] {
+  display: none !important;
+}
+
+/* Preserve short amounts and the brand without preventing sentence wrapping. */
+.roommate-template-page.site-lang-de .roommate-template-amount,
+.roommate-template-page.site-lang-de .roommate-template-brand {
+  white-space: nowrap;
+}

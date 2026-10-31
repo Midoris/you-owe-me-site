@@ -1,3 +1,4 @@
+import { normalizeReviewedGermanRoommateCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import { normalizeReviewedSpanishRoommateCopy, normalizeReviewedLanguageCopy, normalizeReviewedGermanRepaymentCopy, normalizeReviewedArabicRepaymentCopy, normalizeReviewedGermanBorrowCopy, normalizeReviewedArabicBorrowCopy, normalizeReviewedFrenchBorrowCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import test from "node:test";
 import assert from "node:assert/strict";
@@ -170,7 +171,7 @@ test("analytics preserves English metadata and maps only completed localized rou
   const baseline = execFileSync("git", ["show", "bfd69d7:scripts/analytics.js"], { encoding: "utf8" });
   const metadata = source.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0];
   assert.equal(metadata.replace("  \"/blog/how-to-import-loan-history/\": { page_type: \"guide\", cluster: \"money_owed_followups\", app_store_cpp: \"default\" },\n", "").replace("  \"/tools/roommate-move-in-checklist/\": { page_type: \"tool\", cluster: \"roommates_household_costs\", app_store_cpp: \"roommates_household_costs\" },\n", "").replace("  \"/tools/tutor-payment-tracker-template/\": { page_type: \"tool\", cluster: \"client_payment_records\", app_store_cpp: \"client_payment_records\" },\n", ""), baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
-  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=roommatees20261031"/);
+  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=roommatede20261031"/);
   const functions = source.match(/function normalizePath\(path\) \{[\s\S]*?\nfunction sanitizeText/)[0].replace(/\nfunction sanitizeText$/, "");
   const context = { window: { location: { pathname: "/" } }, localizedSourceRoute: route => localizedSourceRoute(route, threeLocales()) };
   vm.createContext(context);
@@ -220,6 +221,7 @@ test("reviewed native registry prose overrides only five editorial fields and re
 
 test("native navigation is closed only on reviewed localized disclosure routes", () => {
   const targets = new Map([
+    ["/de/tools/wg-kasse-vorlage/", ["site-german-disclosure", "Seiten auf Deutsch"]],
     ["/es/blog/como-pedir-dinero-prestado-a-un-amigo/", ["site-spanish-disclosure", "Más guías en español"]],
     ["/es/blog/como-pedir-que-te-devuelvan-dinero/", ["site-spanish-disclosure", "Más guías en español"]],
     ["/es/herramientas/plantilla-gastos-piso-compartido/", ["site-spanish-disclosure", "Más guías en español"]],
@@ -248,6 +250,7 @@ test("original localized navigation retains its immutable pre-polish baseline", 
   const frenchRoute = "/fr/blog/comment-reclamer-son-argent-poliment/";
   const targets = new Set(["/es/blog/como-pedir-dinero-prestado-a-un-amigo/", "/es/blog/como-pedir-que-te-devuelvan-dinero/"]);
   function approved(html, baseline) {
+    html = normalizeReviewedGermanRoommateCopy(html);
     html = normalizeReviewedSpanishRoommateCopy(normalizeReviewedFrenchBorrowCopy(normalizeReviewedArabicBorrowCopy(normalizeReviewedGermanBorrowCopy(normalizeReviewedArabicRepaymentCopy(normalizeReviewedGermanRepaymentCopy(html))))))
       .replace('    <link rel="alternate" hreflang="fr" href="https://you-owe-me.com/fr/blog/comment-demander-de-l-argent-a-un-ami/" />\n', "")
       .replace('<span aria-hidden="true"> · </span><a href="/fr/blog/comment-demander-de-l-argent-a-un-ami/" lang="fr" hreflang="fr">Français</a>', "")
@@ -267,7 +270,7 @@ test("original localized navigation retains its immutable pre-polish baseline", 
     }
     return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)(?:\?[^" ]*)?/g, '$1?v=approved-cache');
   }
-  for (const locale of siteLocales.filter(item => item.code !== "en")) for (const page of locale.pages.filter(item => item.complete && item[locale.code] !== frenchRoute && item[locale.code] !== "/de/blog/geld-freundlich-zurueckfordern/" && item[locale.code] !== "/ar/blog/how-to-remind-someone-they-owe-you-money-politely/" && item[locale.code] !== "/de/blog/freunde-um-geld-bitten/" && item[locale.code] !== "/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/" && item[locale.code] !== "/fr/blog/comment-demander-de-l-argent-a-un-ami/" && item[locale.code] !== "/es/herramientas/plantilla-gastos-piso-compartido/")) {
+  for (const locale of siteLocales.filter(item => item.code !== "en")) for (const page of locale.pages.filter(item => item.complete && item[locale.code] !== frenchRoute && item[locale.code] !== "/de/blog/geld-freundlich-zurueckfordern/" && item[locale.code] !== "/ar/blog/how-to-remind-someone-they-owe-you-money-politely/" && item[locale.code] !== "/de/blog/freunde-um-geld-bitten/" && item[locale.code] !== "/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/" && item[locale.code] !== "/fr/blog/comment-demander-de-l-argent-a-un-ami/" && item[locale.code] !== "/es/herramientas/plantilla-gastos-piso-compartido/" && item[locale.code] !== "/de/tools/wg-kasse-vorlage/")) {
     const route = page[locale.code];
     const baseline = execFileSync("git", ["show", `739ee644646dff36eeeb646e6848c7b884cdfb51:${route.slice(1)}index.html`], { encoding: "utf8" });
     const rendered = renderLocaleHtml(baseline, page.en, locale.code);

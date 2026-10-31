@@ -1,0 +1,4 @@
+Datum,Art des Eintrags,Ausgabe oder Zahlung,Kategorie,Betrag,Bezahlt von oder Absender,Empfänger,Aufteilung,Beteiligte Personen,Vereinbarte Beträge,Notizen
+2026-05-01,Ausgabe,Miete,Miete,1800.00,Mia,,Gleichmäßig unter Beteiligten,"Mia, Jonas, Lea",Mia 600.00; Jonas 600.00; Lea 600.00,Fiktives Beispiel in EUR. Ersetze diese Zeile durch eigene Angaben. Diese CSV-Datei berechnet keine Salden.
+2026-05-05,Ausgabe,Internet,Internet,60.00,Jonas,,Gleichmäßig unter Beteiligten,"Mia, Jonas, Lea",Mia 20.00; Jonas 20.00; Lea 20.00,Beispielausgabe; ersetzen oder löschen.
+2026-05-20,Zahlung,Zahlung an Mia,,200.00,Jonas,Mia,,,,Separat erfasste Beispielzahlung; ersetzen oder löschen.

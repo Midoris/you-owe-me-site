@@ -1,0 +1,50 @@
+{
+  "message": "Hier ist unsere WG-Abrechnung für diesen Monat. Sie enthält die eingetragenen Ausgaben, unsere vereinbarte Aufteilung und die Zahlungen, die schon erfolgt sind. Schaut bitte kurz nach, ob alles mit euren eigenen Notizen übereinstimmt. Wenn etwas fehlt oder anders aussieht, klären wir das vor dem Überweisen.",
+  "faq": [
+    {
+      "question": "Was hält die WG-Kasse-Vorlage fest?",
+      "answer": "Sie zeigt gemeinsame Ausgaben, wer bezahlt hat, die vereinbarten Anteile, bereits erfolgte Zahlungen und noch offene Beträge. Du kannst sie für mehrere Abrechnungszeiträume verwenden, indem du jeweils eine neue Kopie anlegst."
+    },
+    {
+      "question": "Können wir Kosten unterschiedlich aufteilen?",
+      "answer": "Ja. Wähle Vereinbarte Beträge, wenn ihr bereits festgelegt habt, wer welchen Anteil trägt. Die Summe der Anteile muss dem Betrag der Ausgabe entsprechen."
+    },
+    {
+      "question": "Kann ich jemanden bei einer Ausgabe ausschließen?",
+      "answer": "Ja. Wähle nur die Personen aus, die diese Ausgabe teilen. Private Einkäufe oder Kosten, die nur einen Teil der WG betreffen, müssen nicht automatisch auf alle verteilt werden."
+    },
+    {
+      "question": "Wie erfasse ich eine Zahlung zwischen zwei Personen?",
+      "answer": "Trage sie separat im Blatt Zahlungen ein: mit Datum, Absender, Empfänger und Betrag. So ändert sich der offene Saldo, ohne dass die ursprüngliche Ausgabe überschrieben wird."
+    },
+    {
+      "question": "Kann ich einen offenen Betrag in den nächsten Monat übernehmen?",
+      "answer": "Ja. Übernimm die geprüften Endsalden genau einmal als Anfangssalden des neuen Zeitraums. Trage dieselben Beträge nicht zusätzlich als Ausgaben ein und zähle keine Zahlung doppelt."
+    },
+    {
+      "question": "Erhält die Website meine Tabellendaten?",
+      "answer": "You Owe Me erhält keine der Ausgaben, die du einträgst. Die Excel-Datei bleibt dort, wo du sie speicherst, solange du sie nicht hochlädst oder teilst. Deine Google-Sheets-Kopie liegt in deinem Google-Konto. Du bestimmst, wer darauf zugreifen darf."
+    },
+    {
+      "question": "Wie verwende ich die Vorlage in Google Sheets?",
+      "answer": "Wähle In Google Sheets verwenden, melde dich bei Bedarf bei Google an und erstelle eine Kopie in deinem Drive. Trage die Namen unter Einrichtung und die Einträge unter Ausgaben und Zahlungen ein. Prüft vor dem Ausgleichen die Übersicht."
+    },
+    {
+      "question": "Funktioniert die Excel-Datei auch in Apple Numbers?",
+      "answer": "Die Datei verwendet gängige Formeln. Darstellung, Dropdown-Menüs oder Berechnungen können sich beim Öffnen in Numbers trotzdem anders verhalten. Prüfe die Ergebnisse nach dem Import. Für Google Sheets verwende die separate Vorlage auf dieser Seite."
+    },
+    {
+      "question": "Wie viele Einträge passen in die Vorlage?",
+      "answer": "Jede Version bietet 200 Zeilen für Ausgaben und 200 für Zahlungen. Lege für den nächsten Zeitraum eine neue Kopie an und übernimm die geprüften Endsalden einmal als Anfangssalden."
+    }
+  ],
+  "ui": {
+    "initial": "Nachricht kopieren",
+    "success": "Kopiert",
+    "successStatus": "Nachricht zur Abrechnung kopiert.",
+    "manual": "Der Text ist markiert. Nutze die Kopierfunktion deines Geräts.",
+    "failure": "Kopieren hat nicht funktioniert. Markiere die Nachricht und kopiere sie manuell.",
+    "noJS": "JavaScript ist deaktiviert. Du kannst die Nachricht markieren und manuell kopieren.",
+    "busy": "Wird kopiert…"
+  }
+}
