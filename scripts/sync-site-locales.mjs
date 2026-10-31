@@ -65,7 +65,9 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
   const marker = locale.sectionMarker;
   html = html.replace(new RegExp(`\\s*<!-- ${marker}-section:start -->[\\s\\S]*?<!-- ${marker}-section:end -->`, "g"), "");
   const sectionNav = `<nav class="${locale.sectionClass}" aria-label="${esc(locale.shared.sectionLabel)}">${nav}</nav>`;
-  const sectionContent = lang === "es" && spanishDisclosureRoutes.has(route)
+  const sectionContent = lang === "de" && route === "/de/blog/geld-freundlich-zurueckfordern/"
+    ? `<details class="site-german-disclosure"><summary>Seiten auf Deutsch</summary>${sectionNav}</details>`
+    : lang === "es" && spanishDisclosureRoutes.has(route)
     ? `<details class="site-spanish-disclosure"><summary>Más guías en español</summary>${sectionNav}</details>`
     : lang === "fr" && route === frenchRepaymentRoute
       ? `<details class="site-french-disclosure"><summary>Pages en français</summary>${sectionNav}</details>`

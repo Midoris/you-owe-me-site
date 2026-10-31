@@ -302,6 +302,7 @@ Contenido público en español. Cada página conserva su propia URL canónica; l
 - [Wer schuldet mir Geld? So behältst du den Überblick](https://you-owe-me.com/de/blog/wer-schuldet-mir-geld/)
 - [Private Darlehen und Rückzahlungen verwalten](https://you-owe-me.com/de/loesungen/private-darlehen-verwalten/)
 - [Ausgaben aufteilen: Rechner für gemeinsame Kosten](https://you-owe-me.com/de/tools/ausgaben-aufteilen/)
+- [Freundlich um Rückzahlung bitten](https://you-owe-me.com/de/blog/geld-freundlich-zurueckfordern/) — 10 Nachrichten, ein Beispiel mit Teilzahlungen und eine Vorlage für deine Aufzeichnungen.
 <!-- german-pages:end -->
 
 <!-- arabic-pages:start -->

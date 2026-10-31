@@ -1,0 +1,121 @@
+{
+  "messages": [
+    {
+      "number": 1,
+      "heading": "Zum ersten Mal nachfragen",
+      "guidance": "Nenne den Betrag und den Anlass. Frage nach einem passenden Termin, statt eine Erklärung zu verlangen.",
+      "payload": "Hey [Name], ich wollte wegen der [Betrag und Währung] nachfragen, die ich dir für [Anlass] geliehen habe. Wann könntest du sie mir zurückzahlen?",
+      "template": "de_repayment_first_reminder",
+      "tone": "friendly"
+    },
+    {
+      "number": 2,
+      "heading": "Einen vereinbarten Termin bestätigen",
+      "guidance": "Für eine kurze Nachfrage vor dem Termin, den ihr bereits abgesprochen habt.",
+      "payload": "Hey [Name], wir hatten für die Rückzahlung der [Betrag und Währung] den [Datum] vereinbart. Passt der Termin für dich noch? Sag bitte Bescheid, falls wir noch einmal darüber sprechen müssen.",
+      "template": "de_repayment_confirm_date",
+      "tone": "neutral"
+    },
+    {
+      "number": 3,
+      "heading": "Der vereinbarte Termin ist vorbei",
+      "guidance": "Bleib beim offenen Betrag und bei eurer Absprache. Bitte um einen realistischen neuen Termin.",
+      "payload": "Hey [Name], der vereinbarte Termin am [Datum] ist inzwischen vorbei. Es sind noch [Betrag und Währung] offen. Kannst du mir sagen, wann du den Betrag zurückzahlen kannst?",
+      "template": "de_repayment_date_passed",
+      "tone": "clear"
+    },
+    {
+      "number": 4,
+      "heading": "Nach einer Teilzahlung",
+      "guidance": "Bestätige den Eingang und nenne den neuen Restbetrag. Fordere nicht noch einmal den ursprünglichen Betrag.",
+      "payload": "Danke für die [erhaltener Betrag und Währung] vom [Datum]. Von den ursprünglich geliehenen [Betrag und Währung] sind jetzt noch [Restbetrag und Währung] offen. Wann würde es dir mit dem Rest passen?",
+      "template": "de_repayment_partial_payment",
+      "tone": "friendly"
+    },
+    {
+      "number": 5,
+      "heading": "Es gab noch keinen Termin",
+      "guidance": "Vereinbart jetzt einen Termin. Ohne vorherige Absprache solltest du die Zahlung nicht als verspätet darstellen.",
+      "payload": "Hey [Name], als ich dir [Betrag und Währung] für [Anlass] geliehen habe, hatten wir noch keinen Rückzahlungstermin festgelegt. Können wir das jetzt nachholen? Welcher Termin wäre für dich machbar?",
+      "template": "de_repayment_no_date",
+      "tone": "neutral"
+    },
+    {
+      "number": 6,
+      "heading": "Eine gemeinsame Ausgabe abrechnen",
+      "guidance": "Bitte um den vereinbarten Anteil dieser Person. Gleiche Anteile sind nicht automatisch die richtige Aufteilung.",
+      "payload": "Hey [Name], für deinen vereinbarten Anteil an [Ausgabe] sind noch [Betrag und Währung] offen. Wann kannst du mir den Betrag schicken? Falls du auf eine andere Summe kommst, schauen wir die Aufteilung zusammen an.",
+      "template": "de_repayment_shared_expense",
+      "tone": "neutral"
+    },
+    {
+      "number": 7,
+      "heading": "Eine Nachricht blieb unbeantwortet",
+      "guidance": "Frage ruhig noch einmal nach. Vermeide mehrere Nachrichten direkt hintereinander oder eine öffentliche Nachfrage im Gruppenchat.",
+      "payload": "Hey [Name], ich wollte noch einmal auf meine Nachricht wegen der offenen [Betrag und Währung] zurückkommen. Kannst du mir kurz sagen, wie es mit der Rückzahlung aussieht? Falls der besprochene Termin nicht klappt, lass uns einen neuen vereinbaren.",
+      "template": "de_repayment_no_reply",
+      "tone": "clear"
+    },
+    {
+      "number": 8,
+      "heading": "Die andere Person braucht mehr Zeit",
+      "guidance": "Wenn du eine neue Absprache treffen möchtest, halte geplante und bereits erhaltene Zahlungen getrennt.",
+      "payload": "Danke, dass du mir Bescheid gesagt hast. Es sind noch [Restbetrag und Währung] offen. Welchen Betrag könntest du bis wann zurückzahlen? Dann können wir gemeinsam festhalten, wie es mit dem Rest weitergeht.",
+      "template": "de_repayment_more_time",
+      "tone": "friendly"
+    },
+    {
+      "number": 9,
+      "heading": "War es ein Darlehen oder ein Geschenk?",
+      "guidance": "Klärt zuerst, was ihr beide verstanden habt. Eine ungeklärte Erwartung ist noch keine gemeinsame Rückzahlungsvereinbarung.",
+      "payload": "Hey [Name], ich bin davon ausgegangen, dass du mir die [Betrag und Währung] für [Anlass] zurückzahlst. Bevor wir über einen Termin sprechen, würde ich gern klären, wie du das verstanden hast.",
+      "template": "de_repayment_loan_or_gift",
+      "tone": "neutral"
+    },
+    {
+      "number": 10,
+      "heading": "Alles ist zurückgezahlt",
+      "guidance": "Prüfe den letzten Zahlungseingang und bestätige anschließend, dass für dieses Darlehen nichts mehr offen ist.",
+      "payload": "Danke, die letzten [Betrag und Währung] sind angekommen. Damit sind die geliehenen [ursprünglicher Betrag und Währung] vollständig zurückgezahlt. Ich habe meine Übersicht aktualisiert.",
+      "template": "de_repayment_fully_repaid",
+      "tone": "friendly"
+    }
+  ],
+  "record": "Person: [Name]\nAnlass: [Wofür wurde das Geld geliehen?]\nUrsprünglicher Betrag: [Betrag und Währung]\nDatum der Auszahlung: [Datum]\nErhaltene Rückzahlungen: [Datum — Betrag und Währung; eine Zeile je Zahlung]\nInsgesamt zurückgezahlt: [Betrag und Währung]\nNoch offen: [Betrag und Währung]\nNächster vereinbarter Termin oder nächstes Gespräch: [Datum und Absprache]\nZuletzt aktualisiert: [Datum]",
+  "faq": [
+    {
+      "question": "Wie frage ich freundlich nach geliehenem Geld?",
+      "answer": "Nenne den Betrag und den Anlass und frage nach einem möglichen Rückzahlungstermin. Prüfe vorher, was schon zurückgezahlt wurde. Zum Beispiel: „Hey [Name], ich wollte wegen der [Betrag und Währung] für [Anlass] nachfragen. Wann könntest du sie mir zurückzahlen?“"
+    },
+    {
+      "question": "Was schreibe ich nach einer Teilzahlung?",
+      "answer": "Bedanke dich für den erhaltenen Betrag und nenne den neuen Rest. Bei 120 € geliehenem Geld und 40 € Rückzahlung sind noch 80 € offen. Ein neuer Termin allein ändert den offenen Betrag nicht. Erst eine tatsächlich erhaltene Rückzahlung verringert ihn."
+    },
+    {
+      "question": "Was mache ich, wenn wir keinen Termin vereinbart haben?",
+      "answer": "Frage nach einem realistischen Termin und haltet eure Absprache fest. Stelle die Zahlung nicht als verspätet dar, wenn es vorher keinen vereinbarten Termin gab."
+    },
+    {
+      "question": "Was ist, wenn wir unterschiedliche Beträge im Kopf haben?",
+      "answer": "Vergleicht den ursprünglichen Betrag, alle erhaltenen Rückzahlungen und die jeweiligen Daten. Bei gemeinsamen Ausgaben prüft ihr außerdem die vereinbarten Anteile. Wenn unklar ist, ob das Geld geliehen oder geschenkt war, klärt das zuerst."
+    },
+    {
+      "question": "Muss die andere Person You Owe Me installieren?",
+      "answer": "Nein. Du kannst deine eigenen Aufzeichnungen auf iPhone und iPad führen, auch wenn die andere Person die App nicht nutzt."
+    },
+    {
+      "question": "Werden diese Nachrichten automatisch verschickt?",
+      "answer": "Nein. Du kopierst und verschickst die Nachrichten selbst über den Weg deiner Wahl. You Owe Me hilft dir, Beträge und Rückzahlungen festzuhalten. Die eigentliche Zahlung erfolgt außerhalb der App."
+    }
+  ],
+  "ui": {
+    "Initial message label": "Nachricht kopieren",
+    "Initial record label": "Vorlage kopieren",
+    "Busy label": "Wird kopiert…",
+    "Successful button label": "Kopiert",
+    "Successful live status": "Text kopiert.",
+    "Manual selection status": "Automatisches Kopieren ist nicht verfügbar. Der Text ist markiert; kopiere ihn bitte selbst.",
+    "Terminal failure status": "Der Text konnte nicht automatisch kopiert werden. Markiere ihn und kopiere ihn bitte selbst.",
+    "No JavaScript hint": "JavaScript ist deaktiviert. Markiere den Text, um ihn zu kopieren."
+  }
+}

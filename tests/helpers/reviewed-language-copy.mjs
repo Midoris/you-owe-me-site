@@ -2,7 +2,8 @@ import fs from "node:fs";
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
 // October 20 independent review: normalize only the approved stale website-language FAQ correction.
-export function normalizeReviewedLanguageCopy(html) {
+// Exact reviewed Stats additions from production commit 69b3628 (October 30).
+export function normalizeReviewedStatsCopy(html) {
   // October 30 Stats release: allow only exact reviewed localized additions.
   // Any later edit to these blocks remains visible to the preservation checks.
   for (const [file, insertion] of Object.entries(statsApprovedCopy.insertions)) {
@@ -15,6 +16,25 @@ export function normalizeReviewedLanguageCopy(html) {
         .replace(statsApprovedCopy.updatedDateModified[file], statsApprovedCopy.originalDateModified[file]);
     }
   }
+  return html;
+}
+
+export function normalizeReviewedGermanRepaymentCopy(html) {
+  // LOC-01: only the five exact reviewed German guide anchors and two context links.
+  html = html.replace("\n              <a href=\"/de/blog/geld-freundlich-zurueckfordern/\">Freundlich um Rückzahlung bitten</a>", "");
+  html = html.replaceAll("<a href=\"/de/blog/geld-freundlich-zurueckfordern/\" class=\"lt-cardCta\">Leitfaden für freundliche Erinnerungen lesen</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">Leitfaden für freundliche Erinnerungen lesen (auf Englisch)</a>");
+  html = html.replaceAll("<a href=\"/de/blog/geld-freundlich-zurueckfordern/\" class=\"lt-cardCta\">Leitfaden für freundliche Erinnerungen lesen </a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">Leitfaden für freundliche Erinnerungen lesen <span class=\"site-locale-fallback\">(auf Englisch)</span></a>");
+  html = html.replaceAll("<a href=\"/de/blog/geld-freundlich-zurueckfordern/\">Freundlich an einen offenen Betrag erinnern</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">Freundlich an einen offenen Betrag erinnern (auf Englisch)</a>");
+  html = html.replaceAll("<a href=\"/de/blog/geld-freundlich-zurueckfordern/\">Freundlich an einen offenen Betrag erinnern </a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">Freundlich an einen offenen Betrag erinnern <span class=\"site-locale-fallback\">(auf Englisch)</span></a>");
+  html = html.replaceAll("<a href=\"/de/blog/geld-freundlich-zurueckfordern/\">freundlichen Formulierungen für Zahlungserinnerungen </a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">freundlichen Formulierungen für Zahlungserinnerungen <span class=\"site-locale-fallback\">(auf Englisch)</span></a>");
+  html = html.replace("\n                <p>Bevor du nachfragst, prüfe die bereits erhaltenen Zahlungen. Hier findest du <a href=\"/de/blog/geld-freundlich-zurueckfordern/\">freundliche Nachrichten für die Rückzahlung</a>, die du an euren aktuellen Stand anpassen kannst.</p>", "");
+  html = html.replace("\n              <p>Wenn der offene Betrag feststeht, kannst du <a href=\"/de/blog/geld-freundlich-zurueckfordern/\">eine passende Nachricht auswählen</a>. Berücksichtige dabei die bisherigen Rückzahlungen und eure letzte Absprache.</p>", "");
+  return html;
+}
+
+export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedGermanRepaymentCopy(html);
+  html = normalizeReviewedStatsCopy(html);
   html = html.replace('The full website is available in English, with selected pages also available in Spanish, German, Arabic and French.', 'Language availability applies to the app; the You Owe Me website is currently available in English only.');
   html = html.replace('Este sitio web ofrece páginas en español, alemán, árabe y francés, además de todos sus contenidos en inglés. Los enlaces a recursos en inglés se indican como tales.', 'Este sitio web ofrece una sección en español; otros recursos siguen disponibles en inglés y se indican como tales.');
   html = html.replace('Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch und Französisch sowie alle Inhalte auf Englisch. Weiterführende Inhalte auf Englisch sind entsprechend gekennzeichnet.', 'Die Website bietet Bereiche auf Deutsch und Spanisch. Weiterführende Inhalte auf Englisch sind entsprechend gekennzeichnet.');

@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "repaymentfr20261027",
+  "/scripts/analytics.js": "repaymentde20261031",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -67,6 +67,21 @@ export const germanPages = [
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", de: "/de/blog/wer-schuldet-mir-geld/", title: "Wer schuldet mir Geld? So behältst du den Überblick", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", de: "/de/loesungen/private-darlehen-verwalten/", title: "Private Darlehen und Rückzahlungen verwalten", complete: true },
   { en: "/tools/split-expense-calculator/", de: "/de/tools/ausgaben-aufteilen/", title: "Ausgaben aufteilen: Rechner für gemeinsame Kosten", complete: true },
+  {
+    "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+    "de": "/de/blog/geld-freundlich-zurueckfordern/",
+    "title": "Freundlich um Rückzahlung bitten",
+    "updated": "2026-10-31",
+    "complete": true,
+    "discoveryDescription": "10 Nachrichten, ein Beispiel mit Teilzahlungen und eine Vorlage für deine Aufzeichnungen.",
+    "registry": {
+      "primaryAudience": "Menschen, die eine Rückzahlung unter Freunden oder einen vereinbarten Anteil an gemeinsamen Ausgaben festhalten.",
+      "problemSolved": "Mit einer passenden Nachricht nachfragen und den tatsächlich offenen Betrag berücksichtigen.",
+      "useWhen": "Bei einer Rückfrage, einem neuen Termin oder einer Teilzahlung.",
+      "primaryCta": "Zu den 10 Nachrichten",
+      "nextStep": "Private Darlehen in You Owe Me festhalten"
+    }
+  },
 ];
 
 export const germanShared = Object.freeze({

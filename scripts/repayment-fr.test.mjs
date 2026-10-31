@@ -1,3 +1,4 @@
+import { normalizeReviewedStatsCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
@@ -45,7 +46,7 @@ test('French repayment guide retains reviewed payloads, matching FAQ, official b
  const visible=env.document.querySelectorAll('.repayment-fr-faq details');
  assert.deepEqual(visible.map(node=>({question:node.querySelector('summary').textContent,answer:node.querySelector('p').textContent})),expected.faq);
  assert.equal(localizedSourceRoute(route),sourceRoute);
- assert.equal(contentRegistry.length,113);
+ assert.equal(contentRegistry.length,114);
  const registry=contentRegistry.find(entry=>entry.url===route);
  assert.equal(registry.appStoreCpp,'general');assert.equal(registry.locale,'fr');
  assert.equal(siteLocales.find(locale=>locale.code==='fr').pages.length,6);
@@ -96,7 +97,8 @@ test('French handoff allowlist forwards only existing metadata keys',()=>{
 });
 
 test('all original French page text is preserved outside exact approved navigation and context additions',()=>{
- const cache=html=>html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)(?:\?[^" ]*)?/g,'$1?v=approved-cache');
+ // Preserve the original baseline; remove only exact approved October 30 Stats delta (69b3628).
+ const cache=html=>normalizeReviewedStatsCopy(html).replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)(?:\?[^" ]*)?/g,'$1?v=approved-cache');
  const navAddition='\n              <a href="'+route+'">Messages de remboursement</a>';
  const paragraphs=[
   '            <p>Avant de relancer, vérifiez les paiements déjà reçus. Retrouvez des <a href="'+route+'">messages pour demander un remboursement</a> adaptés à votre situation.</p>\n',
