@@ -285,7 +285,22 @@ export const japanesePages = [
       "primaryCta": "App Storeからダウンロード",
       "nextStep": "You Owe Meをダウンロードして、相手と金額を登録しましょう。"
     }
+  },
+{
+  "en": "/solutions/app-to-track-money-owed/",
+  "ja": "/ja/solutions/app-to-track-money-owed/",
+  "title": "貸したお金の管理アプリ",
+  "updated": "2026-10-31",
+  "complete": true,
+  "discoveryDescription": "誰にいくら貸して、いくら返してもらったか。You Owe Meなら、貸し借りと返済を相手ごとに記録して残額を確認できます。日本語対応のiPhone・iPadアプリ。",
+  "registry": {
+    "primaryAudience": "友人や家族への貸し借り、立て替え、一部返済を継続して記録したい方。",
+    "problemSolved": "相手ごとに元の金額と返済の履歴を残し、まだ返してもらっていない金額を確認できます。",
+    "useWhen": "返済が何回かに分かれるときや、同じ相手とのお金のやり取りが続くとき。",
+    "primaryCta": "App Storeからダウンロード",
+    "nextStep": "You Owe Meに相手と金額を登録し、返済があるたびに記録しましょう。"
   }
+}
 ];
 export const japaneseShared = Object.freeze({
   "languageLabel": "ページの言語",

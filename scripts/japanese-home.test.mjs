@@ -24,8 +24,8 @@ test('Japanese home retains all ten reviewed FAQs and all twenty-one translated 
  assert.ok(page.includes('子どもたちも、借りた金額や返した金額を忘れずに済みます。'));
 });
 
-test('Japanese admission is home-only with reciprocal six-language discovery, exact route semantics and fullwidth fallback removal',()=>{
- assert.deepEqual(japanesePages.map(p=>p.ja),['/ja/']);
+test('Japanese admission contains only its reviewed home and solution with exact route semantics and fullwidth fallback removal',()=>{
+ assert.deepEqual(japanesePages.map(p=>p.ja),['/ja/','/ja/solutions/app-to-track-money-owed/']);
  assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja']);
  assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='ja'),false);
  assert.equal(renderLocaleHtml(page,'/','ja'),page);
@@ -43,7 +43,8 @@ test('Japanese source preserves active English section order, CTA tracking ident
  const ids=d=>d.querySelectorAll('#main section').map(n=>n.getAttribute('aria-labelledby'));
  assert.deepEqual(ids(doc),ids(original));
  const attrs=d=>d.querySelectorAll('.best-next-step__card').map(n=>[...n.attributes].filter(([k])=>k==='href'||k.startsWith('data-')));
- assert.deepEqual(attrs(doc),attrs(original));
+ const sourceAttrs=attrs(original);sourceAttrs[0]=sourceAttrs[0].map(([key,value])=>[key,key==='href'?'/ja/solutions/app-to-track-money-owed/':value]);
+ assert.deepEqual(attrs(doc),sourceAttrs);
  assert.equal(doc.querySelectorAll('.lt-situationCard').length,8);assert.equal(doc.querySelectorAll('.lt-resourceShelfLink').length,6);
  const included=doc.querySelectorAll('.lt-checkGrid li')[2];assert.equal(included.children.length,1);assert.equal(included.children[0].tagName,'span');assert.equal(included.querySelectorAll('a').length,2);
  for(const a of doc.querySelectorAll('#main a')){const href=a.getAttribute('href');if(href?.startsWith('/')&&!href.startsWith('/ja/'))assert.ok(text(a).includes('（英語）'),href);if(href?.includes('apps.apple.com'))assert.equal(href,'https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8');}

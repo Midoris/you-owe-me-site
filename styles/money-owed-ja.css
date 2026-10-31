@@ -1,0 +1,21 @@
+/* Native Japanese copy uses the current English solution components and order. */
+html[lang="ja"] body.money-owed-solution-page #navPanel,
+html[lang="ja"] body.money-owed-solution-page #main :is(.lt-eyebrow,summary,.lt-cardCta,.money-owed-first-minute__eyebrow,.lt-statusChip,.lt-maintenanceProof,.lt-pageMeta,.lt-fitLine) {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+}
+html[lang="ja"] body.money-owed-solution-page #main .lt-detailHeroVisual img { max-height: 640px; object-fit: contain; }
+html[lang="ja"] body.money-owed-solution-page #main .lt-detailHeroVisual figcaption { margin-top: 0.8rem; font-size: 0.8rem; line-height: 1.7; color: #52616c; }
+html[lang="ja"] body.money-owed-solution-page #main .lt-breadcrumb > a { min-width: 0; }
+html[lang="ja"] body.money-owed-solution-page #main .lt-breadcrumb { padding-top: 0; }
+html[lang="ja"] body.money-owed-solution-page #main .solution-step-item p .site-locale-fallback { display: inline; margin: 0; font: inherit; width: auto; height: auto; border-radius: 0; background: none; }
+html[lang="ja"] body.money-owed-solution-page #main .lt-cardCta { line-height: 1.55; }
+html[lang="ja"] body.money-owed-solution-page #main .lt-detailHero h1 { text-wrap: balance; }
+html[lang="ja"] body.money-owed-solution-page #main .ja-hero-phrase { white-space: nowrap; }
+@media (max-width: 980px) {
+  html[lang="ja"] body.money-owed-solution-page #main .site-locale-section { padding-top: 3rem; }
+}
+@media (max-width: 736px) {
+  html[lang="ja"] body.money-owed-solution-page #main .lt-detailHero h1 { font-size: clamp(1.6rem, 7.8vw, 2.1rem); }
+}

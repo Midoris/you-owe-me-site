@@ -6,6 +6,10 @@ const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-
 // generated Japanese home counterpart annotations, and five changed shared script pins.
 // Immutable historical commit IDs and all other authored bytes remain checked.
 export function normalizeReviewedJapaneseHomeIntegration(html) {
+  // LOC-11: exact new completed Japanese solution annotations only.
+  html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/solutions/app-to-track-money-owed/" />\n', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/solutions/app-to-track-money-owed/" lang="ja" hreflang="ja">日本語</a>', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/solutions/app-to-track-money-owed/" lang="ja" dir="ltr" hreflang="ja">日本語</a>', '');
   html = html.replaceAll("The full website is available in English, with selected pages also available in Spanish, German, Arabic, French and Japanese.", "The full website is available in English, with selected pages also available in Spanish, German, Arabic and French.");
   html = html.replaceAll("Este sitio web ofrece páginas en español, alemán, árabe, francés y japonés, además de todos sus contenidos en inglés.", "Este sitio web ofrece páginas en español, alemán, árabe y francés, además de todos sus contenidos en inglés.");
   html = html.replaceAll("Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch, Französisch und Japanisch sowie alle Inhalte auf Englisch.", "Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch und Französisch sowie alle Inhalte auf Englisch.");
