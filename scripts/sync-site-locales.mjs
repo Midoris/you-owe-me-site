@@ -65,7 +65,7 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
   const marker = locale.sectionMarker;
   html = html.replace(new RegExp(`\\s*<!-- ${marker}-section:start -->[\\s\\S]*?<!-- ${marker}-section:end -->`, "g"), "");
   const sectionNav = `<nav class="${locale.sectionClass}" aria-label="${esc(locale.shared.sectionLabel)}">${nav}</nav>`;
-  const sectionContent = lang === "ar" && route === "/ar/blog/how-to-remind-someone-they-owe-you-money-politely/"
+  const sectionContent = lang === "ar" && ["/ar/blog/how-to-remind-someone-they-owe-you-money-politely/", "/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/"].includes(route)
     ? `<details class="site-arabic-disclosure"><summary>صفحات بالعربية</summary>${sectionNav}</details>`
     : lang === "de" && ["/de/blog/geld-freundlich-zurueckfordern/", "/de/blog/freunde-um-geld-bitten/"].includes(route)
     ? `<details class="site-german-disclosure"><summary>Seiten auf Deutsch</summary>${sectionNav}</details>`

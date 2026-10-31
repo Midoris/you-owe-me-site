@@ -53,7 +53,16 @@ export function normalizeReviewedGermanBorrowCopy(html) {
   return html;
 }
 
+export function normalizeReviewedArabicBorrowCopy(html) {
+  // LOC-04: exact parent-approved native navigation and two context paragraphs.
+  html = html.replace("\n              <a href=\"/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/\">طلب المال من صديق</a>", "");
+  html = html.replace("\n              <p>قبل استلام المال، يساعدك الاتفاق الواضح على تجنب سوء الفهم. إليك <a href=\"/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/\">رسائل لطلب المال من صديق</a> دون ضغط.</p>", "");
+  html = html.replace("\n<p>هل تريد أن تقترض المال بدلًا من طلب استرجاعه؟ استخدم <a href=\"/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/\">رسائل طلب المال من صديق</a>، وميّز بين الموافقة على الإقراض ووصول المبلغ فعلًا.</p>", "");
+  return html;
+}
+
 export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedArabicBorrowCopy(html);
   html = normalizeReviewedGermanBorrowCopy(html);
   html = normalizeReviewedArabicRepaymentCopy(html);
   html = normalizeReviewedGermanRepaymentCopy(html);

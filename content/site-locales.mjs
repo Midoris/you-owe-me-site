@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "borrowde20261031",
+  "/scripts/analytics.js": "borrowar20261031",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -134,6 +134,21 @@ export const arabicPages = [
       "useWhen": "عند التذكير بالسداد أو الاتفاق على موعد أو استلام دفعة جزئية.",
       "nextStep": "تابع القرض في You Owe Me",
       "primaryCta": "اختر من الرسائل العشر"
+    }
+  },
+  {
+    "en": "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
+    "ar": "/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
+    "title": "طلب المال من صديق",
+    "updated": "2026-10-31",
+    "complete": true,
+    "discoveryDescription": "8 رسائل لطلب المال من صديق دون ضغط، مع أمثلة للاتفاق على السداد ونموذج لتسجيل المبلغ والدفعات. عدّل الرسالة لتناسب موقفك.",
+    "registry": {
+      "primaryAudience": "من يريدون اقتراض المال من صديق والاتفاق معه بوضوح على السداد.",
+      "problemSolved": "صياغة طلب مناسب والتمييز بين الاتفاق واستلام المال ودفعات السداد.",
+      "useWhen": "قبل طلب قرض من صديق وبعد الموافقة عليه.",
+      "nextStep": "متابعة سداد القرض",
+      "primaryCta": "عرض الرسائل الثماني"
     }
   },
 ];
