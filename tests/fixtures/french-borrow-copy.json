@@ -1,0 +1,115 @@
+{
+  "messages": [
+    {
+      "number": 1,
+      "heading": "Faire une demande courte",
+      "guidance": "Quand tu connais le montant nécessaire et une date de remboursement réaliste.",
+      "payload": "Salut [prénom], est-ce que tu pourrais me prêter [montant et devise] pour [raison] ? Je peux te rembourser le [date]. Si ce n’est pas possible pour toi, je comprends.",
+      "template": "fr_friend_borrow_short_ask",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 2,
+      "heading": "Proposer un remboursement en deux fois",
+      "guidance": "Vérifie que les deux versements couvrent bien la totalité du montant demandé.",
+      "payload": "Salut [prénom], est-ce que tu pourrais me prêter [montant total et devise] pour [raison] ? Je pourrais te rembourser [premier montant] le [première date], puis [deuxième montant] le [deuxième date]. Est-ce que ça te conviendrait ? Si tu préfères ne pas le faire, aucun souci.",
+      "template": "fr_friend_borrow_clear_ask_with_repayment_plan",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 3,
+      "heading": "Ne pas encore connaître la date de remboursement",
+      "guidance": "Une date pour donner des nouvelles n’est pas une date de paiement. Fais bien la différence.",
+      "payload": "Salut [prénom], j’aurais besoin de [montant et devise] pour [raison], mais je ne peux pas encore te donner une date de remboursement sûre. Je peux te tenir au courant le [date pour donner des nouvelles]. Je comprends si tu préfères ne pas me prêter d’argent dans ces conditions.",
+      "template": "fr_friend_borrow_cannot_promise_exact_date",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 4,
+      "heading": "Demander une avance pour une dépense",
+      "guidance": "Précise que tu comptes rendre l’argent avancé.",
+      "payload": "Est-ce que tu pourrais payer [dépense] pour moi cette fois-ci ? Ça représente [montant et devise], que je peux te rendre le [date]. Je préfère te demander avant de compter dessus. Si tu ne peux pas, je comprends.",
+      "template": "fr_friend_borrow_cover_something_temporarily",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 5,
+      "heading": "Dire que la demande te gêne",
+      "guidance": "Tu peux reconnaître ton embarras sans en faire une obligation pour ton ami.",
+      "payload": "Ça me gêne un peu de te le demander, mais est-ce que tu pourrais me prêter [montant et devise] pour [raison] ? Je peux te rembourser le [date]. Je ne veux pas te mettre la pression : si ce n’est pas possible, je comprends tout à fait.",
+      "template": "fr_friend_borrow_slightly_more_personal",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 6,
+      "heading": "Accepter un refus",
+      "guidance": "Accepte sa réponse sans insister ni demander de justification.",
+      "payload": "Merci de m’avoir répondu. Je comprends, ne t’inquiète pas.",
+      "template": "fr_friend_borrow_respectful_reply_if_no",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 7,
+      "heading": "Confirmer l’accord après un oui",
+      "guidance": "Avant de recevoir l’argent, vérifiez que vous avez bien prévu les mêmes montants et les mêmes dates.",
+      "payload": "Merci pour ton aide. Pour confirmer ce qu’on a prévu : tu as accepté de me prêter [montant et devise] pour [raison]. Voici le remboursement convenu : [date ou montants et dates des versements]. Je te préviens dès que l’argent est arrivé. Si ma situation change, je t’en parle avant la date prévue.",
+      "template": "fr_friend_borrow_reply_after_yes",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 8,
+      "heading": "Prévenir que tu as besoin de plus de temps",
+      "guidance": "Écris dès que tu sais que tu ne pourras pas respecter la date. Propose seulement ce que tu peux tenir, puis attends sa réponse.",
+      "payload": "Salut [prénom], je te préviens au sujet du remboursement prévu le [date convenue]. Malheureusement, je ne pourrai pas payer comme on l’avait prévu. Je peux te verser [montant et devise] le [date], mais je ne sais pas encore quand je pourrai rembourser le reste. Est-ce qu’on peut en parler ? Je te redonne des nouvelles au plus tard le [date de suivi].",
+      "template": "fr_friend_borrow_need_more_time_update",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    }
+  ],
+  "record": "Personne qui prête l’argent : [prénom]\nPersonne qui emprunte : [ton prénom]\nMontant et devise : [montant et devise]\nRaison : [à quoi servira l’argent]\nDate de réception : [à remplir une fois l’argent reçu]\nRemboursement prévu : [date ou montants et dates des versements]\nRemboursements effectués : [date et montant de chaque paiement]\nReste à rembourser : [montant et devise]\nProchain point, si nécessaire : [date]",
+  "faq": [
+    {
+      "question": "Comment demander de l’argent à un ami par message ?",
+      "answer": "Indique un montant précis, explique brièvement pourquoi et dis quand tu peux rembourser. Si tu ne connais pas encore la date, dis-le. Laisse à ton ami la possibilité de refuser et adapte le message avant de l’envoyer."
+    },
+    {
+      "question": "Que dire si je ne sais pas quand je pourrai rembourser ?",
+      "answer": "Explique-le avant que ton ami te prête l’argent. Tu peux proposer une date pour donner des nouvelles, mais ce n’est pas une promesse de paiement à cette date. Ton ami doit pouvoir décider en le sachant."
+    },
+    {
+      "question": "Comment demander sans mettre la pression ?",
+      "answer": "Fais une demande claire et n’utilise pas votre amitié comme argument. Accepte un refus sans insister. Ne compte pas sur la somme avant votre accord et la réception réelle de l’argent."
+    },
+    {
+      "question": "Est-ce la même chose que demander à être remboursé ?",
+      "answer": "Non. Ici, tu demandes de l’argent que tu comptes rendre plus tard. Si quelqu’un te doit déjà de l’argent, il s’agit d’une demande de remboursement. Un autre guide propose des messages pour cette situation."
+    },
+    {
+      "question": "Devons-nous tous les deux installer You Owe Me ?",
+      "answer": "Non. Tu peux copier les messages sans l’app. Si tu utilises You Owe Me sur ton iPhone ou ton iPad, tu tiens ton propre suivi. L’autre personne n’a pas besoin d’installer l’app."
+    },
+    {
+      "question": "You Owe Me peut-il me prêter de l’argent ?",
+      "answer": "Non. You Owe Me est une app pour noter l’argent que tu dois ou qu’on te doit, les prêts et les remboursements. Elle n’accorde pas de crédits et n’effectue pas de virements."
+    }
+  ],
+  "ui": {
+    "Initial message label": "Copier le message",
+    "Initial record label": "Copier le modèle",
+    "Busy label": "Copie en cours…",
+    "Successful button label": "Copié",
+    "Successful message status": "Message copié. Vérifie les informations avant de l’envoyer.",
+    "Successful record status": "Modèle copié.",
+    "Selected button label": "Texte sélectionné",
+    "Manual selection status": "Le texte est sélectionné. Utilise la fonction de copie de ton appareil.",
+    "Terminal failure status": "La copie automatique a échoué. Sélectionne le texte et copie-le manuellement.",
+    "No JavaScript hint": "JavaScript est désactivé. Tu peux sélectionner le texte et le copier manuellement."
+  }
+}

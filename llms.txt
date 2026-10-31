@@ -331,4 +331,5 @@ Contenus publics en français. Chaque page possède sa propre URL canonique. Les
 - [Suivez vos prêts personnels et leurs remboursements](https://you-owe-me.com/fr/solutions/suivi-remboursement-pret-personnel/)
 - [Calculateur de partage des dépenses](https://you-owe-me.com/fr/outils/calculateur-partage-depenses/)
 - [Messages de remboursement](https://you-owe-me.com/fr/blog/comment-reclamer-son-argent-poliment/) — 10 messages en français, un exemple de remboursement partiel et un modèle de suivi.
+- [Demander de l’argent à un ami](https://you-owe-me.com/fr/blog/comment-demander-de-l-argent-a-un-ami/) — Comment demander à un ami de te prêter de l’argent ? 8 messages à adapter, un accord clair et un modèle pour suivre les remboursements.
 <!-- french-pages:end -->

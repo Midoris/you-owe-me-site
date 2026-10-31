@@ -61,7 +61,16 @@ export function normalizeReviewedArabicBorrowCopy(html) {
   return html;
 }
 
+export function normalizeReviewedFrenchBorrowCopy(html) {
+  // LOC-05: only exact parent-approved French navigation and two context paragraphs.
+  html = html.replace("\n              <a href=\"/fr/blog/comment-demander-de-l-argent-a-un-ami/\">Demander de l’argent à un ami</a>", "");
+  html = html.replace("\n              <p>Avant le versement, une demande claire aide à poser les bases de l’accord. Retrouvez des <a href=\"/fr/blog/comment-demander-de-l-argent-a-un-ami/\">messages pour demander de l’argent à un ami</a> sans lui mettre la pression.</p>", "");
+  html = html.replace("\n<p>Vous souhaitez emprunter de l’argent plutôt que demander un remboursement ? Consultez les <a href=\"/fr/blog/comment-demander-de-l-argent-a-un-ami/\">messages pour demander un prêt à un ami</a>, puis distinguez son accord de la réception effective de l’argent.</p>", "");
+  return html;
+}
+
 export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedFrenchBorrowCopy(html);
   html = normalizeReviewedArabicBorrowCopy(html);
   html = normalizeReviewedGermanBorrowCopy(html);
   html = normalizeReviewedArabicRepaymentCopy(html);

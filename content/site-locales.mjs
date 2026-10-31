@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "borrowar20261031",
+  "/scripts/analytics.js": "borrowfr20261031",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -182,6 +182,21 @@ export const frenchPages = [
       "useWhen": "Après un prêt, un paiement partiel ou une date de remboursement à confirmer.",
       "primaryCta": "Voir les 10 messages",
       "nextStep": "Suivre le prêt dans You Owe Me"
+    }
+  },
+  {
+    "en": "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
+    "fr": "/fr/blog/comment-demander-de-l-argent-a-un-ami/",
+    "title": "Demander de l’argent à un ami",
+    "updated": "2026-10-31",
+    "complete": true,
+    "discoveryDescription": "Comment demander à un ami de te prêter de l’argent ? 8 messages à adapter, un accord clair et un modèle pour suivre les remboursements.",
+    "registry": {
+      "primaryAudience": "Les personnes qui souhaitent emprunter de l’argent à un ami et convenir clairement du remboursement.",
+      "problemSolved": "Formuler une demande adaptée et distinguer l’accord, l’argent reçu et les remboursements.",
+      "useWhen": "Avant de demander un prêt à un ami et après son accord.",
+      "nextStep": "Suivre un prêt personnel",
+      "primaryCta": "Voir les 8 messages"
     }
   },
 ];
