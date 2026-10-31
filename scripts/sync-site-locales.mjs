@@ -67,7 +67,7 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
   const sectionNav = `<nav class="${locale.sectionClass}" aria-label="${esc(locale.shared.sectionLabel)}">${nav}</nav>`;
   const sectionContent = lang === "ar" && route === "/ar/blog/how-to-remind-someone-they-owe-you-money-politely/"
     ? `<details class="site-arabic-disclosure"><summary>صفحات بالعربية</summary>${sectionNav}</details>`
-    : lang === "de" && route === "/de/blog/geld-freundlich-zurueckfordern/"
+    : lang === "de" && ["/de/blog/geld-freundlich-zurueckfordern/", "/de/blog/freunde-um-geld-bitten/"].includes(route)
     ? `<details class="site-german-disclosure"><summary>Seiten auf Deutsch</summary>${sectionNav}</details>`
     : lang === "es" && spanishDisclosureRoutes.has(route)
     ? `<details class="site-spanish-disclosure"><summary>Más guías en español</summary>${sectionNav}</details>`

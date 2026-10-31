@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "repaymentar20261031",
+  "/scripts/analytics.js": "borrowde20261031",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -80,6 +80,21 @@ export const germanPages = [
       "useWhen": "Bei einer Rückfrage, einem neuen Termin oder einer Teilzahlung.",
       "primaryCta": "Zu den 10 Nachrichten",
       "nextStep": "Private Darlehen in You Owe Me festhalten"
+    }
+  },
+  {
+    "en": "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
+    "de": "/de/blog/freunde-um-geld-bitten/",
+    "title": "Freunde um Geld bitten",
+    "discoveryDescription": "Wie fragst du Freunde nach einem kleinen Darlehen? 8 natürliche Nachrichten, klare Absprachen zur Rückzahlung und eine Vorlage für deinen Überblick.",
+    "updated": "2026-10-31",
+    "complete": true,
+    "registry": {
+      "primaryAudience": "Menschen, die sich privat Geld leihen und die Rückzahlung klar absprechen möchten.",
+      "problemSolved": "Eine passende Bitte formulieren und Zusagen, erhaltenes Geld und Rückzahlungen auseinanderhalten.",
+      "useWhen": "Vor einer privaten Bitte um Geld und nach einer Zusage.",
+      "nextStep": "Private Darlehen festhalten",
+      "primaryCta": "Zu den 8 Nachrichten"
     }
   },
 ];

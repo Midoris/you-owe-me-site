@@ -45,7 +45,16 @@ export function normalizeReviewedArabicRepaymentCopy(html) {
   return html;
 }
 
+export function normalizeReviewedGermanBorrowCopy(html) {
+  // LOC-03: exact new native navigation link and two parent-authored context paragraphs.
+  html = html.replace("\n              <a href=\"/de/blog/freunde-um-geld-bitten/\">Freunde um Geld bitten</a>", "");
+  html = html.replace("\n              <p>Noch vor der Auszahlung hilft eine klare Absprache. Hier findest du <a href=\"/de/blog/freunde-um-geld-bitten/\">Nachrichten, mit denen du Freunde um Geld bitten kannst</a>, ohne Druck zu machen.</p>", "");
+  html = html.replace("\n<p>Möchtest du dir selbst Geld leihen? Nutze die <a href=\"/de/blog/freunde-um-geld-bitten/\">Nachrichten zum Bitten um Geld</a> und halte eine spätere Zusage getrennt vom tatsächlichen Geldeingang fest.</p>", "");
+  return html;
+}
+
 export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedGermanBorrowCopy(html);
   html = normalizeReviewedArabicRepaymentCopy(html);
   html = normalizeReviewedGermanRepaymentCopy(html);
   html = normalizeReviewedStatsCopy(html);

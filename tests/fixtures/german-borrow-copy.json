@@ -1,0 +1,115 @@
+{
+  "messages": [
+    {
+      "number": 1,
+      "heading": "Kurz und direkt fragen",
+      "guidance": "Wenn du den Betrag und einen realistischen Rückzahlungstermin kennst.",
+      "payload": "Hey [Name], könntest du mir [Betrag und Währung] für [Anlass] leihen? Ich kann dir das Geld am [Datum] zurückzahlen. Wenn es bei dir gerade nicht passt, verstehe ich das.",
+      "template": "de_friend_borrow_short_ask",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 2,
+      "heading": "In zwei Teilbeträgen zurückzahlen",
+      "guidance": "Prüfe vorher, ob beide Teilbeträge zusammen die gesamte geliehene Summe ergeben.",
+      "payload": "Hey [Name], könntest du mir [Gesamtbetrag und Währung] für [Anlass] leihen? Ich könnte dir [erster Teilbetrag] am [erstes Datum] und [zweiter Teilbetrag] am [zweites Datum] zurückzahlen. Wäre das für dich in Ordnung? Wenn du das lieber nicht möchtest, ist das okay.",
+      "template": "de_friend_borrow_clear_ask_with_repayment_plan",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 3,
+      "heading": "Noch keinen Rückzahlungstermin nennen können",
+      "guidance": "Ein Termin für ein Gespräch ist kein Zahlungstermin. Sage offen, was noch unklar ist.",
+      "payload": "Hey [Name], ich brauche [Betrag und Währung] für [Anlass]. Im Moment kann ich dir leider noch nicht sicher sagen, wann ich das Geld zurückzahlen könnte. Am [Datum für eine Rückmeldung] kann ich dir sagen, wie es bei mir aussieht. Ich verstehe, wenn du mir unter diesen Umständen nichts leihen möchtest.",
+      "template": "de_friend_borrow_cannot_promise_exact_date",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 4,
+      "heading": "Um einen Vorschuss für eine Ausgabe bitten",
+      "guidance": "Mache deutlich, dass du den ausgelegten Betrag zurückzahlen möchtest.",
+      "payload": "Könntest du [Ausgabe] dieses Mal für mich bezahlen? Es geht um [Betrag und Währung], die ich dir am [Datum] zurückgeben kann. Ich frage lieber vorher, bevor ich damit rechne. Wenn es nicht geht, verstehe ich das.",
+      "template": "de_friend_borrow_cover_something_temporarily",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 5,
+      "heading": "Wenn dir das Fragen unangenehm ist",
+      "guidance": "Du kannst die Unsicherheit ansprechen, ohne die andere Person verantwortlich dafür zu machen.",
+      "payload": "Mir ist die Frage etwas unangenehm, aber könntest du mir [Betrag und Währung] für [Anlass] leihen? Ich kann dir das Geld am [Datum] zurückzahlen. Bitte fühl dich nicht verpflichtet. Wenn es für dich nicht passt, ist das in Ordnung.",
+      "template": "de_friend_borrow_slightly_more_personal",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 6,
+      "heading": "Ein Nein annehmen",
+      "guidance": "Akzeptiere die Antwort, ohne nachzuhaken oder eine Begründung zu verlangen.",
+      "payload": "Danke, dass du mir Bescheid sagst. Ich verstehe das, mach dir bitte keinen Kopf.",
+      "template": "de_friend_borrow_respectful_reply_if_no",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 7,
+      "heading": "Nach einem Ja die Absprache bestätigen",
+      "guidance": "Kläre vor der Auszahlung, ob ihr beide dieselben Beträge und Termine im Kopf habt.",
+      "payload": "Danke für deine Hilfe. Damit wir beide dieselbe Absprache haben: Du leihst mir [Betrag und Währung] für [Anlass]. Für die Rückzahlung vereinbaren wir: [Datum oder Teilbeträge mit Terminen]. Sobald es angekommen ist, sage ich dir Bescheid. Falls sich bei mir etwas ändert, melde ich mich vor dem vereinbarten Termin.",
+      "template": "de_friend_borrow_reply_after_yes",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "number": 8,
+      "heading": "Rechtzeitig sagen, dass du mehr Zeit brauchst",
+      "guidance": "Melde dich, sobald du weißt, dass der Termin nicht klappt. Schlage nur vor, was du zusagen kannst, und warte auf die Antwort.",
+      "payload": "Hey [Name], ich melde mich wegen unserer Absprache für den [vereinbartes Datum]. Leider schaffe ich es nicht, den Betrag wie geplant zurückzuzahlen. Ich kann dir [Teilbetrag und Währung] am [Datum] geben. Wann ich den Rest schaffe, kann ich noch nicht sicher sagen. Können wir darüber sprechen? Spätestens am [Datum für eine Rückmeldung] melde ich mich wieder.",
+      "template": "de_friend_borrow_need_more_time_update",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    }
+  ],
+  "record": "Wer das Geld verleiht: [Name]\nWer das Geld erhält: [dein Name]\nBetrag und Währung: [Betrag und Währung]\nAnlass: [Wofür ist das Geld?]\nGeld erhalten am: [Datum; erst nach Erhalt eintragen]\nVereinbarte Rückzahlung: [Termin oder Teilbeträge mit Terminen]\nTatsächliche Rückzahlungen: [Datum und Betrag jeder Zahlung]\nNoch zurückzuzahlen: [offener Betrag und Währung]\nNächste Rückmeldung, falls nötig: [Datum]",
+  "faq": [
+    {
+      "question": "Wie bitte ich einen Freund per WhatsApp um Geld?",
+      "answer": "Nenne einen konkreten Betrag, erkläre kurz den Anlass und sage, wann du zurückzahlen kannst. Wenn du noch keinen Termin weißt, sprich das offen an. Mache deutlich, dass ein Nein in Ordnung ist, und passe die Nachricht vor dem Absenden an."
+    },
+    {
+      "question": "Was sage ich, wenn ich noch keinen Rückzahlungstermin weiß?",
+      "answer": "Sage das, bevor dir jemand Geld leiht. Du kannst einen Termin für eine Rückmeldung vorschlagen. Das ist aber kein Versprechen, bis dahin zu zahlen. Die andere Person sollte mit diesem Wissen entscheiden können."
+    },
+    {
+      "question": "Wie frage ich, ohne Druck zu machen?",
+      "answer": "Frage klar und einmalig. Benutze eure Freundschaft nicht als Argument und akzeptiere ein Nein, ohne zu drängen. Rechne nicht mit dem Geld, bevor ihr eine Absprache getroffen habt und es angekommen ist."
+    },
+    {
+      "question": "Ist das dasselbe wie geliehenes Geld zurückzufordern?",
+      "answer": "Nein. Hier fragst du nach Geld, das du später zurückzahlen möchtest. Wenn jemand dir bereits Geld schuldet, brauchst du eine Nachricht zur Rückzahlung. Dafür gibt es einen eigenen Leitfaden."
+    },
+    {
+      "question": "Müssen wir beide You Owe Me installieren?",
+      "answer": "Nein. Die Nachrichten kannst du ohne App kopieren. Wenn du You Owe Me auf deinem iPhone oder iPad verwendest, führst du deine eigenen Aufzeichnungen. Die andere Person braucht die App dafür nicht."
+    },
+    {
+      "question": "Kann You Owe Me mir Geld leihen?",
+      "answer": "Nein. You Owe Me ist eine App, mit der du geliehenes Geld, eigene Schulden und Rückzahlungen festhältst. Die App vergibt keine Kredite und führt keine Überweisungen aus."
+    }
+  ],
+  "ui": {
+    "Initial message label": "Nachricht kopieren",
+    "Initial record label": "Vorlage kopieren",
+    "Busy label": "Wird kopiert…",
+    "Successful button label": "Kopiert",
+    "Successful message status": "Nachricht kopiert. Prüfe die Angaben vor dem Absenden.",
+    "Successful record status": "Vorlage kopiert.",
+    "Selected button label": "Markiert",
+    "Manual selection status": "Der Text ist markiert. Kopiere ihn über die Kopierfunktion deines Geräts.",
+    "Terminal failure status": "Der Text konnte nicht automatisch kopiert werden. Markiere ihn und kopiere ihn bitte selbst.",
+    "No JavaScript hint": "JavaScript ist deaktiviert. Markiere den Text, um ihn zu kopieren."
+  }
+}

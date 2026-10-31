@@ -13,6 +13,7 @@ const LOCATION_VALUES = new Set([
   "fr_repayment_iphone_handoff",
   "de_repayment_iphone_handoff",
   "ar_repayment_iphone_handoff",
+  "de_borrow_iphone_handoff",
   "split_result_iphone_handoff",
   "money_owed_hero_iphone_handoff",
   "roommate_calculator_iphone_handoff",
