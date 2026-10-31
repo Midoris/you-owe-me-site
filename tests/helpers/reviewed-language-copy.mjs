@@ -1,9 +1,27 @@
 import fs from "node:fs";
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+
+// LOC-10 (2026-10-31): exact parent-approved homepage language sentences,
+// generated Japanese home counterpart annotations, and five changed shared script pins.
+// Immutable historical commit IDs and all other authored bytes remain checked.
+export function normalizeReviewedJapaneseHomeIntegration(html) {
+  html = html.replaceAll("The full website is available in English, with selected pages also available in Spanish, German, Arabic, French and Japanese.", "The full website is available in English, with selected pages also available in Spanish, German, Arabic and French.");
+  html = html.replaceAll("Este sitio web ofrece páginas en español, alemán, árabe, francés y japonés, además de todos sus contenidos en inglés.", "Este sitio web ofrece páginas en español, alemán, árabe y francés, además de todos sus contenidos en inglés.");
+  html = html.replaceAll("Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch, Französisch und Japanisch sowie alle Inhalte auf Englisch.", "Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch und Französisch sowie alle Inhalte auf Englisch.");
+  html = html.replaceAll("يوفّر الموقع صفحات بالعربية والإسبانية والألمانية والفرنسية واليابانية، إلى جانب جميع محتوياته بالإنجليزية.", "يوفّر الموقع صفحات بالعربية والإسبانية والألمانية والفرنسية، إلى جانب جميع محتوياته بالإنجليزية.");
+  html = html.replaceAll("Le site propose une sélection de pages en français, espagnol, allemand, arabe et japonais, ainsi que l’ensemble de ses contenus en anglais.", "Le site propose une sélection de pages en français, espagnol, allemand et arabe, ainsi que l’ensemble de ses contenus en anglais.");
+  html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/" />\n', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/" lang="ja" hreflang="ja">日本語</a>', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/" lang="ja" dir="ltr" hreflang="ja">日本語</a>', '');
+  html = html.replace(/((?:src|href)="[^"?]*(?:scripts\/(?:sales|anniversary-announcement|app-language-support|video-embed)|assets\/js\/main)\.js)\?v=ja20261031(?=")/g, '$1?v=fr20261020');
+  return html;
+}
+
 // October 20 independent review: normalize only the approved stale website-language FAQ correction.
 // Exact reviewed Stats additions from production commit 69b3628 (October 30).
 export function normalizeReviewedStatsCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   // October 30 Stats release: allow only exact reviewed localized additions.
   // Any later edit to these blocks remains visible to the preservation checks.
   for (const [file, insertion] of Object.entries(statsApprovedCopy.insertions)) {
@@ -20,6 +38,7 @@ export function normalizeReviewedStatsCopy(html) {
 }
 
 export function normalizeReviewedGermanRepaymentCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   // LOC-01: only the five exact reviewed German guide anchors and two context links.
   html = html.replace("\n              <a href=\"/de/blog/geld-freundlich-zurueckfordern/\">Freundlich um Rückzahlung bitten</a>", "");
   html = html.replaceAll("<a href=\"/de/blog/geld-freundlich-zurueckfordern/\" class=\"lt-cardCta\">Leitfaden für freundliche Erinnerungen lesen</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">Leitfaden für freundliche Erinnerungen lesen (auf Englisch)</a>");
@@ -33,6 +52,7 @@ export function normalizeReviewedGermanRepaymentCopy(html) {
 }
 
 export function normalizeReviewedArabicRepaymentCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   // LOC-02: exact approved Arabic guide navigation, five retargeted anchors and two context links.
   html = html.replace("\n              <a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\">رسائل لطلب السداد بلطف</a>", "");
   html = html.replaceAll("<a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">اقرأ دليل التذكيرات اللطيفة</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">اقرأ دليل التذكيرات اللطيفة (بالإنجليزية)</a>");
@@ -46,6 +66,7 @@ export function normalizeReviewedArabicRepaymentCopy(html) {
 }
 
 export function normalizeReviewedGermanBorrowCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   // LOC-03: exact new native navigation link and two parent-authored context paragraphs.
   html = html.replace("\n              <a href=\"/de/blog/freunde-um-geld-bitten/\">Freunde um Geld bitten</a>", "");
   html = html.replace("\n              <p>Noch vor der Auszahlung hilft eine klare Absprache. Hier findest du <a href=\"/de/blog/freunde-um-geld-bitten/\">Nachrichten, mit denen du Freunde um Geld bitten kannst</a>, ohne Druck zu machen.</p>", "");
@@ -54,6 +75,7 @@ export function normalizeReviewedGermanBorrowCopy(html) {
 }
 
 export function normalizeReviewedArabicBorrowCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   // LOC-04: exact parent-approved native navigation and two context paragraphs.
   html = html.replace("\n              <a href=\"/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/\">طلب المال من صديق</a>", "");
   html = html.replace("\n              <p>قبل استلام المال، يساعدك الاتفاق الواضح على تجنب سوء الفهم. إليك <a href=\"/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/\">رسائل لطلب المال من صديق</a> دون ضغط.</p>", "");
@@ -62,6 +84,7 @@ export function normalizeReviewedArabicBorrowCopy(html) {
 }
 
 export function normalizeReviewedFrenchBorrowCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   // LOC-05: only exact parent-approved French navigation and two context paragraphs.
   html = html.replace("\n              <a href=\"/fr/blog/comment-demander-de-l-argent-a-un-ami/\">Demander de l’argent à un ami</a>", "");
   html = html.replace("\n              <p>Avant le versement, une demande claire aide à poser les bases de l’accord. Retrouvez des <a href=\"/fr/blog/comment-demander-de-l-argent-a-un-ami/\">messages pour demander de l’argent à un ami</a> sans lui mettre la pression.</p>", "");
@@ -72,6 +95,7 @@ export function normalizeReviewedFrenchBorrowCopy(html) {
 // LOC-06: exact parent-authored Spanish discovery and the two inward paragraphs.
 // Original snapshots remain immutable; any other source delta stays visible.
 export function normalizeReviewedSpanishRoommateCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   return html
     .replace('\n              <a href="/es/herramientas/plantilla-gastos-piso-compartido/">Plantilla de gastos del piso compartido</a>', '')
     .replace('\n  <p>Si quieres conservar los gastos del piso y los pagos de varios periodos, utiliza la <a href="/es/herramientas/plantilla-gastos-piso-compartido/">plantilla de gastos para un piso compartido</a>. Incluye Excel y Google Sheets en español.</p>', '')
@@ -81,6 +105,7 @@ export function normalizeReviewedSpanishRoommateCopy(html) {
 // LOC-07: only the exact approved German navigation and two contextual paragraphs.
 // Immutable historical snapshots stay pinned; all other source changes remain visible.
 export function normalizeReviewedGermanRoommateCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   return html
     .replace("\n              <a href=\"/de/tools/wg-kasse-vorlage/\">WG-Kasse-Vorlage</a>", "")
     .replace("\n  <p>Wenn du WG-Ausgaben und Zahlungen über mehrere Zeiträume festhalten möchtest, nutze die <a href=\"/de/tools/wg-kasse-vorlage/\">WG-Kasse-Vorlage</a>. Sie enthält Excel, Google Sheets und eine einfache CSV-Liste auf Deutsch.</p>", "")
@@ -90,6 +115,7 @@ export function normalizeReviewedGermanRoommateCopy(html) {
 // LOC-08: exact approved Arabic navigation and two contextual paragraphs only.
 // Historical release baselines remain pinned and all other changes stay visible.
 export function normalizeReviewedArabicRoommateCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   return html
     .replace("\n              <a href=\"/ar/tools/roommate-expense-tracker-template/\">قالب مصاريف السكن</a>", "")
     .replace("\n  <p>إذا أردت الاحتفاظ بمصاريف السكن والدفعات عبر فترات متعددة، استخدم <a href=\"/ar/tools/roommate-expense-tracker-template/\">قالب مصاريف السكن المشترك</a>. يتضمن <bdi dir=\"ltr\">Excel</bdi> و<bdi dir=\"ltr\">Google Sheets</bdi> وسجل <bdi dir=\"ltr\">CSV</bdi> بسيطًا بالعربية.</p>", "")
@@ -99,6 +125,7 @@ export function normalizeReviewedArabicRoommateCopy(html) {
 // LOC-09: exact approved French navigation and two contextual paragraphs only.
 // Keep every historical release baseline pinned.
 export function normalizeReviewedFrenchRoommateCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   return html
     .replace("\n              <a href=\"/fr/outils/tableau-depenses-colocation/\">Dépenses de colocation</a>", "")
     .replace("\n              <p>Pour garder un historique des dépenses et des remboursements d’un mois sur l’autre, utilisez le <a href=\"/fr/outils/tableau-depenses-colocation/\">tableau des dépenses de colocation</a>. Il comprend des versions Excel et Google Sheets en français, ainsi qu’un registre CSV simple.</p>", "")
@@ -106,6 +133,7 @@ export function normalizeReviewedFrenchRoommateCopy(html) {
 }
 
 export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedJapaneseHomeIntegration(html);
   html = normalizeReviewedFrenchRoommateCopy(html);
   html = normalizeReviewedArabicRoommateCopy(html);
   html = normalizeReviewedGermanRoommateCopy(html);

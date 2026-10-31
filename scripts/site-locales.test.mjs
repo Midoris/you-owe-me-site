@@ -69,7 +69,7 @@ test("English locale rendering preserves authored content outside locale links a
 });
 
 test("locale routes are unique, stable and contain no financial inputs", () => {
-  assert.deepEqual(siteLocales.map(locale => locale.code), ["en", "es", "de", "ar", "fr"]);
+  assert.deepEqual(siteLocales.map(locale => locale.code), ["en", "es", "de", "ar", "fr", "ja"]);
   const routes = siteLocales.flatMap(locale => locale.pages.map(page => page[locale.code]));
   assert.equal(new Set(routes).size, routes.length);
   for (const locale of siteLocales) for (const page of locale.pages) {
@@ -84,7 +84,7 @@ test("Spanish authored HTML stays byte-for-byte intact from the accepted public 
     .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g, "")
     // Only explicitly changed shared dependencies may receive cache URL updates.
     .replace(/((?:src|href)=")([^"?]+)(?:\?v=([^"&]+))?(")/g, (original, start, asset, version, end) =>
-      sharedAssetVersions[asset] && [undefined, sharedAssetVersions[asset], "es20261020"].includes(version) ? `${start}${asset}?v=shared-cache-version${end}` : original);
+      sharedAssetVersions[asset] && ([undefined, sharedAssetVersions[asset], "es20261020"].includes(version) || (version === "fr20261020" && ["/scripts/sales.js", "/scripts/anniversary-announcement.js", "/scripts/app-language-support.js", "/scripts/video-embed.js", "/assets/js/main.js"].includes(asset))) ? `${start}${asset}?v=shared-cache-version${end}` : original);
   // This immutable-release guard covers its original five routes; the later guides did not exist then.
   for (const page of spanishPages.filter(page => !["/es/blog/como-pedir-dinero-prestado-a-un-amigo/", "/es/blog/como-pedir-que-te-devuelvan-dinero/", "/es/herramientas/plantilla-gastos-piso-compartido/"].includes(page.es))) {
     const file = `${page.es.slice(1)}index.html`;
@@ -209,7 +209,7 @@ test("reviewed native registry prose overrides only five editorial fields and re
     const baseline = defaults.find(entry => entry.url === current.url);
     const approvedNative = siteLocales.flatMap(locale => locale.pages).find(page => page.registry && Object.values(page).includes(current.url));
     if (!approvedNative) { assert.deepEqual(current, baseline); continue; }
-    assert.deepEqual(Object.keys(current).filter(key => JSON.stringify(current[key]) !== JSON.stringify(baseline[key])).sort(), [...fields].sort());
+    assert.deepEqual(Object.keys(current).filter(key => JSON.stringify(current[key]) !== JSON.stringify(baseline[key])).sort(), fields.filter(key => JSON.stringify(approvedNative.registry[key]) !== JSON.stringify(baseline[key])).sort());
     for (const field of fields) assert.equal(current[field], approvedNative.registry[field]);
     assert.equal(current.appStoreCpp, "general");
     assert.equal(current.translationOf, approvedNative.en);
@@ -274,7 +274,7 @@ test("original localized navigation retains its immutable pre-polish baseline", 
     }
     return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)(?:\?[^" ]*)?/g, '$1?v=approved-cache');
   }
-  for (const locale of siteLocales.filter(item => item.code !== "en")) for (const page of locale.pages.filter(item => item.complete && item[locale.code] !== frenchRoute && item[locale.code] !== "/de/blog/geld-freundlich-zurueckfordern/" && item[locale.code] !== "/ar/blog/how-to-remind-someone-they-owe-you-money-politely/" && item[locale.code] !== "/de/blog/freunde-um-geld-bitten/" && item[locale.code] !== "/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/" && item[locale.code] !== "/fr/blog/comment-demander-de-l-argent-a-un-ami/" && item[locale.code] !== "/es/herramientas/plantilla-gastos-piso-compartido/" && item[locale.code] !== "/de/tools/wg-kasse-vorlage/" && item[locale.code] !== "/ar/tools/roommate-expense-tracker-template/" && item[locale.code] !== "/fr/outils/tableau-depenses-colocation/")) {
+  for (const locale of siteLocales.filter(item => ["es", "de", "ar", "fr"].includes(item.code))) for (const page of locale.pages.filter(item => item.complete && item[locale.code] !== frenchRoute && item[locale.code] !== "/de/blog/geld-freundlich-zurueckfordern/" && item[locale.code] !== "/ar/blog/how-to-remind-someone-they-owe-you-money-politely/" && item[locale.code] !== "/de/blog/freunde-um-geld-bitten/" && item[locale.code] !== "/ar/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/" && item[locale.code] !== "/fr/blog/comment-demander-de-l-argent-a-un-ami/" && item[locale.code] !== "/es/herramientas/plantilla-gastos-piso-compartido/" && item[locale.code] !== "/de/tools/wg-kasse-vorlage/" && item[locale.code] !== "/ar/tools/roommate-expense-tracker-template/" && item[locale.code] !== "/fr/outils/tableau-depenses-colocation/")) {
     const route = page[locale.code];
     const baseline = execFileSync("git", ["show", `739ee644646dff36eeeb646e6848c7b884cdfb51:${route.slice(1)}index.html`], { encoding: "utf8" });
     const rendered = renderLocaleHtml(baseline, page.en, locale.code);

@@ -119,6 +119,33 @@
       inline: Object.freeze({ label: "الأيام الأخيرة", body: "ينتهي عرض الذكرى السنوية لمستخدمي النسخة المجانية المؤهلين في 4 سبتمبر. وستظل قصة السنوات العشر متاحة." }),
     }),
   });
+  const JAPANESE_ACTIVE_STATES = Object.freeze({
+  "inactive": {},
+  "active": {
+    "standard": {
+      "eyebrow": "2016–2026",
+      "heading": "You Owe Meは10周年。",
+      "body": "人とのお金のやり取りをわかりやすくしてきた、10年の歩みをご覧ください。対象となる無料版の利用者は、9月4日までアプリ内で周年記念の期間限定アップグレードを利用できます。",
+      "cta": "10年の歩みを見る（英語）"
+    },
+    "inline": {
+      "label": "10周年を迎えました",
+      "body": "You Owe Meは10周年。対象となる無料版の利用者は、9月4日までアプリ内の周年記念キャンペーンを利用できます。"
+    }
+  },
+  "final": {
+    "standard": {
+      "eyebrow": "終了間近",
+      "heading": "周年記念キャンペーンは9月4日まで。",
+      "body": "10年の歩みを紹介するページは引き続きご覧いただけます。対象となる無料版の利用者は、9月4日までアプリ内の期間限定アップグレードを利用できます。",
+      "cta": "周年記念ページを見る（英語）"
+    },
+    "inline": {
+      "label": "終了間近",
+      "body": "対象となる無料版の利用者向けの周年記念キャンペーンは9月4日までです。10年の歩みを紹介するページは引き続きご覧いただけます。"
+    }
+  }
+});
   const FRENCH_ACTIVE_STATES = Object.freeze({
     inactive: Object.freeze({}),
     active: Object.freeze({
@@ -169,7 +196,7 @@
     if (typeof moduleElement.querySelector !== "function") return false;
 
     const variant = moduleElement.getAttribute("data-anniversary-variant");
-    const states = documentObject?.documentElement?.lang === "fr" ? FRENCH_ACTIVE_STATES : documentObject?.documentElement?.lang === "ar" ? ARABIC_ACTIVE_STATES : documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
+    const states = documentObject?.documentElement?.lang === "ja" ? JAPANESE_ACTIVE_STATES : documentObject?.documentElement?.lang === "fr" ? FRENCH_ACTIVE_STATES : documentObject?.documentElement?.lang === "ar" ? ARABIC_ACTIVE_STATES : documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
     const state = states[safePhase][variant];
     if (!state) {
       moduleElement.hidden = true;

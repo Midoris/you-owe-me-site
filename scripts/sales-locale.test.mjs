@@ -26,6 +26,17 @@ function runSale(lang, month, day) {
   return { badge: badges[0], sale: window.YouOweMeSaleState.getActiveSale(), events };
 }
 
+test("Japanese campaign labels retain English campaign dates, identity and analytics state", () => {
+  for (const [month, day, label] of [[12, 24, "クリスマス"], [1, 1, "新年"], [6, 19, "米国の父の日"], [7, 4, "米国独立記念日"], [10, 31, "ハロウィーン"]]) {
+    const english = runSale("en", month, day), japanese = runSale("ja", month, day);
+    assert.equal(japanese.badge.textContent, label + "・期間限定");
+    assert.equal(japanese.badge.attributes["aria-label"], "実施中のキャンペーン：" + label);
+    assert.equal(JSON.stringify(japanese.sale), JSON.stringify(english.sale));
+    assert.equal(JSON.stringify(japanese.events), JSON.stringify(english.events));
+  }
+  assert.equal(runSale("ja", 10, 20).badge.hidden, true);
+});
+
 test("Spanish sale labels preserve the campaign identity, dates and emitted English state", () => {
   for (const [month, day, label] of [[12, 24, "Navidad"], [1, 1, "Año Nuevo"], [6, 19, "Día del Padre"], [7, 4, "Día de la Independencia de Estados Unidos"]]) {
     const english = runSale("en", month, day);

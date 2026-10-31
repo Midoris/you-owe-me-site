@@ -36,6 +36,7 @@
     "New Year": "رأس السنة", "Valentine's Day": "عيد الحب", Easter: "عيد الفصح",
     Halloween: "هالوين", "Singles' Day": "يوم العزّاب", Thanksgiving: "عيد الشكر الأمريكي",
   });
+  const JAPANESE_SALE_NAMES = Object.freeze({"Debug": "テスト", "Father's Day": "米国の父の日", "Independence Day": "米国独立記念日", "Black Friday": "ブラックフライデー", "Cyber Monday": "サイバーマンデー", "Christmas": "クリスマス", "New Year": "新年", "Valentine's Day": "バレンタインデー", "Easter": "イースター", "Halloween": "ハロウィーン", "Singles' Day": "独身の日", "Thanksgiving": "米国の感謝祭"});
   let currentActiveSale = null;
 
   /**
@@ -241,6 +242,7 @@
   }
 
   function saleBadgeLabel(sale) {
+    if (document.documentElement?.lang === "ja") return sale ? JAPANESE_SALE_NAMES[sale.saleName] + "・期間限定" : "";
     if (document.documentElement?.lang === "fr") return sale ? FRENCH_SALE_NAMES[sale.saleName] + " • Offre à durée limitée" : "";
     if (document.documentElement?.lang === "ar") return sale ? ARABIC_SALE_NAMES[sale.saleName] + " • عرض لفترة محدودة" : "";
     if (document.documentElement?.lang === "de") {
@@ -269,7 +271,9 @@
     badges.forEach((badge) => {
       badge.hidden = false;
       badge.textContent = label;
-      badge.setAttribute("aria-label", document.documentElement?.lang === "fr"
+      badge.setAttribute("aria-label", document.documentElement?.lang === "ja"
+        ? "実施中のキャンペーン：" + JAPANESE_SALE_NAMES[sale.saleName]
+        : document.documentElement?.lang === "fr"
         ? "Offre en cours : " + FRENCH_SALE_NAMES[sale.saleName]
         : document.documentElement?.lang === "ar"
         ? "عرض سارٍ: " + ARABIC_SALE_NAMES[sale.saleName]

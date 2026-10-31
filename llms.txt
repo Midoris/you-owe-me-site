@@ -337,3 +337,11 @@ Contenus publics en français. Chaque page possède sa propre URL canonique. Les
 - [Demander de l’argent à un ami](https://you-owe-me.com/fr/blog/comment-demander-de-l-argent-a-un-ami/) — Comment demander à un ami de te prêter de l’argent ? 8 messages à adapter, un accord clair et un modèle pour suivre les remboursements.
 - [Dépenses de colocation](https://you-owe-me.com/fr/outils/tableau-depenses-colocation/) — Loyer, charges, courses et remboursements : faites les comptes de la coloc avec un tableau gratuit en français pour Excel et Google Sheets, de 2 à 6 personnes.
 <!-- french-pages:end -->
+
+<!-- japanese-pages:start -->
+## 日本語のページ
+
+日本語で読めるページです。各ページに専用のURLがあり、英語のみのリンク先には「英語」と表示しています。
+
+- [お金の貸し借り・立て替えを記録](https://you-owe-me.com/ja/)
+<!-- japanese-pages:end -->

@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="720" viewBox="0 0 480 720" lang="ja" xml:lang="ja" role="img" aria-labelledby="title desc">
+  <title id="title">You Owe Meの使い方を見る</title>
+  <desc id="desc">返済や立て替えの記録を紹介する英語動画の、日本語の案内画像</desc>
+  <defs><linearGradient id="bg" x2="0.8" y2="1"><stop stop-color="#e5f4d8"/><stop offset="1" stop-color="#e4eef8"/></linearGradient></defs>
+  <rect width="480" height="720" rx="32" fill="url(#bg)"/>
+  <rect x="32" y="42" width="416" height="636" rx="26" fill="#fff" fill-opacity=".88" stroke="#dfe6eb"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Hiragino Kaku Gothic ProN, Yu Gothic, Meiryo, sans-serif" text-anchor="middle" fill="#18212b">
+    <text x="240" y="128" font-size="29" font-weight="700">You Owe Me</text>
+    <text x="240" y="190" font-size="26" font-weight="700">貸し借りを、わかりやすく。</text>
+    <text x="240" y="242" font-size="21">返済・立て替え・やり取りの記録</text>
+    <text x="240" y="485" font-size="25">使い方の動画（英語）</text>
+  </g>
+</svg>

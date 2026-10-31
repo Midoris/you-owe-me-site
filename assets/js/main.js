@@ -127,7 +127,9 @@
 
 		// Toggle.
 			$navPanelToggle = $(
-				document.documentElement.lang === 'ar'
+				document.documentElement.lang === 'ja'
+					? '<a href="#navPanel" id="navPanelToggle">メニュー</a>'
+					: document.documentElement.lang === 'ar'
 					? '<a href="#navPanel" id="navPanelToggle">القائمة</a>'
 					: document.documentElement.lang === 'de'
 					? '<a href="#navPanel" id="navPanelToggle">Menü</a>'
@@ -153,7 +155,9 @@
 				'<div id="navPanel">' +
 					'<nav>' +
 					'</nav>' +
-					(document.documentElement.lang === 'ar'
+					(document.documentElement.lang === 'ja'
+						? '<a href="#navPanel" class="close" aria-label="閉じる"></a>'
+						: document.documentElement.lang === 'ar'
 						? '<a href="#navPanel" class="close" aria-label="إغلاق القائمة"></a>'
 						: document.documentElement.lang === 'de'
 						? '<a href="#navPanel" class="close" aria-label="Menü schließen"></a>'

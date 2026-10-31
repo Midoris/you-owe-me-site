@@ -72,6 +72,22 @@ function inlineModule() {
   return moduleElement;
 }
 
+test("Japanese anniversary copy preserves the historical active/final/inactive gate", () => {
+  const standard = standardModule(), inline = inlineModule();
+  const documentObject = new FakeDocument([standard, inline]);
+  documentObject.documentElement = { lang: "ja" };
+  anniversary.render(documentObject, new Date(2026, 7, 26, 12));
+  assert.equal(standard.querySelector("[data-anniversary-heading]").textContent, "You Owe Meは10周年。");
+  assert.equal(standard.querySelector("[data-anniversary-cta]").textContent, "10年の歩みを見る（英語）");
+  assert.equal(standard.querySelector("[data-anniversary-cta]").getAttribute("href"), "/10-years/");
+  assert.equal(inline.querySelector("[data-anniversary-inline-label]").textContent, "10周年を迎えました");
+  anniversary.render(documentObject, new Date(2026, 8, 4, 12));
+  assert.equal(standard.querySelector("[data-anniversary-heading]").textContent, "周年記念キャンペーンは9月4日まで。");
+  assert.equal(inline.querySelector("[data-anniversary-inline-label]").textContent, "終了間近");
+  anniversary.render(documentObject, new Date(2026, 9, 31, 12));
+  assert.equal(standard.hidden, true); assert.equal(inline.hidden, true);
+});
+
 test("Spanish announcements translate active/final states and label the English story", () => {
   const standard = standardModule();
   const inline = inlineModule();

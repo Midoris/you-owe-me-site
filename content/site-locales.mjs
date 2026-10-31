@@ -6,11 +6,11 @@ export const germanAssetVersion = "de20261020";
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
   "/scripts/analytics.js": "roommatefr20261031",
-  "/scripts/sales.js": "fr20261020",
-  "/scripts/anniversary-announcement.js": "fr20261020",
-  "/scripts/app-language-support.js": "fr20261020",
-  "/scripts/video-embed.js": "fr20261020",
-  "/assets/js/main.js": "fr20261020",
+  "/scripts/sales.js": "ja20261031",
+  "/scripts/anniversary-announcement.js": "ja20261031",
+  "/scripts/app-language-support.js": "ja20261031",
+  "/scripts/video-embed.js": "ja20261031",
+  "/assets/js/main.js": "ja20261031",
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "fr20261020",
@@ -271,12 +271,54 @@ export const frenchShared = Object.freeze({
   useWhen: "Pour consulter cette page en français et choisir la suite.",
   nextStep: "Consultez les ressources associées ou poursuivez dans You Owe Me sur iPhone.",
 });
+export const japanesePages = [
+  {
+    "en": "/",
+    "ja": "/ja/",
+    "title": "お金の貸し借り・立て替えを記録",
+    "updated": "2026-10-31",
+    "complete": true,
+    "registry": {
+      "primaryAudience": "人とのお金の貸し借りや立て替えを、わかりやすく記録したい方。",
+      "problemSolved": "相手ごとに金額と返済の履歴を残し、まだ残っている金額を確認できます。",
+      "useWhen": "貸し借りや立て替えの記録を始めたいとき。",
+      "primaryCta": "App Storeからダウンロード",
+      "nextStep": "You Owe Meをダウンロードして、相手と金額を登録しましょう。"
+    }
+  }
+];
+export const japaneseShared = Object.freeze({
+  "languageLabel": "ページの言語",
+  "englishFallback": "英語",
+  "storeLabel": "App Storeからダウンロード",
+  "navigation": {
+    "home": "ホーム",
+    "solutions": "使い方・用途",
+    "features": "機能",
+    "reviews": "レビュー",
+    "tools": "計算ツール・テンプレート",
+    "compare": "比較",
+    "blog": "ガイド"
+  },
+  "footer": {
+    "/quick-start/": "はじめに",
+    "/privacy-and-data/": "プライバシーとデータ",
+    "/privacy-policy/": "プライバシーポリシー",
+    "/contact/": "お問い合わせ"
+  },
+  "sectionLabel": "日本語のページ",
+  "discoveryDescription": "日本語で読めるページです。各ページに専用のURLがあり、英語のみのリンク先には「英語」と表示しています。",
+  "primaryAudience": "人とのお金の貸し借りや立て替えを、わかりやすく記録したい方。",
+  "useWhen": "日本語で内容を確認し、目的に合う次のページを選びたいとき。",
+  "nextStep": "関連するガイドを読むか、iPhoneのYou Owe Meで記録を始めましょう。"
+});
 export const siteLocales = [
   { code: "en", label: "English", home: "/", pages: [], shared: { languageLabel: "Page language" } },
   { code: "es", label: "Español", home: "/es/", pages: spanishPages, shared: spanishShared, assetVersion: spanishAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "spanish", sectionClass: "site-spanish-section", nextStepComment: "Spanish next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Spanish next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "de", label: "Deutsch", home: "/de/", pages: germanPages, shared: germanShared, assetVersion: germanAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "german", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "ar", label: "العربية", direction: "rtl", home: "/ar/", pages: arabicPages, shared: arabicShared, assetVersion: "ar20261020", versionedAssets: [...spanishVersionedAssets, "/scripts/arabic-number-input.js"], sectionMarker: "arabic", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "fr", label: "Français", home: "/fr/", pages: frenchPages, shared: frenchShared, assetVersion: "fr20261020", versionedAssets: [...spanishVersionedAssets, "/scripts/french-number-input.js"], sectionMarker: "french", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
+  { code: "ja", label: "日本語", home: "/ja/", pages: japanesePages, shared: japaneseShared, assetVersion: "ja20261031", versionedAssets: spanishVersionedAssets, sectionMarker: "japanese", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
 ];
 
 export function localeAssetVersion(locale, asset) {

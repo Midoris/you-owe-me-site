@@ -95,6 +95,17 @@ function flattenedText(node) {
   return [node.textContent, ...(node.children || []).map(flattenedText)].join("");
 }
 
+test("Japanese page language overrides browser locale and links to the Japanese home", () => {
+  for (const browserLanguage of ["en-US", "fr-FR", "ar-SA"]) {
+    const documentObject = new FakeDocument();
+    documentObject.documentElement = { lang: "ja" };
+    const anchor = languageSupport.render(documentObject, { language: browserLanguage });
+    assert.equal(flattenedText(anchor), "✓You Owe Meは日本語に対応しています。");
+    assert.equal(anchor.children[1].children[0].getAttribute("href"), "/ja/");
+    assert.equal(languageSupport.render(documentObject, { language: "en-US" }), anchor);
+  }
+});
+
 test("Spanish publications use Spanish regardless of browser language and link to the Spanish home", () => {
   const documentObject = new FakeDocument();
   documentObject.documentElement = { lang: "es" };
