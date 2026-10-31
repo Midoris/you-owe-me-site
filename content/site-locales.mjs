@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "borrowfr20261031",
+  "/scripts/analytics.js": "roommatees20261031",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -45,6 +45,21 @@ export const spanishPages = [
   },
   { en: "/solutions/personal-loan-repayment-tracker/", es: "/es/soluciones/seguimiento-de-prestamos-personales/", title: "Seguimiento de préstamos personales y sus pagos", updated: "2026-10-27", complete: true },
   { en: "/tools/split-expense-calculator/", es: "/es/herramientas/calculadora-de-gastos-compartidos/", title: "Calculadora de gastos compartidos", complete: true },
+  {
+    "en": "/tools/roommate-expense-tracker-template/",
+    "es": "/es/herramientas/plantilla-gastos-piso-compartido/",
+    "title": "Plantilla de gastos del piso compartido",
+    "updated": "2026-10-31",
+    "complete": true,
+    "discoveryDescription": "Organiza los gastos del piso, los pagos entre compañeros y lo que queda pendiente. Plantilla gratis en español para Excel y Google Sheets, de 2 a 6 personas.",
+    "registry": {
+      "primaryAudience": "Personas que comparten una vivienda y quieren llevar un registro de gastos, pagos y saldos acordados.",
+      "problemSolved": "Separar gastos y pagos entre compañeros para revisar lo que cada persona debe pagar o recibir.",
+      "useWhen": "Al registrar gastos del piso, revisar el mes o trasladar un saldo pendiente al siguiente periodo.",
+      "nextStep": "Llevar el seguimiento en You Owe Me",
+      "primaryCta": "Descargar plantilla de Excel"
+    }
+  },
 ];
 
 export const spanishShared = Object.freeze({

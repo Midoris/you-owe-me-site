@@ -1,0 +1,4 @@
+Fecha,Tipo de movimiento,Gasto o pago,Categoría,Importe,Pagado por o remitente,Destinatario,Tipo de reparto,Personas incluidas,Importes acordados,Notas
+2026-05-01,Gasto,Alquiler,Alquiler,1800.00,Lucía,,A partes iguales entre participantes,"Lucía, Diego, Sara",Lucía 600.00; Diego 600.00; Sara 600.00,Ejemplo ficticio en EUR. Sustituye esta fila por tus datos. Este CSV no calcula saldos.
+2026-05-05,Gasto,Internet,Internet,60.00,Diego,,A partes iguales entre participantes,"Lucía, Diego, Sara",Lucía 20.00; Diego 20.00; Sara 20.00,Gasto de ejemplo; sustitúyelo o elimínalo.
+2026-05-20,Pago,Pago a Lucía,,200.00,Diego,Lucía,,,,Pago de ejemplo registrado por separado; sustitúyelo o elimínalo.

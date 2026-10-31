@@ -69,7 +69,17 @@ export function normalizeReviewedFrenchBorrowCopy(html) {
   return html;
 }
 
+// LOC-06: exact parent-authored Spanish discovery and the two inward paragraphs.
+// Original snapshots remain immutable; any other source delta stays visible.
+export function normalizeReviewedSpanishRoommateCopy(html) {
+  return html
+    .replace('\n              <a href="/es/herramientas/plantilla-gastos-piso-compartido/">Plantilla de gastos del piso compartido</a>', '')
+    .replace('\n  <p>Si quieres conservar los gastos del piso y los pagos de varios periodos, utiliza la <a href="/es/herramientas/plantilla-gastos-piso-compartido/">plantilla de gastos para un piso compartido</a>. Incluye Excel y Google Sheets en español.</p>', '')
+    .replace('\n  <p>Para los gastos de una vivienda compartida, esta <a href="/es/herramientas/plantilla-gastos-piso-compartido/">plantilla para compañeros de piso</a> separa los gastos originales, los pagos entre personas y el saldo pendiente.</p>', '');
+}
+
 export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedSpanishRoommateCopy(html);
   html = normalizeReviewedFrenchBorrowCopy(html);
   html = normalizeReviewedArabicBorrowCopy(html);
   html = normalizeReviewedGermanBorrowCopy(html);

@@ -11,6 +11,7 @@ const sections = ["solutions", "features", "reviews", "tools", "compare", "blog"
 const frenchRepaymentRoute = "/fr/blog/comment-reclamer-son-argent-poliment/";
 const frenchRepaymentSource = "/blog/how-to-remind-someone-they-owe-you-money-politely/";
 const spanishDisclosureRoutes = new Set([
+  "/es/herramientas/plantilla-gastos-piso-compartido/",
   "/es/blog/como-pedir-dinero-prestado-a-un-amigo/",
   "/es/blog/como-pedir-que-te-devuelvan-dinero/",
 ]);

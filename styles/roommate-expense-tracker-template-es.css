@@ -1,0 +1,9 @@
+/* Keep the localized copy control unavailable until its handler is installed. */
+.roommate-template-page.site-lang-es .roommate-template-copy-button[hidden] {
+  display: none !important;
+}
+
+/* Keep short euro amounts together without changing their copyable text. */
+.roommate-template-page.site-lang-es .roommate-template-amount {
+  white-space: nowrap;
+}

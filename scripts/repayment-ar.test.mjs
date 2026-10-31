@@ -1,4 +1,4 @@
-import { normalizeReviewedGermanBorrowCopy, normalizeReviewedArabicBorrowCopy, normalizeReviewedFrenchBorrowCopy } from "../tests/helpers/reviewed-language-copy.mjs";
+import { normalizeReviewedSpanishRoommateCopy, normalizeReviewedGermanBorrowCopy, normalizeReviewedArabicBorrowCopy, normalizeReviewedFrenchBorrowCopy } from "../tests/helpers/reviewed-language-copy.mjs";
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
@@ -47,7 +47,7 @@ test('Arabic repayment guide retains reviewed payloads, matching FAQ, official b
  const visible=env.document.querySelectorAll('.repayment-ar-faq details');
  assert.deepEqual(visible.map(node=>({question:node.querySelector('summary').textContent,answer:node.querySelector('p').textContent})),expected.faq);
  assert.equal(localizedSourceRoute(route),sourceRoute);
- assert.equal(contentRegistry.length,118);
+ assert.equal(contentRegistry.length,119);
  const registry=contentRegistry.find(entry=>entry.url===route);
  assert.equal(registry.appStoreCpp,'general');assert.equal(registry.locale,'ar');
  assert.equal(siteLocales.find(locale=>locale.code==='ar').pages.length,7);
@@ -99,7 +99,7 @@ test('Arabic handoff allowlist forwards only existing metadata keys',()=>{
 
 
 test('prior repayment guides retain all authored bytes outside generated counterparts and shared cache',()=>{
- const normalize=html=>normalizeReviewedFrenchBorrowCopy(normalizeReviewedArabicBorrowCopy(normalizeReviewedGermanBorrowCopy(html))).replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g,'')
+ const normalize=html=>normalizeReviewedSpanishRoommateCopy(normalizeReviewedFrenchBorrowCopy(normalizeReviewedArabicBorrowCopy(normalizeReviewedGermanBorrowCopy(html)))).replace(/\s*<!-- locale-alternates:start -->[\s\S]*?<!-- locale-alternates:end -->/g,'')
   .replace(/\s*<!-- locale-switch:start -->[\s\S]*?<!-- locale-switch:end -->/g,'')
   .replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)(?:\?[^" ]*)?/g,'$1?v=approved-cache');
  for(const file of ['de/blog/geld-freundlich-zurueckfordern/index.html','fr/blog/comment-reclamer-son-argent-poliment/index.html','es/blog/como-pedir-que-te-devuelvan-dinero/index.html','blog/how-to-remind-someone-they-owe-you-money-politely/index.html'])

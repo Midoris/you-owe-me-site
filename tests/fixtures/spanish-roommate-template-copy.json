@@ -1,0 +1,50 @@
+{
+  "message": "Aquí está el resumen de los gastos del piso de este mes. Incluye los gastos de la hoja, el reparto que acordamos y los pagos que ya se han hecho. Revisad cualquier diferencia con vuestros apuntes antes de saldar las cuentas.",
+  "faq": [
+    {
+      "question": "¿Qué es una plantilla de gastos para un piso compartido?",
+      "answer": "Es un registro reutilizable de los gastos comunes, quién pagó, la parte acordada de cada persona, los pagos ya enviados y el saldo pendiente."
+    },
+    {
+      "question": "¿Admite repartos desiguales?",
+      "answer": "Sí. Elige importes acordados cuando el grupo ya haya decidido que un gasto no se divide por igual. La suma de las partes debe coincidir con el total del gasto."
+    },
+    {
+      "question": "¿Puedo dejar a alguien fuera de un gasto?",
+      "answer": "Sí. Incluye solo a las personas que lo compartieron. Una compra personal o un gasto de parte del grupo no debe asignarse automáticamente a todo el piso."
+    },
+    {
+      "question": "¿Cómo registro un pago entre compañeros?",
+      "answer": "Anótalo por separado del gasto original, con fecha, remitente, destinatario e importe. Así cambia el saldo pendiente sin borrar el historial del gasto."
+    },
+    {
+      "question": "¿Puedo llevar un saldo al siguiente mes?",
+      "answer": "Sí. Introduce el saldo final revisado una sola vez como saldo inicial del nuevo periodo. No lo añadas también como gasto ni cuentes dos veces el mismo pago."
+    },
+    {
+      "question": "¿La web recibe los datos de mi hoja?",
+      "answer": "You Owe Me no recibe los gastos que introduces. El archivo de Excel se queda donde lo guardes, salvo que lo subas o compartas. La copia de Google Sheets se guarda en tu cuenta de Google y la ven las personas con las que decidas compartirla."
+    },
+    {
+      "question": "¿Cómo uso la plantilla en Google Sheets?",
+      "answer": "Pulsa Usar en Google Sheets, inicia sesión si Google lo pide y crea una copia en tu Drive. Añade los nombres en Configuración, registra los movimientos en Gastos y Pagos y revisa Resumen antes de saldar las cuentas."
+    },
+    {
+      "question": "¿Puedo abrir el Excel con Apple Numbers?",
+      "answer": "El archivo utiliza fórmulas habituales, pero el formato, los menús desplegables o los cálculos pueden comportarse de otra forma en Numbers. Revisa los resultados después de importarlo. Para Google Sheets, utiliza la plantilla específica de esta página."
+    },
+    {
+      "question": "¿Cuántos movimientos caben?",
+      "answer": "Cada versión incluye 200 filas de gastos y 200 de pagos. Para otro periodo, crea una copia nueva y lleva una sola vez los saldos finales revisados como saldos iniciales."
+    }
+  ],
+  "ui": {
+    "initial": "Copiar mensaje del resumen",
+    "success": "Copiado",
+    "successStatus": "Mensaje del resumen copiado.",
+    "manual": "El texto está seleccionado. Usa la opción de copiar de tu dispositivo.",
+    "failure": "No se pudo copiar. Selecciona el mensaje y cópialo manualmente.",
+    "noJS": "JavaScript está desactivado. Puedes seleccionar el mensaje y copiarlo manualmente.",
+    "busy": "Copiando…"
+  }
+}
