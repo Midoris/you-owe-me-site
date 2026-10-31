@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "repaymentde20261031",
+  "/scripts/analytics.js": "repaymentar20261031",
   "/scripts/sales.js": "fr20261020",
   "/scripts/anniversary-announcement.js": "fr20261020",
   "/scripts/app-language-support.js": "fr20261020",
@@ -106,6 +106,21 @@ export const arabicPages = [
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", ar: "/ar/blog/how-to-keep-track-of-who-owes-you-money/", title: "كيف تتابع من يدين لك بالمال", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", ar: "/ar/solutions/personal-loan-repayment-tracker/", title: "تتبّع القروض الشخصية وسدادها", complete: true },
   { en: "/tools/split-expense-calculator/", ar: "/ar/tools/split-expense-calculator/", title: "حاسبة تقسيم المصروفات المشتركة", complete: true },
+  {
+    "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+    "ar": "/ar/blog/how-to-remind-someone-they-owe-you-money-politely/",
+    "title": "رسائل لطلب السداد بلطف",
+    "updated": "2026-10-31",
+    "complete": true,
+    "discoveryDescription": "10 رسائل بالعربية، ومثال للدفعات الجزئية، ونموذج لتسجيل المبلغ المتبقي.",
+    "registry": {
+      "primaryAudience": "من يتابعون سداد قرض بين الأصدقاء أو حصة جرى الاتفاق عليها من مصروف مشترك.",
+      "problemSolved": "اختيار رسالة مناسبة للمبلغ المتبقي بعد احتساب الدفعات المستلمة.",
+      "useWhen": "عند التذكير بالسداد أو الاتفاق على موعد أو استلام دفعة جزئية.",
+      "nextStep": "تابع القرض في You Owe Me",
+      "primaryCta": "اختر من الرسائل العشر"
+    }
+  },
 ];
 export const arabicShared = Object.freeze({
   languageLabel: "لغة الصفحة", exampleLabel: "مثال توضيحي؛ ليس لقطة شاشة من التطبيق",

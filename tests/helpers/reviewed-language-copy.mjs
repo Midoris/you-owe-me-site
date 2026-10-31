@@ -32,7 +32,21 @@ export function normalizeReviewedGermanRepaymentCopy(html) {
   return html;
 }
 
+export function normalizeReviewedArabicRepaymentCopy(html) {
+  // LOC-02: exact approved Arabic guide navigation, five retargeted anchors and two context links.
+  html = html.replace("\n              <a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\">رسائل لطلب السداد بلطف</a>", "");
+  html = html.replaceAll("<a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">اقرأ دليل التذكيرات اللطيفة</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">اقرأ دليل التذكيرات اللطيفة (بالإنجليزية)</a>");
+  html = html.replaceAll("<a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">قراءة دليل التذكيرات اللطيفة </a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\">قراءة دليل التذكيرات اللطيفة <span class=\"site-locale-fallback\">(بالإنجليزية)</span></a>");
+  html = html.replaceAll("<a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\">تذكير شخص بلطف بأنه يدين لك بالمال</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">تذكير شخص بلطف بأنه يدين لك بالمال (بالإنجليزية)</a>");
+  html = html.replaceAll("<a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\">تذكير شخص بلطف بأنه يدين لك بالمال </a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">تذكير شخص بلطف بأنه يدين لك بالمال <span class=\"site-locale-fallback\">(بالإنجليزية)</span></a>");
+  html = html.replaceAll("<a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\">نماذج التذكير اللطيف بسداد المال </a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">نماذج التذكير اللطيف بسداد المال <span class=\"site-locale-fallback\">(بالإنجليزية)</span></a>");
+  html = html.replace("\n                <p>قبل المتابعة، راجع الدفعات التي استلمتها. ستجد هنا <a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\">رسائل لطلب السداد بلطف</a> يمكنك تعديلها بحسب المبلغ المتبقي واتفاقكما.</p>", "");
+  html = html.replace("\n              <p>بعد التأكد من المبلغ المتبقي، اختر <a href=\"/ar/blog/how-to-remind-someone-they-owe-you-money-politely/\">رسالة تناسب الموقف</a>. عدّلها وفق الدفعات المستلمة وآخر اتفاق بينكما.</p>", "");
+  return html;
+}
+
 export function normalizeReviewedLanguageCopy(html) {
+  html = normalizeReviewedArabicRepaymentCopy(html);
   html = normalizeReviewedGermanRepaymentCopy(html);
   html = normalizeReviewedStatsCopy(html);
   html = html.replace('The full website is available in English, with selected pages also available in Spanish, German, Arabic and French.', 'Language availability applies to the app; the You Owe Me website is currently available in English only.');
