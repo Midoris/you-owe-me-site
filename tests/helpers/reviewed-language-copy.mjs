@@ -2,7 +2,19 @@ import fs from "node:fs";
 const portugueseCacheUpdates = JSON.parse(fs.readFileSync(new URL("../fixtures/portuguese-home-cache-updates.json", import.meta.url), "utf8"));
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+export function normalizeReviewedPortugueseRecordGuideIntegration(html) {
+  const route = '/pt/blog/como-controlar-quem-te-deve-dinheiro/';
+  html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Como registrar quem te deve</a>', '');
+  html = html.replace("<a href=\"/pt/blog/como-controlar-quem-te-deve-dinheiro/\" class=\"lt-situationMicroLink\"><span class=\"pt-link-label\">Antes de escolher um app, veja como organizar seus registros.</span></a>", "<a href=\"/blog/how-to-keep-track-of-who-owes-you-money/\" class=\"lt-situationMicroLink\"><span class=\"pt-link-label\">Antes de escolher um app, veja como organizar seus registros <span class=\"site-locale-fallback\">(em inglês)</span>.</span></a>");
+  html = html.replace("<a href=\"/pt/blog/como-controlar-quem-te-deve-dinheiro/\" class=\"lt-resourceShelfLink\">\n                  <strong>Como registrar quem deve a você</strong>", "<a href=\"/blog/how-to-keep-track-of-who-owes-you-money/\" class=\"lt-resourceShelfLink\">\n                  <strong>Como registrar quem deve a você <span class=\"site-locale-fallback\">(em inglês)</span></strong>");
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=ptrecord20261105(?=")/g, '$1?v=ptmoney20261105');
+  return html.replace(/((?:src|href)="[^"?]*scripts\/recordkeeping-guide-es\.js)\?v=ptrecord20261105(?=")/g, '$1?v=jarecord20261031');
+}
+
 export function normalizeReviewedPortugueseMoneyOwedIntegration(html) {
+  html = normalizeReviewedPortugueseRecordGuideIntegration(html);
   const route = '/pt/solucoes/app-para-controlar-quem-te-deve/';
   html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');

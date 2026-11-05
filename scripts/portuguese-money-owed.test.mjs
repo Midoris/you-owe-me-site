@@ -18,12 +18,12 @@ test('Portuguese solution preserves active English structure, source analytics a
 });
 
 test('Portuguese solution discovery and two homepage inward links match only the completed family',()=>{
- assert.deepEqual(portuguesePages.map(p=>p.pt),['/pt/',route]);assert.deepEqual(completedCounterparts(source).map(p=>p.code),['en','es','de','ar','fr','ja','pt']);assert.equal(completedCounterparts('/solutions/personal-loan-repayment-tracker/').some(p=>p.code==='pt'),false);
+ assert.deepEqual(portuguesePages.map(p=>p.pt),['/pt/',route,'/pt/blog/como-controlar-quem-te-deve-dinheiro/']);assert.deepEqual(completedCounterparts(source).map(p=>p.code),['en','es','de','ar','fr','ja','pt']);assert.equal(completedCounterparts('/solutions/personal-loan-repayment-tracker/').some(p=>p.code==='pt'),false);
  assert.equal(renderLocaleHtml(page,source,'pt'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));assert.ok(read('sitemap.xml').includes('https://you-owe-me.com'+route));
  const home=parseStaticPage(read('pt/index.html'));
  assert.equal(home.querySelector('.best-next-step__card').getAttribute('href'),route);assert.equal(home.querySelector('.lt-situationPrimaryCta').getAttribute('href'),route);assert.ok(!text(home.querySelector('.best-next-step__card')).includes('(em inglês)'));assert.ok(!text(home.querySelector('.lt-situationPrimaryCta')).includes('(em inglês)'));
  for(const c of completedCounterparts(source))assert.ok(read(c.route.slice(1)+'index.html').includes('hreflang="pt" href="https://you-owe-me.com'+route+'"'));
- assert.equal(siteLocales.find(l=>l.code==='pt').pages.length,2);
+ assert.equal(siteLocales.find(l=>l.code==='pt').pages.length,3);
 });
 
 test('prior HTML and private resources remain exact beyond the precise reviewed Portuguese solution admissions',()=>{

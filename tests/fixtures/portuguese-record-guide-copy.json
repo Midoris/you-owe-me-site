@@ -1,0 +1,37 @@
+{
+  "authority": "LOC-20-COPY.md",
+  "records": [
+    {
+      "id": "money-owed-blank-record",
+      "heading": "Modelo de registro para copiar",
+      "payload": "Quem deve a quem: [nome de quem deve] → [nome de quem recebe]\nMoeda: [BRL — real, EUR — euro ou outra]\nValor inicial: [valor]\nMotivo e data: [motivo], [data]\nPagamento recebido: [data] — [valor efetivamente recebido]\nTotal recebido: [valor]\nSaldo restante: [valor inicial − total recebido]\nSituação: [pendente / parcialmente pago / quitado / a conferir]\nPróximo pagamento ou conversa: [data ou ainda não combinado]",
+      "button": "Copiar registro",
+      "aria": "Copiar o modelo de registro em branco",
+      "tone": "clear",
+      "category": "record"
+    },
+    {
+      "id": "record-confirmation-full",
+      "heading": "Conferir valor inicial, pagamentos e saldo",
+      "payload": "Oi! Estou conferindo minhas anotações sobre [motivo]. O valor inicial era R$ [valor inicial], já recebi R$ [total recebido] e ficaram R$ [saldo] para acertar. Está assim nas suas anotações também?",
+      "button": "Copiar mensagem",
+      "aria": "Copiar a mensagem para conferir valor inicial, pagamentos e saldo",
+      "tone": "clear",
+      "category": "confirmation"
+    },
+    {
+      "id": "record-confirmation-short",
+      "heading": "Conferir só o saldo atual",
+      "payload": "Oi! Estou organizando meus registros para não esquecer nada. Pelas minhas anotações, ainda faltam R$ [saldo] de [motivo]. Se ficou algum pagamento de fora, me avisa?",
+      "button": "Copiar mensagem",
+      "aria": "Copiar a mensagem curta para conferir o saldo",
+      "tone": "clear",
+      "category": "confirmation"
+    }
+  ],
+  "copyUI": {
+    "copied": "Copiado!",
+    "prefix": "Copiado: ",
+    "failure": "Não foi possível copiar. Selecione o texto e copie manualmente."
+  }
+}

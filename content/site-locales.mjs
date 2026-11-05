@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "ptmoney20261105",
+  "/scripts/analytics.js": "ptrecord20261105",
   "/scripts/sales.js": "pt20261105",
   "/scripts/anniversary-announcement.js": "pt20261105",
   "/scripts/app-language-support.js": "pt20261105",
@@ -13,7 +13,7 @@ export const sharedAssetVersions = {
   "/assets/js/main.js": "pt20261105",
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
-  "/scripts/recordkeeping-guide-es.js": "jarecord20261031",
+  "/scripts/recordkeeping-guide-es.js": "ptrecord20261105",
   "/scripts/split-expense-locale.js": "jasplit20261105",
   "/scripts/split-expense-calculator.js": "jasplit20261105",
   "/scripts/tool-transfer.js": "jasplit20261105",
@@ -445,6 +445,21 @@ export const portuguesePages = [
       "useWhen": "Quando os pagamentos vêm em partes ou as despesas com a mesma pessoa continuam acontecendo.",
       "primaryCta": "Baixar na App Store",
       "nextStep": "Adicione uma pessoa e um valor no You Owe Me. Registre cada pagamento para manter o saldo atualizado."
+    }
+  },
+  {
+    "en": "/blog/how-to-keep-track-of-who-owes-you-money/",
+    "pt": "/pt/blog/como-controlar-quem-te-deve-dinheiro/",
+    "title": "Como registrar quem te deve",
+    "updated": "2026-11-05",
+    "complete": true,
+    "discoveryDescription": "Organize dinheiro emprestado e despesas que você pagou por alguém. Use um modelo para copiar, exemplos em reais e mensagens para conferir pagamentos e saldo.",
+    "registry": {
+      "primaryAudience": "Quem quer organizar dinheiro emprestado e despesas que pagou por alguém, sem complicar os registros.",
+      "problemSolved": "Separa valor inicial, pagamentos recebidos e saldo atual para você conferir o que ainda falta.",
+      "useWhen": "Quando você não sabe o que anotar ou como registrar um pagamento parcial.",
+      "primaryCta": "Copiar modelo de registro",
+      "nextStep": "Comece com uma pessoa e uma moeda e confira o saldo que existe hoje."
     }
   }
 ];
