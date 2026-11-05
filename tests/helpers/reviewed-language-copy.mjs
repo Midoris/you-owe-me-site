@@ -12,12 +12,30 @@ export function normalizeReviewedPortugueseSplitSource(source, file) {
   for (const [current, previous] of portugueseSplitAdmissions[file]) source = source.replace(current, previous);
   return bytes ? Buffer.from(source) : source;
 }
+export function normalizeReviewedPortugueseBorrowSource(source, file) {
+  if (file === 'scripts/analytics.js') return source.replace('../content/site-locales.mjs?v=ptborrow20261106', '../content/site-locales.mjs?v=ptrepayment20261106').replace('./iphone-handoff-analytics-bridge.mjs?v=ptborrow20261106', './iphone-handoff-analytics-bridge.mjs?v=ptrepayment20261106');
+  if (file === 'scripts/iphone-handoff-analytics-bridge.mjs') return source.replace('  "pt_borrow_iphone_handoff",\n', '');
+  return source;
+}
+export function normalizeReviewedPortugueseBorrowIntegration(html) {
+  const route = '/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/';
+  html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Como pedir dinheiro emprestado</a>', '');
+  html = html.replace("\n            <p>Se você vai pedir dinheiro emprestado a um amigo, veja <a href=\"/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/\">como explicar o pedido e combinar a devolução</a>. Confirme o valor e as condições com a pessoa e registre o recebimento quando o dinheiro chegar.</p>", '');
+  html = html.replace("<p>Se você quer pedir um empréstimo a um amigo, veja as <a href=\"/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/\">mensagens para pedir dinheiro emprestado</a>. Separe o acordo de emprestar do dinheiro que você realmente recebeu.</p>", '');
+  html = html.replace("\n\n                <article class=\"lt-blogCard lt-roomyCard\">\n                  <p class=\"lt-cardLabel\" lang=\"pt\">Português</p>\n                  <h3 class=\"lt-cardHeadingGap\"><a href=\"/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/\" hreflang=\"pt\">Ask a friend to lend you money: Portuguese messages</a></h3>\n                  <p>Eight Portuguese messages, an agreement record and a worked repayment example.</p>\n                </article>", '');
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=ptborrow20261106(?=")/g, '$1?v=ptrepayment20261106');
+}
+
 export function normalizeReviewedPortugueseRepaymentSource(source, file) {
+  source = normalizeReviewedPortugueseBorrowSource(source, file);
   if (file === 'scripts/analytics.js') return source.replace('../content/site-locales.mjs?v=ptrepayment20261106', '../content/site-locales.mjs?v=ptsplit20261105').replace('./iphone-handoff-analytics-bridge.mjs?v=ptrepayment20261106', './iphone-handoff-analytics-bridge.mjs?v=pt20261105');
   if (file === 'scripts/iphone-handoff-analytics-bridge.mjs') return source.replace('  "pt_repayment_iphone_handoff",\n', '');
   return source;
 }
 export function normalizeReviewedPortugueseRepaymentIntegration(html) {
+  html = normalizeReviewedPortugueseBorrowIntegration(html);
   const route = '/pt/blog/como-cobrar-um-amigo-com-educacao/';
   html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');

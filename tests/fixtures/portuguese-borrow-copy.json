@@ -1,0 +1,309 @@
+{
+  "language": "pt-BR",
+  "title": "Como pedir dinheiro emprestado a um amigo: 8 mensagens | You Owe Me",
+  "description": "Oito mensagens para pedir dinheiro emprestado a um amigo pelo WhatsApp, combinar a devolução e conversar quando o plano muda. Com modelo para registrar o combinado.",
+  "h1": "Como pedir dinheiro emprestado a um amigo",
+  "eyebrow": "Dinheiro entre amigos",
+  "breadcrumb": {
+    "label": "Navegação estrutural",
+    "home": "Início",
+    "current": "Como pedir dinheiro emprestado"
+  },
+  "hero": {
+    "lead": "É uma conversa delicada, mas você pode ser direto sem pressionar. Diga quanto precisa e quando consegue devolver. Se ainda não sabe a data, explique isso antes de pedir — e deixe a pessoa à vontade para dizer não.",
+    "support": "Escolha a mensagem que combina com a sua situação e substitua os campos entre colchetes. Antes de enviar pelo WhatsApp ou por outro canal, confira se os valores e as datas são possíveis para você.",
+    "primary": "Ver as 8 mensagens",
+    "secondary": "Registrar o combinado",
+    "appBefore": "Depois de receber o dinheiro, você pode ",
+    "appAnchor": "registrar o empréstimo e os pagamentos no You Owe Me",
+    "appAfter": ".",
+    "previewTitle": "Um pedido claro, com espaço para dizer não",
+    "chips": [
+      "Quanto você precisa",
+      "Quando consegue devolver",
+      "Liberdade para recusar"
+    ],
+    "previewCaption": "Adapte a mensagem ao seu jeito de falar e à relação de vocês.",
+    "byline": "Por Ievgenii Iablonskyi · Publicado em 6 de novembro de 2026"
+  },
+  "contents": {
+    "heading": "Nesta página",
+    "items": [
+      {
+        "label": "8 mensagens para situações diferentes",
+        "id": "messages"
+      },
+      {
+        "label": "O que conferir antes de pedir",
+        "id": "before"
+      },
+      {
+        "label": "Modelo para registrar o combinado",
+        "id": "agreement"
+      },
+      {
+        "label": "Exemplo de empréstimo e pagamento",
+        "id": "example"
+      },
+      {
+        "label": "Como manter o histórico no app",
+        "id": "app"
+      },
+      {
+        "label": "Dúvidas frequentes",
+        "id": "faq"
+      }
+    ]
+  },
+  "messagesHeading": "8 mensagens: do pedido à conversa sobre a devolução",
+  "messagesIntro": "Explique o motivo até onde se sentir confortável. Você não precisa contar detalhes pessoais que prefere guardar nem prometer uma data só para conseguir o empréstimo. Os modelos abaixo são opções para situações diferentes, não uma sequência de mensagens para insistir.",
+  "situationLabel": "Escolha a situação mais parecida com a sua",
+  "situationAria": "Mensagens por situação",
+  "messages": [
+    {
+      "key": "short_ask",
+      "heading": "Quando você sabe o valor e a data de devolução",
+      "guidance": "Use quando já conferiu quanto precisa e tem uma previsão realista de quando poderá devolver.",
+      "text": "Oi, [nome]! Preciso de [valor e moeda] para [motivo]. Você conseguiria me emprestar? Posso devolver no dia [data]. Se não puder, tudo bem.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "clear_ask_with_repayment_plan",
+      "heading": "Para propor a devolução em duas vezes",
+      "guidance": "Confira se as duas parcelas somam o valor que você está pedindo e se as datas cabem no seu planejamento.",
+      "text": "Você conseguiria me emprestar [valor total e moeda] para [motivo]? Minha proposta é devolver [primeiro valor e moeda] em [primeira data] e [segundo valor e moeda] em [segunda data]. Esse combinado funcionaria para você? Se não der, tudo bem.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "cannot_promise_exact_date",
+      "heading": "Quando você ainda não sabe quando poderá devolver",
+      "guidance": "Avise antes de a pessoa decidir se pode emprestar. Uma data para dar notícias não é uma data de pagamento.",
+      "text": "Preciso de [valor e moeda] para [motivo], mas ainda não sei quando consigo devolver. Posso te dar uma atualização no dia [data para conversar]. Queria saber se você consideraria me emprestar nessas condições. Entendo se não for possível.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "cover_something_temporarily",
+      "heading": "Para pedir que alguém adiante a sua parte",
+      "guidance": "Diga qual despesa é sua e quando pretende devolver. Deixe claro que está pedindo um adiantamento, não mudando a divisão da conta.",
+      "text": "Você conseguiria pagar a minha parte de [despesa] por enquanto? São [valor e moeda], e eu te devolvo no dia [data]. Queria confirmar com você antes. Se não puder, sem problema.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "slightly_more_personal",
+      "heading": "Quando você está sem jeito de pedir",
+      "guidance": "Você pode dizer que está sem jeito, sem fazer a pessoa se sentir responsável por resolver a situação.",
+      "text": "Fico um pouco sem jeito de pedir, mas estou precisando de [valor e moeda] para [motivo]. Você conseguiria me emprestar até [data de devolução]? Não quero te apertar; se não puder, pode me dizer.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "respectful_reply_if_no",
+      "heading": "Para responder quando a pessoa diz não",
+      "guidance": "Aceite a resposta sem pedir justificativas nem tentar convencer de novo.",
+      "text": "Tudo bem, valeu por me responder. Não precisa se justificar.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "reply_after_yes",
+      "heading": "Depois do sim, para confirmar o combinado",
+      "guidance": "Confirme as condições antes de receber. Essa mensagem registra o acordo; ainda não confirma que o dinheiro chegou.",
+      "text": "Valeu por topar! Só para confirmar: vou pegar [valor e moeda] emprestados para [motivo]. Combinamos a devolução assim: [data ou valores e datas das parcelas]. Te aviso assim que receber o dinheiro. Se eu perceber que vou precisar mudar o plano, converso com você antes da data combinada.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "need_more_time_update",
+      "heading": "Quando você percebe que não vai conseguir pagar como combinou",
+      "guidance": "Avise assim que souber e proponha apenas o que acredita conseguir cumprir. Uma nova data precisa ser conversada, não apenas comunicada como decisão tomada.",
+      "text": "Queria falar antes sobre o pagamento de [data combinada]. Não vou conseguir devolver como planejamos. Consigo pagar [valor e moeda] no dia [data], mas ainda não sei quando conseguirei devolver o restante. Podemos conversar sobre como ajustar? Até [data da próxima conversa], te dou uma atualização.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    }
+  ],
+  "before": {
+    "heading": "Cinco coisas para conferir antes de pedir",
+    "cards": [
+      {
+        "heading": "O valor e a moeda",
+        "body": "Confira quanto precisa e para qual despesa. Um valor específico ajuda a pessoa a entender o pedido."
+      },
+      {
+        "heading": "O que você quer explicar",
+        "body": "Conte o motivo de forma breve. Não é preciso expor detalhes pessoais que você não quer compartilhar."
+      },
+      {
+        "heading": "Sua previsão de devolução",
+        "body": "Fale de valores e datas que você acredita conseguir cumprir. O que ainda está incerto precisa ficar claro antes do empréstimo."
+      },
+      {
+        "heading": "Empréstimo ou ajuda sem devolução",
+        "body": "Deixem claro se o dinheiro será devolvido. Pedir um empréstimo e pedir uma ajuda que não será devolvida são conversas diferentes."
+      },
+      {
+        "heading": "A possibilidade de ouvir um não",
+        "body": "Evite frases como “se fosse meu amigo, emprestaria”. A pessoa pode recusar sem precisar explicar as próprias contas."
+      }
+    ],
+    "after": "Ficar sem resposta não significa receber um sim. Não conte com esse dinheiro como disponível antes de vocês combinarem as condições e de ele realmente chegar."
+  },
+  "agreement": {
+    "heading": "Concordar em emprestar não é o mesmo que enviar o dinheiro",
+    "intro": "Primeiro, anotem o que combinaram. Registre o recebimento quando o dinheiro chegar e separe o que você pretende devolver do que já pagou.",
+    "recordHeading": "Modelo para registrar o combinado e os pagamentos",
+    "text": "Quem empresta: [nome]\nQuem pega emprestado: [seu nome]\nValor combinado: [valor e moeda]\nMotivo: [para que precisa do dinheiro]\nRecebimento: [data e valor que realmente recebeu; preencha depois de receber]\nDevolução combinada: [data ou valores e datas das parcelas]\nPagamentos feitos: [data e valor de cada pagamento]\nAinda falta devolver: [valor e moeda]\nPróxima conversa: [data, se necessário]",
+    "after": "Se o valor ou as datas mudarem, confirmem o novo combinado. Guarde tanto a versão inicial quanto as mudanças para poder consultar depois. Este modelo de texto não calcula o saldo automaticamente.",
+    "contextBefore": "No guia ",
+    "contextAnchor": "como controlar quem te deve dinheiro",
+    "contextAfter": ", você encontra uma forma de separar o valor inicial dos pagamentos seguintes. A mesma organização também serve para o dinheiro que você precisa devolver."
+  },
+  "example": {
+    "heading": "Pegou R$ 300 emprestados e devolveu R$ 100: quanto falta?",
+    "intro": "Neste exemplo fictício, Marina pede R$ 300 emprestados a Lucas e combina devolver em três parcelas de R$ 100. Depois de receber os R$ 300 e pagar a primeira parcela, ainda precisa devolver R$ 200.",
+    "caption": "Exemplo fictício em reais: combinado, dinheiro recebido e pagamentos feitos",
+    "regionLabel": "Exemplo de acordo, recebimento e pagamento de um empréstimo",
+    "headers": [
+      "Momento",
+      "O que registrar",
+      "Ainda falta devolver"
+    ],
+    "rows": [
+      [
+        "Lucas concorda em emprestar",
+        "Combinaram R$ 300, mas Marina ainda não recebeu.",
+        "Ainda não recebeu"
+      ],
+      [
+        "O dinheiro chega",
+        "Marina recebe R$ 300.",
+        "R$ 300"
+      ],
+      [
+        "Marina devolve R$ 100",
+        "A primeira parcela foi paga.",
+        "R$ 200"
+      ],
+      [
+        "Eles conversam sobre a próxima data",
+        "A previsão foi revista, mas nenhum novo pagamento foi feito.",
+        "Continuam faltando R$ 200"
+      ]
+    ],
+    "scrollCue": "Deslize a tabela para os lados para ver todas as colunas.",
+    "after": "Mudar a previsão não reduz o que falta devolver. Registre cada pagamento realizado e confira o saldo antes da próxima conversa."
+  },
+  "app": {
+    "heading": "Saiba quanto ainda falta devolver",
+    "lead": "No You Owe Me para iPhone e iPad, registre o dinheiro que recebeu emprestado e os pagamentos que fez. Antes de conversar sobre a próxima parcela, você pode conferir o saldo atual.",
+    "cards": [
+      {
+        "heading": "Empréstimo e pagamentos no mesmo histórico",
+        "body": "Guarde o valor recebido e cada pagamento feito. Registre cada novo pagamento sem apagar os anteriores."
+      },
+      {
+        "heading": "Um plano para acompanhar a devolução",
+        "body": "Organize pagamentos semanais, a cada duas semanas ou mensais, por exemplo. Confira o que está previsto e o que já foi pago."
+      },
+      {
+        "heading": "O combinado fica anotado",
+        "body": "Guarde o que vocês conversaram nas notas e crie lembretes para você acompanhar os próximos pagamentos."
+      }
+    ],
+    "boundary": "O You Owe Me é um app de registro: não empresta dinheiro nem faz transferências. A outra pessoa não precisa instalar o app para você manter seu próprio histórico.",
+    "handoffHeading": "O que você pegou emprestado e o que já devolveu",
+    "handoffBody": "Confira o valor inicial, o histórico de pagamentos e quanto ainda falta, no iPhone ou iPad.",
+    "assurance": "O You Owe Me está disponível em português.",
+    "badgeAlt": "Baixar o You Owe Me na App Store",
+    "qrInstruction": "Aponte a câmera do iPhone ou iPad para o código.",
+    "storeFallback": "Abrir na App Store",
+    "qrAlt": "Código QR para abrir o You Owe Me na App Store",
+    "productLink": "Ver como acompanhar empréstimos e pagamentos"
+  },
+  "faqHeading": "Dúvidas sobre pedir dinheiro emprestado a um amigo",
+  "faq": [
+    {
+      "q": "Como pedir dinheiro emprestado a um amigo pelo WhatsApp?",
+      "a": "Diga o valor, explique brevemente o motivo e informe quando acredita que conseguirá devolver. Se ainda não sabe a data, deixe isso claro antes. Dê espaço para a pessoa recusar e adapte a mensagem à relação de vocês."
+    },
+    {
+      "q": "E se eu não souber quando vou conseguir devolver?",
+      "a": "Conte isso antes de receber o dinheiro. Você pode combinar uma data para dar notícias, mas ela não deve ser apresentada como uma data de pagamento. A pessoa precisa conhecer essa incerteza para decidir se quer emprestar."
+    },
+    {
+      "q": "Como pedir sem colocar pressão na pessoa?",
+      "a": "Explique o pedido com clareza e não use a amizade como motivo para a pessoa aceitar. Se ela disser não, aceite a resposta sem insistir nem pedir que justifique a recusa."
+    },
+    {
+      "q": "Estas mensagens servem para cobrar dinheiro que eu emprestei?",
+      "a": "Esta página é para quem quer pedir dinheiro emprestado. Se você já emprestou e quer receber de volta, veja as mensagens para pedir seu dinheiro de volta. Escolha o texto de acordo com o saldo que falta e com a data que vocês combinaram."
+    },
+    {
+      "q": "Meu amigo também precisa usar o You Owe Me?",
+      "a": "Não para você manter seu próprio registro. As mensagens também podem ser copiadas sem instalar o app. Se usar o You Owe Me, você registra o empréstimo e os pagamentos no seu iPhone ou iPad."
+    },
+    {
+      "q": "Posso conseguir um empréstimo pelo You Owe Me?",
+      "a": "Não. O You Owe Me serve para registrar dinheiro emprestado, valores a devolver e pagamentos. O app não oferece empréstimos nem faz transferências; a movimentação do dinheiro acontece fora dele."
+    }
+  ],
+  "faqRepaymentAnchor": "mensagens para pedir seu dinheiro de volta",
+  "relatedHeading": "Depois do pedido, mantenha o combinado claro",
+  "relatedIntroBefore": "Se você está do outro lado e quer receber o dinheiro que emprestou, use as ",
+  "relatedIntroAnchor": "mensagens para pedir seu dinheiro de volta",
+  "relatedIntroAfter": ". Confira o que ainda falta, descontando os pagamentos que já recebeu.",
+  "related": [
+    {
+      "title": "Como organizar os registros de empréstimos",
+      "body": "Separe o valor inicial dos pagamentos feitos para saber quanto ainda falta.",
+      "url": "/pt/blog/como-controlar-quem-te-deve-dinheiro/"
+    },
+    {
+      "title": "Controle de empréstimos entre pessoas",
+      "body": "Acompanhe o que está previsto para devolver e o que já foi pago.",
+      "url": "/pt/solucoes/controle-de-emprestimos-entre-pessoas/"
+    },
+    {
+      "title": "App para registrar o que você tem a receber e a pagar",
+      "body": "Consulte os valores que te devem e o que você precisa devolver, no iPhone ou iPad.",
+      "url": "/pt/solucoes/app-para-controlar-quem-te-deve/"
+    }
+  ],
+  "copyUI": {
+    "message": "Copiar mensagem",
+    "record": "Copiar registro do combinado",
+    "busy": "Copiando…",
+    "successButton": "Copiado",
+    "successStatus": "Texto copiado.",
+    "manualSelected": "Não foi possível copiar automaticamente. O texto está selecionado: use a opção de copiar do seu dispositivo.",
+    "failure": "Não foi possível copiar automaticamente. Selecione o texto e copie.",
+    "noJS": "O JavaScript está desativado. Você pode selecionar e copiar os textos.",
+    "messageAriaPrefix": "Copiar mensagem: ",
+    "recordAria": "Copiar modelo para registrar o combinado do empréstimo"
+  },
+  "registry": {
+    "title": "Como pedir dinheiro emprestado",
+    "discoveryDescription": "Oito mensagens para conversar sobre um empréstimo entre amigos, com modelo de registro e exemplo de pagamentos.",
+    "primaryAudience": "Quem quer pedir dinheiro emprestado a um amigo e registrar o combinado de devolução.",
+    "problemSolved": "Ajuda a explicar o pedido e a separar o acordo, o dinheiro recebido e os pagamentos realizados.",
+    "useWhen": "Antes de pedir um empréstimo a um amigo e ao conversar sobre a devolução depois.",
+    "primaryCta": "Ver as 8 mensagens",
+    "nextStep": "Registrar o empréstimo e acompanhar os pagamentos"
+  },
+  "inwardNewParagraphs": {
+    "loanBefore": "Se você vai pedir dinheiro emprestado a um amigo, veja ",
+    "loanAnchor": "como explicar o pedido e combinar a devolução",
+    "loanAfter": ". Confirme o valor e as condições com a pessoa e registre o recebimento quando o dinheiro chegar.",
+    "repaymentBefore": "Se você quer pedir um empréstimo a um amigo, veja as ",
+    "repaymentAnchor": "mensagens para pedir dinheiro emprestado",
+    "repaymentAfter": ". Separe o acordo de emprestar do dinheiro que você realmente recebeu."
+  },
+  "englishBlogCard": {
+    "language": "Português",
+    "title": "Ask a friend to lend you money: Portuguese messages",
+    "description": "Eight Portuguese messages, an agreement record and a worked repayment example."
+  }
+}

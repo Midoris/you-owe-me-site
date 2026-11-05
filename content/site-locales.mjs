@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "ptrepayment20261106",
+  "/scripts/analytics.js": "ptborrow20261106",
   "/scripts/sales.js": "pt20261105",
   "/scripts/anniversary-announcement.js": "pt20261105",
   "/scripts/app-language-support.js": "pt20261105",
@@ -505,6 +505,21 @@ export const portuguesePages = [
     "useWhen": "Para começar a conversa, confirmar uma data ou pedir o restante depois de um pagamento parcial.",
     "primaryCta": "Ver as 10 mensagens",
     "nextStep": "Registrar empréstimos e pagamentos no You Owe Me"
+  }
+}
+, {
+  "en": "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
+  "pt": "/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/",
+  "title": "Como pedir dinheiro emprestado",
+  "updated": "2026-11-06",
+  "complete": true,
+  "discoveryDescription": "Oito mensagens para conversar sobre um empréstimo entre amigos, com modelo de registro e exemplo de pagamentos.",
+  "registry": {
+    "primaryAudience": "Quem quer pedir dinheiro emprestado a um amigo e registrar o combinado de devolução.",
+    "problemSolved": "Ajuda a explicar o pedido e a separar o acordo, o dinheiro recebido e os pagamentos realizados.",
+    "useWhen": "Antes de pedir um empréstimo a um amigo e ao conversar sobre a devolução depois.",
+    "primaryCta": "Ver as 8 mensagens",
+    "nextStep": "Registrar o empréstimo e acompanhar os pagamentos"
   }
 }
 ];

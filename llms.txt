@@ -364,4 +364,5 @@ Páginas disponíveis em português. Cada página tem seu próprio endereço; os
 - [Empréstimos e planos de pagamento](https://you-owe-me.com/pt/solucoes/controle-de-emprestimos-entre-pessoas/) — Organize empréstimos entre amigos e familiares. Registre pagamentos, confira o saldo e acompanhe o plano de devolução no You Owe Me para iPhone, em português.
 - [Calculadora para dividir despesas](https://you-owe-me.com/pt/ferramentas/calculadora-dividir-despesas/) — Some o que cada pessoa pagou e veja quem precisa pagar a quem. Divida jantar, viagem, mercado e outras despesas, escolhendo os participantes de cada gasto.
 - [Mensagens para pedir seu dinheiro de volta](https://you-owe-me.com/pt/blog/como-cobrar-um-amigo-com-educacao/) — Dez mensagens para cobrar um amigo com educação, com exemplo de pagamentos parciais e modelo de registro para copiar.
+- [Como pedir dinheiro emprestado](https://you-owe-me.com/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/) — Oito mensagens para conversar sobre um empréstimo entre amigos, com modelo de registro e exemplo de pagamentos.
 <!-- portuguese-pages:end -->

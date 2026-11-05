@@ -4,6 +4,7 @@ export const INCLUDED_EXACT_ROUTES = new Set([
   "/",
   "/ja/",
   "/pt/",
+  "/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/",
   "/pt/blog/como-cobrar-um-amigo-com-educacao/",
   "/pt/ferramentas/calculadora-dividir-despesas/",
   "/pt/solucoes/controle-de-emprestimos-entre-pessoas/",
