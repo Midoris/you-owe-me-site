@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "pt20261105",
+  "/scripts/analytics.js": "ptmoney20261105",
   "/scripts/sales.js": "pt20261105",
   "/scripts/anniversary-announcement.js": "pt20261105",
   "/scripts/app-language-support.js": "pt20261105",
@@ -425,11 +425,26 @@ export const portuguesePages = [
     "updated": "2026-11-05",
     "complete": true,
     "registry": {
-      "primaryAudience": "Quem quer organizar o dinheiro emprestado, as despesas pagas por outras pessoas e os valores que precisa devolver.",
+      "primaryAudience": "Quem quer organizar o dinheiro emprestado, as despesas que pagou para outras pessoas e os valores que precisa devolver.",
       "problemSolved": "Mantenha o histórico por pessoa e confira o que já foi pago e o que ainda falta.",
       "useWhen": "Quando você precisa começar a registrar valores a receber ou a devolver.",
       "primaryCta": "Baixar na App Store",
       "nextStep": "Baixe o You Owe Me e registre a primeira pessoa e o primeiro valor."
+    }
+  },
+  {
+    "en": "/solutions/app-to-track-money-owed/",
+    "pt": "/pt/solucoes/app-para-controlar-quem-te-deve/",
+    "title": "App para controlar quem te deve",
+    "updated": "2026-11-05",
+    "complete": true,
+    "discoveryDescription": "Registre quem te deve, os pagamentos recebidos e quanto ainda falta receber. Organize dinheiro emprestado e despesas que você pagou por alguém no You Owe Me para iPhone e iPad.",
+    "registry": {
+      "primaryAudience": "Quem precisa acompanhar dinheiro emprestado, despesas que você pagou por amigos ou familiares e pagamentos feitos aos poucos.",
+      "problemSolved": "Reúne o valor original, os pagamentos e o saldo de cada pessoa para você saber quanto ainda falta receber.",
+      "useWhen": "Quando os pagamentos vêm em partes ou as despesas com a mesma pessoa continuam acontecendo.",
+      "primaryCta": "Baixar na App Store",
+      "nextStep": "Adicione uma pessoa e um valor no You Owe Me. Registre cada pagamento para manter o saldo atualizado."
     }
   }
 ];
@@ -454,7 +469,7 @@ export const portugueseShared = Object.freeze({
   },
   "sectionLabel": "Páginas em português",
   "discoveryDescription": "Páginas disponíveis em português. Cada página tem seu próprio endereço; os links para conteúdos ainda não traduzidos indicam “em inglês”.",
-  "primaryAudience": "Quem quer organizar o dinheiro emprestado, as despesas pagas por outras pessoas e os valores que precisa devolver.",
+  "primaryAudience": "Quem quer organizar o dinheiro emprestado, as despesas que pagou para outras pessoas e os valores que precisa devolver.",
   "useWhen": "Para entender as opções em português e escolher o próximo passo.",
   "nextStep": "Leia um guia relacionado ou comece seus registros no You Owe Me para iPhone."
 });

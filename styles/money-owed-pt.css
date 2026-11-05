@@ -1,0 +1,32 @@
+/* Portuguese copy uses the current English solution typography and components. */
+html[lang="pt-BR"] body.money-owed-solution-page #main { overflow-wrap: break-word; }
+html[lang="pt-BR"] body.money-owed-solution-page #main .lt-detailHeroVisual img { max-height: 640px; object-fit: contain; }
+html[lang="pt-BR"] body.money-owed-solution-page #main .lt-detailHeroVisual figcaption { margin-top: 0.8rem; font-size: 0.8rem; line-height: 1.7; color: #52616c; }
+html[lang="pt-BR"] body.money-owed-solution-page #main .lt-breadcrumb > a { min-width: 0; }
+html[lang="pt-BR"] body.money-owed-solution-page #main .lt-breadcrumb { padding-top: 0; }
+html[lang="pt-BR"] body.money-owed-solution-page .site-locale-fallback,
+html[lang="pt-BR"] body.money-owed-solution-page #main .solution-step-item p .site-locale-fallback {
+  display: inline;
+  white-space: nowrap;
+  margin: 0;
+  font: inherit;
+  color: inherit;
+  text-transform: none;
+  letter-spacing: normal;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  background: none;
+}
+html[lang="pt-BR"] body.money-owed-solution-page #main .lt-cardCta { line-height: 1.55; }
+html[lang="pt-BR"] body.money-owed-solution-page #main .pt-money { white-space: nowrap; }
+html[lang="pt-BR"] body.money-owed-solution-page .site-language-switch a { white-space: nowrap; }
+@media (max-width: 980px) {
+  html[lang="pt-BR"] body.money-owed-solution-page #main .site-locale-section { padding-top: 3rem; }
+}
+html[lang="pt-BR"] body.money-owed-solution-page #main .pt-hero-connector { white-space: nowrap; }
+/* Include the directory CTA padding and border in its available card width. */
+html[lang="pt-BR"] body.money-owed-solution-page #main .money-owed-related-directory .lt-cardCta {
+  box-sizing: border-box;
+  max-width: 100%;
+}

@@ -2,7 +2,19 @@ import fs from "node:fs";
 const portugueseCacheUpdates = JSON.parse(fs.readFileSync(new URL("../fixtures/portuguese-home-cache-updates.json", import.meta.url), "utf8"));
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+export function normalizeReviewedPortugueseMoneyOwedIntegration(html) {
+  const route = '/pt/solucoes/app-para-controlar-quem-te-deve/';
+  html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
+  html = html.replace('\n              <a href="'+route+'">App para controlar quem te deve</a>', '');
+  html = html.replace("<a class=\"best-next-step__card\" href=\"/pt/solucoes/app-para-controlar-quem-te-deve/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_1\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"money-owed\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/app-to-track-money-owed/\" data-step-position=\"1\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_money_owed\">", "<a class=\"best-next-step__card\" href=\"/solutions/app-to-track-money-owed/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_1\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"money-owed\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/app-to-track-money-owed/\" data-step-position=\"1\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_money_owed\">");
+  html = html.replace("<strong>Quero acompanhar o dinheiro que me devem</strong>", "<strong>Quero acompanhar o dinheiro que me devem <span class=\"site-locale-fallback\">(em inglês)</span></strong>");
+  html = html.replace("<a href=\"/pt/solucoes/app-para-controlar-quem-te-deve/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"pt-link-label\">Organizar valores a receber</span></a>", "<a href=\"/solutions/app-to-track-money-owed/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"pt-link-label\">Organizar valores a receber <span class=\"site-locale-fallback\">(em inglês)</span></span></a>");
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=ptmoney20261105(?=")/g, '$1?v=pt20261105');
+}
+
 export function normalizeReviewedPortugueseHomeIntegration(html) {
+  html = normalizeReviewedPortugueseMoneyOwedIntegration(html);
   html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com/pt/" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="/pt/" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
   html = html.replaceAll("The full website is available in English, with selected pages also available in Spanish, German, Arabic, French, Japanese and Portuguese.", "The full website is available in English, with selected pages also available in Spanish, German, Arabic, French and Japanese.");

@@ -13,13 +13,13 @@ const base='390c493b04d6fe5feede3088ac1c5de940b6121d',page=read('pt/index.html')
 const hash=b=>createHash('sha256').update(b).digest('hex');
 
 test('Portuguese discovery admits only the reviewed base-pt homepage with native pt-BR document language',()=>{
- assert.deepEqual(portuguesePages.map(p=>p.pt),['/pt/']);
+ assert.deepEqual(portuguesePages.map(p=>p.pt),['/pt/','/pt/solucoes/app-para-controlar-quem-te-deve/']);
  assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja','pt']);
  assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='pt'),false);
  assert.match(page,/<html lang="pt-BR">/);assert.equal(renderLocaleHtml(page,'/','pt'),page);
  assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
  assert.ok(read('sitemap.xml').includes('<loc>https://you-owe-me.com/pt/</loc>'));
- const nav=d.querySelector('.site-locale-section');assert.equal(nav.querySelectorAll('a').length,1);assert.equal(nav.querySelector('a').getAttribute('href'),'/pt/');
+ const nav=d.querySelector('.site-locale-section');assert.equal(nav.querySelectorAll('a').length,2);assert.equal(nav.querySelector('a').getAttribute('href'),'/pt/');
  for(const c of completedCounterparts('/'))assert.ok(read(c.route.slice(1)+'index.html').includes('hreflang="pt" href="https://you-owe-me.com/pt/"'));
  const graph=JSON.parse(page.match(/<script type="application\/ld\+json">([\s\S]+?)<\/script>/)[1])['@graph'];
  assert.equal(graph[0].inLanguage,'pt-BR');assert.equal(graph[1].inLanguage.length,10);assert.equal(graph[2].inLanguage,'en');
@@ -38,7 +38,8 @@ test('Portuguese home preserves active source structure and English fallback des
 });
 
 test('all prior public HTML preserves exact accepted bytes beyond the approved Portuguese homepage integration',()=>{
- const files=execFileSync('git',['diff','--name-only',base],{encoding:'utf8'}).trim().split('\n').filter(f=>f.endsWith('.html'));
+ const oldFiles=new Set(execFileSync('git',['ls-tree','-r','--name-only',base],{encoding:'utf8'}).trim().split('\n'));
+ const files=execFileSync('git',['diff','--name-only',base],{encoding:'utf8'}).trim().split('\n').filter(f=>f.endsWith('.html')&&oldFiles.has(f));
  assert.ok(files.length>100);
  for(const file of files){const old=execFileSync('git',['show',base+':'+file],{encoding:'utf8'});assert.equal(normalizeReviewedPortugueseHomeIntegration(read(file)),old,file);}
  const afterAttribute='<a href="/pt/" lang="pt" data-unapproved="x" hreflang="pt">Português</a>';
