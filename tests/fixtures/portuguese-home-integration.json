@@ -1,0 +1,35 @@
+{
+  "base": "390c493b04d6fe5feede3088ac1c5de940b6121d",
+  "sentences": [
+    [
+      "index.html",
+      "The full website is available in English, with selected pages also available in Spanish, German, Arabic, French and Japanese.",
+      "The full website is available in English, with selected pages also available in Spanish, German, Arabic, French, Japanese and Portuguese."
+    ],
+    [
+      "es/index.html",
+      "Este sitio web ofrece páginas en español, alemán, árabe, francés y japonés, además de todos sus contenidos en inglés.",
+      "Este sitio web ofrece páginas en español, alemán, árabe, francés, japonés y portugués, además de todos sus contenidos en inglés."
+    ],
+    [
+      "de/index.html",
+      "Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch, Französisch und Japanisch sowie alle Inhalte auf Englisch.",
+      "Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch, Französisch, Japanisch und Portugiesisch sowie alle Inhalte auf Englisch."
+    ],
+    [
+      "ar/index.html",
+      "يوفّر الموقع صفحات بالعربية والإسبانية والألمانية والفرنسية واليابانية، إلى جانب جميع محتوياته بالإنجليزية.",
+      "يوفّر الموقع صفحات بالعربية والإسبانية والألمانية والفرنسية واليابانية والبرتغالية، إلى جانب جميع محتوياته بالإنجليزية."
+    ],
+    [
+      "fr/index.html",
+      "Le site propose une sélection de pages en français, espagnol, allemand, arabe et japonais, ainsi que l’ensemble de ses contenus en anglais.",
+      "Le site propose une sélection de pages en français, espagnol, allemand, arabe, japonais et portugais, ainsi que l’ensemble de ses contenus en anglais."
+    ],
+    [
+      "ja/index.html",
+      "ウェブサイト全体は英語で、一部のページは日本語、スペイン語、ドイツ語、アラビア語、フランス語でも読めます。",
+      "ウェブサイト全体は英語で、一部のページは日本語、スペイン語、ドイツ語、アラビア語、フランス語、ポルトガル語でも読めます。"
+    ]
+  ]
+}

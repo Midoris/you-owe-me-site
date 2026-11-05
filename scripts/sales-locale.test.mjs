@@ -81,3 +81,16 @@ test("French campaign presentation preserves original dates, identity and analyt
   }
   assert.equal(runSale("fr", 10, 20).badge.hidden, true);
 });
+
+
+test("Portuguese campaign labels retain US campaign dates and original analytics state", () => {
+ for (const [month,day,label] of [[12,24,"Natal"],[1,1,"Ano-Novo"],[6,19,"Dia dos Pais nos EUA"],[7,4,"Independência dos EUA"],[2,14,"Dia de São Valentim"],[4,5,"Páscoa"],[10,31,"Halloween"],[11,11,"Dia dos Solteiros"],[11,26,"Ação de Graças nos EUA"],[11,27,"Black Friday"],[11,30,"Cyber Monday"]]) {
+  const en=runSale("en",month,day),pt=runSale("pt-BR",month,day);
+  assert.equal(pt.badge.textContent,"Oferta de "+label);
+  assert.equal(pt.badge.attributes["aria-label"],"Promoção em andamento: "+label);
+  assert.equal(JSON.stringify(pt.sale),JSON.stringify(en.sale));
+  assert.equal(JSON.stringify(pt.events),JSON.stringify(en.events));
+ }
+ assert.equal(runSale("pt-BR",6,12).badge.hidden,true);
+ assert.equal(runSale("pt-BR",11,5).badge.hidden,true);
+});

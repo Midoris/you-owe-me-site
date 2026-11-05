@@ -343,3 +343,14 @@ test("French publications keep French text and home links for all browser langua
     assert.equal(anchor.getAttribute("dir"), "ltr");
   }
 });
+
+
+test("Portuguese page normalizes pt-BR and overrides other browser locales", () => {
+  for (const browserLanguage of ["en-US", "ja-JP", "ar-SA", "pt-PT"]) {
+    const d = new FakeDocument(); d.documentElement = {lang: "pt-BR"};
+    const node = languageSupport.render(d, {language: browserLanguage});
+    assert.equal(flattenedText(node), "✓O You Owe Me está disponível em português.");
+    assert.equal(node.children[1].children[1].getAttribute("href"), "/pt/");
+    assert.equal(node.getAttribute("lang"), "pt");
+  }
+});

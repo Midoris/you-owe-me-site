@@ -37,6 +37,7 @@
     Halloween: "هالوين", "Singles' Day": "يوم العزّاب", Thanksgiving: "عيد الشكر الأمريكي",
   });
   const JAPANESE_SALE_NAMES = Object.freeze({"Debug": "テスト", "Father's Day": "米国の父の日", "Independence Day": "米国独立記念日", "Black Friday": "ブラックフライデー", "Cyber Monday": "サイバーマンデー", "Christmas": "クリスマス", "New Year": "新年", "Valentine's Day": "バレンタインデー", "Easter": "イースター", "Halloween": "ハロウィーン", "Singles' Day": "独身の日", "Thanksgiving": "米国の感謝祭"});
+  const PORTUGUESE_SALE_NAMES = Object.freeze({"Debug": "Teste", "Father's Day": "Dia dos Pais nos EUA", "Independence Day": "Independência dos EUA", "Black Friday": "Black Friday", "Cyber Monday": "Cyber Monday", "Christmas": "Natal", "New Year": "Ano-Novo", "Valentine's Day": "Dia de São Valentim", "Easter": "Páscoa", "Halloween": "Halloween", "Singles' Day": "Dia dos Solteiros", "Thanksgiving": "Ação de Graças nos EUA"});
   let currentActiveSale = null;
 
   /**
@@ -242,6 +243,7 @@
   }
 
   function saleBadgeLabel(sale) {
+    if (document.documentElement?.lang?.split("-")[0] === "pt") return sale ? "Oferta de " + PORTUGUESE_SALE_NAMES[sale.saleName] : "";
     if (document.documentElement?.lang === "ja") return sale ? JAPANESE_SALE_NAMES[sale.saleName] + "・期間限定" : "";
     if (document.documentElement?.lang === "fr") return sale ? FRENCH_SALE_NAMES[sale.saleName] + " • Offre à durée limitée" : "";
     if (document.documentElement?.lang === "ar") return sale ? ARABIC_SALE_NAMES[sale.saleName] + " • عرض لفترة محدودة" : "";
@@ -271,7 +273,9 @@
     badges.forEach((badge) => {
       badge.hidden = false;
       badge.textContent = label;
-      badge.setAttribute("aria-label", document.documentElement?.lang === "ja"
+      badge.setAttribute("aria-label", document.documentElement?.lang?.split("-")[0] === "pt"
+        ? "Promoção em andamento: " + PORTUGUESE_SALE_NAMES[sale.saleName]
+        : document.documentElement?.lang === "ja"
         ? "実施中のキャンペーン：" + JAPANESE_SALE_NAMES[sale.saleName]
         : document.documentElement?.lang === "fr"
         ? "Offre en cours : " + FRENCH_SALE_NAMES[sale.saleName]

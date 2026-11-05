@@ -217,3 +217,18 @@ test("German announcements translate active/final states and label the English s
   assert.equal(standard.hidden, true);
   assert.equal(inline.hidden, true);
 });
+
+
+test("Portuguese anniversary copy retains exact historical gates and English destination", () => {
+  const standard = standardModule(), inline = inlineModule();
+  const d = new FakeDocument([standard, inline]); d.documentElement = {lang: "pt-BR"};
+  anniversary.render(d, new Date(2026, 7, 26, 12));
+  assert.equal(standard.querySelector("[data-anniversary-heading]").textContent, "O You Owe Me faz 10 anos.");
+  assert.equal(standard.querySelector("[data-anniversary-cta]").textContent, "Conheça essa história (em inglês)");
+  assert.equal(standard.querySelector("[data-anniversary-cta]").getAttribute("href"), "/10-years/");
+  assert.equal(inline.querySelector("[data-anniversary-inline-label]").textContent, "Estamos comemorando 10 anos");
+  anniversary.render(d, new Date(2026, 8, 4, 12));
+  assert.equal(standard.querySelector("[data-anniversary-heading]").textContent, "A oferta de aniversário termina em 4 de setembro.");
+  assert.equal(inline.querySelector("[data-anniversary-inline-label]").textContent, "Últimos dias");
+  anniversary.render(d, new Date(2026, 10, 5, 12)); assert.equal(standard.hidden, true); assert.equal(inline.hidden, true);
+});

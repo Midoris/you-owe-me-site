@@ -1,7 +1,23 @@
 import fs from "node:fs";
+const portugueseCacheUpdates = JSON.parse(fs.readFileSync(new URL("../fixtures/portuguese-home-cache-updates.json", import.meta.url), "utf8"));
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+export function normalizeReviewedPortugueseHomeIntegration(html) {
+  html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com/pt/" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="/pt/" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
+  html = html.replaceAll("The full website is available in English, with selected pages also available in Spanish, German, Arabic, French, Japanese and Portuguese.", "The full website is available in English, with selected pages also available in Spanish, German, Arabic, French and Japanese.");
+  html = html.replaceAll("Este sitio web ofrece páginas en español, alemán, árabe, francés, japonés y portugués, además de todos sus contenidos en inglés.", "Este sitio web ofrece páginas en español, alemán, árabe, francés y japonés, además de todos sus contenidos en inglés.");
+  html = html.replaceAll("Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch, Französisch, Japanisch und Portugiesisch sowie alle Inhalte auf Englisch.", "Die Website bietet ausgewählte Seiten auf Deutsch, Spanisch, Arabisch, Französisch und Japanisch sowie alle Inhalte auf Englisch.");
+  html = html.replaceAll("يوفّر الموقع صفحات بالعربية والإسبانية والألمانية والفرنسية واليابانية والبرتغالية، إلى جانب جميع محتوياته بالإنجليزية.", "يوفّر الموقع صفحات بالعربية والإسبانية والألمانية والفرنسية واليابانية، إلى جانب جميع محتوياته بالإنجليزية.");
+  html = html.replaceAll("Le site propose une sélection de pages en français, espagnol, allemand, arabe, japonais et portugais, ainsi que l’ensemble de ses contenus en anglais.", "Le site propose une sélection de pages en français, espagnol, allemand, arabe et japonais, ainsi que l’ensemble de ses contenus en anglais.");
+  html = html.replaceAll("ウェブサイト全体は英語で、一部のページは日本語、スペイン語、ドイツ語、アラビア語、フランス語、ポルトガル語でも読めます。", "ウェブサイト全体は英語で、一部のページは日本語、スペイン語、ドイツ語、アラビア語、フランス語でも読めます。");
+  const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/)?.[1];
+  for (const [updated, previous] of portugueseCacheUpdates[canonical] || []) html = html.replaceAll(updated, previous);
+  return html;
+}
+
 export function normalizeReviewedJapaneseRoommateIntegration(html) {
+  html = normalizeReviewedPortugueseHomeIntegration(html);
   const route = '/ja/tools/roommate-expense-tracker-template/';
   html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const dir of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="ja"'+dir+' hreflang="ja">日本語</a>', '');

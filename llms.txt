@@ -352,3 +352,11 @@ Contenus publics en français. Chaque page possède sa propre URL canonique. Les
 - [お金を借りるときの例文](https://you-owe-me.com/ja/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/) — 友人にお金を借りたいとき、どう頼めばいい？金額や返す予定を伝える例文8選と、約束・受け取ったお金・返済を分けて残す記録テンプレート。
 - [ルームシェアの家計・精算表](https://you-owe-me.com/ja/tools/roommate-expense-tracker-template/) — ルームシェアの家賃、光熱費、食費と精算をまとめて記録。2〜6人で使える日本語の無料Excel・Googleスプレッドシートテンプレート。均等割りにも、決めた負担額にも対応。
 <!-- japanese-pages:end -->
+
+<!-- portuguese-pages:start -->
+## Páginas em português
+
+Páginas disponíveis em português. Cada página tem seu próprio endereço; os links para conteúdos ainda não traduzidos indicam “em inglês”.
+
+- [Dinheiro emprestado e valores a receber](https://you-owe-me.com/pt/)
+<!-- portuguese-pages:end -->

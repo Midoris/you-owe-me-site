@@ -116,13 +116,15 @@
 
     const text = documentObject.createElement("span");
     text.className = "app-language-support__text";
-    if (message.before) text.appendChild(documentObject.createTextNode(message.before));
+    const pageLanguage = normalizeLocale(documentObject.documentElement?.lang)?.split("-")[0];
+    if (pageLanguage === "pt") text.appendChild(documentObject.createTextNode("O "));
+    else if (message.before) text.appendChild(documentObject.createTextNode(message.before));
 
     const productName = documentObject.createElement("bdi");
     productName.textContent = PRODUCT_NAME;
-    if (["es", "de", "ar", "fr", "ja"].includes(documentObject.documentElement?.lang)) {
+    if (["es", "de", "ar", "fr", "ja", "pt"].includes(pageLanguage)) {
       const productLink = documentObject.createElement("a");
-      productLink.setAttribute("href", `/${documentObject.documentElement.lang}/`);
+      productLink.setAttribute("href", `/${pageLanguage}/`);
       productLink.appendChild(productName);
       text.appendChild(productLink);
     } else {
@@ -147,7 +149,8 @@
     const existing = documentObject.querySelector(RENDERED_SELECTOR);
     if (existing) return existing;
 
-    const language = ["es", "de", "ar", "fr", "ja"].includes(documentObject.documentElement?.lang) ? documentObject.documentElement.lang : matchedAppLanguage(
+    const pageLanguage = normalizeLocale(documentObject.documentElement?.lang)?.split("-")[0];
+    const language = ["es", "de", "ar", "fr", "ja", "pt"].includes(pageLanguage) ? pageLanguage : matchedAppLanguage(
       localPreviewLocale(locationLike) || primaryBrowserLocale(navigatorLike),
     );
     if (!language) return null;
