@@ -75,6 +75,8 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
     ? `<details class="site-spanish-disclosure"><summary>Más guías en español</summary>${sectionNav}</details>`
     : lang === "fr" && ["/fr/outils/tableau-depenses-colocation/", frenchRepaymentRoute, "/fr/blog/comment-demander-de-l-argent-a-un-ami/"].includes(route)
       ? `<details class="site-french-disclosure"><summary>Pages en français</summary>${sectionNav}</details>`
+      : lang === "ja" && route === "/ja/blog/how-to-remind-someone-they-owe-you-money-politely/"
+      ? `<details class="site-japanese-disclosure"><summary>${esc(locale.shared.sectionLabel)}</summary>${sectionNav}</details>`
       : sectionNav;
   html = html.replace(/(<article\b[^>]*>)/, `$1\n          <!-- ${marker}-section:start -->\n          ${sectionContent}\n          <!-- ${marker}-section:end -->`);
   return html;

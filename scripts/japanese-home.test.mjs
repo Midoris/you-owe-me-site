@@ -10,7 +10,7 @@ const page=read('ja/index.html'),doc=parseStaticPage(page),expected=JSON.parse(r
 const text=n=>n.textContent.trim().replace(/\s+/g,' ');
 
 test('Japanese home retains all ten reviewed FAQs and all twenty-one translated review cards',()=>{
- const linkedAnswers={1:['無料の計算ツール','Live Link','Balance Sync'],4:['返済をお願いするメッセージ集'],6:['親の費用を記録する使い方']};
+ const linkedAnswers={1:['無料の計算ツール','Live Link','Balance Sync'],6:['親の費用を記録する使い方']};
  const articles=doc.querySelectorAll('.lt-faqList article');assert.equal(articles.length,10);
  for(const [i,node]of articles.entries()){
   assert.equal(text(node.querySelector('h3')),expected.faq[i].question);
@@ -25,7 +25,7 @@ test('Japanese home retains all ten reviewed FAQs and all twenty-one translated 
 });
 
 test('Japanese admission contains only its reviewed home and solution with exact route semantics and fullwidth fallback removal',()=>{
- assert.deepEqual(japanesePages.map(p=>p.ja),['/ja/','/ja/solutions/app-to-track-money-owed/','/ja/blog/how-to-keep-track-of-who-owes-you-money/','/ja/solutions/personal-loan-repayment-tracker/','/ja/tools/split-expense-calculator/']);
+ assert.deepEqual(japanesePages.map(p=>p.ja),['/ja/','/ja/solutions/app-to-track-money-owed/','/ja/blog/how-to-keep-track-of-who-owes-you-money/','/ja/solutions/personal-loan-repayment-tracker/','/ja/tools/split-expense-calculator/','/ja/blog/how-to-remind-someone-they-owe-you-money-politely/']);
  assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja']);
  assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='ja'),true);
  assert.equal(renderLocaleHtml(page,'/','ja'),page);

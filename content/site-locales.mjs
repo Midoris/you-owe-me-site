@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "roommatefr20261031",
+  "/scripts/analytics.js": "jarepayment20261105",
   "/scripts/sales.js": "ja20261031",
   "/scripts/anniversary-announcement.js": "ja20261031",
   "/scripts/app-language-support.js": "ja20261031",
@@ -344,6 +344,21 @@ export const japanesePages = [
     "useWhen": "ひとつ、または複数の費用を、それぞれの参加者で均等に分けたいとき。",
     "primaryCta": "割り勘を計算する",
     "nextStep": "結果を共有し、あとで返してもらう分は記録を続けましょう。"
+  }
+},
+{
+  "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+  "ja": "/ja/blog/how-to-remind-someone-they-owe-you-money-politely/",
+  "title": "返済をお願いする例文",
+  "updated": "2026-11-05",
+  "complete": true,
+  "discoveryDescription": "友人への返済のお願いに使える例文10選。一部返済後の残額の例と、コピーできる記録テンプレート付き。",
+  "registry": {
+    "primaryAudience": "友人に貸したお金や、合意した立て替え分の返済をお願いしたい方。",
+    "problemSolved": "今の残額と相手との約束に合わせて、具体的な連絡文を選べます。",
+    "useWhen": "初めての連絡、返済日の確認、一部返済後のやり取りに。",
+    "primaryCta": "10の例文を見る",
+    "nextStep": "You Owe Meで貸し借りと返済を記録する"
   }
 }
 ];

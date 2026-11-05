@@ -1,10 +1,27 @@
 import fs from "node:fs";
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+// LOC-15: exact completed Japanese reminder family, five existing-anchor
+// retargets, two approved paragraphs, one English index card and analytics pin.
+export function normalizeReviewedJapaneseRepaymentIntegration(html) {
+  const route = '/ja/blog/how-to-remind-someone-they-owe-you-money-politely/';
+  html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="ja"'+direction+' hreflang="ja">日本語</a>', '');
+  html = html.replace('\n              <a href="'+route+'">返済をお願いする例文</a>', '');
+  for (const label of ['返済をお願いするメッセージ集','返済をお願いする伝え方','返済のお願いのガイドを読む','角が立ちにくい返済の頼み方','返済の頼み方を読む']) {
+    const attrs = label==='返済のお願いのガイドを読む'||label==='返済の頼み方を読む'?' class="lt-cardCta"':'';
+    html = html.replace('<a href="'+route+'"'+attrs+'>'+label+'</a>', '<a href="/blog/how-to-remind-someone-they-owe-you-money-politely/"'+attrs+'>'+label+'<span class="site-locale-fallback">（英語）</span></a>');
+  }
+  html = html.replace('\n              <p>返済をお願いする前に、受け取った金額を確認しておきましょう。<a href="'+route+'">状況に合う返済の例文</a>を、今の残額に合わせて使えます。</p>', '');
+  html = html.replace('\n            <p>残額がはっきりしたら、<a href="'+route+'">返済をお願いする例文</a>から合うものを選べます。受け取った返済と、最後に話し合った内容を文面に反映しましょう。</p>', '');
+  html = html.replace('\n\n                <article class="lt-blogCard lt-roomyCard">\n                  <p class="lt-cardLabel" lang="ja">日本語</p>\n                  <h3 class="lt-cardHeadingGap"><a href="'+route+'" hreflang="ja">Friendly repayment messages in Japanese</a></h3>\n                  <p>Japanese messages for asking friends to repay, with a partial-payment example and a record of the remaining balance.</p>\n                </article>', '');
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=jarepayment20261105(?=")/g, '$1?v=roommatefr20261031');
+}
 // LOC-14: admit only the Japanese calculator counterpart, generated navigation,
 // three exact approved inward links and the three changed shared-script pins.
 // Original commit IDs and every other authored byte stay pinned.
 export function normalizeReviewedJapaneseSplitIntegration(html) {
+  html = normalizeReviewedJapaneseRepaymentIntegration(html);
   html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/tools/split-expense-calculator/" />\n', '');
   html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/tools/split-expense-calculator/" lang="ja" hreflang="ja">日本語</a>', '');
   html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/tools/split-expense-calculator/" lang="ja" dir="ltr" hreflang="ja">日本語</a>', '');
