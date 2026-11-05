@@ -1,0 +1,16 @@
+/* Portuguese copy retains the English personal-loan components and typography. */
+html[lang="pt-BR"] body.personal-loan-repayment-tracker-page #main :is(.plrt-hero__visual,.plrt-product-visual) img { object-fit: contain; }
+html[lang="pt-BR"] body.personal-loan-repayment-tracker-page #main .pt-screen-caption { position: relative; z-index: 1; line-height: 1.7; }
+html[lang="pt-BR"] body.personal-loan-repayment-tracker-page #main .lt-breadcrumb > a { min-width: 0; }
+html[lang="pt-BR"] body.personal-loan-repayment-tracker-page .site-locale-fallback { display: inline; white-space: nowrap; margin: 0; font: inherit; color: inherit; text-transform: none; letter-spacing: normal; }
+html[lang="pt-BR"] body.personal-loan-repayment-tracker-page #main .pt-link-label { font: inherit; color: inherit; line-height: inherit; }
+html[lang="pt-BR"] body.personal-loan-repayment-tracker-page #main .pt-loan-token,
+html[lang="pt-BR"] body.personal-loan-repayment-tracker-page #main .plrt-record-once__connected .pt-loan-token { display: inline; white-space: nowrap; font: inherit; line-height: inherit; letter-spacing: inherit; color: inherit; margin: 0; }
+html[lang="pt-BR"] body.personal-loan-repayment-tracker-page #main .plrt-button { box-sizing: border-box; max-width: 100%; white-space: normal; }
+/* The stacked mobile table row heading uses the full available row width. */
+@media (max-width: 736px) {
+  html[lang="pt-BR"] body.personal-loan-repayment-tracker-page #main .plrt-table--compact tbody th {
+    box-sizing: border-box;
+    width: 100%;
+  }
+}

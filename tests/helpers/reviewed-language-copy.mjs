@@ -2,7 +2,19 @@ import fs from "node:fs";
 const portugueseCacheUpdates = JSON.parse(fs.readFileSync(new URL("../fixtures/portuguese-home-cache-updates.json", import.meta.url), "utf8"));
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+export function normalizeReviewedPortugueseLoanIntegration(html) {
+  const route = '/pt/solucoes/controle-de-emprestimos-entre-pessoas/';
+  html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Empréstimos e planos de pagamento</a>', '');
+  html = html.replace("<a class=\"best-next-step__card\" href=\"/pt/solucoes/controle-de-emprestimos-entre-pessoas/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_2\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"repayments\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/personal-loan-repayment-tracker/\" data-step-position=\"2\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_loan_repayments\">", "<a class=\"best-next-step__card\" href=\"/solutions/personal-loan-repayment-tracker/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_2\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"repayments\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/personal-loan-repayment-tracker/\" data-step-position=\"2\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_loan_repayments\">");
+  html = html.replace("<strong>Quero acompanhar um empréstimo até o fim</strong>", "<strong>Quero acompanhar um empréstimo até o fim <span class=\"site-locale-fallback\">(em inglês)</span></strong>");
+  html = html.replace("<a href=\"/pt/solucoes/controle-de-emprestimos-entre-pessoas/\">controle de empréstimos entre pessoas</a>", "<a href=\"/solutions/personal-loan-repayment-tracker/\">controle de empréstimos entre pessoas <span class=\"site-locale-fallback\">(em inglês)</span></a>");
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=ptloan20261105(?=")/g, '$1?v=ptrecord20261105');
+}
+
 export function normalizeReviewedPortugueseRecordGuideIntegration(html) {
+  html = normalizeReviewedPortugueseLoanIntegration(html);
   const route = '/pt/blog/como-controlar-quem-te-deve-dinheiro/';
   html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');

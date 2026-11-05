@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1120" viewBox="0 0 600 1120" lang="pt-BR" role="img" aria-labelledby="title desc">
+  <title id="title">Ilustração do histórico de quem emprestou: pagamento de R$ 150 recebido e R$ 50 ainda pendentes na parcela</title>
+  <desc id="desc">Ilustração explicativa. Não é uma tela do app.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f1f9e9"/><stop offset="1" stop-color="#edf3fa"/></linearGradient></defs>
+  <rect width="600" height="1120" rx="32" fill="url(#bg)"/>
+  <path d="M64 260V915" stroke="#a4c28b" stroke-width="4"/>
+  <rect x="78" y="238" width="470" height="200" rx="24" fill="#fff" stroke="#dfe7e3"/>
+  <rect x="78" y="474" width="470" height="204" rx="24" fill="#fff" stroke="#dfe7e3"/>
+  <rect x="78" y="714" width="470" height="232" rx="24" fill="#fff" stroke="#dfe7e3"/>
+  <circle cx="64" cy="280" r="9" fill="#527938"/><circle cx="64" cy="516" r="9" fill="#527938"/><circle cx="64" cy="756" r="9" fill="#527938"/>
+  <g fill="#18212b" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="56" y="76" font-size="22">HISTÓRICO DO EMPRÉSTIMO</text>
+    <text x="56" y="134" font-size="38" font-weight="700">Empréstimo para Lucas</text>
+    <text x="56" y="182" font-size="28">Compra do notebook</text>
+    <text x="100" y="286" font-size="26">1 de novembro</text>
+    <text x="100" y="340" font-size="30" font-weight="700">Pagamento registrado</text>
+    <text x="100" y="398" font-size="38" font-weight="700">R$ 150 recebidos</text>
+    <text x="100" y="524" font-size="26">Plano de pagamento</text>
+    <text x="100" y="576" font-size="30" font-weight="700">Restante desta parcela</text>
+    <text x="100" y="638" font-size="42" font-weight="700">R$ 50</text>
+    <text x="100" y="764" font-size="26">Próximo passo</text>
+    <text x="100" y="816" font-size="28" font-weight="700">Vencimento: 1 de novembro</text>
+    <text x="100" y="870" font-size="28"><tspan x="100">Conferir o registro e, </tspan><tspan x="100" dy="38">se necessário, conversar</tspan></text>
+    <text x="56" y="1040" font-size="26">Exemplo fictício de quem emprestou</text>
+  </g>
+</svg>

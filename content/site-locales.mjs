@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "ptrecord20261105",
+  "/scripts/analytics.js": "ptloan20261105",
   "/scripts/sales.js": "pt20261105",
   "/scripts/anniversary-announcement.js": "pt20261105",
   "/scripts/app-language-support.js": "pt20261105",
@@ -460,6 +460,21 @@ export const portuguesePages = [
       "useWhen": "Quando você não sabe o que anotar ou como registrar um pagamento parcial.",
       "primaryCta": "Copiar modelo de registro",
       "nextStep": "Comece com uma pessoa e uma moeda e confira o saldo que existe hoje."
+    }
+  },
+  {
+    "en": "/solutions/personal-loan-repayment-tracker/",
+    "pt": "/pt/solucoes/controle-de-emprestimos-entre-pessoas/",
+    "title": "Empréstimos e planos de pagamento",
+    "updated": "2026-11-05",
+    "complete": true,
+    "discoveryDescription": "Organize empréstimos entre amigos e familiares. Registre pagamentos, confira o saldo e acompanhe o plano de devolução no You Owe Me para iPhone, em português.",
+    "registry": {
+      "primaryAudience": "Quem emprestou ou pegou dinheiro emprestado e quer acompanhar o saldo, os pagamentos e o plano de devolução.",
+      "problemSolved": "Reúne o histórico de cada empréstimo, o saldo restante, o plano e o próximo pagamento.",
+      "useWhen": "Quando pagamentos parciais, valores extras ou mudanças no plano precisam continuar ligados ao mesmo empréstimo.",
+      "primaryCta": "Baixar na App Store",
+      "nextStep": "Cadastre um empréstimo e registre cada pagamento que realmente acontecer."
     }
   }
 ];

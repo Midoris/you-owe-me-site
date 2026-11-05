@@ -361,4 +361,5 @@ Páginas disponíveis em português. Cada página tem seu próprio endereço; os
 - [Dinheiro emprestado e valores a receber](https://you-owe-me.com/pt/)
 - [App para controlar quem te deve](https://you-owe-me.com/pt/solucoes/app-para-controlar-quem-te-deve/) — Registre quem te deve, os pagamentos recebidos e quanto ainda falta receber. Organize dinheiro emprestado e despesas que você pagou por alguém no You Owe Me para iPhone e iPad.
 - [Como registrar quem te deve](https://you-owe-me.com/pt/blog/como-controlar-quem-te-deve-dinheiro/) — Organize dinheiro emprestado e despesas que você pagou por alguém. Use um modelo para copiar, exemplos em reais e mensagens para conferir pagamentos e saldo.
+- [Empréstimos e planos de pagamento](https://you-owe-me.com/pt/solucoes/controle-de-emprestimos-entre-pessoas/) — Organize empréstimos entre amigos e familiares. Registre pagamentos, confira o saldo e acompanhe o plano de devolução no You Owe Me para iPhone, em português.
 <!-- portuguese-pages:end -->
