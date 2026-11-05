@@ -14,9 +14,9 @@ export const sharedAssetVersions = {
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "jarecord20261031",
-  "/scripts/split-expense-locale.js": "fr20261020",
-  "/scripts/split-expense-calculator.js": "copy20261025",
-  "/scripts/tool-transfer.js": "fr20261020",
+  "/scripts/split-expense-locale.js": "jasplit20261105",
+  "/scripts/split-expense-calculator.js": "jasplit20261105",
+  "/scripts/tool-transfer.js": "jasplit20261105",
 };
 export const spanishVersionedAssets = [
   "/scripts/analytics.js", "/scripts/sales.js", "/scripts/anniversary-announcement.js",
@@ -329,6 +329,21 @@ export const japanesePages = [
     "useWhen": "一部返済や追加の貸し借りがあり、予定と実際の記録を合わせたいとき。",
     "primaryCta": "App Storeからダウンロード",
     "nextStep": "ひとつの貸し借りを登録し、実際に返済があったら記録しましょう。"
+  }
+},
+{
+  "en": "/tools/split-expense-calculator/",
+  "ja": "/ja/tools/split-expense-calculator/",
+  "title": "割り勘・立て替え精算",
+  "updated": "2026-11-05",
+  "complete": true,
+  "discoveryDescription": "誰がいくら立て替えたかを入力して、誰にいくら払えば精算できるかを確認。食事・旅行・買い物を、費用ごとの参加者で割り勘にできる無料ツールです。",
+  "registry": {
+    "primaryAudience": "食事や旅行などで立て替えたお金を、参加者同士で精算したい方。",
+    "problemSolved": "各自の支払額と負担額を比べて、誰にいくら払えばよいかを計算します。",
+    "useWhen": "ひとつ、または複数の費用を、それぞれの参加者で均等に分けたいとき。",
+    "primaryCta": "割り勘を計算する",
+    "nextStep": "結果を共有し、あとで返してもらう分は記録を続けましょう。"
   }
 }
 ];

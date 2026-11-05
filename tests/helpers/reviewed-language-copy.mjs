@@ -1,6 +1,22 @@
 import fs from "node:fs";
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+// LOC-14: admit only the Japanese calculator counterpart, generated navigation,
+// three exact approved inward links and the three changed shared-script pins.
+// Original commit IDs and every other authored byte stay pinned.
+export function normalizeReviewedJapaneseSplitIntegration(html) {
+  html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/tools/split-expense-calculator/" />\n', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/tools/split-expense-calculator/" lang="ja" hreflang="ja">日本語</a>', '');
+  html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/tools/split-expense-calculator/" lang="ja" dir="ltr" hreflang="ja">日本語</a>', '');
+  html = html.replace('\n              <a href="/ja/tools/split-expense-calculator/">割り勘・立て替え精算</a>', '');
+  if (/rel="canonical" href="https:\/\/you-owe-me.com\/ja\/(?:"|solutions\/app-to-track-money-owed\/"|blog\/how-to-keep-track-of-who-owes-you-money\/\")/.test(html)) {
+    html = html.replace(/<a href="\/ja\/tools\/split-expense-calculator\/" (class="(?:lt-cardCta|lt-situationPrimaryCta)"(?: data-cta-location="situation-card")?)>割り勘を計算する<\/a>/g,
+      '<a href="/tools/split-expense-calculator/" $1>割り勘を計算する<span class="site-locale-fallback">（英語）</span></a>');
+  }
+  const oldPins = { 'split-expense-locale': 'fr20261020', 'split-expense-calculator': 'copy20261025', 'tool-transfer': 'fr20261020' };
+  for (const [file, version] of Object.entries(oldPins)) html = html.replace(new RegExp(`((?:src|href)="[^"?]*scripts/${file}\\.js)\\?v=jasplit20261105(?=")`, 'g'), `$1?v=${version}`);
+  return html;
+}
 
 // LOC-10 (2026-10-31): exact parent-approved homepage language sentences,
 // generated Japanese home counterpart annotations, and five changed shared script pins.
@@ -26,6 +42,7 @@ export function normalizeReviewedJapaneseHomeIntegration(html) {
 // LOC-13: only the admitted personal-loan family annotations, Japanese section
 // navigation, and two exact approved inward links. Historical snapshots stay pinned.
 export function normalizeReviewedJapaneseLoanIntegration(html) {
+  html = normalizeReviewedJapaneseSplitIntegration(html);
   html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/solutions/personal-loan-repayment-tracker/" />\n', '');
   html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/solutions/personal-loan-repayment-tracker/" lang="ja" hreflang="ja">日本語</a>', '');
   html = html.replace('<span aria-hidden="true"> · </span><a href="/ja/solutions/personal-loan-repayment-tracker/" lang="ja" dir="ltr" hreflang="ja">日本語</a>', '');

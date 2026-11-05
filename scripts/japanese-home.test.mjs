@@ -25,12 +25,12 @@ test('Japanese home retains all ten reviewed FAQs and all twenty-one translated 
 });
 
 test('Japanese admission contains only its reviewed home and solution with exact route semantics and fullwidth fallback removal',()=>{
- assert.deepEqual(japanesePages.map(p=>p.ja),['/ja/','/ja/solutions/app-to-track-money-owed/','/ja/blog/how-to-keep-track-of-who-owes-you-money/','/ja/solutions/personal-loan-repayment-tracker/']);
+ assert.deepEqual(japanesePages.map(p=>p.ja),['/ja/','/ja/solutions/app-to-track-money-owed/','/ja/blog/how-to-keep-track-of-who-owes-you-money/','/ja/solutions/personal-loan-repayment-tracker/','/ja/tools/split-expense-calculator/']);
  assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja']);
- assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='ja'),false);
+ assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='ja'),true);
  assert.equal(renderLocaleHtml(page,'/','ja'),page);
  const fixture='<html lang="ja"><head><link rel="canonical" href="https://you-owe-me.com/ja/" /></head><body><nav id="nav" aria-label="メインメニュー"><ul class="links"></ul></nav><article><a href="/tools/split-expense-calculator/">計算する（英語）</a><a href="/tools/personal-loan-payment-tracker/">履歴を取り込む（英語）</a></article><div id="copyright"><ul></ul></div></body></html>';
- const locales=siteLocales.map(l=>l.code==='ja'?{...l,pages:[...l.pages,{en:'/tools/split-expense-calculator/',ja:'/ja/test-split/',title:'計算する',complete:true}]}:l);
+ const locales=siteLocales.map(l=>l.code==='ja'?{...l,pages:[...l.pages.filter(p=>p.en!=='/tools/split-expense-calculator/'),{en:'/tools/split-expense-calculator/',ja:'/ja/test-split/',title:'計算する',complete:true}]}:l);
  const rendered=renderLocaleHtml(fixture,'/','ja',locales);
  assert.ok(rendered.includes('href="/ja/test-split/">計算する</a>'));assert.ok(rendered.includes('href="/tools/personal-loan-payment-tracker/">履歴を取り込む（英語）</a>'));
  assert.ok(text(parseStaticPage(rendered).querySelector('a[href="/tools/"]')).includes('計算ツール・テンプレート（英語）'));assert.equal(renderLocaleHtml(rendered,'/','ja',locales),rendered);

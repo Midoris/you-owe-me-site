@@ -7,6 +7,8 @@
   const locale = document.documentElement?.lang || "en";
   const isArabic = locale === "ar";
   const isFrench = locale === "fr";
+  const isJapanese = locale === "ja";
+  const defaultCurrency = isJapanese ? "円" : "$";
   const localizedNumberInput = isArabic ? window.UomiArabicNumberInput : isFrench ? window.UomiFrenchNumberInput : null;
   const localizedStrings = window.UomiSplitExpenseLocales?.[locale];
   const CANONICAL_CALCULATOR_URL = localizedStrings
@@ -89,7 +91,7 @@
   const SPLIT_CALCULATOR_EVENT = "youoweme:split-calculator-event";
 
   const state = {
-    currency: "$",
+    currency: defaultCurrency,
     people: [],
     expenses: [],
     nextPersonNumber: 1,
@@ -140,7 +142,7 @@
 
   function sanitizeCurrency(value) {
     const trimmed = String(value || "").trim().slice(0, 6);
-    return trimmed || "$";
+    return trimmed || defaultCurrency;
   }
 
   function parseAmount(value) {
@@ -166,6 +168,11 @@
 
   function formatMoney(value) {
     const symbol = sanitizeCurrency(state.currency);
+    if (isJapanese) {
+      if (symbol === "円") return `${formatNumber(value)}円`;
+      if (["¥", "￥", "$", "€", "£"].includes(symbol)) return `${symbol}${formatNumber(value)}`;
+      return `${formatNumber(value)} ${symbol}`;
+    }
     if (isFrench) return `${formatNumber(value)}\u00a0${symbol}`;
     if (locale === "de" || isArabic) return `${formatNumber(value)} ${symbol}`;
     const space = symbol.length > 1 ? " " : "";
@@ -693,13 +700,13 @@
   }
 
   function setInitialState() {
-    state.currency = "$";
+    state.currency = defaultCurrency;
     state.nextPersonNumber = 1;
     state.nextExpenseNumber = 1;
     state.people = [createPerson(translate("Person 1")), createPerson(translate("Person 2")), createPerson(translate("Person 3"))];
     state.nextPersonNumber = 4;
     state.expenses = [
-      createExpense(translate("Dinner"), "90", state.people[0].id, state.people.map((person) => person.id))
+      createExpense(translate("Dinner"), isJapanese ? "9000" : "90", state.people[0].id, state.people.map((person) => person.id))
     ];
     state.message = "";
   }
@@ -707,16 +714,16 @@
   function useExample() {
     meaningfulEdit = false; transferAttempt = null;
     hasExplicitInteraction = true;
-    state.currency = "$";
+    state.currency = defaultCurrency;
     state.nextPersonNumber = 1;
-    state.people = [createPerson("Alex"), createPerson("Mia"), createPerson("Sam")];
+    state.people = (isJapanese ? ["悠太", "美咲", "葵"] : ["Alex", "Mia", "Sam"]).map(name => createPerson(name));
     const alex = state.people[0].id;
     const mia = state.people[1].id;
     const sam = state.people[2].id;
     state.expenses = [
-      createExpense(translate("Groceries"), "90", alex, [alex, mia, sam]),
-      createExpense(translate("Dinner"), "60", mia, [alex, mia, sam]),
-      createExpense(translate("Taxi"), "30", sam, [alex, sam])
+      createExpense(translate("Groceries"), isJapanese ? "9000" : "90", alex, [alex, mia, sam]),
+      createExpense(translate("Dinner"), isJapanese ? "6000" : "60", mia, [alex, mia, sam]),
+      createExpense(translate("Taxi"), isJapanese ? "3000" : "30", sam, [alex, sam])
     ];
     state.message = "";
     els.currency.value = state.currency;
@@ -929,6 +936,7 @@
     els.shareSummary = document.querySelector('[data-action="share-summary"]');
 
     setInitialState();
+    if (isJapanese) { useExample(); hasExplicitInteraction = false; }
     try {
       const saved = sessionStorage.getItem("uomi-exp003-return");
       sessionStorage.removeItem("uomi-exp003-return");

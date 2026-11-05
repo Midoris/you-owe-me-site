@@ -1,0 +1,20 @@
+/* Japanese text on the established calculator components. */
+html[lang="ja"] .calculator-page :is(h1,h2,h3,h4,h5,button,input,select,label,summary,legend,.lt-primaryCta,.lt-textCta,.lt-cardCta,.lt-pageMeta) {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Hiragino Sans", "Yu Gothic", Meiryo, sans-serif;
+  text-transform: none;
+  letter-spacing: normal;
+}
+html[lang="ja"] .calculator-page .calculator-hero h1 { max-width: none; text-wrap: balance; }
+html[lang="ja"] .calculator-page :is(.settlement-item,.result-item,.checkbox-pill,select) { overflow-wrap: anywhere; }
+html[lang="ja"] .calculator-page .result-item strong { white-space: nowrap; }
+html[lang="ja"] .calculator-page .site-locale-fallback { white-space: nowrap; }
+html[lang="ja"] .calculator-page .example-table caption { text-align: left; font-size: .85rem; margin-bottom: .7rem; }
+html[lang="ja"] .calculator-page .ja-money-token { white-space: nowrap; }
+html[lang="ja"] .calculator-page .small-action { white-space: normal; height: auto; min-height: 2.75rem; line-height: 1.5; padding-block: .55rem; }
+html[lang="ja"] .calculator-page .split-result-action { white-space: normal; height: auto; min-height: 2.75rem; line-height: 1.5; padding-block: .65rem; }
+@media (max-width: 736px) {
+  html[lang="ja"] .calculator-page .calculator-hero h1 { font-size: clamp(1.6rem,7vw,2.4rem); }
+  html[lang="ja"] .calculator-page .panel-heading { align-items: flex-start; }
+  html[lang="ja"] .calculator-page .example-table { min-width: 0; table-layout: fixed; }
+  html[lang="ja"] .calculator-page .example-table :is(th,td) { overflow-wrap: anywhere; padding: .65rem .5rem; }
+}

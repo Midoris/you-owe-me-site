@@ -1,0 +1,777 @@
+<!DOCTYPE HTML>
+<html lang="ja">
+  <head>
+    <title>割り勘・立て替え精算の計算ツール | You Owe Me</title>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no" />
+    <meta name="apple-itunes-app" content="app-id=1147058670, affiliate-data=pt=117888502&amp;ct=website_smart_banner" />
+    <meta name="robots" content="index, follow" />
+
+    <link rel="icon" href="/favicon.ico" sizes="any" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/shared/brand/icon_3_0.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/shared/brand/icon_3_0.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/shared/brand/icon_3_0.png" />
+
+    <link rel="canonical" href="https://you-owe-me.com/ja/tools/split-expense-calculator/" />
+    <!-- locale-alternates:start -->
+    <link rel="alternate" hreflang="en" href="https://you-owe-me.com/tools/split-expense-calculator/" />
+    <link rel="alternate" hreflang="es" href="https://you-owe-me.com/es/herramientas/calculadora-de-gastos-compartidos/" />
+    <link rel="alternate" hreflang="de" href="https://you-owe-me.com/de/tools/ausgaben-aufteilen/" />
+    <link rel="alternate" hreflang="ar" href="https://you-owe-me.com/ar/tools/split-expense-calculator/" />
+    <link rel="alternate" hreflang="fr" href="https://you-owe-me.com/fr/outils/calculateur-partage-depenses/" />
+    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com/ja/tools/split-expense-calculator/" />
+    <link rel="alternate" hreflang="x-default" href="https://you-owe-me.com/tools/split-expense-calculator/" />
+    <!-- locale-alternates:end -->
+    <meta
+      name="description"
+      content="誰がいくら立て替えたかを入力して、誰にいくら払えば精算できるかを確認。食事・旅行・買い物を、費用ごとの参加者で割り勘にできる無料ツールです。"
+    />
+    <meta property="og:title" content="割り勘・立て替え精算の計算ツール | You Owe Me" />
+    <meta
+      property="og:description"
+      content="誰がいくら立て替えたかを入力して、誰にいくら払えば精算できるかを確認。食事・旅行・買い物を、費用ごとの参加者で割り勘にできる無料ツールです。"
+    />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://you-owe-me.com/ja/tools/split-expense-calculator/" />
+    <meta property="og:image" content="https://you-owe-me.com/images/ja/tools/split-expense-calculator/split-expense-calculator-og.webp" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="日本語の割り勘計算ツール。支払額と負担額から、誰にいくら払うかを表示した例" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="割り勘・立て替え精算の計算ツール | You Owe Me" />
+    <meta
+      name="twitter:description"
+      content="誰がいくら立て替えたかを入力して、誰にいくら払えば精算できるかを確認。食事・旅行・買い物を、費用ごとの参加者で割り勘にできる無料ツールです。"
+    />
+    <meta name="twitter:image" content="https://you-owe-me.com/images/ja/tools/split-expense-calculator/split-expense-calculator-og.webp" />
+    <meta name="twitter:image:alt" content="日本語の割り勘計算ツール。支払額と負担額から、誰にいくら払うかを表示した例" />
+
+    <script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "WebPage",
+      "name": "割り勘・立て替え精算の計算ツール | You Owe Me",
+      "description": "誰がいくら立て替えたかを入力して、誰にいくら払えば精算できるかを確認。食事・旅行・買い物を、費用ごとの参加者で割り勘にできる無料ツールです。",
+      "url": "https://you-owe-me.com/ja/tools/split-expense-calculator/",
+      "image": {
+        "@type": "ImageObject",
+        "url": "https://you-owe-me.com/images/ja/tools/split-expense-calculator/split-expense-calculator-og.webp",
+        "width": 1200,
+        "height": 630,
+        "caption": "日本語の割り勘計算ツール。支払額と負担額から、誰にいくら払うかを表示した例"
+      },
+      "dateModified": "2026-11-05",
+      "isPartOf": {
+        "@type": "CollectionPage",
+        "name": "ツール（英語）",
+        "url": "https://you-owe-me.com/tools/"
+      },
+      "publisher": {
+        "@type": "Organization",
+        "name": "You Owe Me"
+      },
+      "inLanguage": "ja"
+    },
+    {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        {
+          "@type": "ListItem",
+          "position": 1,
+          "name": "ホーム",
+          "item": "https://you-owe-me.com/ja/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 2,
+          "name": "ツール（英語）",
+          "item": "https://you-owe-me.com/tools/"
+        },
+        {
+          "@type": "ListItem",
+          "position": 3,
+          "name": "割り勘の計算",
+          "item": "https://you-owe-me.com/ja/tools/split-expense-calculator/"
+        }
+      ]
+    },
+    {
+      "@type": "FAQPage",
+      "mainEntity": [
+        {
+          "@type": "Question",
+          "name": "どんな計算ができますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "誰が払ったか、誰がその費用に参加したかをもとに、各自の負担額と、精算のために誰にいくら払うかを計算できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ひとりずつの負担額もわかりますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。参加者、費用、払った人、分ける人を入力すると、各自の負担額、支払額との差額、精算に必要な支払いが表示されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "誰から誰に払うかも表示されますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。立て替えた金額を差し引いたうえで、誰が誰にいくら払えばよいかを表示します。負担額を全員がもう一度払う必要はありません。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ひとつの会計を人数で均等に分けられますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。合計金額をひとつの費用として入力し、参加者を全員選んでください。たとえば9,800円を8人で分けると、ひとり1,225円です。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "ある費用だけ、参加しなかった人を外せますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。その費用を負担する人だけを選んでください。食事、タクシー、買い物に参加していない人は、その費用では選ばないようにします。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "人によって金額や割合を変えられますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "このツールは、選んだ人で均等に分ける方式です。任意の割合、収入比、項目別の分担にはカップルの共有費用計算ツール（英語）、月ごとの生活費の精算には同居人との月次精算ツール（英語）が使えます。その後の立て替えや返済も含めるなら、やり取り全体の残額を計算するツール（英語）をご利用ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "複数の支払いをまとめて精算できますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。支払いを1件ずつ追加し、払った人と、その費用を分ける人を選びます。すべてを合わせた精算結果が表示されます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "同居人との生活費にも使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "簡単な割り勘や一度きりの支払いに使えます。家賃、光熱費、食材、日用品、返済、先月からの残額を月ごとにまとめるなら、同居人との月次精算ツール（英語）が使えます。定期的な費用や長く続く残額は、You Owe Meで記録を続ける方法もあります。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "カップルの支払いにも使えますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "はい。ひとりが立て替えた費用を2人で均等に分ける場合に使えます。任意の割合や、すでに精算した支払いも含めたい場合は、カップルの共有費用計算ツール（英語）をご利用ください。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "3人の旅行で、タクシーには2人だけ乗った場合は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "タクシー代では、乗った2人だけを選びます。ほかの費用では3人を選べるので、費用ごとに参加者を分けて計算できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "You Owe Meアプリとは何が違いますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "この計算ツールは、一度きりの割り勘をすぐ確認するためのものです。You Owe Meでは、その後も続く残額や返済履歴、定期的な費用を記録し、リマインダーの設定や確認の連絡に役立てられます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "返してもらう日や金額が人によって違う場合は？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "まずこのツールで最初の負担額を決めます。その後、全額・一部・未払いを確認したい場合は、You Owe Meのグループの立て替え記録で、ひとりずつの返済と残額を管理できます。"
+          }
+        },
+        {
+          "@type": "Question",
+          "name": "入力内容は保存・送信されますか？",
+          "acceptedAnswer": {
+            "@type": "Answer",
+            "text": "計算はこの端末のブラウザー内で行い、継続保存する台帳ではありません。「返済の記録を続ける」を選ぶと、名前と金額をYou Owe Meへ安全に送信し、24時間で期限が切れる引き継ぎリンクを作成します。アカウントは作成されません。"
+          }
+        }
+      ]
+    }
+  ]
+}
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link rel="stylesheet" href="/assets/css/fontawesome-all.min.css" />
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Merriweather:300,700,300italic,700italic%7CSource+Sans+Pro:900&amp;display=swap" />
+    <link rel="stylesheet" href="/assets/css/main.css" />
+    <noscript><link rel="stylesheet" href="/assets/css/noscript.css" /></noscript>
+    <link rel="stylesheet" href="/styles/site-nav.css?v=ar20261020" />
+    <link rel="stylesheet" href="/styles/tools.css" />
+    <link rel="stylesheet" href="/styles/split-expense-calculator.css?v=organic-entry-20261011" />
+    <link rel="stylesheet" href="/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1" />
+    <link rel="stylesheet" href="/styles/best-next-step.css" />
+    <link rel="stylesheet" href="/styles/app-language-support.css" />
+    <link rel="stylesheet" href="/styles/site-locale.css?v=review20261020" />
+    <link rel="stylesheet" href="/styles/split-expense-ja.css" />
+    <link rel="stylesheet" href="/styles/anniversary-signals.css?v=anniversary-signals-1" />
+  </head>
+
+  <body class="is-preload tools-page calculator-page site-nav-page">
+    <div id="wrapper" class="fade-in">
+      <header id="header">
+        <a href="/ja/" class="logo">You Owe Me</a>
+      </header>
+
+      <nav id="nav">
+        <ul class="links">
+          <li><a href="/ja/">You Owe Me</a></li><li><a href="/solutions/">使い方・用途<span class="site-locale-fallback">（英語）</span></a></li><li><a href="/features/">機能<span class="site-locale-fallback">（英語）</span></a></li><li><a href="/reviews/">レビュー<span class="site-locale-fallback">（英語）</span></a></li><li class="active"><a href="/tools/">計算ツール・テンプレート<span class="site-locale-fallback">（英語）</span></a></li><li><a href="/compare/">比較<span class="site-locale-fallback">（英語）</span></a></li><li><a href="/blog/">ガイド<span class="site-locale-fallback">（英語）</span></a></li>
+        </ul>
+      </nav>
+
+      <div id="main">
+        <article class="post featured">
+          <!-- japanese-section:start -->
+          <nav class="site-locale-section" aria-label="日本語のページ"><a href="/ja/">お金の貸し借り・立て替えを記録</a>
+              <a href="/ja/solutions/app-to-track-money-owed/">貸したお金の管理アプリ</a>
+              <a href="/ja/blog/how-to-keep-track-of-who-owes-you-money/">貸したお金の記録方法</a>
+              <a href="/ja/solutions/personal-loan-repayment-tracker/">貸し借りと返済計画の管理</a>
+              <a href="/ja/tools/split-expense-calculator/" aria-current="page">割り勘・立て替え精算</a></nav>
+          <!-- japanese-section:end -->
+          <nav class="lt-breadcrumb" aria-label="パンくずリスト"><a href="/ja/">ホーム</a><span aria-hidden="true">/</span><a href="/tools/">ツール<span class="site-locale-fallback">（英語）</span></a><span aria-hidden="true">/</span><span>割り勘の計算</span></nav>
+
+          <section class="lt-toolsHero calculator-hero">
+            <div class="lt-toolsHeroCopy">
+              <p class="lt-eyebrow">無料ツール</p>
+              <header class="major">
+                <h1>割り勘・立て替え精算の計算ツール</h1>
+              </header>
+              <p class="lt-heroBody">みんなが払った金額を入力するだけ。ひとりずつの負担額と、誰にいくら払えばよいかがわかります。</p>
+              <p class="privacy-note">You Owe Meで続きを記録する操作をしない限り、計算内容はこのブラウザー内で処理されます。</p>
+              <div class="lt-ctaRow">
+                <a href="#calculator" class="lt-primaryCta">割り勘を計算する</a>
+                <a href="/tools/" class="split-tools-backlink">ツール一覧へ<span class="site-locale-fallback">（英語）</span></a>
+              </div>
+            </div>
+            <div class="calculator-hero-visual" aria-hidden="true">
+              <span></span>
+              <span></span>
+              <span></span>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection split-calculator" id="calculator" aria-labelledby="calculator-title">
+<noscript><p class="privacy-note">計算にはJavaScriptが必要です。有効にしてからご利用ください。下の説明と計算例は、そのまま読めます。</p></noscript>
+            <div class="calculator-card">
+              <div class="calculator-card-header">
+                <h2 id="calculator-title">みんなで使ったお金を入力</h2>
+                <p>支払いごとに1行ずつ追加し、立て替えた人と、その費用を分ける人を選びます。</p>
+              </div>
+
+              <div class="calculator-controls">
+                <div class="currency-control">
+                  <label for="currency-symbol">通貨</label>
+                  <input id="currency-symbol" class="calculator-input" type="text" value="円" maxlength="6" inputmode="text" autocomplete="off" aria-label="通貨の記号または名前" />
+                </div>
+                <div class="people-controls">
+                  <details class="people-disclosure">
+                    <summary id="people-title" data-people-summary>参加者（3人）：名前の変更・削除</summary>
+                    <div class="people-list" data-people-list></div>
+                  </details>
+                  <button type="button" class="small-action" data-action="add-person">＋ 参加者を追加</button>
+                </div>
+              </div>
+              <div class="validation-message people-limit-message" id="people-message" aria-live="polite"></div>
+
+              <div class="calculator-actions">
+                <button type="button" class="secondary-action" data-action="use-example">入力例を使う</button>
+                <button type="button" class="secondary-action" data-action="clear-all">すべて消去</button>
+              </div>
+
+              <div class="calculator-grid">
+                <div class="calculator-editor">
+                  <p class="calculator-example" data-example-marker>入力例です。内容を書き換えるか、「すべて消去」で最初から入力できます。</p>
+
+                  <section class="calculator-panel" aria-labelledby="expenses-title">
+                    <div class="panel-heading">
+                      <h3 id="expenses-title">費用</h3>
+                      <button type="button" class="small-action" data-action="add-expense">＋ 費用を追加</button>
+                    </div>
+                    <div class="expenses-list" data-expenses-list></div>
+                    <p class="expense-entry-help">選んだ人だけで、その費用を均等に分けます。複数の人が支払った場合は、支払いごとに別の行に入力してください。</p>
+<p class="expense-entry-help ja-precision-help">金額は小数第2位まで表示します。円でも端数が出る場合は、実際に払う金額を参加者同士で確認してください。通貨欄を変えても、為替換算はされません。</p>
+                  </section>
+
+                  <p class="privacy-note calculator-note">You Owe Meで続きを記録する操作をしない限り、計算内容はこのブラウザー内で処理されます。</p>
+                </div>
+
+                <aside class="results-panel" aria-labelledby="results-title">
+                  <div class="results-heading">
+                    <h3 id="results-title">計算結果</h3>
+                  </div>
+
+                  <section class="result-block settlement-block">
+                    <h4>誰にいくら払う？</h4>
+                    <div class="settlement-list" data-settlement></div>
+                  </section>
+
+                  <section class="split-result-actions" aria-label="計算結果の操作" data-result-actions hidden>
+                  <div data-tool-transfer hidden>
+                    <h3>全員の支払いが終わるまで、記録を続ける</h3>
+                    <p>あとで払う人や、何回かに分けて払う人がいる場合は、この割り勘をiPhoneのYou Owe Meで開き、ひとりずつの返済を記録できます。</p>
+                    <button type="button" class="split-result-action tool-transfer-primary" data-action="track-split">返済の記録を続ける</button>
+                    <p>無料のApp Clipで試してから、アプリ本体に記録を引き継げます。アカウントは不要です。</p>
+                    <p class="privacy-note">名前と金額を安全に送信し、24時間で期限が切れる非公開の引き継ぎリンクを作成します。</p>
+                    <p data-transfer-status role="status" aria-live="polite"></p>
+                  </div>
+                    <div class="split-result-actions__buttons">
+                      <button type="button" class="split-result-action" data-action="copy-summary">結果をコピー</button>
+                      <button type="button" class="split-result-action" data-action="share-summary" data-share-summary hidden>結果を共有</button>
+                    </div>
+                    <p class="copy-status" aria-live="polite" data-copy-status></p>
+                    <section class="split-result-app-card" aria-labelledby="split-result-actions-title">
+                      <h4 id="split-result-actions-title" data-result-app-title>返済があるたびに、残りの金額を確認</h4>
+                      <p data-result-app-message>これから確認したい金額をYou Owe Meに記録。返済のたびに更新すれば、相手ごとの残額がわかります。</p>
+                      <div class="split-result-app-card__actions">
+                        <a
+                          href="https://apps.apple.com/app/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8"
+                          class="lt-appStoreBtn"
+                          id="split-result-primary-download"
+                          aria-label="App StoreでYou Owe Meをダウンロード"
+                          data-track-location="split_expense_result_app_store_cta"
+                          data-source-cluster="shared-expenses"
+                          data-iphone-handoff-replaceable
+                        >
+                          <span class="sr-only">App StoreでYou Owe Meをダウンロード</span>
+                          <img src="/images/ja/app-store/download-on-the-app-store-black.svg" alt="App StoreでYou Owe Meをダウンロード" width="250" height="83" />
+                        </a>
+                        <p class="split-result-app-card__price">iPhoneアプリ・無料ダウンロード・アプリ内課金あり</p>
+                        <p class="split-result-app-card__price">アプリで新しく記録を作成します。このApp Storeリンクでは、計算結果は引き継がれません。</p>
+                        <a href="/solutions/shared-expense-tracker/" class="split-result-app-card__learn-more" data-track-location="split_expense_result_solution_cta">共有した費用を記録する方法<span class="site-locale-fallback">（英語）</span></a>
+                      </div>
+                      <section class="iphone-handoff split-result-iphone-handoff" data-iphone-handoff data-iphone-handoff-mode="visible" data-cta-location="split_result_iphone_handoff" data-iphone-handoff-replaces="split-result-primary-download" aria-labelledby="split-result-iphone-handoff-title" hidden>
+                        <div class="iphone-handoff__visible-layout">
+                          <div class="iphone-handoff__visible-copy">
+                            <h5 id="split-result-iphone-handoff-title">誰が、いくら返してくれた？</h5>
+                            <p class="iphone-handoff__benefit">全額・一部の返済を記録して、ひとりずつの残額を確認できます。</p>
+                            <p class="iphone-handoff__instruction" data-iphone-handoff-instruction>iPhoneのカメラで読み取ってください。</p>
+                            <p class="iphone-handoff__clarification">App Storeが開きます。計算結果は引き継がれません。</p>
+                            <p class="iphone-handoff__reassurance">無料ダウンロード・アプリ内課金あり。</p>
+                            <a class="iphone-handoff__fallback" href="https://apps.apple.com/app/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8">App Storeでアプリを見る</a>
+                          </div>
+                          <img class="iphone-handoff__qr" data-iphone-handoff-qr src="/images/ja/iphone-handoff/app-store.png" width="472" height="472" alt="App StoreでYou Owe Meを開くQRコード" />
+                        </div>
+                      </section>
+                      <p class="lt-maintenanceProof"><span class="lt-maintenanceProof__since">2016年から</span> · <span class="lt-maintenanceProof__text">継続して開発・改善しています。</span></p>
+                    </section>
+                  </section>
+
+                  <details class="split-result-breakdown">
+                    <summary>計算の内訳を見る</summary>
+                    <section class="result-block"><h4>概要</h4><div class="result-list" data-summary></div></section>
+                    <section class="result-block"><h4>支払った金額</h4><div class="result-list" data-paid></div></section>
+                    <section class="result-block"><h4>負担する金額</h4><div class="result-list" data-share></div></section>
+                    <section class="result-block"><h4>差し引きの残額</h4><div class="result-list" data-net></div></section>
+                  </details>
+                </aside>
+              </div>
+            </div>
+          </section>
+
+          <p class="calculator-use-cases">食事、旅行、食材の買い物など、みんなで使ったお金の精算に使えます。費用ごとに、払った人も分ける人も変えられます。注文した量に差がある場合は、入力前に<a href="/blog/how-to-split-a-bill-fairly-when-one-person-ordered-less/">納得できる分け方<span class="site-locale-fallback">（英語）</span></a>を決めておきましょう。</p>
+
+          <aside
+            class="lt-anniversaryNotice"
+            data-anniversary-announcement
+            data-anniversary-variant="standard"
+            hidden
+            aria-hidden="true"
+            aria-labelledby="split-expense-anniversary-notice-title"
+          >
+            <span class="lt-anniversaryNotice__mark" aria-hidden="true">10</span>
+            <div class="lt-anniversaryNotice__copy">
+              <p class="lt-anniversaryNotice__eyebrow" data-anniversary-eyebrow>2016–2026</p>
+              <h2 id="split-expense-anniversary-notice-title" data-anniversary-heading>You Owe Meは10周年。</h2>
+              <p data-anniversary-body>人とのお金のやり取りをわかりやすくしてきた、10年の歩みをご覧ください。</p>
+            </div>
+            <a class="lt-anniversaryNotice__link" href="/10-years/" data-anniversary-cta data-track-event="site_link_click" data-track-location="split_expense_anniversary_notice">10年の歩みを見る<span class="site-locale-fallback">（英語）</span></a>
+          </aside>
+
+          <section class="lt-toolsSection content-section">
+            <h2>立て替えた金額も含めて、精算する</h2>
+            <p>各自がすでに払った金額と、その人が負担する金額を比べます。負担額より多く払った人は差額を受け取り、少なく払った人は差額を支払います。精算するのはその差額なので、立て替えた人が自分の負担分をもう一度払う必要はありません。</p>
+          </section>
+
+          <section class="lt-toolsSection content-section">
+            <h2>ひとつの金額を、人数で割るには</h2>
+            <p><strong>ひとり分の負担額 ＝ 合計金額 ÷ 人数。</strong>ひとつの費用として合計金額を入力し、参加者を全員選びます。誰かがまとめて払った場合、その人自身の負担分も含まれています。ほかの人は、自分の分だけを立て替えた人に返します。</p>
+            <ul class="lt-valueList">
+              <li><span class="ja-money-token">9,800円</span>を8人で分けると、ひとり<span class="ja-money-token">1,225円</span></li>
+              <li><span class="ja-money-token">9,000円</span>を3人で分けると、ひとり<span class="ja-money-token">3,000円</span></li>
+            </ul>
+          </section>
+
+          <section class="lt-toolsSection content-section" id="two-payer-example">
+            <h2>2人が別々の金額を立て替えたとき</h2>
+            <p>2つの費用を、どちらも2人で半分ずつ負担する例です。友人が食事代<span class="ja-money-token">12,000円</span>、あなたが飲み物代<span class="ja-money-token">4,000円</span>を払ったなら、合計は<span class="ja-money-token">16,000円</span>。ひとり分は<span class="ja-money-token">8,000円</span>です。あなたはすでに<span class="ja-money-token">4,000円</span>払っているので、友人に渡すのは差額の<span class="ja-money-token">4,000円</span>です。</p>
+            <p>食事代と飲み物代を別々の費用として入力し、それぞれ払った人を選びます。どちらの費用も、分ける人は2人とも選んでください。</p>
+          </section>
+
+          <!-- localized-next-step:start -->
+<!-- Localized next steps are authored in this page; the English module builder does not own this block. -->
+<section class="best-next-step best-next-step--tool best-next-step--custom" aria-labelledby="best-next-step-tools_split_expense_calculator-title" data-module="best-next-step" data-source-page="tools_split_expense_calculator" data-source-cluster="shared-expenses" data-module-variant="tool" data-module-template="custom">
+  <p class="best-next-step__eyebrow">計算したあとは</p>
+  <h2 id="best-next-step-tools_split_expense_calculator-title">結果を共有して、次のやり取りへ</h2>
+  <p class="best-next-step__intro">誰にいくら払うかがわかったら、結果を伝えましょう。支払いの確認や、その後も続く立て替えの記録には、次のツールが使えます。</p>
+  <div class="best-next-step__grid">
+    <a class="best-next-step__card" href="/tools/polite-payback-reminder-generator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_split_expense_calculator_best_next_step_1" data-source-page="tools_split_expense_calculator" data-source-cluster="shared-expenses" data-destination-cluster="repayments" data-step-type="tool" data-step-intent="write_message" data-step-destination="/tools/polite-payback-reminder-generator/" data-step-position="1" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="split_calculator_send">
+      <span class="best-next-step__label">伝える</span>
+      <strong>精算結果をメッセージにする<span class="site-locale-fallback">（英語）</span></strong>
+      <span>金額がはっきりしていて、短くわかりやすく伝えたいときに。</span>
+    </a>
+    <a class="best-next-step__card" href="/tools/group-payback-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_split_expense_calculator_best_next_step_2" data-source-page="tools_split_expense_calculator" data-source-cluster="shared-expenses" data-destination-cluster="group-paybacks" data-step-type="tool" data-step-intent="calculate_split" data-step-destination="/tools/group-payback-calculator/" data-step-position="2" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="split_calculator_group_payback">
+      <span class="best-next-step__label">支払いを確認</span>
+      <strong>誰から返してもらったかを整理する<span class="site-locale-fallback">（英語）</span></strong>
+      <span>まとめて立て替えたあと、全額・一部・未払いを確認したいときに。</span>
+    </a>
+    <a class="best-next-step__card" href="/tools/running-balance-calculator/" data-module="best-next-step" data-track-event="best_next_step_click" data-track-location="tools_split_expense_calculator_best_next_step_3" data-source-page="tools_split_expense_calculator" data-source-cluster="shared-expenses" data-destination-cluster="running-balance" data-step-type="tool" data-step-intent="calculate_running_balance" data-step-destination="/tools/running-balance-calculator/" data-step-position="3" data-module-variant="tool" data-module-template="custom" data-step-analytics-id="split_calculator_running_balance">
+      <span class="best-next-step__label">残額を確認</span>
+      <strong>立て替えと返済を合わせて計算する<span class="site-locale-fallback">（英語）</span></strong>
+      <span>その後もお金のやり取りが続いていて、今の残額を知りたいときに。</span>
+    </a>
+  </div>
+</section>
+<!-- localized-next-step:end -->
+
+          <p>これからグループ旅行を予約するなら、<a href="/blog/when-to-collect-money-before-a-group-trip/">いつ旅費を集めるか<span class="site-locale-fallback">（英語）</span></a>も先に相談しておきましょう。予約前、出発前、旅行後では、立て替える人の負担も変わります。</p>
+
+          <section class="lt-toolsSection content-section">
+            <h2>このツールでできること</h2>
+            <p>ひとつの会計でも、何回かの買い物でも計算できます。費用ごとに払った人と参加者を選ぶと、精算に必要な支払いが表示されます。</p>
+            <p>返してもらうための連絡をするなら、<a href="/blog/how-to-remind-someone-they-owe-you-money-politely/">角が立ちにくい返済の頼み方<span class="site-locale-fallback">（英語）</span></a>、<a href="/tools/polite-payback-reminder-generator/">メッセージ作成ツール<span class="site-locale-fallback">（英語）</span></a>、<a href="/tools/repayment-reminder-text-examples/">返済をお願いする文例<span class="site-locale-fallback">（英語）</span></a>が参考になります。</p>
+            <p class="lt-paragraphGap">立て替えたお金をあとで返してもらう場合は、<a href="/blog/how-to-track-who-paid-you-back-for-a-group-expense/">グループの返済状況を記録する方法<span class="site-locale-fallback">（英語）</span></a>も確認しておくと、チャットの中で結果を見失わずに済みます。</p>
+            <p class="lt-paragraphGap">支払いを受け取ったら、<a href="/tools/repayment-receipt-generator/">返済の受領メモを作るツール<span class="site-locale-fallback">（英語）</span></a>で、金額、対象の費用、残りの有無を伝えられます。</p>
+            <p class="lt-paragraphGap">家賃、光熱費、食材、日用品、返済、先月からの残額をまとめて月ごとに精算するなら、<a href="/tools/roommate-bill-split-calculator/">同居人との月次精算ツール<span class="site-locale-fallback">（英語）</span></a>をご利用ください。</p>
+            <p class="lt-paragraphGap">2人の食費、家賃、サブスク、旅行代や精算済みの支払いをまとめ、折半・任意の割合・収入比・項目別で分けたい場合は、<a href="/tools/couple-shared-expense-balance-calculator/">カップルの共有費用計算ツール<span class="site-locale-fallback">（英語）</span></a>が使えます。</p>
+
+          </section>
+
+          <section class="lt-toolsSection content-section">
+            <h2>割り勘を計算する手順</h2>
+            <ol>
+              <li>参加者を追加する。</li>
+              <li>費用を1件ずつ入力する。</li>
+              <li>それぞれの費用を払った人を選ぶ。</li>
+              <li>その費用を分ける人を選ぶ。</li>
+              <li>結果を見て、誰にいくら払うかを確認する。</li>
+            </ol>
+            <p>一度きりの精算なら、これだけで足りる場合もあります。その後も立て替えや一部返済が続く場合は、<a href="/tools/running-balance-calculator/">やり取りごとの残額を計算するツール<span class="site-locale-fallback">（英語）</span></a>で、支払いと返済を合わせて確認できます。</p>
+          </section>
+
+          <section class="lt-toolsSection content-section">
+            <h2>計算例：買い物、夕食、タクシー代をまとめて精算</h2>
+            <p>悠太さん、美咲さん、葵さんの3人で費用を分ける、架空の例です。</p>
+            <div class="example-table-wrap">
+              <table class="example-table"><caption>3人の支払いと、それぞれの費用の参加者</caption>
+                <thead>
+                  <tr>
+                    <th scope="col">費用</th>
+                    <th scope="col">払った人</th>
+                    <th scope="col">分ける人</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <td>食材の買い物 — <span class="ja-money-token">9,000円</span></td>
+                    <td>悠太</td>
+                    <td>悠太・美咲・葵</td>
+                  </tr>
+                  <tr>
+                    <td>夕食 — <span class="ja-money-token">6,000円</span></td>
+                    <td>美咲</td>
+                    <td>悠太・美咲・葵</td>
+                  </tr>
+                  <tr>
+                    <td>タクシー — <span class="ja-money-token">3,000円</span></td>
+                    <td>葵</td>
+                    <td>悠太・葵</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+            <p>各自の支払額と、参加した費用の負担額を比べて差額を計算すると、葵さんが悠太さんに<span class="ja-money-token">2,500円</span>、美咲さんに<span class="ja-money-token">1,000円</span>を払えば精算できます。費用ごとに払い直さず、差額をまとめてやり取りできます。</p>
+          </section>
+
+          <section class="lt-toolsSection content-section">
+            <h2>全員で分ける・一部の人で分ける・割合を変える</h2>
+            <p><strong>均等に分ける：</strong>その費用で選んだ人が、同じ金額ずつ負担します。</p>
+            <p class="lt-paragraphGap"><strong>参加した人だけで分ける：</strong>全員の食材なら3人を選び、2人だけで乗ったタクシーなら、その2人だけを選びます。費用ごとに参加者を変えられます。</p>
+            <p class="lt-paragraphGap"><strong>金額や割合を変える：</strong>このツールでは、任意の割合や収入比での計算はできません。2人の負担を任意の割合・収入比・項目別で分けるなら<a href="/tools/couple-shared-expense-balance-calculator/">カップルの共有費用計算ツール<span class="site-locale-fallback">（英語）</span></a>、家賃や生活費を月ごとにまとめるなら<a href="/tools/roommate-bill-split-calculator/">同居人との月次精算ツール<span class="site-locale-fallback">（英語）</span></a>、その後の立て替えや返済も合わせるなら<a href="/tools/running-balance-calculator/">残額の計算ツール<span class="site-locale-fallback">（英語）</span></a>をご利用ください。</p>
+          </section>
+
+          <section class="lt-toolsSection">
+            <div class="lt-bridgePanel">
+              <h2>割り勘が決まっても、返済はこれから。</h2>
+              <p>ひとり分がわかるのは、最初の一歩です。今日半分、残りは来週という場合には、その後いくら残っているかも確認する必要があります。</p>
+              <p>You Owe Meなら、共有した費用と返済をひとつの記録にまとめられます。相手ごとの残額を確認し、自分用のリマインダーを設定し、必要なときには履歴を共有できます。</p>
+              <p class="lt-paragraphGap">ひとつの費用をまとめて立て替え、各自が別々の日に返す場合は、まずこのツールで負担額を決められます。その後の全額・一部・未払いを確認するには<a href="/tools/group-payback-calculator/">グループの返済状況計算ツール<span class="site-locale-fallback">（英語）</span></a>、記録を続けるには<a href="/solutions/group-payback-tracker/">グループの返済を管理する方法<span class="site-locale-fallback">（英語）</span></a>が使えます。</p>
+              <p class="lt-paragraphGap">金額が決まったあと、グループチャットへの連絡と個別の確認をどう分けるかは、<a href="/blog/how-to-remind-a-group-to-pay-you-back-without-spamming-everyone/">グループへの返済連絡の進め方<span class="site-locale-fallback">（英語）</span></a>をご覧ください。</p>
+              <h3>やり取りが続いたあとの、今の残額を知りたい？</h3>
+              <p>2人の間で立て替えと返済が何度も続いているなら、<a href="/tools/running-balance-calculator/">やり取り全体の残額を計算するツール<span class="site-locale-fallback">（英語）</span></a>が使えます。1行ごとに残額がどう変わるかを確認できます。</p>
+              <p class="lt-paragraphGap">表計算とアプリのどちらで記録を続けるか迷ったら、<a href="/compare/spreadsheet-vs-app-for-tracking-money-owed/">表計算とアプリの比較<span class="site-locale-fallback">（英語）</span></a>をご覧ください。</p>
+              <p class="lt-paragraphGap">複数の費用を共有するアプリと、相手ごとの残額を記録するアプリの違いは、<a href="/compare/shared-expense-app-vs-running-balance-app/">共有費用アプリと残額管理アプリの比較<span class="site-locale-fallback">（英語）</span></a>で整理できます。Splitwiseのような記録方法とYou Owe Meを比べたい場合は、<a href="/compare/splitwise-alternative/">Splitwiseとの比較<span class="site-locale-fallback">（英語）</span></a>もあります。</p>
+              <a href="/tools/running-balance-calculator/" class="lt-textCta">やり取り全体の残額を計算する<span class="site-locale-fallback">（英語）</span></a>
+              <p>親のための買い物、きょうだい間の立て替え、定期的な家族の支払いが続く場合は、<a href="/solutions/family-reimbursement-tracker/">家族間の立て替えを記録する方法<span class="site-locale-fallback">（英語）</span></a>も参考になります。</p>
+              <p class="lt-paragraphGap">同居人との月ごとの精算には<a href="/tools/roommate-bill-split-calculator/">同居人との月次精算ツール<span class="site-locale-fallback">（英語）</span></a>、先に分担ルールを決めたい場合は<a href="/blog/how-to-split-rent-utilities-and-groceries-with-roommates/">家賃・光熱費・食材の分け方<span class="site-locale-fallback">（英語）</span></a>、家賃や生活費、返済の記録を続けるには<a href="/solutions/roommate-expense-tracker/">同居人との費用管理<span class="site-locale-fallback">（英語）</span></a>をご覧ください。</p>
+              <p class="lt-paragraphGap">同じ相手との家賃、光熱費、食材代、返済が繰り返し発生するなら、<a href="/blog/how-to-track-money-between-roommates/">同居人とのお金のやり取りを記録する方法<span class="site-locale-fallback">（英語）</span></a>で、費用を毎回別々に精算しない方法を確認できます。</p>
+              <div class="lt-valuePanel compact-panel">
+                <p>You Owe Meでできること：</p>
+                <ul class="lt-valueList">
+                  <li>共有した費用を続けて記録する</li>
+                  <li>グループの立て替えを、全員が払い終わるまで確認する</li>
+                  <li>誰にいくら返す・返してもらうかを確認する</li>
+                  <li>一部だけの返済を記録する</li>
+                  <li>定期的な費用を追加する</li>
+                  <li>返済状況をわかりやすく伝える</li>
+                  <li>内訳が必要なときに明細を共有する</li>
+                </ul>
+              </div>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection">
+            <h2>関連するガイドとツール</h2>
+            <p>分担を決めたあとにキャンセルした人がいる場合は、まず<a href="/blog/how-to-split-shared-costs-when-someone-cancels/">キャンセル後の費用の分け直し<span class="site-locale-fallback">（英語）</span></a>を確認してください。この計算ツールは、各費用を選んだ参加者で均等に分ける場合に使えます。個別に調整した負担額は、キャンセル用の整理ツールに残しましょう。</p>
+            <div class="lt-relatedGrid lt-readableGrid">
+              <article class="lt-toolCard">
+                <h3>無料ツールとテンプレート</h3>
+                <p>共有した費用、返済の連絡、お金のやり取りに使えるツールを探せます。</p>
+                <a href="/tools/" class="lt-cardCta">ツール一覧へ<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>グループの立て替えを記録</h3>
+                <p>共同購入のプレゼント、チケット、食事、予約金などについて、全額・一部・未払いを確認できます。</p>
+                <a href="/solutions/group-payback-tracker/" class="lt-cardCta">グループの返済管理を見る<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>グループの返済状況を計算</h3>
+                <p>ひとりがまとめて立て替えたあと、誰がいくら返したかと、残りの金額を整理します。</p>
+                <a href="/tools/group-payback-calculator/" class="lt-cardCta">返済状況を計算する<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>グループへの返済連絡</h3>
+                <p>負担額が決まったあと、グループ全体への案内と個別の確認を分けて進められます。</p>
+                <a href="/blog/how-to-remind-a-group-to-pay-you-back-without-spamming-everyone/" class="lt-cardCta">連絡の進め方を読む<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>まだ一度きりの割り勘で足りる？</h3>
+                <p>支払日が違う、一部だけ返した、追加の費用が出た場合に、合う整理方法を選べます。</p>
+                <a href="/blog/how-to-split-costs-when-people-pay-at-different-times/" class="lt-cardCta">支払うタイミング別の整理方法<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>角が立ちにくい返済の頼み方</h3>
+                <p>金額がはっきりしたあとに、落ち着いた言葉で具体的に伝えるためのガイドです。</p>
+                <a href="/blog/how-to-remind-someone-they-owe-you-money-politely/" class="lt-cardCta">返済の頼み方を読む<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>やり取り全体の残額を計算</h3>
+                <p>2人の間で立て替えと返済が何度も続いているときに、今の残額を確認できます。</p>
+                <a href="/tools/running-balance-calculator/" class="lt-cardCta">残額を計算する<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>同居人との月次精算</h3>
+                <p>家賃、光熱費、食材、日用品、返済、先月からの残額をひとつにまとめます。</p>
+                <a href="/tools/roommate-bill-split-calculator/" class="lt-cardCta">同居人との精算を計算する<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>同居人とのお金の記録</h3>
+                <p>繰り返す生活費、一部返済、前からの残額を、共通の記録に整理する方法です。</p>
+                <a href="/blog/how-to-track-money-between-roommates/" class="lt-cardCta">記録の進め方を読む<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>返済をお願いするメッセージ</h3>
+                <p>残額がわかったら、相手との関係に合わせた連絡文を作れます。</p>
+                <a href="/tools/polite-payback-reminder-generator/" class="lt-cardCta">メッセージを作る<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>返済の連絡に使える文例</h3>
+                <p>友人、同居人、家族への連絡や、一部返済後の確認に使える文例です。</p>
+                <a href="/tools/repayment-reminder-text-examples/" class="lt-cardCta">文例を見る<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>返済を受け取ったときの確認</h3>
+                <p>金額、対象の費用、残りの有無を、短い受領メモにまとめられます。</p>
+                <a href="/tools/repayment-receipt-generator/" class="lt-cardCta">受領メモを作る<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>同居人との費用管理</h3>
+                <p>家賃、光熱費、食材、日用品、定期的な支払いと返済を続けて記録します。</p>
+                <a href="/solutions/roommate-expense-tracker/" class="lt-cardCta">同居人との費用管理を見る<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>共有した費用を記録</h3>
+                <p>費用と返済をつなげて残し、毎回最初から計算し直す手間を減らせます。</p>
+                <a href="/solutions/shared-expense-tracker/" class="lt-cardCta">共有費用の記録方法を見る<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>相手ごとの貸し借りを管理</h3>
+                <p>自分が返すお金、返してもらうお金、返済済みの金額を整理できます。</p>
+                <a href="/ja/solutions/app-to-track-money-owed/" class="lt-cardCta">貸し借りの管理方法を見る</a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>カップルの共有費用管理</h3>
+                <p>食材、家賃、旅行、サブスクなど、2人の支出をわかりやすく記録します。</p>
+                <a href="/solutions/expense-tracker-for-couples/" class="lt-cardCta">2人の費用管理を見る<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>共有した費用の記録方法</h3>
+                <p>取引のたびに最初から数字を合わせ直さずに、記録を続けるためのガイドです。</p>
+                <a href="/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/" class="lt-cardCta">ガイドを読む<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>2人で納得できる費用の分け方</h3>
+                <p>共同の支出、支払額の差、毎月の費用について、落ち着いて話し合うために。</p>
+                <a href="/blog/how-to-split-expenses-in-a-relationship-without-fighting/" class="lt-cardCta">費用の分け方を読む<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>家族間の立て替え管理</h3>
+                <p>家族の支払い、親のための買い物、定期的な費用と返済を記録できます。</p>
+                <a href="/solutions/family-reimbursement-tracker/" class="lt-cardCta">家族の立て替え管理を見る<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+              <article class="lt-toolCard">
+                <h3>家族間のお金の記録方法</h3>
+                <p>共同購入、家族の立て替え、サブスク、介護に伴う費用などが続くときのガイドです。</p>
+                <a href="/blog/how-to-keep-track-of-money-between-family-members/" class="lt-cardCta">家族向けガイドを読む<span class="site-locale-fallback">（英語）</span></a>
+              </article>
+            </div>
+          </section>
+
+          <section class="lt-toolsSection faq-section">
+            <h2>割り勘の計算について、よくある質問</h2>
+            <div class="faq-list">
+              <details>
+                <summary>どんな計算ができますか？</summary>
+                <p>誰が払ったか、誰がその費用に参加したかをもとに、各自の負担額と、精算のために誰にいくら払うかを計算できます。</p>
+              </details>
+              <details>
+                <summary>ひとりずつの負担額もわかりますか？</summary>
+                <p>はい。参加者、費用、払った人、分ける人を入力すると、各自の負担額、支払額との差額、精算に必要な支払いが表示されます。</p>
+              </details>
+              <details>
+                <summary>誰から誰に払うかも表示されますか？</summary>
+                <p>はい。立て替えた金額を差し引いたうえで、誰が誰にいくら払えばよいかを表示します。負担額を全員がもう一度払う必要はありません。</p>
+              </details>
+              <details>
+                <summary>ひとつの会計を人数で均等に分けられますか？</summary>
+                <p>はい。合計金額をひとつの費用として入力し、参加者を全員選んでください。たとえば<span class="ja-money-token">9,800円</span>を8人で分けると、ひとり<span class="ja-money-token">1,225円</span>です。</p>
+              </details>
+              <details>
+                <summary>ある費用だけ、参加しなかった人を外せますか？</summary>
+                <p>はい。その費用を負担する人だけを選んでください。食事、タクシー、買い物に参加していない人は、その費用では選ばないようにします。</p>
+              </details>
+              <details>
+                <summary>人によって金額や割合を変えられますか？</summary>
+                <p>このツールは、選んだ人で均等に分ける方式です。任意の割合、収入比、項目別の分担には<a href="/tools/couple-shared-expense-balance-calculator/">カップルの共有費用計算ツール<span class="site-locale-fallback">（英語）</span></a>、月ごとの生活費の精算には<a href="/tools/roommate-bill-split-calculator/">同居人との月次精算ツール<span class="site-locale-fallback">（英語）</span></a>が使えます。その後の立て替えや返済も含めるなら、<a href="/tools/running-balance-calculator/">やり取り全体の残額を計算するツール<span class="site-locale-fallback">（英語）</span></a>をご利用ください。</p>
+              </details>
+              <details>
+                <summary>複数の支払いをまとめて精算できますか？</summary>
+                <p>はい。支払いを1件ずつ追加し、払った人と、その費用を分ける人を選びます。すべてを合わせた精算結果が表示されます。</p>
+              </details>
+              <details>
+                <summary>同居人との生活費にも使えますか？</summary>
+                <p>簡単な割り勘や一度きりの支払いに使えます。家賃、光熱費、食材、日用品、返済、先月からの残額を月ごとにまとめるなら、<a href="/tools/roommate-bill-split-calculator/">同居人との月次精算ツール<span class="site-locale-fallback">（英語）</span></a>が使えます。定期的な費用や長く続く残額は、You Owe Meで記録を続ける方法もあります。</p>
+              </details>
+              <details>
+                <summary>カップルの支払いにも使えますか？</summary>
+                <p>はい。ひとりが立て替えた費用を2人で均等に分ける場合に使えます。任意の割合や、すでに精算した支払いも含めたい場合は、<a href="/tools/couple-shared-expense-balance-calculator/">カップルの共有費用計算ツール<span class="site-locale-fallback">（英語）</span></a>をご利用ください。</p>
+              </details>
+              <details>
+                <summary>3人の旅行で、タクシーには2人だけ乗った場合は？</summary>
+                <p>タクシー代では、乗った2人だけを選びます。ほかの費用では3人を選べるので、費用ごとに参加者を分けて計算できます。</p>
+              </details>
+              <details>
+                <summary>You Owe Meアプリとは何が違いますか？</summary>
+                <p>この計算ツールは、一度きりの割り勘をすぐ確認するためのものです。You Owe Meでは、その後も続く残額や返済履歴、定期的な費用を記録し、リマインダーの設定や確認の連絡に役立てられます。</p>
+              </details>
+              <details>
+                <summary>返してもらう日や金額が人によって違う場合は？</summary>
+                <p>まずこのツールで最初の負担額を決めます。その後、全額・一部・未払いを確認したい場合は、You Owe Meのグループの立て替え記録で、ひとりずつの返済と残額を管理できます。</p>
+              </details>
+              <details>
+                <summary>入力内容は保存・送信されますか？</summary>
+                <p>計算はこの端末のブラウザー内で行い、継続保存する台帳ではありません。「返済の記録を続ける」を選ぶと、名前と金額をYou Owe Meへ安全に送信し、24時間で期限が切れる引き継ぎリンクを作成します。アカウントは作成されません。</p>
+              </details>
+            </div>
+          </section>
+
+          <section class="lt-finalCta">
+            <h2>割り勘のあとも、返済の記録を残す</h2>
+            <p>iPhoneやiPadのYou Owe Meで、誰がいくら返したかと、あといくら残っているかを記録できます。無料でダウンロードでき、アプリ内課金があります。</p>
+            <p class="lt-paragraphGap">実際の利用者の声は、<a href="/reviews/">App Storeレビュー<span class="site-locale-fallback">（英語）</span></a>をご覧ください。</p>
+            <div data-app-language-support-anchor hidden></div>
+            <div class="lt-ctaRow">
+              <a
+                href="https://apps.apple.com/app/id1147058670?pt=117888502&amp;ct=website_cta&amp;mt=8"
+                class="lt-appStoreBtn"
+                aria-label="App StoreでYou Owe Meをダウンロード"
+                data-track-location="split_calculator_final_primary_cta"
+              >
+                <span class="sr-only">App StoreでYou Owe Meをダウンロード</span>
+                <img src="/images/ja/app-store/download-on-the-app-store-black.svg" alt="App StoreでYou Owe Meをダウンロード" />
+              </a>
+              <a href="/solutions/shared-expense-tracker/" class="lt-textCta" data-track-location="split_calculator_final_secondary_cta">共有費用の記録方法を見る<span class="site-locale-fallback">（英語）</span></a>
+              <a href="/tools/" class="lt-textCta">ツール一覧へ<span class="site-locale-fallback">（英語）</span></a>
+            </div>
+          </section>
+
+          <p class="lt-pageMeta">更新：<time datetime="2026-11-05">2026年11月5日</time></p>
+        </article>
+      </div>
+
+      <div id="copyright">
+        <ul>
+        <!-- locale-switch:start -->
+        <li class="site-language-switch" aria-label="ページの言語"><a href="/tools/split-expense-calculator/" lang="en" hreflang="en">English</a><span aria-hidden="true"> · </span><a href="/es/herramientas/calculadora-de-gastos-compartidos/" lang="es" hreflang="es">Español</a><span aria-hidden="true"> · </span><a href="/de/tools/ausgaben-aufteilen/" lang="de" hreflang="de">Deutsch</a><span aria-hidden="true"> · </span><a href="/ar/tools/split-expense-calculator/" lang="ar" dir="rtl" hreflang="ar">العربية</a><span aria-hidden="true"> · </span><a href="/fr/outils/calculateur-partage-depenses/" lang="fr" hreflang="fr">Français</a><span aria-hidden="true"> · </span><a href="/ja/tools/split-expense-calculator/" lang="ja" hreflang="ja" aria-current="page">日本語</a></li>
+        <!-- locale-switch:end -->
+          <li>&copy; 2026 Ievgenii Iablonskyi</li>
+          <li><a href="/solutions/">使い方・用途<span class="site-locale-fallback">（英語）</span></a></li>
+          <li><a href="/features/">機能<span class="site-locale-fallback">（英語）</span></a></li>
+          <li><a href="/reviews/">レビュー<span class="site-locale-fallback">（英語）</span></a></li>
+          <li><a href="/tools/">計算ツール・テンプレート<span class="site-locale-fallback">（英語）</span></a></li>
+          <li><a href="/compare/">比較<span class="site-locale-fallback">（英語）</span></a></li>
+          <li><a href="/blog/">ガイド<span class="site-locale-fallback">（英語）</span></a></li>
+          <li><a href="/privacy-and-data/">プライバシーとデータ<span class="site-locale-fallback">（英語）</span></a></li>
+          <li><a href="/privacy-policy/">プライバシーポリシー<span class="site-locale-fallback">（英語）</span></a></li>
+          <li><a href="/contact/">お問い合わせ<span class="site-locale-fallback">（英語）</span></a></li>
+          <li>デザイン： <a href="https://html5up.net">HTML5 UP</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <script src="/scripts/sales.js?v=ja20261031"></script>
+    <script src="/scripts/split-expense-locale.js?v=jasplit20261105"></script>
+    <script src="/scripts/tool-transfer.js?v=jasplit20261105"></script>
+    <script src="/scripts/split-expense-calculator.js?v=jasplit20261105"></script>
+    <script src="/scripts/anniversary-announcement.js?v=ja20261031"></script>
+    <script type="module" src="/scripts/analytics.js?v=roommatefr20261031"></script>
+    <script type="module" src="/scripts/iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"></script>
+    <script src="/assets/js/jquery.min.js"></script>
+    <script src="/assets/js/jquery.scrollex.min.js"></script>
+    <script src="/assets/js/jquery.scrolly.min.js"></script>
+    <script src="/assets/js/browser.min.js"></script>
+    <script src="/assets/js/breakpoints.min.js"></script>
+    <script src="/assets/js/util.js"></script>
+    <script src="/assets/js/main.js?v=ja20261031"></script>
+    <script src="/scripts/app-language-support.js?v=ja20261031"></script>
+  </body>
+</html>

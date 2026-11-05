@@ -117,7 +117,7 @@ test("visible cards use the shared desktop-only layout and cache-busted module p
     assert.ok(page.includes("iphone-handoff.mjs?v=iphone-handoff-phase-d-20260914-1"));
     assert.ok(page.includes("styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1"));
   }
-  assert.ok(split.includes("split-expense-calculator.js?v=copy20261025"), "English copy has its own cache version; localized outputs retain their accepted asset URLs");
+  assert.ok(split.includes("split-expense-calculator.js?v=jasplit20261105"), "Shared calculator Japanese additions use their reviewed cache version in every locale");
 });
 
 test("the QR manifest and reproducible generator retain the original pooled-campaign destinations", () => {
