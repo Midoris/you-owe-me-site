@@ -188,6 +188,33 @@
     }
   }
 });
+  const ITALIAN_ACTIVE_STATES = Object.freeze({
+  "inactive": {},
+  "active": {
+    "standard": {
+      "eyebrow": "2016–2026",
+      "heading": "You Owe Me compie 10 anni.",
+      "body": "Scopri dieci anni dedicati a semplificare i conti tra persone. Gli utenti della versione gratuita che soddisfano i requisiti possono approfittare dell’offerta di anniversario nell’app fino al 4 settembre.",
+      "cta": "Scopri questa storia (in inglese)"
+    },
+    "inline": {
+      "label": "Festeggiamo 10 anni",
+      "body": "You Owe Me compie 10 anni. Gli utenti della versione gratuita che soddisfano i requisiti possono approfittare dell’offerta di anniversario nell’app fino al 4 settembre."
+    }
+  },
+  "final": {
+    "standard": {
+      "eyebrow": "Ultimi giorni",
+      "heading": "L’offerta di anniversario termina il 4 settembre.",
+      "body": "La pagina sui dieci anni dell’app resta disponibile. Gli utenti della versione gratuita che soddisfano i requisiti possono approfittare dell’offerta a tempo limitato nell’app fino al 4 settembre.",
+      "cta": "Visita la pagina dell’anniversario (in inglese)"
+    },
+    "inline": {
+      "label": "Ultimi giorni",
+      "body": "L’offerta di anniversario per gli utenti della versione gratuita che soddisfano i requisiti termina il 4 settembre. La storia dei dieci anni dell’app resta disponibile sul sito."
+    }
+  }
+});
   function localDateKey(date) {
     if (!date || typeof date.getFullYear !== "function" || Number.isNaN(date.getTime())) {
       return null;
@@ -223,7 +250,7 @@
     if (typeof moduleElement.querySelector !== "function") return false;
 
     const variant = moduleElement.getAttribute("data-anniversary-variant");
-    const states = documentObject?.documentElement?.lang?.split("-")[0] === "pt" ? PORTUGUESE_ACTIVE_STATES : documentObject?.documentElement?.lang === "ja" ? JAPANESE_ACTIVE_STATES : documentObject?.documentElement?.lang === "fr" ? FRENCH_ACTIVE_STATES : documentObject?.documentElement?.lang === "ar" ? ARABIC_ACTIVE_STATES : documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
+    const states = documentObject?.documentElement?.lang === "it" ? ITALIAN_ACTIVE_STATES : documentObject?.documentElement?.lang?.split("-")[0] === "pt" ? PORTUGUESE_ACTIVE_STATES : documentObject?.documentElement?.lang === "ja" ? JAPANESE_ACTIVE_STATES : documentObject?.documentElement?.lang === "fr" ? FRENCH_ACTIVE_STATES : documentObject?.documentElement?.lang === "ar" ? ARABIC_ACTIVE_STATES : documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
     const state = states[safePhase][variant];
     if (!state) {
       moduleElement.hidden = true;

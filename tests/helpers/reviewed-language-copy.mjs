@@ -1,4 +1,22 @@
 import fs from "node:fs";
+
+const italianHomeAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-home-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedItalianHomeSource(source, file) {
+  if (!italianHomeAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of italianHomeAdmissions.source[file] || []) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedItalianHomeIntegration(html) {
+  html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com/it/" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="/it/" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
+  for (const {current, previous} of italianHomeAdmissions.availability) html = html.replaceAll(current, previous);
+  const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/)?.[1];
+  for (const [current, previous] of italianHomeAdmissions.cacheByCanonical[canonical] || []) html = html.replaceAll(current, previous);
+  return html;
+}
+
 const portugueseCacheUpdates = JSON.parse(fs.readFileSync(new URL("../fixtures/portuguese-home-cache-updates.json", import.meta.url), "utf8"));
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
@@ -13,11 +31,13 @@ export function normalizeReviewedPortugueseSplitSource(source, file) {
   return bytes ? Buffer.from(source) : source;
 }
 export function normalizeReviewedPortugueseRoommateSource(source, file) {
+  source = normalizeReviewedItalianHomeSource(source, file);
   if (file === 'scripts/analytics.js') return source.replace('../content/site-locales.mjs?v=ptroommate20261106', '../content/site-locales.mjs?v=ptborrow20261106').replace('./iphone-handoff-analytics-bridge.mjs?v=ptroommate20261106', './iphone-handoff-analytics-bridge.mjs?v=ptborrow20261106');
   if (file === 'scripts/iphone-handoff-analytics-bridge.mjs') return source.replace('  "pt_roommate_template_iphone_handoff",\n', '');
   return source;
 }
 export function normalizeReviewedPortugueseRoommateIntegration(html) {
+  html = normalizeReviewedItalianHomeIntegration(html);
   const route = '/pt/ferramentas/planilha-despesas-casa-compartilhada/';
   html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');

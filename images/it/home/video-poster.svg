@@ -1,0 +1,13 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="480" height="854" viewBox="0 0 480 854" lang="it" xml:lang="it" role="img" aria-labelledby="title desc">
+  <title id="title">You Owe Me</title>
+  <desc id="desc">Copertina in italiano del video di presentazione di You Owe Me, disponibile in inglese</desc>
+  <defs><linearGradient id="bg" x2="0.8" y2="1"><stop stop-color="#e5f4d8"/><stop offset="1" stop-color="#e4eef8"/></linearGradient></defs>
+  <rect width="480" height="854" rx="32" fill="url(#bg)"/>
+  <rect x="32" y="42" width="416" height="770" rx="26" fill="#fff" fill-opacity=".88" stroke="#dfe6eb"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" text-anchor="middle" fill="#18212b">
+    <text x="240" y="132" font-size="32" font-weight="700">You Owe Me</text>
+    <text x="240" y="200" font-size="27" font-weight="700"><tspan x="240">Soldi tra persone,</tspan><tspan x="240" dy="38">in ordine.</tspan></text>
+    <text x="240" y="292" font-size="22">Importi, rimborsi e cronologia</text>
+    <text x="240" y="650" font-size="23"><tspan x="240">Video di presentazione</tspan><tspan x="240" dy="34">in inglese</tspan></text>
+  </g>
+</svg>

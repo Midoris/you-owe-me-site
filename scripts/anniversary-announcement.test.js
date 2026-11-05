@@ -232,3 +232,18 @@ test("Portuguese anniversary copy retains exact historical gates and English des
   assert.equal(inline.querySelector("[data-anniversary-inline-label]").textContent, "Últimos dias");
   anniversary.render(d, new Date(2026, 10, 5, 12)); assert.equal(standard.hidden, true); assert.equal(inline.hidden, true);
 });
+
+
+test("Italian anniversary localization keeps original start, final and expiration boundaries", () => {
+  const standard = standardModule(), inline = inlineModule();
+  const doc = new FakeDocument([standard,inline]);doc.documentElement={lang:"it"};
+  for(const [month,day,phase] of [[7,25,"inactive"],[7,26,"active"],[8,1,"active"],[8,2,"final"],[8,4,"final"],[8,5,"inactive"],[10,6,"inactive"]]) {
+    anniversary.render(doc,new Date(2026,month,day,12));
+    assert.equal(standard.getAttribute("data-anniversary-phase"),phase);
+    assert.equal(standard.hidden,phase==="inactive");assert.equal(inline.hidden,phase==="inactive");
+    if(phase!=="inactive") {
+      assert.equal(standard.querySelector("[data-anniversary-heading]").textContent,phase==="active"?"You Owe Me compie 10 anni.":"L’offerta di anniversario termina il 4 settembre.");
+      assert.equal(standard.querySelector("[data-anniversary-cta]").getAttribute("href"),"/10-years/");
+    }
+  }
+});

@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1000" viewBox="0 0 600 1000" lang="it" role="img" aria-labelledby="title desc">
+  <title id="title">Quanto è tornato. Quanto manca.</title>
+  <desc id="desc">Illustrazione: 340 € anticipati, 180 € ricevuti e 160 € ancora da ricevere</desc>
+  <rect x="1" y="1" width="598" height="998" rx="36" fill="#fbfdff" stroke="#dfe6eb"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" fill="#18212b">
+    <text x="44" y="95" font-size="26" fill="#52616c">Riepilogo dei movimenti</text>
+    <text x="44" y="165" font-size="40" font-weight="700"><tspan x="44">Quanto è tornato.</tspan><tspan x="44" dy="52">Quanto manca.</tspan></text>
+    <text x="44" y="325" font-size="28">Hai anticipato</text>
+    <text x="44" y="396" font-size="54" font-weight="700">340 €</text>
+    <rect x="44" y="455" width="512" height="40" rx="20" fill="#e1e8ec"/>
+    <path d="M64 455H315.0588V495H64A20 20 0 0 1 64 455" fill="#afe67e"/>
+    <text x="44" y="600" font-size="28">Hai ricevuto</text>
+    <text x="44" y="665" font-size="48" font-weight="700">180 €</text>
+    <text x="44" y="800" font-size="28">Da ricevere</text>
+    <text x="44" y="865" font-size="48" font-weight="700">160 €</text>
+    <text x="44" y="945" font-size="26" fill="#52616c">Esempio con dati inventati</text>
+  </g>
+</svg>

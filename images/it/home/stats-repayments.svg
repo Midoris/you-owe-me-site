@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1000" viewBox="0 0 600 1000" lang="it" role="img" aria-labelledby="title desc">
+  <title id="title">Rimborsi ricevuti</title>
+  <desc id="desc">Esempio inventato: Luca restituisce 100 € il 9 maggio e 80 € il 22 maggio</desc>
+  <rect x="1" y="1" width="598" height="998" rx="36" fill="#fbfdff" stroke="#dfe6eb"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" fill="#18212b">
+    <text x="44" y="95" font-size="26" fill="#52616c">Movimenti con Luca</text>
+    <text x="44" y="165" font-size="40" font-weight="700"><tspan x="44">Rimborsi</tspan><tspan x="44" dy="52">ricevuti</tspan></text>
+    <path d="M44 280H556M44 420H556M44 560H556" stroke="#dfe6eb"/>
+    <text x="44" y="360" font-size="30">9 maggio</text>
+    <text x="556" y="360" text-anchor="end" font-size="40" font-weight="700">100 €</text>
+    <text x="44" y="500" font-size="30">22 maggio</text>
+    <text x="556" y="500" text-anchor="end" font-size="40" font-weight="700">80 €</text>
+    <text x="44" y="680" font-size="28">Totale ricevuto</text>
+    <text x="44" y="760" font-size="54" font-weight="700">180 €</text>
+    <text x="44" y="915" font-size="26" fill="#52616c">Esempio con dati inventati</text>
+  </g>
+</svg>

@@ -354,3 +354,16 @@ test("Portuguese page normalizes pt-BR and overrides other browser locales", () 
     assert.equal(node.getAttribute("lang"), "pt");
   }
 });
+
+
+test("Italian page override fixes the native message and home link regardless of browser locale", () => {
+  for (const language of ["en-US", "pt-BR", "ar-SA", "it-IT"]) {
+    const documentObject = new FakeDocument();
+    documentObject.documentElement = { lang: "it" };
+    const anchor = languageSupport.render(documentObject, { language });
+    assert.equal(flattenedText(anchor), "✓You Owe Me è disponibile in italiano.");
+    assert.equal(anchor.getAttribute("lang"), "it");
+    assert.equal(anchor.children[1].children[0].getAttribute("href"), "/it/");
+    assert.equal(languageSupport.render(documentObject, {language:"en-US"}), anchor);
+  }
+});

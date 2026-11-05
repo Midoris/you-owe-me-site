@@ -94,3 +94,16 @@ test("Portuguese campaign labels retain US campaign dates and original analytics
  assert.equal(runSale("pt-BR",6,12).badge.hidden,true);
  assert.equal(runSale("pt-BR",11,5).badge.hidden,true);
 });
+
+
+test("Italian presentation retains US holidays, campaign identities and analytics state", () => {
+  for (const [month, day, label] of [[12,24,"Natale"],[1,1,"Capodanno"],[6,19,"Festa del papà negli Stati Uniti"],[7,4,"Giorno dell’Indipendenza degli Stati Uniti"],[2,14,"San Valentino"],[4,5,"Pasqua"],[10,31,"Halloween"],[11,11,"Festa dei single"],[11,26,"Giorno del Ringraziamento negli Stati Uniti"],[11,27,"Black Friday"],[11,30,"Cyber Monday"]]) {
+    const en = runSale("en",month,day), it = runSale("it",month,day);
+    assert.equal(it.badge.textContent,"Offerta: "+label);
+    assert.equal(it.badge.attributes["aria-label"],"Promozione in corso: "+label);
+    assert.equal(JSON.stringify(it.sale),JSON.stringify(en.sale));
+    assert.equal(JSON.stringify(it.events),JSON.stringify(en.events));
+  }
+  assert.equal(runSale("it",3,19).badge.hidden,true);
+  assert.equal(runSale("it",11,6).badge.hidden,true);
+});

@@ -127,7 +127,9 @@
 
 		// Toggle.
 			$navPanelToggle = $(
-				document.documentElement.lang.split('-')[0] === 'pt'
+				document.documentElement.lang === 'it'
+					? '<a href="#navPanel" id="navPanelToggle">Menu</a>'
+					: document.documentElement.lang.split('-')[0] === 'pt'
 					? '<a href="#navPanel" id="navPanelToggle">Menu</a>'
 					: document.documentElement.lang === 'ja'
 					? '<a href="#navPanel" id="navPanelToggle">メニュー</a>'
@@ -157,7 +159,9 @@
 				'<div id="navPanel">' +
 					'<nav>' +
 					'</nav>' +
-					(document.documentElement.lang.split('-')[0] === 'pt'
+					(document.documentElement.lang === 'it'
+						? '<a href="#navPanel" class="close" aria-label="Chiudi"></a>'
+						: document.documentElement.lang.split('-')[0] === 'pt'
 						? '<a href="#navPanel" class="close" aria-label="Fechar"></a>'
 						: document.documentElement.lang === 'ja'
 						? '<a href="#navPanel" class="close" aria-label="閉じる"></a>'
