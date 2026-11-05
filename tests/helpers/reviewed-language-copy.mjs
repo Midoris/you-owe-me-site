@@ -2,8 +2,27 @@ import fs from "node:fs";
 
 
 
+
+const italianPersonalLoanAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-personal-loan-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedItalianPersonalLoanSource(source, file) {
+  if (!italianPersonalLoanAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of italianPersonalLoanAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedItalianPersonalLoanIntegration(html) {
+  const route = '/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/';
+  html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Prestiti e piani di rimborso</a>', '');
+  for (const [current, previous] of italianPersonalLoanAdmissions.inwardAnchors) html = html.replace(current, previous);
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=itloan20261106(?=")/g, '$1?v=itrecord20261106');
+}
+
 const italianRecordGuideAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-record-guide-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedItalianRecordGuideSource(source, file) {
+  source = normalizeReviewedItalianPersonalLoanSource(source, file);
   if (!italianRecordGuideAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -11,6 +30,7 @@ export function normalizeReviewedItalianRecordGuideSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedItalianRecordGuideIntegration(html) {
+  html = normalizeReviewedItalianPersonalLoanIntegration(html);
   const route = '/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/';
   html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');

@@ -1,0 +1,26 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1120" viewBox="0 0 600 1120" lang="it" role="img" aria-labelledby="title desc">
+  <title id="title">Illustrazione della cronologia: 150 euro ricevuti e 50 euro ancora da ricevere per la rata in corso</title>
+  <desc id="desc">Illustrazione esplicativa. Non è una schermata dell’app.</desc>
+  <defs><linearGradient id="bg" x2="1" y2="1"><stop stop-color="#f1f9e9"/><stop offset="1" stop-color="#edf3fa"/></linearGradient></defs>
+  <rect width="600" height="1120" rx="32" fill="url(#bg)"/>
+  <path d="M64 260V915" stroke="#a4c28b" stroke-width="4"/>
+  <rect x="78" y="238" width="470" height="200" rx="24" fill="#fff" stroke="#dfe7e3"/>
+  <rect x="78" y="474" width="470" height="204" rx="24" fill="#fff" stroke="#dfe7e3"/>
+  <rect x="78" y="714" width="470" height="232" rx="24" fill="#fff" stroke="#dfe7e3"/>
+  <circle cx="64" cy="280" r="9" fill="#527938"/><circle cx="64" cy="516" r="9" fill="#527938"/><circle cx="64" cy="756" r="9" fill="#527938"/>
+  <g fill="#18212b" font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif">
+    <text x="56" y="76" font-size="22">CRONOLOGIA DEL PRESTITO</text>
+    <text x="56" y="134" font-size="38" font-weight="700">Prestito a Luca</text>
+    <text x="56" y="182" font-size="28">Acquisto del portatile</text>
+    <text x="100" y="286" font-size="26">1 novembre</text>
+    <text x="100" y="340" font-size="30" font-weight="700">Pagamento registrato</text>
+    <text x="100" y="398" font-size="38" font-weight="700">150 € ricevuti</text>
+    <text x="100" y="524" font-size="26">Piano di rimborso</text>
+    <text x="100" y="576" font-size="30" font-weight="700">Manca a questa rata</text>
+    <text x="100" y="638" font-size="42" font-weight="700">50 €</text>
+    <text x="100" y="764" font-size="26">Prossimo passo</text>
+    <text x="100" y="816" font-size="28" font-weight="700">Scadenza: 1 novembre</text>
+    <text x="100" y="870" font-size="28"><tspan x="100">Verifica il pagamento e, </tspan><tspan x="100" dy="38">se serve, parlane con Luca</tspan></text>
+    <text x="56" y="1040" font-size="26"><tspan x="56">Esempio inventato: </tspan><tspan x="56" dy="34">punto di vista di chi ha prestato</tspan></text>
+  </g>
+</svg>

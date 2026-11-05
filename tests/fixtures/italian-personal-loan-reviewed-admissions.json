@@ -1,0 +1,36 @@
+{
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "  \"/scripts/analytics.js\": \"itloan20261106\",\n",
+        "  \"/scripts/analytics.js\": \"itrecord20261106\",\n"
+      ],
+      [
+        "  },\n  {\n    \"en\": \"/solutions/personal-loan-repayment-tracker/\",\n    \"it\": \"/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/\",\n    \"title\": \"Prestiti e piani di rimborso\",\n    \"updated\": \"2026-11-06\",\n    \"complete\": true,\n    \"discoveryDescription\": \"Tieni in ordine i prestiti tra amici e familiari: registra i rimborsi, verifica quanto manca e segui il piano di rimborso con You Owe Me per iPhone.\",\n    \"registry\": {\n      \"primaryAudience\": \"Chi ha prestato o ricevuto denaro e vuole seguire rimborsi, saldo e scadenze dello stesso prestito.\",\n      \"problemSolved\": \"Tiene insieme il saldo residuo, i pagamenti effettivi, il piano di rimborso e la prossima scadenza.\",\n      \"useWhen\": \"Quando un prestito prosegue con rimborsi parziali, nuovi importi o modifiche al piano.\",\n      \"primaryCta\": \"Scarica dall’App Store\",\n      \"nextStep\": \"Crea il registro del prestito e aggiungi ogni pagamento quando avviene davvero.\"\n    }\n",
+        ""
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/\",\n",
+        ""
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=itloan20261106\";\n",
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=itrecord20261106\";\n"
+      ]
+    ]
+  },
+  "inwardAnchors": [
+    [
+      "<a class=\"best-next-step__card\" href=\"/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_2\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"repayments\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/personal-loan-repayment-tracker/\" data-step-position=\"2\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_loan_repayments\"><span class=\"it-link-label\">\n      <span class=\"best-next-step__label\">Prestiti tra persone</span>\n      <strong>Voglio seguire il rimborso di un prestito</strong>\n      <span>Ritrova i pagamenti, il saldo residuo e il piano di rimborso dello stesso prestito.</span>\n    </span></a>",
+      "<a class=\"best-next-step__card\" href=\"/solutions/personal-loan-repayment-tracker/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_2\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"repayments\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/personal-loan-repayment-tracker/\" data-step-position=\"2\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_loan_repayments\"><span class=\"it-link-label\">\n      <span class=\"best-next-step__label\">Prestiti tra persone</span>\n      <strong>Voglio seguire il rimborso di un prestito <span class=\"site-locale-fallback\">(in inglese)</span></strong>\n      <span>Ritrova i pagamenti, il saldo residuo e il piano di rimborso dello stesso prestito.</span>\n    </span></a>"
+    ],
+    [
+      "<a href=\"/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/\">gestione dei prestiti tra persone</a>",
+      "<a href=\"/solutions/personal-loan-repayment-tracker/\">gestione dei prestiti tra persone <span class=\"site-locale-fallback\">(in inglese)</span></a>"
+    ]
+  ]
+}

@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "itrecord20261106",
+  "/scripts/analytics.js": "itloan20261106",
   "/scripts/sales.js": "ithome20261106",
   "/scripts/anniversary-announcement.js": "ithome20261106",
   "/scripts/app-language-support.js": "ithome20261106",
@@ -606,6 +606,21 @@ export const italianPages = [
       "useWhen": "Quando non sai cosa annotare o come registrare un rimborso parziale.",
       "primaryCta": "Copia il modello di registro",
       "nextStep": "Comincia con una persona e una valuta e verifica il saldo di oggi."
+    }
+  },
+  {
+    "en": "/solutions/personal-loan-repayment-tracker/",
+    "it": "/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/",
+    "title": "Prestiti e piani di rimborso",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "Tieni in ordine i prestiti tra amici e familiari: registra i rimborsi, verifica quanto manca e segui il piano di rimborso con You Owe Me per iPhone.",
+    "registry": {
+      "primaryAudience": "Chi ha prestato o ricevuto denaro e vuole seguire rimborsi, saldo e scadenze dello stesso prestito.",
+      "problemSolved": "Tiene insieme il saldo residuo, i pagamenti effettivi, il piano di rimborso e la prossima scadenza.",
+      "useWhen": "Quando un prestito prosegue con rimborsi parziali, nuovi importi o modifiche al piano.",
+      "primaryCta": "Scarica dall’App Store",
+      "nextStep": "Crea il registro del prestito e aggiungi ogni pagamento quando avviene davvero."
     }
   }
 ];
