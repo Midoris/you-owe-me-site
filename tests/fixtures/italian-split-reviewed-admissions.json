@@ -1,0 +1,126 @@
+{
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"itsplit20261106\",\n  \"/scripts/sales.js\": \"ithome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"ithome20261106\",\n",
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"itloan20261106\",\n  \"/scripts/sales.js\": \"ithome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"ithome20261106\",\n"
+      ],
+      [
+        "  \"/styles/site-nav.css\": \"ar20261020\",\n  \"/scripts/recordkeeping-guide-es.js\": \"itrecord20261106\",\n  \"/scripts/split-expense-locale.js\": \"itsplit20261106\",\n  \"/scripts/split-expense-calculator.js\": \"itsplit20261106\",\n  \"/scripts/tool-transfer.js\": \"itsplit20261106\",\n};\nexport const spanishVersionedAssets = [\n",
+        "  \"/styles/site-nav.css\": \"ar20261020\",\n  \"/scripts/recordkeeping-guide-es.js\": \"itrecord20261106\",\n  \"/scripts/split-expense-locale.js\": \"ptsplit20261105\",\n  \"/scripts/split-expense-calculator.js\": \"ptsplit20261105\",\n  \"/scripts/tool-transfer.js\": \"ptsplit20261105\",\n};\nexport const spanishVersionedAssets = [\n"
+      ],
+      [
+        "      \"nextStep\": \"Crea il registro del prestito e aggiungi ogni pagamento quando avviene davvero.\"\n    }\n  },\n  {\n    \"en\": \"/tools/split-expense-calculator/\",\n    \"it\": \"/it/strumenti/calcolatore-spese-condivise/\",\n    \"title\": \"Calcolatore per dividere le spese\",\n    \"updated\": \"2026-11-06\",\n    \"complete\": true,\n    \"discoveryDescription\": \"Inserisci quanto ha pagato ciascuno e scopri chi deve restituire cosa. Dividi cena, viaggio, spesa e altri costi scegliendo chi partecipa a ogni spesa.\",\n    \"registry\": {\n      \"primaryAudience\": \"Chi divide le spese con amici o altre persone e vuole chiarire quanto deve pagare o ricevere ciascuno.\",\n      \"problemSolved\": \"Confronta gli importi già pagati con la quota di ciascuno e calcola i pagamenti per saldare le differenze.\",\n      \"useWhen\": \"Quando una o più spese vanno divise in parti uguali tra le persone che partecipano a ogni spesa.\",\n      \"primaryCta\": \"Calcola la divisione\",\n      \"nextStep\": \"Condividi il risultato e tieni il conto dei pagamenti che arriveranno dopo.\"\n    }\n  }\n];\n",
+        "      \"nextStep\": \"Crea il registro del prestito e aggiungi ogni pagamento quando avviene davvero.\"\n    }\n  }\n];\n"
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=itsplit20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n",
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=itloan20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n"
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/ja/\",\n  \"/it/\",\n  \"/it/strumenti/calcolatore-spese-condivise/\",\n  \"/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/\",\n  \"/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/\",\n",
+        "  \"/ja/\",\n  \"/it/\",\n  \"/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/\",\n  \"/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/\",\n"
+      ]
+    ],
+    "scripts/split-expense-calculator.js": [
+      [
+        "  const isJapanese = locale === \"ja\";\n  const isPortuguese = locale === \"pt-BR\";\n  const isItalian = locale === \"it\";\n  const defaultCurrency = isJapanese ? \"円\" : isPortuguese ? \"R$\" : isItalian ? \"€\" : \"$\";\n  const localizedNumberInput = isArabic ? window.UomiArabicNumberInput : isFrench ? window.UomiFrenchNumberInput : isPortuguese ? window.UomiPortugueseNumberInput : isItalian ? window.UomiItalianNumberInput : null;\n  const localizedStrings = window.UomiSplitExpenseLocales?.[locale];\n  const CANONICAL_CALCULATOR_URL = localizedStrings\n",
+        "  const isJapanese = locale === \"ja\";\n  const isPortuguese = locale === \"pt-BR\";\n  const defaultCurrency = isJapanese ? \"円\" : isPortuguese ? \"R$\" : \"$\";\n  const localizedNumberInput = isArabic ? window.UomiArabicNumberInput : isFrench ? window.UomiFrenchNumberInput : isPortuguese ? window.UomiPortugueseNumberInput : null;\n  const localizedStrings = window.UomiSplitExpenseLocales?.[locale];\n  const CANONICAL_CALCULATOR_URL = localizedStrings\n"
+      ],
+      [
+        "  }\n  function setTranslatedContent(parent, message, values = {}) {\n    if ((isPortuguese || isItalian) && values.amount != null) {\n      clearNode(parent);\n      const template = localizedStrings?.[message] || message;\n",
+        "  }\n  function setTranslatedContent(parent, message, values = {}) {\n    if (isPortuguese && values.amount != null) {\n      clearNode(parent);\n      const template = localizedStrings?.[message] || message;\n"
+      ],
+      [
+        "  }\n  function transferState(source = state) {\n    if (!isArabic && !isFrench && !isPortuguese && !isItalian) return source;\n    return { ...source, expenses: source.expenses.map(expense => ({ ...expense,\n      amount: localizedNumberInput?.normalizeAmount(expense.amount) ?? \"NaN\",\n",
+        "  }\n  function transferState(source = state) {\n    if (!isArabic && !isFrench && !isPortuguese) return source;\n    return { ...source, expenses: source.expenses.map(expense => ({ ...expense,\n      amount: localizedNumberInput?.normalizeAmount(expense.amount) ?? \"NaN\",\n"
+      ],
+      [
+        "\n  function parseAmount(value) {\n    if (typeof value === \"number\" && !isFrench && !isPortuguese && !isItalian) return value;\n    const normalized = isArabic || isFrench || isPortuguese || isItalian\n      ? localizedNumberInput?.normalizeAmount(value) ?? \"\"\n      : String(value || \"\").trim().replace(/,/g, \"\");\n",
+        "\n  function parseAmount(value) {\n    if (typeof value === \"number\" && !isFrench && !isPortuguese) return value;\n    const normalized = isArabic || isFrench || isPortuguese\n      ? localizedNumberInput?.normalizeAmount(value) ?? \"\"\n      : String(value || \"\").trim().replace(/,/g, \"\");\n"
+      ],
+      [
+        "  function formatNumber(value) {\n    const rounded = roundMoney(value);\n    if (localizedStrings) return new Intl.NumberFormat(isArabic ? \"ar-u-nu-latn\" : isItalian ? \"it-IT\" : locale, { maximumFractionDigits: 2, ...(isItalian ? { useGrouping: \"always\" } : {}), ...((isPortuguese || isItalian) ? { minimumFractionDigits: 2 } : {}) }).format(rounded);\n    if (Number.isInteger(rounded)) return String(rounded);\n    return rounded.toFixed(2).replace(/\\.?0+$/, \"\");\n",
+        "  function formatNumber(value) {\n    const rounded = roundMoney(value);\n    if (localizedStrings) return new Intl.NumberFormat(isArabic ? \"ar-u-nu-latn\" : locale, { maximumFractionDigits: 2, ...(isPortuguese ? { minimumFractionDigits: 2 } : {}) }).format(rounded);\n    if (Number.isInteger(rounded)) return String(rounded);\n    return rounded.toFixed(2).replace(/\\.?0+$/, \"\");\n"
+      ],
+      [
+        "      return `${formatNumber(value)} ${symbol}`;\n    }\n    if (isItalian && symbol === \"€\") return `${formatNumber(value)} ${symbol}`;\n    if (isFrench) return `${formatNumber(value)}\\u00a0${symbol}`;\n    if (locale === \"de\" || isArabic) return `${formatNumber(value)} ${symbol}`;\n",
+        "      return `${formatNumber(value)} ${symbol}`;\n    }\n    if (isFrench) return `${formatNumber(value)}\\u00a0${symbol}`;\n    if (locale === \"de\" || isArabic) return `${formatNumber(value)} ${symbol}`;\n"
+      ],
+      [
+        "      });\n\n      const amount = makeInput(`amount-${expense.id}`, expense.amount, isArabic || isFrench || isPortuguese || isItalian ? \"text\" : \"number\");\n      amount.min = \"0\";\n      amount.step = \"0.01\";\n      amount.inputMode = \"decimal\";\n      amount.setAttribute(\"aria-describedby\", `${isFrench ? \"fr-number-help \" : isPortuguese ? \"pt-number-help \" : isItalian ? \"it-number-help \" : \"\"}expense-validation-${expense.id}`);\n      if (isArabic) amount.setAttribute(\"dir\", \"ltr\");\n      amount.addEventListener(\"input\", () => {\n",
+        "      });\n\n      const amount = makeInput(`amount-${expense.id}`, expense.amount, isArabic || isFrench || isPortuguese ? \"text\" : \"number\");\n      amount.min = \"0\";\n      amount.step = \"0.01\";\n      amount.inputMode = \"decimal\";\n      amount.setAttribute(\"aria-describedby\", `${isFrench ? \"fr-number-help \" : isPortuguese ? \"pt-number-help \" : \"\"}expense-validation-${expense.id}`);\n      if (isArabic) amount.setAttribute(\"dir\", \"ltr\");\n      amount.addEventListener(\"input\", () => {\n"
+      ],
+      [
+        "    const amount = parseAmount(expense.amount);\n    let message = \"\";\n    const hasInput = String(isFrench || isPortuguese || isItalian ? expense.amount ?? \"\" : expense.amount || \"\").trim();\n    if ((isArabic || isFrench || isPortuguese || isItalian) && hasInput && localizedNumberInput?.normalizeAmount(expense.amount) == null) {\n      message = localizedStrings[\"Invalid amount format\"];\n    } else if (hasInput && amount <= 0) {\n",
+        "    const amount = parseAmount(expense.amount);\n    let message = \"\";\n    const hasInput = String(isFrench || isPortuguese ? expense.amount ?? \"\" : expense.amount || \"\").trim();\n    if ((isArabic || isFrench || isPortuguese) && hasInput && localizedNumberInput?.normalizeAmount(expense.amount) == null) {\n      message = localizedStrings[\"Invalid amount format\"];\n    } else if (hasInput && amount <= 0) {\n"
+      ],
+      [
+        "    }\n    validation.textContent = message;\n    if (isArabic || isFrench || isPortuguese || isItalian) card.querySelector(`[id=\"amount-${expense.id}\"]`).setAttribute(\"aria-invalid\", message ? \"true\" : \"false\");\n  }\n\n",
+        "    }\n    validation.textContent = message;\n    if (isArabic || isFrench || isPortuguese) card.querySelector(`[id=\"amount-${expense.id}\"]`).setAttribute(\"aria-invalid\", message ? \"true\" : \"false\");\n  }\n\n"
+      ],
+      [
+        "    state.currency = defaultCurrency;\n    state.nextPersonNumber = 1;\n    state.people = (isJapanese ? [\"悠太\", \"美咲\", \"葵\"] : isPortuguese ? [\"Lucas\", \"Marina\", \"Bruno\"] : isItalian ? [\"Luca\", \"Giulia\", \"Marco\"] : [\"Alex\", \"Mia\", \"Sam\"]).map(name => createPerson(name));\n    const alex = state.people[0].id;\n    const mia = state.people[1].id;\n",
+        "    state.currency = defaultCurrency;\n    state.nextPersonNumber = 1;\n    state.people = (isJapanese ? [\"悠太\", \"美咲\", \"葵\"] : isPortuguese ? [\"Lucas\", \"Marina\", \"Bruno\"] : [\"Alex\", \"Mia\", \"Sam\"]).map(name => createPerson(name));\n    const alex = state.people[0].id;\n    const mia = state.people[1].id;\n"
+      ],
+      [
+        "\n    setInitialState();\n    if (isJapanese || isPortuguese || isItalian) { useExample(); hasExplicitInteraction = false; }\n    try {\n      const saved = sessionStorage.getItem(\"uomi-exp003-return\");\n",
+        "\n    setInitialState();\n    if (isJapanese || isPortuguese) { useExample(); hasExplicitInteraction = false; }\n    try {\n      const saved = sessionStorage.getItem(\"uomi-exp003-return\");\n"
+      ]
+    ],
+    "scripts/split-expense-locale.js": [
+      [
+        "    \"Invalid amount format\": \"Digite um valor como 1234,50 ou 1.234,50, com até duas casas decimais.\"\n});\n  const italian = Object.freeze({\n    \"Person {number}\": \"Persona {number}\",\n    \"Person 1\": \"Persona 1\",\n    \"Person 2\": \"Persona 2\",\n    \"Person 3\": \"Persona 3\",\n    \"Someone\": \"Qualcuno\",\n    \"People ({count}): edit names or remove people\": \"Persone ({count}): modifica i nomi o rimuovi\",\n    \"Remove {name}\": \"Rimuovi {name}\",\n    \"Remove\": \"Rimuovi\",\n    \"Expense {number}\": \"Spesa {number}\",\n    \"Remove expense {expense}\": \"Rimuovi la spesa {expense}\",\n    \"Dinner, groceries, rent, taxi...\": \"Cena, spesa, affitto, taxi…\",\n    \"Amount\": \"Importo\",\n    \"Paid by\": \"Ha pagato\",\n    \"Split between / included people\": \"Dividi tra queste persone\",\n    \"Split type\": \"Come dividere\",\n    \"Equal\": \"In parti uguali\",\n    \"Description (optional)\": \"Descrizione (facoltativa)\",\n    \"Enter an amount greater than zero.\": \"Inserisci un importo maggiore di zero.\",\n    \"Choose who paid for this expense.\": \"Scegli chi ha pagato questa spesa.\",\n    \"Select at least one person to share this expense.\": \"Seleziona almeno una persona con cui dividere questa spesa.\",\n    \"{name} paid\": \"{name} ha pagato\",\n    \"{name}'s share\": \"Quota di {name}\",\n    \"{name} is settled\": \"{name}: tutto saldato\",\n    \"{name} should receive\": \"{name} deve ricevere\",\n    \"{name} owes\": \"{name} deve pagare\",\n    \"{from} owes {to} {amount}\": \"{from} deve {amount} a {to}\",\n    \"Keep track until everyone has paid\": \"Tieni il conto finché tutti hanno pagato\",\n    \"Keep this balance in You Owe Me on iPhone. Record each full or partial repayment and see what each person still owes.\": \"Conserva questo saldo in You Owe Me per iPhone. Registra i rimborsi completi o parziali e controlla quanto manca da ogni persona.\",\n    \"Keep future shared costs in one place\": \"Raccogli anche le prossime spese\",\n    \"This split is settled. If you share costs again, You Owe Me on iPhone keeps new expenses and repayments in one balance for each person.\": \"Questa divisione è già saldata. Se dividerete altre spese, You Owe Me per iPhone raccoglie nuovi importi e rimborsi nel saldo di ogni persona.\",\n    \"Preparing your split…\": \"Preparazione della divisione…\",\n    \"Couldn’t prepare the transfer. Your split is still here. Try again, or copy your result.\": \"Non è stato possibile preparare il trasferimento dei dati. La divisione è ancora qui: riprova oppure copia il risultato.\",\n    \"Total expenses\": \"Totale delle spese\",\n    \"People\": \"Persone\",\n    \"Expenses included\": \"Spese incluse\",\n    \"Add an expense to see who owes whom.\": \"Aggiungi una spesa per vedere chi deve pagare chi.\",\n    \"Everyone is settled.\": \"È tutto saldato.\",\n    \"You can add up to 12 people.\": \"Puoi aggiungere fino a 12 persone.\",\n    \"Add at least two people to split an expense.\": \"Aggiungi almeno due persone per dividere una spesa.\",\n    \"You can add up to 30 expenses.\": \"Puoi aggiungere fino a 30 spese.\",\n    \"Dinner\": \"Cena\",\n    \"Groceries\": \"Spesa al supermercato\",\n    \"Taxi\": \"Taxi\",\n    \"Shared expense\": \"Spesa condivisa\",\n    \"Shared expense summary\": \"Riepilogo delle spese condivise\",\n    \"Total shared expenses: {amount}\": \"Totale delle spese: {amount}\",\n    \"Paid:\": \"Importi pagati:\",\n    \"{name} paid {amount}\": \"{name} ha pagato {amount}\",\n    \"Fair share:\": \"Quota di ciascuno:\",\n    \"{name}'s share: {amount}\": \"Quota di {name}: {amount}\",\n    \"Settlement:\": \"Pagamenti per saldare:\",\n    \"Calculate your own split: {url}\": \"Calcola la tua divisione: {url}\",\n    \"Add an expense before copying a summary.\": \"Aggiungi una spesa prima di copiare il riepilogo.\",\n    \"Couldn’t copy the result.\": \"Non è stato possibile copiare il risultato.\",\n    \"Copied summary and calculator link.\": \"Riepilogo e link al calcolatore copiati.\",\n    \"Add an expense before sharing a summary.\": \"Aggiungi una spesa prima di condividere il riepilogo.\",\n    \"Shared result.\": \"Risultato condiviso.\",\n    \"Sharing wasn’t available, so the result was copied.\": \"La condivisione non era disponibile. Il risultato è stato copiato.\",\n    \"Couldn’t share or copy the result.\": \"Non è stato possibile condividere né copiare il risultato.\",\n    \"Invalid amount format\": \"Inserisci un importo come 1234,50 o 1.234,50, con al massimo due decimali.\"\n});\n  root.UomiSplitExpenseLocales = Object.freeze({ es: spanish, de: german, ar: arabic, fr: french, ja: japanese, \"pt-BR\": portuguese, it: italian });\n  // Keep the established selected-dictionary API for existing consumers.\n  root.UomiSplitExpenseLocale = root.UomiSplitExpenseLocales[root.document?.documentElement?.lang || \"es\"];\n",
+        "    \"Invalid amount format\": \"Digite um valor como 1234,50 ou 1.234,50, com até duas casas decimais.\"\n});\n  root.UomiSplitExpenseLocales = Object.freeze({ es: spanish, de: german, ar: arabic, fr: french, ja: japanese, \"pt-BR\": portuguese });\n  // Keep the established selected-dictionary API for existing consumers.\n  root.UomiSplitExpenseLocale = root.UomiSplitExpenseLocales[root.document?.documentElement?.lang || \"es\"];\n"
+      ]
+    ],
+    "scripts/tool-transfer.js": [
+      [
+        "  const config = Object.freeze({enabled: true, endpoint: \"https://us-central1-you-owe-me-app.cloudfunctions.net/toolTransfer\", continuation: \"https://continue.you-owe-me.com/split/\"});\n  function fallbackText(message, number) {\n    if (root.document?.documentElement?.lang === \"it\") {\n      return message === \"Person\" ? `Persona ${number}` : \"Spesa condivisa\";\n    }\n    if (root.document?.documentElement?.lang === \"pt-BR\") {\n      return message === \"Person\" ? `Pessoa ${number}` : \"Despesa compartilhada\";\n",
+        "  const config = Object.freeze({enabled: true, endpoint: \"https://us-central1-you-owe-me-app.cloudfunctions.net/toolTransfer\", continuation: \"https://continue.you-owe-me.com/split/\"});\n  function fallbackText(message, number) {\n    if (root.document?.documentElement?.lang === \"pt-BR\") {\n      return message === \"Person\" ? `Pessoa ${number}` : \"Despesa compartilhada\";\n"
+      ]
+    ],
+    "private-continuation/split/index.html": [
+      [
+        "  <link rel=\"stylesheet\" href=\"../continuation.css\">\n  <link rel=\"stylesheet\" href=\"/split/arabic.css?v=ar20261020\">\n  <script src=\"locale.js?v=itsplit20261106\" defer></script>\n</head>\n<body>\n",
+        "  <link rel=\"stylesheet\" href=\"../continuation.css\">\n  <link rel=\"stylesheet\" href=\"/split/arabic.css?v=ar20261020\">\n  <script src=\"locale.js?v=ptsplit20261105\" defer></script>\n</head>\n<body>\n"
+      ],
+      [
+        "      <a href=\"#ja\" lang=\"ja\" dir=\"ltr\" hreflang=\"ja\">日本語</a>\n      <a href=\"#pt\" lang=\"pt-BR\" dir=\"ltr\" hreflang=\"pt\">Português</a>\n      <a href=\"#it\" lang=\"it\" dir=\"ltr\" hreflang=\"it\">Italiano</a>\n    </nav>\n    <!-- All eight language blocks remain readable when JavaScript is unavailable. -->\n    <section id=\"en\" lang=\"en\" data-locale=\"en\" data-title=\"Continue your split · You Owe Me\">\n      <p>You Owe Me</p>\n",
+        "      <a href=\"#ja\" lang=\"ja\" dir=\"ltr\" hreflang=\"ja\">日本語</a>\n      <a href=\"#pt\" lang=\"pt-BR\" dir=\"ltr\" hreflang=\"pt\">Português</a>\n    </nav>\n    <!-- All seven language blocks remain readable when JavaScript is unavailable. -->\n    <section id=\"en\" lang=\"en\" data-locale=\"en\" data-title=\"Continue your split · You Owe Me\">\n      <p>You Owe Me</p>\n"
+      ],
+      [
+        "      <p>Não publique este link. Enquanto ele estiver válido, quem tiver o link poderá acessar os dados da divisão.</p>\n    </section>\n    <section id=\"it\" lang=\"it\" dir=\"ltr\" data-locale=\"it\" data-title=\"Continua la divisione delle spese · You Owe Me\">\n      <p>You Owe Me</p>\n      <h1>Continua a tenere i conti di questa divisione</h1>\n      <p>Apri la divisione dal riquadro o dal banner dell’App Clip di Apple. Controlla nomi, valuta e saldi prima di iniziare a registrare i pagamenti. Non serve creare un account.</p>\n      <p>Se il riquadro non compare, apri questa pagina in Safari, fuori dalla navigazione privata. La disponibilità dell’App Clip dipende dal dispositivo e dalle impostazioni.</p>\n      <p>Se hai già installato l’app completa, aprila dal banner per continuare a tenere i conti lì.</p>\n      <p>Il link scade dopo 24 ore. I registri già aggiunti su questo dispositivo restano disponibili anche dopo la scadenza.</p>\n      <a href=\"https://you-owe-me.com/it/strumenti/calcolatore-spese-condivise/\" rel=\"noreferrer\">Torna al calcolatore</a>\n      <p>Non pubblicare questo link. Finché è valido, chi lo possiede può accedere ai dati della divisione.</p>\n    </section>\n  </main>\n</body>\n",
+        "      <p>Não publique este link. Enquanto ele estiver válido, quem tiver o link poderá acessar os dados da divisão.</p>\n    </section>\n  </main>\n</body>\n"
+      ]
+    ],
+    "private-continuation/split/locale.js": [
+      [
+        "  function renderLocale() {\n    var fragment = window.location.hash;\n    var locale = fragment === \"#it\" ? \"it\" : fragment === \"#pt\" ? \"pt\" : fragment === \"#ja\" ? \"ja\" : fragment === \"#fr\" ? \"fr\" : fragment === \"#ar\" ? \"ar\" : fragment === \"#es\" ? \"es\" : fragment === \"#de\" ? \"de\" : \"en\";\n    document.documentElement.lang = locale === \"pt\" ? \"pt-BR\" : locale;\n    document.documentElement.dir = locale === \"ar\" ? \"rtl\" : \"ltr\";\n",
+        "  function renderLocale() {\n    var fragment = window.location.hash;\n    var locale = fragment === \"#pt\" ? \"pt\" : fragment === \"#ja\" ? \"ja\" : fragment === \"#fr\" ? \"fr\" : fragment === \"#ar\" ? \"ar\" : fragment === \"#es\" ? \"es\" : fragment === \"#de\" ? \"de\" : \"en\";\n    document.documentElement.lang = locale === \"pt\" ? \"pt-BR\" : locale;\n    document.documentElement.dir = locale === \"ar\" ? \"rtl\" : \"ltr\";\n"
+      ],
+      [
+        "    var navigation = document.querySelector(\"[data-language-navigation]\");\n    if (navigation) {\n      navigation.setAttribute(\"aria-label\", locale === \"it\" ? \"Lingua della pagina\" : locale === \"pt\" ? \"Idioma da página\" : locale === \"ja\" ? \"ページの言語\" : locale === \"fr\" ? \"Langue de la page\" : locale === \"ar\" ? \"لغة الصفحة\" : locale === \"es\" ? \"Idioma de la página\" : locale === \"de\" ? \"Sprache der Seite\" : \"Page language\");\n      navigation.querySelectorAll(\"a\").forEach(function (link) {\n        if (link.getAttribute(\"lang\") === (locale === \"pt\" ? \"pt-BR\" : locale)) link.setAttribute(\"aria-current\", \"page\");\n",
+        "    var navigation = document.querySelector(\"[data-language-navigation]\");\n    if (navigation) {\n      navigation.setAttribute(\"aria-label\", locale === \"pt\" ? \"Idioma da página\" : locale === \"ja\" ? \"ページの言語\" : locale === \"fr\" ? \"Langue de la page\" : locale === \"ar\" ? \"لغة الصفحة\" : locale === \"es\" ? \"Idioma de la página\" : locale === \"de\" ? \"Sprache der Seite\" : \"Page language\");\n      navigation.querySelectorAll(\"a\").forEach(function (link) {\n        if (link.getAttribute(\"lang\") === (locale === \"pt\" ? \"pt-BR\" : locale)) link.setAttribute(\"aria-current\", \"page\");\n"
+      ]
+    ]
+  },
+  "inwardAnchors": [
+    [
+      "<a href=\"/it/strumenti/calcolatore-spese-condivise/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"it-link-label\">Dividi una spesa</span></a>",
+      "<a href=\"/tools/split-expense-calculator/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"it-link-label\">Dividi una spesa <span class=\"site-locale-fallback\">(in inglese)</span></span></a>"
+    ],
+    [
+      "<a href=\"/it/strumenti/calcolatore-spese-condivise/\" class=\"lt-cardCta\"><span class=\"it-link-label\">Dividi una spesa</span></a>",
+      "<a href=\"/tools/split-expense-calculator/\" class=\"lt-cardCta\"><span class=\"it-link-label\">Dividi una spesa <span class=\"site-locale-fallback\">(in inglese)</span></span></a>"
+    ],
+    [
+      "<a href=\"/it/strumenti/calcolatore-spese-condivise/\" class=\"lt-cardCta\"><span class=\"it-link-label\">Dividi la spesa</span></a>",
+      "<a href=\"/tools/split-expense-calculator/\" class=\"lt-cardCta\"><span class=\"it-link-label\">Dividi la spesa <span class=\"site-locale-fallback\">(in inglese)</span></span></a>"
+    ]
+  ]
+}

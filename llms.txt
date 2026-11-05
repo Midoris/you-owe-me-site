@@ -377,4 +377,5 @@ Pagine disponibili in italiano. Ogni pagina ha un indirizzo dedicato; i collegam
 - [App per segnare chi ti deve soldi](https://you-owe-me.com/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/) — Registra chi ti deve dei soldi, i rimborsi ricevuti e quanto manca. Tieni in ordine prestiti e spese anticipate con You Owe Me per iPhone e iPad.
 - [Come tenere il conto di chi ti deve soldi](https://you-owe-me.com/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/) — Tieni in ordine soldi prestati e spese anticipate. Usa un modello da copiare, esempi in euro e messaggi per verificare rimborsi e saldo.
 - [Prestiti e piani di rimborso](https://you-owe-me.com/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/) — Tieni in ordine i prestiti tra amici e familiari: registra i rimborsi, verifica quanto manca e segui il piano di rimborso con You Owe Me per iPhone.
+- [Calcolatore per dividere le spese](https://you-owe-me.com/it/strumenti/calcolatore-spese-condivise/) — Inserisci quanto ha pagato ciascuno e scopri chi deve restituire cosa. Dividi cena, viaggio, spesa e altri costi scegliendo chi partecipa a ogni spesa.
 <!-- italian-pages:end -->

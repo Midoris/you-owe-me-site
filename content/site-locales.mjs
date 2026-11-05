@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "itloan20261106",
+  "/scripts/analytics.js": "itsplit20261106",
   "/scripts/sales.js": "ithome20261106",
   "/scripts/anniversary-announcement.js": "ithome20261106",
   "/scripts/app-language-support.js": "ithome20261106",
@@ -14,9 +14,9 @@ export const sharedAssetVersions = {
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "itrecord20261106",
-  "/scripts/split-expense-locale.js": "ptsplit20261105",
-  "/scripts/split-expense-calculator.js": "ptsplit20261105",
-  "/scripts/tool-transfer.js": "ptsplit20261105",
+  "/scripts/split-expense-locale.js": "itsplit20261106",
+  "/scripts/split-expense-calculator.js": "itsplit20261106",
+  "/scripts/tool-transfer.js": "itsplit20261106",
 };
 export const spanishVersionedAssets = [
   "/scripts/analytics.js", "/scripts/sales.js", "/scripts/anniversary-announcement.js",
@@ -621,6 +621,21 @@ export const italianPages = [
       "useWhen": "Quando un prestito prosegue con rimborsi parziali, nuovi importi o modifiche al piano.",
       "primaryCta": "Scarica dall’App Store",
       "nextStep": "Crea il registro del prestito e aggiungi ogni pagamento quando avviene davvero."
+    }
+  },
+  {
+    "en": "/tools/split-expense-calculator/",
+    "it": "/it/strumenti/calcolatore-spese-condivise/",
+    "title": "Calcolatore per dividere le spese",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "Inserisci quanto ha pagato ciascuno e scopri chi deve restituire cosa. Dividi cena, viaggio, spesa e altri costi scegliendo chi partecipa a ogni spesa.",
+    "registry": {
+      "primaryAudience": "Chi divide le spese con amici o altre persone e vuole chiarire quanto deve pagare o ricevere ciascuno.",
+      "problemSolved": "Confronta gli importi già pagati con la quota di ciascuno e calcola i pagamenti per saldare le differenze.",
+      "useWhen": "Quando una o più spese vanno divise in parti uguali tra le persone che partecipano a ogni spesa.",
+      "primaryCta": "Calcola la divisione",
+      "nextStep": "Condividi il risultato e tieni il conto dei pagamenti che arriveranno dopo."
     }
   }
 ];

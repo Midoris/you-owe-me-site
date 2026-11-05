@@ -4,6 +4,7 @@ export const INCLUDED_EXACT_ROUTES = new Set([
   "/",
   "/ja/",
   "/it/",
+  "/it/strumenti/calcolatore-spese-condivise/",
   "/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/",
   "/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/",
   "/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/",

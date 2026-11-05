@@ -3,8 +3,31 @@ import fs from "node:fs";
 
 
 
+const italianSplitAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-split-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedItalianSplitSource(source, file) {
+  if (!italianSplitAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of italianSplitAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedItalianSplitIntegration(html) {
+  html = normalizeReviewedItalianSplitSource(html, 'private-continuation/split/index.html');
+  const route = '/it/strumenti/calcolatore-spese-condivise/';
+  html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Calcolatore per dividere le spese</a>', '');
+  for (const [current, previous] of italianSplitAdmissions.inwardAnchors) html = html.replace(current, previous);
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=itsplit20261106(?=")/g, '$1?v=itloan20261106');
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/split-expense-locale\.js)\?v=itsplit20261106(?=")/g, '$1?v=ptsplit20261105');
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/split-expense-calculator\.js)\?v=itsplit20261106(?=")/g, '$1?v=ptsplit20261105');
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/tool-transfer\.js)\?v=itsplit20261106(?=")/g, '$1?v=ptsplit20261105');
+  return html;
+}
+
 const italianPersonalLoanAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-personal-loan-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedItalianPersonalLoanSource(source, file) {
+  source = normalizeReviewedItalianSplitSource(source, file);
   if (!italianPersonalLoanAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -12,6 +35,7 @@ export function normalizeReviewedItalianPersonalLoanSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedItalianPersonalLoanIntegration(html) {
+  html = normalizeReviewedItalianSplitIntegration(html);
   const route = '/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/';
   html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
@@ -85,6 +109,7 @@ const portugueseSplitAdmissions = JSON.parse(fs.readFileSync(new URL("../fixture
 // Only exact reviewed PT branch additions/selector changes are reversible here.
 // No arbitrary attributes, prior-language literals or calculation math is erased.
 export function normalizeReviewedPortugueseSplitSource(source, file) {
+  source = normalizeReviewedItalianSplitSource(source, file);
   if (!portugueseSplitAdmissions[file]) return source;
   const bytes = Buffer.isBuffer(source);
   if (bytes) source = source.toString("utf8");

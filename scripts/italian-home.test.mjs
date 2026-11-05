@@ -10,13 +10,13 @@ const base='b92a9ec5a72e2fce58955cca053e0b0e63887c40',read=f=>fs.readFileSync(ne
 const page=read('it/index.html'),d=parseStaticPage(page);
 
 test('Italian discovery admits only reviewed home/solution/guide routes and removes only their English fallback',()=>{
- assert.deepEqual(italianPages.map(p=>p.it),['/it/','/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/','/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/','/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/']);assert.equal(localizedSourceRoute('/it/'),'/');
+ assert.deepEqual(italianPages.map(p=>p.it),['/it/','/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/','/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/','/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/','/it/strumenti/calcolatore-spese-condivise/']);assert.equal(localizedSourceRoute('/it/'),'/');
  assert.equal(localizedSourceRoute('/it/tools/split-expense-calculator/'),null);
  assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja','pt','it']);
- assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='it'),false);
+ assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='it'),true);
  assert.equal(renderLocaleHtml(page,'/','it'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
  const fixture='<html lang="it"><head><link rel="canonical" href="https://you-owe-me.com/it/" /></head><body><article><a href="/">Home (in inglese)</a><a href="/tools/split-expense-calculator/">Calcolo (in inglese)</a></article><div id="copyright"><ul></ul></div></body></html>';
- const rendered=renderLocaleHtml(fixture,'/','it');assert.ok(rendered.includes('href="/it/">Home</a>'));assert.ok(rendered.includes('href="/tools/split-expense-calculator/">Calcolo (in inglese)</a>'));
+ const rendered=renderLocaleHtml(fixture,'/','it');assert.ok(rendered.includes('href="/it/">Home</a>'));assert.ok(rendered.includes('href="/it/strumenti/calcolatore-spese-condivise/">Calcolo</a>'));
  assert.ok(read('sitemap.xml').includes('<loc>https://you-owe-me.com/it/</loc>'));
 });
 

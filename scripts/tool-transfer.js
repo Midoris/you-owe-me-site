@@ -3,6 +3,9 @@
   "use strict";
   const config = Object.freeze({enabled: true, endpoint: "https://us-central1-you-owe-me-app.cloudfunctions.net/toolTransfer", continuation: "https://continue.you-owe-me.com/split/"});
   function fallbackText(message, number) {
+    if (root.document?.documentElement?.lang === "it") {
+      return message === "Person" ? `Persona ${number}` : "Spesa condivisa";
+    }
     if (root.document?.documentElement?.lang === "pt-BR") {
       return message === "Person" ? `Pessoa ${number}` : "Despesa compartilhada";
     }
