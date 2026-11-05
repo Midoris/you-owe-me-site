@@ -1,0 +1,12 @@
+{
+  "status": "verified",
+  "copyUrl": "https://docs.google.com/spreadsheets/d/1OESl8NM2fWPka_3pkbH7qNqwHGCocup5oBHW3kpmToU/copy",
+  "masterId": "1OESl8NM2fWPka_3pkbH7qNqwHGCocup5oBHW3kpmToU",
+  "heroSha256": "cfd6ea6b3dbebf886694b57d522b92de465b999c096f4e1f2823686e07f380b6",
+  "width": 1536,
+  "height": 1024,
+  "provenanceReceipt": "LOC-25-hero-provenance.json",
+  "provenanceSha256": "95929579ebda3659b75d0c17c2447aba9485bac5f133ce1d513e64c3f4246e83",
+  "viewerReceipt": "LOC-25-native-public-viewer.png",
+  "viewerReceiptSha256": "6c010c602ba78d64a97670ca89b1222ec8feb40d2653ae36288cfa8813dccf04"
+}

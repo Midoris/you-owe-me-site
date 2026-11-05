@@ -1,0 +1,492 @@
+{
+  "language": "pt-BR",
+  "title": "Planilha de despesas da casa compartilhada | Excel e Google Planilhas",
+  "description": "Registre aluguel, contas, compras e acertos entre moradores. Planilha gratuita em português para Excel e Google Planilhas, com divisão igual ou valores combinados para 2 a 6 pessoas.",
+  "h1": "Planilha de despesas da casa compartilhada",
+  "eyebrow": "Modelo gratuito para Excel e Google Planilhas",
+  "breadcrumb": {
+    "label": "Navegação estrutural",
+    "home": "Início",
+    "tools": "Ferramentas (em inglês)",
+    "current": "Planilha de despesas da casa compartilhada"
+  },
+  "hero": {
+    "lead": "Uma pessoa paga o aluguel, outra faz as compras e alguém devolve uma parte depois. Reúna esses registros para conferir quem ainda precisa pagar e quem tem a receber. Baixe o Excel ou faça uma cópia no Google Planilhas para organizar as contas da casa ou do apartamento.",
+    "qualifier": "Para 2 a 6 pessoas. Divida igualmente entre os participantes de cada despesa ou use os valores que vocês já combinaram.",
+    "excelCTA": "Baixar a planilha Excel",
+    "sheetsCTA": "Usar no Google Planilhas",
+    "secondaryBefore": "Para acertar só uma compra ou saída, use a ",
+    "secondaryAnchor": "calculadora para dividir despesas",
+    "secondaryAfter": ".",
+    "accountNote": "Não precisa de conta no You Owe Me. Para criar e salvar uma cópia no Google Planilhas, você precisa de uma conta Google.",
+    "moveInBefore": "Se vocês ainda vão morar juntos, veja também o ",
+    "moveInAnchor": "checklist para dividir casa (em inglês)",
+    "moveInAfter": ". Use esta planilha para as despesas e os acertos que acontecerem depois.",
+    "imageAlt": "Aba Exemplo da planilha em português: despesas de Marina, Lucas e Bruno, um acerto parcial e os saldos restantes."
+  },
+  "downloads": {
+    "eyebrow": "Escolha o formato",
+    "heading": "Prepare a sua cópia",
+    "intro": "Excel e Google Planilhas incluem configuração, despesas, acertos, resumo automático e exemplo preenchido. O CSV é uma lista para registro: não calcula as partes nem os saldos.",
+    "excel": {
+      "heading": "Arquivo Excel",
+      "body": "Registre despesas de 2 a 6 pessoas, divisão igual ou valores combinados, acertos entre moradores e saldos anteriores. O resumo e a sugestão de pagamentos são calculados pela planilha.",
+      "bullets": [
+        "7 abas em português",
+        "Fórmulas e listas de seleção, sem macros",
+        "Campos de entrada vazios e exemplo em uma aba separada",
+        "Avisos sobre dados que faltam e valores que não fecham"
+      ],
+      "sizeLabel": "Arquivo Excel · {actual rounded KB} KB",
+      "button": "Baixar Excel (.xlsx)"
+    },
+    "sheets": {
+      "heading": "Modelo do Google Planilhas",
+      "body": "Faça uma cópia no seu Google Drive. Registre as despesas combinadas, os acertos realizados e os saldos anteriores conferidos. Antes de transferir dinheiro, revisem o resumo juntos.",
+      "bullets": [
+        "7 abas em português",
+        "Entradas e resultados calculados identificados",
+        "Campos de entrada vazios e exemplo em uma aba separada",
+        "Você escolhe com quem compartilhar sua cópia"
+      ],
+      "note": "O modelo é gratuito. É preciso ter uma conta Google para salvar sua cópia.",
+      "button": "Usar no Google Planilhas"
+    },
+    "csv": {
+      "heading": "CSV para registro",
+      "body": "Uma lista com exemplos para abrir em outros programas de planilha. Você precisa calcular as partes e os saldos por conta própria. As datas usam AAAA-MM-DD, e os valores usam ponto decimal.",
+      "button": "Baixar CSV (.csv)"
+    },
+    "privacy": "As despesas que você preenche não são enviadas ao You Owe Me. No Excel, os dados ficam no arquivo e seguem as permissões do local onde você o salvar ou compartilhar. A cópia do Google Planilhas fica na sua conta Google, e você escolhe quem pode acessá-la.",
+    "boundary": "A planilha registra a divisão que vocês já aceitaram. Ela não decide qual seria uma divisão justa do aluguel nem substitui os combinados entre os moradores.",
+    "precision": "Os valores são tratados com até duas casas decimais. Use uma única moeda por cópia. Escolher a moeda não converte os valores."
+  },
+  "example": {
+    "eyebrow": "Veja um exemplo completo",
+    "heading": "Três moradores, três despesas e um acerto parcial",
+    "intro": "Exemplo fictício em reais. Marina, Lucas e Bruno dividem as três despesas igualmente. Marina paga o aluguel, Lucas paga a internet e Bruno faz as compras do mercado. Antes do fechamento, Lucas devolve R$ 200 a Marina.",
+    "scrollCue": "Deslize a tabela para os lados para ver todas as colunas.",
+    "expenseCaption": "Despesas e acertos são registros separados",
+    "expenseHeaders": [
+      "Registro",
+      "Quem pagou",
+      "Valor",
+      "Quem participa",
+      "Parte combinada"
+    ],
+    "expenseRows": [
+      [
+        "Aluguel",
+        "Marina",
+        "R$ 1.800",
+        "Marina, Lucas e Bruno",
+        "R$ 600 por pessoa"
+      ],
+      [
+        "Internet",
+        "Lucas",
+        "R$ 60",
+        "Marina, Lucas e Bruno",
+        "R$ 20 por pessoa"
+      ],
+      [
+        "Mercado",
+        "Bruno",
+        "R$ 120",
+        "Marina, Lucas e Bruno",
+        "R$ 40 por pessoa"
+      ],
+      [
+        "Acerto para Marina",
+        "Lucas",
+        "R$ 200",
+        "Não é uma nova despesa",
+        "Registrado separadamente em Acertos"
+      ]
+    ],
+    "afterExpenses": "As despesas somam R$ 1.980, e a parte de cada um é R$ 660.",
+    "summaryCaption": "Resumo depois do acerto de R$ 200",
+    "summaryHeaders": [
+      "Pessoa",
+      "Pago nas despesas",
+      "Sua parte",
+      "Acertos realizados",
+      "Saldo restante"
+    ],
+    "summaryRows": [
+      [
+        "Marina",
+        "R$ 1.800",
+        "R$ 660",
+        "Recebeu R$ 200",
+        "Tem R$ 940 a receber"
+      ],
+      [
+        "Lucas",
+        "R$ 60",
+        "R$ 660",
+        "Enviou R$ 200",
+        "Precisa pagar R$ 400"
+      ],
+      [
+        "Bruno",
+        "R$ 120",
+        "R$ 660",
+        "Nenhum acerto ainda",
+        "Precisa pagar R$ 540"
+      ]
+    ],
+    "calloutLabel": "Para zerar os saldos restantes",
+    "calloutBody": "Lucas paga R$ 400 a Marina, e Bruno paga R$ 540 a Marina. Depois que esses dois pagamentos realmente acontecerem, os saldos desse período ficam zerados.",
+    "after": "O acerto de R$ 200 não transforma o aluguel em R$ 1.600. O aluguel continua registrado como R$ 1.800; o acerto reduz o que Lucas precisa pagar e o que Marina tem a receber.",
+    "nextHeading": "E se ficar um saldo para o próximo mês?",
+    "nextParagraphs": [
+      "Se Lucas já pagou os R$ 400 e Bruno os R$ 540, todos começam o próximo período com saldo inicial zero.",
+      "Se ainda não pagaram, levem os saldos conferidos uma única vez: Marina com R$ 940 positivos, Lucas com R$ 400 negativos e Bruno com R$ 540 negativos. Não registrem esses mesmos valores como novas despesas.",
+      "Partindo desses saldos, se Lucas pagar uma nova despesa de R$ 90 dividida igualmente entre os três, Marina passa a ter R$ 910 a receber. Lucas precisa pagar R$ 340, e Bruno, R$ 570."
+    ]
+  },
+  "earlyHandoff": {
+    "heading": "Registre o próximo acerto no iPhone",
+    "benefit": "No You Owe Me, anote o que pagou por alguém e os acertos recebidos para acompanhar o saldo de cada pessoa.",
+    "clarification": "Comece um registro separado no app. Esta planilha não é importada.",
+    "reassurance": "O download é gratuito, com compras dentro do app."
+  },
+  "workbook": {
+    "eyebrow": "O que vem na planilha",
+    "heading": "Despesas e acertos separados, reunidos no resumo",
+    "intro": "Em Despesas, registre o que foi pago e como cada gasto foi dividido. Em Acertos, anote o dinheiro enviado entre moradores. O Resumo reúne os dois para mostrar o que ainda falta, sem alterar as despesas originais.",
+    "caption": "As 7 abas",
+    "headers": [
+      "Aba",
+      "Como usar"
+    ],
+    "rows": [
+      [
+        "Como usar",
+        "Veja as instruções, a privacidade e os limites do modelo antes de preencher."
+      ],
+      [
+        "Configuração",
+        "Informe de 2 a 6 nomes, período, moeda e, se necessário, os saldos anteriores já conferidos."
+      ],
+      [
+        "Despesas",
+        "Registre cada gasto uma vez, quem pagou, quem participa e como será dividido."
+      ],
+      [
+        "Acertos",
+        "Anote os pagamentos entre moradores sem mudar a despesa original."
+      ],
+      [
+        "Resumo",
+        "Confira o que cada pessoa pagou, sua parte, os acertos enviados e recebidos e o saldo atual."
+      ],
+      [
+        "Exemplo",
+        "Acompanhe os registros de Marina, Lucas e Bruno até o acerto final."
+      ],
+      [
+        "Listas",
+        "Veja as categorias, formas de divisão e moedas usadas nos menus de seleção."
+      ]
+    ],
+    "cards": [
+      {
+        "heading": "Combinem a divisão primeiro",
+        "body": "Use partes iguais quando os participantes concordarem. Se os valores forem diferentes, informe as partes já combinadas."
+      },
+      {
+        "heading": "Registre as devoluções à parte",
+        "body": "Um acerto muda o saldo restante, mas não muda quem pagou a despesa original nem a parte de cada um."
+      },
+      {
+        "heading": "Traga o saldo anterior uma única vez",
+        "body": "Use o fechamento anterior conferido. Não coloque o mesmo valor no saldo inicial e em uma nova despesa."
+      }
+    ]
+  },
+  "setup": {
+    "eyebrow": "Primeiros passos",
+    "heading": "Configure o primeiro período",
+    "intro": "Comece pela aba Configuração e preencha os campos de entrada. Preserve as células com fórmulas e resultados automáticos.",
+    "steps": [
+      {
+        "heading": "Informe nomes, período e moeda",
+        "body": "O nome da casa ou do grupo é opcional. Escolha uma moeda e use de 2 a 6 nomes diferentes. O período não filtra os registros, e a moeda não faz conversão."
+      },
+      {
+        "heading": "Traga saldos anteriores só se necessário",
+        "body": "Use o fechamento anterior já conferido: positivo para quem tem a receber, negativo para quem precisa pagar. A soma dos saldos iniciais deve ser zero."
+      },
+      {
+        "heading": "Registre cada despesa uma única vez",
+        "body": "Informe data, descrição, categoria, valor e quem pagou. Uma devolução recebida depois não é uma nova despesa."
+      },
+      {
+        "heading": "Escolha quem participa e como dividir",
+        "body": "Na divisão igual, selecione apenas os participantes daquele gasto. Para valores combinados, preencha cada parte e confira se a soma corresponde à despesa."
+      },
+      {
+        "heading": "Anote os acertos e revisem o resumo",
+        "body": "Quando houver pagamento entre moradores, registre em Acertos. Antes de pagar o que falta, confiram o resumo juntos."
+      }
+    ],
+    "tip": "Se ainda há dúvida sobre quem participa ou qual é a parte de cada um, conversem antes de incluir o gasto no saldo combinado."
+  },
+  "situations": {
+    "eyebrow": "Situações do dia a dia",
+    "heading": "Como registrar sem perder o histórico",
+    "intro": "Uma devolução parcial ou a mudança de mês não exige reescrever as despesas anteriores. Acrescente o acerto ou leve o saldo conferido para o próximo período.",
+    "caption": "Situações comuns",
+    "headers": [
+      "Situação",
+      "O que fazer",
+      "O que evitar"
+    ],
+    "rows": [
+      [
+        "Só algumas pessoas participam",
+        "Selecione quem participou da despesa ou concordou em dividi-la.",
+        "Dividir toda compra entre todos, automaticamente."
+      ],
+      [
+        "O aluguel tem partes diferentes",
+        "Informe os valores que vocês já combinaram.",
+        "Esperar que a planilha decida o que é justo."
+      ],
+      [
+        "Alguém devolveu só uma parte",
+        "Em Acertos, registre data, quem enviou, quem recebeu e valor, uma única vez.",
+        "Diminuir o valor da despesa original ou apagar o registro."
+      ],
+      [
+        "Uma loja fez um estorno",
+        "Despesas negativas e estornos de lojas não são aceitos neste modelo. Anote a correção separadamente e confiram os saldos antes de levar valores ao próximo período.",
+        "Mudar um fechamento já revisado sem avisar quem o conferiu."
+      ],
+      [
+        "Ficou um saldo do período anterior",
+        "Leve o saldo final conferido como saldo inicial do novo período, uma vez.",
+        "Adicionar o mesmo valor como uma nova despesa."
+      ],
+      [
+        "Há discordância sobre uma despesa",
+        "Separem o valor até conferir data, valor, quem pagou e a divisão.",
+        "Tratar o número da planilha como prova de quem está certo."
+      ],
+      [
+        "A compra é pessoal",
+        "Inclua nas despesas compartilhadas apenas se outras pessoas concordaram em participar.",
+        "Misturar compras pessoais com gastos da casa sem combinar."
+      ],
+      [
+        "Um morador sai ou outro entra",
+        "Confiram o período e os saldos antes de começar outro com os novos nomes.",
+        "Trocar os nomes no meio de um período que já tem registros."
+      ]
+    ],
+    "afterBefore": "Para combinar a divisão antes de preencher, veja o ",
+    "afterAnchor": "guia para dividir aluguel, contas e mercado (em inglês)",
+    "afterAfter": "."
+  },
+  "review": {
+    "eyebrow": "Antes de transferir dinheiro",
+    "heading": "Confiram o mesmo registro juntos",
+    "intro": "Uma fórmula certa não resolve uma despesa esquecida. Revisem enquanto ainda lembram do que aconteceu.",
+    "checklistHeading": "O que conferir neste fechamento",
+    "checklist": [
+      "Cada despesa tem data, descrição, valor e quem pagou.",
+      "Os participantes de cada gasto correspondem ao que vocês combinaram.",
+      "A soma das partes combinadas é igual ao valor da despesa.",
+      "Cada acerto foi registrado uma vez, com as pessoas e o valor corretos.",
+      "Os saldos iniciais vieram do fechamento anterior conferido, uma única vez.",
+      "A soma dos saldos de todos é zero antes de usar a sugestão de pagamentos.",
+      "Valores ainda não combinados estão separados dos saldos aceitos."
+    ],
+    "messageHeading": "Uma mensagem para enviar junto com o resumo",
+    "text": "Organizei as despesas e os acertos da casa deste mês. Incluí os gastos, a parte combinada de cada um e os pagamentos que já aconteceram. Vocês conseguem conferir com os próprios registros? Se faltou algum valor ou algo ficou diferente do combinado, vamos revisar antes de pagar o que resta.",
+    "afterBefore": "Depois de um pagamento, você também pode usar o ",
+    "afterAnchor": "gerador de registro de recebimento (em inglês)",
+    "afterAfter": " para anotar o que recebeu e o que ainda falta.",
+    "note": "Compartilhar o resumo ajuda a conferir os registros. Isso não transforma um valor em disputa em um valor aceito por todos."
+  },
+  "copyUI": {
+    "button": "Copiar mensagem",
+    "busy": "Copiando…",
+    "successButton": "Copiado",
+    "successStatus": "Mensagem copiada.",
+    "manual": "O texto está selecionado. Use a opção de copiar do seu dispositivo.",
+    "failure": "Não foi possível copiar automaticamente. Selecione o texto e copie.",
+    "noJS": "O JavaScript está desativado. Você pode selecionar e copiar o texto.",
+    "aria": "Copiar mensagem para conferir o resumo da casa"
+  },
+  "comparison": {
+    "eyebrow": "Escolha um jeito de manter os registros",
+    "heading": "Planilha ou app: o que funciona para vocês?",
+    "intro": "A planilha funciona melhor quando alguém mantém os registros e todos revisam com frequência. Se você prefere anotar cada mudança no iPhone ou iPad, o You Owe Me ajuda a acompanhar os saldos por pessoa.",
+    "caption": "Formas de organizar os registros",
+    "headers": [
+      "Método",
+      "Quando faz sentido",
+      "Limites e trabalho necessário",
+      "Próximo passo"
+    ],
+    "rows": [
+      [
+        "Mensagem ou nota",
+        "Uma despesa simples, com divisão já combinada.",
+        "Fica mais difícil acompanhar quando aumentam as despesas, os acertos e os períodos.",
+        "Guardar uma nota."
+      ],
+      [
+        "Calculadora de contas da casa",
+        "Você quer fechar as contas de um período.",
+        "Não mantém um histórico contínuo entre os meses.",
+        "Usar a calculadora (em inglês)."
+      ],
+      [
+        "Planilha de despesas da casa",
+        "Alguém pode atualizar os registros e o grupo pode revisar regularmente.",
+        "É preciso registrar e conferir as despesas e os acertos, inclusive os parciais.",
+        "Baixar a planilha."
+      ],
+      [
+        "You Owe Me",
+        "Uma pessoa quer acompanhar saldos, pagamentos e lembretes para si.",
+        "Não é uma planilha editada em conjunto por todos os moradores. Não transfere dinheiro nem decide uma divisão em disputa.",
+        "Acompanhar os saldos no app."
+      ]
+    ],
+    "after": "A planilha é um registro manual da casa. O You Owe Me oferece registros recorrentes, lembretes para você e histórico compartilhável. Escolha a opção que consiga manter atualizada."
+  },
+  "product": {
+    "eyebrow": "Entre um fechamento e outro",
+    "heading": "Registre uma compra ou um acerto na hora",
+    "intro": "Entram novas contas, alguém faz uma compra e outra pessoa devolve parte do que devia. Os saldos podem mudar antes de vocês abrirem a planilha de novo.",
+    "body": "No You Owe Me para iPhone e iPad, registre essas mudanças e confira o saldo de cada pessoa. Você pode usar registros recorrentes, criar lembretes para si e compartilhar o histórico por Live Link.",
+    "boundary": "O You Owe Me não transfere nem cobra dinheiro, não resolve discordâncias sobre a divisão e não cria uma obrigação legal só porque você registrou um valor.",
+    "appLink": "Acompanhar os saldos por pessoa",
+    "privacyLink": "Privacidade e compartilhamento (em inglês)",
+    "clarification": "Comece um registro separado no app. Esta planilha não é importada. O download é gratuito, com compras dentro do app.",
+    "chips": [
+      "Não transfere dinheiro",
+      "Não faz cobranças automáticas",
+      "Você pode manter seu próprio registro",
+      "Acompanha acertos parciais e saldos que mudam"
+    ]
+  },
+  "appAssets": {
+    "assurance": "O You Owe Me está disponível em português.",
+    "badgeAlt": "Baixar o You Owe Me na App Store",
+    "qrInstruction": "Aponte a câmera do iPhone ou iPad para o código.",
+    "qrAlt": "Código QR para abrir o You Owe Me na App Store",
+    "fallback": "Abrir na App Store"
+  },
+  "nextSteps": {
+    "eyebrow": "Outros próximos passos",
+    "heading": "Escolha o recurso para a sua situação",
+    "intro": "Se a planilha atende ao que vocês precisam, continuem com ela. Para combinar a divisão, acertar só um período ou manter um registro pelo celular, escolha o recurso adequado.",
+    "cards": [
+      {
+        "label": "Fechamento",
+        "title": "Acertar as contas de um período (em inglês)",
+        "body": "Confira o que falta pagar ou receber sem começar um histórico mensal em planilha.",
+        "url": "/tools/roommate-bill-split-calculator/"
+      },
+      {
+        "label": "Divisão",
+        "title": "Combinar como dividir as despesas (em inglês)",
+        "body": "Conversem sobre aluguel, contas e mercado antes de registrar a parte de cada um.",
+        "url": "/blog/how-to-split-rent-utilities-and-groceries-with-roommates/"
+      },
+      {
+        "label": "Comparação",
+        "title": "Comparar planilha e app (em inglês)",
+        "body": "Veja as diferenças entre atualizar uma planilha e manter os registros de despesas e pagamentos em um app.",
+        "url": "/compare/spreadsheet-vs-app-for-tracking-money-owed/"
+      },
+      {
+        "label": "Registros do dia a dia",
+        "title": "Acompanhar os saldos no app",
+        "body": "Guarde o saldo e o histórico de cada pessoa e configure lembretes para você.",
+        "url": "/pt/solucoes/app-para-controlar-quem-te-deve/"
+      }
+    ]
+  },
+  "faqEyebrow": "Dúvidas frequentes",
+  "faqHeading": "Sobre a planilha de despesas da casa",
+  "faq": [
+    {
+      "q": "O que posso registrar nesta planilha?",
+      "a": "Despesas compartilhadas, quem pagou, a parte de cada pessoa, acertos entre moradores e saldos restantes. Para outro período, faça uma nova cópia e traga os saldos já conferidos."
+    },
+    {
+      "q": "Posso dividir uma despesa em valores diferentes?",
+      "a": "Sim. Escolha Valores combinados e informe a parte de cada participante conforme o que vocês já decidiram. A soma deve ser igual ao valor da despesa."
+    },
+    {
+      "q": "Posso deixar uma pessoa fora de uma despesa?",
+      "a": "Sim. Selecione apenas quem participa daquele gasto. Uma compra pessoal ou uma despesa de parte do grupo não precisa ser dividida entre todos."
+    },
+    {
+      "q": "Como registrar um pagamento entre moradores?",
+      "a": "Use Acertos para anotar separadamente a data, quem enviou, quem recebeu e o valor. O pagamento altera os saldos sem mudar a despesa original."
+    },
+    {
+      "q": "Posso levar um saldo para o mês seguinte?",
+      "a": "Sim. Use o saldo final conferido como saldo inicial da nova cópia, uma única vez. Não adicione o mesmo valor como nova despesa nem registre um acerto duas vezes."
+    },
+    {
+      "q": "As despesas que eu preencher são enviadas ao You Owe Me?",
+      "a": "Não. Os dados do Excel ficam no arquivo e seguem as permissões do local onde você o salvar ou compartilhar. A cópia do Google Planilhas fica na sua conta Google, com o acesso que você escolher."
+    },
+    {
+      "q": "Como usar o modelo no Google Planilhas?",
+      "a": "Clique em Usar no Google Planilhas, entre na sua conta Google se necessário e crie uma cópia no seu Drive. Informe os nomes em Configuração, preencha Despesas e Acertos e confira o Resumo com os moradores antes de pagar."
+    },
+    {
+      "q": "O arquivo Excel funciona no Apple Numbers?",
+      "a": "O modelo usa fórmulas comuns, mas a formatação, as listas de seleção e os cálculos podem funcionar de forma diferente no Numbers. Confira os resultados depois de abrir. Para o Google Planilhas, use o modelo específico desta página."
+    },
+    {
+      "q": "Quantos registros cabem em cada cópia?",
+      "a": "São 200 linhas para despesas e 200 para acertos. Para outro período, faça uma nova cópia e traga o saldo final conferido como saldo inicial, uma única vez."
+    }
+  ],
+  "limits": {
+    "heading": "Limites do modelo",
+    "body": "Esta planilha ajuda a organizar os registros de uma casa compartilhada. Ela não determina uma divisão justa do aluguel, não cria nem comprova uma dívida legal e não substitui o contrato de aluguel ou os combinados da casa. Não transfere nem cobra dinheiro e não substitui registros contábeis oficiais ou orientação jurídica e tributária. Registre despesas e partes que os participantes entendem e aceitam. Separe valores em disputa até que vocês cheguem a um acordo."
+  },
+  "closing": {
+    "eyebrow": "Uma base comum para conversar",
+    "heading": "Comece um registro que todos possam conferir",
+    "body": "Escolha Excel ou Google Planilhas e anote as despesas e as partes combinadas. Antes de transferir dinheiro, confiram o resumo juntos.",
+    "excel": "Baixar a planilha Excel",
+    "sheets": "Usar no Google Planilhas",
+    "calculator": "Dividir uma despesa agora",
+    "updated": "Atualizado em 6 de novembro de 2026"
+  },
+  "inwardNewParagraphs": {
+    "splitBefore": "Para registrar despesas e acertos da casa ao longo dos meses, use a ",
+    "splitAnchor": "planilha de despesas da casa compartilhada",
+    "splitAfter": ". Há modelos em português para Excel e Google Planilhas, além de um CSV para registro.",
+    "recordBefore": "Para despesas com quem mora com você, use também a ",
+    "recordAnchor": "planilha de despesas da casa compartilhada",
+    "recordAfter": ". Registre as despesas originais e os acertos posteriores separadamente."
+  },
+  "englishToolsCard": {
+    "language": "Português",
+    "title": "Roommate expense tracker template in Portuguese",
+    "description": "Portuguese Excel, Google Sheets and CSV resources for agreed shared costs and repayments."
+  },
+  "registry": {
+    "title": "Planilha de despesas da casa",
+    "discoveryDescription": "Planilha gratuita em português para registrar despesas compartilhadas, acertos entre moradores e saldos. Versões Excel, Google Planilhas e CSV.",
+    "primaryAudience": "Quem divide casa ou apartamento e quer conferir despesas e acertos em um registro comum.",
+    "problemSolved": "Separa despesas e pagamentos entre moradores para mostrar quem ainda precisa pagar e quem tem a receber.",
+    "useWhen": "Ao registrar os gastos, fechar um período ou levar um saldo conferido ao período seguinte.",
+    "primaryCta": "Baixar a planilha Excel",
+    "nextStep": "Acompanhar os saldos por pessoa no You Owe Me"
+  }
+}

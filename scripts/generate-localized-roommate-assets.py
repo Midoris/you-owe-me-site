@@ -31,6 +31,7 @@ APP_ROUTES = {
     "ar": "https://you-owe-me.com/ar/solutions/app-to-track-money-owed/",
     "fr": "https://you-owe-me.com/fr/solutions/application-suivi-argent-du/",
     "ja": "https://you-owe-me.com/ja/solutions/app-to-track-money-owed/",
+    "pt": "https://you-owe-me.com/pt/solucoes/app-para-controlar-quem-te-deve/",
 }
 
 
@@ -84,6 +85,21 @@ def localized_builder_source(copy: dict, edition: str = "excel") -> str:
         source = source.replace('settings.getRange("A5:D15")', 'settings.getRange("A5:D16")')
         source = source.replace('"$D$5:$D$15"', '"$D$5:$D$16"')
         source = source.replace(js_string(copy["sheet_names"]["Settings"]) + ': "A1:D15"', js_string(copy["sheet_names"]["Settings"]) + ': "A1:D16"')
+    if copy["locale"] == "pt":
+        # Portuguese-only BRL choice; preserve every earlier emitted program.
+        addition = copy["currency_list_addition"]
+        assert addition["code"] == "BRL" and addition["insert_before"] == "Other"
+        assert addition["final_range"] == "D5:D16" and addition["other_cell"] == "D16"
+        assert copy["cell_overrides"] == {"Settings!D16": mappings["Other"]}
+        assert "example_amount_scale" not in copy and copy["example_currency"] == "BRL"
+        old = '"THB", ' + js_string(mappings["Other"]) + ']'
+        assert source.count(old) == 1
+        source = source.replace(old, '"THB", "BRL", ' + js_string(mappings["Other"]) + ']')
+        assert source.count('const settingsRows = Array.from({ length: 11 }') == 1
+        source = source.replace('const settingsRows = Array.from({ length: 11 }', 'const settingsRows = Array.from({ length: 12 }')
+        source = source.replace('settings.getRange("A5:D15")', 'settings.getRange("A5:D16")')
+        source = source.replace('"$D$5:$D$15"', '"$D$5:$D$16"')
+        source = source.replace(js_string(copy["sheet_names"]["Settings"]) + ': "A1:D15"', js_string(copy["sheet_names"]["Settings"]) + ': "A1:D16"')
     override_lines = []
     if copy["locale"] == "ja" or "example_amount_scale" in copy:
         # Japanese fictional examples use plausible yen amounts. Only these
@@ -117,6 +133,10 @@ def native_repair_module(copy: dict, temp: Path):
     for original, translated in copy["sheet_names"].items():
         source = source.replace(f"'{original}'!", f"'{translated}'!")
     if copy["locale"] == "ar":
+        source = source.replace("$D$5:$D$15", "$D$5:$D$16")
+    if copy["locale"] == "pt":
+        assert copy["currency_list_addition"]["code"] == "BRL"
+        assert copy["currency_list_addition"]["final_range"] == "D5:D16"
         source = source.replace("$D$5:$D$15", "$D$5:$D$16")
     target = temp / "native_repair.py"
     target.write_text(source)
@@ -226,7 +246,7 @@ def main() -> None:
     args = parser.parse_args()
     copy = json.loads(args.copy_file.read_text())
     if copy["locale"] not in APP_ROUTES:
-        raise ValueError("Only the reviewed Spanish, German, Arabic, French and Japanese copies are implemented")
+        raise ValueError("Only the reviewed Spanish, German, Arabic, French, Japanese and Portuguese copies are implemented")
     if args.output.resolve() == (ROOT / "downloads/roommate-expense-tracker-template.xlsx").resolve():
         raise ValueError("The English workbook must not be overwritten")
     if args.csv and any(len(row) != 11 for row in copy["csv"]):

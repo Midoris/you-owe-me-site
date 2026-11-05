@@ -19,12 +19,12 @@ test('Portuguese solution preserves active English structure, source analytics a
 });
 
 test('Portuguese solution discovery and two homepage inward links match only the completed family',()=>{
- assert.deepEqual(portuguesePages.map(p=>p.pt),['/pt/',route,'/pt/blog/como-controlar-quem-te-deve-dinheiro/','/pt/solucoes/controle-de-emprestimos-entre-pessoas/','/pt/ferramentas/calculadora-dividir-despesas/','/pt/blog/como-cobrar-um-amigo-com-educacao/','/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/']);assert.deepEqual(completedCounterparts(source).map(p=>p.code),['en','es','de','ar','fr','ja','pt']);assert.equal(completedCounterparts('/solutions/personal-loan-repayment-tracker/').some(p=>p.code==='pt'),true);
+ assert.deepEqual(portuguesePages.map(p=>p.pt),['/pt/',route,'/pt/blog/como-controlar-quem-te-deve-dinheiro/','/pt/solucoes/controle-de-emprestimos-entre-pessoas/','/pt/ferramentas/calculadora-dividir-despesas/','/pt/blog/como-cobrar-um-amigo-com-educacao/','/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/','/pt/ferramentas/planilha-despesas-casa-compartilhada/']);assert.deepEqual(completedCounterparts(source).map(p=>p.code),['en','es','de','ar','fr','ja','pt']);assert.equal(completedCounterparts('/solutions/personal-loan-repayment-tracker/').some(p=>p.code==='pt'),true);
  assert.equal(renderLocaleHtml(page,source,'pt'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));assert.ok(read('sitemap.xml').includes('https://you-owe-me.com'+route));
  const home=parseStaticPage(read('pt/index.html'));
  assert.equal(home.querySelector('.best-next-step__card').getAttribute('href'),route);assert.equal(home.querySelector('.lt-situationPrimaryCta').getAttribute('href'),route);assert.ok(!text(home.querySelector('.best-next-step__card')).includes('(em inglês)'));assert.ok(!text(home.querySelector('.lt-situationPrimaryCta')).includes('(em inglês)'));
  for(const c of completedCounterparts(source))assert.ok(read(c.route.slice(1)+'index.html').includes('hreflang="pt" href="https://you-owe-me.com'+route+'"'));
- assert.equal(siteLocales.find(l=>l.code==='pt').pages.length,7);
+ assert.equal(siteLocales.find(l=>l.code==='pt').pages.length,8);
 });
 
 test('prior HTML and private resources remain exact beyond the precise reviewed Portuguese solution admissions',()=>{

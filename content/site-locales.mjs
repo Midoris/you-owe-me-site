@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "ptborrow20261106",
+  "/scripts/analytics.js": "ptroommate20261106",
   "/scripts/sales.js": "pt20261105",
   "/scripts/anniversary-announcement.js": "pt20261105",
   "/scripts/app-language-support.js": "pt20261105",
@@ -520,6 +520,21 @@ export const portuguesePages = [
     "useWhen": "Antes de pedir um empréstimo a um amigo e ao conversar sobre a devolução depois.",
     "primaryCta": "Ver as 8 mensagens",
     "nextStep": "Registrar o empréstimo e acompanhar os pagamentos"
+  }
+}
+, {
+  "en": "/tools/roommate-expense-tracker-template/",
+  "pt": "/pt/ferramentas/planilha-despesas-casa-compartilhada/",
+  "title": "Planilha de despesas da casa",
+  "updated": "2026-11-06",
+  "complete": true,
+  "discoveryDescription": "Planilha gratuita em português para registrar despesas compartilhadas, acertos entre moradores e saldos. Versões Excel, Google Planilhas e CSV.",
+  "registry": {
+    "primaryAudience": "Quem divide casa ou apartamento e quer conferir despesas e acertos em um registro comum.",
+    "problemSolved": "Separa despesas e pagamentos entre moradores para mostrar quem ainda precisa pagar e quem tem a receber.",
+    "useWhen": "Ao registrar os gastos, fechar um período ou levar um saldo conferido ao período seguinte.",
+    "primaryCta": "Baixar a planilha Excel",
+    "nextStep": "Acompanhar os saldos por pessoa no You Owe Me"
   }
 }
 ];

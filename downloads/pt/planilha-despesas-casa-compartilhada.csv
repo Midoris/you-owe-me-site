@@ -1,0 +1,4 @@
+Data,Tipo de registro,Despesa ou acerto,Categoria,Valor,Quem pagou ou enviou,Quem recebeu,Forma de divisão,Participantes,Partes combinadas,Observações
+2026-05-01,Despesa,Aluguel,Aluguel,1800.00,Marina,,Igual entre os participantes,"Marina, Lucas e Bruno",Marina 600.00; Lucas 600.00; Bruno 600.00,Exemplo fictício em BRL. Substitua pelos seus registros. O CSV não calcula saldos.
+2026-05-05,Despesa,Internet,Internet,60.00,Lucas,,Igual entre os participantes,"Marina, Lucas e Bruno",Marina 20.00; Lucas 20.00; Bruno 20.00,Linha de exemplo. Substitua ou apague.
+2026-05-20,Acerto,Acerto para Marina,,200.00,Lucas,Marina,,,,"Exemplo de pagamento entre moradores, separado das despesas. Substitua ou apague."

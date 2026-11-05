@@ -77,7 +77,7 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
       ? `<details class="site-french-disclosure"><summary>Pages en français</summary>${sectionNav}</details>`
       : lang === "ja" && ["/ja/tools/roommate-expense-tracker-template/", "/ja/blog/how-to-remind-someone-they-owe-you-money-politely/", "/ja/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/"].includes(route)
       ? `<details class="site-japanese-disclosure"><summary>${esc(locale.shared.sectionLabel)}</summary>${sectionNav}</details>`
-      : lang === "pt" && ["/pt/blog/como-cobrar-um-amigo-com-educacao/", "/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/"].includes(route)
+      : lang === "pt" && ["/pt/blog/como-cobrar-um-amigo-com-educacao/", "/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/", "/pt/ferramentas/planilha-despesas-casa-compartilhada/"].includes(route)
       ? `<details class="site-portuguese-disclosure"><summary>${esc(locale.shared.sectionLabel)}</summary>${sectionNav}</details>`
       : sectionNav;
   html = html.replace(/(<article\b[^>]*>)/, `$1\n          <!-- ${marker}-section:start -->\n          ${sectionContent}\n          <!-- ${marker}-section:end -->`);

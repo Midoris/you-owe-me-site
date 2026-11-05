@@ -12,12 +12,30 @@ export function normalizeReviewedPortugueseSplitSource(source, file) {
   for (const [current, previous] of portugueseSplitAdmissions[file]) source = source.replace(current, previous);
   return bytes ? Buffer.from(source) : source;
 }
+export function normalizeReviewedPortugueseRoommateSource(source, file) {
+  if (file === 'scripts/analytics.js') return source.replace('../content/site-locales.mjs?v=ptroommate20261106', '../content/site-locales.mjs?v=ptborrow20261106').replace('./iphone-handoff-analytics-bridge.mjs?v=ptroommate20261106', './iphone-handoff-analytics-bridge.mjs?v=ptborrow20261106');
+  if (file === 'scripts/iphone-handoff-analytics-bridge.mjs') return source.replace('  "pt_roommate_template_iphone_handoff",\n', '');
+  return source;
+}
+export function normalizeReviewedPortugueseRoommateIntegration(html) {
+  const route = '/pt/ferramentas/planilha-despesas-casa-compartilhada/';
+  html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Planilha de despesas da casa</a>', '');
+  html = html.replace("\n              <p class=\"lt-paragraphGap\">Para registrar despesas e acertos da casa ao longo dos meses, use a <a href=\"/pt/ferramentas/planilha-despesas-casa-compartilhada/\">planilha de despesas da casa compartilhada</a>. Há modelos em português para Excel e Google Planilhas, além de um CSV para registro.</p>", '');
+  html = html.replace("\n            <p>Para despesas com quem mora com você, use também a <a href=\"/pt/ferramentas/planilha-despesas-casa-compartilhada/\">planilha de despesas da casa compartilhada</a>. Registre as despesas originais e os acertos posteriores separadamente.</p>", '');
+  html = html.replace("\n                <article class=\"lt-toolCard\">\n                  <span class=\"lt-statusChip\" lang=\"pt\">Português</span>\n                  <h3><a href=\"/pt/ferramentas/planilha-despesas-casa-compartilhada/\" hreflang=\"pt\">Roommate expense tracker template in Portuguese</a></h3>\n                  <p>Portuguese Excel, Google Sheets and CSV resources for agreed shared costs and repayments.</p>\n                </article>", '');
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=ptroommate20261106(?=")/g, '$1?v=ptborrow20261106');
+}
+
 export function normalizeReviewedPortugueseBorrowSource(source, file) {
+  source = normalizeReviewedPortugueseRoommateSource(source, file);
   if (file === 'scripts/analytics.js') return source.replace('../content/site-locales.mjs?v=ptborrow20261106', '../content/site-locales.mjs?v=ptrepayment20261106').replace('./iphone-handoff-analytics-bridge.mjs?v=ptborrow20261106', './iphone-handoff-analytics-bridge.mjs?v=ptrepayment20261106');
   if (file === 'scripts/iphone-handoff-analytics-bridge.mjs') return source.replace('  "pt_borrow_iphone_handoff",\n', '');
   return source;
 }
 export function normalizeReviewedPortugueseBorrowIntegration(html) {
+  html = normalizeReviewedPortugueseRoommateIntegration(html);
   const route = '/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/';
   html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
