@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "jarepayment20261105",
+  "/scripts/analytics.js": "jaborrow20261105",
   "/scripts/sales.js": "ja20261031",
   "/scripts/anniversary-announcement.js": "ja20261031",
   "/scripts/app-language-support.js": "ja20261031",
@@ -359,6 +359,21 @@ export const japanesePages = [
     "useWhen": "初めての連絡、返済日の確認、一部返済後のやり取りに。",
     "primaryCta": "10の例文を見る",
     "nextStep": "You Owe Meで貸し借りと返済を記録する"
+  }
+},
+{
+  "en": "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
+  "ja": "/ja/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
+  "title": "お金を借りるときの例文",
+  "updated": "2026-11-05",
+  "complete": true,
+  "discoveryDescription": "友人にお金を借りたいとき、どう頼めばいい？金額や返す予定を伝える例文8選と、約束・受け取ったお金・返済を分けて残す記録テンプレート。",
+  "registry": {
+    "primaryAudience": "友人にお金を借りる相談をし、返済の約束を残したい方。",
+    "problemSolved": "借りたい金額と返す見通しを伝え、約束・受け取り・実際の返済を分けて記録できます。",
+    "useWhen": "友人にお金を借りる前の相談と、その後の返済の確認に。",
+    "primaryCta": "8つの例文を見る",
+    "nextStep": "貸し借りと返済計画を記録する"
   }
 }
 ];

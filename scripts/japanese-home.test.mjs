@@ -25,7 +25,7 @@ test('Japanese home retains all ten reviewed FAQs and all twenty-one translated 
 });
 
 test('Japanese admission contains only its reviewed home and solution with exact route semantics and fullwidth fallback removal',()=>{
- assert.deepEqual(japanesePages.map(p=>p.ja),['/ja/','/ja/solutions/app-to-track-money-owed/','/ja/blog/how-to-keep-track-of-who-owes-you-money/','/ja/solutions/personal-loan-repayment-tracker/','/ja/tools/split-expense-calculator/','/ja/blog/how-to-remind-someone-they-owe-you-money-politely/']);
+ assert.deepEqual(japanesePages.map(p=>p.ja),['/ja/','/ja/solutions/app-to-track-money-owed/','/ja/blog/how-to-keep-track-of-who-owes-you-money/','/ja/solutions/personal-loan-repayment-tracker/','/ja/tools/split-expense-calculator/','/ja/blog/how-to-remind-someone-they-owe-you-money-politely/','/ja/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/']);
  assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja']);
  assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='ja'),true);
  assert.equal(renderLocaleHtml(page,'/','ja'),page);

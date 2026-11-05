@@ -47,10 +47,10 @@ test('Japanese repayment guide retains reviewed payloads, matching FAQ, official
  const visible=env.document.querySelectorAll('.repayment-ja-faq details');
  assert.deepEqual(visible.map(node=>({question:node.querySelector('summary').textContent,answer:node.querySelector('p').textContent})),expected.faq);
  assert.equal(localizedSourceRoute(route),sourceRoute);
- assert.equal(contentRegistry.length,128);
+ assert.equal(contentRegistry.length,129);
  const registry=contentRegistry.find(entry=>entry.url===route);
  assert.equal(registry.appStoreCpp,'general');assert.equal(registry.locale,'ja');
- assert.equal(siteLocales.find(locale=>locale.code==='ja').pages.length,6);
+ assert.equal(siteLocales.find(locale=>locale.code==='ja').pages.length,7);
  assert.equal(renderLocaleHtml(page,sourceRoute,'ja'),page);
  assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
  assert.equal(createHash('sha256').update(fs.readFileSync(new URL('../images/ja/app-store/download-on-the-app-store-black.svg',import.meta.url))).digest('hex'),'988fe0a48015c5a56dac88172487a1f5cda96340b34d80fd94312d02e9f67865');
@@ -115,9 +115,9 @@ test('Japanese guide isolates its controller and preserves all earlier language 
 });
 
 test('Japanese reminder integration admits only exact approved prior-page bytes and metadata cache changes',()=>{
- const files=execFileSync('git',['diff','--name-only','1a33aa7','--','*.html'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);assert.ok(files.length>100);
+ const files=execFileSync('git',['diff','--name-only','--diff-filter=M','1a33aa7','--','*.html'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);assert.ok(files.length>100);
  for(const file of files)assert.equal(normalizeReviewedJapaneseRepaymentIntegration(read(file)),execFileSync('git',['show','1a33aa7:'+file],{encoding:'utf8'}),file);
  const original='<a href="/blog/how-to-remind-someone-they-owe-you-money-politely/">返済をお願いする伝え方<span class="site-locale-fallback">（英語）</span></a>',approvedAnchor='<a href="'+route+'">返済をお願いする伝え方</a>';
  assert.equal(normalizeReviewedJapaneseRepaymentIntegration(approvedAnchor),original);for(const altered of [approvedAnchor.replace('href=','data-unapproved="x" href='),approvedAnchor.replace('\">','\" data-unapproved="x">')]){assert.notEqual(normalizeReviewedJapaneseRepaymentIntegration(altered),original);assert.ok(normalizeReviewedJapaneseRepaymentIntegration(altered).includes('data-unapproved'));}
- const analytics=read('scripts/analytics.js').replace('../content/site-locales.mjs?v=jarepayment20261105','../content/site-locales.mjs?v=roommatefr20261031').replace('./iphone-handoff-analytics-bridge.mjs?v=jarepayment20261105','./iphone-handoff-analytics-bridge.mjs?v=roommatefr20261031');assert.equal(analytics,execFileSync('git',['show','1a33aa7:scripts/analytics.js'],{encoding:'utf8'}));assert.equal(read('scripts/iphone-handoff-analytics-bridge.mjs').replace('  "ja_repayment_iphone_handoff",\n',''),execFileSync('git',['show','1a33aa7:scripts/iphone-handoff-analytics-bridge.mjs'],{encoding:'utf8'}));
+ const analytics=read('scripts/analytics.js').replaceAll('jaborrow20261105','jarepayment20261105').replace('../content/site-locales.mjs?v=jarepayment20261105','../content/site-locales.mjs?v=roommatefr20261031').replace('./iphone-handoff-analytics-bridge.mjs?v=jarepayment20261105','./iphone-handoff-analytics-bridge.mjs?v=roommatefr20261031');assert.equal(analytics,execFileSync('git',['show','1a33aa7:scripts/analytics.js'],{encoding:'utf8'}));assert.equal(read('scripts/iphone-handoff-analytics-bridge.mjs').replace('  "ja_borrow_iphone_handoff",\n','').replace('  "ja_repayment_iphone_handoff",\n',''),execFileSync('git',['show','1a33aa7:scripts/iphone-handoff-analytics-bridge.mjs'],{encoding:'utf8'}));
 });

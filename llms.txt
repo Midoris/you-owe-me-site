@@ -349,4 +349,5 @@ Contenus publics en français. Chaque page possède sa propre URL canonique. Les
 - [貸し借りと返済計画の管理](https://you-owe-me.com/ja/solutions/personal-loan-repayment-tracker/) — 友人や家族との貸し借りを分けて記録し、実際の返済に合わせて残額・次の支払い・返済計画を確認。貸す側も借りる側も使える、日本語対応のYou Owe Me。
 - [割り勘・立て替え精算](https://you-owe-me.com/ja/tools/split-expense-calculator/) — 誰がいくら立て替えたかを入力して、誰にいくら払えば精算できるかを確認。食事・旅行・買い物を、費用ごとの参加者で割り勘にできる無料ツールです。
 - [返済をお願いする例文](https://you-owe-me.com/ja/blog/how-to-remind-someone-they-owe-you-money-politely/) — 友人への返済のお願いに使える例文10選。一部返済後の残額の例と、コピーできる記録テンプレート付き。
+- [お金を借りるときの例文](https://you-owe-me.com/ja/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/) — 友人にお金を借りたいとき、どう頼めばいい？金額や返す予定を伝える例文8選と、約束・受け取ったお金・返済を分けて残す記録テンプレート。
 <!-- japanese-pages:end -->

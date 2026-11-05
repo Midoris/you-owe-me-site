@@ -8,6 +8,7 @@ export const INCLUDED_EXACT_ROUTES = new Set([
   "/ja/solutions/personal-loan-repayment-tracker/",
   "/ja/tools/split-expense-calculator/",
   "/ja/blog/how-to-remind-someone-they-owe-you-money-politely/",
+  "/ja/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
   "/features/",
   "/live-link/",
   "/voice-to-entry/",

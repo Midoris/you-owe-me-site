@@ -1,9 +1,20 @@
 import fs from "node:fs";
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+export function normalizeReviewedJapaneseBorrowIntegration(html) {
+  const route='/ja/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/';
+  html=html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com'+route+'" />\n','');
+  for(const dir of['',' dir="ltr"'])html=html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="ja"'+dir+' hreflang="ja">日本語</a>','');
+  html=html.replace('\n              <a href="'+route+'">お金を借りるときの例文</a>','');
+  html=html.replace('\n            <p>これから友人に借りる相談をするなら、<a href="'+route+'">お金を借りるときの例文</a>も参考にできます。金額と返す見通しを伝え、相手と約束を確認してから記録しましょう。</p>','');
+  html=html.replace('<p>これから自分がお金を借りたい場合は、<a href="'+route+'">友人にお金を借りるときの例文</a>をご覧ください。相手の了承と、実際にお金を受け取ったことは分けて記録しましょう。</p>','');
+  html=html.replace('\n\n                <article class="lt-blogCard lt-roomyCard">\n                  <p class="lt-cardLabel" lang="ja">日本語</p>\n                  <h3 class="lt-cardHeadingGap"><a href="'+route+'" hreflang="ja">Ask a friend to lend you money: Japanese messages</a></h3>\n                  <p>Eight Japanese messages, an agreement record and a worked repayment example.</p>\n                </article>','');
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=jaborrow20261105(?=")/g,'$1?v=jarepayment20261105');
+}
 // LOC-15: exact completed Japanese reminder family, five existing-anchor
 // retargets, two approved paragraphs, one English index card and analytics pin.
 export function normalizeReviewedJapaneseRepaymentIntegration(html) {
+  html=normalizeReviewedJapaneseBorrowIntegration(html);
   const route = '/ja/blog/how-to-remind-someone-they-owe-you-money-politely/';
   html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="ja"'+direction+' hreflang="ja">日本語</a>', '');
