@@ -1,0 +1,50 @@
+{
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"itborrow20261106\",\n  \"/scripts/sales.js\": \"ithome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"ithome20261106\",\n",
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"itrepayment20261106\",\n  \"/scripts/sales.js\": \"ithome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"ithome20261106\",\n"
+      ],
+      [
+        "      \"nextStep\": \"Registra prestiti e rimborsi in You Owe Me\"\n    }\n  },\n  {\n    \"en\": \"/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/\",\n    \"it\": \"/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/\",\n    \"title\": \"Come chiedere soldi in prestito\",\n    \"updated\": \"2026-11-06\",\n    \"complete\": true,\n    \"discoveryDescription\": \"Otto messaggi per parlare di un prestito tra amici, con un modello per annotare l’accordo e un esempio di rimborso.\",\n    \"registry\": {\n      \"primaryAudience\": \"Chi vuole chiedere soldi in prestito a un amico e tenere traccia dell’accordo sulla restituzione.\",\n      \"problemSolved\": \"Aiuta a formulare la richiesta e a distinguere l’accordo, il denaro ricevuto e i pagamenti effettuati.\",\n      \"useWhen\": \"Prima di chiedere un prestito a un amico e nelle conversazioni successive sul rimborso.\",\n      \"primaryCta\": \"Leggi gli 8 messaggi\",\n      \"nextStep\": \"Registra il prestito e segui i rimborsi\"\n    }\n  }\n];\n",
+        "      \"nextStep\": \"Registra prestiti e rimborsi in You Owe Me\"\n    }\n  }\n];\n"
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=itborrow20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n",
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=itrepayment20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n"
+      ],
+      [
+        "} from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js\";\nimport { createAppStoreCtaViewTracker } from \"./app-store-cta-view-tracker.mjs\";\nimport { bindIphoneHandoffAnalytics } from \"./iphone-handoff-analytics-bridge.mjs?v=itborrow20261106\";\n\nconst FIREBASE_CONFIG = {\n",
+        "} from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js\";\nimport { createAppStoreCtaViewTracker } from \"./app-store-cta-view-tracker.mjs\";\nimport { bindIphoneHandoffAnalytics } from \"./iphone-handoff-analytics-bridge.mjs?v=itrepayment20261106\";\n\nconst FIREBASE_CONFIG = {\n"
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/ja/\",\n  \"/it/\",\n  \"/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/\",\n  \"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\",\n  \"/it/strumenti/calcolatore-spese-condivise/\",\n",
+        "  \"/ja/\",\n  \"/it/\",\n  \"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\",\n  \"/it/strumenti/calcolatore-spese-condivise/\",\n"
+      ]
+    ],
+    "scripts/iphone-handoff-analytics-bridge.mjs": [
+      [
+        "  \"pt_repayment_iphone_handoff\",\n  \"it_repayment_iphone_handoff\",\n  \"it_borrow_iphone_handoff\",\n  \"pt_borrow_iphone_handoff\",\n  \"ja_borrow_iphone_handoff\",\n",
+        "  \"pt_repayment_iphone_handoff\",\n  \"it_repayment_iphone_handoff\",\n  \"pt_borrow_iphone_handoff\",\n  \"ja_borrow_iphone_handoff\",\n"
+      ]
+    ]
+  },
+  "integrations": [
+    [
+      "\n            <p>Se stai per chiedere soldi in prestito a un amico, leggi <a href=\"/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/\">come formulare la richiesta e concordare il rimborso</a>. Conferma importo e condizioni con l’altra persona e registra la ricezione quando il denaro arriva.</p>",
+      ""
+    ],
+    [
+      "<p>Se invece vuoi chiedere un prestito a un amico, leggi i <a href=\"/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/\">messaggi per chiedere soldi in prestito</a>. Distingui l’accordo di prestare dal denaro che hai effettivamente ricevuto.</p>",
+      ""
+    ],
+    [
+      "\n\n                <article class=\"lt-blogCard lt-roomyCard\">\n                  <p class=\"lt-cardLabel\" lang=\"it\">Italiano</p>\n                  <h3 class=\"lt-cardHeadingGap\"><a href=\"/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/\" hreflang=\"it\">Ask a friend for a loan: Italian messages</a></h3>\n                  <p>Eight Italian messages, a copyable agreement record and a worked repayment example.</p>\n                </article>",
+      ""
+    ]
+  ]
+}

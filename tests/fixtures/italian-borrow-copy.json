@@ -1,0 +1,309 @@
+{
+  "language": "it",
+  "title": "Come chiedere soldi in prestito a un amico: 8 messaggi",
+  "description": "Otto messaggi per chiedere un prestito a un amico, concordare il rimborso e parlarne se il piano cambia. Con un modello per annotare accordi e pagamenti.",
+  "h1": "Come chiedere soldi in prestito a un amico",
+  "eyebrow": "Soldi tra amici",
+  "breadcrumb": {
+    "label": "Percorso di navigazione",
+    "home": "Home",
+    "current": "Chiedere soldi in prestito"
+  },
+  "hero": {
+    "lead": "È una conversazione delicata, ma puoi fare una richiesta chiara senza mettere pressione. Spiega quanto ti serve e quando pensi di restituirlo. Se non conosci ancora la data, dillo prima di chiedere il prestito e lascia all’altra persona la libertà di dire no.",
+    "support": "Scegli il messaggio adatto alla tua situazione e sostituisci i campi tra parentesi quadre. Prima di inviarlo su WhatsApp o su un altro canale, verifica che importi e date siano realistici per te.",
+    "primary": "Leggi gli 8 messaggi",
+    "secondary": "Annota l’accordo",
+    "appBefore": "Dopo aver ricevuto il denaro, puoi ",
+    "appAnchor": "registrare il prestito e i rimborsi in You Owe Me",
+    "appAfter": ".",
+    "previewTitle": "Una richiesta chiara, con la libertà di dire no",
+    "chips": [
+      "Quanto ti serve",
+      "Quando puoi restituirlo",
+      "Spazio per un no"
+    ],
+    "previewCaption": "Adatta il messaggio al tuo modo di parlare e al rapporto tra voi.",
+    "byline": "Di Ievgenii Iablonskyi · Pubblicato il 6 novembre 2026"
+  },
+  "contents": {
+    "heading": "In questa pagina",
+    "items": [
+      {
+        "label": "8 messaggi per situazioni diverse",
+        "id": "messages"
+      },
+      {
+        "label": "Cosa controllare prima di chiedere",
+        "id": "before"
+      },
+      {
+        "label": "Modello per annotare l’accordo",
+        "id": "agreement"
+      },
+      {
+        "label": "Esempio di prestito e rimborso",
+        "id": "example"
+      },
+      {
+        "label": "Come tenere la cronologia nell’app",
+        "id": "app"
+      },
+      {
+        "label": "Domande frequenti",
+        "id": "faq"
+      }
+    ]
+  },
+  "messagesHeading": "8 messaggi: dalla richiesta alla restituzione",
+  "messagesIntro": "Spiega il motivo nei limiti in cui ti senti a tuo agio. Non devi condividere dettagli personali che preferisci tenere per te, né promettere una data solo per ottenere il prestito. Questi messaggi sono alternative per situazioni diverse, non una sequenza per insistere.",
+  "situationLabel": "Scegli la situazione più vicina alla tua",
+  "situationAria": "Messaggi per situazione",
+  "messages": [
+    {
+      "key": "short_ask",
+      "heading": "Quando conosci l’importo e la data di restituzione",
+      "guidance": "Usalo dopo aver verificato quanto ti serve e quando pensi realisticamente di poterlo restituire.",
+      "text": "Ciao, [nome]! Mi servirebbero [importo e valuta] per [motivo]. Potresti prestarmeli? Posso restituirteli il [data]. Se non puoi, non c’è problema.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "clear_ask_with_repayment_plan",
+      "heading": "Per proporre un rimborso in due parti",
+      "guidance": "Controlla che le due rate sommino all’importo richiesto e che le date siano sostenibili per te.",
+      "text": "Potresti prestarmi [importo totale e valuta] per [motivo]? Ti proporrei di restituire [primo importo e valuta] il [prima data] e [secondo importo e valuta] il [seconda data]. Per te potrebbe andare bene? Se non è possibile, lo capisco.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "cannot_promise_exact_date",
+      "heading": "Quando non sai ancora quando potrai restituire",
+      "guidance": "Dillo prima che l’altra persona decida se prestarti il denaro. Una data in cui dare notizie non è una data di pagamento.",
+      "text": "Mi servirebbero [importo e valuta] per [motivo], ma non so ancora quando riuscirò a restituirli. Posso aggiornarti il [data del prossimo confronto]. Te la sentiresti di prestarmeli anche con questa incertezza? Capisco se preferisci di no.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "cover_something_temporarily",
+      "heading": "Per chiedere di anticipare la tua quota",
+      "guidance": "Indica quale spesa vuoi farti anticipare e quando prevedi di restituire l’importo. Chiarisci che chiedi un anticipo, non una modifica alla divisione del conto.",
+      "text": "Potresti anticipare la mia parte di [spesa]? Sono [importo e valuta] e te li restituirei il [data]. Volevo chiedertelo prima: se non puoi, nessun problema.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "slightly_more_personal",
+      "heading": "Quando ti senti in imbarazzo a chiedere",
+      "guidance": "Puoi dire che la richiesta ti mette a disagio senza far sentire l’altra persona responsabile di risolvere la situazione.",
+      "text": "Mi mette un po’ a disagio chiedertelo, ma mi servirebbero [importo e valuta] per [motivo]. Potresti prestarmeli fino al [data di restituzione]? Se per te non è possibile, dimmelo tranquillamente.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "respectful_reply_if_no",
+      "heading": "Per rispondere a un no",
+      "guidance": "Accetta la risposta senza chiedere spiegazioni o provare di nuovo a convincere l’altra persona.",
+      "text": "Va bene, grazie per avermi risposto. Non devi giustificarti.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "reply_after_yes",
+      "heading": "Dopo il sì, per confermare l’accordo",
+      "guidance": "Conferma le condizioni prima di ricevere il denaro. Questo messaggio riassume l’accordo: non conferma ancora che i soldi siano arrivati.",
+      "text": "Grazie! Solo per confermare: mi presterai [importo e valuta] per [motivo]. Per il rimborso abbiamo concordato: [data oppure importi e date delle rate]. Ti avviso appena ricevo il denaro. Se mi accorgo di dover rivedere il piano, ne parlo con te prima della scadenza.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    },
+    {
+      "key": "need_more_time_update",
+      "heading": "Quando capisci che non riuscirai a rispettare il piano",
+      "guidance": "Avvisa appena te ne accorgi e proponi soltanto ciò che pensi di poter rispettare. Una nuova data va concordata, non comunicata come una decisione già presa.",
+      "text": "Vorrei parlarti in anticipo del pagamento previsto per il [data concordata]. Non riuscirò a restituire tutto come avevamo previsto. Posso pagare [importo e valuta] il [data], ma non so ancora quando riuscirò a restituire il resto. Possiamo parlarne e rivedere l’accordo? Entro il [data del prossimo confronto] ti aggiorno.",
+      "tone": "respectful",
+      "category": "friend_borrow"
+    }
+  ],
+  "before": {
+    "heading": "Cinque cose da chiarire prima della richiesta",
+    "cards": [
+      {
+        "heading": "L’importo e la valuta",
+        "body": "Verifica quanto ti serve e per quale spesa. Una cifra precisa aiuta l’altra persona a capire la richiesta."
+      },
+      {
+        "heading": "Quanto vuoi spiegare",
+        "body": "Racconta brevemente il motivo. Non è necessario condividere dettagli personali che preferisci tenere per te."
+      },
+      {
+        "heading": "La previsione di rimborso",
+        "body": "Parla di importi e date che pensi di poter rispettare. Ciò che è ancora incerto deve essere chiaro prima del prestito."
+      },
+      {
+        "heading": "Un prestito o un aiuto da non restituire",
+        "body": "Chiarite se il denaro andrà restituito. Chiedere un prestito e chiedere un aiuto senza restituzione sono due conversazioni diverse."
+      },
+      {
+        "heading": "La possibilità di ricevere un no",
+        "body": "Evita frasi come “se fossi davvero mio amico, me li presteresti”. L’altra persona può rifiutare senza dover spiegare la propria situazione economica."
+      }
+    ],
+    "after": "Non ricevere una risposta non equivale a un sì. Non considerare quel denaro disponibile prima di aver concordato le condizioni e di averlo effettivamente ricevuto."
+  },
+  "agreement": {
+    "heading": "Accettare di prestare non significa aver già inviato il denaro",
+    "intro": "Prima annotate l’accordo. Registra la ricezione quando i soldi arrivano e distingui i rimborsi previsti da quelli che hai già effettuato.",
+    "recordHeading": "Modello per annotare l’accordo e i pagamenti",
+    "text": "Chi presta: [nome]\nChi riceve il prestito: [il tuo nome]\nImporto concordato: [importo e valuta]\nMotivo: [a cosa serve il denaro]\nDenaro ricevuto: [data e importo effettivi; compila dopo la ricezione]\nRimborso concordato: [data oppure importi e date delle rate]\nPagamenti effettuati: [data e importo di ogni pagamento]\nDa restituire: [importo e valuta]\nProssimo confronto: [data, se serve]",
+    "after": "Se l’importo o le date cambiano, confermate il nuovo accordo. Conserva sia la versione iniziale sia le modifiche, così puoi rileggerle. Questo modello di testo non calcola il saldo automaticamente.",
+    "contextBefore": "La guida ",
+    "contextAnchor": "come tenere il conto di chi ti deve soldi",
+    "contextAfter": " mostra come distinguere l’importo iniziale dai pagamenti successivi. Puoi usare la stessa organizzazione anche per il denaro che devi restituire."
+  },
+  "example": {
+    "heading": "Ricevi un prestito di 300 € e restituisci 100 €: quanto manca?",
+    "intro": "In questo esempio inventato, Giulia chiede a Luca un prestito di 300 € e concorda tre rate da 100 €. Dopo aver ricevuto i 300 € e pagato la prima rata, deve ancora restituire 200 €.",
+    "caption": "Esempio in euro: accordo, denaro ricevuto e rimborsi effettuati",
+    "regionLabel": "Esempio di accordo, ricezione e rimborso di un prestito",
+    "headers": [
+      "Momento",
+      "Cosa annotare",
+      "Da restituire"
+    ],
+    "rows": [
+      [
+        "Luca accetta di prestare il denaro",
+        "Hanno concordato 300 €, ma Giulia non li ha ancora ricevuti.",
+        "Denaro non ancora ricevuto"
+      ],
+      [
+        "Il denaro arriva",
+        "Giulia riceve 300 €.",
+        "300 €"
+      ],
+      [
+        "Giulia restituisce 100 €",
+        "La prima rata è stata pagata.",
+        "200 €"
+      ],
+      [
+        "Rivedono la prossima data",
+        "La previsione cambia, ma non è stato effettuato un altro pagamento.",
+        "Restano 200 €"
+      ]
+    ],
+    "scrollCue": "Scorri la tabella in orizzontale per vedere tutte le colonne.",
+    "after": "Cambiare la previsione non riduce ciò che devi restituire. Registra ogni pagamento effettivo e verifica il saldo prima della prossima conversazione."
+  },
+  "app": {
+    "heading": "Tieni d’occhio quanto devi ancora restituire",
+    "lead": "In You Owe Me per iPhone e iPad, registra il denaro ricevuto in prestito e i pagamenti che hai effettuato. Prima di parlare della prossima rata, puoi controllare il saldo attuale.",
+    "cards": [
+      {
+        "heading": "Prestito e rimborsi nella stessa cronologia",
+        "body": "Conserva l’importo ricevuto e ogni pagamento effettuato. Aggiungi i nuovi rimborsi senza cancellare quelli precedenti."
+      },
+      {
+        "heading": "Un piano per seguire la restituzione",
+        "body": "Organizza, per esempio, pagamenti settimanali, ogni due settimane o mensili. Distingui quanto è previsto da quanto hai già pagato."
+      },
+      {
+        "heading": "L’accordo resta annotato",
+        "body": "Conserva nelle note ciò che avete concordato e imposta promemoria per te sui prossimi pagamenti."
+      }
+    ],
+    "boundary": "You Owe Me serve a tenere i registri: non concede prestiti e non trasferisce denaro. L’altra persona non deve installare l’app perché tu possa conservare la tua cronologia.",
+    "handoffHeading": "Quanto hai ricevuto in prestito e quanto hai già restituito",
+    "handoffBody": "Controlla importo iniziale, cronologia dei pagamenti e saldo residuo sul tuo iPhone o iPad.",
+    "assurance": "You Owe Me è disponibile in italiano.",
+    "badgeAlt": "Scarica You Owe Me dall’App Store",
+    "qrInstruction": "Inquadra il codice con la fotocamera dell’iPhone o dell’iPad.",
+    "storeFallback": "Apri nell’App Store",
+    "qrAlt": "Codice QR per aprire You Owe Me sull’App Store",
+    "productLink": "Scopri come seguire prestiti e rimborsi"
+  },
+  "faqHeading": "Domande su come chiedere un prestito a un amico",
+  "faq": [
+    {
+      "q": "Come chiedere soldi in prestito a un amico su WhatsApp?",
+      "a": "Indica l’importo, spiega brevemente il motivo e dì quando pensi di poter restituire il denaro. Se non conosci ancora la data, chiariscilo prima. Lascia la libertà di rifiutare e adatta il messaggio al rapporto tra voi."
+    },
+    {
+      "q": "E se non so quando riuscirò a restituire il denaro?",
+      "a": "Dillo prima di ricevere i soldi. Potete concordare una data in cui dare notizie, ma non va presentata come una data di pagamento. L’altra persona deve conoscere questa incertezza prima di decidere se prestarti il denaro."
+    },
+    {
+      "q": "Come chiedere senza mettere pressione?",
+      "a": "Spiega chiaramente la richiesta e non usare l’amicizia come motivo per ottenere un sì. Se l’altra persona rifiuta, accetta la risposta senza insistere o chiedere di giustificarla."
+    },
+    {
+      "q": "Questi messaggi servono a chiedere indietro soldi che ho prestato?",
+      "a": "Questa pagina è per chi vuole chiedere un prestito. Se hai già prestato denaro e vuoi riceverlo indietro, usa i messaggi per chiedere un rimborso. Scegli il testo in base al saldo che manca e alla data concordata."
+    },
+    {
+      "q": "Anche il mio amico deve usare You Owe Me?",
+      "a": "Non per tenere il tuo registro personale. Puoi anche copiare i messaggi senza installare l’app. Se usi You Owe Me, registri il prestito e i pagamenti sul tuo iPhone o iPad."
+    },
+    {
+      "q": "Posso ottenere un prestito tramite You Owe Me?",
+      "a": "No. You Owe Me serve a registrare denaro prestato, importi da restituire e pagamenti. L’app non concede prestiti e non effettua trasferimenti: il denaro passa da una persona all’altra fuori dall’app."
+    }
+  ],
+  "faqRepaymentAnchor": "messaggi per chiedere un rimborso",
+  "relatedHeading": "Dopo la richiesta, tieni chiaro l’accordo",
+  "relatedIntroBefore": "Se sei dall’altra parte e vuoi ricevere indietro il denaro prestato, usa i ",
+  "relatedIntroAnchor": "messaggi per chiedere un rimborso",
+  "relatedIntroAfter": ". Verifica quanto manca, sottraendo i pagamenti già ricevuti.",
+  "related": [
+    {
+      "title": "Come organizzare i registri dei prestiti",
+      "body": "Distingui l’importo iniziale dai pagamenti effettuati per sapere quanto manca.",
+      "url": "/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/"
+    },
+    {
+      "title": "Prestiti e piani di rimborso",
+      "body": "Segui ciò che è previsto e ciò che è già stato pagato.",
+      "url": "/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/"
+    },
+    {
+      "title": "App per seguire i soldi da ricevere e da restituire",
+      "body": "Consulta quanto ti devono e quanto devi restituire sul tuo iPhone o iPad.",
+      "url": "/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/"
+    }
+  ],
+  "copyUI": {
+    "message": "Copia il messaggio",
+    "record": "Copia il registro dell’accordo",
+    "busy": "Copia in corso…",
+    "successButton": "Copiato",
+    "successStatus": "Testo copiato.",
+    "manualSelected": "Non è stato possibile copiare automaticamente. Il testo è selezionato: usa il comando di copia del dispositivo.",
+    "failure": "Non è stato possibile copiare automaticamente. Seleziona il testo e copialo.",
+    "noJS": "JavaScript è disattivato. Puoi selezionare e copiare i testi.",
+    "messageAriaPrefix": "Copia il messaggio: ",
+    "recordAria": "Copia il modello per annotare l’accordo sul prestito"
+  },
+  "registry": {
+    "title": "Come chiedere soldi in prestito",
+    "discoveryDescription": "Otto messaggi per parlare di un prestito tra amici, con un modello per annotare l’accordo e un esempio di rimborso.",
+    "primaryAudience": "Chi vuole chiedere soldi in prestito a un amico e tenere traccia dell’accordo sulla restituzione.",
+    "problemSolved": "Aiuta a formulare la richiesta e a distinguere l’accordo, il denaro ricevuto e i pagamenti effettuati.",
+    "useWhen": "Prima di chiedere un prestito a un amico e nelle conversazioni successive sul rimborso.",
+    "primaryCta": "Leggi gli 8 messaggi",
+    "nextStep": "Registra il prestito e segui i rimborsi"
+  },
+  "inwardNewParagraphs": {
+    "loanBefore": "Se stai per chiedere soldi in prestito a un amico, leggi ",
+    "loanAnchor": "come formulare la richiesta e concordare il rimborso",
+    "loanAfter": ". Conferma importo e condizioni con l’altra persona e registra la ricezione quando il denaro arriva.",
+    "repaymentBefore": "Se invece vuoi chiedere un prestito a un amico, leggi i ",
+    "repaymentAnchor": "messaggi per chiedere soldi in prestito",
+    "repaymentAfter": ". Distingui l’accordo di prestare dal denaro che hai effettivamente ricevuto."
+  },
+  "englishBlogCard": {
+    "language": "Italiano",
+    "title": "Ask a friend for a loan: Italian messages",
+    "description": "Eight Italian messages, a copyable agreement record and a worked repayment example."
+  }
+}

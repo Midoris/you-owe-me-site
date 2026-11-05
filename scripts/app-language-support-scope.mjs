@@ -4,6 +4,7 @@ export const INCLUDED_EXACT_ROUTES = new Set([
   "/",
   "/ja/",
   "/it/",
+  "/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/",
   "/it/blog/come-chiedere-indietro-soldi-a-un-amico/",
   "/it/strumenti/calcolatore-spese-condivise/",
   "/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/",

@@ -3,8 +3,26 @@ import fs from "node:fs";
 
 
 
+const italianBorrowAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-borrow-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedItalianBorrowSource(source, file) {
+  if (!italianBorrowAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of italianBorrowAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedItalianBorrowIntegration(html) {
+  const route = '/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/';
+  html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Come chiedere soldi in prestito</a>', '');
+  for (const [current, previous] of italianBorrowAdmissions.integrations) html = html.replace(current, previous);
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=itborrow20261106(?=")/g, '$1?v=itrepayment20261106');
+}
+
 const italianRepaymentAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-repayment-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedItalianRepaymentSource(source, file) {
+  source = normalizeReviewedItalianBorrowSource(source, file);
   if (!italianRepaymentAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -12,6 +30,7 @@ export function normalizeReviewedItalianRepaymentSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedItalianRepaymentIntegration(html) {
+  html = normalizeReviewedItalianBorrowIntegration(html);
   const route = '/it/blog/come-chiedere-indietro-soldi-a-un-amico/';
   html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');

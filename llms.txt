@@ -379,4 +379,5 @@ Pagine disponibili in italiano. Ogni pagina ha un indirizzo dedicato; i collegam
 - [Prestiti e piani di rimborso](https://you-owe-me.com/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/) — Tieni in ordine i prestiti tra amici e familiari: registra i rimborsi, verifica quanto manca e segui il piano di rimborso con You Owe Me per iPhone.
 - [Calcolatore per dividere le spese](https://you-owe-me.com/it/strumenti/calcolatore-spese-condivise/) — Inserisci quanto ha pagato ciascuno e scopri chi deve restituire cosa. Dividi cena, viaggio, spesa e altri costi scegliendo chi partecipa a ogni spesa.
 - [Messaggi per chiedere un rimborso](https://you-owe-me.com/it/blog/come-chiedere-indietro-soldi-a-un-amico/) — Dieci messaggi per chiedere indietro i soldi a un amico con tatto, con un esempio di rimborsi parziali e un registro da copiare.
+- [Come chiedere soldi in prestito](https://you-owe-me.com/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/) — Otto messaggi per parlare di un prestito tra amici, con un modello per annotare l’accordo e un esempio di rimborso.
 <!-- italian-pages:end -->

@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "itrepayment20261106",
+  "/scripts/analytics.js": "itborrow20261106",
   "/scripts/sales.js": "ithome20261106",
   "/scripts/anniversary-announcement.js": "ithome20261106",
   "/scripts/app-language-support.js": "ithome20261106",
@@ -651,6 +651,21 @@ export const italianPages = [
       "useWhen": "Per aprire la conversazione, confermare una data o chiedere ciò che manca dopo un rimborso parziale.",
       "primaryCta": "Leggi i 10 messaggi",
       "nextStep": "Registra prestiti e rimborsi in You Owe Me"
+    }
+  },
+  {
+    "en": "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/",
+    "it": "/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/",
+    "title": "Come chiedere soldi in prestito",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "Otto messaggi per parlare di un prestito tra amici, con un modello per annotare l’accordo e un esempio di rimborso.",
+    "registry": {
+      "primaryAudience": "Chi vuole chiedere soldi in prestito a un amico e tenere traccia dell’accordo sulla restituzione.",
+      "problemSolved": "Aiuta a formulare la richiesta e a distinguere l’accordo, il denaro ricevuto e i pagamenti effettuati.",
+      "useWhen": "Prima di chiedere un prestito a un amico e nelle conversazioni successive sul rimborso.",
+      "primaryCta": "Leggi gli 8 messaggi",
+      "nextStep": "Registra il prestito e segui i rimborsi"
     }
   }
 ];
