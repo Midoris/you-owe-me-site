@@ -1,0 +1,37 @@
+{
+  "authority": "LOC-28-COPY.md",
+  "records": [
+    {
+      "id": "money-owed-blank-record",
+      "heading": "Modello di registro da copiare",
+      "payload": "Chi deve a chi: [nome di chi deve restituire] → [nome di chi deve ricevere]\nValuta: [EUR — euro o altra valuta]\nImporto iniziale: [importo]\nMotivo e data: [motivo], [data]\nPagamento ricevuto: [data] — [importo effettivamente ricevuto]\nTotale ricevuto: [importo]\nSaldo residuo: [importo iniziale − totale ricevuto]\nStato: [da rimborsare / rimborsato in parte / saldato / da verificare]\nProssimo pagamento o aggiornamento: [data oppure non ancora concordato]",
+      "button": "Copia il registro",
+      "aria": "Copia il modello di registro vuoto",
+      "tone": "clear",
+      "category": "record"
+    },
+    {
+      "id": "record-confirmation-full",
+      "heading": "Verificare importo iniziale, rimborsi e saldo",
+      "payload": "Ciao! Sto controllando i miei appunti su [motivo]. L’importo iniziale era di [importo iniziale] €, ho già ricevuto [totale ricevuto] € e restano [saldo] € da rimborsare. Ti risulta lo stesso?",
+      "button": "Copia il messaggio",
+      "aria": "Copia il messaggio per verificare importo iniziale, rimborsi e saldo",
+      "tone": "clear",
+      "category": "confirmation"
+    },
+    {
+      "id": "record-confirmation-short",
+      "heading": "Verificare solo il saldo attuale",
+      "payload": "Ciao! Sto riordinando i miei appunti per non dimenticare nulla. Da quello che ho segnato, restano [saldo] € per [motivo]. Mi avvisi se ho tralasciato qualche pagamento?",
+      "button": "Copia il messaggio",
+      "aria": "Copia il messaggio breve per verificare il saldo",
+      "tone": "clear",
+      "category": "confirmation"
+    }
+  ],
+  "copyUI": {
+    "copied": "Copiato!",
+    "prefix": "Copiato: ",
+    "failure": "Impossibile copiare. Seleziona il testo e copialo manualmente."
+  }
+}

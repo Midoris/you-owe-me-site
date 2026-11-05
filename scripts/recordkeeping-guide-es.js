@@ -2,6 +2,7 @@
 // Templates come from static localized HTML; event fields never contain their text.
 (function () {
   var messages = {
+    it: { copied: "Copiato!", prefix: "Copiato: ", fallback: "Testo", failure: "Impossibile copiare. Seleziona il testo e copialo manualmente." },
     "pt-BR": { copied: "Copiado!", prefix: "Copiado: ", fallback: "Texto", failure: "Não foi possível copiar. Selecione o texto e copie manualmente." },
     fr: { copied: "Copié", prefix: "Copié : ", fallback: "message", failure: "La copie a échoué. Sélectionnez le texte et copiez-le manuellement." },
     ar: { copied: "تم النسخ", prefix: "تم نسخ: ", fallback: "الرسالة", failure: "تعذّر النسخ. حدّد النص وانسخه يدويًا." },
@@ -13,7 +14,8 @@
   var copyUi = messages[document.documentElement.lang] || messages.en;
   var isJapanese = document.documentElement.lang === "ja";
   var isPortuguese = document.documentElement.lang === "pt-BR";
-  var usesNearbyStatus = isJapanese || isPortuguese;
+  var isItalian = document.documentElement.lang === "it";
+  var usesNearbyStatus = isJapanese || isPortuguese || isItalian;
   var japaneseCopySequence = 0;
 
   function ready(callback) {
@@ -96,7 +98,7 @@
         if (!message) return;
 
         var originalText = usesNearbyStatus ? japaneseDefaultLabel : button.textContent;
-        var buttonSequence = isPortuguese ? ++portugueseCopySequence : 0;
+        var buttonSequence = (isPortuguese || isItalian) ? ++portugueseCopySequence : 0;
         var statusSequence = usesNearbyStatus ? ++japaneseCopySequence : 0;
         if (usesNearbyStatus && status) {
           card.appendChild(status);
@@ -105,21 +107,21 @@
         var textToCopy = (message.getAttribute("data-template") || message.textContent).trim();
 
         copyText(textToCopy).then(function () {
-          if (!isPortuguese || buttonSequence === portugueseCopySequence) button.textContent = copyUi.copied;
+          if (!(isPortuguese || isItalian) || buttonSequence === portugueseCopySequence) button.textContent = copyUi.copied;
           if (status && (!usesNearbyStatus || statusSequence === japaneseCopySequence)) status.textContent = isJapanese
             ? "「" + (card.querySelector("h3") ? card.querySelector("h3").textContent : copyUi.fallback) + "」をコピーしました。"
             : copyUi.prefix + (card.querySelector("h3") ? card.querySelector("h3").textContent : copyUi.fallback) + ".";
           trackTemplateCopy(card);
 
           window.setTimeout(function () {
-            if (!isPortuguese || buttonSequence === portugueseCopySequence) button.textContent = originalText;
+            if (!(isPortuguese || isItalian) || buttonSequence === portugueseCopySequence) button.textContent = originalText;
             if (status && (!usesNearbyStatus || statusSequence === japaneseCopySequence)) status.textContent = "";
           }, 1800);
         }).catch(function () {
           if (status && (!usesNearbyStatus || statusSequence === japaneseCopySequence)) {
             status.textContent = copyUi.failure;
           }
-          if (isPortuguese && buttonSequence === portugueseCopySequence) button.textContent = originalText;
+          if ((isPortuguese || isItalian) && buttonSequence === portugueseCopySequence) button.textContent = originalText;
         });
       });
     });

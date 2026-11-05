@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "itmoney20261106",
+  "/scripts/analytics.js": "itrecord20261106",
   "/scripts/sales.js": "ithome20261106",
   "/scripts/anniversary-announcement.js": "ithome20261106",
   "/scripts/app-language-support.js": "ithome20261106",
@@ -13,7 +13,7 @@ export const sharedAssetVersions = {
   "/assets/js/main.js": "ithome20261106",
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
-  "/scripts/recordkeeping-guide-es.js": "ptrecord20261105",
+  "/scripts/recordkeeping-guide-es.js": "itrecord20261106",
   "/scripts/split-expense-locale.js": "ptsplit20261105",
   "/scripts/split-expense-calculator.js": "ptsplit20261105",
   "/scripts/tool-transfer.js": "ptsplit20261105",
@@ -591,6 +591,21 @@ export const italianPages = [
       "useWhen": "Quando i rimborsi arrivano in più volte o continui ad anticipare spese per la stessa persona.",
       "primaryCta": "Scarica dall’App Store",
       "nextStep": "Aggiungi una persona e un importo in You Owe Me. Registra ogni rimborso per tenere aggiornato il saldo."
+    }
+  },
+  {
+    "en": "/blog/how-to-keep-track-of-who-owes-you-money/",
+    "it": "/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/",
+    "title": "Come tenere il conto di chi ti deve soldi",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "Tieni in ordine soldi prestati e spese anticipate. Usa un modello da copiare, esempi in euro e messaggi per verificare rimborsi e saldo.",
+    "registry": {
+      "primaryAudience": "Chi vuole tenere in ordine soldi prestati e spese anticipate per altre persone, senza complicare i conti.",
+      "problemSolved": "Separa importo iniziale, rimborsi ricevuti e saldo attuale per chiarire quanto manca da ricevere.",
+      "useWhen": "Quando non sai cosa annotare o come registrare un rimborso parziale.",
+      "primaryCta": "Copia il modello di registro",
+      "nextStep": "Comincia con una persona e una valuta e verifica il saldo di oggi."
     }
   }
 ];

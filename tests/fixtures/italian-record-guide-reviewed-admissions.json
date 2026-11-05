@@ -1,0 +1,66 @@
+{
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "  \"/scripts/analytics.js\": \"itrecord20261106\",\n",
+        "  \"/scripts/analytics.js\": \"itmoney20261106\",\n"
+      ],
+      [
+        "  \"/scripts/recordkeeping-guide-es.js\": \"itrecord20261106\",\n",
+        "  \"/scripts/recordkeeping-guide-es.js\": \"ptrecord20261105\",\n"
+      ],
+      [
+        "  },\n  {\n    \"en\": \"/blog/how-to-keep-track-of-who-owes-you-money/\",\n    \"it\": \"/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/\",\n    \"title\": \"Come tenere il conto di chi ti deve soldi\",\n    \"updated\": \"2026-11-06\",\n    \"complete\": true,\n    \"discoveryDescription\": \"Tieni in ordine soldi prestati e spese anticipate. Usa un modello da copiare, esempi in euro e messaggi per verificare rimborsi e saldo.\",\n    \"registry\": {\n      \"primaryAudience\": \"Chi vuole tenere in ordine soldi prestati e spese anticipate per altre persone, senza complicare i conti.\",\n      \"problemSolved\": \"Separa importo iniziale, rimborsi ricevuti e saldo attuale per chiarire quanto manca da ricevere.\",\n      \"useWhen\": \"Quando non sai cosa annotare o come registrare un rimborso parziale.\",\n      \"primaryCta\": \"Copia il modello di registro\",\n      \"nextStep\": \"Comincia con una persona e una valuta e verifica il saldo di oggi.\"\n    }\n",
+        ""
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/\",\n",
+        ""
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=itrecord20261106\";\n",
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=itmoney20261106\";\n"
+      ]
+    ],
+    "scripts/recordkeeping-guide-es.js": [
+      [
+        "    it: { copied: \"Copiato!\", prefix: \"Copiato: \", fallback: \"Testo\", failure: \"Impossibile copiare. Seleziona il testo e copialo manualmente.\" },\n",
+        ""
+      ],
+      [
+        "  var isItalian = document.documentElement.lang === \"it\";\n  var usesNearbyStatus = isJapanese || isPortuguese || isItalian;\n",
+        "  var usesNearbyStatus = isJapanese || isPortuguese;\n"
+      ],
+      [
+        "        var buttonSequence = (isPortuguese || isItalian) ? ++portugueseCopySequence : 0;\n",
+        "        var buttonSequence = isPortuguese ? ++portugueseCopySequence : 0;\n"
+      ],
+      [
+        "          if (!(isPortuguese || isItalian) || buttonSequence === portugueseCopySequence) button.textContent = copyUi.copied;\n",
+        "          if (!isPortuguese || buttonSequence === portugueseCopySequence) button.textContent = copyUi.copied;\n"
+      ],
+      [
+        "            if (!(isPortuguese || isItalian) || buttonSequence === portugueseCopySequence) button.textContent = originalText;\n",
+        "            if (!isPortuguese || buttonSequence === portugueseCopySequence) button.textContent = originalText;\n"
+      ],
+      [
+        "          if ((isPortuguese || isItalian) && buttonSequence === portugueseCopySequence) button.textContent = originalText;\n",
+        "          if (isPortuguese && buttonSequence === portugueseCopySequence) button.textContent = originalText;\n"
+      ]
+    ]
+  },
+  "homeAnchors": [
+    [
+      "<a href=\"/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/\" class=\"lt-situationMicroLink\"><span class=\"it-link-label\">Prima di scegliere un’app, scopri come impostare i tuoi registri.</span></a>",
+      "<a href=\"/blog/how-to-keep-track-of-who-owes-you-money/\" class=\"lt-situationMicroLink\"><span class=\"it-link-label\">Prima di scegliere un’app, scopri come impostare i tuoi registri <span class=\"site-locale-fallback\">(in inglese)</span>.</span></a>"
+    ],
+    [
+      "<a href=\"/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/\" class=\"lt-resourceShelfLink\"><span class=\"it-link-label\">\n                  <strong>Come tenere il conto di chi ti deve dei soldi</strong>\n                  <span>Parti dalla persona, dal motivo, dai rimborsi e dal saldo, prima di scegliere uno strumento.</span>\n                </span></a>",
+      "<a href=\"/blog/how-to-keep-track-of-who-owes-you-money/\" class=\"lt-resourceShelfLink\"><span class=\"it-link-label\">\n                  <strong>Come tenere il conto di chi ti deve dei soldi <span class=\"site-locale-fallback\">(in inglese)</span></strong>\n                  <span>Parti dalla persona, dal motivo, dai rimborsi e dal saldo, prima di scegliere uno strumento.</span>\n                </span></a>"
+    ]
+  ]
+}

@@ -1,8 +1,28 @@
 import fs from "node:fs";
 
 
+
+const italianRecordGuideAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-record-guide-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedItalianRecordGuideSource(source, file) {
+  if (!italianRecordGuideAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of italianRecordGuideAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedItalianRecordGuideIntegration(html) {
+  const route = '/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/';
+  html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Come tenere il conto di chi ti deve soldi</a>', '');
+  for (const [current, previous] of italianRecordGuideAdmissions.homeAnchors) html = html.replace(current, previous);
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=itrecord20261106(?=")/g, '$1?v=itmoney20261106');
+  return html.replace(/((?:src|href)="[^"?]*scripts\/recordkeeping-guide-es\.js)\?v=itrecord20261106(?=")/g, '$1?v=ptrecord20261105');
+}
+
 const italianMoneyOwedAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-money-owed-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedItalianMoneyOwedSource(source, file) {
+  source = normalizeReviewedItalianRecordGuideSource(source, file);
   if (!italianMoneyOwedAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -10,6 +30,7 @@ export function normalizeReviewedItalianMoneyOwedSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedItalianMoneyOwedIntegration(html) {
+  html = normalizeReviewedItalianRecordGuideIntegration(html);
   const route = '/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/';
   html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
