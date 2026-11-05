@@ -1,7 +1,26 @@
 import fs from "node:fs";
 
+
+const italianMoneyOwedAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-money-owed-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedItalianMoneyOwedSource(source, file) {
+  if (!italianMoneyOwedAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of italianMoneyOwedAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedItalianMoneyOwedIntegration(html) {
+  const route = '/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/';
+  html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
+  html = html.replace('\n              <a href="'+route+'">App per segnare chi ti deve soldi</a>', '');
+  for (const [current, previous] of italianMoneyOwedAdmissions.homeAnchors) html = html.replace(current, previous);
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=itmoney20261106(?=")/g, '$1?v=ithome20261106');
+}
+
 const italianHomeAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-home-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedItalianHomeSource(source, file) {
+  source = normalizeReviewedItalianMoneyOwedSource(source, file);
   if (!italianHomeAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -9,6 +28,7 @@ export function normalizeReviewedItalianHomeSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedItalianHomeIntegration(html) {
+  html = normalizeReviewedItalianMoneyOwedIntegration(html);
   html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com/it/" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="/it/" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
   for (const {current, previous} of italianHomeAdmissions.availability) html = html.replaceAll(current, previous);

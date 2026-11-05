@@ -374,4 +374,5 @@ Páginas disponíveis em português. Cada página tem seu próprio endereço; os
 Pagine disponibili in italiano. Ogni pagina ha un indirizzo dedicato; i collegamenti ai contenuti non ancora localizzati riportano “in inglese”.
 
 - [Soldi prestati, spese anticipate e rimborsi](https://you-owe-me.com/it/)
+- [App per segnare chi ti deve soldi](https://you-owe-me.com/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/) — Registra chi ti deve dei soldi, i rimborsi ricevuti e quanto manca. Tieni in ordine prestiti e spese anticipate con You Owe Me per iPhone e iPad.
 <!-- italian-pages:end -->

@@ -1,0 +1,36 @@
+{
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "  \"/scripts/analytics.js\": \"itmoney20261106\",\n",
+        "  \"/scripts/analytics.js\": \"ithome20261106\",\n"
+      ],
+      [
+        "  },\n  {\n    \"en\": \"/solutions/app-to-track-money-owed/\",\n    \"it\": \"/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/\",\n    \"title\": \"App per segnare chi ti deve soldi\",\n    \"updated\": \"2026-11-06\",\n    \"complete\": true,\n    \"discoveryDescription\": \"Registra chi ti deve dei soldi, i rimborsi ricevuti e quanto manca. Tieni in ordine prestiti e spese anticipate con You Owe Me per iPhone e iPad.\",\n    \"registry\": {\n      \"primaryAudience\": \"Chi vuole tenere il conto dei soldi prestati, delle spese anticipate per amici o familiari e dei rimborsi ricevuti a poco a poco.\",\n      \"problemSolved\": \"Riunisce l’importo iniziale, i rimborsi e il saldo di ogni persona, così sai quanto resta da ricevere.\",\n      \"useWhen\": \"Quando i rimborsi arrivano in più volte o continui ad anticipare spese per la stessa persona.\",\n      \"primaryCta\": \"Scarica dall’App Store\",\n      \"nextStep\": \"Aggiungi una persona e un importo in You Owe Me. Registra ogni rimborso per tenere aggiornato il saldo.\"\n    }\n",
+        ""
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/\",\n",
+        ""
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=itmoney20261106\";\n",
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=ithome20261106\";\n"
+      ]
+    ]
+  },
+  "homeAnchors": [
+    [
+      "<a class=\"best-next-step__card\" href=\"/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_1\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"money-owed\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/app-to-track-money-owed/\" data-step-position=\"1\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_money_owed\"><span class=\"it-link-label\">\n      <span class=\"best-next-step__label\">Soldi da ricevere</span>\n      <strong>Qualcuno mi deve dei soldi</strong>\n      <span>Tieni insieme l’importo iniziale, i rimborsi e quanto resta da ricevere.</span>\n    </span></a>",
+      "<a class=\"best-next-step__card\" href=\"/solutions/app-to-track-money-owed/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_1\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"money-owed\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/app-to-track-money-owed/\" data-step-position=\"1\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_money_owed\"><span class=\"it-link-label\">\n      <span class=\"best-next-step__label\">Soldi da ricevere</span>\n      <strong>Qualcuno mi deve dei soldi <span class=\"site-locale-fallback\">(in inglese)</span></strong>\n      <span>Tieni insieme l’importo iniziale, i rimborsi e quanto resta da ricevere.</span>\n    </span></a>"
+    ],
+    [
+      "<a href=\"/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"it-link-label\">Organizza i soldi da ricevere</span></a>",
+      "<a href=\"/solutions/app-to-track-money-owed/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"it-link-label\">Organizza i soldi da ricevere <span class=\"site-locale-fallback\">(in inglese)</span></span></a>"
+    ]
+  ]
+}

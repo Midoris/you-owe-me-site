@@ -9,8 +9,8 @@ import {normalizeReviewedItalianHomeIntegration,normalizeReviewedItalianHomeSour
 const base='b92a9ec5a72e2fce58955cca053e0b0e63887c40',read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8');
 const page=read('it/index.html'),d=parseStaticPage(page);
 
-test('Italian discovery admits only the reviewed homepage and removes only its English fallback',()=>{
- assert.deepEqual(italianPages.map(p=>p.it),['/it/']);assert.equal(localizedSourceRoute('/it/'),'/');
+test('Italian discovery admits only reviewed home/solution routes and removes only their English fallback',()=>{
+ assert.deepEqual(italianPages.map(p=>p.it),['/it/','/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/']);assert.equal(localizedSourceRoute('/it/'),'/');
  assert.equal(localizedSourceRoute('/it/tools/split-expense-calculator/'),null);
  assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja','pt','it']);
  assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='it'),false);
@@ -26,7 +26,7 @@ test('Italian active hierarchy, single marked navigation and English destination
  assert.equal(d.querySelectorAll('section').length,16);assert.equal(sections(d).length,12);assert.deepEqual(sections(d),sections(original));
  assert.equal(d.querySelectorAll('.lt-proofGrid article').length,3);assert.equal(d.querySelectorAll('.lt-reviewRail article').length,18);assert.equal(d.querySelectorAll('.lt-faqList article').length,10);
  assert.equal((page.match(/<!-- italian-section:start -->/g)||[]).length,1);
- const navs=d.querySelectorAll('.site-locale-section');assert.equal(navs.length,1);assert.deepEqual(navs[0].querySelectorAll('a').map(a=>a.getAttribute('href')),['/it/']);
+ const navs=d.querySelectorAll('.site-locale-section');assert.equal(navs.length,1);assert.deepEqual(navs[0].querySelectorAll('a').map(a=>a.getAttribute('href')),italianPages.map(p=>p.it));
  assert.equal(navs[0].querySelector('a').getAttribute('aria-current'),'page');
  for(const a of d.querySelectorAll('#main a')){const href=a.getAttribute('href');if(href?.startsWith('/')&&!href.startsWith('/it/'))assert.ok(a.textContent.includes('(in inglese)'),href);}
  const graph=JSON.parse(page.match(/<script type="application\/ld\+json">([\s\S]+?)<\/script>/)[1])['@graph'];
@@ -35,7 +35,7 @@ test('Italian active hierarchy, single marked navigation and English destination
 });
 
 test('all preexisting authored HTML and shared runtime roundtrip exact immutable bytes beyond LOC26 admissions',()=>{
- const files=execFileSync('git',['diff','--name-only',base,'--','*.html'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);assert.ok(files.length>100);
+ const present=new Set(execFileSync('git',['ls-tree','-r','--name-only',base],{encoding:'utf8'}).trim().split('\n'));const files=execFileSync('git',['diff','--name-only',base,'--','*.html'],{encoding:'utf8'}).trim().split('\n').filter(f=>present.has(f));assert.ok(files.length>100);
  for(const f of files)assert.equal(normalizeReviewedItalianHomeIntegration(read(f)),execFileSync('git',['show',base+':'+f],{encoding:'utf8'}),f);
  const admissions=JSON.parse(read('tests/fixtures/italian-home-reviewed-admissions.json'));
  for(const f of Object.keys(admissions.source))assert.deepEqual(normalizeReviewedItalianHomeSource(fs.readFileSync(new URL('../'+f,import.meta.url)),f),execFileSync('git',['show',base+':'+f]),f);

@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "ithome20261106",
+  "/scripts/analytics.js": "itmoney20261106",
   "/scripts/sales.js": "ithome20261106",
   "/scripts/anniversary-announcement.js": "ithome20261106",
   "/scripts/app-language-support.js": "ithome20261106",
@@ -576,6 +576,21 @@ export const italianPages = [
       "useWhen": "Quando vuoi iniziare a tenere il conto dei soldi da ricevere o restituire.",
       "primaryCta": "Scarica dall’App Store",
       "nextStep": "Scarica You Owe Me e aggiungi la prima persona e il primo importo."
+    }
+  },
+  {
+    "en": "/solutions/app-to-track-money-owed/",
+    "it": "/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/",
+    "title": "App per segnare chi ti deve soldi",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "Registra chi ti deve dei soldi, i rimborsi ricevuti e quanto manca. Tieni in ordine prestiti e spese anticipate con You Owe Me per iPhone e iPad.",
+    "registry": {
+      "primaryAudience": "Chi vuole tenere il conto dei soldi prestati, delle spese anticipate per amici o familiari e dei rimborsi ricevuti a poco a poco.",
+      "problemSolved": "Riunisce l’importo iniziale, i rimborsi e il saldo di ogni persona, così sai quanto resta da ricevere.",
+      "useWhen": "Quando i rimborsi arrivano in più volte o continui ad anticipare spese per la stessa persona.",
+      "primaryCta": "Scarica dall’App Store",
+      "nextStep": "Aggiungi una persona e un importo in You Owe Me. Registra ogni rimborso per tenere aggiornato il saldo."
     }
   }
 ];
