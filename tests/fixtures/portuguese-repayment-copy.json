@@ -1,0 +1,293 @@
+{
+  "language": "pt-BR",
+  "title": "Como cobrar um amigo com educação: 10 mensagens | You Owe Me",
+  "description": "Mensagens para pedir seu dinheiro de volta pelo WhatsApp, lembrar uma data combinada ou cobrar só o que falta. Veja 10 exemplos e um modelo para anotar os pagamentos.",
+  "h1": "Como cobrar um amigo com educação",
+  "eyebrow": "Dinheiro entre amigos",
+  "breadcrumb": {
+    "label": "Navegação estrutural",
+    "home": "Início",
+    "current": "Mensagens para pedir seu dinheiro de volta"
+  },
+  "hero": {
+    "lead": "Você quer receber o que emprestou, mas não sabe como tocar no assunto? Comece pelo que foi combinado e pelo valor que ainda falta. Escolha uma mensagem, adapte ao seu jeito de falar e envie pelo WhatsApp ou pelo canal que vocês costumam usar.",
+    "support": "Troque os campos entre colchetes pelos seus dados. Os dez modelos são alternativas para situações diferentes: escolha o que faz sentido para você, sem enviar todos em sequência.",
+    "primary": "Ver as 10 mensagens",
+    "secondary": "Conferir o valor que falta",
+    "appBefore": "Se a pessoa está pagando aos poucos, você pode ",
+    "appAnchor": "acompanhar o que falta no You Owe Me",
+    "appAfter": ".",
+    "byline": "Por Ievgenii Iablonskyi · Publicado em 6 de novembro de 2026",
+    "previewTitle": "Uma pergunta simples já abre a conversa",
+    "previewCaption": "Diga de qual valor você está falando e pergunte quando a pessoa consegue devolver."
+  },
+  "contents": {
+    "heading": "Nesta página",
+    "items": [
+      {
+        "label": "10 mensagens para situações diferentes",
+        "id": "messages"
+      },
+      {
+        "label": "O que conferir antes de enviar",
+        "id": "before"
+      },
+      {
+        "label": "Como calcular o que ainda falta",
+        "id": "balance"
+      },
+      {
+        "label": "Como manter o registro no app",
+        "id": "app"
+      },
+      {
+        "label": "Modelo de registro para copiar",
+        "id": "record"
+      },
+      {
+        "label": "Dúvidas frequentes",
+        "id": "faq"
+      }
+    ]
+  },
+  "messagesHeading": "10 mensagens para pedir seu dinheiro de volta",
+  "messagesIntro": "Confira o valor que ainda falta, considerando tudo o que você já recebeu. Ao adaptar a mensagem, diferencie o valor emprestado do saldo restante. Uma promessa de pagamento pode mudar o combinado, mas só o dinheiro recebido reduz o saldo.",
+  "situationLabel": "Escolha a situação mais parecida com a sua",
+  "messages": [
+    {
+      "key": "first_reminder",
+      "tone": "friendly",
+      "heading": "Para tocar no assunto pela primeira vez",
+      "guidance": "Lembre de qual dinheiro você está falando e pergunte quando a pessoa consegue devolver. Não é preciso se desculpar por perguntar nem fazer uma acusação.",
+      "text": "Oi! Sobre os [valor e moeda] que te emprestei para [motivo], quando você acha que consegue me devolver?"
+    },
+    {
+      "key": "confirm_date",
+      "tone": "neutral",
+      "heading": "Quando a data combinada está chegando",
+      "guidance": "Confirme uma data que vocês já combinaram. Se ainda não havia uma data, use o modelo “Quando vocês não combinaram uma data”.",
+      "text": "Oi! Está tudo certo para me devolver os [valor e moeda] no dia [data], como combinamos? Se precisar ajustar, me avisa para a gente conversar."
+    },
+    {
+      "key": "date_passed",
+      "tone": "clear",
+      "heading": "Quando a data combinada já passou",
+      "guidance": "Mencione o combinado e o que ainda falta receber. Peça uma previsão concreta, sem presumir por que a pessoa não pagou.",
+      "text": "Oi! Combinamos a devolução dos [valor que falta e moeda] para [data], mas ainda não recebi. Você consegue me dizer quando pode pagar?"
+    },
+    {
+      "key": "partial_payment",
+      "tone": "friendly",
+      "heading": "Depois de receber uma parte",
+      "guidance": "Confirme o valor recebido e atualize o que falta. Não cobre de novo a parte que a pessoa já devolveu.",
+      "text": "Recebi os [valor recebido e moeda] no dia [data], valeu! Dos [valor emprestado e moeda] que te emprestei, ainda faltam [saldo e moeda], já descontando tudo o que você devolveu. Quando acha que consegue pagar o restante?"
+    },
+    {
+      "key": "no_date",
+      "tone": "neutral",
+      "heading": "Quando vocês não combinaram uma data",
+      "guidance": "Abra a conversa sobre o prazo. Sem uma data combinada antes, não trate o pagamento como atrasado.",
+      "text": "Oi! Sobre os [valor e moeda] que te emprestei para [motivo], a gente acabou não combinando uma data para devolver. Quando você consegue me devolver?"
+    },
+    {
+      "key": "shared_expense",
+      "tone": "neutral",
+      "heading": "Para pedir a parte de uma despesa que você adiantou",
+      "guidance": "Confira a parte que a pessoa concordou em pagar. A divisão pode ser igual ou seguir outro combinado.",
+      "text": "Oi! Eu paguei [despesa] e a sua parte ficou em [valor e moeda]. Quando você consegue me passar? Se chegou a outro valor, vamos conferir a divisão juntos."
+    },
+    {
+      "key": "no_reply",
+      "tone": "clear",
+      "heading": "Quando a mensagem anterior ficou sem resposta",
+      "guidance": "Dê tempo para a pessoa responder antes de retomar o assunto, de forma privada. Evite várias mensagens seguidas ou uma cobrança no grupo.",
+      "text": "Oi! Queria retomar a conversa sobre os [saldo e moeda] que ainda faltam. Você conseguiu ver minha mensagem? Me diz quando podemos combinar o pagamento."
+    },
+    {
+      "key": "more_time",
+      "tone": "friendly",
+      "heading": "Quando a pessoa pede mais tempo",
+      "guidance": "Se vocês forem fazer um novo combinado, conversem sobre valores e datas possíveis. Anote a nova previsão separadamente dos pagamentos já recebidos.",
+      "text": "Valeu por me avisar. Ainda faltam [saldo e moeda]. Quanto você consegue devolver e em que data? Vamos combinar também como fica o restante."
+    },
+    {
+      "key": "loan_or_gift",
+      "tone": "neutral",
+      "heading": "Quando não ficou claro se era empréstimo ou ajuda",
+      "guidance": "Primeiro, entendam o que cada um tinha em mente. Se não houve um combinado claro de devolução, não apresente isso como uma dívida já reconhecida.",
+      "text": "Queria esclarecer uma coisa sobre os [valor e moeda] que te passei para [motivo]. Eu tinha entendido que você me devolveria depois. Como você entendeu esse combinado?"
+    },
+    {
+      "key": "fully_repaid",
+      "tone": "friendly",
+      "heading": "Para confirmar que está tudo pago",
+      "guidance": "Espere o último pagamento chegar antes de dar esse empréstimo por encerrado. Deixe claro a qual valor você está se referindo.",
+      "text": "Recebi os últimos [valor recebido e moeda], valeu! Com isso, os [valor total e moeda] que te emprestei estão todos pagos. Vou deixar esse empréstimo como quitado no meu registro."
+    }
+  ],
+  "before": {
+    "heading": "Antes de enviar, confira três coisas",
+    "cards": [
+      {
+        "heading": "Quanto ainda falta",
+        "body": "Desconte apenas os pagamentos que você recebeu. O valor de uma mensagem antiga pode estar desatualizado se a pessoa já devolveu uma parte."
+      },
+      {
+        "heading": "O que vocês combinaram",
+        "body": "Confira o motivo, o valor de cada um e se havia uma data para pagar. Se algum ponto ficou em aberto, pergunte antes de concluir."
+      },
+      {
+        "heading": "O que você precisa saber agora",
+        "body": "Peça uma informação concreta, como uma previsão de pagamento. Adapte a mensagem à relação de vocês e dê espaço para a pessoa responder."
+      }
+    ]
+  },
+  "balance": {
+    "heading": "Recebeu uma parte? Atualize o valor antes de cobrar",
+    "intro": "Neste exemplo fictício, Marina emprestou R$ 300 a Lucas. Depois de receber R$ 100, faltam R$ 200. Quando ele devolve mais R$ 75, o saldo cai para R$ 125.",
+    "caption": "Exemplo fictício em reais: valor emprestado, pagamentos recebidos e saldo",
+    "headers": [
+      "Data",
+      "O que aconteceu",
+      "Valor movimentado",
+      "Ainda falta"
+    ],
+    "rows": [
+      [
+        "4 de outubro",
+        "Empréstimo para Lucas",
+        "R$ 300 emprestados",
+        "R$ 300"
+      ],
+      [
+        "12 de outubro",
+        "Primeiro pagamento",
+        "R$ 100 recebidos",
+        "R$ 200"
+      ],
+      [
+        "20 de outubro",
+        "Segundo pagamento",
+        "R$ 75 recebidos",
+        "R$ 125"
+      ]
+    ],
+    "scrollCue": "Deslize a tabela para os lados para ver todas as colunas.",
+    "regionLabel": "Exemplo de empréstimo, pagamentos recebidos e saldo restante",
+    "after": "Depois do segundo pagamento, cobrar R$ 200 ignoraria os R$ 75 que já chegaram. Por outro lado, se Lucas prometer devolver os R$ 125 na semana seguinte, o saldo continua em R$ 125 até você receber.",
+    "quoteHeading": "A próxima mensagem já pode usar o saldo atualizado",
+    "quote": "Recebi os R$ 75, valeu! Dos R$ 300 que te emprestei, agora faltam R$ 125. Quando acha que consegue devolver o restante?"
+  },
+  "app": {
+    "heading": "Na próxima conversa, tenha o valor atualizado em mãos",
+    "lead": "No You Owe Me para iPhone e iPad, registre o que emprestou e cada pagamento recebido. Assim, você pode conferir quanto ainda falta sem procurar valores em várias conversas.",
+    "cards": [
+      {
+        "heading": "Empréstimo e pagamentos no mesmo histórico",
+        "body": "Mantenha o valor inicial e as devoluções ligadas ao mesmo empréstimo."
+      },
+      {
+        "heading": "Cada pagamento parcial conta",
+        "body": "Acrescente o que recebeu sem apagar os pagamentos anteriores e confira o saldo atualizado."
+      },
+      {
+        "heading": "O próximo combinado fica anotado",
+        "body": "Guarde o que vocês conversaram nas notas e crie um lembrete para você quando quiser voltar ao assunto."
+      }
+    ],
+    "boundary": "A outra pessoa não precisa usar o app para você manter seu registro. O You Owe Me não faz transferências de dinheiro nem garante o pagamento.",
+    "handoffHeading": "Registre o que já recebeu e o que ainda falta",
+    "handoffBody": "Acompanhe seus empréstimos e os pagamentos recebidos no iPhone ou iPad.",
+    "assurance": "O You Owe Me está disponível em português.",
+    "badgeAlt": "Baixar o You Owe Me na App Store",
+    "qrInstruction": "Aponte a câmera do iPhone ou iPad para o código.",
+    "storeFallback": "Abrir na App Store",
+    "qrAlt": "Código QR para abrir o You Owe Me na App Store",
+    "productLink": "Ver como acompanhar empréstimos e pagamentos"
+  },
+  "record": {
+    "heading": "Recebeu um pagamento? Atualize o registro",
+    "intro": "Antes da próxima mensagem, anote o que já recebeu. Copie este modelo para suas notas ou mantenha o histórico no app. O modelo de texto não calcula o saldo automaticamente.",
+    "text": "Pessoa: [nome]\nMotivo do empréstimo: [motivo]\nValor emprestado: [valor e moeda]\nData do empréstimo: [data]\nPagamentos recebidos: [data — valor e moeda; uma linha por pagamento]\nTotal recebido: [valor e moeda]\nAinda falta: [valor e moeda]\nPróximo pagamento ou conversa: [data e combinado]\nÚltima atualização: [data]",
+    "after": "Separe as previsões dos valores que você já recebeu. Se os registros de vocês forem diferentes, confiram os valores e as datas antes de combinar o próximo pagamento."
+  },
+  "faqHeading": "Dúvidas sobre como pedir seu dinheiro de volta",
+  "faq": [
+    {
+      "q": "Como cobrar um amigo pelo WhatsApp sem ser grosseiro?",
+      "a": "Diga de qual dinheiro você está falando e quanto ainda falta receber. Por exemplo: “Oi! Sobre o dinheiro que te emprestei para [motivo], ainda faltam [saldo e moeda]. Quando você acha que consegue me devolver?” Antes de enviar, confira se todos os pagamentos recebidos foram descontados e adapte ao seu jeito de falar."
+    },
+    {
+      "q": "Como cobrar o restante depois de um pagamento parcial?",
+      "a": "Confirme o que recebeu e informe o saldo atualizado. Se emprestou R$ 300 e recebeu R$ 100, ainda faltam R$ 200. Combinar outra data não reduz esse valor: ele só diminui quando você recebe um novo pagamento."
+    },
+    {
+      "q": "E se a gente não combinou uma data para devolver?",
+      "a": "Pergunte quando a pessoa consegue pagar e conversem sobre uma data. Se não havia um prazo combinado, evite tratar o pagamento como atrasado."
+    },
+    {
+      "q": "O que fazer quando a pessoa acha que deve outro valor?",
+      "a": "Confiram o valor inicial, os pagamentos recebidos e as datas. Para uma despesa compartilhada, revejam também a divisão combinada. Se a dúvida é se o dinheiro era um empréstimo ou uma ajuda sem devolução, esclareçam isso primeiro."
+    },
+    {
+      "q": "Meu amigo também precisa instalar o You Owe Me?",
+      "a": "Não para você manter seu próprio registro. Você pode anotar o que emprestou e os pagamentos recebidos no seu iPhone ou iPad, sem que a outra pessoa use o app."
+    },
+    {
+      "q": "O app envia essas mensagens automaticamente?",
+      "a": "Não. Copie o texto, confira os valores e envie pelo WhatsApp ou pelo canal que preferir. O You Owe Me ajuda a registrar empréstimos e pagamentos; o dinheiro é transferido fora do app."
+    }
+  ],
+  "relatedHeading": "Confira os valores antes da próxima mensagem",
+  "related": [
+    {
+      "title": "Como controlar quem te deve dinheiro",
+      "body": "Organize o valor inicial, os pagamentos recebidos e o que ainda falta.",
+      "url": "/pt/blog/como-controlar-quem-te-deve-dinheiro/"
+    },
+    {
+      "title": "Controle de empréstimos entre pessoas",
+      "body": "Mantenha o histórico de pagamentos e o próximo combinado junto de cada empréstimo.",
+      "url": "/pt/solucoes/controle-de-emprestimos-entre-pessoas/"
+    },
+    {
+      "title": "Calculadora para dividir despesas",
+      "body": "Confira a parte de cada um antes de pedir o dinheiro de uma despesa compartilhada.",
+      "url": "/pt/ferramentas/calculadora-dividir-despesas/"
+    }
+  ],
+  "copyUI": {
+    "message": "Copiar mensagem",
+    "record": "Copiar modelo de registro",
+    "busy": "Copiando…",
+    "successButton": "Copiado",
+    "successStatus": "Texto copiado.",
+    "manualSelected": "Não foi possível copiar automaticamente. O texto está selecionado: use a opção de copiar do seu dispositivo.",
+    "failure": "Não foi possível copiar automaticamente. Selecione o texto e copie.",
+    "noJS": "O JavaScript está desativado. Você pode selecionar e copiar os textos.",
+    "messageAriaPrefix": "Copiar mensagem: ",
+    "recordAria": "Copiar modelo de registro de pagamentos"
+  },
+  "registry": {
+    "title": "Mensagens para pedir seu dinheiro de volta",
+    "discoveryDescription": "Dez mensagens para cobrar um amigo com educação, com exemplo de pagamentos parciais e modelo de registro para copiar.",
+    "primaryAudience": "Quem quer pedir a devolução de um empréstimo entre amigos ou de uma parte combinada de uma despesa.",
+    "problemSolved": "Ajuda a escolher uma mensagem que corresponda ao combinado e ao valor que ainda falta receber.",
+    "useWhen": "Para começar a conversa, confirmar uma data ou pedir o restante depois de um pagamento parcial.",
+    "primaryCta": "Ver as 10 mensagens",
+    "nextStep": "Registrar empréstimos e pagamentos no You Owe Me"
+  },
+  "inwardNewParagraphs": {
+    "loanBefore": "Antes de pedir um pagamento, confira o que já recebeu. Use uma das ",
+    "loanAnchor": "mensagens para pedir seu dinheiro de volta",
+    "loanAfter": " e adapte ao valor que ainda falta.",
+    "recordBefore": "Com o saldo conferido, escolha uma das ",
+    "recordAnchor": "mensagens para pedir seu dinheiro de volta",
+    "recordAfter": ". Inclua o valor atualizado e o que vocês combinaram na última conversa."
+  },
+  "englishBlogCard": {
+    "language": "Português",
+    "title": "Friendly repayment messages in Portuguese",
+    "description": "Portuguese messages for asking friends to repay, with a partial-payment example and a record of the remaining balance."
+  }
+}

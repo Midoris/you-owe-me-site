@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "ptsplit20261105",
+  "/scripts/analytics.js": "ptrepayment20261106",
   "/scripts/sales.js": "pt20261105",
   "/scripts/anniversary-announcement.js": "pt20261105",
   "/scripts/app-language-support.js": "pt20261105",
@@ -490,6 +490,21 @@ export const portuguesePages = [
     "useWhen": "Quando uma ou várias despesas precisam ser divididas igualmente entre os participantes de cada gasto.",
     "primaryCta": "Calcular a divisão",
     "nextStep": "Compartilhe o resultado e acompanhe os pagamentos que ficarem para depois."
+  }
+}
+, {
+  "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+  "pt": "/pt/blog/como-cobrar-um-amigo-com-educacao/",
+  "title": "Mensagens para pedir seu dinheiro de volta",
+  "updated": "2026-11-06",
+  "complete": true,
+  "discoveryDescription": "Dez mensagens para cobrar um amigo com educação, com exemplo de pagamentos parciais e modelo de registro para copiar.",
+  "registry": {
+    "primaryAudience": "Quem quer pedir a devolução de um empréstimo entre amigos ou de uma parte combinada de uma despesa.",
+    "problemSolved": "Ajuda a escolher uma mensagem que corresponda ao combinado e ao valor que ainda falta receber.",
+    "useWhen": "Para começar a conversa, confirmar uma data ou pedir o restante depois de um pagamento parcial.",
+    "primaryCta": "Ver as 10 mensagens",
+    "nextStep": "Registrar empréstimos e pagamentos no You Owe Me"
   }
 }
 ];

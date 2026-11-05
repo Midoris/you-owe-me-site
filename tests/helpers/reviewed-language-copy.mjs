@@ -12,7 +12,29 @@ export function normalizeReviewedPortugueseSplitSource(source, file) {
   for (const [current, previous] of portugueseSplitAdmissions[file]) source = source.replace(current, previous);
   return bytes ? Buffer.from(source) : source;
 }
+export function normalizeReviewedPortugueseRepaymentSource(source, file) {
+  if (file === 'scripts/analytics.js') return source.replace('../content/site-locales.mjs?v=ptrepayment20261106', '../content/site-locales.mjs?v=ptsplit20261105').replace('./iphone-handoff-analytics-bridge.mjs?v=ptrepayment20261106', './iphone-handoff-analytics-bridge.mjs?v=pt20261105');
+  if (file === 'scripts/iphone-handoff-analytics-bridge.mjs') return source.replace('  "pt_repayment_iphone_handoff",\n', '');
+  return source;
+}
+export function normalizeReviewedPortugueseRepaymentIntegration(html) {
+  const route = '/pt/blog/como-cobrar-um-amigo-com-educacao/';
+  html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Mensagens para pedir seu dinheiro de volta</a>', '');
+  html = html.replace("<a href=\"/pt/blog/como-cobrar-um-amigo-com-educacao/\">guia de mensagens para pedir o dinheiro de volta</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">guia de mensagens para pedir o dinheiro de volta <span class=\"site-locale-fallback\">(em inglês)</span></a>");
+  html = html.replace("<a href=\"/pt/blog/como-cobrar-um-amigo-com-educacao/\">como pedir o dinheiro de volta com educação</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">como pedir o dinheiro de volta com educação <span class=\"site-locale-fallback\">(em inglês)</span></a>");
+  html = html.replace("<a href=\"/pt/blog/como-cobrar-um-amigo-com-educacao/\" class=\"lt-cardCta\"><span class=\"pt-link-label\">Ler o guia para pedir o dinheiro de volta</span></a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\"><span class=\"pt-link-label\">Ler o guia para pedir o dinheiro de volta <span class=\"site-locale-fallback\">(em inglês)</span></span></a>");
+  html = html.replace("<a href=\"/pt/blog/como-cobrar-um-amigo-com-educacao/\">como pedir seu dinheiro de volta com educação</a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">como pedir seu dinheiro de volta com educação <span class=\"site-locale-fallback\">(em inglês)</span></a>");
+  html = html.replace("<a href=\"/pt/blog/como-cobrar-um-amigo-com-educacao/\" class=\"lt-cardCta\"><span class=\"pt-link-label\">Ver como pedir o pagamento</span></a>", "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\"><span class=\"pt-link-label\">Ver como pedir o pagamento <span class=\"site-locale-fallback\">(em inglês)</span></span></a>");
+  html = html.replace("\n              <p>Antes de pedir um pagamento, confira o que já recebeu. Use uma das <a href=\"/pt/blog/como-cobrar-um-amigo-com-educacao/\">mensagens para pedir seu dinheiro de volta</a> e adapte ao valor que ainda falta.</p>", "");
+  html = html.replace("\n            <p>Com o saldo conferido, escolha uma das <a href=\"/pt/blog/como-cobrar-um-amigo-com-educacao/\">mensagens para pedir seu dinheiro de volta</a>. Inclua o valor atualizado e o que vocês combinaram na última conversa.</p>", "");
+  html = html.replace("\n\n                <article class=\"lt-blogCard lt-roomyCard\">\n                  <p class=\"lt-cardLabel\" lang=\"pt\">Português</p>\n                  <h3 class=\"lt-cardHeadingGap\"><a href=\"/pt/blog/como-cobrar-um-amigo-com-educacao/\" hreflang=\"pt\">Friendly repayment messages in Portuguese</a></h3>\n                  <p>Portuguese messages for asking friends to repay, with a partial-payment example and a record of the remaining balance.</p>\n                </article>", "");
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=ptrepayment20261106(?=")/g, '$1?v=ptsplit20261105');
+}
+
 export function normalizeReviewedPortugueseSplitIntegration(html) {
+  html = normalizeReviewedPortugueseRepaymentIntegration(html);
   html = normalizeReviewedPortugueseSplitSource(html, 'private-continuation/split/index.html');
   const route = '/pt/ferramentas/calculadora-dividir-despesas/';
   html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');

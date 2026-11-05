@@ -6,7 +6,7 @@ const read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8'),route='/p
 test('Portuguese solution has eighteen visible/schema FAQ pairs and all twenty-two source destinations',()=>{
  const faqs=d.querySelectorAll('.solution-faq-item');assert.equal(faqs.length,18);assert.equal(faqs[0].hasAttribute('open'),true);assert.ok(faqs.slice(1).every(n=>!n.hasAttribute('open')));
  const schemas=[...page.matchAll(/<script type="application\/ld\+json">([\s\S]+?)<\/script>/g)].map(m=>JSON.parse(m[1]));const schema=schemas.find(n=>n['@type']==='FAQPage');assert.equal(schema.inLanguage,'pt-BR');assert.deepEqual(schema.mainEntity.map(n=>({question:n.name,answer:n.acceptedAnswer.text.trim().replace(/\s+/g,' ')})),faqs.map(n=>({question:text(n.querySelector('summary')),answer:text(n.querySelector('p'))})));assert.equal(text(faqs[10].querySelector('summary')),'Posso registrar juros?');
- const cards=d.querySelectorAll('.lt-relatedCard');assert.equal(cards.length,22);assert.deepEqual(cards.map(n=>n.querySelector('a').getAttribute('href')),original.querySelectorAll('.lt-relatedCard').map(n=>{const h=n.querySelector('a').getAttribute('href');return h==='/tools/split-expense-calculator/'?'/pt/ferramentas/calculadora-dividir-despesas/':h;}));
+ const cards=d.querySelectorAll('.lt-relatedCard');assert.equal(cards.length,22);assert.deepEqual(cards.map(n=>n.querySelector('a').getAttribute('href')),original.querySelectorAll('.lt-relatedCard').map(n=>{const h=n.querySelector('a').getAttribute('href');return h==='/tools/split-expense-calculator/'?'/pt/ferramentas/calculadora-dividir-despesas/':h==='/blog/how-to-remind-someone-they-owe-you-money-politely/'?'/pt/blog/como-cobrar-um-amigo-com-educacao/':h;}));
  assert.equal(d.querySelector('.money-owed-related-directory').hasAttribute('open'),false);assert.equal(d.querySelector('.money-owed-extra-features').hasAttribute('open'),false);
 });
 
@@ -19,12 +19,12 @@ test('Portuguese solution preserves active English structure, source analytics a
 });
 
 test('Portuguese solution discovery and two homepage inward links match only the completed family',()=>{
- assert.deepEqual(portuguesePages.map(p=>p.pt),['/pt/',route,'/pt/blog/como-controlar-quem-te-deve-dinheiro/','/pt/solucoes/controle-de-emprestimos-entre-pessoas/','/pt/ferramentas/calculadora-dividir-despesas/']);assert.deepEqual(completedCounterparts(source).map(p=>p.code),['en','es','de','ar','fr','ja','pt']);assert.equal(completedCounterparts('/solutions/personal-loan-repayment-tracker/').some(p=>p.code==='pt'),true);
+ assert.deepEqual(portuguesePages.map(p=>p.pt),['/pt/',route,'/pt/blog/como-controlar-quem-te-deve-dinheiro/','/pt/solucoes/controle-de-emprestimos-entre-pessoas/','/pt/ferramentas/calculadora-dividir-despesas/','/pt/blog/como-cobrar-um-amigo-com-educacao/']);assert.deepEqual(completedCounterparts(source).map(p=>p.code),['en','es','de','ar','fr','ja','pt']);assert.equal(completedCounterparts('/solutions/personal-loan-repayment-tracker/').some(p=>p.code==='pt'),true);
  assert.equal(renderLocaleHtml(page,source,'pt'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));assert.ok(read('sitemap.xml').includes('https://you-owe-me.com'+route));
  const home=parseStaticPage(read('pt/index.html'));
  assert.equal(home.querySelector('.best-next-step__card').getAttribute('href'),route);assert.equal(home.querySelector('.lt-situationPrimaryCta').getAttribute('href'),route);assert.ok(!text(home.querySelector('.best-next-step__card')).includes('(em inglês)'));assert.ok(!text(home.querySelector('.lt-situationPrimaryCta')).includes('(em inglês)'));
  for(const c of completedCounterparts(source))assert.ok(read(c.route.slice(1)+'index.html').includes('hreflang="pt" href="https://you-owe-me.com'+route+'"'));
- assert.equal(siteLocales.find(l=>l.code==='pt').pages.length,5);
+ assert.equal(siteLocales.find(l=>l.code==='pt').pages.length,6);
 });
 
 test('prior HTML and private resources remain exact beyond the precise reviewed Portuguese solution admissions',()=>{
