@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "jaborrow20261105",
+  "/scripts/analytics.js": "jaroommate20261105",
   "/scripts/sales.js": "ja20261031",
   "/scripts/anniversary-announcement.js": "ja20261031",
   "/scripts/app-language-support.js": "ja20261031",
@@ -374,6 +374,21 @@ export const japanesePages = [
     "useWhen": "友人にお金を借りる前の相談と、その後の返済の確認に。",
     "primaryCta": "8つの例文を見る",
     "nextStep": "貸し借りと返済計画を記録する"
+  }
+}
+,{
+  "en": "/tools/roommate-expense-tracker-template/",
+  "ja": "/ja/tools/roommate-expense-tracker-template/",
+  "title": "ルームシェアの家計・精算表",
+  "updated": "2026-11-05",
+  "complete": true,
+  "discoveryDescription": "ルームシェアの家賃、光熱費、食費と精算をまとめて記録。2〜6人で使える日本語の無料Excel・Googleスプレッドシートテンプレート。均等割りにも、決めた負担額にも対応。",
+  "registry": {
+    "primaryAudience": "ルームシェアの共通の支出と精算を、ひとつの表で確認したい方。",
+    "problemSolved": "支出とメンバー間の精算を分け、誰がいくら受け取る・支払うかを確認できます。",
+    "useWhen": "日々の記録、期間の終わりの確認、残高を次の期間へ引き継ぐときに。",
+    "primaryCta": "Excelテンプレートをダウンロード",
+    "nextStep": "You Owe Meで相手ごとの残額を記録する"
   }
 }
 ];

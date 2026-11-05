@@ -1,0 +1,24 @@
+/* Retain the reviewed template components, with Japanese reading typography. */
+.roommate-template-page.site-lang-ja {
+  font-family: -apple-system, BlinkMacSystemFont, "Hiragino Kaku Gothic ProN", "Yu Gothic", Meiryo, sans-serif;
+  line-break: strict;
+  overflow-wrap: anywhere;
+}
+.roommate-template-page.site-lang-ja h1,
+.roommate-template-page.site-lang-ja h2,
+.roommate-template-page.site-lang-ja h3,
+.roommate-template-page.site-lang-ja button,
+.roommate-template-page.site-lang-ja .lt-primaryCta,
+.roommate-template-page.site-lang-ja .roommate-template-secondaryCta { font-family: inherit; text-transform: none; letter-spacing: 0; }
+.roommate-template-page.site-lang-ja .roommate-template-copy-button[hidden] { display: none !important; }
+.roommate-template-page.site-lang-ja .roommate-template-amount,
+.roommate-template-page.site-lang-ja .roommate-template-format { white-space: nowrap; overflow-wrap: normal; }
+.roommate-template-page.site-lang-ja h1 { font-size: clamp(2rem, 4.5vw, 3.5rem); line-height: 1.3; }
+.roommate-template-page.site-lang-ja p { line-height: 1.9; }
+.roommate-template-page.site-lang-ja [id] { scroll-margin-top: 5rem; }
+.roommate-template-page.site-lang-ja .roommate-template-message-card blockquote { border-left: 4px solid #afe67e; border-right: 0; }
+.roommate-template-page.site-lang-ja .roommate-template-secondaryCta,
+.roommate-template-page.site-lang-ja .lt-primaryCta { white-space: normal; line-height: 1.5; text-align: center; }
+.roommate-template-page.site-lang-ja .lt-eyebrow,
+.roommate-template-page.site-lang-ja .lt-sectionEyebrow { text-transform: none; letter-spacing: 0.04em; }
+.roommate-template-page.site-lang-ja .roommate-template-secondary-note { margin: 0.75rem 0; font-size: 0.95rem; }

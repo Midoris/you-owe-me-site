@@ -1,7 +1,19 @@
 import fs from "node:fs";
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+export function normalizeReviewedJapaneseRoommateIntegration(html) {
+  const route = '/ja/tools/roommate-expense-tracker-template/';
+  html = html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const dir of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="ja"'+dir+' hreflang="ja">日本語</a>', '');
+  html = html.replace('\n              <a href="'+route+'">ルームシェアの家計・精算表</a>', '');
+  html = html.replace("<p>月をまたいで共通の支出と精算を残したい場合は、<a href=\"/ja/tools/roommate-expense-tracker-template/\">ルームシェアの家計・精算表</a>を使えます。日本語のExcel・Googleスプレッドシートテンプレートと、記録用CSVを用意しています。</p>\n              ", '');
+  html = html.replace("\n            <p>一緒に暮らす人との支出には、<a href=\"/ja/tools/roommate-expense-tracker-template/\">ルームシェアの家計・精算表</a>も使えます。元の支出と、あとから精算した分を分けて残せます。</p>", '');
+  html = html.replace("\n                <article class=\"lt-toolCard\">\n                  <span class=\"lt-statusChip\" lang=\"ja\">日本語</span>\n                  <h3><a href=\"/ja/tools/roommate-expense-tracker-template/\" hreflang=\"ja\">Roommate expense tracker template in Japanese</a></h3>\n                  <p>Japanese Excel, Google Sheets and CSV resources for agreed shared costs and repayments.</p>\n                </article>", '');
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=jaroommate20261105(?=")/g, '$1?v=jaborrow20261105');
+}
+
 export function normalizeReviewedJapaneseBorrowIntegration(html) {
+  html = normalizeReviewedJapaneseRoommateIntegration(html);
   const route='/ja/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/';
   html=html.replace('    <link rel="alternate" hreflang="ja" href="https://you-owe-me.com'+route+'" />\n','');
   for(const dir of['',' dir="ltr"'])html=html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="ja"'+dir+' hreflang="ja">日本語</a>','');
