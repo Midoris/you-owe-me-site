@@ -173,7 +173,7 @@ test("analytics preserves English metadata and maps only completed localized rou
   const baseline = execFileSync("git", ["show", "bfd69d7:scripts/analytics.js"], { encoding: "utf8" });
   const metadata = source.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0];
   assert.equal(metadata.replace("  \"/blog/how-to-import-loan-history/\": { page_type: \"guide\", cluster: \"money_owed_followups\", app_store_cpp: \"default\" },\n", "").replace("  \"/tools/roommate-move-in-checklist/\": { page_type: \"tool\", cluster: \"roommates_household_costs\", app_store_cpp: \"roommates_household_costs\" },\n", "").replace("  \"/tools/tutor-payment-tracker-template/\": { page_type: \"tool\", cluster: \"client_payment_records\", app_store_cpp: \"client_payment_records\" },\n", ""), baseline.match(/const PAGE_METADATA = \{[\s\S]*?\n\};/)[0]);
-  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=ptloan20261105"/);
+  assert.match(source, /import \{ localizedSourceRoute \} from "\.\.\/content\/site-locales\.mjs\?v=ptsplit20261105"/);
   const functions = source.match(/function normalizePath\(path\) \{[\s\S]*?\nfunction sanitizeText/)[0].replace(/\nfunction sanitizeText$/, "");
   const context = { window: { location: { pathname: "/" } }, localizedSourceRoute: route => localizedSourceRoute(route, threeLocales()) };
   vm.createContext(context);

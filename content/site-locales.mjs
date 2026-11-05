@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "ptloan20261105",
+  "/scripts/analytics.js": "ptsplit20261105",
   "/scripts/sales.js": "pt20261105",
   "/scripts/anniversary-announcement.js": "pt20261105",
   "/scripts/app-language-support.js": "pt20261105",
@@ -14,9 +14,9 @@ export const sharedAssetVersions = {
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "ptrecord20261105",
-  "/scripts/split-expense-locale.js": "jasplit20261105",
-  "/scripts/split-expense-calculator.js": "jasplit20261105",
-  "/scripts/tool-transfer.js": "jasplit20261105",
+  "/scripts/split-expense-locale.js": "ptsplit20261105",
+  "/scripts/split-expense-calculator.js": "ptsplit20261105",
+  "/scripts/tool-transfer.js": "ptsplit20261105",
 };
 export const spanishVersionedAssets = [
   "/scripts/analytics.js", "/scripts/sales.js", "/scripts/anniversary-announcement.js",
@@ -477,6 +477,21 @@ export const portuguesePages = [
       "nextStep": "Cadastre um empréstimo e registre cada pagamento que realmente acontecer."
     }
   }
+, {
+  "en": "/tools/split-expense-calculator/",
+  "pt": "/pt/ferramentas/calculadora-dividir-despesas/",
+  "title": "Calculadora para dividir despesas",
+  "updated": "2026-11-05",
+  "complete": true,
+  "discoveryDescription": "Some o que cada pessoa pagou e veja quem precisa pagar a quem. Divida jantar, viagem, mercado e outras despesas, escolhendo os participantes de cada gasto.",
+  "registry": {
+    "primaryAudience": "Quem divide despesas com amigos ou outras pessoas e quer acertar os valores que cada um pagou.",
+    "problemSolved": "Compara o que cada pessoa pagou com sua parte nas despesas e calcula os valores para acertar.",
+    "useWhen": "Quando uma ou várias despesas precisam ser divididas igualmente entre os participantes de cada gasto.",
+    "primaryCta": "Calcular a divisão",
+    "nextStep": "Compartilhe o resultado e acompanhe os pagamentos que ficarem para depois."
+  }
+}
 ];
 export const portugueseShared = Object.freeze({
   "languageLabel": "Idioma da página",

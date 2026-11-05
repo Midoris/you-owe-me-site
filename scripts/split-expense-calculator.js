@@ -8,8 +8,9 @@
   const isArabic = locale === "ar";
   const isFrench = locale === "fr";
   const isJapanese = locale === "ja";
-  const defaultCurrency = isJapanese ? "円" : "$";
-  const localizedNumberInput = isArabic ? window.UomiArabicNumberInput : isFrench ? window.UomiFrenchNumberInput : null;
+  const isPortuguese = locale === "pt-BR";
+  const defaultCurrency = isJapanese ? "円" : isPortuguese ? "R$" : "$";
+  const localizedNumberInput = isArabic ? window.UomiArabicNumberInput : isFrench ? window.UomiFrenchNumberInput : isPortuguese ? window.UomiPortugueseNumberInput : null;
   const localizedStrings = window.UomiSplitExpenseLocales?.[locale];
   const CANONICAL_CALCULATOR_URL = localizedStrings
     ? document.querySelector('link[rel="canonical"]').getAttribute("href")
@@ -29,6 +30,21 @@
     return translate(message, isolated);
   }
   function setTranslatedContent(parent, message, values = {}) {
+    if (isPortuguese && values.amount != null) {
+      clearNode(parent);
+      const template = localizedStrings?.[message] || message;
+      for (const token of template.split(/(\{\w+\})/g)) {
+        const key = token.match(/^\{(\w+)\}$/)?.[1];
+        if (key === "amount") {
+          const amount = document.createElement("span");
+          amount.className = "money-token";
+          amount.style.whiteSpace = "nowrap";
+          amount.textContent = values.amount;
+          parent.appendChild(amount);
+        } else appendText(parent, key ? values[key] ?? "" : token);
+      }
+      return;
+    }
     if (!isArabic) { parent.textContent = translate(message, values); return; }
     clearNode(parent);
     const template = localizedStrings?.[message] || message;
@@ -44,7 +60,7 @@
     }
   }
   function transferState(source = state) {
-    if (!isArabic && !isFrench) return source;
+    if (!isArabic && !isFrench && !isPortuguese) return source;
     return { ...source, expenses: source.expenses.map(expense => ({ ...expense,
       amount: localizedNumberInput?.normalizeAmount(expense.amount) ?? "NaN",
     })) };
@@ -146,8 +162,8 @@
   }
 
   function parseAmount(value) {
-    if (typeof value === "number" && !isFrench) return value;
-    const normalized = isArabic || isFrench
+    if (typeof value === "number" && !isFrench && !isPortuguese) return value;
+    const normalized = isArabic || isFrench || isPortuguese
       ? localizedNumberInput?.normalizeAmount(value) ?? ""
       : String(value || "").trim().replace(/,/g, "");
     const amount = Number(normalized);
@@ -161,7 +177,7 @@
 
   function formatNumber(value) {
     const rounded = roundMoney(value);
-    if (localizedStrings) return new Intl.NumberFormat(isArabic ? "ar-u-nu-latn" : locale, { maximumFractionDigits: 2 }).format(rounded);
+    if (localizedStrings) return new Intl.NumberFormat(isArabic ? "ar-u-nu-latn" : locale, { maximumFractionDigits: 2, ...(isPortuguese ? { minimumFractionDigits: 2 } : {}) }).format(rounded);
     if (Number.isInteger(rounded)) return String(rounded);
     return rounded.toFixed(2).replace(/\.?0+$/, "");
   }
@@ -287,11 +303,11 @@
         renderResults(calculate());
       });
 
-      const amount = makeInput(`amount-${expense.id}`, expense.amount, isArabic || isFrench ? "text" : "number");
+      const amount = makeInput(`amount-${expense.id}`, expense.amount, isArabic || isFrench || isPortuguese ? "text" : "number");
       amount.min = "0";
       amount.step = "0.01";
       amount.inputMode = "decimal";
-      amount.setAttribute("aria-describedby", `${isFrench ? "fr-number-help " : ""}expense-validation-${expense.id}`);
+      amount.setAttribute("aria-describedby", `${isFrench ? "fr-number-help " : isPortuguese ? "pt-number-help " : ""}expense-validation-${expense.id}`);
       if (isArabic) amount.setAttribute("dir", "ltr");
       amount.addEventListener("input", () => {
         expense.amount = amount.value;
@@ -382,8 +398,8 @@
     if (!validation) return;
     const amount = parseAmount(expense.amount);
     let message = "";
-    const hasInput = String(isFrench ? expense.amount ?? "" : expense.amount || "").trim();
-    if ((isArabic || isFrench) && hasInput && localizedNumberInput?.normalizeAmount(expense.amount) == null) {
+    const hasInput = String(isFrench || isPortuguese ? expense.amount ?? "" : expense.amount || "").trim();
+    if ((isArabic || isFrench || isPortuguese) && hasInput && localizedNumberInput?.normalizeAmount(expense.amount) == null) {
       message = localizedStrings["Invalid amount format"];
     } else if (hasInput && amount <= 0) {
       message = translate("Enter an amount greater than zero.");
@@ -393,7 +409,7 @@
       message = translate("Select at least one person to share this expense.");
     }
     validation.textContent = message;
-    if (isArabic || isFrench) card.querySelector(`[id="amount-${expense.id}"]`).setAttribute("aria-invalid", message ? "true" : "false");
+    if (isArabic || isFrench || isPortuguese) card.querySelector(`[id="amount-${expense.id}"]`).setAttribute("aria-invalid", message ? "true" : "false");
   }
 
   function calculate() {
@@ -575,7 +591,7 @@
           JSON.stringify(window.UomiToolTransfer.prepare(transferState())) !== fingerprint) throw new Error("changed");
       // Preserve input only following explicit consent. Cleared when restored on Back.
       sessionStorage.setItem("uomi-exp003-return", JSON.stringify({locale: locale || "en", state, transferAttempt}));
-      location.assign(window.UomiToolTransfer.config.continuation + "?ref=" + transferAttempt.reference + (localizedStrings ? "#" + locale : ""));
+      location.assign(window.UomiToolTransfer.config.continuation + "?ref=" + transferAttempt.reference + (localizedStrings ? "#" + (isPortuguese ? "pt" : locale) : ""));
     } catch (_) {
       status.textContent = translate("Couldn’t prepare the transfer. Your split is still here. Try again, or copy your result.");
     } finally { transferBusy = false; button.disabled = false; }
@@ -716,7 +732,7 @@
     hasExplicitInteraction = true;
     state.currency = defaultCurrency;
     state.nextPersonNumber = 1;
-    state.people = (isJapanese ? ["悠太", "美咲", "葵"] : ["Alex", "Mia", "Sam"]).map(name => createPerson(name));
+    state.people = (isJapanese ? ["悠太", "美咲", "葵"] : isPortuguese ? ["Lucas", "Marina", "Bruno"] : ["Alex", "Mia", "Sam"]).map(name => createPerson(name));
     const alex = state.people[0].id;
     const mia = state.people[1].id;
     const sam = state.people[2].id;
@@ -936,7 +952,7 @@
     els.shareSummary = document.querySelector('[data-action="share-summary"]');
 
     setInitialState();
-    if (isJapanese) { useExample(); hasExplicitInteraction = false; }
+    if (isJapanese || isPortuguese) { useExample(); hasExplicitInteraction = false; }
     try {
       const saved = sessionStorage.getItem("uomi-exp003-return");
       sessionStorage.removeItem("uomi-exp003-return");

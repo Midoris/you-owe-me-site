@@ -2,7 +2,34 @@ import fs from "node:fs";
 const portugueseCacheUpdates = JSON.parse(fs.readFileSync(new URL("../fixtures/portuguese-home-cache-updates.json", import.meta.url), "utf8"));
 const statsApprovedCopy = JSON.parse(fs.readFileSync(new URL("../fixtures/stats-approved-copy.json", import.meta.url), "utf8"));
 
+const portugueseSplitAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/portuguese-split-reviewed-admissions.json", import.meta.url), "utf8"));
+// Only exact reviewed PT branch additions/selector changes are reversible here.
+// No arbitrary attributes, prior-language literals or calculation math is erased.
+export function normalizeReviewedPortugueseSplitSource(source, file) {
+  if (!portugueseSplitAdmissions[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  if (bytes) source = source.toString("utf8");
+  for (const [current, previous] of portugueseSplitAdmissions[file]) source = source.replace(current, previous);
+  return bytes ? Buffer.from(source) : source;
+}
+export function normalizeReviewedPortugueseSplitIntegration(html) {
+  html = normalizeReviewedPortugueseSplitSource(html, 'private-continuation/split/index.html');
+  const route = '/pt/ferramentas/calculadora-dividir-despesas/';
+  html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Calculadora para dividir despesas</a>', '');
+  html = html.replace("<a href=\"/pt/ferramentas/calculadora-dividir-despesas/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"pt-link-label\">Dividir uma despesa</span></a>", "<a href=\"/tools/split-expense-calculator/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"pt-link-label\">Dividir uma despesa <span class=\"site-locale-fallback\">(em inglês)</span></span></a>");
+  html = html.replace("<a href=\"/pt/ferramentas/calculadora-dividir-despesas/\" class=\"lt-cardCta\"><span class=\"pt-link-label\">Dividir uma despesa</span></a>", "<a href=\"/tools/split-expense-calculator/\" class=\"lt-cardCta\"><span class=\"pt-link-label\">Dividir uma despesa <span class=\"site-locale-fallback\">(em inglês)</span></span></a>");
+  html = html.replace("<a href=\"/pt/ferramentas/calculadora-dividir-despesas/\" class=\"lt-cardCta\"><span class=\"pt-link-label\">Dividir a despesa</span></a>", "<a href=\"/tools/split-expense-calculator/\" class=\"lt-cardCta\"><span class=\"pt-link-label\">Dividir a despesa <span class=\"site-locale-fallback\">(em inglês)</span></span></a>");
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=ptsplit20261105(?=")/g, '$1?v=ptloan20261105');
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/split-expense-locale\.js)\?v=ptsplit20261105(?=")/g, '$1?v=jasplit20261105');
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/split-expense-calculator\.js)\?v=ptsplit20261105(?=")/g, '$1?v=jasplit20261105');
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/tool-transfer\.js)\?v=ptsplit20261105(?=")/g, '$1?v=jasplit20261105');
+  return html;
+}
+
 export function normalizeReviewedPortugueseLoanIntegration(html) {
+  html = normalizeReviewedPortugueseSplitIntegration(html);
   const route = '/pt/solucoes/controle-de-emprestimos-entre-pessoas/';
   html = html.replace('    <link rel="alternate" hreflang="pt" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pt"'+direction+' hreflang="pt">Português</a>', '');

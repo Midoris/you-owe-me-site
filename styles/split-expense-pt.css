@@ -1,0 +1,11 @@
+/* Portuguese retains the established English calculator typography and layout. */
+html[lang="pt-BR"] .calculator-page .site-locale-fallback { display: inline; white-space: nowrap; margin: 0; font: inherit; color: inherit; text-transform: none; letter-spacing: normal; }
+html[lang="pt-BR"] .calculator-page .pt-link-label { font: inherit; line-height: inherit; color: inherit; }
+html[lang="pt-BR"] .calculator-page :is(.pt-money-token,.money-token) { white-space: nowrap; }
+/* A settlement is one sentence; keep its atomic amount in the same text flow. */
+html[lang="pt-BR"] .calculator-page .settlement-item { display: block; overflow-wrap: anywhere; }
+html[lang="pt-BR"] .calculator-page .result-item > span { min-width: 0; overflow-wrap: anywhere; }
+html[lang="pt-BR"] .calculator-page .result-item strong { white-space: nowrap; flex-shrink: 0; }
+html[lang="pt-BR"] .calculator-page :is(.small-action,.secondary-action,.split-result-action) { box-sizing: border-box; max-width: 100%; white-space: normal; height: auto; min-height: 2.75rem; line-height: 1.5; padding-block: 0.65rem; }
+html[lang="pt-BR"] .calculator-page .lt-toolCard .lt-cardCta { box-sizing: border-box; max-width: 100%; }
+html[lang="pt-BR"] .calculator-page .example-table caption { text-align: left; font-size: 0.85rem; margin-bottom: 0.7rem; }

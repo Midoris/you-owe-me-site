@@ -12,7 +12,7 @@ test('private continuation allows only its local locale selector with no persona
   const html=fs.readFileSync('private-continuation/split/index.html','utf8');
   assert.ok(!/analytics|og:|app-argument/i.test(html));
   assert.equal((html.match(/<script\b/g)||[]).length,1);
-  assert.deepEqual([...html.matchAll(/<script\b[^>]*src="([^"]+)"[^>]*>([\s\S]*?)<\/script>/g)].map(match=>[match[1],match[2]]), [['locale.js?v=jasplit20261105','']]);
+  assert.deepEqual([...html.matchAll(/<script\b[^>]*src="([^"]+)"[^>]*>([\s\S]*?)<\/script>/g)].map(match=>[match[1],match[2]]), [['locale.js?v=ptsplit20261105','']]);
   assert.ok(html.includes('no-referrer') && html.includes('noindex,nofollow,noarchive'));
   const cfg=JSON.parse(fs.readFileSync('firebase.exp003.json'));
   for(const [key,value] of [['Cache-Control','no-store'],['Referrer-Policy','no-referrer'],['X-Robots-Tag','noindex, nofollow, noarchive']]) assert.ok(cfg.hosting.headers[0].headers.some(h=>h.key===key&&h.value===value));
@@ -64,18 +64,19 @@ test('private fragment switching changes only language, title and visible sectio
   Object.defineProperty(location, 'search', {get() { throw new Error('must not read reference'); }});
   const context = {document, window: {location, addEventListener(type, fn) {listeners[type] = fn; }}};
   vm.runInNewContext(selector, context);
-  for (const [fragment, locale, ariaLabel] of [['#de', 'de', 'Sprache der Seite'], ['#es', 'es', 'Idioma de la página'], ['#en', 'en', 'Page language'], ['#unrecognized', 'en', 'Page language'], ['', 'en', 'Page language']]) {
+  for (const [fragment, locale, ariaLabel] of [['#pt', 'pt-BR', 'Idioma da página'], ['#de', 'de', 'Sprache der Seite'], ['#es', 'es', 'Idioma de la página'], ['#en', 'en', 'Page language'], ['#unrecognized', 'en', 'Page language'], ['', 'en', 'Page language']]) {
     location.hash = fragment; listeners.hashchange();
     assert.equal(document.documentElement.lang, locale);
     assert.equal(document.querySelector('[data-language-navigation]').getAttribute('aria-label'), ariaLabel);
-    assert.equal(document.title, document.querySelector(`[data-locale="${locale}"]`).getAttribute('data-title'));
-    for (const section of document.querySelectorAll('[data-locale]')) assert.equal(section.hidden, section.getAttribute('data-locale') !== locale);
+    const localeKey = locale === "pt-BR" ? "pt" : locale;
+    assert.equal(document.title, document.querySelector(`[data-locale="${localeKey}"]`).getAttribute('data-title'));
+    for (const section of document.querySelectorAll('[data-locale]')) assert.equal(section.hidden, section.getAttribute('data-locale') !== localeKey);
     for (const link of document.querySelector('[data-language-navigation]').querySelectorAll('a')) {
       assert.equal(link.getAttribute('aria-current'), link.getAttribute('lang') === locale ? 'page' : null);
       const destination = new URL(link.getAttribute('href'), 'https://continue.you-owe-me.com/split/?ref=' + 'a'.repeat(64) + fragment);
       assert.deepEqual([...destination.searchParams.keys()], ['ref']);
       assert.equal(destination.searchParams.get('ref'), 'a'.repeat(64));
-      assert.equal(destination.hash, '#' + link.getAttribute('lang'));
+      assert.equal(destination.hash, '#' + (link.getAttribute('lang') === 'pt-BR' ? 'pt' : link.getAttribute('lang')));
     }
   }
 });

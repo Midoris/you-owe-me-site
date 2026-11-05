@@ -2,8 +2,8 @@
 (function () {
   function renderLocale() {
     var fragment = window.location.hash;
-    var locale = fragment === "#ja" ? "ja" : fragment === "#fr" ? "fr" : fragment === "#ar" ? "ar" : fragment === "#es" ? "es" : fragment === "#de" ? "de" : "en";
-    document.documentElement.lang = locale;
+    var locale = fragment === "#pt" ? "pt" : fragment === "#ja" ? "ja" : fragment === "#fr" ? "fr" : fragment === "#ar" ? "ar" : fragment === "#es" ? "es" : fragment === "#de" ? "de" : "en";
+    document.documentElement.lang = locale === "pt" ? "pt-BR" : locale;
     document.documentElement.dir = locale === "ar" ? "rtl" : "ltr";
     document.querySelectorAll("[data-locale]").forEach(function (section) {
       section.hidden = section.getAttribute("data-locale") !== locale;
@@ -11,9 +11,9 @@
     });
     var navigation = document.querySelector("[data-language-navigation]");
     if (navigation) {
-      navigation.setAttribute("aria-label", locale === "ja" ? "ページの言語" : locale === "fr" ? "Langue de la page" : locale === "ar" ? "لغة الصفحة" : locale === "es" ? "Idioma de la página" : locale === "de" ? "Sprache der Seite" : "Page language");
+      navigation.setAttribute("aria-label", locale === "pt" ? "Idioma da página" : locale === "ja" ? "ページの言語" : locale === "fr" ? "Langue de la page" : locale === "ar" ? "لغة الصفحة" : locale === "es" ? "Idioma de la página" : locale === "de" ? "Sprache der Seite" : "Page language");
       navigation.querySelectorAll("a").forEach(function (link) {
-        if (link.getAttribute("lang") === locale) link.setAttribute("aria-current", "page");
+        if (link.getAttribute("lang") === (locale === "pt" ? "pt-BR" : locale)) link.setAttribute("aria-current", "page");
         else link.removeAttribute("aria-current");
       });
     }

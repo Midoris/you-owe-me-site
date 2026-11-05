@@ -1,3 +1,4 @@
+import {normalizeReviewedPortugueseSplitSource} from '../tests/helpers/reviewed-language-copy.mjs';
 import assert from 'node:assert/strict';
 import test from 'node:test';
 import fs from 'node:fs';
@@ -33,7 +34,7 @@ test('Japanese borrowing copies all nine exact approved payloads and only existi
 
 test('Japanese borrowing retains proven Japanese copy logic with only scoped UI and source-metadata substitutions',()=>{
  const normalized=controller.replace('Japanese borrowing guide','Japanese repayment guide').replaceAll('borrow-ja','repayment-ja').replace('ja_borrow_messages','ja_repayment_messages').replace('約束の記録をコピー','記録テンプレートをコピー').replace('category: button.dataset.category,','category: "repayment",');assert.equal(normalized,execFileSync('git',['show','2b88200:scripts/repayment-ja.js'],{encoding:'utf8'}));
- for(const f of ['scripts/repayment-ja.js','scripts/borrow-fr.js','scripts/borrow-de.js','scripts/borrow-ar.js','scripts/split-expense-calculator.js','scripts/tool-transfer.js',...execFileSync('git',['ls-tree','-r','--name-only','2b88200','private-continuation'],{encoding:'utf8'}).trim().split('\n')])assert.deepEqual(fs.readFileSync(new URL('../'+f,import.meta.url)),execFileSync('git',['show','2b88200:'+f]),f);
+ for(const f of ['scripts/repayment-ja.js','scripts/borrow-fr.js','scripts/borrow-de.js','scripts/borrow-ar.js','scripts/split-expense-calculator.js','scripts/tool-transfer.js',...execFileSync('git',['ls-tree','-r','--name-only','2b88200','private-continuation'],{encoding:'utf8'}).trim().split('\n')])assert.deepEqual(Buffer.from(normalizeReviewedPortugueseSplitSource(fs.readFileSync(new URL('../'+f,import.meta.url)),f)),execFileSync('git',['show','2b88200:'+f]),f);
 });
 
 test('Japanese borrowing has its full eight-section hierarchy, nine-line record, six matching FAQs and exact borrower-side arithmetic',()=>{
@@ -46,5 +47,5 @@ test('Japanese borrowing has its full eight-section hierarchy, nine-line record,
 
 test('Japanese borrowing integration admits only exact approved prior HTML and cache changes',()=>{
  const files=execFileSync('git',['diff','--name-only','--diff-filter=M','2b88200','--','*.html'],{encoding:'utf8'}).trim().split('\n').filter(Boolean);assert.ok(files.length>100);for(const f of files)assert.equal(normalizeReviewedJapaneseBorrowIntegration(read(f)),execFileSync('git',['show','2b88200:'+f],{encoding:'utf8'}),f);
- const original=execFileSync('git',['show','2b88200:ja/solutions/app-to-track-money-owed/index.html'],{encoding:'utf8'});assert.ok(original.includes('/blog/how-to-handle-a-friend-who-keeps-borrowing-money/'));assert.ok(read('ja/solutions/app-to-track-money-owed/index.html').includes('/blog/how-to-handle-a-friend-who-keeps-borrowing-money/'));assert.equal(contentRegistry.length,134);assert.equal(siteLocales.find(l=>l.code==='ja').pages.length,8);assert.equal(localizedSourceRoute(route),route.replace('/ja',''));assert.equal(renderLocaleHtml(page,route.replace('/ja',''),'ja'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
+ const original=execFileSync('git',['show','2b88200:ja/solutions/app-to-track-money-owed/index.html'],{encoding:'utf8'});assert.ok(original.includes('/blog/how-to-handle-a-friend-who-keeps-borrowing-money/'));assert.ok(read('ja/solutions/app-to-track-money-owed/index.html').includes('/blog/how-to-handle-a-friend-who-keeps-borrowing-money/'));assert.equal(contentRegistry.length,135);assert.equal(siteLocales.find(l=>l.code==='ja').pages.length,8);assert.equal(localizedSourceRoute(route),route.replace('/ja',''));assert.equal(renderLocaleHtml(page,route.replace('/ja',''),'ja'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
 });
