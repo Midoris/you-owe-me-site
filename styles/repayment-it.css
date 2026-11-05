@@ -1,0 +1,250 @@
+body.repayment-it-page { background: #f4f6f8; }
+body.repayment-it-page #header { display: none !important; }
+body.repayment-it-page #wrapper > .bg { display: none !important; }
+body.repayment-it-page #wrapper.fade-in:before { background: #f4f6f8; }
+body.repayment-it-page #nav,
+body.repayment-it-page #main,
+body.repayment-it-page #copyright {
+  width: 100% !important;
+  max-width: none !important;
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+body.repayment-it-page #main {
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.16), transparent 30%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f6f8 76%);
+  padding: clamp(1rem, 2.25vw, 1.85rem) clamp(1rem, 3.5vw, 3rem) 3rem;
+}
+body.repayment-it-page #main > article.post.featured {
+  width: min(100%, 1220px);
+  max-width: none;
+  margin: 0 auto;
+  padding: 0;
+  border-top: 0;
+  text-align: left;
+}
+body.repayment-it-page #main h1,
+body.repayment-it-page #main h2,
+body.repayment-it-page #main h3 {
+  color: #18212b;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1.2;
+  text-transform: none;
+  text-wrap: balance;
+}
+body.repayment-it-page #main h1 { font-size: clamp(2.05rem, 3.7vw, 3.35rem); line-height: 1.05; margin: 0 0 1.1rem; }
+body.repayment-it-page #main h2 { font-size: clamp(1.55rem, 2.5vw, 2.05rem); margin: 0 0 1.1rem; }
+body.repayment-it-page #main h3 { font-size: 1.3rem; margin: 0 0 0.8rem; }
+body.repayment-it-page #main p,
+body.repayment-it-page #main li,
+body.repayment-it-page #main blockquote,
+body.repayment-it-page #main td,
+body.repayment-it-page #main th {
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 1rem;
+  line-height: 1.75;
+  text-align: left;
+}
+body.repayment-it-page #main p { margin: 0 0 1.1rem; }
+body.repayment-it-page #main a { border-bottom: 1px solid rgba(33, 41, 49, 0.35); }
+body.repayment-it-page :is(a, button, summary, [tabindex]):focus-visible { outline: 3px solid rgba(53, 84, 40, 0.32); outline-offset: 4px; }
+body.repayment-it-page .repayment-it-breadcrumb { display: flex; flex-wrap: wrap; gap: 0.5rem; font-size: 0.9rem; line-height: 1.5; margin: 0 0 1.1rem; }
+body.repayment-it-page .repayment-it-hero {
+  display: grid;
+  grid-template-columns: minmax(0, 1.15fr) minmax(0, 0.85fr);
+  align-items: center;
+  gap: clamp(1.5rem, 3vw, 3rem);
+  padding: clamp(1.4rem, 3.3vw, 3rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+body.repayment-it-page #main .repayment-it-eyebrow { color: rgba(33, 41, 49, 0.88); text-transform: uppercase; font-family: 'Source Sans Pro', sans-serif; font-weight: 700; letter-spacing: 0.08em; font-size: 0.82rem; line-height: 1.5; }
+body.repayment-it-page .repayment-it-hero-copy { min-width: 0; }
+body.repayment-it-page .repayment-it-actions { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.3rem; margin-top: 1.5rem; }
+body.repayment-it-page #main .repayment-it-primary,
+body.repayment-it-page #main .copy-button {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 46px;
+  height: auto;
+  padding: 0.7rem 1.15rem;
+  border: 0;
+  border-radius: 12px;
+  background: #afe67e;
+  color: #18212b !important;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  letter-spacing: 0;
+  line-height: 1.4;
+  text-transform: none;
+  white-space: normal;
+  box-shadow: none;
+  cursor: pointer;
+}
+body.repayment-it-page #main .repayment-it-primary:hover,
+body.repayment-it-page #main .copy-button:hover { background: #bcf18c; }
+body.repayment-it-page .repayment-it-secondary { font-family: 'Source Sans Pro', sans-serif; font-weight: 900; }
+body.repayment-it-page .repayment-it-visual {
+  padding: clamp(1.25rem, 2.1vw, 2rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 22px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+}
+body.repayment-it-page #main .repayment-it-visual h2 { font-size: 1.3rem; }
+body.repayment-it-page #main blockquote { margin: 0 0 1.2rem; padding: 0 0 0 1rem; border-left: 3px solid #afe67e; font-style: normal; overflow-wrap: anywhere; }
+body.repayment-it-page .repayment-it-annotations { display: flex; flex-wrap: wrap; list-style: none; gap: 0.5rem; margin: 0 0 1rem; padding: 0; }
+body.repayment-it-page #main .repayment-it-annotations li { padding: 0.35rem 0.65rem; border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 100px; background: #fff; font-family: 'Source Sans Pro', sans-serif; font-size: 0.86rem; font-weight: 700; line-height: 1.4; }
+body.repayment-it-page #main .repayment-it-note { font-size: 0.85rem; margin: 0; }
+body.repayment-it-page #main .repayment-it-byline { font-size: 0.86rem; margin: 1.25rem 0 0; }
+body.repayment-it-page .repayment-it-section { margin-top: clamp(2.8rem, 5vw, 4rem); scroll-margin-top: 1rem; }
+body.repayment-it-page .repayment-it-message-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+body.repayment-it-page .repayment-it-card {
+  min-width: 0;
+  padding: clamp(1.25rem, 2vw, 1.75rem);
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+body.repayment-it-page .template-card { display: flex; flex-direction: column; align-items: flex-start; }
+body.repayment-it-page #main .repayment-it-guidance { font-size: 0.9rem; }
+body.repayment-it-page .template-card__message { user-select: text; }
+body.repayment-it-page .template-card .copy-button { margin-top: auto; }
+body.repayment-it-page #main .repayment-it-copy-status { min-height: 1.5rem; margin: 0.65rem 0 0; font-size: 0.85rem; line-height: 1.5; }
+body.repayment-it-page .repayment-it-checklist { list-style-position: outside; padding-left: 1.5rem; margin: 1.5rem 0; }
+body.repayment-it-page .repayment-it-checklist li { padding-left: 0.4rem; margin: 0 0 1rem; }
+body.repayment-it-page .repayment-it-record { margin: 1.5rem 0; }
+body.repayment-it-page .repayment-it-record pre { font: inherit; color: #212931; font-size: 0.95rem; line-height: 1.85; white-space: pre-wrap; overflow-wrap: anywhere; margin: 0 0 1.2rem; padding: 0; background: transparent; }
+body.repayment-it-page .repayment-it-table-wrap { overflow-x: auto; border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 20px; background: #fff; margin: 1.5rem 0; }
+body.repayment-it-page table { width: 100%; margin: 0; border-collapse: collapse; table-layout: fixed; }
+body.repayment-it-page #main th,
+body.repayment-it-page #main td { padding: 1rem; vertical-align: top; overflow-wrap: anywhere; }
+body.repayment-it-page #main th { background: rgba(175, 230, 126, 0.22); font-weight: 700; }
+body.repayment-it-page #main tr { border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
+body.repayment-it-page #main tbody tr:nth-child(2n + 1) { background: rgba(244, 246, 248, 0.65); }
+body.repayment-it-page .repayment-it-feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 1.25rem; margin: 1.5rem 0; }
+body.repayment-it-page #main .repayment-it-feature-grid p { margin: 0; }
+body.repayment-it-page #main a.repayment-it-related { border: 1px solid rgba(15, 23, 42, 0.08); }
+body.repayment-it-page a.repayment-it-related:hover { background: #f5fbed; }
+body.repayment-it-page .repayment-it-handoff { margin-top: 2rem; padding: clamp(1.25rem, 2.5vw, 2rem); border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 20px; background: rgba(175, 230, 126, 0.15); }
+body.repayment-it-page #main .repayment-it-store {
+  display: inline-block;
+  width: min(250px, 100%);
+  margin: 0.5rem 0 1rem;
+  border: 0;
+  border-radius: 13px;
+  overflow: hidden;
+  line-height: 0;
+  box-shadow: 0 10px 22px rgba(15, 23, 42, 0.2);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+body.repayment-it-page .repayment-it-store img { display: block; width: 100%; height: auto; }
+body.repayment-it-page .repayment-it-store:hover { transform: translateY(-1px) scale(1.01); box-shadow: 0 14px 28px rgba(15, 23, 42, 0.24); }
+body.repayment-it-page .repayment-it-store:active { transform: translateY(0); }
+body.repayment-it-page #main .iphone-handoff { margin-bottom: 1.4rem; }
+body.repayment-it-page .repayment-it-faq { border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 20px; overflow: hidden; background: #fff; }
+body.repayment-it-page .repayment-it-faq details { padding: 1.2rem 1.5rem; border-bottom: 1px solid rgba(15, 23, 42, 0.08); }
+body.repayment-it-page .repayment-it-faq details:last-child { border: 0; }
+body.repayment-it-page .repayment-it-faq summary { cursor: pointer; font-weight: 700; line-height: 1.65; }
+body.repayment-it-page #main .repayment-it-faq details p { margin: 1rem 0 0; }
+body.repayment-it-page #copyright { padding: 2rem 1rem; background: #f4f6f8; color: rgba(33, 41, 49, 0.88); }
+body.repayment-it-page #copyright a { color: inherit; }
+body.repayment-it-page [hidden] { display: none !important; }
+@media (max-width: 980px) {
+  body.repayment-it-page .repayment-it-hero { grid-template-columns: 1fr; gap: 1.5rem; }
+  body.repayment-it-page .repayment-it-feature-grid { grid-template-columns: 1fr; }
+  body.repayment-it-page .repayment-it-hero-copy { max-width: none; }
+}
+@media (max-width: 600px) {
+  body.repayment-it-page .repayment-it-hero { border-radius: 20px; padding: 1.25rem; }
+  body.repayment-it-page .repayment-it-message-grid { grid-template-columns: 1fr; }
+  body.repayment-it-page #main h1 { font-size: clamp(1.9rem, 7.5vw, 2.6rem); }
+  body.repayment-it-page #main th,
+  body.repayment-it-page #main td { font-size: 0.88rem; padding: 0.7rem; line-height: 1.6; }
+  body.repayment-it-page .repayment-it-table-wrap table { min-width: 36rem; }
+  body.repayment-it-page .repayment-it-faq details { padding: 1rem; }
+}
+
+body.repayment-it-page .repayment-it-check-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 1.25rem; margin-top: 1.5rem; }
+body.repayment-it-page .repayment-it-contents { margin-top: 1.7rem; padding: 1.2rem 1.5rem; border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 20px; background: rgba(255,255,255,0.74); }
+body.repayment-it-page .repayment-it-contents ul { display: flex; flex-wrap: wrap; gap: 0.6rem 1.5rem; list-style: none; padding: 0; margin: 0.6rem 0 0; }
+body.repayment-it-page .repayment-it-contents li { padding: 0; }
+body.repayment-it-page .repayment-it-number { display: block; font-size: 0.9rem; color: rgba(33, 41, 49, 0.88); margin-bottom: 0.5rem; letter-spacing: 0.08em; }
+body.repayment-it-page #main .repayment-it-copy-hint { font-size: 0.85rem; line-height: 1.5; }
+body.repayment-it-page .repayment-it-callout { margin-bottom: 1.5rem; background: rgba(175, 230, 126, 0.15); }
+body.repayment-it-page #main table caption { text-align: left; padding: 1rem; font-weight: 700; color: #212931; }
+body.repayment-it-page .repayment-it-related { display: flex; flex-direction: column; gap: 0.75rem; }
+body.repayment-it-page .repayment-it-related-cta { margin-top: auto; font-family: 'Source Sans Pro', sans-serif; font-weight: 900; text-decoration: underline; }
+@media (max-width: 600px) { body.repayment-it-page .repayment-it-check-grid { grid-template-columns: 1fr; } }
+
+body.repayment-it-page #main .repayment-it-table-hint { display: none; }
+@media (max-width: 600px) { body.repayment-it-page #main .repayment-it-table-hint { display: block; font-size: 0.85rem; line-height: 1.5; margin-bottom: 0.6rem; } }
+
+/* Native guide and situation disclosures keep every destination in static HTML. */
+body.repayment-it-page .site-italian-disclosure,
+body.repayment-it-page .repayment-it-situations {
+  margin: 0 0 1.25rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 16px;
+  background: rgba(255, 255, 255, 0.74);
+}
+body.repayment-it-page .repayment-it-situations { margin: 1.25rem 0 0; }
+body.repayment-it-page .site-italian-disclosure > summary,
+body.repayment-it-page .repayment-it-situations > summary {
+  min-height: 44px;
+  padding: 0.7rem 1rem;
+  color: #18212b;
+  font-family: 'Source Sans Pro', sans-serif;
+  font-size: 1rem;
+  font-weight: 900;
+  line-height: 1.5;
+  cursor: pointer;
+}
+body.repayment-it-page .site-italian-disclosure .site-locale-section { margin: 0; border: 0; background: transparent; }
+body.repayment-it-page .repayment-it-situations ul {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(min(100%, 19rem), 1fr));
+  gap: 0.25rem 1rem;
+  list-style: none;
+  margin: 0;
+  padding: 0 1rem 1rem;
+}
+body.repayment-it-page .repayment-it-situations li { padding: 0; }
+body.repayment-it-page #main .repayment-it-situations a {
+  display: flex;
+  align-items: center;
+  min-height: 44px;
+  padding: 0.5rem 0;
+  border: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.2em;
+}
+body.repayment-it-page .template-card[id] { scroll-margin-top: 1rem; }
+body.repayment-it-page .template-card[id]:focus { outline: 3px solid rgba(53, 84, 40, 0.32); outline-offset: 4px; }
+body.repayment-it-page #main .repayment-it-app-jump { margin: 1.1rem 0 0; }
+@media (max-width: 736px) {
+  body.repayment-it-page .repayment-it-visual { display: none; }
+}
+
+body.repayment-it-page #main .repayment-it-store { width: min(200px, 100%); padding: 0; border-radius: 0; overflow: visible; box-shadow: none; background: transparent; margin: 0.75rem 0 1.25rem; }
+body.repayment-it-page .repayment-it-store:hover { box-shadow: none; }
+body.repayment-it-page #main .repayment-it-secondary,
+body.repayment-it-page #main .repayment-it-contents a { display: inline-flex; align-items: center; min-height: 44px; }
+body.repayment-it-page .repayment-it-faq summary { min-height: 44px; }
+
+/* Italian guide: preserve ordinary spaces and atomic currency amounts. */
+body.repayment-it-page .repayment-it-token { white-space: nowrap; font: inherit; }
+body.repayment-it-page .repayment-it-record pre { overflow-wrap: anywhere; word-break: normal; }
+body.repayment-it-page .repayment-it-table-container { container-type: inline-size; }
+body.repayment-it-page .repayment-it-table-wrap table { min-width: 42rem; }
+body.repayment-it-page #main .repayment-it-table-hint { display: none; }
+@container (max-width: 42rem) { body.repayment-it-page #main .repayment-it-table-hint { display: block; font-size: .85rem; line-height: 1.5; } }
+body.repayment-it-page #main :is(.copy-button,.repayment-it-primary,.repayment-it-secondary) { box-sizing: border-box; max-width: 100%; overflow-wrap: anywhere; }
+body.repayment-it-page .site-locale-fallback { white-space: nowrap; font: inherit; letter-spacing: normal; text-transform: none; }

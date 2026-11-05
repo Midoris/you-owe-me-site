@@ -1,0 +1,70 @@
+{
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"itrepayment20261106\",\n  \"/scripts/sales.js\": \"ithome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"ithome20261106\",\n",
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"itsplit20261106\",\n  \"/scripts/sales.js\": \"ithome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"ithome20261106\",\n"
+      ],
+      [
+        "      \"nextStep\": \"Condividi il risultato e tieni il conto dei pagamenti che arriveranno dopo.\"\n    }\n  },\n  {\n    \"en\": \"/blog/how-to-remind-someone-they-owe-you-money-politely/\",\n    \"it\": \"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\",\n    \"title\": \"Messaggi per chiedere un rimborso\",\n    \"updated\": \"2026-11-06\",\n    \"complete\": true,\n    \"discoveryDescription\": \"Dieci messaggi per chiedere indietro i soldi a un amico con tatto, con un esempio di rimborsi parziali e un registro da copiare.\",\n    \"registry\": {\n      \"primaryAudience\": \"Chi vuole chiedere la restituzione di un prestito tra amici o della quota concordata di una spesa.\",\n      \"problemSolved\": \"Aiuta a scegliere un messaggio coerente con l’accordo e con l’importo ancora da ricevere.\",\n      \"useWhen\": \"Per aprire la conversazione, confermare una data o chiedere ciò che manca dopo un rimborso parziale.\",\n      \"primaryCta\": \"Leggi i 10 messaggi\",\n      \"nextStep\": \"Registra prestiti e rimborsi in You Owe Me\"\n    }\n  }\n];\n",
+        "      \"nextStep\": \"Condividi il risultato e tieni il conto dei pagamenti che arriveranno dopo.\"\n    }\n  }\n];\n"
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=itrepayment20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n",
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=itsplit20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n"
+      ],
+      [
+        "} from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js\";\nimport { createAppStoreCtaViewTracker } from \"./app-store-cta-view-tracker.mjs\";\nimport { bindIphoneHandoffAnalytics } from \"./iphone-handoff-analytics-bridge.mjs?v=itrepayment20261106\";\n\nconst FIREBASE_CONFIG = {\n",
+        "} from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js\";\nimport { createAppStoreCtaViewTracker } from \"./app-store-cta-view-tracker.mjs\";\nimport { bindIphoneHandoffAnalytics } from \"./iphone-handoff-analytics-bridge.mjs?v=ptroommate20261106\";\n\nconst FIREBASE_CONFIG = {\n"
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/ja/\",\n  \"/it/\",\n  \"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\",\n  \"/it/strumenti/calcolatore-spese-condivise/\",\n  \"/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/\",\n",
+        "  \"/ja/\",\n  \"/it/\",\n  \"/it/strumenti/calcolatore-spese-condivise/\",\n  \"/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/\",\n"
+      ]
+    ],
+    "scripts/iphone-handoff-analytics-bridge.mjs": [
+      [
+        "  \"ja_repayment_iphone_handoff\",\n  \"pt_repayment_iphone_handoff\",\n  \"it_repayment_iphone_handoff\",\n  \"pt_borrow_iphone_handoff\",\n  \"ja_borrow_iphone_handoff\",\n",
+        "  \"ja_repayment_iphone_handoff\",\n  \"pt_repayment_iphone_handoff\",\n  \"pt_borrow_iphone_handoff\",\n  \"ja_borrow_iphone_handoff\",\n"
+      ]
+    ]
+  },
+  "integrations": [
+    [
+      "<a href=\"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\"><span class=\"it-link-label\">guida ai messaggi per chiedere indietro dei soldi</span></a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\"><span class=\"it-link-label\">guida ai messaggi per chiedere indietro dei soldi <span class=\"site-locale-fallback\">(in inglese)</span></span></a>"
+    ],
+    [
+      "<a href=\"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\">come chiedere indietro dei soldi con gentilezza</a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">come chiedere indietro dei soldi con gentilezza <span class=\"site-locale-fallback\">(in inglese)</span></a>"
+    ],
+    [
+      "<a href=\"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\" class=\"lt-cardCta\"><span class=\"it-link-label\">Leggi la guida per chiedere il rimborso</span></a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\"><span class=\"it-link-label\">Leggi la guida per chiedere il rimborso <span class=\"site-locale-fallback\">(in inglese)</span></span></a>"
+    ],
+    [
+      "<a href=\"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\">guida per chiedere la restituzione dei soldi con tatto</a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">guida per chiedere la restituzione dei soldi con tatto <span class=\"site-locale-fallback\">(in inglese)</span></a>"
+    ],
+    [
+      "<a href=\"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\" class=\"lt-cardCta\"><span class=\"it-link-label\">Leggi come chiedere un rimborso</span></a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\"><span class=\"it-link-label\">Leggi come chiedere un rimborso <span class=\"site-locale-fallback\">(in inglese)</span></span></a>"
+    ],
+    [
+      "\n              <p>Prima di chiedere un pagamento, controlla ciò che hai già ricevuto. Scegli uno dei <a href=\"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\">messaggi per chiedere un rimborso</a> e adattalo all’importo che manca.</p>",
+      ""
+    ],
+    [
+      "\n            <p>Dopo aver verificato il saldo, scegli uno dei <a href=\"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\">messaggi per chiedere un rimborso</a>. Indica l’importo aggiornato e ciò che avevate concordato nell’ultima conversazione.</p>",
+      ""
+    ],
+    [
+      "\n\n                <article class=\"lt-blogCard lt-roomyCard\">\n                  <p class=\"lt-cardLabel\" lang=\"it\">Italiano</p>\n                  <h3 class=\"lt-cardHeadingGap\"><a href=\"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\" hreflang=\"it\">Polite repayment messages in Italian</a></h3>\n                  <p>Italian messages for asking a friend to repay, with a partial-payment example and a copyable record of the remaining balance.</p>\n                </article>",
+      ""
+    ]
+  ]
+}

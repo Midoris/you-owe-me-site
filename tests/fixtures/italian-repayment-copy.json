@@ -1,0 +1,293 @@
+{
+  "language": "it",
+  "title": "Come chiedere indietro i soldi a un amico: 10 messaggi",
+  "description": "Dieci messaggi per chiedere un rimborso con tatto, confermare una data o ricordare quanto manca. Con un esempio in euro e un registro dei pagamenti da copiare.",
+  "h1": "Come chiedere indietro i soldi a un amico",
+  "eyebrow": "Soldi tra amici",
+  "breadcrumb": {
+    "label": "Percorso di navigazione",
+    "home": "Home",
+    "current": "Messaggi per chiedere un rimborso"
+  },
+  "hero": {
+    "lead": "Vuoi chiedere la restituzione dei soldi, ma non sai come iniziare? Parti da ciò che avevate concordato e dall’importo che manca. Scegli un messaggio, adattalo al tuo modo di parlare e invialo su WhatsApp o sul canale che usate di solito.",
+    "support": "Sostituisci i campi tra parentesi quadre con i tuoi dati. I dieci esempi servono per situazioni diverse: scegli quello adatto, senza inviarli tutti in sequenza.",
+    "primary": "Leggi i 10 messaggi",
+    "secondary": "Verifica quanto manca",
+    "appBefore": "Se i rimborsi arrivano un po’ alla volta, puoi ",
+    "appAnchor": "tenere il conto di ciò che manca in You Owe Me",
+    "appAfter": ".",
+    "byline": "Di Ievgenii Iablonskyi · Pubblicato il 6 novembre 2026",
+    "previewTitle": "Per iniziare basta una domanda chiara",
+    "previewCaption": "Ricorda a quale importo ti riferisci e chiedi quando può essere restituito."
+  },
+  "contents": {
+    "heading": "In questa pagina",
+    "items": [
+      {
+        "label": "10 messaggi per situazioni diverse",
+        "id": "messages"
+      },
+      {
+        "label": "Cosa controllare prima di scrivere",
+        "id": "before"
+      },
+      {
+        "label": "Come calcolare quanto manca",
+        "id": "balance"
+      },
+      {
+        "label": "Come tenere i registri nell’app",
+        "id": "app"
+      },
+      {
+        "label": "Modello di registro da copiare",
+        "id": "record"
+      },
+      {
+        "label": "Domande frequenti",
+        "id": "faq"
+      }
+    ]
+  },
+  "messagesHeading": "10 messaggi per chiedere la restituzione dei soldi",
+  "messagesIntro": "Prima controlla quanto manca, contando tutti i pagamenti già ricevuti. Quando adatti il messaggio, distingui l’importo prestato dal saldo residuo. Una promessa di pagamento può cambiare l’accordo, ma solo il denaro ricevuto riduce il saldo.",
+  "situationLabel": "Scegli la situazione più vicina alla tua",
+  "messages": [
+    {
+      "key": "first_reminder",
+      "tone": "friendly",
+      "heading": "Per parlarne la prima volta",
+      "guidance": "Ricorda a quale prestito ti riferisci e chiedi quando può essere restituito. Puoi fare una domanda diretta senza scusarti per averla fatta e senza accusare nessuno.",
+      "text": "Ciao! Ti scrivo per i [importo e valuta] che ti ho prestato per [motivo]. Quando pensi di riuscire a restituirmeli?"
+    },
+    {
+      "key": "confirm_date",
+      "tone": "neutral",
+      "heading": "Quando si avvicina la data concordata",
+      "guidance": "Conferma una data che avevate già stabilito. Se non c’era ancora una scadenza, usa il messaggio “Quando non avevate fissato una data”.",
+      "text": "Ciao! Confermi che riesci a restituirmi [importo e valuta] il [data], come avevamo concordato? Se serve rivedere la data, dimmelo così ne parliamo."
+    },
+    {
+      "key": "date_passed",
+      "tone": "clear",
+      "heading": "Quando la data concordata è passata",
+      "guidance": "Richiama l’accordo e l’importo ancora da ricevere. Chiedi una previsione concreta senza dare per scontato il motivo del mancato pagamento.",
+      "text": "Ciao! Avevamo concordato il rimborso di [saldo e valuta] per il [data], ma non l’ho ancora ricevuto. Mi fai sapere quando riesci a pagare?"
+    },
+    {
+      "key": "partial_payment",
+      "tone": "friendly",
+      "heading": "Dopo aver ricevuto una parte",
+      "guidance": "Conferma quanto è arrivato e aggiorna il saldo. La parte già restituita non va chiesta una seconda volta.",
+      "text": "Ho ricevuto [importo ricevuto e valuta] il [data], grazie! Del prestito di [importo iniziale e valuta] restano [saldo e valuta], tenendo conto di tutti i rimborsi ricevuti. Quando pensi di riuscire a restituire il resto?"
+    },
+    {
+      "key": "no_date",
+      "tone": "neutral",
+      "heading": "Quando non avevate fissato una data",
+      "guidance": "Apri la conversazione sui tempi. Se non avevate concordato una scadenza, non presentare il pagamento come in ritardo.",
+      "text": "Ciao! Per i [importo e valuta] che ti ho prestato per [motivo] non avevamo fissato una data di restituzione. Quando pensi di riuscire a restituirmeli?"
+    },
+    {
+      "key": "shared_expense",
+      "tone": "neutral",
+      "heading": "Per una spesa che hai anticipato",
+      "guidance": "Verifica la quota che l’altra persona aveva accettato di pagare. Potreste aver concordato parti uguali oppure una divisione diversa.",
+      "text": "Ciao! Ho anticipato i soldi per [spesa] e la tua parte è di [importo e valuta]. Quando riesci a mandarmeli? Se a te risulta una cifra diversa, ricontrolliamo insieme la divisione."
+    },
+    {
+      "key": "no_reply",
+      "tone": "clear",
+      "heading": "Quando il primo messaggio non ha avuto risposta",
+      "guidance": "Lascia il tempo di rispondere, poi riprendi la conversazione in privato. Evita una serie di messaggi ravvicinati o un sollecito davanti al gruppo.",
+      "text": "Ciao! Riprendo il discorso dei [saldo e valuta] che mancano ancora. Hai avuto modo di leggere il mio messaggio? Fammi sapere quando possiamo concordare il rimborso."
+    },
+    {
+      "key": "more_time",
+      "tone": "friendly",
+      "heading": "Quando l’altra persona chiede più tempo",
+      "guidance": "Se decidete di rivedere l’accordo, parlate di importi e date sostenibili. Annota la nuova previsione separatamente dai pagamenti già ricevuti.",
+      "text": "Grazie per avermelo detto. Restano [saldo e valuta]: quanto riesci a restituire e in quale data? Concordiamo anche come gestire la parte che rimane."
+    },
+    {
+      "key": "loan_or_gift",
+      "tone": "neutral",
+      "heading": "Quando non era chiaro se fosse un prestito",
+      "guidance": "Prima chiarite come ciascuno aveva inteso il passaggio di denaro. Se non c’era un accordo chiaro sulla restituzione, non presentarlo come un debito già riconosciuto.",
+      "text": "Vorrei chiarire una cosa sui [importo e valuta] che ti ho dato per [motivo]. Pensavo che me li avresti restituiti. Tu come avevi inteso il nostro accordo?"
+    },
+    {
+      "key": "fully_repaid",
+      "tone": "friendly",
+      "heading": "Per confermare che il prestito è saldato",
+      "guidance": "Aspetta di ricevere l’ultimo pagamento prima di chiudere il prestito. Specifica a quale somma ti riferisci, soprattutto se avete altri conti aperti.",
+      "text": "Ho ricevuto anche gli ultimi [importo ricevuto e valuta], grazie! Con questo pagamento il prestito di [importo totale e valuta] è saldato. Lo segno come chiuso nel mio registro."
+    }
+  ],
+  "before": {
+    "heading": "Tre cose da controllare prima di inviare",
+    "cards": [
+      {
+        "heading": "Quanto manca davvero",
+        "body": "Sottrai soltanto i pagamenti ricevuti. L’importo di un vecchio messaggio potrebbe essere superato se nel frattempo è arrivato un rimborso parziale."
+      },
+      {
+        "heading": "Cosa avevate concordato",
+        "body": "Controlla il motivo, la quota di ciascuno e l’eventuale data di restituzione. Se un punto è rimasto aperto, chiedi prima di trarre conclusioni."
+      },
+      {
+        "heading": "Cosa vuoi sapere adesso",
+        "body": "Chiedi un’informazione concreta, per esempio una data possibile per il rimborso. Adatta il tono al vostro rapporto e lascia spazio alla risposta."
+      }
+    ]
+  },
+  "balance": {
+    "heading": "Hai ricevuto una parte? Aggiorna il saldo prima di scrivere",
+    "intro": "In questo esempio inventato, Giulia presta 300 € a Luca. Dopo aver ricevuto 100 €, mancano 200 €. Quando arrivano altri 75 €, il saldo scende a 125 €.",
+    "caption": "Esempio in euro: prestito iniziale, rimborsi ricevuti e saldo residuo",
+    "headers": [
+      "Data",
+      "Cosa è successo",
+      "Importo",
+      "Da ricevere"
+    ],
+    "rows": [
+      [
+        "4 ottobre",
+        "Prestito a Luca",
+        "300 € prestati",
+        "300 €"
+      ],
+      [
+        "12 ottobre",
+        "Primo rimborso",
+        "100 € ricevuti",
+        "200 €"
+      ],
+      [
+        "20 ottobre",
+        "Secondo rimborso",
+        "75 € ricevuti",
+        "125 €"
+      ]
+    ],
+    "scrollCue": "Scorri la tabella in orizzontale per vedere tutte le colonne.",
+    "regionLabel": "Esempio di prestito, rimborsi ricevuti e saldo residuo",
+    "after": "Dopo il secondo rimborso, chiedere 200 € significherebbe ignorare i 75 € già ricevuti. Se invece Luca promette di restituire i 125 € la settimana successiva, il saldo resta di 125 € finché il denaro non arriva.",
+    "quoteHeading": "Il prossimo messaggio può partire dal saldo aggiornato",
+    "quote": "Ho ricevuto i 75 €, grazie! Del prestito di 300 € restano ora 125 €. Quando pensi di riuscire a restituire il resto?"
+  },
+  "app": {
+    "heading": "Alla prossima conversazione, parti dai conti aggiornati",
+    "lead": "In You Owe Me per iPhone e iPad, registra il denaro prestato e ogni pagamento ricevuto. Puoi così controllare quanto manca senza cercare importi in conversazioni diverse.",
+    "cards": [
+      {
+        "heading": "Prestito e rimborsi nella stessa cronologia",
+        "body": "Tieni l’importo iniziale e le restituzioni collegati allo stesso prestito."
+      },
+      {
+        "heading": "Ogni rimborso parziale conta",
+        "body": "Aggiungi ciò che hai ricevuto senza cancellare i pagamenti precedenti e controlla il saldo aggiornato."
+      },
+      {
+        "heading": "Il prossimo accordo resta annotato",
+        "body": "Conserva nelle note ciò che avete concordato e imposta un promemoria per te quando vuoi riprendere il discorso."
+      }
+    ],
+    "boundary": "L’altra persona non deve usare l’app perché tu possa tenere il tuo registro. You Owe Me non trasferisce denaro e non garantisce il rimborso.",
+    "handoffHeading": "Segna quanto hai ricevuto e quanto manca",
+    "handoffBody": "Tieni in ordine prestiti e rimborsi sul tuo iPhone o iPad.",
+    "assurance": "You Owe Me è disponibile in italiano.",
+    "badgeAlt": "Scarica You Owe Me dall’App Store",
+    "qrInstruction": "Inquadra il codice con la fotocamera dell’iPhone o dell’iPad.",
+    "storeFallback": "Apri nell’App Store",
+    "qrAlt": "Codice QR per aprire You Owe Me sull’App Store",
+    "productLink": "Scopri come seguire prestiti e rimborsi"
+  },
+  "record": {
+    "heading": "È arrivato un rimborso? Aggiorna il registro",
+    "intro": "Prima del prossimo messaggio, annota ciò che hai già ricevuto. Copia questo modello nelle tue note oppure tieni la cronologia nell’app. Il modello di testo non calcola il saldo automaticamente.",
+    "text": "Persona: [nome]\nMotivo del prestito: [motivo]\nImporto prestato: [importo e valuta]\nData del prestito: [data]\nPagamenti ricevuti: [data — importo e valuta; una riga per pagamento]\nTotale ricevuto: [importo e valuta]\nDa ricevere: [importo e valuta]\nProssimo pagamento o conversazione: [data e accordo]\nUltimo aggiornamento: [data]",
+    "after": "Tieni separate le previsioni dagli importi già ricevuti. Se i vostri registri non coincidono, confrontate importi e date prima di concordare il prossimo pagamento."
+  },
+  "faqHeading": "Domande su come chiedere la restituzione dei soldi",
+  "faq": [
+    {
+      "q": "Come chiedere indietro i soldi a un amico su WhatsApp senza essere scortesi?",
+      "a": "Ricorda a quale prestito ti riferisci e indica quanto manca da ricevere. Per esempio: “Ciao! Del denaro che ti ho prestato per [motivo] restano [saldo e valuta]. Quando pensi di riuscire a restituirmeli?” Prima di inviare, verifica di aver sottratto tutti i pagamenti ricevuti e adatta il messaggio al tuo modo di parlare."
+    },
+    {
+      "q": "Come chiedere il resto dopo un rimborso parziale?",
+      "a": "Conferma quanto hai ricevuto e indica il saldo aggiornato. Se hai prestato 300 € e ricevuto 100 €, mancano 200 €. Concordare una nuova data non riduce quell’importo: il saldo scende solo quando ricevi un altro pagamento."
+    },
+    {
+      "q": "E se non avevamo fissato una data di restituzione?",
+      "a": "Chiedi quando l’altra persona può rimborsarti e parlate di una data. Se non c’era una scadenza concordata, evita di presentare il pagamento come in ritardo."
+    },
+    {
+      "q": "Cosa fare se all’altra persona risulta un importo diverso?",
+      "a": "Confrontate l’importo iniziale, i pagamenti ricevuti e le date. Per una spesa condivisa, ricontrollate anche la divisione concordata. Se il dubbio è se il denaro fosse un prestito o un aiuto senza obbligo di restituzione, chiarite prima quel punto."
+    },
+    {
+      "q": "Anche il mio amico deve installare You Owe Me?",
+      "a": "Non per tenere il tuo registro personale. Puoi annotare il denaro prestato e i pagamenti ricevuti sul tuo iPhone o iPad senza che l’altra persona usi l’app."
+    },
+    {
+      "q": "L’app invia questi messaggi automaticamente?",
+      "a": "No. Copia il testo, controlla gli importi e invialo su WhatsApp o sul canale che preferisci. You Owe Me aiuta a registrare prestiti e pagamenti; il denaro viene trasferito fuori dall’app."
+    }
+  ],
+  "relatedHeading": "Controlla i conti prima del prossimo messaggio",
+  "related": [
+    {
+      "title": "Come tenere il conto di chi ti deve soldi",
+      "body": "Distingui importo iniziale, rimborsi ricevuti e saldo ancora da ricevere.",
+      "url": "/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/"
+    },
+    {
+      "title": "Prestiti e piani di rimborso",
+      "body": "Tieni la cronologia dei pagamenti e il prossimo accordo accanto al prestito a cui si riferiscono.",
+      "url": "/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/"
+    },
+    {
+      "title": "Calcolatore per dividere le spese",
+      "body": "Verifica la quota di ciascuno prima di chiedere il rimborso di una spesa condivisa.",
+      "url": "/it/strumenti/calcolatore-spese-condivise/"
+    }
+  ],
+  "copyUI": {
+    "message": "Copia il messaggio",
+    "record": "Copia il modello di registro",
+    "busy": "Copia in corso…",
+    "successButton": "Copiato",
+    "successStatus": "Testo copiato.",
+    "manualSelected": "Non è stato possibile copiare automaticamente. Il testo è selezionato: usa il comando di copia del dispositivo.",
+    "failure": "Non è stato possibile copiare automaticamente. Seleziona il testo e copialo.",
+    "noJS": "JavaScript è disattivato. Puoi selezionare e copiare i testi.",
+    "messageAriaPrefix": "Copia il messaggio: ",
+    "recordAria": "Copia il modello di registro dei pagamenti"
+  },
+  "registry": {
+    "title": "Messaggi per chiedere un rimborso",
+    "discoveryDescription": "Dieci messaggi per chiedere indietro i soldi a un amico con tatto, con un esempio di rimborsi parziali e un registro da copiare.",
+    "primaryAudience": "Chi vuole chiedere la restituzione di un prestito tra amici o della quota concordata di una spesa.",
+    "problemSolved": "Aiuta a scegliere un messaggio coerente con l’accordo e con l’importo ancora da ricevere.",
+    "useWhen": "Per aprire la conversazione, confermare una data o chiedere ciò che manca dopo un rimborso parziale.",
+    "primaryCta": "Leggi i 10 messaggi",
+    "nextStep": "Registra prestiti e rimborsi in You Owe Me"
+  },
+  "inwardNewParagraphs": {
+    "loanBefore": "Prima di chiedere un pagamento, controlla ciò che hai già ricevuto. Scegli uno dei ",
+    "loanAnchor": "messaggi per chiedere un rimborso",
+    "loanAfter": " e adattalo all’importo che manca.",
+    "recordBefore": "Dopo aver verificato il saldo, scegli uno dei ",
+    "recordAnchor": "messaggi per chiedere un rimborso",
+    "recordAfter": ". Indica l’importo aggiornato e ciò che avevate concordato nell’ultima conversazione."
+  },
+  "englishBlogCard": {
+    "language": "Italiano",
+    "title": "Polite repayment messages in Italian",
+    "description": "Italian messages for asking a friend to repay, with a partial-payment example and a copyable record of the remaining balance."
+  }
+}

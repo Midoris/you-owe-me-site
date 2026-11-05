@@ -378,4 +378,5 @@ Pagine disponibili in italiano. Ogni pagina ha un indirizzo dedicato; i collegam
 - [Come tenere il conto di chi ti deve soldi](https://you-owe-me.com/it/blog/come-tenere-il-conto-di-chi-ti-deve-soldi/) — Tieni in ordine soldi prestati e spese anticipate. Usa un modello da copiare, esempi in euro e messaggi per verificare rimborsi e saldo.
 - [Prestiti e piani di rimborso](https://you-owe-me.com/it/soluzioni/gestire-prestiti-tra-amici-e-familiari/) — Tieni in ordine i prestiti tra amici e familiari: registra i rimborsi, verifica quanto manca e segui il piano di rimborso con You Owe Me per iPhone.
 - [Calcolatore per dividere le spese](https://you-owe-me.com/it/strumenti/calcolatore-spese-condivise/) — Inserisci quanto ha pagato ciascuno e scopri chi deve restituire cosa. Dividi cena, viaggio, spesa e altri costi scegliendo chi partecipa a ogni spesa.
+- [Messaggi per chiedere un rimborso](https://you-owe-me.com/it/blog/come-chiedere-indietro-soldi-a-un-amico/) — Dieci messaggi per chiedere indietro i soldi a un amico con tatto, con un esempio di rimborsi parziali e un registro da copiare.
 <!-- italian-pages:end -->

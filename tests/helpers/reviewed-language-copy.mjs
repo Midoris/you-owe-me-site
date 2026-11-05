@@ -3,8 +3,26 @@ import fs from "node:fs";
 
 
 
+const italianRepaymentAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-repayment-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedItalianRepaymentSource(source, file) {
+  if (!italianRepaymentAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of italianRepaymentAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedItalianRepaymentIntegration(html) {
+  const route = '/it/blog/come-chiedere-indietro-soldi-a-un-amico/';
+  html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Messaggi per chiedere un rimborso</a>', '');
+  for (const [current, previous] of italianRepaymentAdmissions.integrations) html = html.replace(current, previous);
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=itrepayment20261106(?=")/g, '$1?v=itsplit20261106');
+}
+
 const italianSplitAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-split-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedItalianSplitSource(source, file) {
+  source = normalizeReviewedItalianRepaymentSource(source, file);
   if (!italianSplitAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -12,6 +30,7 @@ export function normalizeReviewedItalianSplitSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedItalianSplitIntegration(html) {
+  html = normalizeReviewedItalianRepaymentIntegration(html);
   html = normalizeReviewedItalianSplitSource(html, 'private-continuation/split/index.html');
   const route = '/it/strumenti/calcolatore-spese-condivise/';
   html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');

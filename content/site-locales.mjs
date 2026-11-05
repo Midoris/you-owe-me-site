@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "itsplit20261106",
+  "/scripts/analytics.js": "itrepayment20261106",
   "/scripts/sales.js": "ithome20261106",
   "/scripts/anniversary-announcement.js": "ithome20261106",
   "/scripts/app-language-support.js": "ithome20261106",
@@ -636,6 +636,21 @@ export const italianPages = [
       "useWhen": "Quando una o più spese vanno divise in parti uguali tra le persone che partecipano a ogni spesa.",
       "primaryCta": "Calcola la divisione",
       "nextStep": "Condividi il risultato e tieni il conto dei pagamenti che arriveranno dopo."
+    }
+  },
+  {
+    "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+    "it": "/it/blog/come-chiedere-indietro-soldi-a-un-amico/",
+    "title": "Messaggi per chiedere un rimborso",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "Dieci messaggi per chiedere indietro i soldi a un amico con tatto, con un esempio di rimborsi parziali e un registro da copiare.",
+    "registry": {
+      "primaryAudience": "Chi vuole chiedere la restituzione di un prestito tra amici o della quota concordata di una spesa.",
+      "problemSolved": "Aiuta a scegliere un messaggio coerente con l’accordo e con l’importo ancora da ricevere.",
+      "useWhen": "Per aprire la conversazione, confermare una data o chiedere ciò che manca dopo un rimborso parziale.",
+      "primaryCta": "Leggi i 10 messaggi",
+      "nextStep": "Registra prestiti e rimborsi in You Owe Me"
     }
   }
 ];
