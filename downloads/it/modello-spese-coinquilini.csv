@@ -1,0 +1,4 @@
+Data,Tipo di registrazione,Spesa o rimborso,Categoria,Importo,Chi ha pagato o inviato,Chi ha ricevuto,Metodo di divisione,Partecipanti,Quote concordate,Note
+2026-05-01,Spesa,Affitto,Affitto,1800.00,Giulia,,In parti uguali tra i partecipanti,"Giulia, Luca e Marco",Giulia 600.00; Luca 600.00; Marco 600.00,Esempio inventato in EUR. Sostituisci con i tuoi registri. Il CSV non calcola i saldi.
+2026-05-05,Spesa,Internet,Internet,60.00,Luca,,In parti uguali tra i partecipanti,"Giulia, Luca e Marco",Giulia 20.00; Luca 20.00; Marco 20.00,Riga di esempio. Sostituiscila o eliminala.
+2026-05-20,Rimborso,Rimborso a Giulia,,200.00,Luca,Giulia,,,,"Esempio di pagamento tra coinquilini, separato dalle spese. Sostituiscilo o eliminalo."

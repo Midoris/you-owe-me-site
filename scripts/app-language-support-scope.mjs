@@ -4,6 +4,7 @@ export const INCLUDED_EXACT_ROUTES = new Set([
   "/",
   "/ja/",
   "/it/",
+  "/it/strumenti/modello-spese-coinquilini/",
   "/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/",
   "/it/blog/come-chiedere-indietro-soldi-a-un-amico/",
   "/it/strumenti/calcolatore-spese-condivise/",

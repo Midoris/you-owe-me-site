@@ -1,0 +1,14 @@
+{
+  "status": "verified",
+  "copyUrl": "https://docs.google.com/spreadsheets/d/1Yb8Ytq-TADuMelIObk0SYahYGGyhfNug7Uu9xTJhWdg/copy",
+  "masterId": "1Yb8Ytq-TADuMelIObk0SYahYGGyhfNug7Uu9xTJhWdg",
+  "heroSha256": "91e59b8777bffea9dc3ab9a7c67d6d79a1962f73f1e317bb7a94a2554b788c80",
+  "width": 1536,
+  "height": 1024,
+  "provenanceReceipt": "LOC-33-hero-provenance.json",
+  "provenanceSha256": "9abf4c944b0941889744d46087501a77d2620ec3a0aa0c4629f70160b50214e5",
+  "viewerReceipt": "LOC-33-native-public-viewer.png",
+  "viewerReceiptSha256": "387a9db6a2c73b57045a664ef0b40694829aa8dfb8f53ec49cf5dd2471bf3be1",
+  "anonymousReceipt": "LOC-33-native-anonymous-fresh-context.json",
+  "anonymousReceiptSha256": "1922f59e7fdab772af27f68d5bf017adc0f61c646442efb3e56150bcd9de096e"
+}

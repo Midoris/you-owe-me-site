@@ -32,6 +32,7 @@ APP_ROUTES = {
     "fr": "https://you-owe-me.com/fr/solutions/application-suivi-argent-du/",
     "ja": "https://you-owe-me.com/ja/solutions/app-to-track-money-owed/",
     "pt": "https://you-owe-me.com/pt/solucoes/app-para-controlar-quem-te-deve/",
+    "it": "https://you-owe-me.com/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/",
 }
 
 
@@ -101,6 +102,12 @@ def localized_builder_source(copy: dict, edition: str = "excel") -> str:
         source = source.replace('"$D$5:$D$15"', '"$D$5:$D$16"')
         source = source.replace(js_string(copy["sheet_names"]["Settings"]) + ': "A1:D15"', js_string(copy["sheet_names"]["Settings"]) + ': "A1:D16"')
     override_lines = []
+    if copy["locale"] == "it":
+        # Italian label fits two lines without covering the household input.
+        override_lines.extend([
+            'setup.getRange("A4").format.wrapText = true;',
+            'setup.getRange("A4:F4").format.rowHeightPx = 34;',
+        ])
     if copy["locale"] == "ja" or "example_amount_scale" in copy:
         # Japanese fictional examples use plausible yen amounts. Only these
         # four known input cells change; dates, formulas and model constants do
@@ -112,6 +119,9 @@ def localized_builder_source(copy: dict, edition: str = "excel") -> str:
             'example.getRange("D12").values = [[20000]];',
         ])
     variables = {"Settings": "settings"}
+    if copy["locale"] == "it":
+        assert copy["cell_overrides"] == {"Settings!D15": mappings["Other"], "Expenses!S3": mappings["Notes"], "Expenses!S4": mappings["Notes"]}
+        variables["Expenses"] = "expenses"
     for address, value in copy["cell_overrides"].items():
         sheet, cell = address.split("!")
         override_lines.append(f'{variables[sheet]}.getRange({js_string(cell)}).values = [[{js_string(value)}]];')
@@ -246,7 +256,7 @@ def main() -> None:
     args = parser.parse_args()
     copy = json.loads(args.copy_file.read_text())
     if copy["locale"] not in APP_ROUTES:
-        raise ValueError("Only the reviewed Spanish, German, Arabic, French, Japanese and Portuguese copies are implemented")
+        raise ValueError("Only the reviewed Spanish, German, Arabic, French, Japanese, Portuguese and Italian copies are implemented")
     if args.output.resolve() == (ROOT / "downloads/roommate-expense-tracker-template.xlsx").resolve():
         raise ValueError("The English workbook must not be overwritten")
     if args.csv and any(len(row) != 11 for row in copy["csv"]):

@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "itborrow20261106",
+  "/scripts/analytics.js": "itroommate20261106",
   "/scripts/sales.js": "ithome20261106",
   "/scripts/anniversary-announcement.js": "ithome20261106",
   "/scripts/app-language-support.js": "ithome20261106",
@@ -667,7 +667,22 @@ export const italianPages = [
       "primaryCta": "Leggi gli 8 messaggi",
       "nextStep": "Registra il prestito e segui i rimborsi"
     }
+  },
+{
+  "en": "/tools/roommate-expense-tracker-template/",
+  "it": "/it/strumenti/modello-spese-coinquilini/",
+  "title": "Modello spese tra coinquilini",
+  "updated": "2026-11-06",
+  "complete": true,
+  "discoveryDescription": "Modello gratuito in italiano per spese condivise, rimborsi tra coinquilini e saldi. Versioni Excel, Fogli Google e CSV.",
+  "registry": {
+    "primaryAudience": "Chi condivide casa e vuole controllare spese e rimborsi con gli altri coinquilini.",
+    "problemSolved": "Separa le spese dai pagamenti tra coinquilini per mostrare chi deve ancora pagare e chi deve ricevere denaro.",
+    "useWhen": "Quando registrate le spese, chiudete un periodo o riportate un saldo verificato al periodo successivo.",
+    "primaryCta": "Scarica il modello Excel",
+    "nextStep": "Segui i saldi per persona in You Owe Me"
   }
+}
 ];
 export const italianShared = Object.freeze({
   "languageLabel": "Lingua della pagina",

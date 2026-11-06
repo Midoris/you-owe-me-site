@@ -3,8 +3,26 @@ import fs from "node:fs";
 
 
 
+const italianRoommateAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-roommate-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedItalianRoommateSource(source, file) {
+  if (!italianRoommateAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of italianRoommateAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedItalianRoommateIntegration(html) {
+  const route = '/it/strumenti/modello-spese-coinquilini/';
+  html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Modello spese tra coinquilini</a>', '');
+  for (const [current, previous] of italianRoommateAdmissions.integrations) html = html.replace(current, previous);
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=itroommate20261106(?=")/g, '$1?v=itborrow20261106');
+}
+
 const italianBorrowAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-borrow-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedItalianBorrowSource(source, file) {
+  source = normalizeReviewedItalianRoommateSource(source, file);
   if (!italianBorrowAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -12,6 +30,7 @@ export function normalizeReviewedItalianBorrowSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedItalianBorrowIntegration(html) {
+  html = normalizeReviewedItalianRoommateIntegration(html);
   const route = '/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/';
   html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');

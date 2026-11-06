@@ -1,0 +1,51 @@
+{
+  "base": "967b5a6e9d3dd25ac9c9d6f08f5935bd1e493935",
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"itroommate20261106\",\n  \"/scripts/sales.js\": \"ithome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"ithome20261106\",\n",
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"itborrow20261106\",\n  \"/scripts/sales.js\": \"ithome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"ithome20261106\",\n"
+      ],
+      [
+        "      \"nextStep\": \"Registra il prestito e segui i rimborsi\"\n    }\n  },\n{\n  \"en\": \"/tools/roommate-expense-tracker-template/\",\n  \"it\": \"/it/strumenti/modello-spese-coinquilini/\",\n  \"title\": \"Modello spese tra coinquilini\",\n  \"updated\": \"2026-11-06\",\n  \"complete\": true,\n  \"discoveryDescription\": \"Modello gratuito in italiano per spese condivise, rimborsi tra coinquilini e saldi. Versioni Excel, Fogli Google e CSV.\",\n  \"registry\": {\n    \"primaryAudience\": \"Chi condivide casa e vuole controllare spese e rimborsi con gli altri coinquilini.\",\n    \"problemSolved\": \"Separa le spese dai pagamenti tra coinquilini per mostrare chi deve ancora pagare e chi deve ricevere denaro.\",\n    \"useWhen\": \"Quando registrate le spese, chiudete un periodo o riportate un saldo verificato al periodo successivo.\",\n    \"primaryCta\": \"Scarica il modello Excel\",\n    \"nextStep\": \"Segui i saldi per persona in You Owe Me\"\n  }\n}\n];\nexport const italianShared = Object.freeze({\n",
+        "      \"nextStep\": \"Registra il prestito e segui i rimborsi\"\n    }\n  }\n];\nexport const italianShared = Object.freeze({\n"
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=itroommate20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n",
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=itborrow20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n"
+      ],
+      [
+        "} from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js\";\nimport { createAppStoreCtaViewTracker } from \"./app-store-cta-view-tracker.mjs\";\nimport { bindIphoneHandoffAnalytics } from \"./iphone-handoff-analytics-bridge.mjs?v=itroommate20261106\";\n\nconst FIREBASE_CONFIG = {\n",
+        "} from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js\";\nimport { createAppStoreCtaViewTracker } from \"./app-store-cta-view-tracker.mjs\";\nimport { bindIphoneHandoffAnalytics } from \"./iphone-handoff-analytics-bridge.mjs?v=itborrow20261106\";\n\nconst FIREBASE_CONFIG = {\n"
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/ja/\",\n  \"/it/\",\n  \"/it/strumenti/modello-spese-coinquilini/\",\n  \"/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/\",\n  \"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\",\n",
+        "  \"/ja/\",\n  \"/it/\",\n  \"/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/\",\n  \"/it/blog/come-chiedere-indietro-soldi-a-un-amico/\",\n"
+      ]
+    ],
+    "scripts/iphone-handoff-analytics-bridge.mjs": [
+      [
+        "  \"it_repayment_iphone_handoff\",\n  \"it_borrow_iphone_handoff\",\n  \"it_roommate_template_iphone_handoff\",\n  \"pt_borrow_iphone_handoff\",\n  \"ja_borrow_iphone_handoff\",\n",
+        "  \"it_repayment_iphone_handoff\",\n  \"it_borrow_iphone_handoff\",\n  \"pt_borrow_iphone_handoff\",\n  \"ja_borrow_iphone_handoff\",\n"
+      ]
+    ]
+  },
+  "integrations": [
+    [
+      "\n              <p class=\"lt-paragraphGap\">Per seguire spese e rimborsi di casa da un mese all’altro, usa il <a href=\"/it/strumenti/modello-spese-coinquilini/\">modello per le spese tra coinquilini</a>. Trovi le versioni in italiano per Excel e Fogli Google e un registro CSV.</p>",
+      ""
+    ],
+    [
+      "\n            <p>Per i conti con chi vive con te, puoi usare anche il <a href=\"/it/strumenti/modello-spese-coinquilini/\">modello per le spese tra coinquilini</a>. Annota separatamente le spese originali e i rimborsi successivi.</p>",
+      ""
+    ],
+    [
+      "\n                <article class=\"lt-toolCard\">\n                  <span class=\"lt-statusChip\" lang=\"it\">Italiano</span>\n                  <h3><a href=\"/it/strumenti/modello-spese-coinquilini/\" hreflang=\"it\">Roommate expense tracker template in Italian</a></h3>\n                  <p>Italian Excel, Google Sheets and CSV resources for agreed shared costs and repayments.</p>\n                </article>",
+      ""
+    ]
+  ]
+}

@@ -1,0 +1,29 @@
+/* Italian additions retain the original active English template components. */
+body.roommate-template-page.site-lang-it .roommate-template-copy-button[hidden] { display: none !important; }
+body.roommate-template-page.site-lang-it .roommate-template-amount { white-space: nowrap; font: inherit; }
+body.roommate-template-page.site-lang-it :is(.lt-primaryCta,.roommate-template-secondaryCta,.roommate-template-copy-button,.lt-textCta) { box-sizing: border-box; max-width: 100%; height: auto; white-space: normal; line-height: 1.5; overflow-wrap: break-word; }
+body.roommate-template-page.site-lang-it .site-locale-fallback { font: inherit; white-space: nowrap; text-transform: none; letter-spacing: normal; }
+body.roommate-template-page.site-lang-it .roommate-template-secondary-note { margin: .75rem 0; font-size: .95rem; }
+body.roommate-template-page.site-lang-it .roommate-template-copy-hint { font-size: .85rem; line-height: 1.5; }
+body.roommate-template-page.site-lang-it .roommate-template-table-container { container-type: inline-size; }
+body.roommate-template-page.site-lang-it #main article.post.featured .roommate-template-mobile-swipe { display: none; }
+@container (max-width: 46rem) { body.roommate-template-page.site-lang-it #main article.post.featured .roommate-template-mobile-swipe { display: block; font-size: .85rem; line-height: 1.5; margin: .85rem 0 .4rem; } }
+body.roommate-template-page.site-lang-it .site-italian-disclosure {
+  width: min(100%, 76rem); margin: 0 0 1.25rem; border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 16px; background: rgba(255,255,255,.74); box-sizing: border-box;
+}
+body.roommate-template-page.site-lang-it .site-italian-disclosure > summary { min-height: 44px; padding: .7rem 1rem; color: #18212b; font-family: 'Source Sans Pro',sans-serif; font-size: 1rem; font-weight: 900; line-height: 1.5; cursor: pointer; }
+body.roommate-template-page.site-lang-it .site-italian-disclosure .site-locale-section { margin: 0; border: 0; background: transparent; padding: 0 18px 18px; box-sizing: border-box; font-size: 14px; line-height: 1.5; gap: 8px 16px; }
+body.roommate-template-page.site-lang-it .site-italian-disclosure .site-locale-section a { max-width: 100%; white-space: normal; overflow-wrap: break-word; }
+body.roommate-template-page.site-lang-it .roommate-template-message-card blockquote { overflow-wrap: anywhere; }
+body.roommate-template-page.site-lang-it [id] { scroll-margin-top: 5rem; }
+@media (max-width: 736px) {
+  body.roommate-template-page.site-lang-it .site-italian-disclosure .site-locale-section { flex-direction: column; align-items: flex-start; gap: 8px; }
+  body.roommate-template-page.site-lang-it .roommate-template-method-comparison + * { max-width: 100%; }
+}
+
+/* Explicit shell rule for the composed page-design audit. */
+body.roommate-template-page #header { display: none !important; }
+@media (max-width: 736px) {
+  /* The source comparison becomes stacked cards here, so it does not scroll. */
+  body.roommate-template-page.site-lang-it #main article.post.featured .roommate-template-table-container:has(.roommate-template-method-comparison) .roommate-template-mobile-swipe { display: none; }
+}

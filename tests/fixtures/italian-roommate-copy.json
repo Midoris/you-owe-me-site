@@ -1,0 +1,492 @@
+{
+  "language": "it",
+  "title": "Spese tra coinquilini: modello Excel e Fogli Google",
+  "description": "Un modello gratuito in italiano per affitto, bollette, spesa e rimborsi tra coinquilini. Excel e Fogli Google, da 2 a 6 persone, con quote uguali o concordate.",
+  "h1": "Spese tra coinquilini: modello Excel e Fogli Google",
+  "eyebrow": "Modello gratuito per le spese di casa",
+  "breadcrumb": {
+    "label": "Percorso di navigazione",
+    "home": "Home",
+    "tools": "Strumenti (in inglese)",
+    "current": "Modello spese tra coinquilini"
+  },
+  "hero": {
+    "lead": "Una persona paga l’affitto, un’altra fa la spesa e qualcuno restituisce la sua parte qualche giorno dopo. Riunisci questi movimenti per capire chi deve ancora pagare e chi deve ricevere denaro. Scarica il file Excel o crea una copia in Fogli Google per tenere i conti della casa.",
+    "qualifier": "Per 2–6 persone. Dividi ogni spesa in parti uguali tra chi partecipa oppure inserisci le quote che avete già concordato.",
+    "excelCTA": "Scarica il modello Excel",
+    "sheetsCTA": "Usa in Fogli Google",
+    "secondaryBefore": "Per dividere una singola spesa o il conto di una serata, usa il ",
+    "secondaryAnchor": "calcolatore delle spese condivise",
+    "secondaryAfter": ".",
+    "accountNote": "Non serve un account You Owe Me. Per creare e salvare una copia in Fogli Google serve un account Google.",
+    "moveInBefore": "Se state per andare a vivere insieme, trovi anche una ",
+    "moveInAnchor": "lista per organizzare la casa condivisa (in inglese)",
+    "moveInAfter": ". Usa questo modello per annotare le spese e i rimborsi successivi.",
+    "imageAlt": "Scheda Esempio del modello in italiano: le spese di Giulia, Luca e Marco, un rimborso parziale e i saldi ancora da chiudere."
+  },
+  "downloads": {
+    "eyebrow": "Scegli il formato",
+    "heading": "Prepara la tua copia",
+    "intro": "Excel e Fogli Google comprendono configurazione, spese, rimborsi, riepilogo automatico ed esempio compilato. Il CSV è un semplice registro: non calcola quote o saldi.",
+    "excel": {
+      "heading": "File Excel",
+      "body": "Registra le spese di 2–6 persone, le quote uguali o concordate, i rimborsi tra coinquilini e i saldi precedenti. Il file calcola il riepilogo e suggerisce i pagamenti per chiudere i saldi.",
+      "bullets": [
+        "7 schede in italiano",
+        "Formule e menu a discesa, senza macro",
+        "Campi da compilare vuoti ed esempio in una scheda separata",
+        "Avvisi per dati mancanti e importi che non tornano"
+      ],
+      "sizeLabel": "File Excel · {actual rounded KB} KB",
+      "button": "Scarica Excel (.xlsx)"
+    },
+    "sheets": {
+      "heading": "Modello per Fogli Google",
+      "body": "Crea una copia nel tuo Google Drive. Annota le spese concordate, i rimborsi effettuati e i saldi precedenti già verificati. Prima di trasferire denaro, controllate insieme il riepilogo.",
+      "bullets": [
+        "7 schede in italiano",
+        "Campi da compilare e risultati calcolati riconoscibili",
+        "Campi da compilare vuoti ed esempio in una scheda separata",
+        "Scegli tu con chi condividere la tua copia"
+      ],
+      "note": "Il modello è gratuito. Serve un account Google per salvare la tua copia.",
+      "button": "Usa in Fogli Google"
+    },
+    "csv": {
+      "heading": "Registro CSV",
+      "body": "Un elenco con righe di esempio da aprire in altri programmi per fogli di calcolo. Devi calcolare quote e saldi separatamente. Le date sono nel formato AAAA-MM-GG e gli importi usano il punto decimale.",
+      "button": "Scarica CSV (.csv)"
+    },
+    "privacy": "Le spese che inserisci non vengono inviate a You Owe Me. In Excel, i dati restano nel file e seguono le autorizzazioni del luogo in cui lo salvi o condividi. La copia di Fogli Google è nel tuo account Google: scegli tu chi può accedervi.",
+    "boundary": "Il modello registra la divisione che avete già accettato. Non decide quale sia una ripartizione equa dell’affitto e non sostituisce gli accordi tra coinquilini.",
+    "precision": "Gli importi sono gestiti con non più di due decimali. Usa una sola valuta per copia. Scegliere la valuta non converte gli importi."
+  },
+  "example": {
+    "eyebrow": "Un esempio dall’inizio al saldo",
+    "heading": "Tre coinquilini, tre spese e un rimborso parziale",
+    "intro": "In questo esempio inventato in euro, Giulia, Luca e Marco dividono tutte e tre le spese in parti uguali. Giulia paga l’affitto, Luca internet e Marco la spesa alimentare. Prima del riepilogo, Luca restituisce 200 € a Giulia.",
+    "scrollCue": "Scorri la tabella in orizzontale per vedere tutte le colonne.",
+    "expenseCaption": "Spese e rimborsi sono registrazioni separate",
+    "expenseHeaders": [
+      "Registrazione",
+      "Chi ha pagato",
+      "Importo",
+      "Partecipanti",
+      "Quota concordata"
+    ],
+    "expenseRows": [
+      [
+        "Affitto",
+        "Giulia",
+        "1.800 €",
+        "Giulia, Luca e Marco",
+        "600 € a persona"
+      ],
+      [
+        "Internet",
+        "Luca",
+        "60 €",
+        "Giulia, Luca e Marco",
+        "20 € a persona"
+      ],
+      [
+        "Spesa alimentare",
+        "Marco",
+        "120 €",
+        "Giulia, Luca e Marco",
+        "40 € a persona"
+      ],
+      [
+        "Rimborso a Giulia",
+        "Luca",
+        "200 €",
+        "Non è una nuova spesa",
+        "Registrato a parte in Rimborsi"
+      ]
+    ],
+    "afterExpenses": "Le spese ammontano a 1.980 € e la quota di ciascuno è di 660 €.",
+    "summaryCaption": "Riepilogo dopo il rimborso di 200 €",
+    "summaryHeaders": [
+      "Persona",
+      "Spese pagate",
+      "La sua quota",
+      "Rimborsi",
+      "Saldo residuo"
+    ],
+    "summaryRows": [
+      [
+        "Giulia",
+        "1.800 €",
+        "660 €",
+        "Ha ricevuto 200 €",
+        "Deve ricevere 940 €"
+      ],
+      [
+        "Luca",
+        "60 €",
+        "660 €",
+        "Ha inviato 200 €",
+        "Deve pagare 400 €"
+      ],
+      [
+        "Marco",
+        "120 €",
+        "660 €",
+        "Nessun rimborso",
+        "Deve pagare 540 €"
+      ]
+    ],
+    "calloutLabel": "Per chiudere i saldi residui",
+    "calloutBody": "Luca paga 400 € a Giulia e Marco paga 540 € a Giulia. Quando entrambi i pagamenti sono stati effettivamente eseguiti, i saldi del periodo sono a zero.",
+    "after": "Il rimborso di 200 € non trasforma l’affitto in una spesa di 1.600 €. L’affitto resta registrato per 1.800 €; il rimborso riduce ciò che Luca deve pagare e ciò che Giulia deve ricevere.",
+    "nextHeading": "E se resta un saldo per il mese prossimo?",
+    "nextParagraphs": [
+      "Se Luca ha già pagato i 400 € e Marco i 540 €, nel nuovo periodo tutti partono da un saldo iniziale pari a zero.",
+      "Se non hanno ancora pagato, riportate una sola volta i saldi verificati: Giulia con 940 € positivi, Luca con 400 € negativi e Marco con 540 € negativi. Non registrate gli stessi importi come nuove spese.",
+      "Partendo da questi saldi, se Luca paga una nuova spesa di 90 € divisa in parti uguali tra i tre, Giulia deve ricevere 910 €. Luca deve pagare 340 € e Marco 570 €."
+    ]
+  },
+  "earlyHandoff": {
+    "heading": "Annota il prossimo rimborso sull’iPhone",
+    "benefit": "In You Owe Me, registra ciò che hai pagato per qualcuno e i rimborsi ricevuti per seguire il saldo di ogni persona.",
+    "clarification": "Inizia un registro separato nell’app. Questo foglio non viene importato.",
+    "reassurance": "Il download è gratuito, con acquisti in-app."
+  },
+  "workbook": {
+    "eyebrow": "Cosa trovi nel modello",
+    "heading": "Spese e rimborsi separati, riuniti nel riepilogo",
+    "intro": "In Spese, annota ciò che è stato pagato e come avete diviso ogni importo. In Rimborsi, registra il denaro inviato tra coinquilini. Riepilogo riunisce i due tipi di registrazione per mostrare quanto resta, senza modificare le spese originali.",
+    "caption": "Le 7 schede",
+    "headers": [
+      "Scheda",
+      "Come usarla"
+    ],
+    "rows": [
+      [
+        "Istruzioni",
+        "Leggi le indicazioni, la privacy e i limiti del modello prima di compilare."
+      ],
+      [
+        "Configurazione",
+        "Inserisci da 2 a 6 nomi, periodo, valuta e, se servono, i saldi precedenti già verificati."
+      ],
+      [
+        "Spese",
+        "Registra ogni spesa una volta, chi ha pagato, chi partecipa e come dividerla."
+      ],
+      [
+        "Rimborsi",
+        "Annota i pagamenti tra coinquilini senza modificare la spesa originale."
+      ],
+      [
+        "Riepilogo",
+        "Controlla le spese pagate da ciascuno, la sua quota, i rimborsi inviati e ricevuti e il saldo attuale."
+      ],
+      [
+        "Esempio",
+        "Segui i movimenti di Giulia, Luca e Marco fino ai pagamenti finali."
+      ],
+      [
+        "Elenchi",
+        "Trovi le categorie, i metodi di divisione e le valute usate nei menu a discesa."
+      ]
+    ],
+    "cards": [
+      {
+        "heading": "Concordate prima le quote",
+        "body": "Usa parti uguali se i partecipanti sono d’accordo. Se le quote sono diverse, inserisci gli importi che avete concordato."
+      },
+      {
+        "heading": "Annota i rimborsi a parte",
+        "body": "Un rimborso cambia il saldo residuo, ma non cambia chi ha pagato la spesa originale o la quota di ciascuno."
+      },
+      {
+        "heading": "Riporta il saldo precedente una sola volta",
+        "body": "Parti dal riepilogo finale già verificato. Non inserire lo stesso importo sia nel saldo iniziale sia in una nuova spesa."
+      }
+    ]
+  },
+  "setup": {
+    "eyebrow": "Per iniziare",
+    "heading": "Imposta il primo periodo",
+    "intro": "Parti dalla scheda Configurazione e inserisci i tuoi dati nei campi da compilare. Conserva le celle con formule e risultati automatici.",
+    "steps": [
+      {
+        "heading": "Inserisci nomi, periodo e valuta",
+        "body": "Il nome della casa o del gruppo è facoltativo. Scegli una valuta e inserisci da 2 a 6 nomi diversi. Il periodo non filtra le registrazioni e la valuta non converte gli importi."
+      },
+      {
+        "heading": "Riporta i saldi precedenti solo se servono",
+        "body": "Usa il riepilogo finale precedente già verificato: positivo per chi deve ricevere denaro, negativo per chi deve pagarlo. La somma dei saldi iniziali deve essere zero."
+      },
+      {
+        "heading": "Registra ogni spesa una sola volta",
+        "body": "Indica data, descrizione, categoria, importo e chi ha pagato. Un rimborso ricevuto in seguito non è una nuova spesa."
+      },
+      {
+        "heading": "Scegli chi partecipa e come dividere",
+        "body": "Per le parti uguali, seleziona solo chi partecipa a quella spesa. Per le quote concordate, inserisci ogni importo e controlla che la somma corrisponda alla spesa."
+      },
+      {
+        "heading": "Annota i rimborsi e controllate il riepilogo",
+        "body": "Quando avviene un pagamento tra coinquilini, registralo in Rimborsi. Prima di pagare ciò che resta, verificate il riepilogo insieme."
+      }
+    ],
+    "tip": "Se non è ancora chiaro chi partecipa o quale sia la quota di ciascuno, parlatene prima di inserire la spesa nei saldi concordati."
+  },
+  "situations": {
+    "eyebrow": "Nella vita di tutti i giorni",
+    "heading": "Come aggiornare i conti senza perdere la cronologia",
+    "intro": "Un rimborso parziale o un nuovo mese non richiedono di riscrivere le spese precedenti. Aggiungi il pagamento oppure riporta il saldo verificato nel periodo successivo.",
+    "caption": "Situazioni frequenti",
+    "headers": [
+      "Situazione",
+      "Cosa fare",
+      "Cosa evitare"
+    ],
+    "rows": [
+      [
+        "Partecipano solo alcune persone",
+        "Seleziona chi ha partecipato alla spesa o ha accettato di dividerla.",
+        "Dividere automaticamente ogni acquisto tra tutti."
+      ],
+      [
+        "Le quote dell’affitto sono diverse",
+        "Inserisci gli importi che avete già concordato.",
+        "Aspettarti che il modello decida cosa sia equo."
+      ],
+      [
+        "Qualcuno ha restituito solo una parte",
+        "Registra una volta in Rimborsi la data, chi ha inviato, chi ha ricevuto e l’importo.",
+        "Ridurre la spesa originale o cancellarla."
+      ],
+      [
+        "Un negozio ha rimborsato un acquisto",
+        "Questo modello non gestisce spese negative o rimborsi dei negozi. Annota la rettifica separatamente e verificate i saldi prima di riportarli al periodo successivo.",
+        "Modificare un riepilogo già verificato senza avvisare gli altri."
+      ],
+      [
+        "Resta un saldo del periodo precedente",
+        "Riporta una volta il saldo finale verificato come saldo iniziale del nuovo periodo.",
+        "Aggiungere lo stesso importo come nuova spesa."
+      ],
+      [
+        "Non siete d’accordo su una spesa",
+        "Tieni separato l’importo finché non avete verificato data, cifra, chi ha pagato e quote.",
+        "Trattare il risultato del foglio come prova di chi ha ragione."
+      ],
+      [
+        "Un acquisto è personale",
+        "Inseriscilo nelle spese condivise solo se altre persone hanno accettato di partecipare.",
+        "Mescolare acquisti personali e spese di casa senza accordarsi."
+      ],
+      [
+        "Un coinquilino se ne va o ne arriva uno nuovo",
+        "Verificate il periodo e i saldi prima di iniziarne un altro con i nuovi nomi.",
+        "Cambiare i nomi a metà di un periodo già compilato."
+      ]
+    ],
+    "afterBefore": "Per concordare le quote prima di compilare, leggi la ",
+    "afterAnchor": "guida per dividere affitto, bollette e spesa (in inglese)",
+    "afterAfter": "."
+  },
+  "review": {
+    "eyebrow": "Prima di trasferire denaro",
+    "heading": "Controllate insieme gli stessi registri",
+    "intro": "Una formula corretta non recupera una spesa dimenticata. Rivedete i movimenti mentre ricordate ancora cosa è successo.",
+    "checklistHeading": "Cosa verificare prima di chiudere il periodo",
+    "checklist": [
+      "Ogni spesa ha data, descrizione, importo e nome di chi ha pagato.",
+      "I partecipanti a ogni spesa corrispondono a quanto avete concordato.",
+      "La somma delle quote concordate corrisponde all’importo della spesa.",
+      "Ogni rimborso è stato registrato una sola volta, con le persone e l’importo corretti.",
+      "I saldi iniziali provengono dal riepilogo precedente verificato e sono stati riportati una volta.",
+      "La somma dei saldi di tutti è zero prima di usare i pagamenti suggeriti.",
+      "Gli importi ancora da concordare restano separati dai saldi accettati."
+    ],
+    "messageHeading": "Un messaggio da inviare insieme al riepilogo",
+    "text": "Ho riordinato le spese e i rimborsi di casa di questo mese. Ho inserito gli acquisti, la quota concordata di ciascuno e i pagamenti già effettuati. Potete confrontarli con i vostri appunti? Se manca qualcosa o una cifra è diversa da quanto avevamo deciso, rivediamola insieme prima di pagare il saldo.",
+    "afterBefore": "Dopo un pagamento, puoi usare anche il ",
+    "afterAnchor": "generatore di conferme di rimborso (in inglese)",
+    "afterAfter": " per annotare quanto hai ricevuto e quanto resta.",
+    "note": "Condividere il riepilogo aiuta a controllare i registri. Non rende automaticamente accettato da tutti un importo ancora in discussione."
+  },
+  "copyUI": {
+    "button": "Copia il messaggio",
+    "busy": "Copia in corso…",
+    "successButton": "Copiato",
+    "successStatus": "Messaggio copiato.",
+    "manual": "Il testo è selezionato. Usa il comando di copia del dispositivo.",
+    "failure": "Non è stato possibile copiare automaticamente. Seleziona il testo e copialo.",
+    "noJS": "JavaScript è disattivato. Puoi selezionare e copiare il testo.",
+    "aria": "Copia il messaggio per controllare il riepilogo delle spese di casa"
+  },
+  "comparison": {
+    "eyebrow": "Scegli come tenere i conti",
+    "heading": "Foglio di calcolo o app: cosa fa per voi?",
+    "intro": "Il foglio funziona bene se qualcuno lo aggiorna e tutti lo controllano regolarmente. Se preferisci annotare ogni cambiamento su iPhone o iPad, You Owe Me ti aiuta a seguire i saldi per persona.",
+    "caption": "Modi diversi per tenere i registri",
+    "headers": [
+      "Metodo",
+      "Quando è utile",
+      "Limiti e lavoro richiesto",
+      "Prossimo passo"
+    ],
+    "rows": [
+      [
+        "Messaggio o nota",
+        "Una spesa semplice con quote già concordate.",
+        "Diventa più difficile seguire tutto quando aumentano spese, rimborsi e periodi.",
+        "Conserva una nota."
+      ],
+      [
+        "Calcolatore dei conti di casa",
+        "Vuoi chiudere i conti di un singolo periodo.",
+        "Non conserva una cronologia continua da un mese all’altro.",
+        "Usa il calcolatore (in inglese)."
+      ],
+      [
+        "Foglio per le spese tra coinquilini",
+        "Qualcuno può aggiornare i registri e il gruppo può controllarli regolarmente.",
+        "Occorre annotare e verificare spese e rimborsi, anche quelli parziali.",
+        "Scarica il modello."
+      ],
+      [
+        "You Owe Me",
+        "Una persona vuole seguire saldi, pagamenti e promemoria per sé.",
+        "Non è un foglio modificato insieme da tutti i coinquilini. Non trasferisce denaro e non risolve disaccordi sulle quote.",
+        "Segui i saldi nell’app."
+      ]
+    ],
+    "after": "Il foglio è un registro manuale della casa. You Owe Me offre registrazioni ricorrenti, promemoria per te e una cronologia da condividere. Scegli lo strumento che riesci a tenere aggiornato."
+  },
+  "product": {
+    "eyebrow": "Tra un riepilogo e l’altro",
+    "heading": "Registra una spesa o un rimborso quando avviene",
+    "intro": "Arrivano nuove bollette, qualcuno fa la spesa e un’altra persona restituisce una parte di ciò che deve. I saldi possono cambiare prima che riapriate il foglio.",
+    "body": "In You Owe Me per iPhone e iPad, annota questi movimenti e controlla il saldo di ogni persona. Puoi usare registrazioni ricorrenti, impostare promemoria per te e condividere la cronologia tramite Live Link.",
+    "boundary": "You Owe Me non trasferisce né riscuote denaro, non risolve i disaccordi sulla divisione e non crea un obbligo legale solo perché hai registrato un importo.",
+    "appLink": "Segui i saldi per persona",
+    "privacyLink": "Privacy e condivisione (in inglese)",
+    "clarification": "Inizia un registro separato nell’app. Questo foglio non viene importato. Il download è gratuito, con acquisti in-app.",
+    "chips": [
+      "Non trasferisce denaro",
+      "Non riscuote automaticamente i pagamenti",
+      "Puoi tenere il tuo registro personale",
+      "Segue rimborsi parziali e saldi che cambiano"
+    ]
+  },
+  "appAssets": {
+    "assurance": "You Owe Me è disponibile in italiano.",
+    "badgeAlt": "Scarica You Owe Me dall’App Store",
+    "qrInstruction": "Inquadra il codice con la fotocamera dell’iPhone o dell’iPad.",
+    "qrAlt": "Codice QR per aprire You Owe Me sull’App Store",
+    "fallback": "Apri nell’App Store"
+  },
+  "nextSteps": {
+    "eyebrow": "Altre risorse utili",
+    "heading": "Scegli in base alla vostra situazione",
+    "intro": "Se il foglio risponde alle vostre esigenze, continuate a usarlo. Per concordare le quote, chiudere un solo periodo o tenere i registri sul telefono, scegli la risorsa adatta.",
+    "cards": [
+      {
+        "label": "Saldo del periodo",
+        "title": "Chiudi i conti di un periodo (in inglese)",
+        "body": "Controlla quanto resta da pagare o ricevere senza iniziare una cronologia mensile nel foglio.",
+        "url": "/tools/roommate-bill-split-calculator/"
+      },
+      {
+        "label": "Divisione",
+        "title": "Concordate come dividere le spese (in inglese)",
+        "body": "Parlate di affitto, bollette e spesa prima di registrare la quota di ciascuno.",
+        "url": "/blog/how-to-split-rent-utilities-and-groceries-with-roommates/"
+      },
+      {
+        "label": "Confronto",
+        "title": "Confronta foglio di calcolo e app (in inglese)",
+        "body": "Valuta le differenze tra aggiornare un foglio e registrare spese e pagamenti in un’app.",
+        "url": "/compare/spreadsheet-vs-app-for-tracking-money-owed/"
+      },
+      {
+        "label": "Registri quotidiani",
+        "title": "Segui i saldi nell’app",
+        "body": "Conserva saldo e cronologia di ogni persona e imposta promemoria per te.",
+        "url": "/it/soluzioni/app-per-segnare-chi-ti-deve-soldi/"
+      }
+    ]
+  },
+  "faqEyebrow": "Domande frequenti",
+  "faqHeading": "Sul modello per le spese tra coinquilini",
+  "faq": [
+    {
+      "q": "Cosa posso registrare in questo modello?",
+      "a": "Spese condivise, chi ha pagato, la quota di ciascuno, rimborsi tra coinquilini e saldi residui. Per un altro periodo, crea una nuova copia e riporta i saldi già verificati."
+    },
+    {
+      "q": "Posso dividere una spesa in quote diverse?",
+      "a": "Sì. Scegli Quote concordate e inserisci la parte di ciascun partecipante in base a quanto avete deciso. La somma deve corrispondere all’importo della spesa."
+    },
+    {
+      "q": "Posso escludere una persona da una spesa?",
+      "a": "Sì. Seleziona solo chi partecipa a quella spesa. Un acquisto personale o una spesa che riguarda parte del gruppo non deve essere divisa per forza tra tutti."
+    },
+    {
+      "q": "Come registro un pagamento tra coinquilini?",
+      "a": "Usa Rimborsi per annotare separatamente data, chi ha inviato, chi ha ricevuto e importo. Il pagamento modifica i saldi senza cambiare la spesa originale."
+    },
+    {
+      "q": "Posso riportare un saldo al mese successivo?",
+      "a": "Sì. Inserisci una sola volta il saldo finale verificato come saldo iniziale della nuova copia. Non aggiungere lo stesso importo come nuova spesa e non registrare un rimborso due volte."
+    },
+    {
+      "q": "Le spese che inserisco vengono inviate a You Owe Me?",
+      "a": "No. I dati di Excel restano nel file e seguono le autorizzazioni del luogo in cui lo salvi o condividi. La copia di Fogli Google è nel tuo account Google, con l’accesso che scegli."
+    },
+    {
+      "q": "Come uso il modello in Fogli Google?",
+      "a": "Seleziona Usa in Fogli Google, accedi al tuo account Google se necessario e crea una copia nel tuo Drive. Inserisci i nomi in Configurazione, compila Spese e Rimborsi e controlla Riepilogo con gli altri coinquilini prima di pagare."
+    },
+    {
+      "q": "Il file Excel funziona in Apple Numbers?",
+      "a": "Il modello usa formule comuni, ma formattazione, menu a discesa e calcoli possono comportarsi diversamente in Numbers. Controlla i risultati dopo l’apertura. Per Fogli Google, usa il modello dedicato di questa pagina."
+    },
+    {
+      "q": "Quante registrazioni contiene ogni copia?",
+      "a": "Ci sono 200 righe per le spese e 200 per i rimborsi. Per un nuovo periodo, crea un’altra copia e riporta una sola volta il saldo finale verificato come saldo iniziale."
+    }
+  ],
+  "limits": {
+    "heading": "Limiti del modello",
+    "body": "Questo foglio aiuta a organizzare i registri di una casa condivisa. Non stabilisce una divisione equa dell’affitto, non crea né dimostra un debito legale e non sostituisce il contratto di affitto o gli accordi tra coinquilini. Non trasferisce né riscuote denaro e non sostituisce documenti contabili ufficiali o consulenza legale e fiscale. Registra spese e quote che i partecipanti comprendono e accettano. Tieni separati gli importi contestati finché non trovate un accordo."
+  },
+  "closing": {
+    "eyebrow": "Una base comune per parlarne",
+    "heading": "Inizia un registro che tutti possano controllare",
+    "body": "Scegli Excel o Fogli Google e annota spese e quote concordate. Prima di trasferire denaro, verificate il riepilogo insieme.",
+    "excel": "Scarica il modello Excel",
+    "sheets": "Usa in Fogli Google",
+    "calculator": "Dividi una spesa adesso",
+    "updated": "Aggiornato il 6 novembre 2026"
+  },
+  "inwardNewParagraphs": {
+    "splitBefore": "Per seguire spese e rimborsi di casa da un mese all’altro, usa il ",
+    "splitAnchor": "modello per le spese tra coinquilini",
+    "splitAfter": ". Trovi le versioni in italiano per Excel e Fogli Google e un registro CSV.",
+    "recordBefore": "Per i conti con chi vive con te, puoi usare anche il ",
+    "recordAnchor": "modello per le spese tra coinquilini",
+    "recordAfter": ". Annota separatamente le spese originali e i rimborsi successivi."
+  },
+  "englishToolsCard": {
+    "language": "Italiano",
+    "title": "Roommate expense tracker template in Italian",
+    "description": "Italian Excel, Google Sheets and CSV resources for agreed shared costs and repayments."
+  },
+  "registry": {
+    "title": "Modello spese tra coinquilini",
+    "discoveryDescription": "Modello gratuito in italiano per spese condivise, rimborsi tra coinquilini e saldi. Versioni Excel, Fogli Google e CSV.",
+    "primaryAudience": "Chi condivide casa e vuole controllare spese e rimborsi con gli altri coinquilini.",
+    "problemSolved": "Separa le spese dai pagamenti tra coinquilini per mostrare chi deve ancora pagare e chi deve ricevere denaro.",
+    "useWhen": "Quando registrate le spese, chiudete un periodo o riportate un saldo verificato al periodo successivo.",
+    "primaryCta": "Scarica il modello Excel",
+    "nextStep": "Segui i saldi per persona in You Owe Me"
+  }
+}
