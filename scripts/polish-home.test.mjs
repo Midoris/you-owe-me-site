@@ -11,21 +11,21 @@ const base='e6463edf3c4cc781c09d8168c09a4894b051edda';
 const read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8');
 const page=read('pl/index.html'),d=parseStaticPage(page);
 
-test('Polish discovery admits only the reviewed home and keeps English-content fallback until real counterparts exist',()=>{
- assert.deepEqual(polishPages.map(p=>p.pl),['/pl/']);assert.equal(localizedSourceRoute('/pl/'),'/');assert.equal(localizedSourceRoute('/pl/solutions/app-to-track-money-owed/'),null);
- assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja','pt','it','pl']);assert.equal(completedCounterparts('/solutions/app-to-track-money-owed/').some(p=>p.code==='pl'),false);
- const nav=d.querySelectorAll('.site-locale-section');assert.equal(nav.length,1);assert.deepEqual(nav[0].querySelectorAll('a').map(n=>n.getAttribute('href')),['/pl/']);assert.equal(nav[0].querySelector('a').getAttribute('aria-current'),'page');assert.equal((page.match(/<!-- polish-section:start -->/g)||[]).length,1);
+test('Polish discovery admits reviewed routes and keeps English-content fallback until real counterparts exist',()=>{
+ assert.deepEqual(polishPages.map(p=>p.pl),['/pl/','/pl/zastosowania/aplikacja-kto-ile-jest-winien/']);assert.equal(localizedSourceRoute('/pl/'),'/');assert.equal(localizedSourceRoute('/pl/solutions/app-to-track-money-owed/'),null);
+ assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja','pt','it','pl']);assert.equal(completedCounterparts('/solutions/app-to-track-money-owed/').some(p=>p.code==='pl'),true);
+ const nav=d.querySelectorAll('.site-locale-section');assert.equal(nav.length,1);assert.deepEqual(nav[0].querySelectorAll('a').map(n=>n.getAttribute('href')),['/pl/','/pl/zastosowania/aplikacja-kto-ile-jest-winien/']);assert.equal(nav[0].querySelector('a').getAttribute('aria-current'),'page');assert.equal((page.match(/<!-- polish-section:start -->/g)||[]).length,1);
  assert.equal(renderLocaleHtml(page,'/','pl'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
  const fixture='<html lang="pl"><head><link rel="canonical" href="https://you-owe-me.com/pl/" /></head><body><article><a href="/">Strona główna (po angielsku)</a><a href="/solutions/app-to-track-money-owed/">Zastosowania (po angielsku)</a></article><div id="copyright"><ul></ul></div></body></html>';
- const rendered=renderLocaleHtml(fixture,'/','pl');assert.ok(rendered.includes('href="/pl/">Strona główna</a>'));assert.ok(rendered.includes('href="/solutions/app-to-track-money-owed/">Zastosowania (po angielsku)</a>'));
- const registry=contentRegistry.find(p=>p.url==='/pl/');assert.equal(contentRegistry.length,147);for(const key of ['primaryAudience','problemSolved','useWhen','primaryCta','nextStep'])assert.equal(registry[key],polishPages[0].registry[key]);assert.equal(registry.primaryAudience,polishShared.primaryAudience);
+ const rendered=renderLocaleHtml(fixture,'/','pl');assert.ok(rendered.includes('href="/pl/">Strona główna</a>'));assert.ok(rendered.includes('href="/pl/zastosowania/aplikacja-kto-ile-jest-winien/">Zastosowania</a>'));
+ const registry=contentRegistry.find(p=>p.url==='/pl/');assert.equal(contentRegistry.length,148);for(const key of ['primaryAudience','problemSolved','useWhen','primaryCta','nextStep'])assert.equal(registry[key],polishPages[0].registry[key]);assert.equal(registry.primaryAudience,polishShared.primaryAudience);
 });
 
 test('Polish active homepage retains established components and honest English links without a dormant story or new FAQ schema',()=>{
  const original=parseStaticPage(execFileSync('git',['show',base+':it/index.html'],{encoding:'utf8'}));
  const direct=doc=>doc.querySelectorAll('section').filter(n=>n.parentNode?.tagName==='article'&&n.parentNode.parentNode?.id==='main').map(n=>n.getAttribute('aria-labelledby'));
  assert.equal(d.querySelectorAll('section').length,16);assert.equal(direct(d).length,12);assert.deepEqual(direct(d),direct(original));assert.equal(d.querySelectorAll('.lt-proofGrid article').length,3);assert.equal(d.querySelectorAll('.lt-reviewRail article').length,18);assert.equal(d.querySelectorAll('.lt-faqList article').length,10);
- for(const a of d.querySelectorAll('#main a')){const href=a.getAttribute('href');if(href?.startsWith('/')&&href!=='/pl/')assert.ok(a.textContent.includes('(po angielsku)'),href);}
+ for(const a of d.querySelectorAll('#main a')){const href=a.getAttribute('href');if(href?.startsWith('/')&&!href.startsWith('/pl/'))assert.ok(a.textContent.includes('(po angielsku)'),href);}
  const graph=JSON.parse(page.match(/<script type="application\/ld\+json">([\s\S]+?)<\/script>/)[1])['@graph'];assert.equal(graph[0].inLanguage,'pl');assert.equal(graph[1].inLanguage.length,10);assert.equal(graph[1].featureList.length,22);assert.equal(graph[2].inLanguage,'en');assert.equal(graph.some(n=>n['@type']==='FAQPage'),false);
  assert.doesNotMatch(page,/homepage-interactive-story-backup|loan-import-entry\.mjs|loc\d+-.*pending/);
 });

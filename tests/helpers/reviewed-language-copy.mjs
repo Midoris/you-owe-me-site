@@ -3,8 +3,27 @@ import fs from "node:fs";
 
 
 
+
+const polishMoneyOwedAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/polish-money-owed-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedPolishMoneyOwedSource(source, file) {
+  if (!polishMoneyOwedAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of polishMoneyOwedAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedPolishMoneyOwedIntegration(html) {
+  const route = '/pl/zastosowania/aplikacja-kto-ile-jest-winien/';
+  html = html.replace('    <link rel="alternate" hreflang="pl" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pl"'+direction+' hreflang="pl">Polski</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Aplikacja do zapisywania rozliczeń</a>', '');
+  for (const [current, previous] of polishMoneyOwedAdmissions.homeAnchors) html = html.replace(current, previous);
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=plmoney20261106(?=")/g, '$1?v=plhome20261106');
+}
+
 const polishHomeAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/polish-home-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedPolishHomeSource(source, file) {
+  source = normalizeReviewedPolishMoneyOwedSource(source, file);
   if (!polishHomeAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -12,6 +31,7 @@ export function normalizeReviewedPolishHomeSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedPolishHomeIntegration(html) {
+  html = normalizeReviewedPolishMoneyOwedIntegration(html);
   html = html.replace('    <link rel="alternate" hreflang="pl" href="https://you-owe-me.com/pl/" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="/pl/" lang="pl"'+direction+' hreflang="pl">Polski</a>', '');
   for (const {current, previous} of polishHomeAdmissions.availability) html = html.replaceAll(current, previous);

@@ -4,6 +4,7 @@ export const INCLUDED_EXACT_ROUTES = new Set([
   "/",
   "/ja/",
   "/pl/",
+  "/pl/zastosowania/aplikacja-kto-ile-jest-winien/",
   "/it/",
   "/it/strumenti/modello-spese-coinquilini/",
   "/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/",

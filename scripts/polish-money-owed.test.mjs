@@ -1,0 +1,39 @@
+import test from 'node:test';import assert from 'node:assert/strict';import fs from 'node:fs';import {execFileSync} from 'node:child_process';
+import {parseStaticPage} from '../tests/helpers/static-dom.mjs';import {siteLocales,polishPages,completedCounterparts,localizedSourceRoute} from '../content/site-locales.mjs';import {contentRegistry} from '../content/content-registry.mjs';import {renderLocaleHtml,renderLocaleDiscovery} from './sync-site-locales.mjs';import {normalizeReviewedPolishMoneyOwedIntegration,normalizeReviewedPolishMoneyOwedSource} from '../tests/helpers/reviewed-language-copy.mjs';
+const base='a727f7b06f81ea4de77a6abd254de82254489fdc',route='/pl/zastosowania/aplikacja-kto-ile-jest-winien/',source='/solutions/app-to-track-money-owed/',read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8'),page=read(route.slice(1)+'index.html'),d=parseStaticPage(page),original=parseStaticPage(execFileSync('git',['show',base+':solutions/app-to-track-money-owed/index.html'],{encoding:'utf8'})),text=n=>n.textContent.trim().replace(/\s+/g,' '),store='https://apps.apple.com/app/id1147058670?pt=117888502&ct=website_cta&mt=8';
+
+test('Polish solution contains18visible/schema FAQs including interest and22unchanged source destinations',()=>{
+ const faqs=d.querySelectorAll('.solution-faq-item');assert.equal(faqs.length,18);assert.equal(faqs[0].hasAttribute('open'),true);assert.ok(faqs.slice(1).every(n=>!n.hasAttribute('open')));
+ const schemas=[...page.matchAll(/<script type="application\/ld\+json">([\s\S]+?)<\/script>/g)].map(m=>JSON.parse(m[1]));const faqSchema=schemas.find(n=>n['@type']==='FAQPage');assert.equal(faqSchema.inLanguage,'pl');assert.deepEqual(faqSchema.mainEntity.map(n=>({q:n.name,a:n.acceptedAnswer.text.trim().replace(/\s+/g,' ')})),faqs.map(n=>({q:text(n.querySelector('summary')),a:text(n.querySelector('p'))})));assert.equal(text(faqs[10].querySelector('summary')),'Czy mogę zapisywać odsetki?');
+ const cards=d.querySelectorAll('.lt-relatedCard');assert.equal(cards.length,22);assert.deepEqual(cards.map(n=>n.querySelector('a').getAttribute('href')),original.querySelectorAll('.lt-relatedCard').map(n=>{const h=n.querySelector('a').getAttribute('href');return h}));
+ assert.equal(d.querySelector('.money-owed-related-directory').hasAttribute('open'),false);assert.equal(d.querySelector('.money-owed-extra-features').hasAttribute('open'),false);
+});
+
+test('Polish solution retains English active structure, analytics identity and valid fallback/fragment semantics',()=>{
+ const sections=doc=>doc.querySelectorAll('section').filter(n=>n.parentNode?.tagName==='article'&&n.parentNode.parentNode?.id==='main').map(n=>[n.className,n.id,n.getAttribute('aria-labelledby')]);assert.equal(sections(d).length,16);assert.deepEqual(sections(d),sections(original));
+ const attrs=doc=>doc.querySelectorAll('.best-next-step__card').map(n=>[...n.attributes].filter(([k])=>k==='href'||k.startsWith('data-')));const expected=attrs(original);expected[3]=expected[3].map(([k,v])=>[k,k==='href'?store:k==='data-step-destination'?'app-store:general':v]);assert.deepEqual(attrs(d),expected);
+ for(const a of d.querySelectorAll('#main a')){const h=a.getAttribute('href');assert.notEqual(h,'undefined');if(h?.startsWith('/')&&!h.startsWith('/pl/'))assert.ok(text(a).includes('(po angielsku)'),h);if(h?.includes('apps.apple.com'))assert.equal(h,store);if(h?.startsWith('#'))assert.ok(d.querySelector(h),h);}
+ const web=[...page.matchAll(/<script type="application\/ld\+json">([\s\S]+?)<\/script>/g)].map(m=>JSON.parse(m[1])).find(n=>n['@type']==='WebPage');assert.equal(web.inLanguage,'pl');assert.equal(web.name,text(d.querySelector('h1')));assert.equal(web.dateModified,'2026-11-06');assert.equal(web.url,'https://you-owe-me.com'+route);assert.doesNotMatch(page,/loan-import-entry\.mjs|data-loan-import-open|ppid=/);
+});
+
+test('Polish discovery/nav/inward links admit exactly the accepted routes and correct family',()=>{
+ assert.deepEqual(polishPages.map(p=>p.pl),['/pl/',route]);assert.equal(localizedSourceRoute(route),source);assert.equal(localizedSourceRoute('/pl/tools/split-expense-calculator/'),null);assert.deepEqual(completedCounterparts(source).map(p=>p.code),['en','es','de','ar','fr','ja','pt','it','pl']);assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='pl'),false);
+ assert.equal(contentRegistry.length,148);assert.equal(renderLocaleHtml(page,source,'pl'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
+ for(const r of polishPages.map(p=>p.pl)){const raw=read(r.slice(1)+'index.html'),doc=parseStaticPage(raw),navs=doc.querySelectorAll('.site-locale-section');assert.equal(navs.length,1);assert.equal((raw.match(/<!-- polish-section:start -->/g)||[]).length,1);assert.deepEqual(navs[0].querySelectorAll('a').map(n=>n.getAttribute('href')),polishPages.map(p=>p.pl));assert.equal(navs[0].querySelectorAll('a').filter(n=>n.getAttribute('aria-current')==='page')[0].getAttribute('href'),r);}
+ const home=parseStaticPage(read('pl/index.html'));assert.equal(home.querySelector('.best-next-step__card').getAttribute('href'),route);assert.equal(home.querySelector('.lt-situationPrimaryCta').getAttribute('href'),route);assert.ok(!text(home.querySelector('.best-next-step__card')).includes('(po angielsku)'));assert.ok(!text(home.querySelector('.lt-situationPrimaryCta')).includes('(po angielsku)'));
+ for(const c of completedCounterparts(source))assert.ok(read(c.route.slice(1)+'index.html').includes('hreflang="pl" href="https://you-owe-me.com'+route+'"'));
+});
+
+test('all previous HTML/shared source preserve exact bytes beyond narrow Polish solution admissions',()=>{
+ const present=new Set(execFileSync('git',['ls-tree','-r','--name-only',base],{encoding:'utf8'}).trim().split('\n'));const files=execFileSync('git',['diff','--name-only',base,'--','*.html'],{encoding:'utf8'}).trim().split('\n').filter(f=>present.has(f));assert.ok(files.length>100);for(const f of files)assert.equal(normalizeReviewedPolishMoneyOwedIntegration(read(f)),execFileSync('git',['show',base+':'+f],{encoding:'utf8'}),f);
+ const admissions=JSON.parse(read('tests/fixtures/polish-money-owed-reviewed-admissions.json'));for(const f of Object.keys(admissions.source))assert.deepEqual(normalizeReviewedPolishMoneyOwedSource(fs.readFileSync(new URL('../'+f,import.meta.url)),f),execFileSync('git',['show',base+':'+f]),f);
+ const altered=admissions.homeAnchors[1][0].replace(' class=',' data-unapproved="x" class=');assert.equal(normalizeReviewedPolishMoneyOwedIntegration(altered),altered);
+ const bytes=Buffer.from([0xff,0xfe,0x00,0x80]);assert.equal(normalizeReviewedPolishMoneyOwedSource(bytes,'downloads/protected.xlsx'),bytes);
+});
+
+
+test('Polish FAQ and directory prose exactly matches the parent-reviewed copy',()=>{
+ const approved=JSON.parse(read('tests/fixtures/polish-money-owed-copy.json'));
+ assert.deepEqual(d.querySelectorAll('.solution-faq-item').map(n=>({q:text(n.querySelector('summary')),a:text(n.querySelector('p'))})),approved.faq);
+ assert.deepEqual(d.querySelectorAll('.lt-relatedCard').map(n=>[n.querySelector('a').getAttribute('href'),text(n.querySelector('h3')),text(n.querySelector('p')),text(n.querySelector('a'))]),approved.cards);
+});

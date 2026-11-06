@@ -1,0 +1,36 @@
+{
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "  \"/scripts/analytics.js\": \"plmoney20261106\",\n",
+        "  \"/scripts/analytics.js\": \"plhome20261106\",\n"
+      ],
+      [
+        "  },\n  {\n    \"en\": \"/solutions/app-to-track-money-owed/\",\n    \"pl\": \"/pl/zastosowania/aplikacja-kto-ile-jest-winien/\",\n    \"title\": \"Aplikacja do zapisywania rozliczeń\",\n    \"updated\": \"2026-11-06\",\n    \"complete\": true,\n    \"discoveryDescription\": \"Zapisuj pożyczone pieniądze, wydatki opłacone za innych i każdą spłatę. Sprawdzaj, ile zostało do oddania. You Owe Me po polsku na iPhone’a i iPada.\",\n    \"registry\": {\n      \"primaryAudience\": \"Osoby, które pożyczają pieniądze znajomym lub rodzinie, płacą za innych i otrzymują zwroty w kilku częściach.\",\n      \"problemSolved\": \"Łączy początkową kwotę, kolejne spłaty i saldo każdej osoby, żeby było wiadomo, ile zostało do oddania.\",\n      \"useWhen\": \"Gdy pieniądze wracają w częściach albo regularnie płacisz za tę samą osobę.\",\n      \"primaryCta\": \"Pobierz z App Store\",\n      \"nextStep\": \"Dodaj osobę i pierwszą kwotę w You Owe Me. Dopisuj każdą spłatę, aby saldo było aktualne.\"\n    }\n",
+        ""
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/pl/zastosowania/aplikacja-kto-ile-jest-winien/\",\n",
+        ""
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=plmoney20261106\";\n",
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=plhome20261106\";\n"
+      ]
+    ]
+  },
+  "homeAnchors": [
+    [
+      "<a class=\"best-next-step__card\" href=\"/pl/zastosowania/aplikacja-kto-ile-jest-winien/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_1\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"money-owed\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/pl/zastosowania/aplikacja-kto-ile-jest-winien/\" data-step-position=\"1\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_money_owed\"><span class=\"pl-link-label\">\n      <span class=\"best-next-step__label\">Pieniądze do odzyskania</span>\n      <strong><span class=\"pl-link-label\">Ktoś ma mi oddać pieniądze</span></strong>\n      <span>Zachowaj początkową kwotę, kolejne spłaty i to, co jeszcze zostało do oddania.</span>\n    </span></a>",
+      "<a class=\"best-next-step__card\" href=\"/solutions/app-to-track-money-owed/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_1\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"money-owed\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/app-to-track-money-owed/\" data-step-position=\"1\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_money_owed\"><span class=\"pl-link-label\">\n      <span class=\"best-next-step__label\">Pieniądze do odzyskania</span>\n      <strong><span class=\"pl-link-label\">Ktoś ma mi oddać pieniądze <span class=\"site-locale-fallback\">(po angielsku)</span></span></strong>\n      <span>Zachowaj początkową kwotę, kolejne spłaty i to, co jeszcze zostało do oddania.</span>\n    </span></a>"
+    ],
+    [
+      "<a href=\"/pl/zastosowania/aplikacja-kto-ile-jest-winien/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"pl-link-label\">Uporządkuj pieniądze do zwrotu</span></a>",
+      "<a href=\"/solutions/app-to-track-money-owed/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"pl-link-label\">Uporządkuj pieniądze do zwrotu <span class=\"site-locale-fallback\">(po angielsku)</span></span></a>"
+    ]
+  ]
+}

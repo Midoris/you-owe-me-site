@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "plhome20261106",
+  "/scripts/analytics.js": "plmoney20261106",
   "/scripts/sales.js": "plhome20261106",
   "/scripts/anniversary-announcement.js": "plhome20261106",
   "/scripts/app-language-support.js": "plhome20261106",
@@ -722,6 +722,21 @@ export const polishPages = [
       "useWhen": "Gdy chcesz uporządkować pieniądze do otrzymania lub oddania.",
       "primaryCta": "Pobierz z App Store",
       "nextStep": "Pobierz You Owe Me, dodaj pierwszą osobę i zapisz kwotę."
+    }
+  },
+  {
+    "en": "/solutions/app-to-track-money-owed/",
+    "pl": "/pl/zastosowania/aplikacja-kto-ile-jest-winien/",
+    "title": "Aplikacja do zapisywania rozliczeń",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "Zapisuj pożyczone pieniądze, wydatki opłacone za innych i każdą spłatę. Sprawdzaj, ile zostało do oddania. You Owe Me po polsku na iPhone’a i iPada.",
+    "registry": {
+      "primaryAudience": "Osoby, które pożyczają pieniądze znajomym lub rodzinie, płacą za innych i otrzymują zwroty w kilku częściach.",
+      "problemSolved": "Łączy początkową kwotę, kolejne spłaty i saldo każdej osoby, żeby było wiadomo, ile zostało do oddania.",
+      "useWhen": "Gdy pieniądze wracają w częściach albo regularnie płacisz za tę samą osobę.",
+      "primaryCta": "Pobierz z App Store",
+      "nextStep": "Dodaj osobę i pierwszą kwotę w You Owe Me. Dopisuj każdą spłatę, aby saldo było aktualne."
     }
   }
 ];

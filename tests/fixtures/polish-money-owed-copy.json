@@ -1,0 +1,211 @@
+{
+  "briefSHA256": "fa1f8f7572524c241a85fa888cdfbe5370d8485ed7753523658a01d77771e01e",
+  "faq": [
+    {
+      "q": "Co mogę zapisywać w aplikacji do rozliczeń?",
+      "a": "Osobę, kwotę, powód, otrzymane wpłaty, częściowe spłaty, przypomnienia i aktualne saldo. Dzięki temu wiesz, kto komu ma oddać pieniądze, bez polegania wyłącznie na pamięci lub starych wiadomościach."
+    },
+    {
+      "q": "Czy aplikacja działa na Androidzie?",
+      "a": "You Owe Me jest dostępna na iPhone’a i iPada. Nie ma aplikacji na Androida ani pełnej wersji aplikacji w przeglądarce. Na Androidzie możesz korzystać z bezpłatnych narzędzi na stronie (po angielsku) i otworzyć Live Link (po angielsku) udostępniony przez osobę korzystającą z iPhone’a lub iPada. Jeśli ta osoba włączy zgłaszanie wpłat, możesz też zgłosić wpłatę w przeglądarce, bez zakładania konta. Osoba prowadząca zapiski sprawdza zgłoszenie przed dodaniem wpłaty. Do prowadzenia zapisów w aplikacji potrzebujesz iPhone’a lub iPada; użytkownicy Androida nie mogą korzystać z Balance Sync (po angielsku)."
+    },
+    {
+      "q": "Czy mogę w prosty sposób sprawdzać, kto jest mi winien pieniądze?",
+      "a": "Tak. You Owe Me łączy osobę, kwotę, powód, spłaty, przypomnienia i saldo. Możesz zapisywać pożyczki między znajomymi, pieniądze do oddania, wydatki rodzinne, domowe i wspólne zakupy w parze, a także niewielkie kwoty do otrzymania od klientów."
+    },
+    {
+      "q": "Czy mogę prowadzić rozliczenia bez arkusza?",
+      "a": "Tak. Saldo, historia wpłat, przypomnienia i szczegóły potrzebne do rozmowy zostają w aplikacji, bez ręcznego aktualizowania tabeli. To przydatne, gdy pieniądze wracają w częściach lub pojawiają się nowe wydatki z tą samą osobą."
+    },
+    {
+      "q": "Czy mogę ułożyć plan spłaty pożyczki między znajomymi?",
+      "a": "Tak. Utwórz osobny zapis pożyczki, który nadal wlicza się do łącznego salda tej osoby. Jeśli chcesz ustalić terminy i wysokość wpłat, dodaj plan spłaty."
+    },
+    {
+      "q": "Czym dokładnie jest You Owe Me?",
+      "a": "To dostępna w App Store aplikacja na iPhone’a i iPada do zapisywania rozliczeń między ludźmi. Łączy wpłaty, przypomnienia i informacje przydatne przy kolejnej rozmowie. Możesz przeczytać opinie użytkowników (po angielsku) oraz informacje o prywatności i danych (po angielsku). Nie jest bankiem, firmą pożyczkową, usługą płatniczą, windykacją, generatorem dokumentów prawnych ani systemem księgowym."
+    },
+    {
+      "q": "Czy aplikacja nadaje się do drobnych pożyczek i wydatków za innych?",
+      "a": "Tak. Możesz zapisywać pożyczone pieniądze, wspólne zakupy, zwroty między osobami oraz kwoty zmieniające się wraz z kolejnymi wydatkami i wpłatami."
+    },
+    {
+      "q": "Czy mogę zapisać częściową spłatę?",
+      "a": "Tak. Dopisz każdą otrzymaną wpłatę i sprawdź, ile jeszcze zostało do oddania. Historia pozostaje w aplikacji, więc nie musisz polegać tylko na pamięci lub rozmowie w telefonie."
+    },
+    {
+      "q": "A jeśli mam kilka pożyczek z tą samą osobą?",
+      "a": "Możesz nadać każdej pożyczce nazwę i prowadzić osobne saldo, historię oraz, w razie potrzeby, plan spłaty. Wszystkie nadal wliczają się do łącznego salda tej osoby."
+    },
+    {
+      "q": "Czy mogę ustawić przypomnienia o spłacie?",
+      "a": "Tak. Możesz ustawić przypomnienie dla pojedynczego wpisu, terminu pożyczki, salda danej osoby lub rozmowy o rozliczeniu. Przypomnienie powiązane z osobą pomaga wrócić do tematu z jej historią pod ręką."
+    },
+    {
+      "q": "Czy mogę zapisywać odsetki?",
+      "a": "Tak. Odsetki ustawia się dla pojedynczego wpisu. Jeśli kwota ma rosnąć w czasie, możesz ustalić stawkę i częstotliwość oraz, w razie potrzeby, datę początkową i końcową. Jeśli uzgodniona kwota ma zostać doliczona tylko raz, możesz wybrać odsetki w stałej kwocie."
+    },
+    {
+      "q": "Czy aplikacja pomoże napisać wiadomość z prośbą o zwrot pieniędzy?",
+      "a": "Tak. Korzysta z rzeczywistego salda i historii, żeby pomóc dobrać treść do Waszej relacji. Przeczytaj propozycję, zanim zdecydujesz, co wysłać."
+    },
+    {
+      "q": "Czy mogę zapisywać też pieniądze, które mam oddać?",
+      "a": "Tak. Możesz zapisywać zarówno kwoty do otrzymania, jak i do oddania. Gdy to Ty masz spłacić zobowiązanie, możesz też przygotować wiadomość o planowanych wpłatach."
+    },
+    {
+      "q": "Czym to się różni od notatki lub rozmowy w komunikatorze?",
+      "a": "Przy prostym, jednorazowym zwrocie notatka lub wiadomość może wystarczyć. Gdy saldo się zmienia albo pieniądze wracają w częściach, aplikacja pomaga zachować początkową kwotę, wpłaty i pozostałe saldo w jednej historii."
+    },
+    {
+      "q": "Czy druga osoba też musi mieć aplikację?",
+      "a": "Nie. Możesz prowadzić zapiski samodzielnie i w razie potrzeby udostępniać wiadomości, zestawienia, zapisy otrzymanych wpłat lub aktualny Live Link. Druga osoba może sprawdzić kwoty bez instalowania aplikacji."
+    },
+    {
+      "q": "Czy druga osoba zobaczy aktualne saldo bez aplikacji?",
+      "a": "Tak. Przez Live Link może zobaczyć udostępnione saldo i historię bez aplikacji i konta. Jeśli otrzyma zaproszenie do zgłaszania wpłat, może też przesłać kwotę, datę i opcjonalną notatkę do sprawdzenia. Samo zgłoszenie nie zmienia salda."
+    },
+    {
+      "q": "Czy druga osoba może zmieniać saldo?",
+      "a": "Jeśli Ty i druga osoba korzystacie z You Owe Me, Balance Sync pozwala bezpośrednio edytować obsługiwane zapisy. Jeśli tylko Ty korzystasz z aplikacji, możesz udostępnić Live Link i włączyć zgłaszanie wpłat. Po otrzymaniu zgłoszenia decydujesz, czy dodać nowy wpis, połączyć je z odpowiednią wpłatą już zapisaną w historii, czy odrzucić."
+    },
+    {
+      "q": "Czy mogę zapisywać niezapłacone kwoty od klientów?",
+      "a": "Tak. Możesz zapisywać niewielkie kwoty do otrzymania, wydatki opłacone za klienta, zaliczki i częściowe płatności, zachowując ich historię. Aplikacja nie zastępuje pełnego systemu księgowego ani narzędzi do płac, podatków i fakturowania. Przykłady znajdziesz na stronie opisującej zapisy płatności klientów (po angielsku)."
+    }
+  ],
+  "cards": [
+    [
+      "/features/#repayment-plans",
+      "Osobne pożyczki i plany spłat",
+      "Prowadź każdą pożyczkę oddzielnie i dodaj plan aktualizowany wraz z saldem oraz zapisanymi wpłatami.",
+      "Poznaj plany spłat (po angielsku)"
+    ],
+    [
+      "/solutions/client-payment-records/",
+      "Zapisy płatności klientów",
+      "Zaliczki, częściowe wpłaty i historia rozliczeń za zlecenia, lekcje oraz drobne usługi.",
+      "Zobacz rozliczenia z klientami (po angielsku)"
+    ],
+    [
+      "/solutions/temporary-financial-support-tracker/",
+      "Tymczasowe wsparcie finansowe",
+      "Opłacone za kogoś rachunki, pomoc przez pewien czas, zwroty w ratach i zmiany ustaleń.",
+      "Uporządkuj tymczasową pomoc (po angielsku)"
+    ],
+    [
+      "/blog/how-to-support-someone-financially-without-confusion/",
+      "Jasne zasady pomocy finansowej",
+      "Ustalcie, czy pieniądze są prezentem czy pożyczką, ile obejmuje pomoc i kiedy wrócicie do rozmowy.",
+      "Przeczytaj poradnik dla osoby pomagającej (po angielsku)"
+    ],
+    [
+      "/tools/temporary-financial-support-record-template/",
+      "Szablon zapisu wsparcia finansowego",
+      "Zacznij od prostej notatki, zanim potrzebne będzie prowadzenie zmieniającego się salda.",
+      "Zapisz zasady pomocy (po angielsku)"
+    ],
+    [
+      "/blog/how-to-ask-family-for-temporary-financial-help/",
+      "Jak poprosić rodzinę o pomoc finansową",
+      "Przedstaw prośbę i planowany zwrot z szacunkiem, zanim otrzymasz pieniądze.",
+      "Przeczytaj, jak poprosić o pomoc (po angielsku)"
+    ],
+    [
+      "/tools/polite-payback-reminder-generator/",
+      "Generator wiadomości w sprawie zwrotu pieniędzy",
+      "Przygotuj wiadomość przyjazną, uprzejmą, bezpośrednią lub stanowczą — stosownie do sytuacji.",
+      "Otwórz generator wiadomości (po angielsku)"
+    ],
+    [
+      "/tools/repayment-receipt-generator/",
+      "Zapis otrzymanej wpłaty",
+      "Zapisz, czego dotyczy wpłata i czy po jej otrzymaniu pozostało coś do oddania.",
+      "Przygotuj zapis wpłaty (po angielsku)"
+    ],
+    [
+      "/tools/payment-plan-calculator/",
+      "Kalkulator planu spłaty",
+      "Porównaj wpłaty co tydzień, co dwa tygodnie lub co miesiąc dla kwoty rozłożonej na raty.",
+      "Oblicz plan spłaty (po angielsku)"
+    ],
+    [
+      "/tools/split-expense-calculator/",
+      "Kalkulator podziału wydatków",
+      "Podziel pojedynczy wydatek, zanim zdecydujesz, czy potrzebujesz zapisywać kolejne zwroty.",
+      "Podziel wydatek (po angielsku)"
+    ],
+    [
+      "/blog/how-to-handle-awkward-money-conversations/",
+      "Jak rozmawiać o pieniądzach bez skrępowania",
+      "Uporządkuj prośby, przypomnienia i informacje o planowanych wpłatach.",
+      "Przeczytaj poradnik o rozmowach (po angielsku)"
+    ],
+    [
+      "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+      "Jak uprzejmie poprosić o zwrot pieniędzy",
+      "Gdy znasz kwotę i chcesz wysłać spokojną, konkretną wiadomość.",
+      "Zobacz przykłady próśb o zwrot (po angielsku)"
+    ],
+    [
+      "/blog/how-to-follow-up-after-a-partial-repayment/",
+      "Co napisać po częściowej spłacie",
+      "Podziękuj za wpłatę, potwierdź saldo i ustalcie, jak wrócicie do pozostałej kwoty.",
+      "Przeczytaj o częściowej spłacie (po angielsku)"
+    ],
+    [
+      "/blog/how-to-ask-someone-to-pay-you-back-without-being-rude/",
+      "Jak taktownie poprosić o zwrot pieniędzy",
+      "Wybierz moment na powrót do rozmowy i skorzystaj z przykładów taktownych wiadomości.",
+      "Przeczytaj, jak poprosić o spłatę (po angielsku)"
+    ],
+    [
+      "/blog/how-to-handle-a-friend-who-keeps-borrowing-money/",
+      "Gdy znajomy ciągle pożycza pieniądze",
+      "Zróbcie podsumowanie, jeśli poprzednia kwota wciąż jest nieoddana, pożyczki się mnożą lub brakuje jasnych ustaleń.",
+      "Przeczytaj o powtarzających się prośbach (po angielsku)"
+    ],
+    [
+      "/blog/how-do-you-confront-someone-who-owes-you-money-without-ruining-the-relationship/",
+      "Jak porozmawiać o spłacie stanowczo i z szacunkiem",
+      "Rozmawiaj o konkretnych kwotach i terminach, dbając o Waszą relację.",
+      "Przygotuj się do rozmowy o spłacie (po angielsku)"
+    ],
+    [
+      "/solutions/roommate-expense-tracker/",
+      "Wydatki ze współlokatorami",
+      "Czynsz, rachunki, zakupy spożywcze, rzeczy do mieszkania, regularne opłaty i zwroty w ciągu miesiąca.",
+      "Uporządkuj wydatki w mieszkaniu (po angielsku)"
+    ],
+    [
+      "/solutions/family-reimbursement-tracker/",
+      "Rozliczenia z rodziną",
+      "Rachunki rodziców, regularne wydatki, zwroty między rodzeństwem i zakupy dla bliskich.",
+      "Uporządkuj rozliczenia rodzinne (po angielsku)"
+    ],
+    [
+      "/solutions/shared-expense-tracker/",
+      "Wspólne wydatki",
+      "Rozliczenia ze znajomymi, partnerem, współlokatorami lub rodziną, które nie kończą się na jednym rachunku.",
+      "Zapisuj wspólne wydatki (po angielsku)"
+    ],
+    [
+      "/tools/repayment-reminder-text-examples/",
+      "Przykładowe wiadomości o spłacie",
+      "Przypomnienia, opóźnienia, częściowe spłaty, wydatki domowe, pomoc rodzinie i zapowiedzi kolejnych wpłat.",
+      "Zobacz przykładowe wiadomości (po angielsku)"
+    ],
+    [
+      "/compare/spreadsheet-vs-app-for-tracking-money-owed/",
+      "Arkusz czy aplikacja?",
+      "Porównaj sposoby zapisywania pożyczonych pieniędzy, częściowych spłat, przypomnień i zmieniającego się salda.",
+      "Przeczytaj porównanie (po angielsku)"
+    ],
+    [
+      "/solutions/",
+      "Zastosowania You Owe Me",
+      "Wybierz rozwiązanie do wspólnych wydatków, pożyczek, rozliczeń w parze lub rodzinie i spłat rozłożonych w czasie.",
+      "Zobacz wszystkie zastosowania (po angielsku)"
+    ]
+  ]
+}
