@@ -391,4 +391,5 @@ Strony dostępne po polsku. Każda ma własny adres. Linki do treści, których 
 - [Pożyczone pieniądze, wspólne wydatki i spłaty](https://you-owe-me.com/pl/)
 - [Aplikacja do zapisywania rozliczeń](https://you-owe-me.com/pl/zastosowania/aplikacja-kto-ile-jest-winien/) — Zapisuj pożyczone pieniądze, wydatki opłacone za innych i każdą spłatę. Sprawdzaj, ile zostało do oddania. You Owe Me po polsku na iPhone’a i iPada.
 - [Kalkulator podziału wydatków](https://you-owe-me.com/pl/narzedzia/kalkulator-podzialu-wydatkow/) — Wpisz, ile zapłaciła każda osoba, i sprawdź, kto komu ma oddać pieniądze. Podziel koszty kolacji, wyjazdu lub zakupów, wybierając uczestników każdego wydatku.
+- [Wiadomości z prośbą o zwrot pieniędzy](https://you-owe-me.com/pl/blog/jak-poprosic-o-zwrot-pieniedzy/) — Dziesięć naturalnych wiadomości z prośbą o zwrot pieniędzy od znajomego, przykład częściowych spłat i zapis pożyczki do skopiowania.
 <!-- polish-pages:end -->

@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "plsplit20261106",
+  "/scripts/analytics.js": "plrepayment20261106",
   "/scripts/sales.js": "plhome20261106",
   "/scripts/anniversary-announcement.js": "plhome20261106",
   "/scripts/app-language-support.js": "plhome20261106",
@@ -752,6 +752,21 @@ export const polishPages = [
       "useWhen": "Gdy jeden lub kilka wydatków trzeba podzielić po równo między uczestników każdego z nich.",
       "primaryCta": "Oblicz podział",
       "nextStep": "Udostępnij wynik i zapisuj wpłaty, które pojawią się później."
+    }
+  },
+  {
+    "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+    "pl": "/pl/blog/jak-poprosic-o-zwrot-pieniedzy/",
+    "title": "Wiadomości z prośbą o zwrot pieniędzy",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "Dziesięć naturalnych wiadomości z prośbą o zwrot pieniędzy od znajomego, przykład częściowych spłat i zapis pożyczki do skopiowania.",
+    "registry": {
+      "primaryAudience": "Osoby, które chcą poprosić znajomego o spłatę pożyczki lub uzgodnionej części wspólnego wydatku.",
+      "problemSolved": "Pomaga wybrać wiadomość zgodną z ustaleniami i kwotą, która rzeczywiście została do oddania.",
+      "useWhen": "Przy pierwszym przypomnieniu, potwierdzaniu terminu lub proszeniu o resztę po częściowej spłacie.",
+      "primaryCta": "Zobacz 10 wiadomości",
+      "nextStep": "Zapisuj pożyczki i spłaty w You Owe Me"
     }
   }
 ];

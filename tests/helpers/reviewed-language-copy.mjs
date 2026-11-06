@@ -4,8 +4,26 @@ import fs from "node:fs";
 
 
 
+const polishRepaymentAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/polish-repayment-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedPolishRepaymentSource(source, file) {
+  if (!polishRepaymentAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of polishRepaymentAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedPolishRepaymentIntegration(html) {
+  const route = '/pl/blog/jak-poprosic-o-zwrot-pieniedzy/';
+  html = html.replace('    <link rel="alternate" hreflang="pl" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pl"'+direction+' hreflang="pl">Polski</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Wiadomości z prośbą o zwrot pieniędzy</a>', '');
+  for (const [current, previous] of polishRepaymentAdmissions.integrations) html = html.replace(current, previous);
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=plrepayment20261106(?=")/g, '$1?v=plsplit20261106');
+}
+
 const polishSplitAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/polish-split-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedPolishSplitSource(source, file) {
+  source = normalizeReviewedPolishRepaymentSource(source, file);
   if (!polishSplitAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -13,6 +31,7 @@ export function normalizeReviewedPolishSplitSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedPolishSplitIntegration(html) {
+  html = normalizeReviewedPolishRepaymentIntegration(html);
   html = normalizeReviewedPolishSplitSource(html, 'private-continuation/split/index.html');
   const route = '/pl/narzedzia/kalkulator-podzialu-wydatkow/';
   html = html.replace('    <link rel="alternate" hreflang="pl" href="https://you-owe-me.com'+route+'" />\n', '');

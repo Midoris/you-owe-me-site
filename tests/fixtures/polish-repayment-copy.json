@@ -1,0 +1,286 @@
+{
+  "language": "pl",
+  "title": "Jak poprosić o zwrot pieniędzy: 10 gotowych wiadomości",
+  "description": "Dziesięć wiadomości z prośbą o zwrot pieniędzy, potwierdzenie terminu lub spłatę reszty. Przykład częściowych spłat w złotych i zapis pożyczki do skopiowania.",
+  "h1": "Jak poprosić znajomego o zwrot pieniędzy",
+  "eyebrow": "Pieniądze między znajomymi",
+  "breadcrumb": {
+    "label": "Ścieżka nawigacji",
+    "home": "Strona główna",
+    "current": "Wiadomości z prośbą o zwrot pieniędzy"
+  },
+  "hero": {
+    "lead": "Chcesz przypomnieć o pożyczce, ale trudno Ci zacząć rozmowę? Wróć do Waszych ustaleń i kwoty, która została do oddania. Wybierz wiadomość, dopasuj ją do swojego sposobu mówienia i wyślij na WhatsAppie lub tam, gdzie zwykle rozmawiacie.",
+    "support": "Uzupełnij pola w nawiasach kwadratowych. To przykłady na różne sytuacje: wybierz odpowiedni, zamiast wysyłać wszystkie po kolei.",
+    "primary": "Zobacz 10 wiadomości",
+    "secondary": "Sprawdź, ile zostało do oddania",
+    "appBefore": "Gdy pieniądze wracają w częściach, możesz ",
+    "appAnchor": "zapisywać wpłaty i pozostałe saldo w You Owe Me",
+    "appAfter": ".",
+    "byline": "Autor: Ievgenii Iablonskyi · Opublikowano 6 listopada 2026",
+    "previewTitle": "Zacznij od prostego pytania",
+    "previewCaption": "Przypomnij, o jaką kwotę chodzi, i zapytaj o termin zwrotu."
+  },
+  "contents": {
+    "heading": "Na tej stronie",
+    "items": [
+      {
+        "label": "10 wiadomości na różne sytuacje",
+        "id": "messages"
+      },
+      {
+        "label": "Co sprawdzić przed napisaniem",
+        "id": "before"
+      },
+      {
+        "label": "Jak ustalić pozostałą kwotę",
+        "id": "balance"
+      },
+      {
+        "label": "Zapisywanie spłat w aplikacji",
+        "id": "app"
+      },
+      {
+        "label": "Zapis pożyczki do skopiowania",
+        "id": "record"
+      },
+      {
+        "label": "Częste pytania",
+        "id": "faq"
+      }
+    ]
+  },
+  "messagesHeading": "10 wiadomości z prośbą o zwrot pieniędzy",
+  "messagesIntro": "Najpierw sprawdź, ile zostało do oddania, uwzględniając wszystkie otrzymane wpłaty. W wiadomości odróżnij początkową kwotę pożyczki od pozostałego salda. Obietnica wpłaty może zmienić ustalenia, ale saldo zmniejsza się dopiero po otrzymaniu pieniędzy.",
+  "situationLabel": "Wybierz sytuację najbliższą Twojej",
+  "messages": [
+    {
+      "key": "first_reminder",
+      "tone": "friendly",
+      "heading": "Gdy poruszasz temat po raz pierwszy",
+      "guidance": "Przypomnij, o którą pożyczkę chodzi, i zapytaj o termin. Możesz zapytać wprost, bez przepraszania za samo pytanie i bez oskarżeń.",
+      "text": "Cześć! Chcę wrócić do naszej pożyczki na [cel]. Do oddania zostało [pozostała kwota i waluta]. Kiedy możesz oddać te pieniądze?"
+    },
+    {
+      "key": "confirm_date",
+      "tone": "neutral",
+      "heading": "Gdy zbliża się ustalony termin",
+      "guidance": "Potwierdź termin, który już był uzgodniony. Jeśli daty nie było, wybierz przykład „Gdy nie było ustalonego terminu”.",
+      "text": "Cześć! Czy oddasz [kwota i waluta] [data], tak jak było ustalone? Jeśli potrzebujesz zmienić termin, daj znać — porozmawiamy."
+    },
+    {
+      "key": "date_passed",
+      "tone": "clear",
+      "heading": "Gdy termin już minął",
+      "guidance": "Przypomnij ustalenie i pozostałą kwotę. Poproś o konkretny termin, nie zakładając z góry przyczyny opóźnienia.",
+      "text": "Cześć! Termin zwrotu [pozostała kwota i waluta] minął [data], a wpłata jeszcze nie dotarła. Kiedy możesz oddać tę kwotę?"
+    },
+    {
+      "key": "partial_payment",
+      "tone": "friendly",
+      "heading": "Po otrzymaniu części pieniędzy",
+      "guidance": "Potwierdź wpłatę i podaj aktualne saldo. Nie proś ponownie o część, która już została oddana.",
+      "text": "Dziękuję za [otrzymana kwota i waluta] z [data]! Po uwzględnieniu wszystkich wpłat z pożyczki na [początkowa kwota i waluta] zostało do oddania [pozostała kwota i waluta]. Kiedy możesz oddać resztę?"
+    },
+    {
+      "key": "no_date",
+      "tone": "neutral",
+      "heading": "Gdy nie było ustalonego terminu",
+      "guidance": "Zacznij rozmowę o terminie. Jeśli data nie była uzgodniona, nie przedstawiaj wpłaty jako spóźnionej.",
+      "text": "Cześć! Przy pożyczce na [cel] nie było ustalonego terminu zwrotu. Do oddania zostało [pozostała kwota i waluta]. Kiedy możesz oddać te pieniądze?"
+    },
+    {
+      "key": "shared_expense",
+      "tone": "neutral",
+      "heading": "Gdy opłacasz wspólny wydatek",
+      "guidance": "Sprawdź udział, na który druga osoba się zgodziła. Podział mógł być równy albo oparty na innych ustaleniach.",
+      "text": "Cześć! Wracam do rozliczenia za [wydatek]. Twoja część to [kwota i waluta]. Kiedy możesz ją oddać? Jeśli masz inną kwotę w swoich zapiskach, sprawdźmy razem podział."
+    },
+    {
+      "key": "no_reply",
+      "tone": "clear",
+      "heading": "Gdy pierwsza wiadomość została bez odpowiedzi",
+      "guidance": "Daj czas na odpowiedź, a potem wróć do rozmowy prywatnie. Unikaj serii wiadomości w krótkich odstępach i przypominania przy całej grupie.",
+      "text": "Cześć! Wracam do poprzedniej wiadomości o zwrocie pieniędzy. Zostało [pozostała kwota i waluta]. Kiedy możemy ustalić, jak to rozliczyć?"
+    },
+    {
+      "key": "more_time",
+      "tone": "friendly",
+      "heading": "Gdy druga osoba potrzebuje więcej czasu",
+      "guidance": "Jeśli zmieniacie ustalenia, omówcie możliwe do dotrzymania kwoty i terminy. Nowy plan zapisz osobno od otrzymanych już wpłat.",
+      "text": "Dzięki za informację. Do oddania zostało [pozostała kwota i waluta]. Jaką część możesz oddać i kiedy? Ustalmy też, co z resztą."
+    },
+    {
+      "key": "loan_or_gift",
+      "tone": "neutral",
+      "heading": "Gdy nie było jasne, czy to pożyczka",
+      "guidance": "Najpierw ustalcie, jak każde z Was rozumiało przekazanie pieniędzy. Jeśli zwrot nie był jasno uzgodniony, nie przedstawiaj kwoty jako bezspornego długu.",
+      "text": "Chcę wyjaśnić nasze ustalenie dotyczące pieniędzy na [cel] — [kwota i waluta]. Dla mnie to była pożyczka, czyli pieniądze do oddania. Jak Ty to rozumiesz?"
+    },
+    {
+      "key": "fully_repaid",
+      "tone": "friendly",
+      "heading": "Gdy cała pożyczka została spłacona",
+      "guidance": "Zamknij pożyczkę dopiero po otrzymaniu ostatniej wpłaty. Wskaż, której kwoty dotyczy potwierdzenie, zwłaszcza jeśli macie inne otwarte rozliczenia.",
+      "text": "Ostatnia wpłata — [otrzymana kwota i waluta] — dotarła, dzięki! Pożyczka na [łączna kwota i waluta] jest już w całości spłacona. Zamykam ten wpis w swoich zapiskach."
+    }
+  ],
+  "before": {
+    "heading": "Trzy rzeczy do sprawdzenia przed wysłaniem",
+    "cards": [
+      {
+        "heading": "Ile naprawdę zostało",
+        "body": "Odejmij tylko otrzymane wpłaty. Kwota ze starej wiadomości może być już nieaktualna, jeśli od tego czasu wróciła część pieniędzy."
+      },
+      {
+        "heading": "Co było uzgodnione",
+        "body": "Sprawdź cel, udział każdej osoby i ewentualny termin zwrotu. Jeśli coś pozostało niejasne, najpierw zapytaj."
+      },
+      {
+        "heading": "Czego chcesz się teraz dowiedzieć",
+        "body": "Poproś o konkretną informację, na przykład możliwy termin spłaty. Dopasuj ton do Waszej relacji i zostaw przestrzeń na odpowiedź."
+      }
+    ]
+  },
+  "balance": {
+    "heading": "Wróciła część pieniędzy? Zaktualizuj saldo przed napisaniem",
+    "intro": "W tym wymyślonym przykładzie Julia pożycza Jakubowi 300 zł. Po otrzymaniu 100 zł zostaje 200 zł. Gdy przychodzi kolejne 75 zł, saldo spada do 125 zł.",
+    "caption": "Przykład w złotych: pożyczka, otrzymane wpłaty i pozostała kwota",
+    "headers": [
+      "Data",
+      "Co się wydarzyło",
+      "Kwota",
+      "Do otrzymania"
+    ],
+    "rows": [
+      [
+        "4 października",
+        "Pożyczka dla Jakuba",
+        "Pożyczono 300 zł",
+        "300 zł"
+      ],
+      [
+        "12 października",
+        "Pierwsza spłata",
+        "Otrzymano 100 zł",
+        "200 zł"
+      ],
+      [
+        "20 października",
+        "Druga spłata",
+        "Otrzymano 75 zł",
+        "125 zł"
+      ]
+    ],
+    "scrollCue": "Przesuń tabelę w poziomie, aby zobaczyć wszystkie kolumny.",
+    "regionLabel": "Przykład pożyczki, otrzymanych spłat i pozostałej kwoty",
+    "after": "Po drugiej wpłacie prośba o 200 zł pomijałaby otrzymane już 75 zł. Jeśli Jakub obieca oddać pozostałe 125 zł w następnym tygodniu, saldo nadal wynosi 125 zł, dopóki pieniądze nie dotrą.",
+    "quoteHeading": "Następną wiadomość zacznij od aktualnej kwoty",
+    "quote": "Dzięki za 75 zł! Z pożyczki na 300 zł zostało teraz do oddania 125 zł. Kiedy możesz oddać resztę?"
+  },
+  "app": {
+    "heading": "Kwoty i spłaty pod ręką przy następnej rozmowie",
+    "lead": "W You Owe Me na iPhonie i iPadzie zapisuj pożyczone pieniądze i każdą otrzymaną wpłatę. Sprawdzisz, ile zostało, bez szukania kwot w różnych rozmowach.",
+    "cards": [
+      {
+        "heading": "Pożyczka i spłaty w jednej historii",
+        "body": "Trzymaj początkową kwotę i kolejne spłaty przy tej samej pożyczce."
+      },
+      {
+        "heading": "Każda częściowa spłata ma znaczenie",
+        "body": "Dopisz otrzymaną kwotę bez usuwania poprzednich wpłat i sprawdź aktualne saldo."
+      },
+      {
+        "heading": "Następne ustalenie zostaje zapisane",
+        "body": "Zachowaj uzgodnienia w notatkach i ustaw przypomnienie dla siebie, gdy chcesz wrócić do tematu."
+      }
+    ],
+    "boundary": "Możesz prowadzić własne zapiski, nawet jeśli druga osoba nie korzysta z aplikacji. You Owe Me nie przesyła pieniędzy i nie gwarantuje spłaty.",
+    "handoffHeading": "Zapisz, ile wróciło i ile jeszcze zostało",
+    "handoffBody": "Prowadź pożyczki i spłaty na iPhonie lub iPadzie.",
+    "assurance": "Aplikacja You Owe Me jest dostępna po polsku.",
+    "badgeAlt": "Pobierz You Owe Me z App Store",
+    "qrInstruction": "Zeskanuj kod aparatem iPhone’a lub iPada.",
+    "storeFallback": "Otwórz w App Store",
+    "qrAlt": "Kod QR do You Owe Me w App Store",
+    "productLink": "Zobacz, jak zapisywać kwoty i spłaty"
+  },
+  "record": {
+    "heading": "Pieniądze dotarły? Uzupełnij zapiski",
+    "intro": "Przed następną wiadomością zapisz otrzymane wpłaty. Skopiuj ten wzór do notatek albo prowadź historię w aplikacji. Tekstowy wzór nie oblicza salda automatycznie.",
+    "text": "Osoba: [imię]\nCel pożyczki: [cel]\nPożyczona kwota: [kwota i waluta]\nData pożyczki: [data]\nOtrzymane wpłaty: [data — kwota i waluta; osobny wiersz dla każdej wpłaty]\nŁącznie otrzymano: [kwota i waluta]\nPozostało do otrzymania: [kwota i waluta]\nNastępna wpłata lub rozmowa: [data i ustalenie]\nOstatnia aktualizacja: [data]",
+    "after": "Oddziel planowane wpłaty od pieniędzy już otrzymanych. Jeśli Wasze zapiski się różnią, porównajcie kwoty i daty, zanim uzgodnicie następną spłatę."
+  },
+  "faqHeading": "Pytania o proszenie o zwrot pieniędzy",
+  "faq": [
+    {
+      "q": "Jak poprosić znajomego o zwrot pieniędzy na WhatsAppie?",
+      "a": "Przypomnij, o jaką pożyczkę chodzi, i podaj pozostałą kwotę. Na przykład: „Cześć! Wracam do pożyczki na [cel]. Do oddania zostało [pozostała kwota i waluta]. Kiedy możesz oddać resztę?” Przed wysłaniem odejmij wszystkie otrzymane wpłaty i dopasuj wiadomość do swojego sposobu mówienia."
+    },
+    {
+      "q": "Jak poprosić o resztę po częściowej spłacie?",
+      "a": "Potwierdź otrzymaną wpłatę i podaj aktualne saldo. Przy pożyczce 300 zł i otrzymanej wpłacie 100 zł zostaje 200 zł. Ustalenie nowego terminu nie zmniejsza tej kwoty. Saldo spada dopiero po otrzymaniu kolejnych pieniędzy."
+    },
+    {
+      "q": "Co jeśli nie było ustalonego terminu zwrotu?",
+      "a": "Zapytaj, kiedy druga osoba może oddać pieniądze, i porozmawiajcie o dacie. Jeśli termin nie był uzgodniony, unikaj przedstawiania wpłaty jako spóźnionej."
+    },
+    {
+      "q": "Co jeśli druga osoba podaje inną kwotę?",
+      "a": "Porównajcie początkową kwotę, otrzymane wpłaty i daty. Przy wspólnym wydatku sprawdźcie też uzgodniony podział. Jeśli niejasne jest to, czy pieniądze były pożyczką czy pomocą bez obowiązku zwrotu, najpierw wyjaśnijcie tę sprawę."
+    },
+    {
+      "q": "Czy znajomy też musi zainstalować You Owe Me?",
+      "a": "Nie, jeśli chcesz prowadzić własne zapiski. Możesz zapisywać pożyczone pieniądze i otrzymane wpłaty na swoim iPhonie lub iPadzie bez korzystania z aplikacji przez drugą osobę."
+    },
+    {
+      "q": "Czy aplikacja wysyła te wiadomości automatycznie?",
+      "a": "Nie. Skopiuj tekst, sprawdź kwoty i wyślij go na WhatsAppie lub w wybranym komunikatorze. You Owe Me pomaga zapisywać pożyczki i wpłaty. Same pieniądze są przekazywane poza aplikacją."
+    }
+  ],
+  "relatedHeading": "Sprawdź rozliczenie przed następną wiadomością",
+  "related": [
+    {
+      "title": "Jak zapisywać, kto jest Ci winien pieniądze (po angielsku)",
+      "body": "Oddziel początkową kwotę, otrzymane spłaty i pozostałe saldo.",
+      "url": "/blog/how-to-keep-track-of-who-owes-you-money/"
+    },
+    {
+      "title": "Aplikacja do zapisywania rozliczeń",
+      "body": "Zachowaj kwoty, kolejne spłaty i aktualne saldo przy każdej osobie.",
+      "url": "/pl/zastosowania/aplikacja-kto-ile-jest-winien/"
+    },
+    {
+      "title": "Kalkulator podziału wydatków",
+      "body": "Sprawdź udział każdej osoby, zanim poprosisz o zwrot za wspólny wydatek.",
+      "url": "/pl/narzedzia/kalkulator-podzialu-wydatkow/"
+    }
+  ],
+  "copyUI": {
+    "message": "Kopiuj wiadomość",
+    "record": "Kopiuj wzór zapisków",
+    "busy": "Kopiowanie…",
+    "successButton": "Skopiowano",
+    "successStatus": "Skopiowano tekst.",
+    "manualSelected": "Nie udało się skopiować automatycznie. Tekst jest zaznaczony — użyj polecenia kopiowania na urządzeniu.",
+    "failure": "Nie udało się skopiować automatycznie. Zaznacz tekst i skopiuj go.",
+    "noJS": "JavaScript jest wyłączony. Nadal możesz zaznaczać i kopiować teksty.",
+    "messageAriaPrefix": "Kopiuj wiadomość: ",
+    "recordAria": "Kopiuj wzór zapisu pożyczki i spłat"
+  },
+  "registry": {
+    "title": "Wiadomości z prośbą o zwrot pieniędzy",
+    "discoveryDescription": "Dziesięć naturalnych wiadomości z prośbą o zwrot pieniędzy od znajomego, przykład częściowych spłat i zapis pożyczki do skopiowania.",
+    "primaryAudience": "Osoby, które chcą poprosić znajomego o spłatę pożyczki lub uzgodnionej części wspólnego wydatku.",
+    "problemSolved": "Pomaga wybrać wiadomość zgodną z ustaleniami i kwotą, która rzeczywiście została do oddania.",
+    "useWhen": "Przy pierwszym przypomnieniu, potwierdzaniu terminu lub proszeniu o resztę po częściowej spłacie.",
+    "primaryCta": "Zobacz 10 wiadomości",
+    "nextStep": "Zapisuj pożyczki i spłaty w You Owe Me"
+  },
+  "inwardNewParagraphs": {},
+  "englishBlogCard": {
+    "language": "Polski",
+    "title": "Polite repayment messages in Polish",
+    "description": "Polish messages for asking a friend to repay, with a partial-payment example and a copyable record of the remaining balance."
+  }
+}

@@ -1,0 +1,62 @@
+{
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"plrepayment20261106\",\n  \"/scripts/sales.js\": \"plhome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"plhome20261106\",\n",
+        "// reach every localized page, including already-published Spanish pages.\nexport const sharedAssetVersions = {\n  \"/scripts/analytics.js\": \"plsplit20261106\",\n  \"/scripts/sales.js\": \"plhome20261106\",\n  \"/scripts/anniversary-announcement.js\": \"plhome20261106\",\n"
+      ],
+      [
+        "      \"nextStep\": \"Udostępnij wynik i zapisuj wpłaty, które pojawią się później.\"\n    }\n  },\n  {\n    \"en\": \"/blog/how-to-remind-someone-they-owe-you-money-politely/\",\n    \"pl\": \"/pl/blog/jak-poprosic-o-zwrot-pieniedzy/\",\n    \"title\": \"Wiadomości z prośbą o zwrot pieniędzy\",\n    \"updated\": \"2026-11-06\",\n    \"complete\": true,\n    \"discoveryDescription\": \"Dziesięć naturalnych wiadomości z prośbą o zwrot pieniędzy od znajomego, przykład częściowych spłat i zapis pożyczki do skopiowania.\",\n    \"registry\": {\n      \"primaryAudience\": \"Osoby, które chcą poprosić znajomego o spłatę pożyczki lub uzgodnionej części wspólnego wydatku.\",\n      \"problemSolved\": \"Pomaga wybrać wiadomość zgodną z ustaleniami i kwotą, która rzeczywiście została do oddania.\",\n      \"useWhen\": \"Przy pierwszym przypomnieniu, potwierdzaniu terminu lub proszeniu o resztę po częściowej spłacie.\",\n      \"primaryCta\": \"Zobacz 10 wiadomości\",\n      \"nextStep\": \"Zapisuj pożyczki i spłaty w You Owe Me\"\n    }\n  }\n];\n",
+        "      \"nextStep\": \"Udostępnij wynik i zapisuj wpłaty, które pojawią się później.\"\n    }\n  }\n];\n"
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=plrepayment20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n",
+        "import { loanImportEventName } from \"./loan-import-analytics.mjs?v=20261018-review1\";\nimport { localizedSourceRoute } from \"../content/site-locales.mjs?v=plsplit20261106\";\nimport { initializeApp } from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js\";\nimport {\n"
+      ],
+      [
+        "} from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js\";\nimport { createAppStoreCtaViewTracker } from \"./app-store-cta-view-tracker.mjs\";\nimport { bindIphoneHandoffAnalytics } from \"./iphone-handoff-analytics-bridge.mjs?v=plrepayment20261106\";\n\nconst FIREBASE_CONFIG = {\n",
+        "} from \"https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js\";\nimport { createAppStoreCtaViewTracker } from \"./app-store-cta-view-tracker.mjs\";\nimport { bindIphoneHandoffAnalytics } from \"./iphone-handoff-analytics-bridge.mjs?v=itroommate20261106\";\n\nconst FIREBASE_CONFIG = {\n"
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/ja/\",\n  \"/pl/\",\n  \"/pl/blog/jak-poprosic-o-zwrot-pieniedzy/\",\n  \"/pl/narzedzia/kalkulator-podzialu-wydatkow/\",\n  \"/pl/zastosowania/aplikacja-kto-ile-jest-winien/\",\n",
+        "  \"/ja/\",\n  \"/pl/\",\n  \"/pl/narzedzia/kalkulator-podzialu-wydatkow/\",\n  \"/pl/zastosowania/aplikacja-kto-ile-jest-winien/\",\n"
+      ]
+    ],
+    "scripts/iphone-handoff-analytics-bridge.mjs": [
+      [
+        "  \"pt_repayment_iphone_handoff\",\n  \"it_repayment_iphone_handoff\",\n  \"pl_repayment_iphone_handoff\",\n  \"it_borrow_iphone_handoff\",\n  \"it_roommate_template_iphone_handoff\",\n",
+        "  \"pt_repayment_iphone_handoff\",\n  \"it_repayment_iphone_handoff\",\n  \"it_borrow_iphone_handoff\",\n  \"it_roommate_template_iphone_handoff\",\n"
+      ]
+    ]
+  },
+  "integrations": [
+    [
+      "<a href=\"/pl/blog/jak-poprosic-o-zwrot-pieniedzy/\"><span class=\"pl-link-label\">poradnika z wiadomościami w sprawie zwrotu pieniędzy</span></a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\"><span class=\"pl-link-label\">poradnika z wiadomościami w sprawie zwrotu pieniędzy <span class=\"site-locale-fallback\">(po angielsku)</span></span></a>"
+    ],
+    [
+      "<a href=\"/pl/blog/jak-poprosic-o-zwrot-pieniedzy/\">jak uprzejmie poprosić o zwrot pieniędzy</a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">jak uprzejmie poprosić o zwrot pieniędzy <span class=\"site-locale-fallback\">(po angielsku)</span></a>"
+    ],
+    [
+      "<a href=\"/pl/blog/jak-poprosic-o-zwrot-pieniedzy/\" class=\"lt-cardCta\"><span class=\"pl-link-label\">Zobacz przykłady próśb o zwrot</span></a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\"><span class=\"pl-link-label\">Zobacz przykłady próśb o zwrot <span class=\"site-locale-fallback\">(po angielsku)</span></span></a>"
+    ],
+    [
+      "<a href=\"/pl/blog/jak-poprosic-o-zwrot-pieniedzy/\">poradnika o uprzejmym proszeniu o zwrot pieniędzy</a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\">poradnika o uprzejmym proszeniu o zwrot pieniędzy <span class=\"site-locale-fallback\">(po angielsku)</span></a>"
+    ],
+    [
+      "<a href=\"/pl/blog/jak-poprosic-o-zwrot-pieniedzy/\" class=\"lt-cardCta\"><span class=\"pl-link-label\">Przeczytaj, jak poprosić o zwrot</span></a>",
+      "<a href=\"/blog/how-to-remind-someone-they-owe-you-money-politely/\" class=\"lt-cardCta\"><span class=\"pl-link-label\">Przeczytaj, jak poprosić o zwrot <span class=\"site-locale-fallback\">(po angielsku)</span></span></a>"
+    ],
+    [
+      "\n\n                <article class=\"lt-blogCard lt-roomyCard\">\n                  <p class=\"lt-cardLabel\" lang=\"pl\">Polski</p>\n                  <h3 class=\"lt-cardHeadingGap\"><a href=\"/pl/blog/jak-poprosic-o-zwrot-pieniedzy/\" hreflang=\"pl\">Polite repayment messages in Polish</a></h3>\n                  <p>Polish messages for asking a friend to repay, with a partial-payment example and a copyable record of the remaining balance.</p>\n                </article>",
+      ""
+    ]
+  ]
+}
