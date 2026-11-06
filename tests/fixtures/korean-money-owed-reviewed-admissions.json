@@ -1,0 +1,37 @@
+{
+  "base": "5d22e08db923216ecf2145b9944a0e284304abe3",
+  "source": {
+    "content/site-locales.mjs": [
+      [
+        "  \"/scripts/analytics.js\": \"komoney20261106\",\n",
+        "  \"/scripts/analytics.js\": \"kohome20261106\",\n"
+      ],
+      [
+        "  },\n  {\n    \"en\": \"/solutions/app-to-track-money-owed/\",\n    \"ko\": \"/ko/solutions/app-to-track-money-owed/\",\n    \"title\": \"받을 돈을 기록하는 앱\",\n    \"updated\": \"2026-11-06\",\n    \"complete\": true,\n    \"discoveryDescription\": \"빌려준 돈과 대신 낸 비용, 돌려받은 내역을 한곳에 기록하세요. 일부만 받아도 남은 금액을 바로 확인할 수 있어요. iPhone·iPad용 You Owe Me.\",\n    \"registry\": {\n      \"primaryAudience\": \"친구나 가족에게 돈을 빌려주거나 비용을 대신 내고, 여러 번에 나눠 돌려받는 사람.\",\n      \"problemSolved\": \"처음 금액과 돌려받은 내역, 남은 금액을 사람별로 모아 받을 돈을 확인할 수 있게 합니다.\",\n      \"useWhen\": \"돈을 여러 번 나눠 받거나 같은 사람 대신 비용을 자주 낼 때.\",\n      \"primaryCta\": \"App Store에서 다운로드\",\n      \"nextStep\": \"You Owe Me에 사람과 첫 금액을 추가하세요. 돈을 돌려받을 때마다 기록해 남은 금액을 확인하세요.\"\n    }\n",
+        ""
+      ]
+    ],
+    "scripts/app-language-support-scope.mjs": [
+      [
+        "  \"/ko/solutions/app-to-track-money-owed/\",\n",
+        ""
+      ]
+    ],
+    "scripts/analytics.js": [
+      [
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=komoney20261106\";\n",
+        "import { localizedSourceRoute } from \"../content/site-locales.mjs?v=kohome20261106\";\n"
+      ]
+    ]
+  },
+  "homeAnchors": [
+    [
+      "<a class=\"best-next-step__card\" href=\"/ko/solutions/app-to-track-money-owed/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_1\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"money-owed\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/ko/solutions/app-to-track-money-owed/\" data-step-position=\"1\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_money_owed\"><span class=\"best-next-step__label\">받을 돈</span><strong>돌려받아야 할 돈이 있어요</strong><span>처음 금액과 돌려받은 내역, 아직 남은 금액을 함께 정리하세요.</span></a>",
+      "<a class=\"best-next-step__card\" href=\"/solutions/app-to-track-money-owed/\" data-module=\"best-next-step\" data-track-event=\"best_next_step_click\" data-track-location=\"home_best_next_step_1\" data-source-page=\"home\" data-source-cluster=\"homepage\" data-destination-cluster=\"money-owed\" data-step-type=\"solution\" data-step-intent=\"track_ongoing_balance\" data-step-destination=\"/solutions/app-to-track-money-owed/\" data-step-position=\"1\" data-module-variant=\"hub\" data-module-template=\"custom\" data-step-analytics-id=\"home_money_owed\"><span class=\"best-next-step__label\">받을 돈</span><strong>돌려받아야 할 돈이 있어요 <span class=\"site-locale-fallback\">(영어)</span></strong><span>처음 금액과 돌려받은 내역, 아직 남은 금액을 함께 정리하세요.</span></a>"
+    ],
+    [
+      "<a href=\"/ko/solutions/app-to-track-money-owed/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"ko-link-label\">받을 돈 관리하기</span></a>",
+      "<a href=\"/solutions/app-to-track-money-owed/\" class=\"lt-situationPrimaryCta\" data-cta-location=\"situation-card\"><span class=\"ko-link-label\">받을 돈 관리하기 <span class=\"site-locale-fallback\">(영어)</span></span></a>"
+    ]
+  ]
+}

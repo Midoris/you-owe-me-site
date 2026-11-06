@@ -4,6 +4,7 @@ export const INCLUDED_EXACT_ROUTES = new Set([
   "/",
   "/ja/",
   "/ko/",
+  "/ko/solutions/app-to-track-money-owed/",
   "/pl/",
   "/pl/blog/jak-poprosic-o-zwrot-pieniedzy/",
   "/pl/narzedzia/kalkulator-podzialu-wydatkow/",

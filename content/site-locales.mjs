@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "kohome20261106",
+  "/scripts/analytics.js": "komoney20261106",
   "/scripts/sales.js": "kohome20261106",
   "/scripts/anniversary-announcement.js": "kohome20261106",
   "/scripts/app-language-support.js": "kohome20261106",
@@ -808,6 +808,21 @@ export const koreanPages = [
       "useWhen": "받을 돈이나 갚을 돈을 한곳에 정리하고 싶을 때.",
       "primaryCta": "App Store에서 다운로드",
       "nextStep": "You Owe Me를 내려받고, 사람을 추가한 뒤 금액을 기록하세요."
+    }
+  },
+  {
+    "en": "/solutions/app-to-track-money-owed/",
+    "ko": "/ko/solutions/app-to-track-money-owed/",
+    "title": "받을 돈을 기록하는 앱",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "빌려준 돈과 대신 낸 비용, 돌려받은 내역을 한곳에 기록하세요. 일부만 받아도 남은 금액을 바로 확인할 수 있어요. iPhone·iPad용 You Owe Me.",
+    "registry": {
+      "primaryAudience": "친구나 가족에게 돈을 빌려주거나 비용을 대신 내고, 여러 번에 나눠 돌려받는 사람.",
+      "problemSolved": "처음 금액과 돌려받은 내역, 남은 금액을 사람별로 모아 받을 돈을 확인할 수 있게 합니다.",
+      "useWhen": "돈을 여러 번 나눠 받거나 같은 사람 대신 비용을 자주 낼 때.",
+      "primaryCta": "App Store에서 다운로드",
+      "nextStep": "You Owe Me에 사람과 첫 금액을 추가하세요. 돈을 돌려받을 때마다 기록해 남은 금액을 확인하세요."
     }
   }
 ];

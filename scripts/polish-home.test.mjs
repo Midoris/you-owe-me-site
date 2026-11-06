@@ -18,7 +18,7 @@ test('Polish discovery admits reviewed routes and keeps English-content fallback
  assert.equal(renderLocaleHtml(page,'/','pl'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
  const fixture='<html lang="pl"><head><link rel="canonical" href="https://you-owe-me.com/pl/" /></head><body><article><a href="/">Strona główna (po angielsku)</a><a href="/solutions/app-to-track-money-owed/">Zastosowania (po angielsku)</a></article><div id="copyright"><ul></ul></div></body></html>';
  const rendered=renderLocaleHtml(fixture,'/','pl');assert.ok(rendered.includes('href="/pl/">Strona główna</a>'));assert.ok(rendered.includes('href="/pl/zastosowania/aplikacja-kto-ile-jest-winien/">Zastosowania</a>'));
- const registry=contentRegistry.find(p=>p.url==='/pl/');assert.equal(contentRegistry.length,151);for(const key of ['primaryAudience','problemSolved','useWhen','primaryCta','nextStep'])assert.equal(registry[key],polishPages[0].registry[key]);assert.equal(registry.primaryAudience,polishShared.primaryAudience);
+ const registry=contentRegistry.find(p=>p.url==='/pl/');assert.equal(contentRegistry.length,152);for(const key of ['primaryAudience','problemSolved','useWhen','primaryCta','nextStep'])assert.equal(registry[key],polishPages[0].registry[key]);assert.equal(registry.primaryAudience,polishShared.primaryAudience);
 });
 
 test('Polish active homepage retains established components and honest English links without a dormant story or new FAQ schema',()=>{

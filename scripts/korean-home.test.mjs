@@ -11,16 +11,16 @@ const base='624c89a98641c42076dcb21ad2fb05c7cc897b52';
 const read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8');
 const page=read('ko/index.html'),d=parseStaticPage(page);
 
-test('Korean final-stop discovery contains only completed homepage and exact five editorial fields',()=>{
- assert.deepEqual(koreanPages.map(p=>p.ko),['/ko/']);assert.equal(localizedSourceRoute('/ko/'),'/');
+test('Korean discovery contains only completed home and app solution and exact five editorial fields',()=>{
+ assert.deepEqual(koreanPages.map(p=>p.ko),['/ko/','/ko/solutions/app-to-track-money-owed/']);assert.equal(localizedSourceRoute('/ko/'),'/');
  for(const f of ['/ko/blog/','/ko/solutions/','/ko/tools/'])assert.equal(localizedSourceRoute(f),null);
  assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja','pt','it','pl','ko']);
- for(const source of ['/solutions/app-to-track-money-owed/','/tools/split-expense-calculator/','/blog/how-to-remind-someone-they-owe-you-money-politely/'])assert.equal(completedCounterparts(source).some(p=>p.code==='ko'),false);
+ for(const source of ['/solutions/app-to-track-money-owed/','/tools/split-expense-calculator/','/blog/how-to-remind-someone-they-owe-you-money-politely/'])assert.equal(completedCounterparts(source).some(p=>p.code==='ko'),source==='/solutions/app-to-track-money-owed/');
  assert.equal(siteLocales.find(l=>l.code==='pl').pages.length,4);
- const nav=d.querySelectorAll('.site-locale-section');assert.equal(nav.length,1);assert.deepEqual(nav[0].querySelectorAll('a').map(n=>n.getAttribute('href')),['/ko/']);assert.equal(nav[0].querySelector('a').getAttribute('aria-current'),'page');assert.equal((page.match(/<!-- korean-section:start -->/g)||[]).length,1);
+ const nav=d.querySelectorAll('.site-locale-section');assert.equal(nav.length,1);assert.deepEqual(nav[0].querySelectorAll('a').map(n=>n.getAttribute('href')),['/ko/','/ko/solutions/app-to-track-money-owed/']);assert.equal(nav[0].querySelector('a').getAttribute('aria-current'),'page');assert.equal((page.match(/<!-- korean-section:start -->/g)||[]).length,1);
  assert.equal(renderLocaleHtml(page,'/','ko'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
- const entry=contentRegistry.find(p=>p.url==='/ko/');assert.equal(contentRegistry.length,151);for(const key of ['primaryAudience','problemSolved','useWhen','primaryCta','nextStep'])assert.equal(entry[key],koreanPages[0].registry[key]);assert.equal(entry.primaryAudience,koreanShared.primaryAudience);assert.equal(entry.appStoreCpp,'general');
- assert.equal((read('sitemap.xml').match(/<loc>/g)||[]).length,146);
+ const entry=contentRegistry.find(p=>p.url==='/ko/');assert.equal(contentRegistry.length,152);for(const key of ['primaryAudience','problemSolved','useWhen','primaryCta','nextStep'])assert.equal(entry[key],koreanPages[0].registry[key]);assert.equal(entry.primaryAudience,koreanShared.primaryAudience);assert.equal(entry.appStoreCpp,'general');
+ assert.equal((read('sitemap.xml').match(/<loc>/g)||[]).length,147);
 });
 
 test('Korean active page preserves sixteen source sections and honest English-only content links',()=>{

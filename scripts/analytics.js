@@ -1,5 +1,5 @@
 import { loanImportEventName } from "./loan-import-analytics.mjs?v=20261018-review1";
-import { localizedSourceRoute } from "../content/site-locales.mjs?v=kohome20261106";
+import { localizedSourceRoute } from "../content/site-locales.mjs?v=komoney20261106";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import {
   getAnalytics,

@@ -4,8 +4,26 @@ import fs from "node:fs";
 
 
 
+const koreanMoneyOwedAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/korean-money-owed-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedKoreanMoneyOwedSource(source, file) {
+  if (!koreanMoneyOwedAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of koreanMoneyOwedAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedKoreanMoneyOwedIntegration(html) {
+  const route = '/ko/solutions/app-to-track-money-owed/';
+  html = html.replace('    <link rel="alternate" hreflang="ko" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="ko"'+direction+' hreflang="ko">한국어</a>', '');
+  html = html.replace('\n              <a href="'+route+'">받을 돈을 기록하는 앱</a>', '');
+  for (const [current, previous] of koreanMoneyOwedAdmissions.homeAnchors) html = html.replace(current, previous);
+  return html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=komoney20261106(?=")/g, '$1?v=kohome20261106');
+}
+
 const koreanHomeAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/korean-home-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedKoreanHomeSource(source, file) {
+  source = normalizeReviewedKoreanMoneyOwedSource(source, file);
   if (!koreanHomeAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -13,6 +31,7 @@ export function normalizeReviewedKoreanHomeSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedKoreanHomeIntegration(html) {
+  html = normalizeReviewedKoreanMoneyOwedIntegration(html);
   html = html.replace('    <link rel="alternate" hreflang="ko" href="https://you-owe-me.com/ko/" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="/ko/" lang="ko"'+direction+' hreflang="ko">한국어</a>', '');
   for (const {current, previous} of koreanHomeAdmissions.availability) html = html.replaceAll(current, previous);
