@@ -3,6 +3,7 @@ import path from "node:path";
 export const INCLUDED_EXACT_ROUTES = new Set([
   "/",
   "/ja/",
+  "/ko/",
   "/pl/",
   "/pl/blog/jak-poprosic-o-zwrot-pieniedzy/",
   "/pl/narzedzia/kalkulator-podzialu-wydatkow/",

@@ -4,8 +4,26 @@ import fs from "node:fs";
 
 
 
+const koreanHomeAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/korean-home-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedKoreanHomeSource(source, file) {
+  if (!koreanHomeAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of koreanHomeAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedKoreanHomeIntegration(html) {
+  html = html.replace('    <link rel="alternate" hreflang="ko" href="https://you-owe-me.com/ko/" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="/ko/" lang="ko"'+direction+' hreflang="ko">한국어</a>', '');
+  for (const {current, previous} of koreanHomeAdmissions.availability) html = html.replaceAll(current, previous);
+  const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/)?.[1];
+  for (const [current, previous] of koreanHomeAdmissions.cacheByCanonical[canonical] || []) html = html.replaceAll(current, previous);
+  return html;
+}
+
 const polishRepaymentAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/polish-repayment-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedPolishRepaymentSource(source, file) {
+  source = normalizeReviewedKoreanHomeSource(source, file);
   if (!polishRepaymentAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -13,6 +31,7 @@ export function normalizeReviewedPolishRepaymentSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedPolishRepaymentIntegration(html) {
+  html = normalizeReviewedKoreanHomeIntegration(html);
   const route = '/pl/blog/jak-poprosic-o-zwrot-pieniedzy/';
   html = html.replace('    <link rel="alternate" hreflang="pl" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pl"'+direction+' hreflang="pl">Polski</a>', '');

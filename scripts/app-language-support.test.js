@@ -379,3 +379,21 @@ test("Polish page override keeps the authored Polish message and native home und
     assert.equal(languageSupport.render(d, {language:"fr-FR"}), anchor);
   }
 });
+
+
+test("Korean page capsule is fixed and native while prior browser-matched Korean stays unchanged", () => {
+  for (const language of ["en-US", "ar-SA", "pl-PL", "ko-KR"]) {
+    const d = new FakeDocument(); d.documentElement = {lang:"ko"};
+    const anchor = languageSupport.render(d, {language});
+    assert.equal(flattenedText(anchor),"✓You Owe Me 앱은 한국어를 지원합니다.");
+    assert.equal(anchor.getAttribute("lang"),"ko");
+    assert.equal(anchor.children[1].children[0].getAttribute("href"),"/ko/");
+    assert.equal(languageSupport.render(d,{language:"ja-JP"}),anchor);
+  }
+  const d = new FakeDocument(); d.documentElement = {lang:"en"};
+  const anchor = languageSupport.render(d,{language:"ko-KR"});
+  assert.equal(languageSupport.messageText("ko"),"You Owe Me는 한국어를 지원해요.");
+  assert.equal(flattenedText(anchor),"✓"+languageSupport.messageText("ko"));
+  assert.equal(anchor.children[1].children[0].tagName,"BDI");
+  assert.equal(anchor.children[1].children[0].getAttribute("href"),null);
+});

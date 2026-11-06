@@ -127,7 +127,9 @@
 
 		// Toggle.
 			$navPanelToggle = $(
-				document.documentElement.lang === 'pl'
+				document.documentElement.lang === 'ko'
+					? '<a href="#navPanel" id="navPanelToggle">메뉴</a>'
+					: document.documentElement.lang === 'pl'
 					? '<a href="#navPanel" id="navPanelToggle">Menu</a>'
 					: document.documentElement.lang === 'it'
 					? '<a href="#navPanel" id="navPanelToggle">Menu</a>'
@@ -161,7 +163,9 @@
 				'<div id="navPanel">' +
 					'<nav>' +
 					'</nav>' +
-					(document.documentElement.lang === 'pl'
+					(document.documentElement.lang === 'ko'
+						? '<a href="#navPanel" class="close" aria-label="닫기"></a>'
+						: document.documentElement.lang === 'pl'
 						? '<a href="#navPanel" class="close" aria-label="Zamknij"></a>'
 						: document.documentElement.lang === 'it'
 						? '<a href="#navPanel" class="close" aria-label="Chiudi"></a>'

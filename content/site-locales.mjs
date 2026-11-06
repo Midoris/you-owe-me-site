@@ -5,12 +5,12 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "plrepayment20261106",
-  "/scripts/sales.js": "plhome20261106",
-  "/scripts/anniversary-announcement.js": "plhome20261106",
-  "/scripts/app-language-support.js": "plhome20261106",
-  "/scripts/video-embed.js": "plhome20261106",
-  "/assets/js/main.js": "plhome20261106",
+  "/scripts/analytics.js": "kohome20261106",
+  "/scripts/sales.js": "kohome20261106",
+  "/scripts/anniversary-announcement.js": "kohome20261106",
+  "/scripts/app-language-support.js": "kohome20261106",
+  "/scripts/video-embed.js": "kohome20261106",
+  "/assets/js/main.js": "kohome20261106",
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "itrecord20261106",
@@ -795,6 +795,47 @@ export const polishShared = Object.freeze({
   "useWhen": "Gdy chcesz poznać aplikację po polsku i wybrać, od czego zacząć.",
   "nextStep": "Przeczytaj powiązany poradnik lub zacznij zapisywać rozliczenia w You Owe Me na iPhonie."
 });
+export const koreanPages = [
+  {
+    "en": "/",
+    "ko": "/ko/",
+    "title": "빌려준 돈과 함께 쓴 돈 관리",
+    "updated": "2026-11-06",
+    "complete": true,
+    "registry": {
+      "primaryAudience": "빌려준 돈, 대신 낸 비용, 돌려받거나 갚아야 할 금액을 기록하려는 사람.",
+      "problemSolved": "사람별로 금액과 입금 내역을 모아, 얼마나 돌려받았고 얼마가 남았는지 확인할 수 있게 합니다.",
+      "useWhen": "받을 돈이나 갚을 돈을 한곳에 정리하고 싶을 때.",
+      "primaryCta": "App Store에서 다운로드",
+      "nextStep": "You Owe Me를 내려받고, 사람을 추가한 뒤 금액을 기록하세요."
+    }
+  }
+];
+export const koreanShared = Object.freeze({
+  "languageLabel": "페이지 언어",
+  "englishFallback": "영어",
+  "storeLabel": "App Store에서 다운로드",
+  "navigation": {
+    "home": "홈",
+    "solutions": "활용 방법",
+    "features": "기능",
+    "reviews": "사용자 후기",
+    "tools": "무료 도구",
+    "compare": "비교",
+    "blog": "가이드"
+  },
+  "footer": {
+    "/quick-start/": "시작 가이드",
+    "/privacy-and-data/": "개인정보와 데이터",
+    "/privacy-policy/": "개인정보 처리방침",
+    "/contact/": "문의"
+  },
+  "sectionLabel": "한국어 페이지",
+  "discoveryDescription": "한국어로 읽을 수 있는 페이지입니다. 각 페이지에는 고유한 주소가 있으며, 아직 한국어로 제공되지 않는 콘텐츠의 링크에는 ‘영어’라고 표시합니다.",
+  "primaryAudience": "빌려준 돈, 대신 낸 비용, 돌려받거나 갚아야 할 금액을 기록하려는 사람.",
+  "useWhen": "You Owe Me를 한국어로 살펴보고 내 상황에 맞는 시작 방법을 찾을 때.",
+  "nextStep": "관련 가이드를 읽거나 iPhone의 You Owe Me에서 첫 기록을 시작하세요."
+});
 export const siteLocales = [
   { code: "en", label: "English", home: "/", pages: [], shared: { languageLabel: "Page language" } },
   { code: "es", label: "Español", home: "/es/", pages: spanishPages, shared: spanishShared, assetVersion: spanishAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "spanish", sectionClass: "site-spanish-section", nextStepComment: "Spanish next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Spanish next steps are translated in the public HTML; the English module generator must not overwrite them." },
@@ -805,6 +846,7 @@ export const siteLocales = [
   { code: "pt", documentLanguage: "pt-BR", label: "Português", home: "/pt/", pages: portuguesePages, shared: portugueseShared, assetVersion: "pt20261105", versionedAssets: spanishVersionedAssets, sectionMarker: "portuguese", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "it", label: "Italiano", home: "/it/", pages: italianPages, shared: italianShared, assetVersion: "ithome20261106", versionedAssets: spanishVersionedAssets, sectionMarker: "italian", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "pl", label: "Polski", home: "/pl/", pages: polishPages, shared: polishShared, assetVersion: "plhome20261106", versionedAssets: spanishVersionedAssets, sectionMarker: "polish", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
+  { code: "ko", label: "한국어", home: "/ko/", pages: koreanPages, shared: koreanShared, assetVersion: "kohome20261106", versionedAssets: spanishVersionedAssets, sectionMarker: "korean", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
 ];
 
 export function localeAssetVersion(locale, asset) {

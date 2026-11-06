@@ -393,3 +393,11 @@ Strony dostępne po polsku. Każda ma własny adres. Linki do treści, których 
 - [Kalkulator podziału wydatków](https://you-owe-me.com/pl/narzedzia/kalkulator-podzialu-wydatkow/) — Wpisz, ile zapłaciła każda osoba, i sprawdź, kto komu ma oddać pieniądze. Podziel koszty kolacji, wyjazdu lub zakupów, wybierając uczestników każdego wydatku.
 - [Wiadomości z prośbą o zwrot pieniędzy](https://you-owe-me.com/pl/blog/jak-poprosic-o-zwrot-pieniedzy/) — Dziesięć naturalnych wiadomości z prośbą o zwrot pieniędzy od znajomego, przykład częściowych spłat i zapis pożyczki do skopiowania.
 <!-- polish-pages:end -->
+
+<!-- korean-pages:start -->
+## 한국어 페이지
+
+한국어로 읽을 수 있는 페이지입니다. 각 페이지에는 고유한 주소가 있으며, 아직 한국어로 제공되지 않는 콘텐츠의 링크에는 ‘영어’라고 표시합니다.
+
+- [빌려준 돈과 함께 쓴 돈 관리](https://you-owe-me.com/ko/)
+<!-- korean-pages:end -->

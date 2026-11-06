@@ -120,3 +120,16 @@ test("Polish campaign labels preserve US dates, identities and emitted analytics
   assert.equal(runSale("pl",6,23).badge.hidden,true);
   assert.equal(runSale("pl",11,6).badge.hidden,true);
 });
+
+
+test("Korean labels preserve original US campaign dates, identities and analytics", () => {
+  for(const [month,day,label]of [[12,24,"크리스마스"],[1,1,"새해"],[6,19,"미국 아버지의 날"],[7,4,"미국 독립기념일"],[2,14,"밸런타인데이"],[4,5,"부활절"],[10,31,"핼러윈"],[11,11,"싱글즈 데이"],[11,26,"미국 추수감사절"],[11,27,"블랙 프라이데이"],[11,30,"사이버 먼데이"]]) {
+    const en=runSale("en",month,day),ko=runSale("ko",month,day);
+    assert.equal(ko.badge.textContent,label+" 할인");
+    assert.equal(ko.badge.attributes["aria-label"],"진행 중인 할인: "+label);
+    assert.equal(JSON.stringify(ko.sale),JSON.stringify(en.sale));
+    assert.equal(JSON.stringify(ko.events),JSON.stringify(en.events));
+  }
+  assert.equal(runSale("ko",5,8).badge.hidden,true);
+  assert.equal(runSale("ko",11,6).badge.hidden,true);
+});

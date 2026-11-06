@@ -261,3 +261,18 @@ test("Polish anniversary localization retains exact original gate boundaries and
     }
   }
 });
+
+
+test("Korean anniversary labels retain exact historical boundaries and English story", () => {
+  const standard=standardModule(),inline=inlineModule(),d=new FakeDocument([standard,inline]);d.documentElement={lang:"ko"};
+  const states={"active": {"eyebrow": "2016–2026", "heading": "You Owe Me 10주년.", "body": "사람 사이에 오가는 돈을 더 쉽게 정리해 온 10년의 이야기를 만나 보세요. 대상에 해당하는 무료 사용자는 9월 4일까지 앱에서 10주년 혜택을 이용할 수 있습니다.", "cta": "10년의 이야기 읽기 (영어)"}, "final": {"eyebrow": "마감 임박", "heading": "10주년 혜택은 9월 4일에 종료됩니다.", "body": "10년의 이야기는 웹사이트에서 계속 읽을 수 있습니다. 대상에 해당하는 무료 사용자는 9월 4일까지 앱에서 기간 한정 혜택을 이용할 수 있습니다.", "cta": "10주년 페이지 보기 (영어)"}};
+  for(const [month,day,phase]of [[7,25,"inactive"],[7,26,"active"],[8,1,"active"],[8,2,"final"],[8,4,"final"],[8,5,"inactive"],[10,6,"inactive"]]) {
+    anniversary.render(d,new Date(2026,month,day,12));
+    assert.equal(standard.getAttribute("data-anniversary-phase"),phase);
+    assert.equal(standard.hidden,phase==="inactive");assert.equal(inline.hidden,phase==="inactive");
+    if(phase!=="inactive") {
+      for(const key of ["eyebrow","heading","body","cta"])assert.equal(standard.querySelector("[data-anniversary-"+key+"]").textContent,states[phase][key]);
+      assert.equal(standard.querySelector("[data-anniversary-cta]").getAttribute("href"),"/10-years/");
+    }
+  }
+});

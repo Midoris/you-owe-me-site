@@ -188,6 +188,33 @@
     }
   }
 });
+  const KOREAN_ACTIVE_STATES = Object.freeze({
+  "inactive": {},
+  "active": {
+    "standard": {
+      "eyebrow": "2016–2026",
+      "heading": "You Owe Me 10주년.",
+      "body": "사람 사이에 오가는 돈을 더 쉽게 정리해 온 10년의 이야기를 만나 보세요. 대상에 해당하는 무료 사용자는 9월 4일까지 앱에서 10주년 혜택을 이용할 수 있습니다.",
+      "cta": "10년의 이야기 읽기 (영어)"
+    },
+    "inline": {
+      "label": "10주년을 기념하며",
+      "body": "You Owe Me가 10주년을 맞았습니다. 대상에 해당하는 무료 사용자는 9월 4일까지 앱에서 10주년 혜택을 이용할 수 있습니다."
+    }
+  },
+  "final": {
+    "standard": {
+      "eyebrow": "마감 임박",
+      "heading": "10주년 혜택은 9월 4일에 종료됩니다.",
+      "body": "10년의 이야기는 웹사이트에서 계속 읽을 수 있습니다. 대상에 해당하는 무료 사용자는 9월 4일까지 앱에서 기간 한정 혜택을 이용할 수 있습니다.",
+      "cta": "10주년 페이지 보기 (영어)"
+    },
+    "inline": {
+      "label": "마감 임박",
+      "body": "대상에 해당하는 무료 사용자를 위한 10주년 혜택은 9월 4일에 종료됩니다. 10년의 이야기는 웹사이트에서 계속 읽을 수 있습니다."
+    }
+  }
+});
   const POLISH_ACTIVE_STATES = Object.freeze({
   "inactive": {},
   "active": {
@@ -277,7 +304,7 @@
     if (typeof moduleElement.querySelector !== "function") return false;
 
     const variant = moduleElement.getAttribute("data-anniversary-variant");
-    const states = documentObject?.documentElement?.lang === "pl" ? POLISH_ACTIVE_STATES : documentObject?.documentElement?.lang === "it" ? ITALIAN_ACTIVE_STATES : documentObject?.documentElement?.lang?.split("-")[0] === "pt" ? PORTUGUESE_ACTIVE_STATES : documentObject?.documentElement?.lang === "ja" ? JAPANESE_ACTIVE_STATES : documentObject?.documentElement?.lang === "fr" ? FRENCH_ACTIVE_STATES : documentObject?.documentElement?.lang === "ar" ? ARABIC_ACTIVE_STATES : documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
+    const states = documentObject?.documentElement?.lang === "ko" ? KOREAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "pl" ? POLISH_ACTIVE_STATES : documentObject?.documentElement?.lang === "it" ? ITALIAN_ACTIVE_STATES : documentObject?.documentElement?.lang?.split("-")[0] === "pt" ? PORTUGUESE_ACTIVE_STATES : documentObject?.documentElement?.lang === "ja" ? JAPANESE_ACTIVE_STATES : documentObject?.documentElement?.lang === "fr" ? FRENCH_ACTIVE_STATES : documentObject?.documentElement?.lang === "ar" ? ARABIC_ACTIVE_STATES : documentObject?.documentElement?.lang === "de" ? GERMAN_ACTIVE_STATES : documentObject?.documentElement?.lang === "es" ? SPANISH_ACTIVE_STATES : ACTIVE_STATES;
     const state = states[safePhase][variant];
     if (!state) {
       moduleElement.hidden = true;

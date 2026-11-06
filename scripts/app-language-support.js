@@ -122,7 +122,7 @@
 
     const productName = documentObject.createElement("bdi");
     productName.textContent = PRODUCT_NAME;
-    if (["es", "de", "ar", "fr", "ja", "pt", "it", "pl"].includes(pageLanguage)) {
+    if (["es", "de", "ar", "fr", "ja", "pt", "it", "pl", "ko"].includes(pageLanguage)) {
       const productLink = documentObject.createElement("a");
       productLink.setAttribute("href", `/${pageLanguage}/`);
       productLink.appendChild(productName);
@@ -131,7 +131,8 @@
       text.appendChild(productName);
     }
 
-    if (message.after) text.appendChild(documentObject.createTextNode(message.after));
+    if (pageLanguage === "ko") text.appendChild(documentObject.createTextNode(" 앱은 한국어를 지원합니다."));
+    else if (message.after) text.appendChild(documentObject.createTextNode(message.after));
 
     anchor.replaceChildren(icon, text);
     anchor.classList.add("app-language-support");
@@ -150,7 +151,7 @@
     if (existing) return existing;
 
     const pageLanguage = normalizeLocale(documentObject.documentElement?.lang)?.split("-")[0];
-    const language = ["es", "de", "ar", "fr", "ja", "pt", "it", "pl"].includes(pageLanguage) ? pageLanguage : matchedAppLanguage(
+    const language = ["es", "de", "ar", "fr", "ja", "pt", "it", "pl", "ko"].includes(pageLanguage) ? pageLanguage : matchedAppLanguage(
       localPreviewLocale(locationLike) || primaryBrowserLocale(navigatorLike),
     );
     if (!language) return null;
