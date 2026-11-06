@@ -4,8 +4,31 @@ import fs from "node:fs";
 
 
 
+const polishSplitAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/polish-split-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedPolishSplitSource(source, file) {
+  if (!polishSplitAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of polishSplitAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedPolishSplitIntegration(html) {
+  html = normalizeReviewedPolishSplitSource(html, 'private-continuation/split/index.html');
+  const route = '/pl/narzedzia/kalkulator-podzialu-wydatkow/';
+  html = html.replace('    <link rel="alternate" hreflang="pl" href="https://you-owe-me.com'+route+'" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pl"'+direction+' hreflang="pl">Polski</a>', '');
+  html = html.replace('\n              <a href="'+route+'">Kalkulator podziału wydatków</a>', '');
+  for (const [current, previous] of polishSplitAdmissions.inwardAnchors) html = html.replace(current, previous);
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/analytics\.js)\?v=plsplit20261106(?=")/g, '$1?v=plmoney20261106');
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/split-expense-locale\.js)\?v=plsplit20261106(?=")/g, '$1?v=itsplit20261106');
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/split-expense-calculator\.js)\?v=plsplit20261106(?=")/g, '$1?v=itsplit20261106');
+  html = html.replace(/((?:src|href)="[^"?]*scripts\/tool-transfer\.js)\?v=plsplit20261106(?=")/g, '$1?v=itsplit20261106');
+  return html;
+}
+
 const polishMoneyOwedAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/polish-money-owed-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedPolishMoneyOwedSource(source, file) {
+  source = normalizeReviewedPolishSplitSource(source, file);
   if (!polishMoneyOwedAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -13,6 +36,7 @@ export function normalizeReviewedPolishMoneyOwedSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedPolishMoneyOwedIntegration(html) {
+  html = normalizeReviewedPolishSplitIntegration(html);
   const route = '/pl/zastosowania/aplikacja-kto-ile-jest-winien/';
   html = html.replace('    <link rel="alternate" hreflang="pl" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="pl"'+direction+' hreflang="pl">Polski</a>', '');

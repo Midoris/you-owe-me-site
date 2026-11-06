@@ -1,0 +1,14 @@
+/* Polish retains the established English calculator typography and layout. */
+html[lang="pl"] .calculator-page .site-locale-fallback { display: inline; white-space: nowrap; margin: 0; font: inherit; color: inherit; text-transform: none; letter-spacing: normal; }
+html[lang="pl"] .calculator-page .pl-link-label { font: inherit; line-height: inherit; color: inherit; }
+html[lang="pl"] .calculator-page :is(.pl-money-token,.money-token) { white-space: nowrap; }
+/* A settlement is one sentence; keep its atomic amount in the same text flow. */
+html[lang="pl"] .calculator-page .settlement-item { display: block; overflow-wrap: anywhere; }
+html[lang="pl"] .calculator-page .result-item > span { min-width: 0; overflow-wrap: anywhere; }
+html[lang="pl"] .calculator-page .result-item strong { white-space: nowrap; flex-shrink: 0; }
+html[lang="pl"] .calculator-page :is(.small-action,.secondary-action,.split-result-action) { box-sizing: border-box; max-width: 100%; white-space: normal; height: auto; min-height: 2.75rem; line-height: 1.5; padding-block: 0.65rem; }
+html[lang="pl"] .calculator-page .lt-toolCard .lt-cardCta { box-sizing: border-box; max-width: 100%; }
+html[lang="pl"] .calculator-page .example-table caption { text-align: left; font-size: 0.85rem; margin-bottom: 0.7rem; }
+
+/* Keep the name field inside its grid track beside the remove action. */
+html[lang="pl"] .person-row .calculator-input { box-sizing: border-box; }

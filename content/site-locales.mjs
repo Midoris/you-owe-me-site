@@ -5,7 +5,7 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "plmoney20261106",
+  "/scripts/analytics.js": "plsplit20261106",
   "/scripts/sales.js": "plhome20261106",
   "/scripts/anniversary-announcement.js": "plhome20261106",
   "/scripts/app-language-support.js": "plhome20261106",
@@ -14,9 +14,9 @@ export const sharedAssetVersions = {
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "itrecord20261106",
-  "/scripts/split-expense-locale.js": "itsplit20261106",
-  "/scripts/split-expense-calculator.js": "itsplit20261106",
-  "/scripts/tool-transfer.js": "itsplit20261106",
+  "/scripts/split-expense-locale.js": "plsplit20261106",
+  "/scripts/split-expense-calculator.js": "plsplit20261106",
+  "/scripts/tool-transfer.js": "plsplit20261106",
 };
 export const spanishVersionedAssets = [
   "/scripts/analytics.js", "/scripts/sales.js", "/scripts/anniversary-announcement.js",
@@ -737,6 +737,21 @@ export const polishPages = [
       "useWhen": "Gdy pieniądze wracają w częściach albo regularnie płacisz za tę samą osobę.",
       "primaryCta": "Pobierz z App Store",
       "nextStep": "Dodaj osobę i pierwszą kwotę w You Owe Me. Dopisuj każdą spłatę, aby saldo było aktualne."
+    }
+  },
+  {
+    "en": "/tools/split-expense-calculator/",
+    "pl": "/pl/narzedzia/kalkulator-podzialu-wydatkow/",
+    "title": "Kalkulator podziału wydatków",
+    "updated": "2026-11-06",
+    "complete": true,
+    "discoveryDescription": "Wpisz, ile zapłaciła każda osoba, i sprawdź, kto komu ma oddać pieniądze. Podziel koszty kolacji, wyjazdu lub zakupów, wybierając uczestników każdego wydatku.",
+    "registry": {
+      "primaryAudience": "Osoby dzielące koszty ze znajomymi lub innymi osobami, które chcą ustalić, kto komu i ile ma oddać.",
+      "problemSolved": "Porównuje już zapłacone kwoty z udziałem każdej osoby w kosztach i oblicza wpłaty potrzebne do rozliczenia.",
+      "useWhen": "Gdy jeden lub kilka wydatków trzeba podzielić po równo między uczestników każdego z nich.",
+      "primaryCta": "Oblicz podział",
+      "nextStep": "Udostępnij wynik i zapisuj wpłaty, które pojawią się później."
     }
   }
 ];

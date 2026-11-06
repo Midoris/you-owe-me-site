@@ -5,7 +5,7 @@ const base='a727f7b06f81ea4de77a6abd254de82254489fdc',route='/pl/zastosowania/ap
 test('Polish solution contains18visible/schema FAQs including interest and22unchanged source destinations',()=>{
  const faqs=d.querySelectorAll('.solution-faq-item');assert.equal(faqs.length,18);assert.equal(faqs[0].hasAttribute('open'),true);assert.ok(faqs.slice(1).every(n=>!n.hasAttribute('open')));
  const schemas=[...page.matchAll(/<script type="application\/ld\+json">([\s\S]+?)<\/script>/g)].map(m=>JSON.parse(m[1]));const faqSchema=schemas.find(n=>n['@type']==='FAQPage');assert.equal(faqSchema.inLanguage,'pl');assert.deepEqual(faqSchema.mainEntity.map(n=>({q:n.name,a:n.acceptedAnswer.text.trim().replace(/\s+/g,' ')})),faqs.map(n=>({q:text(n.querySelector('summary')),a:text(n.querySelector('p'))})));assert.equal(text(faqs[10].querySelector('summary')),'Czy mogę zapisywać odsetki?');
- const cards=d.querySelectorAll('.lt-relatedCard');assert.equal(cards.length,22);assert.deepEqual(cards.map(n=>n.querySelector('a').getAttribute('href')),original.querySelectorAll('.lt-relatedCard').map(n=>{const h=n.querySelector('a').getAttribute('href');return h}));
+ const cards=d.querySelectorAll('.lt-relatedCard');assert.equal(cards.length,22);assert.deepEqual(cards.map(n=>n.querySelector('a').getAttribute('href')),original.querySelectorAll('.lt-relatedCard').map(n=>{const h=n.querySelector('a').getAttribute('href');return h==='/tools/split-expense-calculator/'?'/pl/narzedzia/kalkulator-podzialu-wydatkow/':h}));
  assert.equal(d.querySelector('.money-owed-related-directory').hasAttribute('open'),false);assert.equal(d.querySelector('.money-owed-extra-features').hasAttribute('open'),false);
 });
 
@@ -17,8 +17,8 @@ test('Polish solution retains English active structure, analytics identity and v
 });
 
 test('Polish discovery/nav/inward links admit exactly the accepted routes and correct family',()=>{
- assert.deepEqual(polishPages.map(p=>p.pl),['/pl/',route]);assert.equal(localizedSourceRoute(route),source);assert.equal(localizedSourceRoute('/pl/tools/split-expense-calculator/'),null);assert.deepEqual(completedCounterparts(source).map(p=>p.code),['en','es','de','ar','fr','ja','pt','it','pl']);assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='pl'),false);
- assert.equal(contentRegistry.length,148);assert.equal(renderLocaleHtml(page,source,'pl'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
+ assert.deepEqual(polishPages.map(p=>p.pl),['/pl/',route,'/pl/narzedzia/kalkulator-podzialu-wydatkow/']);assert.equal(localizedSourceRoute(route),source);assert.equal(localizedSourceRoute('/pl/tools/split-expense-calculator/'),null);assert.deepEqual(completedCounterparts(source).map(p=>p.code),['en','es','de','ar','fr','ja','pt','it','pl']);assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='pl'),true);
+ assert.equal(contentRegistry.length,149);assert.equal(renderLocaleHtml(page,source,'pl'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
  for(const r of polishPages.map(p=>p.pl)){const raw=read(r.slice(1)+'index.html'),doc=parseStaticPage(raw),navs=doc.querySelectorAll('.site-locale-section');assert.equal(navs.length,1);assert.equal((raw.match(/<!-- polish-section:start -->/g)||[]).length,1);assert.deepEqual(navs[0].querySelectorAll('a').map(n=>n.getAttribute('href')),polishPages.map(p=>p.pl));assert.equal(navs[0].querySelectorAll('a').filter(n=>n.getAttribute('aria-current')==='page')[0].getAttribute('href'),r);}
  const home=parseStaticPage(read('pl/index.html'));assert.equal(home.querySelector('.best-next-step__card').getAttribute('href'),route);assert.equal(home.querySelector('.lt-situationPrimaryCta').getAttribute('href'),route);assert.ok(!text(home.querySelector('.best-next-step__card')).includes('(po angielsku)'));assert.ok(!text(home.querySelector('.lt-situationPrimaryCta')).includes('(po angielsku)'));
  for(const c of completedCounterparts(source))assert.ok(read(c.route.slice(1)+'index.html').includes('hreflang="pl" href="https://you-owe-me.com'+route+'"'));
@@ -35,5 +35,5 @@ test('all previous HTML/shared source preserve exact bytes beyond narrow Polish 
 test('Polish FAQ and directory prose exactly matches the parent-reviewed copy',()=>{
  const approved=JSON.parse(read('tests/fixtures/polish-money-owed-copy.json'));
  assert.deepEqual(d.querySelectorAll('.solution-faq-item').map(n=>({q:text(n.querySelector('summary')),a:text(n.querySelector('p'))})),approved.faq);
- assert.deepEqual(d.querySelectorAll('.lt-relatedCard').map(n=>[n.querySelector('a').getAttribute('href'),text(n.querySelector('h3')),text(n.querySelector('p')),text(n.querySelector('a'))]),approved.cards);
+ assert.deepEqual(d.querySelectorAll('.lt-relatedCard').map(n=>[n.querySelector('a').getAttribute('href'),text(n.querySelector('h3')),text(n.querySelector('p')),text(n.querySelector('a'))]),approved.cards.map(row=>row[0]==='/tools/split-expense-calculator/'?['/pl/narzedzia/kalkulator-podzialu-wydatkow/',row[1],row[2],row[3].replace(' (po angielsku)','')]:row));
 });

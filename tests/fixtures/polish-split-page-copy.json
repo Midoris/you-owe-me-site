@@ -1,0 +1,179 @@
+{
+  "briefSHA256": "e83c9b2af5934fd6cc8c069591f55c3c06bfce8bf3190f0a7ff3b6dfd217a544",
+  "faq": [
+    [
+      "Co oblicza to narzędzie?",
+      "Uwzględnia osobę płacącą i uczestników każdego wydatku. Na tej podstawie oblicza udział każdej osoby w kosztach oraz wpłaty potrzebne do rozliczenia różnic."
+    ],
+    [
+      "Czy zobaczę udział każdej osoby w kosztach?",
+      "Tak. Dodaj osoby i wydatki, wskazując, kto zapłacił i kto uczestniczy. Wynik pokaże udział każdej osoby, różnicę względem już zapłaconej kwoty i kwoty do przekazania, aby się rozliczyć."
+    ],
+    [
+      "Czy kalkulator pokaże, kto komu ma oddać pieniądze?",
+      "Tak. Zanim pokaże kwoty do zwrotu, uwzględnia już zapłacone pieniądze. Nikt nie musi płacić ponownie całego swojego udziału w kosztach."
+    ],
+    [
+      "Czy mogę podzielić jeden rachunek po równo?",
+      "Tak. Dodaj całą kwotę jako jeden wydatek i zaznacz wszystkie osoby. Na przykład 98 zł podzielone na osiem osób daje po 12,25 zł na osobę."
+    ],
+    [
+      "Czy mogę wykluczyć kogoś z jednego wydatku?",
+      "Tak. Przy każdym wydatku zaznacz tylko jego uczestników. Możesz pominąć na przykład osobę, która nie jechała taksówką lub nie była na kolacji."
+    ],
+    [
+      "Czy mogę ustalić różne kwoty lub procenty dla poszczególnych osób?",
+      "To narzędzie dzieli koszt po równo między zaznaczone osoby. Do podziału między dwie osoby procentowo, według dochodów lub osobno dla każdej pozycji użyj kalkulatora wydatków w parze (po angielsku). Do miesięcznych rozliczeń mieszkania służy kalkulator wydatków współlokatorów (po angielsku). Kolejne wydatki i wpłaty dodasz w kalkulatorze salda między dwiema osobami (po angielsku)."
+    ],
+    [
+      "Czy mogę połączyć kilka płatności w jednym podziale?",
+      "Tak. Dodaj każdą zapłaconą kwotę w osobnym wierszu, wybierz osobę płacącą i uczestników wydatku. Kalkulator połączy kwoty i pokaże, jak się rozliczyć."
+    ],
+    [
+      "Czy nadaje się do rozliczeń ze współlokatorami?",
+      "Tak, do prostych lub jednorazowych podziałów. Aby zebrać czynsz, rachunki, zakupy, rzeczy do domu, wpłaty i saldo z poprzedniego miesiąca, użyj kalkulatora wydatków współlokatorów (po angielsku). Regularne wydatki i salda możesz dalej zapisywać w You Owe Me."
+    ],
+    [
+      "Czy nadaje się do rozliczeń w parze?",
+      "Tak, gdy dwie osoby dzielą po równo wydatek opłacony przez jedną z nich. Do innych proporcji lub uwzględnienia dokonanych już zwrotów użyj kalkulatora wydatków w parze (po angielsku)."
+    ],
+    [
+      "Co jeśli jedziemy we troje, ale taksówką jadą tylko dwie osoby?",
+      "Przy taksówce zaznacz tylko te dwie osoby. W pozostałych wydatkach mogą uczestniczyć wszystkie trzy. Uczestników wybierasz osobno dla każdego wydatku."
+    ],
+    [
+      "Czym kalkulator różni się od aplikacji You Owe Me?",
+      "Kalkulator pomaga w jednorazowym podziale. W You Owe Me możesz dalej prowadzić salda, dopisywać wpłaty i wydatki cykliczne, ustawiać przypomnienia oraz sprawdzać historię przy rozmowie o rozliczeniu."
+    ],
+    [
+      "A jeśli każda osoba oddaje pieniądze innego dnia lub w częściach?",
+      "Ustal początkowy podział w kalkulatorze. Potem w rozliczeniach grupowych w You Owe Me zapisuj pełne i częściowe wpłaty oraz sprawdzaj, ile każda osoba ma jeszcze do oddania."
+    ],
+    [
+      "Czy wpisane dane są zapisywane lub wysyłane?",
+      "Obliczenia są wykonywane w przeglądarce tego urządzenia, bez tworzenia stałego rejestru. Jeśli wybierzesz „Kontynuuj rozliczenie na iPhonie”, imiona i kwoty zostaną bezpiecznie przesłane do You Owe Me, aby utworzyć link ważny przez 24 godziny. Nie powstaje żadne konto."
+    ]
+  ],
+  "cards": [
+    [
+      "/tools/",
+      "Bezpłatne narzędzia i szablony",
+      "Znajdź pomoc do wspólnych wydatków, wiadomości o wpłatach i rozliczeń między ludźmi.",
+      "Zobacz wszystkie narzędzia (po angielsku)"
+    ],
+    [
+      "/solutions/group-payback-tracker/",
+      "Rozliczenia z grupą",
+      "Śledź pełne, częściowe i brakujące wpłaty za wspólny prezent, bilety, posiłki lub rezerwację.",
+      "Zobacz, jak zapisywać zwroty (po angielsku)"
+    ],
+    [
+      "/tools/group-payback-calculator/",
+      "Kalkulator zwrotów w grupie",
+      "Gdy jedna osoba zapłaciła za wszystkich, sprawdź, ile każda osoba oddała i ile jeszcze zostało.",
+      "Sprawdź wpłaty grupy (po angielsku)"
+    ],
+    [
+      "/blog/how-to-remind-a-group-to-pay-you-back-without-spamming-everyone/",
+      "Wiadomości o rozliczeniu grupy",
+      "Po ustaleniu udziałów połącz ogólną wiadomość z indywidualnymi rozmowami o wpłatach.",
+      "Zaplanuj wiadomości (po angielsku)"
+    ],
+    [
+      "/blog/how-to-split-costs-when-people-pay-at-different-times/",
+      "Czy jednorazowe obliczenie nadal wystarcza?",
+      "Wybierz sposób prowadzenia rozliczeń, gdy wpłaty przychodzą w różnych dniach, wraca tylko część pieniędzy lub dochodzą nowe wydatki.",
+      "Porównaj sposoby rozliczania (po angielsku)"
+    ],
+    [
+      "/blog/how-to-remind-someone-they-owe-you-money-politely/",
+      "Jak poprosić o zwrot pieniędzy",
+      "Gdy znasz kwotę, przygotuj konkretną i spokojną rozmowę o spłacie.",
+      "Przeczytaj, jak poprosić o zwrot (po angielsku)"
+    ],
+    [
+      "/tools/running-balance-calculator/",
+      "Saldo między dwiema osobami",
+      "Zbierz wydatki opłacane za siebie nawzajem i późniejsze zwroty, aby obliczyć aktualne saldo.",
+      "Oblicz saldo (po angielsku)"
+    ],
+    [
+      "/tools/roommate-bill-split-calculator/",
+      "Miesięczne wydatki mieszkania",
+      "Zbierz czynsz, rachunki, zakupy, rzeczy do domu, wpłaty i saldo z poprzedniego miesiąca.",
+      "Oblicz koszty mieszkania (po angielsku)"
+    ],
+    [
+      "/blog/how-to-track-money-between-roommates/",
+      "Historia rozliczeń ze współlokatorami",
+      "Prowadź regularne wydatki, częściowe spłaty i poprzednie salda w jednej przydatnej historii.",
+      "Zobacz, jak prowadzić zapisy (po angielsku)"
+    ],
+    [
+      "/tools/polite-payback-reminder-generator/",
+      "Generator wiadomości o wpłacie",
+      "Po sprawdzeniu salda przygotuj wiadomość dopasowaną do Waszej relacji.",
+      "Przygotuj wiadomość (po angielsku)"
+    ],
+    [
+      "/tools/repayment-reminder-text-examples/",
+      "Przykładowe wiadomości w sprawie zwrotu",
+      "Znajdź przykłady dla znajomych, rodziny i współlokatorów, także po częściowej spłacie.",
+      "Zobacz przykładowe wiadomości (po angielsku)"
+    ],
+    [
+      "/tools/repayment-receipt-generator/",
+      "Zapis otrzymanej wpłaty",
+      "Zanotuj otrzymaną kwotę, cel wpłaty i ewentualną resztę do oddania.",
+      "Przygotuj zapis wpłaty (po angielsku)"
+    ],
+    [
+      "/solutions/roommate-expense-tracker/",
+      "Zapisywanie wydatków ze współlokatorami",
+      "Dopisuj czynsz, rachunki, zakupy, rzeczy do domu, regularne opłaty i zwroty pieniędzy.",
+      "Zobacz, jak zapisywać wydatki (po angielsku)"
+    ],
+    [
+      "/solutions/shared-expense-tracker/",
+      "Historia wspólnych wydatków",
+      "Trzymaj wydatki i wpłaty razem, bez liczenia wszystkiego od początku po każdej zmianie.",
+      "Zobacz, jak prowadzić rozliczenie (po angielsku)"
+    ],
+    [
+      "/pl/zastosowania/aplikacja-kto-ile-jest-winien/",
+      "Aplikacja do zapisywania rozliczeń",
+      "Uporządkuj pieniądze do oddania, kwoty do otrzymania i zapisane już wpłaty.",
+      "Zobacz, jak prowadzić rozliczenia w aplikacji"
+    ],
+    [
+      "/solutions/expense-tracker-for-couples/",
+      "Wspólne wydatki w parze",
+      "Uporządkuj zakupy, czynsz, wyjazdy, abonamenty i pozostałe wspólne koszty.",
+      "Zobacz rozliczenia w parze (po angielsku)"
+    ],
+    [
+      "/blog/how-to-track-shared-expenses-without-constantly-reconciling-every-transaction/",
+      "Jak zapisywać wspólne wydatki",
+      "Kontynuuj historię bez odtwarzania wszystkich kwot po każdej wpłacie.",
+      "Przeczytaj poradnik (po angielsku)"
+    ],
+    [
+      "/blog/how-to-split-expenses-in-a-relationship-without-fighting/",
+      "Jak ustalić podział wydatków w parze",
+      "Omówcie wspólne koszty, kwoty opłacone za drugą osobę i miesięczne wydatki.",
+      "Porównaj sposoby podziału (po angielsku)"
+    ],
+    [
+      "/solutions/family-reimbursement-tracker/",
+      "Rozliczenia rodzinne",
+      "Zapisuj wydatki rodziny, zakupy dla rodziców, regularne opłaty i zwroty pieniędzy.",
+      "Zobacz, jak prowadzić rozliczenia rodzinne (po angielsku)"
+    ],
+    [
+      "/blog/how-to-keep-track-of-money-between-family-members/",
+      "Jak zapisywać wydatki rodziny",
+      "Poradnik o wspólnych zakupach, kwotach opłaconych za bliskich, abonamentach i regularnych kosztach opieki.",
+      "Przeczytaj poradnik dla rodzin (po angielsku)"
+    ]
+  ]
+}

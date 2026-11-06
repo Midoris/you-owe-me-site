@@ -12,13 +12,13 @@ const read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8');
 const page=read('pl/index.html'),d=parseStaticPage(page);
 
 test('Polish discovery admits reviewed routes and keeps English-content fallback until real counterparts exist',()=>{
- assert.deepEqual(polishPages.map(p=>p.pl),['/pl/','/pl/zastosowania/aplikacja-kto-ile-jest-winien/']);assert.equal(localizedSourceRoute('/pl/'),'/');assert.equal(localizedSourceRoute('/pl/solutions/app-to-track-money-owed/'),null);
+ assert.deepEqual(polishPages.map(p=>p.pl),['/pl/','/pl/zastosowania/aplikacja-kto-ile-jest-winien/','/pl/narzedzia/kalkulator-podzialu-wydatkow/']);assert.equal(localizedSourceRoute('/pl/'),'/');assert.equal(localizedSourceRoute('/pl/solutions/app-to-track-money-owed/'),null);
  assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja','pt','it','pl']);assert.equal(completedCounterparts('/solutions/app-to-track-money-owed/').some(p=>p.code==='pl'),true);
- const nav=d.querySelectorAll('.site-locale-section');assert.equal(nav.length,1);assert.deepEqual(nav[0].querySelectorAll('a').map(n=>n.getAttribute('href')),['/pl/','/pl/zastosowania/aplikacja-kto-ile-jest-winien/']);assert.equal(nav[0].querySelector('a').getAttribute('aria-current'),'page');assert.equal((page.match(/<!-- polish-section:start -->/g)||[]).length,1);
+ const nav=d.querySelectorAll('.site-locale-section');assert.equal(nav.length,1);assert.deepEqual(nav[0].querySelectorAll('a').map(n=>n.getAttribute('href')),['/pl/','/pl/zastosowania/aplikacja-kto-ile-jest-winien/','/pl/narzedzia/kalkulator-podzialu-wydatkow/']);assert.equal(nav[0].querySelector('a').getAttribute('aria-current'),'page');assert.equal((page.match(/<!-- polish-section:start -->/g)||[]).length,1);
  assert.equal(renderLocaleHtml(page,'/','pl'),page);assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));
  const fixture='<html lang="pl"><head><link rel="canonical" href="https://you-owe-me.com/pl/" /></head><body><article><a href="/">Strona główna (po angielsku)</a><a href="/solutions/app-to-track-money-owed/">Zastosowania (po angielsku)</a></article><div id="copyright"><ul></ul></div></body></html>';
  const rendered=renderLocaleHtml(fixture,'/','pl');assert.ok(rendered.includes('href="/pl/">Strona główna</a>'));assert.ok(rendered.includes('href="/pl/zastosowania/aplikacja-kto-ile-jest-winien/">Zastosowania</a>'));
- const registry=contentRegistry.find(p=>p.url==='/pl/');assert.equal(contentRegistry.length,148);for(const key of ['primaryAudience','problemSolved','useWhen','primaryCta','nextStep'])assert.equal(registry[key],polishPages[0].registry[key]);assert.equal(registry.primaryAudience,polishShared.primaryAudience);
+ const registry=contentRegistry.find(p=>p.url==='/pl/');assert.equal(contentRegistry.length,149);for(const key of ['primaryAudience','problemSolved','useWhen','primaryCta','nextStep'])assert.equal(registry[key],polishPages[0].registry[key]);assert.equal(registry.primaryAudience,polishShared.primaryAudience);
 });
 
 test('Polish active homepage retains established components and honest English links without a dormant story or new FAQ schema',()=>{
