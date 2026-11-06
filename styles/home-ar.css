@@ -1,0 +1,15 @@
+/* The original Arabic amount and LTR currency stay together on narrow phones. */
+@media (max-width: 736px) {
+  html[lang="ar"] body.homepage-page #money-story p.homepage-balance-example__amount {
+    font-size: clamp(2.5rem, 13vw, 4.25rem);
+    white-space: nowrap;
+  }
+}
+
+/* Let the complete Arabic/English Store label set this one button's width. */
+html[lang="ar"] body.homepage-page .lt-definitionPanel [data-cta-location="homepage-definition"] {
+  width: max-content;
+  max-width: 100%;
+  box-sizing: border-box;
+  white-space: nowrap;
+}

@@ -122,7 +122,7 @@
 
     const productName = documentObject.createElement("bdi");
     productName.textContent = PRODUCT_NAME;
-    if (["es", "de", "ar", "fr", "ja", "pt", "it"].includes(pageLanguage)) {
+    if (["es", "de", "ar", "fr", "ja", "pt", "it", "pl"].includes(pageLanguage)) {
       const productLink = documentObject.createElement("a");
       productLink.setAttribute("href", `/${pageLanguage}/`);
       productLink.appendChild(productName);
@@ -150,7 +150,7 @@
     if (existing) return existing;
 
     const pageLanguage = normalizeLocale(documentObject.documentElement?.lang)?.split("-")[0];
-    const language = ["es", "de", "ar", "fr", "ja", "pt", "it"].includes(pageLanguage) ? pageLanguage : matchedAppLanguage(
+    const language = ["es", "de", "ar", "fr", "ja", "pt", "it", "pl"].includes(pageLanguage) ? pageLanguage : matchedAppLanguage(
       localPreviewLocale(locationLike) || primaryBrowserLocale(navigatorLike),
     );
     if (!language) return null;

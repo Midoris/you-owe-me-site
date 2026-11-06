@@ -247,3 +247,17 @@ test("Italian anniversary localization keeps original start, final and expiratio
     }
   }
 });
+
+
+test("Polish anniversary localization retains exact original gate boundaries and destination", () => {
+  const standard=standardModule(),inline=inlineModule(),d=new FakeDocument([standard,inline]);d.documentElement={lang:"pl"};
+  for(const [month,day,phase]of [[7,25,"inactive"],[7,26,"active"],[8,1,"active"],[8,2,"final"],[8,4,"final"],[8,5,"inactive"],[10,6,"inactive"]]) {
+    anniversary.render(d,new Date(2026,month,day,12));
+    assert.equal(standard.getAttribute("data-anniversary-phase"),phase);
+    assert.equal(standard.hidden,phase==="inactive");assert.equal(inline.hidden,phase==="inactive");
+    if(phase!=="inactive") {
+      assert.equal(standard.querySelector("[data-anniversary-heading]").textContent,phase==="active"?"You Owe Me ma 10 lat.":"Oferta rocznicowa kończy się 4 września.");
+      assert.equal(standard.querySelector("[data-anniversary-cta]").getAttribute("href"),"/10-years/");
+    }
+  }
+});

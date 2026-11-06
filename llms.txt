@@ -382,3 +382,11 @@ Pagine disponibili in italiano. Ogni pagina ha un indirizzo dedicato; i collegam
 - [Come chiedere soldi in prestito](https://you-owe-me.com/it/blog/come-chiedere-soldi-in-prestito-a-un-amico/) — Otto messaggi per parlare di un prestito tra amici, con un modello per annotare l’accordo e un esempio di rimborso.
 - [Modello spese tra coinquilini](https://you-owe-me.com/it/strumenti/modello-spese-coinquilini/) — Modello gratuito in italiano per spese condivise, rimborsi tra coinquilini e saldi. Versioni Excel, Fogli Google e CSV.
 <!-- italian-pages:end -->
+
+<!-- polish-pages:start -->
+## Strony po polsku
+
+Strony dostępne po polsku. Każda ma własny adres. Linki do treści, których jeszcze nie ma po polsku, mają dopisek „po angielsku”.
+
+- [Pożyczone pieniądze, wspólne wydatki i spłaty](https://you-owe-me.com/pl/)
+<!-- polish-pages:end -->

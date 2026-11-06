@@ -1,0 +1,7 @@
+/* Preserve the original NBSP amount/currency inside the phone card content. */
+@media (max-width: 736px) {
+  html[lang="fr"] body.homepage-page #money-story p.homepage-balance-example__amount {
+    font-size: clamp(2.5rem, 13vw, 4.25rem);
+    white-space: nowrap;
+  }
+}

@@ -1,0 +1,17 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1000" viewBox="0 0 600 1000" lang="pl" role="img" aria-labelledby="title desc">
+  <title id="title">Otrzymane spłaty</title>
+  <desc id="desc">Fikcyjny przykład: Jakub oddaje 100 zł 9 maja i 80 zł 22 maja</desc>
+  <rect x="1" y="1" width="598" height="998" rx="36" fill="#fbfdff" stroke="#dfe6eb"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" fill="#18212b">
+    <text x="44" y="95" font-size="26" fill="#52616c">Rozliczenia z Jakubem</text>
+    <text x="44" y="165" font-size="40" font-weight="700"><tspan x="44">Otrzymane</tspan><tspan x="44" dy="52">spłaty</tspan></text>
+    <path d="M44 280H556M44 420H556M44 560H556" stroke="#dfe6eb"/>
+    <text x="44" y="360" font-size="30">9 maja</text>
+    <text x="556" y="360" text-anchor="end" font-size="40" font-weight="700">100 zł</text>
+    <text x="44" y="500" font-size="30">22 maja</text>
+    <text x="556" y="500" text-anchor="end" font-size="40" font-weight="700">80 zł</text>
+    <text x="44" y="680" font-size="28">Łącznie otrzymano</text>
+    <text x="44" y="760" font-size="54" font-weight="700">180 zł</text>
+    <text x="44" y="915" font-size="26" fill="#52616c">Przykład z fikcyjnymi danymi</text>
+  </g>
+</svg>

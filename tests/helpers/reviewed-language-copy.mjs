@@ -3,8 +3,28 @@ import fs from "node:fs";
 
 
 
+const polishHomeAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/polish-home-reviewed-admissions.json", import.meta.url), "utf8"));
+export function normalizeReviewedPolishHomeSource(source, file) {
+  if (!polishHomeAdmissions.source[file]) return source;
+  const bytes = Buffer.isBuffer(source);
+  let text = bytes ? source.toString("utf8") : source;
+  for (const [current, previous] of polishHomeAdmissions.source[file]) text = text.replace(current, previous);
+  return bytes ? Buffer.from(text) : text;
+}
+export function normalizeReviewedPolishHomeIntegration(html) {
+  html = html.replace('    <link rel="alternate" hreflang="pl" href="https://you-owe-me.com/pl/" />\n', '');
+  for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="/pl/" lang="pl"'+direction+' hreflang="pl">Polski</a>', '');
+  for (const {current, previous} of polishHomeAdmissions.availability) html = html.replaceAll(current, previous);
+  const canonical = html.match(/<link\s+rel="canonical"\s+href="([^"]+)"/)?.[1];
+  for (const [current, previous] of polishHomeAdmissions.cacheByCanonical[canonical] || []) html = html.replaceAll(current, previous);
+  for (const [current, previous] of polishHomeAdmissions.proseWrappersByCanonical[canonical] || []) html = html.replace(current, previous);
+  for (const [current, previous] of polishHomeAdmissions.additionalHtmlByCanonical[canonical] || []) html = html.replace(current, previous);
+  return html;
+}
+
 const italianRoommateAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/italian-roommate-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedItalianRoommateSource(source, file) {
+  source = normalizeReviewedPolishHomeSource(source, file);
   if (!italianRoommateAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -12,6 +32,7 @@ export function normalizeReviewedItalianRoommateSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedItalianRoommateIntegration(html) {
+  html = normalizeReviewedPolishHomeIntegration(html);
   const route = '/it/strumenti/modello-spese-coinquilini/';
   html = html.replace('    <link rel="alternate" hreflang="it" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="it"'+direction+' hreflang="it">Italiano</a>', '');

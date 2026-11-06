@@ -367,3 +367,15 @@ test("Italian page override fixes the native message and home link regardless of
     assert.equal(languageSupport.render(documentObject, {language:"en-US"}), anchor);
   }
 });
+
+
+test("Polish page override keeps the authored Polish message and native home under unrelated browser languages", () => {
+  for (const language of ["en-US", "ar-SA", "it-IT", "pl-PL"]) {
+    const d = new FakeDocument(); d.documentElement = {lang: "pl"};
+    const anchor = languageSupport.render(d, {language});
+    assert.equal(flattenedText(anchor), "✓Aplikacja You Owe Me jest dostępna po polsku.");
+    assert.equal(anchor.getAttribute("lang"), "pl");
+    assert.equal(anchor.children[1].children[1].getAttribute("href"), "/pl/");
+    assert.equal(languageSupport.render(d, {language:"fr-FR"}), anchor);
+  }
+});

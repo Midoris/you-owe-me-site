@@ -15,7 +15,7 @@ const hash=b=>createHash('sha256').update(b).digest('hex');
 
 test('Portuguese discovery admits only the reviewed base-pt homepage with native pt-BR document language',()=>{
  assert.deepEqual(portuguesePages.map(p=>p.pt),['/pt/','/pt/solucoes/app-para-controlar-quem-te-deve/','/pt/blog/como-controlar-quem-te-deve-dinheiro/','/pt/solucoes/controle-de-emprestimos-entre-pessoas/','/pt/ferramentas/calculadora-dividir-despesas/','/pt/blog/como-cobrar-um-amigo-com-educacao/','/pt/blog/como-pedir-dinheiro-emprestado-a-um-amigo/','/pt/ferramentas/planilha-despesas-casa-compartilhada/']);
- assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja','pt','it']);
+ assert.deepEqual(completedCounterparts('/').map(p=>p.code),['en','es','de','ar','fr','ja','pt','it','pl']);
  assert.equal(completedCounterparts('/tools/split-expense-calculator/').some(p=>p.code==='pt'),true);
  assert.match(page,/<html lang="pt-BR">/);assert.equal(renderLocaleHtml(page,'/','pt'),page);
  assert.equal(renderLocaleDiscovery(read('llms.txt')),read('llms.txt'));

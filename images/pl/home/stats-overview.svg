@@ -1,0 +1,18 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="600" height="1000" viewBox="0 0 600 1000" lang="pl" role="img" aria-labelledby="title desc">
+  <title id="title">Ile wróciło. Ile zostało.</title>
+  <desc id="desc">Ilustracja: zapłacono za Jakuba 340 zł, oddał 180 zł, zostało 160 zł</desc>
+  <rect x="1" y="1" width="598" height="998" rx="36" fill="#fbfdff" stroke="#dfe6eb"/>
+  <g font-family="-apple-system, BlinkMacSystemFont, Segoe UI, sans-serif" fill="#18212b">
+    <text x="44" y="95" font-size="26" fill="#52616c">Podsumowanie rozliczeń</text>
+    <text x="44" y="165" font-size="40" font-weight="700"><tspan x="44">Ile wróciło.</tspan><tspan x="44" dy="52">Ile zostało.</tspan></text>
+    <text x="44" y="325" font-size="28">Zapłacono za Jakuba</text>
+    <text x="44" y="396" font-size="54" font-weight="700">340 zł</text>
+    <rect x="44" y="455" width="512" height="40" rx="20" fill="#e1e8ec"/>
+    <path d="M64 455H315.0588V495H64A20 20 0 0 1 64 455" fill="#afe67e"/>
+    <text x="44" y="600" font-size="28">Jakub oddał</text>
+    <text x="44" y="665" font-size="48" font-weight="700">180 zł</text>
+    <text x="44" y="800" font-size="28">Do oddania</text>
+    <text x="44" y="865" font-size="48" font-weight="700">160 zł</text>
+    <text x="44" y="945" font-size="26" fill="#52616c">Przykład z fikcyjnymi danymi</text>
+  </g>
+</svg>

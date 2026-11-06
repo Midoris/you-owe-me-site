@@ -5,12 +5,12 @@ export const germanAssetVersion = "de20261020";
 // Add a shared dependency here when its bytes change. The same new URL must
 // reach every localized page, including already-published Spanish pages.
 export const sharedAssetVersions = {
-  "/scripts/analytics.js": "itroommate20261106",
-  "/scripts/sales.js": "ithome20261106",
-  "/scripts/anniversary-announcement.js": "ithome20261106",
-  "/scripts/app-language-support.js": "ithome20261106",
-  "/scripts/video-embed.js": "ithome20261106",
-  "/assets/js/main.js": "ithome20261106",
+  "/scripts/analytics.js": "plhome20261106",
+  "/scripts/sales.js": "plhome20261106",
+  "/scripts/anniversary-announcement.js": "plhome20261106",
+  "/scripts/app-language-support.js": "plhome20261106",
+  "/scripts/video-embed.js": "plhome20261106",
+  "/assets/js/main.js": "plhome20261106",
   "/styles/site-locale.css": "review20261020",
   "/styles/site-nav.css": "ar20261020",
   "/scripts/recordkeeping-guide-es.js": "itrecord20261106",
@@ -709,6 +709,47 @@ export const italianShared = Object.freeze({
   "useWhen": "Per conoscere le possibilità in italiano e scegliere da dove iniziare.",
   "nextStep": "Leggi una guida collegata oppure inizia a registrare i movimenti su You Owe Me per iPhone."
 });
+export const polishPages = [
+  {
+    "en": "/",
+    "pl": "/pl/",
+    "title": "Pożyczone pieniądze, wspólne wydatki i spłaty",
+    "updated": "2026-11-06",
+    "complete": true,
+    "registry": {
+      "primaryAudience": "Osoby, które chcą zapisywać pożyczone pieniądze, wydatki opłacone za innych i kwoty do zwrotu.",
+      "problemSolved": "Zbiera kwoty i spłaty przy każdej osobie, żeby było jasne, ile już oddano i ile jeszcze zostało.",
+      "useWhen": "Gdy chcesz uporządkować pieniądze do otrzymania lub oddania.",
+      "primaryCta": "Pobierz z App Store",
+      "nextStep": "Pobierz You Owe Me, dodaj pierwszą osobę i zapisz kwotę."
+    }
+  }
+];
+export const polishShared = Object.freeze({
+  "languageLabel": "Język strony",
+  "englishFallback": "po angielsku",
+  "storeLabel": "Pobierz z App Store",
+  "navigation": {
+    "home": "Strona główna",
+    "solutions": "Zastosowania",
+    "features": "Funkcje",
+    "reviews": "Opinie",
+    "tools": "Narzędzia",
+    "compare": "Porównania",
+    "blog": "Poradniki"
+  },
+  "footer": {
+    "/quick-start/": "Pierwsze kroki",
+    "/privacy-and-data/": "Prywatność i dane",
+    "/privacy-policy/": "Polityka prywatności",
+    "/contact/": "Kontakt"
+  },
+  "sectionLabel": "Strony po polsku",
+  "discoveryDescription": "Strony dostępne po polsku. Każda ma własny adres. Linki do treści, których jeszcze nie ma po polsku, mają dopisek „po angielsku”.",
+  "primaryAudience": "Osoby, które chcą zapisywać pożyczone pieniądze, wydatki opłacone za innych i kwoty do zwrotu.",
+  "useWhen": "Gdy chcesz poznać aplikację po polsku i wybrać, od czego zacząć.",
+  "nextStep": "Przeczytaj powiązany poradnik lub zacznij zapisywać rozliczenia w You Owe Me na iPhonie."
+});
 export const siteLocales = [
   { code: "en", label: "English", home: "/", pages: [], shared: { languageLabel: "Page language" } },
   { code: "es", label: "Español", home: "/es/", pages: spanishPages, shared: spanishShared, assetVersion: spanishAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "spanish", sectionClass: "site-spanish-section", nextStepComment: "Spanish next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Spanish next steps are translated in the public HTML; the English module generator must not overwrite them." },
@@ -718,6 +759,7 @@ export const siteLocales = [
   { code: "ja", label: "日本語", home: "/ja/", pages: japanesePages, shared: japaneseShared, assetVersion: "ja20261031", versionedAssets: spanishVersionedAssets, sectionMarker: "japanese", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "pt", documentLanguage: "pt-BR", label: "Português", home: "/pt/", pages: portuguesePages, shared: portugueseShared, assetVersion: "pt20261105", versionedAssets: spanishVersionedAssets, sectionMarker: "portuguese", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "it", label: "Italiano", home: "/it/", pages: italianPages, shared: italianShared, assetVersion: "ithome20261106", versionedAssets: spanishVersionedAssets, sectionMarker: "italian", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
+  { code: "pl", label: "Polski", home: "/pl/", pages: polishPages, shared: polishShared, assetVersion: "plhome20261106", versionedAssets: spanishVersionedAssets, sectionMarker: "polish", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
 ];
 
 export function localeAssetVersion(locale, asset) {

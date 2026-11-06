@@ -44,3 +44,11 @@ html[lang="ja"] #main .stats-product-composition figcaption { line-height: 1.7; 
 html[lang="ja"] #main .lt-videoPlayButton { background: #afe67e; }
 html[lang="ja"] #main .lt-videoPlayButton::before { border-left-color: #18212b; }
 @media (max-width: 980px) { html[lang="ja"] #main .ja-illustration { padding: 1.5rem; } }
+
+/* Preserve the original yen example as one amount inside the narrow card. */
+@media (max-width: 736px) {
+  html[lang="ja"] body.homepage-page #money-story p.homepage-balance-example__amount {
+    font-size: clamp(2.5rem, 13vw, 4.25rem);
+    white-space: nowrap;
+  }
+}

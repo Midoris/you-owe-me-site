@@ -1,0 +1,7 @@
+/* Keep the original example amount and currency together on narrow phones. */
+@media (max-width: 736px) {
+  html[lang="es"] body.homepage-page #money-story p.homepage-balance-example__amount {
+    font-size: clamp(2.5rem, 13vw, 4.25rem);
+    white-space: nowrap;
+  }
+}
