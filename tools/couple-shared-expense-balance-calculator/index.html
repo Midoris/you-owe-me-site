@@ -43,7 +43,7 @@
           "name": "Couple Shared Expense Balance Calculator",
           "description": "A free browser calculator for partners to add shared expenses, choose 50/50, custom, income-proportional, category-based, or paid-total views, include transfers, and copy a calm settle-up summary.",
           "url": "https://you-owe-me.com/tools/couple-shared-expense-balance-calculator/",
-          "dateModified": "2026-06-18",
+          "dateModified": "2026-11-14",
           "isPartOf": {
             "@type": "CollectionPage",
             "name": "Money Tools and Templates",
@@ -208,7 +208,7 @@
               <p class="cb-privacyNote">This calculator runs in your browser. The values you enter are not sent anywhere or saved to an account.</p>
               <div class="lt-ctaRow">
                 <a href="#calculator" class="lt-primaryCta">Start calculating</a>
-                <button type="button" class="cb-linkButton" data-action="load-example" data-scroll-to-calculator>See example</button>
+                <a href="#worked-example" class="lt-textCta">See example</a>
                 <a href="/tools/" class="lt-textCta">Browse all money tools</a>
               </div>
             </div>
@@ -239,11 +239,10 @@
                   <p class="cb-cardLabel">Example result</p>
                   <h3 id="cb-example-title">Mia covered $16.00 more than her share</h3>
                   <p>Groceries, internet, dinner, a streaming subscription, and one $30 transfer from Alex.</p>
-                  <button type="button" class="cb-secondaryButton" data-action="load-example">Use example</button>
+                  <button type="button" class="cb-secondaryButton" data-action="load-example">Load example</button>
                 </aside>
                 <div class="cb-actionCluster" aria-label="Calculator actions">
-                  <button type="button" class="cb-secondaryButton" data-action="load-example">Use example</button>
-                  <button type="button" class="cb-secondaryButton" data-action="load-income-example">Income split example</button>
+                  <button type="button" class="cb-secondaryButton" data-action="load-income-example">Load income split example</button>
                   <button type="button" class="cb-secondaryButton" data-action="clear-all">Clear all</button>
                 </div>
               </div>
@@ -390,7 +389,7 @@
                       </div>
                       <div class="cb-actionCluster">
                         <button type="button" class="cb-smallButton" data-action="add-expense">Add shared expense</button>
-                        <button type="button" class="cb-smallButton" data-action="load-example">Add example expenses</button>
+                        <button type="button" class="cb-smallButton" data-action="load-example">Load example</button>
                         <button type="button" class="cb-smallButton" data-action="clear-expenses">Clear expenses</button>
                       </div>
                     </div>
@@ -595,8 +594,8 @@
             </div>
           </section>
 
-          <section class="lt-toolsSection cb-contentSection">
-            <h2>Example: groceries, bills, and a partial settle-up</h2>
+          <section class="lt-toolsSection cb-contentSection" id="worked-example" aria-labelledby="worked-example-title">
+            <h2 id="worked-example-title">Example: groceries, bills, and a partial settle-up</h2>
             <p>Mia paid for groceries, dinner, and a streaming subscription. Alex paid the internet bill and later sent Mia $30. After the calculator applies a 50/50 split, Mia has still covered $16 more than her share. Alex could send $16 now, or they could carry that amount forward into next month.</p>
             <div class="cb-exampleTableWrap">
               <table class="cb-exampleTable">
@@ -790,7 +789,7 @@
             </div>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-06-18">June 18, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-11-14">November 14, 2026</time></p>
         </article>
       </div>
 
@@ -812,7 +811,7 @@
     </div>
 
     <script src="../../scripts/sales.js?v=kohome20261106"></script>
-    <script src="../../scripts/couple-shared-expense-balance-calculator.js"></script>
+    <script src="../../scripts/couple-shared-expense-balance-calculator.js?v=examples20261114"></script>
     <script type="module" src="../../scripts/analytics.js?v=komoney20261106"></script>
     <script src="../../assets/js/jquery.min.js"></script>
     <script src="../../assets/js/jquery.scrollex.min.js"></script>

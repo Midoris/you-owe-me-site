@@ -34,6 +34,7 @@
   };
 
   const els = {};
+  let hasVisitorEdits = false;
 
   function makeId(prefix) {
     return `${prefix}-${Date.now().toString(36)}-${Math.random().toString(36).slice(2, 8)}`;
@@ -822,6 +823,7 @@
   }
 
   function setStarterState() {
+    hasVisitorEdits = false;
     state.currency = "$";
     state.partner1 = "You";
     state.partner2 = "Alex";
@@ -882,6 +884,7 @@
 
   function addExpense() {
     if (state.expenses.length >= MAX_EXPENSES) return;
+    hasVisitorEdits = true;
     state.expenses.push(createExpense());
     renderExpenses();
     renderAll();
@@ -889,30 +892,35 @@
 
   function addTransfer() {
     if (state.transfers.length >= MAX_TRANSFERS) return;
+    hasVisitorEdits = true;
     state.transfers.push(createTransfer());
     renderTransfers();
     renderAll();
   }
 
   function removeExpense(id) {
+    hasVisitorEdits = true;
     state.expenses = state.expenses.filter((expense) => expense.id !== id);
     renderExpenses();
     renderAll();
   }
 
   function removeTransfer(id) {
+    hasVisitorEdits = true;
     state.transfers = state.transfers.filter((transfer) => transfer.id !== id);
     renderTransfers();
     renderAll();
   }
 
   function clearExpenses() {
+    if (state.expenses.length) hasVisitorEdits = true;
     state.expenses = [];
     renderExpenses();
     renderAll();
   }
 
   function clearTransfers() {
+    if (state.transfers.length) hasVisitorEdits = true;
     state.transfers = [];
     renderTransfers();
     renderAll();
@@ -1063,7 +1071,13 @@
     renderAll();
   }
 
-  function bindEvents() {
+  function bindEvents(root) {
+    const markVisitorEdit = (event) => {
+      if (event.target.matches("input, select")) hasVisitorEdits = true;
+    };
+    root.addEventListener("input", markVisitorEdit, true);
+    root.addEventListener("change", markVisitorEdit, true);
+
     [
       els.currency,
       els.partner1,
@@ -1098,7 +1112,6 @@
       const action = button.getAttribute("data-action");
       const expenseRow = button.closest("[data-expense-id]");
       const transferRow = button.closest("[data-transfer-id]");
-      const shouldScrollToCalculator = button.hasAttribute("data-scroll-to-calculator");
 
       if (action === "add-expense") addExpense();
       if (action === "add-transfer") addTransfer();
@@ -1107,10 +1120,14 @@
       if (action === "clear-expenses") clearExpenses();
       if (action === "clear-transfers") clearTransfers();
       if (action === "clear-all") clearAll();
-      if (action === "load-example") loadExample();
-      if (action === "load-income-example") loadIncomeExample();
+      if (action === "load-example" || action === "load-income-example") {
+        // Examples leave some inactive split settings intact, so only Clear all clears the edit flag.
+        if (hasVisitorEdits && !window.confirm("Replace your current calculator entries with the example?")) return;
+        if (action === "load-example") loadExample();
+        else loadIncomeExample();
+        if (button.hasAttribute("data-scroll-to-calculator")) scrollCalculatorIntoView();
+      }
       if (action === "copy-summary") copySummary();
-      if (shouldScrollToCalculator) scrollCalculatorIntoView();
     });
   }
 
@@ -1142,7 +1159,7 @@
 
     setStarterState();
     syncSetupInputs();
-    bindEvents();
+    bindEvents(root);
     renderEverything();
   }
 

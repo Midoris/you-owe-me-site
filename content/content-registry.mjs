@@ -2802,7 +2802,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/expense-tracker-for-couples/", "/solutions/shared-expense-tracker/"],
     appStoreCpp: "couples-relationship-spending",
     tags: ["couples", "partners", "shared-expenses", "expense-split", "running-balance", "income-split", "custom-split", "settle-up", "relationship-spending"],
-    updated: "2026-06-18",
+    updated: "2026-11-14",
     status: "live",
     priority: "high",
     primaryCta: "Calculate couple balance",

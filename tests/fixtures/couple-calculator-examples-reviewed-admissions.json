@@ -1,0 +1,90 @@
+{
+  "tools/couple-shared-expense-balance-calculator/index.html": [
+    [
+      "          \"dateModified\": \"2026-11-14\",\n",
+      "          \"dateModified\": \"2026-06-18\",\n"
+    ],
+    [
+      "                <a href=\"#worked-example\" class=\"lt-textCta\">See example</a>\n",
+      "                <button type=\"button\" class=\"cb-linkButton\" data-action=\"load-example\" data-scroll-to-calculator>See example</button>\n"
+    ],
+    [
+      "                  <button type=\"button\" class=\"cb-secondaryButton\" data-action=\"load-example\">Load example</button>\n",
+      "                  <button type=\"button\" class=\"cb-secondaryButton\" data-action=\"load-example\">Use example</button>\n"
+    ],
+    [
+      "                  <button type=\"button\" class=\"cb-secondaryButton\" data-action=\"load-income-example\">Load income split example</button>\n",
+      "                  <button type=\"button\" class=\"cb-secondaryButton\" data-action=\"load-example\">Use example</button>\n                  <button type=\"button\" class=\"cb-secondaryButton\" data-action=\"load-income-example\">Income split example</button>\n"
+    ],
+    [
+      "                        <button type=\"button\" class=\"cb-smallButton\" data-action=\"load-example\">Load example</button>\n",
+      "                        <button type=\"button\" class=\"cb-smallButton\" data-action=\"load-example\">Add example expenses</button>\n"
+    ],
+    [
+      "          <section class=\"lt-toolsSection cb-contentSection\" id=\"worked-example\" aria-labelledby=\"worked-example-title\">\n            <h2 id=\"worked-example-title\">Example: groceries, bills, and a partial settle-up</h2>\n",
+      "          <section class=\"lt-toolsSection cb-contentSection\">\n            <h2>Example: groceries, bills, and a partial settle-up</h2>\n"
+    ],
+    [
+      "          <p class=\"lt-pageMeta\">Updated <time datetime=\"2026-11-14\">November 14, 2026</time></p>\n",
+      "          <p class=\"lt-pageMeta\">Updated <time datetime=\"2026-06-18\">June 18, 2026</time></p>\n"
+    ],
+    [
+      "    <script src=\"../../scripts/couple-shared-expense-balance-calculator.js?v=examples20261114\"></script>\n",
+      "    <script src=\"../../scripts/couple-shared-expense-balance-calculator.js\"></script>\n"
+    ]
+  ],
+  "scripts/couple-shared-expense-balance-calculator.js": [
+    [
+      "  let hasVisitorEdits = false;\n",
+      ""
+    ],
+    [
+      "    hasVisitorEdits = false;\n",
+      ""
+    ],
+    [
+      "    hasVisitorEdits = true;\n    state.expenses.push(createExpense());\n",
+      "    state.expenses.push(createExpense());\n"
+    ],
+    [
+      "    hasVisitorEdits = true;\n    state.transfers.push(createTransfer());\n",
+      "    state.transfers.push(createTransfer());\n"
+    ],
+    [
+      "    hasVisitorEdits = true;\n    state.expenses = state.expenses.filter((expense) => expense.id !== id);\n",
+      "    state.expenses = state.expenses.filter((expense) => expense.id !== id);\n"
+    ],
+    [
+      "    hasVisitorEdits = true;\n    state.transfers = state.transfers.filter((transfer) => transfer.id !== id);\n",
+      "    state.transfers = state.transfers.filter((transfer) => transfer.id !== id);\n"
+    ],
+    [
+      "    if (state.expenses.length) hasVisitorEdits = true;\n",
+      ""
+    ],
+    [
+      "    if (state.transfers.length) hasVisitorEdits = true;\n",
+      ""
+    ],
+    [
+      "  function bindEvents(root) {\n    const markVisitorEdit = (event) => {\n      if (event.target.matches(\"input, select\")) hasVisitorEdits = true;\n    };\n    root.addEventListener(\"input\", markVisitorEdit, true);\n    root.addEventListener(\"change\", markVisitorEdit, true);\n\n",
+      "  function bindEvents() {\n"
+    ],
+    [
+      "      const transferRow = button.closest(\"[data-transfer-id]\");\n",
+      "      const transferRow = button.closest(\"[data-transfer-id]\");\n      const shouldScrollToCalculator = button.hasAttribute(\"data-scroll-to-calculator\");\n"
+    ],
+    [
+      "      if (action === \"load-example\" || action === \"load-income-example\") {\n        // Examples leave some inactive split settings intact, so only Clear all clears the edit flag.\n        if (hasVisitorEdits && !window.confirm(\"Replace your current calculator entries with the example?\")) return;\n        if (action === \"load-example\") loadExample();\n        else loadIncomeExample();\n        if (button.hasAttribute(\"data-scroll-to-calculator\")) scrollCalculatorIntoView();\n      }\n",
+      "      if (action === \"load-example\") loadExample();\n      if (action === \"load-income-example\") loadIncomeExample();\n"
+    ],
+    [
+      "      if (action === \"copy-summary\") copySummary();\n",
+      "      if (action === \"copy-summary\") copySummary();\n      if (shouldScrollToCalculator) scrollCalculatorIntoView();\n"
+    ],
+    [
+      "    bindEvents(root);\n",
+      "    bindEvents();\n"
+    ]
+  ]
+}

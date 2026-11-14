@@ -10,6 +10,7 @@ const seoAdmissions = {
   ...readSeoAdmissions("tools-loan-import-link"),
   ...readSeoAdmissions("confrontation-example-link"),
   ...readSeoAdmissions("money-owed-group-paybacks"),
+  ...readSeoAdmissions("couple-calculator-examples"),
 };
 
 // Reverse only unique, literal fragments from the reviewed changes on these paths.
