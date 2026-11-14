@@ -3283,7 +3283,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/group-payback-tracker/", "/solutions/temporary-financial-support-tracker/"],
     appStoreCpp: "money-owed-followups",
     tags: ["receipt", "repayments", "confirmation", "remaining-balance"],
-    updated: "2026-06-13",
+    updated: "2026-11-14",
     status: "live",
     priority: "high",
     primaryCta: "Generate a repayment receipt",

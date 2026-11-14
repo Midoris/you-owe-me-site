@@ -1,0 +1,46 @@
+{
+  "tools/repayment-receipt-generator/index.html": [
+    [
+      "\"dateModified\": \"2026-11-14\",",
+      "\"dateModified\": \"2026-06-13\","
+    ],
+    [
+      "<input id=\"receipt-amount\" name=\"amount\" type=\"number\" min=\"0.01\" step=\"0.01\" inputmode=\"decimal\" required aria-describedby=\"receipt-amount-error\" />",
+      "<input id=\"receipt-amount\" name=\"amount\" type=\"number\" min=\"0.01\" step=\"0.01\" inputmode=\"decimal\" value=\"120\" required aria-describedby=\"receipt-amount-error\" />"
+    ],
+    [
+      "                    <p data-result-support>Copy whichever version fits the conversation or your own records.</p>\n                    <p data-example-instructions hidden>Select <strong>Clear fields</strong> above to start your own receipt.</p>\n",
+      "                    <p data-result-support>Copy whichever version fits the conversation or your own records.</p>\n"
+    ],
+    [
+      "Updated <time datetime=\"2026-11-14\">November 14, 2026</time>",
+      "Updated <time datetime=\"2026-06-13\">June 13, 2026</time>"
+    ],
+    [
+      "src=\"../../scripts/repayment-receipt-generator.js?v=receiptexample20261114\"",
+      "src=\"../../scripts/repayment-receipt-generator.js\""
+    ]
+  ],
+  "scripts/repayment-receipt-generator.js": [
+    [
+      "  var els = {};\n  var exampleLoaded = false;\n",
+      "  var els = {};\n"
+    ],
+    [
+      "    lastOutput.record = buildRecord(values, calc);\n\n    if (exampleLoaded) {\n      lastOutput.message = \"[Example receipt] \" + lastOutput.message;\n      lastOutput.summary = \"[Example receipt]\\n\\n\" + lastOutput.summary;\n      lastOutput.record = \"[Example receipt] \" + lastOutput.record;\n    }\n\n    if (els.resultTitle) els.resultTitle.textContent = exampleLoaded ? \"Example receipt\" : \"Your repayment confirmation\";\n    if (els.exampleInstructions) els.exampleInstructions.hidden = !exampleLoaded;\n    if (els.results) els.results.hidden = false;\n",
+      "    lastOutput.record = buildRecord(values, calc);\n\n    if (els.results) els.results.hidden = false;\n"
+    ],
+    [
+      "  function loadExample() {\n    exampleLoaded = true;\n",
+      "  function loadExample() {\n"
+    ],
+    [
+      "  function clearFields() {\n    exampleLoaded = false;\n",
+      "  function clearFields() {\n"
+    ],
+    [
+      "      results: byId(\"receipt-results\"),\n      resultTitle: byId(\"receipt-results-title\"),\n      exampleInstructions: document.querySelector(\"[data-example-instructions]\"),\n",
+      "      results: byId(\"receipt-results\"),\n"
+    ]
+  ]
+}

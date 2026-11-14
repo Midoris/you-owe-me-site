@@ -7,6 +7,7 @@
   var tolerance = 0.005;
 
   var els = {};
+  var exampleLoaded = false;
   var lastOutput = {
     message: "",
     summary: "",
@@ -334,6 +335,14 @@
     lastOutput.summary = buildSummary(values, calc);
     lastOutput.record = buildRecord(values, calc);
 
+    if (exampleLoaded) {
+      lastOutput.message = "[Example receipt] " + lastOutput.message;
+      lastOutput.summary = "[Example receipt]\n\n" + lastOutput.summary;
+      lastOutput.record = "[Example receipt] " + lastOutput.record;
+    }
+
+    if (els.resultTitle) els.resultTitle.textContent = exampleLoaded ? "Example receipt" : "Your repayment confirmation";
+    if (els.exampleInstructions) els.exampleInstructions.hidden = !exampleLoaded;
     if (els.results) els.results.hidden = false;
     if (els.resultStatus) els.resultStatus.textContent = calc.status;
     if (els.resultSupport) els.resultSupport.textContent = calc.remainingText;
@@ -364,6 +373,7 @@
   }
 
   function loadExample() {
+    exampleLoaded = true;
     if (els.currency) els.currency.value = "$";
     if (els.amount) els.amount.value = "120";
     if (els.date) els.date.value = todayInputValue();
@@ -380,6 +390,7 @@
   }
 
   function clearFields() {
+    exampleLoaded = false;
     if (els.currency) els.currency.value = "$";
     if (els.amount) els.amount.value = "";
     if (els.date) els.date.value = todayInputValue();
@@ -497,6 +508,8 @@
       amountError: byId("receipt-amount-error"),
       balanceError: byId("receipt-balance-error"),
       results: byId("receipt-results"),
+      resultTitle: byId("receipt-results-title"),
+      exampleInstructions: document.querySelector("[data-example-instructions]"),
       resultStatus: document.querySelector("[data-result-status]"),
       resultSupport: document.querySelector("[data-result-support]"),
       outputMessage: document.querySelector("[data-output-message]"),
