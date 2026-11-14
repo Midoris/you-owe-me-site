@@ -8,6 +8,7 @@ const seoAdmissions = {
   ...readSeoAdmissions("borrowing-pdf"),
   ...readSeoAdmissions("roommate-electricity"),
   ...readSeoAdmissions("tools-loan-import-link"),
+  ...readSeoAdmissions("confrontation-example-link"),
 };
 
 // Reverse only unique, literal fragments from the reviewed changes on these paths.
