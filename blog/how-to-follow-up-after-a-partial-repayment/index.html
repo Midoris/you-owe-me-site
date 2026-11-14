@@ -73,7 +73,7 @@
             "track partial repayments"
           ],
           "datePublished": "2026-05-21",
-          "dateModified": "2026-08-02",
+          "dateModified": "2026-11-14",
           "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://you-owe-me.com/blog/how-to-follow-up-after-a-partial-repayment/"
@@ -170,7 +170,7 @@
     <link rel="stylesheet" href="/styles/tools.css" />
     <link rel="stylesheet" href="/styles/repayment-reminder-text-examples.css" />
     <link rel="stylesheet" href="/styles/polite-money-reminder-answer.css" />
-    <link rel="stylesheet" href="/styles/partial-repayment-follow-up.css" />
+    <link rel="stylesheet" href="/styles/partial-repayment-follow-up.css?v=20261114" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
   </head>
@@ -356,23 +356,27 @@
                 </div>
               </form>
 
-              <div class="partial-helper-results" aria-live="polite">
+              <div class="partial-helper-results" data-copy-scope>
                 <div class="partial-remaining-card">
-                  <span>Remaining balance</span>
-                  <strong data-remaining-output>Add amounts above</strong>
-                  <p data-helper-note>Enter the original amount and amount already repaid to see what is still open.</p>
-                  <p class="partial-warning" data-helper-warning hidden>The repaid amount is higher than the original amount. Check the numbers before sending a message.</p>
+                  <div aria-live="polite" aria-atomic="true">
+                    <span>Remaining balance</span>
+                    <strong data-remaining-output>Add amounts above</strong>
+                    <p data-helper-note>Enter the original amount and amount already repaid to see what is still open.</p>
+                    <p class="partial-warning" id="partial-helper-warning" data-helper-warning hidden></p>
+                    <p data-helper-receipt hidden><a href="/tools/repayment-receipt-generator/">Create a repayment receipt</a></p>
+                  </div>
+                  <p class="repayment-copy-status" aria-live="polite" data-copy-status></p>
                 </div>
-                <div class="partial-helper-messages" aria-label="Generated partial repayment follow-up messages">
+                <div class="partial-helper-messages" role="group" aria-label="Generated partial repayment follow-up messages" hidden>
                   <article class="partial-helper-message">
                     <h3>Warm</h3>
-                    <p id="partial-helper-warm">Thanks for sending part of it. I still have the remaining balance open. Could you send the rest when you get a chance?</p>
-                    <button type="button" class="copy-button" data-copy-text-target="partial-helper-warm" aria-label="Copy warm partial repayment follow-up message">Copy warm message</button>
+                    <p id="partial-helper-warm"></p>
+                    <button type="button" class="copy-button" data-copy-text-target="partial-helper-warm" aria-label="Copy warm partial repayment follow-up message" disabled>Copy warm message</button>
                   </article>
                   <article class="partial-helper-message">
                     <h3>Clearer</h3>
-                    <p id="partial-helper-clear">Thanks for the partial repayment. That leaves a remaining balance still open. Could you let me know what timing works for sending the rest?</p>
-                    <button type="button" class="copy-button" data-copy-text-target="partial-helper-clear" aria-label="Copy clearer partial repayment follow-up message">Copy clearer message</button>
+                    <p id="partial-helper-clear"></p>
+                    <button type="button" class="copy-button" data-copy-text-target="partial-helper-clear" aria-label="Copy clearer partial repayment follow-up message" disabled>Copy clearer message</button>
                   </article>
                 </div>
               </div>
@@ -825,7 +829,7 @@
             </div>
           </section>
 
-          <p class="lt-pageMeta">Published <time datetime="2026-05-21">May 21, 2026</time> &middot; Updated <time datetime="2026-08-02">August 2, 2026</time></p>
+          <p class="lt-pageMeta">Published <time datetime="2026-05-21">May 21, 2026</time> &middot; Updated <time datetime="2026-11-14">November 14, 2026</time></p>
 
           <ul class="actions lt-actions">
             <li><a href="../" class="button">Back to blog</a></li>
@@ -852,7 +856,7 @@
     </div>
 
     <script src="/scripts/sales.js?v=kohome20261106"></script>
-    <script src="/scripts/partial-repayment-follow-up.js"></script>
+    <script src="/scripts/partial-repayment-follow-up.js?v=20261114"></script>
     <script type="module" src="/scripts/analytics.js?v=komoney20261106"></script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/jquery.scrollex.min.js"></script>

@@ -8,21 +8,28 @@
     callback();
   }
 
-  function parseMoney(value) {
-    if (!value) return null;
-    var cleaned = String(value).replace(/[^0-9.-]/g, "");
-    if (!cleaned) return null;
-    var parsed = Number(cleaned);
-    return Number.isFinite(parsed) ? parsed : null;
+  function readAmount(input) {
+    var validity = input.validity;
+    var value = input.value;
+    var guidance = "Use regular decimal notation with up to two decimal places, such as 75 or 75.25.";
+    if (validity.badInput) return { error: guidance };
+    if (value === "") return { cents: null };
+    if (validity.rangeUnderflow || value.charAt(0) === "-") {
+      return { error: "Enter zero or more." };
+    }
+
+    // Read the decimal digits directly to avoid rounding money or misreading exponents.
+    var amount = /^(\d*)(?:\.(\d{1,2}))?$/.exec(value);
+    if (!amount || validity.stepMismatch) return { error: guidance };
+    var cents = Number(amount[1] + ((amount[2] || "") + "00").slice(0, 2));
+    if (!Number.isSafeInteger(cents)) return { error: "This amount is too large. Enter a smaller amount." };
+    return { cents: cents };
   }
 
-  function formatMoney(value) {
-    var rounded = Math.round(value * 100) / 100;
-    var hasCents = Math.abs(rounded % 1) > 0.001;
-    return "$" + rounded.toLocaleString("en-US", {
-      minimumFractionDigits: hasCents ? 2 : 0,
-      maximumFractionDigits: 2,
-    });
+  function formatMoney(cents) {
+    var fraction = cents % 100;
+    var whole = (cents - fraction) / 100;
+    return "$" + whole.toLocaleString("en-US") + (fraction ? "." + ("0" + fraction).slice(-2) : "");
   }
 
   function copyText(text) {
@@ -53,7 +60,8 @@
 
   function findStatus(button) {
     var scope = button.closest("[data-copy-scope]") || button.closest("section") || document;
-    return scope.querySelector("[data-copy-status]") || document.querySelector("[data-copy-status]");
+    return scope.querySelector("[data-copy-status]") ||
+      document.querySelector("#partial-repayment-texts [data-copy-status]");
   }
 
   function announce(button, message) {
@@ -113,7 +121,7 @@
     });
   }
 
-  function initCopyButtons() {
+  function initCopyButtons(updateHelper) {
     document.addEventListener("click", function (event) {
       var templateButton = event.target.closest("[data-copy-template]");
       if (templateButton) {
@@ -125,6 +133,7 @@
 
       var targetButton = event.target.closest("[data-copy-text-target]");
       if (targetButton) {
+        if (updateHelper) updateHelper();
         var targetId = targetButton.getAttribute("data-copy-text-target");
         var target = document.getElementById(targetId);
         handleCopy(targetButton, target ? target.textContent.trim() : "", "message", "helper", targetId);
@@ -142,17 +151,16 @@
 
   function buildMessages(state) {
     var prefix = state.name ? "Hey " + state.name + ", " : "";
-    var repaid = state.hasRepaid ? formatMoney(state.repaid) : "part of it";
-    var remainingWarm = state.hasRemaining ? formatMoney(state.remaining) + " remaining" : "the remaining balance open";
-    var remainingClear = state.hasRemaining ? formatMoney(state.remaining) : "a remaining balance";
     var context = state.context ? " from " + state.context : "";
     var clearTiming = state.timing ? "by " + state.timing : "when you can";
-    var warmOpening = state.hasRepaid ? "Thanks for sending " + repaid + "." : "Thanks for sending part of it.";
-    var clearOpening = state.hasRepaid ? "Thanks for the " + repaid + " repayment." : "Thanks for the partial repayment.";
+    var remaining = formatMoney(state.remaining);
+    var repaid = formatMoney(state.repaid);
+    var warmOpening = state.repaid ? "Thanks for sending " + repaid + ". " : "";
+    var clearOpening = state.repaid ? "Thanks for the " + repaid + " repayment. That leaves " : "I have ";
 
     return {
-      warm: prefix + warmOpening + " I still have " + remainingWarm + context + ". Could you send the rest when you get a chance?",
-      clear: prefix + clearOpening + " That leaves " + remainingClear + " still open" + context + ". Could you send it " + clearTiming + ", or let me know what works?",
+      warm: prefix + warmOpening + "I still have " + remaining + " remaining" + context + ". Could you send the rest when you get a chance?",
+      clear: prefix + clearOpening + remaining + " still open" + context + ". Could you send it " + clearTiming + ", or let me know what works?",
     };
   }
 
@@ -168,73 +176,94 @@
     var remainingOutput = document.querySelector("[data-remaining-output]");
     var helperNote = document.querySelector("[data-helper-note]");
     var warning = document.querySelector("[data-helper-warning]");
+    var receipt = document.querySelector("[data-helper-receipt]");
+    var results = document.querySelector(".partial-helper-results");
+    var messageGroup = results.querySelector(".partial-helper-messages");
     var warmMessage = document.getElementById("partial-helper-warm");
     var clearMessage = document.getElementById("partial-helper-clear");
-    var helperCopyButtons = Array.prototype.slice.call(document.querySelectorAll('[data-copy-text-target^="partial-helper"]'));
+    var helperCopyButtons = messageGroup.querySelectorAll("[data-copy-text-target]");
 
-    function setHelperCopyDisabled(disabled) {
-      helperCopyButtons.forEach(function (button) {
-        button.disabled = disabled;
-      });
+    function setText(node, text) {
+      if (node.textContent !== text) node.textContent = text;
+    }
+
+    function setInvalid(input, invalid) {
+      if (invalid) {
+        input.setAttribute("aria-invalid", "true");
+        input.setAttribute("aria-describedby", warning.id);
+      } else {
+        input.removeAttribute("aria-invalid");
+        input.removeAttribute("aria-describedby");
+      }
     }
 
     function update() {
-      var original = parseMoney(originalInput.value);
-      var repaid = parseMoney(repaidInput.value);
-      var hasOriginal = original !== null;
-      var hasRepaid = repaid !== null;
-      var hasRemaining = hasOriginal && hasRepaid;
-      var remaining = hasRemaining ? original - repaid : null;
-      var overpaid = hasRemaining && remaining < 0;
-      var state = {
-        original: original,
-        repaid: repaid,
-        remaining: remaining,
-        hasRepaid: hasRepaid,
-        hasRemaining: hasRemaining && !overpaid,
-        context: contextInput.value.trim(),
-        name: nameInput.value.trim(),
-        timing: timingInput.value.trim(),
-      };
+      var original = readAmount(originalInput);
+      var repaid = readAmount(repaidInput);
+      var hasAmounts = !original.error && !repaid.error && original.cents !== null && repaid.cents !== null;
+      var remaining = hasAmounts ? original.cents - repaid.cents : null;
+      var overpaid = hasAmounts && remaining < 0;
+      var hasNoBalance = hasAmounts && original.cents === 0 && repaid.cents === 0;
+      var settled = hasAmounts && remaining === 0 && !hasNoBalance;
+      var canCopy = hasAmounts && remaining > 0;
+      var errors = [];
+      if (original.error) errors.push("Original amount: " + original.error);
+      if (repaid.error) errors.push("Amount already repaid: " + repaid.error);
+      if (overpaid) errors.push("The amount already repaid is higher than the original amount. Check both amounts.");
 
-      if (!hasRemaining) {
-        remainingOutput.textContent = "Add amounts above";
-        helperNote.textContent = "Enter the original amount and amount already repaid to see what is still open.";
-        warning.hidden = true;
-        setHelperCopyDisabled(false);
-      } else if (overpaid) {
-        remainingOutput.textContent = "Check numbers";
-        helperNote.textContent = "The remaining balance cannot be calculated from these values.";
-        warning.hidden = false;
-        warmMessage.textContent = "Check the original amount and the amount already repaid before sending a follow-up.";
-        clearMessage.textContent = "The repaid amount is higher than the original amount. Confirm the numbers first, then send a clear message.";
-        setHelperCopyDisabled(true);
-        return;
-      } else {
-        remainingOutput.textContent = formatMoney(remaining);
-        helperNote.textContent = formatMoney(original) + " original - " + formatMoney(repaid) + " repaid = " + formatMoney(remaining) + " still open.";
-        warning.hidden = true;
-        setHelperCopyDisabled(false);
+      var balance = "Add amounts above";
+      var note = "Enter the original amount and amount already repaid to see what is still open.";
+      var messages = { warm: "", clear: "" };
+      if (errors.length) {
+        balance = "Check amounts";
+        note = "";
+      } else if (settled) {
+        balance = "Paid in full";
+        note = "There is no remaining balance. Use a receipt to confirm the repayment.";
+      } else if (hasNoBalance) {
+        balance = "No balance to repay";
+        note = "Both amounts are zero.";
+      } else if (canCopy) {
+        balance = formatMoney(remaining);
+        note = formatMoney(original.cents) + " original - " + formatMoney(repaid.cents) + " repaid = " + balance + " still open.";
+        messages = buildMessages({
+          repaid: repaid.cents,
+          remaining: remaining,
+          context: contextInput.value.trim(),
+          name: nameInput.value.trim(),
+          timing: timingInput.value.trim(),
+        });
       }
 
-      var messages = buildMessages(state);
-      warmMessage.textContent = messages.warm;
-      clearMessage.textContent = messages.clear;
+      setText(remainingOutput, balance);
+      setText(helperNote, note);
+      helperNote.hidden = !note;
+      setText(warning, errors.join(" "));
+      warning.hidden = errors.length === 0;
+      setInvalid(originalInput, !!original.error);
+      setInvalid(repaidInput, !!repaid.error || overpaid);
+      receipt.hidden = !settled;
+      setText(warmMessage, messages.warm);
+      setText(clearMessage, messages.clear);
+      helperCopyButtons.forEach(function (button) {
+        button.disabled = !canCopy;
+      });
+      messageGroup.hidden = !canCopy;
+      results.classList.toggle("partial-helper-results--has-messages", canCopy);
     }
 
     form.addEventListener("submit", function (event) {
       event.preventDefault();
     });
 
-    [originalInput, repaidInput, contextInput, nameInput, timingInput].forEach(function (input) {
-      input.addEventListener("input", update);
-    });
-
+    form.addEventListener("input", update);
+    form.addEventListener("change", update);
+    window.addEventListener("pageshow", update);
     update();
+    return update;
   }
 
   ready(function () {
-    initHelper();
-    initCopyButtons();
+    initCopyButtons(initHelper());
   });
 })();

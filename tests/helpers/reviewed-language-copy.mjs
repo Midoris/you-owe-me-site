@@ -18,6 +18,7 @@ const seoAdmissions = {
   ...readSeoAdmissions("shared-expense-planner-current-plan"),
   ...readSeoAdmissions("personal-loan-hero-import"),
   ...readSeoAdmissions("shared-expense-direct-answer"),
+  ...readSeoAdmissions("partial-repayment-helper-validated-amounts"),
 };
 
 // Reverse only unique, literal fragments from the reviewed changes on these paths.

@@ -217,8 +217,16 @@ body.partial-repayment-page .lt-toolsSection > p {
 }
 
 .partial-helper-results {
-  grid-template-columns: minmax(14rem, 0.35fr) minmax(0, 0.65fr);
+  grid-template-columns: minmax(0, 1fr);
   align-items: stretch;
+}
+
+.partial-helper-results--has-messages {
+  grid-template-columns: minmax(14rem, 0.35fr) minmax(0, 0.65fr);
+}
+
+.partial-helper-results [hidden] {
+  display: none !important;
 }
 
 .partial-remaining-card,
@@ -535,7 +543,7 @@ body.partial-repayment-page .copy-button:disabled {
 
 @media (max-width: 980px) {
   .partial-repayment-hero,
-  .partial-helper-results,
+  .partial-helper-results--has-messages,
   .partial-allocation-panel,
   .partial-product-cta {
     grid-template-columns: 1fr;

@@ -10,5 +10,13 @@
   "styles/shared-expense-setup-guide.css": {
     "previous": "315f1cbb9ffb460eef9ac347b5180b715745117b",
     "current": "688575cacdff75a7e579ffff3860d658aa9e723e"
+  },
+  "scripts/partial-repayment-follow-up.js": {
+    "previous": "da1c2f0e0cbdb552d89ace7c001c45ff3fa22f21",
+    "current": "142590c3849a03e4bed4de5b85060e8b82ce567e"
+  },
+  "styles/partial-repayment-follow-up.css": {
+    "previous": "a657c88307085d878547e78afbed54dd83aa1868",
+    "current": "267fd71f8fa46528ec36101e7f56800d2f7bba4f"
   }
 }
