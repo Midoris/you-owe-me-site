@@ -3,10 +3,33 @@
 
   function ready(callback) { if (document.readyState === "loading") document.addEventListener("DOMContentLoaded", callback, { once: true }); else callback(); }
   function value(id, fallback) { var node = document.getElementById(id); var text = node ? node.value.trim() : ""; return text || fallback; }
-  function copyText(text) {
-    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") return navigator.clipboard.writeText(text).catch(fallbackCopy);
+  function copyText(text, isCurrent) {
+    if (navigator.clipboard && typeof navigator.clipboard.writeText === "function") {
+      return navigator.clipboard.writeText(text).catch(fallbackCopy);
+    }
     return fallbackCopy();
-    function fallbackCopy() { return new Promise(function (resolve, reject) { var area = document.createElement("textarea"); area.value = text; area.setAttribute("readonly", ""); area.style.cssText = "position:fixed;left:-9999px;top:-9999px;opacity:0"; document.body.appendChild(area); area.select(); try { document.execCommand("copy") ? resolve() : reject(new Error("Copy failed")); } catch (error) { reject(error); } document.body.removeChild(area); }); }
+
+    function fallbackCopy() {
+      return new Promise(function (resolve, reject) {
+        if (isCurrent && !isCurrent()) {
+          reject(new Error("Plan changed"));
+          return;
+        }
+        var area = document.createElement("textarea");
+        area.value = text;
+        area.setAttribute("readonly", "");
+        area.style.cssText = "position:fixed;left:-9999px;top:-9999px;opacity:0";
+        document.body.appendChild(area);
+        area.select();
+        try {
+          document.execCommand("copy") ? resolve() : reject(new Error("Copy failed"));
+        } catch (error) {
+          reject(error);
+        } finally {
+          document.body.removeChild(area);
+        }
+      });
+    }
   }
   ready(function () {
     var form = document.getElementById("sibling-plan-form");
@@ -17,8 +40,41 @@
     var result = document.getElementById("result-generated");
     var emptyResult = document.getElementById("result-empty");
     var output = document.getElementById("plan-summary-text");
+    var buildButton = document.getElementById("build-plan");
+    var copyButton = document.getElementById("copy-plan");
+    var printButton = document.getElementById("print-plan");
+    var initialResultMessage = emptyResult.textContent;
     var participantNumber = 3;
-    function announce(message) { status.textContent = message; window.clearTimeout(announce.timer); announce.timer = window.setTimeout(function () { status.textContent = ""; }, 3000); }
+    var planRevision = 0;
+
+    function announce(message, isPlanCopy) {
+      status.textContent = message;
+      announce.isPlanCopy = isPlanCopy;
+      window.clearTimeout(announce.timer);
+      announce.timer = window.setTimeout(function () { status.textContent = ""; }, 3000);
+    }
+
+    function hideResult(needsUpdate) {
+      planRevision += 1;
+      result.hidden = true;
+      output.textContent = "";
+      copyButton.disabled = true;
+      printButton.disabled = true;
+      emptyResult.textContent = needsUpdate
+        ? "Update the plan summary to copy or print your changes."
+        : initialResultMessage;
+      emptyResult.hidden = false;
+      buildButton.textContent = needsUpdate ? "Update plan summary" : "Create plan summary";
+      if (announce.isPlanCopy) {
+        window.clearTimeout(announce.timer);
+        status.textContent = "";
+        announce.isPlanCopy = false;
+      }
+    }
+
+    function invalidateResult() {
+      if (!result.hidden) hideResult(true);
+    }
     function clearErrors() { summary.hidden = true; summary.replaceChildren(); form.querySelectorAll("[aria-invalid='true']").forEach(function (field) { field.removeAttribute("aria-invalid"); }); form.querySelectorAll(".sibling-inline-error").forEach(function (slot) { slot.textContent = ""; }); }
     function error(errors, field, slot, message, invalidTarget) { var target = invalidTarget || field; if (target) target.setAttribute("aria-invalid", "true"); if (slot) slot.textContent = message; errors.push({ field: field, target: target, message: message }); }
     function showErrors(errors) { if (!errors.length) return; var heading = document.createElement("h3"); heading.textContent = "Check the highlighted fields"; var list = document.createElement("ul"); errors.forEach(function (item, index) { var li = document.createElement("li"); var link = document.createElement("a"); link.href = "#" + item.target.id; link.textContent = item.message; link.addEventListener("click", function () { item.field.focus(); }); li.appendChild(link); list.appendChild(li); }); summary.append(heading, list); summary.hidden = false; summary.focus(); errors[0].field.focus(); }
@@ -29,14 +85,88 @@
     var methodGroup = document.getElementById("contribution-method-group");
     var methodError = document.getElementById("method-error");
     function clearMethodError() { methodGroup.removeAttribute("aria-invalid"); methodError.textContent = ""; var link = summary.querySelector('a[href="#contribution-method-group"]'); if (link) { link.closest("li").remove(); if (!summary.querySelector("li")) { summary.hidden = true; summary.replaceChildren(); } } }
-    form.addEventListener("submit", function (event) { event.preventDefault(); clearErrors(); var errors = []; var name = document.getElementById("plan-name"); if (!name.value.trim()) error(errors, name, document.getElementById("plan-name-error"), "Add a short name for this contribution plan."); var selected = form.querySelector("input[name='contribution-method']:checked"); if (!selected) error(errors, form.querySelector("input[name='contribution-method']"), methodError, "Choose the contribution method the family plans to use.", methodGroup); var people = participantData(); if (people.length < 2) error(errors, document.getElementById("add-participant"), document.getElementById("participants-error"), "Add at least two people to the plan."); people.forEach(function (person) { if (!person.name) error(errors, person.row.querySelector("[data-person-name]"), person.row.querySelector("[data-person-error]"), "Add a name or role for each person."); }); if (errors.length) { showErrors(errors); return; } output.textContent = summaryText(people, selected.value); emptyResult.hidden = true; result.hidden = false; document.getElementById("print-plan").disabled = false; document.getElementById("plan-result").scrollIntoView({ behavior: "smooth", block: "start" }); });
-    document.getElementById("add-participant").addEventListener("click", function () { participants.appendChild(createParticipant()); updateRemoveLabels(); participants.querySelector("[data-participant-row]:last-child [data-person-name]").focus(); });
-    participants.addEventListener("click", function (event) { var button = event.target.closest("[data-remove-participant]"); if (!button) return; var rows = participants.querySelectorAll("[data-participant-row]"); if (rows.length <= 2) { document.getElementById("participants-error").textContent = "A contribution plan needs at least two people."; return; } button.closest("[data-participant-row]").remove(); updateRemoveLabels(); });
+    form.addEventListener("submit", function (event) {
+      event.preventDefault();
+      clearErrors();
+      var errors = [];
+      var name = document.getElementById("plan-name");
+      if (!name.value.trim()) error(errors, name, document.getElementById("plan-name-error"), "Add a short name for this contribution plan.");
+      var selected = form.querySelector("input[name='contribution-method']:checked");
+      if (!selected) error(errors, form.querySelector("input[name='contribution-method']"), methodError, "Choose the contribution method the family plans to use.", methodGroup);
+      var people = participantData();
+      if (people.length < 2) error(errors, document.getElementById("add-participant"), document.getElementById("participants-error"), "Add at least two people to the plan.");
+      people.forEach(function (person) {
+        if (!person.name) error(errors, person.row.querySelector("[data-person-name]"), person.row.querySelector("[data-person-error]"), "Add a name or role for each person.");
+      });
+      if (errors.length) {
+        invalidateResult();
+        showErrors(errors);
+        return;
+      }
+      output.textContent = summaryText(people, selected.value);
+      emptyResult.hidden = true;
+      result.hidden = false;
+      copyButton.disabled = false;
+      printButton.disabled = false;
+      document.getElementById("plan-result").scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+
+    form.addEventListener("input", invalidateResult);
+    form.addEventListener("change", invalidateResult);
+    document.getElementById("add-participant").addEventListener("click", function () {
+      var row = createParticipant();
+      participants.appendChild(row);
+      document.getElementById("participants-error").textContent = "";
+      updateRemoveLabels();
+      invalidateResult();
+      row.querySelector("[data-person-name]").focus();
+    });
+    participants.addEventListener("click", function (event) {
+      var button = event.target.closest("[data-remove-participant]");
+      if (!button) return;
+      var rows = participants.querySelectorAll("[data-participant-row]");
+      if (rows.length <= 2) {
+        document.getElementById("participants-error").textContent = "A contribution plan needs at least two people.";
+        return;
+      }
+      participants.removeChild(button.closest("[data-participant-row]"));
+      updateRemoveLabels();
+      invalidateResult();
+    });
     participants.addEventListener("input", updateRemoveLabels);
-    document.getElementById("clear-planner").addEventListener("click", function () { if (!window.confirm("Clear this planner? This will remove the information you entered.")) return; form.reset(); participants.replaceChildren(); participantNumber = 1; participants.appendChild(createParticipant()); participants.appendChild(createParticipant()); result.hidden = true; emptyResult.hidden = false; document.getElementById("print-plan").disabled = true; output.textContent = ""; clearErrors(); updateRemoveLabels(); });
-    document.querySelectorAll("input[name='contribution-method']").forEach(function (radio) { radio.addEventListener("change", clearMethodError); });
-    document.getElementById("copy-plan").addEventListener("click", function () { copyText(output.textContent).then(function () { announce("Plan summary copied."); }).catch(function () { var range = document.createRange(); range.selectNodeContents(output); window.getSelection().removeAllRanges(); window.getSelection().addRange(range); announce("We could not copy the summary. Select the text and copy it manually."); }); });
-    document.getElementById("print-plan").addEventListener("click", function () { if (output.textContent) window.print(); });
+    document.getElementById("clear-planner").addEventListener("click", function () {
+      if (window.confirm("Clear this planner? This will remove the information you entered.")) form.reset();
+    });
+    form.addEventListener("reset", function () {
+      participants.replaceChildren();
+      participantNumber = 1;
+      participants.appendChild(createParticipant());
+      participants.appendChild(createParticipant());
+      hideResult(false);
+      clearErrors();
+      updateRemoveLabels();
+    });
+    document.querySelectorAll("input[name='contribution-method']").forEach(function (radio) {
+      radio.addEventListener("change", clearMethodError);
+    });
+    copyButton.addEventListener("click", function () {
+      if (result.hidden) return;
+      var revision = planRevision;
+      function isCurrent() { return revision === planRevision && !result.hidden; }
+      copyText(output.textContent, isCurrent).then(function () {
+        if (isCurrent()) announce("Plan summary copied.", true);
+      }).catch(function () {
+        if (!isCurrent()) return;
+        var range = document.createRange();
+        range.selectNodeContents(output);
+        window.getSelection().removeAllRanges();
+        window.getSelection().addRange(range);
+        announce("We could not copy the summary. Select the text and copy it manually.", true);
+      });
+    });
+    printButton.addEventListener("click", function () {
+      if (!result.hidden) window.print();
+    });
     document.querySelectorAll("[data-copy-script]").forEach(function (button) { button.addEventListener("click", function () { var source = document.getElementById(button.getAttribute("data-copy-script")); var original = button.textContent; copyText(source.textContent.trim()).then(function () { button.textContent = "Copied"; announce("Copied"); window.setTimeout(function () { button.textContent = original; }, 1800); }).catch(function () { var range = document.createRange(); range.selectNodeContents(source); window.getSelection().removeAllRanges(); window.getSelection().addRange(range); announce("We could not copy this message. Select the text and copy it manually."); }); }); });
     updateRemoveLabels();
   });

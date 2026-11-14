@@ -110,4 +110,23 @@ body.sibling-contribution-page article.post.featured .sibling-distinct-callout h
 @media screen and (max-width: 820px) { .sibling-hero { grid-template-columns: 1fr; } body.sibling-contribution-page .sibling-hero-media { max-width: 42rem !important; margin-top: 0.35rem !important; justify-self: start; } .sibling-method-table-wrap { overflow: visible; } .sibling-method-table, .sibling-method-table thead, .sibling-method-table tbody, .sibling-method-table tr, .sibling-method-table th, .sibling-method-table td { display: block; width: 100%; } .sibling-method-table thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; } .sibling-method-table tbody { display: grid; gap: 0.75rem; padding: 0.75rem; } .sibling-method-table tr { overflow: hidden; border: 1px solid rgba(15, 23, 42, 0.08); border-radius: 16px; background: rgba(255, 255, 255, 0.94); } .sibling-method-table th, .sibling-method-table td { display: grid; grid-template-columns: minmax(9rem, 0.46fr) minmax(0, 1fr); gap: 0.85rem; padding: 0.75rem; border: 0; border-bottom: 1px solid rgba(15, 23, 42, 0.08); } .sibling-method-table th::before, .sibling-method-table td::before { content: attr(data-label); color: #18212b; font-weight: 900; } .sibling-method-table tr > *:last-child { border-bottom: 0; } .sibling-participant-row { grid-template-columns: repeat(2, minmax(0, 1fr)); } .sibling-participant-row .sibling-remove-button { grid-column: span 2; } }
 @media screen and (max-width: 640px) { body.sibling-contribution-page article.post.featured { width: 100%; padding: 1.35rem 0 3rem; } .sibling-hero, .sibling-planner-shell, .sibling-final-cta { border-radius: 20px; } .sibling-hero { padding: 1.35rem; } .sibling-hero-media img { border-radius: 18px; } .sibling-decision-grid, .sibling-example-grid, .sibling-script-grid, .sibling-record-grid, .sibling-form-grid, .sibling-participant-row { grid-template-columns: 1fr; } .sibling-participant-row .sibling-remove-button { grid-column: auto; } .sibling-planner-actions, .sibling-result-actions, .sibling-hero-actions { align-items: stretch; flex-direction: column; } .sibling-planner-actions button, .sibling-result-actions button, .sibling-hero-actions a { width: 100%; } .sibling-method-table th, .sibling-method-table td { grid-template-columns: 1fr; gap: 0.25rem; } }
 @media (prefers-reduced-motion: reduce) { .sibling-contribution-page *, .sibling-contribution-page *::before, .sibling-contribution-page *::after { scroll-behavior: auto !important; transition-duration: 0.01ms !important; animation-duration: 0.01ms !important; animation-iteration-count: 1 !important; } }
-@media print { body.sibling-contribution-page * { visibility: hidden !important; } body.sibling-contribution-page #plan-result, body.sibling-contribution-page #plan-result * { visibility: visible !important; } body.sibling-contribution-page #plan-result { position: absolute; top: 0; left: 0; width: 100%; margin: 0; padding: 0; border: 0; box-shadow: none; } body.sibling-contribution-page .sibling-result-actions, body.sibling-contribution-page .sibling-product-bridge { display: none !important; } body.sibling-contribution-page #plan-summary-text { max-height: none; overflow: visible; border: 0; padding: 0; } }
+@media print {
+  .sibling-contribution-page #result-generated[hidden] { display: none !important; }
+
+  /* Print a current summary in normal flow so long plans can span pages. */
+  .sibling-contribution-page:has(#result-generated:not([hidden])) :is(
+    #wrapper > :not(#main),
+    #main > article > :not(#sibling-contribution-plan),
+    #sibling-contribution-plan > :not(.sibling-planner-shell),
+    .sibling-planner-shell > :not(#plan-result),
+    #plan-result > :not(#result-generated),
+    .sibling-result-actions,
+    .sibling-product-bridge
+  ) { display: none !important; }
+
+  .sibling-contribution-page:has(#result-generated:not([hidden])) :is(
+    #main, #sibling-contribution-plan, .sibling-planner-shell, #plan-result, #plan-summary-text
+  ) { margin: 0; padding: 0 !important; border: 0; background: white; box-shadow: none; }
+
+  .sibling-contribution-page #plan-summary-text { min-height: 0; max-height: none; overflow: visible; }
+}

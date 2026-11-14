@@ -1,0 +1,24 @@
+{
+  "blog/how-to-split-parent-expenses-with-siblings-fairly/index.html": [
+    [
+      "          \"datePublished\": \"2026-07-18\",\n          \"dateModified\": \"2026-11-14\",\n          \"articleSection\": \"Family reimbursements and parent expenses\",\n",
+      "          \"datePublished\": \"2026-07-18\",\n          \"dateModified\": \"2026-07-18\",\n          \"articleSection\": \"Family reimbursements and parent expenses\",\n"
+    ],
+    [
+      "    <link rel=\"stylesheet\" href=\"/styles/tools.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/sibling-contribution-plan.css?v=seobatch0720261114\" />\n    <link rel=\"stylesheet\" href=\"/styles/best-next-step.css\" />\n",
+      "    <link rel=\"stylesheet\" href=\"/styles/tools.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/sibling-contribution-plan.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/best-next-step.css\" />\n"
+    ],
+    [
+      "                <p class=\"sibling-planner-boundary\">This planner creates a family summary, not a legal agreement. It does not create an obligation that was not agreed.</p>\n                <div class=\"sibling-planner-actions\"><button type=\"submit\" class=\"lt-primaryCta\" id=\"build-plan\">Create plan summary</button><button type=\"button\" class=\"sibling-secondary-button\" id=\"clear-planner\">Clear planner</button></div>\n              </form>\n              <section id=\"plan-result\" class=\"sibling-result-panel\" aria-labelledby=\"result-title\" aria-live=\"polite\"><h3 id=\"result-title\">Your plan summary</h3><p id=\"result-empty\">Your contribution-plan summary will appear here after you complete the required fields.</p><div id=\"result-generated\" hidden><h3>Sibling contribution plan</h3><p>Review this together. Change anything that is unclear before using it as the basis for an expense record.</p><pre id=\"plan-summary-text\" tabindex=\"0\"></pre><div class=\"sibling-result-actions\"><button type=\"button\" class=\"lt-primaryCta\" id=\"copy-plan\" disabled>Copy plan summary</button><button type=\"button\" class=\"sibling-secondary-button\" id=\"print-plan\" disabled>Print plan</button></div><p class=\"sibling-product-bridge\">Once the rule is agreed, the next job is keeping the real expenses and reimbursements consistent with it.</p></div></section>\n            </div>\n",
+      "                <p class=\"sibling-planner-boundary\">This planner creates a family summary, not a legal agreement. It does not create an obligation that was not agreed.</p>\n                <div class=\"sibling-planner-actions\"><button type=\"submit\" class=\"lt-primaryCta\">Create plan summary</button><button type=\"button\" class=\"sibling-secondary-button\" id=\"clear-planner\">Clear planner</button></div>\n              </form>\n              <section id=\"plan-result\" class=\"sibling-result-panel\" aria-labelledby=\"result-title\" aria-live=\"polite\"><h3 id=\"result-title\">Your plan summary</h3><p id=\"result-empty\">Your contribution-plan summary will appear here after you complete the required fields.</p><div id=\"result-generated\" hidden><h3>Sibling contribution plan</h3><p>Review this together. Change anything that is unclear before using it as the basis for an expense record.</p><pre id=\"plan-summary-text\" tabindex=\"0\"></pre><div class=\"sibling-result-actions\"><button type=\"button\" class=\"lt-primaryCta\" id=\"copy-plan\">Copy plan summary</button><button type=\"button\" class=\"sibling-secondary-button\" id=\"print-plan\" disabled>Print plan</button></div><p class=\"sibling-product-bridge\">Once the rule is agreed, the next job is keeping the real expenses and reimbursements consistent with it.</p></div></section>\n            </div>\n"
+    ],
+    [
+      "          <p class=\"sibling-copy-status\" aria-live=\"polite\" aria-atomic=\"true\" data-copy-status></p>\n          <p class=\"lt-pageMeta\">Published <time datetime=\"2026-07-18\">July 18, 2026</time> &middot; Updated <time datetime=\"2026-11-14\">November 14, 2026</time></p>\n          <ul class=\"actions lt-actions\"><li><a href=\"/blog/\" class=\"button\">Back to blog</a></li></ul>\n",
+      "          <p class=\"sibling-copy-status\" aria-live=\"polite\" aria-atomic=\"true\" data-copy-status></p>\n          <p class=\"lt-pageMeta\">Published <time datetime=\"2026-07-18\">July 18, 2026</time></p>\n          <ul class=\"actions lt-actions\"><li><a href=\"/blog/\" class=\"button\">Back to blog</a></li></ul>\n"
+    ],
+    [
+      "    </div>\n    <script src=\"/scripts/sibling-contribution-plan.js?v=seobatch0720261114\"></script>\n    <script type=\"module\" src=\"/scripts/analytics.js?v=komoney20261106\"></script>\n",
+      "    </div>\n    <script src=\"/scripts/sibling-contribution-plan.js\"></script>\n    <script type=\"module\" src=\"/scripts/analytics.js?v=komoney20261106\"></script>\n"
+    ]
+  ]
+}

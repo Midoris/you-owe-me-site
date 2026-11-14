@@ -5,6 +5,7 @@ function readSeoAdmissions(change) {
 }
 
 const seoAdmissions = [
+  readSeoAdmissions("sibling-planner-current-summary"),
   readSeoAdmissions("trip-planner-current-shares"),
   readSeoAdmissions("temporary-support-reminder-fields"),
   readSeoAdmissions("spreadsheet-app-quick-verdict"),

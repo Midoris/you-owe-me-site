@@ -34,7 +34,7 @@
           "author": { "@type": "Person", "name": "Ievgenii Iablonskyi" },
           "publisher": { "@type": "Organization", "name": "You Owe Me" },
           "datePublished": "2026-07-18",
-          "dateModified": "2026-07-18",
+          "dateModified": "2026-11-14",
           "articleSection": "Family reimbursements and parent expenses",
           "mainEntityOfPage": "https://you-owe-me.com/blog/how-to-split-parent-expenses-with-siblings-fairly/"
         },
@@ -58,7 +58,7 @@
     <link rel="stylesheet" href="/styles/blog.css" />
     <link rel="stylesheet" href="/styles/site-nav.css" />
     <link rel="stylesheet" href="/styles/tools.css" />
-    <link rel="stylesheet" href="/styles/sibling-contribution-plan.css" />
+    <link rel="stylesheet" href="/styles/sibling-contribution-plan.css?v=seobatch0720261114" />
     <link rel="stylesheet" href="/styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
   </head>
@@ -139,9 +139,9 @@
 
                 <fieldset class="sibling-planner-step"><legend>How the plan will work</legend><div class="sibling-form-grid"><div class="sibling-field"><label for="first-payer">Who normally pays first?</label><textarea id="first-payer" rows="3" placeholder="For example, Alex pays routine purchases and shares a monthly summary"></textarea></div><div class="sibling-field"><label for="approval-rule">Approval rule</label><textarea id="approval-rule" rows="3" placeholder="For example, discuss any non-routine purchase before it is made" aria-describedby="approval-rule-help"></textarea><p id="approval-rule-help" class="sibling-helper">Use this for larger, unusual, or optional expenses.</p></div><div class="sibling-field"><label for="reimbursement-rhythm">Reimbursement rhythm</label><textarea id="reimbursement-rhythm" rows="3" placeholder="For example, reimburse by the last day of each month"></textarea></div><div class="sibling-field"><label for="record-keeper">Who will keep the record?</label><input id="record-keeper" type="text" placeholder="Name or role" /></div><div class="sibling-field"><label for="review-date">Review date</label><input id="review-date" type="date" /></div></div><div class="sibling-field"><label for="unresolved-items">Unresolved items kept outside the agreed balance</label><textarea id="unresolved-items" rows="3" placeholder="List anything the family has not agreed to include" aria-describedby="unresolved-items-help"></textarea><p id="unresolved-items-help" class="sibling-helper">Unresolved does not mean owed. Keep these items separate until the family reaches an agreement.</p></div></fieldset>
                 <p class="sibling-planner-boundary">This planner creates a family summary, not a legal agreement. It does not create an obligation that was not agreed.</p>
-                <div class="sibling-planner-actions"><button type="submit" class="lt-primaryCta">Create plan summary</button><button type="button" class="sibling-secondary-button" id="clear-planner">Clear planner</button></div>
+                <div class="sibling-planner-actions"><button type="submit" class="lt-primaryCta" id="build-plan">Create plan summary</button><button type="button" class="sibling-secondary-button" id="clear-planner">Clear planner</button></div>
               </form>
-              <section id="plan-result" class="sibling-result-panel" aria-labelledby="result-title" aria-live="polite"><h3 id="result-title">Your plan summary</h3><p id="result-empty">Your contribution-plan summary will appear here after you complete the required fields.</p><div id="result-generated" hidden><h3>Sibling contribution plan</h3><p>Review this together. Change anything that is unclear before using it as the basis for an expense record.</p><pre id="plan-summary-text" tabindex="0"></pre><div class="sibling-result-actions"><button type="button" class="lt-primaryCta" id="copy-plan">Copy plan summary</button><button type="button" class="sibling-secondary-button" id="print-plan" disabled>Print plan</button></div><p class="sibling-product-bridge">Once the rule is agreed, the next job is keeping the real expenses and reimbursements consistent with it.</p></div></section>
+              <section id="plan-result" class="sibling-result-panel" aria-labelledby="result-title" aria-live="polite"><h3 id="result-title">Your plan summary</h3><p id="result-empty">Your contribution-plan summary will appear here after you complete the required fields.</p><div id="result-generated" hidden><h3>Sibling contribution plan</h3><p>Review this together. Change anything that is unclear before using it as the basis for an expense record.</p><pre id="plan-summary-text" tabindex="0"></pre><div class="sibling-result-actions"><button type="button" class="lt-primaryCta" id="copy-plan" disabled>Copy plan summary</button><button type="button" class="sibling-secondary-button" id="print-plan" disabled>Print plan</button></div><p class="sibling-product-bridge">Once the rule is agreed, the next job is keeping the real expenses and reimbursements consistent with it.</p></div></section>
             </div>
           </section>
 
@@ -190,13 +190,13 @@
 
           <section class="lt-toolsSection sibling-important-boundaries" aria-labelledby="boundaries-title"><h2 id="boundaries-title">Important boundaries</h2><p>This page is for informal family planning and recordkeeping. It does not determine legal responsibility for a parent’s expenses, create a caregiver-employment agreement, value caregiving for tax or benefits purposes, or advise on inheritance, guardianship, property, medical decisions, or formal care contracts.</p><p class="lt-paragraphGap">If the family needs advice about formal caregiver compensation, benefits, taxes, estate treatment, legal authority, or high-value disputes, use appropriately qualified local professional help.</p></section>
           <p class="sibling-copy-status" aria-live="polite" aria-atomic="true" data-copy-status></p>
-          <p class="lt-pageMeta">Published <time datetime="2026-07-18">July 18, 2026</time></p>
+          <p class="lt-pageMeta">Published <time datetime="2026-07-18">July 18, 2026</time> &middot; Updated <time datetime="2026-11-14">November 14, 2026</time></p>
           <ul class="actions lt-actions"><li><a href="/blog/" class="button">Back to blog</a></li></ul>
         </article>
       </main>
       <div id="copyright"><ul><li>&copy; 2026 Ievgenii Iablonskyi</li><li><a href="/solutions/">Solutions</a></li><li><a href="/features/">Features</a></li><li><a href="/reviews/">Reviews</a></li><li><a href="/tools/">Tools</a></li><li><a href="/compare/">Compare</a></li><li><a href="/blog/">Blog</a></li><li><a href="/privacy-and-data/">Privacy &amp; Data</a></li><li><a href="/privacy-policy/">Privacy Policy</a></li><li><a href="/contact/">Contact</a></li><li>Design: <a href="https://html5up.net">HTML5 UP</a></li></ul></div>
     </div>
-    <script src="/scripts/sibling-contribution-plan.js"></script>
+    <script src="/scripts/sibling-contribution-plan.js?v=seobatch0720261114"></script>
     <script type="module" src="/scripts/analytics.js?v=komoney20261106"></script>
     <script src="/assets/js/jquery.min.js"></script><script src="/assets/js/jquery.scrollex.min.js"></script><script src="/assets/js/jquery.scrolly.min.js"></script><script src="/assets/js/browser.min.js"></script><script src="/assets/js/breakpoints.min.js"></script><script src="/assets/js/util.js"></script><script src="/assets/js/main.js?v=kohome20261106"></script>
     <script src="/scripts/app-language-support.js?v=kohome20261106"></script>
