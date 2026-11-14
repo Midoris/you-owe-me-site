@@ -1,0 +1,20 @@
+{
+  "solutions/shared-expense-tracker/index.html": [
+    [
+      "      \"isPartOf\": \"https://you-owe-me.com/solutions/\",\n      \"dateModified\": \"2026-11-14\",\n      \"publisher\": {\n",
+      "      \"isPartOf\": \"https://you-owe-me.com/solutions/\",\n      \"dateModified\": \"2026-10-18\",\n      \"publisher\": {\n"
+    ],
+    [
+      "            <h2>If you are looking for an app to track shared expenses</h2>\n            <p>For each shared bill, record who paid, what each person agreed to cover, and repayments as they happen. Carry the unpaid amount forward so the next bill starts from the right balance.</p>\n            <p><a href=\"#recurring-shared-bill-title\">See a recurring bill and partial repayment</a></p>\n            <p>YouOweMe is built for ongoing shared balances, not just one-off split calculations. It works when expenses keep happening over time and the real need is a running balance, clear repayment history, recurring entries, and calmer follow-ups when needed.</p>\n",
+      "            <h2>If you are looking for an app to track shared expenses</h2>\n            <p>Some people search for a shared expense tracker. Others search for a shared expense app, an app to split bills, or an app to track who owes whom. The core job is the same: keep shared costs visible without redoing the math every time.</p>\n            <p>YouOweMe is built for ongoing shared balances, not just one-off split calculations. It works when expenses keep happening over time and the real need is a running balance, clear repayment history, recurring entries, and calmer follow-ups when needed.</p>\n"
+    ],
+    [
+      "            <p class=\"lt-eyebrow\">Recurring bill example</p>\n            <h2 id=\"recurring-shared-bill-title\" tabindex=\"-1\">When a shared bill renews before anyone talks about it</h2>\n            <p>An automatic payment can go through normally and still leave the shared balance unclear. Here is what happens when a $60 internet bill is charged to Maya&rsquo;s card each month and Maya and Noah have agreed to split it equally.</p>\n",
+      "            <p class=\"lt-eyebrow\">Recurring bill example</p>\n            <h2 id=\"recurring-shared-bill-title\">When a shared bill renews before anyone talks about it</h2>\n            <p>An automatic payment can go through normally and still leave the shared balance unclear. Here is what happens when a $60 internet bill is charged to Maya&rsquo;s card each month and Maya and Noah have agreed to split it equally.</p>\n"
+    ],
+    [
+      "          </section>\n          <p class=\"lt-pageMeta\">Updated <time datetime=\"2026-11-14\">November 14, 2026</time></p>\n        </article>\n",
+      "          </section>\n          <p class=\"lt-pageMeta\">Updated <time datetime=\"2026-10-18\">October 18, 2026</time></p>\n        </article>\n"
+    ]
+  ]
+}
