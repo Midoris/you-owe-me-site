@@ -1,0 +1,20 @@
+{
+  "blog/how-to-keep-track-of-who-owes-you-money/index.html": [
+    [
+      "<meta property=\"article:modified_time\" content=\"2026-11-14\" />",
+      "<meta property=\"article:modified_time\" content=\"2026-10-27\" />"
+    ],
+    [
+      "\"dateModified\": \"2026-11-14\",",
+      "\"dateModified\": \"2026-10-27\","
+    ],
+    [
+      "            </div>\n            <section aria-labelledby=\"group-gift-paybacks-title\">\n              <h3 id=\"group-gift-paybacks-title\">Who paid back the group gift?</h3>\n              <p>After one person buys the group gift, the three other contributors each owe $40.</p>\n              <ul>\n                <li><strong>Anna</strong> paid $40 and is settled.</li>\n                <li><strong>Ben</strong> paid $35 and still owes $5.</li>\n                <li><strong>Leo</strong> paid $0 and still owes $40.</li>\n              </ul>\n              <p>The group has paid <strong>$75</strong> and still owes <strong>$45</strong>. The person who bought the gift keeps the record and updates it as payments arrive.</p>\n              <p><a href=\"/solutions/group-payback-tracker/\" style=\"text-decoration: underline; text-underline-offset: 0.18em;\">Track group paybacks in You Owe Me</a></p>\n            </section>\n            <p>This kind of record is useful because it separates the original amount from the current balance. That matters when someone pays part of what they owe, repays late, or covers a different expense later.</p>\n",
+      "            </div>\n            <p>This kind of record is useful because it separates the original amount from the current balance. That matters when someone pays part of what they owe, repays late, or covers a different expense later.</p>\n"
+    ],
+    [
+      "Updated <time datetime=\"2026-11-14\">November 14, 2026</time>",
+      "Updated <time datetime=\"2026-10-27\">October 27, 2026</time>"
+    ]
+  ]
+}

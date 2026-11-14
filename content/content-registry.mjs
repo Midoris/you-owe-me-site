@@ -5970,7 +5970,7 @@ export const contentRegistry = [
     appStoreCpp: "money-owed-followups",
     conversionRole: "answer_search_entry_to_money_owed_cpp",
     tags: ["money-owed", "iou-tracking", "who-owes-whom", "repayments", "partial-repayments", "remaining-balance", "running-balance", "payback-records", "money-between-people", "follow-ups"],
-    updated: "2026-10-27",
+    updated: "2026-11-14",
     status: "live",
     priority: "high",
     primaryCta: "Track money owed clearly",
