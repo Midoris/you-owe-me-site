@@ -600,6 +600,10 @@ body.shared-expense-setup-guide-page .ses-section > h3 {
   margin-top: 0.85rem;
 }
 
+.ses-otherField[hidden] {
+  display: none;
+}
+
 .ses-otherField label {
   color: #18212b;
   font-size: 0.9rem;
@@ -657,7 +661,9 @@ body.shared-expense-setup-guide-page .ses-section > h3 {
   padding: clamp(1rem, 2.5vw, 1.5rem);
 }
 
-body.shared-expense-setup-guide-page .ses-result[hidden] {
+body.shared-expense-setup-guide-page .ses-result[hidden],
+.ses-resultFields[hidden],
+.ses-recommendation[hidden] {
   display: none;
 }
 
@@ -721,6 +727,10 @@ body.shared-expense-setup-guide-page .ses-result[hidden] {
   gap: 0.75rem;
   align-items: center;
   margin-top: 0.9rem;
+}
+
+.ses-copyActions .lt-primaryCta:disabled {
+  opacity: 0.6;
 }
 
 .ses-copyStatus {

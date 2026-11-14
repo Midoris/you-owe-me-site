@@ -15,6 +15,7 @@ const seoAdmissions = {
   ...readSeoAdmissions("family-workbook-summary"),
   ...readSeoAdmissions("family-subscriptions-example-link"),
   ...readSeoAdmissions("localized-split-demo-confirmation"),
+  ...readSeoAdmissions("shared-expense-planner-current-plan"),
 };
 
 // Reverse only unique, literal fragments from the reviewed changes on these paths.

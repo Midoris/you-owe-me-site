@@ -1,0 +1,32 @@
+{
+  "blog/how-to-track-shared-expenses-without-a-joint-account/index.html": [
+    [
+      "          \"datePublished\": \"2026-08-10\",\n          \"dateModified\": \"2026-11-14\",\n          \"mainEntityOfPage\": {\n",
+      "          \"datePublished\": \"2026-08-10\",\n          \"dateModified\": \"2026-10-18\",\n          \"mainEntityOfPage\": {\n"
+    ],
+    [
+      "    <link rel=\"stylesheet\" href=\"/styles/best-next-step.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/shared-expense-setup-guide.css?v=20261114\" />\n    <link rel=\"stylesheet\" href=\"/styles/app-language-support.css\" />\n",
+      "    <link rel=\"stylesheet\" href=\"/styles/best-next-step.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/shared-expense-setup-guide.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/app-language-support.css\" />\n"
+    ],
+    [
+      "                <h3 id=\"ses-result-title\" tabindex=\"-1\">Your shared-expense setup</h3>\n                <dl id=\"ses-result-fields\" class=\"ses-resultFields\">\n                  <div><dt>Shared:</dt><dd id=\"ses-result-shared\"></dd></div>\n",
+      "                <h3 id=\"ses-result-title\" tabindex=\"-1\">Your shared-expense setup</h3>\n                <dl class=\"ses-resultFields\">\n                  <div><dt>Shared:</dt><dd id=\"ses-result-shared\"></dd></div>\n"
+    ],
+    [
+      "                  <div class=\"ses-copyActions\">\n                    <button id=\"ses-copy-button\" type=\"button\" class=\"lt-primaryCta\" disabled>Copy this setup</button>\n                    <span id=\"ses-copy-status\" class=\"ses-copyStatus\" aria-live=\"polite\"></span>\n",
+      "                  <div class=\"ses-copyActions\">\n                    <button id=\"ses-copy-button\" type=\"button\" class=\"lt-primaryCta\">Copy this setup</button>\n                    <span id=\"ses-copy-status\" class=\"ses-copyStatus\" aria-live=\"polite\"></span>\n"
+    ],
+    [
+      "            <p class=\"lt-sectionEyebrow\">When the balance keeps changing</p>\n            <h2 id=\"product-fit-title\" tabindex=\"-1\">How You Owe Me fits this setup</h2>\n            <p>You Owe Me is useful when the shared-money layer will keep changing.</p>\n",
+      "            <p class=\"lt-sectionEyebrow\">When the balance keeps changing</p>\n            <h2 id=\"product-fit-title\">How You Owe Me fits this setup</h2>\n            <p>You Owe Me is useful when the shared-money layer will keep changing.</p>\n"
+    ],
+    [
+      "\n          <p class=\"lt-pageMeta\">Published <time datetime=\"2026-08-10\">August 10, 2026</time> &middot; Updated <time datetime=\"2026-11-14\">November 14, 2026</time></p>\n          <ul class=\"actions lt-actions\"><li><a href=\"/blog/\" class=\"button\">Back to blog</a></li></ul>\n",
+      "\n          <p class=\"lt-pageMeta\">Published <time datetime=\"2026-08-10\">August 10, 2026</time> &middot; Updated <time datetime=\"2026-10-18\">October 18, 2026</time></p>\n          <ul class=\"actions lt-actions\"><li><a href=\"/blog/\" class=\"button\">Back to blog</a></li></ul>\n"
+    ],
+    [
+      "    <script src=\"/scripts/sales.js?v=kohome20261106\"></script>\n    <script src=\"/scripts/shared-expense-setup-planner.js?v=20261114\"></script>\n    <script type=\"module\" src=\"/scripts/analytics.js?v=komoney20261106\"></script>\n",
+      "    <script src=\"/scripts/sales.js?v=kohome20261106\"></script>\n    <script src=\"/scripts/shared-expense-setup-planner.js\"></script>\n    <script type=\"module\" src=\"/scripts/analytics.js?v=komoney20261106\"></script>\n"
+    ]
+  ]
+}

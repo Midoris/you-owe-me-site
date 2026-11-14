@@ -8,9 +8,12 @@
   const otherWrap = document.getElementById("ses-other-expense-wrap");
   const otherInput = document.getElementById("ses-other-expense");
   const errorSummary = document.getElementById("ses-error-summary");
+  const buildButton = form.querySelector('button[type="submit"]');
+  const buildButtonLabel = buildButton.textContent;
   const resetButton = document.getElementById("ses-reset");
   const result = document.getElementById("ses-result");
   const resultHeading = document.getElementById("ses-result-title");
+  const resultDetails = document.getElementById("ses-result-fields");
   const copyButton = document.getElementById("ses-copy-button");
   const copyStatus = document.getElementById("ses-copy-status");
   const recommendation = document.getElementById("ses-recommendation");
@@ -35,6 +38,7 @@
   const expenseError = document.getElementById("ses-expenses-error");
   let lastSummary = "";
   let copyTimer = null;
+  let copyRequest = 0;
 
   const splitDescriptions = {
     equal: "We split agreed shared expenses equally.",
@@ -113,7 +117,7 @@
     if (record === "two-editors") {
       return '<h4 id="ses-recommendation-title">You need a two-person shared record</h4><p>Your key decision is whether the two of you want a private relationship balance or a broader collaborative shared-expense workspace.</p><a href="/compare/shared-expense-app-vs-running-balance-app/">Compare the record models</a>';
     }
-    return '<h4 id="ses-recommendation-title">Keep one clear working balance</h4><p>One person can maintain the shared-money history without exposing unrelated personal spending.</p><a href="/blog/what-is-a-running-balance-between-two-people/">See how a running balance works</a>';
+    return '<h4 id="ses-recommendation-title">Keep one clear working balance</h4><p>One person can maintain the shared-money history without exposing unrelated personal spending.</p><a href="/blog/what-is-a-running-balance-between-two-people/">See how a running balance works</a><div><a href="#product-fit-title">See how You Owe Me fits this setup</a></div>';
   }
 
   function validate() {
@@ -193,11 +197,42 @@
       "Personal purchases stay outside this shared record unless we both agree to change the rule.",
     ].join("\n");
     copySummary.textContent = lastSummary;
-    copyStatus.textContent = "";
-    copyButton.textContent = "Copy this setup";
+    clearCopyFeedback();
+    copyButton.disabled = false;
     recommendation.innerHTML = recommendationMarkup(split, record);
+    showResultDetails(true);
+    buildButton.textContent = buildButtonLabel;
     result.hidden = false;
     resultHeading.focus();
+  }
+
+  function clearCopyFeedback() {
+    copyRequest++;
+    if (copyTimer !== null) window.clearTimeout(copyTimer);
+    copyTimer = null;
+    copyStatus.textContent = "";
+    copyButton.textContent = "Copy this setup";
+  }
+
+  function showResultDetails(visible) {
+    resultDetails.hidden = !visible;
+    copySummary.hidden = !visible;
+    recommendation.hidden = !visible;
+  }
+
+  function clearResultSummary() {
+    lastSummary = "";
+    copySummary.textContent = "";
+    showResultDetails(false);
+    copyButton.disabled = true;
+    clearCopyFeedback();
+  }
+
+  function markResultStale() {
+    if (!lastSummary) return;
+    clearResultSummary();
+    buildButton.textContent = "Update your setup";
+    copyStatus.textContent = "Your choices changed. Update your setup before copying.";
   }
 
   function resetPlanner() {
@@ -207,39 +242,46 @@
     clearValidation();
     result.hidden = true;
     recommendation.innerHTML = "";
-    copyStatus.textContent = "";
-    copyButton.textContent = "Copy this setup";
-    lastSummary = "";
-    if (copyTimer) window.clearTimeout(copyTimer);
+    clearResultSummary();
+    buildButton.textContent = buildButtonLabel;
     expenseFieldset.tabIndex = -1;
     expenseFieldset.focus();
   }
 
-  function copySetup() {
-    if (!lastSummary || !navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
-      copyStatus.textContent = "Copy failed. Select the setup text and copy it manually.";
-      return;
-    }
+  async function copySetup() {
+    if (!lastSummary) return;
+    clearCopyFeedback();
+    const request = copyRequest;
 
-    navigator.clipboard.writeText(lastSummary).then(() => {
+    try {
+      await navigator.clipboard.writeText(lastSummary);
+      if (request !== copyRequest) return;
       copyButton.textContent = "Copied";
       copyStatus.textContent = "Your shared-expense setup was copied.";
-      if (copyTimer) window.clearTimeout(copyTimer);
       copyTimer = window.setTimeout(() => {
         copyButton.textContent = "Copy this setup";
+        copyTimer = null;
       }, 2400);
-    }).catch(() => {
-      copyStatus.textContent = "Copy failed. Select the setup text and copy it manually.";
-    });
+    } catch {
+      if (request === copyRequest) {
+        copyStatus.textContent = "Copy failed. Select the setup text and copy it manually.";
+      }
+    }
+  }
+
+  function handleEdit() {
+    clearValidation();
+    markResultStale();
   }
 
   otherToggle.addEventListener("change", toggleOtherField);
-  form.addEventListener("input", clearValidation);
-  form.addEventListener("change", clearValidation);
+  form.addEventListener("input", handleEdit);
+  form.addEventListener("change", handleEdit);
   form.addEventListener("submit", (event) => {
     event.preventDefault();
     const validation = validate();
     if (validation.valid) buildResult(validation.categories);
+    else markResultStale();
   });
   resetButton.addEventListener("click", resetPlanner);
   copyButton.addEventListener("click", copySetup);

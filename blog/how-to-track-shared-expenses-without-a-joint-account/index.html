@@ -37,7 +37,7 @@
           "publisher": { "@type": "Organization", "name": "You Owe Me" },
           "articleSection": "Shared expenses",
           "datePublished": "2026-08-10",
-          "dateModified": "2026-10-18",
+          "dateModified": "2026-11-14",
           "mainEntityOfPage": {
             "@type": "WebPage",
             "@id": "https://you-owe-me.com/blog/how-to-track-shared-expenses-without-a-joint-account/"
@@ -135,7 +135,7 @@
     <link rel="stylesheet" href="/styles/site-nav.css" />
     <link rel="stylesheet" href="/styles/tools.css" />
     <link rel="stylesheet" href="/styles/best-next-step.css" />
-    <link rel="stylesheet" href="/styles/shared-expense-setup-guide.css" />
+    <link rel="stylesheet" href="/styles/shared-expense-setup-guide.css?v=20261114" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
   </head>
 
@@ -341,7 +341,7 @@
               <section id="ses-result" class="ses-result" aria-labelledby="ses-result-title" hidden>
                 <p class="lt-sectionEyebrow">Your setup</p>
                 <h3 id="ses-result-title" tabindex="-1">Your shared-expense setup</h3>
-                <dl class="ses-resultFields">
+                <dl id="ses-result-fields" class="ses-resultFields">
                   <div><dt>Shared:</dt><dd id="ses-result-shared"></dd></div>
                   <div><dt>Split:</dt><dd id="ses-result-split"></dd></div>
                   <div><dt>Record:</dt><dd id="ses-result-record"></dd></div>
@@ -352,7 +352,7 @@
                 <div class="ses-copyBlock">
                   <p id="ses-copy-summary" class="ses-copySummary" tabindex="0"></p>
                   <div class="ses-copyActions">
-                    <button id="ses-copy-button" type="button" class="lt-primaryCta">Copy this setup</button>
+                    <button id="ses-copy-button" type="button" class="lt-primaryCta" disabled>Copy this setup</button>
                     <span id="ses-copy-status" class="ses-copyStatus" aria-live="polite"></span>
                   </div>
                 </div>
@@ -539,7 +539,7 @@
 
           <section class="lt-toolsSection ses-section ses-productSection" aria-labelledby="product-fit-title">
             <p class="lt-sectionEyebrow">When the balance keeps changing</p>
-            <h2 id="product-fit-title">How You Owe Me fits this setup</h2>
+            <h2 id="product-fit-title" tabindex="-1">How You Owe Me fits this setup</h2>
             <p>You Owe Me is useful when the shared-money layer will keep changing.</p>
             <p class="lt-paragraphGap">Record only the shared costs that belong between you, keep one running balance, add repayments and recurring expenses as they happen, and choose how much participation the other person actually needs.</p>
             <div class="ses-cardGrid ses-cardGrid--four">
@@ -589,7 +589,7 @@
             <div class="lt-ctaRow"><a href="https://apps.apple.com/us/app/loan-tracker-you-owe-me/id1147058670?ppid=8e720a01-7489-4044-9f6a-0080793442a0&amp;pt=117888502&amp;ct=website_cta&amp;mt=8" class="lt-appStoreBtn" aria-label="Download You Owe Me on the App Store" data-track-location="shared_expense_setup_guide_final_primary_cta"><span class="sr-only">Download You Owe Me on the App Store</span><img src="https://tools.applemediaservices.com/api/badges/download-on-the-app-store/black/en-us?size=250x83" alt="Download You Owe Me on the App Store" /></a><a href="/quick-start/" class="lt-textCta">See how You Owe Me works</a></div>
           </section>
 
-          <p class="lt-pageMeta">Published <time datetime="2026-08-10">August 10, 2026</time> &middot; Updated <time datetime="2026-10-18">October 18, 2026</time></p>
+          <p class="lt-pageMeta">Published <time datetime="2026-08-10">August 10, 2026</time> &middot; Updated <time datetime="2026-11-14">November 14, 2026</time></p>
           <ul class="actions lt-actions"><li><a href="/blog/" class="button">Back to blog</a></li></ul>
         </article>
       </main>
@@ -612,7 +612,7 @@
     </div>
 
     <script src="/scripts/sales.js?v=kohome20261106"></script>
-    <script src="/scripts/shared-expense-setup-planner.js"></script>
+    <script src="/scripts/shared-expense-setup-planner.js?v=20261114"></script>
     <script type="module" src="/scripts/analytics.js?v=komoney20261106"></script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/jquery.scrollex.min.js"></script>

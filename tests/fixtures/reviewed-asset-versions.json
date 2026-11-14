@@ -2,5 +2,13 @@
   "downloads/family-reimbursement-tracker-template.xlsx": {
     "previous": "54c98b37a718625b47c121ae3ad335296fbc2a93",
     "current": "7ceb20bac51f84ce51ea9be0b257d4b95ab75588"
+  },
+  "scripts/shared-expense-setup-planner.js": {
+    "previous": "874532d138817a0e813519da7ea1e71f68f31ee7",
+    "current": "8ea581475675b3458b360e35b637dd124ec3ae1c"
+  },
+  "styles/shared-expense-setup-guide.css": {
+    "previous": "315f1cbb9ffb460eef9ac347b5180b715745117b",
+    "current": "688575cacdff75a7e579ffff3860d658aa9e723e"
   }
 }
