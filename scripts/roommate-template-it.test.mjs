@@ -9,7 +9,7 @@ import { siteLocales, localizedSourceRoute, sharedAssetVersions, completedCounte
 import { contentRegistry } from '../content/content-registry.mjs';
 import { renderLocaleHtml, renderLocaleDiscovery } from './sync-site-locales.mjs';
 import { bindIphoneHandoffAnalytics } from './iphone-handoff-analytics-bridge.mjs';
-import { normalizeReviewedItalianRoommateIntegration, normalizeReviewedItalianRoommateSource } from '../tests/helpers/reviewed-language-copy.mjs';
+import { normalizeReviewedAssetHash,  normalizeReviewedItalianRoommateIntegration, normalizeReviewedItalianRoommateSource } from '../tests/helpers/reviewed-language-copy.mjs';
 const route='/it/strumenti/modello-spese-coinquilini/';
 const sourceRoute='/tools/roommate-expense-tracker-template/';
 const base='967b5a6e9d3dd25ac9c9d6f08f5935bd1e493935';
@@ -96,7 +96,7 @@ test('Italian integration admits only literal reviewed changes to old authored H
  const admissions=JSON.parse(read('tests/fixtures/italian-roommate-reviewed-admissions.json'));for(const f of Object.keys(admissions.source))assert.deepEqual(normalizeReviewedItalianRoommateSource(fs.readFileSync(new URL('../'+f,import.meta.url)),f),execFileSync('git',['show',base+':'+f]),f);
  const altered=admissions.integrations[0][0].replace(' class=',' data-unapproved="x" class=');assert.equal(normalizeReviewedItalianRoommateIntegration(altered),altered);const binary=Buffer.from([255,254,128,0]);assert.equal(normalizeReviewedItalianRoommateSource(binary,'downloads/protected.xlsx'),binary);
  const protectedFiles=files.filter(f=>f.startsWith('private-continuation/')||f.startsWith('images/')||f.startsWith('downloads/')||f.startsWith('styles/')||f.startsWith('content/roommate-workbooks/')||(/^scripts\/.*\.(?:m?js)$/.test(f)&&!f.includes('.test.')&&!Object.keys(admissions.source).includes(f)));
- const oldObjects=new Map(execFileSync('git',['ls-tree','-r','-z',base],{encoding:'utf8'}).split('\0').filter(Boolean).map(line=>[line.slice(line.indexOf('\t')+1),line.slice(0,line.indexOf('\t')).split(' ')[2]]));const currentObjects=execFileSync('git',['hash-object','--stdin-paths'],{input:protectedFiles.join('\n')+'\n',encoding:'utf8'}).trim().split('\n');protectedFiles.forEach((f,i)=>{const current=fs.readFileSync(new URL('../'+f,import.meta.url));const normalized=normalizeReviewedItalianRoommateSource(current,f);if(normalized.equals(current))assert.equal(currentObjects[i],oldObjects.get(f),f);else assert.deepEqual(normalized,execFileSync('git',['show',base+':'+f]),f);});
+ const oldObjects=new Map(execFileSync('git',['ls-tree','-r','-z',base],{encoding:'utf8'}).split('\0').filter(Boolean).map(line=>[line.slice(line.indexOf('\t')+1),line.slice(0,line.indexOf('\t')).split(' ')[2]]));const currentObjects=execFileSync('git',['hash-object','--stdin-paths'],{input:protectedFiles.join('\n')+'\n',encoding:'utf8'}).trim().split('\n');protectedFiles.forEach((f,i)=>{const current=fs.readFileSync(new URL('../'+f,import.meta.url));const normalized=normalizeReviewedItalianRoommateSource(current,f);if(normalized.equals(current))assert.equal(normalizeReviewedAssetHash(f,currentObjects[i]),oldObjects.get(f),f);else assert.deepEqual(normalized,execFileSync('git',['show',base+':'+f]),f);});
 });
 
 test('Italian copy mechanics remain the accepted PT household-controller behavior with exact authored labels only',()=>{

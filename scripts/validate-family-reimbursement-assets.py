@@ -1,10 +1,13 @@
 import csv
 import json
 import re
+import subprocess
 import urllib.parse
 import xml.etree.ElementTree as ET
+from argparse import ArgumentParser
 from html import unescape
 from pathlib import Path
+from tempfile import TemporaryDirectory
 from zipfile import ZipFile
 
 from openpyxl import load_workbook
@@ -12,9 +15,86 @@ from pypdf import PdfReader
 
 
 ROOT = Path(__file__).resolve().parents[1]
+NAME_WARNING = "Some Tracker rows need a name on Summary. Check the highlighted name cells in Tracker."
+
+
+def validate_recalculation(workbook_path, soffice):
+    expense = "Expense paid for family"
+    repayment = "Repayment received"
+    partial_repayment = [("Mom", expense, 30, None), ("Aunt Rosa", expense, 60, None), ("Aunt Rosa", repayment, None, 25)]
+    offsetting_names = [("Nina", expense, 20, None), ("Luis", repayment, None, 20)]
+    literal_names = [("Jo?", expense, 7, None), ("Joe", expense, 12, None), ("Al*", expense, 11, None),
+                     ("Alex", expense, 16, None), ("Sam~", expense, 9, None), ("Sam", expense, 5, None)]
+    numeric_names = [("001", expense, 30, None), ("1", expense, 20, None), (1, expense, 100, None)]
+    last_row = [None] * 299 + [("Last row", expense, 13, None)]
+    scenarios = [
+        ("blank", [], [], 0, False, {"Tracker": {"J2": None}, "Summary": {"D8": None}}),
+        ("unlisted", partial_repayment, [], 65, True,
+         {"Tracker": {"J2": 30, "J4": 35}, "Summary": {"D2": 30, "D8": None}, "Monthly Review": {"A13": None}}),
+        ("listed-once", partial_repayment, ["Aunt Rosa"], 65, False,
+         {"Summary": {"D2": 30, "D8": 35}, "Monthly Review": {"A13": "Aunt Rosa", "B13": 35}}),
+        ("listed-twice", partial_repayment, ["Aunt Rosa", "Aunt Rosa"], 65, False,
+         {"Summary": {"D8": 35, "D9": 35}}),
+        ("offsetting-unlisted", offsetting_names, [], 0, True, {"Tracker": {"J2": 20, "J3": -20}}),
+        ("literal-unlisted", literal_names, ["Joe", "Alex", "Sam"], 60, True,
+         {"Tracker": {"J2": 7, "J3": 12, "J4": 11, "J5": 16, "J6": 9, "J7": 5}}),
+        ("literal-listed", literal_names, ["Jo?", "Joe", "Al*", "Alex", "Sam~", "Sam"], 60, False,
+         {"Summary": {"D8": 7, "D9": 12, "D10": 11, "D11": 16, "D12": 9, "D13": 5},
+          "Monthly Review": {"A13": "Jo?", "B13": 7}}),
+        ("numeric-names", numeric_names, ["001", "1", 1], 150, False,
+         {"Tracker": {"J2": 30, "J3": 20, "J4": 100}, "Summary": {"D8": 30, "D9": 20, "D10": 100}}),
+        ("last-row", last_row, [], 13, True, {"Tracker": {"J301": 13}}),
+        ("blank-name-and-stray-amount", [(None, expense, 4, None), ("  ", expense, 5, None), ("Mom", expense, 6, 9)],
+         ["  "], 15, True, {"Tracker": {"J2": None, "J3": None, "J4": 6}, "Summary": {"D2": 6, "D8": None},
+                            "Monthly Review": {"A13": None}}),
+    ]
+    with TemporaryDirectory(prefix="family-workbook-recalc-") as directory:
+        work = Path(directory)
+        output = work / "recalculated"
+        output.mkdir()
+        sources = []
+        for name, rows, summary_names, _, _, _ in scenarios:
+            workbook = load_workbook(workbook_path)
+            tracker = workbook["Tracker"]
+            for row, entry in enumerate(rows, start=2):
+                if entry is None:
+                    continue
+                member, entry_type, paid, repaid = entry
+                tracker[f"B{row}"] = member
+                tracker[f"C{row}"] = entry_type
+                tracker[f"G{row}"] = paid
+                tracker[f"H{row}"] = repaid
+            for row, member in enumerate(summary_names, start=8):
+                workbook["Summary"][f"A{row}"] = member
+            source = work / f"{name}.xlsx"
+            workbook.save(source)
+            sources.append(source)
+        subprocess.run([
+            soffice, f"-env:UserInstallation={(work / 'profile').as_uri()}", "--headless",
+            "--convert-to", "xlsx", "--outdir", str(output), *map(str, sources),
+        ], check=True, capture_output=True, text=True, timeout=120)
+        for name, _, _, total, needs_names, expected in scenarios:
+            workbook = load_workbook(output / f"{name}.xlsx", data_only=True)
+            assert workbook["Summary"]["D33"].value == total, name
+            for sheet, cell in (("Start Here", "A4"), ("Summary", "A35"), ("Monthly Review", "A4")):
+                actual = workbook[sheet][cell].value or None
+                assert actual == (NAME_WARNING if needs_names else None), (name, sheet, actual)
+            for sheet, values in expected.items():
+                for cell, value in values.items():
+                    actual = workbook[sheet][cell].value
+                    if value is None and actual == "":
+                        actual = None
+                    assert actual == value, (name, sheet, cell, actual, value)
+            assert [workbook["Example Tracker"][f"J{row}"].value for row in range(2, 13)] == [
+                48, 23, 85, 45, 12, 64, 32, 0, 60, 45, 0,
+            ], name
+        print(f"validated {len(scenarios)} workbook scenarios with LibreOffice recalculation")
 
 
 def main():
+    parser = ArgumentParser()
+    parser.add_argument("--soffice", help="Run optional workbook recalculation checks with this LibreOffice executable.")
+    args = parser.parse_args()
     html = (ROOT / "tools/family-reimbursement-tracker-template/index.html").read_text(encoding="utf-8")
     sitemap = (ROOT / "sitemap.xml").read_text(encoding="utf-8")
     robots = (ROOT / "robots.txt").read_text(encoding="utf-8")
@@ -44,12 +124,15 @@ def main():
         "Notes",
     ]
     assert tracker["I2"].value == '=IF(C2="Expense paid for family",G2,IF(C2="Repayment received",-H2,IF(C2="Adjustment",G2-H2,"")))'
-    assert tracker["J2"].value == '=IF(B2="","",SUMIFS($I$2:I2,$B$2:B2,B2))'
     for row in (2, 3, 50, 301):
         assert tracker[f"I{row}"].value == f'=IF(C{row}="Expense paid for family",G{row},IF(C{row}="Repayment received",-H{row},IF(C{row}="Adjustment",G{row}-H{row},"")))'
-        assert tracker[f"J{row}"].value == f'=IF(B{row}="","",SUMIFS($I$2:I{row},$B$2:B{row},B{row}))'
+        assert tracker[f"J{row}"].value == f'=IF(TRIM(B{row})="","",SUMPRODUCT(--($B$2:B{row}=B{row}),$I$2:I{row}))'
+        assert f'Summary!$A$2:$A$31=B{row}' in tracker[f"O{row}"].value
     assert tracker.freeze_panes == "A2"
     assert tracker.auto_filter.ref == "A1:N301"
+    assert tracker.column_dimensions["O"].hidden
+    assert tracker["O1"].value == "=SUM(O2:O301)"
+    assert tracker.conditional_formatting["B2:B301"][0].formula == ["$O2>0"]
     validations = "\n".join(str(validation.formula1) for validation in tracker.data_validations.dataValidation)
     assert "=EntryTypes" in validations
     assert "=Categories" in validations
@@ -99,14 +182,17 @@ def main():
         assert balances[member] == expected_balances[row], (row, balances[member], expected_balances[row])
 
     summary = wb["Summary"]
-    assert summary["B2"].value == '=IF($A2="","",SUMIFS(Tracker!$G:$G,Tracker!$B:$B,$A2))'
-    assert summary["C2"].value == '=IF($A2="","",SUMIFS(Tracker!$H:$H,Tracker!$B:$B,$A2))'
-    assert summary["D2"].value == '=IF($A2="","",B2-C2)'
-    assert summary["D33"].value == "=SUM(D2:D31)"
+    for summary_column, tracker_column in (("B", "G"), ("C", "H"), ("D", "I")):
+        assert summary[f"{summary_column}2"].value == (
+            f'=IF(TRIM($A2)="","",SUMPRODUCT(--(Tracker!$B$2:$B$301=$A2),Tracker!${tracker_column}$2:${tracker_column}$301))'
+        )
+    assert summary["D33"].value == "=SUM(Tracker!I2:I301)"
     assert summary["A33"].value == "Total open balance"
+    assert NAME_WARNING in summary["A35"].value
+    assert "each family member's name once in Summary column A" in wb["Start Here"]["B9"].value
 
     monthly = wb["Monthly Review"]
-    assert monthly["A7"].value == '=IF(Summary!A2="","",Summary!A2)'
+    assert monthly["A7"].value == '=IF(TRIM(Summary!A2)="","",Summary!A2)'
     assert monthly["B7"].value == '=IF(A7="","",Summary!D2)'
     assert monthly["A41"].value == "Recurring bills added"
     assert monthly["A45"].value == "One clear summary prepared if needed"
@@ -141,8 +227,14 @@ def main():
         assert not any(name.startswith("xl/externalLinks/") for name in names)
         assert "xl/vbaProject.bin" not in names
 
+    workbook_links = []
     for download in re.findall(r'href="../../downloads/([^"]+)', html):
-        assert (ROOT / "downloads" / download).exists(), download
+        parsed = urllib.parse.urlsplit(download)
+        assert (ROOT / "downloads" / parsed.path).is_file(), download
+        if parsed.path == workbook_path.name:
+            workbook_links.append(parsed.query)
+    assert workbook_links == ["v=summary-20261114"] * 3
+    assert "add each family member&rsquo;s name once in column A of Summary" in html
 
     assert html.count("<h1") == 1
     assert '<link rel="canonical" href="https://you-owe-me.com/tools/family-reimbursement-tracker-template/" />' in html
@@ -159,7 +251,7 @@ def main():
     assert 'aria-label="Download the Family Reimbursement Tracker printable PDF log"' in html
     assert '<figcaption class="family-mini-sheet" aria-hidden="true">' in html
     assert '<table class="family-example-table">' in html
-    assert "<caption>Example family reimbursement log with expenses, repayments, balance changes, and running balances.</caption>" in html
+    assert "<caption>Example family reimbursement record with two expenses, one partial reimbursement, and the remaining amount.</caption>" in html
     assert "<thead>" in html
     assert "<tbody>" in html
     assert '<th scope="col">Date</th>' in html
@@ -223,6 +315,8 @@ def main():
             if raw_href.startswith(("#", "mailto:", "tel:", "javascript:")):
                 continue
             parsed = urllib.parse.urlsplit(unescape(raw_href))
+            if parsed.scheme == "youoweme":
+                continue
             if parsed.scheme in ("http", "https") and parsed.netloc not in ("you-owe-me.com", "www.you-owe-me.com"):
                 continue
             path = parsed.path if parsed.scheme else raw_href.split("#", 1)[0].split("?", 1)[0]
@@ -240,6 +334,8 @@ def main():
     assert "Monthly family reimbursement review with receipts and balance cards." in html
 
     print("validated workbook/csv/pdf/html downloads")
+    if args.soffice:
+        validate_recalculation(workbook_path, args.soffice)
 
 
 if __name__ == "__main__":

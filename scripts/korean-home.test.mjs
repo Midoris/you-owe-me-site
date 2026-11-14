@@ -6,7 +6,7 @@ import {parseStaticPage} from '../tests/helpers/static-dom.mjs';
 import {siteLocales,koreanPages,koreanShared,completedCounterparts,localizedSourceRoute} from '../content/site-locales.mjs';
 import {contentRegistry} from '../content/content-registry.mjs';
 import {renderLocaleHtml,renderLocaleDiscovery} from './sync-site-locales.mjs';
-import {normalizeReviewedKoreanHomeIntegration,normalizeReviewedKoreanHomeSource,normalizeReviewedSeoSource} from '../tests/helpers/reviewed-language-copy.mjs';
+import { normalizeReviewedAssetHash, normalizeReviewedKoreanHomeIntegration,normalizeReviewedKoreanHomeSource,normalizeReviewedSeoSource} from '../tests/helpers/reviewed-language-copy.mjs';
 const base='624c89a98641c42076dcb21ad2fb05c7cc897b52';
 const read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8');
 const page=read('ko/index.html'),d=parseStaticPage(page);
@@ -49,7 +49,7 @@ test('old artwork, native templates, private hosting and all prior home design f
  const protectedRows=rows.filter(([f])=>f.startsWith('private-continuation/')||f.startsWith('images/')||f.startsWith('downloads/')||f.startsWith('styles/')||f.startsWith('content/roommate-workbooks/')||f.startsWith('assets/css/'));
  const hashes=execFileSync('git',['hash-object','--stdin-paths'],{input:protectedRows.map(([f])=>f).join('\n')+'\n',encoding:'utf8'}).trim().split('\n');
  for (const [i, [file, expectedHash]] of protectedRows.entries()) {
-   let hash = hashes[i];
+   let hash = normalizeReviewedAssetHash(file, hashes[i]);
    if (hash !== expectedHash && file.endsWith('.css')) {
      const source = fs.readFileSync(new URL('../' + file, import.meta.url));
      const previous = normalizeReviewedSeoSource(source, file);

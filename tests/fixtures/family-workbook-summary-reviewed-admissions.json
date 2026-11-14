@@ -1,0 +1,32 @@
+{
+  "tools/family-reimbursement-tracker-template/index.html": [
+    [
+      "          \"dateModified\": \"2026-11-14\",\n",
+      "          \"dateModified\": \"2026-05-23\",\n"
+    ],
+    [
+      "                <a\n                  href=\"../../downloads/family-reimbursement-tracker-template.xlsx?v=summary-20261114\"\n                  class=\"lt-primaryCta\"\n",
+      "                <a\n                  href=\"../../downloads/family-reimbursement-tracker-template.xlsx\"\n                  class=\"lt-primaryCta\"\n"
+    ],
+    [
+      "                <a\n                  href=\"../../downloads/family-reimbursement-tracker-template.xlsx?v=summary-20261114\"\n                  class=\"lt-cardCta\"\n",
+      "                <a\n                  href=\"../../downloads/family-reimbursement-tracker-template.xlsx\"\n                  class=\"lt-cardCta\"\n"
+    ],
+    [
+      "                <p class=\"family-file-meta\">.xlsx · 42.0 KB</p>\n",
+      "                <p class=\"family-file-meta\">.xlsx · 36.6 KB</p>\n"
+    ],
+    [
+      "            <p class=\"lt-paragraphGap\">In Excel, add each family member&rsquo;s name once in column A of Summary to see their balance in Summary and Monthly Review. The total already includes every balance change in Tracker. If the workbook shows a name warning, check the highlighted name cells in Tracker.</p>\n",
+      ""
+    ],
+    [
+      "              <a\n                href=\"../../downloads/family-reimbursement-tracker-template.xlsx?v=summary-20261114\"\n                class=\"lt-primaryCta\"\n",
+      "              <a\n                href=\"../../downloads/family-reimbursement-tracker-template.xlsx\"\n                class=\"lt-primaryCta\"\n"
+    ],
+    [
+      "          <p class=\"lt-pageMeta\"><time datetime=\"2026-11-14\">Updated November 14, 2026</time></p>\n",
+      "          <p class=\"lt-pageMeta\"><time datetime=\"2026-05-23\">Updated May 23, 2026</time></p>\n"
+    ]
+  ]
+}

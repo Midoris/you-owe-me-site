@@ -6,7 +6,7 @@ import {parseStaticPage} from '../tests/helpers/static-dom.mjs';
 import {siteLocales,polishPages,polishShared,completedCounterparts,localizedSourceRoute} from '../content/site-locales.mjs';
 import {contentRegistry} from '../content/content-registry.mjs';
 import {renderLocaleHtml,renderLocaleDiscovery} from './sync-site-locales.mjs';
-import {normalizeReviewedPolishHomeIntegration,normalizeReviewedPolishHomeSource} from '../tests/helpers/reviewed-language-copy.mjs';
+import { normalizeReviewedAssetHash, normalizeReviewedPolishHomeIntegration,normalizeReviewedPolishHomeSource} from '../tests/helpers/reviewed-language-copy.mjs';
 const base='e6463edf3c4cc781c09d8168c09a4894b051edda';
 const read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8');
 const page=read('pl/index.html'),d=parseStaticPage(page);
@@ -44,5 +44,5 @@ test('preexisting authored HTML and shared runtime preserve immutable bytes outs
  const binary=Buffer.from([255,254,0,128]);assert.equal(normalizeReviewedPolishHomeSource(binary,'downloads/protected.xlsx'),binary);
  const extra='<a href="/pl/" lang="pl" data-unapproved="x" hreflang="pl">Polski</a>';assert.equal(normalizeReviewedPolishHomeIntegration(extra),extra);const prose='The full website is available in English, with arbitrary unapproved content.';assert.equal(normalizeReviewedPolishHomeIntegration(prose),prose);
  const protectedFiles=tracked.filter(f=>f.startsWith('private-continuation/')||f.startsWith('images/')||f.startsWith('downloads/')||f.startsWith('styles/')||f.startsWith('content/roommate-workbooks/')||(/^scripts\/.*\.(?:m?js)$/.test(f)&&!f.includes('.test.')&&!Object.keys(admissions.source).includes(f)));
- const oldObjects=new Map(execFileSync('git',['ls-tree','-r','-z',base],{encoding:'utf8'}).split('\0').filter(Boolean).map(line=>[line.slice(line.indexOf('\t')+1),line.slice(0,line.indexOf('\t')).split(' ')[2]]));const currentObjects=execFileSync('git',['hash-object','--stdin-paths'],{input:protectedFiles.join('\n')+'\n',encoding:'utf8'}).trim().split('\n');protectedFiles.forEach((f,i)=>{const current=fs.readFileSync(new URL('../'+f,import.meta.url));const normalized=normalizeReviewedPolishHomeSource(current,f);if(normalized.equals(current))assert.equal(currentObjects[i],oldObjects.get(f),f);else assert.deepEqual(normalized,execFileSync('git',['show',base+':'+f]),f);});
+ const oldObjects=new Map(execFileSync('git',['ls-tree','-r','-z',base],{encoding:'utf8'}).split('\0').filter(Boolean).map(line=>[line.slice(line.indexOf('\t')+1),line.slice(0,line.indexOf('\t')).split(' ')[2]]));const currentObjects=execFileSync('git',['hash-object','--stdin-paths'],{input:protectedFiles.join('\n')+'\n',encoding:'utf8'}).trim().split('\n');protectedFiles.forEach((f,i)=>{const current=fs.readFileSync(new URL('../'+f,import.meta.url));const normalized=normalizeReviewedPolishHomeSource(current,f);if(normalized.equals(current))assert.equal(normalizeReviewedAssetHash(f,currentObjects[i]),oldObjects.get(f),f);else assert.deepEqual(normalized,execFileSync('git',['show',base+':'+f]),f);});
 });

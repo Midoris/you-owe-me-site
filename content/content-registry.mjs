@@ -3015,7 +3015,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/family-reimbursement-tracker/", "/solutions/temporary-financial-support-tracker/"],
     appStoreCpp: "family-reimbursements",
     tags: ["template", "family", "reimbursements", "parents"],
-    updated: "2026-06-09",
+    updated: "2026-11-14",
     status: "live",
     priority: "core",
     primaryCta: "Use the template",

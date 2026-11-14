@@ -12,6 +12,7 @@ const seoAdmissions = {
   ...readSeoAdmissions("money-owed-group-paybacks"),
   ...readSeoAdmissions("couple-calculator-examples"),
   ...readSeoAdmissions("receipt-example-amount"),
+  ...readSeoAdmissions("family-workbook-summary"),
 };
 
 // Reverse only unique, literal fragments from the reviewed changes on these paths.
@@ -27,6 +28,13 @@ export function normalizeReviewedSeoSource(source, file) {
     }
   }
   return text === original ? source : bytes ? Buffer.from(text) : text;
+}
+
+const reviewedAssetVersions = JSON.parse(fs.readFileSync(new URL("../fixtures/reviewed-asset-versions.json", import.meta.url), "utf8"));
+
+export function normalizeReviewedAssetHash(file, hash) {
+  const versions = reviewedAssetVersions[file];
+  return versions && versions.current === hash ? versions.previous : hash;
 }
 
 const koreanMoneyOwedAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/korean-money-owed-reviewed-admissions.json", import.meta.url), "utf8"));

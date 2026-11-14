@@ -1,9 +1,10 @@
+from argparse import ArgumentParser
 from datetime import date
 from pathlib import Path
 
 from openpyxl import Workbook
 from openpyxl.comments import Comment
-from openpyxl.formatting.rule import CellIsRule
+from openpyxl.formatting.rule import CellIsRule, FormulaRule
 from openpyxl.styles import Alignment, Border, Font, PatternFill, Side
 from openpyxl.utils import get_column_letter
 from openpyxl.worksheet.datavalidation import DataValidation
@@ -35,6 +36,7 @@ HEADERS = [
     "Receipt / reference",
     "Notes",
 ]
+TRACKER_LAST_ROW = 301
 
 ENTRY_TYPES = [
     "Expense paid for family",
@@ -168,6 +170,18 @@ def add_validations(workbook, sheet, max_row):
         validation.add(f"{col}2:{col}{max_row}")
 
 
+def format_name_warning(sheet, cell_range, formula):
+    sheet.merge_cells(cell_range)
+    cell = sheet[cell_range.split(":")[0]]
+    cell.value = formula
+    cell.alignment = Alignment(wrap_text=True, vertical="center")
+    sheet.row_dimensions[cell.row].height = 30
+    sheet.conditional_formatting.add(
+        cell_range,
+        FormulaRule(formula=[f'$A${cell.row}<>""'], fill=PatternFill("solid", fgColor="FFF4C2")),
+    )
+
+
 def build_workbook():
     wb = Workbook()
     wb.calculation.fullCalcOnLoad = True
@@ -191,11 +205,12 @@ def build_workbook():
     start["A3"] = "Use this workbook to track money you pay for parents, siblings, relatives, shared family costs, bills, subscriptions, purchases, repayments, and remaining balances."
     start.merge_cells("A3:H3")
     start["A3"].alignment = Alignment(wrap_text=True, vertical="top")
+    format_name_warning(start, "A4:H4", '=IF(Summary!A35="","",Summary!A35)')
     instructions = [
         "Use the Tracker sheet for your own entries.",
         "Add expenses when you pay for something.",
         "Add repayments as separate rows.",
-        "Check the Summary sheet to see current balances.",
+        "Add each family member's name once in Summary column A to see their balance in Summary and Monthly Review.",
         "Use the Example Tracker sheet if you want to see how partial repayments work.",
         "Use the Monthly Review sheet to prepare one calm weekly or monthly summary.",
         "Edit categories in the Settings sheet if needed.",
@@ -206,6 +221,7 @@ def build_workbook():
         row = 5 + index
         start[f"A{row}"] = index
         start[f"B{row}"] = text
+        start.merge_cells(start_row=row, start_column=2, end_row=row, end_column=8)
         start[f"A{row}"].font = Font(bold=True, color="355428")
         start[f"B{row}"].alignment = Alignment(wrap_text=True)
     notes = [
@@ -249,15 +265,24 @@ def build_workbook():
     add_defined_name(wb, "ReviewStatusOptions", "Settings!$E$2:$E$4")
 
     tracker.append(HEADERS)
-    for row in range(2, 302):
+    for row in range(2, TRACKER_LAST_ROW + 1):
         tracker[f"I{row}"] = f'=IF(C{row}="Expense paid for family",G{row},IF(C{row}="Repayment received",-H{row},IF(C{row}="Adjustment",G{row}-H{row},"")))'
-        tracker[f"J{row}"] = f'=IF(B{row}="","",SUMIFS($I$2:I{row},$B$2:B{row},B{row}))'
+        tracker[f"J{row}"] = f'=IF(TRIM(B{row})="","",SUMPRODUCT(--($B$2:B{row}=B{row}),$I$2:I{row}))'
+        tracker[f"O{row}"] = (
+            f'=IF(TRIM(B{row})="",IF(OR(C{row}<>"",G{row}<>"",H{row}<>""),1,0),'
+            f'IF(SUMPRODUCT(--(Summary!$A$2:$A$31=B{row}))=0,1,0))'
+        )
     tracker["G1"].comment = Comment("Expense amount is used for expenses.", "You Owe Me")
     tracker["H1"].comment = Comment("Repayment amount is used for repayments.", "You Owe Me")
     tracker["I1"].comment = Comment("Balance change and Running balance are calculated automatically.", "You Owe Me")
     tracker["J1"].comment = Comment("Running balance is calculated separately for each family member.", "You Owe Me")
-    apply_tracker_format(tracker, 301)
-    add_validations(wb, tracker, 301)
+    apply_tracker_format(tracker, TRACKER_LAST_ROW)
+    add_validations(wb, tracker, TRACKER_LAST_ROW)
+    tracker["O1"] = f"=SUM(O2:O{TRACKER_LAST_ROW})"
+    tracker.column_dimensions["O"].hidden = True
+    tracker.conditional_formatting.add(
+        f"B2:B{TRACKER_LAST_ROW}", FormulaRule(formula=["$O2>0"], fill=PatternFill("solid", fgColor="FFF4C2")),
+    )
 
     example.append(HEADERS)
     for idx, row_values in enumerate(EXAMPLE_ROWS, start=2):
@@ -270,7 +295,7 @@ def build_workbook():
         example[f"G{idx}"] = row_values[6]
         example[f"H{idx}"] = row_values[7]
         example[f"I{idx}"] = f'=IF(C{idx}="Expense paid for family",G{idx},IF(C{idx}="Repayment received",-H{idx},IF(C{idx}="Adjustment",G{idx}-H{idx},"")))'
-        example[f"J{idx}"] = f'=IF(B{idx}="","",SUMIFS($I$2:I{idx},$B$2:B{idx},B{idx}))'
+        example[f"J{idx}"] = f'=IF(TRIM(B{idx})="","",SUMPRODUCT(--($B$2:B{idx}=B{idx}),$I$2:I{idx}))'
         example[f"K{idx}"] = row_values[8]
         example[f"L{idx}"] = row_values[9]
         example[f"M{idx}"] = row_values[10]
@@ -283,20 +308,25 @@ def build_workbook():
     family_names = ["Mom", "Dad", "Sister", "Brother", "Family shared", "Other"]
     for index in range(2, 32):
         summary[f"A{index}"] = family_names[index - 2] if index - 2 < len(family_names) else None
-        summary[f"B{index}"] = f'=IF($A{index}="","",SUMIFS(Tracker!$G:$G,Tracker!$B:$B,$A{index}))'
-        summary[f"C{index}"] = f'=IF($A{index}="","",SUMIFS(Tracker!$H:$H,Tracker!$B:$B,$A{index}))'
-        summary[f"D{index}"] = f'=IF($A{index}="","",B{index}-C{index})'
+        for summary_column, tracker_column in (("B", "G"), ("C", "H"), ("D", "I")):
+            summary[f"{summary_column}{index}"] = (
+                f'=IF(TRIM($A{index})="","",SUMPRODUCT(--(Tracker!$B$2:$B${TRACKER_LAST_ROW}=$A{index}),'
+                f'Tracker!${tracker_column}$2:${tracker_column}${TRACKER_LAST_ROW}))'
+            )
         for col in ("B", "C", "D"):
             summary[f"{col}{index}"].number_format = '$#,##0.00;-$#,##0.00;""'
     total_row = 33
     summary[f"A{total_row}"] = "Total open balance"
     summary[f"A{total_row}"].font = Font(bold=True)
-    summary[f"D{total_row}"] = "=SUM(D2:D31)"
+    summary[f"D{total_row}"] = f"=SUM(Tracker!I2:I{TRACKER_LAST_ROW})"
     summary[f"D{total_row}"].font = Font(bold=True)
-    summary[f"D{total_row}"].number_format = '$#,##0.00;-$#,##0.00;""'
-    summary["A35"] = "Edit the family member names in column A to match your situation."
-    summary["A35"].font = Font(italic=True, color="5F6D7A")
-    summary.merge_cells("A35:E35")
+    summary[f"D{total_row}"].number_format = "$#,##0.00;-$#,##0.00;$0.00"
+    format_name_warning(summary, "A35:E35", (
+        '=IF(Tracker!$O$1>0,"Some Tracker rows need a name on Summary. Check the highlighted name cells in Tracker.","")'
+    ))
+    summary["A36"] = "Add each family member once in Summary column A. Fill in any highlighted blank names in Tracker."
+    summary["A36"].font = Font(italic=True, color="5F6D7A")
+    summary.merge_cells("A36:E36")
     summary.freeze_panes = "A2"
     summary.auto_filter.ref = "A1:E31"
     for column, width in {"A": 22, "B": 18, "C": 18, "D": 18, "E": 34}.items():
@@ -318,6 +348,7 @@ def build_workbook():
     for cell in ("B3", "D3", "F3"):
         monthly[cell].fill = PatternFill("solid", fgColor="FFFFFF")
         monthly[cell].border = Border(bottom=Side(style="thin", color="9AA7B3"))
+    format_name_warning(monthly, "A4:F4", '=IF(Summary!A35="","",Summary!A35)')
     monthly.merge_cells("A5:F5")
     monthly["A5"] = "Current balances to review"
     monthly["A5"].font = Font(bold=True, size=13, color="18212B")
@@ -331,7 +362,7 @@ def build_workbook():
     style_header(monthly[6])
     for row in range(7, 37):
         source_row = row - 5
-        monthly[f"A{row}"] = f'=IF(Summary!A{source_row}="","",Summary!A{source_row})'
+        monthly[f"A{row}"] = f'=IF(TRIM(Summary!A{source_row})="","",Summary!A{source_row})'
         monthly[f"B{row}"] = f'=IF(A{row}="","",Summary!D{source_row})'
         monthly[f"B{row}"].number_format = '$#,##0.00;-$#,##0.00;""'
         monthly[f"D{row}"].number_format = "yyyy-mm-dd"
@@ -592,9 +623,13 @@ def build_pdf():
 
 
 def main():
+    parser = ArgumentParser()
+    parser.add_argument("--xlsx-only", action="store_true", help="Regenerate only the Excel workbook.")
+    args = parser.parse_args()
     DOWNLOADS.mkdir(parents=True, exist_ok=True)
-    build_csv()
-    build_pdf()
+    if not args.xlsx_only:
+        build_csv()
+        build_pdf()
     workbook = build_workbook()
     workbook.save(DOWNLOADS / "family-reimbursement-tracker-template.xlsx")
 
