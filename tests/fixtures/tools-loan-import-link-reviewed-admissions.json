@@ -1,0 +1,20 @@
+{
+  "tools/index.html": [
+    [
+      "          \"url\": \"https://you-owe-me.com/tools/\",\n          \"dateModified\": \"2026-11-14\",\n          \"publisher\": {\n",
+      "          \"url\": \"https://you-owe-me.com/tools/\",\n          \"dateModified\": \"2026-10-27\",\n          \"publisher\": {\n"
+    ],
+    [
+      "                <a href=\"/tools/split-expense-calculator/\" class=\"lt-cardCta\">Open split calculator</a>\n              </article>\n",
+      "                <a href=\"/tools/split-expense-calculator/\" class=\"lt-cardCta\">Open split calculator</a>\n              <p data-loan-rollout hidden><a href=\"/tools/personal-loan-payment-tracker/#import-loan-history\">Import an existing personal loan history and check what remains</a></p>\n</article>\n"
+    ],
+    [
+      "                <a href=\"/tools/personal-loan-payment-tracker/\" class=\"lt-cardCta\">Track actual repayments</a>\n                <p class=\"lt-bestFit\"><a href=\"/tools/personal-loan-payment-tracker/#loan-import-guide\" style=\"text-decoration: underline; text-underline-offset: 0.18em;\">Import an existing personal loan history</a></p>\n              </article>\n",
+      "                <a href=\"/tools/personal-loan-payment-tracker/\" class=\"lt-cardCta\">Track actual repayments</a>\n              </article>\n"
+    ],
+    [
+      "          <p class=\"lt-pageMeta\">Updated <time datetime=\"2026-11-14\">November 14, 2026</time></p>\n",
+      "          <p class=\"lt-pageMeta\">Updated <time datetime=\"2026-10-27\">October 27, 2026</time></p>\n"
+    ]
+  ]
+}

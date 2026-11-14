@@ -1398,7 +1398,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/app-to-track-money-owed/", "/solutions/personal-loan-repayment-tracker/", "/solutions/debt-repayment-tracker/", "/solutions/shared-expense-tracker/", "/solutions/group-payback-tracker/", "/solutions/family-reimbursement-tracker/"],
     appStoreCpp: "general",
     tags: ["tools", "calculators", "templates", "message-examples", "formal-debt"],
-    updated: "2026-10-27",
+    updated: "2026-11-14",
     status: "live",
     priority: "core",
     primaryCta: "Choose a free tool",
