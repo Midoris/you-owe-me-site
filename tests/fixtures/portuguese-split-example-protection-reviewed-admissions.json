@@ -1,0 +1,40 @@
+{
+  "pt/ferramentas/calculadora-dividir-despesas/index.html": [
+    [
+      "      },\n      \"dateModified\": \"2026-11-14\",\n      \"isPartOf\": {\n",
+      "      },\n      \"dateModified\": \"2026-11-05\",\n      \"isPartOf\": {\n"
+    ],
+    [
+      "\n          <p class=\"lt-pageMeta\">Atualizado em <time datetime=\"2026-11-14\">14 de novembro de 2026</time></p>\n        </article>\n",
+      "\n          <p class=\"lt-pageMeta\">Atualizado em <time datetime=\"2026-11-05\">5 de novembro de 2026</time></p>\n        </article>\n"
+    ],
+    [
+      "    <script src=\"/scripts/tool-transfer.js?v=plsplit20261106\"></script>\n    <script src=\"/scripts/portuguese-number-input.js?v=ptsplit20261105\"></script><script src=\"/scripts/split-expense-calculator.js?v=ptsplitexample20261114\"></script>\n    <script src=\"/scripts/anniversary-announcement.js?v=kohome20261106\"></script>\n",
+      "    <script src=\"/scripts/tool-transfer.js?v=plsplit20261106\"></script>\n    <script src=\"/scripts/portuguese-number-input.js?v=ptsplit20261105\"></script><script src=\"/scripts/split-expense-calculator.js?v=plsplit20261106\"></script>\n    <script src=\"/scripts/anniversary-announcement.js?v=kohome20261106\"></script>\n"
+    ]
+  ],
+  "scripts/split-expense-calculator.js": [
+    [
+      "  const isFrench = locale === \"fr\";\n  const exampleReplacementConfirmation = new Map([\n    [\"ar\", \"سيستبدل المثال بيانات التقسيم الحالية. هل تريد المتابعة؟\"],\n    [\"fr\", \"Charger l’exemple remplacera les données de votre calcul en cours. Voulez-vous continuer ?\"],\n    [\"pt-BR\", \"Usar o exemplo vai substituir os dados da sua divisão atual. Quer continuar?\"],\n  ]).get(locale);\n  const isJapanese = locale === \"ja\";\n",
+      "  const isFrench = locale === \"fr\";\n  const guardExampleReplacement = isArabic || isFrench;\n  const isJapanese = locale === \"ja\";\n"
+    ],
+    [
+      "\n  function useExample({ explicit = true } = {}) {\n    if (exampleReplacementConfirmation && (meaningfulEdit || hasEditedStructure) &&\n        !window.confirm(exampleReplacementConfirmation)) return;\n    hasEditedStructure = false;\n    meaningfulEdit = false; transferAttempt = null;\n    hasExplicitInteraction = explicit;\n    state.currency = defaultCurrency;\n",
+      "\n  function useExample() {\n    if (guardExampleReplacement && (meaningfulEdit || hasEditedStructure)) {\n      const confirmation = isArabic\n        ? \"سيستبدل المثال بيانات التقسيم الحالية. هل تريد المتابعة؟\"\n        : \"Charger l’exemple remplacera les données de votre calcul en cours. Voulez-vous continuer ?\";\n      if (!window.confirm(confirmation)) return;\n    }\n    hasEditedStructure = false;\n    meaningfulEdit = false; transferAttempt = null;\n    hasExplicitInteraction = true;\n    state.currency = defaultCurrency;\n"
+    ],
+    [
+      "      // Only record example activation when it proceeds past confirmation.\n      if (exampleReplacementConfirmation && control?.getAttribute(\"data-action\") === \"use-example\") return;\n      if (control && root.contains(control)) markInteraction();\n",
+      "      // Only record example activation when it proceeds past confirmation.\n      if (guardExampleReplacement && control?.getAttribute(\"data-action\") === \"use-example\") return;\n      if (control && root.contains(control)) markInteraction();\n"
+    ],
+    [
+      "    setInitialState();\n    if (isJapanese || isPortuguese || isItalian || isPolish) {\n      useExample({ explicit: !isPortuguese });\n      hasExplicitInteraction = false;\n    }\n    try {\n",
+      "    setInitialState();\n    if (isJapanese || isPortuguese || isItalian || isPolish) { useExample(); hasExplicitInteraction = false; }\n    try {\n"
+    ]
+  ],
+  "content/site-locales.mjs": [
+    [
+      "  \"title\": \"Calculadora para dividir despesas\",\n  \"updated\": \"2026-11-14\",\n  \"assetVersions\": { \"/scripts/split-expense-calculator.js\": \"ptsplitexample20261114\" },\n  \"complete\": true,\n",
+      "  \"title\": \"Calculadora para dividir despesas\",\n  \"updated\": \"2026-11-05\",\n  \"complete\": true,\n"
+    ]
+  ]
+}

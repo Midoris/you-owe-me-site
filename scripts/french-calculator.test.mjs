@@ -14,7 +14,9 @@ const plain=value=>JSON.parse(JSON.stringify(value));
 const flush=()=>new Promise(resolve=>setImmediate(resolve));
 const fixtures=JSON.parse(read("tests/fixtures/french-number-input-fixtures.json"));
 function localizedCalculator(lang = "fr", options = {}) {
-  const document = parseStaticPage(page);
+  const document = parseStaticPage(lang === "pt-BR"
+    ? read("pt/ferramentas/calculadora-dividir-despesas/index.html")
+    : page);
   document.documentElement = { lang };
   if (lang === "de") document.querySelector('link[rel="canonical"]').setAttribute("href", germanCanonical);
   if (lang === "es") document.querySelector('link[rel="canonical"]').setAttribute("href", spanishCanonical);
@@ -45,6 +47,7 @@ function localizedCalculator(lang = "fr", options = {}) {
   });
   vm.runInContext(arabicInput, context);
   vm.runInContext(frenchInput, context);
+  if (lang === "pt-BR") vm.runInContext(read("scripts/portuguese-number-input.js"), context);
   vm.runInContext(spanishLocale, context);
   vm.runInContext(transferScript, context);
   vm.runInContext(calculator.replace('  if (document.readyState === "loading")',
@@ -98,12 +101,13 @@ test("French copied/shared summaries retain currency, creditor direction and loc
  const env=localizedCalculator();env.action("use-example");env.action("copy-summary");await flush();const text=env.copied.at(-1),visible=text.replace(/[\u2066-\u2069]/g,"");assert.ok(visible.includes("Sam doit 25\u00a0$ à Alex"));assert.ok(visible.includes("Sam doit 10\u00a0$ à Mia"));assert.ok(text.split("\n").filter(Boolean).every(line=>line.startsWith("\u2066")&&line.endsWith("\u2069")));assert.equal((text.match(/[\u2066-\u2068]/g)||[]).length,(text.match(/\u2069/g)||[]).length);assert.ok(!/[\u202a-\u202e]/.test(text));assert.ok(text.includes(frenchCanonical));assert.ok(!text.includes("EUR"));env.action("share-summary");await flush();assert.equal(env.shared[0].text,text);assert.equal(env.shared[0].url,frenchCanonical);
 });
 
-test("Arabic and French prompt only when loading the example would replace entered work", () => {
+test("Arabic, French and Brazilian Portuguese prompt only when the example would replace entered work", () => {
   const localized = {
-    ar: { amount: "٩٠٫٥٠", prompt: /المثال.*المتابعة؟/ },
-    fr: { amount: "90,50", prompt: /l’exemple.*continuer \?/ },
+    ar: { amount: "٩٠٫٥٠", currency: "$", prompt: /المثال.*المتابعة؟/ },
+    fr: { amount: "90,50", currency: "$", prompt: /l’exemple.*continuer \?/ },
+    "pt-BR": { amount: "90,50", currency: "R$", prompt: /Usar o exemplo vai substituir os dados da sua divisão atual\. Quer continuar\?/ },
   };
-  for (const [lang, { amount, prompt }] of Object.entries(localized)) {
+  for (const [lang, { amount, currency, prompt }] of Object.entries(localized)) {
     const mutations = {
       amount: (env, expense) => env.edit(`#amount-${expense.id}`, amount),
       currency: env => env.edit("#currency-symbol", "EUR"),
@@ -145,14 +149,14 @@ test("Arabic and French prompt only when loading the example would replace enter
     accepted.edit("#currency-symbol", "EUR");
     accepted.action("use-example");
     assert.equal(accepted.confirmations.length, 1);
-    assert.equal(accepted.api.state.currency, "$");
+    assert.equal(accepted.api.state.currency, currency);
     assert.equal(accepted.api.state.expenses.length, 3);
     assert.equal(accepted.query("[data-tool-transfer]").hidden, true);
     accepted.action("use-example");
     assert.equal(accepted.confirmations.length, 1);
   }
 
-  for (const lang of ["en", "es", "de", "ja", "pt-BR", "it", "pl"]) {
+  for (const lang of ["en", "es", "de", "ja", "it", "pl"]) {
     const env = localizedCalculator(lang);
     env.edit("#currency-symbol", "EUR");
     env.action("use-example");
@@ -160,8 +164,8 @@ test("Arabic and French prompt only when loading the example would replace enter
   }
 });
 
-test("canceling the Arabic or French example preserves the copied result and restored iPhone transfer", async () => {
-  for (const [lang, amount] of [["ar", "٩٠٫٥٠"], ["fr", "90,50"]]) {
+test("canceling the Arabic, French or Brazilian Portuguese example preserves the copied result and restored iPhone transfer", async () => {
+  for (const [lang, amount] of [["ar", "٩٠٫٥٠"], ["fr", "90,50"], ["pt-BR", "90,50"]]) {
     const snapshot = await returnSnapshot(lang, amount);
     const env = localizedCalculator(lang, { storage: [["uomi-exp003-return", JSON.stringify(snapshot)]] });
     const before = plain(env.api.state);
@@ -174,6 +178,7 @@ test("canceling the Arabic or French example preserves the copied result and res
     env.action("use-example");
     assert.equal(env.confirmations.length, 1);
     assert.deepEqual(plain(env.api.state), before);
+    assert.equal(env.query(`#amount-${before.expenses[0].id}`).value, amount);
     assert.equal(env.query("[data-settlement]").textContent, settlement);
     assert.equal(env.query("[data-copy-status]").textContent, status);
     assert.equal(env.query("[data-result-actions]").hidden, false);
@@ -187,6 +192,7 @@ test("canceling the Arabic or French example preserves the copied result and res
     await flush();
     assert.ok(env.copied[0].length);
     assert.equal(env.copied[1], env.copied[0]);
+    if (lang === "pt-BR") assert.match(env.copied[1], /Total das despesas: R\$ 90,50/);
     env.action("track-split");
     await flush();
     const body = JSON.parse(env.requests[0][1].body);
@@ -195,6 +201,32 @@ test("canceling the Arabic or French example preserves the copied result and res
     assert.equal(body.draft.costs[0].amount, 9050);
     assert.deepEqual(JSON.parse(env.storage.get("uomi-exp003-return")), snapshot);
   }
+});
+
+test("the Portuguese preview and a canceled replacement do not report a result-ready event", () => {
+  const preview = localizedCalculator("pt-BR");
+  assert.equal(preview.api.calculate().total, 180);
+  assert.equal(preview.query("[data-result-actions]").hidden, true);
+  assert.deepEqual(preview.events, []);
+  preview.action("use-example");
+  assert.deepEqual(preview.confirmations, []);
+  assert.equal(preview.query("[data-result-actions]").hidden, false);
+  assert.deepEqual(preview.events.map(event => event.detail), [{ eventName: "split_result_ready" }]);
+
+  let accept = false;
+  const dirty = localizedCalculator("pt-BR", { confirm: () => accept });
+  dirty.action("clear-all");
+  const amount = `#amount-${dirty.api.state.expenses[0].id}`;
+  dirty.edit(amount, "90,");
+  dirty.action("use-example");
+  assert.equal(dirty.query(amount).value, "90,");
+  assert.equal(dirty.confirmations.length, 1);
+  assert.deepEqual(dirty.events, []);
+  accept = true;
+  dirty.action("use-example");
+  assert.equal(dirty.confirmations.length, 2);
+  assert.equal(dirty.api.calculate().total, 180);
+  assert.deepEqual(dirty.events.map(event => event.detail), [{ eventName: "split_result_ready" }]);
 });
 
 test("French restored numeric values follow the same fail-closed input boundary",()=>{
@@ -222,7 +254,7 @@ test("French private continuation preserves all four accepted sections and priva
 // another calculator locale in the same tab. Exercise actual consent/storage.
 async function returnSnapshot(language, amount, blankLabels = false) {
   const env = localizedCalculator(language);
-  Object.assign(env.api.state, { currency: "EUR", people: [
+  Object.assign(env.api.state, { currency: language === "pt-BR" ? "R$" : "EUR", people: [
     { id: "audit-p0", name: blankLabels ? "" : "Élodie" }, { id: "audit-p1", name: "أحمد (Alex 2)" },
   ], expenses: [{ id: "audit-e0", description: blankLabels ? "" : "Synthetic return check", amount,
     paidBy: "audit-p0", includedPeople: ["audit-p0", "audit-p1"] }], nextPersonNumber: 3, nextExpenseNumber: 2 });

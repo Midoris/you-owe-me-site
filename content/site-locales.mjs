@@ -481,7 +481,8 @@ export const portuguesePages = [
   "en": "/tools/split-expense-calculator/",
   "pt": "/pt/ferramentas/calculadora-dividir-despesas/",
   "title": "Calculadora para dividir despesas",
-  "updated": "2026-11-05",
+  "updated": "2026-11-14",
+  "assetVersions": { "/scripts/split-expense-calculator.js": "ptsplitexample20261114" },
   "complete": true,
   "discoveryDescription": "Some o que cada pessoa pagou e veja quem precisa pagar a quem. Divida jantar, viagem, mercado e outras despesas, escolhendo os participantes de cada gasto.",
   "registry": {

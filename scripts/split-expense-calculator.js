@@ -7,7 +7,11 @@
   const locale = document.documentElement?.lang || "en";
   const isArabic = locale === "ar";
   const isFrench = locale === "fr";
-  const guardExampleReplacement = isArabic || isFrench;
+  const exampleReplacementConfirmation = new Map([
+    ["ar", "سيستبدل المثال بيانات التقسيم الحالية. هل تريد المتابعة؟"],
+    ["fr", "Charger l’exemple remplacera les données de votre calcul en cours. Voulez-vous continuer ?"],
+    ["pt-BR", "Usar o exemplo vai substituir os dados da sua divisão atual. Quer continuar?"],
+  ]).get(locale);
   const isJapanese = locale === "ja";
   const isPortuguese = locale === "pt-BR";
   const isItalian = locale === "it";
@@ -737,16 +741,12 @@
     state.message = "";
   }
 
-  function useExample() {
-    if (guardExampleReplacement && (meaningfulEdit || hasEditedStructure)) {
-      const confirmation = isArabic
-        ? "سيستبدل المثال بيانات التقسيم الحالية. هل تريد المتابعة؟"
-        : "Charger l’exemple remplacera les données de votre calcul en cours. Voulez-vous continuer ?";
-      if (!window.confirm(confirmation)) return;
-    }
+  function useExample({ explicit = true } = {}) {
+    if (exampleReplacementConfirmation && (meaningfulEdit || hasEditedStructure) &&
+        !window.confirm(exampleReplacementConfirmation)) return;
     hasEditedStructure = false;
     meaningfulEdit = false; transferAttempt = null;
-    hasExplicitInteraction = true;
+    hasExplicitInteraction = explicit;
     state.currency = defaultCurrency;
     state.nextPersonNumber = 1;
     state.people = (isJapanese ? ["悠太", "美咲", "葵"] : isPortuguese ? ["Lucas", "Marina", "Bruno"] : isItalian ? ["Luca", "Giulia", "Marco"] : isPolish ? ["Anna", "Jakub", "Julia"] : ["Alex", "Mia", "Sam"]).map(name => createPerson(name));
@@ -945,7 +945,7 @@
     root.addEventListener("click", function (event) {
       const control = event.target && event.target.closest("button, input, select, textarea");
       // Only record example activation when it proceeds past confirmation.
-      if (guardExampleReplacement && control?.getAttribute("data-action") === "use-example") return;
+      if (exampleReplacementConfirmation && control?.getAttribute("data-action") === "use-example") return;
       if (control && root.contains(control)) markInteraction();
     }, true);
   }
@@ -972,7 +972,10 @@
     els.shareSummary = document.querySelector('[data-action="share-summary"]');
 
     setInitialState();
-    if (isJapanese || isPortuguese || isItalian || isPolish) { useExample(); hasExplicitInteraction = false; }
+    if (isJapanese || isPortuguese || isItalian || isPolish) {
+      useExample({ explicit: !isPortuguese });
+      hasExplicitInteraction = false;
+    }
     try {
       const saved = sessionStorage.getItem("uomi-exp003-return");
       sessionStorage.removeItem("uomi-exp003-return");

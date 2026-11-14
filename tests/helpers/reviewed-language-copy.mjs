@@ -5,6 +5,7 @@ function readSeoAdmissions(change) {
 }
 
 const seoAdmissions = [
+  readSeoAdmissions("portuguese-split-example-protection"),
   readSeoAdmissions("sibling-planner-current-summary"),
   readSeoAdmissions("trip-planner-current-shares"),
   readSeoAdmissions("temporary-support-reminder-fields"),
