@@ -238,6 +238,15 @@ body.friend-borrow-money-page .lt-primaryCta:hover {
   margin-bottom: 0 !important;
 }
 
+.friend-borrow-pdf-link {
+  display: inline-block;
+  margin-top: 0.35rem;
+  padding-block: 0.2rem;
+  border-bottom: 0;
+  text-decoration: underline;
+  text-underline-offset: 0.15em;
+}
+
 .friend-borrow-template-grid .template-card {
   min-width: 0;
 }

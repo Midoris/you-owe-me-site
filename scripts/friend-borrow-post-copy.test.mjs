@@ -64,8 +64,8 @@ test('authored prompt is visible after the whole grid with ordinary attributed a
   assert.equal(env.anchor.hidden, true);
   invariant(env);
   assert.ok(page.indexOf('/scripts/friend-borrow-post-copy.js?v=additional-opportunities-20261025-1') > page.indexOf('/scripts/friend-borrow-money-answer.js'));
-  assert.match(page, /dateModified": "2026-10-25"/);
-  assert.match(page, /Updated <time datetime="2026-10-25">October 25, 2026/);
+  assert.match(page, /dateModified": "2026-11-14"/);
+  assert.match(page, /Updated <time datetime="2026-11-14">November 14, 2026/);
   assert.doesNotMatch(controller, /innerHTML|cloneNode|scrollIntoView|\.focus\(|navigator|localStorage|CustomEvent/);
 });
 

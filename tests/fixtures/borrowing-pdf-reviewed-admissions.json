@@ -1,0 +1,30 @@
+{
+  "blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/index.html": [
+    [
+      "    <meta property=\"article:published_time\" content=\"2026-07-08\" />\n    <meta property=\"article:modified_time\" content=\"2026-11-14T00:00:00+07:00\" />\n    <meta property=\"article:author\" content=\"Ievgenii Iablonskyi\" />\n",
+      "    <meta property=\"article:published_time\" content=\"2026-07-08\" />\n    <meta property=\"article:modified_time\" content=\"2026-10-25T00:00:00+07:00\" />\n    <meta property=\"article:author\" content=\"Ievgenii Iablonskyi\" />\n"
+    ],
+    [
+      "          \"datePublished\": \"2026-07-08\",\n          \"dateModified\": \"2026-11-14\",\n          \"mainEntityOfPage\": {\n",
+      "          \"datePublished\": \"2026-07-08\",\n          \"dateModified\": \"2026-10-25\",\n          \"mainEntityOfPage\": {\n"
+    ],
+    [
+      "    <link rel=\"stylesheet\" href=\"/styles/repayment-reminder-text-examples.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css?v=borrowing-pdf-20261114\" />\n    <link rel=\"stylesheet\" href=\"/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1\" />\n",
+      "    <link rel=\"stylesheet\" href=\"/styles/repayment-reminder-text-examples.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css?v=additional-opportunities-20261011-1\" />\n    <link rel=\"stylesheet\" href=\"/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1\" />\n"
+    ],
+    [
+      "            <p>Choose the example that fits, then edit the details before sending. Only promise a repayment date you can reasonably meet; if you are unsure, use the check-in example.</p>\n            <p><a class=\"friend-borrow-pdf-link\" href=\"/downloads/borrowing-money-from-a-friend-text-examples.pdf\" download=\"borrowing-money-from-a-friend-text-examples.pdf\" data-track-event=\"site_link_click\" data-track-location=\"friend_borrow_text_examples_pdf_download\">Download the text examples (PDF)</a></p>\n            <p class=\"friend-borrow-copy-status\" aria-live=\"polite\" data-copy-status></p>\n",
+      "            <p>Choose the example that fits, then edit the details before sending. Only promise a repayment date you can reasonably meet; if you are unsure, use the check-in example.</p>\n            <p class=\"friend-borrow-copy-status\" aria-live=\"polite\" data-copy-status></p>\n"
+    ],
+    [
+      "\n          <p class=\"lt-pageMeta\">Published <time datetime=\"2026-07-08\">July 8, 2026</time> &middot; Updated <time datetime=\"2026-11-14\">November 14, 2026</time></p>\n\n",
+      "\n          <p class=\"lt-pageMeta\">Published <time datetime=\"2026-07-08\">July 8, 2026</time> &middot; Updated <time datetime=\"2026-10-25\">October 25, 2026</time></p>\n\n"
+    ]
+  ],
+  "styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css": [
+    [
+      "  margin-bottom: 0 !important;\n}\n\n.friend-borrow-pdf-link {\n  display: inline-block;\n  margin-top: 0.35rem;\n  padding-block: 0.2rem;\n  border-bottom: 0;\n  text-decoration: underline;\n  text-underline-offset: 0.15em;\n}\n",
+      "  margin-bottom: 0 !important;\n}\n"
+    ]
+  ]
+}

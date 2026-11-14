@@ -1,11 +1,31 @@
 import fs from "node:fs";
 
+function readSeoAdmissions(change) {
+  return JSON.parse(fs.readFileSync(new URL(`../fixtures/${change}-reviewed-admissions.json`, import.meta.url), "utf8"));
+}
 
+const seoAdmissions = {
+  ...readSeoAdmissions("borrowing-pdf"),
+};
 
-
+// Reverse only unique, literal fragments from the reviewed changes on these paths.
+export function normalizeReviewedSeoSource(source, file) {
+  if (!Object.hasOwn(seoAdmissions, file)) return source;
+  const bytes = Buffer.isBuffer(source);
+  const original = bytes ? source.toString("utf8") : source;
+  let text = original;
+  for (const [current, previous] of seoAdmissions[file]) {
+    const offset = text.indexOf(current);
+    if (offset !== -1 && offset === text.lastIndexOf(current)) {
+      text = text.slice(0, offset) + previous + text.slice(offset + current.length);
+    }
+  }
+  return text === original ? source : bytes ? Buffer.from(text) : text;
+}
 
 const koreanMoneyOwedAdmissions = JSON.parse(fs.readFileSync(new URL("../fixtures/korean-money-owed-reviewed-admissions.json", import.meta.url), "utf8"));
 export function normalizeReviewedKoreanMoneyOwedSource(source, file) {
+  source = normalizeReviewedSeoSource(source, file);
   if (!koreanMoneyOwedAdmissions.source[file]) return source;
   const bytes = Buffer.isBuffer(source);
   let text = bytes ? source.toString("utf8") : source;
@@ -13,6 +33,8 @@ export function normalizeReviewedKoreanMoneyOwedSource(source, file) {
   return bytes ? Buffer.from(text) : text;
 }
 export function normalizeReviewedKoreanMoneyOwedIntegration(html) {
+  const canonicalPath = html.match(/<link rel="canonical" href="https:\/\/you-owe-me\.com\/([^"?#]*\/)"/u)?.[1];
+  if (canonicalPath) html = normalizeReviewedSeoSource(html, `${canonicalPath}index.html`);
   const route = '/ko/solutions/app-to-track-money-owed/';
   html = html.replace('    <link rel="alternate" hreflang="ko" href="https://you-owe-me.com'+route+'" />\n', '');
   for (const direction of ['', ' dir="ltr"']) html = html.replace('<span aria-hidden="true"> · </span><a href="'+route+'" lang="ko"'+direction+' hreflang="ko">한국어</a>', '');

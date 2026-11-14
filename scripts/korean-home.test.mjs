@@ -6,7 +6,7 @@ import {parseStaticPage} from '../tests/helpers/static-dom.mjs';
 import {siteLocales,koreanPages,koreanShared,completedCounterparts,localizedSourceRoute} from '../content/site-locales.mjs';
 import {contentRegistry} from '../content/content-registry.mjs';
 import {renderLocaleHtml,renderLocaleDiscovery} from './sync-site-locales.mjs';
-import {normalizeReviewedKoreanHomeIntegration,normalizeReviewedKoreanHomeSource} from '../tests/helpers/reviewed-language-copy.mjs';
+import {normalizeReviewedKoreanHomeIntegration,normalizeReviewedKoreanHomeSource,normalizeReviewedSeoSource} from '../tests/helpers/reviewed-language-copy.mjs';
 const base='624c89a98641c42076dcb21ad2fb05c7cc897b52';
 const read=f=>fs.readFileSync(new URL('../'+f,import.meta.url),'utf8');
 const page=read('ko/index.html'),d=parseStaticPage(page);
@@ -47,5 +47,16 @@ test('all existing HTML and nine shared sources roundtrip exactly to accepted pr
 test('old artwork, native templates, private hosting and all prior home design fixes remain exact Git objects',()=>{
  const rows=execFileSync('git',['ls-tree','-r','-z',base],{encoding:'utf8'}).split('\0').filter(Boolean).map(row=>[row.slice(row.indexOf('\t')+1),row.slice(0,row.indexOf('\t')).split(' ')[2]]);
  const protectedRows=rows.filter(([f])=>f.startsWith('private-continuation/')||f.startsWith('images/')||f.startsWith('downloads/')||f.startsWith('styles/')||f.startsWith('content/roommate-workbooks/')||f.startsWith('assets/css/'));
- const hashes=execFileSync('git',['hash-object','--stdin-paths'],{input:protectedRows.map(([f])=>f).join('\n')+'\n',encoding:'utf8'}).trim().split('\n');protectedRows.forEach(([f,h],i)=>assert.equal(hashes[i],h,f));
+ const hashes=execFileSync('git',['hash-object','--stdin-paths'],{input:protectedRows.map(([f])=>f).join('\n')+'\n',encoding:'utf8'}).trim().split('\n');
+ for (const [i, [file, expectedHash]] of protectedRows.entries()) {
+   let hash = hashes[i];
+   if (hash !== expectedHash && file.endsWith('.css')) {
+     const source = fs.readFileSync(new URL('../' + file, import.meta.url));
+     const previous = normalizeReviewedSeoSource(source, file);
+     if (previous !== source) {
+       hash = execFileSync('git', ['hash-object', '--stdin'], {input:previous, encoding:'utf8'}).trim();
+     }
+   }
+   assert.equal(hash, expectedHash, file);
+ }
 });

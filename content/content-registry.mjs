@@ -4470,7 +4470,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/temporary-financial-support-tracker/"],
     appStoreCpp: "temporary-financial-support",
     tags: ["guide", "temporary-support", "borrow money from friend", "ask friend for money", "ask a friend to lend money", "friend loan", "repayment expectation", "gift vs loan", "repayment plan", "money conversations", "borrower side"],
-    updated: "2026-10-25",
+    updated: "2026-11-14",
     status: "live",
     priority: "high",
     primaryCta: "Copy a clear friend money ask",
