@@ -11,16 +11,37 @@
     replace: "If someone cancels, we will try to replace the place first, apply any refund, credit, resale, or replacement payment, and then recalculate only what remains.",
     resplit: "If someone cancels, we will apply refunds, credits, resale, or replacement payments first, then the remaining travelers will re-split any unrecovered cost.",
   };
+  const MAX_OTHER_PEOPLE = 100;
+  const MAX_AMOUNT_CENTS = Number.MAX_SAFE_INTEGER;
 
-  function parseAmount(value) {
-    const normalized = String(value == null ? "" : value).trim().replace(/,/g, "");
-    if (!/^(?:\d+\.?\d*|\.\d+)$/.test(normalized)) return NaN;
-    const number = Number(normalized);
-    return Number.isFinite(number) ? number : NaN;
+  function parseCents(value) {
+    const raw = String(value ?? "").trim();
+    if (!/^(?:(?:\d+|\d{1,3}(?:,\d{3})+)(?:\.\d{1,2})?|\.\d{1,2})$/.test(raw)) return NaN;
+    const [whole, fraction = ""] = raw.replace(/,/g, "").split(".");
+    const cents = Number(whole + fraction.padEnd(2, "0"));
+    return Number.isSafeInteger(cents) ? cents : NaN;
   }
 
-  function money(value) {
-    return Number(value).toFixed(2);
+  function money(cents) {
+    const fraction = cents % 100;
+    return `${(cents - fraction) / 100}.${String(fraction).padStart(2, "0")}`;
+  }
+
+  function validOtherPeople(count) {
+    return Number.isInteger(count) && count >= 1 && count <= MAX_OTHER_PEOPLE;
+  }
+
+  function allocateShares(totalCents, otherPeople, includeSelf) {
+    const shareCount = otherPeople + (includeSelf ? 1 : 0);
+    const extraShares = totalCents % shareCount;
+    const baseShare = (totalCents - extraShares) / shareCount;
+    // The listed travelers get the extra cents first, in row order; the organizer is last.
+    const shareCents = Array.from({ length: shareCount }, (_, index) => baseShare + (index < extraShares ? 1 : 0));
+    return { shareCount, extraShares, baseShare, shareCents, selfShareCents: includeSelf ? shareCents[otherPeople] : null };
+  }
+
+  function shareDisplay(currency, split) {
+    return split.extraShares ? `${currency} ${money(split.baseShare)}–${money(split.baseShare + 1)} per person` : `${currency} ${money(split.baseShare)} each`;
   }
 
   function bookingLabel(type, name) {
@@ -28,13 +49,13 @@
   }
 
   function statusFor(received, share) {
+    if (received >= share) return "paid";
     if (received <= 0) return "open";
-    if (received < share - 0.0000001) return "partial";
-    return "paid";
+    return "partial";
   }
 
   function recommendation(state) {
-    const allCovered = state.participants.length > 0 && state.participants.every((person) => person.received >= state.share - 0.0000001);
+    const allCovered = state.participants.length > 0 && state.participants.every((person) => person.remainingCents === 0);
     if (allCovered) return { key: "covered", label: "Fixed shares are covered", explanation: "Everyone else’s fixed share is covered. Keep the cancellation/refund rule with the booking record and handle variable trip costs separately after they happen." };
     if (state.bookingStatus === "already-booked") return { key: "already", label: "Set a fixed pay-before-departure date", explanation: "The booking is already made, so the useful next step is a clear deadline for the remaining fixed shares, plus a written cancellation/refund rule." };
     if (state.refundability === "Nonrefundable" || state.comfortableCarry === "No" || state.priorDelays === "Yes") return { key: "collect", label: "Collect before booking", explanation: "This booking has enough fixed risk that the clearest plan is to collect the agreed shares before one person commits the full amount." };
@@ -47,36 +68,41 @@
 
   function buildArtifacts(state, result) {
     const label = bookingLabel(state.bookingType, state.bookingName);
-    const base = `${label}: ${state.currency} ${money(state.total)} total for ${state.shareCount} people (${state.currency} ${money(state.share)} each).`;
+    const checkIndividualBalance = state.extraShares > 0 || state.participants.some((person) => person.receivedCents > 0);
+    const total = `${state.currency} ${money(state.totalCents)} total`;
+    const individualShare = `${state.currency} ${money(state.baseShare)}`;
+    const splitTerms = `${total} for ${state.shareCount} people${checkIndividualBalance ? "" : ` (${individualShare} each)`}`;
+    const base = `${label}: ${splitTerms}.`;
     const policySentence = cancellationSentence(state.cancellationRule, state.customRule);
+    const balancePolicy = checkIndividualBalance ? " Check your remaining balance with the organizer before sending any payment." : "";
+    const paymentRequest = checkIndividualBalance
+      ? `Please check your remaining balance with me and send anything still due by ${state.deadlineDisplay}`
+      : `Please send your fixed share of ${individualShare} by ${state.deadlineDisplay}`;
     let policy;
     let message;
     if (result.key === "covered") {
       policy = `${base} Everyone else’s fixed share is covered. ${policySentence} Variable trip costs such as meals and taxis will be handled separately after they happen.`;
       message = `Thanks — everyone else’s fixed share for ${label} is covered. ${policySentence}`;
     } else if (state.bookingStatus === "already-booked") {
-      policy = `${label} is booked at ${state.currency} ${money(state.total)} total for ${state.shareCount} people (${state.currency} ${money(state.share)} each). The remaining fixed shares are due by ${state.deadlineDisplay} before travel. ${policySentence} Variable trip costs such as meals and taxis will be handled separately after they happen.`;
-      message = `${label} is booked. Your fixed share is ${state.currency} ${money(state.share)}, due by ${state.deadlineDisplay} before we travel. ${policySentence}`;
+      policy = `${label} is booked at ${splitTerms}. Any remaining fixed balance is due by ${state.deadlineDisplay} before travel.${balancePolicy} ${policySentence} Variable trip costs such as meals and taxis will be handled separately after they happen.`;
+      message = `${label} is booked. ${paymentRequest} before we travel. ${policySentence}`;
     } else if (result.key === "collect") {
-      policy = `${base} We will collect the fixed shares by ${state.deadlineDisplay} before booking. ${policySentence} Variable trip costs such as meals and taxis will be handled separately after they happen.`;
-      message = `I’m ready to book ${label}. It’s ${state.currency} ${money(state.total)} total, so ${state.currency} ${money(state.share)} each. Could everyone send the fixed share by ${state.deadlineDisplay}? I’ll book once the shares are in. ${policySentence}`;
+      policy = `${base} Any remaining fixed balance is due by ${state.deadlineDisplay} before booking.${balancePolicy} ${policySentence} Variable trip costs such as meals and taxis will be handled separately after they happen.`;
+      message = `I’m ready to book ${label} for ${total}. ${paymentRequest}. I’ll book once the shares are covered. ${policySentence}`;
     } else {
-      policy = `${base} The booking can be secured first, and the fixed shares are due by ${state.deadlineDisplay} before travel. ${policySentence} Variable trip costs such as meals and taxis will be handled separately after they happen.`;
-      message = `I’m going to secure ${label} now. It’s ${state.currency} ${money(state.total)} total, so ${state.currency} ${money(state.share)} each. Please send your fixed share by ${state.deadlineDisplay} before the trip. ${policySentence}`;
+      policy = `${base} The booking can be secured first. Any remaining fixed balance is due by ${state.deadlineDisplay} before travel.${balancePolicy} ${policySentence} Variable trip costs such as meals and taxis will be handled separately after they happen.`;
+      message = `I’m going to secure ${label} for ${total}. ${paymentRequest} before the trip. ${policySentence}`;
     }
     return { policy, message };
   }
 
   function calculate(input) {
-    const total = Number(input.total);
-    const otherPeople = Number(input.otherPeople);
-    const shareCount = otherPeople + (input.includeSelf ? 1 : 0);
-    const share = total / shareCount;
-    const participants = (input.participants || []).map((person, index) => ({
-      name: String(person.name || "").trim() || `Person ${index + 1}`,
-      received: Number(person.received),
-    }));
-    const state = { ...input, total, otherPeople, shareCount, share, participants };
+    const split = allocateShares(input.totalCents, input.otherPeople, input.includeSelf);
+    const participants = input.participants.map((person, index) => {
+      const shareCents = split.shareCents[index];
+      return { ...person, shareCents, remainingCents: shareCents - person.receivedCents, status: statusFor(person.receivedCents, shareCents) };
+    });
+    const state = { ...input, ...split, participants };
     const result = recommendation(state);
     return { ...state, result, artifacts: buildArtifacts(state, result) };
   }
@@ -111,11 +137,14 @@
     const roundingNote = $("rounding-note");
     const errorSummary = $("tbp-error-summary");
     const emptyState = $("planner-empty-state");
+    const initialPrompt = emptyState.textContent;
     const resultRegion = $("planner-result");
+    const resetButton = $("planner-reset");
+    const resultCopyButtons = resultRegion.querySelectorAll(".tbp-copyButton");
     const resultTitle = $("result-title");
     const paymentDeadline = $("payment-deadline");
     const refundDeadline = $("refund-deadline");
-    let participantState = [];
+    let currentPlan = null;
 
     paymentDeadline.min = todayLocal();
 
@@ -125,38 +154,40 @@
 
     function renderParticipants() {
       const parsed = Number(otherPeopleInput.value);
-      const count = Number.isInteger(parsed) && parsed >= 1 ? parsed : 0;
-      participantState = Array.from(participantRows.querySelectorAll(".tbp-participant")).map((row) => ({
+      if (!validOtherPeople(parsed) || parsed === participantRows.children.length) return;
+      const participantState = Array.from(participantRows.querySelectorAll(".tbp-participant")).map((row) => ({
         name: row.querySelector("[data-person-name]").value,
         received: row.querySelector("[data-person-received]").value,
       }));
       participantRows.replaceChildren();
-      for (let i = 0; i < count; i += 1) {
+      for (let i = 0; i < parsed; i += 1) {
         const row = document.createElement("div");
         row.className = "tbp-participant";
         row.innerHTML = `<div class="tbp-control"><label for="person-name-${i}">Person ${i + 1} name (optional)</label><input id="person-name-${i}" data-person-name type="text" placeholder="e.g. Maya" value="${escapeAttribute(participantState[i]?.name || "")}" /></div><div class="tbp-control"><label for="person-received-${i}">Amount received from this person</label><input id="person-received-${i}" data-person-received type="text" inputmode="decimal" placeholder="0" value="${escapeAttribute(participantState[i]?.received || "")}" aria-describedby="person-received-help-${i} person-received-error-${i}" /><p class="tbp-help" id="person-received-help-${i}">Leave at 0 if nothing has been received yet.</p><p class="tbp-fieldError" id="person-received-error-${i}"></p></div>`;
         participantRows.appendChild(row);
       }
-      updateLiveShare();
     }
 
     function escapeAttribute(value) {
       return String(value).replace(/&/g, "&amp;").replace(/"/g, "&quot;").replace(/</g, "&lt;");
     }
 
-    function updateLiveShare() {
-      const total = parseAmount(totalInput.value);
+    function draftSplit() {
+      const totalCents = parseCents(totalInput.value);
       const others = Number(otherPeopleInput.value);
-      const shareCount = others + (includeSelf.checked ? 1 : 0);
-      const currency = currencyInput.value.trim() || "currency";
-      if (!(total > 0) || !Number.isInteger(others) || others < 1 || shareCount < 1) {
-        shareSummary.textContent = "Equal fixed share: add a total to calculate";
-        roundingNote.hidden = true;
-        return;
+      return totalCents > 0 && validOtherPeople(others) ? allocateShares(totalCents, others, includeSelf.checked) : null;
+    }
+
+    function updateLiveShare() {
+      const split = draftSplit();
+      const currency = currencyInput.value.trim().toUpperCase() || "currency";
+      shareSummary.textContent = split ? `Fixed shares: ${shareDisplay(currency, split)}${split.selfShareCents === null ? "" : ` · Your share: ${currency} ${money(split.selfShareCents)}`}` : "Fixed shares: enter a valid total and group size to calculate";
+      roundingNote.hidden = !split?.extraShares;
+      for (let index = 0; index < participantRows.children.length; index += 1) {
+        $(`person-received-help-${index}`).textContent = split
+          ? `Fixed share: ${currency} ${money(split.shareCents[index])}. Leave at 0 if nothing has been received yet.`
+          : "Leave at 0 if nothing has been received yet.";
       }
-      const share = total / shareCount;
-      shareSummary.textContent = `Equal fixed share: ${currency} ${money(share)} each`;
-      roundingNote.hidden = Math.abs(Number(money(share)) * shareCount - total) < 0.000001;
     }
 
     function toggleConditionalFields() {
@@ -179,7 +210,6 @@
 
     function participantValues() {
       return Array.from(participantRows.querySelectorAll(".tbp-participant")).map((row, index) => ({
-        nameInput: row.querySelector("[data-person-name]"),
         receivedInput: row.querySelector("[data-person-received]"),
         name: row.querySelector("[data-person-name]").value.trim() || `Person ${index + 1}`,
         receivedRaw: row.querySelector("[data-person-received]").value.trim(),
@@ -189,18 +219,17 @@
     function validate() {
       clearErrors();
       const totalRaw = totalInput.value.trim();
-      const total = parseAmount(totalRaw);
+      const totalCents = parseCents(totalRaw);
       const otherRaw = otherPeopleInput.value.trim();
       const otherPeople = Number(otherRaw);
-      const shareCount = otherPeople + (includeSelf.checked ? 1 : 0);
-      const share = total / shareCount;
+      const split = draftSplit();
       const participants = participantValues();
       const errors = [];
       if (!totalRaw) { setError(totalInput, "booking-total-error", "Enter the fixed booking total."); errors.push(totalInput); }
-      else if (!(total > 0)) { setError(totalInput, "booking-total-error", "Use an amount greater than 0."); errors.push(totalInput); }
+      else if (!(totalCents > 0)) { setError(totalInput, "booking-total-error", `Enter an amount from 0.01 to ${money(MAX_AMOUNT_CENTS)}, with up to two decimal places (for example, 1,200.50).`); errors.push(totalInput); }
       if (!currencyInput.value.trim()) { setError(currencyInput, "currency-error", "Enter a currency label such as USD, EUR, GBP, or THB."); errors.push(currencyInput); }
       if (!otherRaw) { setError(otherPeopleInput, "other-people-error", "Add at least one other person."); errors.push(otherPeopleInput); }
-      else if (!Number.isInteger(otherPeople) || otherPeople < 1) { setError(otherPeopleInput, "other-people-error", "Use a whole number of 1 or more."); errors.push(otherPeopleInput); }
+      else if (!validOtherPeople(otherPeople)) { setError(otherPeopleInput, "other-people-error", `Use a whole number from 1 to ${MAX_OTHER_PEOPLE}.`); errors.push(otherPeopleInput); }
       if (!selected("refundability")) { setError($("refundability-group"), "refundability-error", "Choose whether the booking is refundable, partly refundable, or nonrefundable."); errors.push($("refundability-group")); }
       if (!selected("comfortableCarry")) { setError($("comfortable-group"), "comfortable-error", "Choose whether you are comfortable carrying the unpaid fixed amount."); errors.push($("comfortable-group")); }
       if (!selected("priorDelays")) { setError($("delays-group"), "delays-error", "Choose whether trip repayments in this group have been delayed or missed before."); errors.push($("delays-group")); }
@@ -209,16 +238,17 @@
       const cancellationRule = selected("cancellationRule");
       if (!cancellationRule) { setError($("cancellation-group"), "cancellation-error", "Choose what happens if someone cancels before you build the plan."); errors.push($("cancellation-group")); }
       if (cancellationRule === "custom" && !$("custom-rule").value.trim()) { setError($("custom-rule"), "custom-rule-error", "Write the custom group rule you agreed."); errors.push($("custom-rule")); }
-      if (Number.isFinite(share) && share > 0) {
-        participants.forEach((person, index) => {
-          const received = person.receivedRaw === "" ? 0 : parseAmount(person.receivedRaw);
-          if (!Number.isFinite(received) || received < 0) {
-            setError(person.receivedInput, `person-received-error-${index}`, `Enter a valid amount for ${person.name}.`); errors.push(person.receivedInput);
-          } else if (received > share + 0.0000001) {
-            setError(person.receivedInput, `person-received-error-${index}`, `This amount is higher than ${person.name}’s calculated share. Check the payment or use the dedicated split/payback tool if the shares are unequal.`); errors.push(person.receivedInput);
-          }
-        });
-      }
+      const currency = currencyInput.value.trim().toUpperCase();
+      const payments = participants.map((person, index) => {
+        const receivedCents = person.receivedRaw === "" ? 0 : parseCents(person.receivedRaw);
+        const shareCents = split?.shareCents[index];
+        if (Number.isNaN(receivedCents)) {
+          setError(person.receivedInput, `person-received-error-${index}`, "Enter a valid payment amount with up to two decimal places (for example, 150.50)."); errors.push(person.receivedInput);
+        } else if (shareCents !== undefined && receivedCents > shareCents) {
+          setError(person.receivedInput, `person-received-error-${index}`, `This amount is higher than the fixed share of ${currency} ${money(shareCents)}. Check the payment or use the dedicated split/payback tool if the shares are unequal.`); errors.push(person.receivedInput);
+        }
+        return { name: person.name, receivedCents };
+      });
       if (errors.length) {
         errorSummary.hidden = false;
         errorSummary.focus();
@@ -228,8 +258,8 @@
         bookingStatus: $("booking-status").value,
         bookingType: $("booking-type").value,
         bookingName: $("booking-name").value.trim(),
-        total,
-        currency: currencyInput.value.trim().toUpperCase(),
+        totalCents,
+        currency,
         refundability: selected("refundability"),
         refundDeadline: refundDeadlineWrap.hidden ? "" : refundDeadline.value,
         refundDeadlineDisplay: refundDeadlineWrap.hidden ? "" : formatDate(refundDeadline.value),
@@ -241,7 +271,7 @@
         deadlineDisplay: formatDate(paymentDeadline.value),
         cancellationRule,
         customRule: $("custom-rule").value.trim(),
-        participants: participants.map((person) => ({ name: person.name, received: person.receivedRaw === "" ? 0 : parseAmount(person.receivedRaw) })),
+        participants: payments,
       };
     }
 
@@ -258,35 +288,40 @@
     }
 
     function renderResult(plan) {
+      currentPlan = plan;
       clearCopyFeedback(resultRegion);
+      resultCopyButtons.forEach((button) => { button.disabled = false; });
       emptyState.hidden = true;
       resultRegion.hidden = false;
+      resetButton.hidden = false;
       $("recommendation-label").textContent = plan.result.label;
       $("recommendation-explanation").textContent = plan.result.explanation;
       const reasons = $("recommendation-reasons");
       reasons.replaceChildren(...reasonsFor(plan).map((text) => { const li = document.createElement("li"); li.textContent = text; return li; }));
       const summary = $("result-summary");
       const items = [
-        ["Booking", bookingLabel(plan.bookingType, plan.bookingName)], ["Fixed total", `${plan.currency} ${money(plan.total)}`], ["People sharing", String(plan.shareCount)], ["Equal share", `${plan.currency} ${money(plan.share)}`],
+        ["Booking", bookingLabel(plan.bookingType, plan.bookingName)], ["Fixed total", `${plan.currency} ${money(plan.totalCents)}`], ["People sharing", String(plan.shareCount)], ["Fixed shares", shareDisplay(plan.currency, plan)],
         ["Payment deadline", plan.deadlineDisplay], ["Refundability", plan.refundability],
       ];
+      if (plan.selfShareCents !== null) items.push(["Your fixed share", `${plan.currency} ${money(plan.selfShareCents)}`]);
       if (plan.refundDeadlineDisplay) items.push(["Refund/free-cancellation deadline", plan.refundDeadlineDisplay]);
       summary.replaceChildren(...items.map(([term, value]) => { const div = document.createElement("div"); const dt = document.createElement("dt"); const dd = document.createElement("dd"); dt.textContent = term; dd.textContent = value; div.append(dt, dd); return div; }));
-      let paid = 0; let partial = 0; let open = 0;
+      let paid = 0; let partial = 0; let open = 0; let noPayment = 0;
       const statusList = $("status-list");
       statusList.replaceChildren(...plan.participants.map((person) => {
-        const status = statusFor(person.received, plan.share);
-        if (status === "paid") paid += 1; else if (status === "partial") partial += 1; else open += 1;
+        const { status, shareCents, remainingCents, receivedCents } = person;
+        if (shareCents === 0) noPayment += 1; else if (status === "paid") paid += 1; else if (status === "partial") partial += 1; else open += 1;
         const row = document.createElement("div"); row.className = "tbp-statusRow";
         const name = document.createElement("strong"); name.textContent = person.name;
-        const chip = document.createElement("span"); chip.className = `tbp-statusChip tbp-statusChip--${status}`; chip.textContent = status === "paid" ? "Paid" : status === "partial" ? "Partly paid" : "Open";
+        const chip = document.createElement("span"); chip.className = `tbp-statusChip tbp-statusChip--${status}`; chip.textContent = shareCents === 0 ? "No payment due" : status === "paid" ? "Paid" : status === "partial" ? "Partly paid" : "Open";
         const line = document.createElement("span");
-        if (status === "paid") line.textContent = `Received ${plan.currency} ${money(person.received)} · fixed share covered`;
-        else if (status === "partial") line.textContent = `Received ${plan.currency} ${money(person.received)} · ${plan.currency} ${money(plan.share - person.received)} remaining`;
-        else line.textContent = `${plan.currency} ${money(plan.share)} remaining`;
+        const share = `${plan.currency} ${money(shareCents)} fixed share`;
+        if (status === "paid") line.textContent = shareCents === 0 ? share : `${share} · received ${plan.currency} ${money(receivedCents)}`;
+        else if (status === "partial") line.textContent = `${share} · received ${plan.currency} ${money(receivedCents)} · ${plan.currency} ${money(remainingCents)} remaining`;
+        else line.textContent = `${share} · ${plan.currency} ${money(remainingCents)} remaining`;
         row.append(name, chip, line); return row;
       }));
-      $("status-summary").textContent = open === 0 && partial === 0 ? "All fixed shares are covered." : `${paid} paid · ${partial} partly paid · ${open} open`;
+      $("status-summary").textContent = open === 0 && partial === 0 ? "All fixed shares are covered." : `${paid} paid · ${partial} partly paid · ${open} open${noPayment ? ` · ${noPayment} with no payment due` : ""}`;
       $("policy-text").textContent = plan.artifacts.policy;
       const messageElement = $("group-message-text");
       messageElement.textContent = "";
@@ -310,48 +345,78 @@
       });
     }
 
+    function invalidateResult() {
+      if (!currentPlan) return;
+      currentPlan = null;
+      resultRegion.hidden = true;
+      resultCopyButtons.forEach((button) => { button.disabled = true; });
+      $("policy-text").textContent = "";
+      $("group-message-text").textContent = "";
+      clearCopyFeedback(resultRegion);
+      emptyState.hidden = false;
+      emptyState.textContent = "You changed the booking details. Build your booking plan again to get an updated result and copyable text.";
+    }
+
     function resetPlanner() {
+      invalidateResult();
       form.reset();
       otherPeopleInput.value = "3";
       currencyInput.value = "USD";
-      participantState = [];
+      participantRows.replaceChildren();
       renderParticipants();
+      updateLiveShare();
       toggleConditionalFields();
       clearErrors();
-      resultRegion.hidden = true;
+      emptyState.textContent = initialPrompt;
       emptyState.hidden = false;
-      clearCopyFeedback(resultRegion);
+      resetButton.hidden = true;
       $("booking-status").focus();
     }
 
     function copyText(button) {
+      const fromResult = resultRegion.contains(button);
+      if (fromResult && !currentPlan) return;
+      const planAtCopy = currentPlan;
+      const stillCurrent = () => !fromResult || currentPlan === planAtCopy;
       const target = $(button.dataset.copyTarget);
       const status = button.parentElement.querySelector(".tbp-copyStatus");
       const original = button.dataset.copyLabel || button.textContent;
       button.dataset.copyLabel = original;
-      if (!target || !navigator.clipboard || typeof navigator.clipboard.writeText !== "function") {
-        status.textContent = "Couldn’t copy automatically. Select the text and copy it manually.";
-        return;
-      }
+      const manualCopy = () => {
+        if (stillCurrent()) status.textContent = "Couldn’t copy automatically. Select the text and copy it manually.";
+      };
+      if (!target || !navigator.clipboard || typeof navigator.clipboard.writeText !== "function") return manualCopy();
       navigator.clipboard.writeText(target.textContent.trim()).then(() => {
-        button.textContent = "Copied"; status.textContent = "Copied";
-        window.setTimeout(() => { button.textContent = original; }, 2200);
-      }).catch(() => { status.textContent = "Couldn’t copy automatically. Select the text and copy it manually."; });
+        if (!stillCurrent()) return;
+        button.textContent = "Copied";
+        status.textContent = "Copied";
+        window.setTimeout(() => { if (stillCurrent()) button.textContent = original; }, 2200);
+      }).catch(manualCopy);
     }
 
-    otherPeopleInput.addEventListener("input", renderParticipants);
-    includeSelf.addEventListener("change", updateLiveShare);
-    totalInput.addEventListener("input", updateLiveShare);
-    currencyInput.addEventListener("input", updateLiveShare);
-    form.addEventListener("change", (event) => { toggleConditionalFields(); if (event.target.name !== "otherPeople") clearErrors(); });
-    form.addEventListener("input", (event) => { if (event.target !== otherPeopleInput) clearErrors(); });
-    form.addEventListener("submit", (event) => { event.preventDefault(); const input = validate(); if (input) renderResult(calculate(input)); });
-    $("planner-reset").addEventListener("click", resetPlanner);
+    function onEdit(event) {
+      invalidateResult();
+      clearErrors();
+      if (event.target === otherPeopleInput) renderParticipants();
+      if ([otherPeopleInput, includeSelf, totalInput, currencyInput].includes(event.target)) updateLiveShare();
+      if (event.type === "change") toggleConditionalFields();
+    }
+
+    form.addEventListener("change", onEdit);
+    form.addEventListener("input", onEdit);
+    form.addEventListener("submit", (event) => {
+      event.preventDefault();
+      const input = validate();
+      if (input) renderResult(calculate(input));
+      else invalidateResult();
+    });
+    resetButton.addEventListener("click", resetPlanner);
     document.querySelectorAll(".tbp-copyButton").forEach((button) => button.addEventListener("click", () => copyText(button)));
     document.querySelectorAll("[data-planner-link]").forEach((link) => link.addEventListener("click", () => window.setTimeout(() => $("booking-status").focus(), 0)));
     renderParticipants();
+    updateLiveShare();
     toggleConditionalFields();
   }
 
-  return { POLICY_SENTENCES, parseAmount, money, statusFor, recommendation, cancellationSentence, buildArtifacts, calculate, formatDate, init };
+  return { POLICY_SENTENCES, parseCents, money, allocateShares, statusFor, recommendation, cancellationSentence, buildArtifacts, calculate, formatDate, init };
 });

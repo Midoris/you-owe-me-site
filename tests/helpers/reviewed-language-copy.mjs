@@ -4,35 +4,37 @@ function readSeoAdmissions(change) {
   return JSON.parse(fs.readFileSync(new URL(`../fixtures/${change}-reviewed-admissions.json`, import.meta.url), "utf8"));
 }
 
-const seoAdmissions = {
-  ...readSeoAdmissions("borrowing-pdf"),
-  ...readSeoAdmissions("roommate-electricity"),
-  ...readSeoAdmissions("tools-loan-import-link"),
-  ...readSeoAdmissions("confrontation-example-link"),
-  ...readSeoAdmissions("money-owed-group-paybacks"),
-  ...readSeoAdmissions("couple-calculator-examples"),
-  ...readSeoAdmissions("receipt-example-amount"),
-  ...readSeoAdmissions("family-workbook-summary"),
-  ...readSeoAdmissions("family-subscriptions-example-link"),
-  ...readSeoAdmissions("localized-split-demo-confirmation"),
-  ...readSeoAdmissions("shared-expense-planner-current-plan"),
-  ...readSeoAdmissions("personal-loan-hero-import"),
-  ...readSeoAdmissions("shared-expense-direct-answer"),
-  ...readSeoAdmissions("partial-repayment-helper-validated-amounts"),
-  ...readSeoAdmissions("spreadsheet-app-quick-verdict"),
-  ...readSeoAdmissions("temporary-support-reminder-fields"),
-};
+const seoAdmissions = [
+  readSeoAdmissions("trip-planner-current-shares"),
+  readSeoAdmissions("temporary-support-reminder-fields"),
+  readSeoAdmissions("spreadsheet-app-quick-verdict"),
+  readSeoAdmissions("partial-repayment-helper-validated-amounts"),
+  readSeoAdmissions("shared-expense-direct-answer"),
+  readSeoAdmissions("personal-loan-hero-import"),
+  readSeoAdmissions("shared-expense-planner-current-plan"),
+  readSeoAdmissions("localized-split-demo-confirmation"),
+  readSeoAdmissions("family-subscriptions-example-link"),
+  readSeoAdmissions("family-workbook-summary"),
+  readSeoAdmissions("receipt-example-amount"),
+  readSeoAdmissions("couple-calculator-examples"),
+  readSeoAdmissions("money-owed-group-paybacks"),
+  readSeoAdmissions("confrontation-example-link"),
+  readSeoAdmissions("tools-loan-import-link"),
+  readSeoAdmissions("roommate-electricity"),
+  readSeoAdmissions("borrowing-pdf"),
+];
 
 // Reverse only unique, literal fragments from the reviewed changes on these paths.
 export function normalizeReviewedSeoSource(source, file) {
-  if (!Object.hasOwn(seoAdmissions, file)) return source;
   const bytes = Buffer.isBuffer(source);
   const original = bytes ? source.toString("utf8") : source;
   let text = original;
-  for (const [current, previous] of seoAdmissions[file]) {
-    const offset = text.indexOf(current);
-    if (offset !== -1 && offset === text.lastIndexOf(current)) {
-      text = text.slice(0, offset) + previous + text.slice(offset + current.length);
+  for (const admission of seoAdmissions) {
+    for (const [current, previous] of admission[file] || []) {
+      const offset = text.indexOf(current);
+      if (offset !== -1 && offset === text.lastIndexOf(current)) {
+        text = text.slice(0, offset) + previous + text.slice(offset + current.length);
+      }
     }
   }
   return text === original ? source : bytes ? Buffer.from(text) : text;

@@ -18,5 +18,9 @@
   "styles/partial-repayment-follow-up.css": {
     "previous": "a657c88307085d878547e78afbed54dd83aa1868",
     "current": "267fd71f8fa46528ec36101e7f56800d2f7bba4f"
+  },
+  "scripts/trip-booking-share-planner.js": {
+    "previous": "95f75bc820b49de246051f649854fdf763c0fefc",
+    "current": "7783d9a8c615d712984de4a8a9aa71f4bfbd5d38"
   }
 }
