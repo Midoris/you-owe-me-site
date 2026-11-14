@@ -31,11 +31,12 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
   // Shared correctness fixes also need fresh URLs in the English sources.
   // Preserve authored relative/absolute paths; only the cache query is owned.
   const assets = lang === "en" ? Object.keys(sharedAssetVersions) : locale.versionedAssets;
+  const page = locale.pages.find(page => page[lang] === route);
   for (const asset of assets) {
     const relative = path.posix.relative(englishRoute, asset);
     const references = lang === "en" ? [asset, relative, `./${relative}`] : [asset];
     for (const reference of references) {
-      html = html.replace(new RegExp(`((?:src|href)=")${regexEsc(reference)}(?:\\?[^\"]*)?(\")`, "g"), `$1${reference}?v=${localeAssetVersion(locale, asset)}$2`);
+      html = html.replace(new RegExp(`((?:src|href)=")${regexEsc(reference)}(?:\\?[^\"]*)?(\")`, "g"), `$1${reference}?v=${localeAssetVersion(locale, asset, page)}$2`);
     }
   }
   if (lang === "en") return html;

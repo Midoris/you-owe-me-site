@@ -150,7 +150,7 @@ export const arabicPages = [
   { en: "/solutions/app-to-track-money-owed/", ar: "/ar/solutions/app-to-track-money-owed/", title: "تطبيق لتتبّع المبالغ المستحقة لك", updated: "2026-10-30", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", ar: "/ar/blog/how-to-keep-track-of-who-owes-you-money/", title: "كيف تتابع من يدين لك بالمال", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", ar: "/ar/solutions/personal-loan-repayment-tracker/", title: "تتبّع القروض الشخصية وسدادها", complete: true },
-  { en: "/tools/split-expense-calculator/", ar: "/ar/tools/split-expense-calculator/", title: "حاسبة تقسيم المصروفات المشتركة", complete: true },
+  { en: "/tools/split-expense-calculator/", ar: "/ar/tools/split-expense-calculator/", title: "حاسبة تقسيم المصروفات المشتركة", updated: "2026-11-14", assetVersions: { "/scripts/split-expense-calculator.js": "splitexample20261114" }, complete: true },
   {
     "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
     "ar": "/ar/blog/how-to-remind-someone-they-owe-you-money-politely/",
@@ -213,7 +213,7 @@ export const frenchPages = [
   { en: "/solutions/app-to-track-money-owed/", fr: "/fr/solutions/application-suivi-argent-du/", title: "Application pour suivre l’argent qu’on vous doit", updated: "2026-10-30", complete: true },
   { en: "/blog/how-to-keep-track-of-who-owes-you-money/", fr: "/fr/blog/suivre-qui-vous-doit-de-l-argent/", title: "Comment savoir qui vous doit de l’argent", complete: true },
   { en: "/solutions/personal-loan-repayment-tracker/", fr: "/fr/solutions/suivi-remboursement-pret-personnel/", title: "Suivez vos prêts personnels et leurs remboursements", complete: true },
-  { en: "/tools/split-expense-calculator/", fr: "/fr/outils/calculateur-partage-depenses/", title: "Calculateur de partage des dépenses", complete: true },
+  { en: "/tools/split-expense-calculator/", fr: "/fr/outils/calculateur-partage-depenses/", title: "Calculateur de partage des dépenses", updated: "2026-11-14", assetVersions: { "/scripts/split-expense-calculator.js": "splitexample20261114" }, complete: true },
   {
     "en": "/blog/how-to-remind-someone-they-owe-you-money-politely/",
     "fr": "/fr/blog/comment-reclamer-son-argent-poliment/",
@@ -864,8 +864,8 @@ export const siteLocales = [
   { code: "ko", label: "한국어", home: "/ko/", pages: koreanPages, shared: koreanShared, assetVersion: "kohome20261106", versionedAssets: spanishVersionedAssets, sectionMarker: "korean", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
 ];
 
-export function localeAssetVersion(locale, asset) {
-  return sharedAssetVersions[asset] || locale.assetVersion;
+export function localeAssetVersion(locale, asset, page) {
+  return page?.assetVersions?.[asset] || sharedAssetVersions[asset] || locale.assetVersion;
 }
 
 export function completedCounterparts(englishRoute, locales = siteLocales) {

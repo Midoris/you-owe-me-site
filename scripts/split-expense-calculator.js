@@ -7,6 +7,7 @@
   const locale = document.documentElement?.lang || "en";
   const isArabic = locale === "ar";
   const isFrench = locale === "fr";
+  const guardExampleReplacement = isArabic || isFrench;
   const isJapanese = locale === "ja";
   const isPortuguese = locale === "pt-BR";
   const isItalian = locale === "it";
@@ -122,6 +123,7 @@
   let hasExplicitInteraction = false;
   let resultReadyEmitted = false;
   let meaningfulEdit = false;
+  let hasEditedStructure = false;
   let transferExposureEmitted = false;
   let transferAttempt = null;
   let transferBusy = false;
@@ -675,6 +677,7 @@
       render();
       return;
     }
+    hasEditedStructure = true;
     const person = createPerson();
     state.people.push(person);
     state.expenses.forEach((expense) => {
@@ -690,6 +693,7 @@
       renderPeople();
       return;
     }
+    hasEditedStructure = true;
     state.people = state.people.filter((person) => person.id !== id);
     state.expenses.forEach((expense) => {
       expense.includedPeople = expense.includedPeople.filter((personId) => personId !== id);
@@ -707,11 +711,13 @@
       renderPeople();
       return;
     }
+    hasEditedStructure = true;
     state.expenses.push(createExpense("", "", state.people[0] ? state.people[0].id : ""));
     render();
   }
 
   function removeExpense(id) {
+    hasEditedStructure = true;
     state.expenses = state.expenses.filter((expense) => expense.id !== id);
     if (state.expenses.length === 0) {
       state.expenses.push(createExpense("", "", state.people[0] ? state.people[0].id : ""));
@@ -732,6 +738,13 @@
   }
 
   function useExample() {
+    if (guardExampleReplacement && (meaningfulEdit || hasEditedStructure)) {
+      const confirmation = isArabic
+        ? "سيستبدل المثال بيانات التقسيم الحالية. هل تريد المتابعة؟"
+        : "Charger l’exemple remplacera les données de votre calcul en cours. Voulez-vous continuer ?";
+      if (!window.confirm(confirmation)) return;
+    }
+    hasEditedStructure = false;
     meaningfulEdit = false; transferAttempt = null;
     hasExplicitInteraction = true;
     state.currency = defaultCurrency;
@@ -751,6 +764,7 @@
   }
 
   function clearAll() {
+    hasEditedStructure = false;
     meaningfulEdit = false; transferAttempt = null;
     hasExplicitInteraction = false;
     setInitialState();
@@ -930,6 +944,8 @@
     root.addEventListener("change", () => { meaningfulEdit = true; markInteraction(); }, true);
     root.addEventListener("click", function (event) {
       const control = event.target && event.target.closest("button, input, select, textarea");
+      // Only record example activation when it proceeds past confirmation.
+      if (guardExampleReplacement && control?.getAttribute("data-action") === "use-example") return;
       if (control && root.contains(control)) markInteraction();
     }, true);
   }

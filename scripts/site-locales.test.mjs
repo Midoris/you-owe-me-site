@@ -38,7 +38,7 @@ test("only completed translations join the registry and have substantive public 
     assert.ok(html.includes('data-module="best-next-step"'));
     assert.ok(!html.includes("<!-- best-next-step:start -->"), "Localized hand-authored modules must not claim English generator ownership");
     for (const asset of locale.versionedAssets) {
-      if (html.includes(asset)) assert.ok(html.includes(`${asset}?v=${localeAssetVersion(locale, asset)}"`), `Localized dependency must bypass earlier caches: ${asset}`);
+      if (html.includes(asset)) assert.ok(html.includes(`${asset}?v=${localeAssetVersion(locale, asset, page)}"`), `Localized dependency must bypass earlier caches: ${asset}`);
     }
     assert.ok(!/<a\b[^>]*href="https:\/\/apps\.apple\.com\/(?:[a-z]{2})\//.test(html), "Localized Store links must not force a country");
     assert.ok(!/<a\b[^>]*href="https:\/\/apps\.apple\.com\/[^\"]*ppid=/.test(html), "No unverified English custom-product page");

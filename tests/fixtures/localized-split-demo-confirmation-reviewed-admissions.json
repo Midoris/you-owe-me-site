@@ -1,0 +1,92 @@
+{
+  "ar/tools/split-expense-calculator/index.html": [
+    [
+      "      \"dateModified\": \"2026-11-14\",\n",
+      "      \"dateModified\": \"2026-10-20\",\n"
+    ],
+    [
+      "          <p class=\"lt-pageMeta\">آخر تحديث في <time datetime=\"2026-11-14\">14 نوفمبر 2026</time></p>\n",
+      "          <p class=\"lt-pageMeta\">آخر تحديث في <time datetime=\"2026-10-20\">20 أكتوبر 2026</time></p>\n"
+    ],
+    [
+      "    <script src=\"/scripts/split-expense-calculator.js?v=splitexample20261114\"></script>\n",
+      "    <script src=\"/scripts/split-expense-calculator.js?v=plsplit20261106\"></script>\n"
+    ]
+  ],
+  "fr/outils/calculateur-partage-depenses/index.html": [
+    [
+      "      \"dateModified\": \"2026-11-14\",\n",
+      "      \"dateModified\": \"2026-10-20\",\n"
+    ],
+    [
+      "          <p class=\"lt-pageMeta\">Mis à jour le <time datetime=\"2026-11-14\">14 novembre 2026</time></p>\n",
+      "          <p class=\"lt-pageMeta\">Mis à jour le <time datetime=\"2026-10-20\">20 octobre 2026</time></p>\n"
+    ],
+    [
+      "    <script src=\"/scripts/split-expense-calculator.js?v=splitexample20261114\"></script>\n",
+      "    <script src=\"/scripts/split-expense-calculator.js?v=plsplit20261106\"></script>\n"
+    ]
+  ],
+  "scripts/split-expense-calculator.js": [
+    [
+      "  const guardExampleReplacement = isArabic || isFrench;\n",
+      ""
+    ],
+    [
+      "  let hasEditedStructure = false;\n",
+      ""
+    ],
+    [
+      "    hasEditedStructure = true;\n    const person = createPerson();\n",
+      "    const person = createPerson();\n"
+    ],
+    [
+      "    hasEditedStructure = true;\n    state.people = state.people.filter((person) => person.id !== id);\n",
+      "    state.people = state.people.filter((person) => person.id !== id);\n"
+    ],
+    [
+      "    hasEditedStructure = true;\n    state.expenses.push(createExpense(\"\", \"\", state.people[0] ? state.people[0].id : \"\"));\n",
+      "    state.expenses.push(createExpense(\"\", \"\", state.people[0] ? state.people[0].id : \"\"));\n"
+    ],
+    [
+      "    hasEditedStructure = true;\n    state.expenses = state.expenses.filter((expense) => expense.id !== id);\n",
+      "    state.expenses = state.expenses.filter((expense) => expense.id !== id);\n"
+    ],
+    [
+      "    if (guardExampleReplacement && (meaningfulEdit || hasEditedStructure)) {\n      const confirmation = isArabic\n        ? \"سيستبدل المثال بيانات التقسيم الحالية. هل تريد المتابعة؟\"\n        : \"Charger l’exemple remplacera les données de votre calcul en cours. Voulez-vous continuer ?\";\n      if (!window.confirm(confirmation)) return;\n    }\n    hasEditedStructure = false;\n",
+      ""
+    ],
+    [
+      "    hasEditedStructure = false;\n",
+      ""
+    ],
+    [
+      "      // Only record example activation when it proceeds past confirmation.\n      if (guardExampleReplacement && control?.getAttribute(\"data-action\") === \"use-example\") return;\n",
+      ""
+    ]
+  ],
+  "content/site-locales.mjs": [
+    [
+      "  { en: \"/tools/split-expense-calculator/\", ar: \"/ar/tools/split-expense-calculator/\", title: \"حاسبة تقسيم المصروفات المشتركة\", updated: \"2026-11-14\", assetVersions: { \"/scripts/split-expense-calculator.js\": \"splitexample20261114\" }, complete: true },\n",
+      "  { en: \"/tools/split-expense-calculator/\", ar: \"/ar/tools/split-expense-calculator/\", title: \"حاسبة تقسيم المصروفات المشتركة\", complete: true },\n"
+    ],
+    [
+      "  { en: \"/tools/split-expense-calculator/\", fr: \"/fr/outils/calculateur-partage-depenses/\", title: \"Calculateur de partage des dépenses\", updated: \"2026-11-14\", assetVersions: { \"/scripts/split-expense-calculator.js\": \"splitexample20261114\" }, complete: true },\n",
+      "  { en: \"/tools/split-expense-calculator/\", fr: \"/fr/outils/calculateur-partage-depenses/\", title: \"Calculateur de partage des dépenses\", complete: true },\n"
+    ],
+    [
+      "export function localeAssetVersion(locale, asset, page) {\n  return page?.assetVersions?.[asset] || sharedAssetVersions[asset] || locale.assetVersion;\n",
+      "export function localeAssetVersion(locale, asset) {\n  return sharedAssetVersions[asset] || locale.assetVersion;\n"
+    ]
+  ],
+  "scripts/sync-site-locales.mjs": [
+    [
+      "  const assets = lang === \"en\" ? Object.keys(sharedAssetVersions) : locale.versionedAssets;\n  const page = locale.pages.find(page => page[lang] === route);\n",
+      "  const assets = lang === \"en\" ? Object.keys(sharedAssetVersions) : locale.versionedAssets;\n"
+    ],
+    [
+      "      html = html.replace(new RegExp(`((?:src|href)=\")${regexEsc(reference)}(?:\\\\?[^\\\"]*)?(\\\")`, \"g\"), `$1${reference}?v=${localeAssetVersion(locale, asset, page)}$2`);\n",
+      "      html = html.replace(new RegExp(`((?:src|href)=\")${regexEsc(reference)}(?:\\\\?[^\\\"]*)?(\\\")`, \"g\"), `$1${reference}?v=${localeAssetVersion(locale, asset)}$2`);\n"
+    ]
+  ]
+}
