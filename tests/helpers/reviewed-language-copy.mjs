@@ -20,6 +20,7 @@ const seoAdmissions = {
   ...readSeoAdmissions("shared-expense-direct-answer"),
   ...readSeoAdmissions("partial-repayment-helper-validated-amounts"),
   ...readSeoAdmissions("spreadsheet-app-quick-verdict"),
+  ...readSeoAdmissions("temporary-support-reminder-fields"),
 };
 
 // Reverse only unique, literal fragments from the reviewed changes on these paths.
