@@ -13,6 +13,7 @@ const seoAdmissions = {
   ...readSeoAdmissions("couple-calculator-examples"),
   ...readSeoAdmissions("receipt-example-amount"),
   ...readSeoAdmissions("family-workbook-summary"),
+  ...readSeoAdmissions("family-subscriptions-example-link"),
 };
 
 // Reverse only unique, literal fragments from the reviewed changes on these paths.

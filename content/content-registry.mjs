@@ -4032,7 +4032,7 @@ export const contentRegistry = [
     relatedSolutions: ["/solutions/family-reimbursement-tracker/", "/solutions/elderly-parent-expense-tracker/"],
     appStoreCpp: "family-reimbursements",
     tags: ["guide", "family", "caregiving", "elderly-parents", "subscriptions", "recurring-bills", "family-reimbursements", "sibling-reimbursements", "partial-repayments", "running-balance", "monthly-review", "phone-plans", "utilities"],
-    updated: "2026-10-23",
+    updated: "2026-11-14",
     status: "live",
     priority: "high",
     primaryCta: "Track recurring family bills in You Owe Me",
