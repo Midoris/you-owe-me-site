@@ -9,11 +9,11 @@
       "          \"datePublished\": \"2026-07-08\",\n          \"dateModified\": \"2026-10-25\",\n          \"mainEntityOfPage\": {\n"
     ],
     [
-      "    <link rel=\"stylesheet\" href=\"/styles/repayment-reminder-text-examples.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css?v=borrowing-pdf-20261114\" />\n    <link rel=\"stylesheet\" href=\"/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1\" />\n",
+      "    <link rel=\"stylesheet\" href=\"/styles/repayment-reminder-text-examples.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css?v=borrowing-example-20261114\" />\n    <link rel=\"stylesheet\" href=\"/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1\" />\n",
       "    <link rel=\"stylesheet\" href=\"/styles/repayment-reminder-text-examples.css\" />\n    <link rel=\"stylesheet\" href=\"/styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css?v=additional-opportunities-20261011-1\" />\n    <link rel=\"stylesheet\" href=\"/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1\" />\n"
     ],
     [
-      "            <p>Choose the example that fits, then edit the details before sending. Only promise a repayment date you can reasonably meet; if you are unsure, use the check-in example.</p>\n            <p><a class=\"friend-borrow-pdf-link\" href=\"/downloads/borrowing-money-from-a-friend-text-examples.pdf\" download=\"borrowing-money-from-a-friend-text-examples.pdf\" data-track-event=\"site_link_click\" data-track-location=\"friend_borrow_text_examples_pdf_download\">Download the text examples (PDF)</a></p>\n            <p class=\"friend-borrow-copy-status\" aria-live=\"polite\" data-copy-status></p>\n",
+      "            <p>Choose the example that fits, then edit the details before sending. Only promise a repayment date you can reasonably meet; if you are unsure, use the check-in example.</p>\n            <p><a class=\"friend-borrow-pdf-link\" href=\"/downloads/borrowing-money-from-a-friend-text-examples.pdf?v=worked-example-20261114\" download=\"borrowing-money-from-a-friend-text-examples.pdf\" data-track-event=\"site_link_click\" data-track-location=\"friend_borrow_text_examples_pdf_download\">Download the text examples (PDF)</a></p>\n            <figure class=\"friend-borrow-worked-example\" id=\"friend-borrow-worked-example\">\n              <figcaption>A complete example</figcaption>\n              <blockquote>Hey Maya, could I borrow $60 to cover groceries until payday? I can pay you back Friday. Totally okay if you can’t.</blockquote>\n            </figure>\n            <p class=\"friend-borrow-copy-status\" aria-live=\"polite\" data-copy-status></p>\n",
       "            <p>Choose the example that fits, then edit the details before sending. Only promise a repayment date you can reasonably meet; if you are unsure, use the check-in example.</p>\n            <p class=\"friend-borrow-copy-status\" aria-live=\"polite\" data-copy-status></p>\n"
     ],
     [
@@ -23,7 +23,7 @@
   ],
   "styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css": [
     [
-      "  margin-bottom: 0 !important;\n}\n\n.friend-borrow-pdf-link {\n  display: inline-block;\n  margin-top: 0.35rem;\n  padding-block: 0.2rem;\n  border-bottom: 0;\n  text-decoration: underline;\n  text-underline-offset: 0.15em;\n}\n",
+      "  margin-bottom: 0 !important;\n}\n\n.friend-borrow-pdf-link {\n  display: inline-block;\n  margin-top: 0.35rem;\n  padding-block: 0.2rem;\n  border-bottom: 0;\n  text-decoration: underline;\n  text-underline-offset: 0.15em;\n}\n\n.friend-borrow-worked-example {\n  max-width: 74ch;\n  margin: 0.85rem 0 0;\n  padding-inline-start: 0.9rem;\n  border-inline-start: 3px solid #afe67e;\n}\n\n.friend-borrow-worked-example figcaption {\n  color: #18212b;\n  font-weight: 700;\n}\n\n.friend-borrow-worked-example blockquote {\n  margin: 0.15rem 0 0;\n  padding: 0;\n  border: 0;\n  font-style: normal;\n}\n",
       "  margin-bottom: 0 !important;\n}\n"
     ]
   ]

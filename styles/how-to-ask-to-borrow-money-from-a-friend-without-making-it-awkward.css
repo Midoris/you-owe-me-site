@@ -247,6 +247,25 @@ body.friend-borrow-money-page .lt-primaryCta:hover {
   text-underline-offset: 0.15em;
 }
 
+.friend-borrow-worked-example {
+  max-width: 74ch;
+  margin: 0.85rem 0 0;
+  padding-inline-start: 0.9rem;
+  border-inline-start: 3px solid #afe67e;
+}
+
+.friend-borrow-worked-example figcaption {
+  color: #18212b;
+  font-weight: 700;
+}
+
+.friend-borrow-worked-example blockquote {
+  margin: 0.15rem 0 0;
+  padding: 0;
+  border: 0;
+  font-style: normal;
+}
+
 .friend-borrow-template-grid .template-card {
   min-width: 0;
 }
