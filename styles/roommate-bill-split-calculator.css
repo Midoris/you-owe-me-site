@@ -577,12 +577,36 @@ body.roommate-bill-page article.post.featured .roommate-app-continuation a:focus
   background: rgba(255, 255, 255, 0.86);
 }
 
+.roommate-electricity-example,
 .roommate-presets {
-  margin-top: 0.9rem;
   padding: 0.85rem;
   border: 1px solid rgba(15, 23, 42, 0.08);
   border-radius: 16px;
   background: rgba(255, 255, 255, 0.62);
+}
+
+.roommate-electricity-example {
+  margin-bottom: 0.9rem;
+  scroll-margin-top: 1rem;
+}
+
+.roommate-electricity-example h4 {
+  margin: 0 0 0.45rem;
+  color: #18212b;
+  font-size: 1.08rem;
+  line-height: 1.3;
+  letter-spacing: 0;
+  text-transform: none;
+}
+
+body.tools-page article.post.featured .roommate-electricity-example p {
+  margin: 0 0 0.55rem;
+  font-size: 0.96rem;
+  line-height: 1.55;
+}
+
+.roommate-presets {
+  margin-top: 0.9rem;
 }
 
 .roommate-presets summary {

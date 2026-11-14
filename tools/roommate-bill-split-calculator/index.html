@@ -43,7 +43,7 @@
           "name": "Roommate Bill Split Calculator",
           "description": "Split rent, utilities, groceries, subscriptions, and household costs with roommates. Add repayments and see who owes whom this month.",
           "url": "https://you-owe-me.com/tools/roommate-bill-split-calculator/",
-          "dateModified": "2026-10-28",
+          "dateModified": "2026-11-14",
           "isPartOf": {
             "@type": "CollectionPage",
             "name": "Money Tools and Templates",
@@ -187,7 +187,7 @@
     <noscript><link rel="stylesheet" href="../../assets/css/noscript.css" /></noscript>
     <link rel="stylesheet" href="../../styles/site-nav.css" />
     <link rel="stylesheet" href="../../styles/tools.css" />
-    <link rel="stylesheet" href="../../styles/roommate-bill-split-calculator.css?v=conversion-continuation-20261011-3" />
+    <link rel="stylesheet" href="../../styles/roommate-bill-split-calculator.css?v=electricity-example-20261114" />
     <link rel="stylesheet" href="../../styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
@@ -238,7 +238,7 @@
               </div>
               <div class="lt-ctaRow">
                 <a href="#calculator" class="lt-primaryCta">Start calculating</a>
-                <a href="#example" class="lt-textCta">View example</a>
+                <a href="#electricity-example" class="lt-textCta">View electricity split example</a>
               </div>
             </div>
             <figure class="roommate-hero-visual">
@@ -313,13 +313,20 @@
                       </div>
                       <button type="button" class="roommate-small-button" data-action="add-expense">Add bill</button>
                     </div>
+                    <section class="roommate-electricity-example" id="electricity-example" aria-labelledby="electricity-example-title">
+                      <h4 id="electricity-example-title">How to split electricity when a roommate was away</h4>
+                      <p>Alex paid a <strong>$120 electricity bill</strong> for three roommates. They split the <strong>$30 fixed charge</strong> equally, at $10 each.</p>
+                      <p>They agree to divide the <strong>$90 usage charge</strong> using days at home as an estimate. Alex and Maya were home for 30 days each, and Sam for 10.</p>
+                      <p>Alex’s and Maya’s shares are <strong>$48.57 each</strong>, and Sam’s is <strong>$22.86</strong>. Maya and Sam repay Alex their shares.</p>
+                      <p id="electricity-example-warning" class="roommate-small-copy">Loading this example replaces your current calculator inputs.</p>
+                      <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="away" aria-describedby="electricity-example-warning">Load electricity example</button>
+                    </section>
                     <div class="roommate-entry-list" data-expense-list></div>
                     <details class="roommate-presets">
-                      <summary>Try an example split</summary>
+                      <summary>Try another example split</summary>
                       <p>Choosing an example replaces the current inputs. Use Start blank for your own household.</p>
                       <div class="roommate-preset-grid">
                         <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="ordinary">Ordinary equal month</button>
-                        <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="away">Roommate away</button>
                         <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="fixed-usage">Broadband + electricity</button>
                         <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="guest">Long-staying guest</button>
                         <button type="button" class="roommate-small-button" data-action="load-preset" data-preset="weighted">Heavier usage weight</button>
@@ -895,7 +902,7 @@
             </p>
           </section>
 
-          <p class="lt-pageMeta">Updated <time datetime="2026-10-28">October 28, 2026</time></p>
+          <p class="lt-pageMeta">Updated <time datetime="2026-11-14">November 14, 2026</time></p>
         </article>
       </div>
 

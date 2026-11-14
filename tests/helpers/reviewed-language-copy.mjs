@@ -6,6 +6,7 @@ function readSeoAdmissions(change) {
 
 const seoAdmissions = {
   ...readSeoAdmissions("borrowing-pdf"),
+  ...readSeoAdmissions("roommate-electricity"),
 };
 
 // Reverse only unique, literal fragments from the reviewed changes on these paths.
