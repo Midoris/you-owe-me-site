@@ -34,7 +34,14 @@
           return { view, incoming: true };
         }
 
-        return { initial: capture(), capture, remember, isClean };
+        let initial = capture();
+        function takeInitial() {
+          const captured = initial;
+          initial = null;
+          return captured;
+        }
+
+        return { takeInitial, capture, remember, isClean };
       })();
     </script>
     <meta name="viewport" content="width=device-width, initial-scale=1" />
@@ -66,10 +73,11 @@
             <div class="rp-actions">
               <button class="rp-primary" type="button" id="save-proposal">Save on this device</button>
               <p class="rp-saved-label" id="saved-label" tabindex="-1" hidden>Saved on this device</p>
-              <button class="rp-secondary" type="button" id="show-saved-plans" hidden>Saved plans</button>
+              <button class="rp-secondary" type="button" id="show-saved-plans" hidden>View saved plans</button>
               <button class="rp-secondary" type="button" id="remove-proposal" aria-controls="remove-confirmation" aria-expanded="false" hidden>Remove saved copy</button>
             </div>
             <p class="rp-detail" id="saved-detail" hidden>Reopen your saved copy from this page in this browser.</p>
+            <p class="rp-detail" id="copy-conflict" hidden>A different version of this plan is already saved in this browser.</p>
             <div class="rp-confirm" id="remove-confirmation" role="group" aria-labelledby="remove-title" hidden>
               <p id="remove-title"><strong>Remove this saved copy?</strong></p>
               <p>You can reopen the plan from the original link.</p>

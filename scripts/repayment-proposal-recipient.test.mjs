@@ -203,6 +203,9 @@ test("saved copies are independently selectable, protected from accidental remov
   await library.click("confirm-removal");
   assert.equal(library.byId("saved-plans").children.length, 1);
   assert.match(library.byId("library-status").textContent, /removed/);
+  assert.equal(library.byId("proposal-total").textContent, "");
+  assert.equal(library.byId("payment-dates").children.length, 0);
+  assert.doesNotMatch(JSON.stringify(library.history.state), new RegExp(firstToken));
 
   const reopened = page(route + "#p=" + firstToken, { local });
   await reopened.click("save-proposal");
@@ -219,9 +222,31 @@ test("invalid links do not expose saved copies, even after navigating within the
   assert.equal(opened.byId("saved-library").hidden, true);
   assert.equal(opened.byId("proposal").hidden, true);
   assert.deepEqual(opened.stages, ["recipient_opened", "recipient_engaged", "recipient_saved"]);
+  assert.equal(opened.byId("proposal-total").textContent, "");
+  assert.equal(opened.byId("payment-dates").children.length, 0);
   assert.doesNotMatch(JSON.stringify(opened.history.state), /thisisnotaproposal/);
   opened.click("invalid-show-saved");
   assert.equal(opened.byId("saved-library").hidden, false);
+});
+
+test("different terms with the same ID cannot overwrite or remove an existing copy", async () => {
+  const local = storage();
+  const first = page(route + "#p=" + tokenFor(), { local });
+  await first.click("save-proposal");
+
+  const changed = page(route + "#p=" + tokenFor({ totalMinor: 20000 }), { local });
+  assert.match(changed.byId("proposal-total").textContent, /200[.]00/);
+  assert.equal(changed.byId("copy-conflict").hidden, false);
+  assert.equal(changed.byId("saved-label").hidden, true);
+  assert.equal(changed.byId("save-proposal").hidden, true);
+  assert.equal(changed.byId("remove-proposal").hidden, true);
+  changed.click("show-saved-plans");
+  const [saved] = changed.byId("saved-plans").children;
+  changed.click(saved.children[0]);
+  assert.match(changed.byId("proposal-total").textContent, /100[.]03/);
+  assert.equal(changed.byId("copy-conflict").hidden, true);
+  assert.equal(changed.byId("saved-label").hidden, false);
+  assert.deepEqual(changed.stages, []);
 });
 
 test("sender tests and failed browser storage do not create a recipient save event", async () => {

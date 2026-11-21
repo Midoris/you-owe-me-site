@@ -108,6 +108,14 @@ function showOnly(view) {
   for (const section of [proposal, library, invalid]) {
     section.hidden = section !== view;
   }
+  if (view !== proposal) {
+    text("proposal-total", "");
+    text("schedule-count", "");
+    expandButton.textContent = "";
+    byId("payment-dates").replaceChildren();
+    remainingDates.replaceChildren();
+  }
+  if (view !== library) byId("saved-plans").replaceChildren();
 }
 
 function text(id, message) {
@@ -146,8 +154,11 @@ function closeConfirmation(restoreFocus = false) {
 }
 
 function refreshControls(copies) {
-  const isSaved = Boolean(copies?.some(copy => copy.plan.id === current.plan.id));
-  saveButton.hidden = isSaved;
+  const copy = copies?.find(candidate => candidate.plan.id === current.plan.id);
+  const isSaved = Boolean(copy && (current.view.kind === "saved" || copy.token === current.view.token));
+  const conflict = Boolean(copy && !isSaved);
+  saveButton.hidden = isSaved || conflict;
+  byId("copy-conflict").hidden = !conflict;
   byId("saved-label").hidden = !isSaved;
   byId("saved-detail").hidden = !isSaved;
   removeButton.hidden = !isSaved;
@@ -324,4 +335,5 @@ window.addEventListener("storage", event => {
   }
 });
 
-display(navigation.isClean() ? navigation.initial : navigation.capture());
+const initial = navigation.takeInitial();
+display(navigation.isClean() ? initial : navigation.capture());
