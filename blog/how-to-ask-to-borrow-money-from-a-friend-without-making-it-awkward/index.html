@@ -183,6 +183,7 @@
     <link rel="stylesheet" href="/styles/repayment-reminder-text-examples.css" />
     <link rel="stylesheet" href="/styles/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward.css?v=borrowing-example-20261114" />
     <link rel="stylesheet" href="/styles/iphone-handoff.css?v=iphone-handoff-phase-d-20260914-1" />
+    <link rel="stylesheet" href="/styles/friend-borrow-money-proposal.css?v=20261121" />
     <link rel="stylesheet" href="/styles/money-story.css?v=20260926-13" />
     <link rel="stylesheet" href="../../styles/best-next-step.css" />
     <link rel="stylesheet" href="/styles/app-language-support.css" />
@@ -246,6 +247,70 @@
           <section class="lt-toolsSection" id="copyable-text-examples" aria-labelledby="copyable-text-examples-title" data-copy-scope>
             <h2 id="copyable-text-examples-title">Text Messages to Ask a Friend for a Loan</h2>
             <p>Choose the example that fits, then edit the details before sending. Only promise a repayment date you can reasonably meet; if you are unsure, use the check-in example.</p>
+            <details class="repayment-proposal-builder" data-proposal-builder data-loan-private hidden>
+              <summary>
+                <span class="repayment-proposal-builder__icon" aria-hidden="true"><i class="fas fa-calendar-alt"></i></span>
+                <span class="repayment-proposal-builder__intro">
+                  <strong id="proposal-builder-label">Add a repayment plan</strong>
+                  <span>Send the amount and dates with your message.</span>
+                </span>
+              </summary>
+              <div class="repayment-proposal-builder__controls" data-proposal-controls role="group" aria-labelledby="proposal-builder-label">
+                <div class="repayment-proposal-builder__fields">
+                  <div class="repayment-proposal-builder__field">
+                    <label for="proposal-amount">Amount to borrow</label>
+                    <input id="proposal-amount" type="text" inputmode="decimal" autocomplete="off" aria-describedby="proposal-amount-error" required />
+                    <span id="proposal-amount-error" class="repayment-proposal-builder__error"></span>
+                  </div>
+                  <div class="repayment-proposal-builder__field">
+                    <label for="proposal-currency">Currency</label>
+                    <select id="proposal-currency" aria-describedby="proposal-currency-error"></select>
+                    <span id="proposal-currency-error" class="repayment-proposal-builder__error"></span>
+                  </div>
+                  <div class="repayment-proposal-builder__field">
+                    <label for="proposal-count">Number of payments</label>
+                    <input id="proposal-count" type="number" inputmode="numeric" min="1" max="24" step="1" value="3" aria-describedby="proposal-count-error" required />
+                    <span id="proposal-count-error" class="repayment-proposal-builder__error"></span>
+                  </div>
+                  <div class="repayment-proposal-builder__field" data-proposal-cadence>
+                    <label for="proposal-cadence">How often</label>
+                    <select id="proposal-cadence" aria-describedby="proposal-cadence-error">
+                      <option value="monthly">Monthly</option>
+                      <option value="weekly">Weekly</option>
+                    </select>
+                    <span id="proposal-cadence-error" class="repayment-proposal-builder__error"></span>
+                  </div>
+                  <div class="repayment-proposal-builder__field repayment-proposal-builder__date">
+                    <label for="proposal-first-date">First payment</label>
+                    <input id="proposal-first-date" type="date" placeholder="YYYY-MM-DD" aria-describedby="proposal-first-date-error" required />
+                    <span id="proposal-first-date-error" class="repayment-proposal-builder__error"></span>
+                  </div>
+                </div>
+                <dl class="repayment-proposal-builder__preview" data-proposal-preview hidden>
+                  <div>
+                    <dt>Total to repay</dt>
+                    <dd data-proposal-total></dd>
+                  </div>
+                  <div>
+                    <dt data-proposal-first-label>First payment</dt>
+                    <dd><span data-proposal-first-amount></span><span data-proposal-first></span></dd>
+                  </div>
+                  <div data-proposal-last-row>
+                    <dt>Last payment</dt>
+                    <dd><span data-proposal-last-amount></span><span data-proposal-last></span></dd>
+                  </div>
+                </dl>
+                <div class="repayment-proposal-builder__actions">
+                  <button type="button" class="lt-primaryCta" data-proposal-copy aria-describedby="proposal-privacy">Copy message &amp; link</button>
+                  <button type="button" class="lt-textCta" data-proposal-share aria-describedby="proposal-privacy" hidden>Share proposal</button>
+                </div>
+                <p id="proposal-privacy" class="repayment-proposal-builder__privacy">Anyone with the link can see the amounts and dates.</p>
+                <p class="repayment-proposal-builder__status" role="status" data-proposal-status></p>
+                <div class="repayment-proposal-builder__fallback" data-proposal-fallback hidden>
+                  <label for="proposal-message">Message &amp; link</label>
+                </div>
+              </div>
+            </details>
             <p><a class="friend-borrow-pdf-link" href="/downloads/borrowing-money-from-a-friend-text-examples.pdf?v=worked-example-20261114" download="borrowing-money-from-a-friend-text-examples.pdf" data-track-event="site_link_click" data-track-location="friend_borrow_text_examples_pdf_download">Download the text examples (PDF)</a></p>
             <figure class="friend-borrow-worked-example" id="friend-borrow-worked-example">
               <figcaption>A complete example</figcaption>
@@ -753,7 +818,8 @@ Remaining balance: $120</pre>
     <script src="/scripts/sales.js?v=kohome20261106"></script>
     <script src="/scripts/friend-borrow-money-answer.js?v=friend-borrow-money-1"></script>
     <script src="/scripts/friend-borrow-post-copy.js?v=additional-opportunities-20261025-1"></script>
-    <script type="module" src="/scripts/analytics.js?v=komoney20261106"></script>
+    <script type="module" src="/scripts/analytics.js?v=repayment-proposal-20261121"></script>
+    <script type="module" src="/scripts/repayment-proposal-sender.mjs?v=20261121"></script>
     <script src="/assets/js/jquery.min.js"></script>
     <script src="/assets/js/jquery.scrollex.min.js"></script>
     <script src="/assets/js/jquery.scrolly.min.js"></script>

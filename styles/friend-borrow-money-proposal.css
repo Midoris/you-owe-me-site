@@ -1,0 +1,256 @@
+.repayment-proposal-builder {
+  width: min(100%, 64rem);
+  margin: 1rem 0 1.1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+  color: #18212b;
+  font: 1rem/1.4 system-ui, sans-serif;
+}
+
+.repayment-proposal-builder[hidden],
+.repayment-proposal-builder [hidden] {
+  display: none !important;
+}
+
+.repayment-proposal-builder summary {
+  display: flex;
+  align-items: center;
+  gap: 0.8rem;
+  min-height: 4.15rem;
+  padding: 0.8rem clamp(0.8rem, 2.4vw, 1.25rem);
+  border-radius: inherit;
+  background: linear-gradient(112deg, #f1f9e8, #fcfefb 70%);
+  cursor: pointer;
+  list-style: none;
+}
+
+.repayment-proposal-builder summary::-webkit-details-marker {
+  display: none;
+}
+
+.repayment-proposal-builder summary::after {
+  content: "";
+  flex: 0 0 0.55rem;
+  width: 0.55rem;
+  height: 0.55rem;
+  margin: 0 0.25rem 0.24rem auto;
+  border: solid #355428;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+
+.repayment-proposal-builder[open] summary {
+  border-radius: 19px 19px 0 0;
+}
+
+.repayment-proposal-builder[open] summary::after {
+  margin-bottom: -0.24rem;
+  transform: rotate(225deg);
+}
+
+.repayment-proposal-builder__icon {
+  display: grid;
+  flex: 0 0 2.6rem;
+  width: 2.6rem;
+  height: 2.6rem;
+  place-items: center;
+  border: 1px solid #dbeccb;
+  border-radius: 0.72rem;
+  background: #e6f4db;
+  color: #355428;
+  font-size: 1.12rem;
+}
+
+.repayment-proposal-builder__intro {
+  display: grid;
+  gap: 0.1rem;
+}
+
+.repayment-proposal-builder__intro strong {
+  font-size: 1.1rem;
+  font-weight: 750;
+}
+
+.repayment-proposal-builder__intro > span {
+  color: #424e48;
+  font-size: 0.93rem;
+}
+
+.repayment-proposal-builder__controls {
+  padding: 1rem clamp(0.8rem, 2.4vw, 1.25rem) 1.15rem;
+  border-top: 1px solid rgba(15, 23, 42, 0.08);
+}
+
+.repayment-proposal-builder__fields {
+  display: grid;
+  grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.75fr) repeat(2, minmax(0, 1fr)) minmax(0, 1.35fr);
+  gap: 0.85rem;
+}
+
+.repayment-proposal-builder__field {
+  min-width: 0;
+}
+
+.repayment-proposal-builder label {
+  margin: 0 0 0.35rem;
+  color: #28343d;
+  font: 700 0.9rem/1.35 system-ui, sans-serif;
+  letter-spacing: normal;
+  text-transform: none;
+}
+
+.repayment-proposal-builder :is(input, select, textarea) {
+  display: block;
+  width: 100%;
+  min-width: 0;
+  padding: 0.52rem 0.68rem;
+  border: 1px solid #aab5ba;
+  border-radius: 0.58rem;
+  background: #fff;
+  color: #18212b;
+  font: 400 max(1rem, 16px)/1.4 system-ui, sans-serif;
+}
+
+.repayment-proposal-builder :is(input, select) {
+  height: 2.8rem;
+  min-height: 44px;
+}
+
+.repayment-proposal-builder select {
+  appearance: auto;
+}
+
+.repayment-proposal-builder textarea {
+  resize: vertical;
+}
+
+.repayment-proposal-builder [aria-invalid="true"] {
+  border-color: #a42f28;
+}
+
+.repayment-proposal-builder :is(summary, input, select, textarea):focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+.repayment-proposal-builder__error:not(:empty) {
+  display: block;
+  margin-top: 0.34rem;
+  color: #8e2923;
+  font-size: 0.85rem;
+}
+
+.repayment-proposal-builder__preview {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 0.7rem 1rem;
+  margin: 0.9rem 0 0;
+  padding: 0.75rem 0.85rem;
+  border: 1px solid #dde6e9;
+  border-radius: 0.8rem;
+  background: #f5f8fa;
+  font-variant-numeric: tabular-nums;
+}
+
+.repayment-proposal-builder__preview dt {
+  color: #47535d;
+  font-size: 0.84rem;
+  font-weight: 650;
+}
+
+.repayment-proposal-builder__preview dd {
+  margin: 0.2rem 0 0;
+  font-weight: 650;
+  overflow-wrap: anywhere;
+}
+
+.repayment-proposal-builder__preview dd span:not([hidden]) + span::before {
+  content: " · ";
+}
+
+.repayment-proposal-builder__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.55rem;
+  margin-top: 1rem;
+}
+
+.repayment-proposal-builder__actions button {
+  height: auto;
+  min-height: 44px;
+  color: #18212b !important;
+  box-shadow: none;
+  font-family: inherit;
+}
+
+.repayment-proposal-builder__actions .lt-textCta:hover {
+  background: #f5f8fa;
+}
+
+.repayment-proposal-builder .repayment-proposal-builder__privacy,
+.repayment-proposal-builder .repayment-proposal-builder__status {
+  margin: 0.6rem 0 0;
+  color: #47535d;
+  font-size: 0.88rem;
+  line-height: 1.45;
+  text-align: left;
+}
+
+.repayment-proposal-builder p.repayment-proposal-builder__status:empty {
+  margin: 0;
+}
+
+.repayment-proposal-builder .repayment-proposal-builder__status {
+  color: #355428;
+  font-weight: 650;
+}
+
+.repayment-proposal-builder__fallback {
+  margin-top: 0.7rem;
+}
+
+@media (max-width: 860px) {
+  .repayment-proposal-builder__fields {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .repayment-proposal-builder__date {
+    grid-column: 1 / -1;
+  }
+}
+
+@media (max-width: 530px) {
+  .repayment-proposal-builder__fields {
+    grid-template-columns: minmax(0, 1.1fr) minmax(0, 0.9fr);
+  }
+
+  .repayment-proposal-builder__preview {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 0.4rem;
+  }
+
+  .repayment-proposal-builder__preview > div {
+    display: grid;
+    grid-template-columns: minmax(0, 0.95fr) minmax(0, 1.3fr);
+    align-items: baseline;
+    gap: 0.5rem;
+  }
+
+  .repayment-proposal-builder__preview dd {
+    margin: 0;
+    text-align: right;
+  }
+
+  .repayment-proposal-builder__preview dd span:not([hidden]) + span {
+    display: block;
+    color: #47535d;
+    font-size: 0.88rem;
+    font-weight: 500;
+  }
+
+  .repayment-proposal-builder__preview dd span:not([hidden]) + span::before {
+    content: none;
+  }
+}
