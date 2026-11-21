@@ -21,7 +21,7 @@ const startMarker = "<!-- best-next-step:start -->";
 const endMarker = "<!-- best-next-step:end -->";
 const excludedRouteDirs = new Set([".git", ".agents", ".codex", "assets", "downloads", "images", "styles", "scripts"]);
 const hubUrls = ["/find/", "/solutions/", "/tools/"];
-const registryOptionalNoindexRoutes = new Set(["/connect/", "/invite/", "/app-clip-review/", "/private-continuation/loan/", "/private-continuation/split/", "/repayment-plan/"]);
+const registryOptionalNoindexRoutes = new Set(["/connect/", "/invite/", "/app-clip-review/", "/private-continuation/loan/", "/private-continuation/split/", "/repayment-plan/", "/repayment-plan/analytics/"]);
 
 const priorityAuditTiers = {
   tier1: [

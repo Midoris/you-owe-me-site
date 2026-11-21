@@ -61,6 +61,7 @@ export const EXCLUDED_EXACT_ROUTES = new Set([
   "/privacy-policy/",
   "/redeem/",
   "/repayment-plan/", // Unlisted private plan viewer without acquisition widgets.
+  "/repayment-plan/analytics/", // Non-interactive telemetry frame.
 ]);
 
 export const EXCLUDED_ROUTE_PREFIXES = Object.freeze([
