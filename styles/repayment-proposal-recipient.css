@@ -1,0 +1,309 @@
+* {
+  box-sizing: border-box;
+}
+
+[hidden] {
+  display: none !important;
+}
+
+html, body {
+  min-height: 100%;
+}
+
+body.repayment-proposal-recipient-page {
+  margin: 0;
+  background: #f4f6f8;
+  color: #212931;
+  font: 1rem/1.55 system-ui, -apple-system, BlinkMacSystemFont, sans-serif;
+  -webkit-text-size-adjust: 100%;
+}
+
+body.repayment-proposal-recipient-page #header {
+  display: none !important;
+}
+
+body.repayment-proposal-recipient-page #wrapper > .bg {
+  display: none !important;
+}
+
+body.repayment-proposal-recipient-page #wrapper.fade-in:before {
+  background: #f4f6f8;
+}
+
+body.repayment-proposal-recipient-page #nav,
+body.repayment-proposal-recipient-page #main,
+body.repayment-proposal-recipient-page #copyright {
+  max-width: none !important;
+  width: 100% !important;
+}
+
+body.repayment-proposal-recipient-page #nav {
+  background: #fff;
+  border-bottom: 1px solid rgba(15, 23, 42, 0.08);
+  padding-inline: clamp(1rem, 4vw, 2rem);
+}
+
+body.repayment-proposal-recipient-page #main {
+  min-height: calc(100vh - 61px);
+  padding: clamp(1.5rem, 5.5vw, 3.5rem) clamp(1rem, 4vw, 2rem) 3rem;
+  background:
+    radial-gradient(circle at top left, rgba(175, 230, 126, 0.16), transparent 30%),
+    linear-gradient(180deg, #fbfdff 0%, #f4f6f8 76%);
+}
+
+.rp-brand, .rp-view {
+  width: min(100%, 43rem);
+  margin-inline: auto;
+}
+
+.rp-brand {
+  display: flex;
+  align-items: center;
+  gap: 0.65rem;
+  padding-block: 0.85rem;
+  font-weight: 770;
+  color: #18212b;
+}
+
+.rp-brand img {
+  border-radius: 8px;
+}
+
+.rp-hero, .rp-card {
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  padding: clamp(1.25rem, 4vw, 2.25rem);
+}
+
+.rp-hero {
+  border-radius: 24px;
+  background: linear-gradient(135deg, rgba(175, 230, 126, 0.22), rgba(255, 255, 255, 0.98) 48%, rgba(228, 238, 248, 0.92));
+  box-shadow: 0 18px 42px rgba(15, 23, 42, 0.08);
+}
+
+.rp-card {
+  margin-block-start: 1rem;
+  border-radius: 20px;
+  background: #fff;
+  box-shadow: 0 14px 36px rgba(15, 23, 42, 0.08);
+}
+
+.rp-view h1, .rp-view h2, .rp-view p {
+  margin: 0;
+}
+
+.rp-view h1, .rp-view h2 {
+  color: #18212b;
+  letter-spacing: -0.02em;
+  line-height: 1.12;
+}
+
+.rp-view h1 {
+  font-size: clamp(1.85rem, 5vw, 2.75rem);
+  font-weight: 900;
+  text-wrap: balance;
+}
+
+.rp-view h2 {
+  font-size: clamp(1.25rem, 3vw, 1.5rem);
+  font-weight: 820;
+}
+
+.rp-view .rp-total {
+  display: grid;
+  gap: 0.2rem;
+  margin-block: 1.5rem 1.1rem;
+}
+
+.rp-label {
+  color: rgba(33, 41, 49, 0.88);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  text-transform: uppercase;
+}
+
+.rp-total strong {
+  color: #18212b;
+  font-size: clamp(1.5rem, 7.2vw, 3.25rem);
+  font-weight: 800;
+  letter-spacing: -0.045em;
+  line-height: 1.1;
+  overflow-wrap: anywhere;
+}
+
+.rp-actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 0.6rem;
+  margin-block-start: 1.25rem;
+}
+
+.rp-primary, .rp-secondary {
+  min-height: 44px;
+  padding: 0.55rem 0.95rem;
+  border-radius: 10px;
+  color: #18212b;
+  font: inherit;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.rp-primary {
+  border: 1px solid rgba(44, 95, 34, 0.21);
+  background: #afe67e;
+}
+
+.rp-primary:hover {
+  background: #bcf18c;
+}
+
+.rp-secondary {
+  border: 1px solid #cbd3db;
+  background: #fff;
+}
+
+.rp-secondary:hover {
+  background: #f4f6f8;
+}
+
+.rp-view button:disabled {
+  opacity: 0.65;
+  cursor: wait;
+}
+
+.rp-view :focus-visible {
+  outline: 3px solid rgba(53, 84, 40, 0.32);
+  outline-offset: 3px;
+}
+
+.rp-saved-label {
+  color: #264d28;
+  font-weight: 750;
+}
+
+.rp-saved-label::before {
+  content: "";
+  display: inline-block;
+  width: 0.6em;
+  height: 0.35em;
+  border: solid currentColor;
+  border-width: 0 0 2px 2px;
+  margin-inline: 0.08em 0.45em;
+  transform: translateY(-0.15em) rotate(-45deg);
+}
+
+.rp-view .rp-detail, .rp-view .rp-status {
+  margin-block-start: 0.55rem;
+  color: #414d59;
+  font-size: 0.91rem;
+}
+
+.rp-status:empty {
+  margin: 0;
+}
+
+.rp-confirm {
+  margin-block-start: 1rem;
+  padding: 0.9rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  background: #fff;
+}
+
+.rp-confirm .rp-actions {
+  margin-block-start: 0.65rem;
+}
+
+.rp-remove {
+  color: #8b252a;
+  border-color: #e7bfc2;
+}
+
+.rp-remove:hover {
+  background: #fff3f3;
+}
+
+.rp-schedule table {
+  width: 100%;
+  margin-block-start: 0.75rem;
+  border-collapse: collapse;
+  text-align: start;
+}
+
+.rp-schedule th, .rp-schedule td {
+  border-bottom: 1px solid #e5eaf0;
+  padding: 0.72rem 0.2rem;
+}
+
+.rp-schedule th {
+  color: #414d59;
+  font-size: 0.85rem;
+  font-weight: 680;
+  text-align: start;
+}
+
+.rp-schedule th:last-child, .rp-schedule td:last-child {
+  padding-inline-start: 0.65rem;
+  text-align: end;
+}
+
+.rp-schedule td:last-child {
+  color: #18212b;
+  font-weight: 720;
+  font-variant-numeric: tabular-nums;
+}
+
+.rp-more {
+  margin-block-start: 1rem;
+}
+
+.rp-empty > p, .rp-empty > button {
+  margin-block-start: 1rem;
+}
+
+.rp-library {
+  display: grid;
+  gap: 0.55rem;
+  padding: 0;
+  margin: 1.2rem 0 0;
+  list-style: none;
+}
+
+.rp-library:empty {
+  margin: 0;
+}
+
+.rp-library button {
+  display: grid;
+  gap: 0.2rem;
+  width: 100%;
+  padding: 0.8rem 1rem;
+  border: 1px solid rgba(15, 23, 42, 0.08);
+  border-radius: 12px;
+  background: rgba(255, 255, 255, 0.74);
+  box-shadow: 0 18px 38px rgba(15, 23, 42, 0.1);
+  color: #18212b;
+  font: inherit;
+  text-align: start;
+  cursor: pointer;
+}
+
+.rp-library button:hover {
+  background: #fff;
+}
+
+.rp-library strong {
+  overflow-wrap: anywhere;
+}
+
+.rp-library span {
+  color: #414d59;
+  font-size: 0.9rem;
+}
+
+@media (max-width: 40rem) {
+  .rp-hero {
+    border-radius: 20px;
+  }
+}

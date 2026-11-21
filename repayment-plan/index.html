@@ -1,0 +1,120 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="referrer" content="no-referrer" />
+    <meta name="robots" content="noindex,nofollow,noarchive" />
+    <script>
+      // Run before the page module or any analytics can read the address.
+      window.repaymentProposalNavigation = (() => {
+        const route = "/repayment-plan/";
+        const key = "uomiRepaymentProposalView";
+        const isClean = () => location.href === location.origin + route;
+
+        function remember(view) {
+          try {
+            history.replaceState({ [key]: view }, "", route);
+          } catch {
+            // The current view remains usable in memory. Analytics checks isClean().
+          }
+        }
+
+        function capture() {
+          const [address] = location.href.split("#", 1);
+          const hasQuery = address.includes("?");
+          if (!hasQuery && !location.href.includes("#")) {
+            return { view: history.state?.[key] ?? { kind: "library" }, incoming: false };
+          }
+
+          const match = /^#p=([A-Za-z0-9_-]{1,128})$/.exec(location.hash);
+          const view = match
+            ? { kind: "link", token: match[1], hasQuery }
+            : { kind: "invalid" };
+          remember(view);
+          return { view, incoming: true };
+        }
+
+        return { initial: capture(), capture, remember, isClean };
+      })();
+    </script>
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Repayment plans | You Owe Me</title>
+    <link rel="icon" href="/images/shared/brand/icon_3_0.png" type="image/png" />
+    <link rel="stylesheet" href="/styles/repayment-proposal-recipient.css" />
+    <script type="module" src="/scripts/repayment-proposal-recipient.mjs"></script>
+  </head>
+
+  <body class="repayment-proposal-recipient-page">
+    <div id="wrapper">
+      <div id="nav">
+        <div class="rp-brand">
+          <img src="/images/shared/brand/icon_3_0.png" alt="" width="32" height="32" />
+          <span>You Owe Me</span>
+        </div>
+      </div>
+
+      <main id="main">
+        <article class="rp-view" id="proposal" aria-labelledby="proposal-title" hidden>
+          <section class="rp-hero">
+            <h1 id="proposal-title" tabindex="-1">Proposed repayment plan</h1>
+            <p class="rp-total">
+              <span class="rp-label">Proposed total</span>
+              <strong id="proposal-total"></strong>
+            </p>
+            <p>These are proposed payments. Save a copy if you’d like to keep it.</p>
+
+            <div class="rp-actions">
+              <button class="rp-primary" type="button" id="save-proposal">Save on this device</button>
+              <p class="rp-saved-label" id="saved-label" tabindex="-1" hidden>Saved on this device</p>
+              <button class="rp-secondary" type="button" id="show-saved-plans" hidden>Saved plans</button>
+              <button class="rp-secondary" type="button" id="remove-proposal" aria-controls="remove-confirmation" aria-expanded="false" hidden>Remove saved copy</button>
+            </div>
+            <p class="rp-detail" id="saved-detail" hidden>Reopen your saved copy from this page in this browser.</p>
+            <div class="rp-confirm" id="remove-confirmation" role="group" aria-labelledby="remove-title" hidden>
+              <p id="remove-title"><strong>Remove this saved copy?</strong></p>
+              <p>You can reopen the plan from the original link.</p>
+              <div class="rp-actions">
+                <button class="rp-secondary" type="button" id="cancel-removal">Keep copy</button>
+                <button class="rp-secondary rp-remove" type="button" id="confirm-removal">Remove copy</button>
+              </div>
+            </div>
+            <p class="rp-status" id="proposal-status" role="status"></p>
+          </section>
+
+          <section class="rp-card rp-schedule" aria-labelledby="schedule-title">
+            <h2 id="schedule-title">Payment schedule</h2>
+            <p class="rp-detail" id="schedule-count"></p>
+            <table aria-labelledby="schedule-title">
+              <thead>
+                <tr><th scope="col">Date</th><th scope="col">Amount</th></tr>
+              </thead>
+              <tbody id="payment-dates"></tbody>
+              <tbody id="remaining-dates" hidden></tbody>
+            </table>
+            <button class="rp-secondary rp-more" type="button" id="show-all-dates" aria-controls="remaining-dates" aria-expanded="false" hidden></button>
+          </section>
+        </article>
+
+        <section class="rp-view rp-hero rp-empty" id="saved-library" aria-labelledby="library-title" hidden>
+          <h1 id="library-title" tabindex="-1">Saved repayment plans</h1>
+          <p id="library-description"></p>
+          <ul class="rp-library" id="saved-plans"></ul>
+          <p class="rp-status" id="library-status" role="status"></p>
+        </section>
+
+        <section class="rp-view rp-hero rp-empty" id="invalid-link" aria-labelledby="invalid-title" hidden>
+          <h1 id="invalid-title" tabindex="-1">This plan link couldn’t be opened</h1>
+          <p>Try opening the complete link from the original message, or ask the sender for a new link.</p>
+          <button class="rp-secondary" type="button" id="invalid-show-saved" hidden>View saved plans</button>
+        </section>
+
+        <noscript>
+          <section class="rp-view rp-hero rp-empty">
+            <h1>Open a repayment plan</h1>
+            <p>Enable JavaScript in this browser, then reopen the link from the original message.</p>
+          </section>
+        </noscript>
+      </main>
+    </div>
+  </body>
+</html>

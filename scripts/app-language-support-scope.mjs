@@ -60,6 +60,7 @@ export const EXCLUDED_EXACT_ROUTES = new Set([
   "/privacy-and-data/",
   "/privacy-policy/",
   "/redeem/",
+  "/repayment-plan/", // Unlisted private plan viewer without acquisition widgets.
 ]);
 
 export const EXCLUDED_ROUTE_PREFIXES = Object.freeze([
