@@ -1,8 +1,17 @@
 import { loanImportEventName } from "./loan-import-analytics.mjs?v=20261018-review1";
 import { localizedSourceRoute } from "../content/site-locales.mjs?v=komoney20261106";
+import { FIREBASE_CONFIG, isSiteAnalyticsHost } from "./site-analytics-config.mjs";
+import {
+  bindProposalSenderAnalytics,
+  canCollectProposalAnalytics,
+  isProposalSenderPath,
+  PROPOSAL_SENDER_PATH,
+  proposalSenderAnalyticsConfig,
+} from "./repayment-proposal-events.mjs";
 import { initializeApp } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-app.js";
 import {
   getAnalytics,
+  initializeAnalytics,
   isSupported,
   logEvent,
   setDefaultEventParameters,
@@ -10,17 +19,6 @@ import {
 } from "https://www.gstatic.com/firebasejs/12.10.0/firebase-analytics.js";
 import { createAppStoreCtaViewTracker } from "./app-store-cta-view-tracker.mjs";
 import { bindIphoneHandoffAnalytics } from "./iphone-handoff-analytics-bridge.mjs?v=plrepayment20261106";
-
-const FIREBASE_CONFIG = {
-  apiKey: "AIzaSyDOsFoz3lixG5KA7aGu_IQg_N3Pc_tIpt4",
-  authDomain: "you-owe-me-app.firebaseapp.com",
-  databaseURL: "https://you-owe-me-app.firebaseio.com",
-  projectId: "you-owe-me-app",
-  storageBucket: "you-owe-me-app.firebasestorage.app",
-  messagingSenderId: "1056899447246",
-  appId: "1:1056899447246:web:9880554b4d5bf68003539f",
-  measurementId: "G-TJDLPVM702",
-};
 
 const APP_STORE_HOST_MATCH = "apps.apple.com";
 const APP_STORE_ID_MATCH = "id1147058670";
@@ -173,6 +171,7 @@ const PAGE_METADATA = {
   "/blog/how-to-track-subscriptions-and-bills-you-pay-for-family/": { page_type: "blog", cluster: "family_reimbursements", app_store_cpp: "family_reimbursements" },
 };
 
+const proposalSenderPage = isProposalSenderPath(window.location.pathname);
 const app = shouldInitializeFirebase() ? initializeApp(FIREBASE_CONFIG) : null;
 const analyticsPromise = initAnalytics();
 const saleBadgeEventsSent = new Set();
@@ -186,8 +185,9 @@ const appStoreCtaViewTracker = createAppStoreCtaViewTracker({
 });
 
 function shouldInitializeFirebase() {
-  const hostname = window.location.hostname;
-  return hostname === "you-owe-me.com" || hostname === "www.you-owe-me.com";
+  if (!isSiteAnalyticsHost(window.location.hostname)) return false;
+  if (!proposalSenderPage) return true;
+  return Boolean(proposalSenderAnalyticsConfig(window.location, document));
 }
 
 async function initAnalytics() {
@@ -197,7 +197,9 @@ async function initAnalytics() {
     const supported = await isSupported();
     if (!supported) return null;
 
-    const analytics = getAnalytics(app);
+    const senderConfig = proposalSenderPage ? proposalSenderAnalyticsConfig(window.location, document) : null;
+    if (proposalSenderPage && !senderConfig) return null;
+    const analytics = senderConfig ? initializeAnalytics(app, { config: senderConfig }) : getAnalytics(app);
 
     setDefaultEventParameters({
       site_platform: "web",
@@ -298,6 +300,7 @@ function getSaleParams() {
 async function trackEvent(eventName, params) {
   const analytics = await analyticsPromise;
   if (!analytics) return;
+  if (proposalSenderPage && !proposalSenderAnalyticsConfig(window.location, document)) return;
   const pageMetadata = getPageMetadata();
 
   logEvent(analytics, normalizeEventName(eventName), Object.assign(
@@ -359,7 +362,9 @@ function trackPageVisited() {
 
   void trackEvent(PAGE_VISITED_EVENT, Object.assign({}, getReferrerContext(), {
     page_title: sanitizeText(document.title, 160),
-    page_url: sanitizeText(window.location.href, 240),
+    page_url: proposalSenderPage
+      ? proposalSenderAnalyticsConfig(window.location, document)?.page_location
+      : sanitizeText(window.location.href, 240),
     smart_app_banner_available: hasSmartAppBanner(),
     smart_app_banner_ios_mobile: hasSmartAppBanner() && isIosMobile() ? 1 : 0,
   }));
@@ -740,6 +745,16 @@ function initEventTracking() {
 }
 
 bindIphoneHandoffAnalytics({ eventTarget: window, trackEvent });
+
+bindProposalSenderAnalytics(async eventName => {
+  const analytics = await analyticsPromise;
+  if (analytics && canCollectProposalAnalytics() && proposalSenderAnalyticsConfig(window.location, document)) {
+    logEvent(analytics, eventName, {
+      page_location: `${window.location.origin}${PROPOSAL_SENDER_PATH}`,
+      page_referrer: "",
+    });
+  }
+});
 
 if (document.readyState === "loading") {
   document.addEventListener("DOMContentLoaded", initEventTracking, { once: true });
