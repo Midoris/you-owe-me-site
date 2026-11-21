@@ -138,7 +138,7 @@ function paymentRow(payment, currency) {
 function renderPayments(plan) {
   const schedule = scheduleFor(plan);
   const rows = schedule.map(payment => paymentRow(payment, plan.currency));
-  text("schedule-count", rows.length === 1 ? "1 proposed payment" : rows.length + " proposed payments");
+  text("schedule-count", rows.length === 1 ? "1 payment" : rows.length + " payments");
   byId("payment-dates").replaceChildren(...rows.slice(0, previewCount));
   remainingDates.replaceChildren(...rows.slice(previewCount));
   remainingDates.hidden = true;
@@ -158,6 +158,7 @@ function refreshControls(copies) {
   const isSaved = Boolean(copy && (current.view.kind === "saved" || copy.token === current.view.token));
   const conflict = Boolean(copy && !isSaved);
   saveButton.hidden = isSaved || conflict;
+  byId("save-detail").hidden = saveButton.hidden;
   byId("copy-conflict").hidden = !conflict;
   byId("saved-label").hidden = !isSaved;
   byId("saved-detail").hidden = !isSaved;

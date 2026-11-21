@@ -127,6 +127,10 @@ test("raw links render exact amounts while the address bar and analytics stay cl
   assert.equal(opened.location.href, route);
   assert.equal(opened.byId("proposal").hidden, false);
   assert.match(opened.byId("proposal-total").textContent, /100[.]03/);
+  assert.equal(opened.byId("proposal-total").parentNode.querySelector(".rp-label").textContent, "Amount requested");
+  assert.equal(opened.byId("schedule-count").textContent, "3 payments");
+  assert.equal(opened.byId("save-detail").textContent, "Keep a copy of the schedule in this browser.");
+  assert.equal(opened.byId("save-detail").hidden, false);
   const rows = opened.byId("payment-dates").children;
   assert.equal(rows.length, 3);
   assert.match(rows[1].textContent, /February 28, 2027/);
@@ -182,6 +186,8 @@ test("saved copies are independently selectable, protected from accidental remov
   assert.deepEqual(first.stages, ["recipient_opened", "recipient_engaged", "recipient_saved"]);
   assert.equal(first.byId("saved-label").hidden, false);
   assert.equal(first.byId("save-proposal").hidden, true);
+  assert.equal(first.byId("save-detail").hidden, true);
+  assert.equal(first.byId("saved-detail").hidden, false);
   assert.equal(first.focused, first.byId("saved-label"));
   const second = page(route + "#p=" + secondToken, { local });
   await second.click("save-proposal");
