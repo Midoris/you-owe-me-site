@@ -35,8 +35,9 @@ export function renderLocaleHtml(html, englishRoute, lang, locales = siteLocales
   for (const asset of assets) {
     const relative = path.posix.relative(englishRoute, asset);
     const references = lang === "en" ? [asset, relative, `./${relative}`] : [asset];
+    const version = localeAssetVersion(locale, asset, page, route);
     for (const reference of references) {
-      html = html.replace(new RegExp(`((?:src|href)=")${regexEsc(reference)}(?:\\?[^\"]*)?(\")`, "g"), `$1${reference}?v=${localeAssetVersion(locale, asset, page)}$2`);
+      html = html.replace(new RegExp(`((?:src|href)=")${regexEsc(reference)}(?:\\?[^\"]*)?(\")`, "g"), `$1${reference}?v=${version}$2`);
     }
   }
   if (lang === "en") return html;

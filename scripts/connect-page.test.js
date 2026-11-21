@@ -145,7 +145,7 @@ test("only explicitly listed noindex utility routes may omit content-registry me
 
   for (const relativePath of auditPaths) {
     const source = fs.readFileSync(path.join(root, relativePath), "utf8");
-    assert.match(source, /registryOptionalNoindexRoutes\s*=\s*new Set\(\["\/connect\/", "\/invite\/", "\/app-clip-review\/", "\/private-continuation\/loan\/", "\/private-continuation\/split\/"\]\)/);
+    assert.match(source, /registryOptionalNoindexRoutes\s*=\s*new Set\(\["\/connect\/", "\/invite\/", "\/app-clip-review\/", "\/private-continuation\/loan\/", "\/private-continuation\/split\/", "\/repayment-plan\/", "\/repayment-plan\/analytics\/"\]\)/);
     assert.match(source, /registryOptionalNoindexRoutes\.has\(route\)/);
     assert.doesNotMatch(source, /!byUrl\.has\(route\)\s*&&\s*!isNoindex\(html\)/);
   }

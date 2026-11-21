@@ -853,7 +853,14 @@ export const koreanShared = Object.freeze({
   "nextStep": "관련 가이드를 읽거나 iPhone의 You Owe Me에서 첫 기록을 시작하세요."
 });
 export const siteLocales = [
-  { code: "en", label: "English", home: "/", pages: [], shared: { languageLabel: "Page language" } },
+  {
+    code: "en", label: "English", home: "/", pages: [], shared: { languageLabel: "Page language" },
+    assetVersionsByRoute: {
+      "/blog/how-to-ask-to-borrow-money-from-a-friend-without-making-it-awkward/": {
+        "/scripts/analytics.js": "repayment-proposal-20261121",
+      },
+    },
+  },
   { code: "es", label: "Español", home: "/es/", pages: spanishPages, shared: spanishShared, assetVersion: spanishAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "spanish", sectionClass: "site-spanish-section", nextStepComment: "Spanish next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Spanish next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "de", label: "Deutsch", home: "/de/", pages: germanPages, shared: germanShared, assetVersion: germanAssetVersion, versionedAssets: spanishVersionedAssets, sectionMarker: "german", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
   { code: "ar", label: "العربية", direction: "rtl", home: "/ar/", pages: arabicPages, shared: arabicShared, assetVersion: "ar20261020", versionedAssets: [...spanishVersionedAssets, "/scripts/arabic-number-input.js"], sectionMarker: "arabic", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
@@ -865,8 +872,8 @@ export const siteLocales = [
   { code: "ko", label: "한국어", home: "/ko/", pages: koreanPages, shared: koreanShared, assetVersion: "kohome20261106", versionedAssets: spanishVersionedAssets, sectionMarker: "korean", sectionClass: "site-locale-section", nextStepComment: "Localized next steps are authored in this page; the English module builder does not own this block.", registrySkipReason: "Localized next steps are translated in the public HTML; the English module generator must not overwrite them." },
 ];
 
-export function localeAssetVersion(locale, asset, page) {
-  return page?.assetVersions?.[asset] || sharedAssetVersions[asset] || locale.assetVersion;
+export function localeAssetVersion(locale, asset, page, route = page?.[locale.code]) {
+  return page?.assetVersions?.[asset] || locale.assetVersionsByRoute?.[route]?.[asset] || sharedAssetVersions[asset] || locale.assetVersion;
 }
 
 export function completedCounterparts(englishRoute, locales = siteLocales) {

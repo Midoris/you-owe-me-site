@@ -15,7 +15,7 @@ test("every site route satisfies the language-support inclusion and exclusion co
   assert.deepEqual(result.errors, []);
   const localizedPages = result.files.filter(file => /[/\\](?:es|de|ar|fr|ja|pt|it|pl|ko)[/\\]/.test(file)).length;
   assert.equal(result.counts.included, 84 + localizedPages);
-  assert.equal(result.counts.excluded, 11);
+  assert.equal(result.counts.excluded, 13);
   assert.equal(result.counts.unclassified, 0);
 });
 
